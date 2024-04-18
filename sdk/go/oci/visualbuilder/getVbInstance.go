@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := VisualBuilder.GetVbInstance(ctx, &visualbuilder.GetVbInstanceArgs{
-//				VbInstanceId: oci_visual_builder_vb_instance.Test_vb_instance.Id,
+//				VbInstanceId: testVbInstanceOciVisualBuilderVbInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

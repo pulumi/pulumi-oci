@@ -20,25 +20,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPool = new oci.streaming.StreamPool("testStreamPool", {
- *     compartmentId: _var.compartment_id,
+ * const testStreamPool = new oci.streaming.StreamPool("test_stream_pool", {
+ *     compartmentId: compartmentId,
+ *     name: streamPoolName,
  *     customEncryptionKey: {
- *         kmsKeyId: oci_kms_key.test_key.id,
+ *         kmsKeyId: testKey.id,
  *     },
- *     definedTags: _var.stream_pool_defined_tags,
+ *     definedTags: streamPoolDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     kafkaSettings: {
- *         autoCreateTopicsEnable: _var.stream_pool_kafka_settings_auto_create_topics_enable,
- *         bootstrapServers: _var.stream_pool_kafka_settings_bootstrap_servers,
- *         logRetentionHours: _var.stream_pool_kafka_settings_log_retention_hours,
- *         numPartitions: _var.stream_pool_kafka_settings_num_partitions,
+ *         autoCreateTopicsEnable: streamPoolKafkaSettingsAutoCreateTopicsEnable,
+ *         bootstrapServers: streamPoolKafkaSettingsBootstrapServers,
+ *         logRetentionHours: streamPoolKafkaSettingsLogRetentionHours,
+ *         numPartitions: streamPoolKafkaSettingsNumPartitions,
  *     },
  *     privateEndpointSettings: {
- *         nsgIds: _var.stream_pool_private_endpoint_settings_nsg_ids,
- *         privateEndpointIp: _var.stream_pool_private_endpoint_settings_private_endpoint_ip,
- *         subnetId: oci_core_subnet.test_subnet.id,
+ *         nsgIds: streamPoolPrivateEndpointSettingsNsgIds,
+ *         privateEndpointIp: streamPoolPrivateEndpointSettingsPrivateEndpointIp,
+ *         subnetId: testSubnet.id,
  *     },
  * });
  * ```

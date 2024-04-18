@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetManagedPreferredCredentials(ctx, &database.GetManagedPreferredCredentialsArgs{
-//				ManagedDatabaseId: oci_database_management_managed_database.Test_managed_database.Id,
+//				ManagedDatabaseId: testManagedDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -26,32 +26,32 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDatabaseRegistration = new Oci.GoldenGate.DatabaseRegistration("testDatabaseRegistration", new()
+    ///     var testDatabaseRegistration = new Oci.GoldenGate.DatabaseRegistration("test_database_registration", new()
     ///     {
-    ///         AliasName = @var.Database_registration_alias_name,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Database_registration_display_name,
-    ///         Fqdn = @var.Database_registration_fqdn,
-    ///         Password = @var.Database_registration_password,
-    ///         Username = @var.Database_registration_username,
-    ///         ConnectionString = @var.Database_registration_connection_string,
-    ///         DatabaseId = oci_database_database.Test_database.Id,
+    ///         AliasName = databaseRegistrationAliasName,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = databaseRegistrationDisplayName,
+    ///         Fqdn = databaseRegistrationFqdn,
+    ///         Password = databaseRegistrationPassword,
+    ///         Username = databaseRegistrationUsername,
+    ///         ConnectionString = databaseRegistrationConnectionString,
+    ///         DatabaseId = testDatabase.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Database_registration_description,
+    ///         Description = databaseRegistrationDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IpAddress = @var.Database_registration_ip_address,
-    ///         KeyId = oci_kms_key.Test_key.Id,
-    ///         SecretCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         SessionMode = @var.Database_registration_session_mode,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VaultId = oci_kms_vault.Test_vault.Id,
-    ///         Wallet = @var.Database_registration_wallet,
+    ///         IpAddress = databaseRegistrationIpAddress,
+    ///         KeyId = testKey.Id,
+    ///         SecretCompartmentId = testCompartment.Id,
+    ///         SessionMode = databaseRegistrationSessionMode,
+    ///         SubnetId = testSubnet.Id,
+    ///         VaultId = testVault.Id,
+    ///         Wallet = databaseRegistrationWallet,
     ///     });
     /// 
     /// });

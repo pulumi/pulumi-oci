@@ -16,27 +16,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspace = new oci.dataintegration.Workspace("testWorkspace", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.workspace_display_name,
+ * const testWorkspace = new oci.dataintegration.Workspace("test_workspace", {
+ *     compartmentId: compartmentId,
+ *     displayName: workspaceDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.workspace_description,
- *     dnsServerIp: _var.workspace_dns_server_ip,
- *     dnsServerZone: _var.workspace_dns_server_zone,
- *     endpointCompartmentId: oci_identity_compartment.test_compartment.id,
- *     endpointId: oci_dataintegration_endpoint.test_endpoint.id,
- *     endpointName: _var.workspace_endpoint_name,
+ *     description: workspaceDescription,
+ *     dnsServerIp: workspaceDnsServerIp,
+ *     dnsServerZone: workspaceDnsServerZone,
+ *     endpointCompartmentId: testCompartment.id,
+ *     endpointId: testEndpoint.id,
+ *     endpointName: workspaceEndpointName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isPrivateNetworkEnabled: _var.workspace_is_private_network_enabled,
- *     registryCompartmentId: oci_identity_compartment.test_compartment.id,
- *     registryId: oci_data_connectivity_registry.test_registry.id,
- *     registryName: oci_data_connectivity_registry.test_registry.name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     isPrivateNetworkEnabled: workspaceIsPrivateNetworkEnabled,
+ *     registryCompartmentId: testCompartment.id,
+ *     registryId: testRegistry.id,
+ *     registryName: testRegistry.name,
+ *     subnetId: testSubnet.id,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

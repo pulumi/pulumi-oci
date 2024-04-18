@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetApplications(ctx, &dataflow.GetApplicationsArgs{
-//				CompartmentId:         _var.Compartment_id,
-//				DisplayName:           pulumi.StringRef(_var.Application_display_name),
-//				DisplayNameStartsWith: pulumi.StringRef(_var.Application_display_name_starts_with),
-//				OwnerPrincipalId:      pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
-//				SparkVersion:          pulumi.StringRef(_var.Application_spark_version),
+//				CompartmentId:         compartmentId,
+//				DisplayName:           pulumi.StringRef(applicationDisplayName),
+//				DisplayNameStartsWith: pulumi.StringRef(applicationDisplayNameStartsWith),
+//				OwnerPrincipalId:      pulumi.StringRef(testOwnerPrincipal.Id),
+//				SparkVersion:          pulumi.StringRef(applicationSparkVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentStatus = oci.Functions.getFusionEnvironmentStatus({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -67,7 +67,7 @@ export interface GetFusionEnvironmentStatusResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentStatus = oci.Functions.getFusionEnvironmentStatus({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testClusters = Oci.ContainerEngine.GetClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Cluster_name,
-        ///         States = @var.Cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = clusterName,
+        ///         States = clusterState,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testClusters = Oci.ContainerEngine.GetClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Cluster_name,
-        ///         States = @var.Cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = clusterName,
+        ///         States = clusterState,
         ///     });
         /// 
         /// });

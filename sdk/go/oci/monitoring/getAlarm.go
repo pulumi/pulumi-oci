@@ -39,7 +39,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetAlarm(ctx, &monitoring.GetAlarmArgs{
-//				AlarmId: oci_monitoring_alarm.Test_alarm.Id,
+//				AlarmId: testAlarmOciMonitoringAlarm.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := UsageProxy.GetSubscriptionRewards(ctx, &usageproxy.GetSubscriptionRewardsArgs{
-//				SubscriptionId: oci_ons_subscription.Test_subscription.Id,
-//				TenancyId:      oci_identity_tenancy.Test_tenancy.Id,
+//				SubscriptionId: testSubscription.Id,
+//				TenancyId:      testTenancy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

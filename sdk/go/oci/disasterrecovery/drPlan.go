@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DisasterRecovery.NewDrPlan(ctx, "testDrPlan", &DisasterRecovery.DrPlanArgs{
-//				DisplayName:         pulumi.Any(_var.Dr_plan_display_name),
-//				DrProtectionGroupId: pulumi.Any(oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id),
-//				Type:                pulumi.Any(_var.Dr_plan_type),
+//			_, err := DisasterRecovery.NewDrPlan(ctx, "test_dr_plan", &DisasterRecovery.DrPlanArgs{
+//				DisplayName:         pulumi.Any(drPlanDisplayName),
+//				DrProtectionGroupId: pulumi.Any(testDrProtectionGroup.Id),
+//				Type:                pulumi.Any(drPlanType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

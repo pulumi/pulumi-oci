@@ -24,12 +24,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testKeys = oci.Kms.getKeys({
- *     compartmentId: _var.compartment_id,
- *     managementEndpoint: _var.key_management_endpoint,
- *     algorithm: _var.key_algorithm,
- *     length: _var.key_length,
- *     curveId: oci_kms_curve.test_curve.id,
- *     protectionMode: _var.key_protection_mode,
+ *     compartmentId: compartmentId,
+ *     managementEndpoint: keyManagementEndpoint,
+ *     algorithm: keyAlgorithm,
+ *     length: keyLength,
+ *     curveId: testCurve.id,
+ *     protectionMode: keyProtectionMode,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,12 +135,12 @@ export interface GetKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testKeys = oci.Kms.getKeys({
- *     compartmentId: _var.compartment_id,
- *     managementEndpoint: _var.key_management_endpoint,
- *     algorithm: _var.key_algorithm,
- *     length: _var.key_length,
- *     curveId: oci_kms_curve.test_curve.id,
- *     protectionMode: _var.key_protection_mode,
+ *     compartmentId: compartmentId,
+ *     managementEndpoint: keyManagementEndpoint,
+ *     algorithm: keyAlgorithm,
+ *     length: keyLength,
+ *     curveId: testCurve.id,
+ *     protectionMode: keyProtectionMode,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

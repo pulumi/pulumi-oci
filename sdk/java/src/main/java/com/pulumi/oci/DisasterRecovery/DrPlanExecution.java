@@ -52,13 +52,13 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDrPlanExecution = new DrPlanExecution(&#34;testDrPlanExecution&#34;, DrPlanExecutionArgs.builder()        
  *             .executionOptions(DrPlanExecutionExecutionOptionsArgs.builder()
- *                 .planExecutionType(var_.dr_plan_execution_execution_options_plan_execution_type())
- *                 .arePrechecksEnabled(var_.dr_plan_execution_execution_options_are_prechecks_enabled())
- *                 .areWarningsIgnored(var_.dr_plan_execution_execution_options_are_warnings_ignored())
+ *                 .planExecutionType(drPlanExecutionExecutionOptionsPlanExecutionType)
+ *                 .arePrechecksEnabled(drPlanExecutionExecutionOptionsArePrechecksEnabled)
+ *                 .areWarningsIgnored(drPlanExecutionExecutionOptionsAreWarningsIgnored)
  *                 .build())
- *             .planId(oci_disaster_recovery_plan.test_plan().id())
+ *             .planId(testPlan.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.dr_plan_execution_display_name())
+ *             .displayName(drPlanExecutionDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

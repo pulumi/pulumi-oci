@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMesh = new oci.servicemesh.Mesh("testMesh", {
+ * const testMesh = new oci.servicemesh.Mesh("test_mesh", {
  *     certificateAuthorities: [{
- *         id: _var.mesh_certificate_authorities_id,
+ *         id: meshCertificateAuthoritiesId,
  *     }],
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.mesh_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: meshDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.mesh_description,
+ *     description: meshDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     mtls: {
- *         minimum: _var.mesh_mtls_minimum,
+ *         minimum: meshMtlsMinimum,
  *     },
  * });
  * ```

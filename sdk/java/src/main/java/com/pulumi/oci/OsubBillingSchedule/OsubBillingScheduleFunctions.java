@@ -45,10 +45,10 @@ public final class OsubBillingScheduleFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testService.id())
+     *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -91,10 +91,10 @@ public final class OsubBillingScheduleFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testService.id())
+     *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -137,10 +137,10 @@ public final class OsubBillingScheduleFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testService.id())
+     *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -183,10 +183,10 @@ public final class OsubBillingScheduleFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBillingSchedules = OsubBillingScheduleFunctions.getBillingSchedule(GetBillingScheduleArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionId(oci_ons_subscription.test_subscription().id())
-     *             .subscribedServiceId(oci_core_service.test_service().id())
-     *             .xOneOriginRegion(var_.billing_schedule_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionId(testSubscription.id())
+     *             .subscribedServiceId(testService.id())
+     *             .xOneOriginRegion(billingScheduleXOneOriginRegion)
      *             .build());
      * 
      *     }

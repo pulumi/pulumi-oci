@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testAssociation = Oci.CertificatesManagement.GetAssociation.Invoke(new()
         ///     {
-        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
+        ///         AssociationId = testAssociationOciCertificatesManagementAssociation.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testAssociation = Oci.CertificatesManagement.GetAssociation.Invoke(new()
         ///     {
-        ///         AssociationId = oci_certificates_management_association.Test_association.Id,
+        ///         AssociationId = testAssociationOciCertificatesManagementAssociation.Id,
         ///     });
         /// 
         /// });

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testSubscribedServices = Oci.OneSubsription.GetSubscribedServices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         OrderLineId = oci_onesubscription_order_line.Test_order_line.Id,
-        ///         Status = @var.Subscribed_service_status,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         OrderLineId = testOrderLine.Id,
+        ///         Status = subscribedServiceStatus,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testSubscribedServices = Oci.OneSubsription.GetSubscribedServices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         OrderLineId = oci_onesubscription_order_line.Test_order_line.Id,
-        ///         Status = @var.Subscribed_service_status,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         OrderLineId = testOrderLine.Id,
+        ///         Status = subscribedServiceStatus,
         ///     });
         /// 
         /// });

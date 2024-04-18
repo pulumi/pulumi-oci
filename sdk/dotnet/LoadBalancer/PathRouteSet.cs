@@ -26,18 +26,19 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPathRouteSet = new Oci.LoadBalancer.PathRouteSet("testPathRouteSet", new()
+    ///     var testPathRouteSet = new Oci.LoadBalancer.PathRouteSet("test_path_route_set", new()
     ///     {
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Name = pathRouteSetName,
     ///         PathRoutes = new[]
     ///         {
     ///             new Oci.LoadBalancer.Inputs.PathRouteSetPathRouteArgs
     ///             {
-    ///                 BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///                 Path = @var.Path_route_set_path_routes_path,
+    ///                 BackendSetName = testBackendSet.Name,
+    ///                 Path = pathRouteSetPathRoutesPath,
     ///                 PathMatchType = new Oci.LoadBalancer.Inputs.PathRouteSetPathRoutePathMatchTypeArgs
     ///                 {
-    ///                     MatchType = @var.Path_route_set_path_routes_path_match_type_match_type,
+    ///                     MatchType = pathRouteSetPathRoutesPathMatchTypeMatchType,
     ///                 },
     ///             },
     ///         },

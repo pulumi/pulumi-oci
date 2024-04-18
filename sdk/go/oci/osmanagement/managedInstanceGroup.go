@@ -33,18 +33,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagement.NewManagedInstanceGroup(ctx, "testManagedInstanceGroup", &OsManagement.ManagedInstanceGroupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Managed_instance_group_display_name),
+//			_, err := OsManagement.NewManagedInstanceGroup(ctx, "test_managed_instance_group", &OsManagement.ManagedInstanceGroupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(managedInstanceGroupDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Managed_instance_group_description),
+//				Description: pulumi.Any(managedInstanceGroupDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				OsFamily:           pulumi.Any(_var.Managed_instance_group_os_family),
-//				ManagedInstanceIds: pulumi.Any(_var.Managed_instance_group_managed_instance_ids),
+//				OsFamily:           pulumi.Any(managedInstanceGroupOsFamily),
+//				ManagedInstanceIds: pulumi.Any(managedInstanceGroupManagedInstanceIds),
 //			})
 //			if err != nil {
 //				return err

@@ -30,9 +30,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testScripts = Oci.ApmSynthetics.GetScripts.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///         ContentType = @var.Script_content_type,
-        ///         DisplayName = @var.Script_display_name,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ContentType = scriptContentType,
+        ///         DisplayName = scriptDisplayName,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testScripts = Oci.ApmSynthetics.GetScripts.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///         ContentType = @var.Script_content_type,
-        ///         DisplayName = @var.Script_display_name,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ContentType = scriptContentType,
+        ///         DisplayName = scriptDisplayName,
         ///     });
         /// 
         /// });

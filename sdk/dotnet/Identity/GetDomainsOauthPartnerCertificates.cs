@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauthPartnerCertificates = Oci.Identity.GetDomainsOauthPartnerCertificates.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         OauthPartnerCertificateCount = @var.Oauth_partner_certificate_oauth_partner_certificate_count,
-        ///         OauthPartnerCertificateFilter = @var.Oauth_partner_certificate_oauth_partner_certificate_filter,
-        ///         Authorization = @var.Oauth_partner_certificate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth_partner_certificate_resource_type_schema_version,
-        ///         StartIndex = @var.Oauth_partner_certificate_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OauthPartnerCertificateCount = oauthPartnerCertificateOauthPartnerCertificateCount,
+        ///         OauthPartnerCertificateFilter = oauthPartnerCertificateOauthPartnerCertificateFilter,
+        ///         Authorization = oauthPartnerCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthPartnerCertificateResourceTypeSchemaVersion,
+        ///         StartIndex = oauthPartnerCertificateStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauthPartnerCertificates = Oci.Identity.GetDomainsOauthPartnerCertificates.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         OauthPartnerCertificateCount = @var.Oauth_partner_certificate_oauth_partner_certificate_count,
-        ///         OauthPartnerCertificateFilter = @var.Oauth_partner_certificate_oauth_partner_certificate_filter,
-        ///         Authorization = @var.Oauth_partner_certificate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth_partner_certificate_resource_type_schema_version,
-        ///         StartIndex = @var.Oauth_partner_certificate_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OauthPartnerCertificateCount = oauthPartnerCertificateOauthPartnerCertificateCount,
+        ///         OauthPartnerCertificateFilter = oauthPartnerCertificateOauthPartnerCertificateFilter,
+        ///         Authorization = oauthPartnerCertificateAuthorization,
+        ///         ResourceTypeSchemaVersion = oauthPartnerCertificateResourceTypeSchemaVersion,
+        ///         StartIndex = oauthPartnerCertificateStartIndex,
         ///     });
         /// 
         /// });

@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmConfig.GetConfig(ctx, &apmconfig.GetConfigArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-//				ConfigId:    oci_apm_config_config.Test_config.Id,
+//				ApmDomainId: testApmDomain.Id,
+//				ConfigId:    testConfigOciApmConfigConfig.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

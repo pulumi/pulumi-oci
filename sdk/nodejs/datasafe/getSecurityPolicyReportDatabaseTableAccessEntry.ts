@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReportDatabaseTableAccessEntry = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntry({
- *     databaseTableAccessEntryKey: _var.security_policy_report_database_table_access_entry_database_table_access_entry_key,
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
+ *     databaseTableAccessEntryKey: securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -158,8 +158,8 @@ export interface GetSecurityPolicyReportDatabaseTableAccessEntryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReportDatabaseTableAccessEntry = oci.DataSafe.getSecurityPolicyReportDatabaseTableAccessEntry({
- *     databaseTableAccessEntryKey: _var.security_policy_report_database_table_access_entry_database_table_access_entry_key,
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
+ *     databaseTableAccessEntryKey: securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

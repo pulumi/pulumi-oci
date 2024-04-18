@@ -50,12 +50,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMaintenanceRun = new MaintenanceRun(&#34;testMaintenanceRun&#34;, MaintenanceRunArgs.builder()        
- *             .patchType(var_.maintenance_run_patch_type())
- *             .targetResourceId(oci_usage_proxy_resource.test_resource().id())
- *             .timeScheduled(var_.maintenance_run_time_scheduled())
- *             .compartmentId(var_.compartment_id())
- *             .isDstFileUpdateEnabled(var_.maintenance_run_is_dst_file_update_enabled())
- *             .patchingMode(var_.maintenance_run_patching_mode())
+ *             .patchType(maintenanceRunPatchType)
+ *             .targetResourceId(testResource.id())
+ *             .timeScheduled(maintenanceRunTimeScheduled)
+ *             .compartmentId(compartmentId)
+ *             .isDstFileUpdateEnabled(maintenanceRunIsDstFileUpdateEnabled)
+ *             .patchingMode(maintenanceRunPatchingMode)
  *             .build());
  * 
  *     }

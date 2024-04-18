@@ -31,17 +31,17 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testDatabaseInsights = Oci.Opsi.GetDatabaseInsights.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Database_insight_compartment_id_in_subtree,
-        ///         DatabaseIds = oci_database_database.Test_database.Id,
-        ///         DatabaseTypes = @var.Database_insight_database_type,
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///         Fields = @var.Database_insight_fields,
-        ///         Id = @var.Database_insight_id,
-        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///         States = @var.Database_insight_state,
-        ///         Statuses = @var.Database_insight_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = databaseInsightCompartmentIdInSubtree,
+        ///         DatabaseIds = testDatabase.Id,
+        ///         DatabaseTypes = databaseInsightDatabaseType,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataInsightId = testExadataInsight.Id,
+        ///         Fields = databaseInsightFields,
+        ///         Id = databaseInsightId,
+        ///         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+        ///         States = databaseInsightState,
+        ///         Statuses = databaseInsightStatus,
         ///     });
         /// 
         /// });
@@ -71,17 +71,17 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testDatabaseInsights = Oci.Opsi.GetDatabaseInsights.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Database_insight_compartment_id_in_subtree,
-        ///         DatabaseIds = oci_database_database.Test_database.Id,
-        ///         DatabaseTypes = @var.Database_insight_database_type,
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///         Fields = @var.Database_insight_fields,
-        ///         Id = @var.Database_insight_id,
-        ///         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-        ///         States = @var.Database_insight_state,
-        ///         Statuses = @var.Database_insight_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = databaseInsightCompartmentIdInSubtree,
+        ///         DatabaseIds = testDatabase.Id,
+        ///         DatabaseTypes = databaseInsightDatabaseType,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataInsightId = testExadataInsight.Id,
+        ///         Fields = databaseInsightFields,
+        ///         Id = databaseInsightId,
+        ///         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+        ///         States = databaseInsightState,
+        ///         Statuses = databaseInsightStatus,
         ///     });
         /// 
         /// });

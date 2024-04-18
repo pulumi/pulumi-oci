@@ -49,18 +49,19 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyDecryptionRule = new NetworkFirewallPolicyDecryptionRule(&#34;testNetworkFirewallPolicyDecryptionRule&#34;, NetworkFirewallPolicyDecryptionRuleArgs.builder()        
  *             .lifecycle(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .action(var_.network_firewall_policy_decryption_rule_action())
+ *             .name(networkFirewallPolicyDecryptionRuleName)
+ *             .action(networkFirewallPolicyDecryptionRuleAction)
  *             .condition(NetworkFirewallPolicyDecryptionRuleConditionArgs.builder()
- *                 .destinationAddresses(var_.network_firewall_policy_decryption_rule_condition_destination_address())
- *                 .sourceAddresses(var_.network_firewall_policy_decryption_rule_condition_source_address())
+ *                 .destinationAddresses(networkFirewallPolicyDecryptionRuleConditionDestinationAddress)
+ *                 .sourceAddresses(networkFirewallPolicyDecryptionRuleConditionSourceAddress)
  *                 .build())
  *             .position(NetworkFirewallPolicyDecryptionRulePositionArgs.builder()
- *                 .afterRule(var_.network_firewall_policy_decryption_rule_position_after_rule())
- *                 .beforeRule(var_.network_firewall_policy_decryption_rule_position_before_rule())
+ *                 .afterRule(networkFirewallPolicyDecryptionRulePositionAfterRule)
+ *                 .beforeRule(networkFirewallPolicyDecryptionRulePositionBeforeRule)
  *                 .build())
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
- *             .decryptionProfile(var_.network_firewall_policy_decryption_rule_decryption_profile())
- *             .secret(var_.network_firewall_policy_decryption_rule_secret())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .decryptionProfile(networkFirewallPolicyDecryptionRuleDecryptionProfile)
+ *             .secret(networkFirewallPolicyDecryptionRuleSecret)
  *             .build());
  * 
  *     }

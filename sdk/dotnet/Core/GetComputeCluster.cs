@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCluster = Oci.Core.GetComputeCluster.Invoke(new()
         ///     {
-        ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
+        ///         ComputeClusterId = testComputeClusterOciCoreComputeCluster.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCluster = Oci.Core.GetComputeCluster.Invoke(new()
         ///     {
-        ///         ComputeClusterId = oci_core_compute_cluster.Test_compute_cluster.Id,
+        ///         ComputeClusterId = testComputeClusterOciCoreComputeCluster.Id,
         ///     });
         /// 
         /// });

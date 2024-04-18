@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOpsiConfigurations = oci.Opsi.getOpsiConfigurations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.opsi_configuration_display_name,
- *     opsiConfigTypes: _var.opsi_configuration_opsi_config_type,
- *     states: _var.opsi_configuration_state,
+ *     compartmentId: compartmentId,
+ *     displayName: opsiConfigurationDisplayName,
+ *     opsiConfigTypes: opsiConfigurationOpsiConfigType,
+ *     states: opsiConfigurationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetOpsiConfigurationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOpsiConfigurations = oci.Opsi.getOpsiConfigurations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.opsi_configuration_display_name,
- *     opsiConfigTypes: _var.opsi_configuration_opsi_config_type,
- *     states: _var.opsi_configuration_state,
+ *     compartmentId: compartmentId,
+ *     displayName: opsiConfigurationDisplayName,
+ *     opsiConfigTypes: opsiConfigurationOpsiConfigType,
+ *     states: opsiConfigurationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

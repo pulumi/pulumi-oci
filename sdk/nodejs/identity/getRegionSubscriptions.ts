@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRegionSubscriptions = oci.Identity.getRegionSubscriptions({
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetRegionSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRegionSubscriptions = oci.Identity.getRegionSubscriptions({
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

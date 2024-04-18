@@ -37,16 +37,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewConfig(ctx, "testConfig", &StackMonitoring.ConfigArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ConfigType:    pulumi.Any(_var.Config_config_type),
-//				IsEnabled:     pulumi.Any(_var.Config_is_enabled),
-//				ResourceType:  pulumi.Any(_var.Config_resource_type),
-//				License:       pulumi.Any(_var.Config_license),
+//			_, err := StackMonitoring.NewConfig(ctx, "test_config", &StackMonitoring.ConfigArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ConfigType:    pulumi.Any(configConfigType),
+//				IsEnabled:     pulumi.Any(configIsEnabled),
+//				ResourceType:  pulumi.Any(configResourceType),
+//				License:       pulumi.Any(configLicense),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Config_display_name),
+//				DisplayName: pulumi.Any(configDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

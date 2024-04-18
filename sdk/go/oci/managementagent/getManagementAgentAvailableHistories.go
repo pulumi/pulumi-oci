@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentAvailableHistories(ctx, &managementagent.GetManagementAgentAvailableHistoriesArgs{
-//				ManagementAgentId:                      oci_management_agent_management_agent.Test_management_agent.Id,
-//				TimeAvailabilityStatusEndedGreaterThan: pulumi.StringRef(_var.Management_agent_available_history_time_availability_status_ended_greater_than),
-//				TimeAvailabilityStatusStartedLessThan:  pulumi.StringRef(_var.Management_agent_available_history_time_availability_status_started_less_than),
+//				ManagementAgentId:                      testManagementAgent.Id,
+//				TimeAvailabilityStatusEndedGreaterThan: pulumi.StringRef(managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan),
+//				TimeAvailabilityStatusStartedLessThan:  pulumi.StringRef(managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

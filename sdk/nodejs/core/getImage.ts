@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testImage = oci.Core.getImage({
- *     imageId: oci_core_image.test_image.id,
+ *     imageId: testImageOciCoreImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -131,7 +131,7 @@ export interface GetImageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testImage = oci.Core.getImage({
- *     imageId: oci_core_image.test_image.id,
+ *     imageId: testImageOciCoreImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

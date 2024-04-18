@@ -47,17 +47,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVolumeAttachment = new VolumeAttachment(&#34;testVolumeAttachment&#34;, VolumeAttachmentArgs.builder()        
- *             .attachmentType(var_.volume_attachment_attachment_type())
- *             .instanceId(oci_core_instance.test_instance().id())
- *             .volumeId(oci_core_volume.test_volume().id())
- *             .device(var_.volume_attachment_device())
- *             .displayName(var_.volume_attachment_display_name())
- *             .encryptionInTransitType(var_.volume_attachment_encryption_in_transit_type())
- *             .isAgentAutoIscsiLoginEnabled(var_.volume_attachment_is_agent_auto_iscsi_login_enabled())
- *             .isPvEncryptionInTransitEnabled(var_.volume_attachment_is_pv_encryption_in_transit_enabled())
- *             .isReadOnly(var_.volume_attachment_is_read_only())
- *             .isShareable(var_.volume_attachment_is_shareable())
- *             .useChap(var_.volume_attachment_use_chap())
+ *             .attachmentType(volumeAttachmentAttachmentType)
+ *             .instanceId(testInstance.id())
+ *             .volumeId(testVolume.id())
+ *             .device(volumeAttachmentDevice)
+ *             .displayName(volumeAttachmentDisplayName)
+ *             .encryptionInTransitType(volumeAttachmentEncryptionInTransitType)
+ *             .isAgentAutoIscsiLoginEnabled(volumeAttachmentIsAgentAutoIscsiLoginEnabled)
+ *             .isPvEncryptionInTransitEnabled(volumeAttachmentIsPvEncryptionInTransitEnabled)
+ *             .isReadOnly(volumeAttachmentIsReadOnly)
+ *             .isShareable(volumeAttachmentIsShareable)
+ *             .useChap(volumeAttachmentUseChap)
  *             .build());
  * 
  *     }

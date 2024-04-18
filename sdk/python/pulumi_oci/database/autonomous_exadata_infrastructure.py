@@ -627,37 +627,37 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_exadata_infrastructure = oci.database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure",
-            availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape=var["autonomous_exadata_infrastructure_shape"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_autonomous_exadata_infrastructure = oci.database.AutonomousExadataInfrastructure("test_autonomous_exadata_infrastructure",
+            availability_domain=autonomous_exadata_infrastructure_availability_domain,
+            compartment_id=compartment_id,
+            shape=autonomous_exadata_infrastructure_shape,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["autonomous_exadata_infrastructure_display_name"],
-            domain=var["autonomous_exadata_infrastructure_domain"],
+            display_name=autonomous_exadata_infrastructure_display_name,
+            domain=autonomous_exadata_infrastructure_domain,
             freeform_tags={
                 "Department": "Finance",
             },
-            license_model=var["autonomous_exadata_infrastructure_license_model"],
+            license_model=autonomous_exadata_infrastructure_license_model,
             maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
                 days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
+                    name=autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
                 )],
-                hours_of_days=var["autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day"],
-                is_custom_action_timeout_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks"],
+                hours_of_days=autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
+                is_custom_action_timeout_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
+                is_monthly_patching_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
+                lead_time_in_weeks=autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
                 months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
+                    name=autonomous_exadata_infrastructure_maintenance_window_details_months_name,
                 )],
-                patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
+                patching_mode=autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+                preference=autonomous_exadata_infrastructure_maintenance_window_details_preference,
+                weeks_of_months=autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
             ),
-            nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
+            nsg_ids=autonomous_exadata_infrastructure_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -711,37 +711,37 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_exadata_infrastructure = oci.database.AutonomousExadataInfrastructure("testAutonomousExadataInfrastructure",
-            availability_domain=var["autonomous_exadata_infrastructure_availability_domain"],
-            compartment_id=var["compartment_id"],
-            shape=var["autonomous_exadata_infrastructure_shape"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_autonomous_exadata_infrastructure = oci.database.AutonomousExadataInfrastructure("test_autonomous_exadata_infrastructure",
+            availability_domain=autonomous_exadata_infrastructure_availability_domain,
+            compartment_id=compartment_id,
+            shape=autonomous_exadata_infrastructure_shape,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["autonomous_exadata_infrastructure_display_name"],
-            domain=var["autonomous_exadata_infrastructure_domain"],
+            display_name=autonomous_exadata_infrastructure_display_name,
+            domain=autonomous_exadata_infrastructure_domain,
             freeform_tags={
                 "Department": "Finance",
             },
-            license_model=var["autonomous_exadata_infrastructure_license_model"],
+            license_model=autonomous_exadata_infrastructure_license_model,
             maintenance_window_details=oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs(
-                custom_action_timeout_in_mins=var["autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins"],
+                custom_action_timeout_in_mins=autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
                 days_of_weeks=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name"],
+                    name=autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
                 )],
-                hours_of_days=var["autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day"],
-                is_custom_action_timeout_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled"],
-                is_monthly_patching_enabled=var["autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled"],
-                lead_time_in_weeks=var["autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks"],
+                hours_of_days=autonomous_exadata_infrastructure_maintenance_window_details_hours_of_day,
+                is_custom_action_timeout_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_custom_action_timeout_enabled,
+                is_monthly_patching_enabled=autonomous_exadata_infrastructure_maintenance_window_details_is_monthly_patching_enabled,
+                lead_time_in_weeks=autonomous_exadata_infrastructure_maintenance_window_details_lead_time_in_weeks,
                 months=[oci.database.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonthArgs(
-                    name=var["autonomous_exadata_infrastructure_maintenance_window_details_months_name"],
+                    name=autonomous_exadata_infrastructure_maintenance_window_details_months_name,
                 )],
-                patching_mode=var["autonomous_exadata_infrastructure_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_exadata_infrastructure_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month"],
+                patching_mode=autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+                preference=autonomous_exadata_infrastructure_maintenance_window_details_preference,
+                weeks_of_months=autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
             ),
-            nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
+            nsg_ids=autonomous_exadata_infrastructure_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

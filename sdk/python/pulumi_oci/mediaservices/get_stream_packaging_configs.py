@@ -130,10 +130,10 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_packaging_config_display_name"],
-        state=var["stream_packaging_config_state"],
-        stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
+    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=test_channel["id"],
+        display_name=stream_packaging_config_display_name,
+        state=stream_packaging_config_state,
+        stream_packaging_config_id=test_stream_packaging_config["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_packaging_config_display_name"],
-        state=var["stream_packaging_config_state"],
-        stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
+    test_stream_packaging_configs = oci.MediaServices.get_stream_packaging_configs(distribution_channel_id=test_channel["id"],
+        display_name=stream_packaging_config_display_name,
+        state=stream_packaging_config_state,
+        stream_packaging_config_id=test_stream_packaging_config["id"])
     ```
     <!--End PulumiCodeChooser -->
 

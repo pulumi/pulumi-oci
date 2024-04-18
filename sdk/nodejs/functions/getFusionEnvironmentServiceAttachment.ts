@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentServiceAttachment = oci.Functions.getFusionEnvironmentServiceAttachment({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     serviceAttachmentId: oci_fusion_apps_service_attachment.test_service_attachment.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     serviceAttachmentId: testServiceAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,8 +114,8 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentServiceAttachment = oci.Functions.getFusionEnvironmentServiceAttachment({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     serviceAttachmentId: oci_fusion_apps_service_attachment.test_service_attachment.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     serviceAttachmentId: testServiceAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

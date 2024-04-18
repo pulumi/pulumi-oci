@@ -120,9 +120,9 @@ def get_network_load_balancers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=var["compartment_id"],
-        display_name=var["network_load_balancer_display_name"],
-        state=var["network_load_balancer_state"])
+    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=compartment_id,
+        display_name=network_load_balancer_display_name,
+        state=network_load_balancer_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=var["compartment_id"],
-        display_name=var["network_load_balancer_display_name"],
-        state=var["network_load_balancer_state"])
+    test_network_load_balancers = oci.NetworkLoadBalancer.get_network_load_balancers(compartment_id=compartment_id,
+        display_name=network_load_balancer_display_name,
+        state=network_load_balancer_state)
     ```
     <!--End PulumiCodeChooser -->
 

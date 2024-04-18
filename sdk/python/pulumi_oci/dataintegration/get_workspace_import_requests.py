@@ -150,12 +150,12 @@ def get_workspace_import_requests(filters: Optional[Sequence[pulumi.InputType['G
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        import_status=var["workspace_import_request_import_status"],
-        name=var["workspace_import_request_name"],
-        projection=var["workspace_import_request_projection"],
-        time_ended_in_millis=var["workspace_import_request_time_ended_in_millis"],
-        time_started_in_millis=var["workspace_import_request_time_started_in_millis"])
+    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
+        import_status=workspace_import_request_import_status,
+        name=workspace_import_request_name,
+        projection=workspace_import_request_projection,
+        time_ended_in_millis=workspace_import_request_time_ended_in_millis,
+        time_started_in_millis=workspace_import_request_time_started_in_millis)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -211,12 +211,12 @@ def get_workspace_import_requests_output(filters: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        import_status=var["workspace_import_request_import_status"],
-        name=var["workspace_import_request_name"],
-        projection=var["workspace_import_request_projection"],
-        time_ended_in_millis=var["workspace_import_request_time_ended_in_millis"],
-        time_started_in_millis=var["workspace_import_request_time_started_in_millis"])
+    test_workspace_import_requests = oci.DataIntegration.get_workspace_import_requests(workspace_id=test_workspace["id"],
+        import_status=workspace_import_request_import_status,
+        name=workspace_import_request_name,
+        projection=workspace_import_request_projection,
+        time_ended_in_millis=workspace_import_request_time_ended_in_millis,
+        time_started_in_millis=workspace_import_request_time_started_in_millis)
     ```
     <!--End PulumiCodeChooser -->
 

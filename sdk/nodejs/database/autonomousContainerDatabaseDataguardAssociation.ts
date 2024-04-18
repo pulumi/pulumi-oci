@@ -25,28 +25,28 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousContainerDatabaseDataguardAssociation = new oci.database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", {
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
- *     peerAutonomousContainerDatabaseDisplayName: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
- *     protectionMode: _var.autonomous_container_database_dataguard_association_protection_mode,
- *     fastStartFailOverLagLimitInSeconds: _var.autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
- *     isAutomaticFailoverEnabled: _var.autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
+ * const testAutonomousContainerDatabaseDataguardAssociation = new oci.database.AutonomousContainerDatabaseDataguardAssociation("test_autonomous_container_database_dataguard_association", {
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName,
+ *     protectionMode: autonomousContainerDatabaseDataguardAssociationProtectionMode,
+ *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds,
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled,
  *     peerAutonomousContainerDatabaseBackupConfig: {
  *         backupDestinationDetails: [{
- *             type: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
- *             dbrsPolicyId: oci_identity_policy.test_policy.id,
- *             id: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
- *             internetProxy: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
- *             vpcPassword: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
- *             vpcUser: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+ *             type: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+ *             dbrsPolicyId: testPolicy.id,
+ *             id: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+ *             internetProxy: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+ *             vpcPassword: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+ *             vpcUser: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         recoveryWindowInDays: _var.autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+ *         recoveryWindowInDays: autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
  *     },
- *     peerAutonomousContainerDatabaseCompartmentId: oci_identity_compartment.test_compartment.id,
- *     peerAutonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
- *     peerCloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
- *     peerDbUniqueName: _var.autonomous_container_database_dataguard_association_peer_db_unique_name,
- *     standbyMaintenanceBufferInDays: _var.autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days,
+ *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
+ *     peerAutonomousVmClusterId: testAutonomousVmCluster.id,
+ *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     peerDbUniqueName: autonomousContainerDatabaseDataguardAssociationPeerDbUniqueName,
+ *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

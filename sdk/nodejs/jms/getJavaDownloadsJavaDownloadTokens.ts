@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadTokens = oci.Jms.getJavaDownloadsJavaDownloadTokens({
- *     compartmentId: _var.tenancy_ocid,
- *     displayName: _var.java_download_token_display_name,
- *     familyVersion: _var.java_download_token_family_version,
- *     id: _var.java_download_token_id,
- *     searchByUser: _var.java_download_token_search_by_user,
- *     state: _var.java_download_token_state,
- *     value: _var.java_download_token_value,
+ *     compartmentId: tenancyOcid,
+ *     displayName: javaDownloadTokenDisplayName,
+ *     familyVersion: javaDownloadTokenFamilyVersion,
+ *     id: javaDownloadTokenId,
+ *     searchByUser: javaDownloadTokenSearchByUser,
+ *     state: javaDownloadTokenState,
+ *     value: javaDownloadTokenValue,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,13 +125,13 @@ export interface GetJavaDownloadsJavaDownloadTokensResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadTokens = oci.Jms.getJavaDownloadsJavaDownloadTokens({
- *     compartmentId: _var.tenancy_ocid,
- *     displayName: _var.java_download_token_display_name,
- *     familyVersion: _var.java_download_token_family_version,
- *     id: _var.java_download_token_id,
- *     searchByUser: _var.java_download_token_search_by_user,
- *     state: _var.java_download_token_state,
- *     value: _var.java_download_token_value,
+ *     compartmentId: tenancyOcid,
+ *     displayName: javaDownloadTokenDisplayName,
+ *     familyVersion: javaDownloadTokenFamilyVersion,
+ *     id: javaDownloadTokenId,
+ *     searchByUser: javaDownloadTokenSearchByUser,
+ *     state: javaDownloadTokenState,
+ *     value: javaDownloadTokenValue,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

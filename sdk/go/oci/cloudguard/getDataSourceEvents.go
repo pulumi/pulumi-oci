@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetDataSourceEvents(ctx, &cloudguard.GetDataSourceEventsArgs{
-//				DataSourceId: oci_cloud_guard_data_source.Test_data_source.Id,
-//				Region:       pulumi.StringRef(_var.Data_source_event_region),
+//				DataSourceId: testDataSource.Id,
+//				Region:       pulumi.StringRef(dataSourceEventRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

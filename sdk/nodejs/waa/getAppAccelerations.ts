@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppAccelerations = oci.Waa.getAppAccelerations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.web_app_acceleration_display_name,
- *     id: _var.web_app_acceleration_id,
- *     states: _var.web_app_acceleration_state,
- *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ *     compartmentId: compartmentId,
+ *     displayName: webAppAccelerationDisplayName,
+ *     id: webAppAccelerationId,
+ *     states: webAppAccelerationState,
+ *     webAppAccelerationPolicyId: testWebAppAccelerationPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetAppAccelerationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppAccelerations = oci.Waa.getAppAccelerations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.web_app_acceleration_display_name,
- *     id: _var.web_app_acceleration_id,
- *     states: _var.web_app_acceleration_state,
- *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ *     compartmentId: compartmentId,
+ *     displayName: webAppAccelerationDisplayName,
+ *     id: webAppAccelerationId,
+ *     states: webAppAccelerationState,
+ *     webAppAccelerationPolicyId: testWebAppAccelerationPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

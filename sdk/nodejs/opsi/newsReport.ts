@@ -18,30 +18,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNewsReport = new oci.opsi.NewsReport("testNewsReport", {
- *     compartmentId: _var.compartment_id,
+ * const testNewsReport = new oci.opsi.NewsReport("test_news_report", {
+ *     compartmentId: compartmentId,
  *     contentTypes: {
- *         capacityPlanningResources: _var.news_report_content_types_capacity_planning_resources,
- *         sqlInsightsFleetAnalysisResources: _var.news_report_content_types_sql_insights_fleet_analysis_resources,
- *         sqlInsightsPerformanceDegradationResources: _var.news_report_content_types_sql_insights_performance_degradation_resources,
- *         sqlInsightsPlanChangesResources: _var.news_report_content_types_sql_insights_plan_changes_resources,
- *         sqlInsightsTopDatabasesResources: _var.news_report_content_types_sql_insights_top_databases_resources,
- *         sqlInsightsTopSqlByInsightsResources: _var.news_report_content_types_sql_insights_top_sql_by_insights_resources,
- *         sqlInsightsTopSqlResources: _var.news_report_content_types_sql_insights_top_sql_resources,
+ *         capacityPlanningResources: newsReportContentTypesCapacityPlanningResources,
+ *         sqlInsightsFleetAnalysisResources: newsReportContentTypesSqlInsightsFleetAnalysisResources,
+ *         sqlInsightsPerformanceDegradationResources: newsReportContentTypesSqlInsightsPerformanceDegradationResources,
+ *         sqlInsightsPlanChangesResources: newsReportContentTypesSqlInsightsPlanChangesResources,
+ *         sqlInsightsTopDatabasesResources: newsReportContentTypesSqlInsightsTopDatabasesResources,
+ *         sqlInsightsTopSqlByInsightsResources: newsReportContentTypesSqlInsightsTopSqlByInsightsResources,
+ *         sqlInsightsTopSqlResources: newsReportContentTypesSqlInsightsTopSqlResources,
  *     },
- *     description: _var.news_report_description,
- *     locale: _var.news_report_locale,
- *     newsFrequency: _var.news_report_news_frequency,
- *     onsTopicId: oci_opsi_ons_topic.test_ons_topic.id,
- *     areChildCompartmentsIncluded: _var.news_report_are_child_compartments_included,
- *     dayOfWeek: _var.news_report_day_of_week,
+ *     description: newsReportDescription,
+ *     locale: newsReportLocale,
+ *     name: newsReportName,
+ *     newsFrequency: newsReportNewsFrequency,
+ *     onsTopicId: testOnsTopic.id,
+ *     areChildCompartmentsIncluded: newsReportAreChildCompartmentsIncluded,
+ *     dayOfWeek: newsReportDayOfWeek,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     status: _var.news_report_status,
+ *     status: newsReportStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

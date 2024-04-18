@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Logging.GetUnifiedAgentConfigurations(ctx, &logging.GetUnifiedAgentConfigurationsArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				DisplayName:              pulumi.StringRef(_var.Unified_agent_configuration_display_name),
-//				GroupId:                  pulumi.StringRef(oci_identity_group.Test_group.Id),
-//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Unified_agent_configuration_is_compartment_id_in_subtree),
-//				LogId:                    pulumi.StringRef(oci_logging_log.Test_log.Id),
-//				State:                    pulumi.StringRef(_var.Unified_agent_configuration_state),
+//				CompartmentId:            compartmentId,
+//				DisplayName:              pulumi.StringRef(unifiedAgentConfigurationDisplayName),
+//				GroupId:                  pulumi.StringRef(testGroup.Id),
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(unifiedAgentConfigurationIsCompartmentIdInSubtree),
+//				LogId:                    pulumi.StringRef(testLog.Id),
+//				State:                    pulumi.StringRef(unifiedAgentConfigurationState),
 //			}, nil)
 //			if err != nil {
 //				return err

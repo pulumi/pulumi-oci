@@ -50,19 +50,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWebAppAccelerationPolicy = new AppAccelerationPolicy(&#34;testWebAppAccelerationPolicy&#34;, AppAccelerationPolicyArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.web_app_acceleration_policy_display_name())
+ *             .displayName(webAppAccelerationPolicyDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .responseCachingPolicy(AppAccelerationPolicyResponseCachingPolicyArgs.builder()
- *                 .isResponseHeaderBasedCachingEnabled(var_.web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled())
+ *                 .isResponseHeaderBasedCachingEnabled(webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled)
  *                 .build())
  *             .responseCompressionPolicy(AppAccelerationPolicyResponseCompressionPolicyArgs.builder()
  *                 .gzipCompression(AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs.builder()
- *                     .isEnabled(var_.web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled())
+ *                     .isEnabled(webAppAccelerationPolicyResponseCompressionPolicyGzipCompressionIsEnabled)
  *                     .build())
  *                 .build())
- *             .systemTags(var_.web_app_acceleration_policy_system_tags())
+ *             .systemTags(webAppAccelerationPolicySystemTags)
  *             .build());
  * 
  *     }

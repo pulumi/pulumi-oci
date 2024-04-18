@@ -31,32 +31,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResourceType(ctx, "testMonitoredResourceType", &StackMonitoring.MonitoredResourceTypeArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := StackMonitoring.NewMonitoredResourceType(ctx, "test_monitored_resource_type", &StackMonitoring.MonitoredResourceTypeArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(monitoredResourceTypeName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Monitored_resource_type_description),
-//				DisplayName: pulumi.Any(_var.Monitored_resource_type_display_name),
+//				Description: pulumi.Any(monitoredResourceTypeDescription),
+//				DisplayName: pulumi.Any(monitoredResourceTypeDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Metadata: &stackmonitoring.MonitoredResourceTypeMetadataArgs{
-//					Format:             pulumi.Any(_var.Monitored_resource_type_metadata_format),
-//					AgentProperties:    pulumi.Any(_var.Monitored_resource_type_metadata_agent_properties),
-//					RequiredProperties: pulumi.Any(_var.Monitored_resource_type_metadata_required_properties),
+//					Format:             pulumi.Any(monitoredResourceTypeMetadataFormat),
+//					AgentProperties:    pulumi.Any(monitoredResourceTypeMetadataAgentProperties),
+//					RequiredProperties: pulumi.Any(monitoredResourceTypeMetadataRequiredProperties),
 //					UniquePropertySets: stackmonitoring.MonitoredResourceTypeMetadataUniquePropertySetArray{
 //						&stackmonitoring.MonitoredResourceTypeMetadataUniquePropertySetArgs{
-//							Properties: pulumi.Any(_var.Monitored_resource_type_metadata_unique_property_sets_properties),
+//							Properties: pulumi.Any(monitoredResourceTypeMetadataUniquePropertySetsProperties),
 //						},
 //					},
-//					ValidPropertiesForCreates: pulumi.Any(_var.Monitored_resource_type_metadata_valid_properties_for_create),
-//					ValidPropertiesForUpdates: pulumi.Any(_var.Monitored_resource_type_metadata_valid_properties_for_update),
-//					ValidPropertyValues:       pulumi.Any(_var.Monitored_resource_type_metadata_valid_property_values),
+//					ValidPropertiesForCreates: pulumi.Any(monitoredResourceTypeMetadataValidPropertiesForCreate),
+//					ValidPropertiesForUpdates: pulumi.Any(monitoredResourceTypeMetadataValidPropertiesForUpdate),
+//					ValidPropertyValues:       pulumi.Any(monitoredResourceTypeMetadataValidPropertyValues),
 //				},
-//				MetricNamespace:  pulumi.Any(_var.Monitored_resource_type_metric_namespace),
-//				ResourceCategory: pulumi.Any(_var.Monitored_resource_type_resource_category),
-//				SourceType:       pulumi.Any(_var.Monitored_resource_type_source_type),
+//				MetricNamespace:  pulumi.Any(monitoredResourceTypeMetricNamespace),
+//				ResourceCategory: pulumi.Any(monitoredResourceTypeResourceCategory),
+//				SourceType:       pulumi.Any(monitoredResourceTypeSourceType),
 //			})
 //			if err != nil {
 //				return err

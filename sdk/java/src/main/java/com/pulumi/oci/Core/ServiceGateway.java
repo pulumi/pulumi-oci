@@ -57,15 +57,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testServiceGateway = new ServiceGateway(&#34;testServiceGateway&#34;, ServiceGatewayArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .services(ServiceGatewayServiceArgs.builder()
- *                 .serviceId(data.oci_core_services().test_services().services()[0].id())
+ *                 .serviceId(testServices.services()[0].id())
  *                 .build())
- *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .vcnId(testVcn.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.service_gateway_display_name())
+ *             .displayName(serviceGatewayDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }

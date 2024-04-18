@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificate = oci.ApiGateway.getCertificate({
- *     certificateId: oci_apigateway_certificate.test_certificate.id,
+ *     certificateId: testCertificateOciApigatewayCertificate.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,7 +112,7 @@ export interface GetCertificateResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificate = oci.ApiGateway.getCertificate({
- *     certificateId: oci_apigateway_certificate.test_certificate.id,
+ *     certificateId: testCertificateOciApigatewayCertificate.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetLoadBalancerRoutingPolicy(ctx, &loadbalancer.GetLoadBalancerRoutingPolicyArgs{
-//				LoadBalancerId:    oci_load_balancer_load_balancer.Test_load_balancer.Id,
-//				RoutingPolicyName: oci_load_balancer_routing_policy.Test_routing_policy.Name,
+//				LoadBalancerId:    testLoadBalancer.Id,
+//				RoutingPolicyName: testRoutingPolicy.Name,
 //			}, nil)
 //			if err != nil {
 //				return err

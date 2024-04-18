@@ -48,10 +48,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMonitoredResourcesAssociateMonitoredResource = new MonitoredResourcesAssociateMonitoredResource(&#34;testMonitoredResourcesAssociateMonitoredResource&#34;, MonitoredResourcesAssociateMonitoredResourceArgs.builder()        
- *             .associationType(var_.monitored_resources_associate_monitored_resource_association_type())
- *             .compartmentId(var_.compartment_id())
- *             .destinationResourceId(oci_stack_monitoring_destination_resource.test_destination_resource().id())
- *             .sourceResourceId(oci_stack_monitoring_source_resource.test_source_resource().id())
+ *             .associationType(monitoredResourcesAssociateMonitoredResourceAssociationType)
+ *             .compartmentId(compartmentId)
+ *             .destinationResourceId(testDestinationResource.id())
+ *             .sourceResourceId(testSourceResource.id())
  *             .build());
  * 
  *     }

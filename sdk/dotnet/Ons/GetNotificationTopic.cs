@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testNotificationTopic = Oci.Ons.GetNotificationTopic.Invoke(new()
         ///     {
-        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///         TopicId = testNotificationTopicOciOnsNotificationTopic.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testNotificationTopic = Oci.Ons.GetNotificationTopic.Invoke(new()
         ///     {
-        ///         TopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+        ///         TopicId = testNotificationTopicOciOnsNotificationTopic.Id,
         ///     });
         /// 
         /// });

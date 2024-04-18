@@ -285,12 +285,12 @@ class Drg(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg = oci.core.Drg("testDrg",
-            compartment_id=var["compartment_id"],
+        test_drg = oci.core.Drg("test_drg",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["drg_display_name"],
+            display_name=drg_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -345,12 +345,12 @@ class Drg(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg = oci.core.Drg("testDrg",
-            compartment_id=var["compartment_id"],
+        test_drg = oci.core.Drg("test_drg",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["drg_display_name"],
+            display_name=drg_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

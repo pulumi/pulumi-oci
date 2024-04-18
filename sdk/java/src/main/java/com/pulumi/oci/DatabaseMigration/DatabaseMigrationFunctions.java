@@ -62,7 +62,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
      *             .build());
      * 
      *     }
@@ -104,7 +104,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
      *             .build());
      * 
      *     }
@@ -146,7 +146,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
      *             .build());
      * 
      *     }
@@ -188,7 +188,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(oci_database_migration_connection.test_connection().id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
      *             .build());
      * 
      *     }
@@ -230,9 +230,9 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
      *             .build());
      * 
      *     }
@@ -274,9 +274,9 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
      *             .build());
      * 
      *     }
@@ -318,9 +318,9 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
      *             .build());
      * 
      *     }
@@ -362,9 +362,9 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DatabaseMigrationFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.connection_display_name())
-     *             .state(var_.connection_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(connectionDisplayName)
+     *             .state(connectionState)
      *             .build());
      * 
      *     }
@@ -406,7 +406,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -448,7 +448,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -490,7 +490,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -532,7 +532,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -574,7 +574,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -616,7 +616,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -658,7 +658,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -700,7 +700,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(oci_database_migration_job.test_job().id())
+     *             .jobId(testJob.id())
      *             .build());
      * 
      *     }
@@ -742,7 +742,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
      *             .build());
      * 
      *     }
@@ -784,7 +784,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
      *             .build());
      * 
      *     }
@@ -826,7 +826,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
      *             .build());
      * 
      *     }
@@ -868,7 +868,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(oci_database_migration_migration.test_migration().id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
      *             .build());
      * 
      *     }
@@ -1150,10 +1150,10 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .lifecycleDetails(var_.migration_lifecycle_details())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1195,10 +1195,10 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .lifecycleDetails(var_.migration_lifecycle_details())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1240,10 +1240,10 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .lifecycleDetails(var_.migration_lifecycle_details())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
      *             .build());
      * 
      *     }
@@ -1285,10 +1285,10 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.migration_display_name())
-     *             .lifecycleDetails(var_.migration_lifecycle_details())
-     *             .state(var_.migration_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
      *             .build());
      * 
      *     }

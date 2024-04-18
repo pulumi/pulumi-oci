@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testAddressList = Oci.Waas.GetAddressList.Invoke(new()
         ///     {
-        ///         AddressListId = oci_waas_address_list.Test_address_list.Id,
+        ///         AddressListId = testAddressListOciWaasAddressList.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testAddressList = Oci.Waas.GetAddressList.Invoke(new()
         ///     {
-        ///         AddressListId = oci_waas_address_list.Test_address_list.Id,
+        ///         AddressListId = testAddressListOciWaasAddressList.Id,
         ///     });
         /// 
         /// });

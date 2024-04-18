@@ -29,7 +29,7 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testReplicationTarget = Oci.FileStorage.GetReplicationTarget.Invoke(new()
         ///     {
-        ///         ReplicationTargetId = oci_file_storage_replication_target.Test_replication_target.Id,
+        ///         ReplicationTargetId = testReplicationTargetOciFileStorageReplicationTarget.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testReplicationTarget = Oci.FileStorage.GetReplicationTarget.Invoke(new()
         ///     {
-        ///         ReplicationTargetId = oci_file_storage_replication_target.Test_replication_target.Id,
+        ///         ReplicationTargetId = testReplicationTargetOciFileStorageReplicationTarget.Id,
         ///     });
         /// 
         /// });

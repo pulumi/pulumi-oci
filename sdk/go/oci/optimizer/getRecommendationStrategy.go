@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetRecommendationStrategy(ctx, &optimizer.GetRecommendationStrategyArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: _var.Recommendation_strategy_compartment_id_in_subtree,
-//				Name:                   pulumi.StringRef(_var.Recommendation_strategy_name),
-//				RecommendationName:     pulumi.StringRef(oci_optimizer_recommendation.Test_recommendation.Name),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+//				Name:                   pulumi.StringRef(recommendationStrategyName),
+//				RecommendationName:     pulumi.StringRef(testRecommendation.Name),
 //			}, nil)
 //			if err != nil {
 //				return err

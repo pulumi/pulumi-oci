@@ -346,13 +346,13 @@ class Record(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_record = oci.dns.Record("testRecord",
-            zone_name_or_id=oci_dns_zone_name_or["test_zone_name_or"]["id"],
-            domain=var["record_items_domain"],
-            rtype=var["record_items_rtype"],
-            compartment_id=var["compartment_id"],
-            rdata=var["record_items_rdata"],
-            ttl=var["record_items_ttl"])
+        test_record = oci.dns.Record("test_record",
+            zone_name_or_id=test_zone_name_or["id"],
+            domain=record_items_domain,
+            rtype=record_items_rtype,
+            compartment_id=compartment_id,
+            rdata=record_items_rdata,
+            ttl=record_items_ttl)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -397,13 +397,13 @@ class Record(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_record = oci.dns.Record("testRecord",
-            zone_name_or_id=oci_dns_zone_name_or["test_zone_name_or"]["id"],
-            domain=var["record_items_domain"],
-            rtype=var["record_items_rtype"],
-            compartment_id=var["compartment_id"],
-            rdata=var["record_items_rdata"],
-            ttl=var["record_items_ttl"])
+        test_record = oci.dns.Record("test_record",
+            zone_name_or_id=test_zone_name_or["id"],
+            domain=record_items_domain,
+            rtype=record_items_rtype,
+            compartment_id=compartment_id,
+            rdata=record_items_rdata,
+            ttl=record_items_ttl)
         ```
         <!--End PulumiCodeChooser -->
 

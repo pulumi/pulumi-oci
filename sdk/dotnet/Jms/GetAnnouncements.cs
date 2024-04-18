@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testAnnouncements = Oci.Jms.GetAnnouncements.Invoke(new()
         ///     {
-        ///         SummaryContains = @var.Announcement_summary_contains,
-        ///         TimeEnd = @var.Announcement_time_end,
-        ///         TimeStart = @var.Announcement_time_start,
+        ///         SummaryContains = announcementSummaryContains,
+        ///         TimeEnd = announcementTimeEnd,
+        ///         TimeStart = announcementTimeStart,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testAnnouncements = Oci.Jms.GetAnnouncements.Invoke(new()
         ///     {
-        ///         SummaryContains = @var.Announcement_summary_contains,
-        ///         TimeEnd = @var.Announcement_time_end,
-        ///         TimeStart = @var.Announcement_time_start,
+        ///         SummaryContains = announcementSummaryContains,
+        ///         TimeEnd = announcementTimeEnd,
+        ///         TimeStart = announcementTimeStart,
         ///     });
         /// 
         /// });

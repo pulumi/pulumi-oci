@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ComputeCloud.GetAtCustomerCccUpgradeSchedules(ctx, &computecloud.GetAtCustomerCccUpgradeSchedulesArgs{
-//				AccessLevel:            pulumi.StringRef(_var.Ccc_upgrade_schedule_access_level),
-//				CccUpgradeScheduleId:   pulumi.StringRef(oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id),
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Ccc_upgrade_schedule_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Ccc_upgrade_schedule_display_name),
-//				DisplayNameContains:    pulumi.StringRef(_var.Ccc_upgrade_schedule_display_name_contains),
-//				State:                  pulumi.StringRef(_var.Ccc_upgrade_schedule_state),
+//				AccessLevel:            pulumi.StringRef(cccUpgradeScheduleAccessLevel),
+//				CccUpgradeScheduleId:   pulumi.StringRef(testCccUpgradeSchedule.Id),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(cccUpgradeScheduleCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(cccUpgradeScheduleDisplayName),
+//				DisplayNameContains:    pulumi.StringRef(cccUpgradeScheduleDisplayNameContains),
+//				State:                  pulumi.StringRef(cccUpgradeScheduleState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetProtectionPolicies(ctx, &recoverymod.GetProtectionPoliciesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				DisplayName:        pulumi.StringRef(_var.Protection_policy_display_name),
-//				Owner:              pulumi.StringRef(_var.Protection_policy_owner),
-//				ProtectionPolicyId: pulumi.StringRef(oci_recovery_protection_policy.Test_protection_policy.Id),
-//				State:              pulumi.StringRef(_var.Protection_policy_state),
+//				CompartmentId:      compartmentId,
+//				DisplayName:        pulumi.StringRef(protectionPolicyDisplayName),
+//				Owner:              pulumi.StringRef(protectionPolicyOwner),
+//				ProtectionPolicyId: pulumi.StringRef(testProtectionPolicy.Id),
+//				State:              pulumi.StringRef(protectionPolicyState),
 //			}, nil)
 //			if err != nil {
 //				return err

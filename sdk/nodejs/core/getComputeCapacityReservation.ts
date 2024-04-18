@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservation = oci.Core.getComputeCapacityReservation({
- *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *     capacityReservationId: testCapacityReservation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetComputeCapacityReservationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservation = oci.Core.getComputeCapacityReservation({
- *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
+ *     capacityReservationId: testCapacityReservation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

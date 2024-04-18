@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTableReplica = new oci.nosql.TableReplica("testTableReplica", {
- *     region: _var.table_replica_region,
- *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
- *     compartmentId: _var.compartment_id,
- *     maxReadUnits: _var.table_replica_max_read_units,
- *     maxWriteUnits: _var.table_replica_max_write_units,
+ * const testTableReplica = new oci.nosql.TableReplica("test_table_replica", {
+ *     region: tableReplicaRegion,
+ *     tableNameOrId: testTableNameOr.id,
+ *     compartmentId: compartmentId,
+ *     maxReadUnits: tableReplicaMaxReadUnits,
+ *     maxWriteUnits: tableReplicaMaxWriteUnits,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

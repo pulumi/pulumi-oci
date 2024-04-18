@@ -420,22 +420,23 @@ class NamedCredential(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_named_credential = oci.database_management.NamedCredential("testNamedCredential",
-            compartment_id=var["compartment_id"],
+        test_named_credential = oci.database_management.NamedCredential("test_named_credential",
+            compartment_id=compartment_id,
             content=oci.database_management.NamedCredentialContentArgs(
-                credential_type=var["named_credential_content_credential_type"],
-                password_secret_access_mode=var["named_credential_content_password_secret_access_mode"],
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                role=var["named_credential_content_role"],
-                user_name=oci_identity_user["test_user"]["name"],
+                credential_type=named_credential_content_credential_type,
+                password_secret_access_mode=named_credential_content_password_secret_access_mode,
+                password_secret_id=test_secret["id"],
+                role=named_credential_content_role,
+                user_name=test_user["name"],
             ),
-            scope=var["named_credential_scope"],
-            type=var["named_credential_type"],
-            associated_resource=var["named_credential_associated_resource"],
+            name=named_credential_name,
+            scope=named_credential_scope,
+            type=named_credential_type,
+            associated_resource=named_credential_associated_resource,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["named_credential_description"],
+            description=named_credential_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -484,22 +485,23 @@ class NamedCredential(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_named_credential = oci.database_management.NamedCredential("testNamedCredential",
-            compartment_id=var["compartment_id"],
+        test_named_credential = oci.database_management.NamedCredential("test_named_credential",
+            compartment_id=compartment_id,
             content=oci.database_management.NamedCredentialContentArgs(
-                credential_type=var["named_credential_content_credential_type"],
-                password_secret_access_mode=var["named_credential_content_password_secret_access_mode"],
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                role=var["named_credential_content_role"],
-                user_name=oci_identity_user["test_user"]["name"],
+                credential_type=named_credential_content_credential_type,
+                password_secret_access_mode=named_credential_content_password_secret_access_mode,
+                password_secret_id=test_secret["id"],
+                role=named_credential_content_role,
+                user_name=test_user["name"],
             ),
-            scope=var["named_credential_scope"],
-            type=var["named_credential_type"],
-            associated_resource=var["named_credential_associated_resource"],
+            name=named_credential_name,
+            scope=named_credential_scope,
+            type=named_credential_type,
+            associated_resource=named_credential_associated_resource,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["named_credential_description"],
+            description=named_credential_description,
             freeform_tags={
                 "Department": "Finance",
             })

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceStorageRecallCount = oci.LogAnalytics.getNamespaceStorageRecallCount({
- *     namespace: _var.namespace_storage_recall_count_namespace,
+ *     namespace: namespaceStorageRecallCountNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -83,7 +83,7 @@ export interface GetNamespaceStorageRecallCountResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceStorageRecallCount = oci.LogAnalytics.getNamespaceStorageRecallCount({
- *     namespace: _var.namespace_storage_recall_count_namespace,
+ *     namespace: namespaceStorageRecallCountNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

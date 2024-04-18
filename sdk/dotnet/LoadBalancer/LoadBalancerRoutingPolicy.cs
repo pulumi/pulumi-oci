@@ -26,10 +26,11 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLoadBalancerRoutingPolicy = new Oci.LoadBalancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", new()
+    ///     var testLoadBalancerRoutingPolicy = new Oci.LoadBalancer.LoadBalancerRoutingPolicy("test_load_balancer_routing_policy", new()
     ///     {
-    ///         ConditionLanguageVersion = @var.Load_balancer_routing_policy_condition_language_version,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         ConditionLanguageVersion = loadBalancerRoutingPolicyConditionLanguageVersion,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Name = loadBalancerRoutingPolicyName,
     ///         Rules = new[]
     ///         {
     ///             new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleArgs
@@ -38,12 +39,12 @@ namespace Pulumi.Oci.LoadBalancer
     ///                 {
     ///                     new Oci.LoadBalancer.Inputs.LoadBalancerRoutingPolicyRuleActionArgs
     ///                     {
-    ///                         BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///                         Name = @var.Load_balancer_routing_policy_rules_actions_name,
+    ///                         BackendSetName = testBackendSet.Name,
+    ///                         Name = loadBalancerRoutingPolicyRulesActionsName,
     ///                     },
     ///                 },
-    ///                 Condition = @var.Load_balancer_routing_policy_rules_condition,
-    ///                 Name = @var.Load_balancer_routing_policy_rules_name,
+    ///                 Condition = loadBalancerRoutingPolicyRulesCondition,
+    ///                 Name = loadBalancerRoutingPolicyRulesName,
     ///             },
     ///         },
     ///     });

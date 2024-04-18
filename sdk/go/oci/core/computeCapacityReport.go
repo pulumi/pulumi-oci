@@ -36,17 +36,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCapacityReport(ctx, "testComputeCapacityReport", &Core.ComputeCapacityReportArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Compute_capacity_report_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewComputeCapacityReport(ctx, "test_compute_capacity_report", &Core.ComputeCapacityReportArgs{
+//				AvailabilityDomain: pulumi.Any(computeCapacityReportAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
 //				ShapeAvailabilities: core.ComputeCapacityReportShapeAvailabilityArray{
 //					&core.ComputeCapacityReportShapeAvailabilityArgs{
-//						InstanceShape: pulumi.Any(_var.Compute_capacity_report_shape_availabilities_instance_shape),
-//						FaultDomain:   pulumi.Any(_var.Compute_capacity_report_shape_availabilities_fault_domain),
+//						InstanceShape: pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShape),
+//						FaultDomain:   pulumi.Any(computeCapacityReportShapeAvailabilitiesFaultDomain),
 //						InstanceShapeConfig: &core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs{
-//							MemoryInGbs: pulumi.Any(_var.Compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs),
-//							Nvmes:       pulumi.Any(_var.Compute_capacity_report_shape_availabilities_instance_shape_config_nvmes),
-//							Ocpus:       pulumi.Any(_var.Compute_capacity_report_shape_availabilities_instance_shape_config_ocpus),
+//							MemoryInGbs: pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs),
+//							Nvmes:       pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes),
+//							Ocpus:       pulumi.Any(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus),
 //						},
 //					},
 //				},

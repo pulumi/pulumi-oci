@@ -29,19 +29,19 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testConnections = Oci.DataCatalog.GetConnections.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         DataAssetKey = @var.Connection_data_asset_key,
-        ///         CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         DisplayNameContains = @var.Connection_display_name_contains,
-        ///         ExternalKey = @var.Connection_external_key,
-        ///         Fields = @var.Connection_fields,
-        ///         IsDefault = @var.Connection_is_default,
-        ///         State = @var.Connection_state,
-        ///         TimeCreated = @var.Connection_time_created,
-        ///         TimeStatusUpdated = @var.Connection_time_status_updated,
-        ///         TimeUpdated = @var.Connection_time_updated,
-        ///         UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
+        ///         CatalogId = testCatalog.Id,
+        ///         DataAssetKey = connectionDataAssetKey,
+        ///         CreatedById = testCreatedBy.Id,
+        ///         DisplayName = connectionDisplayName,
+        ///         DisplayNameContains = connectionDisplayNameContains,
+        ///         ExternalKey = connectionExternalKey,
+        ///         Fields = connectionFields,
+        ///         IsDefault = connectionIsDefault,
+        ///         State = connectionState,
+        ///         TimeCreated = connectionTimeCreated,
+        ///         TimeStatusUpdated = connectionTimeStatusUpdated,
+        ///         TimeUpdated = connectionTimeUpdated,
+        ///         UpdatedById = testUpdatedBy.Id,
         ///     });
         /// 
         /// });
@@ -69,19 +69,19 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testConnections = Oci.DataCatalog.GetConnections.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         DataAssetKey = @var.Connection_data_asset_key,
-        ///         CreatedById = oci_datacatalog_created_by.Test_created_by.Id,
-        ///         DisplayName = @var.Connection_display_name,
-        ///         DisplayNameContains = @var.Connection_display_name_contains,
-        ///         ExternalKey = @var.Connection_external_key,
-        ///         Fields = @var.Connection_fields,
-        ///         IsDefault = @var.Connection_is_default,
-        ///         State = @var.Connection_state,
-        ///         TimeCreated = @var.Connection_time_created,
-        ///         TimeStatusUpdated = @var.Connection_time_status_updated,
-        ///         TimeUpdated = @var.Connection_time_updated,
-        ///         UpdatedById = oci_datacatalog_updated_by.Test_updated_by.Id,
+        ///         CatalogId = testCatalog.Id,
+        ///         DataAssetKey = connectionDataAssetKey,
+        ///         CreatedById = testCreatedBy.Id,
+        ///         DisplayName = connectionDisplayName,
+        ///         DisplayNameContains = connectionDisplayNameContains,
+        ///         ExternalKey = connectionExternalKey,
+        ///         Fields = connectionFields,
+        ///         IsDefault = connectionIsDefault,
+        ///         State = connectionState,
+        ///         TimeCreated = connectionTimeCreated,
+        ///         TimeStatusUpdated = connectionTimeStatusUpdated,
+        ///         TimeUpdated = connectionTimeUpdated,
+        ///         UpdatedById = testUpdatedBy.Id,
         ///     });
         /// 
         /// });

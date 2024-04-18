@@ -42,18 +42,18 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///         DbVersion = @var.Autonomous_database_db_version,
-        ///         DbWorkload = @var.Autonomous_database_db_workload,
-        ///         DisplayName = @var.Autonomous_database_display_name,
-        ///         InfrastructureType = @var.Autonomous_database_infrastructure_type,
-        ///         IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
-        ///         IsFreeTier = @var.Autonomous_database_is_free_tier,
-        ///         IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
-        ///         IsResourcePoolLeader = @var.Autonomous_database_is_resource_pool_leader,
-        ///         ResourcePoolLeaderId = oci_database_resource_pool_leader.Test_resource_pool_leader.Id,
-        ///         State = @var.Autonomous_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         DbVersion = autonomousDatabaseDbVersion,
+        ///         DbWorkload = autonomousDatabaseDbWorkload,
+        ///         DisplayName = autonomousDatabaseDisplayName,
+        ///         InfrastructureType = autonomousDatabaseInfrastructureType,
+        ///         IsDataGuardEnabled = autonomousDatabaseIsDataGuardEnabled,
+        ///         IsFreeTier = autonomousDatabaseIsFreeTier,
+        ///         IsRefreshableClone = autonomousDatabaseIsRefreshableClone,
+        ///         IsResourcePoolLeader = autonomousDatabaseIsResourcePoolLeader,
+        ///         ResourcePoolLeaderId = testResourcePoolLeader.Id,
+        ///         State = autonomousDatabaseState,
         ///     });
         /// 
         /// });
@@ -94,18 +94,18 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDatabases = Oci.Database.GetAutonomousDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///         DbVersion = @var.Autonomous_database_db_version,
-        ///         DbWorkload = @var.Autonomous_database_db_workload,
-        ///         DisplayName = @var.Autonomous_database_display_name,
-        ///         InfrastructureType = @var.Autonomous_database_infrastructure_type,
-        ///         IsDataGuardEnabled = @var.Autonomous_database_is_data_guard_enabled,
-        ///         IsFreeTier = @var.Autonomous_database_is_free_tier,
-        ///         IsRefreshableClone = @var.Autonomous_database_is_refreshable_clone,
-        ///         IsResourcePoolLeader = @var.Autonomous_database_is_resource_pool_leader,
-        ///         ResourcePoolLeaderId = oci_database_resource_pool_leader.Test_resource_pool_leader.Id,
-        ///         State = @var.Autonomous_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         DbVersion = autonomousDatabaseDbVersion,
+        ///         DbWorkload = autonomousDatabaseDbWorkload,
+        ///         DisplayName = autonomousDatabaseDisplayName,
+        ///         InfrastructureType = autonomousDatabaseInfrastructureType,
+        ///         IsDataGuardEnabled = autonomousDatabaseIsDataGuardEnabled,
+        ///         IsFreeTier = autonomousDatabaseIsFreeTier,
+        ///         IsRefreshableClone = autonomousDatabaseIsRefreshableClone,
+        ///         IsResourcePoolLeader = autonomousDatabaseIsResourcePoolLeader,
+        ///         ResourcePoolLeaderId = testResourcePoolLeader.Id,
+        ///         State = autonomousDatabaseState,
         ///     });
         /// 
         /// });

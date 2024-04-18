@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalDbSystem(ctx, &databasemanagement.GetExternalDbSystemArgs{
-//				ExternalDbSystemId: oci_database_management_external_db_system.Test_external_db_system.Id,
+//				ExternalDbSystemId: testExternalDbSystemOciDatabaseManagementExternalDbSystem.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

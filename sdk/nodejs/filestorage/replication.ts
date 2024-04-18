@@ -42,18 +42,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplication = new oci.filestorage.Replication("testReplication", {
- *     compartmentId: _var.compartment_id,
- *     sourceId: oci_file_storage_file_system.test_source.id,
- *     targetId: oci_file_storage_file_system.test_target.id,
+ * const testReplication = new oci.filestorage.Replication("test_replication", {
+ *     compartmentId: compartmentId,
+ *     sourceId: testSource.id,
+ *     targetId: testTarget.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.replication_display_name,
+ *     displayName: replicationDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     replicationInterval: _var.replication_replication_interval,
+ *     replicationInterval: replicationReplicationInterval,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

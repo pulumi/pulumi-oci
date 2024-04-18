@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOauthClientCertificate = new oci.identity.DomainsOauthClientCertificate("testOauthClientCertificate", {
- *     certificateAlias: _var.oauth_client_certificate_certificate_alias,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ * const testOauthClientCertificate = new oci.identity.DomainsOauthClientCertificate("test_oauth_client_certificate", {
+ *     certificateAlias: oauthClientCertificateCertificateAlias,
+ *     idcsEndpoint: testDomain.url,
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate"],
- *     x509base64certificate: _var.oauth_client_certificate_x509base64certificate,
- *     authorization: _var.oauth_client_certificate_authorization,
+ *     x509base64certificate: oauthClientCertificateX509base64certificate,
+ *     authorization: oauthClientCertificateAuthorization,
  *     externalId: "externalId",
- *     resourceTypeSchemaVersion: _var.oauth_client_certificate_resource_type_schema_version,
+ *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

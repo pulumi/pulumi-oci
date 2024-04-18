@@ -18,27 +18,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflowJob = new oci.mediaservices.MediaWorkflowJob("testMediaWorkflowJob", {
- *     compartmentId: _var.compartment_id,
- *     workflowIdentifierType: _var.media_workflow_job_workflow_identifier_type,
+ * const testMediaWorkflowJob = new oci.mediaservices.MediaWorkflowJob("test_media_workflow_job", {
+ *     compartmentId: compartmentId,
+ *     workflowIdentifierType: mediaWorkflowJobWorkflowIdentifierType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.media_workflow_job_display_name,
+ *     displayName: mediaWorkflowJobDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     locks: [{
- *         compartmentId: _var.compartment_id,
- *         type: _var.media_workflow_job_locks_type,
- *         message: _var.media_workflow_job_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.media_workflow_job_locks_time_created,
+ *         compartmentId: compartmentId,
+ *         type: mediaWorkflowJobLocksType,
+ *         message: mediaWorkflowJobLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: mediaWorkflowJobLocksTimeCreated,
  *     }],
- *     mediaWorkflowConfigurationIds: _var.media_workflow_job_media_workflow_configuration_ids,
- *     mediaWorkflowId: oci_media_services_media_workflow.test_media_workflow.id,
- *     mediaWorkflowName: oci_media_services_media_workflow.test_media_workflow.name,
- *     parameters: _var.media_workflow_job_parameters,
+ *     mediaWorkflowConfigurationIds: mediaWorkflowJobMediaWorkflowConfigurationIds,
+ *     mediaWorkflowId: testMediaWorkflow.id,
+ *     mediaWorkflowName: testMediaWorkflow.name,
+ *     parameters: mediaWorkflowJobParameters,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

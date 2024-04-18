@@ -31,41 +31,41 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewAutoScalingConfiguration(ctx, "testAutoScalingConfiguration", &BigDataService.AutoScalingConfigurationArgs{
-//				BdsInstanceId:        pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-//				ClusterAdminPassword: pulumi.Any(_var.Auto_scaling_configuration_cluster_admin_password),
-//				IsEnabled:            pulumi.Any(_var.Auto_scaling_configuration_is_enabled),
-//				NodeType:             pulumi.Any(_var.Auto_scaling_configuration_node_type),
-//				DisplayName:          pulumi.Any(_var.Auto_scaling_configuration_display_name),
+//			_, err := BigDataService.NewAutoScalingConfiguration(ctx, "test_auto_scaling_configuration", &BigDataService.AutoScalingConfigurationArgs{
+//				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
+//				ClusterAdminPassword: pulumi.Any(autoScalingConfigurationClusterAdminPassword),
+//				IsEnabled:            pulumi.Any(autoScalingConfigurationIsEnabled),
+//				NodeType:             pulumi.Any(autoScalingConfigurationNodeType),
+//				DisplayName:          pulumi.Any(autoScalingConfigurationDisplayName),
 //				PolicyDetails: &bigdataservice.AutoScalingConfigurationPolicyDetailsArgs{
-//					PolicyType: pulumi.Any(_var.Auto_scaling_configuration_policy_details_policy_type),
+//					PolicyType: pulumi.Any(autoScalingConfigurationPolicyDetailsPolicyType),
 //					ScaleDownConfig: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs{
-//						MemoryStepSize: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_memory_step_size),
+//						MemoryStepSize: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMemoryStepSize),
 //						Metric: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs{
-//							MetricType: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type),
+//							MetricType: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricMetricType),
 //							Threshold: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs{
-//								DurationInMinutes: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes),
-//								Operator:          pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator),
-//								Value:             pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value),
+//								DurationInMinutes: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdDurationInMinutes),
+//								Operator:          pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdOperator),
+//								Value:             pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdValue),
 //							},
 //						},
-//						MinMemoryPerNode: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node),
-//						MinOcpusPerNode:  pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node),
-//						OcpuStepSize:     pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size),
+//						MinMemoryPerNode: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMinMemoryPerNode),
+//						MinOcpusPerNode:  pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigMinOcpusPerNode),
+//						OcpuStepSize:     pulumi.Any(autoScalingConfigurationPolicyDetailsScaleDownConfigOcpuStepSize),
 //					},
 //					ScaleUpConfig: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs{
-//						MaxMemoryPerNode: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node),
-//						MaxOcpusPerNode:  pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node),
-//						MemoryStepSize:   pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_memory_step_size),
+//						MaxMemoryPerNode: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMaxMemoryPerNode),
+//						MaxOcpusPerNode:  pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMaxOcpusPerNode),
+//						MemoryStepSize:   pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMemoryStepSize),
 //						Metric: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs{
-//							MetricType: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type),
+//							MetricType: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricMetricType),
 //							Threshold: &bigdataservice.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs{
-//								DurationInMinutes: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes),
-//								Operator:          pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator),
-//								Value:             pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value),
+//								DurationInMinutes: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdDurationInMinutes),
+//								Operator:          pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdOperator),
+//								Value:             pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdValue),
 //							},
 //						},
-//						OcpuStepSize: pulumi.Any(_var.Auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size),
+//						OcpuStepSize: pulumi.Any(autoScalingConfigurationPolicyDetailsScaleUpConfigOcpuStepSize),
 //					},
 //				},
 //			})

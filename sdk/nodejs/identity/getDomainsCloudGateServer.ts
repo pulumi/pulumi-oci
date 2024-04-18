@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateServer = oci.Identity.getDomainsCloudGateServer({
- *     cloudGateServerId: oci_identity_domains_cloud_gate_server.test_cloud_gate_server.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     cloudGateServerId: testCloudGateServerOciIdentityDomainsCloudGateServer.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_server_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_server_resource_type_schema_version,
+ *     authorization: cloudGateServerAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -180,12 +180,12 @@ export interface GetDomainsCloudGateServerResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGateServer = oci.Identity.getDomainsCloudGateServer({
- *     cloudGateServerId: oci_identity_domains_cloud_gate_server.test_cloud_gate_server.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     cloudGateServerId: testCloudGateServerOciIdentityDomainsCloudGateServer.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.cloud_gate_server_authorization,
- *     resourceTypeSchemaVersion: _var.cloud_gate_server_resource_type_schema_version,
+ *     authorization: cloudGateServerAuthorization,
+ *     resourceTypeSchemaVersion: cloudGateServerResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

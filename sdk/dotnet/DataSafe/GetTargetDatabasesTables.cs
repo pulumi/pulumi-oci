@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasesTables = Oci.DataSafe.GetTargetDatabasesTables.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         SchemaNames = @var.Target_databases_table_schema_name,
-        ///         SchemaNameContains = @var.Target_databases_table_schema_name_contains,
-        ///         TableNames = oci_nosql_table.Test_table.Name,
-        ///         TableNameContains = @var.Target_databases_table_table_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         SchemaNames = targetDatabasesTableSchemaName,
+        ///         SchemaNameContains = targetDatabasesTableSchemaNameContains,
+        ///         TableNames = testTable.Name,
+        ///         TableNameContains = targetDatabasesTableTableNameContains,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasesTables = Oci.DataSafe.GetTargetDatabasesTables.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         SchemaNames = @var.Target_databases_table_schema_name,
-        ///         SchemaNameContains = @var.Target_databases_table_schema_name_contains,
-        ///         TableNames = oci_nosql_table.Test_table.Name,
-        ///         TableNameContains = @var.Target_databases_table_table_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         SchemaNames = targetDatabasesTableSchemaName,
+        ///         SchemaNameContains = targetDatabasesTableSchemaNameContains,
+        ///         TableNames = testTable.Name,
+        ///         TableNameContains = targetDatabasesTableTableNameContains,
         ///     });
         /// 
         /// });

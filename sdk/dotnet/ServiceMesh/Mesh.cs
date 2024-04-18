@@ -25,29 +25,29 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMesh = new Oci.ServiceMesh.Mesh("testMesh", new()
+    ///     var testMesh = new Oci.ServiceMesh.Mesh("test_mesh", new()
     ///     {
     ///         CertificateAuthorities = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.MeshCertificateAuthorityArgs
     ///             {
-    ///                 Id = @var.Mesh_certificate_authorities_id,
+    ///                 Id = meshCertificateAuthoritiesId,
     ///             },
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Mesh_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = meshDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Mesh_description,
+    ///         Description = meshDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         Mtls = new Oci.ServiceMesh.Inputs.MeshMtlsArgs
     ///         {
-    ///             Minimum = @var.Mesh_mtls_minimum,
+    ///             Minimum = meshMtlsMinimum,
     ///         },
     ///     });
     /// 

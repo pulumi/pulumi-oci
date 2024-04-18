@@ -521,19 +521,19 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_exadata_infrastructure = oci.database_management.ExternalExadataInfrastructure("testExternalExadataInfrastructure",
-            compartment_id=var["compartment_id"],
-            db_system_ids=var["external_exadata_infrastructure_db_system_ids"],
-            display_name=var["external_exadata_infrastructure_display_name"],
+        test_external_exadata_infrastructure = oci.database_management.ExternalExadataInfrastructure("test_external_exadata_infrastructure",
+            compartment_id=compartment_id,
+            db_system_ids=external_exadata_infrastructure_db_system_ids,
+            display_name=external_exadata_infrastructure_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            discovery_key=var["external_exadata_infrastructure_discovery_key"],
+            discovery_key=external_exadata_infrastructure_discovery_key,
             freeform_tags={
                 "Department": "Finance",
             },
-            license_model=var["external_exadata_infrastructure_license_model"],
-            storage_server_names=var["external_exadata_infrastructure_storage_server_names"])
+            license_model=external_exadata_infrastructure_license_model,
+            storage_server_names=external_exadata_infrastructure_storage_server_names)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -583,19 +583,19 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_exadata_infrastructure = oci.database_management.ExternalExadataInfrastructure("testExternalExadataInfrastructure",
-            compartment_id=var["compartment_id"],
-            db_system_ids=var["external_exadata_infrastructure_db_system_ids"],
-            display_name=var["external_exadata_infrastructure_display_name"],
+        test_external_exadata_infrastructure = oci.database_management.ExternalExadataInfrastructure("test_external_exadata_infrastructure",
+            compartment_id=compartment_id,
+            db_system_ids=external_exadata_infrastructure_db_system_ids,
+            display_name=external_exadata_infrastructure_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            discovery_key=var["external_exadata_infrastructure_discovery_key"],
+            discovery_key=external_exadata_infrastructure_discovery_key,
             freeform_tags={
                 "Department": "Finance",
             },
-            license_model=var["external_exadata_infrastructure_license_model"],
-            storage_server_names=var["external_exadata_infrastructure_storage_server_names"])
+            license_model=external_exadata_infrastructure_license_model,
+            storage_server_names=external_exadata_infrastructure_storage_server_names)
         ```
         <!--End PulumiCodeChooser -->
 

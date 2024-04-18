@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCluster(ctx, &core.GetComputeClusterArgs{
-//				ComputeClusterId: oci_core_compute_cluster.Test_compute_cluster.Id,
+//				ComputeClusterId: testComputeClusterOciCoreComputeCluster.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

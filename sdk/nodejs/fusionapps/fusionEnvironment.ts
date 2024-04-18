@@ -18,38 +18,38 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFusionEnvironment = new oci.fusionapps.FusionEnvironment("testFusionEnvironment", {
- *     compartmentId: _var.compartment_id,
+ * const testFusionEnvironment = new oci.fusionapps.FusionEnvironment("test_fusion_environment", {
+ *     compartmentId: compartmentId,
  *     createFusionEnvironmentAdminUserDetails: {
- *         emailAddress: _var.fusion_environment_create_fusion_environment_admin_user_details_email_address,
- *         firstName: _var.fusion_environment_create_fusion_environment_admin_user_details_first_name,
- *         lastName: _var.fusion_environment_create_fusion_environment_admin_user_details_last_name,
- *         password: _var.fusion_environment_create_fusion_environment_admin_user_details_password,
- *         username: _var.fusion_environment_create_fusion_environment_admin_user_details_username,
+ *         emailAddress: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsEmailAddress,
+ *         firstName: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName,
+ *         lastName: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName,
+ *         password: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword,
+ *         username: fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername,
  *     },
- *     displayName: _var.fusion_environment_display_name,
- *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
- *     fusionEnvironmentType: _var.fusion_environment_fusion_environment_type,
- *     additionalLanguagePacks: _var.fusion_environment_additional_language_packs,
+ *     displayName: fusionEnvironmentDisplayName,
+ *     fusionEnvironmentFamilyId: testFusionEnvironmentFamily.id,
+ *     fusionEnvironmentType: fusionEnvironmentFusionEnvironmentType,
+ *     additionalLanguagePacks: fusionEnvironmentAdditionalLanguagePacks,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     dnsPrefix: _var.fusion_environment_dns_prefix,
+ *     dnsPrefix: fusionEnvironmentDnsPrefix,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     kmsKeyId: oci_kms_key.test_key.id,
+ *     kmsKeyId: testKey.id,
  *     maintenancePolicy: {
- *         environmentMaintenanceOverride: _var.fusion_environment_maintenance_policy_environment_maintenance_override,
- *         monthlyPatchingOverride: _var.fusion_environment_maintenance_policy_monthly_patching_override,
+ *         environmentMaintenanceOverride: fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride,
+ *         monthlyPatchingOverride: fusionEnvironmentMaintenancePolicyMonthlyPatchingOverride,
  *     },
  *     rules: [{
- *         action: _var.fusion_environment_rules_action,
+ *         action: fusionEnvironmentRulesAction,
  *         conditions: [{
- *             attributeName: _var.fusion_environment_rules_conditions_attribute_name,
- *             attributeValue: _var.fusion_environment_rules_conditions_attribute_value,
+ *             attributeName: fusionEnvironmentRulesConditionsAttributeName,
+ *             attributeValue: fusionEnvironmentRulesConditionsAttributeValue,
  *         }],
- *         description: _var.fusion_environment_rules_description,
+ *         description: fusionEnvironmentRulesDescription,
  *     }],
  * });
  * ```

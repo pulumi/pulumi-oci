@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetSteeringPolicyAttachments(ctx, &dns.GetSteeringPolicyAttachmentsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				DisplayName:                     pulumi.StringRef(_var.Steering_policy_attachment_display_name),
-//				Domain:                          pulumi.StringRef(_var.Steering_policy_attachment_domain),
-//				DomainContains:                  pulumi.StringRef(_var.Steering_policy_attachment_domain_contains),
-//				Id:                              pulumi.StringRef(_var.Steering_policy_attachment_id),
-//				State:                           pulumi.StringRef(_var.Steering_policy_attachment_state),
-//				SteeringPolicyId:                pulumi.StringRef(oci_dns_steering_policy.Test_steering_policy.Id),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Steering_policy_attachment_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Steering_policy_attachment_time_created_less_than),
-//				ZoneId:                          pulumi.StringRef(oci_dns_zone.Test_zone.Id),
+//				CompartmentId:                   compartmentId,
+//				DisplayName:                     pulumi.StringRef(steeringPolicyAttachmentDisplayName),
+//				Domain:                          pulumi.StringRef(steeringPolicyAttachmentDomain),
+//				DomainContains:                  pulumi.StringRef(steeringPolicyAttachmentDomainContains),
+//				Id:                              pulumi.StringRef(steeringPolicyAttachmentId),
+//				State:                           pulumi.StringRef(steeringPolicyAttachmentState),
+//				SteeringPolicyId:                pulumi.StringRef(testSteeringPolicy.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(steeringPolicyAttachmentTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(steeringPolicyAttachmentTimeCreatedLessThan),
+//				ZoneId:                          pulumi.StringRef(testZone.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

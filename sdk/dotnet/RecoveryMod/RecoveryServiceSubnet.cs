@@ -25,12 +25,12 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRecoveryServiceSubnet = new Oci.RecoveryMod.RecoveryServiceSubnet("testRecoveryServiceSubnet", new()
+    ///     var testRecoveryServiceSubnet = new Oci.RecoveryMod.RecoveryServiceSubnet("test_recovery_service_subnet", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Recovery_service_subnet_display_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = recoveryServiceSubnetDisplayName,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },

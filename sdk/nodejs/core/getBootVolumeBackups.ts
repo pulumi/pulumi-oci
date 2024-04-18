@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumeBackups = oci.Core.getBootVolumeBackups({
- *     compartmentId: _var.compartment_id,
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
- *     displayName: _var.boot_volume_backup_display_name,
- *     sourceBootVolumeBackupId: oci_core_boot_volume_backup.test_boot_volume_backup.id,
- *     state: _var.boot_volume_backup_state,
+ *     compartmentId: compartmentId,
+ *     bootVolumeId: testBootVolume.id,
+ *     displayName: bootVolumeBackupDisplayName,
+ *     sourceBootVolumeBackupId: testBootVolumeBackup.id,
+ *     state: bootVolumeBackupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetBootVolumeBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumeBackups = oci.Core.getBootVolumeBackups({
- *     compartmentId: _var.compartment_id,
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
- *     displayName: _var.boot_volume_backup_display_name,
- *     sourceBootVolumeBackupId: oci_core_boot_volume_backup.test_boot_volume_backup.id,
- *     state: _var.boot_volume_backup_state,
+ *     compartmentId: compartmentId,
+ *     bootVolumeId: testBootVolume.id,
+ *     displayName: bootVolumeBackupDisplayName,
+ *     sourceBootVolumeBackupId: testBootVolumeBackup.id,
+ *     state: bootVolumeBackupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogSavedSearch = Oci.Logging.GetLogSavedSearch.Invoke(new()
         ///     {
-        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
+        ///         LogSavedSearchId = testLogSavedSearchOciLoggingLogSavedSearch.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogSavedSearch = Oci.Logging.GetLogSavedSearch.Invoke(new()
         ///     {
-        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
+        ///         LogSavedSearchId = testLogSavedSearchOciLoggingLogSavedSearch.Id,
         ///     });
         /// 
         /// });

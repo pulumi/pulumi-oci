@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAccountRecoverySetting = Oci.Identity.GetDomainsAccountRecoverySetting.Invoke(new()
         ///     {
-        ///         AccountRecoverySettingId = oci_identity_domains_account_recovery_setting.Test_account_recovery_setting.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AccountRecoverySettingId = testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Account_recovery_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Account_recovery_setting_resource_type_schema_version,
+        ///         Authorization = accountRecoverySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = accountRecoverySettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAccountRecoverySetting = Oci.Identity.GetDomainsAccountRecoverySetting.Invoke(new()
         ///     {
-        ///         AccountRecoverySettingId = oci_identity_domains_account_recovery_setting.Test_account_recovery_setting.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AccountRecoverySettingId = testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Account_recovery_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Account_recovery_setting_resource_type_schema_version,
+        ///         Authorization = accountRecoverySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = accountRecoverySettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

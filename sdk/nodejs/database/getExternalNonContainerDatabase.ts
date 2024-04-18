@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalNonContainerDatabase = oci.Database.getExternalNonContainerDatabase({
- *     externalNonContainerDatabaseId: oci_database_external_non_container_database.test_external_non_container_database.id,
+ *     externalNonContainerDatabaseId: testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,7 +141,7 @@ export interface GetExternalNonContainerDatabaseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalNonContainerDatabase = oci.Database.getExternalNonContainerDatabase({
- *     externalNonContainerDatabaseId: oci_database_external_non_container_database.test_external_non_container_database.id,
+ *     externalNonContainerDatabaseId: testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

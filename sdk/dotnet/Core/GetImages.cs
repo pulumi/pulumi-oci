@@ -40,14 +40,14 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testImages = Oci.Core.GetImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Image_display_name,
-        ///         OperatingSystem = @var.Image_operating_system,
-        ///         OperatingSystemVersion = @var.Image_operating_system_version,
-        ///         Shape = @var.Image_shape,
-        ///         State = @var.Image_state,
-        ///         SortBy = @var.Image_sort_by,
-        ///         SortOrder = @var.Image_sort_order,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = imageDisplayName,
+        ///         OperatingSystem = imageOperatingSystem,
+        ///         OperatingSystemVersion = imageOperatingSystemVersion,
+        ///         Shape = imageShape,
+        ///         State = imageState,
+        ///         SortBy = imageSortBy,
+        ///         SortOrder = imageSortOrder,
         ///     });
         /// 
         /// });
@@ -86,14 +86,14 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testImages = Oci.Core.GetImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Image_display_name,
-        ///         OperatingSystem = @var.Image_operating_system,
-        ///         OperatingSystemVersion = @var.Image_operating_system_version,
-        ///         Shape = @var.Image_shape,
-        ///         State = @var.Image_state,
-        ///         SortBy = @var.Image_sort_by,
-        ///         SortOrder = @var.Image_sort_order,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = imageDisplayName,
+        ///         OperatingSystem = imageOperatingSystem,
+        ///         OperatingSystemVersion = imageOperatingSystemVersion,
+        ///         Shape = imageShape,
+        ///         State = imageState,
+        ///         SortBy = imageSortBy,
+        ///         SortOrder = imageSortOrder,
         ///     });
         /// 
         /// });

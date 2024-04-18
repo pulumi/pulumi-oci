@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testTargetAsset = Oci.CloudMigrations.GetTargetAsset.Invoke(new()
         ///     {
-        ///         TargetAssetId = oci_cloud_migrations_target_asset.Test_target_asset.Id,
+        ///         TargetAssetId = testTargetAssetOciCloudMigrationsTargetAsset.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testTargetAsset = Oci.CloudMigrations.GetTargetAsset.Invoke(new()
         ///     {
-        ///         TargetAssetId = oci_cloud_migrations_target_asset.Test_target_asset.Id,
+        ///         TargetAssetId = testTargetAssetOciCloudMigrationsTargetAsset.Id,
         ///     });
         /// 
         /// });

@@ -18,11 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsPreferencesManagement = new oci.loganalytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", {
- *     namespace: _var.log_analytics_preferences_management_namespace,
+ * const testLogAnalyticsPreferencesManagement = new oci.loganalytics.LogAnalyticsPreferencesManagement("test_log_analytics_preferences_management", {
+ *     namespace: logAnalyticsPreferencesManagementNamespace,
  *     items: [{
- *         name: _var.log_analytics_preferences_management_items_name,
- *         value: _var.log_analytics_preferences_management_items_value,
+ *         name: logAnalyticsPreferencesManagementItemsName,
+ *         value: logAnalyticsPreferencesManagementItemsValue,
  *     }],
  * });
  * ```

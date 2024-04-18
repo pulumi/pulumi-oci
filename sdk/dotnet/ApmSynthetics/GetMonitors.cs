@@ -30,14 +30,14 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testMonitors = Oci.ApmSynthetics.GetMonitors.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///         DisplayName = @var.Monitor_display_name,
-        ///         IsMaintenanceWindowActive = @var.Monitor_is_maintenance_window_active,
-        ///         IsMaintenanceWindowSet = @var.Monitor_is_maintenance_window_set,
-        ///         MonitorType = @var.Monitor_monitor_type,
-        ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
-        ///         Status = @var.Monitor_status,
-        ///         VantagePoint = @var.Monitor_vantage_point,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = monitorDisplayName,
+        ///         IsMaintenanceWindowActive = monitorIsMaintenanceWindowActive,
+        ///         IsMaintenanceWindowSet = monitorIsMaintenanceWindowSet,
+        ///         MonitorType = monitorMonitorType,
+        ///         ScriptId = testScript.Id,
+        ///         Status = monitorStatus,
+        ///         VantagePoint = monitorVantagePoint,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testMonitors = Oci.ApmSynthetics.GetMonitors.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///         DisplayName = @var.Monitor_display_name,
-        ///         IsMaintenanceWindowActive = @var.Monitor_is_maintenance_window_active,
-        ///         IsMaintenanceWindowSet = @var.Monitor_is_maintenance_window_set,
-        ///         MonitorType = @var.Monitor_monitor_type,
-        ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
-        ///         Status = @var.Monitor_status,
-        ///         VantagePoint = @var.Monitor_vantage_point,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         DisplayName = monitorDisplayName,
+        ///         IsMaintenanceWindowActive = monitorIsMaintenanceWindowActive,
+        ///         IsMaintenanceWindowSet = monitorIsMaintenanceWindowSet,
+        ///         MonitorType = monitorMonitorType,
+        ///         ScriptId = testScript.Id,
+        ///         Status = monitorStatus,
+        ///         VantagePoint = monitorVantagePoint,
         ///     });
         /// 
         /// });

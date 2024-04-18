@@ -236,7 +236,7 @@ def get_session(session_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_session = oci.Bastion.get_session(session_id=oci_bastion_session["test_session"]["id"])
+    test_session = oci.Bastion.get_session(session_id=test_session_oci_bastion_session["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_session_output(session_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_session = oci.Bastion.get_session(session_id=oci_bastion_session["test_session"]["id"])
+    test_session = oci.Bastion.get_session(session_id=test_session_oci_bastion_session["id"])
     ```
     <!--End PulumiCodeChooser -->
 

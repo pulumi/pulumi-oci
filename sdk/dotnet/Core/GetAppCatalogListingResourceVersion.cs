@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testAppCatalogListingResourceVersion = Oci.Core.GetAppCatalogListingResourceVersion.Invoke(new()
         ///     {
-        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         ResourceVersion = @var.App_catalog_listing_resource_version_resource_version,
+        ///         ListingId = testListing.Id,
+        ///         ResourceVersion = appCatalogListingResourceVersionResourceVersion,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testAppCatalogListingResourceVersion = Oci.Core.GetAppCatalogListingResourceVersion.Invoke(new()
         ///     {
-        ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-        ///         ResourceVersion = @var.App_catalog_listing_resource_version_resource_version,
+        ///         ListingId = testListing.Id,
+        ///         ResourceVersion = appCatalogListingResourceVersionResourceVersion,
         ///     });
         /// 
         /// });

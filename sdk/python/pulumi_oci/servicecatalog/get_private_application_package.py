@@ -145,7 +145,7 @@ def get_private_application_package(private_application_package_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
+    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=test_private_application_package_oci_service_catalog_private_application_package["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,7 +184,7 @@ def get_private_application_package_output(private_application_package_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
+    test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=test_private_application_package_oci_service_catalog_private_application_package["id"])
     ```
     <!--End PulumiCodeChooser -->
 

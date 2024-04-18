@@ -16,6 +16,126 @@ import (
 //
 // Create a DR protection group.
 //
+// ## Example Usage
+//
+// <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DisasterRecovery"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi/config"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			cfg := config.New(ctx, "")
+//			disassociateTrigger := float64(0)
+//			if param := cfg.GetFloat64("disassociateTrigger"); param != 0 {
+//				disassociateTrigger = param
+//			}
+//			_, err := DisasterRecovery.NewDrProtectionGroup(ctx, "test_dr_protection_group", &DisasterRecovery.DrProtectionGroupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(drProtectionGroupDisplayName),
+//				LogLocation: &disasterrecovery.DrProtectionGroupLogLocationArgs{
+//					Bucket:    pulumi.Any(drProtectionGroupLogLocationBucket),
+//					Namespace: pulumi.Any(drProtectionGroupLogLocationNamespace),
+//				},
+//				Association: &disasterrecovery.DrProtectionGroupAssociationArgs{
+//					Role:       pulumi.Any(drProtectionGroupAssociationRole),
+//					PeerId:     pulumi.Any(drProtectionGroupAssociationPeerId),
+//					PeerRegion: pulumi.Any(drProtectionGroupAssociationPeerRegion),
+//				},
+//				DefinedTags: pulumi.Map{
+//					"Operations.CostCenter": pulumi.Any("42"),
+//				},
+//				FreeformTags: pulumi.Map{
+//					"Department": pulumi.Any("Finance"),
+//				},
+//				DisassociateTrigger: pulumi.Float64(disassociateTrigger),
+//				Members: disasterrecovery.DrProtectionGroupMemberArray{
+//					&disasterrecovery.DrProtectionGroupMemberArgs{
+//						MemberId:   pulumi.Any(drProtectionGroupMembersMemberId),
+//						MemberType: pulumi.Any(drProtectionGroupMembersMemberType),
+//						BackendSetMappings: disasterrecovery.DrProtectionGroupMemberBackendSetMappingArray{
+//							&disasterrecovery.DrProtectionGroupMemberBackendSetMappingArgs{
+//								DestinationBackendSetName: pulumi.Any(testBackendSet.Name),
+//								IsBackendSetForNonMovable: pulumi.Any(drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable),
+//								SourceBackendSetName:      pulumi.Any(testBackendSet.Name),
+//							},
+//						},
+//						BlockVolumeOperations: disasterrecovery.DrProtectionGroupMemberBlockVolumeOperationArray{
+//							&disasterrecovery.DrProtectionGroupMemberBlockVolumeOperationArgs{
+//								AttachmentDetails: &disasterrecovery.DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs{
+//									VolumeAttachmentReferenceInstanceId: pulumi.Any(testInstance.Id),
+//								},
+//								BlockVolumeId: pulumi.Any(testVolume.Id),
+//								MountDetails: &disasterrecovery.DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{
+//									MountPoint: pulumi.Any(drProtectionGroupMembersBlockVolumeOperationsMountDetailsMountPoint),
+//								},
+//							},
+//						},
+//						DestinationAvailabilityDomain:    pulumi.Any(drProtectionGroupMembersDestinationAvailabilityDomain),
+//						DestinationCapacityReservationId: pulumi.Any(destinationCapacityReservationId),
+//						DestinationCompartmentId:         pulumi.Any(testCompartment.Id),
+//						DestinationDedicatedVmHostId:     pulumi.Any(testDedicatedVmHost.Id),
+//						DestinationLoadBalancerId:        pulumi.Any(testLoadBalancer.Id),
+//						DestinationNetworkLoadBalancerId: pulumi.Any(testNetworkLoadBalancer.Id),
+//						ExportMappings: disasterrecovery.DrProtectionGroupMemberExportMappingArray{
+//							&disasterrecovery.DrProtectionGroupMemberExportMappingArgs{
+//								DestinationMountTargetId: pulumi.Any(testMountTarget.Id),
+//								ExportId:                 pulumi.Any(testExport.Id),
+//							},
+//						},
+//						FileSystemOperations: disasterrecovery.DrProtectionGroupMemberFileSystemOperationArray{
+//							&disasterrecovery.DrProtectionGroupMemberFileSystemOperationArgs{
+//								ExportPath: pulumi.Any(drProtectionGroupMembersFileSystemOperationsExportPath),
+//								MountDetails: &disasterrecovery.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs{
+//									MountTargetId: pulumi.Any(testMountTarget.Id),
+//								},
+//								MountPoint:    pulumi.Any(drProtectionGroupMembersFileSystemOperationsMountPoint),
+//								MountTargetId: pulumi.Any(testMountTarget.Id),
+//								UnmountDetails: &disasterrecovery.DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs{
+//									MountTargetId: pulumi.Any(testMountTarget.Id),
+//								},
+//							},
+//						},
+//						IsMovable:             pulumi.Any(drProtectionGroupMembersIsMovable),
+//						IsRetainFaultDomain:   pulumi.Any(drProtectionGroupMembersIsRetainFaultDomain),
+//						IsStartStopEnabled:    pulumi.Any(drProtectionGroupMembersIsStartStopEnabled),
+//						PasswordVaultSecretId: pulumi.Any(passwordVaultSecretId),
+//						VnicMappings: disasterrecovery.DrProtectionGroupMemberVnicMappingArray{
+//							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{
+//								DestinationNsgIdLists:                    pulumi.Any(drProtectionGroupMembersVnicMappingDestinationNsgIdList),
+//								DestinationPrimaryPrivateIpAddress:       pulumi.Any(drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpAddress),
+//								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpHostnameLabel),
+//								DestinationSubnetId:                      pulumi.Any(testSubnet.Id),
+//								SourceVnicId:                             pulumi.Any(testVnic.Id),
+//							},
+//							&disasterrecovery.DrProtectionGroupMemberVnicMappingArgs{
+//								DestinationNsgIdLists:                    pulumi.Any(drProtectionGroupMembersVnicMappingsDestinationNsgIdList),
+//								DestinationPrimaryPrivateIpAddress:       pulumi.Any(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress),
+//								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel),
+//								DestinationSubnetId:                      pulumi.Any(testSubnet.Id),
+//								SourceVnicId:                             pulumi.Any(testVnic.Id),
+//							},
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+// <!--End PulumiCodeChooser -->
+//
 // ## Create
 //
 // Create DR Protection Group resource with a default value of `disassociateTrigger` property, e.g.

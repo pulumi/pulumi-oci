@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewVmClusterAddVirtualNetwork(ctx, "testVmClusterAddVirtualMachine", &Database.VmClusterAddVirtualNetworkArgs{
+//			_, err := Database.NewVmClusterAddVirtualNetwork(ctx, "test_vm_cluster_add_virtual_machine", &Database.VmClusterAddVirtualNetworkArgs{
 //				DbServers: database.VmClusterAddVirtualNetworkDbServerArray{
 //					&database.VmClusterAddVirtualNetworkDbServerArgs{
-//						DbServerId: pulumi.Any(oci_database_db_server.Test_db_server.Id),
+//						DbServerId: pulumi.Any(testDbServer.Id),
 //					},
 //				},
-//				VmClusterId: pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//				VmClusterId: pulumi.Any(testVmCluster.Id),
 //			})
 //			if err != nil {
 //				return err

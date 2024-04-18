@@ -134,11 +134,11 @@ def get_firewalls(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=var["compartment_id"],
-        display_name=var["web_app_firewall_display_name"],
-        id=var["web_app_firewall_id"],
-        states=var["web_app_firewall_state"],
-        web_app_firewall_policy_id=oci_waf_web_app_firewall_policy["test_web_app_firewall_policy"]["id"])
+    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=compartment_id,
+        display_name=web_app_firewall_display_name,
+        id=web_app_firewall_id,
+        states=web_app_firewall_state,
+        web_app_firewall_policy_id=test_web_app_firewall_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_firewalls_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=var["compartment_id"],
-        display_name=var["web_app_firewall_display_name"],
-        id=var["web_app_firewall_id"],
-        states=var["web_app_firewall_state"],
-        web_app_firewall_policy_id=oci_waf_web_app_firewall_policy["test_web_app_firewall_policy"]["id"])
+    test_web_app_firewalls = oci.Waf.get_firewalls(compartment_id=compartment_id,
+        display_name=web_app_firewall_display_name,
+        id=web_app_firewall_id,
+        states=web_app_firewall_state,
+        web_app_firewall_policy_id=test_web_app_firewall_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

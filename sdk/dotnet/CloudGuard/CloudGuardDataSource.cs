@@ -25,31 +25,31 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataSource = new Oci.CloudGuard.CloudGuardDataSource("testDataSource", new()
+    ///     var testDataSource = new Oci.CloudGuard.CloudGuardDataSource("test_data_source", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DataSourceFeedProvider = @var.Data_source_data_source_feed_provider,
-    ///         DisplayName = @var.Data_source_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DataSourceFeedProvider = dataSourceDataSourceFeedProvider,
+    ///         DisplayName = dataSourceDisplayName,
     ///         DataSourceDetails = new Oci.CloudGuard.Inputs.CloudGuardDataSourceDataSourceDetailsArgs
     ///         {
-    ///             DataSourceFeedProvider = @var.Data_source_data_source_details_data_source_feed_provider,
-    ///             AdditionalEntitiesCount = @var.Data_source_data_source_details_additional_entities_count,
-    ///             IntervalInMinutes = @var.Data_source_data_source_details_interval_in_minutes,
+    ///             DataSourceFeedProvider = dataSourceDataSourceDetailsDataSourceFeedProvider,
+    ///             AdditionalEntitiesCount = dataSourceDataSourceDetailsAdditionalEntitiesCount,
+    ///             IntervalInMinutes = dataSourceDataSourceDetailsIntervalInMinutes,
     ///             LoggingQueryDetails = new Oci.CloudGuard.Inputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs
     ///             {
-    ///                 LoggingQueryType = @var.Data_source_data_source_details_logging_query_details_logging_query_type,
-    ///                 KeyEntitiesCount = @var.Data_source_data_source_details_logging_query_details_key_entities_count,
+    ///                 LoggingQueryType = dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType,
+    ///                 KeyEntitiesCount = dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount,
     ///             },
-    ///             LoggingQueryType = @var.Data_source_data_source_details_logging_query_type,
-    ///             Operator = @var.Data_source_data_source_details_operator,
-    ///             Query = @var.Data_source_data_source_details_query,
+    ///             LoggingQueryType = dataSourceDataSourceDetailsLoggingQueryType,
+    ///             Operator = dataSourceDataSourceDetailsOperator,
+    ///             Query = dataSourceDataSourceDetailsQuery,
     ///             QueryStartTime = new Oci.CloudGuard.Inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs
     ///             {
-    ///                 StartPolicyType = @var.Data_source_data_source_details_query_start_time_start_policy_type,
-    ///                 QueryStartTime = @var.Data_source_data_source_details_query_start_time_query_start_time,
+    ///                 StartPolicyType = dataSourceDataSourceDetailsQueryStartTimeStartPolicyType,
+    ///                 QueryStartTime = dataSourceDataSourceDetailsQueryStartTimeQueryStartTime,
     ///             },
-    ///             Regions = @var.Data_source_data_source_details_regions,
-    ///             Threshold = @var.Data_source_data_source_details_threshold,
+    ///             Regions = dataSourceDataSourceDetailsRegions,
+    ///             Threshold = dataSourceDataSourceDetailsThreshold,
     ///         },
     ///         DefinedTags = 
     ///         {
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.CloudGuard
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Status = @var.Data_source_status,
+    ///         Status = dataSourceStatus,
     ///     });
     /// 
     /// });

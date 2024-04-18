@@ -25,21 +25,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLocalPeeringGateway = new Oci.Core.LocalPeeringGateway("testLocalPeeringGateway", new()
+    ///     var testLocalPeeringGateway = new Oci.Core.LocalPeeringGateway("test_local_peering_gateway", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Local_peering_gateway_display_name,
+    ///         DisplayName = localPeeringGatewayDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PeerId = oci_core_local_peering_gateway.Test_local_peering_gateway2.Id,
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         PeerId = testLocalPeeringGateway2.Id,
+    ///         RouteTableId = testRouteTable.Id,
     ///     });
     /// 
     /// });

@@ -153,12 +153,12 @@ def get_compute_capacity_topology_compute_bare_metal_hosts(availability_domain: 
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=oci_core_compute_capacity_topology["test_compute_capacity_topology"]["id"],
-        availability_domain=var["compute_capacity_topology_compute_bare_metal_host_availability_domain"],
-        compartment_id=var["compartment_id"],
-        compute_hpc_island_id=oci_core_compute_hpc_island["test_compute_hpc_island"]["id"],
-        compute_local_block_id=oci_core_compute_local_block["test_compute_local_block"]["id"],
-        compute_network_block_id=oci_core_compute_network_block["test_compute_network_block"]["id"])
+    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+        availability_domain=compute_capacity_topology_compute_bare_metal_host_availability_domain,
+        compartment_id=compartment_id,
+        compute_hpc_island_id=test_compute_hpc_island["id"],
+        compute_local_block_id=test_compute_local_block["id"],
+        compute_network_block_id=test_compute_network_block["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -214,12 +214,12 @@ def get_compute_capacity_topology_compute_bare_metal_hosts_output(availability_d
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=oci_core_compute_capacity_topology["test_compute_capacity_topology"]["id"],
-        availability_domain=var["compute_capacity_topology_compute_bare_metal_host_availability_domain"],
-        compartment_id=var["compartment_id"],
-        compute_hpc_island_id=oci_core_compute_hpc_island["test_compute_hpc_island"]["id"],
-        compute_local_block_id=oci_core_compute_local_block["test_compute_local_block"]["id"],
-        compute_network_block_id=oci_core_compute_network_block["test_compute_network_block"]["id"])
+    test_compute_capacity_topology_compute_bare_metal_hosts = oci.Core.get_compute_capacity_topology_compute_bare_metal_hosts(compute_capacity_topology_id=test_compute_capacity_topology["id"],
+        availability_domain=compute_capacity_topology_compute_bare_metal_host_availability_domain,
+        compartment_id=compartment_id,
+        compute_hpc_island_id=test_compute_hpc_island["id"],
+        compute_local_block_id=test_compute_local_block["id"],
+        compute_network_block_id=test_compute_network_block["id"])
     ```
     <!--End PulumiCodeChooser -->
 

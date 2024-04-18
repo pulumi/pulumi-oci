@@ -30,10 +30,10 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testSecurityRecipes = Oci.CloudGuard.GetSecurityRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Security_recipe_display_name,
-        ///         Id = @var.Security_recipe_id,
-        ///         State = @var.Security_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityRecipeDisplayName,
+        ///         Id = securityRecipeId,
+        ///         State = securityRecipeState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testSecurityRecipes = Oci.CloudGuard.GetSecurityRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Security_recipe_display_name,
-        ///         Id = @var.Security_recipe_id,
-        ///         State = @var.Security_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = securityRecipeDisplayName,
+        ///         Id = securityRecipeId,
+        ///         State = securityRecipeState,
         ///     });
         /// 
         /// });

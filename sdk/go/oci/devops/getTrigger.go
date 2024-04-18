@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetTrigger(ctx, &devops.GetTriggerArgs{
-//				TriggerId: oci_devops_trigger.Test_trigger.Id,
+//				TriggerId: testTriggerOciDevopsTrigger.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

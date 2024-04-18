@@ -187,14 +187,14 @@ def get_exsi_hosts(cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=oci_ocvp_cluster["test_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        compute_instance_id=oci_core_instance["test_instance"]["id"],
-        display_name=var["esxi_host_display_name"],
-        is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
-        is_swap_billing_only=var["esxi_host_is_swap_billing_only"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["esxi_host_state"])
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
+        compartment_id=compartment_id,
+        compute_instance_id=test_instance["id"],
+        display_name=esxi_host_display_name,
+        is_billing_donors_only=esxi_host_is_billing_donors_only,
+        is_swap_billing_only=esxi_host_is_swap_billing_only,
+        sddc_id=test_sddc["id"],
+        state=esxi_host_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -266,14 +266,14 @@ def get_exsi_hosts_output(cluster_id: Optional[pulumi.Input[Optional[str]]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=oci_ocvp_cluster["test_cluster"]["id"],
-        compartment_id=var["compartment_id"],
-        compute_instance_id=oci_core_instance["test_instance"]["id"],
-        display_name=var["esxi_host_display_name"],
-        is_billing_donors_only=var["esxi_host_is_billing_donors_only"],
-        is_swap_billing_only=var["esxi_host_is_swap_billing_only"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["esxi_host_state"])
+    test_esxi_hosts = oci.Ocvp.get_exsi_hosts(cluster_id=test_cluster["id"],
+        compartment_id=compartment_id,
+        compute_instance_id=test_instance["id"],
+        display_name=esxi_host_display_name,
+        is_billing_donors_only=esxi_host_is_billing_donors_only,
+        is_swap_billing_only=esxi_host_is_swap_billing_only,
+        sddc_id=test_sddc["id"],
+        state=esxi_host_state)
     ```
     <!--End PulumiCodeChooser -->
 

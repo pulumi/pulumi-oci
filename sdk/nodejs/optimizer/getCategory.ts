@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCategory = oci.Optimizer.getCategory({
- *     categoryId: oci_optimizer_category.test_category.id,
+ *     categoryId: testCategoryOciOptimizerCategory.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,7 +109,7 @@ export interface GetCategoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCategory = oci.Optimizer.getCategory({
- *     categoryId: oci_optimizer_category.test_category.id,
+ *     categoryId: testCategoryOciOptimizerCategory.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

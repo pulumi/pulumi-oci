@@ -121,10 +121,10 @@ def get_decrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=var["decrypted_data_ciphertext"],
-        crypto_endpoint=var["decrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        associated_data=var["decrypted_data_associated_data"])
+    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
+        crypto_endpoint=decrypted_data_crypto_endpoint,
+        key_id=test_key["id"],
+        associated_data=decrypted_data_associated_data)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -170,10 +170,10 @@ def get_decrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     import pulumi
     import pulumi_oci as oci
 
-    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=var["decrypted_data_ciphertext"],
-        crypto_endpoint=var["decrypted_data_crypto_endpoint"],
-        key_id=oci_kms_key["test_key"]["id"],
-        associated_data=var["decrypted_data_associated_data"])
+    test_decrypted_data = oci.Kms.get_decrypted_data(ciphertext=decrypted_data_ciphertext,
+        crypto_endpoint=decrypted_data_crypto_endpoint,
+        key_id=test_key["id"],
+        associated_data=decrypted_data_associated_data)
     ```
     <!--End PulumiCodeChooser -->
 

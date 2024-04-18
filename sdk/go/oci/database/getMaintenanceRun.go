@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetMaintenanceRun(ctx, &database.GetMaintenanceRunArgs{
-//				MaintenanceRunId: oci_database_maintenance_run.Test_maintenance_run.Id,
+//				MaintenanceRunId: testMaintenanceRunOciDatabaseMaintenanceRun.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

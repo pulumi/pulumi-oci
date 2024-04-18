@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testAverageCarbonEmission = Oci.MeteringComputation.GetAverageCarbonEmission.Invoke(new()
         ///     {
-        ///         SkuPartNumber = @var.Average_carbon_emission_sku_part_number,
+        ///         SkuPartNumber = averageCarbonEmissionSkuPartNumber,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testAverageCarbonEmission = Oci.MeteringComputation.GetAverageCarbonEmission.Invoke(new()
         ///     {
-        ///         SkuPartNumber = @var.Average_carbon_emission_sku_part_number,
+        ///         SkuPartNumber = averageCarbonEmissionSkuPartNumber,
         ///     });
         /// 
         /// });

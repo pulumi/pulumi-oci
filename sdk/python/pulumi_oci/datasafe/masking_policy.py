@@ -587,28 +587,28 @@ class MaskingPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_masking_policy = oci.data_safe.MaskingPolicy("testMaskingPolicy",
+        test_masking_policy = oci.data_safe.MaskingPolicy("test_masking_policy",
             column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=var["masking_policy_column_source_column_source"],
-                sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-                target_id=oci_cloud_guard_target["test_target"]["id"],
+                column_source=masking_policy_column_source_column_source,
+                sensitive_data_model_id=test_sensitive_data_model["id"],
+                target_id=test_target["id"],
             )],
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["masking_policy_description"],
-            display_name=var["masking_policy_display_name"],
+            description=masking_policy_description,
+            display_name=masking_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_drop_temp_tables_enabled=var["masking_policy_is_drop_temp_tables_enabled"],
-            is_redo_logging_enabled=var["masking_policy_is_redo_logging_enabled"],
-            is_refresh_stats_enabled=var["masking_policy_is_refresh_stats_enabled"],
-            parallel_degree=var["masking_policy_parallel_degree"],
-            post_masking_script=var["masking_policy_post_masking_script"],
-            pre_masking_script=var["masking_policy_pre_masking_script"],
-            recompile=var["masking_policy_recompile"])
+            is_drop_temp_tables_enabled=masking_policy_is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=masking_policy_is_redo_logging_enabled,
+            is_refresh_stats_enabled=masking_policy_is_refresh_stats_enabled,
+            parallel_degree=masking_policy_parallel_degree,
+            post_masking_script=masking_policy_post_masking_script,
+            pre_masking_script=masking_policy_pre_masking_script,
+            recompile=masking_policy_recompile)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -675,28 +675,28 @@ class MaskingPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_masking_policy = oci.data_safe.MaskingPolicy("testMaskingPolicy",
+        test_masking_policy = oci.data_safe.MaskingPolicy("test_masking_policy",
             column_sources=[oci.data_safe.MaskingPolicyColumnSourceArgs(
-                column_source=var["masking_policy_column_source_column_source"],
-                sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
-                target_id=oci_cloud_guard_target["test_target"]["id"],
+                column_source=masking_policy_column_source_column_source,
+                sensitive_data_model_id=test_sensitive_data_model["id"],
+                target_id=test_target["id"],
             )],
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["masking_policy_description"],
-            display_name=var["masking_policy_display_name"],
+            description=masking_policy_description,
+            display_name=masking_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_drop_temp_tables_enabled=var["masking_policy_is_drop_temp_tables_enabled"],
-            is_redo_logging_enabled=var["masking_policy_is_redo_logging_enabled"],
-            is_refresh_stats_enabled=var["masking_policy_is_refresh_stats_enabled"],
-            parallel_degree=var["masking_policy_parallel_degree"],
-            post_masking_script=var["masking_policy_post_masking_script"],
-            pre_masking_script=var["masking_policy_pre_masking_script"],
-            recompile=var["masking_policy_recompile"])
+            is_drop_temp_tables_enabled=masking_policy_is_drop_temp_tables_enabled,
+            is_redo_logging_enabled=masking_policy_is_redo_logging_enabled,
+            is_refresh_stats_enabled=masking_policy_is_refresh_stats_enabled,
+            parallel_degree=masking_policy_parallel_degree,
+            post_masking_script=masking_policy_post_masking_script,
+            pre_masking_script=masking_policy_pre_masking_script,
+            recompile=masking_policy_recompile)
         ```
         <!--End PulumiCodeChooser -->
 

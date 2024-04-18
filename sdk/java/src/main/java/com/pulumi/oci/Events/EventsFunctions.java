@@ -47,7 +47,7 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = EventsFunctions.getRule(GetRuleArgs.builder()
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = EventsFunctions.getRule(GetRuleArgs.builder()
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = EventsFunctions.getRule(GetRuleArgs.builder()
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRule = EventsFunctions.getRule(GetRuleArgs.builder()
-     *             .ruleId(oci_events_rule.test_rule().id())
+     *             .ruleId(testRuleOciEventsRule.id())
      *             .build());
      * 
      *     }
@@ -215,9 +215,9 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = EventsFunctions.getRules(GetRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.rule_display_name())
-     *             .state(var_.rule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(ruleDisplayName)
+     *             .state(ruleState)
      *             .build());
      * 
      *     }
@@ -259,9 +259,9 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = EventsFunctions.getRules(GetRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.rule_display_name())
-     *             .state(var_.rule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(ruleDisplayName)
+     *             .state(ruleState)
      *             .build());
      * 
      *     }
@@ -303,9 +303,9 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = EventsFunctions.getRules(GetRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.rule_display_name())
-     *             .state(var_.rule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(ruleDisplayName)
+     *             .state(ruleState)
      *             .build());
      * 
      *     }
@@ -347,9 +347,9 @@ public final class EventsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRules = EventsFunctions.getRules(GetRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.rule_display_name())
-     *             .state(var_.rule_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(ruleDisplayName)
+     *             .state(ruleState)
      *             .build());
      * 
      *     }

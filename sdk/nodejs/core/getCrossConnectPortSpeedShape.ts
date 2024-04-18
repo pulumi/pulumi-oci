@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCrossConnectPortSpeedShapes = oci.Core.getCrossConnectPortSpeedShape({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -76,7 +76,7 @@ export interface GetCrossConnectPortSpeedShapeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCrossConnectPortSpeedShapes = oci.Core.getCrossConnectPortSpeedShape({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

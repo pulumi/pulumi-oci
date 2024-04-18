@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAlerts = Oci.DataSafe.GetAlerts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Alert_access_level,
-        ///         CompartmentIdInSubtree = @var.Alert_compartment_id_in_subtree,
-        ///         Fields = @var.Alert_field,
-        ///         Id = @var.Alert_id,
-        ///         ScimQuery = @var.Alert_scim_query,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = alertAccessLevel,
+        ///         CompartmentIdInSubtree = alertCompartmentIdInSubtree,
+        ///         Fields = alertField,
+        ///         Id = alertId,
+        ///         ScimQuery = alertScimQuery,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAlerts = Oci.DataSafe.GetAlerts.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Alert_access_level,
-        ///         CompartmentIdInSubtree = @var.Alert_compartment_id_in_subtree,
-        ///         Fields = @var.Alert_field,
-        ///         Id = @var.Alert_id,
-        ///         ScimQuery = @var.Alert_scim_query,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = alertAccessLevel,
+        ///         CompartmentIdInSubtree = alertCompartmentIdInSubtree,
+        ///         Fields = alertField,
+        ///         Id = alertId,
+        ///         ScimQuery = alertScimQuery,
         ///     });
         /// 
         /// });

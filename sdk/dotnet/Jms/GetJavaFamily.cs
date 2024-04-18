@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaFamily = Oci.Jms.GetJavaFamily.Invoke(new()
         ///     {
-        ///         FamilyVersion = @var.Java_family_family_version,
+        ///         FamilyVersion = javaFamilyFamilyVersion,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaFamily = Oci.Jms.GetJavaFamily.Invoke(new()
         ///     {
-        ///         FamilyVersion = @var.Java_family_family_version,
+        ///         FamilyVersion = javaFamilyFamilyVersion,
         ///     });
         /// 
         /// });

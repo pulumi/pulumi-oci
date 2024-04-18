@@ -701,27 +701,27 @@ class Workspace(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace = oci.data_integration.Workspace("testWorkspace",
-            compartment_id=var["compartment_id"],
-            display_name=var["workspace_display_name"],
+        test_workspace = oci.data_integration.Workspace("test_workspace",
+            compartment_id=compartment_id,
+            display_name=workspace_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["workspace_description"],
-            dns_server_ip=var["workspace_dns_server_ip"],
-            dns_server_zone=var["workspace_dns_server_zone"],
-            endpoint_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            endpoint_id=oci_dataintegration_endpoint["test_endpoint"]["id"],
-            endpoint_name=var["workspace_endpoint_name"],
+            description=workspace_description,
+            dns_server_ip=workspace_dns_server_ip,
+            dns_server_zone=workspace_dns_server_zone,
+            endpoint_compartment_id=test_compartment["id"],
+            endpoint_id=test_endpoint["id"],
+            endpoint_name=workspace_endpoint_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private_network_enabled=var["workspace_is_private_network_enabled"],
-            registry_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            registry_id=oci_data_connectivity_registry["test_registry"]["id"],
-            registry_name=oci_data_connectivity_registry["test_registry"]["name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"])
+            is_private_network_enabled=workspace_is_private_network_enabled,
+            registry_compartment_id=test_compartment["id"],
+            registry_id=test_registry["id"],
+            registry_name=test_registry["name"],
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -774,27 +774,27 @@ class Workspace(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace = oci.data_integration.Workspace("testWorkspace",
-            compartment_id=var["compartment_id"],
-            display_name=var["workspace_display_name"],
+        test_workspace = oci.data_integration.Workspace("test_workspace",
+            compartment_id=compartment_id,
+            display_name=workspace_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["workspace_description"],
-            dns_server_ip=var["workspace_dns_server_ip"],
-            dns_server_zone=var["workspace_dns_server_zone"],
-            endpoint_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            endpoint_id=oci_dataintegration_endpoint["test_endpoint"]["id"],
-            endpoint_name=var["workspace_endpoint_name"],
+            description=workspace_description,
+            dns_server_ip=workspace_dns_server_ip,
+            dns_server_zone=workspace_dns_server_zone,
+            endpoint_compartment_id=test_compartment["id"],
+            endpoint_id=test_endpoint["id"],
+            endpoint_name=workspace_endpoint_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private_network_enabled=var["workspace_is_private_network_enabled"],
-            registry_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            registry_id=oci_data_connectivity_registry["test_registry"]["id"],
-            registry_name=oci_data_connectivity_registry["test_registry"]["name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"])
+            is_private_network_enabled=workspace_is_private_network_enabled,
+            registry_compartment_id=test_compartment["id"],
+            registry_id=test_registry["id"],
+            registry_name=test_registry["name"],
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"])
         ```
         <!--End PulumiCodeChooser -->
 

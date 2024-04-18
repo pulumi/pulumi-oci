@@ -30,21 +30,21 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPoliciesMaskingColumns = Oci.DataSafe.GetMaskingPoliciesMaskingColumns.Invoke(new()
         ///     {
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         ColumnNames = @var.Masking_policies_masking_column_column_name,
-        ///         DataTypes = @var.Masking_policies_masking_column_data_type,
-        ///         IsMaskingEnabled = @var.Masking_policies_masking_column_is_masking_enabled,
-        ///         IsSeedRequired = @var.Masking_policies_masking_column_is_seed_required,
-        ///         MaskingColumnGroups = @var.Masking_policies_masking_column_masking_column_group,
-        ///         MaskingColumnLifecycleState = @var.Masking_policies_masking_column_masking_column_lifecycle_state,
-        ///         Objects = @var.Masking_policies_masking_column_object,
-        ///         ObjectTypes = @var.Masking_policies_masking_column_object_type,
-        ///         SchemaNames = @var.Masking_policies_masking_column_schema_name,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Masking_policies_masking_column_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Masking_policies_masking_column_time_created_less_than,
-        ///         TimeUpdatedGreaterThanOrEqualTo = @var.Masking_policies_masking_column_time_updated_greater_than_or_equal_to,
-        ///         TimeUpdatedLessThan = @var.Masking_policies_masking_column_time_updated_less_than,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         ColumnNames = maskingPoliciesMaskingColumnColumnName,
+        ///         DataTypes = maskingPoliciesMaskingColumnDataType,
+        ///         IsMaskingEnabled = maskingPoliciesMaskingColumnIsMaskingEnabled,
+        ///         IsSeedRequired = maskingPoliciesMaskingColumnIsSeedRequired,
+        ///         MaskingColumnGroups = maskingPoliciesMaskingColumnMaskingColumnGroup,
+        ///         MaskingColumnLifecycleState = maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
+        ///         Objects = maskingPoliciesMaskingColumnObject,
+        ///         ObjectTypes = maskingPoliciesMaskingColumnObjectType,
+        ///         SchemaNames = maskingPoliciesMaskingColumnSchemaName,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = maskingPoliciesMaskingColumnTimeCreatedLessThan,
+        ///         TimeUpdatedGreaterThanOrEqualTo = maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = maskingPoliciesMaskingColumnTimeUpdatedLessThan,
         ///     });
         /// 
         /// });
@@ -73,21 +73,21 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPoliciesMaskingColumns = Oci.DataSafe.GetMaskingPoliciesMaskingColumns.Invoke(new()
         ///     {
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         ColumnNames = @var.Masking_policies_masking_column_column_name,
-        ///         DataTypes = @var.Masking_policies_masking_column_data_type,
-        ///         IsMaskingEnabled = @var.Masking_policies_masking_column_is_masking_enabled,
-        ///         IsSeedRequired = @var.Masking_policies_masking_column_is_seed_required,
-        ///         MaskingColumnGroups = @var.Masking_policies_masking_column_masking_column_group,
-        ///         MaskingColumnLifecycleState = @var.Masking_policies_masking_column_masking_column_lifecycle_state,
-        ///         Objects = @var.Masking_policies_masking_column_object,
-        ///         ObjectTypes = @var.Masking_policies_masking_column_object_type,
-        ///         SchemaNames = @var.Masking_policies_masking_column_schema_name,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Masking_policies_masking_column_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Masking_policies_masking_column_time_created_less_than,
-        ///         TimeUpdatedGreaterThanOrEqualTo = @var.Masking_policies_masking_column_time_updated_greater_than_or_equal_to,
-        ///         TimeUpdatedLessThan = @var.Masking_policies_masking_column_time_updated_less_than,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         ColumnNames = maskingPoliciesMaskingColumnColumnName,
+        ///         DataTypes = maskingPoliciesMaskingColumnDataType,
+        ///         IsMaskingEnabled = maskingPoliciesMaskingColumnIsMaskingEnabled,
+        ///         IsSeedRequired = maskingPoliciesMaskingColumnIsSeedRequired,
+        ///         MaskingColumnGroups = maskingPoliciesMaskingColumnMaskingColumnGroup,
+        ///         MaskingColumnLifecycleState = maskingPoliciesMaskingColumnMaskingColumnLifecycleState,
+        ///         Objects = maskingPoliciesMaskingColumnObject,
+        ///         ObjectTypes = maskingPoliciesMaskingColumnObjectType,
+        ///         SchemaNames = maskingPoliciesMaskingColumnSchemaName,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = maskingPoliciesMaskingColumnTimeCreatedLessThan,
+        ///         TimeUpdatedGreaterThanOrEqualTo = maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = maskingPoliciesMaskingColumnTimeUpdatedLessThan,
         ///     });
         /// 
         /// });

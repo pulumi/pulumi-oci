@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetConnection(ctx, &datacatalog.GetConnectionArgs{
-//				CatalogId:     oci_datacatalog_catalog.Test_catalog.Id,
-//				ConnectionKey: _var.Connection_connection_key,
-//				DataAssetKey:  _var.Connection_data_asset_key,
-//				Fields:        _var.Connection_fields,
+//				CatalogId:     testCatalog.Id,
+//				ConnectionKey: connectionConnectionKey,
+//				DataAssetKey:  connectionDataAssetKey,
+//				Fields:        connectionFields,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -35,53 +35,53 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewInstancePool(ctx, "testInstancePool", &Core.InstancePoolArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				InstanceConfigurationId: pulumi.Any(oci_core_instance_configuration.Test_instance_configuration.Id),
+//			_, err := Core.NewInstancePool(ctx, "test_instance_pool", &Core.InstancePoolArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				InstanceConfigurationId: pulumi.Any(testInstanceConfiguration.Id),
 //				PlacementConfigurations: core.InstancePoolPlacementConfigurationArray{
 //					&core.InstancePoolPlacementConfigurationArgs{
-//						AvailabilityDomain: pulumi.Any(_var.Instance_pool_placement_configurations_availability_domain),
-//						FaultDomains:       pulumi.Any(_var.Instance_pool_placement_configurations_fault_domains),
-//						PrimarySubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//						AvailabilityDomain: pulumi.Any(instancePoolPlacementConfigurationsAvailabilityDomain),
+//						FaultDomains:       pulumi.Any(instancePoolPlacementConfigurationsFaultDomains),
+//						PrimarySubnetId:    pulumi.Any(testSubnet.Id),
 //						PrimaryVnicSubnets: &core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs{
-//							SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//							SubnetId: pulumi.Any(testSubnet.Id),
 //							Ipv6addressIpv6subnetCidrPairDetails: core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArray{
 //								&core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs{
-//									Ipv6subnetCidr: pulumi.Any(_var.Instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//									Ipv6subnetCidr: pulumi.Any(instancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //								},
 //							},
-//							IsAssignIpv6ip: pulumi.Any(_var.Instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip),
+//							IsAssignIpv6ip: pulumi.Any(instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip),
 //						},
 //						SecondaryVnicSubnets: core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArray{
 //							&core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs{
-//								SubnetId:    pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//								DisplayName: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name),
+//								SubnetId:    pulumi.Any(testSubnet.Id),
+//								DisplayName: pulumi.Any(instancePoolPlacementConfigurationsSecondaryVnicSubnetsDisplayName),
 //								Ipv6addressIpv6subnetCidrPairDetails: core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArray{
 //									&core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs{
-//										Ipv6subnetCidr: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr),
+//										Ipv6subnetCidr: pulumi.Any(instancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr),
 //									},
 //								},
-//								IsAssignIpv6ip: pulumi.Any(_var.Instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip),
+//								IsAssignIpv6ip: pulumi.Any(instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip),
 //							},
 //						},
 //					},
 //				},
-//				Size: pulumi.Any(_var.Instance_pool_size),
+//				Size: pulumi.Any(instancePoolSize),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Instance_pool_display_name),
+//				DisplayName: pulumi.Any(instancePoolDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				InstanceDisplayNameFormatter: pulumi.Any(_var.Instance_pool_instance_display_name_formatter),
-//				InstanceHostnameFormatter:    pulumi.Any(_var.Instance_pool_instance_hostname_formatter),
+//				InstanceDisplayNameFormatter: pulumi.Any(instancePoolInstanceDisplayNameFormatter),
+//				InstanceHostnameFormatter:    pulumi.Any(instancePoolInstanceHostnameFormatter),
 //				LoadBalancers: core.InstancePoolLoadBalancerArray{
 //					&core.InstancePoolLoadBalancerArgs{
-//						BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-//						LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//						Port:           pulumi.Any(_var.Instance_pool_load_balancers_port),
-//						VnicSelection:  pulumi.Any(_var.Instance_pool_load_balancers_vnic_selection),
+//						BackendSetName: pulumi.Any(testBackendSet.Name),
+//						LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
+//						Port:           pulumi.Any(instancePoolLoadBalancersPort),
+//						VnicSelection:  pulumi.Any(instancePoolLoadBalancersVnicSelection),
 //					},
 //				},
 //			})

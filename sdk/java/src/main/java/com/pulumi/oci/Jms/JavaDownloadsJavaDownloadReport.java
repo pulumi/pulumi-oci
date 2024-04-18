@@ -48,10 +48,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testJavaDownloadReport = new JavaDownloadsJavaDownloadReport(&#34;testJavaDownloadReport&#34;, JavaDownloadsJavaDownloadReportArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .format(var_.java_download_report_format())
- *             .timeEnd(var_.java_download_report_time_end())
- *             .timeStart(var_.java_download_report_time_start())
+ *             .compartmentId(tenancyOcid)
+ *             .format(javaDownloadReportFormat)
+ *             .timeEnd(javaDownloadReportTimeEnd)
+ *             .timeStart(javaDownloadReportTimeStart)
  *             .build());
  * 
  *     }

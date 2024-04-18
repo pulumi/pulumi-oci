@@ -33,14 +33,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewPluggableDatabasesRemoteClone(ctx, "testPluggableDatabasesRemoteClone", &Database.PluggableDatabasesRemoteCloneArgs{
-//				ClonedPdbName:                  pulumi.Any(_var.Pluggable_databases_remote_clone_cloned_pdb_name),
-//				PluggableDatabaseId:            pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
-//				SourceContainerDbAdminPassword: pulumi.Any(_var.Pluggable_databases_remote_clone_source_container_db_admin_password),
-//				TargetContainerDatabaseId:      pulumi.Any(oci_database_database.Test_database.Id),
-//				PdbAdminPassword:               pulumi.Any(_var.Pluggable_databases_remote_clone_pdb_admin_password),
-//				ShouldPdbAdminAccountBeLocked:  pulumi.Any(_var.Pluggable_databases_remote_clone_should_pdb_admin_account_be_locked),
-//				TargetTdeWalletPassword:        pulumi.Any(_var.Pluggable_databases_remote_clone_target_tde_wallet_password),
+//			_, err := Database.NewPluggableDatabasesRemoteClone(ctx, "test_pluggable_databases_remote_clone", &Database.PluggableDatabasesRemoteCloneArgs{
+//				ClonedPdbName:                  pulumi.Any(pluggableDatabasesRemoteCloneClonedPdbName),
+//				PluggableDatabaseId:            pulumi.Any(testPluggableDatabase.Id),
+//				SourceContainerDbAdminPassword: pulumi.Any(pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword),
+//				TargetContainerDatabaseId:      pulumi.Any(testDatabase.Id),
+//				PdbAdminPassword:               pulumi.Any(pluggableDatabasesRemoteClonePdbAdminPassword),
+//				ShouldPdbAdminAccountBeLocked:  pulumi.Any(pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked),
+//				TargetTdeWalletPassword:        pulumi.Any(pluggableDatabasesRemoteCloneTargetTdeWalletPassword),
 //			})
 //			if err != nil {
 //				return err

@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudMigrations.NewMigration(ctx, "testMigration", &CloudMigrations.MigrationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Migration_display_name),
+//			_, err := CloudMigrations.NewMigration(ctx, "test_migration", &CloudMigrations.MigrationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(migrationDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsCompleted:           pulumi.Any(_var.Migration_is_completed),
-//				ReplicationScheduleId: pulumi.Any(oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id),
+//				IsCompleted:           pulumi.Any(migrationIsCompleted),
+//				ReplicationScheduleId: pulumi.Any(testReplicationSchedule.Id),
 //			})
 //			if err != nil {
 //				return err

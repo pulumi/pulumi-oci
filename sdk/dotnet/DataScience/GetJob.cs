@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testJob = Oci.DataScience.GetJob.Invoke(new()
         ///     {
-        ///         JobId = oci_datascience_job.Test_job.Id,
+        ///         JobId = testJobOciDatascienceJob.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testJob = Oci.DataScience.GetJob.Invoke(new()
         ///     {
-        ///         JobId = oci_datascience_job.Test_job.Id,
+        ///         JobId = testJobOciDatascienceJob.Id,
         ///     });
         /// 
         /// });

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodes = oci.Database.getDbNodes({
- *     compartmentId: _var.compartment_id,
- *     dbServerId: oci_database_db_server.test_db_server.id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     state: _var.db_node_state,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     compartmentId: compartmentId,
+ *     dbServerId: testDbServer.id,
+ *     dbSystemId: testDbSystem.id,
+ *     state: dbNodeState,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetDbNodesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodes = oci.Database.getDbNodes({
- *     compartmentId: _var.compartment_id,
- *     dbServerId: oci_database_db_server.test_db_server.id,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     state: _var.db_node_state,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     compartmentId: compartmentId,
+ *     dbServerId: testDbServer.id,
+ *     dbSystemId: testDbSystem.id,
+ *     state: dbNodeState,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

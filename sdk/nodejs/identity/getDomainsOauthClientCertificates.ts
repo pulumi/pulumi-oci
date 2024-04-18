@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOauthClientCertificates = oci.Identity.getDomainsOauthClientCertificates({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     oauthClientCertificateCount: _var.oauth_client_certificate_oauth_client_certificate_count,
- *     oauthClientCertificateFilter: _var.oauth_client_certificate_oauth_client_certificate_filter,
- *     authorization: _var.oauth_client_certificate_authorization,
- *     resourceTypeSchemaVersion: _var.oauth_client_certificate_resource_type_schema_version,
- *     startIndex: _var.oauth_client_certificate_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     oauthClientCertificateCount: oauthClientCertificateOauthClientCertificateCount,
+ *     oauthClientCertificateFilter: oauthClientCertificateOauthClientCertificateFilter,
+ *     authorization: oauthClientCertificateAuthorization,
+ *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
+ *     startIndex: oauthClientCertificateStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsOauthClientCertificatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOauthClientCertificates = oci.Identity.getDomainsOauthClientCertificates({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     oauthClientCertificateCount: _var.oauth_client_certificate_oauth_client_certificate_count,
- *     oauthClientCertificateFilter: _var.oauth_client_certificate_oauth_client_certificate_filter,
- *     authorization: _var.oauth_client_certificate_authorization,
- *     resourceTypeSchemaVersion: _var.oauth_client_certificate_resource_type_schema_version,
- *     startIndex: _var.oauth_client_certificate_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     oauthClientCertificateCount: oauthClientCertificateOauthClientCertificateCount,
+ *     oauthClientCertificateFilter: oauthClientCertificateOauthClientCertificateFilter,
+ *     authorization: oauthClientCertificateAuthorization,
+ *     resourceTypeSchemaVersion: oauthClientCertificateResourceTypeSchemaVersion,
+ *     startIndex: oauthClientCertificateStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

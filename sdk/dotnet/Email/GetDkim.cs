@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testDkim = Oci.Email.GetDkim.Invoke(new()
         ///     {
-        ///         DkimId = oci_email_dkim.Test_dkim.Id,
+        ///         DkimId = testDkimOciEmailDkim.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testDkim = Oci.Email.GetDkim.Invoke(new()
         ///     {
-        ///         DkimId = oci_email_dkim.Test_dkim.Id,
+        ///         DkimId = testDkimOciEmailDkim.Id,
         ///     });
         /// 
         /// });

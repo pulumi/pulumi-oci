@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoiceLineComputedUsages = oci.OneSubsription.getInvoiceLineComputedUsages({
- *     compartmentId: _var.compartment_id,
- *     invoiceLineId: oci_onesubscription_invoice_line.test_invoice_line.id,
- *     fields: _var.invoice_line_computed_usage_fields,
+ *     compartmentId: compartmentId,
+ *     invoiceLineId: testInvoiceLine.id,
+ *     fields: invoiceLineComputedUsageFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,9 +86,9 @@ export interface GetInvoiceLineComputedUsagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoiceLineComputedUsages = oci.OneSubsription.getInvoiceLineComputedUsages({
- *     compartmentId: _var.compartment_id,
- *     invoiceLineId: oci_onesubscription_invoice_line.test_invoice_line.id,
- *     fields: _var.invoice_line_computed_usage_fields,
+ *     compartmentId: compartmentId,
+ *     invoiceLineId: testInvoiceLine.id,
+ *     fields: invoiceLineComputedUsageFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

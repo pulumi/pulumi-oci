@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedMySqlDatabaseSqlData = Oci.DatabaseManagement.GetManagedMySqlDatabaseSqlData.Invoke(new()
         ///     {
-        ///         EndTime = @var.Managed_my_sql_database_sql_data_end_time,
-        ///         ManagedMySqlDatabaseId = oci_database_management_managed_my_sql_database.Test_managed_my_sql_database.Id,
-        ///         StartTime = @var.Managed_my_sql_database_sql_data_start_time,
-        ///         FilterColumn = @var.Managed_my_sql_database_sql_data_filter_column,
+        ///         EndTime = managedMySqlDatabaseSqlDataEndTime,
+        ///         ManagedMySqlDatabaseId = testManagedMySqlDatabase.Id,
+        ///         StartTime = managedMySqlDatabaseSqlDataStartTime,
+        ///         FilterColumn = managedMySqlDatabaseSqlDataFilterColumn,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedMySqlDatabaseSqlData = Oci.DatabaseManagement.GetManagedMySqlDatabaseSqlData.Invoke(new()
         ///     {
-        ///         EndTime = @var.Managed_my_sql_database_sql_data_end_time,
-        ///         ManagedMySqlDatabaseId = oci_database_management_managed_my_sql_database.Test_managed_my_sql_database.Id,
-        ///         StartTime = @var.Managed_my_sql_database_sql_data_start_time,
-        ///         FilterColumn = @var.Managed_my_sql_database_sql_data_filter_column,
+        ///         EndTime = managedMySqlDatabaseSqlDataEndTime,
+        ///         ManagedMySqlDatabaseId = testManagedMySqlDatabase.Id,
+        ///         StartTime = managedMySqlDatabaseSqlDataStartTime,
+        ///         FilterColumn = managedMySqlDatabaseSqlDataFilterColumn,
         ///     });
         /// 
         /// });

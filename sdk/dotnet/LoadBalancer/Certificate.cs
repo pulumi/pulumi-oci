@@ -12,29 +12,6 @@ namespace Pulumi.Oci.LoadBalancer
     /// <summary>
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testCertificate = new Oci.LoadBalancer.Certificate("testCertificate", new()
-    ///     {
-    ///         CertificateName = @var.Certificate_certificate_name,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         CaCertificate = @var.Certificate_ca_certificate,
-    ///         Passphrase = @var.Certificate_passphrase,
-    ///         PrivateKey = @var.Certificate_private_key,
-    ///         PublicCertificate = @var.Certificate_public_certificate,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
-    /// 
     /// ## Import
     /// 
     /// Certificates can be imported using the `id`, e.g.

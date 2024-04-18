@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPublicIpPool = Oci.Core.GetPublicIpPool.Invoke(new()
         ///     {
-        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///         PublicIpPoolId = testPublicIpPoolOciCorePublicIpPool.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPublicIpPool = Oci.Core.GetPublicIpPool.Invoke(new()
         ///     {
-        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///         PublicIpPoolId = testPublicIpPoolOciCorePublicIpPool.Id,
         ///     });
         /// 
         /// });

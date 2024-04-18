@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEnrollmentStatus = oci.Optimizer.getEnrollmentStatus({
- *     enrollmentStatusId: oci_optimizer_enrollment_status.test_enrollment_status.id,
+ *     enrollmentStatusId: testEnrollmentStatusOciOptimizerEnrollmentStatus.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -87,7 +87,7 @@ export interface GetEnrollmentStatusResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEnrollmentStatus = oci.Optimizer.getEnrollmentStatus({
- *     enrollmentStatusId: oci_optimizer_enrollment_status.test_enrollment_status.id,
+ *     enrollmentStatusId: testEnrollmentStatusOciOptimizerEnrollmentStatus.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

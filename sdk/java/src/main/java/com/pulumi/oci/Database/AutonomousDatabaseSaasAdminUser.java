@@ -44,10 +44,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser(&#34;testAutonomousDatabaseSaasAdminUser&#34;, AutonomousDatabaseSaasAdminUserArgs.builder()        
- *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
- *             .password(var_.autonomous_database_saas_admin_user_password())
- *             .accessType(var_.autonomous_database_saas_admin_user_access_type())
- *             .duration(var_.autonomous_database_saas_admin_user_duration())
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .password(autonomousDatabaseSaasAdminUserPassword)
+ *             .accessType(autonomousDatabaseSaasAdminUserAccessType)
+ *             .duration(autonomousDatabaseSaasAdminUserDuration)
  *             .build());
  * 
  *     }

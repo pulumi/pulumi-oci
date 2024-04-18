@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkSource = Oci.Identity.GetNetworkSource.Invoke(new()
         ///     {
-        ///         NetworkSourceId = oci_identity_network_source.Test_network_source.Id,
+        ///         NetworkSourceId = testNetworkSourceOciIdentityNetworkSource.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkSource = Oci.Identity.GetNetworkSource.Invoke(new()
         ///     {
-        ///         NetworkSourceId = oci_identity_network_source.Test_network_source.Id,
+        ///         NetworkSourceId = testNetworkSourceOciIdentityNetworkSource.Id,
         ///     });
         /// 
         /// });

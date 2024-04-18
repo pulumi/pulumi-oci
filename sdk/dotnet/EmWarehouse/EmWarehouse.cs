@@ -25,16 +25,16 @@ namespace Pulumi.Oci.EmWarehouse
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEmWarehouse = new Oci.EmWarehouse.EmWarehouse("testEmWarehouse", new()
+    ///     var testEmWarehouse = new Oci.EmWarehouse.EmWarehouse("test_em_warehouse", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EmBridgeId = oci_em_warehouse_em_bridge.Test_em_bridge.Id,
-    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         CompartmentId = compartmentId,
+    ///         EmBridgeId = testEmBridge.Id,
+    ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Em_warehouse_display_name,
+    ///         DisplayName = emWarehouseDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

@@ -41,10 +41,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testGroup = new Oci.Identity.Group("testGroup", new()
+    ///     var testGroup = new Oci.Identity.Group("test_group", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Group_description,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = groupDescription,
+    ///         Name = groupName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

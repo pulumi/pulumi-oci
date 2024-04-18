@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalListenerServices(ctx, &databasemanagement.GetExternalListenerServicesArgs{
-//				ExternalListenerId:   oci_database_management_external_listener.Test_external_listener.Id,
-//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
-//				OpcNamedCredentialId: pulumi.StringRef(_var.External_listener_service_opc_named_credential_id),
+//				ExternalListenerId:   testExternalListener.Id,
+//				ManagedDatabaseId:    testManagedDatabase.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(externalListenerServiceOpcNamedCredentialId),
 //			}, nil)
 //			if err != nil {
 //				return err

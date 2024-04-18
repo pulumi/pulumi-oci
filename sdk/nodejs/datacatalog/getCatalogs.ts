@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogs = oci.DataCatalog.getCatalogs({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.catalog_display_name,
- *     state: _var.catalog_state,
+ *     compartmentId: compartmentId,
+ *     displayName: catalogDisplayName,
+ *     state: catalogState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetCatalogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogs = oci.DataCatalog.getCatalogs({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.catalog_display_name,
- *     state: _var.catalog_state,
+ *     compartmentId: compartmentId,
+ *     displayName: catalogDisplayName,
+ *     state: catalogState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

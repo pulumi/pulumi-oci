@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuits = Oci.Core.GetVirtualCircuits.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Virtual_circuit_display_name,
-        ///         State = @var.Virtual_circuit_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = virtualCircuitDisplayName,
+        ///         State = virtualCircuitState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuits = Oci.Core.GetVirtualCircuits.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Virtual_circuit_display_name,
-        ///         State = @var.Virtual_circuit_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = virtualCircuitDisplayName,
+        ///         State = virtualCircuitState,
         ///     });
         /// 
         /// });

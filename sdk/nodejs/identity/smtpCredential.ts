@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSmtpCredential = new oci.identity.SmtpCredential("testSmtpCredential", {
- *     description: _var.smtp_credential_description,
- *     userId: oci_identity_user.test_user.id,
+ * const testSmtpCredential = new oci.identity.SmtpCredential("test_smtp_credential", {
+ *     description: smtpCredentialDescription,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

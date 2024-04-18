@@ -18,49 +18,49 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataset = new oci.datalabellingservice.Dataset("testDataset", {
- *     annotationFormat: _var.dataset_annotation_format,
- *     compartmentId: _var.compartment_id,
+ * const testDataset = new oci.datalabellingservice.Dataset("test_dataset", {
+ *     annotationFormat: datasetAnnotationFormat,
+ *     compartmentId: compartmentId,
  *     datasetFormatDetails: {
- *         formatType: _var.dataset_dataset_format_details_format_type,
+ *         formatType: datasetDatasetFormatDetailsFormatType,
  *         textFileTypeMetadata: {
- *             columnIndex: _var.dataset_dataset_format_details_text_file_type_metadata_column_index,
- *             formatType: _var.dataset_dataset_format_details_text_file_type_metadata_format_type,
- *             columnDelimiter: _var.dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
- *             columnName: _var.dataset_dataset_format_details_text_file_type_metadata_column_name,
- *             escapeCharacter: _var.dataset_dataset_format_details_text_file_type_metadata_escape_character,
- *             lineDelimiter: _var.dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+ *             columnIndex: datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex,
+ *             formatType: datasetDatasetFormatDetailsTextFileTypeMetadataFormatType,
+ *             columnDelimiter: datasetDatasetFormatDetailsTextFileTypeMetadataColumnDelimiter,
+ *             columnName: datasetDatasetFormatDetailsTextFileTypeMetadataColumnName,
+ *             escapeCharacter: datasetDatasetFormatDetailsTextFileTypeMetadataEscapeCharacter,
+ *             lineDelimiter: datasetDatasetFormatDetailsTextFileTypeMetadataLineDelimiter,
  *         },
  *     },
  *     datasetSourceDetails: {
- *         bucket: _var.dataset_dataset_source_details_bucket,
- *         namespace: _var.dataset_dataset_source_details_namespace,
- *         sourceType: _var.dataset_dataset_source_details_source_type,
- *         prefix: _var.dataset_dataset_source_details_prefix,
+ *         bucket: datasetDatasetSourceDetailsBucket,
+ *         namespace: datasetDatasetSourceDetailsNamespace,
+ *         sourceType: datasetDatasetSourceDetailsSourceType,
+ *         prefix: datasetDatasetSourceDetailsPrefix,
  *     },
  *     labelSet: {
  *         items: [{
- *             name: _var.dataset_label_set_items_name,
+ *             name: datasetLabelSetItemsName,
  *         }],
  *     },
- *     definedTags: _var.dataset_defined_tags,
- *     description: _var.dataset_description,
- *     displayName: _var.dataset_display_name,
- *     freeformTags: _var.dataset_freeform_tags,
+ *     definedTags: datasetDefinedTags,
+ *     description: datasetDescription,
+ *     displayName: datasetDisplayName,
+ *     freeformTags: datasetFreeformTags,
  *     initialImportDatasetConfiguration: {
  *         importFormat: {
- *             name: _var.dataset_initial_import_dataset_configuration_import_format_name,
- *             version: _var.dataset_initial_import_dataset_configuration_import_format_version,
+ *             name: datasetInitialImportDatasetConfigurationImportFormatName,
+ *             version: datasetInitialImportDatasetConfigurationImportFormatVersion,
  *         },
  *         importMetadataPath: {
- *             bucket: _var.dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
- *             namespace: _var.dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
- *             path: _var.dataset_initial_import_dataset_configuration_import_metadata_path_path,
- *             sourceType: _var.dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
+ *             bucket: datasetInitialImportDatasetConfigurationImportMetadataPathBucket,
+ *             namespace: datasetInitialImportDatasetConfigurationImportMetadataPathNamespace,
+ *             path: datasetInitialImportDatasetConfigurationImportMetadataPathPath,
+ *             sourceType: datasetInitialImportDatasetConfigurationImportMetadataPathSourceType,
  *         },
  *     },
  *     initialRecordGenerationConfiguration: {},
- *     labelingInstructions: _var.dataset_labeling_instructions,
+ *     labelingInstructions: datasetLabelingInstructions,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

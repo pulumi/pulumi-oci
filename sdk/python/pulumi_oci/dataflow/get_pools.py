@@ -143,11 +143,11 @@ def get_pools(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pools = oci.DataFlow.get_pools(compartment_id=var["compartment_id"],
-        display_name=var["pool_display_name"],
-        display_name_starts_with=var["pool_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        state=var["pool_state"])
+    test_pools = oci.DataFlow.get_pools(compartment_id=compartment_id,
+        display_name=pool_display_name,
+        display_name_starts_with=pool_display_name_starts_with,
+        owner_principal_id=test_owner_principal["id"],
+        state=pool_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,11 +199,11 @@ def get_pools_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pools = oci.DataFlow.get_pools(compartment_id=var["compartment_id"],
-        display_name=var["pool_display_name"],
-        display_name_starts_with=var["pool_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        state=var["pool_state"])
+    test_pools = oci.DataFlow.get_pools(compartment_id=compartment_id,
+        display_name=pool_display_name,
+        display_name_starts_with=pool_display_name_starts_with,
+        owner_principal_id=test_owner_principal["id"],
+        state=pool_state)
     ```
     <!--End PulumiCodeChooser -->
 

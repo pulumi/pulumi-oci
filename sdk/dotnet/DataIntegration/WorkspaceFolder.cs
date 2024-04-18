@@ -26,23 +26,24 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceFolder = new Oci.DataIntegration.WorkspaceFolder("testWorkspaceFolder", new()
+    ///     var testWorkspaceFolder = new Oci.DataIntegration.WorkspaceFolder("test_workspace_folder", new()
     ///     {
-    ///         Identifier = @var.Workspace_folder_identifier,
+    ///         Identifier = workspaceFolderIdentifier,
+    ///         Name = workspaceFolderName,
     ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceFolderRegistryMetadataArgs
     ///         {
-    ///             AggregatorKey = @var.Workspace_folder_registry_metadata_aggregator_key,
-    ///             IsFavorite = @var.Workspace_folder_registry_metadata_is_favorite,
-    ///             Key = @var.Workspace_folder_registry_metadata_key,
-    ///             Labels = @var.Workspace_folder_registry_metadata_labels,
-    ///             RegistryVersion = @var.Workspace_folder_registry_metadata_registry_version,
+    ///             AggregatorKey = workspaceFolderRegistryMetadataAggregatorKey,
+    ///             IsFavorite = workspaceFolderRegistryMetadataIsFavorite,
+    ///             Key = workspaceFolderRegistryMetadataKey,
+    ///             Labels = workspaceFolderRegistryMetadataLabels,
+    ///             RegistryVersion = workspaceFolderRegistryMetadataRegistryVersion,
     ///         },
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         CategoryName = oci_marketplace_category.Test_category.Name,
-    ///         Description = @var.Workspace_folder_description,
-    ///         Key = @var.Workspace_folder_key,
-    ///         ModelVersion = @var.Workspace_folder_model_version,
-    ///         ObjectStatus = @var.Workspace_folder_object_status,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         CategoryName = testCategory.Name,
+    ///         Description = workspaceFolderDescription,
+    ///         Key = workspaceFolderKey,
+    ///         ModelVersion = workspaceFolderModelVersion,
+    ///         ObjectStatus = workspaceFolderObjectStatus,
     ///     });
     /// 
     /// });

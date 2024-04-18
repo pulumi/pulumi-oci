@@ -467,21 +467,21 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_occ_availability_catalog = oci.capacity_management.OccAvailabilityCatalog("testOccAvailabilityCatalog",
-            base64encoded_catalog_details=var["occ_availability_catalog_base64encoded_catalog_details"],
-            compartment_id=var["compartment_id"],
-            display_name=var["occ_availability_catalog_display_name"],
-            namespace=var["occ_availability_catalog_namespace"],
-            occ_customer_group_id=oci_capacity_management_occ_customer_group["test_occ_customer_group"]["id"],
+        test_occ_availability_catalog = oci.capacity_management.OccAvailabilityCatalog("test_occ_availability_catalog",
+            base64encoded_catalog_details=occ_availability_catalog_base64encoded_catalog_details,
+            compartment_id=compartment_id,
+            display_name=occ_availability_catalog_display_name,
+            namespace=occ_availability_catalog_namespace,
+            occ_customer_group_id=test_occ_customer_group["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["occ_availability_catalog_description"],
+            description=occ_availability_catalog_description,
             freeform_tags={
                 "bar-key": "value",
             },
             metadata_details=oci.capacity_management.OccAvailabilityCatalogMetadataDetailsArgs(
-                format_version=var["occ_availability_catalog_metadata_details_format_version"],
+                format_version=occ_availability_catalog_metadata_details_format_version,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -528,21 +528,21 @@ class OccAvailabilityCatalog(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_occ_availability_catalog = oci.capacity_management.OccAvailabilityCatalog("testOccAvailabilityCatalog",
-            base64encoded_catalog_details=var["occ_availability_catalog_base64encoded_catalog_details"],
-            compartment_id=var["compartment_id"],
-            display_name=var["occ_availability_catalog_display_name"],
-            namespace=var["occ_availability_catalog_namespace"],
-            occ_customer_group_id=oci_capacity_management_occ_customer_group["test_occ_customer_group"]["id"],
+        test_occ_availability_catalog = oci.capacity_management.OccAvailabilityCatalog("test_occ_availability_catalog",
+            base64encoded_catalog_details=occ_availability_catalog_base64encoded_catalog_details,
+            compartment_id=compartment_id,
+            display_name=occ_availability_catalog_display_name,
+            namespace=occ_availability_catalog_namespace,
+            occ_customer_group_id=test_occ_customer_group["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["occ_availability_catalog_description"],
+            description=occ_availability_catalog_description,
             freeform_tags={
                 "bar-key": "value",
             },
             metadata_details=oci.capacity_management.OccAvailabilityCatalogMetadataDetailsArgs(
-                format_version=var["occ_availability_catalog_metadata_details_format_version"],
+                format_version=occ_availability_catalog_metadata_details_format_version,
             ))
         ```
         <!--End PulumiCodeChooser -->

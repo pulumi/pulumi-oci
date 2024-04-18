@@ -181,14 +181,14 @@ def get_metric_data(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=var["compartment_id"],
-        namespace=var["metric_data_namespace"],
-        query=var["metric_data_query"],
-        compartment_id_in_subtree=var["metric_data_compartment_id_in_subtree"],
-        end_time=var["metric_data_end_time"],
-        resolution=var["metric_data_resolution"],
-        resource_group=var["metric_data_resource_group"],
-        start_time=var["metric_data_start_time"])
+    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=compartment_id,
+        namespace=metric_data_namespace,
+        query=metric_data_query,
+        compartment_id_in_subtree=metric_data_compartment_id_in_subtree,
+        end_time=metric_data_end_time,
+        resolution=metric_data_resolution,
+        resource_group=metric_data_resource_group,
+        start_time=metric_data_start_time)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -268,14 +268,14 @@ def get_metric_data_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=var["compartment_id"],
-        namespace=var["metric_data_namespace"],
-        query=var["metric_data_query"],
-        compartment_id_in_subtree=var["metric_data_compartment_id_in_subtree"],
-        end_time=var["metric_data_end_time"],
-        resolution=var["metric_data_resolution"],
-        resource_group=var["metric_data_resource_group"],
-        start_time=var["metric_data_start_time"])
+    test_metric_data = oci.Monitoring.get_metric_data(compartment_id=compartment_id,
+        namespace=metric_data_namespace,
+        query=metric_data_query,
+        compartment_id_in_subtree=metric_data_compartment_id_in_subtree,
+        end_time=metric_data_end_time,
+        resolution=metric_data_resolution,
+        resource_group=metric_data_resource_group,
+        start_time=metric_data_start_time)
     ```
     <!--End PulumiCodeChooser -->
 

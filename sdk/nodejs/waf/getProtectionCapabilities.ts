@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionCapabilities = oci.Waf.getProtectionCapabilities({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.protection_capability_display_name,
- *     groupTags: _var.protection_capability_group_tag,
- *     isLatestVersions: _var.protection_capability_is_latest_version,
- *     key: _var.protection_capability_key,
- *     type: _var.protection_capability_type,
+ *     compartmentId: compartmentId,
+ *     displayName: protectionCapabilityDisplayName,
+ *     groupTags: protectionCapabilityGroupTag,
+ *     isLatestVersions: protectionCapabilityIsLatestVersion,
+ *     key: protectionCapabilityKey,
+ *     type: protectionCapabilityType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetProtectionCapabilitiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionCapabilities = oci.Waf.getProtectionCapabilities({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.protection_capability_display_name,
- *     groupTags: _var.protection_capability_group_tag,
- *     isLatestVersions: _var.protection_capability_is_latest_version,
- *     key: _var.protection_capability_key,
- *     type: _var.protection_capability_type,
+ *     compartmentId: compartmentId,
+ *     displayName: protectionCapabilityDisplayName,
+ *     groupTags: protectionCapabilityGroupTag,
+ *     isLatestVersions: protectionCapabilityIsLatestVersion,
+ *     key: protectionCapabilityKey,
+ *     type: protectionCapabilityType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

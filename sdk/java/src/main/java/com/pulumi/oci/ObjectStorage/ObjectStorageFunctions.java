@@ -83,8 +83,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBucket = ObjectStorageFunctions.getBucket(GetBucketArgs.builder()
-     *             .name(var_.bucket_name())
-     *             .namespace(var_.bucket_namespace())
+     *             .name(bucketName)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -126,8 +126,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBucket = ObjectStorageFunctions.getBucket(GetBucketArgs.builder()
-     *             .name(var_.bucket_name())
-     *             .namespace(var_.bucket_namespace())
+     *             .name(bucketName)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -169,8 +169,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBucket = ObjectStorageFunctions.getBucket(GetBucketArgs.builder()
-     *             .name(var_.bucket_name())
-     *             .namespace(var_.bucket_namespace())
+     *             .name(bucketName)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -212,8 +212,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBucket = ObjectStorageFunctions.getBucket(GetBucketArgs.builder()
-     *             .name(var_.bucket_name())
-     *             .namespace(var_.bucket_namespace())
+     *             .name(bucketName)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -263,8 +263,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuckets = ObjectStorageFunctions.getBucketSummaries(GetBucketSummariesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.bucket_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -314,8 +314,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuckets = ObjectStorageFunctions.getBucketSummaries(GetBucketSummariesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.bucket_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -365,8 +365,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuckets = ObjectStorageFunctions.getBucketSummaries(GetBucketSummariesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.bucket_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -416,8 +416,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuckets = ObjectStorageFunctions.getBucketSummaries(GetBucketSummariesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.bucket_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(bucketNamespace)
      *             .build());
      * 
      *     }
@@ -465,7 +465,7 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -513,7 +513,7 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -561,7 +561,7 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -609,7 +609,7 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -657,7 +657,7 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -705,7 +705,7 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = ObjectStorageFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -759,16 +759,16 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObject = ObjectStorageFunctions.getObject(GetObjectArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
-     *             .httpResponseCacheControl(var_.object_http_response_cache_control())
-     *             .httpResponseContentDisposition(var_.object_http_response_content_disposition())
-     *             .httpResponseContentEncoding(var_.object_http_response_content_encoding())
-     *             .httpResponseContentLanguage(var_.object_http_response_content_language())
-     *             .httpResponseContentType(var_.object_http_response_content_type())
-     *             .httpResponseExpires(var_.object_http_response_expires())
-     *             .versionId(oci_objectstorage_version.test_version().id())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
+     *             .httpResponseCacheControl(objectHttpResponseCacheControl)
+     *             .httpResponseContentDisposition(objectHttpResponseContentDisposition)
+     *             .httpResponseContentEncoding(objectHttpResponseContentEncoding)
+     *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
+     *             .httpResponseContentType(objectHttpResponseContentType)
+     *             .httpResponseExpires(objectHttpResponseExpires)
+     *             .versionId(testVersion.id())
      *             .build());
      * 
      *     }
@@ -810,16 +810,16 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObject = ObjectStorageFunctions.getObject(GetObjectArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
-     *             .httpResponseCacheControl(var_.object_http_response_cache_control())
-     *             .httpResponseContentDisposition(var_.object_http_response_content_disposition())
-     *             .httpResponseContentEncoding(var_.object_http_response_content_encoding())
-     *             .httpResponseContentLanguage(var_.object_http_response_content_language())
-     *             .httpResponseContentType(var_.object_http_response_content_type())
-     *             .httpResponseExpires(var_.object_http_response_expires())
-     *             .versionId(oci_objectstorage_version.test_version().id())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
+     *             .httpResponseCacheControl(objectHttpResponseCacheControl)
+     *             .httpResponseContentDisposition(objectHttpResponseContentDisposition)
+     *             .httpResponseContentEncoding(objectHttpResponseContentEncoding)
+     *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
+     *             .httpResponseContentType(objectHttpResponseContentType)
+     *             .httpResponseExpires(objectHttpResponseExpires)
+     *             .versionId(testVersion.id())
      *             .build());
      * 
      *     }
@@ -861,16 +861,16 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObject = ObjectStorageFunctions.getObject(GetObjectArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
-     *             .httpResponseCacheControl(var_.object_http_response_cache_control())
-     *             .httpResponseContentDisposition(var_.object_http_response_content_disposition())
-     *             .httpResponseContentEncoding(var_.object_http_response_content_encoding())
-     *             .httpResponseContentLanguage(var_.object_http_response_content_language())
-     *             .httpResponseContentType(var_.object_http_response_content_type())
-     *             .httpResponseExpires(var_.object_http_response_expires())
-     *             .versionId(oci_objectstorage_version.test_version().id())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
+     *             .httpResponseCacheControl(objectHttpResponseCacheControl)
+     *             .httpResponseContentDisposition(objectHttpResponseContentDisposition)
+     *             .httpResponseContentEncoding(objectHttpResponseContentEncoding)
+     *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
+     *             .httpResponseContentType(objectHttpResponseContentType)
+     *             .httpResponseExpires(objectHttpResponseExpires)
+     *             .versionId(testVersion.id())
      *             .build());
      * 
      *     }
@@ -912,16 +912,16 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObject = ObjectStorageFunctions.getObject(GetObjectArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
-     *             .httpResponseCacheControl(var_.object_http_response_cache_control())
-     *             .httpResponseContentDisposition(var_.object_http_response_content_disposition())
-     *             .httpResponseContentEncoding(var_.object_http_response_content_encoding())
-     *             .httpResponseContentLanguage(var_.object_http_response_content_language())
-     *             .httpResponseContentType(var_.object_http_response_content_type())
-     *             .httpResponseExpires(var_.object_http_response_expires())
-     *             .versionId(oci_objectstorage_version.test_version().id())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
+     *             .httpResponseCacheControl(objectHttpResponseCacheControl)
+     *             .httpResponseContentDisposition(objectHttpResponseContentDisposition)
+     *             .httpResponseContentEncoding(objectHttpResponseContentEncoding)
+     *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
+     *             .httpResponseContentType(objectHttpResponseContentType)
+     *             .httpResponseExpires(objectHttpResponseExpires)
+     *             .versionId(testVersion.id())
      *             .build());
      * 
      *     }
@@ -963,9 +963,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectHead = ObjectStorageFunctions.getObjectHead(GetObjectHeadArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
      *             .build());
      * 
      *     }
@@ -1007,9 +1007,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectHead = ObjectStorageFunctions.getObjectHead(GetObjectHeadArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
      *             .build());
      * 
      *     }
@@ -1051,9 +1051,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectHead = ObjectStorageFunctions.getObjectHead(GetObjectHeadArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
      *             .build());
      * 
      *     }
@@ -1095,9 +1095,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectHead = ObjectStorageFunctions.getObjectHead(GetObjectHeadArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .object(var_.object_object())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .object(objectObject)
      *             .build());
      * 
      *     }
@@ -1139,8 +1139,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectLifecyclePolicy = ObjectStorageFunctions.getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs.builder()
-     *             .bucket(var_.object_lifecycle_policy_bucket())
-     *             .namespace(var_.object_lifecycle_policy_namespace())
+     *             .bucket(objectLifecyclePolicyBucket)
+     *             .namespace(objectLifecyclePolicyNamespace)
      *             .build());
      * 
      *     }
@@ -1182,8 +1182,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectLifecyclePolicy = ObjectStorageFunctions.getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs.builder()
-     *             .bucket(var_.object_lifecycle_policy_bucket())
-     *             .namespace(var_.object_lifecycle_policy_namespace())
+     *             .bucket(objectLifecyclePolicyBucket)
+     *             .namespace(objectLifecyclePolicyNamespace)
      *             .build());
      * 
      *     }
@@ -1225,8 +1225,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectLifecyclePolicy = ObjectStorageFunctions.getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs.builder()
-     *             .bucket(var_.object_lifecycle_policy_bucket())
-     *             .namespace(var_.object_lifecycle_policy_namespace())
+     *             .bucket(objectLifecyclePolicyBucket)
+     *             .namespace(objectLifecyclePolicyNamespace)
      *             .build());
      * 
      *     }
@@ -1268,8 +1268,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectLifecyclePolicy = ObjectStorageFunctions.getObjectLifecyclePolicy(GetObjectLifecyclePolicyArgs.builder()
-     *             .bucket(var_.object_lifecycle_policy_bucket())
-     *             .namespace(var_.object_lifecycle_policy_namespace())
+     *             .bucket(objectLifecyclePolicyBucket)
+     *             .namespace(objectLifecyclePolicyNamespace)
      *             .build());
      * 
      *     }
@@ -1318,14 +1318,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectVersions = ObjectStorageFunctions.getObjectVersions(GetObjectVersionsArgs.builder()
-     *             .bucket(var_.object_version_bucket())
-     *             .namespace(var_.object_version_namespace())
-     *             .delimiter(var_.object_version_delimiter())
-     *             .end(var_.object_version_end())
-     *             .fields(var_.object_version_fields())
-     *             .prefix(var_.object_version_prefix())
-     *             .start(var_.object_version_start())
-     *             .startAfter(var_.object_version_start_after())
+     *             .bucket(objectVersionBucket)
+     *             .namespace(objectVersionNamespace)
+     *             .delimiter(objectVersionDelimiter)
+     *             .end(objectVersionEnd)
+     *             .fields(objectVersionFields)
+     *             .prefix(objectVersionPrefix)
+     *             .start(objectVersionStart)
+     *             .startAfter(objectVersionStartAfter)
      *             .build());
      * 
      *     }
@@ -1374,14 +1374,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectVersions = ObjectStorageFunctions.getObjectVersions(GetObjectVersionsArgs.builder()
-     *             .bucket(var_.object_version_bucket())
-     *             .namespace(var_.object_version_namespace())
-     *             .delimiter(var_.object_version_delimiter())
-     *             .end(var_.object_version_end())
-     *             .fields(var_.object_version_fields())
-     *             .prefix(var_.object_version_prefix())
-     *             .start(var_.object_version_start())
-     *             .startAfter(var_.object_version_start_after())
+     *             .bucket(objectVersionBucket)
+     *             .namespace(objectVersionNamespace)
+     *             .delimiter(objectVersionDelimiter)
+     *             .end(objectVersionEnd)
+     *             .fields(objectVersionFields)
+     *             .prefix(objectVersionPrefix)
+     *             .start(objectVersionStart)
+     *             .startAfter(objectVersionStartAfter)
      *             .build());
      * 
      *     }
@@ -1430,14 +1430,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectVersions = ObjectStorageFunctions.getObjectVersions(GetObjectVersionsArgs.builder()
-     *             .bucket(var_.object_version_bucket())
-     *             .namespace(var_.object_version_namespace())
-     *             .delimiter(var_.object_version_delimiter())
-     *             .end(var_.object_version_end())
-     *             .fields(var_.object_version_fields())
-     *             .prefix(var_.object_version_prefix())
-     *             .start(var_.object_version_start())
-     *             .startAfter(var_.object_version_start_after())
+     *             .bucket(objectVersionBucket)
+     *             .namespace(objectVersionNamespace)
+     *             .delimiter(objectVersionDelimiter)
+     *             .end(objectVersionEnd)
+     *             .fields(objectVersionFields)
+     *             .prefix(objectVersionPrefix)
+     *             .start(objectVersionStart)
+     *             .startAfter(objectVersionStartAfter)
      *             .build());
      * 
      *     }
@@ -1486,14 +1486,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectVersions = ObjectStorageFunctions.getObjectVersions(GetObjectVersionsArgs.builder()
-     *             .bucket(var_.object_version_bucket())
-     *             .namespace(var_.object_version_namespace())
-     *             .delimiter(var_.object_version_delimiter())
-     *             .end(var_.object_version_end())
-     *             .fields(var_.object_version_fields())
-     *             .prefix(var_.object_version_prefix())
-     *             .start(var_.object_version_start())
-     *             .startAfter(var_.object_version_start_after())
+     *             .bucket(objectVersionBucket)
+     *             .namespace(objectVersionNamespace)
+     *             .delimiter(objectVersionDelimiter)
+     *             .end(objectVersionEnd)
+     *             .fields(objectVersionFields)
+     *             .prefix(objectVersionPrefix)
+     *             .start(objectVersionStart)
+     *             .startAfter(objectVersionStartAfter)
      *             .build());
      * 
      *     }
@@ -1544,14 +1544,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .delimiter(var_.object_delimiter())
-     *             .end(var_.object_end())
-     *             .fields(var_.object_fields())
-     *             .prefix(var_.object_prefix())
-     *             .start(var_.object_start())
-     *             .startAfter(var_.object_start_after())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
      *             .build());
      * 
      *     }
@@ -1602,14 +1602,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .delimiter(var_.object_delimiter())
-     *             .end(var_.object_end())
-     *             .fields(var_.object_fields())
-     *             .prefix(var_.object_prefix())
-     *             .start(var_.object_start())
-     *             .startAfter(var_.object_start_after())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
      *             .build());
      * 
      *     }
@@ -1660,14 +1660,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .delimiter(var_.object_delimiter())
-     *             .end(var_.object_end())
-     *             .fields(var_.object_fields())
-     *             .prefix(var_.object_prefix())
-     *             .start(var_.object_start())
-     *             .startAfter(var_.object_start_after())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
      *             .build());
      * 
      *     }
@@ -1718,14 +1718,14 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
-     *             .bucket(var_.object_bucket())
-     *             .namespace(var_.object_namespace())
-     *             .delimiter(var_.object_delimiter())
-     *             .end(var_.object_end())
-     *             .fields(var_.object_fields())
-     *             .prefix(var_.object_prefix())
-     *             .start(var_.object_start())
-     *             .startAfter(var_.object_start_after())
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
      *             .build());
      * 
      *     }
@@ -1767,9 +1767,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .parId(oci_objectstorage_preauthrequest.test_par().id())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .parId(testPar.id())
      *             .build());
      * 
      *     }
@@ -1811,9 +1811,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .parId(oci_objectstorage_preauthrequest.test_par().id())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .parId(testPar.id())
      *             .build());
      * 
      *     }
@@ -1855,9 +1855,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .parId(oci_objectstorage_preauthrequest.test_par().id())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .parId(testPar.id())
      *             .build());
      * 
      *     }
@@ -1899,9 +1899,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .parId(oci_objectstorage_preauthrequest.test_par().id())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .parId(testPar.id())
      *             .build());
      * 
      *     }
@@ -1943,9 +1943,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequests = ObjectStorageFunctions.getPreauthrequests(GetPreauthrequestsArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .objectNamePrefix(var_.preauthenticated_request_object_name_prefix())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .objectNamePrefix(preauthenticatedRequestObjectNamePrefix)
      *             .build());
      * 
      *     }
@@ -1987,9 +1987,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequests = ObjectStorageFunctions.getPreauthrequests(GetPreauthrequestsArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .objectNamePrefix(var_.preauthenticated_request_object_name_prefix())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .objectNamePrefix(preauthenticatedRequestObjectNamePrefix)
      *             .build());
      * 
      *     }
@@ -2031,9 +2031,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequests = ObjectStorageFunctions.getPreauthrequests(GetPreauthrequestsArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .objectNamePrefix(var_.preauthenticated_request_object_name_prefix())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .objectNamePrefix(preauthenticatedRequestObjectNamePrefix)
      *             .build());
      * 
      *     }
@@ -2075,9 +2075,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPreauthenticatedRequests = ObjectStorageFunctions.getPreauthrequests(GetPreauthrequestsArgs.builder()
-     *             .bucket(var_.preauthenticated_request_bucket())
-     *             .namespace(var_.preauthenticated_request_namespace())
-     *             .objectNamePrefix(var_.preauthenticated_request_object_name_prefix())
+     *             .bucket(preauthenticatedRequestBucket)
+     *             .namespace(preauthenticatedRequestNamespace)
+     *             .objectNamePrefix(preauthenticatedRequestObjectNamePrefix)
      *             .build());
      * 
      *     }
@@ -2119,8 +2119,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicies = ObjectStorageFunctions.getReplicationPolicies(GetReplicationPoliciesArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
      *             .build());
      * 
      *     }
@@ -2162,8 +2162,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicies = ObjectStorageFunctions.getReplicationPolicies(GetReplicationPoliciesArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
      *             .build());
      * 
      *     }
@@ -2205,8 +2205,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicies = ObjectStorageFunctions.getReplicationPolicies(GetReplicationPoliciesArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
      *             .build());
      * 
      *     }
@@ -2248,8 +2248,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicies = ObjectStorageFunctions.getReplicationPolicies(GetReplicationPoliciesArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
      *             .build());
      * 
      *     }
@@ -2291,9 +2291,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
-     *             .replicationId(oci_objectstorage_replication.test_replication().id())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
+     *             .replicationId(testReplication.id())
      *             .build());
      * 
      *     }
@@ -2335,9 +2335,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
-     *             .replicationId(oci_objectstorage_replication.test_replication().id())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
+     *             .replicationId(testReplication.id())
      *             .build());
      * 
      *     }
@@ -2379,9 +2379,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
-     *             .replicationId(oci_objectstorage_replication.test_replication().id())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
+     *             .replicationId(testReplication.id())
      *             .build());
      * 
      *     }
@@ -2423,9 +2423,9 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
-     *             .bucket(var_.replication_policy_bucket())
-     *             .namespace(var_.replication_policy_namespace())
-     *             .replicationId(oci_objectstorage_replication.test_replication().id())
+     *             .bucket(replicationPolicyBucket)
+     *             .namespace(replicationPolicyNamespace)
+     *             .replicationId(testReplication.id())
      *             .build());
      * 
      *     }
@@ -2467,8 +2467,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSources = ObjectStorageFunctions.getReplicationSources(GetReplicationSourcesArgs.builder()
-     *             .bucket(var_.replication_source_bucket())
-     *             .namespace(var_.replication_source_namespace())
+     *             .bucket(replicationSourceBucket)
+     *             .namespace(replicationSourceNamespace)
      *             .build());
      * 
      *     }
@@ -2510,8 +2510,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSources = ObjectStorageFunctions.getReplicationSources(GetReplicationSourcesArgs.builder()
-     *             .bucket(var_.replication_source_bucket())
-     *             .namespace(var_.replication_source_namespace())
+     *             .bucket(replicationSourceBucket)
+     *             .namespace(replicationSourceNamespace)
      *             .build());
      * 
      *     }
@@ -2553,8 +2553,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSources = ObjectStorageFunctions.getReplicationSources(GetReplicationSourcesArgs.builder()
-     *             .bucket(var_.replication_source_bucket())
-     *             .namespace(var_.replication_source_namespace())
+     *             .bucket(replicationSourceBucket)
+     *             .namespace(replicationSourceNamespace)
      *             .build());
      * 
      *     }
@@ -2596,8 +2596,8 @@ public final class ObjectStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSources = ObjectStorageFunctions.getReplicationSources(GetReplicationSourcesArgs.builder()
-     *             .bucket(var_.replication_source_bucket())
-     *             .namespace(var_.replication_source_namespace())
+     *             .bucket(replicationSourceBucket)
+     *             .namespace(replicationSourceNamespace)
      *             .build());
      * 
      *     }

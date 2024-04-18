@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspace(ctx, &dataintegration.GetWorkspaceArgs{
-//				WorkspaceId: oci_dataintegration_workspace.Test_workspace.Id,
+//				WorkspaceId: testWorkspaceOciDataintegrationWorkspace.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

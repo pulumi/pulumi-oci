@@ -30,13 +30,13 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadTokens = Oci.Jms.GetJavaDownloadsJavaDownloadTokens.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         DisplayName = @var.Java_download_token_display_name,
-        ///         FamilyVersion = @var.Java_download_token_family_version,
-        ///         Id = @var.Java_download_token_id,
-        ///         SearchByUser = @var.Java_download_token_search_by_user,
-        ///         State = @var.Java_download_token_state,
-        ///         Value = @var.Java_download_token_value,
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = javaDownloadTokenDisplayName,
+        ///         FamilyVersion = javaDownloadTokenFamilyVersion,
+        ///         Id = javaDownloadTokenId,
+        ///         SearchByUser = javaDownloadTokenSearchByUser,
+        ///         State = javaDownloadTokenState,
+        ///         Value = javaDownloadTokenValue,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadTokens = Oci.Jms.GetJavaDownloadsJavaDownloadTokens.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         DisplayName = @var.Java_download_token_display_name,
-        ///         FamilyVersion = @var.Java_download_token_family_version,
-        ///         Id = @var.Java_download_token_id,
-        ///         SearchByUser = @var.Java_download_token_search_by_user,
-        ///         State = @var.Java_download_token_state,
-        ///         Value = @var.Java_download_token_value,
+        ///         CompartmentId = tenancyOcid,
+        ///         DisplayName = javaDownloadTokenDisplayName,
+        ///         FamilyVersion = javaDownloadTokenFamilyVersion,
+        ///         Id = javaDownloadTokenId,
+        ///         SearchByUser = javaDownloadTokenSearchByUser,
+        ///         State = javaDownloadTokenState,
+        ///         Value = javaDownloadTokenValue,
         ///     });
         /// 
         /// });

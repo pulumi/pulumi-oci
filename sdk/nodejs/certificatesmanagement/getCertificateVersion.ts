@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificateVersion = oci.CertificatesManagement.getCertificateVersion({
- *     certificateId: oci_certificates_management_certificate.test_certificate.id,
- *     certificateVersionNumber: _var.certificate_version_certificate_version_number,
+ *     certificateId: testCertificate.id,
+ *     certificateVersionNumber: certificateVersionCertificateVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,8 +115,8 @@ export interface GetCertificateVersionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificateVersion = oci.CertificatesManagement.getCertificateVersion({
- *     certificateId: oci_certificates_management_certificate.test_certificate.id,
- *     certificateVersionNumber: _var.certificate_version_certificate_version_number,
+ *     certificateId: testCertificate.id,
+ *     certificateVersionNumber: certificateVersionCertificateVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

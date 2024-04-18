@@ -80,7 +80,7 @@ def get_message(deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_message = oci.GoldenGate.get_message(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
+    test_message = oci.GoldenGate.get_message(deployment_id=test_deployment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -113,7 +113,7 @@ def get_message_output(deployment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_message = oci.GoldenGate.get_message(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
+    test_message = oci.GoldenGate.get_message(deployment_id=test_deployment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalCluster = Oci.DatabaseManagement.GetExternalCluster.Invoke(new()
         ///     {
-        ///         ExternalClusterId = oci_database_management_external_cluster.Test_external_cluster.Id,
+        ///         ExternalClusterId = testExternalClusterOciDatabaseManagementExternalCluster.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalCluster = Oci.DatabaseManagement.GetExternalCluster.Invoke(new()
         ///     {
-        ///         ExternalClusterId = oci_database_management_external_cluster.Test_external_cluster.Id,
+        ///         ExternalClusterId = testExternalClusterOciDatabaseManagementExternalCluster.Id,
         ///     });
         /// 
         /// });

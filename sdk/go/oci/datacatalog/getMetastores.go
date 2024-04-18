@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetMetastores(ctx, &datacatalog.GetMetastoresArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Metastore_display_name),
-//				State:         pulumi.StringRef(_var.Metastore_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(metastoreDisplayName),
+//				State:         pulumi.StringRef(metastoreState),
 //			}, nil)
 //			if err != nil {
 //				return err

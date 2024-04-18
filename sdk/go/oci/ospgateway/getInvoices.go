@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OspGateway.GetInvoices(ctx, &ospgateway.GetInvoicesArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				OspHomeRegion:    _var.Invoice_osp_home_region,
-//				InvoiceId:        pulumi.StringRef(oci_osp_gateway_invoice.Test_invoice.Id),
-//				SearchText:       pulumi.StringRef(_var.Invoice_search_text),
-//				Statuses:         _var.Invoice_status,
-//				TimeInvoiceEnd:   pulumi.StringRef(_var.Invoice_time_invoice_end),
-//				TimeInvoiceStart: pulumi.StringRef(_var.Invoice_time_invoice_start),
-//				TimePaymentEnd:   pulumi.StringRef(_var.Invoice_time_payment_end),
-//				TimePaymentStart: pulumi.StringRef(_var.Invoice_time_payment_start),
-//				Types:            _var.Invoice_type,
+//				CompartmentId:    compartmentId,
+//				OspHomeRegion:    invoiceOspHomeRegion,
+//				InvoiceId:        pulumi.StringRef(testInvoice.Id),
+//				SearchText:       pulumi.StringRef(invoiceSearchText),
+//				Statuses:         invoiceStatus,
+//				TimeInvoiceEnd:   pulumi.StringRef(invoiceTimeInvoiceEnd),
+//				TimeInvoiceStart: pulumi.StringRef(invoiceTimeInvoiceStart),
+//				TimePaymentEnd:   pulumi.StringRef(invoiceTimePaymentEnd),
+//				TimePaymentStart: pulumi.StringRef(invoiceTimePaymentStart),
+//				Types:            invoiceType,
 //			}, nil)
 //			if err != nil {
 //				return err

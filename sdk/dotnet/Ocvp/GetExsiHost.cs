@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHost = Oci.Ocvp.GetExsiHost.Invoke(new()
         ///     {
-        ///         EsxiHostId = oci_ocvp_esxi_host.Test_esxi_host.Id,
+        ///         EsxiHostId = testEsxiHostOciOcvpEsxiHost.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testEsxiHost = Oci.Ocvp.GetExsiHost.Invoke(new()
         ///     {
-        ///         EsxiHostId = oci_ocvp_esxi_host.Test_esxi_host.Id,
+        ///         EsxiHostId = testEsxiHostOciOcvpEsxiHost.Id,
         ///     });
         /// 
         /// });

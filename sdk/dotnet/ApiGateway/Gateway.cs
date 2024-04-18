@@ -25,47 +25,47 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testGateway = new Oci.ApiGateway.Gateway("testGateway", new()
+    ///     var testGateway = new Oci.ApiGateway.Gateway("test_gateway", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EndpointType = @var.Gateway_endpoint_type,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         CertificateId = oci_apigateway_certificate.Test_certificate.Id,
+    ///         CompartmentId = compartmentId,
+    ///         EndpointType = gatewayEndpointType,
+    ///         SubnetId = testSubnet.Id,
+    ///         CertificateId = testCertificate.Id,
     ///         CaBundles = new[]
     ///         {
     ///             new Oci.ApiGateway.Inputs.GatewayCaBundleArgs
     ///             {
-    ///                 Type = @var.Gateway_ca_bundles_type,
-    ///                 CaBundleId = oci_apigateway_ca_bundle.Test_ca_bundle.Id,
-    ///                 CertificateAuthorityId = oci_apigateway_certificate_authority.Test_certificate_authority.Id,
+    ///                 Type = gatewayCaBundlesType,
+    ///                 CaBundleId = testCaBundle.Id,
+    ///                 CertificateAuthorityId = testCertificateAuthority.Id,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Gateway_display_name,
+    ///         DisplayName = gatewayDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         NetworkSecurityGroupIds = @var.Gateway_network_security_group_ids,
+    ///         NetworkSecurityGroupIds = gatewayNetworkSecurityGroupIds,
     ///         ResponseCacheDetails = new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsArgs
     ///         {
-    ///             Type = @var.Gateway_response_cache_details_type,
-    ///             AuthenticationSecretId = oci_vault_secret.Test_secret.Id,
-    ///             AuthenticationSecretVersionNumber = @var.Gateway_response_cache_details_authentication_secret_version_number,
-    ///             ConnectTimeoutInMs = @var.Gateway_response_cache_details_connect_timeout_in_ms,
-    ///             IsSslEnabled = @var.Gateway_response_cache_details_is_ssl_enabled,
-    ///             IsSslVerifyDisabled = @var.Gateway_response_cache_details_is_ssl_verify_disabled,
-    ///             ReadTimeoutInMs = @var.Gateway_response_cache_details_read_timeout_in_ms,
-    ///             SendTimeoutInMs = @var.Gateway_response_cache_details_send_timeout_in_ms,
+    ///             Type = gatewayResponseCacheDetailsType,
+    ///             AuthenticationSecretId = testSecret.Id,
+    ///             AuthenticationSecretVersionNumber = gatewayResponseCacheDetailsAuthenticationSecretVersionNumber,
+    ///             ConnectTimeoutInMs = gatewayResponseCacheDetailsConnectTimeoutInMs,
+    ///             IsSslEnabled = gatewayResponseCacheDetailsIsSslEnabled,
+    ///             IsSslVerifyDisabled = gatewayResponseCacheDetailsIsSslVerifyDisabled,
+    ///             ReadTimeoutInMs = gatewayResponseCacheDetailsReadTimeoutInMs,
+    ///             SendTimeoutInMs = gatewayResponseCacheDetailsSendTimeoutInMs,
     ///             Servers = new[]
     ///             {
     ///                 new Oci.ApiGateway.Inputs.GatewayResponseCacheDetailsServerArgs
     ///                 {
-    ///                     Host = @var.Gateway_response_cache_details_servers_host,
-    ///                     Port = @var.Gateway_response_cache_details_servers_port,
+    ///                     Host = gatewayResponseCacheDetailsServersHost,
+    ///                     Port = gatewayResponseCacheDetailsServersPort,
     ///                 },
     ///             },
     ///         },

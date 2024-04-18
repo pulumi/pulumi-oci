@@ -134,11 +134,11 @@ def get_build_pipelines(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipelines = oci.DevOps.get_build_pipelines(compartment_id=var["compartment_id"],
-        display_name=var["build_pipeline_display_name"],
-        id=var["build_pipeline_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["build_pipeline_state"])
+    test_build_pipelines = oci.DevOps.get_build_pipelines(compartment_id=compartment_id,
+        display_name=build_pipeline_display_name,
+        id=build_pipeline_id,
+        project_id=test_project["id"],
+        state=build_pipeline_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_build_pipelines_output(compartment_id: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipelines = oci.DevOps.get_build_pipelines(compartment_id=var["compartment_id"],
-        display_name=var["build_pipeline_display_name"],
-        id=var["build_pipeline_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["build_pipeline_state"])
+    test_build_pipelines = oci.DevOps.get_build_pipelines(compartment_id=compartment_id,
+        display_name=build_pipeline_display_name,
+        id=build_pipeline_id,
+        project_id=test_project["id"],
+        state=build_pipeline_state)
     ```
     <!--End PulumiCodeChooser -->
 

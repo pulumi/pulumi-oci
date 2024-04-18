@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExternalPluggableDatabase = Oci.Database.GetExternalPluggableDatabase.Invoke(new()
         ///     {
-        ///         ExternalPluggableDatabaseId = oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
+        ///         ExternalPluggableDatabaseId = testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExternalPluggableDatabase = Oci.Database.GetExternalPluggableDatabase.Invoke(new()
         ///     {
-        ///         ExternalPluggableDatabaseId = oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
+        ///         ExternalPluggableDatabaseId = testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.Id,
         ///     });
         /// 
         /// });

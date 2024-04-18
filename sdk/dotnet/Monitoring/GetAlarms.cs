@@ -38,10 +38,10 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarms = Oci.Monitoring.GetAlarms.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Alarm_compartment_id_in_subtree,
-        ///         DisplayName = @var.Alarm_display_name,
-        ///         State = @var.Alarm_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmCompartmentIdInSubtree,
+        ///         DisplayName = alarmDisplayName,
+        ///         State = alarmState,
         ///     });
         /// 
         /// });
@@ -78,10 +78,10 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarms = Oci.Monitoring.GetAlarms.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Alarm_compartment_id_in_subtree,
-        ///         DisplayName = @var.Alarm_display_name,
-        ///         State = @var.Alarm_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmCompartmentIdInSubtree,
+        ///         DisplayName = alarmDisplayName,
+        ///         State = alarmState,
         ///     });
         /// 
         /// });

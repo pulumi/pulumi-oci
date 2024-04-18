@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetPipeline(ctx, &datascience.GetPipelineArgs{
-//				PipelineId: oci_datascience_pipeline.Test_pipeline.Id,
+//				PipelineId: testPipelineOciDatasciencePipeline.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

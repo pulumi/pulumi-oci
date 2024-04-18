@@ -48,10 +48,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgRouteDistribution = new DrgRouteDistribution(&#34;testDrgRouteDistribution&#34;, DrgRouteDistributionArgs.builder()        
- *             .distributionType(var_.drg_route_distribution_distribution_type())
- *             .drgId(oci_core_drg.test_drg().id())
+ *             .distributionType(drgRouteDistributionDistributionType)
+ *             .drgId(testDrg.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.drg_route_distribution_display_name())
+ *             .displayName(drgRouteDistributionDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

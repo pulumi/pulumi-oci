@@ -25,11 +25,12 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNodePool = new Oci.ContainerEngine.NodePool("testNodePool", new()
+    ///     var testNodePool = new Oci.ContainerEngine.NodePool("test_node_pool", new()
     ///     {
-    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         NodeShape = @var.Node_pool_node_shape,
+    ///         ClusterId = testCluster.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = nodePoolName,
+    ///         NodeShape = nodePoolNodeShape,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -42,40 +43,40 @@ namespace Pulumi.Oci.ContainerEngine
     ///         {
     ///             new Oci.ContainerEngine.Inputs.NodePoolInitialNodeLabelArgs
     ///             {
-    ///                 Key = @var.Node_pool_initial_node_labels_key,
-    ///                 Value = @var.Node_pool_initial_node_labels_value,
+    ///                 Key = nodePoolInitialNodeLabelsKey,
+    ///                 Value = nodePoolInitialNodeLabelsValue,
     ///             },
     ///         },
-    ///         KubernetesVersion = @var.Node_pool_kubernetes_version,
+    ///         KubernetesVersion = nodePoolKubernetesVersion,
     ///         NodeConfigDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsArgs
     ///         {
     ///             PlacementConfigs = new[]
     ///             {
     ///                 new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigArgs
     ///                 {
-    ///                     AvailabilityDomain = @var.Node_pool_node_config_details_placement_configs_availability_domain,
-    ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                     CapacityReservationId = oci_containerengine_capacity_reservation.Test_capacity_reservation.Id,
-    ///                     FaultDomains = @var.Node_pool_node_config_details_placement_configs_fault_domains,
+    ///                     AvailabilityDomain = nodePoolNodeConfigDetailsPlacementConfigsAvailabilityDomain,
+    ///                     SubnetId = testSubnet.Id,
+    ///                     CapacityReservationId = testCapacityReservation.Id,
+    ///                     FaultDomains = nodePoolNodeConfigDetailsPlacementConfigsFaultDomains,
     ///                     PreemptibleNodeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs
     ///                     {
     ///                         PreemptionAction = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs
     ///                         {
-    ///                             Type = @var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
-    ///                             IsPreserveBootVolume = @var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+    ///                             Type = nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType,
+    ///                             IsPreserveBootVolume = nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume,
     ///                         },
     ///                     },
     ///                 },
     ///             },
-    ///             Size = @var.Node_pool_node_config_details_size,
-    ///             IsPvEncryptionInTransitEnabled = @var.Node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
+    ///             Size = nodePoolNodeConfigDetailsSize,
+    ///             IsPvEncryptionInTransitEnabled = nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled,
+    ///             KmsKeyId = testKey.Id,
     ///             NodePoolPodNetworkOptionDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs
     ///             {
-    ///                 CniType = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
-    ///                 MaxPodsPerNode = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
-    ///                 PodNsgIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
-    ///                 PodSubnetIds = @var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
+    ///                 CniType = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsCniType,
+    ///                 MaxPodsPerNode = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode,
+    ///                 PodNsgIds = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds,
+    ///                 PodSubnetIds = nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds,
     ///             },
     ///             DefinedTags = 
     ///             {
@@ -85,35 +86,35 @@ namespace Pulumi.Oci.ContainerEngine
     ///             {
     ///                 { "Department", "Finance" },
     ///             },
-    ///             NsgIds = @var.Node_pool_node_config_details_nsg_ids,
+    ///             NsgIds = nodePoolNodeConfigDetailsNsgIds,
     ///         },
     ///         NodeEvictionNodePoolSettings = new Oci.ContainerEngine.Inputs.NodePoolNodeEvictionNodePoolSettingsArgs
     ///         {
-    ///             EvictionGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
-    ///             IsForceDeleteAfterGraceDuration = @var.Node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+    ///             EvictionGraceDuration = nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration,
+    ///             IsForceDeleteAfterGraceDuration = nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration,
     ///         },
-    ///         NodeImageName = oci_core_image.Test_image.Name,
-    ///         NodeMetadata = @var.Node_pool_node_metadata,
+    ///         NodeImageName = testImage.Name,
+    ///         NodeMetadata = nodePoolNodeMetadata,
     ///         NodePoolCyclingDetails = new Oci.ContainerEngine.Inputs.NodePoolNodePoolCyclingDetailsArgs
     ///         {
-    ///             IsNodeCyclingEnabled = @var.Node_pool_node_pool_cycling_details_is_node_cycling_enabled,
-    ///             MaximumSurge = @var.Node_pool_node_pool_cycling_details_maximum_surge,
-    ///             MaximumUnavailable = @var.Node_pool_node_pool_cycling_details_maximum_unavailable,
+    ///             IsNodeCyclingEnabled = nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled,
+    ///             MaximumSurge = nodePoolNodePoolCyclingDetailsMaximumSurge,
+    ///             MaximumUnavailable = nodePoolNodePoolCyclingDetailsMaximumUnavailable,
     ///         },
     ///         NodeShapeConfig = new Oci.ContainerEngine.Inputs.NodePoolNodeShapeConfigArgs
     ///         {
-    ///             MemoryInGbs = @var.Node_pool_node_shape_config_memory_in_gbs,
-    ///             Ocpus = @var.Node_pool_node_shape_config_ocpus,
+    ///             MemoryInGbs = nodePoolNodeShapeConfigMemoryInGbs,
+    ///             Ocpus = nodePoolNodeShapeConfigOcpus,
     ///         },
     ///         NodeSourceDetails = new Oci.ContainerEngine.Inputs.NodePoolNodeSourceDetailsArgs
     ///         {
-    ///             ImageId = oci_core_image.Test_image.Id,
-    ///             SourceType = @var.Node_pool_node_source_details_source_type,
-    ///             BootVolumeSizeInGbs = @var.Node_pool_node_source_details_boot_volume_size_in_gbs,
+    ///             ImageId = testImage.Id,
+    ///             SourceType = nodePoolNodeSourceDetailsSourceType,
+    ///             BootVolumeSizeInGbs = nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
     ///         },
-    ///         QuantityPerSubnet = @var.Node_pool_quantity_per_subnet,
-    ///         SshPublicKey = @var.Node_pool_ssh_public_key,
-    ///         SubnetIds = @var.Node_pool_subnet_ids,
+    ///         QuantityPerSubnet = nodePoolQuantityPerSubnet,
+    ///         SshPublicKey = nodePoolSshPublicKey,
+    ///         SubnetIds = nodePoolSubnetIds,
     ///     });
     /// 
     /// });

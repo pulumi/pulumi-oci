@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaInstance = Oci.Oda.GetOdaInstance.Invoke(new()
         ///     {
-        ///         OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
+        ///         OdaInstanceId = testOdaInstanceOciOdaOdaInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaInstance = Oci.Oda.GetOdaInstance.Invoke(new()
         ///     {
-        ///         OdaInstanceId = oci_oda_oda_instance.Test_oda_instance.Id,
+        ///         OdaInstanceId = testOdaInstanceOciOdaOdaInstance.Id,
         ///     });
         /// 
         /// });

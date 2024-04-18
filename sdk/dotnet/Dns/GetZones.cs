@@ -32,16 +32,16 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testZones = Oci.Dns.GetZones.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Zone_name,
-        ///         NameContains = @var.Zone_name_contains,
-        ///         Scope = @var.Zone_scope,
-        ///         State = @var.Zone_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Zone_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Zone_time_created_less_than,
-        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-        ///         ViewId = oci_dns_view.Test_view.Id,
-        ///         ZoneType = @var.Zone_zone_type,
+        ///         CompartmentId = compartmentId,
+        ///         Name = zoneName,
+        ///         NameContains = zoneNameContains,
+        ///         Scope = zoneScope,
+        ///         State = zoneState,
+        ///         TimeCreatedGreaterThanOrEqualTo = zoneTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = zoneTimeCreatedLessThan,
+        ///         TsigKeyId = testTsigKey.Id,
+        ///         ViewId = testView.Id,
+        ///         ZoneType = zoneZoneType,
         ///     });
         /// 
         /// });
@@ -72,16 +72,16 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testZones = Oci.Dns.GetZones.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Zone_name,
-        ///         NameContains = @var.Zone_name_contains,
-        ///         Scope = @var.Zone_scope,
-        ///         State = @var.Zone_state,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Zone_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Zone_time_created_less_than,
-        ///         TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
-        ///         ViewId = oci_dns_view.Test_view.Id,
-        ///         ZoneType = @var.Zone_zone_type,
+        ///         CompartmentId = compartmentId,
+        ///         Name = zoneName,
+        ///         NameContains = zoneNameContains,
+        ///         Scope = zoneScope,
+        ///         State = zoneState,
+        ///         TimeCreatedGreaterThanOrEqualTo = zoneTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = zoneTimeCreatedLessThan,
+        ///         TsigKeyId = testTsigKey.Id,
+        ///         ViewId = testView.Id,
+        ///         ZoneType = zoneZoneType,
         ///     });
         /// 
         /// });

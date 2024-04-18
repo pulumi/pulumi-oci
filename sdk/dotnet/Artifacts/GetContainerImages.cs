@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImages = Oci.Artifacts.GetContainerImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Container_image_compartment_id_in_subtree,
-        ///         DisplayName = @var.Container_image_display_name,
-        ///         ImageId = oci_core_image.Test_image.Id,
-        ///         IsVersioned = @var.Container_image_is_versioned,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         RepositoryName = oci_artifacts_repository.Test_repository.Name,
-        ///         State = @var.Container_image_state,
-        ///         Version = @var.Container_image_version,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerImageCompartmentIdInSubtree,
+        ///         DisplayName = containerImageDisplayName,
+        ///         ImageId = testImage.Id,
+        ///         IsVersioned = containerImageIsVersioned,
+        ///         RepositoryId = testRepository.Id,
+        ///         RepositoryName = testRepository.Name,
+        ///         State = containerImageState,
+        ///         Version = containerImageVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImages = Oci.Artifacts.GetContainerImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Container_image_compartment_id_in_subtree,
-        ///         DisplayName = @var.Container_image_display_name,
-        ///         ImageId = oci_core_image.Test_image.Id,
-        ///         IsVersioned = @var.Container_image_is_versioned,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         RepositoryName = oci_artifacts_repository.Test_repository.Name,
-        ///         State = @var.Container_image_state,
-        ///         Version = @var.Container_image_version,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerImageCompartmentIdInSubtree,
+        ///         DisplayName = containerImageDisplayName,
+        ///         ImageId = testImage.Id,
+        ///         IsVersioned = containerImageIsVersioned,
+        ///         RepositoryId = testRepository.Id,
+        ///         RepositoryName = testRepository.Name,
+        ///         State = containerImageState,
+        ///         Version = containerImageVersion,
         ///     });
         /// 
         /// });

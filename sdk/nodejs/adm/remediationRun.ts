@@ -18,12 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemediationRun = new oci.adm.RemediationRun("testRemediationRun", {
- *     remediationRecipeId: oci_adm_remediation_recipe.test_remediation_recipe.id,
+ * const testRemediationRun = new oci.adm.RemediationRun("test_remediation_run", {
+ *     remediationRecipeId: testRemediationRecipe.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.remediation_run_display_name,
+ *     displayName: remediationRunDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

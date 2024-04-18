@@ -20,14 +20,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceGroups = oci.OsManagementHub.getManagedInstanceGroups({
- *     archType: _var.managed_instance_group_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.managed_instance_group_display_name,
- *     displayNameContains: _var.managed_instance_group_display_name_contains,
- *     managedInstanceGroupId: oci_os_management_hub_managed_instance_group.test_managed_instance_group.id,
- *     osFamily: _var.managed_instance_group_os_family,
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     state: _var.managed_instance_group_state,
+ *     archType: managedInstanceGroupArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: managedInstanceGroupDisplayName,
+ *     displayNameContains: managedInstanceGroupDisplayNameContains,
+ *     managedInstanceGroupId: testManagedInstanceGroup.id,
+ *     osFamily: managedInstanceGroupOsFamily,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     state: managedInstanceGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -139,14 +139,14 @@ export interface GetManagedInstanceGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceGroups = oci.OsManagementHub.getManagedInstanceGroups({
- *     archType: _var.managed_instance_group_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.managed_instance_group_display_name,
- *     displayNameContains: _var.managed_instance_group_display_name_contains,
- *     managedInstanceGroupId: oci_os_management_hub_managed_instance_group.test_managed_instance_group.id,
- *     osFamily: _var.managed_instance_group_os_family,
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     state: _var.managed_instance_group_state,
+ *     archType: managedInstanceGroupArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: managedInstanceGroupDisplayName,
+ *     displayNameContains: managedInstanceGroupDisplayNameContains,
+ *     managedInstanceGroupId: testManagedInstanceGroup.id,
+ *     osFamily: managedInstanceGroupOsFamily,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     state: managedInstanceGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

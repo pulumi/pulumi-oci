@@ -495,44 +495,44 @@ class VmClusterNetwork(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster_network = oci.database.VmClusterNetwork("testVmClusterNetwork",
-            compartment_id=var["compartment_id"],
-            display_name=var["vm_cluster_network_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        test_vm_cluster_network = oci.database.VmClusterNetwork("test_vm_cluster_network",
+            compartment_id=compartment_id,
+            display_name=vm_cluster_network_display_name,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
             scans=[oci.database.VmClusterNetworkScanArgs(
-                hostname=var["vm_cluster_network_scans_hostname"],
-                ips=var["vm_cluster_network_scans_ips"],
-                port=var["vm_cluster_network_scans_port"],
-                scan_listener_port_tcp=var["vm_cluster_network_scans_scan_listener_port_tcp"],
-                scan_listener_port_tcp_ssl=var["vm_cluster_network_scans_scan_listener_port_tcp_ssl"],
+                hostname=vm_cluster_network_scans_hostname,
+                ips=vm_cluster_network_scans_ips,
+                port=vm_cluster_network_scans_port,
+                scan_listener_port_tcp=vm_cluster_network_scans_scan_listener_port_tcp,
+                scan_listener_port_tcp_ssl=vm_cluster_network_scans_scan_listener_port_tcp_ssl,
             )],
             vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                network_type=var["vm_cluster_network_vm_networks_network_type"],
+                network_type=vm_cluster_network_vm_networks_network_type,
                 nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
-                    hostname=var["vm_cluster_network_vm_networks_nodes_hostname"],
-                    ip=var["vm_cluster_network_vm_networks_nodes_ip"],
-                    db_server_id=oci_database_db_server["test_db_server"]["id"],
-                    state=var["vm_cluster_network_vm_networks_nodes_state"],
-                    vip=var["vm_cluster_network_vm_networks_nodes_vip"],
-                    vip_hostname=var["vm_cluster_network_vm_networks_nodes_vip_hostname"],
+                    hostname=vm_cluster_network_vm_networks_nodes_hostname,
+                    ip=vm_cluster_network_vm_networks_nodes_ip,
+                    db_server_id=test_db_server["id"],
+                    state=vm_cluster_network_vm_networks_nodes_state,
+                    vip=vm_cluster_network_vm_networks_nodes_vip,
+                    vip_hostname=vm_cluster_network_vm_networks_nodes_vip_hostname,
                 )],
-                domain_name=oci_identity_domain["test_domain"]["name"],
-                gateway=var["vm_cluster_network_vm_networks_gateway"],
-                netmask=var["vm_cluster_network_vm_networks_netmask"],
-                vlan_id=var["vm_cluster_network_vm_networks_vlan_id"],
+                domain_name=test_domain["name"],
+                gateway=vm_cluster_network_vm_networks_gateway,
+                netmask=vm_cluster_network_vm_networks_netmask,
+                vlan_id=vm_cluster_network_vm_networks_vlan_id,
             )],
-            defined_tags=var["vm_cluster_network_defined_tags"],
-            dns=var["vm_cluster_network_dns"],
+            defined_tags=vm_cluster_network_defined_tags,
+            dns=vm_cluster_network_dns,
             dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
-                hostname=var["vm_cluster_network_dr_scans_hostname"],
-                ips=var["vm_cluster_network_dr_scans_ips"],
-                scan_listener_port_tcp=var["vm_cluster_network_dr_scans_scan_listener_port_tcp"],
+                hostname=vm_cluster_network_dr_scans_hostname,
+                ips=vm_cluster_network_dr_scans_ips,
+                scan_listener_port_tcp=vm_cluster_network_dr_scans_scan_listener_port_tcp,
             )],
             freeform_tags={
                 "Department": "Finance",
             },
-            ntps=var["vm_cluster_network_ntp"],
-            validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
+            ntps=vm_cluster_network_ntp,
+            validate_vm_cluster_network=vm_cluster_network_validate_vm_cluster_network)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -577,44 +577,44 @@ class VmClusterNetwork(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vm_cluster_network = oci.database.VmClusterNetwork("testVmClusterNetwork",
-            compartment_id=var["compartment_id"],
-            display_name=var["vm_cluster_network_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
+        test_vm_cluster_network = oci.database.VmClusterNetwork("test_vm_cluster_network",
+            compartment_id=compartment_id,
+            display_name=vm_cluster_network_display_name,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
             scans=[oci.database.VmClusterNetworkScanArgs(
-                hostname=var["vm_cluster_network_scans_hostname"],
-                ips=var["vm_cluster_network_scans_ips"],
-                port=var["vm_cluster_network_scans_port"],
-                scan_listener_port_tcp=var["vm_cluster_network_scans_scan_listener_port_tcp"],
-                scan_listener_port_tcp_ssl=var["vm_cluster_network_scans_scan_listener_port_tcp_ssl"],
+                hostname=vm_cluster_network_scans_hostname,
+                ips=vm_cluster_network_scans_ips,
+                port=vm_cluster_network_scans_port,
+                scan_listener_port_tcp=vm_cluster_network_scans_scan_listener_port_tcp,
+                scan_listener_port_tcp_ssl=vm_cluster_network_scans_scan_listener_port_tcp_ssl,
             )],
             vm_networks=[oci.database.VmClusterNetworkVmNetworkArgs(
-                network_type=var["vm_cluster_network_vm_networks_network_type"],
+                network_type=vm_cluster_network_vm_networks_network_type,
                 nodes=[oci.database.VmClusterNetworkVmNetworkNodeArgs(
-                    hostname=var["vm_cluster_network_vm_networks_nodes_hostname"],
-                    ip=var["vm_cluster_network_vm_networks_nodes_ip"],
-                    db_server_id=oci_database_db_server["test_db_server"]["id"],
-                    state=var["vm_cluster_network_vm_networks_nodes_state"],
-                    vip=var["vm_cluster_network_vm_networks_nodes_vip"],
-                    vip_hostname=var["vm_cluster_network_vm_networks_nodes_vip_hostname"],
+                    hostname=vm_cluster_network_vm_networks_nodes_hostname,
+                    ip=vm_cluster_network_vm_networks_nodes_ip,
+                    db_server_id=test_db_server["id"],
+                    state=vm_cluster_network_vm_networks_nodes_state,
+                    vip=vm_cluster_network_vm_networks_nodes_vip,
+                    vip_hostname=vm_cluster_network_vm_networks_nodes_vip_hostname,
                 )],
-                domain_name=oci_identity_domain["test_domain"]["name"],
-                gateway=var["vm_cluster_network_vm_networks_gateway"],
-                netmask=var["vm_cluster_network_vm_networks_netmask"],
-                vlan_id=var["vm_cluster_network_vm_networks_vlan_id"],
+                domain_name=test_domain["name"],
+                gateway=vm_cluster_network_vm_networks_gateway,
+                netmask=vm_cluster_network_vm_networks_netmask,
+                vlan_id=vm_cluster_network_vm_networks_vlan_id,
             )],
-            defined_tags=var["vm_cluster_network_defined_tags"],
-            dns=var["vm_cluster_network_dns"],
+            defined_tags=vm_cluster_network_defined_tags,
+            dns=vm_cluster_network_dns,
             dr_scans=[oci.database.VmClusterNetworkDrScanArgs(
-                hostname=var["vm_cluster_network_dr_scans_hostname"],
-                ips=var["vm_cluster_network_dr_scans_ips"],
-                scan_listener_port_tcp=var["vm_cluster_network_dr_scans_scan_listener_port_tcp"],
+                hostname=vm_cluster_network_dr_scans_hostname,
+                ips=vm_cluster_network_dr_scans_ips,
+                scan_listener_port_tcp=vm_cluster_network_dr_scans_scan_listener_port_tcp,
             )],
             freeform_tags={
                 "Department": "Finance",
             },
-            ntps=var["vm_cluster_network_ntp"],
-            validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
+            ntps=vm_cluster_network_ntp,
+            validate_vm_cluster_network=vm_cluster_network_validate_vm_cluster_network)
         ```
         <!--End PulumiCodeChooser -->
 

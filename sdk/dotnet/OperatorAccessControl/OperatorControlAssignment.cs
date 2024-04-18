@@ -25,26 +25,26 @@ namespace Pulumi.Oci.OperatorAccessControl
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOperatorControlAssignment = new Oci.OperatorAccessControl.OperatorControlAssignment("testOperatorControlAssignment", new()
+    ///     var testOperatorControlAssignment = new Oci.OperatorAccessControl.OperatorControlAssignment("test_operator_control_assignment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsEnforcedAlways = @var.Operator_control_assignment_is_enforced_always,
-    ///         OperatorControlId = oci_operator_access_control_operator_control.Test_operator_control.Id,
-    ///         ResourceCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         ResourceId = oci_operator_access_control_resource.Test_resource.Id,
-    ///         ResourceName = @var.Operator_control_assignment_resource_name,
-    ///         ResourceType = @var.Operator_control_assignment_resource_type,
-    ///         Comment = @var.Operator_control_assignment_comment,
-    ///         DefinedTags = @var.Operator_control_assignment_defined_tags,
-    ///         FreeformTags = @var.Operator_control_assignment_freeform_tags,
-    ///         IsAutoApproveDuringMaintenance = @var.Operator_control_assignment_is_auto_approve_during_maintenance,
-    ///         IsHypervisorLogForwarded = @var.Operator_control_assignment_is_hypervisor_log_forwarded,
-    ///         IsLogForwarded = @var.Operator_control_assignment_is_log_forwarded,
-    ///         RemoteSyslogServerAddress = @var.Operator_control_assignment_remote_syslog_server_address,
-    ///         RemoteSyslogServerCaCert = @var.Operator_control_assignment_remote_syslog_server_ca_cert,
-    ///         RemoteSyslogServerPort = @var.Operator_control_assignment_remote_syslog_server_port,
-    ///         TimeAssignmentFrom = @var.Operator_control_assignment_time_assignment_from,
-    ///         TimeAssignmentTo = @var.Operator_control_assignment_time_assignment_to,
+    ///         CompartmentId = compartmentId,
+    ///         IsEnforcedAlways = operatorControlAssignmentIsEnforcedAlways,
+    ///         OperatorControlId = testOperatorControl.Id,
+    ///         ResourceCompartmentId = testCompartment.Id,
+    ///         ResourceId = testResource.Id,
+    ///         ResourceName = operatorControlAssignmentResourceName,
+    ///         ResourceType = operatorControlAssignmentResourceType,
+    ///         Comment = operatorControlAssignmentComment,
+    ///         DefinedTags = operatorControlAssignmentDefinedTags,
+    ///         FreeformTags = operatorControlAssignmentFreeformTags,
+    ///         IsAutoApproveDuringMaintenance = operatorControlAssignmentIsAutoApproveDuringMaintenance,
+    ///         IsHypervisorLogForwarded = operatorControlAssignmentIsHypervisorLogForwarded,
+    ///         IsLogForwarded = operatorControlAssignmentIsLogForwarded,
+    ///         RemoteSyslogServerAddress = operatorControlAssignmentRemoteSyslogServerAddress,
+    ///         RemoteSyslogServerCaCert = operatorControlAssignmentRemoteSyslogServerCaCert,
+    ///         RemoteSyslogServerPort = operatorControlAssignmentRemoteSyslogServerPort,
+    ///         TimeAssignmentFrom = operatorControlAssignmentTimeAssignmentFrom,
+    ///         TimeAssignmentTo = operatorControlAssignmentTimeAssignmentTo,
     ///     });
     /// 
     /// });

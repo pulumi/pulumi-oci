@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentScheduledActivity = oci.Functions.getFusionEnvironmentScheduledActivity({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     scheduledActivityId: oci_fusion_apps_scheduled_activity.test_scheduled_activity.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     scheduledActivityId: testScheduledActivity.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,8 +123,8 @@ export interface GetFusionEnvironmentScheduledActivityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentScheduledActivity = oci.Functions.getFusionEnvironmentScheduledActivity({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
- *     scheduledActivityId: oci_fusion_apps_scheduled_activity.test_scheduled_activity.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     scheduledActivityId: testScheduledActivity.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

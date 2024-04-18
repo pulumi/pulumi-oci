@@ -428,27 +428,27 @@ class StreamPackagingConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream_packaging_config = oci.media_services.StreamPackagingConfig("testStreamPackagingConfig",
-            display_name=var["stream_packaging_config_display_name"],
-            distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-            segment_time_in_seconds=var["stream_packaging_config_segment_time_in_seconds"],
-            stream_packaging_format=var["stream_packaging_config_stream_packaging_format"],
+        test_stream_packaging_config = oci.media_services.StreamPackagingConfig("test_stream_packaging_config",
+            display_name=stream_packaging_config_display_name,
+            distribution_channel_id=test_channel["id"],
+            segment_time_in_seconds=stream_packaging_config_segment_time_in_seconds,
+            stream_packaging_format=stream_packaging_config_stream_packaging_format,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             encryption=oci.media_services.StreamPackagingConfigEncryptionArgs(
-                algorithm=var["stream_packaging_config_encryption_algorithm"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                algorithm=stream_packaging_config_encryption_algorithm,
+                kms_key_id=test_key["id"],
             ),
             freeform_tags={
                 "bar-key": "value",
             },
             locks=[oci.media_services.StreamPackagingConfigLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["stream_packaging_config_locks_type"],
-                message=var["stream_packaging_config_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["stream_packaging_config_locks_time_created"],
+                compartment_id=compartment_id,
+                type=stream_packaging_config_locks_type,
+                message=stream_packaging_config_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=stream_packaging_config_locks_time_created,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -494,27 +494,27 @@ class StreamPackagingConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_stream_packaging_config = oci.media_services.StreamPackagingConfig("testStreamPackagingConfig",
-            display_name=var["stream_packaging_config_display_name"],
-            distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-            segment_time_in_seconds=var["stream_packaging_config_segment_time_in_seconds"],
-            stream_packaging_format=var["stream_packaging_config_stream_packaging_format"],
+        test_stream_packaging_config = oci.media_services.StreamPackagingConfig("test_stream_packaging_config",
+            display_name=stream_packaging_config_display_name,
+            distribution_channel_id=test_channel["id"],
+            segment_time_in_seconds=stream_packaging_config_segment_time_in_seconds,
+            stream_packaging_format=stream_packaging_config_stream_packaging_format,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             encryption=oci.media_services.StreamPackagingConfigEncryptionArgs(
-                algorithm=var["stream_packaging_config_encryption_algorithm"],
-                kms_key_id=oci_kms_key["test_key"]["id"],
+                algorithm=stream_packaging_config_encryption_algorithm,
+                kms_key_id=test_key["id"],
             ),
             freeform_tags={
                 "bar-key": "value",
             },
             locks=[oci.media_services.StreamPackagingConfigLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["stream_packaging_config_locks_type"],
-                message=var["stream_packaging_config_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["stream_packaging_config_locks_time_created"],
+                compartment_id=compartment_id,
+                type=stream_packaging_config_locks_type,
+                message=stream_packaging_config_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=stream_packaging_config_locks_time_created,
             )])
         ```
         <!--End PulumiCodeChooser -->

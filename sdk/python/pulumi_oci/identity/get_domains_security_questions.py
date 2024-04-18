@@ -222,14 +222,14 @@ def get_domains_security_questions(attribute_sets: Optional[Sequence[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_security_questions = oci.Identity.get_domains_security_questions(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        security_question_count=var["security_question_security_question_count"],
-        security_question_filter=var["security_question_security_question_filter"],
+    test_security_questions = oci.Identity.get_domains_security_questions(idcs_endpoint=test_domain["url"],
+        security_question_count=security_question_security_question_count,
+        security_question_filter=security_question_security_question_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["security_question_authorization"],
-        resource_type_schema_version=var["security_question_resource_type_schema_version"],
-        start_index=var["security_question_start_index"])
+        authorization=security_question_authorization,
+        resource_type_schema_version=security_question_resource_type_schema_version,
+        start_index=security_question_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -303,14 +303,14 @@ def get_domains_security_questions_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_security_questions = oci.Identity.get_domains_security_questions(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        security_question_count=var["security_question_security_question_count"],
-        security_question_filter=var["security_question_security_question_filter"],
+    test_security_questions = oci.Identity.get_domains_security_questions(idcs_endpoint=test_domain["url"],
+        security_question_count=security_question_security_question_count,
+        security_question_filter=security_question_security_question_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["security_question_authorization"],
-        resource_type_schema_version=var["security_question_resource_type_schema_version"],
-        start_index=var["security_question_start_index"])
+        authorization=security_question_authorization,
+        resource_type_schema_version=security_question_resource_type_schema_version,
+        start_index=security_question_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNotificationTopic = oci.Ons.getNotificationTopic({
- *     topicId: oci_ons_notification_topic.test_notification_topic.id,
+ *     topicId: testNotificationTopicOciOnsNotificationTopic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,7 +105,7 @@ export interface GetNotificationTopicResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNotificationTopic = oci.Ons.getNotificationTopic({
- *     topicId: oci_ons_notification_topic.test_notification_topic.id,
+ *     topicId: testNotificationTopicOciOnsNotificationTopic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstancePoolLoadBalancerAttachment = oci.Core.getInstancePoolLoadBalancerAttachment({
- *     instancePoolId: oci_core_instance_pool.test_instance_pool.id,
- *     instancePoolLoadBalancerAttachmentId: oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment.id,
+ *     instancePoolId: testInstancePool.id,
+ *     instancePoolLoadBalancerAttachmentId: testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,8 +93,8 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstancePoolLoadBalancerAttachment = oci.Core.getInstancePoolLoadBalancerAttachment({
- *     instancePoolId: oci_core_instance_pool.test_instance_pool.id,
- *     instancePoolLoadBalancerAttachmentId: oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment.id,
+ *     instancePoolId: testInstancePool.id,
+ *     instancePoolLoadBalancerAttachmentId: testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

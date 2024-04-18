@@ -32,9 +32,9 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyDeploymentSecurityPolicyEntryStates = Oci.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStates.Invoke(new()
         ///     {
-        ///         SecurityPolicyDeploymentId = oci_data_safe_security_policy_deployment.Test_security_policy_deployment.Id,
-        ///         DeploymentStatus = @var.Security_policy_deployment_security_policy_entry_state_deployment_status,
-        ///         SecurityPolicyEntryId = oci_data_safe_security_policy_entry.Test_security_policy_entry.Id,
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
+        ///         DeploymentStatus = securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
+        ///         SecurityPolicyEntryId = testSecurityPolicyEntry.Id,
         ///     });
         /// 
         /// });
@@ -65,9 +65,9 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyDeploymentSecurityPolicyEntryStates = Oci.DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStates.Invoke(new()
         ///     {
-        ///         SecurityPolicyDeploymentId = oci_data_safe_security_policy_deployment.Test_security_policy_deployment.Id,
-        ///         DeploymentStatus = @var.Security_policy_deployment_security_policy_entry_state_deployment_status,
-        ///         SecurityPolicyEntryId = oci_data_safe_security_policy_entry.Test_security_policy_entry.Id,
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
+        ///         DeploymentStatus = securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
+        ///         SecurityPolicyEntryId = testSecurityPolicyEntry.Id,
         ///     });
         /// 
         /// });

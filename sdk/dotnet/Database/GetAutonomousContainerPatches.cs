@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousContainerPatches = Oci.Database.GetAutonomousContainerPatches.Invoke(new()
         ///     {
-        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AutonomousPatchType = @var.Autonomous_container_patch_autonomous_patch_type,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousPatchType = autonomousContainerPatchAutonomousPatchType,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousContainerPatches = Oci.Database.GetAutonomousContainerPatches.Invoke(new()
         ///     {
-        ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AutonomousPatchType = @var.Autonomous_container_patch_autonomous_patch_type,
+        ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousPatchType = autonomousContainerPatchAutonomousPatchType,
         ///     });
         /// 
         /// });

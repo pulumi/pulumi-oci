@@ -92,7 +92,7 @@ def get_managed_database_table_statistics(filters: Optional[Sequence[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=test_managed_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -129,7 +129,7 @@ def get_managed_database_table_statistics_output(filters: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database_table_statistics = oci.DatabaseManagement.get_managed_database_table_statistics(managed_database_id=test_managed_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

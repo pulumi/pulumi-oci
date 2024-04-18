@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowSteps = oci.Identity.getDomainsApprovalWorkflowSteps({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     approvalWorkflowStepCount: _var.approval_workflow_step_approval_workflow_step_count,
- *     approvalWorkflowStepFilter: _var.approval_workflow_step_approval_workflow_step_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     approvalWorkflowStepCount: approvalWorkflowStepApprovalWorkflowStepCount,
+ *     approvalWorkflowStepFilter: approvalWorkflowStepApprovalWorkflowStepFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_step_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_step_resource_type_schema_version,
- *     startIndex: _var.approval_workflow_step_start_index,
+ *     authorization: approvalWorkflowStepAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowStepResourceTypeSchemaVersion,
+ *     startIndex: approvalWorkflowStepStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsApprovalWorkflowStepsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowSteps = oci.Identity.getDomainsApprovalWorkflowSteps({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     approvalWorkflowStepCount: _var.approval_workflow_step_approval_workflow_step_count,
- *     approvalWorkflowStepFilter: _var.approval_workflow_step_approval_workflow_step_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     approvalWorkflowStepCount: approvalWorkflowStepApprovalWorkflowStepCount,
+ *     approvalWorkflowStepFilter: approvalWorkflowStepApprovalWorkflowStepFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_step_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_step_resource_type_schema_version,
- *     startIndex: _var.approval_workflow_step_start_index,
+ *     authorization: approvalWorkflowStepAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowStepResourceTypeSchemaVersion,
+ *     startIndex: approvalWorkflowStepStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

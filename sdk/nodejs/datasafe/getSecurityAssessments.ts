@@ -33,19 +33,19 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_compartment_id_in_subtree,
- *     displayName: _var.security_assessment_display_name,
- *     isBaseline: _var.security_assessment_is_baseline,
- *     isScheduleAssessment: _var.security_assessment_is_schedule_assessment,
- *     scheduleAssessmentId: oci_data_safe_schedule_assessment.test_schedule_assessment.id,
- *     state: _var.security_assessment_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.security_assessment_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.security_assessment_time_created_less_than,
- *     triggeredBy: _var.security_assessment_triggered_by,
- *     type: _var.security_assessment_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree,
+ *     displayName: securityAssessmentDisplayName,
+ *     isBaseline: securityAssessmentIsBaseline,
+ *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
+ *     scheduleAssessmentId: testScheduleAssessment.id,
+ *     state: securityAssessmentState,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: securityAssessmentTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: securityAssessmentTimeCreatedLessThan,
+ *     triggeredBy: securityAssessmentTriggeredBy,
+ *     type: securityAssessmentType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -206,19 +206,19 @@ export interface GetSecurityAssessmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessments = oci.DataSafe.getSecurityAssessments({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_compartment_id_in_subtree,
- *     displayName: _var.security_assessment_display_name,
- *     isBaseline: _var.security_assessment_is_baseline,
- *     isScheduleAssessment: _var.security_assessment_is_schedule_assessment,
- *     scheduleAssessmentId: oci_data_safe_schedule_assessment.test_schedule_assessment.id,
- *     state: _var.security_assessment_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.security_assessment_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.security_assessment_time_created_less_than,
- *     triggeredBy: _var.security_assessment_triggered_by,
- *     type: _var.security_assessment_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentCompartmentIdInSubtree,
+ *     displayName: securityAssessmentDisplayName,
+ *     isBaseline: securityAssessmentIsBaseline,
+ *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
+ *     scheduleAssessmentId: testScheduleAssessment.id,
+ *     state: securityAssessmentState,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: securityAssessmentTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: securityAssessmentTimeCreatedLessThan,
+ *     triggeredBy: securityAssessmentTriggeredBy,
+ *     type: securityAssessmentType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

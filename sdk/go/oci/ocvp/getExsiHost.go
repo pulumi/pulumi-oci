@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetExsiHost(ctx, &ocvp.GetExsiHostArgs{
-//				EsxiHostId: oci_ocvp_esxi_host.Test_esxi_host.Id,
+//				EsxiHostId: testEsxiHostOciOcvpEsxiHost.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

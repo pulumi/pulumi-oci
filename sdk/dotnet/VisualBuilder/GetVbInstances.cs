@@ -30,9 +30,9 @@ namespace Pulumi.Oci.VisualBuilder
         /// {
         ///     var testVbInstances = Oci.VisualBuilder.GetVbInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vb_instance_display_name,
-        ///         State = @var.Vb_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vbInstanceDisplayName,
+        ///         State = vbInstanceState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.VisualBuilder
         /// {
         ///     var testVbInstances = Oci.VisualBuilder.GetVbInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vb_instance_display_name,
-        ///         State = @var.Vb_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vbInstanceDisplayName,
+        ///         State = vbInstanceState,
         ///     });
         /// 
         /// });

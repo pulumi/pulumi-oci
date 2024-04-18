@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Analytics
         /// {
         ///     var testAnalyticsInstance = Oci.Analytics.GetAnalyticsInstance.Invoke(new()
         ///     {
-        ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
+        ///         AnalyticsInstanceId = testAnalyticsInstanceOciAnalyticsAnalyticsInstance.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Analytics
         /// {
         ///     var testAnalyticsInstance = Oci.Analytics.GetAnalyticsInstance.Invoke(new()
         ///     {
-        ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
+        ///         AnalyticsInstanceId = testAnalyticsInstanceOciAnalyticsAnalyticsInstance.Id,
         ///     });
         /// 
         /// });

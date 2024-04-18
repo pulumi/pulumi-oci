@@ -25,24 +25,25 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceApplicationPatch = new Oci.DataIntegration.WorkspaceApplicationPatch("testWorkspaceApplicationPatch", new()
+    ///     var testWorkspaceApplicationPatch = new Oci.DataIntegration.WorkspaceApplicationPatch("test_workspace_application_patch", new()
     ///     {
-    ///         ApplicationKey = @var.Workspace_application_patch_application_key,
-    ///         Identifier = @var.Workspace_application_patch_identifier,
-    ///         ObjectKeys = @var.Workspace_application_patch_object_keys,
-    ///         PatchType = @var.Workspace_application_patch_patch_type,
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         Description = @var.Workspace_application_patch_description,
-    ///         Key = @var.Workspace_application_patch_key,
-    ///         ModelVersion = @var.Workspace_application_patch_model_version,
-    ///         ObjectStatus = @var.Workspace_application_patch_object_status,
+    ///         ApplicationKey = workspaceApplicationPatchApplicationKey,
+    ///         Identifier = workspaceApplicationPatchIdentifier,
+    ///         Name = workspaceApplicationPatchName,
+    ///         ObjectKeys = workspaceApplicationPatchObjectKeys,
+    ///         PatchType = workspaceApplicationPatchPatchType,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         Description = workspaceApplicationPatchDescription,
+    ///         Key = workspaceApplicationPatchKey,
+    ///         ModelVersion = workspaceApplicationPatchModelVersion,
+    ///         ObjectStatus = workspaceApplicationPatchObjectStatus,
     ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceApplicationPatchRegistryMetadataArgs
     ///         {
-    ///             AggregatorKey = @var.Workspace_application_patch_registry_metadata_aggregator_key,
-    ///             IsFavorite = @var.Workspace_application_patch_registry_metadata_is_favorite,
-    ///             Key = @var.Workspace_application_patch_registry_metadata_key,
-    ///             Labels = @var.Workspace_application_patch_registry_metadata_labels,
-    ///             RegistryVersion = @var.Workspace_application_patch_registry_metadata_registry_version,
+    ///             AggregatorKey = workspaceApplicationPatchRegistryMetadataAggregatorKey,
+    ///             IsFavorite = workspaceApplicationPatchRegistryMetadataIsFavorite,
+    ///             Key = workspaceApplicationPatchRegistryMetadataKey,
+    ///             Labels = workspaceApplicationPatchRegistryMetadataLabels,
+    ///             RegistryVersion = workspaceApplicationPatchRegistryMetadataRegistryVersion,
     ///         },
     ///     });
     /// 

@@ -26,12 +26,13 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOperationsInsightsWarehouseUser = new Oci.Opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", new()
+    ///     var testOperationsInsightsWarehouseUser = new Oci.Opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ConnectionPassword = @var.Operations_insights_warehouse_user_connection_password,
-    ///         IsAwrDataAccess = @var.Operations_insights_warehouse_user_is_awr_data_access,
-    ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ConnectionPassword = operationsInsightsWarehouseUserConnectionPassword,
+    ///         IsAwrDataAccess = operationsInsightsWarehouseUserIsAwrDataAccess,
+    ///         Name = operationsInsightsWarehouseUserName,
+    ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -40,8 +41,8 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsEmDataAccess = @var.Operations_insights_warehouse_user_is_em_data_access,
-    ///         IsOpsiDataAccess = @var.Operations_insights_warehouse_user_is_opsi_data_access,
+    ///         IsEmDataAccess = operationsInsightsWarehouseUserIsEmDataAccess,
+    ///         IsOpsiDataAccess = operationsInsightsWarehouseUserIsOpsiDataAccess,
     ///     });
     /// 
     /// });

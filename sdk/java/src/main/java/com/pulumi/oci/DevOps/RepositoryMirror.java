@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRepositoryMirror = new RepositoryMirror(&#34;testRepositoryMirror&#34;, RepositoryMirrorArgs.builder()        
- *             .repositoryId(oci_devops_repository.test_repository().id())
+ *             .repositoryId(testRepository.id())
  *             .build());
  * 
  *     }

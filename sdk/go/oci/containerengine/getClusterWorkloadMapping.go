@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetClusterWorkloadMapping(ctx, &containerengine.GetClusterWorkloadMappingArgs{
-//				ClusterId:         oci_containerengine_cluster.Test_cluster.Id,
-//				WorkloadMappingId: oci_containerengine_workload_mapping.Test_workload_mapping.Id,
+//				ClusterId:         testCluster.Id,
+//				WorkloadMappingId: testWorkloadMapping.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

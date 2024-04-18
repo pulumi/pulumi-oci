@@ -32,13 +32,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetLifecycleEnvironments(ctx, &osmanagementhub.GetLifecycleEnvironmentsArgs{
-//				ArchType:               pulumi.StringRef(_var.Lifecycle_environment_arch_type),
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				DisplayNames:           _var.Lifecycle_environment_display_name,
-//				DisplayNameContains:    pulumi.StringRef(_var.Lifecycle_environment_display_name_contains),
-//				LifecycleEnvironmentId: pulumi.StringRef(oci_os_management_hub_lifecycle_environment.Test_lifecycle_environment.Id),
-//				OsFamily:               pulumi.StringRef(_var.Lifecycle_environment_os_family),
-//				State:                  pulumi.StringRef(_var.Lifecycle_environment_state),
+//				ArchType:               pulumi.StringRef(lifecycleEnvironmentArchType),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				DisplayNames:           lifecycleEnvironmentDisplayName,
+//				DisplayNameContains:    pulumi.StringRef(lifecycleEnvironmentDisplayNameContains),
+//				LifecycleEnvironmentId: pulumi.StringRef(testLifecycleEnvironment.Id),
+//				OsFamily:               pulumi.StringRef(lifecycleEnvironmentOsFamily),
+//				State:                  pulumi.StringRef(lifecycleEnvironmentState),
 //			}, nil)
 //			if err != nil {
 //				return err

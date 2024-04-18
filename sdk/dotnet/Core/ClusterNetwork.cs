@@ -39,20 +39,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testClusterNetwork = new Oci.Core.ClusterNetwork("testClusterNetwork", new()
+    ///     var testClusterNetwork = new Oci.Core.ClusterNetwork("test_cluster_network", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         InstancePools = new[]
     ///         {
     ///             new Oci.Core.Inputs.ClusterNetworkInstancePoolArgs
     ///             {
-    ///                 InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
-    ///                 Size = @var.Cluster_network_instance_pools_size,
+    ///                 InstanceConfigurationId = testInstanceConfiguration.Id,
+    ///                 Size = clusterNetworkInstancePoolsSize,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },
     ///                 },
-    ///                 DisplayName = @var.Cluster_network_instance_pools_display_name,
+    ///                 DisplayName = clusterNetworkInstancePoolsDisplayName,
     ///                 FreeformTags = 
     ///                 {
     ///                     { "Department", "Finance" },
@@ -61,46 +61,46 @@ namespace Pulumi.Oci.Core
     ///         },
     ///         PlacementConfiguration = new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationArgs
     ///         {
-    ///             AvailabilityDomain = @var.Cluster_network_placement_configuration_availability_domain,
+    ///             AvailabilityDomain = clusterNetworkPlacementConfigurationAvailabilityDomain,
     ///             PrimaryVnicSubnets = new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsArgs
     ///             {
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                 SubnetId = testSubnet.Id,
     ///                 Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                 {
     ///                     new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                     {
-    ///                         Ipv6subnetCidr = @var.Cluster_network_placement_configuration_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                         Ipv6subnetCidr = clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                     },
     ///                 },
-    ///                 IsAssignIpv6ip = @var.Cluster_network_placement_configuration_primary_vnic_subnets_is_assign_ipv6ip,
+    ///                 IsAssignIpv6ip = clusterNetworkPlacementConfigurationPrimaryVnicSubnetsIsAssignIpv6ip,
     ///             },
     ///             SecondaryVnicSubnets = new[]
     ///             {
     ///                 new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetArgs
     ///                 {
-    ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                     DisplayName = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_display_name,
+    ///                     SubnetId = testSubnet.Id,
+    ///                     DisplayName = clusterNetworkPlacementConfigurationSecondaryVnicSubnetsDisplayName,
     ///                     Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                     {
     ///                         new Oci.Core.Inputs.ClusterNetworkPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs
     ///                         {
-    ///                             Ipv6subnetCidr = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                             Ipv6subnetCidr = clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                         },
     ///                     },
-    ///                     IsAssignIpv6ip = @var.Cluster_network_placement_configuration_secondary_vnic_subnets_is_assign_ipv6ip,
+    ///                     IsAssignIpv6ip = clusterNetworkPlacementConfigurationSecondaryVnicSubnetsIsAssignIpv6ip,
     ///                 },
     ///             },
     ///         },
     ///         ClusterConfiguration = new Oci.Core.Inputs.ClusterNetworkClusterConfigurationArgs
     ///         {
-    ///             HpcIslandId = oci_core_hpc_island.Test_hpc_island.Id,
-    ///             NetworkBlockIds = @var.Cluster_network_cluster_configuration_network_block_ids,
+    ///             HpcIslandId = testHpcIsland.Id,
+    ///             NetworkBlockIds = clusterNetworkClusterConfigurationNetworkBlockIds,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Cluster_network_display_name,
+    ///         DisplayName = clusterNetworkDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

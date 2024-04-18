@@ -144,11 +144,11 @@ def get_software_source_module_streams(filters: Optional[Sequence[pulumi.InputTy
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        is_latest=var["software_source_module_stream_is_latest"],
-        module_name=var["software_source_module_stream_module_name"],
-        module_name_contains=var["software_source_module_stream_module_name_contains"],
-        name=var["software_source_module_stream_name"])
+    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=test_software_source["id"],
+        is_latest=software_source_module_stream_is_latest,
+        module_name=software_source_module_stream_module_name,
+        module_name_contains=software_source_module_stream_module_name_contains,
+        name=software_source_module_stream_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -201,11 +201,11 @@ def get_software_source_module_streams_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        is_latest=var["software_source_module_stream_is_latest"],
-        module_name=var["software_source_module_stream_module_name"],
-        module_name_contains=var["software_source_module_stream_module_name_contains"],
-        name=var["software_source_module_stream_name"])
+    test_software_source_module_streams = oci.OsManagementHub.get_software_source_module_streams(software_source_id=test_software_source["id"],
+        is_latest=software_source_module_stream_is_latest,
+        module_name=software_source_module_stream_module_name,
+        module_name_contains=software_source_module_stream_module_name_contains,
+        name=software_source_module_stream_name)
     ```
     <!--End PulumiCodeChooser -->
 

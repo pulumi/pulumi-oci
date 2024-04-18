@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaLicense = Oci.Jms.GetJavaDownloadsJavaLicense.Invoke(new()
         ///     {
-        ///         LicenseType = @var.Java_license_license_type,
+        ///         LicenseType = javaLicenseLicenseType,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaLicense = Oci.Jms.GetJavaDownloadsJavaLicense.Invoke(new()
         ///     {
-        ///         LicenseType = @var.Java_license_license_type,
+        ///         LicenseType = javaLicenseLicenseType,
         ///     });
         /// 
         /// });

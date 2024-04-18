@@ -62,38 +62,38 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewMountTarget(ctx, "testMountTarget", &FileStorage.MountTargetArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Mount_target_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := FileStorage.NewMountTarget(ctx, "test_mount_target", &FileStorage.MountTargetArgs{
+//				AvailabilityDomain: pulumi.Any(mountTargetAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				SubnetId:           pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Mount_target_display_name),
+//				DisplayName: pulumi.Any(mountTargetDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				HostnameLabel: pulumi.Any(_var.Mount_target_hostname_label),
-//				IdmapType:     pulumi.Any(_var.Mount_target_idmap_type),
-//				IpAddress:     pulumi.Any(_var.Mount_target_ip_address),
+//				HostnameLabel: pulumi.Any(mountTargetHostnameLabel),
+//				IdmapType:     pulumi.Any(mountTargetIdmapType),
+//				IpAddress:     pulumi.Any(mountTargetIpAddress),
 //				Kerberos: &filestorage.MountTargetKerberosArgs{
-//					KerberosRealm:              pulumi.Any(_var.Mount_target_kerberos_kerberos_realm),
-//					BackupKeyTabSecretVersion:  pulumi.Any(_var.Mount_target_kerberos_backup_key_tab_secret_version),
-//					CurrentKeyTabSecretVersion: pulumi.Any(_var.Mount_target_kerberos_current_key_tab_secret_version),
-//					IsKerberosEnabled:          pulumi.Any(_var.Mount_target_kerberos_is_kerberos_enabled),
-//					KeyTabSecretId:             pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					KerberosRealm:              pulumi.Any(mountTargetKerberosKerberosRealm),
+//					BackupKeyTabSecretVersion:  pulumi.Any(mountTargetKerberosBackupKeyTabSecretVersion),
+//					CurrentKeyTabSecretVersion: pulumi.Any(mountTargetKerberosCurrentKeyTabSecretVersion),
+//					IsKerberosEnabled:          pulumi.Any(mountTargetKerberosIsKerberosEnabled),
+//					KeyTabSecretId:             pulumi.Any(testSecret.Id),
 //				},
 //				LdapIdmap: &filestorage.MountTargetLdapIdmapArgs{
-//					CacheLifetimeSeconds:         pulumi.Any(_var.Mount_target_ldap_idmap_cache_lifetime_seconds),
-//					CacheRefreshIntervalSeconds:  pulumi.Any(_var.Mount_target_ldap_idmap_cache_refresh_interval_seconds),
-//					GroupSearchBase:              pulumi.Any(_var.Mount_target_ldap_idmap_group_search_base),
-//					NegativeCacheLifetimeSeconds: pulumi.Any(_var.Mount_target_ldap_idmap_negative_cache_lifetime_seconds),
-//					OutboundConnector1id:         pulumi.Any(oci_file_storage_outbound_connector1.Test_outbound_connector1.Id),
-//					OutboundConnector2id:         pulumi.Any(oci_file_storage_outbound_connector2.Test_outbound_connector2.Id),
-//					SchemaType:                   pulumi.Any(_var.Mount_target_ldap_idmap_schema_type),
-//					UserSearchBase:               pulumi.Any(_var.Mount_target_ldap_idmap_user_search_base),
+//					CacheLifetimeSeconds:         pulumi.Any(mountTargetLdapIdmapCacheLifetimeSeconds),
+//					CacheRefreshIntervalSeconds:  pulumi.Any(mountTargetLdapIdmapCacheRefreshIntervalSeconds),
+//					GroupSearchBase:              pulumi.Any(mountTargetLdapIdmapGroupSearchBase),
+//					NegativeCacheLifetimeSeconds: pulumi.Any(mountTargetLdapIdmapNegativeCacheLifetimeSeconds),
+//					OutboundConnector1id:         pulumi.Any(testOutboundConnector1.Id),
+//					OutboundConnector2id:         pulumi.Any(testOutboundConnector2.Id),
+//					SchemaType:                   pulumi.Any(mountTargetLdapIdmapSchemaType),
+//					UserSearchBase:               pulumi.Any(mountTargetLdapIdmapUserSearchBase),
 //				},
-//				NsgIds: pulumi.Any(_var.Mount_target_nsg_ids),
+//				NsgIds: pulumi.Any(mountTargetNsgIds),
 //			})
 //			if err != nil {
 //				return err

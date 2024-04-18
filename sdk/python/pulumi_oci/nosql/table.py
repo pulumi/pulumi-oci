@@ -452,19 +452,20 @@ class Table(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_table = oci.nosql.Table("testTable",
-            compartment_id=var["compartment_id"],
-            ddl_statement=var["table_ddl_statement"],
-            defined_tags=var["table_defined_tags"],
+        test_table = oci.nosql.Table("test_table",
+            compartment_id=compartment_id,
+            ddl_statement=table_ddl_statement,
+            name=table_name,
+            defined_tags=table_defined_tags,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_reclaimable=var["table_is_auto_reclaimable"],
+            is_auto_reclaimable=table_is_auto_reclaimable,
             table_limits=oci.nosql.TableTableLimitsArgs(
-                max_read_units=var["table_table_limits_max_read_units"],
-                max_storage_in_gbs=var["table_table_limits_max_storage_in_gbs"],
-                max_write_units=var["table_table_limits_max_write_units"],
-                capacity_mode=var["table_table_limits_capacity_mode"],
+                max_read_units=table_table_limits_max_read_units,
+                max_storage_in_gbs=table_table_limits_max_storage_in_gbs,
+                max_write_units=table_table_limits_max_write_units,
+                capacity_mode=table_table_limits_capacity_mode,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -505,19 +506,20 @@ class Table(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_table = oci.nosql.Table("testTable",
-            compartment_id=var["compartment_id"],
-            ddl_statement=var["table_ddl_statement"],
-            defined_tags=var["table_defined_tags"],
+        test_table = oci.nosql.Table("test_table",
+            compartment_id=compartment_id,
+            ddl_statement=table_ddl_statement,
+            name=table_name,
+            defined_tags=table_defined_tags,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_reclaimable=var["table_is_auto_reclaimable"],
+            is_auto_reclaimable=table_is_auto_reclaimable,
             table_limits=oci.nosql.TableTableLimitsArgs(
-                max_read_units=var["table_table_limits_max_read_units"],
-                max_storage_in_gbs=var["table_table_limits_max_storage_in_gbs"],
-                max_write_units=var["table_table_limits_max_write_units"],
-                capacity_mode=var["table_table_limits_capacity_mode"],
+                max_read_units=table_table_limits_max_read_units,
+                max_storage_in_gbs=table_table_limits_max_storage_in_gbs,
+                max_write_units=table_table_limits_max_write_units,
+                capacity_mode=table_table_limits_capacity_mode,
             ))
         ```
         <!--End PulumiCodeChooser -->

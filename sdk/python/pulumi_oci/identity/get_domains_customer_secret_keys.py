@@ -210,14 +210,14 @@ def get_domains_customer_secret_keys(attribute_sets: Optional[Sequence[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_domains_customer_secret_keys(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        customer_secret_key_count=var["customer_secret_key_customer_secret_key_count"],
-        customer_secret_key_filter=var["customer_secret_key_customer_secret_key_filter"],
+    test_customer_secret_keys = oci.Identity.get_domains_customer_secret_keys(idcs_endpoint=test_domain["url"],
+        customer_secret_key_count=customer_secret_key_customer_secret_key_count,
+        customer_secret_key_filter=customer_secret_key_customer_secret_key_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["customer_secret_key_authorization"],
-        resource_type_schema_version=var["customer_secret_key_resource_type_schema_version"],
-        start_index=var["customer_secret_key_start_index"])
+        authorization=customer_secret_key_authorization,
+        resource_type_schema_version=customer_secret_key_resource_type_schema_version,
+        start_index=customer_secret_key_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_customer_secret_keys_output(attribute_sets: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_customer_secret_keys = oci.Identity.get_domains_customer_secret_keys(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        customer_secret_key_count=var["customer_secret_key_customer_secret_key_count"],
-        customer_secret_key_filter=var["customer_secret_key_customer_secret_key_filter"],
+    test_customer_secret_keys = oci.Identity.get_domains_customer_secret_keys(idcs_endpoint=test_domain["url"],
+        customer_secret_key_count=customer_secret_key_customer_secret_key_count,
+        customer_secret_key_filter=customer_secret_key_customer_secret_key_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["customer_secret_key_authorization"],
-        resource_type_schema_version=var["customer_secret_key_resource_type_schema_version"],
-        start_index=var["customer_secret_key_start_index"])
+        authorization=customer_secret_key_authorization,
+        resource_type_schema_version=customer_secret_key_resource_type_schema_version,
+        start_index=customer_secret_key_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

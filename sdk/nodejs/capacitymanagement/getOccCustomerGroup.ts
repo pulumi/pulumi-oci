@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOccCustomerGroup = oci.CapacityManagement.getOccCustomerGroup({
- *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
+ *     occCustomerGroupId: testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,7 +116,7 @@ export interface GetOccCustomerGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOccCustomerGroup = oci.CapacityManagement.getOccCustomerGroup({
- *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
+ *     occCustomerGroupId: testOccCustomerGroupOciCapacityManagementOccCustomerGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,12 +30,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testAccessRequests = Oci.OperatorAccessControl.GetAccessRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ResourceName = @var.Access_request_resource_name,
-        ///         ResourceType = @var.Access_request_resource_type,
-        ///         State = @var.Access_request_state,
-        ///         TimeEnd = @var.Access_request_time_end,
-        ///         TimeStart = @var.Access_request_time_start,
+        ///         CompartmentId = compartmentId,
+        ///         ResourceName = accessRequestResourceName,
+        ///         ResourceType = accessRequestResourceType,
+        ///         State = accessRequestState,
+        ///         TimeEnd = accessRequestTimeEnd,
+        ///         TimeStart = accessRequestTimeStart,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testAccessRequests = Oci.OperatorAccessControl.GetAccessRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ResourceName = @var.Access_request_resource_name,
-        ///         ResourceType = @var.Access_request_resource_type,
-        ///         State = @var.Access_request_state,
-        ///         TimeEnd = @var.Access_request_time_end,
-        ///         TimeStart = @var.Access_request_time_start,
+        ///         CompartmentId = compartmentId,
+        ///         ResourceName = accessRequestResourceName,
+        ///         ResourceType = accessRequestResourceType,
+        ///         State = accessRequestState,
+        ///         TimeEnd = accessRequestTimeEnd,
+        ///         TimeStart = accessRequestTimeStart,
         ///     });
         /// 
         /// });

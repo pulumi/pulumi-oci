@@ -24,24 +24,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFleet = new oci.jms.Fleet("testFleet", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.fleet_display_name,
+ * const testFleet = new oci.jms.Fleet("test_fleet", {
+ *     compartmentId: compartmentId,
+ *     displayName: fleetDisplayName,
  *     inventoryLog: {
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.fleet_description,
+ *     description: fleetDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAdvancedFeaturesEnabled: _var.fleet_is_advanced_features_enabled,
+ *     isAdvancedFeaturesEnabled: fleetIsAdvancedFeaturesEnabled,
  *     operationLog: {
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
  *     },
  * });
  * ```

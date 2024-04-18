@@ -31,19 +31,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSensitiveTypes(ctx, &datasafe.GetSensitiveTypesArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.Sensitive_type_access_level),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Sensitive_type_compartment_id_in_subtree),
-//				DefaultMaskingFormatId:          pulumi.StringRef(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
-//				DisplayName:                     pulumi.StringRef(_var.Sensitive_type_display_name),
-//				EntityType:                      pulumi.StringRef(_var.Sensitive_type_entity_type),
-//				IsCommon:                        pulumi.BoolRef(_var.Sensitive_type_is_common),
-//				ParentCategoryId:                pulumi.StringRef(oci_marketplace_category.Test_category.Id),
-//				SensitiveTypeId:                 pulumi.StringRef(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
-//				SensitiveTypeSource:             pulumi.StringRef(_var.Sensitive_type_sensitive_type_source),
-//				State:                           pulumi.StringRef(_var.Sensitive_type_state),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Sensitive_type_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Sensitive_type_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(sensitiveTypeAccessLevel),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(sensitiveTypeCompartmentIdInSubtree),
+//				DefaultMaskingFormatId:          pulumi.StringRef(testDefaultMaskingFormat.Id),
+//				DisplayName:                     pulumi.StringRef(sensitiveTypeDisplayName),
+//				EntityType:                      pulumi.StringRef(sensitiveTypeEntityType),
+//				IsCommon:                        pulumi.BoolRef(sensitiveTypeIsCommon),
+//				ParentCategoryId:                pulumi.StringRef(testCategory.Id),
+//				SensitiveTypeId:                 pulumi.StringRef(testSensitiveType.Id),
+//				SensitiveTypeSource:             pulumi.StringRef(sensitiveTypeSensitiveTypeSource),
+//				State:                           pulumi.StringRef(sensitiveTypeState),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(sensitiveTypeTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(sensitiveTypeTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -247,7 +247,7 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=oci_opsi_operations_insights_private_endpoint["test_operations_insights_private_endpoint"]["id"])
+    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=test_operations_insights_private_endpoint_oci_opsi_operations_insights_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -294,7 +294,7 @@ def get_operations_insights_private_endpoint_output(operations_insights_private_
     import pulumi
     import pulumi_oci as oci
 
-    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=oci_opsi_operations_insights_private_endpoint["test_operations_insights_private_endpoint"]["id"])
+    test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=test_operations_insights_private_endpoint_oci_opsi_operations_insights_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

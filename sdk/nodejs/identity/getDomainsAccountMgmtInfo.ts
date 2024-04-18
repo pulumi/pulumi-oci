@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountMgmtInfo = oci.Identity.getDomainsAccountMgmtInfo({
- *     accountMgmtInfoId: oci_identity_domains_account_mgmt_info.test_account_mgmt_info.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     accountMgmtInfoId: testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_mgmt_info_authorization,
- *     resourceTypeSchemaVersion: _var.account_mgmt_info_resource_type_schema_version,
+ *     authorization: accountMgmtInfoAuthorization,
+ *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -232,12 +232,12 @@ export interface GetDomainsAccountMgmtInfoResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountMgmtInfo = oci.Identity.getDomainsAccountMgmtInfo({
- *     accountMgmtInfoId: oci_identity_domains_account_mgmt_info.test_account_mgmt_info.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     accountMgmtInfoId: testAccountMgmtInfoOciIdentityDomainsAccountMgmtInfo.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_mgmt_info_authorization,
- *     resourceTypeSchemaVersion: _var.account_mgmt_info_resource_type_schema_version,
+ *     authorization: accountMgmtInfoAuthorization,
+ *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

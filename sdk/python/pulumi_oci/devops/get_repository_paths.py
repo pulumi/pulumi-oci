@@ -131,11 +131,11 @@ def get_repository_paths(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_paths = oci.DevOps.get_repository_paths(repository_id=oci_devops_repository["test_repository"]["id"],
-        display_name=var["repository_path_display_name"],
-        folder_path=var["repository_path_folder_path"],
-        paths_in_subtree=var["repository_path_paths_in_subtree"],
-        ref=var["repository_path_ref"])
+    test_repository_paths = oci.DevOps.get_repository_paths(repository_id=test_repository["id"],
+        display_name=repository_path_display_name,
+        folder_path=repository_path_folder_path,
+        paths_in_subtree=repository_path_paths_in_subtree,
+        ref=repository_path_ref)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -187,11 +187,11 @@ def get_repository_paths_output(display_name: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_repository_paths = oci.DevOps.get_repository_paths(repository_id=oci_devops_repository["test_repository"]["id"],
-        display_name=var["repository_path_display_name"],
-        folder_path=var["repository_path_folder_path"],
-        paths_in_subtree=var["repository_path_paths_in_subtree"],
-        ref=var["repository_path_ref"])
+    test_repository_paths = oci.DevOps.get_repository_paths(repository_id=test_repository["id"],
+        display_name=repository_path_display_name,
+        folder_path=repository_path_folder_path,
+        paths_in_subtree=repository_path_paths_in_subtree,
+        ref=repository_path_ref)
     ```
     <!--End PulumiCodeChooser -->
 

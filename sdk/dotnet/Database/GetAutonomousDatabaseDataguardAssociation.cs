@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDatabaseDataguardAssociation = Oci.Database.GetAutonomousDatabaseDataguardAssociation.Invoke(new()
         ///     {
-        ///         AutonomousDatabaseDataguardAssociationId = oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
-        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         AutonomousDatabaseDataguardAssociationId = testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.Id,
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousDatabaseDataguardAssociation = Oci.Database.GetAutonomousDatabaseDataguardAssociation.Invoke(new()
         ///     {
-        ///         AutonomousDatabaseDataguardAssociationId = oci_database_autonomous_database_dataguard_association.Test_autonomous_database_dataguard_association.Id,
-        ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
+        ///         AutonomousDatabaseDataguardAssociationId = testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.Id,
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
         ///     });
         /// 
         /// });

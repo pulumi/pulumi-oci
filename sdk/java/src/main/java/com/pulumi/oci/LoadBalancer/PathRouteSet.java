@@ -48,12 +48,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPathRouteSet = new PathRouteSet(&#34;testPathRouteSet&#34;, PathRouteSetArgs.builder()        
- *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+ *             .loadBalancerId(testLoadBalancer.id())
+ *             .name(pathRouteSetName)
  *             .pathRoutes(PathRouteSetPathRouteArgs.builder()
- *                 .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
- *                 .path(var_.path_route_set_path_routes_path())
+ *                 .backendSetName(testBackendSet.name())
+ *                 .path(pathRouteSetPathRoutesPath)
  *                 .pathMatchType(PathRouteSetPathRoutePathMatchTypeArgs.builder()
- *                     .matchType(var_.path_route_set_path_routes_path_match_type_match_type())
+ *                     .matchType(pathRouteSetPathRoutesPathMatchTypeMatchType)
  *                     .build())
  *                 .build())
  *             .build());

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDatabaseSoftwareImage(ctx, &database.GetDatabaseSoftwareImageArgs{
-//				DatabaseSoftwareImageId: oci_database_database_software_image.Test_database_software_image.Id,
+//				DatabaseSoftwareImageId: testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

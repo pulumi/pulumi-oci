@@ -233,7 +233,7 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job = oci.StackMonitoring.get_discovery_job(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"])
+    test_discovery_job = oci.StackMonitoring.get_discovery_job(discovery_job_id=test_discovery_job_oci_stack_monitoring_discovery_job["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -279,7 +279,7 @@ def get_discovery_job_output(discovery_job_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_discovery_job = oci.StackMonitoring.get_discovery_job(discovery_job_id=oci_stack_monitoring_discovery_job["test_discovery_job"]["id"])
+    test_discovery_job = oci.StackMonitoring.get_discovery_job(discovery_job_id=test_discovery_job_oci_stack_monitoring_discovery_job["id"])
     ```
     <!--End PulumiCodeChooser -->
 

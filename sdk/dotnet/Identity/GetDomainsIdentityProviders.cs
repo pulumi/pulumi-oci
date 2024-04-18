@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityProviders = Oci.Identity.GetDomainsIdentityProviders.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityProviderCount = @var.Identity_provider_identity_provider_count,
-        ///         IdentityProviderFilter = @var.Identity_provider_identity_provider_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityProviderCount = identityProviderIdentityProviderCount,
+        ///         IdentityProviderFilter = identityProviderIdentityProviderFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_provider_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_provider_resource_type_schema_version,
-        ///         StartIndex = @var.Identity_provider_start_index,
+        ///         Authorization = identityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
+        ///         StartIndex = identityProviderStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityProviders = Oci.Identity.GetDomainsIdentityProviders.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityProviderCount = @var.Identity_provider_identity_provider_count,
-        ///         IdentityProviderFilter = @var.Identity_provider_identity_provider_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityProviderCount = identityProviderIdentityProviderCount,
+        ///         IdentityProviderFilter = identityProviderIdentityProviderFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_provider_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_provider_resource_type_schema_version,
-        ///         StartIndex = @var.Identity_provider_start_index,
+        ///         Authorization = identityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
+        ///         StartIndex = identityProviderStartIndex,
         ///     });
         /// 
         /// });

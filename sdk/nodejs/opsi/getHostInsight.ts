@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHostInsight = oci.Opsi.getHostInsight({
- *     hostInsightId: oci_opsi_host_insight.test_host_insight.id,
+ *     hostInsightId: testHostInsightOciOpsiHostInsight.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -167,7 +167,7 @@ export interface GetHostInsightResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHostInsight = oci.Opsi.getHostInsight({
- *     hostInsightId: oci_opsi_host_insight.test_host_insight.id,
+ *     hostInsightId: testHostInsightOciOpsiHostInsight.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

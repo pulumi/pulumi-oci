@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOperationsInsightsPrivateEndpoints(ctx, &opsi.GetOperationsInsightsPrivateEndpointsArgs{
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Operations_insights_private_endpoint_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Operations_insights_private_endpoint_display_name),
-//				IsUsedForRacDbs:        pulumi.BoolRef(_var.Operations_insights_private_endpoint_is_used_for_rac_dbs),
-//				OpsiPrivateEndpointId:  pulumi.StringRef(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
-//				States:                 _var.Operations_insights_private_endpoint_state,
-//				VcnId:                  pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(operationsInsightsPrivateEndpointCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(operationsInsightsPrivateEndpointDisplayName),
+//				IsUsedForRacDbs:        pulumi.BoolRef(operationsInsightsPrivateEndpointIsUsedForRacDbs),
+//				OpsiPrivateEndpointId:  pulumi.StringRef(testPrivateEndpoint.Id),
+//				States:                 operationsInsightsPrivateEndpointState,
+//				VcnId:                  pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

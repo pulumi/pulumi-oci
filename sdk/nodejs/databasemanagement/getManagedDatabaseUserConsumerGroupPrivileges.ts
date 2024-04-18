@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserConsumerGroupPrivileges = oci.DatabaseManagement.getManagedDatabaseUserConsumerGroupPrivileges({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_consumer_group_privilege_name,
- *     opcNamedCredentialId: _var.managed_database_user_consumer_group_privilege_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserConsumerGroupPrivilegeName,
+ *     opcNamedCredentialId: managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,10 +96,10 @@ export interface GetManagedDatabaseUserConsumerGroupPrivilegesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserConsumerGroupPrivileges = oci.DatabaseManagement.getManagedDatabaseUserConsumerGroupPrivileges({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_consumer_group_privilege_name,
- *     opcNamedCredentialId: _var.managed_database_user_consumer_group_privilege_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserConsumerGroupPrivilegeName,
+ *     opcNamedCredentialId: managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

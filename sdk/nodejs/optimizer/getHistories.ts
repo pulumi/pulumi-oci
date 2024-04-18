@@ -20,15 +20,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHistories = oci.Optimizer.getHistories({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.history_compartment_id_in_subtree,
- *     includeResourceMetadata: _var.history_include_resource_metadata,
- *     name: _var.history_name,
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
- *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
- *     resourceType: _var.history_resource_type,
- *     state: _var.history_state,
- *     status: _var.history_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
+ *     includeResourceMetadata: historyIncludeResourceMetadata,
+ *     name: historyName,
+ *     recommendationId: testRecommendation.id,
+ *     recommendationName: testRecommendation.name,
+ *     resourceType: historyResourceType,
+ *     state: historyState,
+ *     status: historyStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -153,15 +153,15 @@ export interface GetHistoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHistories = oci.Optimizer.getHistories({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.history_compartment_id_in_subtree,
- *     includeResourceMetadata: _var.history_include_resource_metadata,
- *     name: _var.history_name,
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
- *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
- *     resourceType: _var.history_resource_type,
- *     state: _var.history_state,
- *     status: _var.history_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: historyCompartmentIdInSubtree,
+ *     includeResourceMetadata: historyIncludeResourceMetadata,
+ *     name: historyName,
+ *     recommendationId: testRecommendation.id,
+ *     recommendationName: testRecommendation.name,
+ *     resourceType: historyResourceType,
+ *     state: historyState,
+ *     status: historyStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

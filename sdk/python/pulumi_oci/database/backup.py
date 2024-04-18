@@ -381,9 +381,9 @@ class Backup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backup = oci.database.Backup("testBackup",
-            database_id=oci_database_database["test_database"]["id"],
-            display_name=var["backup_display_name"])
+        test_backup = oci.database.Backup("test_backup",
+            database_id=test_database["id"],
+            display_name=backup_display_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -422,9 +422,9 @@ class Backup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backup = oci.database.Backup("testBackup",
-            database_id=oci_database_database["test_database"]["id"],
-            display_name=var["backup_display_name"])
+        test_backup = oci.database.Backup("test_backup",
+            database_id=test_database["id"],
+            display_name=backup_display_name)
         ```
         <!--End PulumiCodeChooser -->
 

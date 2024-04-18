@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbServer = oci.Database.getDbServer({
- *     dbServerId: oci_database_db_server.test_db_server.id,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     dbServerId: testDbServerOciDatabaseDbServer.id,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -151,8 +151,8 @@ export interface GetDbServerResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbServer = oci.Database.getDbServer({
- *     dbServerId: oci_database_db_server.test_db_server.id,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     dbServerId: testDbServerOciDatabaseDbServer.id,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

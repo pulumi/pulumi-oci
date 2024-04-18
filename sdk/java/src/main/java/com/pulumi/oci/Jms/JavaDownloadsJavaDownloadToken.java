@@ -49,15 +49,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testJavaDownloadToken = new JavaDownloadsJavaDownloadToken(&#34;testJavaDownloadToken&#34;, JavaDownloadsJavaDownloadTokenArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .description(var_.java_download_token_description())
- *             .displayName(var_.java_download_token_display_name())
- *             .javaVersion(var_.java_download_token_java_version())
- *             .licenseTypes(var_.java_download_token_license_type())
- *             .timeExpires(var_.java_download_token_time_expires())
+ *             .compartmentId(tenancyOcid)
+ *             .description(javaDownloadTokenDescription)
+ *             .displayName(javaDownloadTokenDisplayName)
+ *             .javaVersion(javaDownloadTokenJavaVersion)
+ *             .licenseTypes(javaDownloadTokenLicenseType)
+ *             .timeExpires(javaDownloadTokenTimeExpires)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isDefault(var_.java_download_token_is_default())
+ *             .isDefault(javaDownloadTokenIsDefault)
  *             .build());
  * 
  *     }

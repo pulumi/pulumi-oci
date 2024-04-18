@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuitBandwidthShapes = Oci.Core.GetVirtualCircuitBandwidthShapes.Invoke(new()
         ///     {
-        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVirtualCircuitBandwidthShapes = Oci.Core.GetVirtualCircuitBandwidthShapes.Invoke(new()
         ///     {
-        ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
+        ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
         ///     });
         /// 
         /// });

@@ -93,7 +93,7 @@ def get_authentication_policy(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=var["tenancy_ocid"])
+    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=tenancy_ocid)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -128,7 +128,7 @@ def get_authentication_policy_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=var["tenancy_ocid"])
+    test_authentication_policy = oci.Identity.get_authentication_policy(compartment_id=tenancy_ocid)
     ```
     <!--End PulumiCodeChooser -->
 

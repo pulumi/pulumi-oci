@@ -31,8 +31,8 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCertificateAuthorityVersions = Oci.CertificatesManagement.GetCertificateAuthorityVersions.Invoke(new()
         ///     {
-        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         VersionNumber = @var.Certificate_authority_version_version_number,
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         VersionNumber = certificateAuthorityVersionVersionNumber,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCertificateAuthorityVersions = Oci.CertificatesManagement.GetCertificateAuthorityVersions.Invoke(new()
         ///     {
-        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         VersionNumber = @var.Certificate_authority_version_version_number,
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         VersionNumber = certificateAuthorityVersionVersionNumber,
         ///     });
         /// 
         /// });

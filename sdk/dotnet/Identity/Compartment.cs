@@ -21,10 +21,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCompartment = new Oci.Identity.Compartment("testCompartment", new()
+    ///     var testCompartment = new Oci.Identity.Compartment("test_compartment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Description = @var.Compartment_description,
+    ///         CompartmentId = compartmentId,
+    ///         Description = compartmentDescription,
+    ///         Name = compartmentName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

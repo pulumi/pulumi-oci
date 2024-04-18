@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetDbSystems(ctx, &psql.GetDbSystemsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Db_system_display_name),
-//				Id:            pulumi.StringRef(_var.Db_system_id),
-//				State:         pulumi.StringRef(_var.Db_system_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(dbSystemDisplayName),
+//				Id:            pulumi.StringRef(dbSystemId),
+//				State:         pulumi.StringRef(dbSystemState),
 //			}, nil)
 //			if err != nil {
 //				return err

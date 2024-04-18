@@ -397,13 +397,14 @@ class Preauthrequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_preauthenticated_request = oci.object_storage.Preauthrequest("testPreauthenticatedRequest",
-            access_type=var["preauthenticated_request_access_type"],
-            bucket=var["preauthenticated_request_bucket"],
-            namespace=var["preauthenticated_request_namespace"],
-            time_expires=var["preauthenticated_request_time_expires"],
-            bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
-            object=var["preauthenticated_request_object"])
+        test_preauthenticated_request = oci.object_storage.Preauthrequest("test_preauthenticated_request",
+            access_type=preauthenticated_request_access_type,
+            bucket=preauthenticated_request_bucket,
+            name=preauthenticated_request_name,
+            namespace=preauthenticated_request_namespace,
+            time_expires=preauthenticated_request_time_expires,
+            bucket_listing_action=preauthenticated_request_bucket_listing_action,
+            object=preauthenticated_request_object)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -448,13 +449,14 @@ class Preauthrequest(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_preauthenticated_request = oci.object_storage.Preauthrequest("testPreauthenticatedRequest",
-            access_type=var["preauthenticated_request_access_type"],
-            bucket=var["preauthenticated_request_bucket"],
-            namespace=var["preauthenticated_request_namespace"],
-            time_expires=var["preauthenticated_request_time_expires"],
-            bucket_listing_action=var["preauthenticated_request_bucket_listing_action"],
-            object=var["preauthenticated_request_object"])
+        test_preauthenticated_request = oci.object_storage.Preauthrequest("test_preauthenticated_request",
+            access_type=preauthenticated_request_access_type,
+            bucket=preauthenticated_request_bucket,
+            name=preauthenticated_request_name,
+            namespace=preauthenticated_request_namespace,
+            time_expires=preauthenticated_request_time_expires,
+            bucket_listing_action=preauthenticated_request_bucket_listing_action,
+            object=preauthenticated_request_object)
         ```
         <!--End PulumiCodeChooser -->
 

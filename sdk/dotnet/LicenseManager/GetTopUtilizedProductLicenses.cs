@@ -29,8 +29,8 @@ namespace Pulumi.Oci.LicenseManager
         /// {
         ///     var testTopUtilizedProductLicenses = Oci.LicenseManager.GetTopUtilizedProductLicenses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCompartmentIdInSubtree = @var.Top_utilized_product_license_is_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = topUtilizedProductLicenseIsCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.LicenseManager
         /// {
         ///     var testTopUtilizedProductLicenses = Oci.LicenseManager.GetTopUtilizedProductLicenses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCompartmentIdInSubtree = @var.Top_utilized_product_license_is_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         IsCompartmentIdInSubtree = topUtilizedProductLicenseIsCompartmentIdInSubtree,
         ///     });
         /// 
         /// });

@@ -30,20 +30,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBootVolumeBackup = new Oci.Core.BootVolumeBackup("testBootVolumeBackup", new()
+    ///     var testBootVolumeBackup = new Oci.Core.BootVolumeBackup("test_boot_volume_backup", new()
     ///     {
-    ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
+    ///         BootVolumeId = testBootVolume.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Boot_volume_backup_display_name,
+    ///         DisplayName = bootVolumeBackupDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         Type = @var.Boot_volume_backup_type,
+    ///         KmsKeyId = testKey.Id,
+    ///         Type = bootVolumeBackupType,
     ///     });
     /// 
     /// });

@@ -50,85 +50,85 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Sch.NewConnector(ctx, "testServiceConnector", &Sch.ConnectorArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Service_connector_display_name),
+//			_, err := Sch.NewConnector(ctx, "test_service_connector", &Sch.ConnectorArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(serviceConnectorDisplayName),
 //				Source: &sch.ConnectorSourceArgs{
-//					Kind:      pulumi.Any(_var.Service_connector_source_kind),
-//					ConfigMap: pulumi.Any(_var.Service_connector_source_config_map),
+//					Kind:      pulumi.Any(serviceConnectorSourceKind),
+//					ConfigMap: pulumi.Any(serviceConnectorSourceConfigMap),
 //					Cursor: &sch.ConnectorSourceCursorArgs{
-//						Kind: pulumi.Any(_var.Service_connector_source_cursor_kind),
+//						Kind: pulumi.Any(serviceConnectorSourceCursorKind),
 //					},
 //					LogSources: sch.ConnectorSourceLogSourceArray{
 //						&sch.ConnectorSourceLogSourceArgs{
-//							CompartmentId: pulumi.Any(_var.Compartment_id),
-//							LogGroupId:    pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//							LogId:         pulumi.Any(oci_logging_log.Test_log.Id),
+//							CompartmentId: pulumi.Any(compartmentId),
+//							LogGroupId:    pulumi.Any(testLogGroup.Id),
+//							LogId:         pulumi.Any(testLog.Id),
 //						},
 //					},
 //					MonitoringSources: sch.ConnectorSourceMonitoringSourceArray{
 //						&sch.ConnectorSourceMonitoringSourceArgs{
-//							CompartmentId: pulumi.Any(_var.Compartment_id),
+//							CompartmentId: pulumi.Any(compartmentId),
 //							NamespaceDetails: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsArgs{
-//								Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_kind),
+//								Kind: pulumi.Any(serviceConnectorSourceMonitoringSourcesNamespaceDetailsKind),
 //								Namespaces: sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArray{
 //									&sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs{
 //										Metrics: &sch.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs{
-//											Kind: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_metrics_kind),
+//											Kind: pulumi.Any(serviceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsKind),
 //										},
-//										Namespace: pulumi.Any(_var.Service_connector_source_monitoring_sources_namespace_details_namespaces_namespace),
+//										Namespace: pulumi.Any(serviceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesNamespace),
 //									},
 //								},
 //							},
 //						},
 //					},
-//					PluginName: pulumi.Any(_var.Service_connector_source_plugin_name),
-//					StreamId:   pulumi.Any(oci_streaming_stream.Test_stream.Id),
+//					PluginName: pulumi.Any(serviceConnectorSourcePluginName),
+//					StreamId:   pulumi.Any(testStream.Id),
 //				},
 //				Target: &sch.ConnectorTargetArgs{
-//					Kind:                   pulumi.Any(_var.Service_connector_target_kind),
-//					BatchRolloverSizeInMbs: pulumi.Any(_var.Service_connector_target_batch_rollover_size_in_mbs),
-//					BatchRolloverTimeInMs:  pulumi.Any(_var.Service_connector_target_batch_rollover_time_in_ms),
-//					BatchSizeInKbs:         pulumi.Any(_var.Service_connector_target_batch_size_in_kbs),
-//					BatchSizeInNum:         pulumi.Any(_var.Service_connector_target_batch_size_in_num),
-//					BatchTimeInSec:         pulumi.Any(_var.Service_connector_target_batch_time_in_sec),
-//					Bucket:                 pulumi.Any(_var.Service_connector_target_bucket),
-//					CompartmentId:          pulumi.Any(_var.Compartment_id),
+//					Kind:                   pulumi.Any(serviceConnectorTargetKind),
+//					BatchRolloverSizeInMbs: pulumi.Any(serviceConnectorTargetBatchRolloverSizeInMbs),
+//					BatchRolloverTimeInMs:  pulumi.Any(serviceConnectorTargetBatchRolloverTimeInMs),
+//					BatchSizeInKbs:         pulumi.Any(serviceConnectorTargetBatchSizeInKbs),
+//					BatchSizeInNum:         pulumi.Any(serviceConnectorTargetBatchSizeInNum),
+//					BatchTimeInSec:         pulumi.Any(serviceConnectorTargetBatchTimeInSec),
+//					Bucket:                 pulumi.Any(serviceConnectorTargetBucket),
+//					CompartmentId:          pulumi.Any(compartmentId),
 //					Dimensions: sch.ConnectorTargetDimensionArray{
 //						&sch.ConnectorTargetDimensionArgs{
 //							DimensionValue: &sch.ConnectorTargetDimensionDimensionValueArgs{
-//								Kind:  pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_kind),
-//								Path:  pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_path),
-//								Value: pulumi.Any(_var.Service_connector_target_dimensions_dimension_value_value),
+//								Kind:  pulumi.Any(serviceConnectorTargetDimensionsDimensionValueKind),
+//								Path:  pulumi.Any(serviceConnectorTargetDimensionsDimensionValuePath),
+//								Value: pulumi.Any(serviceConnectorTargetDimensionsDimensionValueValue),
 //							},
-//							Name: pulumi.Any(_var.Service_connector_target_dimensions_name),
+//							Name: pulumi.Any(serviceConnectorTargetDimensionsName),
 //						},
 //					},
-//					EnableFormattedMessaging: pulumi.Any(_var.Service_connector_target_enable_formatted_messaging),
-//					FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
-//					LogGroupId:               pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogSourceIdentifier:      pulumi.Any(_var.Service_connector_target_log_source_identifier),
-//					Metric:                   pulumi.Any(_var.Service_connector_target_metric),
-//					MetricNamespace:          pulumi.Any(_var.Service_connector_target_metric_namespace),
-//					Namespace:                pulumi.Any(_var.Service_connector_target_namespace),
-//					ObjectNamePrefix:         pulumi.Any(_var.Service_connector_target_object_name_prefix),
-//					StreamId:                 pulumi.Any(oci_streaming_stream.Test_stream.Id),
-//					TopicId:                  pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//					EnableFormattedMessaging: pulumi.Any(serviceConnectorTargetEnableFormattedMessaging),
+//					FunctionId:               pulumi.Any(testFunction.Id),
+//					LogGroupId:               pulumi.Any(testLogGroup.Id),
+//					LogSourceIdentifier:      pulumi.Any(serviceConnectorTargetLogSourceIdentifier),
+//					Metric:                   pulumi.Any(serviceConnectorTargetMetric),
+//					MetricNamespace:          pulumi.Any(serviceConnectorTargetMetricNamespace),
+//					Namespace:                pulumi.Any(serviceConnectorTargetNamespace),
+//					ObjectNamePrefix:         pulumi.Any(serviceConnectorTargetObjectNamePrefix),
+//					StreamId:                 pulumi.Any(testStream.Id),
+//					TopicId:                  pulumi.Any(testNotificationTopic.Id),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Service_connector_description),
+//				Description: pulumi.Any(serviceConnectorDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Tasks: sch.ConnectorTaskArray{
 //					&sch.ConnectorTaskArgs{
-//						Kind:           pulumi.Any(_var.Service_connector_tasks_kind),
-//						BatchSizeInKbs: pulumi.Any(_var.Service_connector_tasks_batch_size_in_kbs),
-//						BatchTimeInSec: pulumi.Any(_var.Service_connector_tasks_batch_time_in_sec),
-//						Condition:      pulumi.Any(_var.Service_connector_tasks_condition),
-//						FunctionId:     pulumi.Any(oci_functions_function.Test_function.Id),
+//						Kind:           pulumi.Any(serviceConnectorTasksKind),
+//						BatchSizeInKbs: pulumi.Any(serviceConnectorTasksBatchSizeInKbs),
+//						BatchTimeInSec: pulumi.Any(serviceConnectorTasksBatchTimeInSec),
+//						Condition:      pulumi.Any(serviceConnectorTasksCondition),
+//						FunctionId:     pulumi.Any(testFunction.Id),
 //					},
 //				},
 //			})

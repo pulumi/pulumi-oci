@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ComputeCloud.GetAtCustomerCccUpgradeSchedule(ctx, &computecloud.GetAtCustomerCccUpgradeScheduleArgs{
-//				CccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id,
+//				CccUpgradeScheduleId: testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

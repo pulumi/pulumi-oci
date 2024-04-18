@@ -16,11 +16,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRecoveryServiceSubnet = new oci.recoverymod.RecoveryServiceSubnet("testRecoveryServiceSubnet", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.recovery_service_subnet_display_name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testRecoveryServiceSubnet = new oci.recoverymod.RecoveryServiceSubnet("test_recovery_service_subnet", {
+ *     compartmentId: compartmentId,
+ *     displayName: recoveryServiceSubnetDisplayName,
+ *     subnetId: testSubnet.id,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

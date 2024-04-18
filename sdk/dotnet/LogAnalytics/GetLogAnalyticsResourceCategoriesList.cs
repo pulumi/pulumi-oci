@@ -30,10 +30,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
-        ///         Namespace = @var.Log_analytics_resource_categories_list_namespace,
-        ///         ResourceIds = @var.Log_analytics_resource_categories_list_resource_ids,
-        ///         ResourceTypes = @var.Log_analytics_resource_categories_list_resource_types,
-        ///         ResourceCategories = @var.Log_analytics_resource_categories_list_resource_categories,
+        ///         Namespace = logAnalyticsResourceCategoriesListNamespace,
+        ///         ResourceIds = logAnalyticsResourceCategoriesListResourceIds,
+        ///         ResourceTypes = logAnalyticsResourceCategoriesListResourceTypes,
+        ///         ResourceCategories = logAnalyticsResourceCategoriesListResourceCategories,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsResourceCategoriesList = Oci.LogAnalytics.GetLogAnalyticsResourceCategoriesList.Invoke(new()
         ///     {
-        ///         Namespace = @var.Log_analytics_resource_categories_list_namespace,
-        ///         ResourceIds = @var.Log_analytics_resource_categories_list_resource_ids,
-        ///         ResourceTypes = @var.Log_analytics_resource_categories_list_resource_types,
-        ///         ResourceCategories = @var.Log_analytics_resource_categories_list_resource_categories,
+        ///         Namespace = logAnalyticsResourceCategoriesListNamespace,
+        ///         ResourceIds = logAnalyticsResourceCategoriesListResourceIds,
+        ///         ResourceTypes = logAnalyticsResourceCategoriesListResourceTypes,
+        ///         ResourceCategories = logAnalyticsResourceCategoriesListResourceCategories,
         ///     });
         /// 
         /// });

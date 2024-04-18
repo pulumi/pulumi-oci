@@ -24,11 +24,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResolvers = oci.Dns.getResolvers({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
- *     displayName: _var.resolver_display_name,
- *     id: _var.resolver_id,
- *     state: _var.resolver_state,
+ *     displayName: resolverDisplayName,
+ *     id: resolverId,
+ *     state: resolverState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,11 +118,11 @@ export interface GetResolversResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResolvers = oci.Dns.getResolvers({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
- *     displayName: _var.resolver_display_name,
- *     id: _var.resolver_id,
- *     state: _var.resolver_state,
+ *     displayName: resolverDisplayName,
+ *     id: resolverId,
+ *     state: resolverState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

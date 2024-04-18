@@ -146,11 +146,11 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["autonomous_database_backup_display_name"],
-        state=var["autonomous_database_backup_state"],
-        type=var["autonomous_database_backup_type"])
+    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=test_autonomous_database["id"],
+        compartment_id=compartment_id,
+        display_name=autonomous_database_backup_display_name,
+        state=autonomous_database_backup_state,
+        type=autonomous_database_backup_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -202,11 +202,11 @@ def get_autonomous_database_backups_output(autonomous_database_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["autonomous_database_backup_display_name"],
-        state=var["autonomous_database_backup_state"],
-        type=var["autonomous_database_backup_type"])
+    test_autonomous_database_backups = oci.Database.get_autonomous_database_backups(autonomous_database_id=test_autonomous_database["id"],
+        compartment_id=compartment_id,
+        display_name=autonomous_database_backup_display_name,
+        state=autonomous_database_backup_state,
+        type=autonomous_database_backup_type)
     ```
     <!--End PulumiCodeChooser -->
 

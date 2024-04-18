@@ -80,7 +80,7 @@ def get_external_exadata_storage_server_open_alert_history(external_exadata_stor
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
+    test_external_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -113,7 +113,7 @@ def get_external_exadata_storage_server_open_alert_history_output(external_exada
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
+    test_external_exadata_storage_server_open_alert_history = oci.DatabaseManagement.get_external_exadata_storage_server_open_alert_history(external_exadata_storage_server_id=test_external_exadata_storage_server["id"])
     ```
     <!--End PulumiCodeChooser -->
 

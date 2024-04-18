@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetPublications(ctx, &marketplace.GetPublicationsArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				ListingType:      _var.Publication_listing_type,
-//				Names:            _var.Publication_name,
-//				OperatingSystems: _var.Publication_operating_systems,
-//				PublicationId:    pulumi.StringRef(oci_marketplace_publication.Test_publication.Id),
+//				CompartmentId:    compartmentId,
+//				ListingType:      publicationListingType,
+//				Names:            publicationName,
+//				OperatingSystems: publicationOperatingSystems,
+//				PublicationId:    pulumi.StringRef(testPublication.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

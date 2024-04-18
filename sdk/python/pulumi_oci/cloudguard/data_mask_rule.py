@@ -452,24 +452,24 @@ class DataMaskRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_mask_rule = oci.cloud_guard.DataMaskRule("testDataMaskRule",
-            compartment_id=var["compartment_id"],
-            data_mask_categories=var["data_mask_rule_data_mask_categories"],
-            display_name=var["data_mask_rule_display_name"],
-            iam_group_id=oci_identity_group["test_group"]["id"],
+        test_data_mask_rule = oci.cloud_guard.DataMaskRule("test_data_mask_rule",
+            compartment_id=compartment_id,
+            data_mask_categories=data_mask_rule_data_mask_categories,
+            display_name=data_mask_rule_display_name,
+            iam_group_id=test_group["id"],
             target_selected=oci.cloud_guard.DataMaskRuleTargetSelectedArgs(
-                kind=var["data_mask_rule_target_selected_kind"],
-                values=var["data_mask_rule_target_selected_values"],
+                kind=data_mask_rule_target_selected_kind,
+                values=data_mask_rule_target_selected_values,
             ),
-            data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
+            data_mask_rule_status=data_mask_rule_data_mask_rule_status,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["data_mask_rule_description"],
+            description=data_mask_rule_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            state=var["data_mask_rule_state"])
+            state=data_mask_rule_state)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -516,24 +516,24 @@ class DataMaskRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_mask_rule = oci.cloud_guard.DataMaskRule("testDataMaskRule",
-            compartment_id=var["compartment_id"],
-            data_mask_categories=var["data_mask_rule_data_mask_categories"],
-            display_name=var["data_mask_rule_display_name"],
-            iam_group_id=oci_identity_group["test_group"]["id"],
+        test_data_mask_rule = oci.cloud_guard.DataMaskRule("test_data_mask_rule",
+            compartment_id=compartment_id,
+            data_mask_categories=data_mask_rule_data_mask_categories,
+            display_name=data_mask_rule_display_name,
+            iam_group_id=test_group["id"],
             target_selected=oci.cloud_guard.DataMaskRuleTargetSelectedArgs(
-                kind=var["data_mask_rule_target_selected_kind"],
-                values=var["data_mask_rule_target_selected_values"],
+                kind=data_mask_rule_target_selected_kind,
+                values=data_mask_rule_target_selected_values,
             ),
-            data_mask_rule_status=var["data_mask_rule_data_mask_rule_status"],
+            data_mask_rule_status=data_mask_rule_data_mask_rule_status,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["data_mask_rule_description"],
+            description=data_mask_rule_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            state=var["data_mask_rule_state"])
+            state=data_mask_rule_state)
         ```
         <!--End PulumiCodeChooser -->
 

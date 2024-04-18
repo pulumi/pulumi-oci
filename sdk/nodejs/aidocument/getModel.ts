@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModel = oci.AiDocument.getModel({
- *     modelId: oci_ai_document_model.test_model.id,
+ *     modelId: testModelOciAiDocumentModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,7 +164,7 @@ export interface GetModelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModel = oci.AiDocument.getModel({
- *     modelId: oci_ai_document_model.test_model.id,
+ *     modelId: testModelOciAiDocumentModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

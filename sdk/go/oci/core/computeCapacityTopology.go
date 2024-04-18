@@ -36,17 +36,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeCapacityTopology(ctx, "testComputeCapacityTopology", &Core.ComputeCapacityTopologyArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Compute_capacity_topology_availability_domain),
+//			_, err := Core.NewComputeCapacityTopology(ctx, "test_compute_capacity_topology", &Core.ComputeCapacityTopologyArgs{
+//				AvailabilityDomain: pulumi.Any(computeCapacityTopologyAvailabilityDomain),
 //				CapacitySource: &core.ComputeCapacityTopologyCapacitySourceArgs{
-//					CapacityType:  pulumi.Any(_var.Compute_capacity_topology_capacity_source_capacity_type),
-//					CompartmentId: pulumi.Any(_var.Compartment_id),
+//					CapacityType:  pulumi.Any(computeCapacityTopologyCapacitySourceCapacityType),
+//					CompartmentId: pulumi.Any(compartmentId),
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Compute_capacity_topology_display_name),
+//				DisplayName: pulumi.Any(computeCapacityTopologyDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

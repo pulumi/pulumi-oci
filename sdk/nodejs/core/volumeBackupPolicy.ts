@@ -21,27 +21,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicy = new oci.core.VolumeBackupPolicy("testVolumeBackupPolicy", {
- *     compartmentId: _var.compartment_id,
+ * const testVolumeBackupPolicy = new oci.core.VolumeBackupPolicy("test_volume_backup_policy", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     destinationRegion: _var.volume_backup_policy_destination_region,
- *     displayName: _var.volume_backup_policy_display_name,
+ *     destinationRegion: volumeBackupPolicyDestinationRegion,
+ *     displayName: volumeBackupPolicyDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     schedules: [{
- *         backupType: _var.volume_backup_policy_schedules_backup_type,
- *         period: _var.volume_backup_policy_schedules_period,
- *         retentionSeconds: _var.volume_backup_policy_schedules_retention_seconds,
- *         dayOfMonth: _var.volume_backup_policy_schedules_day_of_month,
- *         dayOfWeek: _var.volume_backup_policy_schedules_day_of_week,
- *         hourOfDay: _var.volume_backup_policy_schedules_hour_of_day,
- *         month: _var.volume_backup_policy_schedules_month,
- *         offsetSeconds: _var.volume_backup_policy_schedules_offset_seconds,
- *         offsetType: _var.volume_backup_policy_schedules_offset_type,
- *         timeZone: _var.volume_backup_policy_schedules_time_zone,
+ *         backupType: volumeBackupPolicySchedulesBackupType,
+ *         period: volumeBackupPolicySchedulesPeriod,
+ *         retentionSeconds: volumeBackupPolicySchedulesRetentionSeconds,
+ *         dayOfMonth: volumeBackupPolicySchedulesDayOfMonth,
+ *         dayOfWeek: volumeBackupPolicySchedulesDayOfWeek,
+ *         hourOfDay: volumeBackupPolicySchedulesHourOfDay,
+ *         month: volumeBackupPolicySchedulesMonth,
+ *         offsetSeconds: volumeBackupPolicySchedulesOffsetSeconds,
+ *         offsetType: volumeBackupPolicySchedulesOffsetType,
+ *         timeZone: volumeBackupPolicySchedulesTimeZone,
  *     }],
  * });
  * ```

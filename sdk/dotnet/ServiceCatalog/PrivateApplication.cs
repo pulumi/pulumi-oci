@@ -25,17 +25,17 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPrivateApplication = new Oci.ServiceCatalog.PrivateApplication("testPrivateApplication", new()
+    ///     var testPrivateApplication = new Oci.ServiceCatalog.PrivateApplication("test_private_application", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Private_application_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = privateApplicationDisplayName,
     ///         PackageDetails = new Oci.ServiceCatalog.Inputs.PrivateApplicationPackageDetailsArgs
     ///         {
-    ///             PackageType = @var.Private_application_package_details_package_type,
-    ///             Version = @var.Private_application_package_details_version,
-    ///             ZipFileBase64encoded = @var.Private_application_package_details_zip_file_base64encoded,
+    ///             PackageType = privateApplicationPackageDetailsPackageType,
+    ///             Version = privateApplicationPackageDetailsVersion,
+    ///             ZipFileBase64encoded = privateApplicationPackageDetailsZipFileBase64encoded,
     ///         },
-    ///         ShortDescription = @var.Private_application_short_description,
+    ///         ShortDescription = privateApplicationShortDescription,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -44,8 +44,8 @@ namespace Pulumi.Oci.ServiceCatalog
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         LogoFileBase64encoded = @var.Private_application_logo_file_base64encoded,
-    ///         LongDescription = @var.Private_application_long_description,
+    ///         LogoFileBase64encoded = privateApplicationLogoFileBase64encoded,
+    ///         LongDescription = privateApplicationLongDescription,
     ///     });
     /// 
     /// });

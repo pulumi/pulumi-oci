@@ -18,36 +18,36 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProcessorJob = new oci.aidocument.ProcessorJob("testProcessorJob", {
- *     compartmentId: _var.compartment_id,
+ * const testProcessorJob = new oci.aidocument.ProcessorJob("test_processor_job", {
+ *     compartmentId: compartmentId,
  *     inputLocation: {
- *         sourceType: _var.processor_job_input_location_source_type,
- *         data: _var.processor_job_input_location_data,
+ *         sourceType: processorJobInputLocationSourceType,
+ *         data: processorJobInputLocationData,
  *         objectLocations: [{
- *             bucket: _var.processor_job_input_location_object_locations_bucket,
- *             namespace: _var.processor_job_input_location_object_locations_namespace,
- *             object: _var.processor_job_input_location_object_locations_object,
+ *             bucket: processorJobInputLocationObjectLocationsBucket,
+ *             namespace: processorJobInputLocationObjectLocationsNamespace,
+ *             object: processorJobInputLocationObjectLocationsObject,
  *         }],
  *     },
  *     outputLocation: {
- *         bucket: _var.processor_job_output_location_bucket,
- *         namespace: _var.processor_job_output_location_namespace,
- *         prefix: _var.processor_job_output_location_prefix,
+ *         bucket: processorJobOutputLocationBucket,
+ *         namespace: processorJobOutputLocationNamespace,
+ *         prefix: processorJobOutputLocationPrefix,
  *     },
  *     processorConfig: {
  *         features: [{
- *             featureType: _var.processor_job_processor_config_features_feature_type,
- *             generateSearchablePdf: _var.processor_job_processor_config_features_generate_searchable_pdf,
- *             maxResults: _var.processor_job_processor_config_features_max_results,
- *             modelId: oci_ai_document_model.test_model.id,
- *             tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *             featureType: processorJobProcessorConfigFeaturesFeatureType,
+ *             generateSearchablePdf: processorJobProcessorConfigFeaturesGenerateSearchablePdf,
+ *             maxResults: processorJobProcessorConfigFeaturesMaxResults,
+ *             modelId: testModel.id,
+ *             tenancyId: testTenancy.id,
  *         }],
- *         processorType: _var.processor_job_processor_config_processor_type,
- *         documentType: _var.processor_job_processor_config_document_type,
- *         isZipOutputEnabled: _var.processor_job_processor_config_is_zip_output_enabled,
- *         language: _var.processor_job_processor_config_language,
+ *         processorType: processorJobProcessorConfigProcessorType,
+ *         documentType: processorJobProcessorConfigDocumentType,
+ *         isZipOutputEnabled: processorJobProcessorConfigIsZipOutputEnabled,
+ *         language: processorJobProcessorConfigLanguage,
  *     },
- *     displayName: _var.processor_job_display_name,
+ *     displayName: processorJobDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

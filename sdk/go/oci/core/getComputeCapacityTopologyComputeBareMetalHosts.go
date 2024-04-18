@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityTopologyComputeBareMetalHosts(ctx, &core.GetComputeCapacityTopologyComputeBareMetalHostsArgs{
-//				ComputeCapacityTopologyId: oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-//				AvailabilityDomain:        pulumi.StringRef(_var.Compute_capacity_topology_compute_bare_metal_host_availability_domain),
-//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-//				ComputeHpcIslandId:        pulumi.StringRef(oci_core_compute_hpc_island.Test_compute_hpc_island.Id),
-//				ComputeLocalBlockId:       pulumi.StringRef(oci_core_compute_local_block.Test_compute_local_block.Id),
-//				ComputeNetworkBlockId:     pulumi.StringRef(oci_core_compute_network_block.Test_compute_network_block.Id),
+//				ComputeCapacityTopologyId: testComputeCapacityTopology.Id,
+//				AvailabilityDomain:        pulumi.StringRef(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain),
+//				CompartmentId:             pulumi.StringRef(compartmentId),
+//				ComputeHpcIslandId:        pulumi.StringRef(testComputeHpcIsland.Id),
+//				ComputeLocalBlockId:       pulumi.StringRef(testComputeLocalBlock.Id),
+//				ComputeNetworkBlockId:     pulumi.StringRef(testComputeNetworkBlock.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

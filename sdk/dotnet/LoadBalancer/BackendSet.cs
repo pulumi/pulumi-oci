@@ -29,47 +29,48 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackendSet = new Oci.LoadBalancer.BackendSet("testBackendSet", new()
+    ///     var testBackendSet = new Oci.LoadBalancer.BackendSet("test_backend_set", new()
     ///     {
     ///         HealthChecker = new Oci.LoadBalancer.Inputs.BackendSetHealthCheckerArgs
     ///         {
-    ///             Protocol = @var.Backend_set_health_checker_protocol,
-    ///             IntervalMs = @var.Backend_set_health_checker_interval_ms,
-    ///             IsForcePlainText = @var.Backend_set_health_checker_is_force_plain_text,
-    ///             Port = @var.Backend_set_health_checker_port,
-    ///             ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
-    ///             Retries = @var.Backend_set_health_checker_retries,
-    ///             ReturnCode = @var.Backend_set_health_checker_return_code,
-    ///             TimeoutInMillis = @var.Backend_set_health_checker_timeout_in_millis,
-    ///             UrlPath = @var.Backend_set_health_checker_url_path,
+    ///             Protocol = backendSetHealthCheckerProtocol,
+    ///             IntervalMs = backendSetHealthCheckerIntervalMs,
+    ///             IsForcePlainText = backendSetHealthCheckerIsForcePlainText,
+    ///             Port = backendSetHealthCheckerPort,
+    ///             ResponseBodyRegex = backendSetHealthCheckerResponseBodyRegex,
+    ///             Retries = backendSetHealthCheckerRetries,
+    ///             ReturnCode = backendSetHealthCheckerReturnCode,
+    ///             TimeoutInMillis = backendSetHealthCheckerTimeoutInMillis,
+    ///             UrlPath = backendSetHealthCheckerUrlPath,
     ///         },
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Policy = @var.Backend_set_policy,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Name = backendSetName,
+    ///         Policy = backendSetPolicy,
     ///         LbCookieSessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetLbCookieSessionPersistenceConfigurationArgs
     ///         {
-    ///             CookieName = @var.Backend_set_lb_cookie_session_persistence_configuration_cookie_name,
-    ///             DisableFallback = @var.Backend_set_lb_cookie_session_persistence_configuration_disable_fallback,
-    ///             Domain = @var.Backend_set_lb_cookie_session_persistence_configuration_domain,
-    ///             IsHttpOnly = @var.Backend_set_lb_cookie_session_persistence_configuration_is_http_only,
-    ///             IsSecure = @var.Backend_set_lb_cookie_session_persistence_configuration_is_secure,
-    ///             MaxAgeInSeconds = @var.Backend_set_lb_cookie_session_persistence_configuration_max_age_in_seconds,
-    ///             Path = @var.Backend_set_lb_cookie_session_persistence_configuration_path,
+    ///             CookieName = backendSetLbCookieSessionPersistenceConfigurationCookieName,
+    ///             DisableFallback = backendSetLbCookieSessionPersistenceConfigurationDisableFallback,
+    ///             Domain = backendSetLbCookieSessionPersistenceConfigurationDomain,
+    ///             IsHttpOnly = backendSetLbCookieSessionPersistenceConfigurationIsHttpOnly,
+    ///             IsSecure = backendSetLbCookieSessionPersistenceConfigurationIsSecure,
+    ///             MaxAgeInSeconds = backendSetLbCookieSessionPersistenceConfigurationMaxAgeInSeconds,
+    ///             Path = backendSetLbCookieSessionPersistenceConfigurationPath,
     ///         },
     ///         SessionPersistenceConfiguration = new Oci.LoadBalancer.Inputs.BackendSetSessionPersistenceConfigurationArgs
     ///         {
-    ///             CookieName = @var.Backend_set_session_persistence_configuration_cookie_name,
-    ///             DisableFallback = @var.Backend_set_session_persistence_configuration_disable_fallback,
+    ///             CookieName = backendSetSessionPersistenceConfigurationCookieName,
+    ///             DisableFallback = backendSetSessionPersistenceConfigurationDisableFallback,
     ///         },
     ///         SslConfiguration = new Oci.LoadBalancer.Inputs.BackendSetSslConfigurationArgs
     ///         {
-    ///             CertificateIds = @var.Backend_set_ssl_configuration_certificate_ids,
-    ///             CertificateName = oci_load_balancer_certificate.Test_certificate.Name,
-    ///             CipherSuiteName = @var.Backend_set_ssl_configuration_cipher_suite_name,
-    ///             Protocols = @var.Backend_set_ssl_configuration_protocols,
-    ///             ServerOrderPreference = @var.Backend_set_ssl_configuration_server_order_preference,
-    ///             TrustedCertificateAuthorityIds = @var.Backend_set_ssl_configuration_trusted_certificate_authority_ids,
-    ///             VerifyDepth = @var.Backend_set_ssl_configuration_verify_depth,
-    ///             VerifyPeerCertificate = @var.Backend_set_ssl_configuration_verify_peer_certificate,
+    ///             CertificateIds = backendSetSslConfigurationCertificateIds,
+    ///             CertificateName = testCertificate.Name,
+    ///             CipherSuiteName = backendSetSslConfigurationCipherSuiteName,
+    ///             Protocols = backendSetSslConfigurationProtocols,
+    ///             ServerOrderPreference = backendSetSslConfigurationServerOrderPreference,
+    ///             TrustedCertificateAuthorityIds = backendSetSslConfigurationTrustedCertificateAuthorityIds,
+    ///             VerifyDepth = backendSetSslConfigurationVerifyDepth,
+    ///             VerifyPeerCertificate = backendSetSslConfigurationVerifyPeerCertificate,
     ///         },
     ///     });
     /// 

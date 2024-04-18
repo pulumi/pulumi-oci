@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeBackupPolicyAssignment = new oci.core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", {
- *     assetId: oci_core_volume.test_volume.id,
- *     policyId: oci_core_volume_backup_policy.test_volume_backup_policy.id,
+ * const testVolumeBackupPolicyAssignment = new oci.core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment", {
+ *     assetId: testVolume.id,
+ *     policyId: testVolumeBackupPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

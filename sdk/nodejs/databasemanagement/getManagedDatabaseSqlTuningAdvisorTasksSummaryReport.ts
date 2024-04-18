@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
- *     beginExecIdGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
- *     endExecIdLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
- *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
- *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
- *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
+ *     beginExecIdGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo,
+ *     endExecIdLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo,
+ *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId,
+ *     searchPeriod: managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod,
+ *     timeGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,14 +130,14 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
- *     beginExecIdGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
- *     endExecIdLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
- *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
- *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
- *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
+ *     beginExecIdGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo,
+ *     endExecIdLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo,
+ *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId,
+ *     searchPeriod: managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod,
+ *     timeGreaterThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

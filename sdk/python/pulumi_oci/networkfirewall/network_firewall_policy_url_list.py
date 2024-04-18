@@ -176,11 +176,12 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_url_list = oci.network_firewall.NetworkFirewallPolicyUrlList("testNetworkFirewallPolicyUrlList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
+        test_network_firewall_policy_url_list = oci.network_firewall.NetworkFirewallPolicyUrlList("test_network_firewall_policy_url_list",
+            name=network_firewall_policy_url_list_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
             urls=[oci.network_firewall.NetworkFirewallPolicyUrlListUrlArgs(
-                pattern=var["network_firewall_policy_url_list_urls_pattern"],
-                type=var["network_firewall_policy_url_list_urls_type"],
+                pattern=network_firewall_policy_url_list_urls_pattern,
+                type=network_firewall_policy_url_list_urls_type,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -217,11 +218,12 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_url_list = oci.network_firewall.NetworkFirewallPolicyUrlList("testNetworkFirewallPolicyUrlList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
+        test_network_firewall_policy_url_list = oci.network_firewall.NetworkFirewallPolicyUrlList("test_network_firewall_policy_url_list",
+            name=network_firewall_policy_url_list_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
             urls=[oci.network_firewall.NetworkFirewallPolicyUrlListUrlArgs(
-                pattern=var["network_firewall_policy_url_list_urls_pattern"],
-                type=var["network_firewall_policy_url_list_urls_type"],
+                pattern=network_firewall_policy_url_list_urls_pattern,
+                type=network_firewall_policy_url_list_urls_type,
             )])
         ```
         <!--End PulumiCodeChooser -->

@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMonitoredResourcesListMember = new MonitoredResourcesListMember(&#34;testMonitoredResourcesListMember&#34;, MonitoredResourcesListMemberArgs.builder()        
- *             .monitoredResourceId(oci_stack_monitoring_monitored_resource.test_monitored_resource().id())
- *             .destinationResourceId(oci_stack_monitoring_destination_resource.test_destination_resource().id())
- *             .limitLevel(var_.monitored_resources_list_member_limit_level())
+ *             .monitoredResourceId(testMonitoredResource.id())
+ *             .destinationResourceId(testDestinationResource.id())
+ *             .limitLevel(monitoredResourcesListMemberLimitLevel)
  *             .build());
  * 
  *     }

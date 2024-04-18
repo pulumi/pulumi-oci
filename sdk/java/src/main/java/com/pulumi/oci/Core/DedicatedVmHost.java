@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDedicatedVmHost = new DedicatedVmHost(&#34;testDedicatedVmHost&#34;, DedicatedVmHostArgs.builder()        
- *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
- *             .compartmentId(var_.compartment_id())
- *             .dedicatedVmHostShape(var_.dedicated_vm_host_dedicated_vm_host_shape())
+ *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
+ *             .compartmentId(compartmentId)
+ *             .dedicatedVmHostShape(dedicatedVmHostDedicatedVmHostShape)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.dedicated_vm_host_display_name())
- *             .faultDomain(var_.dedicated_vm_host_fault_domain())
+ *             .displayName(dedicatedVmHostDisplayName)
+ *             .faultDomain(dedicatedVmHostFaultDomain)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

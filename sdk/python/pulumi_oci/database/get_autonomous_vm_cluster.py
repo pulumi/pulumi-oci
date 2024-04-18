@@ -655,7 +655,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster = oci.Database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"])
+    test_autonomous_vm_cluster = oci.Database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=test_autonomous_vm_cluster_oci_database_autonomous_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -737,7 +737,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster = oci.Database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"])
+    test_autonomous_vm_cluster = oci.Database.get_autonomous_vm_cluster(autonomous_vm_cluster_id=test_autonomous_vm_cluster_oci_database_autonomous_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

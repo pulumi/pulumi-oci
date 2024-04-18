@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataInfrastructures = oci.DatabaseManagement.getExternalExadataInfrastructures({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_exadata_infrastructure_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: externalExadataInfrastructureDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetExternalExadataInfrastructuresResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataInfrastructures = oci.DatabaseManagement.getExternalExadataInfrastructures({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_exadata_infrastructure_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: externalExadataInfrastructureDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

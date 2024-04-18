@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImageSignature = oci.Artifacts.getContainerImageSignature({
- *     imageSignatureId: oci_artifacts_image_signature.test_image_signature.id,
+ *     imageSignatureId: testImageSignature.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,7 +119,7 @@ export interface GetContainerImageSignatureResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImageSignature = oci.Artifacts.getContainerImageSignature({
- *     imageSignatureId: oci_artifacts_image_signature.test_image_signature.id,
+ *     imageSignatureId: testImageSignature.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

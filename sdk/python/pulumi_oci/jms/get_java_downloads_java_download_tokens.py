@@ -154,13 +154,13 @@ def get_java_downloads_java_download_tokens(compartment_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=var["tenancy_ocid"],
-        display_name=var["java_download_token_display_name"],
-        family_version=var["java_download_token_family_version"],
-        id=var["java_download_token_id"],
-        search_by_user=var["java_download_token_search_by_user"],
-        state=var["java_download_token_state"],
-        value=var["java_download_token_value"])
+    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
+        display_name=java_download_token_display_name,
+        family_version=java_download_token_family_version,
+        id=java_download_token_id,
+        search_by_user=java_download_token_search_by_user,
+        state=java_download_token_state,
+        value=java_download_token_value)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -219,13 +219,13 @@ def get_java_downloads_java_download_tokens_output(compartment_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=var["tenancy_ocid"],
-        display_name=var["java_download_token_display_name"],
-        family_version=var["java_download_token_family_version"],
-        id=var["java_download_token_id"],
-        search_by_user=var["java_download_token_search_by_user"],
-        state=var["java_download_token_state"],
-        value=var["java_download_token_value"])
+    test_java_download_tokens = oci.Jms.get_java_downloads_java_download_tokens(compartment_id=tenancy_ocid,
+        display_name=java_download_token_display_name,
+        family_version=java_download_token_family_version,
+        id=java_download_token_id,
+        search_by_user=java_download_token_search_by_user,
+        state=java_download_token_state,
+        value=java_download_token_value)
     ```
     <!--End PulumiCodeChooser -->
 

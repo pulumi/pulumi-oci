@@ -120,9 +120,9 @@ def get_integration_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_integration_instances = oci.Integration.get_integration_instances(compartment_id=var["compartment_id"],
-        display_name=var["integration_instance_display_name"],
-        state=var["integration_instance_state"])
+    test_integration_instances = oci.Integration.get_integration_instances(compartment_id=compartment_id,
+        display_name=integration_instance_display_name,
+        state=integration_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_integration_instances_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_integration_instances = oci.Integration.get_integration_instances(compartment_id=var["compartment_id"],
-        display_name=var["integration_instance_display_name"],
-        state=var["integration_instance_state"])
+    test_integration_instances = oci.Integration.get_integration_instances(compartment_id=compartment_id,
+        display_name=integration_instance_display_name,
+        state=integration_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 

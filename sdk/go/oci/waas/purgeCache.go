@@ -32,9 +32,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewPurgeCache(ctx, "testPurgeCache", &Waas.PurgeCacheArgs{
-//				WaasPolicyId: pulumi.Any(oci_waas_waas_policy.Test_waas_policy.Id),
-//				Resources:    pulumi.Any(_var.Purge_cache_resources),
+//			_, err := Waas.NewPurgeCache(ctx, "test_purge_cache", &Waas.PurgeCacheArgs{
+//				WaasPolicyId: pulumi.Any(testWaasPolicy.Id),
+//				Resources:    pulumi.Any(purgeCacheResources),
 //			})
 //			if err != nil {
 //				return err

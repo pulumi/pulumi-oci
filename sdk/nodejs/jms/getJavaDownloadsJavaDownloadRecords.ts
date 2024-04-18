@@ -21,14 +21,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadRecords = oci.Jms.getJavaDownloadsJavaDownloadRecords({
- *     compartmentId: _var.compartment_id,
- *     architecture: _var.java_download_record_architecture,
- *     familyVersion: _var.java_download_record_family_version,
- *     osFamily: _var.java_download_record_os_family,
- *     packageTypeDetail: _var.java_download_record_package_type_detail,
- *     releaseVersion: _var.java_download_record_release_version,
- *     timeEnd: _var.java_download_record_time_end,
- *     timeStart: _var.java_download_record_time_start,
+ *     compartmentId: compartmentId,
+ *     architecture: javaDownloadRecordArchitecture,
+ *     familyVersion: javaDownloadRecordFamilyVersion,
+ *     osFamily: javaDownloadRecordOsFamily,
+ *     packageTypeDetail: javaDownloadRecordPackageTypeDetail,
+ *     releaseVersion: javaDownloadRecordReleaseVersion,
+ *     timeEnd: javaDownloadRecordTimeEnd,
+ *     timeStart: javaDownloadRecordTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -140,14 +140,14 @@ export interface GetJavaDownloadsJavaDownloadRecordsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadRecords = oci.Jms.getJavaDownloadsJavaDownloadRecords({
- *     compartmentId: _var.compartment_id,
- *     architecture: _var.java_download_record_architecture,
- *     familyVersion: _var.java_download_record_family_version,
- *     osFamily: _var.java_download_record_os_family,
- *     packageTypeDetail: _var.java_download_record_package_type_detail,
- *     releaseVersion: _var.java_download_record_release_version,
- *     timeEnd: _var.java_download_record_time_end,
- *     timeStart: _var.java_download_record_time_start,
+ *     compartmentId: compartmentId,
+ *     architecture: javaDownloadRecordArchitecture,
+ *     familyVersion: javaDownloadRecordFamilyVersion,
+ *     osFamily: javaDownloadRecordOsFamily,
+ *     packageTypeDetail: javaDownloadRecordPackageTypeDetail,
+ *     releaseVersion: javaDownloadRecordReleaseVersion,
+ *     timeEnd: javaDownloadRecordTimeEnd,
+ *     timeStart: javaDownloadRecordTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

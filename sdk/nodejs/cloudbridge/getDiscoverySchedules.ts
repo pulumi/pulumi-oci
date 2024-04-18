@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoverySchedules = oci.CloudBridge.getDiscoverySchedules({
- *     compartmentId: _var.compartment_id,
- *     discoveryScheduleId: oci_cloud_bridge_discovery_schedule.test_discovery_schedule.id,
- *     displayName: _var.discovery_schedule_display_name,
- *     state: _var.discovery_schedule_state,
+ *     compartmentId: compartmentId,
+ *     discoveryScheduleId: testDiscoverySchedule.id,
+ *     displayName: discoveryScheduleDisplayName,
+ *     state: discoveryScheduleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetDiscoverySchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoverySchedules = oci.CloudBridge.getDiscoverySchedules({
- *     compartmentId: _var.compartment_id,
- *     discoveryScheduleId: oci_cloud_bridge_discovery_schedule.test_discovery_schedule.id,
- *     displayName: _var.discovery_schedule_display_name,
- *     state: _var.discovery_schedule_state,
+ *     compartmentId: compartmentId,
+ *     discoveryScheduleId: testDiscoverySchedule.id,
+ *     displayName: discoveryScheduleDisplayName,
+ *     state: discoveryScheduleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

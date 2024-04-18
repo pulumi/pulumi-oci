@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testSubnets = Oci.Core.GetSubnets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Subnet_display_name,
-        ///         State = @var.Subnet_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = subnetDisplayName,
+        ///         State = subnetState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testSubnets = Oci.Core.GetSubnets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Subnet_display_name,
-        ///         State = @var.Subnet_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = subnetDisplayName,
+        ///         State = subnetState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

@@ -29,9 +29,9 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// {
         ///     var testArtifactByPath = Oci.GenericArtifactsContent.GetArtifactByPath.Invoke(new()
         ///     {
-        ///         ArtifactPath = @var.Artifact_by_path_artifact_path,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         Version = @var.Artifact_by_path_version,
+        ///         ArtifactPath = artifactByPathArtifactPath,
+        ///         RepositoryId = testRepository.Id,
+        ///         Version = artifactByPathVersion,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.GenericArtifactsContent
         /// {
         ///     var testArtifactByPath = Oci.GenericArtifactsContent.GetArtifactByPath.Invoke(new()
         ///     {
-        ///         ArtifactPath = @var.Artifact_by_path_artifact_path,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         Version = @var.Artifact_by_path_version,
+        ///         ArtifactPath = artifactByPathArtifactPath,
+        ///         RepositoryId = testRepository.Id,
+        ///         Version = artifactByPathVersion,
         ///     });
         /// 
         /// });

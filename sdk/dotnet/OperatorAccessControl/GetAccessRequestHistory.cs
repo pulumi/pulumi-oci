@@ -30,7 +30,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testAccessRequestHistory = Oci.OperatorAccessControl.GetAccessRequestHistory.Invoke(new()
         ///     {
-        ///         AccessRequestId = oci_operator_access_control_access_request.Test_access_request.Id,
+        ///         AccessRequestId = testAccessRequest.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testAccessRequestHistory = Oci.OperatorAccessControl.GetAccessRequestHistory.Invoke(new()
         ///     {
-        ///         AccessRequestId = oci_operator_access_control_access_request.Test_access_request.Id,
+        ///         AccessRequestId = testAccessRequest.Id,
         ///     });
         /// 
         /// });

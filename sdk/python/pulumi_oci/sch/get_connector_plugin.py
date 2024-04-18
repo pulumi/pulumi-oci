@@ -163,7 +163,7 @@ def get_connector_plugin(connector_plugin_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=oci_sch_connector_plugin["test_connector_plugin"]["name"])
+    test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=test_connector_plugin_oci_sch_connector_plugin["name"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -203,7 +203,7 @@ def get_connector_plugin_output(connector_plugin_name: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=oci_sch_connector_plugin["test_connector_plugin"]["name"])
+    test_connector_plugin = oci.Sch.get_connector_plugin(connector_plugin_name=test_connector_plugin_oci_sch_connector_plugin["name"])
     ```
     <!--End PulumiCodeChooser -->
 

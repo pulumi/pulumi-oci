@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DatabaseTools
         /// {
         ///     var testDatabaseToolsConnections = Oci.DatabaseTools.GetDatabaseToolsConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_tools_connection_display_name,
-        ///         RelatedResourceIdentifier = @var.Database_tools_connection_related_resource_identifier,
-        ///         RuntimeSupports = @var.Database_tools_connection_runtime_support,
-        ///         State = @var.Database_tools_connection_state,
-        ///         Types = @var.Database_tools_connection_type,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsConnectionDisplayName,
+        ///         RelatedResourceIdentifier = databaseToolsConnectionRelatedResourceIdentifier,
+        ///         RuntimeSupports = databaseToolsConnectionRuntimeSupport,
+        ///         State = databaseToolsConnectionState,
+        ///         Types = databaseToolsConnectionType,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DatabaseTools
         /// {
         ///     var testDatabaseToolsConnections = Oci.DatabaseTools.GetDatabaseToolsConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_tools_connection_display_name,
-        ///         RelatedResourceIdentifier = @var.Database_tools_connection_related_resource_identifier,
-        ///         RuntimeSupports = @var.Database_tools_connection_runtime_support,
-        ///         State = @var.Database_tools_connection_state,
-        ///         Types = @var.Database_tools_connection_type,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsConnectionDisplayName,
+        ///         RelatedResourceIdentifier = databaseToolsConnectionRelatedResourceIdentifier,
+        ///         RuntimeSupports = databaseToolsConnectionRuntimeSupport,
+        ///         State = databaseToolsConnectionState,
+        ///         Types = databaseToolsConnectionType,
         ///     });
         /// 
         /// });

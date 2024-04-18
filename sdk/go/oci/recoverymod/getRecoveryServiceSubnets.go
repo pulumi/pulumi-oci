@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetRecoveryServiceSubnets(ctx, &recoverymod.GetRecoveryServiceSubnetsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Recovery_service_subnet_display_name),
-//				Id:            pulumi.StringRef(_var.Recovery_service_subnet_id),
-//				State:         pulumi.StringRef(_var.Recovery_service_subnet_state),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(recoveryServiceSubnetDisplayName),
+//				Id:            pulumi.StringRef(recoveryServiceSubnetId),
+//				State:         pulumi.StringRef(recoveryServiceSubnetState),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

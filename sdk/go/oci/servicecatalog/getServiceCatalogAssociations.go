@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceCatalog.GetServiceCatalogAssociations(ctx, &servicecatalog.GetServiceCatalogAssociationsArgs{
-//				EntityId:                    pulumi.StringRef(oci_service_catalog_entity.Test_entity.Id),
-//				EntityType:                  pulumi.StringRef(_var.Service_catalog_association_entity_type),
-//				ServiceCatalogAssociationId: pulumi.StringRef(oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id),
-//				ServiceCatalogId:            pulumi.StringRef(oci_service_catalog_service_catalog.Test_service_catalog.Id),
+//				EntityId:                    pulumi.StringRef(testEntity.Id),
+//				EntityType:                  pulumi.StringRef(serviceCatalogAssociationEntityType),
+//				ServiceCatalogAssociationId: pulumi.StringRef(testServiceCatalogAssociation.Id),
+//				ServiceCatalogId:            pulumi.StringRef(testServiceCatalog.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsEntityTopology(ctx, &loganalytics.GetLogAnalyticsEntityTopologyArgs{
-//				LogAnalyticsEntityId: oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-//				Namespace:            _var.Log_analytics_entity_topology_namespace,
-//				MetadataEquals:       _var.Log_analytics_entity_topology_metadata_equals,
-//				State:                pulumi.StringRef(_var.Log_analytics_entity_topology_state),
+//				LogAnalyticsEntityId: testLogAnalyticsEntity.Id,
+//				Namespace:            logAnalyticsEntityTopologyNamespace,
+//				MetadataEquals:       logAnalyticsEntityTopologyMetadataEquals,
+//				State:                pulumi.StringRef(logAnalyticsEntityTopologyState),
 //			}, nil)
 //			if err != nil {
 //				return err

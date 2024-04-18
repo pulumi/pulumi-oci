@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetAnnouncements(ctx, &jms.GetAnnouncementsArgs{
-//				SummaryContains: pulumi.StringRef(_var.Announcement_summary_contains),
-//				TimeEnd:         pulumi.StringRef(_var.Announcement_time_end),
-//				TimeStart:       pulumi.StringRef(_var.Announcement_time_start),
+//				SummaryContains: pulumi.StringRef(announcementSummaryContains),
+//				TimeEnd:         pulumi.StringRef(announcementTimeEnd),
+//				TimeStart:       pulumi.StringRef(announcementTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

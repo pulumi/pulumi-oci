@@ -923,7 +923,7 @@ def get_connection(connection_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.GoldenGate.get_connection(connection_id=oci_golden_gate_connection["test_connection"]["id"])
+    test_connection = oci.GoldenGate.get_connection(connection_id=test_connection_oci_golden_gate_connection["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -1031,7 +1031,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection = oci.GoldenGate.get_connection(connection_id=oci_golden_gate_connection["test_connection"]["id"])
+    test_connection = oci.GoldenGate.get_connection(connection_id=test_connection_oci_golden_gate_connection["id"])
     ```
     <!--End PulumiCodeChooser -->
 

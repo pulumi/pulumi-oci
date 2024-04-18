@@ -133,10 +133,10 @@ def get_managed_instance_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagement.get_managed_instance_groups(compartment_id=var["compartment_id"],
-        display_name=var["managed_instance_group_display_name"],
-        os_family=var["managed_instance_group_os_family"],
-        state=var["managed_instance_group_state"])
+    test_managed_instance_groups = oci.OsManagement.get_managed_instance_groups(compartment_id=compartment_id,
+        display_name=managed_instance_group_display_name,
+        os_family=managed_instance_group_os_family,
+        state=managed_instance_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_managed_instance_groups_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagement.get_managed_instance_groups(compartment_id=var["compartment_id"],
-        display_name=var["managed_instance_group_display_name"],
-        os_family=var["managed_instance_group_os_family"],
-        state=var["managed_instance_group_state"])
+    test_managed_instance_groups = oci.OsManagement.get_managed_instance_groups(compartment_id=compartment_id,
+        display_name=managed_instance_group_display_name,
+        os_family=managed_instance_group_os_family,
+        state=managed_instance_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -25,10 +25,10 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testClusterStartCredentialRotationManagement = new Oci.ContainerEngine.ClusterStartCredentialRotationManagement("testClusterStartCredentialRotationManagement", new()
+    ///     var testClusterStartCredentialRotationManagement = new Oci.ContainerEngine.ClusterStartCredentialRotationManagement("test_cluster_start_credential_rotation_management", new()
     ///     {
-    ///         AutoCompletionDelayDuration = @var.Cluster_start_credential_rotation_management_auto_completion_delay_duration,
-    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+    ///         AutoCompletionDelayDuration = clusterStartCredentialRotationManagementAutoCompletionDelayDuration,
+    ///         ClusterId = testCluster.Id,
     ///     });
     /// 
     /// });

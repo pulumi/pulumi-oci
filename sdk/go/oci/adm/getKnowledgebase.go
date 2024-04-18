@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.GetKnowledgebase(ctx, &adm.GetKnowledgebaseArgs{
-//				KnowledgeBaseId: oci_adm_knowledge_base.Test_knowledge_base.Id,
+//				KnowledgeBaseId: testKnowledgeBaseOciAdmKnowledgeBase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

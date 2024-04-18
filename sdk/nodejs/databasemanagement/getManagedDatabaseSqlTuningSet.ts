@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningSet = oci.DatabaseManagement.getManagedDatabaseSqlTuningSet({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     nameContains: _var.managed_database_sql_tuning_set_name_contains,
- *     owner: _var.managed_database_sql_tuning_set_owner,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     nameContains: managedDatabaseSqlTuningSetNameContains,
+ *     owner: managedDatabaseSqlTuningSetOwner,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetManagedDatabaseSqlTuningSetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningSet = oci.DatabaseManagement.getManagedDatabaseSqlTuningSet({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     nameContains: _var.managed_database_sql_tuning_set_name_contains,
- *     owner: _var.managed_database_sql_tuning_set_owner,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     nameContains: managedDatabaseSqlTuningSetNameContains,
+ *     owner: managedDatabaseSqlTuningSetOwner,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

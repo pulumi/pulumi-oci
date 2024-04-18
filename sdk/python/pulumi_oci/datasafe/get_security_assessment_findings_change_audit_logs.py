@@ -196,16 +196,16 @@ def get_security_assessment_findings_change_audit_logs(filters: Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        finding_key=var["security_assessment_findings_change_audit_log_finding_key"],
-        finding_title=var["security_assessment_findings_change_audit_log_finding_title"],
-        is_risk_deferred=var["security_assessment_findings_change_audit_log_is_risk_deferred"],
-        modified_by=var["security_assessment_findings_change_audit_log_modified_by"],
-        severity=var["security_assessment_findings_change_audit_log_severity"],
-        time_updated_greater_than_or_equal_to=var["security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["security_assessment_findings_change_audit_log_time_updated_less_than"],
-        time_valid_until_greater_than_or_equal_to=var["security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to"],
-        time_valid_until_less_than=var["security_assessment_findings_change_audit_log_time_valid_until_less_than"])
+    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
+        finding_key=security_assessment_findings_change_audit_log_finding_key,
+        finding_title=security_assessment_findings_change_audit_log_finding_title,
+        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred,
+        modified_by=security_assessment_findings_change_audit_log_modified_by,
+        severity=security_assessment_findings_change_audit_log_severity,
+        time_updated_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
+        time_updated_less_than=security_assessment_findings_change_audit_log_time_updated_less_than,
+        time_valid_until_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to,
+        time_valid_until_less_than=security_assessment_findings_change_audit_log_time_valid_until_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -281,16 +281,16 @@ def get_security_assessment_findings_change_audit_logs_output(filters: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-        finding_key=var["security_assessment_findings_change_audit_log_finding_key"],
-        finding_title=var["security_assessment_findings_change_audit_log_finding_title"],
-        is_risk_deferred=var["security_assessment_findings_change_audit_log_is_risk_deferred"],
-        modified_by=var["security_assessment_findings_change_audit_log_modified_by"],
-        severity=var["security_assessment_findings_change_audit_log_severity"],
-        time_updated_greater_than_or_equal_to=var["security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to"],
-        time_updated_less_than=var["security_assessment_findings_change_audit_log_time_updated_less_than"],
-        time_valid_until_greater_than_or_equal_to=var["security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to"],
-        time_valid_until_less_than=var["security_assessment_findings_change_audit_log_time_valid_until_less_than"])
+    test_security_assessment_findings_change_audit_logs = oci.DataSafe.get_security_assessment_findings_change_audit_logs(security_assessment_id=test_security_assessment["id"],
+        finding_key=security_assessment_findings_change_audit_log_finding_key,
+        finding_title=security_assessment_findings_change_audit_log_finding_title,
+        is_risk_deferred=security_assessment_findings_change_audit_log_is_risk_deferred,
+        modified_by=security_assessment_findings_change_audit_log_modified_by,
+        severity=security_assessment_findings_change_audit_log_severity,
+        time_updated_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
+        time_updated_less_than=security_assessment_findings_change_audit_log_time_updated_less_than,
+        time_valid_until_greater_than_or_equal_to=security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to,
+        time_valid_until_less_than=security_assessment_findings_change_audit_log_time_valid_until_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

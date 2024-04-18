@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationSchedule = new oci.cloudmigrations.ReplicationSchedule("testReplicationSchedule", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_schedule_display_name,
- *     executionRecurrences: _var.replication_schedule_execution_recurrences,
+ * const testReplicationSchedule = new oci.cloudmigrations.ReplicationSchedule("test_replication_schedule", {
+ *     compartmentId: compartmentId,
+ *     displayName: replicationScheduleDisplayName,
+ *     executionRecurrences: replicationScheduleExecutionRecurrences,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

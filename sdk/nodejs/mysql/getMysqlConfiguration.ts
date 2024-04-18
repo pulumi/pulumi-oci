@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlConfiguration = oci.Mysql.getMysqlConfiguration({
- *     configurationId: _var.mysql_configuration_id,
+ *     configurationId: mysqlConfigurationId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetMysqlConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlConfiguration = oci.Mysql.getMysqlConfiguration({
- *     configurationId: _var.mysql_configuration_id,
+ *     configurationId: mysqlConfigurationId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

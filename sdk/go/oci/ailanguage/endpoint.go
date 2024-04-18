@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiLanguage.NewEndpoint(ctx, "testEndpoint", &AiLanguage.EndpointArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ModelId:       pulumi.Any(oci_ai_language_model.Test_model.Id),
+//			_, err := AiLanguage.NewEndpoint(ctx, "test_endpoint", &AiLanguage.EndpointArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ModelId:       pulumi.Any(testModel.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Endpoint_description),
-//				DisplayName: pulumi.Any(_var.Endpoint_display_name),
+//				Description: pulumi.Any(endpointDescription),
+//				DisplayName: pulumi.Any(endpointDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				InferenceUnits: pulumi.Any(_var.Endpoint_inference_units),
+//				InferenceUnits: pulumi.Any(endpointInferenceUnits),
 //			})
 //			if err != nil {
 //				return err

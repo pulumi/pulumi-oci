@@ -22,16 +22,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testZones = oci.Dns.getZones({
- *     compartmentId: _var.compartment_id,
- *     name: _var.zone_name,
- *     nameContains: _var.zone_name_contains,
- *     scope: _var.zone_scope,
- *     state: _var.zone_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.zone_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.zone_time_created_less_than,
- *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
- *     viewId: oci_dns_view.test_view.id,
- *     zoneType: _var.zone_zone_type,
+ *     compartmentId: compartmentId,
+ *     name: zoneName,
+ *     nameContains: zoneNameContains,
+ *     scope: zoneScope,
+ *     state: zoneState,
+ *     timeCreatedGreaterThanOrEqualTo: zoneTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: zoneTimeCreatedLessThan,
+ *     tsigKeyId: testTsigKey.id,
+ *     viewId: testView.id,
+ *     zoneType: zoneZoneType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -175,16 +175,16 @@ export interface GetZonesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testZones = oci.Dns.getZones({
- *     compartmentId: _var.compartment_id,
- *     name: _var.zone_name,
- *     nameContains: _var.zone_name_contains,
- *     scope: _var.zone_scope,
- *     state: _var.zone_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.zone_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.zone_time_created_less_than,
- *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
- *     viewId: oci_dns_view.test_view.id,
- *     zoneType: _var.zone_zone_type,
+ *     compartmentId: compartmentId,
+ *     name: zoneName,
+ *     nameContains: zoneNameContains,
+ *     scope: zoneScope,
+ *     state: zoneState,
+ *     timeCreatedGreaterThanOrEqualTo: zoneTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: zoneTimeCreatedLessThan,
+ *     tsigKeyId: testTsigKey.id,
+ *     viewId: testView.id,
+ *     zoneType: zoneZoneType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

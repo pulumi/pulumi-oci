@@ -458,24 +458,24 @@ class Fleet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fleet = oci.jms.Fleet("testFleet",
-            compartment_id=var["compartment_id"],
-            display_name=var["fleet_display_name"],
+        test_fleet = oci.jms.Fleet("test_fleet",
+            compartment_id=compartment_id,
+            display_name=fleet_display_name,
             inventory_log=oci.jms.FleetInventoryLogArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["fleet_description"],
+            description=fleet_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_advanced_features_enabled=var["fleet_is_advanced_features_enabled"],
+            is_advanced_features_enabled=fleet_is_advanced_features_enabled,
             operation_log=oci.jms.FleetOperationLogArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -523,24 +523,24 @@ class Fleet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fleet = oci.jms.Fleet("testFleet",
-            compartment_id=var["compartment_id"],
-            display_name=var["fleet_display_name"],
+        test_fleet = oci.jms.Fleet("test_fleet",
+            compartment_id=compartment_id,
+            display_name=fleet_display_name,
             inventory_log=oci.jms.FleetInventoryLogArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["fleet_description"],
+            description=fleet_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_advanced_features_enabled=var["fleet_is_advanced_features_enabled"],
+            is_advanced_features_enabled=fleet_is_advanced_features_enabled,
             operation_log=oci.jms.FleetOperationLogArgs(
-                log_group_id=oci_logging_log_group["test_log_group"]["id"],
-                log_id=oci_logging_log["test_log"]["id"],
+                log_group_id=test_log_group["id"],
+                log_id=test_log["id"],
             ))
         ```
         <!--End PulumiCodeChooser -->

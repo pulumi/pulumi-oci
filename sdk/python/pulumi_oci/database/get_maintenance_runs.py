@@ -169,13 +169,13 @@ def get_maintenance_runs(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_availability_domain"],
-        maintenance_subtype=var["maintenance_run_maintenance_subtype"],
-        maintenance_type=var["maintenance_run_maintenance_type"],
-        state=var["maintenance_run_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_target_resource_type"])
+    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=compartment_id,
+        availability_domain=maintenance_run_availability_domain,
+        maintenance_subtype=maintenance_run_maintenance_subtype,
+        maintenance_type=maintenance_run_maintenance_type,
+        state=maintenance_run_state,
+        target_resource_id=test_target_resource["id"],
+        target_resource_type=maintenance_run_target_resource_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -235,13 +235,13 @@ def get_maintenance_runs_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=var["compartment_id"],
-        availability_domain=var["maintenance_run_availability_domain"],
-        maintenance_subtype=var["maintenance_run_maintenance_subtype"],
-        maintenance_type=var["maintenance_run_maintenance_type"],
-        state=var["maintenance_run_state"],
-        target_resource_id=oci_database_target_resource["test_target_resource"]["id"],
-        target_resource_type=var["maintenance_run_target_resource_type"])
+    test_maintenance_runs = oci.Database.get_maintenance_runs(compartment_id=compartment_id,
+        availability_domain=maintenance_run_availability_domain,
+        maintenance_subtype=maintenance_run_maintenance_subtype,
+        maintenance_type=maintenance_run_maintenance_type,
+        state=maintenance_run_state,
+        target_resource_id=test_target_resource["id"],
+        target_resource_type=maintenance_run_target_resource_type)
     ```
     <!--End PulumiCodeChooser -->
 

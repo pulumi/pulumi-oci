@@ -26,62 +26,62 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVmClusterNetwork = new Oci.Database.VmClusterNetwork("testVmClusterNetwork", new()
+    ///     var testVmClusterNetwork = new Oci.Database.VmClusterNetwork("test_vm_cluster_network", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Vm_cluster_network_display_name,
-    ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = vmClusterNetworkDisplayName,
+    ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
     ///         Scans = new[]
     ///         {
     ///             new Oci.Database.Inputs.VmClusterNetworkScanArgs
     ///             {
-    ///                 Hostname = @var.Vm_cluster_network_scans_hostname,
-    ///                 Ips = @var.Vm_cluster_network_scans_ips,
-    ///                 Port = @var.Vm_cluster_network_scans_port,
-    ///                 ScanListenerPortTcp = @var.Vm_cluster_network_scans_scan_listener_port_tcp,
-    ///                 ScanListenerPortTcpSsl = @var.Vm_cluster_network_scans_scan_listener_port_tcp_ssl,
+    ///                 Hostname = vmClusterNetworkScansHostname,
+    ///                 Ips = vmClusterNetworkScansIps,
+    ///                 Port = vmClusterNetworkScansPort,
+    ///                 ScanListenerPortTcp = vmClusterNetworkScansScanListenerPortTcp,
+    ///                 ScanListenerPortTcpSsl = vmClusterNetworkScansScanListenerPortTcpSsl,
     ///             },
     ///         },
     ///         VmNetworks = new[]
     ///         {
     ///             new Oci.Database.Inputs.VmClusterNetworkVmNetworkArgs
     ///             {
-    ///                 NetworkType = @var.Vm_cluster_network_vm_networks_network_type,
+    ///                 NetworkType = vmClusterNetworkVmNetworksNetworkType,
     ///                 Nodes = new[]
     ///                 {
     ///                     new Oci.Database.Inputs.VmClusterNetworkVmNetworkNodeArgs
     ///                     {
-    ///                         Hostname = @var.Vm_cluster_network_vm_networks_nodes_hostname,
-    ///                         Ip = @var.Vm_cluster_network_vm_networks_nodes_ip,
-    ///                         DbServerId = oci_database_db_server.Test_db_server.Id,
-    ///                         State = @var.Vm_cluster_network_vm_networks_nodes_state,
-    ///                         Vip = @var.Vm_cluster_network_vm_networks_nodes_vip,
-    ///                         VipHostname = @var.Vm_cluster_network_vm_networks_nodes_vip_hostname,
+    ///                         Hostname = vmClusterNetworkVmNetworksNodesHostname,
+    ///                         Ip = vmClusterNetworkVmNetworksNodesIp,
+    ///                         DbServerId = testDbServer.Id,
+    ///                         State = vmClusterNetworkVmNetworksNodesState,
+    ///                         Vip = vmClusterNetworkVmNetworksNodesVip,
+    ///                         VipHostname = vmClusterNetworkVmNetworksNodesVipHostname,
     ///                     },
     ///                 },
-    ///                 DomainName = oci_identity_domain.Test_domain.Name,
-    ///                 Gateway = @var.Vm_cluster_network_vm_networks_gateway,
-    ///                 Netmask = @var.Vm_cluster_network_vm_networks_netmask,
-    ///                 VlanId = @var.Vm_cluster_network_vm_networks_vlan_id,
+    ///                 DomainName = testDomain.Name,
+    ///                 Gateway = vmClusterNetworkVmNetworksGateway,
+    ///                 Netmask = vmClusterNetworkVmNetworksNetmask,
+    ///                 VlanId = vmClusterNetworkVmNetworksVlanId,
     ///             },
     ///         },
-    ///         DefinedTags = @var.Vm_cluster_network_defined_tags,
-    ///         Dns = @var.Vm_cluster_network_dns,
+    ///         DefinedTags = vmClusterNetworkDefinedTags,
+    ///         Dns = vmClusterNetworkDns,
     ///         DrScans = new[]
     ///         {
     ///             new Oci.Database.Inputs.VmClusterNetworkDrScanArgs
     ///             {
-    ///                 Hostname = @var.Vm_cluster_network_dr_scans_hostname,
-    ///                 Ips = @var.Vm_cluster_network_dr_scans_ips,
-    ///                 ScanListenerPortTcp = @var.Vm_cluster_network_dr_scans_scan_listener_port_tcp,
+    ///                 Hostname = vmClusterNetworkDrScansHostname,
+    ///                 Ips = vmClusterNetworkDrScansIps,
+    ///                 ScanListenerPortTcp = vmClusterNetworkDrScansScanListenerPortTcp,
     ///             },
     ///         },
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Ntps = @var.Vm_cluster_network_ntp,
-    ///         ValidateVmClusterNetwork = @var.Vm_cluster_network_validate_vm_cluster_network,
+    ///         Ntps = vmClusterNetworkNtp,
+    ///         ValidateVmClusterNetwork = vmClusterNetworkValidateVmClusterNetwork,
     ///     });
     /// 
     /// });

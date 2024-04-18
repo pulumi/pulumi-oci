@@ -46,17 +46,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewIdentityProvider(ctx, "testIdentityProvider", &Identity.IdentityProviderArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.Identity_provider_description),
-//				Metadata:      pulumi.Any(_var.Identity_provider_metadata),
-//				MetadataUrl:   pulumi.Any(_var.Identity_provider_metadata_url),
-//				ProductType:   pulumi.Any(_var.Identity_provider_product_type),
-//				Protocol:      pulumi.Any(_var.Identity_provider_protocol),
+//			_, err := Identity.NewIdentityProvider(ctx, "test_identity_provider", &Identity.IdentityProviderArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(identityProviderDescription),
+//				Metadata:      pulumi.Any(identityProviderMetadata),
+//				MetadataUrl:   pulumi.Any(identityProviderMetadataUrl),
+//				Name:          pulumi.Any(identityProviderName),
+//				ProductType:   pulumi.Any(identityProviderProductType),
+//				Protocol:      pulumi.Any(identityProviderProtocol),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				FreeformAttributes: pulumi.Any(_var.Identity_provider_freeform_attributes),
+//				FreeformAttributes: pulumi.Any(identityProviderFreeformAttributes),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

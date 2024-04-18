@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewKeyStore(ctx, "testKeyStore", &Database.KeyStoreArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Key_store_display_name),
+//			_, err := Database.NewKeyStore(ctx, "test_key_store", &Database.KeyStoreArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(keyStoreDisplayName),
 //				TypeDetails: &database.KeyStoreTypeDetailsArgs{
-//					AdminUsername: pulumi.Any(_var.Key_store_type_details_admin_username),
-//					ConnectionIps: pulumi.Any(_var.Key_store_type_details_connection_ips),
-//					SecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Type:          pulumi.Any(_var.Key_store_type_details_type),
-//					VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
+//					AdminUsername: pulumi.Any(keyStoreTypeDetailsAdminUsername),
+//					ConnectionIps: pulumi.Any(keyStoreTypeDetailsConnectionIps),
+//					SecretId:      pulumi.Any(testSecret.Id),
+//					Type:          pulumi.Any(keyStoreTypeDetailsType),
+//					VaultId:       pulumi.Any(testVault.Id),
 //				},
-//				DefinedTags: pulumi.Any(_var.Key_store_defined_tags),
+//				DefinedTags: pulumi.Any(keyStoreDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

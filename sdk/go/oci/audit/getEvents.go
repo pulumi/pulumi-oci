@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Audit.GetEvents(ctx, &audit.GetEventsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				EndTime:       _var.Audit_event_end_time,
-//				StartTime:     _var.Audit_event_start_time,
+//				CompartmentId: compartmentId,
+//				EndTime:       auditEventEndTime,
+//				StartTime:     auditEventStartTime,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,33 +29,33 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFilesystemSnapshotPolicy = new Oci.FileStorage.FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy", new()
+    ///     var testFilesystemSnapshotPolicy = new Oci.FileStorage.FilesystemSnapshotPolicy("test_filesystem_snapshot_policy", new()
     ///     {
-    ///         AvailabilityDomain = @var.Filesystem_snapshot_policy_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = filesystemSnapshotPolicyAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Filesystem_snapshot_policy_display_name,
+    ///         DisplayName = filesystemSnapshotPolicyDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PolicyPrefix = @var.Filesystem_snapshot_policy_policy_prefix,
+    ///         PolicyPrefix = filesystemSnapshotPolicyPolicyPrefix,
     ///         Schedules = new[]
     ///         {
     ///             new Oci.FileStorage.Inputs.FilesystemSnapshotPolicyScheduleArgs
     ///             {
-    ///                 Period = @var.Filesystem_snapshot_policy_schedules_period,
-    ///                 TimeZone = @var.Filesystem_snapshot_policy_schedules_time_zone,
-    ///                 DayOfMonth = @var.Filesystem_snapshot_policy_schedules_day_of_month,
-    ///                 DayOfWeek = @var.Filesystem_snapshot_policy_schedules_day_of_week,
-    ///                 HourOfDay = @var.Filesystem_snapshot_policy_schedules_hour_of_day,
-    ///                 Month = @var.Filesystem_snapshot_policy_schedules_month,
-    ///                 RetentionDurationInSeconds = @var.Filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
-    ///                 SchedulePrefix = @var.Filesystem_snapshot_policy_schedules_schedule_prefix,
-    ///                 TimeScheduleStart = @var.Filesystem_snapshot_policy_schedules_time_schedule_start,
+    ///                 Period = filesystemSnapshotPolicySchedulesPeriod,
+    ///                 TimeZone = filesystemSnapshotPolicySchedulesTimeZone,
+    ///                 DayOfMonth = filesystemSnapshotPolicySchedulesDayOfMonth,
+    ///                 DayOfWeek = filesystemSnapshotPolicySchedulesDayOfWeek,
+    ///                 HourOfDay = filesystemSnapshotPolicySchedulesHourOfDay,
+    ///                 Month = filesystemSnapshotPolicySchedulesMonth,
+    ///                 RetentionDurationInSeconds = filesystemSnapshotPolicySchedulesRetentionDurationInSeconds,
+    ///                 SchedulePrefix = filesystemSnapshotPolicySchedulesSchedulePrefix,
+    ///                 TimeScheduleStart = filesystemSnapshotPolicySchedulesTimeScheduleStart,
     ///             },
     ///         },
     ///     });

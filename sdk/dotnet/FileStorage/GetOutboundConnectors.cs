@@ -30,11 +30,11 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testOutboundConnectors = Oci.FileStorage.GetOutboundConnectors.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Outbound_connector_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Outbound_connector_display_name,
-        ///         Id = @var.Outbound_connector_id,
-        ///         State = @var.Outbound_connector_state,
+        ///         AvailabilityDomain = outboundConnectorAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = outboundConnectorDisplayName,
+        ///         Id = outboundConnectorId,
+        ///         State = outboundConnectorState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testOutboundConnectors = Oci.FileStorage.GetOutboundConnectors.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Outbound_connector_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Outbound_connector_display_name,
-        ///         Id = @var.Outbound_connector_id,
-        ///         State = @var.Outbound_connector_state,
+        ///         AvailabilityDomain = outboundConnectorAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = outboundConnectorDisplayName,
+        ///         Id = outboundConnectorId,
+        ///         State = outboundConnectorState,
         ///     });
         /// 
         /// });

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubAwrSourcesSummary = oci.Opsi.getAwrHubAwrSourcesSummary({
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.awr_hub_awr_sources_summary_name,
+ *     awrHubId: testAwrHub.id,
+ *     compartmentId: compartmentId,
+ *     name: awrHubAwrSourcesSummaryName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetAwrHubAwrSourcesSummaryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubAwrSourcesSummary = oci.Opsi.getAwrHubAwrSourcesSummary({
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.awr_hub_awr_sources_summary_name,
+ *     awrHubId: testAwrHub.id,
+ *     compartmentId: compartmentId,
+ *     name: awrHubAwrSourcesSummaryName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

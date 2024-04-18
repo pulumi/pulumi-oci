@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVcn = oci.Core.getVcn({
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     vcnId: testVcnOciCoreVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,7 +132,7 @@ export interface GetVcnResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVcn = oci.Core.getVcn({
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     vcnId: testVcnOciCoreVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

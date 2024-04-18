@@ -35,28 +35,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewFilesystemSnapshotPolicy(ctx, "testFilesystemSnapshotPolicy", &FileStorage.FilesystemSnapshotPolicyArgs{
-//				AvailabilityDomain: pulumi.Any(_var.Filesystem_snapshot_policy_availability_domain),
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
+//			_, err := FileStorage.NewFilesystemSnapshotPolicy(ctx, "test_filesystem_snapshot_policy", &FileStorage.FilesystemSnapshotPolicyArgs{
+//				AvailabilityDomain: pulumi.Any(filesystemSnapshotPolicyAvailabilityDomain),
+//				CompartmentId:      pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Filesystem_snapshot_policy_display_name),
+//				DisplayName: pulumi.Any(filesystemSnapshotPolicyDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				PolicyPrefix: pulumi.Any(_var.Filesystem_snapshot_policy_policy_prefix),
+//				PolicyPrefix: pulumi.Any(filesystemSnapshotPolicyPolicyPrefix),
 //				Schedules: filestorage.FilesystemSnapshotPolicyScheduleArray{
 //					&filestorage.FilesystemSnapshotPolicyScheduleArgs{
-//						Period:                     pulumi.Any(_var.Filesystem_snapshot_policy_schedules_period),
-//						TimeZone:                   pulumi.Any(_var.Filesystem_snapshot_policy_schedules_time_zone),
-//						DayOfMonth:                 pulumi.Any(_var.Filesystem_snapshot_policy_schedules_day_of_month),
-//						DayOfWeek:                  pulumi.Any(_var.Filesystem_snapshot_policy_schedules_day_of_week),
-//						HourOfDay:                  pulumi.Any(_var.Filesystem_snapshot_policy_schedules_hour_of_day),
-//						Month:                      pulumi.Any(_var.Filesystem_snapshot_policy_schedules_month),
-//						RetentionDurationInSeconds: pulumi.Any(_var.Filesystem_snapshot_policy_schedules_retention_duration_in_seconds),
-//						SchedulePrefix:             pulumi.Any(_var.Filesystem_snapshot_policy_schedules_schedule_prefix),
-//						TimeScheduleStart:          pulumi.Any(_var.Filesystem_snapshot_policy_schedules_time_schedule_start),
+//						Period:                     pulumi.Any(filesystemSnapshotPolicySchedulesPeriod),
+//						TimeZone:                   pulumi.Any(filesystemSnapshotPolicySchedulesTimeZone),
+//						DayOfMonth:                 pulumi.Any(filesystemSnapshotPolicySchedulesDayOfMonth),
+//						DayOfWeek:                  pulumi.Any(filesystemSnapshotPolicySchedulesDayOfWeek),
+//						HourOfDay:                  pulumi.Any(filesystemSnapshotPolicySchedulesHourOfDay),
+//						Month:                      pulumi.Any(filesystemSnapshotPolicySchedulesMonth),
+//						RetentionDurationInSeconds: pulumi.Any(filesystemSnapshotPolicySchedulesRetentionDurationInSeconds),
+//						SchedulePrefix:             pulumi.Any(filesystemSnapshotPolicySchedulesSchedulePrefix),
+//						TimeScheduleStart:          pulumi.Any(filesystemSnapshotPolicySchedulesTimeScheduleStart),
 //					},
 //				},
 //			})

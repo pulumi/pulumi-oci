@@ -104,8 +104,8 @@ def get_management_agent_data_sources(filters: Optional[Sequence[pulumi.InputTyp
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_data_sources = oci.ManagementAgent.get_management_agent_data_sources(management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-        name=var["management_agent_data_source_name"])
+    test_management_agent_data_sources = oci.ManagementAgent.get_management_agent_data_sources(management_agent_id=test_management_agent["id"],
+        name=management_agent_data_source_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -145,8 +145,8 @@ def get_management_agent_data_sources_output(filters: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_data_sources = oci.ManagementAgent.get_management_agent_data_sources(management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-        name=var["management_agent_data_source_name"])
+    test_management_agent_data_sources = oci.ManagementAgent.get_management_agent_data_sources(management_agent_id=test_management_agent["id"],
+        name=management_agent_data_source_name)
     ```
     <!--End PulumiCodeChooser -->
 

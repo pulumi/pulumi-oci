@@ -20,14 +20,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFileSystems = oci.FileStorage.getFileSystems({
- *     availabilityDomain: _var.file_system_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.file_system_display_name,
- *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
- *     id: _var.file_system_id,
- *     parentFileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     sourceSnapshotId: oci_file_storage_snapshot.test_snapshot.id,
- *     state: _var.file_system_state,
+ *     availabilityDomain: fileSystemAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: fileSystemDisplayName,
+ *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicy.id,
+ *     id: fileSystemId,
+ *     parentFileSystemId: testFileSystem.id,
+ *     sourceSnapshotId: testSnapshot.id,
+ *     state: fileSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -143,14 +143,14 @@ export interface GetFileSystemsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFileSystems = oci.FileStorage.getFileSystems({
- *     availabilityDomain: _var.file_system_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.file_system_display_name,
- *     filesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.test_filesystem_snapshot_policy.id,
- *     id: _var.file_system_id,
- *     parentFileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     sourceSnapshotId: oci_file_storage_snapshot.test_snapshot.id,
- *     state: _var.file_system_state,
+ *     availabilityDomain: fileSystemAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: fileSystemDisplayName,
+ *     filesystemSnapshotPolicyId: testFilesystemSnapshotPolicy.id,
+ *     id: fileSystemId,
+ *     parentFileSystemId: testFileSystem.id,
+ *     sourceSnapshotId: testSnapshot.id,
+ *     state: fileSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,18 +25,18 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOauthClientCertificate = new Oci.Identity.DomainsOauthClientCertificate("testOauthClientCertificate", new()
+    ///     var testOauthClientCertificate = new Oci.Identity.DomainsOauthClientCertificate("test_oauth_client_certificate", new()
     ///     {
-    ///         CertificateAlias = @var.Oauth_client_certificate_certificate_alias,
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+    ///         CertificateAlias = oauthClientCertificateCertificateAlias,
+    ///         IdcsEndpoint = testDomain.Url,
     ///         Schemas = new[]
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate",
     ///         },
-    ///         X509base64certificate = @var.Oauth_client_certificate_x509base64certificate,
-    ///         Authorization = @var.Oauth_client_certificate_authorization,
+    ///         X509base64certificate = oauthClientCertificateX509base64certificate,
+    ///         Authorization = oauthClientCertificateAuthorization,
     ///         ExternalId = "externalId",
-    ///         ResourceTypeSchemaVersion = @var.Oauth_client_certificate_resource_type_schema_version,
+    ///         ResourceTypeSchemaVersion = oauthClientCertificateResourceTypeSchemaVersion,
     ///     });
     /// 
     /// });

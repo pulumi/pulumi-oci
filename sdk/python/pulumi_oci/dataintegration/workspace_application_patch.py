@@ -599,22 +599,23 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_application_patch = oci.data_integration.WorkspaceApplicationPatch("testWorkspaceApplicationPatch",
-            application_key=var["workspace_application_patch_application_key"],
-            identifier=var["workspace_application_patch_identifier"],
-            object_keys=var["workspace_application_patch_object_keys"],
-            patch_type=var["workspace_application_patch_patch_type"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            description=var["workspace_application_patch_description"],
-            key=var["workspace_application_patch_key"],
-            model_version=var["workspace_application_patch_model_version"],
-            object_status=var["workspace_application_patch_object_status"],
+        test_workspace_application_patch = oci.data_integration.WorkspaceApplicationPatch("test_workspace_application_patch",
+            application_key=workspace_application_patch_application_key,
+            identifier=workspace_application_patch_identifier,
+            name=workspace_application_patch_name,
+            object_keys=workspace_application_patch_object_keys,
+            patch_type=workspace_application_patch_patch_type,
+            workspace_id=test_workspace["id"],
+            description=workspace_application_patch_description,
+            key=workspace_application_patch_key,
+            model_version=workspace_application_patch_model_version,
+            object_status=workspace_application_patch_object_status,
             registry_metadata=oci.data_integration.WorkspaceApplicationPatchRegistryMetadataArgs(
-                aggregator_key=var["workspace_application_patch_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_application_patch_registry_metadata_is_favorite"],
-                key=var["workspace_application_patch_registry_metadata_key"],
-                labels=var["workspace_application_patch_registry_metadata_labels"],
-                registry_version=var["workspace_application_patch_registry_metadata_registry_version"],
+                aggregator_key=workspace_application_patch_registry_metadata_aggregator_key,
+                is_favorite=workspace_application_patch_registry_metadata_is_favorite,
+                key=workspace_application_patch_registry_metadata_key,
+                labels=workspace_application_patch_registry_metadata_labels,
+                registry_version=workspace_application_patch_registry_metadata_registry_version,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -663,22 +664,23 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_application_patch = oci.data_integration.WorkspaceApplicationPatch("testWorkspaceApplicationPatch",
-            application_key=var["workspace_application_patch_application_key"],
-            identifier=var["workspace_application_patch_identifier"],
-            object_keys=var["workspace_application_patch_object_keys"],
-            patch_type=var["workspace_application_patch_patch_type"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            description=var["workspace_application_patch_description"],
-            key=var["workspace_application_patch_key"],
-            model_version=var["workspace_application_patch_model_version"],
-            object_status=var["workspace_application_patch_object_status"],
+        test_workspace_application_patch = oci.data_integration.WorkspaceApplicationPatch("test_workspace_application_patch",
+            application_key=workspace_application_patch_application_key,
+            identifier=workspace_application_patch_identifier,
+            name=workspace_application_patch_name,
+            object_keys=workspace_application_patch_object_keys,
+            patch_type=workspace_application_patch_patch_type,
+            workspace_id=test_workspace["id"],
+            description=workspace_application_patch_description,
+            key=workspace_application_patch_key,
+            model_version=workspace_application_patch_model_version,
+            object_status=workspace_application_patch_object_status,
             registry_metadata=oci.data_integration.WorkspaceApplicationPatchRegistryMetadataArgs(
-                aggregator_key=var["workspace_application_patch_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_application_patch_registry_metadata_is_favorite"],
-                key=var["workspace_application_patch_registry_metadata_key"],
-                labels=var["workspace_application_patch_registry_metadata_labels"],
-                registry_version=var["workspace_application_patch_registry_metadata_registry_version"],
+                aggregator_key=workspace_application_patch_registry_metadata_aggregator_key,
+                is_favorite=workspace_application_patch_registry_metadata_is_favorite,
+                key=workspace_application_patch_registry_metadata_key,
+                labels=workspace_application_patch_registry_metadata_labels,
+                registry_version=workspace_application_patch_registry_metadata_registry_version,
             ))
         ```
         <!--End PulumiCodeChooser -->

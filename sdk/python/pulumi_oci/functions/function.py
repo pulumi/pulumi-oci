@@ -544,30 +544,30 @@ class Function(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_function = oci.functions.Function("testFunction",
-            application_id=oci_functions_application["test_application"]["id"],
-            display_name=var["function_display_name"],
-            memory_in_mbs=var["function_memory_in_mbs"],
-            config=var["function_config"],
+        test_function = oci.functions.Function("test_function",
+            application_id=test_application["id"],
+            display_name=function_display_name,
+            memory_in_mbs=function_memory_in_mbs,
+            config=function_config,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            image=var["function_image"],
-            image_digest=var["function_image_digest"],
+            image=function_image,
+            image_digest=function_image_digest,
             provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=var["function_provisioned_concurrency_config_strategy"],
-                count=var["function_provisioned_concurrency_config_count"],
+                strategy=function_provisioned_concurrency_config_strategy,
+                count=function_provisioned_concurrency_config_count,
             ),
             source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-                source_type=var["function_source_details_source_type"],
+                pbf_listing_id=test_pbf_listing["id"],
+                source_type=function_source_details_source_type,
             ),
-            timeout_in_seconds=var["function_timeout_in_seconds"],
+            timeout_in_seconds=function_timeout_in_seconds,
             trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=var["function_trace_config_is_enabled"],
+                is_enabled=function_trace_config_is_enabled,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -615,30 +615,30 @@ class Function(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_function = oci.functions.Function("testFunction",
-            application_id=oci_functions_application["test_application"]["id"],
-            display_name=var["function_display_name"],
-            memory_in_mbs=var["function_memory_in_mbs"],
-            config=var["function_config"],
+        test_function = oci.functions.Function("test_function",
+            application_id=test_application["id"],
+            display_name=function_display_name,
+            memory_in_mbs=function_memory_in_mbs,
+            config=function_config,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            image=var["function_image"],
-            image_digest=var["function_image_digest"],
+            image=function_image,
+            image_digest=function_image_digest,
             provisioned_concurrency_config=oci.functions.FunctionProvisionedConcurrencyConfigArgs(
-                strategy=var["function_provisioned_concurrency_config_strategy"],
-                count=var["function_provisioned_concurrency_config_count"],
+                strategy=function_provisioned_concurrency_config_strategy,
+                count=function_provisioned_concurrency_config_count,
             ),
             source_details=oci.functions.FunctionSourceDetailsArgs(
-                pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-                source_type=var["function_source_details_source_type"],
+                pbf_listing_id=test_pbf_listing["id"],
+                source_type=function_source_details_source_type,
             ),
-            timeout_in_seconds=var["function_timeout_in_seconds"],
+            timeout_in_seconds=function_timeout_in_seconds,
             trace_config=oci.functions.FunctionTraceConfigArgs(
-                is_enabled=var["function_trace_config_is_enabled"],
+                is_enabled=function_trace_config_is_enabled,
             ))
         ```
         <!--End PulumiCodeChooser -->

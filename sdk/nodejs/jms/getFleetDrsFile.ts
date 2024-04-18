@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetDrsFile = oci.Jms.getFleetDrsFile({
- *     drsFileKey: _var.fleet_drs_file_drs_file_key,
- *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     drsFileKey: fleetDrsFileDrsFileKey,
+ *     fleetId: testFleet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,8 +97,8 @@ export interface GetFleetDrsFileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetDrsFile = oci.Jms.getFleetDrsFile({
- *     drsFileKey: _var.fleet_drs_file_drs_file_key,
- *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     drsFileKey: fleetDrsFileDrsFileKey,
+ *     fleetId: testFleet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

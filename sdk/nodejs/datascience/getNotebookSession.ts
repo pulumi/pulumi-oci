@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNotebookSession = oci.DataScience.getNotebookSession({
- *     notebookSessionId: oci_datascience_notebook_session.test_notebook_session.id,
+ *     notebookSessionId: testNotebookSessionOciDatascienceNotebookSession.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetNotebookSessionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNotebookSession = oci.DataScience.getNotebookSession({
- *     notebookSessionId: oci_datascience_notebook_session.test_notebook_session.id,
+ *     notebookSessionId: testNotebookSessionOciDatascienceNotebookSession.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

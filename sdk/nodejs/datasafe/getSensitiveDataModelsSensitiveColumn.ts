@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveDataModelsSensitiveColumn = oci.DataSafe.getSensitiveDataModelsSensitiveColumn({
- *     sensitiveColumnKey: _var.sensitive_data_models_sensitive_column_sensitive_column_key,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     sensitiveColumnKey: sensitiveDataModelsSensitiveColumnSensitiveColumnKey,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,8 +154,8 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveDataModelsSensitiveColumn = oci.DataSafe.getSensitiveDataModelsSensitiveColumn({
- *     sensitiveColumnKey: _var.sensitive_data_models_sensitive_column_sensitive_column_key,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     sensitiveColumnKey: sensitiveDataModelsSensitiveColumnSensitiveColumnKey,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testPreauthenticatedRequest = Oci.ObjectStorage.GetPreauthrequest.Invoke(new()
         ///     {
-        ///         Bucket = @var.Preauthenticated_request_bucket,
-        ///         Namespace = @var.Preauthenticated_request_namespace,
-        ///         ParId = oci_objectstorage_preauthrequest.Test_par.Id,
+        ///         Bucket = preauthenticatedRequestBucket,
+        ///         Namespace = preauthenticatedRequestNamespace,
+        ///         ParId = testPar.Id,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testPreauthenticatedRequest = Oci.ObjectStorage.GetPreauthrequest.Invoke(new()
         ///     {
-        ///         Bucket = @var.Preauthenticated_request_bucket,
-        ///         Namespace = @var.Preauthenticated_request_namespace,
-        ///         ParId = oci_objectstorage_preauthrequest.Test_par.Id,
+        ///         Bucket = preauthenticatedRequestBucket,
+        ///         Namespace = preauthenticatedRequestNamespace,
+        ///         ParId = testPar.Id,
         ///     });
         /// 
         /// });

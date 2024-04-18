@@ -19,21 +19,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceFolder = new oci.dataintegration.WorkspaceFolder("testWorkspaceFolder", {
- *     identifier: _var.workspace_folder_identifier,
+ * const testWorkspaceFolder = new oci.dataintegration.WorkspaceFolder("test_workspace_folder", {
+ *     identifier: workspaceFolderIdentifier,
+ *     name: workspaceFolderName,
  *     registryMetadata: {
- *         aggregatorKey: _var.workspace_folder_registry_metadata_aggregator_key,
- *         isFavorite: _var.workspace_folder_registry_metadata_is_favorite,
- *         key: _var.workspace_folder_registry_metadata_key,
- *         labels: _var.workspace_folder_registry_metadata_labels,
- *         registryVersion: _var.workspace_folder_registry_metadata_registry_version,
+ *         aggregatorKey: workspaceFolderRegistryMetadataAggregatorKey,
+ *         isFavorite: workspaceFolderRegistryMetadataIsFavorite,
+ *         key: workspaceFolderRegistryMetadataKey,
+ *         labels: workspaceFolderRegistryMetadataLabels,
+ *         registryVersion: workspaceFolderRegistryMetadataRegistryVersion,
  *     },
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     categoryName: oci_marketplace_category.test_category.name,
- *     description: _var.workspace_folder_description,
- *     key: _var.workspace_folder_key,
- *     modelVersion: _var.workspace_folder_model_version,
- *     objectStatus: _var.workspace_folder_object_status,
+ *     workspaceId: testWorkspace.id,
+ *     categoryName: testCategory.name,
+ *     description: workspaceFolderDescription,
+ *     key: workspaceFolderKey,
+ *     modelVersion: workspaceFolderModelVersion,
+ *     objectStatus: workspaceFolderObjectStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

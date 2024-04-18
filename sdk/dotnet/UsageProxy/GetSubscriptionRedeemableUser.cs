@@ -30,8 +30,8 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testSubscriptionRedeemableUser = Oci.UsageProxy.GetSubscriptionRedeemableUser.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testSubscriptionRedeemableUser = Oci.UsageProxy.GetSubscriptionRedeemableUser.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
         ///     });
         /// 
         /// });

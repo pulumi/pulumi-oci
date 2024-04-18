@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolumeBackupPolicyAssignments(ctx, &core.GetVolumeBackupPolicyAssignmentsArgs{
-//				AssetId: oci_core_volume.Test_volume.Id,
+//				AssetId: testVolume.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

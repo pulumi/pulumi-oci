@@ -121,10 +121,10 @@ def get_subscription_products(filters: Optional[Sequence[pulumi.InputType['GetSu
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        usage_period_key=var["subscription_product_usage_period_key"],
-        producttype=var["subscription_product_producttype"])
+    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=test_subscription["id"],
+        tenancy_id=test_tenancy["id"],
+        usage_period_key=subscription_product_usage_period_key,
+        producttype=subscription_product_producttype)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -172,10 +172,10 @@ def get_subscription_products_output(filters: Optional[pulumi.Input[Optional[Seq
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        tenancy_id=oci_identity_tenancy["test_tenancy"]["id"],
-        usage_period_key=var["subscription_product_usage_period_key"],
-        producttype=var["subscription_product_producttype"])
+    test_subscription_products = oci.UsageProxy.get_subscription_products(subscription_id=test_subscription["id"],
+        tenancy_id=test_tenancy["id"],
+        usage_period_key=subscription_product_usage_period_key,
+        producttype=subscription_product_producttype)
     ```
     <!--End PulumiCodeChooser -->
 

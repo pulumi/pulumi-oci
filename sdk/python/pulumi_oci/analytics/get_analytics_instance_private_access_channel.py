@@ -183,8 +183,8 @@ def get_analytics_instance_private_access_channel(analytics_instance_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-        private_access_channel_key=var["analytics_instance_private_access_channel_private_access_channel_key"])
+    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
+        private_access_channel_key=analytics_instance_private_access_channel_private_access_channel_key)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,8 +229,8 @@ def get_analytics_instance_private_access_channel_output(analytics_instance_id: 
     import pulumi
     import pulumi_oci as oci
 
-    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=oci_analytics_analytics_instance["test_analytics_instance"]["id"],
-        private_access_channel_key=var["analytics_instance_private_access_channel_private_access_channel_key"])
+    test_analytics_instance_private_access_channel = oci.Analytics.get_analytics_instance_private_access_channel(analytics_instance_id=test_analytics_instance["id"],
+        private_access_channel_key=analytics_instance_private_access_channel_private_access_channel_key)
     ```
     <!--End PulumiCodeChooser -->
 

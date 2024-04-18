@@ -30,15 +30,15 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningAdvisorTasksFindings = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         BeginExecId = oci_database_management_begin_exec.Test_begin_exec.Id,
-        ///         EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
-        ///         FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
-        ///         IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id,
-        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
-        ///         StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         BeginExecId = testBeginExec.Id,
+        ///         EndExecId = testEndExec.Id,
+        ///         FindingFilter = managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter,
+        ///         IndexHashFilter = managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId,
+        ///         SearchPeriod = managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod,
+        ///         StatsHashFilter = managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningAdvisorTasksFindings = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksFindings.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         BeginExecId = oci_database_management_begin_exec.Test_begin_exec.Id,
-        ///         EndExecId = oci_database_management_end_exec.Test_end_exec.Id,
-        ///         FindingFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
-        ///         IndexHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id,
-        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_finding_search_period,
-        ///         StatsHashFilter = @var.Managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         BeginExecId = testBeginExec.Id,
+        ///         EndExecId = testEndExec.Id,
+        ///         FindingFilter = managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter,
+        ///         IndexHashFilter = managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId,
+        ///         SearchPeriod = managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod,
+        ///         StatsHashFilter = managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter,
         ///     });
         /// 
         /// });

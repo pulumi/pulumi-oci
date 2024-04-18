@@ -34,14 +34,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewVerify(ctx, "testVerify", &Kms.VerifyArgs{
-//				CryptoEndpoint:   pulumi.Any(_var.Verify_message_crypto_endpoint),
-//				KeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
-//				KeyVersionId:     pulumi.Any(oci_kms_key_version.Test_key_version.Id),
-//				Message:          pulumi.Any(_var.Verify_message),
-//				Signature:        pulumi.Any(_var.Verify_signature),
-//				SigningAlgorithm: pulumi.Any(_var.Verify_signing_algorithm),
-//				MessageType:      pulumi.Any(_var.Verify_message_type),
+//			_, err := Kms.NewVerify(ctx, "test_verify", &Kms.VerifyArgs{
+//				CryptoEndpoint:   pulumi.Any(verifyMessageCryptoEndpoint),
+//				KeyId:            pulumi.Any(testKey.Id),
+//				KeyVersionId:     pulumi.Any(testKeyVersion.Id),
+//				Message:          pulumi.Any(verifyMessage),
+//				Signature:        pulumi.Any(verifySignature),
+//				SigningAlgorithm: pulumi.Any(verifySigningAlgorithm),
+//				MessageType:      pulumi.Any(verifyMessageType),
 //			})
 //			if err != nil {
 //				return err

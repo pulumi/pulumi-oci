@@ -49,20 +49,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnnouncementSubscription = new AnnouncementSubscription(&#34;testAnnouncementSubscription&#34;, AnnouncementSubscriptionArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.announcement_subscription_display_name())
- *             .onsTopicId(oci_ons_notification_topic.test_notification_topic().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(announcementSubscriptionDisplayName)
+ *             .onsTopicId(testNotificationTopic.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.announcement_subscription_description())
+ *             .description(announcementSubscriptionDescription)
  *             .filterGroups(AnnouncementSubscriptionFilterGroupsArgs.builder()
  *                 .filters(AnnouncementSubscriptionFilterGroupsFilterArgs.builder()
- *                     .type(var_.announcement_subscription_filter_groups_filters_type())
- *                     .value(var_.announcement_subscription_filter_groups_filters_value())
+ *                     .type(announcementSubscriptionFilterGroupsFiltersType)
+ *                     .value(announcementSubscriptionFilterGroupsFiltersValue)
  *                     .build())
  *                 .build())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .preferredLanguage(var_.announcement_subscription_preferred_language())
- *             .preferredTimeZone(var_.announcement_subscription_preferred_time_zone())
+ *             .preferredLanguage(announcementSubscriptionPreferredLanguage)
+ *             .preferredTimeZone(announcementSubscriptionPreferredTimeZone)
  *             .build());
  * 
  *     }

@@ -25,12 +25,12 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrgRouteTableRouteRule = new Oci.Core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule", new()
+    ///     var testDrgRouteTableRouteRule = new Oci.Core.DrgRouteTableRouteRule("test_drg_route_table_route_rule", new()
     ///     {
-    ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-    ///         Destination = @var.Drg_route_table_route_rule_route_rules_destination,
-    ///         DestinationType = @var.Drg_route_table_route_rule_route_rules_destination_type,
-    ///         NextHopDrgAttachmentId = oci_core_drg_attachment.Test_drg_attachment.Id,
+    ///         DrgRouteTableId = testDrgRouteTable.Id,
+    ///         Destination = drgRouteTableRouteRuleRouteRulesDestination,
+    ///         DestinationType = drgRouteTableRouteRuleRouteRulesDestinationType,
+    ///         NextHopDrgAttachmentId = testDrgAttachment.Id,
     ///     });
     /// 
     /// });

@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceQuotas = oci.UsageProxy.getResourceQuotas({
- *     compartmentId: _var.compartment_id,
- *     serviceName: oci_core_service.test_service.name,
- *     serviceEntitlement: _var.resource_quota_service_entitlement,
+ *     compartmentId: compartmentId,
+ *     serviceName: testService.name,
+ *     serviceEntitlement: resourceQuotaServiceEntitlement,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -88,9 +88,9 @@ export interface GetResourceQuotasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceQuotas = oci.UsageProxy.getResourceQuotas({
- *     compartmentId: _var.compartment_id,
- *     serviceName: oci_core_service.test_service.name,
- *     serviceEntitlement: _var.resource_quota_service_entitlement,
+ *     compartmentId: compartmentId,
+ *     serviceName: testService.name,
+ *     serviceEntitlement: resourceQuotaServiceEntitlement,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

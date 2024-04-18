@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDbCredential(ctx, "testDbCredential", &Identity.DbCredentialArgs{
-//				Description: pulumi.Any(_var.Db_credential_description),
-//				Password:    pulumi.Any(_var.Db_credential_password),
-//				UserId:      pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewDbCredential(ctx, "test_db_credential", &Identity.DbCredentialArgs{
+//				Description: pulumi.Any(dbCredentialDescription),
+//				Password:    pulumi.Any(dbCredentialPassword),
+//				UserId:      pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

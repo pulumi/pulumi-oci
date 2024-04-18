@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentImages(ctx, &managementagent.GetManagementAgentImagesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				InstallType:   pulumi.StringRef(_var.Management_agent_image_install_type),
-//				Name:          pulumi.StringRef(_var.Management_agent_image_name),
-//				State:         pulumi.StringRef(_var.Management_agent_image_state),
+//				CompartmentId: compartmentId,
+//				InstallType:   pulumi.StringRef(managementAgentImageInstallType),
+//				Name:          pulumi.StringRef(managementAgentImageName),
+//				State:         pulumi.StringRef(managementAgentImageState),
 //			}, nil)
 //			if err != nil {
 //				return err

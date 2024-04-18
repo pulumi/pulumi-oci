@@ -198,15 +198,15 @@ def get_autonomous_container_databases(autonomous_exadata_infrastructure_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=var["compartment_id"],
-        autonomous_exadata_infrastructure_id=oci_database_autonomous_exadata_infrastructure["test_autonomous_exadata_infrastructure"]["id"],
-        autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        availability_domain=var["autonomous_container_database_availability_domain"],
-        cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-        display_name=var["autonomous_container_database_display_name"],
-        infrastructure_type=var["autonomous_container_database_infrastructure_type"],
-        service_level_agreement_type=var["autonomous_container_database_service_level_agreement_type"],
-        state=var["autonomous_container_database_state"])
+    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=compartment_id,
+        autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
+        autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+        availability_domain=autonomous_container_database_availability_domain,
+        cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+        display_name=autonomous_container_database_display_name,
+        infrastructure_type=autonomous_container_database_infrastructure_type,
+        service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
+        state=autonomous_container_database_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -274,15 +274,15 @@ def get_autonomous_container_databases_output(autonomous_exadata_infrastructure_
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=var["compartment_id"],
-        autonomous_exadata_infrastructure_id=oci_database_autonomous_exadata_infrastructure["test_autonomous_exadata_infrastructure"]["id"],
-        autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        availability_domain=var["autonomous_container_database_availability_domain"],
-        cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"],
-        display_name=var["autonomous_container_database_display_name"],
-        infrastructure_type=var["autonomous_container_database_infrastructure_type"],
-        service_level_agreement_type=var["autonomous_container_database_service_level_agreement_type"],
-        state=var["autonomous_container_database_state"])
+    test_autonomous_container_databases = oci.Database.get_autonomous_container_databases(compartment_id=compartment_id,
+        autonomous_exadata_infrastructure_id=test_autonomous_exadata_infrastructure["id"],
+        autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+        availability_domain=autonomous_container_database_availability_domain,
+        cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+        display_name=autonomous_container_database_display_name,
+        infrastructure_type=autonomous_container_database_infrastructure_type,
+        service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
+        state=autonomous_container_database_state)
     ```
     <!--End PulumiCodeChooser -->
 

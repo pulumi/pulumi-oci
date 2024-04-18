@@ -34,18 +34,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSource = new oci.identity.NetworkSource("testNetworkSource", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.network_source_description,
+ * const testNetworkSource = new oci.identity.NetworkSource("test_network_source", {
+ *     compartmentId: tenancyOcid,
+ *     description: networkSourceDescription,
+ *     name: networkSourceName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     publicSourceLists: _var.network_source_public_source_list,
- *     services: _var.network_source_services,
- *     virtualSourceLists: _var.network_source_virtual_source_list,
+ *     publicSourceLists: networkSourcePublicSourceList,
+ *     services: networkSourceServices,
+ *     virtualSourceLists: networkSourceVirtualSourceList,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

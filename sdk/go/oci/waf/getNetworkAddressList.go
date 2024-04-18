@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waf.GetNetworkAddressList(ctx, &waf.GetNetworkAddressListArgs{
-//				NetworkAddressListId: oci_waf_network_address_list.Test_network_address_list.Id,
+//				NetworkAddressListId: testNetworkAddressListOciWafNetworkAddressList.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,11 +31,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroups = Oci.Core.GetNetworkSecurityGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Network_security_group_display_name,
-        ///         State = @var.Network_security_group_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkSecurityGroupDisplayName,
+        ///         State = networkSecurityGroupState,
+        ///         VcnId = testVcn.Id,
+        ///         VlanId = testVlan.Id,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroups = Oci.Core.GetNetworkSecurityGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Network_security_group_display_name,
-        ///         State = @var.Network_security_group_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
-        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = networkSecurityGroupDisplayName,
+        ///         State = networkSecurityGroupState,
+        ///         VcnId = testVcn.Id,
+        ///         VlanId = testVlan.Id,
         ///     });
         /// 
         /// });

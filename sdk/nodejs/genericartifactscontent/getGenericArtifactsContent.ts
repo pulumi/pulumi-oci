@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGenericArtifactsContent = oci.GenericArtifactsContent.getGenericArtifactsContent({
- *     artifactId: oci_generic_artifacts_content_artifact.test_artifact.id,
+ *     artifactId: testArtifact.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -63,7 +63,7 @@ export interface GetGenericArtifactsContentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGenericArtifactsContent = oci.GenericArtifactsContent.getGenericArtifactsContent({
- *     artifactId: oci_generic_artifacts_content_artifact.test_artifact.id,
+ *     artifactId: testArtifact.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -94,7 +94,7 @@ def get_image_shapes(filters: Optional[Sequence[pulumi.InputType['GetImageShapes
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shapes = oci.Core.get_image_shapes(image_id=oci_core_image["test_image"]["id"])
+    test_image_shapes = oci.Core.get_image_shapes(image_id=test_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_image_shapes_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_image_shapes = oci.Core.get_image_shapes(image_id=oci_core_image["test_image"]["id"])
+    test_image_shapes = oci.Core.get_image_shapes(image_id=test_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 

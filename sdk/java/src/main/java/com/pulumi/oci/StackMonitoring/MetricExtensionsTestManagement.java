@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMetricExtensionsTestManagement = new MetricExtensionsTestManagement(&#34;testMetricExtensionsTestManagement&#34;, MetricExtensionsTestManagementArgs.builder()        
- *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
- *             .resourceIds(var_.metric_extensions_test_management_resource_ids())
+ *             .metricExtensionId(testMetricExtension.id())
+ *             .resourceIds(metricExtensionsTestManagementResourceIds[0])
  *             .build());
  * 
  *     }

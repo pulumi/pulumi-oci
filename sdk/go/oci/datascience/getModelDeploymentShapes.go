@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetModelDeploymentShapes(ctx, &datascience.GetModelDeploymentShapesArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

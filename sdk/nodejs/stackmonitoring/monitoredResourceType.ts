@@ -18,30 +18,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourceType = new oci.stackmonitoring.MonitoredResourceType("testMonitoredResourceType", {
- *     compartmentId: _var.compartment_id,
+ * const testMonitoredResourceType = new oci.stackmonitoring.MonitoredResourceType("test_monitored_resource_type", {
+ *     compartmentId: compartmentId,
+ *     name: monitoredResourceTypeName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.monitored_resource_type_description,
- *     displayName: _var.monitored_resource_type_display_name,
+ *     description: monitoredResourceTypeDescription,
+ *     displayName: monitoredResourceTypeDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     metadata: {
- *         format: _var.monitored_resource_type_metadata_format,
- *         agentProperties: _var.monitored_resource_type_metadata_agent_properties,
- *         requiredProperties: _var.monitored_resource_type_metadata_required_properties,
+ *         format: monitoredResourceTypeMetadataFormat,
+ *         agentProperties: monitoredResourceTypeMetadataAgentProperties,
+ *         requiredProperties: monitoredResourceTypeMetadataRequiredProperties,
  *         uniquePropertySets: [{
- *             properties: _var.monitored_resource_type_metadata_unique_property_sets_properties,
+ *             properties: monitoredResourceTypeMetadataUniquePropertySetsProperties,
  *         }],
- *         validPropertiesForCreates: _var.monitored_resource_type_metadata_valid_properties_for_create,
- *         validPropertiesForUpdates: _var.monitored_resource_type_metadata_valid_properties_for_update,
- *         validPropertyValues: _var.monitored_resource_type_metadata_valid_property_values,
+ *         validPropertiesForCreates: monitoredResourceTypeMetadataValidPropertiesForCreate,
+ *         validPropertiesForUpdates: monitoredResourceTypeMetadataValidPropertiesForUpdate,
+ *         validPropertyValues: monitoredResourceTypeMetadataValidPropertyValues,
  *     },
- *     metricNamespace: _var.monitored_resource_type_metric_namespace,
- *     resourceCategory: _var.monitored_resource_type_resource_category,
- *     sourceType: _var.monitored_resource_type_source_type,
+ *     metricNamespace: monitoredResourceTypeMetricNamespace,
+ *     resourceCategory: monitoredResourceTypeResourceCategory,
+ *     sourceType: monitoredResourceTypeSourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

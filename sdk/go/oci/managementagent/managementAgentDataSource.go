@@ -31,25 +31,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.NewManagementAgentDataSource(ctx, "testManagementAgentDataSource", &ManagementAgent.ManagementAgentDataSourceArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
-//				Type:              pulumi.Any(_var.Management_agent_data_source_type),
-//				Url:               pulumi.Any(_var.Management_agent_data_source_url),
-//				AllowMetrics:      pulumi.Any(_var.Management_agent_data_source_allow_metrics),
-//				ConnectionTimeout: pulumi.Any(_var.Management_agent_data_source_connection_timeout),
+//			_, err := ManagementAgent.NewManagementAgentDataSource(ctx, "test_management_agent_data_source", &ManagementAgent.ManagementAgentDataSourceArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
+//				Name:              pulumi.Any(managementAgentDataSourceName),
+//				Type:              pulumi.Any(managementAgentDataSourceType),
+//				Url:               pulumi.Any(managementAgentDataSourceUrl),
+//				AllowMetrics:      pulumi.Any(managementAgentDataSourceAllowMetrics),
+//				ConnectionTimeout: pulumi.Any(managementAgentDataSourceConnectionTimeout),
 //				MetricDimensions: managementagent.ManagementAgentDataSourceMetricDimensionArray{
 //					&managementagent.ManagementAgentDataSourceMetricDimensionArgs{
-//						Name:  pulumi.Any(_var.Management_agent_data_source_metric_dimensions_name),
-//						Value: pulumi.Any(_var.Management_agent_data_source_metric_dimensions_value),
+//						Name:  pulumi.Any(managementAgentDataSourceMetricDimensionsName),
+//						Value: pulumi.Any(managementAgentDataSourceMetricDimensionsValue),
 //					},
 //				},
-//				Namespace:                pulumi.Any(_var.Management_agent_data_source_namespace),
-//				ProxyUrl:                 pulumi.Any(_var.Management_agent_data_source_proxy_url),
-//				ReadDataLimitInKilobytes: pulumi.Any(_var.Management_agent_data_source_read_data_limit_in_kilobytes),
-//				ReadTimeout:              pulumi.Any(_var.Management_agent_data_source_read_timeout),
-//				ResourceGroup:            pulumi.Any(_var.Management_agent_data_source_resource_group),
-//				ScheduleMins:             pulumi.Any(_var.Management_agent_data_source_schedule_mins),
+//				Namespace:                pulumi.Any(managementAgentDataSourceNamespace),
+//				ProxyUrl:                 pulumi.Any(managementAgentDataSourceProxyUrl),
+//				ReadDataLimitInKilobytes: pulumi.Any(managementAgentDataSourceReadDataLimitInKilobytes),
+//				ReadTimeout:              pulumi.Any(managementAgentDataSourceReadTimeout),
+//				ResourceGroup:            pulumi.Any(managementAgentDataSourceResourceGroup),
+//				ScheduleMins:             pulumi.Any(managementAgentDataSourceScheduleMins),
 //			})
 //			if err != nil {
 //				return err

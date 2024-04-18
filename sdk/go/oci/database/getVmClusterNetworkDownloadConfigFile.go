@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetVmClusterNetworkDownloadConfigFile(ctx, &database.GetVmClusterNetworkDownloadConfigFileArgs{
-//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-//				VmClusterNetworkId:      oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+//				ExadataInfrastructureId: testExadataInfrastructure.Id,
+//				VmClusterNetworkId:      testVmClusterNetwork.Id,
 //				Base64EncodeContent:     pulumi.BoolRef(false),
 //			}, nil)
 //			if err != nil {

@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSteeringPolicyAttachment = new Oci.Dns.SteeringPolicyAttachment("testSteeringPolicyAttachment", new()
+    ///     var testSteeringPolicyAttachment = new Oci.Dns.SteeringPolicyAttachment("test_steering_policy_attachment", new()
     ///     {
-    ///         DomainName = @var.Steering_policy_attachment_domain_name,
-    ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
-    ///         ZoneId = oci_dns_zone.Test_zone.Id,
-    ///         DisplayName = @var.Steering_policy_attachment_display_name,
+    ///         DomainName = steeringPolicyAttachmentDomainName,
+    ///         SteeringPolicyId = testSteeringPolicy.Id,
+    ///         ZoneId = testZone.Id,
+    ///         DisplayName = steeringPolicyAttachmentDisplayName,
     ///     });
     /// 
     /// });

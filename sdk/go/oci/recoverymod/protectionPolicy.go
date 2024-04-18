@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := RecoveryMod.NewProtectionPolicy(ctx, "testProtectionPolicy", &RecoveryMod.ProtectionPolicyArgs{
-//				BackupRetentionPeriodInDays: pulumi.Any(_var.Protection_policy_backup_retention_period_in_days),
-//				CompartmentId:               pulumi.Any(_var.Compartment_id),
-//				DisplayName:                 pulumi.Any(_var.Protection_policy_display_name),
+//			_, err := RecoveryMod.NewProtectionPolicy(ctx, "test_protection_policy", &RecoveryMod.ProtectionPolicyArgs{
+//				BackupRetentionPeriodInDays: pulumi.Any(protectionPolicyBackupRetentionPeriodInDays),
+//				CompartmentId:               pulumi.Any(compartmentId),
+//				DisplayName:                 pulumi.Any(protectionPolicyDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},

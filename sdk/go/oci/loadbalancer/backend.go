@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewBackend(ctx, "testBackend", &LoadBalancer.BackendArgs{
-//				BackendsetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-//				IpAddress:      pulumi.Any(_var.Backend_ip_address),
-//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
-//				Port:           pulumi.Any(_var.Backend_port),
-//				Backup:         pulumi.Any(_var.Backend_backup),
-//				Drain:          pulumi.Any(_var.Backend_drain),
-//				Offline:        pulumi.Any(_var.Backend_offline),
-//				Weight:         pulumi.Any(_var.Backend_weight),
+//			_, err := LoadBalancer.NewBackend(ctx, "test_backend", &LoadBalancer.BackendArgs{
+//				BackendsetName: pulumi.Any(testBackendSet.Name),
+//				IpAddress:      pulumi.Any(backendIpAddress),
+//				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
+//				Port:           pulumi.Any(backendPort),
+//				Backup:         pulumi.Any(backendBackup),
+//				Drain:          pulumi.Any(backendDrain),
+//				Offline:        pulumi.Any(backendOffline),
+//				Weight:         pulumi.Any(backendWeight),
 //			})
 //			if err != nil {
 //				return err

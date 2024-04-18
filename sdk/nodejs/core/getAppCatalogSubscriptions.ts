@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
+ *     compartmentId: compartmentId,
+ *     listingId: testListing.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetAppCatalogSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAppCatalogSubscriptions = oci.Core.getAppCatalogSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
+ *     compartmentId: compartmentId,
+ *     listingId: testListing.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResourceTasks = oci.StackMonitoring.getMonitoredResourceTasks({
- *     compartmentId: _var.compartment_id,
- *     status: _var.monitored_resource_task_status,
+ *     compartmentId: compartmentId,
+ *     status: monitoredResourceTaskStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetMonitoredResourceTasksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResourceTasks = oci.StackMonitoring.getMonitoredResourceTasks({
- *     compartmentId: _var.compartment_id,
- *     status: _var.monitored_resource_task_status,
+ *     compartmentId: compartmentId,
+ *     status: monitoredResourceTaskStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

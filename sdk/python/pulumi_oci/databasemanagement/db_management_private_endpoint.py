@@ -387,18 +387,19 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_management_private_endpoint = oci.database_management.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_db_management_private_endpoint = oci.database_management.DbManagementPrivateEndpoint("test_db_management_private_endpoint",
+            compartment_id=compartment_id,
+            name=db_management_private_endpoint_name,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["db_management_private_endpoint_description"],
+            description=db_management_private_endpoint_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cluster=var["db_management_private_endpoint_is_cluster"],
-            nsg_ids=var["db_management_private_endpoint_nsg_ids"])
+            is_cluster=db_management_private_endpoint_is_cluster,
+            nsg_ids=db_management_private_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -443,18 +444,19 @@ class DbManagementPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_management_private_endpoint = oci.database_management.DbManagementPrivateEndpoint("testDbManagementPrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_db_management_private_endpoint = oci.database_management.DbManagementPrivateEndpoint("test_db_management_private_endpoint",
+            compartment_id=compartment_id,
+            name=db_management_private_endpoint_name,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["db_management_private_endpoint_description"],
+            description=db_management_private_endpoint_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cluster=var["db_management_private_endpoint_is_cluster"],
-            nsg_ids=var["db_management_private_endpoint_nsg_ids"])
+            is_cluster=db_management_private_endpoint_is_cluster,
+            nsg_ids=db_management_private_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

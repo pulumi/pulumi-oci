@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetAddon(ctx, &containerengine.GetAddonArgs{
-//				AddonName: oci_containerengine_addon.Test_addon.Name,
-//				ClusterId: oci_containerengine_cluster.Test_cluster.Id,
+//				AddonName: testAddonOciContainerengineAddon.Name,
+//				ClusterId: testCluster.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

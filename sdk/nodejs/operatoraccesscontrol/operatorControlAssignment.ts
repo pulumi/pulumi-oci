@@ -16,25 +16,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperatorControlAssignment = new oci.operatoraccesscontrol.OperatorControlAssignment("testOperatorControlAssignment", {
- *     compartmentId: _var.compartment_id,
- *     isEnforcedAlways: _var.operator_control_assignment_is_enforced_always,
- *     operatorControlId: oci_operator_access_control_operator_control.test_operator_control.id,
- *     resourceCompartmentId: oci_identity_compartment.test_compartment.id,
- *     resourceId: oci_operator_access_control_resource.test_resource.id,
- *     resourceName: _var.operator_control_assignment_resource_name,
- *     resourceType: _var.operator_control_assignment_resource_type,
- *     comment: _var.operator_control_assignment_comment,
- *     definedTags: _var.operator_control_assignment_defined_tags,
- *     freeformTags: _var.operator_control_assignment_freeform_tags,
- *     isAutoApproveDuringMaintenance: _var.operator_control_assignment_is_auto_approve_during_maintenance,
- *     isHypervisorLogForwarded: _var.operator_control_assignment_is_hypervisor_log_forwarded,
- *     isLogForwarded: _var.operator_control_assignment_is_log_forwarded,
- *     remoteSyslogServerAddress: _var.operator_control_assignment_remote_syslog_server_address,
- *     remoteSyslogServerCaCert: _var.operator_control_assignment_remote_syslog_server_ca_cert,
- *     remoteSyslogServerPort: _var.operator_control_assignment_remote_syslog_server_port,
- *     timeAssignmentFrom: _var.operator_control_assignment_time_assignment_from,
- *     timeAssignmentTo: _var.operator_control_assignment_time_assignment_to,
+ * const testOperatorControlAssignment = new oci.operatoraccesscontrol.OperatorControlAssignment("test_operator_control_assignment", {
+ *     compartmentId: compartmentId,
+ *     isEnforcedAlways: operatorControlAssignmentIsEnforcedAlways,
+ *     operatorControlId: testOperatorControl.id,
+ *     resourceCompartmentId: testCompartment.id,
+ *     resourceId: testResource.id,
+ *     resourceName: operatorControlAssignmentResourceName,
+ *     resourceType: operatorControlAssignmentResourceType,
+ *     comment: operatorControlAssignmentComment,
+ *     definedTags: operatorControlAssignmentDefinedTags,
+ *     freeformTags: operatorControlAssignmentFreeformTags,
+ *     isAutoApproveDuringMaintenance: operatorControlAssignmentIsAutoApproveDuringMaintenance,
+ *     isHypervisorLogForwarded: operatorControlAssignmentIsHypervisorLogForwarded,
+ *     isLogForwarded: operatorControlAssignmentIsLogForwarded,
+ *     remoteSyslogServerAddress: operatorControlAssignmentRemoteSyslogServerAddress,
+ *     remoteSyslogServerCaCert: operatorControlAssignmentRemoteSyslogServerCaCert,
+ *     remoteSyslogServerPort: operatorControlAssignmentRemoteSyslogServerPort,
+ *     timeAssignmentFrom: operatorControlAssignmentTimeAssignmentFrom,
+ *     timeAssignmentTo: operatorControlAssignmentTimeAssignmentTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

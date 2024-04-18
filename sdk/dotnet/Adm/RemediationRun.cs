@@ -25,14 +25,14 @@ namespace Pulumi.Oci.Adm
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRemediationRun = new Oci.Adm.RemediationRun("testRemediationRun", new()
+    ///     var testRemediationRun = new Oci.Adm.RemediationRun("test_remediation_run", new()
     ///     {
-    ///         RemediationRecipeId = oci_adm_remediation_recipe.Test_remediation_recipe.Id,
+    ///         RemediationRecipeId = testRemediationRecipe.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Remediation_run_display_name,
+    ///         DisplayName = remediationRunDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

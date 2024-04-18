@@ -29,67 +29,67 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInstancePool = new Oci.Core.InstancePool("testInstancePool", new()
+    ///     var testInstancePool = new Oci.Core.InstancePool("test_instance_pool", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+    ///         CompartmentId = compartmentId,
+    ///         InstanceConfigurationId = testInstanceConfiguration.Id,
     ///         PlacementConfigurations = new[]
     ///         {
     ///             new Oci.Core.Inputs.InstancePoolPlacementConfigurationArgs
     ///             {
-    ///                 AvailabilityDomain = @var.Instance_pool_placement_configurations_availability_domain,
-    ///                 FaultDomains = @var.Instance_pool_placement_configurations_fault_domains,
-    ///                 PrimarySubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                 AvailabilityDomain = instancePoolPlacementConfigurationsAvailabilityDomain,
+    ///                 FaultDomains = instancePoolPlacementConfigurationsFaultDomains,
+    ///                 PrimarySubnetId = testSubnet.Id,
     ///                 PrimaryVnicSubnets = new Oci.Core.Inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs
     ///                 {
-    ///                     SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                     SubnetId = testSubnet.Id,
     ///                     Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                     {
     ///                         new Oci.Core.Inputs.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs
     ///                         {
-    ///                             Ipv6subnetCidr = @var.Instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                             Ipv6subnetCidr = instancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                         },
     ///                     },
-    ///                     IsAssignIpv6ip = @var.Instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
+    ///                     IsAssignIpv6ip = instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip,
     ///                 },
     ///                 SecondaryVnicSubnets = new[]
     ///                 {
     ///                     new Oci.Core.Inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs
     ///                     {
-    ///                         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///                         DisplayName = @var.Instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
+    ///                         SubnetId = testSubnet.Id,
+    ///                         DisplayName = instancePoolPlacementConfigurationsSecondaryVnicSubnetsDisplayName,
     ///                         Ipv6addressIpv6subnetCidrPairDetails = new[]
     ///                         {
     ///                             new Oci.Core.Inputs.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs
     ///                             {
-    ///                                 Ipv6subnetCidr = @var.Instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
+    ///                                 Ipv6subnetCidr = instancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
     ///                             },
     ///                         },
-    ///                         IsAssignIpv6ip = @var.Instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
+    ///                         IsAssignIpv6ip = instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip,
     ///                     },
     ///                 },
     ///             },
     ///         },
-    ///         Size = @var.Instance_pool_size,
+    ///         Size = instancePoolSize,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Instance_pool_display_name,
+    ///         DisplayName = instancePoolDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         InstanceDisplayNameFormatter = @var.Instance_pool_instance_display_name_formatter,
-    ///         InstanceHostnameFormatter = @var.Instance_pool_instance_hostname_formatter,
+    ///         InstanceDisplayNameFormatter = instancePoolInstanceDisplayNameFormatter,
+    ///         InstanceHostnameFormatter = instancePoolInstanceHostnameFormatter,
     ///         LoadBalancers = new[]
     ///         {
     ///             new Oci.Core.Inputs.InstancePoolLoadBalancerArgs
     ///             {
-    ///                 BackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///                 LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///                 Port = @var.Instance_pool_load_balancers_port,
-    ///                 VnicSelection = @var.Instance_pool_load_balancers_vnic_selection,
+    ///                 BackendSetName = testBackendSet.Name,
+    ///                 LoadBalancerId = testLoadBalancer.Id,
+    ///                 Port = instancePoolLoadBalancersPort,
+    ///                 VnicSelection = instancePoolLoadBalancersVnicSelection,
     ///             },
     ///         },
     ///     });

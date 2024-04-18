@@ -30,14 +30,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewAuditPolicyManagement(ctx, "testAuditPolicyManagement", &DataSafe.AuditPolicyManagementArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				TargetId:      pulumi.Any(oci_data_safe_target_database.Test_target_database.Id),
+//			_, err := DataSafe.NewAuditPolicyManagement(ctx, "test_audit_policy_management", &DataSafe.AuditPolicyManagementArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				TargetId:      pulumi.Any(testTargetDatabase.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Audit_policy_management_description),
-//				DisplayName: pulumi.Any(_var.Audit_policy_management_display_name),
+//				Description: pulumi.Any(auditPolicyManagementDescription),
+//				DisplayName: pulumi.Any(auditPolicyManagementDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

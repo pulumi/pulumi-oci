@@ -46,9 +46,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalNonContainerDatabaseManagement = new ExternalNonContainerDatabaseManagement(&#34;testExternalNonContainerDatabaseManagement&#34;, ExternalNonContainerDatabaseManagementArgs.builder()        
- *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
- *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
- *             .licenseMode(var_.external_non_container_database_management_license_model())
+ *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
+ *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
+ *             .licenseMode(externalNonContainerDatabaseManagementLicenseModel)
  *             .build());
  * 
  *     }

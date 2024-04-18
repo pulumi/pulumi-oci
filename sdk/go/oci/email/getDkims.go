@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetDkims(ctx, &email.GetDkimsArgs{
-//				EmailDomainId: oci_email_email_domain.Test_email_domain.Id,
-//				Id:            pulumi.StringRef(_var.Dkim_id),
-//				Name:          pulumi.StringRef(_var.Dkim_name),
-//				State:         pulumi.StringRef(_var.Dkim_state),
+//				EmailDomainId: testEmailDomain.Id,
+//				Id:            pulumi.StringRef(dkimId),
+//				Name:          pulumi.StringRef(dkimName),
+//				State:         pulumi.StringRef(dkimState),
 //			}, nil)
 //			if err != nil {
 //				return err

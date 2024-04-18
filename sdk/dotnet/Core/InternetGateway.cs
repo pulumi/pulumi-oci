@@ -44,21 +44,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testInternetGateway = new Oci.Core.InternetGateway("testInternetGateway", new()
+    ///     var testInternetGateway = new Oci.Core.InternetGateway("test_internet_gateway", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         Enabled = @var.Internet_gateway_enabled,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
+    ///         Enabled = internetGatewayEnabled,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Internet_gateway_display_name,
+    ///         DisplayName = internetGatewayDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         RouteTableId = testRouteTable.Id,
     ///     });
     /// 
     /// });

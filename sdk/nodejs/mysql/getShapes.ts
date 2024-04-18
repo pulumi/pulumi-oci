@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testShapes = oci.Mysql.getShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.shape_availability_domain,
- *     isSupportedFors: _var.shape_is_supported_for,
- *     name: _var.shape_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: shapeAvailabilityDomain,
+ *     isSupportedFors: shapeIsSupportedFor,
+ *     name: shapeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testShapes = oci.Mysql.getShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.shape_availability_domain,
- *     isSupportedFors: _var.shape_is_supported_for,
- *     name: _var.shape_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: shapeAvailabilityDomain,
+ *     isSupportedFors: shapeIsSupportedFor,
+ *     name: shapeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

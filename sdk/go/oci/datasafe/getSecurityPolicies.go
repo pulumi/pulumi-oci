@@ -44,12 +44,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicies(ctx, &datasafe.GetSecurityPoliciesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Security_policy_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_policy_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Security_policy_display_name),
-//				SecurityPolicyId:       pulumi.StringRef(oci_data_safe_security_policy.Test_security_policy.Id),
-//				State:                  pulumi.StringRef(_var.Security_policy_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(securityPolicyAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(securityPolicyCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(securityPolicyDisplayName),
+//				SecurityPolicyId:       pulumi.StringRef(testSecurityPolicy.Id),
+//				State:                  pulumi.StringRef(securityPolicyState),
 //			}, nil)
 //			if err != nil {
 //				return err

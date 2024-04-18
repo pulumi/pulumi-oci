@@ -51,17 +51,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProductLicense = new ProductLicense(&#34;testProductLicense&#34;, ProductLicenseArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.product_license_display_name())
- *             .isVendorOracle(var_.product_license_is_vendor_oracle())
- *             .licenseUnit(var_.product_license_license_unit())
+ *             .compartmentId(compartmentId)
+ *             .displayName(productLicenseDisplayName)
+ *             .isVendorOracle(productLicenseIsVendorOracle)
+ *             .licenseUnit(productLicenseLicenseUnit)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .images(ProductLicenseImageArgs.builder()
- *                 .listingId(oci_marketplace_listing.test_listing().id())
- *                 .packageVersion(var_.product_license_images_package_version())
+ *                 .listingId(testListing.id())
+ *                 .packageVersion(productLicenseImagesPackageVersion)
  *                 .build())
- *             .vendorName(var_.product_license_vendor_name())
+ *             .vendorName(productLicenseVendorName)
  *             .build());
  * 
  *     }

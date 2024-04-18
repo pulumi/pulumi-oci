@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTrace = oci.ApmTraces.getTrace({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     traceKey: _var.trace_trace_key,
- *     timeTraceStartedGreaterThanOrEqualTo: _var.trace_time_trace_started_greater_than_or_equal_to,
- *     timeTraceStartedLessThan: _var.trace_time_trace_started_less_than,
- *     traceNamespace: _var.trace_trace_namespace,
+ *     apmDomainId: testApmDomain.id,
+ *     traceKey: traceTraceKey,
+ *     timeTraceStartedGreaterThanOrEqualTo: traceTimeTraceStartedGreaterThanOrEqualTo,
+ *     timeTraceStartedLessThan: traceTimeTraceStartedLessThan,
+ *     traceNamespace: traceTraceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -172,11 +172,11 @@ export interface GetTraceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTrace = oci.ApmTraces.getTrace({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     traceKey: _var.trace_trace_key,
- *     timeTraceStartedGreaterThanOrEqualTo: _var.trace_time_trace_started_greater_than_or_equal_to,
- *     timeTraceStartedLessThan: _var.trace_time_trace_started_less_than,
- *     traceNamespace: _var.trace_trace_namespace,
+ *     apmDomainId: testApmDomain.id,
+ *     traceKey: traceTraceKey,
+ *     timeTraceStartedGreaterThanOrEqualTo: traceTimeTraceStartedGreaterThanOrEqualTo,
+ *     timeTraceStartedLessThan: traceTimeTraceStartedLessThan,
+ *     traceNamespace: traceTraceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

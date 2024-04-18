@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testPublication = Oci.Marketplace.GetPublication.Invoke(new()
         ///     {
-        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///         PublicationId = testPublicationOciMarketplacePublication.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testPublication = Oci.Marketplace.GetPublication.Invoke(new()
         ///     {
-        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///         PublicationId = testPublicationOciMarketplacePublication.Id,
         ///     });
         /// 
         /// });

@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewHeatWaveCluster(ctx, "testHeatWaveCluster", &Mysql.HeatWaveClusterArgs{
-//				DbSystemId:         pulumi.Any(oci_database_db_system.Test_db_system.Id),
-//				ClusterSize:        pulumi.Any(_var.Heat_wave_cluster_cluster_size),
-//				IsLakehouseEnabled: pulumi.Any(_var.Heat_wave_cluster_is_lakehouse_enabled),
-//				ShapeName:          pulumi.Any(oci_mysql_shape.Test_shape.Name),
+//			_, err := Mysql.NewHeatWaveCluster(ctx, "test_heat_wave_cluster", &Mysql.HeatWaveClusterArgs{
+//				DbSystemId:         pulumi.Any(testDbSystem.Id),
+//				ClusterSize:        pulumi.Any(heatWaveClusterClusterSize),
+//				IsLakehouseEnabled: pulumi.Any(heatWaveClusterIsLakehouseEnabled),
+//				ShapeName:          pulumi.Any(testShape.Name),
 //			})
 //			if err != nil {
 //				return err

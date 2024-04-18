@@ -32,11 +32,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalDbSystemStackMonitoringsManagement(ctx, "testExternalDbSystemStackMonitoringsManagement", &DatabaseManagement.ExternalDbSystemStackMonitoringsManagementArgs{
-//				ExternalDbSystemId:    pulumi.Any(oci_database_management_external_db_system.Test_external_db_system.Id),
-//				EnableStackMonitoring: pulumi.Any(_var.Enable_stack_monitoring),
-//				IsEnabled:             pulumi.Any(_var.External_db_system_stack_monitorings_management_is_enabled),
-//				Metadata:              pulumi.Any(_var.External_db_system_stack_monitorings_management_metadata),
+//			_, err := DatabaseManagement.NewExternalDbSystemStackMonitoringsManagement(ctx, "test_external_db_system_stack_monitorings_management", &DatabaseManagement.ExternalDbSystemStackMonitoringsManagementArgs{
+//				ExternalDbSystemId:    pulumi.Any(testExternalDbSystem.Id),
+//				EnableStackMonitoring: pulumi.Any(enableStackMonitoring),
+//				IsEnabled:             pulumi.Any(externalDbSystemStackMonitoringsManagementIsEnabled),
+//				Metadata:              pulumi.Any(externalDbSystemStackMonitoringsManagementMetadata),
 //			})
 //			if err != nil {
 //				return err

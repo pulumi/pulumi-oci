@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.NewJavaDownloadsJavaDownloadToken(ctx, "testJavaDownloadToken", &Jms.JavaDownloadsJavaDownloadTokenArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.Java_download_token_description),
-//				DisplayName:   pulumi.Any(_var.Java_download_token_display_name),
-//				JavaVersion:   pulumi.Any(_var.Java_download_token_java_version),
-//				LicenseTypes:  pulumi.Any(_var.Java_download_token_license_type),
-//				TimeExpires:   pulumi.Any(_var.Java_download_token_time_expires),
+//			_, err := Jms.NewJavaDownloadsJavaDownloadToken(ctx, "test_java_download_token", &Jms.JavaDownloadsJavaDownloadTokenArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(javaDownloadTokenDescription),
+//				DisplayName:   pulumi.Any(javaDownloadTokenDisplayName),
+//				JavaVersion:   pulumi.Any(javaDownloadTokenJavaVersion),
+//				LicenseTypes:  pulumi.Any(javaDownloadTokenLicenseType),
+//				TimeExpires:   pulumi.Any(javaDownloadTokenTimeExpires),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsDefault: pulumi.Any(_var.Java_download_token_is_default),
+//				IsDefault: pulumi.Any(javaDownloadTokenIsDefault),
 //			})
 //			if err != nil {
 //				return err

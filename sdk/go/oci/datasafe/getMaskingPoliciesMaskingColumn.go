@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetMaskingPoliciesMaskingColumn(ctx, &datasafe.GetMaskingPoliciesMaskingColumnArgs{
-//				MaskingColumnKey: _var.Masking_policies_masking_column_masking_column_key,
-//				MaskingPolicyId:  oci_data_safe_masking_policy.Test_masking_policy.Id,
+//				MaskingColumnKey: maskingPoliciesMaskingColumnMaskingColumnKey,
+//				MaskingPolicyId:  testMaskingPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

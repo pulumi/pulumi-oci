@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVantagePoints = oci.HealthChecks.getVantagePoints({
- *     displayName: _var.vantage_point_display_name,
- *     name: _var.vantage_point_name,
+ *     displayName: vantagePointDisplayName,
+ *     name: vantagePointName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,8 +86,8 @@ export interface GetVantagePointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVantagePoints = oci.HealthChecks.getVantagePoints({
- *     displayName: _var.vantage_point_display_name,
- *     name: _var.vantage_point_name,
+ *     displayName: vantagePointDisplayName,
+ *     name: vantagePointName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

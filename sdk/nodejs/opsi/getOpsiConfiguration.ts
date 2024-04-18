@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOpsiConfiguration = oci.Opsi.getOpsiConfiguration({
- *     opsiConfigurationId: oci_opsi_opsi_configuration.test_opsi_configuration.id,
- *     configItemCustomStatuses: _var.opsi_configuration_config_item_custom_status,
- *     configItemFields: _var.opsi_configuration_config_item_field,
- *     configItemsApplicableContexts: _var.opsi_configuration_config_items_applicable_context,
- *     opsiConfigFields: _var.opsi_configuration_opsi_config_field,
+ *     opsiConfigurationId: testOpsiConfigurationOciOpsiOpsiConfiguration.id,
+ *     configItemCustomStatuses: opsiConfigurationConfigItemCustomStatus,
+ *     configItemFields: opsiConfigurationConfigItemField,
+ *     configItemsApplicableContexts: opsiConfigurationConfigItemsApplicableContext,
+ *     opsiConfigFields: opsiConfigurationOpsiConfigField,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -145,11 +145,11 @@ export interface GetOpsiConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOpsiConfiguration = oci.Opsi.getOpsiConfiguration({
- *     opsiConfigurationId: oci_opsi_opsi_configuration.test_opsi_configuration.id,
- *     configItemCustomStatuses: _var.opsi_configuration_config_item_custom_status,
- *     configItemFields: _var.opsi_configuration_config_item_field,
- *     configItemsApplicableContexts: _var.opsi_configuration_config_items_applicable_context,
- *     opsiConfigFields: _var.opsi_configuration_opsi_config_field,
+ *     opsiConfigurationId: testOpsiConfigurationOciOpsiOpsiConfiguration.id,
+ *     configItemCustomStatuses: opsiConfigurationConfigItemCustomStatus,
+ *     configItemFields: opsiConfigurationConfigItemField,
+ *     configItemsApplicableContexts: opsiConfigurationConfigItemsApplicableContext,
+ *     opsiConfigFields: opsiConfigurationOpsiConfigField,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

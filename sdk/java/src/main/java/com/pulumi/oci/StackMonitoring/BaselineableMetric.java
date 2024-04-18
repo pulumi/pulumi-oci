@@ -46,10 +46,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBaselineableMetric = new BaselineableMetric(&#34;testBaselineableMetric&#34;, BaselineableMetricArgs.builder()        
- *             .column(var_.baselineable_metric_column())
- *             .compartmentId(var_.compartment_id())
- *             .namespace(var_.baselineable_metric_namespace())
- *             .resourceGroup(var_.baselineable_metric_resource_group())
+ *             .column(baselineableMetricColumn)
+ *             .compartmentId(compartmentId)
+ *             .name(baselineableMetricName)
+ *             .namespace(baselineableMetricNamespace)
+ *             .resourceGroup(baselineableMetricResourceGroup)
  *             .build());
  * 
  *     }

@@ -484,7 +484,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -526,7 +526,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -568,7 +568,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -610,7 +610,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListing = CoreFunctions.getAppCatalogListing(GetAppCatalogListingArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -652,8 +652,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
-     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .listingId(testListing.id())
+     *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
      *     }
@@ -695,8 +695,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
-     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .listingId(testListing.id())
+     *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
      *     }
@@ -738,8 +738,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
-     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .listingId(testListing.id())
+     *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
      *     }
@@ -781,8 +781,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersion = CoreFunctions.getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
-     *             .resourceVersion(var_.app_catalog_listing_resource_version_resource_version())
+     *             .listingId(testListing.id())
+     *             .resourceVersion(appCatalogListingResourceVersionResourceVersion)
      *             .build());
      * 
      *     }
@@ -824,7 +824,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -866,7 +866,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -908,7 +908,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -950,7 +950,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListingResourceVersions = CoreFunctions.getAppCatalogListingResourceVersions(GetAppCatalogListingResourceVersionsArgs.builder()
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -992,9 +992,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
-     *             .displayName(var_.app_catalog_listing_display_name())
-     *             .publisherName(var_.app_catalog_listing_publisher_name())
-     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
      *             .build());
      * 
      *     }
@@ -1036,9 +1036,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
-     *             .displayName(var_.app_catalog_listing_display_name())
-     *             .publisherName(var_.app_catalog_listing_publisher_name())
-     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
      *             .build());
      * 
      *     }
@@ -1080,9 +1080,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
-     *             .displayName(var_.app_catalog_listing_display_name())
-     *             .publisherName(var_.app_catalog_listing_publisher_name())
-     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
      *             .build());
      * 
      *     }
@@ -1124,9 +1124,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
-     *             .displayName(var_.app_catalog_listing_display_name())
-     *             .publisherName(var_.app_catalog_listing_publisher_name())
-     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
      *             .build());
      * 
      *     }
@@ -1168,9 +1168,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
-     *             .displayName(var_.app_catalog_listing_display_name())
-     *             .publisherName(var_.app_catalog_listing_publisher_name())
-     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
      *             .build());
      * 
      *     }
@@ -1212,9 +1212,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogListings = CoreFunctions.getAppCatalogListings(GetAppCatalogListingsArgs.builder()
-     *             .displayName(var_.app_catalog_listing_display_name())
-     *             .publisherName(var_.app_catalog_listing_publisher_name())
-     *             .publisherType(var_.app_catalog_listing_publisher_type())
+     *             .displayName(appCatalogListingDisplayName)
+     *             .publisherName(appCatalogListingPublisherName)
+     *             .publisherType(appCatalogListingPublisherType)
      *             .build());
      * 
      *     }
@@ -1256,8 +1256,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .compartmentId(compartmentId)
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -1299,8 +1299,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .compartmentId(compartmentId)
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -1342,8 +1342,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .compartmentId(compartmentId)
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -1385,8 +1385,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAppCatalogSubscriptions = CoreFunctions.getAppCatalogSubscriptions(GetAppCatalogSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
+     *             .compartmentId(compartmentId)
+     *             .listingId(testListing.id())
      *             .build());
      * 
      *     }
@@ -1428,7 +1428,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -1470,7 +1470,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -1512,7 +1512,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -1554,7 +1554,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplica = CoreFunctions.getBlockVolumeReplica(GetBlockVolumeReplicaArgs.builder()
-     *             .blockVolumeReplicaId(oci_core_block_volume_replica.test_block_volume_replica().id())
+     *             .blockVolumeReplicaId(testBlockVolumeReplicaOciCoreBlockVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -1596,11 +1596,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.block_volume_replica_display_name())
-     *             .state(var_.block_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -1642,11 +1642,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.block_volume_replica_display_name())
-     *             .state(var_.block_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -1688,11 +1688,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.block_volume_replica_display_name())
-     *             .state(var_.block_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -1734,11 +1734,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.block_volume_replica_display_name())
-     *             .state(var_.block_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -1780,11 +1780,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.block_volume_replica_display_name())
-     *             .state(var_.block_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -1826,11 +1826,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBlockVolumeReplicas = CoreFunctions.getBlockVolumeReplicas(GetBlockVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.block_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.block_volume_replica_display_name())
-     *             .state(var_.block_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(blockVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(blockVolumeReplicaDisplayName)
+     *             .state(blockVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -1872,7 +1872,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
      *             .build());
      * 
      *     }
@@ -1914,7 +1914,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
      *             .build());
      * 
      *     }
@@ -1956,7 +1956,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
      *             .build());
      * 
      *     }
@@ -1998,7 +1998,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolume = CoreFunctions.getBootVolume(GetBootVolumeArgs.builder()
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
+     *             .bootVolumeId(testBootVolumeOciCoreBootVolume.id())
      *             .build());
      * 
      *     }
@@ -2041,10 +2041,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -2088,10 +2088,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -2135,10 +2135,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -2182,10 +2182,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeAttachments = CoreFunctions.getBootVolumeAttachments(GetBootVolumeAttachmentsArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_attachment_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .availabilityDomain(bootVolumeAttachmentAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -2228,7 +2228,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
      *             .build());
      * 
      *     }
@@ -2270,7 +2270,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
      *             .build());
      * 
      *     }
@@ -2312,7 +2312,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
      *             .build());
      * 
      *     }
@@ -2354,7 +2354,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackup = CoreFunctions.getBootVolumeBackup(GetBootVolumeBackupArgs.builder()
-     *             .bootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
+     *             .bootVolumeBackupId(testBootVolumeBackupOciCoreBootVolumeBackup.id())
      *             .build());
      * 
      *     }
@@ -2396,11 +2396,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .displayName(var_.boot_volume_backup_display_name())
-     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
-     *             .state(var_.boot_volume_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .displayName(bootVolumeBackupDisplayName)
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .state(bootVolumeBackupState)
      *             .build());
      * 
      *     }
@@ -2442,11 +2442,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .displayName(var_.boot_volume_backup_display_name())
-     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
-     *             .state(var_.boot_volume_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .displayName(bootVolumeBackupDisplayName)
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .state(bootVolumeBackupState)
      *             .build());
      * 
      *     }
@@ -2488,11 +2488,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .displayName(var_.boot_volume_backup_display_name())
-     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
-     *             .state(var_.boot_volume_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .displayName(bootVolumeBackupDisplayName)
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .state(bootVolumeBackupState)
      *             .build());
      * 
      *     }
@@ -2534,11 +2534,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeBackups = CoreFunctions.getBootVolumeBackups(GetBootVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bootVolumeId(oci_core_boot_volume.test_boot_volume().id())
-     *             .displayName(var_.boot_volume_backup_display_name())
-     *             .sourceBootVolumeBackupId(oci_core_boot_volume_backup.test_boot_volume_backup().id())
-     *             .state(var_.boot_volume_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .bootVolumeId(testBootVolume.id())
+     *             .displayName(bootVolumeBackupDisplayName)
+     *             .sourceBootVolumeBackupId(testBootVolumeBackup.id())
+     *             .state(bootVolumeBackupState)
      *             .build());
      * 
      *     }
@@ -2580,7 +2580,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -2622,7 +2622,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -2664,7 +2664,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -2706,7 +2706,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplica = CoreFunctions.getBootVolumeReplica(GetBootVolumeReplicaArgs.builder()
-     *             .bootVolumeReplicaId(oci_core_boot_volume_replica.test_boot_volume_replica().id())
+     *             .bootVolumeReplicaId(testBootVolumeReplicaOciCoreBootVolumeReplica.id())
      *             .build());
      * 
      *     }
@@ -2748,11 +2748,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.boot_volume_replica_display_name())
-     *             .state(var_.boot_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -2794,11 +2794,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.boot_volume_replica_display_name())
-     *             .state(var_.boot_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -2840,11 +2840,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.boot_volume_replica_display_name())
-     *             .state(var_.boot_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -2886,11 +2886,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.boot_volume_replica_display_name())
-     *             .state(var_.boot_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -2932,11 +2932,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.boot_volume_replica_display_name())
-     *             .state(var_.boot_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -2978,11 +2978,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumeReplicas = CoreFunctions.getBootVolumeReplicas(GetBootVolumeReplicasArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.boot_volume_replica_display_name())
-     *             .state(var_.boot_volume_replica_state())
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .availabilityDomain(bootVolumeReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(bootVolumeReplicaDisplayName)
+     *             .state(bootVolumeReplicaState)
+     *             .volumeGroupReplicaId(testVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -3024,9 +3024,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -3068,9 +3068,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -3112,9 +3112,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -3156,9 +3156,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -3200,9 +3200,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -3244,9 +3244,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBootVolumes = CoreFunctions.getBootVolumes(GetBootVolumesArgs.builder()
-     *             .availabilityDomain(var_.boot_volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(bootVolumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -3289,7 +3289,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3332,7 +3332,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3375,7 +3375,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3418,7 +3418,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipAllocatedRanges = CoreFunctions.getByoipAllocatedRanges(GetByoipAllocatedRangesArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3460,7 +3460,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3502,7 +3502,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3544,7 +3544,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3586,7 +3586,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRange = CoreFunctions.getByoipRange(GetByoipRangeArgs.builder()
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
+     *             .byoipRangeId(testByoipRangeOciCoreByoipRange.id())
      *             .build());
      * 
      *     }
@@ -3629,9 +3629,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.byoip_range_display_name())
-     *             .state(var_.byoip_range_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoipRangeDisplayName)
+     *             .state(byoipRangeState)
      *             .build());
      * 
      *     }
@@ -3674,9 +3674,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.byoip_range_display_name())
-     *             .state(var_.byoip_range_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoipRangeDisplayName)
+     *             .state(byoipRangeState)
      *             .build());
      * 
      *     }
@@ -3719,9 +3719,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.byoip_range_display_name())
-     *             .state(var_.byoip_range_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoipRangeDisplayName)
+     *             .state(byoipRangeState)
      *             .build());
      * 
      *     }
@@ -3764,9 +3764,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByoipRanges = CoreFunctions.getByoipRanges(GetByoipRangesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.byoip_range_display_name())
-     *             .state(var_.byoip_range_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoipRangeDisplayName)
+     *             .state(byoipRangeState)
      *             .build());
      * 
      *     }
@@ -3808,7 +3808,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
      *             .build());
      * 
      *     }
@@ -3850,7 +3850,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
      *             .build());
      * 
      *     }
@@ -3892,7 +3892,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
      *             .build());
      * 
      *     }
@@ -3934,7 +3934,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilter = CoreFunctions.getCaptureFilter(GetCaptureFilterArgs.builder()
-     *             .captureFilterId(oci_core_capture_filter.test_capture_filter().id())
+     *             .captureFilterId(testCaptureFilterOciCoreCaptureFilter.id())
      *             .build());
      * 
      *     }
@@ -3976,10 +3976,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.capture_filter_display_name())
-     *             .filterType(var_.capture_filter_filter_type())
-     *             .state(var_.capture_filter_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(captureFilterDisplayName)
+     *             .filterType(captureFilterFilterType)
+     *             .state(captureFilterState)
      *             .build());
      * 
      *     }
@@ -4021,10 +4021,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.capture_filter_display_name())
-     *             .filterType(var_.capture_filter_filter_type())
-     *             .state(var_.capture_filter_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(captureFilterDisplayName)
+     *             .filterType(captureFilterFilterType)
+     *             .state(captureFilterState)
      *             .build());
      * 
      *     }
@@ -4066,10 +4066,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.capture_filter_display_name())
-     *             .filterType(var_.capture_filter_filter_type())
-     *             .state(var_.capture_filter_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(captureFilterDisplayName)
+     *             .filterType(captureFilterFilterType)
+     *             .state(captureFilterState)
      *             .build());
      * 
      *     }
@@ -4111,10 +4111,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCaptureFilters = CoreFunctions.getCaptureFilters(GetCaptureFiltersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.capture_filter_display_name())
-     *             .filterType(var_.capture_filter_filter_type())
-     *             .state(var_.capture_filter_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(captureFilterDisplayName)
+     *             .filterType(captureFilterFilterType)
+     *             .state(captureFilterState)
      *             .build());
      * 
      *     }
@@ -4156,7 +4156,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -4198,7 +4198,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -4240,7 +4240,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -4282,7 +4282,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetwork = CoreFunctions.getClusterNetwork(GetClusterNetworkArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
+     *             .clusterNetworkId(testClusterNetworkOciCoreClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -4324,9 +4324,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -4368,9 +4368,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -4412,9 +4412,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -4456,9 +4456,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworkInstances = CoreFunctions.getClusterNetworkInstances(GetClusterNetworkInstancesArgs.builder()
-     *             .clusterNetworkId(oci_core_cluster_network.test_cluster_network().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_instance_display_name())
+     *             .clusterNetworkId(testClusterNetwork.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -4501,9 +4501,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_display_name())
-     *             .state(var_.cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkDisplayName)
+     *             .state(clusterNetworkState)
      *             .build());
      * 
      *     }
@@ -4546,9 +4546,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_display_name())
-     *             .state(var_.cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkDisplayName)
+     *             .state(clusterNetworkState)
      *             .build());
      * 
      *     }
@@ -4591,9 +4591,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_display_name())
-     *             .state(var_.cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkDisplayName)
+     *             .state(clusterNetworkState)
      *             .build());
      * 
      *     }
@@ -4636,9 +4636,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterNetworks = CoreFunctions.getClusterNetworks(GetClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cluster_network_display_name())
-     *             .state(var_.cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(clusterNetworkDisplayName)
+     *             .state(clusterNetworkState)
      *             .build());
      * 
      *     }
@@ -4680,7 +4680,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -4722,7 +4722,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -4764,7 +4764,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -4806,7 +4806,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcnDnsResolverAssociation = CoreFunctions.getCnvDnsResolverAssociation(GetCnvDnsResolverAssociationArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -4848,7 +4848,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .capacityReservationId(testCapacityReservation.id())
      *             .build());
      * 
      *     }
@@ -4890,7 +4890,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .capacityReservationId(testCapacityReservation.id())
      *             .build());
      * 
      *     }
@@ -4932,7 +4932,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .capacityReservationId(testCapacityReservation.id())
      *             .build());
      * 
      *     }
@@ -4974,7 +4974,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservation = CoreFunctions.getComputeCapacityReservation(GetComputeCapacityReservationArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
+     *             .capacityReservationId(testCapacityReservation.id())
      *             .build());
      * 
      *     }
@@ -5016,9 +5016,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationInstanceShapeAvailabilityDomain)
+     *             .displayName(computeCapacityReservationInstanceShapeDisplayName)
      *             .build());
      * 
      *     }
@@ -5060,9 +5060,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationInstanceShapeAvailabilityDomain)
+     *             .displayName(computeCapacityReservationInstanceShapeDisplayName)
      *             .build());
      * 
      *     }
@@ -5104,9 +5104,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationInstanceShapeAvailabilityDomain)
+     *             .displayName(computeCapacityReservationInstanceShapeDisplayName)
      *             .build());
      * 
      *     }
@@ -5148,9 +5148,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstanceShapes = CoreFunctions.getComputeCapacityReservationInstanceShapes(GetComputeCapacityReservationInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_shape_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_instance_shape_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationInstanceShapeAvailabilityDomain)
+     *             .displayName(computeCapacityReservationInstanceShapeDisplayName)
      *             .build());
      * 
      *     }
@@ -5192,9 +5192,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5236,9 +5236,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5280,9 +5280,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5324,9 +5324,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservationInstances = CoreFunctions.getComputeCapacityReservationInstances(GetComputeCapacityReservationInstancesArgs.builder()
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_instance_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .availabilityDomain(computeCapacityReservationInstanceAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5371,10 +5371,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_display_name())
-     *             .state(var_.compute_capacity_reservation_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationAvailabilityDomain)
+     *             .displayName(computeCapacityReservationDisplayName)
+     *             .state(computeCapacityReservationState)
      *             .build());
      * 
      *     }
@@ -5419,10 +5419,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_display_name())
-     *             .state(var_.compute_capacity_reservation_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationAvailabilityDomain)
+     *             .displayName(computeCapacityReservationDisplayName)
+     *             .state(computeCapacityReservationState)
      *             .build());
      * 
      *     }
@@ -5467,10 +5467,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_display_name())
-     *             .state(var_.compute_capacity_reservation_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationAvailabilityDomain)
+     *             .displayName(computeCapacityReservationDisplayName)
+     *             .state(computeCapacityReservationState)
      *             .build());
      * 
      *     }
@@ -5515,10 +5515,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityReservations = CoreFunctions.getComputeCapacityReservations(GetComputeCapacityReservationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_reservation_availability_domain())
-     *             .displayName(var_.compute_capacity_reservation_display_name())
-     *             .state(var_.compute_capacity_reservation_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityReservationAvailabilityDomain)
+     *             .displayName(computeCapacityReservationDisplayName)
+     *             .state(computeCapacityReservationState)
      *             .build());
      * 
      *     }
@@ -5561,9 +5561,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
-     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
+     *             .displayName(computeCapacityTopologyDisplayName)
      *             .build());
      * 
      *     }
@@ -5606,9 +5606,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
-     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
+     *             .displayName(computeCapacityTopologyDisplayName)
      *             .build());
      * 
      *     }
@@ -5651,9 +5651,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
-     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
+     *             .displayName(computeCapacityTopologyDisplayName)
      *             .build());
      * 
      *     }
@@ -5696,9 +5696,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologies = CoreFunctions.getComputeCapacityTopologies(GetComputeCapacityTopologiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
-     *             .displayName(var_.compute_capacity_topology_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
+     *             .displayName(computeCapacityTopologyDisplayName)
      *             .build());
      * 
      *     }
@@ -5740,7 +5740,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
      *             .build());
      * 
      *     }
@@ -5782,7 +5782,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
      *             .build());
      * 
      *     }
@@ -5824,7 +5824,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
      *             .build());
      * 
      *     }
@@ -5866,7 +5866,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopology = CoreFunctions.getComputeCapacityTopology(GetComputeCapacityTopologyArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopologyOciCoreComputeCapacityTopology.id())
      *             .build());
      * 
      *     }
@@ -5908,12 +5908,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
-     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
-     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeLocalBlockId(testComputeLocalBlock.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
      *             .build());
      * 
      *     }
@@ -5955,12 +5955,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
-     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
-     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeLocalBlockId(testComputeLocalBlock.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
      *             .build());
      * 
      *     }
@@ -6002,12 +6002,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
-     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
-     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeLocalBlockId(testComputeLocalBlock.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
      *             .build());
      * 
      *     }
@@ -6049,12 +6049,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeBareMetalHosts = CoreFunctions.getComputeCapacityTopologyComputeBareMetalHosts(GetComputeCapacityTopologyComputeBareMetalHostsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_bare_metal_host_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
-     *             .computeLocalBlockId(oci_core_compute_local_block.test_compute_local_block().id())
-     *             .computeNetworkBlockId(oci_core_compute_network_block.test_compute_network_block().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeBareMetalHostAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
+     *             .computeLocalBlockId(testComputeLocalBlock.id())
+     *             .computeNetworkBlockId(testComputeNetworkBlock.id())
      *             .build());
      * 
      *     }
@@ -6096,9 +6096,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6140,9 +6140,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6184,9 +6184,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6228,9 +6228,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeHpcIslands = CoreFunctions.getComputeCapacityTopologyComputeHpcIslands(GetComputeCapacityTopologyComputeHpcIslandsArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_hpc_island_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeHpcIslandAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6272,10 +6272,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
      *             .build());
      * 
      *     }
@@ -6317,10 +6317,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
      *             .build());
      * 
      *     }
@@ -6362,10 +6362,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
      *             .build());
      * 
      *     }
@@ -6407,10 +6407,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCapacityTopologyComputeNetworkBlocks = CoreFunctions.getComputeCapacityTopologyComputeNetworkBlocks(GetComputeCapacityTopologyComputeNetworkBlocksArgs.builder()
-     *             .computeCapacityTopologyId(oci_core_compute_capacity_topology.test_compute_capacity_topology().id())
-     *             .availabilityDomain(var_.compute_capacity_topology_compute_network_block_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .computeHpcIslandId(oci_core_compute_hpc_island.test_compute_hpc_island().id())
+     *             .computeCapacityTopologyId(testComputeCapacityTopology.id())
+     *             .availabilityDomain(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .computeHpcIslandId(testComputeHpcIsland.id())
      *             .build());
      * 
      *     }
@@ -6453,7 +6453,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
      *             .build());
      * 
      *     }
@@ -6496,7 +6496,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
      *             .build());
      * 
      *     }
@@ -6539,7 +6539,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
      *             .build());
      * 
      *     }
@@ -6582,7 +6582,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeCluster = CoreFunctions.getComputeCluster(GetComputeClusterArgs.builder()
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
+     *             .computeClusterId(testComputeClusterOciCoreComputeCluster.id())
      *             .build());
      * 
      *     }
@@ -6625,9 +6625,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_cluster_availability_domain())
-     *             .displayName(var_.compute_cluster_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeClusterAvailabilityDomain)
+     *             .displayName(computeClusterDisplayName)
      *             .build());
      * 
      *     }
@@ -6670,9 +6670,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_cluster_availability_domain())
-     *             .displayName(var_.compute_cluster_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeClusterAvailabilityDomain)
+     *             .displayName(computeClusterDisplayName)
      *             .build());
      * 
      *     }
@@ -6715,9 +6715,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_cluster_availability_domain())
-     *             .displayName(var_.compute_cluster_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeClusterAvailabilityDomain)
+     *             .displayName(computeClusterDisplayName)
      *             .build());
      * 
      *     }
@@ -6760,9 +6760,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeClusters = CoreFunctions.getComputeClusters(GetComputeClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.compute_cluster_availability_domain())
-     *             .displayName(var_.compute_cluster_display_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(computeClusterAvailabilityDomain)
+     *             .displayName(computeClusterDisplayName)
      *             .build());
      * 
      *     }
@@ -6804,7 +6804,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
      *             .build());
      * 
      *     }
@@ -6846,7 +6846,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
      *             .build());
      * 
      *     }
@@ -6888,7 +6888,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
      *             .build());
      * 
      *     }
@@ -6930,7 +6930,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchema = CoreFunctions.getComputeGlobalImageCapabilitySchema(GetComputeGlobalImageCapabilitySchemaArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchemaOciCoreComputeGlobalImageCapabilitySchema.id())
      *             .build());
      * 
      *     }
@@ -6972,8 +6972,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
      *             .build());
      * 
      *     }
@@ -7015,8 +7015,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
      *             .build());
      * 
      *     }
@@ -7058,8 +7058,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
      *             .build());
      * 
      *     }
@@ -7101,8 +7101,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
      *             .build());
      * 
      *     }
@@ -7144,8 +7144,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
      *             .build());
      * 
      *     }
@@ -7187,8 +7187,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemas = CoreFunctions.getComputeGlobalImageCapabilitySchemas(GetComputeGlobalImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_global_image_capability_schema_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeGlobalImageCapabilitySchemaDisplayName)
      *             .build());
      * 
      *     }
@@ -7230,8 +7230,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
      *     }
@@ -7273,8 +7273,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
      *     }
@@ -7316,8 +7316,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
      *     }
@@ -7359,8 +7359,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersion = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersion(GetComputeGlobalImageCapabilitySchemasVersionArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .computeGlobalImageCapabilitySchemaVersionName(computeGlobalImageCapabilitySchemasVersionComputeGlobalImageCapabilitySchemaVersionName)
      *             .build());
      * 
      *     }
@@ -7402,8 +7402,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
      *     }
@@ -7445,8 +7445,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
      *     }
@@ -7488,8 +7488,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
      *     }
@@ -7531,8 +7531,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeGlobalImageCapabilitySchemasVersions = CoreFunctions.getComputeGlobalImageCapabilitySchemasVersions(GetComputeGlobalImageCapabilitySchemasVersionsArgs.builder()
-     *             .computeGlobalImageCapabilitySchemaId(oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema().id())
-     *             .displayName(var_.compute_global_image_capability_schemas_version_display_name())
+     *             .computeGlobalImageCapabilitySchemaId(testComputeGlobalImageCapabilitySchema.id())
+     *             .displayName(computeGlobalImageCapabilitySchemasVersionDisplayName)
      *             .build());
      * 
      *     }
@@ -7574,8 +7574,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
-     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
      *     }
@@ -7617,8 +7617,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
-     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
      *     }
@@ -7660,8 +7660,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
-     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
      *     }
@@ -7703,8 +7703,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchema = CoreFunctions.getComputeImageCapabilitySchema(GetComputeImageCapabilitySchemaArgs.builder()
-     *             .computeImageCapabilitySchemaId(oci_core_compute_image_capability_schema.test_compute_image_capability_schema().id())
-     *             .isMergeEnabled(var_.compute_image_capability_schema_is_merge_enabled())
+     *             .computeImageCapabilitySchemaId(testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id())
+     *             .isMergeEnabled(computeImageCapabilitySchemaIsMergeEnabled)
      *             .build());
      * 
      *     }
@@ -7746,9 +7746,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_image_capability_schema_display_name())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -7790,9 +7790,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_image_capability_schema_display_name())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -7834,9 +7834,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_image_capability_schema_display_name())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -7878,9 +7878,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_image_capability_schema_display_name())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -7922,9 +7922,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_image_capability_schema_display_name())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -7966,9 +7966,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputeImageCapabilitySchemas = CoreFunctions.getComputeImageCapabilitySchemas(GetComputeImageCapabilitySchemasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.compute_image_capability_schema_display_name())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(computeImageCapabilitySchemaDisplayName)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -8010,10 +8010,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.console_history_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .state(var_.console_history_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(consoleHistoryAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .state(consoleHistoryState)
      *             .build());
      * 
      *     }
@@ -8055,10 +8055,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.console_history_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .state(var_.console_history_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(consoleHistoryAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .state(consoleHistoryState)
      *             .build());
      * 
      *     }
@@ -8100,10 +8100,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.console_history_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .state(var_.console_history_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(consoleHistoryAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .state(consoleHistoryState)
      *             .build());
      * 
      *     }
@@ -8145,10 +8145,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistories = CoreFunctions.getConsoleHistories(GetConsoleHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.console_history_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .state(var_.console_history_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(consoleHistoryAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .state(consoleHistoryState)
      *             .build());
      * 
      *     }
@@ -8192,9 +8192,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .length(var_.console_history_content_length())
-     *             .offset(var_.console_history_content_offset())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .length(consoleHistoryContentLength)
+     *             .offset(consoleHistoryContentOffset)
      *             .build());
      * 
      *     }
@@ -8238,9 +8238,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .length(var_.console_history_content_length())
-     *             .offset(var_.console_history_content_offset())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .length(consoleHistoryContentLength)
+     *             .offset(consoleHistoryContentOffset)
      *             .build());
      * 
      *     }
@@ -8284,9 +8284,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .length(var_.console_history_content_length())
-     *             .offset(var_.console_history_content_offset())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .length(consoleHistoryContentLength)
+     *             .offset(consoleHistoryContentOffset)
      *             .build());
      * 
      *     }
@@ -8330,9 +8330,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConsoleHistoryData = CoreFunctions.getConsoleHistoryData(GetConsoleHistoryDataArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .length(var_.console_history_content_length())
-     *             .offset(var_.console_history_content_offset())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .length(consoleHistoryContentLength)
+     *             .offset(consoleHistoryContentOffset)
      *             .build());
      * 
      *     }
@@ -8382,7 +8382,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
      *             .build());
      * 
      *     }
@@ -8432,7 +8432,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
      *             .build());
      * 
      *     }
@@ -8482,7 +8482,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
      *             .build());
      * 
      *     }
@@ -8532,7 +8532,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpeDeviceShape = CoreFunctions.getCpeDeviceShape(GetCpeDeviceShapeArgs.builder()
-     *             .cpeDeviceShapeId(oci_core_cpe_device_shape.test_cpe_device_shape().id())
+     *             .cpeDeviceShapeId(testCpeDeviceShapeOciCoreCpeDeviceShape.id())
      *             .build());
      * 
      *     }
@@ -8886,7 +8886,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -8928,7 +8928,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -8970,7 +8970,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9012,7 +9012,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCpes = CoreFunctions.getCpes(GetCpesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9054,7 +9054,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -9096,7 +9096,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -9138,7 +9138,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -9180,7 +9180,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnect = CoreFunctions.getCrossConnect(GetCrossConnectArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnectOciCoreCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -9222,7 +9222,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
      *             .build());
      * 
      *     }
@@ -9264,7 +9264,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
      *             .build());
      * 
      *     }
@@ -9306,7 +9306,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
      *             .build());
      * 
      *     }
@@ -9348,7 +9348,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroup = CoreFunctions.getCrossConnectGroup(GetCrossConnectGroupArgs.builder()
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
+     *             .crossConnectGroupId(testCrossConnectGroupOciCoreCrossConnectGroup.id())
      *             .build());
      * 
      *     }
@@ -9390,9 +9390,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cross_connect_group_display_name())
-     *             .state(var_.cross_connect_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(crossConnectGroupDisplayName)
+     *             .state(crossConnectGroupState)
      *             .build());
      * 
      *     }
@@ -9434,9 +9434,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cross_connect_group_display_name())
-     *             .state(var_.cross_connect_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(crossConnectGroupDisplayName)
+     *             .state(crossConnectGroupState)
      *             .build());
      * 
      *     }
@@ -9478,9 +9478,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cross_connect_group_display_name())
-     *             .state(var_.cross_connect_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(crossConnectGroupDisplayName)
+     *             .state(crossConnectGroupState)
      *             .build());
      * 
      *     }
@@ -9522,9 +9522,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectGroups = CoreFunctions.getCrossConnectGroups(GetCrossConnectGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.cross_connect_group_display_name())
-     *             .state(var_.cross_connect_group_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(crossConnectGroupDisplayName)
+     *             .state(crossConnectGroupState)
      *             .build());
      * 
      *     }
@@ -9567,7 +9567,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9610,7 +9610,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9653,7 +9653,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9696,7 +9696,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectLocations = CoreFunctions.getCrossConnectLocations(GetCrossConnectLocationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9740,7 +9740,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9784,7 +9784,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9828,7 +9828,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9872,7 +9872,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectPortSpeedShapes = CoreFunctions.getCrossConnectPortSpeedShape(GetCrossConnectPortSpeedShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -9914,7 +9914,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -9956,7 +9956,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -9998,7 +9998,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -10040,7 +10040,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnectStatus = CoreFunctions.getCrossConnectStatus(GetCrossConnectStatusArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -10083,10 +10083,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
-     *             .displayName(var_.cross_connect_display_name())
-     *             .state(var_.cross_connect_state())
+     *             .compartmentId(compartmentId)
+     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .displayName(crossConnectDisplayName)
+     *             .state(crossConnectState)
      *             .build());
      * 
      *     }
@@ -10129,10 +10129,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
-     *             .displayName(var_.cross_connect_display_name())
-     *             .state(var_.cross_connect_state())
+     *             .compartmentId(compartmentId)
+     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .displayName(crossConnectDisplayName)
+     *             .state(crossConnectState)
      *             .build());
      * 
      *     }
@@ -10175,10 +10175,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
-     *             .displayName(var_.cross_connect_display_name())
-     *             .state(var_.cross_connect_state())
+     *             .compartmentId(compartmentId)
+     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .displayName(crossConnectDisplayName)
+     *             .state(crossConnectState)
      *             .build());
      * 
      *     }
@@ -10221,10 +10221,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCrossConnects = CoreFunctions.getCrossConnects(GetCrossConnectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .crossConnectGroupId(oci_core_cross_connect_group.test_cross_connect_group().id())
-     *             .displayName(var_.cross_connect_display_name())
-     *             .state(var_.cross_connect_state())
+     *             .compartmentId(compartmentId)
+     *             .crossConnectGroupId(testCrossConnectGroup.id())
+     *             .displayName(crossConnectDisplayName)
+     *             .state(crossConnectState)
      *             .build());
      * 
      *     }
@@ -10266,7 +10266,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
      *             .build());
      * 
      *     }
@@ -10308,7 +10308,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
      *             .build());
      * 
      *     }
@@ -10350,7 +10350,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
      *             .build());
      * 
      *     }
@@ -10392,7 +10392,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHost = CoreFunctions.getDedicatedVmHost(GetDedicatedVmHostArgs.builder()
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
+     *             .dedicatedVmHostId(testDedicatedVmHostOciCoreDedicatedVmHost.id())
      *             .build());
      * 
      *     }
@@ -10435,9 +10435,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
-     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostInstanceShapeAvailabilityDomain)
+     *             .dedicatedVmHostShape(dedicatedVmHostInstanceShapeDedicatedVmHostShape)
      *             .build());
      * 
      *     }
@@ -10480,9 +10480,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
-     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostInstanceShapeAvailabilityDomain)
+     *             .dedicatedVmHostShape(dedicatedVmHostInstanceShapeDedicatedVmHostShape)
      *             .build());
      * 
      *     }
@@ -10525,9 +10525,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
-     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostInstanceShapeAvailabilityDomain)
+     *             .dedicatedVmHostShape(dedicatedVmHostInstanceShapeDedicatedVmHostShape)
      *             .build());
      * 
      *     }
@@ -10570,9 +10570,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostInstanceShapes = CoreFunctions.getDedicatedVmHostInstanceShapes(GetDedicatedVmHostInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_instance_shape_availability_domain())
-     *             .dedicatedVmHostShape(var_.dedicated_vm_host_instance_shape_dedicated_vm_host_shape())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostInstanceShapeAvailabilityDomain)
+     *             .dedicatedVmHostShape(dedicatedVmHostInstanceShapeDedicatedVmHostShape)
      *             .build());
      * 
      *     }
@@ -10614,9 +10614,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
-     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -10658,9 +10658,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
-     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -10702,9 +10702,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
-     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -10746,9 +10746,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostsInstances = CoreFunctions.getDedicatedVmHostInstances(GetDedicatedVmHostInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dedicatedVmHostId(oci_core_dedicated_vm_host.test_dedicated_vm_host().id())
-     *             .availabilityDomain(var_.dedicated_vm_hosts_instance_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .dedicatedVmHostId(testDedicatedVmHost.id())
+     *             .availabilityDomain(dedicatedVmHostsInstanceAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -10790,9 +10790,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
-     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostShapeAvailabilityDomain)
+     *             .instanceShapeName(dedicatedVmHostShapeInstanceShapeName)
      *             .build());
      * 
      *     }
@@ -10834,9 +10834,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
-     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostShapeAvailabilityDomain)
+     *             .instanceShapeName(dedicatedVmHostShapeInstanceShapeName)
      *             .build());
      * 
      *     }
@@ -10878,9 +10878,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
-     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostShapeAvailabilityDomain)
+     *             .instanceShapeName(dedicatedVmHostShapeInstanceShapeName)
      *             .build());
      * 
      *     }
@@ -10922,9 +10922,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHostShapes = CoreFunctions.getDedicatedVmHostShapes(GetDedicatedVmHostShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_shape_availability_domain())
-     *             .instanceShapeName(var_.dedicated_vm_host_shape_instance_shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostShapeAvailabilityDomain)
+     *             .instanceShapeName(dedicatedVmHostShapeInstanceShapeName)
      *             .build());
      * 
      *     }
@@ -10969,13 +10969,13 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
-     *             .displayName(var_.dedicated_vm_host_display_name())
-     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
-     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
-     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
-     *             .state(var_.dedicated_vm_host_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
+     *             .displayName(dedicatedVmHostDisplayName)
+     *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
+     *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
+     *             .state(dedicatedVmHostState)
      *             .build());
      * 
      *     }
@@ -11020,13 +11020,13 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
-     *             .displayName(var_.dedicated_vm_host_display_name())
-     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
-     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
-     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
-     *             .state(var_.dedicated_vm_host_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
+     *             .displayName(dedicatedVmHostDisplayName)
+     *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
+     *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
+     *             .state(dedicatedVmHostState)
      *             .build());
      * 
      *     }
@@ -11071,13 +11071,13 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
-     *             .displayName(var_.dedicated_vm_host_display_name())
-     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
-     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
-     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
-     *             .state(var_.dedicated_vm_host_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
+     *             .displayName(dedicatedVmHostDisplayName)
+     *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
+     *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
+     *             .state(dedicatedVmHostState)
      *             .build());
      * 
      *     }
@@ -11122,13 +11122,13 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVmHosts = CoreFunctions.getDedicatedVmHosts(GetDedicatedVmHostsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.dedicated_vm_host_availability_domain())
-     *             .displayName(var_.dedicated_vm_host_display_name())
-     *             .instanceShapeName(var_.dedicated_vm_host_instance_shape_name())
-     *             .remainingMemoryInGbsGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to())
-     *             .remainingOcpusGreaterThanOrEqualTo(var_.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to())
-     *             .state(var_.dedicated_vm_host_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
+     *             .displayName(dedicatedVmHostDisplayName)
+     *             .instanceShapeName(dedicatedVmHostInstanceShapeName)
+     *             .remainingMemoryInGbsGreaterThanOrEqualTo(dedicatedVmHostRemainingMemoryInGbsGreaterThanOrEqualTo)
+     *             .remainingOcpusGreaterThanOrEqualTo(dedicatedVmHostRemainingOcpusGreaterThanOrEqualTo)
+     *             .state(dedicatedVmHostState)
      *             .build());
      * 
      *     }
@@ -11173,10 +11173,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dhcp_options_display_name())
-     *             .state(var_.dhcp_options_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dhcpOptionsDisplayName)
+     *             .state(dhcpOptionsState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11221,10 +11221,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dhcp_options_display_name())
-     *             .state(var_.dhcp_options_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dhcpOptionsDisplayName)
+     *             .state(dhcpOptionsState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11269,10 +11269,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dhcp_options_display_name())
-     *             .state(var_.dhcp_options_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dhcpOptionsDisplayName)
+     *             .state(dhcpOptionsState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11317,10 +11317,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDhcpOptions = CoreFunctions.getDhcpOptions(GetDhcpOptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dhcp_options_display_name())
-     *             .state(var_.dhcp_options_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dhcpOptionsDisplayName)
+     *             .state(dhcpOptionsState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11367,14 +11367,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .attachmentType(var_.drg_attachment_attachment_type())
-     *             .displayName(var_.drg_attachment_display_name())
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .networkId(oci_core_network.test_network().id())
-     *             .state(var_.drg_attachment_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .attachmentType(drgAttachmentAttachmentType)
+     *             .displayName(drgAttachmentDisplayName)
+     *             .drgId(testDrg.id())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .networkId(testNetwork.id())
+     *             .state(drgAttachmentState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11421,14 +11421,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .attachmentType(var_.drg_attachment_attachment_type())
-     *             .displayName(var_.drg_attachment_display_name())
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .networkId(oci_core_network.test_network().id())
-     *             .state(var_.drg_attachment_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .attachmentType(drgAttachmentAttachmentType)
+     *             .displayName(drgAttachmentDisplayName)
+     *             .drgId(testDrg.id())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .networkId(testNetwork.id())
+     *             .state(drgAttachmentState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11475,14 +11475,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .attachmentType(var_.drg_attachment_attachment_type())
-     *             .displayName(var_.drg_attachment_display_name())
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .networkId(oci_core_network.test_network().id())
-     *             .state(var_.drg_attachment_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .attachmentType(drgAttachmentAttachmentType)
+     *             .displayName(drgAttachmentDisplayName)
+     *             .drgId(testDrg.id())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .networkId(testNetwork.id())
+     *             .state(drgAttachmentState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11529,14 +11529,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgAttachments = CoreFunctions.getDrgAttachments(GetDrgAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .attachmentType(var_.drg_attachment_attachment_type())
-     *             .displayName(var_.drg_attachment_display_name())
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .networkId(oci_core_network.test_network().id())
-     *             .state(var_.drg_attachment_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .attachmentType(drgAttachmentAttachmentType)
+     *             .displayName(drgAttachmentDisplayName)
+     *             .drgId(testDrg.id())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .networkId(testNetwork.id())
+     *             .state(drgAttachmentState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -11578,7 +11578,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11620,7 +11620,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11662,7 +11662,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11704,7 +11704,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistribution = CoreFunctions.getDrgRouteDistribution(GetDrgRouteDistributionArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistributionOciCoreDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11746,7 +11746,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11788,7 +11788,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11830,7 +11830,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11872,7 +11872,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributionStatements = CoreFunctions.getDrgRouteDistributionStatements(GetDrgRouteDistributionStatementsArgs.builder()
-     *             .drgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
+     *             .drgRouteDistributionId(testDrgRouteDistribution.id())
      *             .build());
      * 
      *     }
@@ -11917,9 +11917,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_distribution_display_name())
-     *             .state(var_.drg_route_distribution_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteDistributionDisplayName)
+     *             .state(drgRouteDistributionState)
      *             .build());
      * 
      *     }
@@ -11964,9 +11964,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_distribution_display_name())
-     *             .state(var_.drg_route_distribution_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteDistributionDisplayName)
+     *             .state(drgRouteDistributionState)
      *             .build());
      * 
      *     }
@@ -12011,9 +12011,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_distribution_display_name())
-     *             .state(var_.drg_route_distribution_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteDistributionDisplayName)
+     *             .state(drgRouteDistributionState)
      *             .build());
      * 
      *     }
@@ -12058,9 +12058,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteDistributions = CoreFunctions.getDrgRouteDistributions(GetDrgRouteDistributionsArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_distribution_display_name())
-     *             .state(var_.drg_route_distribution_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteDistributionDisplayName)
+     *             .state(drgRouteDistributionState)
      *             .build());
      * 
      *     }
@@ -12102,7 +12102,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
      *             .build());
      * 
      *     }
@@ -12144,7 +12144,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
      *             .build());
      * 
      *     }
@@ -12186,7 +12186,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
      *             .build());
      * 
      *     }
@@ -12228,7 +12228,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTable = CoreFunctions.getDrgRouteRule(GetDrgRouteRuleArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
+     *             .drgRouteTableId(testDrgRouteTableOciCoreDrgRouteTable.id())
      *             .build());
      * 
      *     }
@@ -12270,8 +12270,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
      *     }
@@ -12313,8 +12313,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
      *     }
@@ -12356,8 +12356,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
      *     }
@@ -12399,8 +12399,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTableRouteRules = CoreFunctions.getDrgRouteTableRouteRules(GetDrgRouteTableRouteRulesArgs.builder()
-     *             .drgRouteTableId(oci_core_drg_route_table.test_drg_route_table().id())
-     *             .routeType(var_.drg_route_table_route_rule_route_type())
+     *             .drgRouteTableId(testDrgRouteTable.id())
+     *             .routeType(drgRouteTableRouteRuleRouteType)
      *             .build());
      * 
      *     }
@@ -12444,10 +12444,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_table_display_name())
-     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
-     *             .state(var_.drg_route_table_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteTableDisplayName)
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .state(drgRouteTableState)
      *             .build());
      * 
      *     }
@@ -12491,10 +12491,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_table_display_name())
-     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
-     *             .state(var_.drg_route_table_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteTableDisplayName)
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .state(drgRouteTableState)
      *             .build());
      * 
      *     }
@@ -12538,10 +12538,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_table_display_name())
-     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
-     *             .state(var_.drg_route_table_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteTableDisplayName)
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .state(drgRouteTableState)
      *             .build());
      * 
      *     }
@@ -12585,10 +12585,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgRouteTables = CoreFunctions.getDrgRouteTables(GetDrgRouteTablesArgs.builder()
-     *             .drgId(oci_core_drg.test_drg().id())
-     *             .displayName(var_.drg_route_table_display_name())
-     *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
-     *             .state(var_.drg_route_table_state())
+     *             .drgId(testDrg.id())
+     *             .displayName(drgRouteTableDisplayName)
+     *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+     *             .state(drgRouteTableState)
      *             .build());
      * 
      *     }
@@ -12630,7 +12630,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -12672,7 +12672,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -12714,7 +12714,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -12756,7 +12756,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDrgs = CoreFunctions.getDrgs(GetDrgsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -12799,7 +12799,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -12842,7 +12842,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -12885,7 +12885,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -12928,7 +12928,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderService = CoreFunctions.getFastConnectProviderService(GetFastConnectProviderServiceArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -12971,8 +12971,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
-     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
      *     }
@@ -13015,8 +13015,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
-     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
      *     }
@@ -13059,8 +13059,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
-     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
      *     }
@@ -13103,8 +13103,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServiceKey = CoreFunctions.getFastConnectProviderServiceKey(GetFastConnectProviderServiceKeyArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
-     *             .providerServiceKeyName(var_.fast_connect_provider_service_key_provider_service_key_name())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
+     *             .providerServiceKeyName(fastConnectProviderServiceKeyProviderServiceKeyName)
      *             .build());
      * 
      *     }
@@ -13152,7 +13152,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -13200,7 +13200,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -13248,7 +13248,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -13296,7 +13296,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastConnectProviderServices = CoreFunctions.getFastConnectProviderServices(GetFastConnectProviderServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -13338,7 +13338,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImageOciCoreImage.id())
      *             .build());
      * 
      *     }
@@ -13380,7 +13380,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImageOciCoreImage.id())
      *             .build());
      * 
      *     }
@@ -13422,7 +13422,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImageOciCoreImage.id())
      *             .build());
      * 
      *     }
@@ -13464,7 +13464,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImage = CoreFunctions.getImage(GetImageArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImageOciCoreImage.id())
      *             .build());
      * 
      *     }
@@ -13506,8 +13506,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
-     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .imageId(testImage.id())
+     *             .shapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -13549,8 +13549,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
-     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .imageId(testImage.id())
+     *             .shapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -13592,8 +13592,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
-     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .imageId(testImage.id())
+     *             .shapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -13635,8 +13635,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShape = CoreFunctions.getImageShape(GetImageShapeArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
-     *             .shapeName(oci_core_shape.test_shape().name())
+     *             .imageId(testImage.id())
+     *             .shapeName(testShape.name())
      *             .build());
      * 
      *     }
@@ -13678,7 +13678,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -13720,7 +13720,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -13762,7 +13762,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -13804,7 +13804,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImageShapes = CoreFunctions.getImageShapes(GetImageShapesArgs.builder()
-     *             .imageId(oci_core_image.test_image().id())
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -13856,14 +13856,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.image_display_name())
-     *             .operatingSystem(var_.image_operating_system())
-     *             .operatingSystemVersion(var_.image_operating_system_version())
-     *             .shape(var_.image_shape())
-     *             .state(var_.image_state())
-     *             .sortBy(var_.image_sort_by())
-     *             .sortOrder(var_.image_sort_order())
+     *             .compartmentId(compartmentId)
+     *             .displayName(imageDisplayName)
+     *             .operatingSystem(imageOperatingSystem)
+     *             .operatingSystemVersion(imageOperatingSystemVersion)
+     *             .shape(imageShape)
+     *             .state(imageState)
+     *             .sortBy(imageSortBy)
+     *             .sortOrder(imageSortOrder)
      *             .build());
      * 
      *     }
@@ -13915,14 +13915,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.image_display_name())
-     *             .operatingSystem(var_.image_operating_system())
-     *             .operatingSystemVersion(var_.image_operating_system_version())
-     *             .shape(var_.image_shape())
-     *             .state(var_.image_state())
-     *             .sortBy(var_.image_sort_by())
-     *             .sortOrder(var_.image_sort_order())
+     *             .compartmentId(compartmentId)
+     *             .displayName(imageDisplayName)
+     *             .operatingSystem(imageOperatingSystem)
+     *             .operatingSystemVersion(imageOperatingSystemVersion)
+     *             .shape(imageShape)
+     *             .state(imageState)
+     *             .sortBy(imageSortBy)
+     *             .sortOrder(imageSortOrder)
      *             .build());
      * 
      *     }
@@ -13974,14 +13974,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.image_display_name())
-     *             .operatingSystem(var_.image_operating_system())
-     *             .operatingSystemVersion(var_.image_operating_system_version())
-     *             .shape(var_.image_shape())
-     *             .state(var_.image_state())
-     *             .sortBy(var_.image_sort_by())
-     *             .sortOrder(var_.image_sort_order())
+     *             .compartmentId(compartmentId)
+     *             .displayName(imageDisplayName)
+     *             .operatingSystem(imageOperatingSystem)
+     *             .operatingSystemVersion(imageOperatingSystemVersion)
+     *             .shape(imageShape)
+     *             .state(imageState)
+     *             .sortBy(imageSortBy)
+     *             .sortOrder(imageSortOrder)
      *             .build());
      * 
      *     }
@@ -14033,14 +14033,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testImages = CoreFunctions.getImages(GetImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.image_display_name())
-     *             .operatingSystem(var_.image_operating_system())
-     *             .operatingSystemVersion(var_.image_operating_system_version())
-     *             .shape(var_.image_shape())
-     *             .state(var_.image_state())
-     *             .sortBy(var_.image_sort_by())
-     *             .sortOrder(var_.image_sort_order())
+     *             .compartmentId(compartmentId)
+     *             .displayName(imageDisplayName)
+     *             .operatingSystem(imageOperatingSystem)
+     *             .operatingSystemVersion(imageOperatingSystemVersion)
+     *             .shape(imageShape)
+     *             .state(imageState)
+     *             .sortBy(imageSortBy)
+     *             .sortOrder(imageSortOrder)
      *             .build());
      * 
      *     }
@@ -14085,7 +14085,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstanceOciCoreInstance.id())
      *             .build());
      * 
      *     }
@@ -14130,7 +14130,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstanceOciCoreInstance.id())
      *             .build());
      * 
      *     }
@@ -14175,7 +14175,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstanceOciCoreInstance.id())
      *             .build());
      * 
      *     }
@@ -14220,7 +14220,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = CoreFunctions.getInstance(GetInstanceArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstanceOciCoreInstance.id())
      *             .build());
      * 
      *     }
@@ -14262,7 +14262,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
      *             .build());
      * 
      *     }
@@ -14304,7 +14304,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
      *             .build());
      * 
      *     }
@@ -14346,7 +14346,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
      *             .build());
      * 
      *     }
@@ -14388,7 +14388,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfiguration = CoreFunctions.getInstanceConfiguration(GetInstanceConfigurationArgs.builder()
-     *             .instanceConfigurationId(oci_core_instance_configuration.test_instance_configuration().id())
+     *             .instanceConfigurationId(testInstanceConfigurationOciCoreInstanceConfiguration.id())
      *             .build());
      * 
      *     }
@@ -14430,7 +14430,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -14472,7 +14472,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -14514,7 +14514,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -14556,7 +14556,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConfigurations = CoreFunctions.getInstanceConfigurations(GetInstanceConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -14600,8 +14600,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .compartmentId(compartmentId)
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14645,8 +14645,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .compartmentId(compartmentId)
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14690,8 +14690,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .compartmentId(compartmentId)
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14735,8 +14735,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceConsoleConnections = CoreFunctions.getInstanceConsoleConnections(GetInstanceConsoleConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .compartmentId(compartmentId)
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14779,7 +14779,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14822,7 +14822,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14865,7 +14865,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14908,7 +14908,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceCredential = CoreFunctions.getInstanceCredentials(GetInstanceCredentialsArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -14950,9 +14950,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .isAvailable(var_.instance_device_is_available())
-     *             .name(var_.instance_device_name())
+     *             .instanceId(testInstance.id())
+     *             .isAvailable(instanceDeviceIsAvailable)
+     *             .name(instanceDeviceName)
      *             .build());
      * 
      *     }
@@ -14994,9 +14994,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .isAvailable(var_.instance_device_is_available())
-     *             .name(var_.instance_device_name())
+     *             .instanceId(testInstance.id())
+     *             .isAvailable(instanceDeviceIsAvailable)
+     *             .name(instanceDeviceName)
      *             .build());
      * 
      *     }
@@ -15038,9 +15038,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .isAvailable(var_.instance_device_is_available())
-     *             .name(var_.instance_device_name())
+     *             .instanceId(testInstance.id())
+     *             .isAvailable(instanceDeviceIsAvailable)
+     *             .name(instanceDeviceName)
      *             .build());
      * 
      *     }
@@ -15082,9 +15082,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceDevices = CoreFunctions.getInstanceDevices(GetInstanceDevicesArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .isAvailable(var_.instance_device_is_available())
-     *             .name(var_.instance_device_name())
+     *             .instanceId(testInstance.id())
+     *             .isAvailable(instanceDeviceIsAvailable)
+     *             .name(instanceDeviceName)
      *             .build());
      * 
      *     }
@@ -15127,7 +15127,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15170,7 +15170,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15213,7 +15213,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15256,7 +15256,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMaintenanceReboot = CoreFunctions.getInstanceMaintenanceReboot(GetInstanceMaintenanceRebootArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15298,7 +15298,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15340,7 +15340,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15382,7 +15382,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15424,7 +15424,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstanceMeasuredBootReport = CoreFunctions.getInstanceMeasuredBootReport(GetInstanceMeasuredBootReportArgs.builder()
-     *             .instanceId(oci_core_instance.test_instance().id())
+     *             .instanceId(testInstance.id())
      *             .build());
      * 
      *     }
@@ -15466,7 +15466,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
      *             .build());
      * 
      *     }
@@ -15508,7 +15508,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
      *             .build());
      * 
      *     }
@@ -15550,7 +15550,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
      *             .build());
      * 
      *     }
@@ -15592,7 +15592,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePool = CoreFunctions.getInstancePool(GetInstancePoolArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
+     *             .instancePoolId(testInstancePoolOciCoreInstancePool.id())
      *             .build());
      * 
      *     }
@@ -15634,9 +15634,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .instancePoolId(testInstancePool.id())
+     *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -15678,9 +15678,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .instancePoolId(testInstancePool.id())
+     *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -15722,9 +15722,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .instancePoolId(testInstancePool.id())
+     *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -15766,9 +15766,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolInstances = CoreFunctions.getInstancePoolInstances(GetInstancePoolInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .displayName(var_.instance_pool_instance_display_name())
+     *             .compartmentId(compartmentId)
+     *             .instancePoolId(testInstancePool.id())
+     *             .displayName(instancePoolInstanceDisplayName)
      *             .build());
      * 
      *     }
@@ -15810,8 +15810,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
      *             .build());
      * 
      *     }
@@ -15853,8 +15853,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
      *             .build());
      * 
      *     }
@@ -15896,8 +15896,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
      *             .build());
      * 
      *     }
@@ -15939,8 +15939,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePoolLoadBalancerAttachment = CoreFunctions.getInstancePoolLoadBalancerAttachment(GetInstancePoolLoadBalancerAttachmentArgs.builder()
-     *             .instancePoolId(oci_core_instance_pool.test_instance_pool().id())
-     *             .instancePoolLoadBalancerAttachmentId(oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment().id())
+     *             .instancePoolId(testInstancePool.id())
+     *             .instancePoolLoadBalancerAttachmentId(testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.id())
      *             .build());
      * 
      *     }
@@ -15982,9 +15982,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.instance_pool_display_name())
-     *             .state(var_.instance_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(instancePoolDisplayName)
+     *             .state(instancePoolState)
      *             .build());
      * 
      *     }
@@ -16026,9 +16026,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.instance_pool_display_name())
-     *             .state(var_.instance_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(instancePoolDisplayName)
+     *             .state(instancePoolState)
      *             .build());
      * 
      *     }
@@ -16070,9 +16070,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.instance_pool_display_name())
-     *             .state(var_.instance_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(instancePoolDisplayName)
+     *             .state(instancePoolState)
      *             .build());
      * 
      *     }
@@ -16114,9 +16114,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstancePools = CoreFunctions.getInstancePools(GetInstancePoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.instance_pool_display_name())
-     *             .state(var_.instance_pool_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(instancePoolDisplayName)
+     *             .state(instancePoolState)
      *             .build());
      * 
      *     }
@@ -16163,12 +16163,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.instance_availability_domain())
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
-     *             .displayName(var_.instance_display_name())
-     *             .state(var_.instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(instanceAvailabilityDomain)
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .computeClusterId(testComputeCluster.id())
+     *             .displayName(instanceDisplayName)
+     *             .state(instanceState)
      *             .build());
      * 
      *     }
@@ -16215,12 +16215,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.instance_availability_domain())
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
-     *             .displayName(var_.instance_display_name())
-     *             .state(var_.instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(instanceAvailabilityDomain)
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .computeClusterId(testComputeCluster.id())
+     *             .displayName(instanceDisplayName)
+     *             .state(instanceState)
      *             .build());
      * 
      *     }
@@ -16267,12 +16267,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.instance_availability_domain())
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
-     *             .displayName(var_.instance_display_name())
-     *             .state(var_.instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(instanceAvailabilityDomain)
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .computeClusterId(testComputeCluster.id())
+     *             .displayName(instanceDisplayName)
+     *             .state(instanceState)
      *             .build());
      * 
      *     }
@@ -16319,12 +16319,12 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstances = CoreFunctions.getInstances(GetInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.instance_availability_domain())
-     *             .capacityReservationId(oci_core_capacity_reservation.test_capacity_reservation().id())
-     *             .computeClusterId(oci_core_compute_cluster.test_compute_cluster().id())
-     *             .displayName(var_.instance_display_name())
-     *             .state(var_.instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(instanceAvailabilityDomain)
+     *             .capacityReservationId(testCapacityReservation.id())
+     *             .computeClusterId(testComputeCluster.id())
+     *             .displayName(instanceDisplayName)
+     *             .state(instanceState)
      *             .build());
      * 
      *     }
@@ -16367,10 +16367,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.internet_gateway_display_name())
-     *             .state(var_.internet_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(internetGatewayDisplayName)
+     *             .state(internetGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -16413,10 +16413,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.internet_gateway_display_name())
-     *             .state(var_.internet_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(internetGatewayDisplayName)
+     *             .state(internetGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -16459,10 +16459,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.internet_gateway_display_name())
-     *             .state(var_.internet_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(internetGatewayDisplayName)
+     *             .state(internetGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -16505,10 +16505,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternetGateways = CoreFunctions.getInternetGateways(GetInternetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.internet_gateway_display_name())
-     *             .state(var_.internet_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(internetGatewayDisplayName)
+     *             .state(internetGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -16787,7 +16787,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -16832,7 +16832,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -16877,7 +16877,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -16922,7 +16922,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceConfig = CoreFunctions.getIpsecConfig(GetIpsecConfigArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -16964,8 +16964,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
      *             .build());
      * 
      *     }
@@ -17007,8 +17007,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
      *             .build());
      * 
      *     }
@@ -17050,8 +17050,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
      *             .build());
      * 
      *     }
@@ -17093,8 +17093,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnel = CoreFunctions.getIpsecConnectionTunnel(GetIpsecConnectionTunnelArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(data.oci_core_ipsec_connection_tunnels().test_ip_sec_connection_tunnels().ip_sec_connection_tunnels()[0].id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
      *             .build());
      * 
      *     }
@@ -17136,8 +17136,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -17179,8 +17179,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -17222,8 +17222,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -17265,8 +17265,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelError = CoreFunctions.getIpsecConnectionTunnelError(GetIpsecConnectionTunnelErrorArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -17308,9 +17308,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
-     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
      *     }
@@ -17352,9 +17352,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
-     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
      *     }
@@ -17396,9 +17396,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
-     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
      *     }
@@ -17440,9 +17440,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpsecConnectionTunnelRoutes = CoreFunctions.getIpsecConnectionTunnelRoutes(GetIpsecConnectionTunnelRoutesArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
-     *             .advertiser(var_.ipsec_connection_tunnel_route_advertiser())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
+     *             .advertiser(ipsecConnectionTunnelRouteAdvertiser)
      *             .build());
      * 
      *     }
@@ -17484,7 +17484,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17526,7 +17526,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17568,7 +17568,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17610,7 +17610,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionTunnels = CoreFunctions.getIpsecConnectionTunnels(GetIpsecConnectionTunnelsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17653,9 +17653,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cpeId(oci_core_cpe.test_cpe().id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .cpeId(testCpe.id())
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -17698,9 +17698,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cpeId(oci_core_cpe.test_cpe().id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .cpeId(testCpe.id())
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -17743,9 +17743,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cpeId(oci_core_cpe.test_cpe().id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .cpeId(testCpe.id())
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -17788,9 +17788,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnections = CoreFunctions.getIpsecConnections(GetIpsecConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cpeId(oci_core_cpe.test_cpe().id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .cpeId(testCpe.id())
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -17833,7 +17833,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17876,7 +17876,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17919,7 +17919,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -17962,7 +17962,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpSecConnectionDeviceStatus = CoreFunctions.getIpsecStatus(GetIpsecStatusArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
+     *             .ipsecId(testIpsec.id())
      *             .build());
      * 
      *     }
@@ -18007,7 +18007,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .ipv6id(testIpv6OciCoreIpv6.id())
      *             .build());
      * 
      *     }
@@ -18052,7 +18052,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .ipv6id(testIpv6OciCoreIpv6.id())
      *             .build());
      * 
      *     }
@@ -18097,7 +18097,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .ipv6id(testIpv6OciCoreIpv6.id())
      *             .build());
      * 
      *     }
@@ -18142,7 +18142,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6 = CoreFunctions.getIpv6(GetIpv6Args.builder()
-     *             .ipv6id(oci_core_ipv6.test_ipv6().id())
+     *             .ipv6id(testIpv6OciCoreIpv6.id())
      *             .build());
      * 
      *     }
@@ -18191,9 +18191,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
-     *             .ipAddress(var_.ipv6_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -18242,9 +18242,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
-     *             .ipAddress(var_.ipv6_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -18293,9 +18293,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
-     *             .ipAddress(var_.ipv6_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -18344,9 +18344,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
-     *             .ipAddress(var_.ipv6_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -18395,9 +18395,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
-     *             .ipAddress(var_.ipv6_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -18446,9 +18446,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIpv6s = CoreFunctions.getIpv6s(GetIpv6sArgs.builder()
-     *             .ipAddress(var_.ipv6_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(ipv6IpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -18490,7 +18490,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -18532,7 +18532,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -18574,7 +18574,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -18616,7 +18616,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLetterOfAuthority = CoreFunctions.getLetterOfAuthority(GetLetterOfAuthorityArgs.builder()
-     *             .crossConnectId(oci_core_cross_connect.test_cross_connect().id())
+     *             .crossConnectId(testCrossConnect.id())
      *             .build());
      * 
      *     }
@@ -18683,8 +18683,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -18727,8 +18727,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -18771,8 +18771,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -18815,8 +18815,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLocalPeeringGateways = CoreFunctions.getLocalPeeringGateways(GetLocalPeeringGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -18858,7 +18858,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
      *             .build());
      * 
      *     }
@@ -18900,7 +18900,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
      *             .build());
      * 
      *     }
@@ -18942,7 +18942,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
      *             .build());
      * 
      *     }
@@ -18984,7 +18984,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateway = CoreFunctions.getNatGateway(GetNatGatewayArgs.builder()
-     *             .natGatewayId(oci_core_nat_gateway.test_nat_gateway().id())
+     *             .natGatewayId(testNatGatewayOciCoreNatGateway.id())
      *             .build());
      * 
      *     }
@@ -19027,10 +19027,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.nat_gateway_display_name())
-     *             .state(var_.nat_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(natGatewayDisplayName)
+     *             .state(natGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -19073,10 +19073,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.nat_gateway_display_name())
-     *             .state(var_.nat_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(natGatewayDisplayName)
+     *             .state(natGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -19119,10 +19119,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.nat_gateway_display_name())
-     *             .state(var_.nat_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(natGatewayDisplayName)
+     *             .state(natGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -19165,10 +19165,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNatGateways = CoreFunctions.getNatGateways(GetNatGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.nat_gateway_display_name())
-     *             .state(var_.nat_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(natGatewayDisplayName)
+     *             .state(natGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -19216,7 +19216,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19264,7 +19264,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19312,7 +19312,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19360,7 +19360,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroup = CoreFunctions.getNetworkSecurityGroup(GetNetworkSecurityGroupArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19402,8 +19402,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
-     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
      *     }
@@ -19445,8 +19445,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
-     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
      *     }
@@ -19488,8 +19488,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
-     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
      *     }
@@ -19531,8 +19531,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupSecurityRules = CoreFunctions.getNetworkSecurityGroupSecurityRules(GetNetworkSecurityGroupSecurityRulesArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
-     *             .direction(var_.network_security_group_security_rule_direction())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+     *             .direction(networkSecurityGroupSecurityRuleDirection)
      *             .build());
      * 
      *     }
@@ -19574,7 +19574,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19616,7 +19616,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19658,7 +19658,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19700,7 +19700,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroupVnics = CoreFunctions.getNetworkSecurityGroupVnics(GetNetworkSecurityGroupVnicsArgs.builder()
-     *             .networkSecurityGroupId(oci_core_network_security_group.test_network_security_group().id())
+     *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
      *             .build());
      * 
      *     }
@@ -19743,11 +19743,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_security_group_display_name())
-     *             .state(var_.network_security_group_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
      *             .build());
      * 
      *     }
@@ -19790,11 +19790,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_security_group_display_name())
-     *             .state(var_.network_security_group_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
      *             .build());
      * 
      *     }
@@ -19837,11 +19837,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_security_group_display_name())
-     *             .state(var_.network_security_group_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
      *             .build());
      * 
      *     }
@@ -19884,11 +19884,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_security_group_display_name())
-     *             .state(var_.network_security_group_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
      *             .build());
      * 
      *     }
@@ -19931,11 +19931,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_security_group_display_name())
-     *             .state(var_.network_security_group_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
      *             .build());
      * 
      *     }
@@ -19978,11 +19978,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkSecurityGroups = CoreFunctions.getNetworkSecurityGroups(GetNetworkSecurityGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_security_group_display_name())
-     *             .state(var_.network_security_group_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkSecurityGroupDisplayName)
+     *             .state(networkSecurityGroupState)
+     *             .vcnId(testVcn.id())
+     *             .vlanId(testVlan.id())
      *             .build());
      * 
      *     }
@@ -20273,7 +20273,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
      *             .build());
      * 
      *     }
@@ -20318,7 +20318,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
      *             .build());
      * 
      *     }
@@ -20363,7 +20363,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
      *             .build());
      * 
      *     }
@@ -20408,7 +20408,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateIp = CoreFunctions.getPrivateIp(GetPrivateIpArgs.builder()
-     *             .privateIpId(oci_core_private_ip.test_private_ip().id())
+     *             .privateIpId(testPrivateIpOciCorePrivateIp.id())
      *             .build());
      * 
      *     }
@@ -20464,8 +20464,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
      *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .subnetId(var_.private_ip_subnet_id())
+     *             .subnetId(privateIpSubnetId)
      *             .build());
      * 
      *     }
@@ -20494,8 +20495,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -20524,11 +20526,12 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .ipAddress(var_.private_ip_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -20584,8 +20587,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
      *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .subnetId(var_.private_ip_subnet_id())
+     *             .subnetId(privateIpSubnetId)
      *             .build());
      * 
      *     }
@@ -20614,8 +20618,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -20644,11 +20649,12 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .ipAddress(var_.private_ip_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -20704,8 +20710,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
      *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .subnetId(var_.private_ip_subnet_id())
+     *             .subnetId(privateIpSubnetId)
      *             .build());
      * 
      *     }
@@ -20734,8 +20741,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -20764,11 +20772,12 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .ipAddress(var_.private_ip_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -20824,8 +20833,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
      *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .subnetId(var_.private_ip_subnet_id())
+     *             .subnetId(privateIpSubnetId)
      *             .build());
      * 
      *     }
@@ -20854,8 +20864,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -20884,11 +20895,12 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .ipAddress(var_.private_ip_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -20944,8 +20956,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
      *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .subnetId(var_.private_ip_subnet_id())
+     *             .subnetId(privateIpSubnetId)
      *             .build());
      * 
      *     }
@@ -20974,8 +20987,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -21004,11 +21018,12 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .ipAddress(var_.private_ip_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -21064,8 +21079,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on Subnet OCID
      *         final var testPrivateIpsBySubnet = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .subnetId(var_.private_ip_subnet_id())
+     *             .subnetId(privateIpSubnetId)
      *             .build());
      * 
      *     }
@@ -21094,8 +21110,9 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on VNIC OCID
      *         final var testPrivateIpsByVnic = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -21124,11 +21141,12 @@ public final class CoreFunctions {
      *     }
      * 
      *     public static void stack(Context ctx) {
+     *         // Filter on private IP address and Subnet OCID
      *         final var testPrivateIpsByIpAddress = CoreFunctions.getPrivateIps(GetPrivateIpsArgs.builder()
-     *             .ipAddress(var_.private_ip_ip_address())
-     *             .subnetId(oci_core_subnet.test_subnet().id())
-     *             .vlanId(oci_core_vlan.test_vlan().id())
-     *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+     *             .ipAddress(privateIpIpAddress)
+     *             .subnetId(testSubnet.id())
+     *             .vlanId(testVlan.id())
+     *             .vnicId(testVnicAttachment.id())
      *             .build());
      * 
      *     }
@@ -21181,7 +21199,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .id(var_.test_public_ip_id())
+     *             .id(testPublicIpId)
      *             .build());
      * 
      *     }
@@ -21213,7 +21231,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .privateIpId(testPublicIpPrivateIpId)
      *             .build());
      * 
      *     }
@@ -21245,7 +21263,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .ipAddress(testPublicIpIpAddress)
      *             .build());
      * 
      *     }
@@ -21298,7 +21316,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .id(var_.test_public_ip_id())
+     *             .id(testPublicIpId)
      *             .build());
      * 
      *     }
@@ -21330,7 +21348,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .privateIpId(testPublicIpPrivateIpId)
      *             .build());
      * 
      *     }
@@ -21362,7 +21380,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .ipAddress(testPublicIpIpAddress)
      *             .build());
      * 
      *     }
@@ -21415,7 +21433,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .id(var_.test_public_ip_id())
+     *             .id(testPublicIpId)
      *             .build());
      * 
      *     }
@@ -21447,7 +21465,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .privateIpId(testPublicIpPrivateIpId)
      *             .build());
      * 
      *     }
@@ -21479,7 +21497,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .ipAddress(testPublicIpIpAddress)
      *             .build());
      * 
      *     }
@@ -21532,7 +21550,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .id(var_.test_public_ip_id())
+     *             .id(testPublicIpId)
      *             .build());
      * 
      *     }
@@ -21564,7 +21582,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .privateIpId(testPublicIpPrivateIpId)
      *             .build());
      * 
      *     }
@@ -21596,7 +21614,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .ipAddress(testPublicIpIpAddress)
      *             .build());
      * 
      *     }
@@ -21649,7 +21667,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .id(var_.test_public_ip_id())
+     *             .id(testPublicIpId)
      *             .build());
      * 
      *     }
@@ -21681,7 +21699,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .privateIpId(testPublicIpPrivateIpId)
      *             .build());
      * 
      *     }
@@ -21713,7 +21731,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .ipAddress(testPublicIpIpAddress)
      *             .build());
      * 
      *     }
@@ -21766,7 +21784,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpById = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .id(var_.test_public_ip_id())
+     *             .id(testPublicIpId)
      *             .build());
      * 
      *     }
@@ -21798,7 +21816,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByPrivateIpId = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .privateIpId(var_.test_public_ip_private_ip_id())
+     *             .privateIpId(testPublicIpPrivateIpId)
      *             .build());
      * 
      *     }
@@ -21830,7 +21848,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOciCorePublicIpByIp = CoreFunctions.getPublicIp(GetPublicIpArgs.builder()
-     *             .ipAddress(var_.test_public_ip_ip_address())
+     *             .ipAddress(testPublicIpIpAddress)
      *             .build());
      * 
      *     }
@@ -21872,7 +21890,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -21914,7 +21932,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -21956,7 +21974,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -21998,7 +22016,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPool = CoreFunctions.getPublicIpPool(GetPublicIpPoolArgs.builder()
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .publicIpPoolId(testPublicIpPoolOciCorePublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -22041,9 +22059,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
-     *             .displayName(var_.public_ip_pool_display_name())
+     *             .compartmentId(compartmentId)
+     *             .byoipRangeId(testByoipRange.id())
+     *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
      *     }
@@ -22086,9 +22104,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
-     *             .displayName(var_.public_ip_pool_display_name())
+     *             .compartmentId(compartmentId)
+     *             .byoipRangeId(testByoipRange.id())
+     *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
      *     }
@@ -22131,9 +22149,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
-     *             .displayName(var_.public_ip_pool_display_name())
+     *             .compartmentId(compartmentId)
+     *             .byoipRangeId(testByoipRange.id())
+     *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
      *     }
@@ -22176,9 +22194,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIpPools = CoreFunctions.getPublicIpPools(GetPublicIpPoolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .byoipRangeId(oci_core_byoip_range.test_byoip_range().id())
-     *             .displayName(var_.public_ip_pool_display_name())
+     *             .compartmentId(compartmentId)
+     *             .byoipRangeId(testByoipRange.id())
+     *             .displayName(publicIpPoolDisplayName)
      *             .build());
      * 
      *     }
@@ -22239,11 +22257,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.public_ip_scope())
-     *             .availabilityDomain(var_.public_ip_availability_domain())
-     *             .lifetime(var_.public_ip_lifetime())
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .scope(publicIpScope)
+     *             .availabilityDomain(publicIpAvailabilityDomain)
+     *             .lifetime(publicIpLifetime)
+     *             .publicIpPoolId(testPublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -22304,11 +22322,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.public_ip_scope())
-     *             .availabilityDomain(var_.public_ip_availability_domain())
-     *             .lifetime(var_.public_ip_lifetime())
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .scope(publicIpScope)
+     *             .availabilityDomain(publicIpAvailabilityDomain)
+     *             .lifetime(publicIpLifetime)
+     *             .publicIpPoolId(testPublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -22369,11 +22387,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.public_ip_scope())
-     *             .availabilityDomain(var_.public_ip_availability_domain())
-     *             .lifetime(var_.public_ip_lifetime())
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .scope(publicIpScope)
+     *             .availabilityDomain(publicIpAvailabilityDomain)
+     *             .lifetime(publicIpLifetime)
+     *             .publicIpPoolId(testPublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -22434,11 +22452,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicIps = CoreFunctions.getPublicIps(GetPublicIpsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .scope(var_.public_ip_scope())
-     *             .availabilityDomain(var_.public_ip_availability_domain())
-     *             .lifetime(var_.public_ip_lifetime())
-     *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+     *             .compartmentId(compartmentId)
+     *             .scope(publicIpScope)
+     *             .availabilityDomain(publicIpAvailabilityDomain)
+     *             .lifetime(publicIpLifetime)
+     *             .publicIpPoolId(testPublicIpPool.id())
      *             .build());
      * 
      *     }
@@ -22481,8 +22499,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -22525,8 +22543,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -22569,8 +22587,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -22613,8 +22631,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemotePeeringConnections = CoreFunctions.getRemotePeeringConnections(GetRemotePeeringConnectionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .drgId(oci_core_drg.test_drg().id())
+     *             .compartmentId(compartmentId)
+     *             .drgId(testDrg.id())
      *             .build());
      * 
      *     }
@@ -22659,10 +22677,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.route_table_display_name())
-     *             .state(var_.route_table_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(routeTableDisplayName)
+     *             .state(routeTableState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22707,10 +22725,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.route_table_display_name())
-     *             .state(var_.route_table_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(routeTableDisplayName)
+     *             .state(routeTableState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22755,10 +22773,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.route_table_display_name())
-     *             .state(var_.route_table_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(routeTableDisplayName)
+     *             .state(routeTableState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22803,10 +22821,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRouteTables = CoreFunctions.getRouteTables(GetRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.route_table_display_name())
-     *             .state(var_.route_table_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(routeTableDisplayName)
+     *             .state(routeTableState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22849,10 +22867,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.security_list_display_name())
-     *             .state(var_.security_list_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(securityListDisplayName)
+     *             .state(securityListState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22895,10 +22913,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.security_list_display_name())
-     *             .state(var_.security_list_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(securityListDisplayName)
+     *             .state(securityListState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22941,10 +22959,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.security_list_display_name())
-     *             .state(var_.security_list_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(securityListDisplayName)
+     *             .state(securityListState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -22987,10 +23005,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityLists = CoreFunctions.getSecurityLists(GetSecurityListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.security_list_display_name())
-     *             .state(var_.security_list_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(securityListDisplayName)
+     *             .state(securityListState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23033,9 +23051,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.service_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .state(serviceGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23078,9 +23096,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.service_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .state(serviceGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23123,9 +23141,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.service_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .state(serviceGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23168,9 +23186,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceGateways = CoreFunctions.getServiceGateways(GetServiceGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.service_gateway_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .state(serviceGatewayState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23471,9 +23489,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -23516,9 +23534,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -23561,9 +23579,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -23606,9 +23624,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = CoreFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .imageId(oci_core_image.test_image().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .imageId(testImage.id())
      *             .build());
      * 
      *     }
@@ -23650,7 +23668,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .subnetId(testSubnetOciCoreSubnet.id())
      *             .build());
      * 
      *     }
@@ -23692,7 +23710,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .subnetId(testSubnetOciCoreSubnet.id())
      *             .build());
      * 
      *     }
@@ -23734,7 +23752,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .subnetId(testSubnetOciCoreSubnet.id())
      *             .build());
      * 
      *     }
@@ -23776,7 +23794,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnet = CoreFunctions.getSubnet(GetSubnetArgs.builder()
-     *             .subnetId(oci_core_subnet.test_subnet().id())
+     *             .subnetId(testSubnetOciCoreSubnet.id())
      *             .build());
      * 
      *     }
@@ -23819,10 +23837,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subnet_display_name())
-     *             .state(var_.subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subnetDisplayName)
+     *             .state(subnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23865,10 +23883,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subnet_display_name())
-     *             .state(var_.subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subnetDisplayName)
+     *             .state(subnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23911,10 +23929,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subnet_display_name())
-     *             .state(var_.subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subnetDisplayName)
+     *             .state(subnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -23957,10 +23975,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubnets = CoreFunctions.getSubnets(GetSubnetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subnet_display_name())
-     *             .state(var_.subnet_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subnetDisplayName)
+     *             .state(subnetState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -24002,8 +24020,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -24045,8 +24063,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -24088,8 +24106,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -24131,8 +24149,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTunnelSecurityAssociations = CoreFunctions.getTunnelSecurityAssociations(GetTunnelSecurityAssociationsArgs.builder()
-     *             .ipsecId(oci_core_ipsec.test_ipsec().id())
-     *             .tunnelId(oci_core_tunnel.test_tunnel().id())
+     *             .ipsecId(testIpsec.id())
+     *             .tunnelId(testTunnel.id())
      *             .build());
      * 
      *     }
@@ -24174,7 +24192,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcnOciCoreVcn.id())
      *             .build());
      * 
      *     }
@@ -24216,7 +24234,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcnOciCoreVcn.id())
      *             .build());
      * 
      *     }
@@ -24258,7 +24276,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcnOciCoreVcn.id())
      *             .build());
      * 
      *     }
@@ -24300,7 +24318,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcn = CoreFunctions.getVcn(GetVcnArgs.builder()
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .vcnId(testVcnOciCoreVcn.id())
      *             .build());
      * 
      *     }
@@ -24346,9 +24364,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vcn_display_name())
-     *             .state(var_.vcn_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vcnDisplayName)
+     *             .state(vcnState)
      *             .build());
      * 
      *     }
@@ -24394,9 +24412,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vcn_display_name())
-     *             .state(var_.vcn_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vcnDisplayName)
+     *             .state(vcnState)
      *             .build());
      * 
      *     }
@@ -24442,9 +24460,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vcn_display_name())
-     *             .state(var_.vcn_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vcnDisplayName)
+     *             .state(vcnState)
      *             .build());
      * 
      *     }
@@ -24490,9 +24508,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVcns = CoreFunctions.getVcns(GetVcnsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vcn_display_name())
-     *             .state(var_.vcn_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vcnDisplayName)
+     *             .state(vcnState)
      *             .build());
      * 
      *     }
@@ -24534,7 +24552,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24576,7 +24594,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24618,7 +24636,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24660,7 +24678,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuit = CoreFunctions.getVirtualCircuit(GetVirtualCircuitArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuitOciCoreVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24702,7 +24720,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24744,7 +24762,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24786,7 +24804,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24828,7 +24846,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitAssociatedTunnels = CoreFunctions.getVirtualCircuitAssociatedTunnels(GetVirtualCircuitAssociatedTunnelsArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
+     *             .virtualCircuitId(testVirtualCircuit.id())
      *             .build());
      * 
      *     }
@@ -24873,7 +24891,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -24918,7 +24936,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -24963,7 +24981,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -25008,7 +25026,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitBandwidthShapes = CoreFunctions.getVirtualCircuitBandwidthShapes(GetVirtualCircuitBandwidthShapesArgs.builder()
-     *             .providerServiceId(data.oci_core_fast_connect_provider_services().test_fast_connect_provider_services().fast_connect_provider_services()[0].id())
+     *             .providerServiceId(testFastConnectProviderServices.fastConnectProviderServices()[0].id())
      *             .build());
      * 
      *     }
@@ -25051,8 +25069,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
-     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
      *     }
@@ -25095,8 +25113,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
-     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
      *     }
@@ -25139,8 +25157,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
-     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
      *     }
@@ -25183,8 +25201,8 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuitPublicPrefixes = CoreFunctions.getVirtualCircuitPublicPrefixes(GetVirtualCircuitPublicPrefixesArgs.builder()
-     *             .virtualCircuitId(oci_core_virtual_circuit.test_virtual_circuit().id())
-     *             .verificationState(var_.virtual_circuit_public_prefix_verification_state())
+     *             .virtualCircuitId(testVirtualCircuit.id())
+     *             .verificationState(virtualCircuitPublicPrefixVerificationState)
      *             .build());
      * 
      *     }
@@ -25226,9 +25244,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.virtual_circuit_display_name())
-     *             .state(var_.virtual_circuit_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(virtualCircuitDisplayName)
+     *             .state(virtualCircuitState)
      *             .build());
      * 
      *     }
@@ -25270,9 +25288,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.virtual_circuit_display_name())
-     *             .state(var_.virtual_circuit_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(virtualCircuitDisplayName)
+     *             .state(virtualCircuitState)
      *             .build());
      * 
      *     }
@@ -25314,9 +25332,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.virtual_circuit_display_name())
-     *             .state(var_.virtual_circuit_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(virtualCircuitDisplayName)
+     *             .state(virtualCircuitState)
      *             .build());
      * 
      *     }
@@ -25358,9 +25376,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualCircuits = CoreFunctions.getVirtualCircuits(GetVirtualCircuitsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.virtual_circuit_display_name())
-     *             .state(var_.virtual_circuit_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(virtualCircuitDisplayName)
+     *             .state(virtualCircuitState)
      *             .build());
      * 
      *     }
@@ -25414,7 +25432,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vlanId(testVlanOciCoreVlan.id())
      *             .build());
      * 
      *     }
@@ -25456,7 +25474,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vlanId(testVlanOciCoreVlan.id())
      *             .build());
      * 
      *     }
@@ -25498,7 +25516,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vlanId(testVlanOciCoreVlan.id())
      *             .build());
      * 
      *     }
@@ -25540,7 +25558,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlan = CoreFunctions.getVlan(GetVlanArgs.builder()
-     *             .vlanId(oci_core_vlan.test_vlan().id())
+     *             .vlanId(testVlanOciCoreVlan.id())
      *             .build());
      * 
      *     }
@@ -25582,10 +25600,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vlan_display_name())
-     *             .state(var_.vlan_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vlanDisplayName)
+     *             .state(vlanState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -25627,10 +25645,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vlan_display_name())
-     *             .state(var_.vlan_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vlanDisplayName)
+     *             .state(vlanState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -25672,10 +25690,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vlan_display_name())
-     *             .state(var_.vlan_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vlanDisplayName)
+     *             .state(vlanState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -25717,10 +25735,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVlans = CoreFunctions.getVlans(GetVlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vlan_display_name())
-     *             .state(var_.vlan_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vlanDisplayName)
+     *             .state(vlanState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -25765,7 +25783,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnicOciCoreVnic.id())
      *             .build());
      * 
      *     }
@@ -25810,7 +25828,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnicOciCoreVnic.id())
      *             .build());
      * 
      *     }
@@ -25855,7 +25873,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnicOciCoreVnic.id())
      *             .build());
      * 
      *     }
@@ -25900,7 +25918,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnic = CoreFunctions.getVnic(GetVnicArgs.builder()
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .vnicId(testVnicOciCoreVnic.id())
      *             .build());
      * 
      *     }
@@ -25944,10 +25962,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -25991,10 +26009,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -26038,10 +26056,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -26085,10 +26103,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVnicAttachments = CoreFunctions.getVnicAttachments(GetVnicAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.vnic_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .vnicId(oci_core_vnic.test_vnic().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(vnicAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .vnicId(testVnic.id())
      *             .build());
      * 
      *     }
@@ -26130,7 +26148,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .volumeId(testVolumeOciCoreVolume.id())
      *             .build());
      * 
      *     }
@@ -26172,7 +26190,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .volumeId(testVolumeOciCoreVolume.id())
      *             .build());
      * 
      *     }
@@ -26214,7 +26232,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .volumeId(testVolumeOciCoreVolume.id())
      *             .build());
      * 
      *     }
@@ -26256,7 +26274,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolume = CoreFunctions.getVolume(GetVolumeArgs.builder()
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .volumeId(testVolumeOciCoreVolume.id())
      *             .build());
      * 
      *     }
@@ -26302,10 +26320,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26351,10 +26369,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26400,10 +26418,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26449,10 +26467,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeAttachments = CoreFunctions.getVolumeAttachments(GetVolumeAttachmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_attachment_availability_domain())
-     *             .instanceId(oci_core_instance.test_instance().id())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeAttachmentAvailabilityDomain)
+     *             .instanceId(testInstance.id())
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26497,7 +26515,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -26542,7 +26560,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -26587,7 +26605,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -26632,7 +26650,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -26677,7 +26695,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -26722,7 +26740,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicies = CoreFunctions.getVolumeBackupPolicies(GetVolumeBackupPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -26766,7 +26784,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(oci_core_volume.test_volume().id())
+     *             .assetId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26810,7 +26828,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(oci_core_volume.test_volume().id())
+     *             .assetId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26854,7 +26872,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(oci_core_volume.test_volume().id())
+     *             .assetId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26898,7 +26916,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackupPolicyAssignments = CoreFunctions.getVolumeBackupPolicyAssignments(GetVolumeBackupPolicyAssignmentsArgs.builder()
-     *             .assetId(oci_core_volume.test_volume().id())
+     *             .assetId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26940,11 +26958,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_backup_display_name())
-     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
-     *             .state(var_.volume_backup_state())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeBackupDisplayName)
+     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .state(volumeBackupState)
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -26986,11 +27004,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_backup_display_name())
-     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
-     *             .state(var_.volume_backup_state())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeBackupDisplayName)
+     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .state(volumeBackupState)
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -27032,11 +27050,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_backup_display_name())
-     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
-     *             .state(var_.volume_backup_state())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeBackupDisplayName)
+     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .state(volumeBackupState)
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -27078,11 +27096,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeBackups = CoreFunctions.getVolumeBackups(GetVolumeBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_backup_display_name())
-     *             .sourceVolumeBackupId(oci_core_volume_backup.test_volume_backup().id())
-     *             .state(var_.volume_backup_state())
-     *             .volumeId(oci_core_volume.test_volume().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeBackupDisplayName)
+     *             .sourceVolumeBackupId(testVolumeBackup.id())
+     *             .state(volumeBackupState)
+     *             .volumeId(testVolume.id())
      *             .build());
      * 
      *     }
@@ -27125,9 +27143,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_backup_display_name())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupBackupDisplayName)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27170,9 +27188,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_backup_display_name())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupBackupDisplayName)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27215,9 +27233,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_backup_display_name())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupBackupDisplayName)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27260,9 +27278,9 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupBackups = CoreFunctions.getVolumeGroupBackups(GetVolumeGroupBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_backup_display_name())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupBackupDisplayName)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27304,7 +27322,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -27346,7 +27364,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -27388,7 +27406,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -27430,7 +27448,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplica = CoreFunctions.getVolumeGroupReplica(GetVolumeGroupReplicaArgs.builder()
-     *             .volumeGroupReplicaId(oci_core_volume_group_replica.test_volume_group_replica().id())
+     *             .volumeGroupReplicaId(testVolumeGroupReplicaOciCoreVolumeGroupReplica.id())
      *             .build());
      * 
      *     }
@@ -27473,10 +27491,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
-     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_replica_display_name())
-     *             .state(var_.volume_group_replica_state())
+     *             .availabilityDomain(volumeGroupReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupReplicaDisplayName)
+     *             .state(volumeGroupReplicaState)
      *             .build());
      * 
      *     }
@@ -27519,10 +27537,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
-     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_replica_display_name())
-     *             .state(var_.volume_group_replica_state())
+     *             .availabilityDomain(volumeGroupReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupReplicaDisplayName)
+     *             .state(volumeGroupReplicaState)
      *             .build());
      * 
      *     }
@@ -27565,10 +27583,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
-     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_replica_display_name())
-     *             .state(var_.volume_group_replica_state())
+     *             .availabilityDomain(volumeGroupReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupReplicaDisplayName)
+     *             .state(volumeGroupReplicaState)
      *             .build());
      * 
      *     }
@@ -27611,10 +27629,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroupReplicas = CoreFunctions.getVolumeGroupReplicas(GetVolumeGroupReplicasArgs.builder()
-     *             .availabilityDomain(var_.volume_group_replica_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_group_replica_display_name())
-     *             .state(var_.volume_group_replica_state())
+     *             .availabilityDomain(volumeGroupReplicaAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeGroupReplicaDisplayName)
+     *             .state(volumeGroupReplicaState)
      *             .build());
      * 
      *     }
@@ -27657,10 +27675,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_group_availability_domain())
-     *             .displayName(var_.volume_group_display_name())
-     *             .state(var_.volume_group_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeGroupAvailabilityDomain)
+     *             .displayName(volumeGroupDisplayName)
+     *             .state(volumeGroupState)
      *             .build());
      * 
      *     }
@@ -27703,10 +27721,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_group_availability_domain())
-     *             .displayName(var_.volume_group_display_name())
-     *             .state(var_.volume_group_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeGroupAvailabilityDomain)
+     *             .displayName(volumeGroupDisplayName)
+     *             .state(volumeGroupState)
      *             .build());
      * 
      *     }
@@ -27749,10 +27767,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_group_availability_domain())
-     *             .displayName(var_.volume_group_display_name())
-     *             .state(var_.volume_group_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeGroupAvailabilityDomain)
+     *             .displayName(volumeGroupDisplayName)
+     *             .state(volumeGroupState)
      *             .build());
      * 
      *     }
@@ -27795,10 +27813,10 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumeGroups = CoreFunctions.getVolumeGroups(GetVolumeGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.volume_group_availability_domain())
-     *             .displayName(var_.volume_group_display_name())
-     *             .state(var_.volume_group_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(volumeGroupAvailabilityDomain)
+     *             .displayName(volumeGroupDisplayName)
+     *             .state(volumeGroupState)
      *             .build());
      * 
      *     }
@@ -27840,11 +27858,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
-     *             .availabilityDomain(var_.volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_display_name())
-     *             .state(var_.volume_state())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27886,11 +27904,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
-     *             .availabilityDomain(var_.volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_display_name())
-     *             .state(var_.volume_state())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27932,11 +27950,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
-     *             .availabilityDomain(var_.volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_display_name())
-     *             .state(var_.volume_state())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -27978,11 +27996,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
-     *             .availabilityDomain(var_.volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_display_name())
-     *             .state(var_.volume_state())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -28024,11 +28042,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
-     *             .availabilityDomain(var_.volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_display_name())
-     *             .state(var_.volume_state())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -28070,11 +28088,11 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVolumes = CoreFunctions.getVolumes(GetVolumesArgs.builder()
-     *             .availabilityDomain(var_.volume_availability_domain())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.volume_display_name())
-     *             .state(var_.volume_state())
-     *             .volumeGroupId(oci_core_volume_group.test_volume_group().id())
+     *             .availabilityDomain(volumeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .displayName(volumeDisplayName)
+     *             .state(volumeState)
+     *             .volumeGroupId(testVolumeGroup.id())
      *             .build());
      * 
      *     }
@@ -28116,7 +28134,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .vtapId(testVtapOciCoreVtap.id())
      *             .build());
      * 
      *     }
@@ -28158,7 +28176,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .vtapId(testVtapOciCoreVtap.id())
      *             .build());
      * 
      *     }
@@ -28200,7 +28218,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .vtapId(testVtapOciCoreVtap.id())
      *             .build());
      * 
      *     }
@@ -28242,7 +28260,7 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtap = CoreFunctions.getVtap(GetVtapArgs.builder()
-     *             .vtapId(oci_core_vtap.test_vtap().id())
+     *             .vtapId(testVtapOciCoreVtap.id())
      *             .build());
      * 
      *     }
@@ -28284,14 +28302,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vtap_display_name())
-     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
-     *             .source(var_.vtap_source())
-     *             .state(var_.vtap_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetIp(var_.vtap_target_ip())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vtapDisplayName)
+     *             .isVtapEnabled(vtapIsVtapEnabled)
+     *             .source(vtapSource)
+     *             .state(vtapState)
+     *             .targetId(testTarget.id())
+     *             .targetIp(vtapTargetIp)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -28333,14 +28351,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vtap_display_name())
-     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
-     *             .source(var_.vtap_source())
-     *             .state(var_.vtap_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetIp(var_.vtap_target_ip())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vtapDisplayName)
+     *             .isVtapEnabled(vtapIsVtapEnabled)
+     *             .source(vtapSource)
+     *             .state(vtapState)
+     *             .targetId(testTarget.id())
+     *             .targetIp(vtapTargetIp)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -28382,14 +28400,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vtap_display_name())
-     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
-     *             .source(var_.vtap_source())
-     *             .state(var_.vtap_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetIp(var_.vtap_target_ip())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vtapDisplayName)
+     *             .isVtapEnabled(vtapIsVtapEnabled)
+     *             .source(vtapSource)
+     *             .state(vtapState)
+     *             .targetId(testTarget.id())
+     *             .targetIp(vtapTargetIp)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -28431,14 +28449,14 @@ public final class CoreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVtaps = CoreFunctions.getVtaps(GetVtapsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vtap_display_name())
-     *             .isVtapEnabled(var_.vtap_is_vtap_enabled())
-     *             .source(var_.vtap_source())
-     *             .state(var_.vtap_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetIp(var_.vtap_target_ip())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vtapDisplayName)
+     *             .isVtapEnabled(vtapIsVtapEnabled)
+     *             .source(vtapSource)
+     *             .state(vtapState)
+     *             .targetId(testTarget.id())
+     *             .targetIp(vtapTargetIp)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }

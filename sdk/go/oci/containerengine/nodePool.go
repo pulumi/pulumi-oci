@@ -31,10 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewNodePool(ctx, "testNodePool", &ContainerEngine.NodePoolArgs{
-//				ClusterId:     pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				NodeShape:     pulumi.Any(_var.Node_pool_node_shape),
+//			_, err := ContainerEngine.NewNodePool(ctx, "test_node_pool", &ContainerEngine.NodePoolArgs{
+//				ClusterId:     pulumi.Any(testCluster.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(nodePoolName),
+//				NodeShape:     pulumi.Any(nodePoolNodeShape),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -43,34 +44,34 @@ import (
 //				},
 //				InitialNodeLabels: containerengine.NodePoolInitialNodeLabelArray{
 //					&containerengine.NodePoolInitialNodeLabelArgs{
-//						Key:   pulumi.Any(_var.Node_pool_initial_node_labels_key),
-//						Value: pulumi.Any(_var.Node_pool_initial_node_labels_value),
+//						Key:   pulumi.Any(nodePoolInitialNodeLabelsKey),
+//						Value: pulumi.Any(nodePoolInitialNodeLabelsValue),
 //					},
 //				},
-//				KubernetesVersion: pulumi.Any(_var.Node_pool_kubernetes_version),
+//				KubernetesVersion: pulumi.Any(nodePoolKubernetesVersion),
 //				NodeConfigDetails: &containerengine.NodePoolNodeConfigDetailsArgs{
 //					PlacementConfigs: containerengine.NodePoolNodeConfigDetailsPlacementConfigArray{
 //						&containerengine.NodePoolNodeConfigDetailsPlacementConfigArgs{
-//							AvailabilityDomain:    pulumi.Any(_var.Node_pool_node_config_details_placement_configs_availability_domain),
-//							SubnetId:              pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//							CapacityReservationId: pulumi.Any(oci_containerengine_capacity_reservation.Test_capacity_reservation.Id),
-//							FaultDomains:          pulumi.Any(_var.Node_pool_node_config_details_placement_configs_fault_domains),
+//							AvailabilityDomain:    pulumi.Any(nodePoolNodeConfigDetailsPlacementConfigsAvailabilityDomain),
+//							SubnetId:              pulumi.Any(testSubnet.Id),
+//							CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
+//							FaultDomains:          pulumi.Any(nodePoolNodeConfigDetailsPlacementConfigsFaultDomains),
 //							PreemptibleNodeConfig: &containerengine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigArgs{
 //								PreemptionAction: &containerengine.NodePoolNodeConfigDetailsPlacementConfigPreemptibleNodeConfigPreemptionActionArgs{
-//									Type:                 pulumi.Any(_var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type),
-//									IsPreserveBootVolume: pulumi.Any(_var.Node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume),
+//									Type:                 pulumi.Any(nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType),
+//									IsPreserveBootVolume: pulumi.Any(nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume),
 //								},
 //							},
 //						},
 //					},
-//					Size:                           pulumi.Any(_var.Node_pool_node_config_details_size),
-//					IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Node_pool_node_config_details_is_pv_encryption_in_transit_enabled),
-//					KmsKeyId:                       pulumi.Any(oci_kms_key.Test_key.Id),
+//					Size:                           pulumi.Any(nodePoolNodeConfigDetailsSize),
+//					IsPvEncryptionInTransitEnabled: pulumi.Any(nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled),
+//					KmsKeyId:                       pulumi.Any(testKey.Id),
 //					NodePoolPodNetworkOptionDetails: &containerengine.NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsArgs{
-//						CniType:        pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_cni_type),
-//						MaxPodsPerNode: pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node),
-//						PodNsgIds:      pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids),
-//						PodSubnetIds:   pulumi.Any(_var.Node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids),
+//						CniType:        pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsCniType),
+//						MaxPodsPerNode: pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode),
+//						PodNsgIds:      pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds),
+//						PodSubnetIds:   pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds),
 //					},
 //					DefinedTags: pulumi.Map{
 //						"Operations.CostCenter": pulumi.Any("42"),
@@ -78,31 +79,31 @@ import (
 //					FreeformTags: pulumi.Map{
 //						"Department": pulumi.Any("Finance"),
 //					},
-//					NsgIds: pulumi.Any(_var.Node_pool_node_config_details_nsg_ids),
+//					NsgIds: pulumi.Any(nodePoolNodeConfigDetailsNsgIds),
 //				},
 //				NodeEvictionNodePoolSettings: &containerengine.NodePoolNodeEvictionNodePoolSettingsArgs{
-//					EvictionGraceDuration:           pulumi.Any(_var.Node_pool_node_eviction_node_pool_settings_eviction_grace_duration),
-//					IsForceDeleteAfterGraceDuration: pulumi.Any(_var.Node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration),
+//					EvictionGraceDuration:           pulumi.Any(nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration),
+//					IsForceDeleteAfterGraceDuration: pulumi.Any(nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration),
 //				},
-//				NodeImageName: pulumi.Any(oci_core_image.Test_image.Name),
-//				NodeMetadata:  pulumi.Any(_var.Node_pool_node_metadata),
+//				NodeImageName: pulumi.Any(testImage.Name),
+//				NodeMetadata:  pulumi.Any(nodePoolNodeMetadata),
 //				NodePoolCyclingDetails: &containerengine.NodePoolNodePoolCyclingDetailsArgs{
-//					IsNodeCyclingEnabled: pulumi.Any(_var.Node_pool_node_pool_cycling_details_is_node_cycling_enabled),
-//					MaximumSurge:         pulumi.Any(_var.Node_pool_node_pool_cycling_details_maximum_surge),
-//					MaximumUnavailable:   pulumi.Any(_var.Node_pool_node_pool_cycling_details_maximum_unavailable),
+//					IsNodeCyclingEnabled: pulumi.Any(nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled),
+//					MaximumSurge:         pulumi.Any(nodePoolNodePoolCyclingDetailsMaximumSurge),
+//					MaximumUnavailable:   pulumi.Any(nodePoolNodePoolCyclingDetailsMaximumUnavailable),
 //				},
 //				NodeShapeConfig: &containerengine.NodePoolNodeShapeConfigArgs{
-//					MemoryInGbs: pulumi.Any(_var.Node_pool_node_shape_config_memory_in_gbs),
-//					Ocpus:       pulumi.Any(_var.Node_pool_node_shape_config_ocpus),
+//					MemoryInGbs: pulumi.Any(nodePoolNodeShapeConfigMemoryInGbs),
+//					Ocpus:       pulumi.Any(nodePoolNodeShapeConfigOcpus),
 //				},
 //				NodeSourceDetails: &containerengine.NodePoolNodeSourceDetailsArgs{
-//					ImageId:             pulumi.Any(oci_core_image.Test_image.Id),
-//					SourceType:          pulumi.Any(_var.Node_pool_node_source_details_source_type),
-//					BootVolumeSizeInGbs: pulumi.Any(_var.Node_pool_node_source_details_boot_volume_size_in_gbs),
+//					ImageId:             pulumi.Any(testImage.Id),
+//					SourceType:          pulumi.Any(nodePoolNodeSourceDetailsSourceType),
+//					BootVolumeSizeInGbs: pulumi.Any(nodePoolNodeSourceDetailsBootVolumeSizeInGbs),
 //				},
-//				QuantityPerSubnet: pulumi.Any(_var.Node_pool_quantity_per_subnet),
-//				SshPublicKey:      pulumi.Any(_var.Node_pool_ssh_public_key),
-//				SubnetIds:         pulumi.Any(_var.Node_pool_subnet_ids),
+//				QuantityPerSubnet: pulumi.Any(nodePoolQuantityPerSubnet),
+//				SshPublicKey:      pulumi.Any(nodePoolSshPublicKey),
+//				SubnetIds:         pulumi.Any(nodePoolSubnetIds),
 //			})
 //			if err != nil {
 //				return err

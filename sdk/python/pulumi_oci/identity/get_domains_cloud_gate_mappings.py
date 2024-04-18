@@ -210,14 +210,14 @@ def get_domains_cloud_gate_mappings(attribute_sets: Optional[Sequence[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_mappings = oci.Identity.get_domains_cloud_gate_mappings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        cloud_gate_mapping_count=var["cloud_gate_mapping_cloud_gate_mapping_count"],
-        cloud_gate_mapping_filter=var["cloud_gate_mapping_cloud_gate_mapping_filter"],
+    test_cloud_gate_mappings = oci.Identity.get_domains_cloud_gate_mappings(idcs_endpoint=test_domain["url"],
+        cloud_gate_mapping_count=cloud_gate_mapping_cloud_gate_mapping_count,
+        cloud_gate_mapping_filter=cloud_gate_mapping_cloud_gate_mapping_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["cloud_gate_mapping_authorization"],
-        resource_type_schema_version=var["cloud_gate_mapping_resource_type_schema_version"],
-        start_index=var["cloud_gate_mapping_start_index"])
+        authorization=cloud_gate_mapping_authorization,
+        resource_type_schema_version=cloud_gate_mapping_resource_type_schema_version,
+        start_index=cloud_gate_mapping_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_cloud_gate_mappings_output(attribute_sets: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_mappings = oci.Identity.get_domains_cloud_gate_mappings(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        cloud_gate_mapping_count=var["cloud_gate_mapping_cloud_gate_mapping_count"],
-        cloud_gate_mapping_filter=var["cloud_gate_mapping_cloud_gate_mapping_filter"],
+    test_cloud_gate_mappings = oci.Identity.get_domains_cloud_gate_mappings(idcs_endpoint=test_domain["url"],
+        cloud_gate_mapping_count=cloud_gate_mapping_cloud_gate_mapping_count,
+        cloud_gate_mapping_filter=cloud_gate_mapping_cloud_gate_mapping_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["cloud_gate_mapping_authorization"],
-        resource_type_schema_version=var["cloud_gate_mapping_resource_type_schema_version"],
-        start_index=var["cloud_gate_mapping_start_index"])
+        authorization=cloud_gate_mapping_authorization,
+        resource_type_schema_version=cloud_gate_mapping_resource_type_schema_version,
+        start_index=cloud_gate_mapping_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

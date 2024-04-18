@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyUserDbCredential = oci.Identity.getDomainsMyUserDbCredential({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myUserDbCredentialId: oci_identity_db_credential.test_db_credential.id,
- *     authorization: _var.my_user_db_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_user_db_credential_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myUserDbCredentialId: testDbCredential.id,
+ *     authorization: myUserDbCredentialAuthorization,
+ *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -178,10 +178,10 @@ export interface GetDomainsMyUserDbCredentialResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyUserDbCredential = oci.Identity.getDomainsMyUserDbCredential({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myUserDbCredentialId: oci_identity_db_credential.test_db_credential.id,
- *     authorization: _var.my_user_db_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_user_db_credential_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myUserDbCredentialId: testDbCredential.id,
+ *     authorization: myUserDbCredentialAuthorization,
+ *     resourceTypeSchemaVersion: myUserDbCredentialResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

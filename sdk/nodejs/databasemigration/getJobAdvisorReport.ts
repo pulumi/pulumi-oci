@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJobAdvisorReport = oci.DatabaseMigration.getJobAdvisorReport({
- *     jobId: oci_database_migration_job.test_job.id,
+ *     jobId: testJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,7 +89,7 @@ export interface GetJobAdvisorReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJobAdvisorReport = oci.DatabaseMigration.getJobAdvisorReport({
- *     jobId: oci_database_migration_job.test_job.id,
+ *     jobId: testJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

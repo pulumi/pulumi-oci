@@ -30,13 +30,13 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccUpgradeSchedules = Oci.ComputeCloud.GetAtCustomerCccUpgradeSchedules.Invoke(new()
         ///     {
-        ///         AccessLevel = @var.Ccc_upgrade_schedule_access_level,
-        ///         CccUpgradeScheduleId = oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Ccc_upgrade_schedule_compartment_id_in_subtree,
-        ///         DisplayName = @var.Ccc_upgrade_schedule_display_name,
-        ///         DisplayNameContains = @var.Ccc_upgrade_schedule_display_name_contains,
-        ///         State = @var.Ccc_upgrade_schedule_state,
+        ///         AccessLevel = cccUpgradeScheduleAccessLevel,
+        ///         CccUpgradeScheduleId = testCccUpgradeSchedule.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = cccUpgradeScheduleCompartmentIdInSubtree,
+        ///         DisplayName = cccUpgradeScheduleDisplayName,
+        ///         DisplayNameContains = cccUpgradeScheduleDisplayNameContains,
+        ///         State = cccUpgradeScheduleState,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccUpgradeSchedules = Oci.ComputeCloud.GetAtCustomerCccUpgradeSchedules.Invoke(new()
         ///     {
-        ///         AccessLevel = @var.Ccc_upgrade_schedule_access_level,
-        ///         CccUpgradeScheduleId = oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Ccc_upgrade_schedule_compartment_id_in_subtree,
-        ///         DisplayName = @var.Ccc_upgrade_schedule_display_name,
-        ///         DisplayNameContains = @var.Ccc_upgrade_schedule_display_name_contains,
-        ///         State = @var.Ccc_upgrade_schedule_state,
+        ///         AccessLevel = cccUpgradeScheduleAccessLevel,
+        ///         CccUpgradeScheduleId = testCccUpgradeSchedule.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = cccUpgradeScheduleCompartmentIdInSubtree,
+        ///         DisplayName = cccUpgradeScheduleDisplayName,
+        ///         DisplayNameContains = cccUpgradeScheduleDisplayNameContains,
+        ///         State = cccUpgradeScheduleState,
         ///     });
         /// 
         /// });

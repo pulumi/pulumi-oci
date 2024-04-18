@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetCostTrackingTags(ctx, &identity.GetCostTrackingTagsArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

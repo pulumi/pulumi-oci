@@ -25,21 +25,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRemotePeeringConnection = new Oci.Core.RemotePeeringConnection("testRemotePeeringConnection", new()
+    ///     var testRemotePeeringConnection = new Oci.Core.RemotePeeringConnection("test_remote_peering_connection", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DrgId = testDrg.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Remote_peering_connection_display_name,
+    ///         DisplayName = remotePeeringConnectionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PeerId = oci_core_remote_peering_connection.Test_remote_peering_connection2.Id,
-    ///         PeerRegionName = @var.Remote_peering_connection_peer_region_name,
+    ///         PeerId = testRemotePeeringConnection2.Id,
+    ///         PeerRegionName = remotePeeringConnectionPeerRegionName,
     ///     });
     /// 
     /// });

@@ -156,12 +156,12 @@ def get_mysql_backups(backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=var["compartment_id"],
-        backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
-        creation_type=var["mysql_backup_creation_type"],
-        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-        display_name=var["mysql_backup_display_name"],
-        state=var["mysql_backup_state"])
+    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=compartment_id,
+        backup_id=test_backup["id"],
+        creation_type=mysql_backup_creation_type,
+        db_system_id=test_db_system["id"],
+        display_name=mysql_backup_display_name,
+        state=mysql_backup_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=var["compartment_id"],
-        backup_id=oci_mysql_mysql_backup["test_backup"]["id"],
-        creation_type=var["mysql_backup_creation_type"],
-        db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"],
-        display_name=var["mysql_backup_display_name"],
-        state=var["mysql_backup_state"])
+    test_mysql_backups = oci.Mysql.get_mysql_backups(compartment_id=compartment_id,
+        backup_id=test_backup["id"],
+        creation_type=mysql_backup_creation_type,
+        db_system_id=test_db_system["id"],
+        display_name=mysql_backup_display_name,
+        state=mysql_backup_state)
     ```
     <!--End PulumiCodeChooser -->
 

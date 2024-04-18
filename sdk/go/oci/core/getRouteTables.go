@@ -34,10 +34,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetRouteTables(ctx, &core.GetRouteTablesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Route_table_display_name),
-//				State:         pulumi.StringRef(_var.Route_table_state),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(routeTableDisplayName),
+//				State:         pulumi.StringRef(routeTableState),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInvokeRun = oci.DataFlow.getInvokeRun({
- *     runId: oci_dataflow_run.test_run.id,
+ *     runId: testRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -239,7 +239,7 @@ export interface GetInvokeRunResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInvokeRun = oci.DataFlow.getInvokeRun({
- *     runId: oci_dataflow_run.test_run.id,
+ *     runId: testRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

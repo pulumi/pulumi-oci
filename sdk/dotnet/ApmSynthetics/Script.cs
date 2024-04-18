@@ -25,13 +25,13 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testScript = new Oci.ApmSynthetics.Script("testScript", new()
+    ///     var testScript = new Oci.ApmSynthetics.Script("test_script", new()
     ///     {
-    ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-    ///         Content = @var.Script_content,
-    ///         ContentType = @var.Script_content_type,
-    ///         DisplayName = @var.Script_display_name,
-    ///         ContentFileName = @var.Script_content_file_name,
+    ///         ApmDomainId = testApmDomain.Id,
+    ///         Content = scriptContent,
+    ///         ContentType = scriptContentType,
+    ///         DisplayName = scriptDisplayName,
+    ///         ContentFileName = scriptContentFileName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -44,9 +44,9 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         {
     ///             new Oci.ApmSynthetics.Inputs.ScriptParameterArgs
     ///             {
-    ///                 ParamName = @var.Script_parameters_param_name,
-    ///                 IsSecret = @var.Script_parameters_is_secret,
-    ///                 ParamValue = @var.Script_parameters_param_value,
+    ///                 ParamName = scriptParametersParamName,
+    ///                 IsSecret = scriptParametersIsSecret,
+    ///                 ParamValue = scriptParametersParamValue,
     ///             },
     ///         },
     ///     });

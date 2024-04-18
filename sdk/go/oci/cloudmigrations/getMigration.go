@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudMigrations.GetMigration(ctx, &cloudmigrations.GetMigrationArgs{
-//				MigrationId: oci_cloud_migrations_migration.Test_migration.Id,
+//				MigrationId: testMigrationOciCloudMigrationsMigration.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

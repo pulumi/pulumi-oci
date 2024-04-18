@@ -221,10 +221,10 @@ class DbCredential(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_credential = oci.identity.DbCredential("testDbCredential",
-            description=var["db_credential_description"],
-            password=var["db_credential_password"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_db_credential = oci.identity.DbCredential("test_db_credential",
+            description=db_credential_description,
+            password=db_credential_password,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -260,10 +260,10 @@ class DbCredential(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_credential = oci.identity.DbCredential("testDbCredential",
-            description=var["db_credential_description"],
-            password=var["db_credential_password"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_db_credential = oci.identity.DbCredential("test_db_credential",
+            description=db_credential_description,
+            password=db_credential_password,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

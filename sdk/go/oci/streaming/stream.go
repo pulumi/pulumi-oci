@@ -35,15 +35,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Streaming.NewStream(ctx, "testStream", &Streaming.StreamArgs{
-//				Partitions:    pulumi.Any(_var.Stream_partitions),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags:   pulumi.Any(_var.Stream_defined_tags),
+//			_, err := Streaming.NewStream(ctx, "test_stream", &Streaming.StreamArgs{
+//				Name:          pulumi.Any(streamName),
+//				Partitions:    pulumi.Any(streamPartitions),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DefinedTags:   pulumi.Any(streamDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				RetentionInHours: pulumi.Any(_var.Stream_retention_in_hours),
-//				StreamPoolId:     pulumi.Any(oci_streaming_stream_pool.Test_stream_pool.Id),
+//				RetentionInHours: pulumi.Any(streamRetentionInHours),
+//				StreamPoolId:     pulumi.Any(testStreamPool.Id),
 //			})
 //			if err != nil {
 //				return err

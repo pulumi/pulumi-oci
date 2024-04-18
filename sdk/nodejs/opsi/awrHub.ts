@@ -17,17 +17,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAwrHub = new oci.opsi.AwrHub("testAwrHub", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.awr_hub_display_name,
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
+ * const testAwrHub = new oci.opsi.AwrHub("test_awr_hub", {
+ *     compartmentId: compartmentId,
+ *     displayName: awrHubDisplayName,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     objectStorageBucketName: oci_objectstorage_bucket.test_bucket.name,
+ *     objectStorageBucketName: testBucket.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -302,21 +302,21 @@ class Export(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_export = oci.file_storage.Export("testExport",
-            export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-            file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-            path=var["export_path"],
+        test_export = oci.file_storage.Export("test_export",
+            export_set_id=test_export_set["id"],
+            file_system_id=test_file_system["id"],
+            path=export_path,
             export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=var["export_export_options_source"],
-                access=var["export_export_options_access"],
-                allowed_auths=var["export_export_options_allowed_auth"],
-                anonymous_gid=var["export_export_options_anonymous_gid"],
-                anonymous_uid=var["export_export_options_anonymous_uid"],
-                identity_squash=var["export_export_options_identity_squash"],
-                is_anonymous_access_allowed=var["export_export_options_is_anonymous_access_allowed"],
-                require_privileged_source_port=var["export_export_options_require_privileged_source_port"],
+                source=export_export_options_source,
+                access=export_export_options_access,
+                allowed_auths=export_export_options_allowed_auth,
+                anonymous_gid=export_export_options_anonymous_gid,
+                anonymous_uid=export_export_options_anonymous_uid,
+                identity_squash=export_export_options_identity_squash,
+                is_anonymous_access_allowed=export_export_options_is_anonymous_access_allowed,
+                require_privileged_source_port=export_export_options_require_privileged_source_port,
             )],
-            is_idmap_groups_for_sys_auth=var["export_is_idmap_groups_for_sys_auth"])
+            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -370,21 +370,21 @@ class Export(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_export = oci.file_storage.Export("testExport",
-            export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-            file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
-            path=var["export_path"],
+        test_export = oci.file_storage.Export("test_export",
+            export_set_id=test_export_set["id"],
+            file_system_id=test_file_system["id"],
+            path=export_path,
             export_options=[oci.file_storage.ExportExportOptionArgs(
-                source=var["export_export_options_source"],
-                access=var["export_export_options_access"],
-                allowed_auths=var["export_export_options_allowed_auth"],
-                anonymous_gid=var["export_export_options_anonymous_gid"],
-                anonymous_uid=var["export_export_options_anonymous_uid"],
-                identity_squash=var["export_export_options_identity_squash"],
-                is_anonymous_access_allowed=var["export_export_options_is_anonymous_access_allowed"],
-                require_privileged_source_port=var["export_export_options_require_privileged_source_port"],
+                source=export_export_options_source,
+                access=export_export_options_access,
+                allowed_auths=export_export_options_allowed_auth,
+                anonymous_gid=export_export_options_anonymous_gid,
+                anonymous_uid=export_export_options_anonymous_uid,
+                identity_squash=export_export_options_identity_squash,
+                is_anonymous_access_allowed=export_export_options_is_anonymous_access_allowed,
+                require_privileged_source_port=export_export_options_require_privileged_source_port,
             )],
-            is_idmap_groups_for_sys_auth=var["export_is_idmap_groups_for_sys_auth"])
+            is_idmap_groups_for_sys_auth=export_is_idmap_groups_for_sys_auth)
         ```
         <!--End PulumiCodeChooser -->
 

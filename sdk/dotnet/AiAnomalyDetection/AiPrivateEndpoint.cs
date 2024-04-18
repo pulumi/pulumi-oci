@@ -25,16 +25,16 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAiPrivateEndpoint = new Oci.AiAnomalyDetection.AiPrivateEndpoint("testAiPrivateEndpoint", new()
+    ///     var testAiPrivateEndpoint = new Oci.AiAnomalyDetection.AiPrivateEndpoint("test_ai_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DnsZones = @var.Ai_private_endpoint_dns_zones,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DnsZones = aiPrivateEndpointDnsZones,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Ai_private_endpoint_display_name,
+    ///         DisplayName = aiPrivateEndpointDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

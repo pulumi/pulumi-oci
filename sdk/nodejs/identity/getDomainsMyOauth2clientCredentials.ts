@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyOauth2clientCredentials = oci.Identity.getDomainsMyOauth2clientCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myOauth2clientCredentialCount: _var.my_oauth2client_credential_my_oauth2client_credential_count,
- *     myOauth2clientCredentialFilter: _var.my_oauth2client_credential_my_oauth2client_credential_filter,
- *     authorization: _var.my_oauth2client_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_oauth2client_credential_resource_type_schema_version,
- *     startIndex: _var.my_oauth2client_credential_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myOauth2clientCredentialCount: myOauth2clientCredentialMyOauth2clientCredentialCount,
+ *     myOauth2clientCredentialFilter: myOauth2clientCredentialMyOauth2clientCredentialFilter,
+ *     authorization: myOauth2clientCredentialAuthorization,
+ *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
+ *     startIndex: myOauth2clientCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsMyOauth2clientCredentialsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyOauth2clientCredentials = oci.Identity.getDomainsMyOauth2clientCredentials({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myOauth2clientCredentialCount: _var.my_oauth2client_credential_my_oauth2client_credential_count,
- *     myOauth2clientCredentialFilter: _var.my_oauth2client_credential_my_oauth2client_credential_filter,
- *     authorization: _var.my_oauth2client_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_oauth2client_credential_resource_type_schema_version,
- *     startIndex: _var.my_oauth2client_credential_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myOauth2clientCredentialCount: myOauth2clientCredentialMyOauth2clientCredentialCount,
+ *     myOauth2clientCredentialFilter: myOauth2clientCredentialMyOauth2clientCredentialFilter,
+ *     authorization: myOauth2clientCredentialAuthorization,
+ *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
+ *     startIndex: myOauth2clientCredentialStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

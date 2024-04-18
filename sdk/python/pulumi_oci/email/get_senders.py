@@ -130,10 +130,10 @@ def get_senders(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_senders = oci.Email.get_senders(compartment_id=var["compartment_id"],
-        domain=var["sender_domain"],
-        email_address=var["sender_email_address"],
-        state=var["sender_state"])
+    test_senders = oci.Email.get_senders(compartment_id=compartment_id,
+        domain=sender_domain,
+        email_address=sender_email_address,
+        state=sender_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_senders = oci.Email.get_senders(compartment_id=var["compartment_id"],
-        domain=var["sender_domain"],
-        email_address=var["sender_email_address"],
-        state=var["sender_state"])
+    test_senders = oci.Email.get_senders(compartment_id=compartment_id,
+        domain=sender_domain,
+        email_address=sender_email_address,
+        state=sender_state)
     ```
     <!--End PulumiCodeChooser -->
 

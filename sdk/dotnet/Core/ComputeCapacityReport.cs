@@ -30,21 +30,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testComputeCapacityReport = new Oci.Core.ComputeCapacityReport("testComputeCapacityReport", new()
+    ///     var testComputeCapacityReport = new Oci.Core.ComputeCapacityReport("test_compute_capacity_report", new()
     ///     {
-    ///         AvailabilityDomain = @var.Compute_capacity_report_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = computeCapacityReportAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         ShapeAvailabilities = new[]
     ///         {
     ///             new Oci.Core.Inputs.ComputeCapacityReportShapeAvailabilityArgs
     ///             {
-    ///                 InstanceShape = @var.Compute_capacity_report_shape_availabilities_instance_shape,
-    ///                 FaultDomain = @var.Compute_capacity_report_shape_availabilities_fault_domain,
+    ///                 InstanceShape = computeCapacityReportShapeAvailabilitiesInstanceShape,
+    ///                 FaultDomain = computeCapacityReportShapeAvailabilitiesFaultDomain,
     ///                 InstanceShapeConfig = new Oci.Core.Inputs.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs
     ///                 {
-    ///                     MemoryInGbs = @var.Compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
-    ///                     Nvmes = @var.Compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
-    ///                     Ocpus = @var.Compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
+    ///                     MemoryInGbs = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs,
+    ///                     Nvmes = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes,
+    ///                     Ocpus = computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus,
     ///                 },
     ///             },
     ///         },

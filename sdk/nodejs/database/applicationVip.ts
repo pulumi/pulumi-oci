@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApplicationVip = new oci.database.ApplicationVip("testApplicationVip", {
- *     cloudVmClusterId: oci_database_cloud_vm_cluster.test_cloud_vm_cluster.id,
- *     hostnameLabel: _var.application_vip_hostname_label,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     dbNodeId: oci_database_db_node.test_db_node.id,
- *     ipAddress: _var.application_vip_ip_address,
+ * const testApplicationVip = new oci.database.ApplicationVip("test_application_vip", {
+ *     cloudVmClusterId: testCloudVmCluster.id,
+ *     hostnameLabel: applicationVipHostnameLabel,
+ *     subnetId: testSubnet.id,
+ *     dbNodeId: testDbNode.id,
+ *     ipAddress: applicationVipIpAddress,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRedisClusters = oci.Redis.getRedisClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.redis_cluster_display_name,
- *     id: _var.redis_cluster_id,
- *     state: _var.redis_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: redisClusterDisplayName,
+ *     id: redisClusterId,
+ *     state: redisClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetRedisClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRedisClusters = oci.Redis.getRedisClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.redis_cluster_display_name,
- *     id: _var.redis_cluster_id,
- *     state: _var.redis_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: redisClusterDisplayName,
+ *     id: redisClusterId,
+ *     state: redisClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,28 +25,29 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVirtualService = new Oci.ServiceMesh.VirtualService("testVirtualService", new()
+    ///     var testVirtualService = new Oci.ServiceMesh.VirtualService("test_virtual_service", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         CompartmentId = compartmentId,
+    ///         MeshId = testMesh.Id,
+    ///         Name = virtualServiceName,
     ///         DefaultRoutingPolicy = new Oci.ServiceMesh.Inputs.VirtualServiceDefaultRoutingPolicyArgs
     ///         {
-    ///             Type = @var.Virtual_service_default_routing_policy_type,
+    ///             Type = virtualServiceDefaultRoutingPolicyType,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Virtual_service_description,
+    ///         Description = virtualServiceDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Hosts = @var.Virtual_service_hosts,
+    ///         Hosts = virtualServiceHosts,
     ///         Mtls = new Oci.ServiceMesh.Inputs.VirtualServiceMtlsArgs
     ///         {
-    ///             Mode = @var.Virtual_service_mtls_mode,
-    ///             MaximumValidity = @var.Virtual_service_mtls_maximum_validity,
+    ///             Mode = virtualServiceMtlsMode,
+    ///             MaximumValidity = virtualServiceMtlsMaximumValidity,
     ///         },
     ///     });
     /// 

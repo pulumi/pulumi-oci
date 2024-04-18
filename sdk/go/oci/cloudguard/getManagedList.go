@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetManagedList(ctx, &cloudguard.GetManagedListArgs{
-//				ManagedListId: oci_cloud_guard_managed_list.Test_managed_list.Id,
+//				ManagedListId: testManagedListOciCloudGuardManagedList.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

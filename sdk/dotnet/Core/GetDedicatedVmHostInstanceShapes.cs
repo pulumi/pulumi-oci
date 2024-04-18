@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDedicatedVmHostInstanceShapes = Oci.Core.GetDedicatedVmHostInstanceShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Dedicated_vm_host_instance_shape_availability_domain,
-        ///         DedicatedVmHostShape = @var.Dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostInstanceShapeAvailabilityDomain,
+        ///         DedicatedVmHostShape = dedicatedVmHostInstanceShapeDedicatedVmHostShape,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDedicatedVmHostInstanceShapes = Oci.Core.GetDedicatedVmHostInstanceShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Dedicated_vm_host_instance_shape_availability_domain,
-        ///         DedicatedVmHostShape = @var.Dedicated_vm_host_instance_shape_dedicated_vm_host_shape,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dedicatedVmHostInstanceShapeAvailabilityDomain,
+        ///         DedicatedVmHostShape = dedicatedVmHostInstanceShapeDedicatedVmHostShape,
         ///     });
         /// 
         /// });

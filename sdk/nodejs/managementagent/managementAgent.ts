@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgent = new oci.managementagent.ManagementAgent("testManagementAgent", {managedAgentId: oci_management_agent_managed_agent.test_managed_agent.id});
+ * const testManagementAgent = new oci.managementagent.ManagementAgent("test_management_agent", {managedAgentId: testManagedAgent.id});
  * ```
  * <!--End PulumiCodeChooser -->
  * ***

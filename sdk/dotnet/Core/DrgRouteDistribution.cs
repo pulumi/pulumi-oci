@@ -28,15 +28,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrgRouteDistribution = new Oci.Core.DrgRouteDistribution("testDrgRouteDistribution", new()
+    ///     var testDrgRouteDistribution = new Oci.Core.DrgRouteDistribution("test_drg_route_distribution", new()
     ///     {
-    ///         DistributionType = @var.Drg_route_distribution_distribution_type,
-    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DistributionType = drgRouteDistributionDistributionType,
+    ///         DrgId = testDrg.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Drg_route_distribution_display_name,
+    ///         DisplayName = drgRouteDistributionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

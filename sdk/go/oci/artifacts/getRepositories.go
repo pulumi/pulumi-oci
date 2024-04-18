@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetRepositories(ctx, &artifacts.GetRepositoriesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Repository_display_name),
-//				Id:            pulumi.StringRef(_var.Repository_id),
-//				IsImmutable:   pulumi.BoolRef(_var.Repository_is_immutable),
-//				State:         pulumi.StringRef(_var.Repository_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(repositoryDisplayName),
+//				Id:            pulumi.StringRef(repositoryId),
+//				IsImmutable:   pulumi.BoolRef(repositoryIsImmutable),
+//				State:         pulumi.StringRef(repositoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -127,10 +127,10 @@ def get_fleet_java_migration_analysis_results(filters: Optional[Sequence[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_java_migration_analysis_result_time_end"],
-        time_start=var["fleet_java_migration_analysis_result_time_start"])
+    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=test_fleet["id"],
+        managed_instance_id=test_managed_instance["id"],
+        time_end=fleet_java_migration_analysis_result_time_end,
+        time_start=fleet_java_migration_analysis_result_time_start)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -178,10 +178,10 @@ def get_fleet_java_migration_analysis_results_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=oci_jms_fleet["test_fleet"]["id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        time_end=var["fleet_java_migration_analysis_result_time_end"],
-        time_start=var["fleet_java_migration_analysis_result_time_start"])
+    test_fleet_java_migration_analysis_results = oci.Jms.get_fleet_java_migration_analysis_results(fleet_id=test_fleet["id"],
+        managed_instance_id=test_managed_instance["id"],
+        time_end=fleet_java_migration_analysis_result_time_end,
+        time_start=fleet_java_migration_analysis_result_time_start)
     ```
     <!--End PulumiCodeChooser -->
 

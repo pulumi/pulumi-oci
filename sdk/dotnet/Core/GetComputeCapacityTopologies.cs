@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopologies = Oci.Core.GetComputeCapacityTopologies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Compute_capacity_topology_availability_domain,
-        ///         DisplayName = @var.Compute_capacity_topology_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityTopologyAvailabilityDomain,
+        ///         DisplayName = computeCapacityTopologyDisplayName,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopologies = Oci.Core.GetComputeCapacityTopologies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Compute_capacity_topology_availability_domain,
-        ///         DisplayName = @var.Compute_capacity_topology_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityTopologyAvailabilityDomain,
+        ///         DisplayName = computeCapacityTopologyDisplayName,
         ///     });
         /// 
         /// });

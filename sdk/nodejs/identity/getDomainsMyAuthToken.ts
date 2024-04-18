@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyAuthToken = oci.Identity.getDomainsMyAuthToken({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myAuthTokenId: oci_identity_auth_token.test_auth_token.id,
- *     authorization: _var.my_auth_token_authorization,
- *     resourceTypeSchemaVersion: _var.my_auth_token_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myAuthTokenId: testAuthToken.id,
+ *     authorization: myAuthTokenAuthorization,
+ *     resourceTypeSchemaVersion: myAuthTokenResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -150,10 +150,10 @@ export interface GetDomainsMyAuthTokenResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyAuthToken = oci.Identity.getDomainsMyAuthToken({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myAuthTokenId: oci_identity_auth_token.test_auth_token.id,
- *     authorization: _var.my_auth_token_authorization,
- *     resourceTypeSchemaVersion: _var.my_auth_token_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     myAuthTokenId: testAuthToken.id,
+ *     authorization: myAuthTokenAuthorization,
+ *     resourceTypeSchemaVersion: myAuthTokenResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

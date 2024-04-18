@@ -25,21 +25,22 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceProject = new Oci.DataIntegration.WorkspaceProject("testWorkspaceProject", new()
+    ///     var testWorkspaceProject = new Oci.DataIntegration.WorkspaceProject("test_workspace_project", new()
     ///     {
-    ///         Identifier = @var.Workspace_project_identifier,
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         Description = @var.Workspace_project_description,
-    ///         Key = @var.Workspace_project_key,
-    ///         ModelVersion = @var.Workspace_project_model_version,
-    ///         ObjectStatus = @var.Workspace_project_object_status,
+    ///         Identifier = workspaceProjectIdentifier,
+    ///         Name = workspaceProjectName,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         Description = workspaceProjectDescription,
+    ///         Key = workspaceProjectKey,
+    ///         ModelVersion = workspaceProjectModelVersion,
+    ///         ObjectStatus = workspaceProjectObjectStatus,
     ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceProjectRegistryMetadataArgs
     ///         {
-    ///             AggregatorKey = @var.Workspace_project_registry_metadata_aggregator_key,
-    ///             IsFavorite = @var.Workspace_project_registry_metadata_is_favorite,
-    ///             Key = @var.Workspace_project_registry_metadata_key,
-    ///             Labels = @var.Workspace_project_registry_metadata_labels,
-    ///             RegistryVersion = @var.Workspace_project_registry_metadata_registry_version,
+    ///             AggregatorKey = workspaceProjectRegistryMetadataAggregatorKey,
+    ///             IsFavorite = workspaceProjectRegistryMetadataIsFavorite,
+    ///             Key = workspaceProjectRegistryMetadataKey,
+    ///             Labels = workspaceProjectRegistryMetadataLabels,
+    ///             RegistryVersion = workspaceProjectRegistryMetadataRegistryVersion,
     ///         },
     ///     });
     /// 

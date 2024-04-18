@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUserCapabilitiesManagement = new UserCapabilitiesManagement(&#34;testUserCapabilitiesManagement&#34;, UserCapabilitiesManagementArgs.builder()        
- *             .userId(oci_identity_user.user1().id())
+ *             .userId(user1.id())
  *             .canUseApiKeys(&#34;true&#34;)
  *             .canUseAuthTokens(&#34;true&#34;)
  *             .canUseConsolePassword(&#34;false&#34;)

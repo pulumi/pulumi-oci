@@ -16,16 +16,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTargetAlertPolicyAssociation = new oci.datasafe.TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", {
- *     compartmentId: _var.compartment_id,
- *     isEnabled: _var.target_alert_policy_association_is_enabled,
- *     policyId: oci_identity_policy.test_policy.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ * const testTargetAlertPolicyAssociation = new oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", {
+ *     compartmentId: compartmentId,
+ *     isEnabled: targetAlertPolicyAssociationIsEnabled,
+ *     policyId: testPolicy.id,
+ *     targetId: testTarget.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.target_alert_policy_association_description,
- *     displayName: _var.target_alert_policy_association_display_name,
+ *     description: targetAlertPolicyAssociationDescription,
+ *     displayName: targetAlertPolicyAssociationDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

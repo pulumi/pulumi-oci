@@ -68,19 +68,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOutboundConnector = new OutboundConnector(&#34;testOutboundConnector&#34;, OutboundConnectorArgs.builder()        
- *             .availabilityDomain(var_.outbound_connector_availability_domain())
- *             .bindDistinguishedName(var_.outbound_connector_bind_distinguished_name())
- *             .compartmentId(var_.compartment_id())
- *             .connectorType(var_.outbound_connector_connector_type())
+ *             .availabilityDomain(outboundConnectorAvailabilityDomain)
+ *             .bindDistinguishedName(outboundConnectorBindDistinguishedName)
+ *             .compartmentId(compartmentId)
+ *             .connectorType(outboundConnectorConnectorType)
  *             .endpoints(OutboundConnectorEndpointArgs.builder()
- *                 .hostname(var_.outbound_connector_endpoints_hostname())
- *                 .port(var_.outbound_connector_endpoints_port())
+ *                 .hostname(outboundConnectorEndpointsHostname)
+ *                 .port(outboundConnectorEndpointsPort)
  *                 .build())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.outbound_connector_display_name())
+ *             .displayName(outboundConnectorDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .passwordSecretId(oci_vault_secret.test_secret().id())
- *             .passwordSecretVersion(var_.outbound_connector_password_secret_version())
+ *             .passwordSecretId(testSecret.id())
+ *             .passwordSecretVersion(outboundConnectorPasswordSecretVersion)
  *             .build());
  * 
  *     }

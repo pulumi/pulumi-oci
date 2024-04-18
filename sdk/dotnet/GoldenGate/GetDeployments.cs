@@ -30,14 +30,14 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeployments = Oci.GoldenGate.GetDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssignableConnectionId = oci_golden_gate_connection.Test_connection.Id,
-        ///         AssignedConnectionId = oci_golden_gate_connection.Test_connection.Id,
-        ///         DisplayName = @var.Deployment_display_name,
-        ///         Fqdn = @var.Deployment_fqdn,
-        ///         LifecycleSubState = @var.Deployment_lifecycle_sub_state,
-        ///         State = @var.Deployment_state,
-        ///         SupportedConnectionType = @var.Deployment_supported_connection_type,
+        ///         CompartmentId = compartmentId,
+        ///         AssignableConnectionId = testConnection.Id,
+        ///         AssignedConnectionId = testConnection.Id,
+        ///         DisplayName = deploymentDisplayName,
+        ///         Fqdn = deploymentFqdn,
+        ///         LifecycleSubState = deploymentLifecycleSubState,
+        ///         State = deploymentState,
+        ///         SupportedConnectionType = deploymentSupportedConnectionType,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeployments = Oci.GoldenGate.GetDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssignableConnectionId = oci_golden_gate_connection.Test_connection.Id,
-        ///         AssignedConnectionId = oci_golden_gate_connection.Test_connection.Id,
-        ///         DisplayName = @var.Deployment_display_name,
-        ///         Fqdn = @var.Deployment_fqdn,
-        ///         LifecycleSubState = @var.Deployment_lifecycle_sub_state,
-        ///         State = @var.Deployment_state,
-        ///         SupportedConnectionType = @var.Deployment_supported_connection_type,
+        ///         CompartmentId = compartmentId,
+        ///         AssignableConnectionId = testConnection.Id,
+        ///         AssignedConnectionId = testConnection.Id,
+        ///         DisplayName = deploymentDisplayName,
+        ///         Fqdn = deploymentFqdn,
+        ///         LifecycleSubState = deploymentLifecycleSubState,
+        ///         State = deploymentState,
+        ///         SupportedConnectionType = deploymentSupportedConnectionType,
         ///     });
         /// 
         /// });

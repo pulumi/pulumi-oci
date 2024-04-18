@@ -25,41 +25,41 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPool = new Oci.DataFlow.Pool("testPool", new()
+    ///     var testPool = new Oci.DataFlow.Pool("test_pool", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Configurations = new[]
     ///         {
     ///             new Oci.DataFlow.Inputs.PoolConfigurationArgs
     ///             {
-    ///                 Max = @var.Pool_configurations_max,
-    ///                 Min = @var.Pool_configurations_min,
-    ///                 Shape = @var.Pool_configurations_shape,
+    ///                 Max = poolConfigurationsMax,
+    ///                 Min = poolConfigurationsMin,
+    ///                 Shape = poolConfigurationsShape,
     ///                 ShapeConfig = new Oci.DataFlow.Inputs.PoolConfigurationShapeConfigArgs
     ///                 {
-    ///                     MemoryInGbs = @var.Pool_configurations_shape_config_memory_in_gbs,
-    ///                     Ocpus = @var.Pool_configurations_shape_config_ocpus,
+    ///                     MemoryInGbs = poolConfigurationsShapeConfigMemoryInGbs,
+    ///                     Ocpus = poolConfigurationsShapeConfigOcpus,
     ///                 },
     ///             },
     ///         },
-    ///         DisplayName = @var.Pool_display_name,
+    ///         DisplayName = poolDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Pool_description,
+    ///         Description = poolDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IdleTimeoutInMinutes = @var.Pool_idle_timeout_in_minutes,
+    ///         IdleTimeoutInMinutes = poolIdleTimeoutInMinutes,
     ///         Schedules = new[]
     ///         {
     ///             new Oci.DataFlow.Inputs.PoolScheduleArgs
     ///             {
-    ///                 DayOfWeek = @var.Pool_schedules_day_of_week,
-    ///                 StartTime = @var.Pool_schedules_start_time,
-    ///                 StopTime = @var.Pool_schedules_stop_time,
+    ///                 DayOfWeek = poolSchedulesDayOfWeek,
+    ///                 StartTime = poolSchedulesStartTime,
+    ///                 StopTime = poolSchedulesStopTime,
     ///             },
     ///         },
     ///     });

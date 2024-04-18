@@ -44,9 +44,9 @@ public final class OsubOrganizationSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OsubOrganizationSubscriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionIds(var_.organization_subscription_subscription_ids())
-     *             .xOneOriginRegion(var_.organization_subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionIds(organizationSubscriptionSubscriptionIds)
+     *             .xOneOriginRegion(organizationSubscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -88,9 +88,9 @@ public final class OsubOrganizationSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OsubOrganizationSubscriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionIds(var_.organization_subscription_subscription_ids())
-     *             .xOneOriginRegion(var_.organization_subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionIds(organizationSubscriptionSubscriptionIds)
+     *             .xOneOriginRegion(organizationSubscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -132,9 +132,9 @@ public final class OsubOrganizationSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OsubOrganizationSubscriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionIds(var_.organization_subscription_subscription_ids())
-     *             .xOneOriginRegion(var_.organization_subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionIds(organizationSubscriptionSubscriptionIds)
+     *             .xOneOriginRegion(organizationSubscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -176,9 +176,9 @@ public final class OsubOrganizationSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationSubscriptions = OsubOrganizationSubscriptionFunctions.getOrganizationSubscriptions(GetOrganizationSubscriptionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .subscriptionIds(var_.organization_subscription_subscription_ids())
-     *             .xOneOriginRegion(var_.organization_subscription_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .subscriptionIds(organizationSubscriptionSubscriptionIds)
+     *             .xOneOriginRegion(organizationSubscriptionXOneOriginRegion)
      *             .build());
      * 
      *     }

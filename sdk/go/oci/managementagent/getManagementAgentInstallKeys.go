@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentInstallKeys(ctx, &managementagent.GetManagementAgentInstallKeysArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Management_agent_install_key_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_install_key_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Management_agent_install_key_display_name),
-//				State:                  pulumi.StringRef(_var.Management_agent_install_key_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(managementAgentInstallKeyAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(managementAgentInstallKeyCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(managementAgentInstallKeyDisplayName),
+//				State:                  pulumi.StringRef(managementAgentInstallKeyState),
 //			}, nil)
 //			if err != nil {
 //				return err

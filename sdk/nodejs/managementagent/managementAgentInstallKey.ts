@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagementAgentInstallKey = new oci.managementagent.ManagementAgentInstallKey("testManagementAgentInstallKey", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.management_agent_install_key_display_name,
- *     allowedKeyInstallCount: _var.management_agent_install_key_allowed_key_install_count,
- *     isUnlimited: _var.management_agent_install_key_is_unlimited,
- *     timeExpires: _var.management_agent_install_key_time_expires,
+ * const testManagementAgentInstallKey = new oci.managementagent.ManagementAgentInstallKey("test_management_agent_install_key", {
+ *     compartmentId: compartmentId,
+ *     displayName: managementAgentInstallKeyDisplayName,
+ *     allowedKeyInstallCount: managementAgentInstallKeyAllowedKeyInstallCount,
+ *     isUnlimited: managementAgentInstallKeyIsUnlimited,
+ *     timeExpires: managementAgentInstallKeyTimeExpires,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -38,7 +38,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetAlarmSuppression(ctx, &monitoring.GetAlarmSuppressionArgs{
-//				AlarmSuppressionId: oci_monitoring_alarm_suppression.Test_alarm_suppression.Id,
+//				AlarmSuppressionId: testAlarmSuppressionOciMonitoringAlarmSuppression.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

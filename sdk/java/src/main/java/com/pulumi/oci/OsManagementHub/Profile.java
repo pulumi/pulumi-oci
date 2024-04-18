@@ -52,19 +52,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProfile = new Profile(&#34;testProfile&#34;, ProfileArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.profile_display_name())
- *             .profileType(var_.profile_profile_type())
- *             .archType(var_.profile_arch_type())
+ *             .compartmentId(compartmentId)
+ *             .displayName(profileDisplayName)
+ *             .profileType(profileProfileType)
+ *             .archType(profileArchType)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.profile_description())
+ *             .description(profileDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .lifecycleStageId(oci_os_management_hub_lifecycle_stage.test_lifecycle_stage().id())
- *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
- *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
- *             .osFamily(var_.profile_os_family())
- *             .softwareSourceIds(var_.profile_software_source_ids())
- *             .vendorName(var_.profile_vendor_name())
+ *             .lifecycleStageId(testLifecycleStage.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+ *             .managementStationId(testManagementStation.id())
+ *             .osFamily(profileOsFamily)
+ *             .softwareSourceIds(profileSoftwareSourceIds)
+ *             .vendorName(profileVendorName)
  *             .build());
  * 
  *     }

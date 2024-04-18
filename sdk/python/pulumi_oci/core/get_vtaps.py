@@ -182,14 +182,14 @@ def get_vtaps(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtaps = oci.Core.get_vtaps(compartment_id=var["compartment_id"],
-        display_name=var["vtap_display_name"],
-        is_vtap_enabled=var["vtap_is_vtap_enabled"],
-        source=var["vtap_source"],
-        state=var["vtap_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_ip=var["vtap_target_ip"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_vtaps = oci.Core.get_vtaps(compartment_id=compartment_id,
+        display_name=vtap_display_name,
+        is_vtap_enabled=vtap_is_vtap_enabled,
+        source=vtap_source,
+        state=vtap_state,
+        target_id=test_target["id"],
+        target_ip=vtap_target_ip,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,14 +255,14 @@ def get_vtaps_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vtaps = oci.Core.get_vtaps(compartment_id=var["compartment_id"],
-        display_name=var["vtap_display_name"],
-        is_vtap_enabled=var["vtap_is_vtap_enabled"],
-        source=var["vtap_source"],
-        state=var["vtap_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        target_ip=var["vtap_target_ip"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"])
+    test_vtaps = oci.Core.get_vtaps(compartment_id=compartment_id,
+        display_name=vtap_display_name,
+        is_vtap_enabled=vtap_is_vtap_enabled,
+        source=vtap_source,
+        state=vtap_state,
+        target_id=test_target["id"],
+        target_ip=vtap_target_ip,
+        vcn_id=test_vcn["id"])
     ```
     <!--End PulumiCodeChooser -->
 

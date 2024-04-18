@@ -25,11 +25,11 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDeploymentCertificate = new Oci.GoldenGate.DeploymentCertificate("testDeploymentCertificate", new()
+    ///     var testDeploymentCertificate = new Oci.GoldenGate.DeploymentCertificate("test_deployment_certificate", new()
     ///     {
-    ///         CertificateContent = @var.Deployment_certificate_certificate_content,
-    ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-    ///         Key = @var.Deployment_certificate_key,
+    ///         CertificateContent = deploymentCertificateCertificateContent,
+    ///         DeploymentId = testDeployment.Id,
+    ///         Key = deploymentCertificateKey,
     ///     });
     /// 
     /// });

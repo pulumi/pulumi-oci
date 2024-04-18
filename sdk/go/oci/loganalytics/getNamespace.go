@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespace(ctx, &loganalytics.GetNamespaceArgs{
-//				Namespace: _var.Namespace_namespace,
+//				Namespace: namespaceNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

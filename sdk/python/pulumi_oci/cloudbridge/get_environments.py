@@ -130,10 +130,10 @@ def get_environments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environments = oci.CloudBridge.get_environments(compartment_id=var["compartment_id"],
-        display_name=var["environment_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["environment_state"])
+    test_environments = oci.CloudBridge.get_environments(compartment_id=compartment_id,
+        display_name=environment_display_name,
+        environment_id=test_environment["id"],
+        state=environment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_environments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_environments = oci.CloudBridge.get_environments(compartment_id=var["compartment_id"],
-        display_name=var["environment_display_name"],
-        environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-        state=var["environment_state"])
+    test_environments = oci.CloudBridge.get_environments(compartment_id=compartment_id,
+        display_name=environment_display_name,
+        environment_id=test_environment["id"],
+        state=environment_state)
     ```
     <!--End PulumiCodeChooser -->
 

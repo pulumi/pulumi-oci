@@ -20,13 +20,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataInsights = oci.Opsi.getExadataInsights({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.exadata_insight_compartment_id_in_subtree,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     exadataTypes: _var.exadata_insight_exadata_type,
- *     id: _var.exadata_insight_id,
- *     states: _var.exadata_insight_state,
- *     statuses: _var.exadata_insight_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     exadataTypes: exadataInsightExadataType,
+ *     id: exadataInsightId,
+ *     states: exadataInsightState,
+ *     statuses: exadataInsightStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -131,13 +131,13 @@ export interface GetExadataInsightsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataInsights = oci.Opsi.getExadataInsights({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.exadata_insight_compartment_id_in_subtree,
- *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
- *     exadataTypes: _var.exadata_insight_exadata_type,
- *     id: _var.exadata_insight_id,
- *     states: _var.exadata_insight_state,
- *     statuses: _var.exadata_insight_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     exadataTypes: exadataInsightExadataType,
+ *     id: exadataInsightId,
+ *     states: exadataInsightState,
+ *     statuses: exadataInsightStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

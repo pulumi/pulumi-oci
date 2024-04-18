@@ -161,8 +161,8 @@ def get_vm_cluster_patch(patch_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=oci_database_patch["test_patch"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=test_patch["id"],
+        vm_cluster_id=test_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,8 +205,8 @@ def get_vm_cluster_patch_output(patch_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=oci_database_patch["test_patch"]["id"],
-        vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster_patch = oci.Database.get_vm_cluster_patch(patch_id=test_patch["id"],
+        vm_cluster_id=test_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

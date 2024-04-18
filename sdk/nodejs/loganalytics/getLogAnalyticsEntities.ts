@@ -19,19 +19,19 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_entity_namespace,
- *     cloudResourceId: oci_log_analytics_cloud_resource.test_cloud_resource.id,
- *     entityTypeNames: _var.log_analytics_entity_entity_type_name,
- *     hostname: _var.log_analytics_entity_hostname,
- *     hostnameContains: _var.log_analytics_entity_hostname_contains,
- *     isManagementAgentIdNull: _var.log_analytics_entity_is_management_agent_id_null,
- *     lifecycleDetailsContains: _var.log_analytics_entity_lifecycle_details_contains,
- *     metadataEquals: _var.log_analytics_entity_metadata_equals,
- *     name: _var.log_analytics_entity_name,
- *     nameContains: _var.log_analytics_entity_name_contains,
- *     sourceId: oci_log_analytics_source.test_source.id,
- *     state: _var.log_analytics_entity_state,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsEntityNamespace,
+ *     cloudResourceId: testCloudResource.id,
+ *     entityTypeNames: logAnalyticsEntityEntityTypeName,
+ *     hostname: logAnalyticsEntityHostname,
+ *     hostnameContains: logAnalyticsEntityHostnameContains,
+ *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
+ *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
+ *     metadataEquals: logAnalyticsEntityMetadataEquals,
+ *     name: logAnalyticsEntityName,
+ *     nameContains: logAnalyticsEntityNameContains,
+ *     sourceId: testSource.id,
+ *     state: logAnalyticsEntityState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -177,19 +177,19 @@ export interface GetLogAnalyticsEntitiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntities = oci.LogAnalytics.getLogAnalyticsEntities({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_entity_namespace,
- *     cloudResourceId: oci_log_analytics_cloud_resource.test_cloud_resource.id,
- *     entityTypeNames: _var.log_analytics_entity_entity_type_name,
- *     hostname: _var.log_analytics_entity_hostname,
- *     hostnameContains: _var.log_analytics_entity_hostname_contains,
- *     isManagementAgentIdNull: _var.log_analytics_entity_is_management_agent_id_null,
- *     lifecycleDetailsContains: _var.log_analytics_entity_lifecycle_details_contains,
- *     metadataEquals: _var.log_analytics_entity_metadata_equals,
- *     name: _var.log_analytics_entity_name,
- *     nameContains: _var.log_analytics_entity_name_contains,
- *     sourceId: oci_log_analytics_source.test_source.id,
- *     state: _var.log_analytics_entity_state,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsEntityNamespace,
+ *     cloudResourceId: testCloudResource.id,
+ *     entityTypeNames: logAnalyticsEntityEntityTypeName,
+ *     hostname: logAnalyticsEntityHostname,
+ *     hostnameContains: logAnalyticsEntityHostnameContains,
+ *     isManagementAgentIdNull: logAnalyticsEntityIsManagementAgentIdNull,
+ *     lifecycleDetailsContains: logAnalyticsEntityLifecycleDetailsContains,
+ *     metadataEquals: logAnalyticsEntityMetadataEquals,
+ *     name: logAnalyticsEntityName,
+ *     nameContains: logAnalyticsEntityNameContains,
+ *     sourceId: testSource.id,
+ *     state: logAnalyticsEntityState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

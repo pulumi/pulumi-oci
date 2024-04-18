@@ -16,11 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBaselineableMetric = new oci.stackmonitoring.BaselineableMetric("testBaselineableMetric", {
- *     column: _var.baselineable_metric_column,
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.baselineable_metric_namespace,
- *     resourceGroup: _var.baselineable_metric_resource_group,
+ * const testBaselineableMetric = new oci.stackmonitoring.BaselineableMetric("test_baselineable_metric", {
+ *     column: baselineableMetricColumn,
+ *     compartmentId: compartmentId,
+ *     name: baselineableMetricName,
+ *     namespace: baselineableMetricNamespace,
+ *     resourceGroup: baselineableMetricResourceGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

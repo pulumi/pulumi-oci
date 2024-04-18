@@ -68,7 +68,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -110,7 +110,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -152,7 +152,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -194,7 +194,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = LicenseManagerFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -236,8 +236,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(licenseMetricIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -279,8 +279,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(licenseMetricIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -322,8 +322,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(licenseMetricIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -365,8 +365,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseMetric = LicenseManagerFunctions.getLicenseMetric(GetLicenseMetricArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.license_metric_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(licenseMetricIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -408,7 +408,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
      *             .build());
      * 
      *     }
@@ -450,7 +450,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
      *             .build());
      * 
      *     }
@@ -492,7 +492,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
      *             .build());
      * 
      *     }
@@ -534,7 +534,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecord = LicenseManagerFunctions.getLicenseRecord(GetLicenseRecordArgs.builder()
-     *             .licenseRecordId(oci_license_manager_license_record.test_license_record().id())
+     *             .licenseRecordId(testLicenseRecordOciLicenseManagerLicenseRecord.id())
      *             .build());
      * 
      *     }
@@ -576,7 +576,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicense.id())
      *             .build());
      * 
      *     }
@@ -618,7 +618,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicense.id())
      *             .build());
      * 
      *     }
@@ -660,7 +660,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicense.id())
      *             .build());
      * 
      *     }
@@ -702,7 +702,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLicenseRecords = LicenseManagerFunctions.getLicenseRecords(GetLicenseRecordsArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicense.id())
      *             .build());
      * 
      *     }
@@ -744,7 +744,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
      *             .build());
      * 
      *     }
@@ -786,7 +786,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
      *             .build());
      * 
      *     }
@@ -828,7 +828,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
      *             .build());
      * 
      *     }
@@ -870,7 +870,7 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicense = LicenseManagerFunctions.getProductLicense(GetProductLicenseArgs.builder()
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
+     *             .productLicenseId(testProductLicenseOciLicenseManagerProductLicense.id())
      *             .build());
      * 
      *     }
@@ -912,9 +912,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
-     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .productLicenseId(testProductLicense.id())
+     *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -956,9 +956,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
-     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .productLicenseId(testProductLicense.id())
+     *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1000,9 +1000,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
-     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .productLicenseId(testProductLicense.id())
+     *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1044,9 +1044,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenseConsumers = LicenseManagerFunctions.getProductLicenseConsumers(GetProductLicenseConsumersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .productLicenseId(oci_license_manager_product_license.test_product_license().id())
-     *             .isCompartmentIdInSubtree(var_.product_license_consumer_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .productLicenseId(testProductLicense.id())
+     *             .isCompartmentIdInSubtree(productLicenseConsumerIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1088,8 +1088,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(productLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1131,8 +1131,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(productLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1174,8 +1174,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(productLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1217,8 +1217,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProductLicenses = LicenseManagerFunctions.getProductLicenses(GetProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(productLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1260,8 +1260,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedProductLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1303,8 +1303,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedProductLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1346,8 +1346,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedProductLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1389,8 +1389,8 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedProductLicenses = LicenseManagerFunctions.getTopUtilizedProductLicenses(GetTopUtilizedProductLicensesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_product_license_is_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedProductLicenseIsCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -1432,9 +1432,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
-     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedResourceIsCompartmentIdInSubtree)
+     *             .resourceUnitType(topUtilizedResourceResourceUnitType)
      *             .build());
      * 
      *     }
@@ -1476,9 +1476,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
-     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedResourceIsCompartmentIdInSubtree)
+     *             .resourceUnitType(topUtilizedResourceResourceUnitType)
      *             .build());
      * 
      *     }
@@ -1520,9 +1520,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
-     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedResourceIsCompartmentIdInSubtree)
+     *             .resourceUnitType(topUtilizedResourceResourceUnitType)
      *             .build());
      * 
      *     }
@@ -1564,9 +1564,9 @@ public final class LicenseManagerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTopUtilizedResources = LicenseManagerFunctions.getTopUtilizedResources(GetTopUtilizedResourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCompartmentIdInSubtree(var_.top_utilized_resource_is_compartment_id_in_subtree())
-     *             .resourceUnitType(var_.top_utilized_resource_resource_unit_type())
+     *             .compartmentId(compartmentId)
+     *             .isCompartmentIdInSubtree(topUtilizedResourceIsCompartmentIdInSubtree)
+     *             .resourceUnitType(topUtilizedResourceResourceUnitType)
      *             .build());
      * 
      *     }

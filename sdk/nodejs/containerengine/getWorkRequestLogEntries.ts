@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkRequestLogEntries = oci.ContainerEngine.getWorkRequestLogEntries({
- *     compartmentId: _var.compartment_id,
- *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ *     compartmentId: compartmentId,
+ *     workRequestId: testWorkRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetWorkRequestLogEntriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkRequestLogEntries = oci.ContainerEngine.getWorkRequestLogEntries({
- *     compartmentId: _var.compartment_id,
- *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ *     compartmentId: compartmentId,
+ *     workRequestId: testWorkRequest.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,32 +31,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsEntity(ctx, "testLogAnalyticsEntity", &LogAnalytics.LogAnalyticsEntityArgs{
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				EntityTypeName:  pulumi.Any(_var.Log_analytics_entity_entity_type_name),
-//				Namespace:       pulumi.Any(_var.Log_analytics_entity_namespace),
-//				CloudResourceId: pulumi.Any(oci_log_analytics_cloud_resource.Test_cloud_resource.Id),
+//			_, err := LogAnalytics.NewLogAnalyticsEntity(ctx, "test_log_analytics_entity", &LogAnalytics.LogAnalyticsEntityArgs{
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				EntityTypeName:  pulumi.Any(logAnalyticsEntityEntityTypeName),
+//				Name:            pulumi.Any(logAnalyticsEntityName),
+//				Namespace:       pulumi.Any(logAnalyticsEntityNamespace),
+//				CloudResourceId: pulumi.Any(testCloudResource.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Hostname:          pulumi.Any(_var.Log_analytics_entity_hostname),
-//				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				Hostname:          pulumi.Any(logAnalyticsEntityHostname),
+//				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
 //				Metadata: &loganalytics.LogAnalyticsEntityMetadataArgs{
 //					Items: loganalytics.LogAnalyticsEntityMetadataItemArray{
 //						&loganalytics.LogAnalyticsEntityMetadataItemArgs{
-//							Name:  pulumi.Any(_var.Log_analytics_entity_metadata_items_name),
-//							Type:  pulumi.Any(_var.Log_analytics_entity_metadata_items_type),
-//							Value: pulumi.Any(_var.Log_analytics_entity_metadata_items_value),
+//							Name:  pulumi.Any(logAnalyticsEntityMetadataItemsName),
+//							Type:  pulumi.Any(logAnalyticsEntityMetadataItemsType),
+//							Value: pulumi.Any(logAnalyticsEntityMetadataItemsValue),
 //						},
 //					},
 //				},
-//				Properties:         pulumi.Any(_var.Log_analytics_entity_properties),
-//				SourceId:           pulumi.Any(oci_log_analytics_source.Test_source.Id),
-//				TimeLastDiscovered: pulumi.Any(_var.Log_analytics_entity_time_last_discovered),
-//				TimezoneRegion:     pulumi.Any(_var.Log_analytics_entity_timezone_region),
+//				Properties:         pulumi.Any(logAnalyticsEntityProperties),
+//				SourceId:           pulumi.Any(testSource.Id),
+//				TimeLastDiscovered: pulumi.Any(logAnalyticsEntityTimeLastDiscovered),
+//				TimezoneRegion:     pulumi.Any(logAnalyticsEntityTimezoneRegion),
 //			})
 //			if err != nil {
 //				return err

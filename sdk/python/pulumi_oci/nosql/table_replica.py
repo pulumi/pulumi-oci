@@ -224,12 +224,12 @@ class TableReplica(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_table_replica = oci.nosql.TableReplica("testTableReplica",
-            region=var["table_replica_region"],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            max_read_units=var["table_replica_max_read_units"],
-            max_write_units=var["table_replica_max_write_units"])
+        test_table_replica = oci.nosql.TableReplica("test_table_replica",
+            region=table_replica_region,
+            table_name_or_id=test_table_name_or["id"],
+            compartment_id=compartment_id,
+            max_read_units=table_replica_max_read_units,
+            max_write_units=table_replica_max_write_units)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -271,12 +271,12 @@ class TableReplica(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_table_replica = oci.nosql.TableReplica("testTableReplica",
-            region=var["table_replica_region"],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            max_read_units=var["table_replica_max_read_units"],
-            max_write_units=var["table_replica_max_write_units"])
+        test_table_replica = oci.nosql.TableReplica("test_table_replica",
+            region=table_replica_region,
+            table_name_or_id=test_table_name_or["id"],
+            compartment_id=compartment_id,
+            max_read_units=table_replica_max_read_units,
+            max_write_units=table_replica_max_write_units)
         ```
         <!--End PulumiCodeChooser -->
 

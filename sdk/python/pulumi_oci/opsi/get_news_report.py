@@ -272,7 +272,7 @@ def get_news_report(news_report_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_news_report = oci.Opsi.get_news_report(news_report_id=oci_opsi_news_report["test_news_report"]["id"])
+    test_news_report = oci.Opsi.get_news_report(news_report_id=test_news_report_oci_opsi_news_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -321,7 +321,7 @@ def get_news_report_output(news_report_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_news_report = oci.Opsi.get_news_report(news_report_id=oci_opsi_news_report["test_news_report"]["id"])
+    test_news_report = oci.Opsi.get_news_report(news_report_id=test_news_report_oci_opsi_news_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 

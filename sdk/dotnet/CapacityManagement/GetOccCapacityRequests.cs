@@ -29,11 +29,11 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccCapacityRequests = Oci.CapacityManagement.GetOccCapacityRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Occ_capacity_request_display_name,
-        ///         Id = @var.Occ_capacity_request_id,
-        ///         Namespace = @var.Occ_capacity_request_namespace,
-        ///         OccAvailabilityCatalogId = oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = occCapacityRequestDisplayName,
+        ///         Id = occCapacityRequestId,
+        ///         Namespace = occCapacityRequestNamespace,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccCapacityRequests = Oci.CapacityManagement.GetOccCapacityRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Occ_capacity_request_display_name,
-        ///         Id = @var.Occ_capacity_request_id,
-        ///         Namespace = @var.Occ_capacity_request_namespace,
-        ///         OccAvailabilityCatalogId = oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = occCapacityRequestDisplayName,
+        ///         Id = occCapacityRequestId,
+        ///         Namespace = occCapacityRequestNamespace,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
         ///     });
         /// 
         /// });

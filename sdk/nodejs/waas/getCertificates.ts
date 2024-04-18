@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificates = oci.Waas.getCertificates({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.certificate_display_names,
- *     ids: _var.certificate_ids,
- *     states: _var.certificate_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.certificate_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.certificate_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: certificateDisplayNames,
+ *     ids: certificateIds,
+ *     states: certificateStates,
+ *     timeCreatedGreaterThanOrEqualTo: certificateTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: certificateTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,12 +110,12 @@ export interface GetCertificatesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificates = oci.Waas.getCertificates({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.certificate_display_names,
- *     ids: _var.certificate_ids,
- *     states: _var.certificate_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.certificate_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.certificate_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: certificateDisplayNames,
+ *     ids: certificateIds,
+ *     states: certificateStates,
+ *     timeCreatedGreaterThanOrEqualTo: certificateTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: certificateTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

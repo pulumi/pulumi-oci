@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigration = oci.CloudMigrations.getMigration({
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
+ *     migrationId: testMigrationOciCloudMigrationsMigration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetMigrationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMigration = oci.CloudMigrations.getMigration({
- *     migrationId: oci_cloud_migrations_migration.test_migration.id,
+ *     migrationId: testMigrationOciCloudMigrationsMigration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

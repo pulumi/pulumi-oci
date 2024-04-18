@@ -590,18 +590,18 @@ class SecurityAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_security_assessment = oci.data_safe.SecurityAssessment("testSecurityAssessment",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_security_assessment = oci.data_safe.SecurityAssessment("test_security_assessment",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["security_assessment_description"],
-            display_name=var["security_assessment_display_name"],
+            description=security_assessment_description,
+            display_name=security_assessment_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            schedule=var["security_assessment_schedule"])
+            schedule=security_assessment_schedule)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -649,18 +649,18 @@ class SecurityAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_security_assessment = oci.data_safe.SecurityAssessment("testSecurityAssessment",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
+        test_security_assessment = oci.data_safe.SecurityAssessment("test_security_assessment",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["security_assessment_description"],
-            display_name=var["security_assessment_display_name"],
+            description=security_assessment_description,
+            display_name=security_assessment_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            schedule=var["security_assessment_schedule"])
+            schedule=security_assessment_schedule)
         ```
         <!--End PulumiCodeChooser -->
 

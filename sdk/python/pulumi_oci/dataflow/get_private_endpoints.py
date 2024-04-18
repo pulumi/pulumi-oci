@@ -143,11 +143,11 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["private_endpoint_display_name"],
-        display_name_starts_with=var["private_endpoint_display_name_starts_with"],
-        owner_principal_id=var["owner_principal_id"],
-        state=var["private_endpoint_state"])
+    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=compartment_id,
+        display_name=private_endpoint_display_name,
+        display_name_starts_with=private_endpoint_display_name_starts_with,
+        owner_principal_id=owner_principal_id,
+        state=private_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,11 +199,11 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["private_endpoint_display_name"],
-        display_name_starts_with=var["private_endpoint_display_name_starts_with"],
-        owner_principal_id=var["owner_principal_id"],
-        state=var["private_endpoint_state"])
+    test_private_endpoints = oci.DataFlow.get_private_endpoints(compartment_id=compartment_id,
+        display_name=private_endpoint_display_name,
+        display_name_starts_with=private_endpoint_display_name_starts_with,
+        owner_principal_id=owner_principal_id,
+        state=private_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 

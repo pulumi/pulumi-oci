@@ -31,28 +31,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewStreamPackagingConfig(ctx, "testStreamPackagingConfig", &MediaServices.StreamPackagingConfigArgs{
-//				DisplayName:           pulumi.Any(_var.Stream_packaging_config_display_name),
-//				DistributionChannelId: pulumi.Any(oci_mysql_channel.Test_channel.Id),
-//				SegmentTimeInSeconds:  pulumi.Any(_var.Stream_packaging_config_segment_time_in_seconds),
-//				StreamPackagingFormat: pulumi.Any(_var.Stream_packaging_config_stream_packaging_format),
+//			_, err := MediaServices.NewStreamPackagingConfig(ctx, "test_stream_packaging_config", &MediaServices.StreamPackagingConfigArgs{
+//				DisplayName:           pulumi.Any(streamPackagingConfigDisplayName),
+//				DistributionChannelId: pulumi.Any(testChannel.Id),
+//				SegmentTimeInSeconds:  pulumi.Any(streamPackagingConfigSegmentTimeInSeconds),
+//				StreamPackagingFormat: pulumi.Any(streamPackagingConfigStreamPackagingFormat),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				Encryption: &mediaservices.StreamPackagingConfigEncryptionArgs{
-//					Algorithm: pulumi.Any(_var.Stream_packaging_config_encryption_algorithm),
-//					KmsKeyId:  pulumi.Any(oci_kms_key.Test_key.Id),
+//					Algorithm: pulumi.Any(streamPackagingConfigEncryptionAlgorithm),
+//					KmsKeyId:  pulumi.Any(testKey.Id),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Locks: mediaservices.StreamPackagingConfigLockArray{
 //					&mediaservices.StreamPackagingConfigLockArgs{
-//						CompartmentId:     pulumi.Any(_var.Compartment_id),
-//						Type:              pulumi.Any(_var.Stream_packaging_config_locks_type),
-//						Message:           pulumi.Any(_var.Stream_packaging_config_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Stream_packaging_config_locks_time_created),
+//						CompartmentId:     pulumi.Any(compartmentId),
+//						Type:              pulumi.Any(streamPackagingConfigLocksType),
+//						Message:           pulumi.Any(streamPackagingConfigLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(streamPackagingConfigLocksTimeCreated),
 //					},
 //				},
 //			})

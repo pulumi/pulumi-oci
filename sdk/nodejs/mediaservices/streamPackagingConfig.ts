@@ -18,27 +18,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStreamPackagingConfig = new oci.mediaservices.StreamPackagingConfig("testStreamPackagingConfig", {
- *     displayName: _var.stream_packaging_config_display_name,
- *     distributionChannelId: oci_mysql_channel.test_channel.id,
- *     segmentTimeInSeconds: _var.stream_packaging_config_segment_time_in_seconds,
- *     streamPackagingFormat: _var.stream_packaging_config_stream_packaging_format,
+ * const testStreamPackagingConfig = new oci.mediaservices.StreamPackagingConfig("test_stream_packaging_config", {
+ *     displayName: streamPackagingConfigDisplayName,
+ *     distributionChannelId: testChannel.id,
+ *     segmentTimeInSeconds: streamPackagingConfigSegmentTimeInSeconds,
+ *     streamPackagingFormat: streamPackagingConfigStreamPackagingFormat,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     encryption: {
- *         algorithm: _var.stream_packaging_config_encryption_algorithm,
- *         kmsKeyId: oci_kms_key.test_key.id,
+ *         algorithm: streamPackagingConfigEncryptionAlgorithm,
+ *         kmsKeyId: testKey.id,
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     locks: [{
- *         compartmentId: _var.compartment_id,
- *         type: _var.stream_packaging_config_locks_type,
- *         message: _var.stream_packaging_config_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.stream_packaging_config_locks_time_created,
+ *         compartmentId: compartmentId,
+ *         type: streamPackagingConfigLocksType,
+ *         message: streamPackagingConfigLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: streamPackagingConfigLocksTimeCreated,
  *     }],
  * });
  * ```

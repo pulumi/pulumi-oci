@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAddressList = new oci.waas.AddressList("testAddressList", {
- *     addresses: _var.address_list_addresses,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.address_list_display_name,
+ * const testAddressList = new oci.waas.AddressList("test_address_list", {
+ *     addresses: addressListAddresses,
+ *     compartmentId: compartmentId,
+ *     displayName: addressListDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

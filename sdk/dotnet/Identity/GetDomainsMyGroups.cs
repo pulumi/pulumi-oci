@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyGroups = Oci.Identity.GetDomainsMyGroups.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyGroupCount = @var.My_group_my_group_count,
-        ///         MyGroupFilter = @var.My_group_my_group_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyGroupCount = myGroupMyGroupCount,
+        ///         MyGroupFilter = myGroupMyGroupFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_group_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_group_resource_type_schema_version,
-        ///         StartIndex = @var.My_group_start_index,
+        ///         Authorization = myGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = myGroupResourceTypeSchemaVersion,
+        ///         StartIndex = myGroupStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyGroups = Oci.Identity.GetDomainsMyGroups.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyGroupCount = @var.My_group_my_group_count,
-        ///         MyGroupFilter = @var.My_group_my_group_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyGroupCount = myGroupMyGroupCount,
+        ///         MyGroupFilter = myGroupMyGroupFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_group_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_group_resource_type_schema_version,
-        ///         StartIndex = @var.My_group_start_index,
+        ///         Authorization = myGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = myGroupResourceTypeSchemaVersion,
+        ///         StartIndex = myGroupStartIndex,
         ///     });
         /// 
         /// });

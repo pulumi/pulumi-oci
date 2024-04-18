@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolume(ctx, &core.GetVolumeArgs{
-//				VolumeId: oci_core_volume.Test_volume.Id,
+//				VolumeId: testVolumeOciCoreVolume.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

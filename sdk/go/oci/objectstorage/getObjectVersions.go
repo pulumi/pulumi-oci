@@ -38,14 +38,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetObjectVersions(ctx, &objectstorage.GetObjectVersionsArgs{
-//				Bucket:     _var.Object_version_bucket,
-//				Namespace:  _var.Object_version_namespace,
-//				Delimiter:  pulumi.StringRef(_var.Object_version_delimiter),
-//				End:        pulumi.StringRef(_var.Object_version_end),
-//				Fields:     pulumi.StringRef(_var.Object_version_fields),
-//				Prefix:     pulumi.StringRef(_var.Object_version_prefix),
-//				Start:      pulumi.StringRef(_var.Object_version_start),
-//				StartAfter: pulumi.StringRef(_var.Object_version_start_after),
+//				Bucket:     objectVersionBucket,
+//				Namespace:  objectVersionNamespace,
+//				Delimiter:  pulumi.StringRef(objectVersionDelimiter),
+//				End:        pulumi.StringRef(objectVersionEnd),
+//				Fields:     pulumi.StringRef(objectVersionFields),
+//				Prefix:     pulumi.StringRef(objectVersionPrefix),
+//				Start:      pulumi.StringRef(objectVersionStart),
+//				StartAfter: pulumi.StringRef(objectVersionStartAfter),
 //			}, nil)
 //			if err != nil {
 //				return err

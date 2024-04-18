@@ -417,10 +417,10 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_container_database = oci.database.ExternalContainerDatabase("testExternalContainerDatabase",
-            compartment_id=var["compartment_id"],
-            display_name=var["external_container_database_display_name"],
-            defined_tags=var["external_container_database_defined_tags"],
+        test_external_container_database = oci.database.ExternalContainerDatabase("test_external_container_database",
+            compartment_id=compartment_id,
+            display_name=external_container_database_display_name,
+            defined_tags=external_container_database_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -464,10 +464,10 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_container_database = oci.database.ExternalContainerDatabase("testExternalContainerDatabase",
-            compartment_id=var["compartment_id"],
-            display_name=var["external_container_database_display_name"],
-            defined_tags=var["external_container_database_defined_tags"],
+        test_external_container_database = oci.database.ExternalContainerDatabase("test_external_container_database",
+            compartment_id=compartment_id,
+            display_name=external_container_database_display_name,
+            defined_tags=external_container_database_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })

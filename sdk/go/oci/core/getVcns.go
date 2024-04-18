@@ -35,9 +35,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVcns(ctx, &core.GetVcnsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Vcn_display_name),
-//				State:         pulumi.StringRef(_var.Vcn_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(vcnDisplayName),
+//				State:         pulumi.StringRef(vcnState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyCustomerSecretKey = Oci.Identity.GetDomainsMyCustomerSecretKey.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyCustomerSecretKeyId = oci_identity_customer_secret_key.Test_customer_secret_key.Id,
-        ///         Authorization = @var.My_customer_secret_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_customer_secret_key_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCustomerSecretKeyId = testCustomerSecretKey.Id,
+        ///         Authorization = myCustomerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyCustomerSecretKey = Oci.Identity.GetDomainsMyCustomerSecretKey.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyCustomerSecretKeyId = oci_identity_customer_secret_key.Test_customer_secret_key.Id,
-        ///         Authorization = @var.My_customer_secret_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_customer_secret_key_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyCustomerSecretKeyId = testCustomerSecretKey.Id,
+        ///         Authorization = myCustomerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = myCustomerSecretKeyResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

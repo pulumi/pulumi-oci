@@ -454,40 +454,40 @@ class SteeringPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_steering_policy = oci.dns.SteeringPolicy("testSteeringPolicy",
-            compartment_id=var["compartment_id"],
-            display_name=var["steering_policy_display_name"],
-            template=var["steering_policy_template"],
+        test_steering_policy = oci.dns.SteeringPolicy("test_steering_policy",
+            compartment_id=compartment_id,
+            display_name=steering_policy_display_name,
+            template=steering_policy_template,
             answers=[oci.dns.SteeringPolicyAnswerArgs(
-                name=var["steering_policy_answers_name"],
-                rdata=var["steering_policy_answers_rdata"],
-                rtype=var["steering_policy_answers_rtype"],
-                is_disabled=var["steering_policy_answers_is_disabled"],
-                pool=var["steering_policy_answers_pool"],
+                name=steering_policy_answers_name,
+                rdata=steering_policy_answers_rdata,
+                rtype=steering_policy_answers_rtype,
+                is_disabled=steering_policy_answers_is_disabled,
+                pool=steering_policy_answers_pool,
             )],
-            defined_tags=var["steering_policy_defined_tags"],
-            freeform_tags=var["steering_policy_freeform_tags"],
-            health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
+            defined_tags=steering_policy_defined_tags,
+            freeform_tags=steering_policy_freeform_tags,
+            health_check_monitor_id=test_http_monitor["id"],
             rules=[oci.dns.SteeringPolicyRuleArgs(
-                rule_type=var["steering_policy_rules_rule_type"],
+                rule_type=steering_policy_rules_rule_type,
                 cases=[oci.dns.SteeringPolicyRuleCaseArgs(
                     answer_datas=[oci.dns.SteeringPolicyRuleCaseAnswerDataArgs(
-                        answer_condition=var["steering_policy_rules_cases_answer_data_answer_condition"],
-                        should_keep=var["steering_policy_rules_cases_answer_data_should_keep"],
-                        value=var["steering_policy_rules_cases_answer_data_value"],
+                        answer_condition=steering_policy_rules_cases_answer_data_answer_condition,
+                        should_keep=steering_policy_rules_cases_answer_data_should_keep,
+                        value=steering_policy_rules_cases_answer_data_value,
                     )],
-                    case_condition=var["steering_policy_rules_cases_case_condition"],
-                    count=var["steering_policy_rules_cases_count"],
+                    case_condition=steering_policy_rules_cases_case_condition,
+                    count=steering_policy_rules_cases_count,
                 )],
                 default_answer_datas=[oci.dns.SteeringPolicyRuleDefaultAnswerDataArgs(
-                    answer_condition=var["steering_policy_rules_default_answer_data_answer_condition"],
-                    should_keep=var["steering_policy_rules_default_answer_data_should_keep"],
-                    value=var["steering_policy_rules_default_answer_data_value"],
+                    answer_condition=steering_policy_rules_default_answer_data_answer_condition,
+                    should_keep=steering_policy_rules_default_answer_data_should_keep,
+                    value=steering_policy_rules_default_answer_data_value,
                 )],
-                default_count=var["steering_policy_rules_default_count"],
-                description=var["steering_policy_rules_description"],
+                default_count=steering_policy_rules_default_count,
+                description=steering_policy_rules_description,
             )],
-            ttl=var["steering_policy_ttl"])
+            ttl=steering_policy_ttl)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -546,40 +546,40 @@ class SteeringPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_steering_policy = oci.dns.SteeringPolicy("testSteeringPolicy",
-            compartment_id=var["compartment_id"],
-            display_name=var["steering_policy_display_name"],
-            template=var["steering_policy_template"],
+        test_steering_policy = oci.dns.SteeringPolicy("test_steering_policy",
+            compartment_id=compartment_id,
+            display_name=steering_policy_display_name,
+            template=steering_policy_template,
             answers=[oci.dns.SteeringPolicyAnswerArgs(
-                name=var["steering_policy_answers_name"],
-                rdata=var["steering_policy_answers_rdata"],
-                rtype=var["steering_policy_answers_rtype"],
-                is_disabled=var["steering_policy_answers_is_disabled"],
-                pool=var["steering_policy_answers_pool"],
+                name=steering_policy_answers_name,
+                rdata=steering_policy_answers_rdata,
+                rtype=steering_policy_answers_rtype,
+                is_disabled=steering_policy_answers_is_disabled,
+                pool=steering_policy_answers_pool,
             )],
-            defined_tags=var["steering_policy_defined_tags"],
-            freeform_tags=var["steering_policy_freeform_tags"],
-            health_check_monitor_id=oci_health_checks_http_monitor["test_http_monitor"]["id"],
+            defined_tags=steering_policy_defined_tags,
+            freeform_tags=steering_policy_freeform_tags,
+            health_check_monitor_id=test_http_monitor["id"],
             rules=[oci.dns.SteeringPolicyRuleArgs(
-                rule_type=var["steering_policy_rules_rule_type"],
+                rule_type=steering_policy_rules_rule_type,
                 cases=[oci.dns.SteeringPolicyRuleCaseArgs(
                     answer_datas=[oci.dns.SteeringPolicyRuleCaseAnswerDataArgs(
-                        answer_condition=var["steering_policy_rules_cases_answer_data_answer_condition"],
-                        should_keep=var["steering_policy_rules_cases_answer_data_should_keep"],
-                        value=var["steering_policy_rules_cases_answer_data_value"],
+                        answer_condition=steering_policy_rules_cases_answer_data_answer_condition,
+                        should_keep=steering_policy_rules_cases_answer_data_should_keep,
+                        value=steering_policy_rules_cases_answer_data_value,
                     )],
-                    case_condition=var["steering_policy_rules_cases_case_condition"],
-                    count=var["steering_policy_rules_cases_count"],
+                    case_condition=steering_policy_rules_cases_case_condition,
+                    count=steering_policy_rules_cases_count,
                 )],
                 default_answer_datas=[oci.dns.SteeringPolicyRuleDefaultAnswerDataArgs(
-                    answer_condition=var["steering_policy_rules_default_answer_data_answer_condition"],
-                    should_keep=var["steering_policy_rules_default_answer_data_should_keep"],
-                    value=var["steering_policy_rules_default_answer_data_value"],
+                    answer_condition=steering_policy_rules_default_answer_data_answer_condition,
+                    should_keep=steering_policy_rules_default_answer_data_should_keep,
+                    value=steering_policy_rules_default_answer_data_value,
                 )],
-                default_count=var["steering_policy_rules_default_count"],
-                description=var["steering_policy_rules_description"],
+                default_count=steering_policy_rules_default_count,
+                description=steering_policy_rules_description,
             )],
-            ttl=var["steering_policy_ttl"])
+            ttl=steering_policy_ttl)
         ```
         <!--End PulumiCodeChooser -->
 

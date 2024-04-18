@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourcePackageGroups = oci.OsManagementHub.getSoftwareSourcePackageGroups({
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     compartmentId: _var.compartment_id,
- *     groupTypes: _var.software_source_package_group_group_type,
- *     name: _var.software_source_package_group_name,
- *     nameContains: _var.software_source_package_group_name_contains,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     compartmentId: compartmentId,
+ *     groupTypes: softwareSourcePackageGroupGroupType,
+ *     name: softwareSourcePackageGroupName,
+ *     nameContains: softwareSourcePackageGroupNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -108,11 +108,11 @@ export interface GetSoftwareSourcePackageGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSoftwareSourcePackageGroups = oci.OsManagementHub.getSoftwareSourcePackageGroups({
- *     softwareSourceId: oci_os_management_hub_software_source.test_software_source.id,
- *     compartmentId: _var.compartment_id,
- *     groupTypes: _var.software_source_package_group_group_type,
- *     name: _var.software_source_package_group_name,
- *     nameContains: _var.software_source_package_group_name_contains,
+ *     softwareSourceId: testSoftwareSource.id,
+ *     compartmentId: compartmentId,
+ *     groupTypes: softwareSourcePackageGroupGroupType,
+ *     name: softwareSourcePackageGroupName,
+ *     nameContains: softwareSourcePackageGroupNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

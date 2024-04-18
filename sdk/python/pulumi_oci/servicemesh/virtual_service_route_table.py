@@ -404,29 +404,30 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("testVirtualServiceRouteTable",
-            compartment_id=var["compartment_id"],
+        test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("test_virtual_service_route_table",
+            compartment_id=compartment_id,
+            name=virtual_service_route_table_name,
             route_rules=[oci.service_mesh.VirtualServiceRouteTableRouteRuleArgs(
                 destinations=[oci.service_mesh.VirtualServiceRouteTableRouteRuleDestinationArgs(
-                    virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"],
-                    weight=var["virtual_service_route_table_route_rules_destinations_weight"],
-                    port=var["virtual_service_route_table_route_rules_destinations_port"],
+                    virtual_deployment_id=test_virtual_deployment["id"],
+                    weight=virtual_service_route_table_route_rules_destinations_weight,
+                    port=virtual_service_route_table_route_rules_destinations_port,
                 )],
-                type=var["virtual_service_route_table_route_rules_type"],
-                is_grpc=var["virtual_service_route_table_route_rules_is_grpc"],
-                path=var["virtual_service_route_table_route_rules_path"],
-                path_type=var["virtual_service_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["virtual_service_route_table_route_rules_request_timeout_in_ms"],
+                type=virtual_service_route_table_route_rules_type,
+                is_grpc=virtual_service_route_table_route_rules_is_grpc,
+                path=virtual_service_route_table_route_rules_path,
+                path_type=virtual_service_route_table_route_rules_path_type,
+                request_timeout_in_ms=virtual_service_route_table_route_rules_request_timeout_in_ms,
             )],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
+            virtual_service_id=test_virtual_service["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["virtual_service_route_table_description"],
+            description=virtual_service_route_table_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=var["virtual_service_route_table_priority"])
+            priority=virtual_service_route_table_priority)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -471,29 +472,30 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("testVirtualServiceRouteTable",
-            compartment_id=var["compartment_id"],
+        test_virtual_service_route_table = oci.service_mesh.VirtualServiceRouteTable("test_virtual_service_route_table",
+            compartment_id=compartment_id,
+            name=virtual_service_route_table_name,
             route_rules=[oci.service_mesh.VirtualServiceRouteTableRouteRuleArgs(
                 destinations=[oci.service_mesh.VirtualServiceRouteTableRouteRuleDestinationArgs(
-                    virtual_deployment_id=oci_service_mesh_virtual_deployment["test_virtual_deployment"]["id"],
-                    weight=var["virtual_service_route_table_route_rules_destinations_weight"],
-                    port=var["virtual_service_route_table_route_rules_destinations_port"],
+                    virtual_deployment_id=test_virtual_deployment["id"],
+                    weight=virtual_service_route_table_route_rules_destinations_weight,
+                    port=virtual_service_route_table_route_rules_destinations_port,
                 )],
-                type=var["virtual_service_route_table_route_rules_type"],
-                is_grpc=var["virtual_service_route_table_route_rules_is_grpc"],
-                path=var["virtual_service_route_table_route_rules_path"],
-                path_type=var["virtual_service_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["virtual_service_route_table_route_rules_request_timeout_in_ms"],
+                type=virtual_service_route_table_route_rules_type,
+                is_grpc=virtual_service_route_table_route_rules_is_grpc,
+                path=virtual_service_route_table_route_rules_path,
+                path_type=virtual_service_route_table_route_rules_path_type,
+                request_timeout_in_ms=virtual_service_route_table_route_rules_request_timeout_in_ms,
             )],
-            virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
+            virtual_service_id=test_virtual_service["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["virtual_service_route_table_description"],
+            description=virtual_service_route_table_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=var["virtual_service_route_table_priority"])
+            priority=virtual_service_route_table_priority)
         ```
         <!--End PulumiCodeChooser -->
 

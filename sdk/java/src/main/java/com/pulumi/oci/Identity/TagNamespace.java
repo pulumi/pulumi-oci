@@ -59,8 +59,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTagNamespace = new TagNamespace(&#34;testTagNamespace&#34;, TagNamespaceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .description(var_.tag_namespace_description())
+ *             .compartmentId(compartmentId)
+ *             .description(tagNamespaceDescription)
+ *             .name(tagNamespaceName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isRetired(false)

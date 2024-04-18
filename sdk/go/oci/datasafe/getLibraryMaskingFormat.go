@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetLibraryMaskingFormat(ctx, &datasafe.GetLibraryMaskingFormatArgs{
-//				LibraryMaskingFormatId: oci_data_safe_library_masking_format.Test_library_masking_format.Id,
+//				LibraryMaskingFormatId: testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

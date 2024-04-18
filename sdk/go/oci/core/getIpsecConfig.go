@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetIpsecConfig(ctx, &core.GetIpsecConfigArgs{
-//				IpsecId: oci_core_ipsec.Test_ipsec.Id,
+//				IpsecId: testIpsec.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

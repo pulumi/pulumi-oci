@@ -25,15 +25,16 @@ namespace Pulumi.Oci.Logging
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogSavedSearch = new Oci.Logging.LogSavedSearch("testLogSavedSearch", new()
+    ///     var testLogSavedSearch = new Oci.Logging.LogSavedSearch("test_log_saved_search", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Query = @var.Log_saved_search_query,
+    ///         CompartmentId = compartmentId,
+    ///         Name = logSavedSearchName,
+    ///         Query = logSavedSearchQuery,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Log_saved_search_description,
+    ///         Description = logSavedSearchDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

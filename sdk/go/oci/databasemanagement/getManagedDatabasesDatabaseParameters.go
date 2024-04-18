@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabasesDatabaseParameters(ctx, &databasemanagement.GetManagedDatabasesDatabaseParametersArgs{
-//				ManagedDatabaseId:       oci_database_management_managed_database.Test_managed_database.Id,
-//				IsAllowedValuesIncluded: pulumi.BoolRef(_var.Managed_databases_database_parameter_is_allowed_values_included),
-//				Name:                    pulumi.StringRef(_var.Managed_databases_database_parameter_name),
-//				OpcNamedCredentialId:    pulumi.StringRef(_var.Managed_databases_database_parameter_opc_named_credential_id),
-//				Source:                  pulumi.StringRef(_var.Managed_databases_database_parameter_source),
+//				ManagedDatabaseId:       testManagedDatabase.Id,
+//				IsAllowedValuesIncluded: pulumi.BoolRef(managedDatabasesDatabaseParameterIsAllowedValuesIncluded),
+//				Name:                    pulumi.StringRef(managedDatabasesDatabaseParameterName),
+//				OpcNamedCredentialId:    pulumi.StringRef(managedDatabasesDatabaseParameterOpcNamedCredentialId),
+//				Source:                  pulumi.StringRef(managedDatabasesDatabaseParameterSource),
 //			}, nil)
 //			if err != nil {
 //				return err

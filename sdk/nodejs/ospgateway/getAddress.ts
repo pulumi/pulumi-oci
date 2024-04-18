@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAddress = oci.OspGateway.getAddress({
- *     addressId: oci_osp_gateway_addres.test_addres.id,
- *     compartmentId: _var.compartment_id,
- *     ospHomeRegion: _var.address_osp_home_region,
+ *     addressId: testAddres.id,
+ *     compartmentId: compartmentId,
+ *     ospHomeRegion: addressOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -181,9 +181,9 @@ export interface GetAddressResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAddress = oci.OspGateway.getAddress({
- *     addressId: oci_osp_gateway_addres.test_addres.id,
- *     compartmentId: _var.compartment_id,
- *     ospHomeRegion: _var.address_osp_home_region,
+ *     addressId: testAddres.id,
+ *     compartmentId: compartmentId,
+ *     ospHomeRegion: addressOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

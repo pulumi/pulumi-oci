@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceIngestTimeRule(ctx, &loganalytics.GetNamespaceIngestTimeRuleArgs{
-//				IngestTimeRuleId: oci_events_rule.Test_rule.Id,
-//				Namespace:        _var.Namespace_ingest_time_rule_namespace,
+//				IngestTimeRuleId: testRule.Id,
+//				Namespace:        namespaceIngestTimeRuleNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

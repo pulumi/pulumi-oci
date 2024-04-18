@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetSoftwareSourceModuleStreamProfile(ctx, &osmanagement.GetSoftwareSourceModuleStreamProfileArgs{
-//				ModuleName:       _var.Software_source_module_name,
-//				ProfileName:      _var.Software_source_module_stream_profile_name,
-//				SoftwareSourceId: _var.Software_source.Id,
-//				StreamName:       _var.Software_source_module_stream_name,
+//				ModuleName:       softwareSourceModuleName,
+//				ProfileName:      softwareSourceModuleStreamProfileName,
+//				SoftwareSourceId: softwareSource.Id,
+//				StreamName:       softwareSourceModuleStreamName,
 //			}, nil)
 //			if err != nil {
 //				return err

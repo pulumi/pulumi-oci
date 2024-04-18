@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataAssets = oci.AiAnomalyDetection.getDetectionDataAssets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.data_asset_display_name,
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
- *     state: _var.data_asset_state,
+ *     compartmentId: compartmentId,
+ *     displayName: dataAssetDisplayName,
+ *     projectId: testProject.id,
+ *     state: dataAssetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetDetectionDataAssetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataAssets = oci.AiAnomalyDetection.getDetectionDataAssets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.data_asset_display_name,
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
- *     state: _var.data_asset_state,
+ *     compartmentId: compartmentId,
+ *     displayName: dataAssetDisplayName,
+ *     projectId: testProject.id,
+ *     state: dataAssetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

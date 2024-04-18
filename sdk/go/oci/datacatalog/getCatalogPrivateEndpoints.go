@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetCatalogPrivateEndpoints(ctx, &datacatalog.GetCatalogPrivateEndpointsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Catalog_private_endpoint_display_name),
-//				State:         pulumi.StringRef(_var.Catalog_private_endpoint_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(catalogPrivateEndpointDisplayName),
+//				State:         pulumi.StringRef(catalogPrivateEndpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

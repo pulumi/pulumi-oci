@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryArchiveContent(ctx, &devops.GetRepositoryArchiveContentArgs{
-//				RepositoryId: oci_devops_repository.Test_repository.Id,
-//				Format:       pulumi.StringRef(_var.Repository_archive_content_format),
-//				RefName:      pulumi.StringRef(_var.Repository_archive_content_ref_name),
+//				RepositoryId: testRepository.Id,
+//				Format:       pulumi.StringRef(repositoryArchiveContentFormat),
+//				RefName:      pulumi.StringRef(repositoryArchiveContentRefName),
 //			}, nil)
 //			if err != nil {
 //				return err

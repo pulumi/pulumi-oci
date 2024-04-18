@@ -19,40 +19,40 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicy = new oci.dns.SteeringPolicy("testSteeringPolicy", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.steering_policy_display_name,
- *     template: _var.steering_policy_template,
+ * const testSteeringPolicy = new oci.dns.SteeringPolicy("test_steering_policy", {
+ *     compartmentId: compartmentId,
+ *     displayName: steeringPolicyDisplayName,
+ *     template: steeringPolicyTemplate,
  *     answers: [{
- *         name: _var.steering_policy_answers_name,
- *         rdata: _var.steering_policy_answers_rdata,
- *         rtype: _var.steering_policy_answers_rtype,
- *         isDisabled: _var.steering_policy_answers_is_disabled,
- *         pool: _var.steering_policy_answers_pool,
+ *         name: steeringPolicyAnswersName,
+ *         rdata: steeringPolicyAnswersRdata,
+ *         rtype: steeringPolicyAnswersRtype,
+ *         isDisabled: steeringPolicyAnswersIsDisabled,
+ *         pool: steeringPolicyAnswersPool,
  *     }],
- *     definedTags: _var.steering_policy_defined_tags,
- *     freeformTags: _var.steering_policy_freeform_tags,
- *     healthCheckMonitorId: oci_health_checks_http_monitor.test_http_monitor.id,
+ *     definedTags: steeringPolicyDefinedTags,
+ *     freeformTags: steeringPolicyFreeformTags,
+ *     healthCheckMonitorId: testHttpMonitor.id,
  *     rules: [{
- *         ruleType: _var.steering_policy_rules_rule_type,
+ *         ruleType: steeringPolicyRulesRuleType,
  *         cases: [{
  *             answerDatas: [{
- *                 answerCondition: _var.steering_policy_rules_cases_answer_data_answer_condition,
- *                 shouldKeep: _var.steering_policy_rules_cases_answer_data_should_keep,
- *                 value: _var.steering_policy_rules_cases_answer_data_value,
+ *                 answerCondition: steeringPolicyRulesCasesAnswerDataAnswerCondition,
+ *                 shouldKeep: steeringPolicyRulesCasesAnswerDataShouldKeep,
+ *                 value: steeringPolicyRulesCasesAnswerDataValue,
  *             }],
- *             caseCondition: _var.steering_policy_rules_cases_case_condition,
- *             count: _var.steering_policy_rules_cases_count,
+ *             caseCondition: steeringPolicyRulesCasesCaseCondition,
+ *             count: steeringPolicyRulesCasesCount,
  *         }],
  *         defaultAnswerDatas: [{
- *             answerCondition: _var.steering_policy_rules_default_answer_data_answer_condition,
- *             shouldKeep: _var.steering_policy_rules_default_answer_data_should_keep,
- *             value: _var.steering_policy_rules_default_answer_data_value,
+ *             answerCondition: steeringPolicyRulesDefaultAnswerDataAnswerCondition,
+ *             shouldKeep: steeringPolicyRulesDefaultAnswerDataShouldKeep,
+ *             value: steeringPolicyRulesDefaultAnswerDataValue,
  *         }],
- *         defaultCount: _var.steering_policy_rules_default_count,
- *         description: _var.steering_policy_rules_description,
+ *         defaultCount: steeringPolicyRulesDefaultCount,
+ *         description: steeringPolicyRulesDescription,
  *     }],
- *     ttl: _var.steering_policy_ttl,
+ *     ttl: steeringPolicyTtl,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

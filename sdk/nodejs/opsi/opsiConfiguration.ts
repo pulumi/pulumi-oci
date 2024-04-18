@@ -18,27 +18,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpsiConfiguration = new oci.opsi.OpsiConfiguration("testOpsiConfiguration", {
- *     opsiConfigType: _var.opsi_configuration_opsi_config_type,
- *     compartmentId: _var.compartment_id,
- *     configItemCustomStatuses: _var.opsi_configuration_config_item_custom_status,
- *     configItemFields: _var.opsi_configuration_config_item_field,
+ * const testOpsiConfiguration = new oci.opsi.OpsiConfiguration("test_opsi_configuration", {
+ *     opsiConfigType: opsiConfigurationOpsiConfigType,
+ *     compartmentId: compartmentId,
+ *     configItemCustomStatuses: opsiConfigurationConfigItemCustomStatus,
+ *     configItemFields: opsiConfigurationConfigItemField,
  *     configItems: [{
- *         configItemType: _var.opsi_configuration_config_items_config_item_type,
- *         name: _var.opsi_configuration_config_items_name,
- *         value: _var.opsi_configuration_config_items_value,
+ *         configItemType: opsiConfigurationConfigItemsConfigItemType,
+ *         name: opsiConfigurationConfigItemsName,
+ *         value: opsiConfigurationConfigItemsValue,
  *     }],
- *     configItemsApplicableContexts: _var.opsi_configuration_config_items_applicable_context,
+ *     configItemsApplicableContexts: opsiConfigurationConfigItemsApplicableContext,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.opsi_configuration_description,
- *     displayName: _var.opsi_configuration_display_name,
+ *     description: opsiConfigurationDescription,
+ *     displayName: opsiConfigurationDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     opsiConfigFields: _var.opsi_configuration_opsi_config_field,
- *     systemTags: _var.opsi_configuration_system_tags,
+ *     opsiConfigFields: opsiConfigurationOpsiConfigField,
+ *     systemTags: opsiConfigurationSystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

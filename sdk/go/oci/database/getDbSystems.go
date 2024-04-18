@@ -35,11 +35,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbSystems(ctx, &database.GetDbSystemsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Db_system_availability_domain),
-//				BackupId:           pulumi.StringRef(oci_database_backup.Test_backup.Id),
-//				DisplayName:        pulumi.StringRef(_var.Db_system_display_name),
-//				State:              pulumi.StringRef(_var.Db_system_state),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(dbSystemAvailabilityDomain),
+//				BackupId:           pulumi.StringRef(testBackup.Id),
+//				DisplayName:        pulumi.StringRef(dbSystemDisplayName),
+//				State:              pulumi.StringRef(dbSystemState),
 //			}, nil)
 //			if err != nil {
 //				return err

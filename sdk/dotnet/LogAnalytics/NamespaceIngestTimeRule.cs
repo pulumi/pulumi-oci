@@ -25,44 +25,44 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNamespaceIngestTimeRule = new Oci.LogAnalytics.NamespaceIngestTimeRule("testNamespaceIngestTimeRule", new()
+    ///     var testNamespaceIngestTimeRule = new Oci.LogAnalytics.NamespaceIngestTimeRule("test_namespace_ingest_time_rule", new()
     ///     {
     ///         Actions = new[]
     ///         {
     ///             new Oci.LogAnalytics.Inputs.NamespaceIngestTimeRuleActionArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 MetricName = oci_monitoring_metric.Test_metric.Name,
-    ///                 Namespace = @var.Namespace_ingest_time_rule_actions_namespace,
-    ///                 Type = @var.Namespace_ingest_time_rule_actions_type,
-    ///                 Dimensions = @var.Namespace_ingest_time_rule_actions_dimensions,
-    ///                 ResourceGroup = @var.Namespace_ingest_time_rule_actions_resource_group,
+    ///                 CompartmentId = compartmentId,
+    ///                 MetricName = testMetric.Name,
+    ///                 Namespace = namespaceIngestTimeRuleActionsNamespace,
+    ///                 Type = namespaceIngestTimeRuleActionsType,
+    ///                 Dimensions = namespaceIngestTimeRuleActionsDimensions,
+    ///                 ResourceGroup = namespaceIngestTimeRuleActionsResourceGroup,
     ///             },
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Conditions = new Oci.LogAnalytics.Inputs.NamespaceIngestTimeRuleConditionsArgs
     ///         {
-    ///             FieldName = @var.Namespace_ingest_time_rule_conditions_field_name,
-    ///             FieldOperator = @var.Namespace_ingest_time_rule_conditions_field_operator,
-    ///             FieldValue = @var.Namespace_ingest_time_rule_conditions_field_value,
-    ///             Kind = @var.Namespace_ingest_time_rule_conditions_kind,
+    ///             FieldName = namespaceIngestTimeRuleConditionsFieldName,
+    ///             FieldOperator = namespaceIngestTimeRuleConditionsFieldOperator,
+    ///             FieldValue = namespaceIngestTimeRuleConditionsFieldValue,
+    ///             Kind = namespaceIngestTimeRuleConditionsKind,
     ///             AdditionalConditions = new[]
     ///             {
     ///                 new Oci.LogAnalytics.Inputs.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs
     ///                 {
-    ///                     ConditionField = @var.Namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
-    ///                     ConditionOperator = @var.Namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
-    ///                     ConditionValue = @var.Namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
+    ///                     ConditionField = namespaceIngestTimeRuleConditionsAdditionalConditionsConditionField,
+    ///                     ConditionOperator = namespaceIngestTimeRuleConditionsAdditionalConditionsConditionOperator,
+    ///                     ConditionValue = namespaceIngestTimeRuleConditionsAdditionalConditionsConditionValue,
     ///                 },
     ///             },
     ///         },
-    ///         DisplayName = @var.Namespace_ingest_time_rule_display_name,
-    ///         Namespace = @var.Namespace_ingest_time_rule_namespace,
+    ///         DisplayName = namespaceIngestTimeRuleDisplayName,
+    ///         Namespace = namespaceIngestTimeRuleNamespace,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Namespace_ingest_time_rule_description,
+    ///         Description = namespaceIngestTimeRuleDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testExadataInsight = Oci.Opsi.GetExadataInsight.Invoke(new()
         ///     {
-        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///         ExadataInsightId = testExadataInsightOciOpsiExadataInsight.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testExadataInsight = Oci.Opsi.GetExadataInsight.Invoke(new()
         ///     {
-        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+        ///         ExadataInsightId = testExadataInsightOciOpsiExadataInsight.Id,
         ///     });
         /// 
         /// });

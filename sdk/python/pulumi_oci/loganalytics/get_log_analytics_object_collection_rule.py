@@ -402,8 +402,8 @@ def get_log_analytics_object_collection_rule(log_analytics_object_collection_rul
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"])
+    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=test_log_analytics_object_collection_rule_oci_log_analytics_log_analytics_object_collection_rule["id"],
+        namespace=log_analytics_object_collection_rule_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -466,8 +466,8 @@ def get_log_analytics_object_collection_rule_output(log_analytics_object_collect
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=oci_log_analytics_log_analytics_object_collection_rule["test_log_analytics_object_collection_rule"]["id"],
-        namespace=var["log_analytics_object_collection_rule_namespace"])
+    test_log_analytics_object_collection_rule = oci.LogAnalytics.get_log_analytics_object_collection_rule(log_analytics_object_collection_rule_id=test_log_analytics_object_collection_rule_oci_log_analytics_log_analytics_object_collection_rule["id"],
+        namespace=log_analytics_object_collection_rule_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

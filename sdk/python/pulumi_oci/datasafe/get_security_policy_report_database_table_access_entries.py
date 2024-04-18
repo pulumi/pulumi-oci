@@ -103,8 +103,8 @@ def get_security_policy_report_database_table_access_entries(filters: Optional[S
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_table_access_entries = oci.DataSafe.get_security_policy_report_database_table_access_entries(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"],
-        scim_query=var["security_policy_report_database_table_access_entry_scim_query"])
+    test_security_policy_report_database_table_access_entries = oci.DataSafe.get_security_policy_report_database_table_access_entries(security_policy_report_id=test_security_policy_report["id"],
+        scim_query=security_policy_report_database_table_access_entry_scim_query)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_security_policy_report_database_table_access_entries_output(filters: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_report_database_table_access_entries = oci.DataSafe.get_security_policy_report_database_table_access_entries(security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"],
-        scim_query=var["security_policy_report_database_table_access_entry_scim_query"])
+    test_security_policy_report_database_table_access_entries = oci.DataSafe.get_security_policy_report_database_table_access_entries(security_policy_report_id=test_security_policy_report["id"],
+        scim_query=security_policy_report_database_table_access_entry_scim_query)
     ```
     <!--End PulumiCodeChooser -->
 

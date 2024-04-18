@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetExternalNonContainerDatabases(ctx, &database.GetExternalNonContainerDatabasesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.External_non_container_database_display_name),
-//				State:         pulumi.StringRef(_var.External_non_container_database_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(externalNonContainerDatabaseDisplayName),
+//				State:         pulumi.StringRef(externalNonContainerDatabaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

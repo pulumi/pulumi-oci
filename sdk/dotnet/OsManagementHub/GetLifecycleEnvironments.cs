@@ -31,13 +31,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testLifecycleEnvironments = Oci.OsManagementHub.GetLifecycleEnvironments.Invoke(new()
         ///     {
-        ///         ArchType = @var.Lifecycle_environment_arch_type,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Lifecycle_environment_display_name,
-        ///         DisplayNameContains = @var.Lifecycle_environment_display_name_contains,
-        ///         LifecycleEnvironmentId = oci_os_management_hub_lifecycle_environment.Test_lifecycle_environment.Id,
-        ///         OsFamily = @var.Lifecycle_environment_os_family,
-        ///         State = @var.Lifecycle_environment_state,
+        ///         ArchType = lifecycleEnvironmentArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = lifecycleEnvironmentDisplayName,
+        ///         DisplayNameContains = lifecycleEnvironmentDisplayNameContains,
+        ///         LifecycleEnvironmentId = testLifecycleEnvironment.Id,
+        ///         OsFamily = lifecycleEnvironmentOsFamily,
+        ///         State = lifecycleEnvironmentState,
         ///     });
         /// 
         /// });
@@ -67,13 +67,13 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testLifecycleEnvironments = Oci.OsManagementHub.GetLifecycleEnvironments.Invoke(new()
         ///     {
-        ///         ArchType = @var.Lifecycle_environment_arch_type,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Lifecycle_environment_display_name,
-        ///         DisplayNameContains = @var.Lifecycle_environment_display_name_contains,
-        ///         LifecycleEnvironmentId = oci_os_management_hub_lifecycle_environment.Test_lifecycle_environment.Id,
-        ///         OsFamily = @var.Lifecycle_environment_os_family,
-        ///         State = @var.Lifecycle_environment_state,
+        ///         ArchType = lifecycleEnvironmentArchType,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = lifecycleEnvironmentDisplayName,
+        ///         DisplayNameContains = lifecycleEnvironmentDisplayNameContains,
+        ///         LifecycleEnvironmentId = testLifecycleEnvironment.Id,
+        ///         OsFamily = lifecycleEnvironmentOsFamily,
+        ///         State = lifecycleEnvironmentState,
         ///     });
         /// 
         /// });

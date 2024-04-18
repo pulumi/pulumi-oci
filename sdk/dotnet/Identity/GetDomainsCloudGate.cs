@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGate = Oci.Identity.GetDomainsCloudGate.Invoke(new()
         ///     {
-        ///         CloudGateId = oci_identity_domains_cloud_gate.Test_cloud_gate.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         CloudGateId = testCloudGateOciIdentityDomainsCloudGate.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_resource_type_schema_version,
+        ///         Authorization = cloudGateAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGate = Oci.Identity.GetDomainsCloudGate.Invoke(new()
         ///     {
-        ///         CloudGateId = oci_identity_domains_cloud_gate.Test_cloud_gate.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         CloudGateId = testCloudGateOciIdentityDomainsCloudGate.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_resource_type_schema_version,
+        ///         Authorization = cloudGateAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

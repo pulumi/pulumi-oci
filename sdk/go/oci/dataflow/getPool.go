@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetPool(ctx, &dataflow.GetPoolArgs{
-//				PoolId: oci_dataflow_pool.Test_pool.Id,
+//				PoolId: testPoolOciDataflowPool.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

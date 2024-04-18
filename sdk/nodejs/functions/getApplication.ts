@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApplication = oci.Functions.getApplication({
- *     applicationId: oci_functions_application.test_application.id,
+ *     applicationId: testApplicationOciFunctionsApplication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetApplicationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApplication = oci.Functions.getApplication({
- *     applicationId: oci_functions_application.test_application.id,
+ *     applicationId: testApplicationOciFunctionsApplication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

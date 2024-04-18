@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.NewScript(ctx, "testScript", &ApmSynthetics.ScriptArgs{
-//				ApmDomainId:     pulumi.Any(oci_apm_synthetics_apm_domain.Test_apm_domain.Id),
-//				Content:         pulumi.Any(_var.Script_content),
-//				ContentType:     pulumi.Any(_var.Script_content_type),
-//				DisplayName:     pulumi.Any(_var.Script_display_name),
-//				ContentFileName: pulumi.Any(_var.Script_content_file_name),
+//			_, err := ApmSynthetics.NewScript(ctx, "test_script", &ApmSynthetics.ScriptArgs{
+//				ApmDomainId:     pulumi.Any(testApmDomain.Id),
+//				Content:         pulumi.Any(scriptContent),
+//				ContentType:     pulumi.Any(scriptContentType),
+//				DisplayName:     pulumi.Any(scriptDisplayName),
+//				ContentFileName: pulumi.Any(scriptContentFileName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -45,9 +45,9 @@ import (
 //				},
 //				Parameters: apmsynthetics.ScriptParameterArray{
 //					&apmsynthetics.ScriptParameterArgs{
-//						ParamName:  pulumi.Any(_var.Script_parameters_param_name),
-//						IsSecret:   pulumi.Any(_var.Script_parameters_is_secret),
-//						ParamValue: pulumi.Any(_var.Script_parameters_param_value),
+//						ParamName:  pulumi.Any(scriptParametersParamName),
+//						IsSecret:   pulumi.Any(scriptParametersIsSecret),
+//						ParamValue: pulumi.Any(scriptParametersParamValue),
 //					},
 //				},
 //			})

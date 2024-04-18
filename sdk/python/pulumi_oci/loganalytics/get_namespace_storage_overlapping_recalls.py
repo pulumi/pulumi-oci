@@ -117,9 +117,9 @@ def get_namespace_storage_overlapping_recalls(filters: Optional[Sequence[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=var["namespace_storage_overlapping_recall_namespace"],
-        time_data_ended=var["namespace_storage_overlapping_recall_time_data_ended"],
-        time_data_started=var["namespace_storage_overlapping_recall_time_data_started"])
+    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=namespace_storage_overlapping_recall_namespace,
+        time_data_ended=namespace_storage_overlapping_recall_time_data_ended,
+        time_data_started=namespace_storage_overlapping_recall_time_data_started)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_namespace_storage_overlapping_recalls_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=var["namespace_storage_overlapping_recall_namespace"],
-        time_data_ended=var["namespace_storage_overlapping_recall_time_data_ended"],
-        time_data_started=var["namespace_storage_overlapping_recall_time_data_started"])
+    test_namespace_storage_overlapping_recalls = oci.LogAnalytics.get_namespace_storage_overlapping_recalls(namespace=namespace_storage_overlapping_recall_namespace,
+        time_data_ended=namespace_storage_overlapping_recall_time_data_ended,
+        time_data_started=namespace_storage_overlapping_recall_time_data_started)
     ```
     <!--End PulumiCodeChooser -->
 

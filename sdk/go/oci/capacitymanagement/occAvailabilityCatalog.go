@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CapacityManagement.NewOccAvailabilityCatalog(ctx, "testOccAvailabilityCatalog", &CapacityManagement.OccAvailabilityCatalogArgs{
-//				Base64encodedCatalogDetails: pulumi.Any(_var.Occ_availability_catalog_base64encoded_catalog_details),
-//				CompartmentId:               pulumi.Any(_var.Compartment_id),
-//				DisplayName:                 pulumi.Any(_var.Occ_availability_catalog_display_name),
-//				Namespace:                   pulumi.Any(_var.Occ_availability_catalog_namespace),
-//				OccCustomerGroupId:          pulumi.Any(oci_capacity_management_occ_customer_group.Test_occ_customer_group.Id),
+//			_, err := CapacityManagement.NewOccAvailabilityCatalog(ctx, "test_occ_availability_catalog", &CapacityManagement.OccAvailabilityCatalogArgs{
+//				Base64encodedCatalogDetails: pulumi.Any(occAvailabilityCatalogBase64encodedCatalogDetails),
+//				CompartmentId:               pulumi.Any(compartmentId),
+//				DisplayName:                 pulumi.Any(occAvailabilityCatalogDisplayName),
+//				Namespace:                   pulumi.Any(occAvailabilityCatalogNamespace),
+//				OccCustomerGroupId:          pulumi.Any(testOccCustomerGroup.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Occ_availability_catalog_description),
+//				Description: pulumi.Any(occAvailabilityCatalogDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				MetadataDetails: &capacitymanagement.OccAvailabilityCatalogMetadataDetailsArgs{
-//					FormatVersion: pulumi.Any(_var.Occ_availability_catalog_metadata_details_format_version),
+//					FormatVersion: pulumi.Any(occAvailabilityCatalogMetadataDetailsFormatVersion),
 //				},
 //			})
 //			if err != nil {

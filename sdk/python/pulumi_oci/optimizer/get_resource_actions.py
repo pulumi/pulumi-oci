@@ -209,17 +209,17 @@ def get_resource_actions(child_tenancy_ids: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
-        child_tenancy_ids=var["resource_action_child_tenancy_ids"],
-        include_organization=var["resource_action_include_organization"],
-        include_resource_metadata=var["resource_action_include_resource_metadata"],
-        name=var["resource_action_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["resource_action_resource_type"],
-        state=var["resource_action_state"],
-        status=var["resource_action_status"])
+    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=compartment_id,
+        compartment_id_in_subtree=resource_action_compartment_id_in_subtree,
+        child_tenancy_ids=resource_action_child_tenancy_ids,
+        include_organization=resource_action_include_organization,
+        include_resource_metadata=resource_action_include_resource_metadata,
+        name=resource_action_name,
+        recommendation_id=test_recommendation["id"],
+        recommendation_name=test_recommendation["name"],
+        resource_type=resource_action_resource_type,
+        state=resource_action_state,
+        status=resource_action_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -307,17 +307,17 @@ def get_resource_actions_output(child_tenancy_ids: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["resource_action_compartment_id_in_subtree"],
-        child_tenancy_ids=var["resource_action_child_tenancy_ids"],
-        include_organization=var["resource_action_include_organization"],
-        include_resource_metadata=var["resource_action_include_resource_metadata"],
-        name=var["resource_action_name"],
-        recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"],
-        resource_type=var["resource_action_resource_type"],
-        state=var["resource_action_state"],
-        status=var["resource_action_status"])
+    test_resource_actions = oci.Optimizer.get_resource_actions(compartment_id=compartment_id,
+        compartment_id_in_subtree=resource_action_compartment_id_in_subtree,
+        child_tenancy_ids=resource_action_child_tenancy_ids,
+        include_organization=resource_action_include_organization,
+        include_resource_metadata=resource_action_include_resource_metadata,
+        name=resource_action_name,
+        recommendation_id=test_recommendation["id"],
+        recommendation_name=test_recommendation["name"],
+        resource_type=resource_action_resource_type,
+        state=resource_action_state,
+        status=resource_action_status)
     ```
     <!--End PulumiCodeChooser -->
 

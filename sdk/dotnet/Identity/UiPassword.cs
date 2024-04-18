@@ -35,9 +35,9 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUiPassword = new Oci.Identity.UiPassword("testUiPassword", new()
+    ///     var testUiPassword = new Oci.Identity.UiPassword("test_ui_password", new()
     ///     {
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

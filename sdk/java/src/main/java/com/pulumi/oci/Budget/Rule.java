@@ -48,16 +48,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAlertRule = new Rule(&#34;testAlertRule&#34;, RuleArgs.builder()        
- *             .budgetId(oci_budget_budget.test_budget().id())
- *             .threshold(var_.alert_rule_threshold())
- *             .thresholdType(var_.alert_rule_threshold_type())
- *             .type(var_.alert_rule_type())
+ *             .budgetId(testBudget.id())
+ *             .threshold(alertRuleThreshold)
+ *             .thresholdType(alertRuleThresholdType)
+ *             .type(alertRuleType)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.alert_rule_description())
- *             .displayName(var_.alert_rule_display_name())
+ *             .description(alertRuleDescription)
+ *             .displayName(alertRuleDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .message(var_.alert_rule_message())
- *             .recipients(var_.alert_rule_recipients())
+ *             .message(alertRuleMessage)
+ *             .recipients(alertRuleRecipients)
  *             .build());
  * 
  *     }

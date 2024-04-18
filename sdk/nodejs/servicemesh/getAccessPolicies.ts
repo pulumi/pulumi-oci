@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessPolicies = oci.ServiceMesh.getAccessPolicies({
- *     compartmentId: _var.compartment_id,
- *     id: _var.access_policy_id,
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     name: _var.access_policy_name,
- *     state: _var.access_policy_state,
+ *     compartmentId: compartmentId,
+ *     id: accessPolicyId,
+ *     meshId: testMesh.id,
+ *     name: accessPolicyName,
+ *     state: accessPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetAccessPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessPolicies = oci.ServiceMesh.getAccessPolicies({
- *     compartmentId: _var.compartment_id,
- *     id: _var.access_policy_id,
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     name: _var.access_policy_name,
- *     state: _var.access_policy_state,
+ *     compartmentId: compartmentId,
+ *     id: accessPolicyId,
+ *     meshId: testMesh.id,
+ *     name: accessPolicyName,
+ *     state: accessPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -186,15 +186,15 @@ def get_list_user_grants(depth_level: Optional[int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_key=var["list_user_grant_user_key"],
-        depth_level=var["list_user_grant_depth_level"],
-        depth_level_greater_than_or_equal_to=var["list_user_grant_depth_level_greater_than_or_equal_to"],
-        depth_level_less_than=var["list_user_grant_depth_level_less_than"],
-        grant_key=var["list_user_grant_grant_key"],
-        grant_name=var["list_user_grant_grant_name"],
-        privilege_category=var["list_user_grant_privilege_category"],
-        privilege_type=var["list_user_grant_privilege_type"])
+    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=test_user_assessment["id"],
+        user_key=list_user_grant_user_key,
+        depth_level=list_user_grant_depth_level,
+        depth_level_greater_than_or_equal_to=list_user_grant_depth_level_greater_than_or_equal_to,
+        depth_level_less_than=list_user_grant_depth_level_less_than,
+        grant_key=list_user_grant_grant_key,
+        grant_name=list_user_grant_grant_name,
+        privilege_category=list_user_grant_privilege_category,
+        privilege_type=list_user_grant_privilege_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -265,15 +265,15 @@ def get_list_user_grants_output(depth_level: Optional[pulumi.Input[Optional[int]
     import pulumi
     import pulumi_oci as oci
 
-    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        user_key=var["list_user_grant_user_key"],
-        depth_level=var["list_user_grant_depth_level"],
-        depth_level_greater_than_or_equal_to=var["list_user_grant_depth_level_greater_than_or_equal_to"],
-        depth_level_less_than=var["list_user_grant_depth_level_less_than"],
-        grant_key=var["list_user_grant_grant_key"],
-        grant_name=var["list_user_grant_grant_name"],
-        privilege_category=var["list_user_grant_privilege_category"],
-        privilege_type=var["list_user_grant_privilege_type"])
+    test_list_user_grants = oci.DataSafe.get_list_user_grants(user_assessment_id=test_user_assessment["id"],
+        user_key=list_user_grant_user_key,
+        depth_level=list_user_grant_depth_level,
+        depth_level_greater_than_or_equal_to=list_user_grant_depth_level_greater_than_or_equal_to,
+        depth_level_less_than=list_user_grant_depth_level_less_than,
+        grant_key=list_user_grant_grant_key,
+        grant_name=list_user_grant_grant_name,
+        privilege_category=list_user_grant_privilege_category,
+        privilege_type=list_user_grant_privilege_type)
     ```
     <!--End PulumiCodeChooser -->
 

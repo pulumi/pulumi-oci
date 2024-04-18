@@ -51,15 +51,15 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMesh = new Mesh(&#34;testMesh&#34;, MeshArgs.builder()        
  *             .certificateAuthorities(MeshCertificateAuthorityArgs.builder()
- *                 .id(var_.mesh_certificate_authorities_id())
+ *                 .id(meshCertificateAuthoritiesId)
  *                 .build())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.mesh_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(meshDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.mesh_description())
+ *             .description(meshDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .mtls(MeshMtlsArgs.builder()
- *                 .minimum(var_.mesh_mtls_minimum())
+ *                 .minimum(meshMtlsMinimum)
  *                 .build())
  *             .build());
  * 

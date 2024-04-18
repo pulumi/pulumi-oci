@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetHostInsight(ctx, &opsi.GetHostInsightArgs{
-//				HostInsightId: oci_opsi_host_insight.Test_host_insight.Id,
+//				HostInsightId: testHostInsightOciOpsiHostInsight.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiLanguage.GetModelEvaluationResults(ctx, &ailanguage.GetModelEvaluationResultsArgs{
-//				ModelId: oci_ai_language_model.Test_model.Id,
+//				ModelId: testModel.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

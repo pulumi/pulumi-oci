@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTenancy = Oci.Identity.GetTenancy.Invoke(new()
         ///     {
-        ///         TenancyId = @var.Tenancy_ocid,
+        ///         TenancyId = tenancyOcid,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTenancy = Oci.Identity.GetTenancy.Invoke(new()
         ///     {
-        ///         TenancyId = @var.Tenancy_ocid,
+        ///         TenancyId = tenancyOcid,
         ///     });
         /// 
         /// });

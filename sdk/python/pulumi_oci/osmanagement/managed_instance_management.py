@@ -349,19 +349,19 @@ class ManagedInstanceManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_instance_management = oci.os_management.ManagedInstanceManagement("testManagedInstanceManagement",
-            managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
+        test_managed_instance_management = oci.os_management.ManagedInstanceManagement("test_managed_instance_management",
+            managed_instance_id=test_managed_instance["id"],
             parent_software_source=oci.os_management.ManagedInstanceManagementParentSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_parent_software_source"]["id"],
-                name=oci_osmanagement_software_source["test_parent_software_source"]["display_name"],
+                id=test_parent_software_source["id"],
+                name=test_parent_software_source["displayName"],
             ),
             managed_instance_groups=[oci.os_management.ManagedInstanceManagementManagedInstanceGroupArgs(
-                id=oci_osmanagement_managed_instance_group["test_managed_instance_group"]["id"],
-                display_name=var["managed_instance_group_display_name"],
+                id=test_managed_instance_group["id"],
+                display_name=managed_instance_group_display_name,
             )],
             child_software_sources=[oci.os_management.ManagedInstanceManagementChildSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_software_source_child"]["id"],
-                name=oci_osmanagement_software_source["test_software_source_child"]["display_name"],
+                id=test_software_source_child["id"],
+                name=test_software_source_child["displayName"],
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -406,19 +406,19 @@ class ManagedInstanceManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_instance_management = oci.os_management.ManagedInstanceManagement("testManagedInstanceManagement",
-            managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
+        test_managed_instance_management = oci.os_management.ManagedInstanceManagement("test_managed_instance_management",
+            managed_instance_id=test_managed_instance["id"],
             parent_software_source=oci.os_management.ManagedInstanceManagementParentSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_parent_software_source"]["id"],
-                name=oci_osmanagement_software_source["test_parent_software_source"]["display_name"],
+                id=test_parent_software_source["id"],
+                name=test_parent_software_source["displayName"],
             ),
             managed_instance_groups=[oci.os_management.ManagedInstanceManagementManagedInstanceGroupArgs(
-                id=oci_osmanagement_managed_instance_group["test_managed_instance_group"]["id"],
-                display_name=var["managed_instance_group_display_name"],
+                id=test_managed_instance_group["id"],
+                display_name=managed_instance_group_display_name,
             )],
             child_software_sources=[oci.os_management.ManagedInstanceManagementChildSoftwareSourceArgs(
-                id=oci_osmanagement_software_source["test_software_source_child"]["id"],
-                name=oci_osmanagement_software_source["test_software_source_child"]["display_name"],
+                id=test_software_source_child["id"],
+                name=test_software_source_child["displayName"],
             )])
         ```
         <!--End PulumiCodeChooser -->

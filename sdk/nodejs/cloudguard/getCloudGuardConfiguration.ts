@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGuardConfiguration = oci.CloudGuard.getCloudGuardConfiguration({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetCloudGuardConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudGuardConfiguration = oci.CloudGuard.getCloudGuardConfiguration({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -37,8 +37,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetListenerRules(ctx, &loadbalancer.GetListenerRulesArgs{
-//				ListenerName:   oci_load_balancer_listener.Test_listener.Name,
-//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//				ListenerName:   testListener.Name,
+//				LoadBalancerId: testLoadBalancer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

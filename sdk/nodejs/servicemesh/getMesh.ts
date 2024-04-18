@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMesh = oci.ServiceMesh.getMesh({
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ *     meshId: testMeshOciServiceMeshMesh.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetMeshResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMesh = oci.ServiceMesh.getMesh({
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ *     meshId: testMeshOciServiceMeshMesh.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetSenders(ctx, &email.GetSendersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Domain:        pulumi.StringRef(_var.Sender_domain),
-//				EmailAddress:  pulumi.StringRef(_var.Sender_email_address),
-//				State:         pulumi.StringRef(_var.Sender_state),
+//				CompartmentId: compartmentId,
+//				Domain:        pulumi.StringRef(senderDomain),
+//				EmailAddress:  pulumi.StringRef(senderEmailAddress),
+//				State:         pulumi.StringRef(senderState),
 //			}, nil)
 //			if err != nil {
 //				return err

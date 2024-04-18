@@ -351,12 +351,12 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_software_image = oci.database.AutonomousDatabaseSoftwareImage("testAutonomousDatabaseSoftwareImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["autonomous_database_software_image_display_name"],
-            image_shape_family=var["autonomous_database_software_image_image_shape_family"],
-            source_cdb_id=oci_database_source_cdb["test_source_cdb"]["id"],
-            defined_tags=var["autonomous_database_software_image_defined_tags"],
+        test_autonomous_database_software_image = oci.database.AutonomousDatabaseSoftwareImage("test_autonomous_database_software_image",
+            compartment_id=compartment_id,
+            display_name=autonomous_database_software_image_display_name,
+            image_shape_family=autonomous_database_software_image_image_shape_family,
+            source_cdb_id=test_source_cdb["id"],
+            defined_tags=autonomous_database_software_image_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -402,12 +402,12 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_software_image = oci.database.AutonomousDatabaseSoftwareImage("testAutonomousDatabaseSoftwareImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["autonomous_database_software_image_display_name"],
-            image_shape_family=var["autonomous_database_software_image_image_shape_family"],
-            source_cdb_id=oci_database_source_cdb["test_source_cdb"]["id"],
-            defined_tags=var["autonomous_database_software_image_defined_tags"],
+        test_autonomous_database_software_image = oci.database.AutonomousDatabaseSoftwareImage("test_autonomous_database_software_image",
+            compartment_id=compartment_id,
+            display_name=autonomous_database_software_image_display_name,
+            image_shape_family=autonomous_database_software_image_image_shape_family,
+            source_cdb_id=test_source_cdb["id"],
+            defined_tags=autonomous_database_software_image_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })

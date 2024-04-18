@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPingProbe = new oci.healthchecks.PingProbe("testPingProbe", {
- *     compartmentId: _var.compartment_id,
- *     protocol: _var.ping_probe_protocol,
- *     targets: _var.ping_probe_targets,
- *     port: _var.ping_probe_port,
- *     timeoutInSeconds: _var.ping_probe_timeout_in_seconds,
- *     vantagePointNames: _var.ping_probe_vantage_point_names,
+ * const testPingProbe = new oci.healthchecks.PingProbe("test_ping_probe", {
+ *     compartmentId: compartmentId,
+ *     protocol: pingProbeProtocol,
+ *     targets: pingProbeTargets,
+ *     port: pingProbePort,
+ *     timeoutInSeconds: pingProbeTimeoutInSeconds,
+ *     vantagePointNames: pingProbeVantagePointNames,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

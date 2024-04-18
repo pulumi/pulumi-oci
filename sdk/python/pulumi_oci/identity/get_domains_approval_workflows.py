@@ -190,14 +190,14 @@ def get_domains_approval_workflows(approval_workflow_count: Optional[int] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflows = oci.Identity.get_domains_approval_workflows(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        approval_workflow_count=var["approval_workflow_approval_workflow_count"],
-        approval_workflow_filter=var["approval_workflow_approval_workflow_filter"],
+    test_approval_workflows = oci.Identity.get_domains_approval_workflows(idcs_endpoint=test_domain["url"],
+        approval_workflow_count=approval_workflow_approval_workflow_count,
+        approval_workflow_filter=approval_workflow_approval_workflow_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_authorization"],
-        resource_type_schema_version=var["approval_workflow_resource_type_schema_version"],
-        start_index=var["approval_workflow_start_index"])
+        authorization=approval_workflow_authorization,
+        resource_type_schema_version=approval_workflow_resource_type_schema_version,
+        start_index=approval_workflow_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -264,14 +264,14 @@ def get_domains_approval_workflows_output(approval_workflow_count: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflows = oci.Identity.get_domains_approval_workflows(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        approval_workflow_count=var["approval_workflow_approval_workflow_count"],
-        approval_workflow_filter=var["approval_workflow_approval_workflow_filter"],
+    test_approval_workflows = oci.Identity.get_domains_approval_workflows(idcs_endpoint=test_domain["url"],
+        approval_workflow_count=approval_workflow_approval_workflow_count,
+        approval_workflow_filter=approval_workflow_approval_workflow_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_authorization"],
-        resource_type_schema_version=var["approval_workflow_resource_type_schema_version"],
-        start_index=var["approval_workflow_start_index"])
+        authorization=approval_workflow_authorization,
+        resource_type_schema_version=approval_workflow_resource_type_schema_version,
+        start_index=approval_workflow_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

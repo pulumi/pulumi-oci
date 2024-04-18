@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousVirtualMachine = Oci.Database.GetAutonomousVirtualMachine.Invoke(new()
         ///     {
-        ///         AutonomousVirtualMachineId = oci_database_autonomous_virtual_machine.Test_autonomous_virtual_machine.Id,
+        ///         AutonomousVirtualMachineId = testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousVirtualMachine = Oci.Database.GetAutonomousVirtualMachine.Invoke(new()
         ///     {
-        ///         AutonomousVirtualMachineId = oci_database_autonomous_virtual_machine.Test_autonomous_virtual_machine.Id,
+        ///         AutonomousVirtualMachineId = testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.Id,
         ///     });
         /// 
         /// });

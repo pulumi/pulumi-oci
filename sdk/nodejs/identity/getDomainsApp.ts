@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApp = oci.Identity.getDomainsApp({
- *     appId: oci_identity_domains_app.test_app.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     appId: testAppOciIdentityDomainsApp.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.app_authorization,
- *     resourceTypeSchemaVersion: _var.app_resource_type_schema_version,
+ *     authorization: appAuthorization,
+ *     resourceTypeSchemaVersion: appResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -567,12 +567,12 @@ export interface GetDomainsAppResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApp = oci.Identity.getDomainsApp({
- *     appId: oci_identity_domains_app.test_app.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     appId: testAppOciIdentityDomainsApp.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.app_authorization,
- *     resourceTypeSchemaVersion: _var.app_resource_type_schema_version,
+ *     authorization: appAuthorization,
+ *     resourceTypeSchemaVersion: appResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

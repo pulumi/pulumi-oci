@@ -32,10 +32,10 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testPrivateEndpoints = Oci.ResourceManager.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Private_endpoint_display_name,
-        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateEndpointDisplayName,
+        ///         PrivateEndpointId = testPrivateEndpoint.Id,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testPrivateEndpoints = Oci.ResourceManager.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Private_endpoint_display_name,
-        ///         PrivateEndpointId = oci_resourcemanager_private_endpoint.Test_private_endpoint.Id,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = privateEndpointDisplayName,
+        ///         PrivateEndpointId = testPrivateEndpoint.Id,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

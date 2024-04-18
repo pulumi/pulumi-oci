@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetCryptoAnalysisResults = Oci.Jms.GetFleetCryptoAnalysisResults.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         AggregationMode = @var.Fleet_crypto_analysis_result_aggregation_mode,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         TimeEnd = @var.Fleet_crypto_analysis_result_time_end,
-        ///         TimeStart = @var.Fleet_crypto_analysis_result_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         AggregationMode = fleetCryptoAnalysisResultAggregationMode,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         TimeEnd = fleetCryptoAnalysisResultTimeEnd,
+        ///         TimeStart = fleetCryptoAnalysisResultTimeStart,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetCryptoAnalysisResults = Oci.Jms.GetFleetCryptoAnalysisResults.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         AggregationMode = @var.Fleet_crypto_analysis_result_aggregation_mode,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         TimeEnd = @var.Fleet_crypto_analysis_result_time_end,
-        ///         TimeStart = @var.Fleet_crypto_analysis_result_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         AggregationMode = fleetCryptoAnalysisResultAggregationMode,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         TimeEnd = fleetCryptoAnalysisResultTimeEnd,
+        ///         TimeStart = fleetCryptoAnalysisResultTimeStart,
         ///     });
         /// 
         /// });

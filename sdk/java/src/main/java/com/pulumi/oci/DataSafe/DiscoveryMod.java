@@ -51,18 +51,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDiscoveryJob = new DiscoveryMod(&#34;testDiscoveryJob&#34;, DiscoveryModArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+ *             .compartmentId(compartmentId)
+ *             .sensitiveDataModelId(testSensitiveDataModel.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .discoveryType(var_.discovery_job_discovery_type())
- *             .displayName(var_.discovery_job_display_name())
+ *             .discoveryType(discoveryJobDiscoveryType)
+ *             .displayName(discoveryJobDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isAppDefinedRelationDiscoveryEnabled(var_.discovery_job_is_app_defined_relation_discovery_enabled())
- *             .isIncludeAllSchemas(var_.discovery_job_is_include_all_schemas())
- *             .isIncludeAllSensitiveTypes(var_.discovery_job_is_include_all_sensitive_types())
- *             .isSampleDataCollectionEnabled(var_.discovery_job_is_sample_data_collection_enabled())
- *             .schemasForDiscoveries(var_.discovery_job_schemas_for_discovery())
- *             .sensitiveTypeIdsForDiscoveries(var_.discovery_job_sensitive_type_ids_for_discovery())
+ *             .isAppDefinedRelationDiscoveryEnabled(discoveryJobIsAppDefinedRelationDiscoveryEnabled)
+ *             .isIncludeAllSchemas(discoveryJobIsIncludeAllSchemas)
+ *             .isIncludeAllSensitiveTypes(discoveryJobIsIncludeAllSensitiveTypes)
+ *             .isSampleDataCollectionEnabled(discoveryJobIsSampleDataCollectionEnabled)
+ *             .schemasForDiscoveries(discoveryJobSchemasForDiscovery)
+ *             .sensitiveTypeIdsForDiscoveries(discoveryJobSensitiveTypeIdsForDiscovery)
  *             .build());
  * 
  *     }

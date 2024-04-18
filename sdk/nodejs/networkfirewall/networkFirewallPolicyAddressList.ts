@@ -16,10 +16,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyAddressList = new oci.networkfirewall.NetworkFirewallPolicyAddressList("testNetworkFirewallPolicyAddressList", {
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     type: _var.network_firewall_policy_address_list_type,
- *     addresses: _var.network_firewall_policy_address_list_addresses,
+ * const testNetworkFirewallPolicyAddressList = new oci.networkfirewall.NetworkFirewallPolicyAddressList("test_network_firewall_policy_address_list", {
+ *     name: networkFirewallPolicyAddressListName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     type: networkFirewallPolicyAddressListType,
+ *     addresses: networkFirewallPolicyAddressListAddresses,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

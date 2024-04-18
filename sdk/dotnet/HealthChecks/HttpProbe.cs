@@ -28,17 +28,17 @@ namespace Pulumi.Oci.HealthChecks
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testHttpProbe = new Oci.HealthChecks.HttpProbe("testHttpProbe", new()
+    ///     var testHttpProbe = new Oci.HealthChecks.HttpProbe("test_http_probe", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Protocol = @var.Http_probe_protocol,
-    ///         Targets = @var.Http_probe_targets,
-    ///         Headers = @var.Http_probe_headers,
-    ///         Method = @var.Http_probe_method,
-    ///         Path = @var.Http_probe_path,
-    ///         Port = @var.Http_probe_port,
-    ///         TimeoutInSeconds = @var.Http_probe_timeout_in_seconds,
-    ///         VantagePointNames = @var.Http_probe_vantage_point_names,
+    ///         CompartmentId = compartmentId,
+    ///         Protocol = httpProbeProtocol,
+    ///         Targets = httpProbeTargets,
+    ///         Headers = httpProbeHeaders,
+    ///         Method = httpProbeMethod,
+    ///         Path = httpProbePath,
+    ///         Port = httpProbePort,
+    ///         TimeoutInSeconds = httpProbeTimeoutInSeconds,
+    ///         VantagePointNames = httpProbeVantagePointNames,
     ///     });
     /// 
     /// });

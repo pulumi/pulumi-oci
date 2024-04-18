@@ -28,17 +28,17 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDedicatedVmHost = new Oci.Core.DedicatedVmHost("testDedicatedVmHost", new()
+    ///     var testDedicatedVmHost = new Oci.Core.DedicatedVmHost("test_dedicated_vm_host", new()
     ///     {
-    ///         AvailabilityDomain = @var.Dedicated_vm_host_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DedicatedVmHostShape = @var.Dedicated_vm_host_dedicated_vm_host_shape,
+    ///         AvailabilityDomain = dedicatedVmHostAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
+    ///         DedicatedVmHostShape = dedicatedVmHostDedicatedVmHostShape,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Dedicated_vm_host_display_name,
-    ///         FaultDomain = @var.Dedicated_vm_host_fault_domain,
+    ///         DisplayName = dedicatedVmHostDisplayName,
+    ///         FaultDomain = dedicatedVmHostFaultDomain,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

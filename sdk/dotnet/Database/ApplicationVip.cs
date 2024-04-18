@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testApplicationVip = new Oci.Database.ApplicationVip("testApplicationVip", new()
+    ///     var testApplicationVip = new Oci.Database.ApplicationVip("test_application_vip", new()
     ///     {
-    ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-    ///         HostnameLabel = @var.Application_vip_hostname_label,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
-    ///         IpAddress = @var.Application_vip_ip_address,
+    ///         CloudVmClusterId = testCloudVmCluster.Id,
+    ///         HostnameLabel = applicationVipHostnameLabel,
+    ///         SubnetId = testSubnet.Id,
+    ///         DbNodeId = testDbNode.Id,
+    ///         IpAddress = applicationVipIpAddress,
     ///     });
     /// 
     /// });

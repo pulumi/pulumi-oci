@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDatabaseSoftwareImages(ctx, &database.GetDatabaseSoftwareImagesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				DisplayName:        pulumi.StringRef(_var.Database_software_image_display_name),
-//				ImageShapeFamily:   pulumi.StringRef(_var.Database_software_image_image_shape_family),
-//				ImageType:          pulumi.StringRef(_var.Database_software_image_image_type),
-//				IsUpgradeSupported: pulumi.BoolRef(_var.Database_software_image_is_upgrade_supported),
-//				State:              pulumi.StringRef(_var.Database_software_image_state),
+//				CompartmentId:      compartmentId,
+//				DisplayName:        pulumi.StringRef(databaseSoftwareImageDisplayName),
+//				ImageShapeFamily:   pulumi.StringRef(databaseSoftwareImageImageShapeFamily),
+//				ImageType:          pulumi.StringRef(databaseSoftwareImageImageType),
+//				IsUpgradeSupported: pulumi.BoolRef(databaseSoftwareImageIsUpgradeSupported),
+//				State:              pulumi.StringRef(databaseSoftwareImageState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewAgentDependency(ctx, "testAgentDependency", &CloudBridge.AgentDependencyArgs{
-//				Bucket:         pulumi.Any(_var.Agent_dependency_bucket),
-//				CompartmentId:  pulumi.Any(_var.Compartment_id),
-//				DependencyName: pulumi.Any(_var.Agent_dependency_dependency_name),
-//				DisplayName:    pulumi.Any(_var.Agent_dependency_display_name),
-//				Namespace:      pulumi.Any(_var.Agent_dependency_namespace),
-//				Object:         pulumi.Any(_var.Agent_dependency_object),
+//			_, err := CloudBridge.NewAgentDependency(ctx, "test_agent_dependency", &CloudBridge.AgentDependencyArgs{
+//				Bucket:         pulumi.Any(agentDependencyBucket),
+//				CompartmentId:  pulumi.Any(compartmentId),
+//				DependencyName: pulumi.Any(agentDependencyDependencyName),
+//				DisplayName:    pulumi.Any(agentDependencyDisplayName),
+//				Namespace:      pulumi.Any(agentDependencyNamespace),
+//				Object:         pulumi.Any(agentDependencyObject),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DependencyVersion: pulumi.Any(_var.Agent_dependency_dependency_version),
-//				Description:       pulumi.Any(_var.Agent_dependency_description),
+//				DependencyVersion: pulumi.Any(agentDependencyDependencyVersion),
+//				Description:       pulumi.Any(agentDependencyDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				SystemTags: pulumi.Any(_var.Agent_dependency_system_tags),
+//				SystemTags: pulumi.Any(agentDependencySystemTags),
 //			})
 //			if err != nil {
 //				return err

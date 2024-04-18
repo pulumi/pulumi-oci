@@ -272,12 +272,12 @@ class Environment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_environment = oci.cloud_bridge.Environment("testEnvironment",
-            compartment_id=var["compartment_id"],
+        test_environment = oci.cloud_bridge.Environment("test_environment",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["environment_display_name"],
+            display_name=environment_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -321,12 +321,12 @@ class Environment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_environment = oci.cloud_bridge.Environment("testEnvironment",
-            compartment_id=var["compartment_id"],
+        test_environment = oci.cloud_bridge.Environment("test_environment",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["environment_display_name"],
+            display_name=environment_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

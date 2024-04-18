@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Sch.GetServiceConnector(ctx, &sch.GetServiceConnectorArgs{
-//				ServiceConnectorId: oci_sch_service_connector.Test_service_connector.Id,
+//				ServiceConnectorId: testServiceConnectorOciSchServiceConnector.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

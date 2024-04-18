@@ -176,7 +176,7 @@ def get_managed_database_group(managed_database_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"])
+    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,7 +217,7 @@ def get_managed_database_group_output(managed_database_group_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=oci_database_management_managed_database_group["test_managed_database_group"]["id"])
+    test_managed_database_group = oci.DatabaseManagement.get_managed_database_group(managed_database_group_id=test_managed_database_group_oci_database_management_managed_database_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

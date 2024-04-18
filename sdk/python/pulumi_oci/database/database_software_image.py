@@ -518,20 +518,20 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_database_software_image = oci.database.DatabaseSoftwareImage("testDatabaseSoftwareImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["database_software_image_display_name"],
-            database_software_image_one_off_patches=var["database_software_image_database_software_image_one_off_patches"],
-            database_version=var["database_software_image_database_version"],
-            defined_tags=var["database_software_image_defined_tags"],
+        test_database_software_image = oci.database.DatabaseSoftwareImage("test_database_software_image",
+            compartment_id=compartment_id,
+            display_name=database_software_image_display_name,
+            database_software_image_one_off_patches=database_software_image_database_software_image_one_off_patches,
+            database_version=database_software_image_database_version,
+            defined_tags=database_software_image_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            image_shape_family=var["database_software_image_image_shape_family"],
-            image_type=var["database_software_image_image_type"],
-            ls_inventory=var["database_software_image_ls_inventory"],
-            patch_set=var["database_software_image_patch_set"],
-            source_db_home_id=oci_database_db_home["test_db_home"]["id"])
+            image_shape_family=database_software_image_image_shape_family,
+            image_type=database_software_image_image_type,
+            ls_inventory=database_software_image_ls_inventory,
+            patch_set=database_software_image_patch_set,
+            source_db_home_id=test_db_home["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -579,20 +579,20 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_database_software_image = oci.database.DatabaseSoftwareImage("testDatabaseSoftwareImage",
-            compartment_id=var["compartment_id"],
-            display_name=var["database_software_image_display_name"],
-            database_software_image_one_off_patches=var["database_software_image_database_software_image_one_off_patches"],
-            database_version=var["database_software_image_database_version"],
-            defined_tags=var["database_software_image_defined_tags"],
+        test_database_software_image = oci.database.DatabaseSoftwareImage("test_database_software_image",
+            compartment_id=compartment_id,
+            display_name=database_software_image_display_name,
+            database_software_image_one_off_patches=database_software_image_database_software_image_one_off_patches,
+            database_version=database_software_image_database_version,
+            defined_tags=database_software_image_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            image_shape_family=var["database_software_image_image_shape_family"],
-            image_type=var["database_software_image_image_type"],
-            ls_inventory=var["database_software_image_ls_inventory"],
-            patch_set=var["database_software_image_patch_set"],
-            source_db_home_id=oci_database_db_home["test_db_home"]["id"])
+            image_shape_family=database_software_image_image_shape_family,
+            image_type=database_software_image_image_type,
+            ls_inventory=database_software_image_ls_inventory,
+            patch_set=database_software_image_patch_set,
+            source_db_home_id=test_db_home["id"])
         ```
         <!--End PulumiCodeChooser -->
 

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemComputePerformances = oci.Database.getDbSystemComputePerformances({
- *     dbSystemShape: _var.db_system_compute_performance_db_system_shape,
+ *     dbSystemShape: dbSystemComputePerformanceDbSystemShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -73,7 +73,7 @@ export interface GetDbSystemComputePerformancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemComputePerformances = oci.Database.getDbSystemComputePerformances({
- *     dbSystemShape: _var.db_system_compute_performance_db_system_shape,
+ *     dbSystemShape: dbSystemComputePerformanceDbSystemShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

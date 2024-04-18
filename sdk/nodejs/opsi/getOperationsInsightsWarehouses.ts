@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouses = oci.Opsi.getOperationsInsightsWarehouses({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.operations_insights_warehouse_display_name,
- *     id: _var.operations_insights_warehouse_id,
- *     states: _var.operations_insights_warehouse_state,
+ *     compartmentId: compartmentId,
+ *     displayName: operationsInsightsWarehouseDisplayName,
+ *     id: operationsInsightsWarehouseId,
+ *     states: operationsInsightsWarehouseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,10 +104,10 @@ export interface GetOperationsInsightsWarehousesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouses = oci.Opsi.getOperationsInsightsWarehouses({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.operations_insights_warehouse_display_name,
- *     id: _var.operations_insights_warehouse_id,
- *     states: _var.operations_insights_warehouse_state,
+ *     compartmentId: compartmentId,
+ *     displayName: operationsInsightsWarehouseDisplayName,
+ *     id: operationsInsightsWarehouseId,
+ *     states: operationsInsightsWarehouseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

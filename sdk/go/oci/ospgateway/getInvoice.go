@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OspGateway.GetInvoice(ctx, &ospgateway.GetInvoiceArgs{
-//				CompartmentId:     _var.Compartment_id,
-//				InternalInvoiceId: oci_osp_gateway_invoice.Test_invoice.Id,
-//				OspHomeRegion:     _var.Invoice_osp_home_region,
+//				CompartmentId:     compartmentId,
+//				InternalInvoiceId: testInvoiceOciOspGatewayInvoice.Id,
+//				OspHomeRegion:     invoiceOspHomeRegion,
 //			}, nil)
 //			if err != nil {
 //				return err

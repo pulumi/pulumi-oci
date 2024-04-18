@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Secrets
         /// {
         ///     var testSecretbundle = Oci.Secrets.GetSecretbundle.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
-        ///         SecretVersionName = oci_vault_secret_version.Test_secret_version.Name,
-        ///         Stage = @var.Secretbundle_stage,
-        ///         VersionNumber = @var.Secretbundle_version_number,
+        ///         SecretId = testSecret.Id,
+        ///         SecretVersionName = testSecretVersion.Name,
+        ///         Stage = secretbundleStage,
+        ///         VersionNumber = secretbundleVersionNumber,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Secrets
         /// {
         ///     var testSecretbundle = Oci.Secrets.GetSecretbundle.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
-        ///         SecretVersionName = oci_vault_secret_version.Test_secret_version.Name,
-        ///         Stage = @var.Secretbundle_stage,
-        ///         VersionNumber = @var.Secretbundle_version_number,
+        ///         SecretId = testSecret.Id,
+        ///         SecretVersionName = testSecretVersion.Name,
+        ///         Stage = secretbundleStage,
+        ///         VersionNumber = secretbundleVersionNumber,
         ///     });
         /// 
         /// });

@@ -36,12 +36,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseWallet(ctx, "testAutonomousDatabaseWallet", &Database.AutonomousDatabaseWalletArgs{
-//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-//				Password:             pulumi.Any(_var.Autonomous_database_wallet_password),
+//			_, err := Database.NewAutonomousDatabaseWallet(ctx, "test_autonomous_database_wallet", &Database.AutonomousDatabaseWalletArgs{
+//				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
+//				Password:             pulumi.Any(autonomousDatabaseWalletPassword),
 //				Base64EncodeContent:  pulumi.Bool(false),
-//				GenerateType:         pulumi.Any(_var.Autonomous_database_wallet_generate_type),
-//				IsRegional:           pulumi.Any(_var.Autonomous_database_wallet_is_regional),
+//				GenerateType:         pulumi.Any(autonomousDatabaseWalletGenerateType),
+//				IsRegional:           pulumi.Any(autonomousDatabaseWalletIsRegional),
 //			})
 //			if err != nil {
 //				return err

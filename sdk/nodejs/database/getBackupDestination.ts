@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackupDestination = oci.Database.getBackupDestination({
- *     backupDestinationId: oci_database_backup_destination.test_backup_destination.id,
+ *     backupDestinationId: testBackupDestinationOciDatabaseBackupDestination.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,7 +128,7 @@ export interface GetBackupDestinationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackupDestination = oci.Database.getBackupDestination({
- *     backupDestinationId: oci_database_backup_destination.test_backup_destination.id,
+ *     backupDestinationId: testBackupDestinationOciDatabaseBackupDestination.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCaBundle = oci.CertificatesManagement.getCaBundle({
- *     caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
+ *     caBundleId: testCaBundleOciCertificatesManagementCaBundle.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,7 +96,7 @@ export interface GetCaBundleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCaBundle = oci.CertificatesManagement.getCaBundle({
- *     caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
+ *     caBundleId: testCaBundleOciCertificatesManagementCaBundle.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

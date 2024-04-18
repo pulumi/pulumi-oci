@@ -25,11 +25,11 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testClusterWorkloadMapping = new Oci.ContainerEngine.ClusterWorkloadMapping("testClusterWorkloadMapping", new()
+    ///     var testClusterWorkloadMapping = new Oci.ContainerEngine.ClusterWorkloadMapping("test_cluster_workload_mapping", new()
     ///     {
-    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-    ///         MappedCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         Namespace = @var.Cluster_workload_mapping_namespace,
+    ///         ClusterId = testCluster.Id,
+    ///         MappedCompartmentId = testCompartment.Id,
+    ///         Namespace = clusterWorkloadMappingNamespace,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

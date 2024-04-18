@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentGetAutoUpgradableConfig = oci.ManagementAgent.getManagementAgentGetAutoUpgradableConfig({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,7 +69,7 @@ export interface GetManagementAgentGetAutoUpgradableConfigResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentGetAutoUpgradableConfig = oci.ManagementAgent.getManagementAgentGetAutoUpgradableConfig({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

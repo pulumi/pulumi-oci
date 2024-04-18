@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testQueryQuickPicks = Oci.ApmTraces.GetQueryQuickPicks.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ApmDomainId = testApmDomain.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testQueryQuickPicks = Oci.ApmTraces.GetQueryQuickPicks.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ApmDomainId = testApmDomain.Id,
         ///     });
         /// 
         /// });

@@ -36,11 +36,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregations(ctx, &databasemanagement.GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs{
-//				GroupType:                     _var.Managed_database_optimizer_statistics_collection_aggregation_group_type,
-//				ManagedDatabaseId:             oci_database_management_managed_database.Test_managed_database.Id,
-//				EndTimeLessThanOrEqualTo:      pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to),
-//				StartTimeGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to),
-//				TaskType:                      pulumi.StringRef(_var.Managed_database_optimizer_statistics_collection_aggregation_task_type),
+//				GroupType:                     managedDatabaseOptimizerStatisticsCollectionAggregationGroupType,
+//				ManagedDatabaseId:             testManagedDatabase.Id,
+//				EndTimeLessThanOrEqualTo:      pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo),
+//				StartTimeGreaterThanOrEqualTo: pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo),
+//				TaskType:                      pulumi.StringRef(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType),
 //			}, nil)
 //			if err != nil {
 //				return err

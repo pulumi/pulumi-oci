@@ -41,14 +41,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConsoleHistory = new Oci.Core.ConsoleHistory("testConsoleHistory", new()
+    ///     var testConsoleHistory = new Oci.Core.ConsoleHistory("test_console_history", new()
     ///     {
-    ///         InstanceId = oci_core_instance.Test_instance.Id,
+    ///         InstanceId = testInstance.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Console_history_display_name,
+    ///         DisplayName = consoleHistoryDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

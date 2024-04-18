@@ -31,12 +31,12 @@ namespace Pulumi.Oci.OsubSubscription
         /// {
         ///     var testRatecards = Oci.OsubSubscription.GetRatecards.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
-        ///         PartNumber = @var.Ratecard_part_number,
-        ///         TimeFrom = @var.Ratecard_time_from,
-        ///         TimeTo = @var.Ratecard_time_to,
-        ///         XOneOriginRegion = @var.Ratecard_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         PartNumber = ratecardPartNumber,
+        ///         TimeFrom = ratecardTimeFrom,
+        ///         TimeTo = ratecardTimeTo,
+        ///         XOneOriginRegion = ratecardXOneOriginRegion,
         ///     });
         /// 
         /// });
@@ -66,12 +66,12 @@ namespace Pulumi.Oci.OsubSubscription
         /// {
         ///     var testRatecards = Oci.OsubSubscription.GetRatecards.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_osub_subscription_subscription.Test_subscription.Id,
-        ///         PartNumber = @var.Ratecard_part_number,
-        ///         TimeFrom = @var.Ratecard_time_from,
-        ///         TimeTo = @var.Ratecard_time_to,
-        ///         XOneOriginRegion = @var.Ratecard_x_one_origin_region,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         PartNumber = ratecardPartNumber,
+        ///         TimeFrom = ratecardTimeFrom,
+        ///         TimeTo = ratecardTimeTo,
+        ///         XOneOriginRegion = ratecardXOneOriginRegion,
         ///     });
         /// 
         /// });

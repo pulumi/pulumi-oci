@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVbInstances = oci.VisualBuilder.getVbInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vb_instance_display_name,
- *     state: _var.vb_instance_state,
+ *     compartmentId: compartmentId,
+ *     displayName: vbInstanceDisplayName,
+ *     state: vbInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetVbInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVbInstances = oci.VisualBuilder.getVbInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vb_instance_display_name,
- *     state: _var.vb_instance_state,
+ *     compartmentId: compartmentId,
+ *     displayName: vbInstanceDisplayName,
+ *     state: vbInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

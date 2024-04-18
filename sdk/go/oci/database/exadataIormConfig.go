@@ -38,14 +38,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExadataIormConfig(ctx, "testExadataIormConfig", &Database.ExadataIormConfigArgs{
+//			_, err := Database.NewExadataIormConfig(ctx, "test_exadata_iorm_config", &Database.ExadataIormConfigArgs{
 //				DbPlans: database.ExadataIormConfigDbPlanArray{
 //					&database.ExadataIormConfigDbPlanArgs{
-//						DbName: pulumi.Any(_var.Exadata_iorm_config_db_plans_db_name),
-//						Share:  pulumi.Any(_var.Exadata_iorm_config_db_plans_share),
+//						DbName: pulumi.Any(exadataIormConfigDbPlansDbName),
+//						Share:  pulumi.Any(exadataIormConfigDbPlansShare),
 //					},
 //				},
-//				DbSystemId: pulumi.Any(oci_database_db_system.Test_db_system.Id),
+//				DbSystemId: pulumi.Any(testDbSystem.Id),
 //				Objective:  pulumi.String("AUTO"),
 //			})
 //			if err != nil {

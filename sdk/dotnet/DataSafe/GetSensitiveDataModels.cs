@@ -30,15 +30,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveDataModels = Oci.DataSafe.GetSensitiveDataModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Sensitive_data_model_access_level,
-        ///         CompartmentIdInSubtree = @var.Sensitive_data_model_compartment_id_in_subtree,
-        ///         DisplayName = @var.Sensitive_data_model_display_name,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         State = @var.Sensitive_data_model_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_model_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Sensitive_data_model_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sensitiveDataModelAccessLevel,
+        ///         CompartmentIdInSubtree = sensitiveDataModelCompartmentIdInSubtree,
+        ///         DisplayName = sensitiveDataModelDisplayName,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = sensitiveDataModelState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveDataModelTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveDataModelTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveDataModels = Oci.DataSafe.GetSensitiveDataModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Sensitive_data_model_access_level,
-        ///         CompartmentIdInSubtree = @var.Sensitive_data_model_compartment_id_in_subtree,
-        ///         DisplayName = @var.Sensitive_data_model_display_name,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         State = @var.Sensitive_data_model_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Sensitive_data_model_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Sensitive_data_model_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = sensitiveDataModelAccessLevel,
+        ///         CompartmentIdInSubtree = sensitiveDataModelCompartmentIdInSubtree,
+        ///         DisplayName = sensitiveDataModelDisplayName,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = sensitiveDataModelState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = sensitiveDataModelTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = sensitiveDataModelTimeCreatedLessThan,
         ///     });
         /// 
         /// });

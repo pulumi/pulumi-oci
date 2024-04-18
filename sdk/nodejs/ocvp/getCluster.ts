@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCluster = oci.Ocvp.getCluster({
- *     clusterId: oci_ocvp_cluster.test_cluster.id,
+ *     clusterId: testClusterOciOcvpCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -162,7 +162,7 @@ export interface GetClusterResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCluster = oci.Ocvp.getCluster({
- *     clusterId: oci_ocvp_cluster.test_cluster.id,
+ *     clusterId: testClusterOciOcvpCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

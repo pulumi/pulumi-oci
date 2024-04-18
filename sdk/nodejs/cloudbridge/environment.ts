@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnvironment = new oci.cloudbridge.Environment("testEnvironment", {
- *     compartmentId: _var.compartment_id,
+ * const testEnvironment = new oci.cloudbridge.Environment("test_environment", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.environment_display_name,
+ *     displayName: environmentDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

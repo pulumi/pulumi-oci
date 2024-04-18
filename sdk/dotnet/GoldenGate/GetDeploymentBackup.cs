@@ -30,7 +30,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentBackup = Oci.GoldenGate.GetDeploymentBackup.Invoke(new()
         ///     {
-        ///         DeploymentBackupId = oci_golden_gate_deployment_backup.Test_deployment_backup.Id,
+        ///         DeploymentBackupId = testDeploymentBackupOciGoldenGateDeploymentBackup.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentBackup = Oci.GoldenGate.GetDeploymentBackup.Invoke(new()
         ///     {
-        ///         DeploymentBackupId = oci_golden_gate_deployment_backup.Test_deployment_backup.Id,
+        ///         DeploymentBackupId = testDeploymentBackupOciGoldenGateDeploymentBackup.Id,
         ///     });
         /// 
         /// });

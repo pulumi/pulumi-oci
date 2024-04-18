@@ -30,9 +30,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testUsageStatementEmailRecipientsGroup = Oci.MeteringComputation.GetUsageStatementEmailRecipientsGroup.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EmailRecipientsGroupId = oci_identity_group.Test_group.Id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+        ///         CompartmentId = compartmentId,
+        ///         EmailRecipientsGroupId = testGroup.Id,
+        ///         SubscriptionId = testSubscription.Id,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testUsageStatementEmailRecipientsGroup = Oci.MeteringComputation.GetUsageStatementEmailRecipientsGroup.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EmailRecipientsGroupId = oci_identity_group.Test_group.Id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+        ///         CompartmentId = compartmentId,
+        ///         EmailRecipientsGroupId = testGroup.Id,
+        ///         SubscriptionId = testSubscription.Id,
         ///     });
         /// 
         /// });

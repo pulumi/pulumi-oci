@@ -52,18 +52,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabasePluggabledatabasemanagementsManagement = new PluggableDatabaseManagementsManagement(&#34;testPluggableDatabasePluggabledatabasemanagementsManagement&#34;, PluggableDatabaseManagementsManagementArgs.builder()        
- *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
- *             .enablePluggabledatabasemanagement(var_.enable_pluggabledatabasemanagement())
+ *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .enablePluggabledatabasemanagement(enablePluggabledatabasemanagement)
  *             .credentialDetails(PluggableDatabaseManagementsManagementCredentialDetailsArgs.builder()
- *                 .passwordSecretId(oci_vault_secret.test_secret().id())
- *                 .userName(oci_identity_user.test_user().name())
+ *                 .passwordSecretId(testSecret.id())
+ *                 .userName(testUser.name())
  *                 .build())
- *             .privateEndPointId(oci_database_private_end_point.test_private_end_point().id())
- *             .serviceName(oci_core_service.test_service().name())
- *             .port(var_.pluggable_database_pluggabledatabasemanagements_management_port())
- *             .protocol(var_.pluggable_database_pluggabledatabasemanagements_management_protocol())
- *             .role(var_.pluggable_database_pluggabledatabasemanagements_management_role())
- *             .sslSecretId(oci_vault_secret.test_secret().id())
+ *             .privateEndPointId(testPrivateEndPoint.id())
+ *             .serviceName(testService.name())
+ *             .port(pluggableDatabasePluggabledatabasemanagementsManagementPort)
+ *             .protocol(pluggableDatabasePluggabledatabasemanagementsManagementProtocol)
+ *             .role(pluggableDatabasePluggabledatabasemanagementsManagementRole)
+ *             .sslSecretId(testSecret.id())
  *             .build());
  * 
  *     }

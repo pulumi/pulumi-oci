@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ComputeCloud.GetAtCustomerCccInfrastructures(ctx, &computecloud.GetAtCustomerCccInfrastructuresArgs{
-//				AccessLevel:            pulumi.StringRef(_var.Ccc_infrastructure_access_level),
-//				CccInfrastructureId:    pulumi.StringRef(oci_compute_cloud_at_customer_ccc_infrastructure.Test_ccc_infrastructure.Id),
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Ccc_infrastructure_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Ccc_infrastructure_display_name),
-//				DisplayNameContains:    pulumi.StringRef(_var.Ccc_infrastructure_display_name_contains),
-//				State:                  pulumi.StringRef(_var.Ccc_infrastructure_state),
+//				AccessLevel:            pulumi.StringRef(cccInfrastructureAccessLevel),
+//				CccInfrastructureId:    pulumi.StringRef(testCccInfrastructure.Id),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(cccInfrastructureCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(cccInfrastructureDisplayName),
+//				DisplayNameContains:    pulumi.StringRef(cccInfrastructureDisplayNameContains),
+//				State:                  pulumi.StringRef(cccInfrastructureState),
 //			}, nil)
 //			if err != nil {
 //				return err

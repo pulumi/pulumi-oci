@@ -32,7 +32,7 @@ namespace Pulumi.Oci.ManagementDashboard
         /// {
         ///     var testManagementDashboardsExport = Oci.ManagementDashboard.GetManagementDashboardsExport.Invoke(new()
         ///     {
-        ///         ExportDashboardId = oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
+        ///         ExportDashboardId = testExportDashboard.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.ManagementDashboard
         /// {
         ///     var testManagementDashboardsExport = Oci.ManagementDashboard.GetManagementDashboardsExport.Invoke(new()
         ///     {
-        ///         ExportDashboardId = oci_management_dashboard_export_dashboard.Test_export_dashboard.Id,
+        ///         ExportDashboardId = testExportDashboard.Id,
         ///     });
         /// 
         /// });

@@ -209,8 +209,8 @@ def get_sdm_masking_policy_difference_difference_column(difference_column_key: O
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=var["sdm_masking_policy_difference_difference_column_difference_column_key"],
-        sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
+    test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=sdm_masking_policy_difference_difference_column_difference_column_key,
+        sdm_masking_policy_difference_id=test_sdm_masking_policy_difference["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -257,8 +257,8 @@ def get_sdm_masking_policy_difference_difference_column_output(difference_column
     import pulumi
     import pulumi_oci as oci
 
-    test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=var["sdm_masking_policy_difference_difference_column_difference_column_key"],
-        sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
+    test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=sdm_masking_policy_difference_difference_column_difference_column_key,
+        sdm_masking_policy_difference_id=test_sdm_masking_policy_difference["id"])
     ```
     <!--End PulumiCodeChooser -->
 

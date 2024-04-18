@@ -121,10 +121,10 @@ def get_security_recipes(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=var["compartment_id"],
-        display_name=var["security_recipe_display_name"],
-        id=var["security_recipe_id"],
-        state=var["security_recipe_state"])
+    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=compartment_id,
+        display_name=security_recipe_display_name,
+        id=security_recipe_id,
+        state=security_recipe_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=var["compartment_id"],
-        display_name=var["security_recipe_display_name"],
-        id=var["security_recipe_id"],
-        state=var["security_recipe_state"])
+    test_security_recipes = oci.CloudGuard.get_security_recipes(compartment_id=compartment_id,
+        display_name=security_recipe_display_name,
+        id=security_recipe_id,
+        state=security_recipe_state)
     ```
     <!--End PulumiCodeChooser -->
 

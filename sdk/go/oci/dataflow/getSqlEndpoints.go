@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetSqlEndpoints(ctx, &dataflow.GetSqlEndpointsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Sql_endpoint_display_name),
-//				SqlEndpointId: pulumi.StringRef(oci_dataflow_sql_endpoint.Test_sql_endpoint.Id),
-//				State:         pulumi.StringRef(_var.Sql_endpoint_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(sqlEndpointDisplayName),
+//				SqlEndpointId: pulumi.StringRef(testSqlEndpoint.Id),
+//				State:         pulumi.StringRef(sqlEndpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

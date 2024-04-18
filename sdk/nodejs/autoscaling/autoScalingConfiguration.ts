@@ -18,54 +18,54 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutoScalingConfiguration = new oci.autoscaling.AutoScalingConfiguration("testAutoScalingConfiguration", {
+ * const testAutoScalingConfiguration = new oci.autoscaling.AutoScalingConfiguration("test_auto_scaling_configuration", {
  *     autoScalingResources: {
- *         id: _var.auto_scaling_configuration_auto_scaling_resources_id,
- *         type: _var.auto_scaling_configuration_auto_scaling_resources_type,
+ *         id: autoScalingConfigurationAutoScalingResourcesId,
+ *         type: autoScalingConfigurationAutoScalingResourcesType,
  *     },
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     policies: [{
- *         policyType: _var.auto_scaling_configuration_policies_policy_type,
+ *         policyType: autoScalingConfigurationPoliciesPolicyType,
  *         capacity: {
- *             initial: _var.auto_scaling_configuration_policies_capacity_initial,
- *             max: _var.auto_scaling_configuration_policies_capacity_max,
- *             min: _var.auto_scaling_configuration_policies_capacity_min,
+ *             initial: autoScalingConfigurationPoliciesCapacityInitial,
+ *             max: autoScalingConfigurationPoliciesCapacityMax,
+ *             min: autoScalingConfigurationPoliciesCapacityMin,
  *         },
- *         displayName: _var.auto_scaling_configuration_policies_display_name,
+ *         displayName: autoScalingConfigurationPoliciesDisplayName,
  *         executionSchedule: {
- *             expression: _var.auto_scaling_configuration_policies_execution_schedule_expression,
- *             timezone: _var.auto_scaling_configuration_policies_execution_schedule_timezone,
- *             type: _var.auto_scaling_configuration_policies_execution_schedule_type,
+ *             expression: autoScalingConfigurationPoliciesExecutionScheduleExpression,
+ *             timezone: autoScalingConfigurationPoliciesExecutionScheduleTimezone,
+ *             type: autoScalingConfigurationPoliciesExecutionScheduleType,
  *         },
- *         isEnabled: _var.auto_scaling_configuration_policies_is_enabled,
+ *         isEnabled: autoScalingConfigurationPoliciesIsEnabled,
  *         resourceAction: {
- *             action: _var.auto_scaling_configuration_policies_resource_action_action,
- *             actionType: _var.auto_scaling_configuration_policies_resource_action_action_type,
+ *             action: autoScalingConfigurationPoliciesResourceActionAction,
+ *             actionType: autoScalingConfigurationPoliciesResourceActionActionType,
  *         },
  *         rules: [{
  *             action: {
- *                 type: _var.auto_scaling_configuration_policies_rules_action_type,
- *                 value: _var.auto_scaling_configuration_policies_rules_action_value,
+ *                 type: autoScalingConfigurationPoliciesRulesActionType,
+ *                 value: autoScalingConfigurationPoliciesRulesActionValue,
  *             },
- *             displayName: _var.auto_scaling_configuration_policies_rules_display_name,
+ *             displayName: autoScalingConfigurationPoliciesRulesDisplayName,
  *             metric: {
- *                 metricType: _var.auto_scaling_configuration_policies_rules_metric_metric_type,
+ *                 metricType: autoScalingConfigurationPoliciesRulesMetricMetricType,
  *                 threshold: {
- *                     operator: _var.auto_scaling_configuration_policies_rules_metric_threshold_operator,
- *                     value: _var.auto_scaling_configuration_policies_rules_metric_threshold_value,
+ *                     operator: autoScalingConfigurationPoliciesRulesMetricThresholdOperator,
+ *                     value: autoScalingConfigurationPoliciesRulesMetricThresholdValue,
  *                 },
  *             },
  *         }],
  *     }],
- *     coolDownInSeconds: _var.auto_scaling_configuration_cool_down_in_seconds,
+ *     coolDownInSeconds: autoScalingConfigurationCoolDownInSeconds,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.auto_scaling_configuration_display_name,
+ *     displayName: autoScalingConfigurationDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: _var.auto_scaling_configuration_is_enabled,
+ *     isEnabled: autoScalingConfigurationIsEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

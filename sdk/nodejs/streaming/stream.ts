@@ -20,15 +20,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testStream = new oci.streaming.Stream("testStream", {
- *     partitions: _var.stream_partitions,
- *     compartmentId: _var.compartment_id,
- *     definedTags: _var.stream_defined_tags,
+ * const testStream = new oci.streaming.Stream("test_stream", {
+ *     name: streamName,
+ *     partitions: streamPartitions,
+ *     compartmentId: compartmentId,
+ *     definedTags: streamDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     retentionInHours: _var.stream_retention_in_hours,
- *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ *     retentionInHours: streamRetentionInHours,
+ *     streamPoolId: testStreamPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

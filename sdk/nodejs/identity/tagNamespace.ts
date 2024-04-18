@@ -29,9 +29,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagNamespace = new oci.identity.TagNamespace("testTagNamespace", {
- *     compartmentId: _var.compartment_id,
- *     description: _var.tag_namespace_description,
+ * const testTagNamespace = new oci.identity.TagNamespace("test_tag_namespace", {
+ *     compartmentId: compartmentId,
+ *     description: tagNamespaceDescription,
+ *     name: tagNamespaceName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

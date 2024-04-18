@@ -18,12 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbSystemsUpgrade = new oci.database.DbSystemsUpgrade("testDbSystemsUpgrade", {
- *     action: _var.db_systems_upgrade_action,
- *     dbSystemId: oci_database_db_system.test_db_system.id,
- *     isSnapshotRetentionDaysForceUpdated: _var.db_systems_upgrade_is_snapshot_retention_days_force_updated,
- *     newGiVersion: _var.db_systems_upgrade_new_gi_version,
- *     snapshotRetentionPeriodInDays: _var.db_systems_upgrade_snapshot_retention_period_in_days,
+ * const testDbSystemsUpgrade = new oci.database.DbSystemsUpgrade("test_db_systems_upgrade", {
+ *     action: dbSystemsUpgradeAction,
+ *     dbSystemId: testDbSystem.id,
+ *     isSnapshotRetentionDaysForceUpdated: dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated,
+ *     newGiVersion: dbSystemsUpgradeNewGiVersion,
+ *     snapshotRetentionPeriodInDays: dbSystemsUpgradeSnapshotRetentionPeriodInDays,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

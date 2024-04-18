@@ -58,28 +58,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewLoadBalancer(ctx, "testLoadBalancer", &LoadBalancer.LoadBalancerArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Load_balancer_display_name),
-//				Shape:         pulumi.Any(_var.Load_balancer_shape),
-//				SubnetIds:     pulumi.Any(_var.Load_balancer_subnet_ids),
+//			_, err := LoadBalancer.NewLoadBalancer(ctx, "test_load_balancer", &LoadBalancer.LoadBalancerArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(loadBalancerDisplayName),
+//				Shape:         pulumi.Any(loadBalancerShape),
+//				SubnetIds:     pulumi.Any(loadBalancerSubnetIds),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IpMode:                  pulumi.Any(_var.Load_balancer_ip_mode),
-//				IsPrivate:               pulumi.Any(_var.Load_balancer_is_private),
-//				NetworkSecurityGroupIds: pulumi.Any(_var.Load_balancer_network_security_group_ids),
+//				IpMode:                  pulumi.Any(loadBalancerIpMode),
+//				IsPrivate:               pulumi.Any(loadBalancerIsPrivate),
+//				NetworkSecurityGroupIds: pulumi.Any(loadBalancerNetworkSecurityGroupIds),
 //				ReservedIps: loadbalancer.LoadBalancerReservedIpArray{
 //					&loadbalancer.LoadBalancerReservedIpArgs{
-//						Id: pulumi.Any(_var.Load_balancer_reserved_ips_id),
+//						Id: pulumi.Any(loadBalancerReservedIpsId),
 //					},
 //				},
 //				ShapeDetails: &loadbalancer.LoadBalancerShapeDetailsArgs{
-//					MaximumBandwidthInMbps: pulumi.Any(_var.Load_balancer_shape_details_maximum_bandwidth_in_mbps),
-//					MinimumBandwidthInMbps: pulumi.Any(_var.Load_balancer_shape_details_minimum_bandwidth_in_mbps),
+//					MaximumBandwidthInMbps: pulumi.Any(loadBalancerShapeDetailsMaximumBandwidthInMbps),
+//					MinimumBandwidthInMbps: pulumi.Any(loadBalancerShapeDetailsMinimumBandwidthInMbps),
 //				},
 //			})
 //			if err != nil {

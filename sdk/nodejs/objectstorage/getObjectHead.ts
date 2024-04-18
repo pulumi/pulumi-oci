@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testObjectHead = oci.ObjectStorage.getObjectHead({
- *     bucket: _var.object_bucket,
- *     namespace: _var.object_namespace,
- *     object: _var.object_object,
+ *     bucket: objectBucket,
+ *     namespace: objectNamespace,
+ *     object: objectObject,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,9 +99,9 @@ export interface GetObjectHeadResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testObjectHead = oci.ObjectStorage.getObjectHead({
- *     bucket: _var.object_bucket,
- *     namespace: _var.object_namespace,
- *     object: _var.object_object,
+ *     bucket: objectBucket,
+ *     namespace: objectNamespace,
+ *     object: objectObject,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

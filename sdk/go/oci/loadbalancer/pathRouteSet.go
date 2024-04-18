@@ -32,14 +32,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewPathRouteSet(ctx, "testPathRouteSet", &LoadBalancer.PathRouteSetArgs{
-//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//			_, err := LoadBalancer.NewPathRouteSet(ctx, "test_path_route_set", &LoadBalancer.PathRouteSetArgs{
+//				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
+//				Name:           pulumi.Any(pathRouteSetName),
 //				PathRoutes: loadbalancer.PathRouteSetPathRouteArray{
 //					&loadbalancer.PathRouteSetPathRouteArgs{
-//						BackendSetName: pulumi.Any(oci_load_balancer_backend_set.Test_backend_set.Name),
-//						Path:           pulumi.Any(_var.Path_route_set_path_routes_path),
+//						BackendSetName: pulumi.Any(testBackendSet.Name),
+//						Path:           pulumi.Any(pathRouteSetPathRoutesPath),
 //						PathMatchType: &loadbalancer.PathRouteSetPathRoutePathMatchTypeArgs{
-//							MatchType: pulumi.Any(_var.Path_route_set_path_routes_path_match_type_match_type),
+//							MatchType: pulumi.Any(pathRouteSetPathRoutesPathMatchTypeMatchType),
 //						},
 //					},
 //				},

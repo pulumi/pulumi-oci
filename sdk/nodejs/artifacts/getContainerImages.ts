@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImages = oci.Artifacts.getContainerImages({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.container_image_compartment_id_in_subtree,
- *     displayName: _var.container_image_display_name,
- *     imageId: oci_core_image.test_image.id,
- *     isVersioned: _var.container_image_is_versioned,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     repositoryName: oci_artifacts_repository.test_repository.name,
- *     state: _var.container_image_state,
- *     version: _var.container_image_version,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
+ *     displayName: containerImageDisplayName,
+ *     imageId: testImage.id,
+ *     isVersioned: containerImageIsVersioned,
+ *     repositoryId: testRepository.id,
+ *     repositoryName: testRepository.name,
+ *     state: containerImageState,
+ *     version: containerImageVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -146,15 +146,15 @@ export interface GetContainerImagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerImages = oci.Artifacts.getContainerImages({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.container_image_compartment_id_in_subtree,
- *     displayName: _var.container_image_display_name,
- *     imageId: oci_core_image.test_image.id,
- *     isVersioned: _var.container_image_is_versioned,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     repositoryName: oci_artifacts_repository.test_repository.name,
- *     state: _var.container_image_state,
- *     version: _var.container_image_version,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: containerImageCompartmentIdInSubtree,
+ *     displayName: containerImageDisplayName,
+ *     imageId: testImage.id,
+ *     isVersioned: containerImageIsVersioned,
+ *     repositoryId: testRepository.id,
+ *     repositoryName: testRepository.name,
+ *     state: containerImageState,
+ *     version: containerImageVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

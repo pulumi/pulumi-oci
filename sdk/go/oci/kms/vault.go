@@ -39,21 +39,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewVault(ctx, "testVault", &Kms.VaultArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Vault_display_name),
-//				VaultType:     pulumi.Any(_var.Vault_vault_type),
+//			_, err := Kms.NewVault(ctx, "test_vault", &Kms.VaultArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(vaultDisplayName),
+//				VaultType:     pulumi.Any(vaultVaultType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				ExternalKeyManagerMetadata: &kms.VaultExternalKeyManagerMetadataArgs{
-//					ExternalVaultEndpointUrl: pulumi.Any(_var.Vault_external_key_manager_metadata_external_vault_endpoint_url),
+//					ExternalVaultEndpointUrl: pulumi.Any(vaultExternalKeyManagerMetadataExternalVaultEndpointUrl),
 //					OauthMetadata: &kms.VaultExternalKeyManagerMetadataOauthMetadataArgs{
-//						ClientAppId:        pulumi.Any(oci_kms_client_app.Test_client_app.Id),
-//						ClientAppSecret:    pulumi.Any(_var.Vault_external_key_manager_metadata_oauth_metadata_client_app_secret),
-//						IdcsAccountNameUrl: pulumi.Any(_var.Vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url),
+//						ClientAppId:        pulumi.Any(testClientApp.Id),
+//						ClientAppSecret:    pulumi.Any(vaultExternalKeyManagerMetadataOauthMetadataClientAppSecret),
+//						IdcsAccountNameUrl: pulumi.Any(vaultExternalKeyManagerMetadataOauthMetadataIdcsAccountNameUrl),
 //					},
-//					PrivateEndpointId: pulumi.Any(oci_dataflow_private_endpoint.Test_private_endpoint.Id),
+//					PrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),

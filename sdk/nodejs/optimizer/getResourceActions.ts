@@ -19,17 +19,17 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceActions = oci.Optimizer.getResourceActions({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.resource_action_compartment_id_in_subtree,
- *     childTenancyIds: _var.resource_action_child_tenancy_ids,
- *     includeOrganization: _var.resource_action_include_organization,
- *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
- *     name: _var.resource_action_name,
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
- *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
- *     resourceType: _var.resource_action_resource_type,
- *     state: _var.resource_action_state,
- *     status: _var.resource_action_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
+ *     childTenancyIds: resourceActionChildTenancyIds,
+ *     includeOrganization: resourceActionIncludeOrganization,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     name: resourceActionName,
+ *     recommendationId: testRecommendation.id,
+ *     recommendationName: testRecommendation.name,
+ *     resourceType: resourceActionResourceType,
+ *     state: resourceActionState,
+ *     status: resourceActionStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -172,17 +172,17 @@ export interface GetResourceActionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceActions = oci.Optimizer.getResourceActions({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.resource_action_compartment_id_in_subtree,
- *     childTenancyIds: _var.resource_action_child_tenancy_ids,
- *     includeOrganization: _var.resource_action_include_organization,
- *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
- *     name: _var.resource_action_name,
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
- *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
- *     resourceType: _var.resource_action_resource_type,
- *     state: _var.resource_action_state,
- *     status: _var.resource_action_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
+ *     childTenancyIds: resourceActionChildTenancyIds,
+ *     includeOrganization: resourceActionIncludeOrganization,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
+ *     name: resourceActionName,
+ *     recommendationId: testRecommendation.id,
+ *     recommendationName: testRecommendation.name,
+ *     resourceType: resourceActionResourceType,
+ *     state: resourceActionState,
+ *     status: resourceActionStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

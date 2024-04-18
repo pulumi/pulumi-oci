@@ -31,13 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModelVersionSet(ctx, "testModelVersionSet", &DataScience.ModelVersionSetArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//			_, err := DataScience.NewModelVersionSet(ctx, "test_model_version_set", &DataScience.ModelVersionSetArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(modelVersionSetName),
+//				ProjectId:     pulumi.Any(testProject.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Model_version_set_description),
+//				Description: pulumi.Any(modelVersionSetDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

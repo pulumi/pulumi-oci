@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetNotebookSession(ctx, &datascience.GetNotebookSessionArgs{
-//				NotebookSessionId: oci_datascience_notebook_session.Test_notebook_session.Id,
+//				NotebookSessionId: testNotebookSessionOciDatascienceNotebookSession.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

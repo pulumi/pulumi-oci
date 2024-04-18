@@ -30,15 +30,15 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousContainerDatabases = Oci.Database.GetAutonomousContainerDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-        ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-        ///         AvailabilityDomain = @var.Autonomous_container_database_availability_domain,
-        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///         DisplayName = @var.Autonomous_container_database_display_name,
-        ///         InfrastructureType = @var.Autonomous_container_database_infrastructure_type,
-        ///         ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
-        ///         State = @var.Autonomous_container_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousExadataInfrastructureId = testAutonomousExadataInfrastructure.Id,
+        ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+        ///         AvailabilityDomain = autonomousContainerDatabaseAvailabilityDomain,
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+        ///         DisplayName = autonomousContainerDatabaseDisplayName,
+        ///         InfrastructureType = autonomousContainerDatabaseInfrastructureType,
+        ///         ServiceLevelAgreementType = autonomousContainerDatabaseServiceLevelAgreementType,
+        ///         State = autonomousContainerDatabaseState,
         ///     });
         /// 
         /// });
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousContainerDatabases = Oci.Database.GetAutonomousContainerDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AutonomousExadataInfrastructureId = oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
-        ///         AutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-        ///         AvailabilityDomain = @var.Autonomous_container_database_availability_domain,
-        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///         DisplayName = @var.Autonomous_container_database_display_name,
-        ///         InfrastructureType = @var.Autonomous_container_database_infrastructure_type,
-        ///         ServiceLevelAgreementType = @var.Autonomous_container_database_service_level_agreement_type,
-        ///         State = @var.Autonomous_container_database_state,
+        ///         CompartmentId = compartmentId,
+        ///         AutonomousExadataInfrastructureId = testAutonomousExadataInfrastructure.Id,
+        ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+        ///         AvailabilityDomain = autonomousContainerDatabaseAvailabilityDomain,
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+        ///         DisplayName = autonomousContainerDatabaseDisplayName,
+        ///         InfrastructureType = autonomousContainerDatabaseInfrastructureType,
+        ///         ServiceLevelAgreementType = autonomousContainerDatabaseServiceLevelAgreementType,
+        ///         State = autonomousContainerDatabaseState,
         ///     });
         /// 
         /// });

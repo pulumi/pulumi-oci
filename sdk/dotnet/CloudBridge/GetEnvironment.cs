@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testEnvironment = Oci.CloudBridge.GetEnvironment.Invoke(new()
         ///     {
-        ///         EnvironmentId = oci_cloud_bridge_environment.Test_environment.Id,
+        ///         EnvironmentId = testEnvironmentOciCloudBridgeEnvironment.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testEnvironment = Oci.CloudBridge.GetEnvironment.Invoke(new()
         ///     {
-        ///         EnvironmentId = oci_cloud_bridge_environment.Test_environment.Id,
+        ///         EnvironmentId = testEnvironmentOciCloudBridgeEnvironment.Id,
         ///     });
         /// 
         /// });

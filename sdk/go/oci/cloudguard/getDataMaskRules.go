@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetDataMaskRules(ctx, &cloudguard.GetDataMaskRulesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AccessLevel:        pulumi.StringRef(_var.Data_mask_rule_access_level),
-//				DataMaskRuleStatus: pulumi.StringRef(_var.Data_mask_rule_data_mask_rule_status),
-//				DisplayName:        pulumi.StringRef(_var.Data_mask_rule_display_name),
-//				IamGroupId:         pulumi.StringRef(oci_identity_group.Test_group.Id),
-//				State:              pulumi.StringRef(_var.Data_mask_rule_state),
-//				TargetId:           pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TargetType:         pulumi.StringRef(_var.Data_mask_rule_target_type),
+//				CompartmentId:      compartmentId,
+//				AccessLevel:        pulumi.StringRef(dataMaskRuleAccessLevel),
+//				DataMaskRuleStatus: pulumi.StringRef(dataMaskRuleDataMaskRuleStatus),
+//				DisplayName:        pulumi.StringRef(dataMaskRuleDisplayName),
+//				IamGroupId:         pulumi.StringRef(testGroup.Id),
+//				State:              pulumi.StringRef(dataMaskRuleState),
+//				TargetId:           pulumi.StringRef(testTarget.Id),
+//				TargetType:         pulumi.StringRef(dataMaskRuleTargetType),
 //			}, nil)
 //			if err != nil {
 //				return err

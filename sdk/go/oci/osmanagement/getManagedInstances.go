@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetManagedInstances(ctx, &osmanagement.GetManagedInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Managed_instance_display_name),
-//				OsFamily:      pulumi.StringRef(_var.Managed_instance_os_family),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(managedInstanceDisplayName),
+//				OsFamily:      pulumi.StringRef(managedInstanceOsFamily),
 //			}, nil)
 //			if err != nil {
 //				return err

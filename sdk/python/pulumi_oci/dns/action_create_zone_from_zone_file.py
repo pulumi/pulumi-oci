@@ -419,11 +419,11 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_action_create_zone_from_zone_file = oci.dns.ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile",
-            create_zone_from_zone_file_details=var["action_create_zone_from_zone_file_create_zone_from_zone_file_details"],
-            compartment_id=var["compartment_id"],
-            scope=var["action_create_zone_from_zone_file_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
+        test_action_create_zone_from_zone_file = oci.dns.ActionCreateZoneFromZoneFile("test_action_create_zone_from_zone_file",
+            create_zone_from_zone_file_details=action_create_zone_from_zone_file_create_zone_from_zone_file_details,
+            compartment_id=compartment_id,
+            scope=action_create_zone_from_zone_file_scope,
+            view_id=test_view["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -466,11 +466,11 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_action_create_zone_from_zone_file = oci.dns.ActionCreateZoneFromZoneFile("testActionCreateZoneFromZoneFile",
-            create_zone_from_zone_file_details=var["action_create_zone_from_zone_file_create_zone_from_zone_file_details"],
-            compartment_id=var["compartment_id"],
-            scope=var["action_create_zone_from_zone_file_scope"],
-            view_id=oci_dns_view["test_view"]["id"])
+        test_action_create_zone_from_zone_file = oci.dns.ActionCreateZoneFromZoneFile("test_action_create_zone_from_zone_file",
+            create_zone_from_zone_file_details=action_create_zone_from_zone_file_create_zone_from_zone_file_details,
+            compartment_id=compartment_id,
+            scope=action_create_zone_from_zone_file_scope,
+            view_id=test_view["id"])
         ```
         <!--End PulumiCodeChooser -->
 

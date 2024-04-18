@@ -124,10 +124,10 @@ def get_managed_database_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=var["compartment_id"],
-        id=var["managed_database_group_id"],
-        name=var["managed_database_group_name"],
-        state=var["managed_database_group_state"])
+    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=compartment_id,
+        id=managed_database_group_id,
+        name=managed_database_group_name,
+        state=managed_database_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -177,10 +177,10 @@ def get_managed_database_groups_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=var["compartment_id"],
-        id=var["managed_database_group_id"],
-        name=var["managed_database_group_name"],
-        state=var["managed_database_group_state"])
+    test_managed_database_groups = oci.DatabaseManagement.get_managed_database_groups(compartment_id=compartment_id,
+        id=managed_database_group_id,
+        name=managed_database_group_name,
+        state=managed_database_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

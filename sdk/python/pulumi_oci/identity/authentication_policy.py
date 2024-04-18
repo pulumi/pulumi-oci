@@ -145,18 +145,18 @@ class AuthenticationPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_authentication_policy = oci.identity.AuthenticationPolicy("testAuthenticationPolicy",
-            compartment_id=var["tenancy_ocid"],
+        test_authentication_policy = oci.identity.AuthenticationPolicy("test_authentication_policy",
+            compartment_id=tenancy_ocid,
             network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=var["authentication_policy_network_policy_network_source_ids"],
+                network_source_ids=authentication_policy_network_policy_network_source_ids,
             ),
             password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=var["authentication_policy_password_policy_is_lowercase_characters_required"],
-                is_numeric_characters_required=var["authentication_policy_password_policy_is_numeric_characters_required"],
-                is_special_characters_required=var["authentication_policy_password_policy_is_special_characters_required"],
-                is_uppercase_characters_required=var["authentication_policy_password_policy_is_uppercase_characters_required"],
-                is_username_containment_allowed=var["authentication_policy_password_policy_is_username_containment_allowed"],
-                minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
+                is_lowercase_characters_required=authentication_policy_password_policy_is_lowercase_characters_required,
+                is_numeric_characters_required=authentication_policy_password_policy_is_numeric_characters_required,
+                is_special_characters_required=authentication_policy_password_policy_is_special_characters_required,
+                is_uppercase_characters_required=authentication_policy_password_policy_is_uppercase_characters_required,
+                is_username_containment_allowed=authentication_policy_password_policy_is_username_containment_allowed,
+                minimum_password_length=authentication_policy_password_policy_minimum_password_length,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -193,18 +193,18 @@ class AuthenticationPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_authentication_policy = oci.identity.AuthenticationPolicy("testAuthenticationPolicy",
-            compartment_id=var["tenancy_ocid"],
+        test_authentication_policy = oci.identity.AuthenticationPolicy("test_authentication_policy",
+            compartment_id=tenancy_ocid,
             network_policy=oci.identity.AuthenticationPolicyNetworkPolicyArgs(
-                network_source_ids=var["authentication_policy_network_policy_network_source_ids"],
+                network_source_ids=authentication_policy_network_policy_network_source_ids,
             ),
             password_policy=oci.identity.AuthenticationPolicyPasswordPolicyArgs(
-                is_lowercase_characters_required=var["authentication_policy_password_policy_is_lowercase_characters_required"],
-                is_numeric_characters_required=var["authentication_policy_password_policy_is_numeric_characters_required"],
-                is_special_characters_required=var["authentication_policy_password_policy_is_special_characters_required"],
-                is_uppercase_characters_required=var["authentication_policy_password_policy_is_uppercase_characters_required"],
-                is_username_containment_allowed=var["authentication_policy_password_policy_is_username_containment_allowed"],
-                minimum_password_length=var["authentication_policy_password_policy_minimum_password_length"],
+                is_lowercase_characters_required=authentication_policy_password_policy_is_lowercase_characters_required,
+                is_numeric_characters_required=authentication_policy_password_policy_is_numeric_characters_required,
+                is_special_characters_required=authentication_policy_password_policy_is_special_characters_required,
+                is_uppercase_characters_required=authentication_policy_password_policy_is_uppercase_characters_required,
+                is_username_containment_allowed=authentication_policy_password_policy_is_username_containment_allowed,
+                minimum_password_length=authentication_policy_password_policy_minimum_password_length,
             ))
         ```
         <!--End PulumiCodeChooser -->

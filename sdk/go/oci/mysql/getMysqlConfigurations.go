@@ -38,12 +38,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetMysqlConfigurations(ctx, &mysql.GetMysqlConfigurationsArgs{
-//				CompartmentId:   _var.Compartment_id,
-//				ConfigurationId: pulumi.StringRef(_var.Mysql_configuration_id),
-//				DisplayName:     pulumi.StringRef(_var.Mysql_configuration_display_name),
-//				ShapeName:       pulumi.StringRef(_var.Mysql_shape_name),
-//				State:           pulumi.StringRef(_var.Mysql_configuration_state),
-//				Types:           _var.Mysql_configuration_type,
+//				CompartmentId:   compartmentId,
+//				ConfigurationId: pulumi.StringRef(mysqlConfigurationId),
+//				DisplayName:     pulumi.StringRef(mysqlConfigurationDisplayName),
+//				ShapeName:       pulumi.StringRef(mysqlShapeName),
+//				State:           pulumi.StringRef(mysqlConfigurationState),
+//				Types:           mysqlConfigurationType,
 //			}, nil)
 //			if err != nil {
 //				return err

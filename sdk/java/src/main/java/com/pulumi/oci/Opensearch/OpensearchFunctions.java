@@ -62,7 +62,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
      *             .build());
      * 
      *     }
@@ -113,7 +113,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
      *             .build());
      * 
      *     }
@@ -164,7 +164,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
      *             .build());
      * 
      *     }
@@ -215,7 +215,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchCluster = OpensearchFunctions.getOpensearchCluster(GetOpensearchClusterArgs.builder()
-     *             .opensearchClusterId(oci_opensearch_opensearch_cluster.test_opensearch_cluster().id())
+     *             .opensearchClusterId(testOpensearchClusterOciOpensearchOpensearchCluster.id())
      *             .build());
      * 
      *     }
@@ -266,10 +266,10 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opensearch_cluster_display_name())
-     *             .id(var_.opensearch_cluster_id())
-     *             .state(var_.opensearch_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterDisplayName)
+     *             .id(opensearchClusterId)
+     *             .state(opensearchClusterState)
      *             .build());
      * 
      *     }
@@ -320,10 +320,10 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opensearch_cluster_display_name())
-     *             .id(var_.opensearch_cluster_id())
-     *             .state(var_.opensearch_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterDisplayName)
+     *             .id(opensearchClusterId)
+     *             .state(opensearchClusterState)
      *             .build());
      * 
      *     }
@@ -374,10 +374,10 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opensearch_cluster_display_name())
-     *             .id(var_.opensearch_cluster_id())
-     *             .state(var_.opensearch_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterDisplayName)
+     *             .id(opensearchClusterId)
+     *             .state(opensearchClusterState)
      *             .build());
      * 
      *     }
@@ -428,10 +428,10 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchClusters = OpensearchFunctions.getOpensearchClusters(GetOpensearchClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.opensearch_cluster_display_name())
-     *             .id(var_.opensearch_cluster_id())
-     *             .state(var_.opensearch_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(opensearchClusterDisplayName)
+     *             .id(opensearchClusterId)
+     *             .state(opensearchClusterState)
      *             .build());
      * 
      *     }
@@ -482,7 +482,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -533,7 +533,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -584,7 +584,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -635,7 +635,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersion = OpensearchFunctions.getOpensearchVersion(GetOpensearchVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -686,7 +686,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -737,7 +737,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -788,7 +788,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -839,7 +839,7 @@ public final class OpensearchFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpensearchVersions = OpensearchFunctions.getOpensearchVersions(GetOpensearchVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }

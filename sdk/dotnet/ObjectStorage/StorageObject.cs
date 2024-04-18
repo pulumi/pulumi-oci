@@ -32,21 +32,21 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testObject = new Oci.ObjectStorage.StorageObject("testObject", new()
+    ///     var testObject = new Oci.ObjectStorage.StorageObject("test_object", new()
     ///     {
-    ///         Bucket = @var.Object_bucket,
-    ///         Content = @var.Object_content,
-    ///         Namespace = @var.Object_namespace,
-    ///         Object = @var.Object_object,
-    ///         CacheControl = @var.Object_cache_control,
-    ///         ContentDisposition = @var.Object_content_disposition,
-    ///         ContentEncoding = @var.Object_content_encoding,
-    ///         ContentLanguage = @var.Object_content_language,
-    ///         ContentType = @var.Object_content_type,
-    ///         DeleteAllObjectVersions = @var.Object_delete_all_object_versions,
-    ///         Metadata = @var.Object_metadata,
-    ///         StorageTier = @var.Object_storage_tier,
-    ///         OpcSseKmsKeyId = @var.Object_opc_sse_kms_key_id,
+    ///         Bucket = objectBucket,
+    ///         Content = objectContent,
+    ///         Namespace = objectNamespace,
+    ///         Object = objectObject,
+    ///         CacheControl = objectCacheControl,
+    ///         ContentDisposition = objectContentDisposition,
+    ///         ContentEncoding = objectContentEncoding,
+    ///         ContentLanguage = objectContentLanguage,
+    ///         ContentType = objectContentType,
+    ///         DeleteAllObjectVersions = objectDeleteAllObjectVersions,
+    ///         Metadata = objectMetadata,
+    ///         StorageTier = objectStorageTier,
+    ///         OpcSseKmsKeyId = objectOpcSseKmsKeyId,
     ///     });
     /// 
     /// });

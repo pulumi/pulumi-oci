@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OneSubsription.GetOrganizationSubscriptions(ctx, &onesubsription.GetOrganizationSubscriptionsArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

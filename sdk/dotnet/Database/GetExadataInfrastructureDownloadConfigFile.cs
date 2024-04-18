@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExadataInfrastructureDownloadConfigFile = Oci.Database.GetExadataInfrastructureDownloadConfigFile.Invoke(new()
         ///     {
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         Base64EncodeContent = false,
         ///     });
         /// 
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testExadataInfrastructureDownloadConfigFile = Oci.Database.GetExadataInfrastructureDownloadConfigFile.Invoke(new()
         ///     {
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
         ///         Base64EncodeContent = false,
         ///     });
         /// 

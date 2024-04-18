@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     orderLineId: oci_onesubscription_order_line.test_order_line.id,
- *     status: _var.subscribed_service_status,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     orderLineId: testOrderLine.id,
+ *     status: subscribedServiceStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetSubscribedServicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscribedServices = oci.OneSubsription.getSubscribedServices({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     orderLineId: oci_onesubscription_order_line.test_order_line.id,
- *     status: _var.subscribed_service_status,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     orderLineId: testOrderLine.id,
+ *     status: subscribedServiceStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

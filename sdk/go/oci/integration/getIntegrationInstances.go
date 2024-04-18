@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Integration.GetIntegrationInstances(ctx, &integration.GetIntegrationInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Integration_instance_display_name),
-//				State:         pulumi.StringRef(_var.Integration_instance_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(integrationInstanceDisplayName),
+//				State:         pulumi.StringRef(integrationInstanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

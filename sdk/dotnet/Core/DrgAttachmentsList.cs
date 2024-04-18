@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrgAttachmentsList = new Oci.Core.DrgAttachmentsList("testDrgAttachmentsList", new()
+    ///     var testDrgAttachmentsList = new Oci.Core.DrgAttachmentsList("test_drg_attachments_list", new()
     ///     {
-    ///         DrgId = oci_core_drg.Test_drg.Id,
-    ///         AttachmentType = @var.Drg_attachments_list_attachment_type,
-    ///         IsCrossTenancy = @var.Drg_attachments_list_is_cross_tenancy,
+    ///         DrgId = testDrg.Id,
+    ///         AttachmentType = drgAttachmentsListAttachmentType,
+    ///         IsCrossTenancy = drgAttachmentsListIsCrossTenancy,
     ///     });
     /// 
     /// });

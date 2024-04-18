@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingAnalytics = oci.DataSafe.getMaskingAnalytics({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.masking_analytic_compartment_id_in_subtree,
- *     groupBy: _var.masking_analytic_group_by,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
+ *     groupBy: maskingAnalyticGroupBy,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,11 +107,11 @@ export interface GetMaskingAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingAnalytics = oci.DataSafe.getMaskingAnalytics({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.masking_analytic_compartment_id_in_subtree,
- *     groupBy: _var.masking_analytic_group_by,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: maskingAnalyticCompartmentIdInSubtree,
+ *     groupBy: maskingAnalyticGroupBy,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

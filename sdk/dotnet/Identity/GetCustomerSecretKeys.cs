@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCustomerSecretKeys = Oci.Identity.GetCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         UserId = testUser.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCustomerSecretKeys = Oci.Identity.GetCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         UserId = testUser.Id,
         ///     });
         /// 
         /// });

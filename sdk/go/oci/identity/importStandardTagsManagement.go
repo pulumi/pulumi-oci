@@ -32,9 +32,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewImportStandardTagsManagement(ctx, "testImportStandardTagsManagement", &Identity.ImportStandardTagsManagementArgs{
-//				CompartmentId:            pulumi.Any(_var.Compartment_id),
-//				StandardTagNamespaceName: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Name),
+//			_, err := Identity.NewImportStandardTagsManagement(ctx, "test_import_standard_tags_management", &Identity.ImportStandardTagsManagementArgs{
+//				CompartmentId:            pulumi.Any(compartmentId),
+//				StandardTagNamespaceName: pulumi.Any(testTagNamespace.Name),
 //			})
 //			if err != nil {
 //				return err

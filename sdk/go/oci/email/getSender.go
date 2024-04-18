@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetSender(ctx, &email.GetSenderArgs{
-//				SenderId: oci_email_sender.Test_sender.Id,
+//				SenderId: testSenderOciEmailSender.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

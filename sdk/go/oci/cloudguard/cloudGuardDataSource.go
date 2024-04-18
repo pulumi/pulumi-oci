@@ -31,27 +31,27 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewCloudGuardDataSource(ctx, "testDataSource", &CloudGuard.CloudGuardDataSourceArgs{
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				DataSourceFeedProvider: pulumi.Any(_var.Data_source_data_source_feed_provider),
-//				DisplayName:            pulumi.Any(_var.Data_source_display_name),
+//			_, err := CloudGuard.NewCloudGuardDataSource(ctx, "test_data_source", &CloudGuard.CloudGuardDataSourceArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				DataSourceFeedProvider: pulumi.Any(dataSourceDataSourceFeedProvider),
+//				DisplayName:            pulumi.Any(dataSourceDisplayName),
 //				DataSourceDetails: &cloudguard.CloudGuardDataSourceDataSourceDetailsArgs{
-//					DataSourceFeedProvider:  pulumi.Any(_var.Data_source_data_source_details_data_source_feed_provider),
-//					AdditionalEntitiesCount: pulumi.Any(_var.Data_source_data_source_details_additional_entities_count),
-//					IntervalInMinutes:       pulumi.Any(_var.Data_source_data_source_details_interval_in_minutes),
+//					DataSourceFeedProvider:  pulumi.Any(dataSourceDataSourceDetailsDataSourceFeedProvider),
+//					AdditionalEntitiesCount: pulumi.Any(dataSourceDataSourceDetailsAdditionalEntitiesCount),
+//					IntervalInMinutes:       pulumi.Any(dataSourceDataSourceDetailsIntervalInMinutes),
 //					LoggingQueryDetails: &cloudguard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs{
-//						LoggingQueryType: pulumi.Any(_var.Data_source_data_source_details_logging_query_details_logging_query_type),
-//						KeyEntitiesCount: pulumi.Any(_var.Data_source_data_source_details_logging_query_details_key_entities_count),
+//						LoggingQueryType: pulumi.Any(dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType),
+//						KeyEntitiesCount: pulumi.Any(dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount),
 //					},
-//					LoggingQueryType: pulumi.Any(_var.Data_source_data_source_details_logging_query_type),
-//					Operator:         pulumi.Any(_var.Data_source_data_source_details_operator),
-//					Query:            pulumi.Any(_var.Data_source_data_source_details_query),
+//					LoggingQueryType: pulumi.Any(dataSourceDataSourceDetailsLoggingQueryType),
+//					Operator:         pulumi.Any(dataSourceDataSourceDetailsOperator),
+//					Query:            pulumi.Any(dataSourceDataSourceDetailsQuery),
 //					QueryStartTime: &cloudguard.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs{
-//						StartPolicyType: pulumi.Any(_var.Data_source_data_source_details_query_start_time_start_policy_type),
-//						QueryStartTime:  pulumi.Any(_var.Data_source_data_source_details_query_start_time_query_start_time),
+//						StartPolicyType: pulumi.Any(dataSourceDataSourceDetailsQueryStartTimeStartPolicyType),
+//						QueryStartTime:  pulumi.Any(dataSourceDataSourceDetailsQueryStartTimeQueryStartTime),
 //					},
-//					Regions:   pulumi.Any(_var.Data_source_data_source_details_regions),
-//					Threshold: pulumi.Any(_var.Data_source_data_source_details_threshold),
+//					Regions:   pulumi.Any(dataSourceDataSourceDetailsRegions),
+//					Threshold: pulumi.Any(dataSourceDataSourceDetailsThreshold),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -59,7 +59,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Status: pulumi.Any(_var.Data_source_status),
+//				Status: pulumi.Any(dataSourceStatus),
 //			})
 //			if err != nil {
 //				return err

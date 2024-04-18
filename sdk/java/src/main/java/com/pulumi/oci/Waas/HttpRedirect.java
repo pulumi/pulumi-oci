@@ -48,19 +48,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testHttpRedirect = new HttpRedirect(&#34;testHttpRedirect&#34;, HttpRedirectArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .domain(var_.http_redirect_domain())
+ *             .compartmentId(compartmentId)
+ *             .domain(httpRedirectDomain)
  *             .target(HttpRedirectTargetArgs.builder()
- *                 .host(var_.http_redirect_target_host())
- *                 .path(var_.http_redirect_target_path())
- *                 .protocol(var_.http_redirect_target_protocol())
- *                 .query(var_.http_redirect_target_query())
- *                 .port(var_.http_redirect_target_port())
+ *                 .host(httpRedirectTargetHost)
+ *                 .path(httpRedirectTargetPath)
+ *                 .protocol(httpRedirectTargetProtocol)
+ *                 .query(httpRedirectTargetQuery)
+ *                 .port(httpRedirectTargetPort)
  *                 .build())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.http_redirect_display_name())
+ *             .displayName(httpRedirectDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .responseCode(var_.http_redirect_response_code())
+ *             .responseCode(httpRedirectResponseCode)
  *             .build());
  * 
  *     }

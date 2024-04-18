@@ -45,21 +45,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPublicIp = new Oci.Core.PublicIp("testPublicIp", new()
+    ///     var testPublicIp = new Oci.Core.PublicIp("test_public_ip", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Lifetime = @var.Public_ip_lifetime,
+    ///         CompartmentId = compartmentId,
+    ///         Lifetime = publicIpLifetime,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Public_ip_display_name,
+    ///         DisplayName = publicIpDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PrivateIpId = oci_core_private_ip.Test_private_ip.Id,
-    ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+    ///         PrivateIpId = testPrivateIp.Id,
+    ///         PublicIpPoolId = testPublicIpPool.Id,
     ///     });
     /// 
     /// });

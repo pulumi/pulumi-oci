@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAlertRule = new oci.budget.Rule("testAlertRule", {
- *     budgetId: oci_budget_budget.test_budget.id,
- *     threshold: _var.alert_rule_threshold,
- *     thresholdType: _var.alert_rule_threshold_type,
- *     type: _var.alert_rule_type,
+ * const testAlertRule = new oci.budget.Rule("test_alert_rule", {
+ *     budgetId: testBudget.id,
+ *     threshold: alertRuleThreshold,
+ *     thresholdType: alertRuleThresholdType,
+ *     type: alertRuleType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.alert_rule_description,
- *     displayName: _var.alert_rule_display_name,
+ *     description: alertRuleDescription,
+ *     displayName: alertRuleDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     message: _var.alert_rule_message,
- *     recipients: _var.alert_rule_recipients,
+ *     message: alertRuleMessage,
+ *     recipients: alertRuleRecipients,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

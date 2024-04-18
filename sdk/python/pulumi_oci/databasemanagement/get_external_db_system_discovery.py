@@ -221,7 +221,7 @@ def get_external_db_system_discovery(external_db_system_discovery_id: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_discovery = oci.DatabaseManagement.get_external_db_system_discovery(external_db_system_discovery_id=oci_database_management_external_db_system_discovery["test_external_db_system_discovery"]["id"])
+    test_external_db_system_discovery = oci.DatabaseManagement.get_external_db_system_discovery(external_db_system_discovery_id=test_external_db_system_discovery_oci_database_management_external_db_system_discovery["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -266,7 +266,7 @@ def get_external_db_system_discovery_output(external_db_system_discovery_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_discovery = oci.DatabaseManagement.get_external_db_system_discovery(external_db_system_discovery_id=oci_database_management_external_db_system_discovery["test_external_db_system_discovery"]["id"])
+    test_external_db_system_discovery = oci.DatabaseManagement.get_external_db_system_discovery(external_db_system_discovery_id=test_external_db_system_discovery_oci_database_management_external_db_system_discovery["id"])
     ```
     <!--End PulumiCodeChooser -->
 

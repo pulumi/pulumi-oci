@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDbNode = oci.DatabaseManagement.getExternalDbNode({
- *     externalDbNodeId: oci_database_management_external_db_node.test_external_db_node.id,
+ *     externalDbNodeId: testExternalDbNodeOciDatabaseManagementExternalDbNode.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -127,7 +127,7 @@ export interface GetExternalDbNodeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDbNode = oci.DatabaseManagement.getExternalDbNode({
- *     externalDbNodeId: oci_database_management_external_db_node.test_external_db_node.id,
+ *     externalDbNodeId: testExternalDbNodeOciDatabaseManagementExternalDbNode.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDatabaseUpgradeHistoryEntries(ctx, &database.GetDatabaseUpgradeHistoryEntriesArgs{
-//				DatabaseId:    oci_database_database.Test_database.Id,
-//				State:         pulumi.StringRef(_var.Database_upgrade_history_entry_state),
-//				UpgradeAction: pulumi.StringRef(_var.Database_upgrade_history_entry_upgrade_action),
+//				DatabaseId:    testDatabase.Id,
+//				State:         pulumi.StringRef(databaseUpgradeHistoryEntryState),
+//				UpgradeAction: pulumi.StringRef(databaseUpgradeHistoryEntryUpgradeAction),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauth2clientCredential = Oci.Identity.GetDomainsOauth2clientCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         OAuth2clientCredentialId = oci_identity_domains_o_auth2client_credential.Test_o_auth2client_credential.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuth2clientCredentialId = testOAuth2clientCredential.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth2client_credential_resource_type_schema_version,
+        ///         Authorization = oauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = oauth2clientCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testOauth2clientCredential = Oci.Identity.GetDomainsOauth2clientCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         OAuth2clientCredentialId = oci_identity_domains_o_auth2client_credential.Test_o_auth2client_credential.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         OAuth2clientCredentialId = testOAuth2clientCredential.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Oauth2client_credential_resource_type_schema_version,
+        ///         Authorization = oauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = oauth2clientCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

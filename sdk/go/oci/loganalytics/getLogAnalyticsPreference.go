@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsPreference(ctx, &loganalytics.GetLogAnalyticsPreferenceArgs{
-//				Namespace: _var.Log_analytics_preference_namespace,
+//				Namespace: logAnalyticsPreferenceNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

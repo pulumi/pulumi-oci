@@ -36,10 +36,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalExadataInfrastructureExadataManagement(ctx, "testExternalExadataInfrastructureExadataManagement", &DatabaseManagement.ExternalExadataInfrastructureExadataManagementArgs{
-//				ExternalExadataInfrastructureId: pulumi.Any(oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id),
-//				EnableExadata:                   pulumi.Any(_var.Enable_exadata),
-//				LicenseModel:                    pulumi.Any(_var.External_exadata_infrastructure_exadata_management_license_model),
+//			_, err := DatabaseManagement.NewExternalExadataInfrastructureExadataManagement(ctx, "test_external_exadata_infrastructure_exadata_management", &DatabaseManagement.ExternalExadataInfrastructureExadataManagementArgs{
+//				ExternalExadataInfrastructureId: pulumi.Any(testExternalExadataInfrastructure.Id),
+//				EnableExadata:                   pulumi.Any(enableExadata),
+//				LicenseModel:                    pulumi.Any(externalExadataInfrastructureExadataManagementLicenseModel),
 //			})
 //			if err != nil {
 //				return err

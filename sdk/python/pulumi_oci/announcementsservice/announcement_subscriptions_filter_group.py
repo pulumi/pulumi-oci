@@ -162,12 +162,13 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
+        test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("test_announcement_subscriptions_filter_group",
+            announcement_subscription_id=test_announcement_subscription["id"],
             filters=[oci.announcements_service.AnnouncementSubscriptionsFilterGroupFilterArgs(
-                type=var["announcement_subscriptions_filter_group_filters_type"],
-                value=var["announcement_subscriptions_filter_group_filters_value"],
-            )])
+                type=announcement_subscriptions_filter_group_filters_type,
+                value=announcement_subscriptions_filter_group_filters_value,
+            )],
+            name=announcement_subscriptions_filter_group_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -209,12 +210,13 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
+        test_announcement_subscriptions_filter_group = oci.announcements_service.AnnouncementSubscriptionsFilterGroup("test_announcement_subscriptions_filter_group",
+            announcement_subscription_id=test_announcement_subscription["id"],
             filters=[oci.announcements_service.AnnouncementSubscriptionsFilterGroupFilterArgs(
-                type=var["announcement_subscriptions_filter_group_filters_type"],
-                value=var["announcement_subscriptions_filter_group_filters_value"],
-            )])
+                type=announcement_subscriptions_filter_group_filters_type,
+                value=announcement_subscriptions_filter_group_filters_value,
+            )],
+            name=announcement_subscriptions_filter_group_name)
         ```
         <!--End PulumiCodeChooser -->
 

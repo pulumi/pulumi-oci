@@ -116,7 +116,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
      *             .build());
      * 
      *     }
@@ -158,7 +158,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
      *             .build());
      * 
      *     }
@@ -200,7 +200,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
      *             .build());
      * 
      *     }
@@ -242,7 +242,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
      *             .build());
      * 
      *     }
@@ -285,13 +285,13 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironments = OsManagementHubFunctions.getLifecycleEnvironments(GetLifecycleEnvironmentsArgs.builder()
-     *             .archType(var_.lifecycle_environment_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.lifecycle_environment_display_name())
-     *             .displayNameContains(var_.lifecycle_environment_display_name_contains())
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
-     *             .osFamily(var_.lifecycle_environment_os_family())
-     *             .state(var_.lifecycle_environment_state())
+     *             .archType(lifecycleEnvironmentArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(lifecycleEnvironmentDisplayName)
+     *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .osFamily(lifecycleEnvironmentOsFamily)
+     *             .state(lifecycleEnvironmentState)
      *             .build());
      * 
      *     }
@@ -334,13 +334,13 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironments = OsManagementHubFunctions.getLifecycleEnvironments(GetLifecycleEnvironmentsArgs.builder()
-     *             .archType(var_.lifecycle_environment_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.lifecycle_environment_display_name())
-     *             .displayNameContains(var_.lifecycle_environment_display_name_contains())
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
-     *             .osFamily(var_.lifecycle_environment_os_family())
-     *             .state(var_.lifecycle_environment_state())
+     *             .archType(lifecycleEnvironmentArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(lifecycleEnvironmentDisplayName)
+     *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .osFamily(lifecycleEnvironmentOsFamily)
+     *             .state(lifecycleEnvironmentState)
      *             .build());
      * 
      *     }
@@ -383,13 +383,13 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironments = OsManagementHubFunctions.getLifecycleEnvironments(GetLifecycleEnvironmentsArgs.builder()
-     *             .archType(var_.lifecycle_environment_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.lifecycle_environment_display_name())
-     *             .displayNameContains(var_.lifecycle_environment_display_name_contains())
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
-     *             .osFamily(var_.lifecycle_environment_os_family())
-     *             .state(var_.lifecycle_environment_state())
+     *             .archType(lifecycleEnvironmentArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(lifecycleEnvironmentDisplayName)
+     *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .osFamily(lifecycleEnvironmentOsFamily)
+     *             .state(lifecycleEnvironmentState)
      *             .build());
      * 
      *     }
@@ -432,13 +432,13 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironments = OsManagementHubFunctions.getLifecycleEnvironments(GetLifecycleEnvironmentsArgs.builder()
-     *             .archType(var_.lifecycle_environment_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.lifecycle_environment_display_name())
-     *             .displayNameContains(var_.lifecycle_environment_display_name_contains())
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
-     *             .osFamily(var_.lifecycle_environment_os_family())
-     *             .state(var_.lifecycle_environment_state())
+     *             .archType(lifecycleEnvironmentArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(lifecycleEnvironmentDisplayName)
+     *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .osFamily(lifecycleEnvironmentOsFamily)
+     *             .state(lifecycleEnvironmentState)
      *             .build());
      * 
      *     }
@@ -481,13 +481,13 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironments = OsManagementHubFunctions.getLifecycleEnvironments(GetLifecycleEnvironmentsArgs.builder()
-     *             .archType(var_.lifecycle_environment_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.lifecycle_environment_display_name())
-     *             .displayNameContains(var_.lifecycle_environment_display_name_contains())
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
-     *             .osFamily(var_.lifecycle_environment_os_family())
-     *             .state(var_.lifecycle_environment_state())
+     *             .archType(lifecycleEnvironmentArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(lifecycleEnvironmentDisplayName)
+     *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .osFamily(lifecycleEnvironmentOsFamily)
+     *             .state(lifecycleEnvironmentState)
      *             .build());
      * 
      *     }
@@ -530,13 +530,13 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironments = OsManagementHubFunctions.getLifecycleEnvironments(GetLifecycleEnvironmentsArgs.builder()
-     *             .archType(var_.lifecycle_environment_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.lifecycle_environment_display_name())
-     *             .displayNameContains(var_.lifecycle_environment_display_name_contains())
-     *             .lifecycleEnvironmentId(oci_os_management_hub_lifecycle_environment.test_lifecycle_environment().id())
-     *             .osFamily(var_.lifecycle_environment_os_family())
-     *             .state(var_.lifecycle_environment_state())
+     *             .archType(lifecycleEnvironmentArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(lifecycleEnvironmentDisplayName)
+     *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .osFamily(lifecycleEnvironmentOsFamily)
+     *             .state(lifecycleEnvironmentState)
      *             .build());
      * 
      *     }
@@ -578,7 +578,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(oci_os_management_hub_lifecycle_stage.test_lifecycle_stage().id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
      *             .build());
      * 
      *     }
@@ -620,7 +620,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(oci_os_management_hub_lifecycle_stage.test_lifecycle_stage().id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
      *             .build());
      * 
      *     }
@@ -662,7 +662,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(oci_os_management_hub_lifecycle_stage.test_lifecycle_stage().id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
      *             .build());
      * 
      *     }
@@ -704,7 +704,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(oci_os_management_hub_lifecycle_stage.test_lifecycle_stage().id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
      *             .build());
      * 
      *     }
@@ -806,7 +806,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -848,7 +848,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -890,7 +890,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -932,7 +932,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
      *             .build());
      * 
      *     }
@@ -975,10 +975,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.managed_instance_group_available_module_name())
-     *             .nameContains(var_.managed_instance_group_available_module_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceGroupAvailableModuleName)
+     *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
      *             .build());
      * 
      *     }
@@ -1021,10 +1021,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.managed_instance_group_available_module_name())
-     *             .nameContains(var_.managed_instance_group_available_module_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceGroupAvailableModuleName)
+     *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
      *             .build());
      * 
      *     }
@@ -1067,10 +1067,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.managed_instance_group_available_module_name())
-     *             .nameContains(var_.managed_instance_group_available_module_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceGroupAvailableModuleName)
+     *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
      *             .build());
      * 
      *     }
@@ -1113,10 +1113,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.managed_instance_group_available_module_name())
-     *             .nameContains(var_.managed_instance_group_available_module_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .name(managedInstanceGroupAvailableModuleName)
+     *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
      *             .build());
      * 
      *     }
@@ -1159,11 +1159,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_package_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_package_display_name_contains())
-     *             .isLatest(var_.managed_instance_group_available_package_is_latest())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
+     *             .isLatest(managedInstanceGroupAvailablePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -1206,11 +1206,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_package_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_package_display_name_contains())
-     *             .isLatest(var_.managed_instance_group_available_package_is_latest())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
+     *             .isLatest(managedInstanceGroupAvailablePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -1253,11 +1253,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_package_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_package_display_name_contains())
-     *             .isLatest(var_.managed_instance_group_available_package_is_latest())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
+     *             .isLatest(managedInstanceGroupAvailablePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -1300,11 +1300,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_package_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_package_display_name_contains())
-     *             .isLatest(var_.managed_instance_group_available_package_is_latest())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
+     *             .isLatest(managedInstanceGroupAvailablePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -1347,10 +1347,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_software_source_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_software_source_display_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
      *             .build());
      * 
      *     }
@@ -1393,10 +1393,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_software_source_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_software_source_display_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
      *             .build());
      * 
      *     }
@@ -1439,10 +1439,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_software_source_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_software_source_display_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
      *             .build());
      * 
      *     }
@@ -1485,10 +1485,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_available_software_source_display_name())
-     *             .displayNameContains(var_.managed_instance_group_available_software_source_display_name_contains())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
+     *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
      *             .build());
      * 
      *     }
@@ -1531,14 +1531,14 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementHubFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .archType(var_.managed_instance_group_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_display_name())
-     *             .displayNameContains(var_.managed_instance_group_display_name_contains())
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .state(var_.managed_instance_group_state())
+     *             .archType(managedInstanceGroupArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupDisplayName)
+     *             .displayNameContains(managedInstanceGroupDisplayNameContains)
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -1581,14 +1581,14 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementHubFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .archType(var_.managed_instance_group_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_display_name())
-     *             .displayNameContains(var_.managed_instance_group_display_name_contains())
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .state(var_.managed_instance_group_state())
+     *             .archType(managedInstanceGroupArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupDisplayName)
+     *             .displayNameContains(managedInstanceGroupDisplayNameContains)
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -1631,14 +1631,14 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementHubFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .archType(var_.managed_instance_group_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_display_name())
-     *             .displayNameContains(var_.managed_instance_group_display_name_contains())
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .state(var_.managed_instance_group_state())
+     *             .archType(managedInstanceGroupArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupDisplayName)
+     *             .displayNameContains(managedInstanceGroupDisplayNameContains)
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -1681,14 +1681,14 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementHubFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .archType(var_.managed_instance_group_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_display_name())
-     *             .displayNameContains(var_.managed_instance_group_display_name_contains())
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .state(var_.managed_instance_group_state())
+     *             .archType(managedInstanceGroupArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupDisplayName)
+     *             .displayNameContains(managedInstanceGroupDisplayNameContains)
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -1731,14 +1731,14 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementHubFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .archType(var_.managed_instance_group_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_display_name())
-     *             .displayNameContains(var_.managed_instance_group_display_name_contains())
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .state(var_.managed_instance_group_state())
+     *             .archType(managedInstanceGroupArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupDisplayName)
+     *             .displayNameContains(managedInstanceGroupDisplayNameContains)
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -1781,14 +1781,14 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroups = OsManagementHubFunctions.getManagedInstanceGroups(GetManagedInstanceGroupsArgs.builder()
-     *             .archType(var_.managed_instance_group_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.managed_instance_group_display_name())
-     *             .displayNameContains(var_.managed_instance_group_display_name_contains())
-     *             .managedInstanceGroupId(oci_os_management_hub_managed_instance_group.test_managed_instance_group().id())
-     *             .osFamily(var_.managed_instance_group_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .state(var_.managed_instance_group_state())
+     *             .archType(managedInstanceGroupArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(managedInstanceGroupDisplayName)
+     *             .displayNameContains(managedInstanceGroupDisplayNameContains)
+     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .osFamily(managedInstanceGroupOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .state(managedInstanceGroupState)
      *             .build());
      * 
      *     }
@@ -1830,7 +1830,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
      *             .build());
      * 
      *     }
@@ -1872,7 +1872,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
      *             .build());
      * 
      *     }
@@ -1914,7 +1914,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
      *             .build());
      * 
      *     }
@@ -1956,7 +1956,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
      *             .build());
      * 
      *     }
@@ -1998,10 +1998,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
-     *             .displayName(var_.management_station_mirror_display_name())
-     *             .displayNameContains(var_.management_station_mirror_display_name_contains())
-     *             .mirrorStates(var_.management_station_mirror_mirror_states())
+     *             .managementStationId(testManagementStation.id())
+     *             .displayName(managementStationMirrorDisplayName)
+     *             .displayNameContains(managementStationMirrorDisplayNameContains)
+     *             .mirrorStates(managementStationMirrorMirrorStates)
      *             .build());
      * 
      *     }
@@ -2043,10 +2043,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
-     *             .displayName(var_.management_station_mirror_display_name())
-     *             .displayNameContains(var_.management_station_mirror_display_name_contains())
-     *             .mirrorStates(var_.management_station_mirror_mirror_states())
+     *             .managementStationId(testManagementStation.id())
+     *             .displayName(managementStationMirrorDisplayName)
+     *             .displayNameContains(managementStationMirrorDisplayNameContains)
+     *             .mirrorStates(managementStationMirrorMirrorStates)
      *             .build());
      * 
      *     }
@@ -2088,10 +2088,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
-     *             .displayName(var_.management_station_mirror_display_name())
-     *             .displayNameContains(var_.management_station_mirror_display_name_contains())
-     *             .mirrorStates(var_.management_station_mirror_mirror_states())
+     *             .managementStationId(testManagementStation.id())
+     *             .displayName(managementStationMirrorDisplayName)
+     *             .displayNameContains(managementStationMirrorDisplayNameContains)
+     *             .mirrorStates(managementStationMirrorMirrorStates)
      *             .build());
      * 
      *     }
@@ -2133,10 +2133,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(oci_os_management_hub_management_station.test_management_station().id())
-     *             .displayName(var_.management_station_mirror_display_name())
-     *             .displayNameContains(var_.management_station_mirror_display_name_contains())
-     *             .mirrorStates(var_.management_station_mirror_mirror_states())
+     *             .managementStationId(testManagementStation.id())
+     *             .displayName(managementStationMirrorDisplayName)
+     *             .displayNameContains(managementStationMirrorDisplayNameContains)
+     *             .mirrorStates(managementStationMirrorMirrorStates)
      *             .build());
      * 
      *     }
@@ -2178,12 +2178,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStations = OsManagementHubFunctions.getManagementStations(GetManagementStationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.management_station_display_name())
-     *             .displayNameContains(var_.management_station_display_name_contains())
-     *             .id(var_.management_station_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .state(var_.management_station_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementStationDisplayName)
+     *             .displayNameContains(managementStationDisplayNameContains)
+     *             .id(managementStationId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .state(managementStationState)
      *             .build());
      * 
      *     }
@@ -2225,12 +2225,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStations = OsManagementHubFunctions.getManagementStations(GetManagementStationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.management_station_display_name())
-     *             .displayNameContains(var_.management_station_display_name_contains())
-     *             .id(var_.management_station_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .state(var_.management_station_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementStationDisplayName)
+     *             .displayNameContains(managementStationDisplayNameContains)
+     *             .id(managementStationId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .state(managementStationState)
      *             .build());
      * 
      *     }
@@ -2272,12 +2272,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStations = OsManagementHubFunctions.getManagementStations(GetManagementStationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.management_station_display_name())
-     *             .displayNameContains(var_.management_station_display_name_contains())
-     *             .id(var_.management_station_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .state(var_.management_station_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementStationDisplayName)
+     *             .displayNameContains(managementStationDisplayNameContains)
+     *             .id(managementStationId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .state(managementStationState)
      *             .build());
      * 
      *     }
@@ -2319,12 +2319,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStations = OsManagementHubFunctions.getManagementStations(GetManagementStationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.management_station_display_name())
-     *             .displayNameContains(var_.management_station_display_name_contains())
-     *             .id(var_.management_station_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .state(var_.management_station_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementStationDisplayName)
+     *             .displayNameContains(managementStationDisplayNameContains)
+     *             .id(managementStationId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .state(managementStationState)
      *             .build());
      * 
      *     }
@@ -2366,12 +2366,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStations = OsManagementHubFunctions.getManagementStations(GetManagementStationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.management_station_display_name())
-     *             .displayNameContains(var_.management_station_display_name_contains())
-     *             .id(var_.management_station_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .state(var_.management_station_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementStationDisplayName)
+     *             .displayNameContains(managementStationDisplayNameContains)
+     *             .id(managementStationId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .state(managementStationState)
      *             .build());
      * 
      *     }
@@ -2413,12 +2413,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStations = OsManagementHubFunctions.getManagementStations(GetManagementStationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.management_station_display_name())
-     *             .displayNameContains(var_.management_station_display_name_contains())
-     *             .id(var_.management_station_id())
-     *             .managedInstanceId(oci_osmanagement_managed_instance.test_managed_instance().id())
-     *             .state(var_.management_station_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(managementStationDisplayName)
+     *             .displayNameContains(managementStationDisplayNameContains)
+     *             .id(managementStationId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .state(managementStationState)
      *             .build());
      * 
      *     }
@@ -2460,7 +2460,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
+     *             .profileId(testProfileOciOsManagementHubProfile.id())
      *             .build());
      * 
      *     }
@@ -2502,7 +2502,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
+     *             .profileId(testProfileOciOsManagementHubProfile.id())
      *             .build());
      * 
      *     }
@@ -2544,7 +2544,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
+     *             .profileId(testProfileOciOsManagementHubProfile.id())
      *             .build());
      * 
      *     }
@@ -2586,7 +2586,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
+     *             .profileId(testProfileOciOsManagementHubProfile.id())
      *             .build());
      * 
      *     }
@@ -2629,15 +2629,15 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfiles = OsManagementHubFunctions.getProfiles(GetProfilesArgs.builder()
-     *             .archType(var_.profile_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.profile_display_name())
-     *             .displayNameContains(var_.profile_display_name_contains())
-     *             .osFamily(var_.profile_os_family())
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
-     *             .profileTypes(var_.profile_profile_type())
-     *             .state(var_.profile_state())
-     *             .vendorName(var_.profile_vendor_name())
+     *             .archType(profileArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileDisplayName)
+     *             .displayNameContains(profileDisplayNameContains)
+     *             .osFamily(profileOsFamily)
+     *             .profileId(testProfile.id())
+     *             .profileTypes(profileProfileType)
+     *             .state(profileState)
+     *             .vendorName(profileVendorName)
      *             .build());
      * 
      *     }
@@ -2680,15 +2680,15 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfiles = OsManagementHubFunctions.getProfiles(GetProfilesArgs.builder()
-     *             .archType(var_.profile_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.profile_display_name())
-     *             .displayNameContains(var_.profile_display_name_contains())
-     *             .osFamily(var_.profile_os_family())
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
-     *             .profileTypes(var_.profile_profile_type())
-     *             .state(var_.profile_state())
-     *             .vendorName(var_.profile_vendor_name())
+     *             .archType(profileArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileDisplayName)
+     *             .displayNameContains(profileDisplayNameContains)
+     *             .osFamily(profileOsFamily)
+     *             .profileId(testProfile.id())
+     *             .profileTypes(profileProfileType)
+     *             .state(profileState)
+     *             .vendorName(profileVendorName)
      *             .build());
      * 
      *     }
@@ -2731,15 +2731,15 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfiles = OsManagementHubFunctions.getProfiles(GetProfilesArgs.builder()
-     *             .archType(var_.profile_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.profile_display_name())
-     *             .displayNameContains(var_.profile_display_name_contains())
-     *             .osFamily(var_.profile_os_family())
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
-     *             .profileTypes(var_.profile_profile_type())
-     *             .state(var_.profile_state())
-     *             .vendorName(var_.profile_vendor_name())
+     *             .archType(profileArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileDisplayName)
+     *             .displayNameContains(profileDisplayNameContains)
+     *             .osFamily(profileOsFamily)
+     *             .profileId(testProfile.id())
+     *             .profileTypes(profileProfileType)
+     *             .state(profileState)
+     *             .vendorName(profileVendorName)
      *             .build());
      * 
      *     }
@@ -2782,15 +2782,15 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfiles = OsManagementHubFunctions.getProfiles(GetProfilesArgs.builder()
-     *             .archType(var_.profile_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.profile_display_name())
-     *             .displayNameContains(var_.profile_display_name_contains())
-     *             .osFamily(var_.profile_os_family())
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
-     *             .profileTypes(var_.profile_profile_type())
-     *             .state(var_.profile_state())
-     *             .vendorName(var_.profile_vendor_name())
+     *             .archType(profileArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileDisplayName)
+     *             .displayNameContains(profileDisplayNameContains)
+     *             .osFamily(profileOsFamily)
+     *             .profileId(testProfile.id())
+     *             .profileTypes(profileProfileType)
+     *             .state(profileState)
+     *             .vendorName(profileVendorName)
      *             .build());
      * 
      *     }
@@ -2833,15 +2833,15 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfiles = OsManagementHubFunctions.getProfiles(GetProfilesArgs.builder()
-     *             .archType(var_.profile_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.profile_display_name())
-     *             .displayNameContains(var_.profile_display_name_contains())
-     *             .osFamily(var_.profile_os_family())
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
-     *             .profileTypes(var_.profile_profile_type())
-     *             .state(var_.profile_state())
-     *             .vendorName(var_.profile_vendor_name())
+     *             .archType(profileArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileDisplayName)
+     *             .displayNameContains(profileDisplayNameContains)
+     *             .osFamily(profileOsFamily)
+     *             .profileId(testProfile.id())
+     *             .profileTypes(profileProfileType)
+     *             .state(profileState)
+     *             .vendorName(profileVendorName)
      *             .build());
      * 
      *     }
@@ -2884,15 +2884,15 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfiles = OsManagementHubFunctions.getProfiles(GetProfilesArgs.builder()
-     *             .archType(var_.profile_arch_type())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.profile_display_name())
-     *             .displayNameContains(var_.profile_display_name_contains())
-     *             .osFamily(var_.profile_os_family())
-     *             .profileId(oci_os_management_hub_profile.test_profile().id())
-     *             .profileTypes(var_.profile_profile_type())
-     *             .state(var_.profile_state())
-     *             .vendorName(var_.profile_vendor_name())
+     *             .archType(profileArchType)
+     *             .compartmentId(compartmentId)
+     *             .displayNames(profileDisplayName)
+     *             .displayNameContains(profileDisplayNameContains)
+     *             .osFamily(profileOsFamily)
+     *             .profileId(testProfile.id())
+     *             .profileTypes(profileProfileType)
+     *             .state(profileState)
+     *             .vendorName(profileVendorName)
      *             .build());
      * 
      *     }
@@ -2934,7 +2934,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -2976,7 +2976,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -3018,7 +3018,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -3060,7 +3060,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -3102,9 +3102,9 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3146,9 +3146,9 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3190,9 +3190,9 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3234,9 +3234,9 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3278,10 +3278,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .profileName(oci_os_management_hub_profile.test_profile().name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .profileName(testProfile.name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3323,10 +3323,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .profileName(oci_os_management_hub_profile.test_profile().name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .profileName(testProfile.name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3368,10 +3368,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .profileName(oci_os_management_hub_profile.test_profile().name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .profileName(testProfile.name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3413,10 +3413,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .profileName(oci_os_management_hub_profile.test_profile().name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .profileName(testProfile.name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3459,10 +3459,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .name(var_.software_source_module_stream_profile_name())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .name(softwareSourceModuleStreamProfileName)
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3505,10 +3505,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .name(var_.software_source_module_stream_profile_name())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .name(softwareSourceModuleStreamProfileName)
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3551,10 +3551,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .name(var_.software_source_module_stream_profile_name())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .name(softwareSourceModuleStreamProfileName)
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3597,10 +3597,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .moduleName(var_.software_source_module_stream_profile_module_name())
-     *             .name(var_.software_source_module_stream_profile_name())
-     *             .streamName(oci_streaming_stream.test_stream().name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .moduleName(softwareSourceModuleStreamProfileModuleName)
+     *             .name(softwareSourceModuleStreamProfileName)
+     *             .streamName(testStream.name())
      *             .build());
      * 
      *     }
@@ -3643,11 +3643,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .isLatest(var_.software_source_module_stream_is_latest())
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .moduleNameContains(var_.software_source_module_stream_module_name_contains())
-     *             .name(var_.software_source_module_stream_name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .isLatest(softwareSourceModuleStreamIsLatest)
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
+     *             .name(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -3690,11 +3690,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .isLatest(var_.software_source_module_stream_is_latest())
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .moduleNameContains(var_.software_source_module_stream_module_name_contains())
-     *             .name(var_.software_source_module_stream_name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .isLatest(softwareSourceModuleStreamIsLatest)
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
+     *             .name(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -3737,11 +3737,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .isLatest(var_.software_source_module_stream_is_latest())
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .moduleNameContains(var_.software_source_module_stream_module_name_contains())
-     *             .name(var_.software_source_module_stream_name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .isLatest(softwareSourceModuleStreamIsLatest)
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
+     *             .name(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -3784,11 +3784,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .isLatest(var_.software_source_module_stream_is_latest())
-     *             .moduleName(var_.software_source_module_stream_module_name())
-     *             .moduleNameContains(var_.software_source_module_stream_module_name_contains())
-     *             .name(var_.software_source_module_stream_name())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .isLatest(softwareSourceModuleStreamIsLatest)
+     *             .moduleName(softwareSourceModuleStreamModuleName)
+     *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
+     *             .name(softwareSourceModuleStreamName)
      *             .build());
      * 
      *     }
@@ -3830,8 +3830,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(oci_identity_group.test_group().id())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .packageGroupId(testGroup.id())
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -3873,8 +3873,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(oci_identity_group.test_group().id())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .packageGroupId(testGroup.id())
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -3916,8 +3916,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(oci_identity_group.test_group().id())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .packageGroupId(testGroup.id())
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -3959,8 +3959,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(oci_identity_group.test_group().id())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .packageGroupId(testGroup.id())
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -4003,11 +4003,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .groupTypes(var_.software_source_package_group_group_type())
-     *             .name(var_.software_source_package_group_name())
-     *             .nameContains(var_.software_source_package_group_name_contains())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .groupTypes(softwareSourcePackageGroupGroupType)
+     *             .name(softwareSourcePackageGroupName)
+     *             .nameContains(softwareSourcePackageGroupNameContains)
      *             .build());
      * 
      *     }
@@ -4050,11 +4050,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .groupTypes(var_.software_source_package_group_group_type())
-     *             .name(var_.software_source_package_group_name())
-     *             .nameContains(var_.software_source_package_group_name_contains())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .groupTypes(softwareSourcePackageGroupGroupType)
+     *             .name(softwareSourcePackageGroupName)
+     *             .nameContains(softwareSourcePackageGroupNameContains)
      *             .build());
      * 
      *     }
@@ -4097,11 +4097,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .groupTypes(var_.software_source_package_group_group_type())
-     *             .name(var_.software_source_package_group_name())
-     *             .nameContains(var_.software_source_package_group_name_contains())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .groupTypes(softwareSourcePackageGroupGroupType)
+     *             .name(softwareSourcePackageGroupName)
+     *             .nameContains(softwareSourcePackageGroupNameContains)
      *             .build());
      * 
      *     }
@@ -4144,11 +4144,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .groupTypes(var_.software_source_package_group_group_type())
-     *             .name(var_.software_source_package_group_name())
-     *             .nameContains(var_.software_source_package_group_name_contains())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .compartmentId(compartmentId)
+     *             .groupTypes(softwareSourcePackageGroupGroupType)
+     *             .name(softwareSourcePackageGroupName)
+     *             .nameContains(softwareSourcePackageGroupNameContains)
      *             .build());
      * 
      *     }
@@ -4190,8 +4190,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(var_.software_source_software_package_software_package_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwarePackageName(softwareSourceSoftwarePackageSoftwarePackageName)
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -4233,8 +4233,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(var_.software_source_software_package_software_package_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwarePackageName(softwareSourceSoftwarePackageSoftwarePackageName)
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -4276,8 +4276,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(var_.software_source_software_package_software_package_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwarePackageName(softwareSourceSoftwarePackageSoftwarePackageName)
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -4319,8 +4319,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(var_.software_source_software_package_software_package_name())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
+     *             .softwarePackageName(softwareSourceSoftwarePackageSoftwarePackageName)
+     *             .softwareSourceId(testSoftwareSource.id())
      *             .build());
      * 
      *     }
@@ -4363,10 +4363,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .displayName(var_.software_source_software_package_display_name())
-     *             .displayNameContains(var_.software_source_software_package_display_name_contains())
-     *             .isLatest(var_.software_source_software_package_is_latest())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceSoftwarePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -4409,10 +4409,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .displayName(var_.software_source_software_package_display_name())
-     *             .displayNameContains(var_.software_source_software_package_display_name_contains())
-     *             .isLatest(var_.software_source_software_package_is_latest())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceSoftwarePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -4455,10 +4455,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .displayName(var_.software_source_software_package_display_name())
-     *             .displayNameContains(var_.software_source_software_package_display_name_contains())
-     *             .isLatest(var_.software_source_software_package_is_latest())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceSoftwarePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -4501,10 +4501,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .displayName(var_.software_source_software_package_display_name())
-     *             .displayNameContains(var_.software_source_software_package_display_name_contains())
-     *             .isLatest(var_.software_source_software_package_is_latest())
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .displayName(softwareSourceSoftwarePackageDisplayName)
+     *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
+     *             .isLatest(softwareSourceSoftwarePackageIsLatest)
      *             .build());
      * 
      *     }
@@ -4547,8 +4547,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceVendors = OsManagementHubFunctions.getSoftwareSourceVendors(GetSoftwareSourceVendorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.software_source_vendor_name())
+     *             .compartmentId(compartmentId)
+     *             .name(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4591,8 +4591,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceVendors = OsManagementHubFunctions.getSoftwareSourceVendors(GetSoftwareSourceVendorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.software_source_vendor_name())
+     *             .compartmentId(compartmentId)
+     *             .name(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4635,8 +4635,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceVendors = OsManagementHubFunctions.getSoftwareSourceVendors(GetSoftwareSourceVendorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.software_source_vendor_name())
+     *             .compartmentId(compartmentId)
+     *             .name(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4679,8 +4679,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceVendors = OsManagementHubFunctions.getSoftwareSourceVendors(GetSoftwareSourceVendorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.software_source_vendor_name())
+     *             .compartmentId(compartmentId)
+     *             .name(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4723,17 +4723,17 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementHubFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .archTypes(var_.software_source_arch_type())
-     *             .availabilities(var_.software_source_availability())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .displayNameContains(var_.software_source_display_name_contains())
-     *             .displayNameNotEqualTos(var_.software_source_display_name_not_equal_to())
-     *             .osFamilies(var_.software_source_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .softwareSourceTypes(var_.software_source_software_source_type())
-     *             .states(var_.software_source_state())
-     *             .vendorName(var_.software_source_vendor_name())
+     *             .archTypes(softwareSourceArchType)
+     *             .availabilities(softwareSourceAvailability)
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .displayNameContains(softwareSourceDisplayNameContains)
+     *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
+     *             .osFamilies(softwareSourceOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
+     *             .states(softwareSourceState)
+     *             .vendorName(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4776,17 +4776,17 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementHubFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .archTypes(var_.software_source_arch_type())
-     *             .availabilities(var_.software_source_availability())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .displayNameContains(var_.software_source_display_name_contains())
-     *             .displayNameNotEqualTos(var_.software_source_display_name_not_equal_to())
-     *             .osFamilies(var_.software_source_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .softwareSourceTypes(var_.software_source_software_source_type())
-     *             .states(var_.software_source_state())
-     *             .vendorName(var_.software_source_vendor_name())
+     *             .archTypes(softwareSourceArchType)
+     *             .availabilities(softwareSourceAvailability)
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .displayNameContains(softwareSourceDisplayNameContains)
+     *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
+     *             .osFamilies(softwareSourceOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
+     *             .states(softwareSourceState)
+     *             .vendorName(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4829,17 +4829,17 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementHubFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .archTypes(var_.software_source_arch_type())
-     *             .availabilities(var_.software_source_availability())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .displayNameContains(var_.software_source_display_name_contains())
-     *             .displayNameNotEqualTos(var_.software_source_display_name_not_equal_to())
-     *             .osFamilies(var_.software_source_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .softwareSourceTypes(var_.software_source_software_source_type())
-     *             .states(var_.software_source_state())
-     *             .vendorName(var_.software_source_vendor_name())
+     *             .archTypes(softwareSourceArchType)
+     *             .availabilities(softwareSourceAvailability)
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .displayNameContains(softwareSourceDisplayNameContains)
+     *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
+     *             .osFamilies(softwareSourceOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
+     *             .states(softwareSourceState)
+     *             .vendorName(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4882,17 +4882,17 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementHubFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .archTypes(var_.software_source_arch_type())
-     *             .availabilities(var_.software_source_availability())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .displayNameContains(var_.software_source_display_name_contains())
-     *             .displayNameNotEqualTos(var_.software_source_display_name_not_equal_to())
-     *             .osFamilies(var_.software_source_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .softwareSourceTypes(var_.software_source_software_source_type())
-     *             .states(var_.software_source_state())
-     *             .vendorName(var_.software_source_vendor_name())
+     *             .archTypes(softwareSourceArchType)
+     *             .availabilities(softwareSourceAvailability)
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .displayNameContains(softwareSourceDisplayNameContains)
+     *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
+     *             .osFamilies(softwareSourceOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
+     *             .states(softwareSourceState)
+     *             .vendorName(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4935,17 +4935,17 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementHubFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .archTypes(var_.software_source_arch_type())
-     *             .availabilities(var_.software_source_availability())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .displayNameContains(var_.software_source_display_name_contains())
-     *             .displayNameNotEqualTos(var_.software_source_display_name_not_equal_to())
-     *             .osFamilies(var_.software_source_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .softwareSourceTypes(var_.software_source_software_source_type())
-     *             .states(var_.software_source_state())
-     *             .vendorName(var_.software_source_vendor_name())
+     *             .archTypes(softwareSourceArchType)
+     *             .availabilities(softwareSourceAvailability)
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .displayNameContains(softwareSourceDisplayNameContains)
+     *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
+     *             .osFamilies(softwareSourceOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
+     *             .states(softwareSourceState)
+     *             .vendorName(softwareSourceVendorName)
      *             .build());
      * 
      *     }
@@ -4988,17 +4988,17 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSources = OsManagementHubFunctions.getSoftwareSources(GetSoftwareSourcesArgs.builder()
-     *             .archTypes(var_.software_source_arch_type())
-     *             .availabilities(var_.software_source_availability())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.software_source_display_name())
-     *             .displayNameContains(var_.software_source_display_name_contains())
-     *             .displayNameNotEqualTos(var_.software_source_display_name_not_equal_to())
-     *             .osFamilies(var_.software_source_os_family())
-     *             .softwareSourceId(oci_os_management_hub_software_source.test_software_source().id())
-     *             .softwareSourceTypes(var_.software_source_software_source_type())
-     *             .states(var_.software_source_state())
-     *             .vendorName(var_.software_source_vendor_name())
+     *             .archTypes(softwareSourceArchType)
+     *             .availabilities(softwareSourceAvailability)
+     *             .compartmentId(compartmentId)
+     *             .displayName(softwareSourceDisplayName)
+     *             .displayNameContains(softwareSourceDisplayNameContains)
+     *             .displayNameNotEqualTos(softwareSourceDisplayNameNotEqualTo)
+     *             .osFamilies(softwareSourceOsFamily)
+     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
+     *             .states(softwareSourceState)
+     *             .vendorName(softwareSourceVendorName)
      *             .build());
      * 
      *     }

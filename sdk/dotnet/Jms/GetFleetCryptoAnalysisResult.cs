@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetCryptoAnalysisResult = Oci.Jms.GetFleetCryptoAnalysisResult.Invoke(new()
         ///     {
-        ///         CryptoAnalysisResultId = oci_apm_synthetics_result.Test_result.Id,
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         CryptoAnalysisResultId = testResult.Id,
+        ///         FleetId = testFleet.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetCryptoAnalysisResult = Oci.Jms.GetFleetCryptoAnalysisResult.Invoke(new()
         ///     {
-        ///         CryptoAnalysisResultId = oci_apm_synthetics_result.Test_result.Id,
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
+        ///         CryptoAnalysisResultId = testResult.Id,
+        ///         FleetId = testFleet.Id,
         ///     });
         /// 
         /// });

@@ -167,13 +167,13 @@ def get_models(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=var["compartment_id"],
-        created_by=var["model_created_by"],
-        display_name=var["model_display_name"],
-        id=var["model_id"],
-        model_version_set_name=oci_datascience_model_version_set["test_model_version_set"]["name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_state"])
+    test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+        created_by=model_created_by,
+        display_name=model_display_name,
+        id=model_id,
+        model_version_set_name=test_model_version_set["name"],
+        project_id=test_project["id"],
+        state=model_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -234,13 +234,13 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_models = oci.DataScience.get_models(compartment_id=var["compartment_id"],
-        created_by=var["model_created_by"],
-        display_name=var["model_display_name"],
-        id=var["model_id"],
-        model_version_set_name=oci_datascience_model_version_set["test_model_version_set"]["name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_state"])
+    test_models = oci.DataScience.get_models(compartment_id=compartment_id,
+        created_by=model_created_by,
+        display_name=model_display_name,
+        id=model_id,
+        model_version_set_name=test_model_version_set["name"],
+        project_id=test_project["id"],
+        state=model_state)
     ```
     <!--End PulumiCodeChooser -->
 

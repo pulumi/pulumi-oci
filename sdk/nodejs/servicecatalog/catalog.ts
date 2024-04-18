@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalog = new oci.servicecatalog.Catalog("testServiceCatalog", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.service_catalog_display_name,
+ * const testServiceCatalog = new oci.servicecatalog.Catalog("test_service_catalog", {
+ *     compartmentId: compartmentId,
+ *     displayName: serviceCatalogDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },

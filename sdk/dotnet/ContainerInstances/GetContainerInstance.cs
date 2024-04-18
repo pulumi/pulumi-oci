@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// {
         ///     var testContainerInstance = Oci.ContainerInstances.GetContainerInstance.Invoke(new()
         ///     {
-        ///         ContainerInstanceId = oci_container_instances_container_instance.Test_container_instance.Id,
+        ///         ContainerInstanceId = testContainerInstanceOciContainerInstancesContainerInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ContainerInstances
         /// {
         ///     var testContainerInstance = Oci.ContainerInstances.GetContainerInstance.Invoke(new()
         ///     {
-        ///         ContainerInstanceId = oci_container_instances_container_instance.Test_container_instance.Id,
+        ///         ContainerInstanceId = testContainerInstanceOciContainerInstancesContainerInstance.Id,
         ///     });
         /// 
         /// });

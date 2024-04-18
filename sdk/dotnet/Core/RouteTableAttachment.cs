@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRouteTableAttachment = new Oci.Core.RouteTableAttachment("testRouteTableAttachment", new()
+    ///     var testRouteTableAttachment = new Oci.Core.RouteTableAttachment("test_route_table_attachment", new()
     ///     {
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
+    ///         SubnetId = testSubnet.Id,
+    ///         RouteTableId = testRouteTable.Id,
     ///     });
     /// 
     /// });

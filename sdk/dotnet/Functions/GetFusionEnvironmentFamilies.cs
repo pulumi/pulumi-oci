@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentFamilies = Oci.Functions.GetFusionEnvironmentFamilies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Fusion_environment_family_display_name,
-        ///         FusionEnvironmentFamilyId = oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
-        ///         State = @var.Fusion_environment_family_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fusionEnvironmentFamilyDisplayName,
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
+        ///         State = fusionEnvironmentFamilyState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentFamilies = Oci.Functions.GetFusionEnvironmentFamilies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Fusion_environment_family_display_name,
-        ///         FusionEnvironmentFamilyId = oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
-        ///         State = @var.Fusion_environment_family_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fusionEnvironmentFamilyDisplayName,
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
+        ///         State = fusionEnvironmentFamilyState,
         ///     });
         /// 
         /// });

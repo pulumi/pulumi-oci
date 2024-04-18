@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiAnomalyDetection.GetDetectionModels(ctx, &aianomalydetection.GetDetectionModelsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Model_display_name),
-//				ProjectId:     pulumi.StringRef(oci_ai_anomaly_detection_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Model_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(modelDisplayName),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(modelState),
 //			}, nil)
 //			if err != nil {
 //				return err

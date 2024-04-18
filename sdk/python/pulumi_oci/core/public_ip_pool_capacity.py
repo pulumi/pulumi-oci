@@ -149,10 +149,10 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_public_ip_pool_capacity = oci.core.PublicIpPoolCapacity("testPublicIpPoolCapacity",
-            byoip_id=var["byoip_id"],
-            cidr_block=var["cidr_block"],
-            public_ip_pool_id=var["public_ip_pool_id"])
+        test_public_ip_pool_capacity = oci.core.PublicIpPoolCapacity("test_public_ip_pool_capacity",
+            public_ip_pool_id=public_ip_pool_id,
+            byoip_id=byoip_id,
+            cidr_block=cidr_block)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -187,10 +187,10 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_public_ip_pool_capacity = oci.core.PublicIpPoolCapacity("testPublicIpPoolCapacity",
-            byoip_id=var["byoip_id"],
-            cidr_block=var["cidr_block"],
-            public_ip_pool_id=var["public_ip_pool_id"])
+        test_public_ip_pool_capacity = oci.core.PublicIpPoolCapacity("test_public_ip_pool_capacity",
+            public_ip_pool_id=public_ip_pool_id,
+            byoip_id=byoip_id,
+            cidr_block=cidr_block)
         ```
         <!--End PulumiCodeChooser -->
 

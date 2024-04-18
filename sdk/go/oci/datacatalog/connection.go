@@ -31,15 +31,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataCatalog.NewConnection(ctx, "testConnection", &DataCatalog.ConnectionArgs{
-//				CatalogId:     pulumi.Any(oci_datacatalog_catalog.Test_catalog.Id),
-//				DataAssetKey:  pulumi.Any(_var.Connection_data_asset_key),
-//				DisplayName:   pulumi.Any(_var.Connection_display_name),
-//				Properties:    pulumi.Any(_var.Connection_properties),
-//				TypeKey:       pulumi.Any(_var.Connection_type_key),
-//				Description:   pulumi.Any(_var.Connection_description),
-//				EncProperties: pulumi.Any(_var.Connection_enc_properties),
-//				IsDefault:     pulumi.Any(_var.Connection_is_default),
+//			_, err := DataCatalog.NewConnection(ctx, "test_connection", &DataCatalog.ConnectionArgs{
+//				CatalogId:     pulumi.Any(testCatalog.Id),
+//				DataAssetKey:  pulumi.Any(connectionDataAssetKey),
+//				DisplayName:   pulumi.Any(connectionDisplayName),
+//				Properties:    pulumi.Any(connectionProperties),
+//				TypeKey:       pulumi.Any(connectionTypeKey),
+//				Description:   pulumi.Any(connectionDescription),
+//				EncProperties: pulumi.Any(connectionEncProperties),
+//				IsDefault:     pulumi.Any(connectionIsDefault),
 //			})
 //			if err != nil {
 //				return err

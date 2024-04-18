@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualService = oci.ServiceMesh.getVirtualService({
- *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *     virtualServiceId: testVirtualServiceOciServiceMeshVirtualService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetVirtualServiceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualService = oci.ServiceMesh.getVirtualService({
- *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *     virtualServiceId: testVirtualServiceOciServiceMeshVirtualService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

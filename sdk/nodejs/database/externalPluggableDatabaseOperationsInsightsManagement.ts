@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalPluggableDatabaseOperationsInsightsManagement = new oci.database.ExternalPluggableDatabaseOperationsInsightsManagement("testExternalPluggableDatabaseOperationsInsightsManagement", {
- *     externalDatabaseConnectorId: oci_database_external_database_connector.test_external_database_connector.id,
- *     externalPluggableDatabaseId: oci_database_external_pluggable_database.test_external_pluggable_database.id,
+ * const testExternalPluggableDatabaseOperationsInsightsManagement = new oci.database.ExternalPluggableDatabaseOperationsInsightsManagement("test_external_pluggable_database_operations_insights_management", {
+ *     externalDatabaseConnectorId: testExternalDatabaseConnector.id,
+ *     externalPluggableDatabaseId: testExternalPluggableDatabase.id,
  *     enableOperationsInsights: true,
  * });
  * ```

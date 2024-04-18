@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_connection_display_name,
- *     relatedResourceIdentifier: _var.database_tools_connection_related_resource_identifier,
- *     runtimeSupports: _var.database_tools_connection_runtime_support,
- *     state: _var.database_tools_connection_state,
- *     types: _var.database_tools_connection_type,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsConnectionDisplayName,
+ *     relatedResourceIdentifier: databaseToolsConnectionRelatedResourceIdentifier,
+ *     runtimeSupports: databaseToolsConnectionRuntimeSupport,
+ *     state: databaseToolsConnectionState,
+ *     types: databaseToolsConnectionType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetDatabaseToolsConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_connection_display_name,
- *     relatedResourceIdentifier: _var.database_tools_connection_related_resource_identifier,
- *     runtimeSupports: _var.database_tools_connection_runtime_support,
- *     state: _var.database_tools_connection_state,
- *     types: _var.database_tools_connection_type,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsConnectionDisplayName,
+ *     relatedResourceIdentifier: databaseToolsConnectionRelatedResourceIdentifier,
+ *     runtimeSupports: databaseToolsConnectionRuntimeSupport,
+ *     state: databaseToolsConnectionState,
+ *     types: databaseToolsConnectionType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

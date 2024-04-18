@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetMetastore(ctx, &datacatalog.GetMetastoreArgs{
-//				MetastoreId: oci_datacatalog_metastore.Test_metastore.Id,
+//				MetastoreId: testMetastoreOciDatacatalogMetastore.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

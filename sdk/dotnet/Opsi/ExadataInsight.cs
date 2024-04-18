@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExadataInsight = new Oci.Opsi.ExadataInsight("testExadataInsight", new()
+    ///     var testExadataInsight = new Oci.Opsi.ExadataInsight("test_exadata_insight", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-    ///         EnterpriseManagerEntityIdentifier = @var.Exadata_insight_enterprise_manager_entity_identifier,
-    ///         EnterpriseManagerIdentifier = @var.Exadata_insight_enterprise_manager_identifier,
-    ///         EntitySource = @var.Exadata_insight_entity_source,
+    ///         CompartmentId = compartmentId,
+    ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+    ///         EnterpriseManagerEntityIdentifier = exadataInsightEnterpriseManagerEntityIdentifier,
+    ///         EnterpriseManagerIdentifier = exadataInsightEnterpriseManagerIdentifier,
+    ///         EntitySource = exadataInsightEntitySource,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -40,54 +40,54 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsAutoSyncEnabled = @var.Exadata_insight_is_auto_sync_enabled,
+    ///         IsAutoSyncEnabled = exadataInsightIsAutoSyncEnabled,
     ///         MemberVmClusterDetails = new[]
     ///         {
     ///             new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 DbmPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///                 CompartmentId = compartmentId,
+    ///                 DbmPrivateEndpointId = testPrivateEndpoint.Id,
     ///                 MemberDatabaseDetails = new[]
     ///                 {
     ///                     new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs
     ///                     {
-    ///                         CompartmentId = @var.Compartment_id,
+    ///                         CompartmentId = compartmentId,
     ///                         ConnectionDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs
     ///                         {
     ///                             Hosts = new[]
     ///                             {
     ///                                 new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHostArgs
     ///                                 {
-    ///                                     HostIp = @var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_host_ip,
-    ///                                     Port = @var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_hosts_port,
+    ///                                     HostIp = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsHostIp,
+    ///                                     Port = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsHostsPort,
     ///                                 },
     ///                             },
-    ///                             Protocol = @var.Exadata_insight_member_vm_cluster_details_member_database_details_connection_details_protocol,
-    ///                             ServiceName = oci_core_service.Test_service.Name,
+    ///                             Protocol = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionDetailsProtocol,
+    ///                             ServiceName = testService.Name,
     ///                         },
     ///                         CredentialDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs
     ///                         {
-    ///                             CredentialType = @var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_type,
-    ///                             CredentialSourceName = @var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_credential_source_name,
-    ///                             PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///                             Role = @var.Exadata_insight_member_vm_cluster_details_member_database_details_credential_details_role,
-    ///                             UserName = oci_identity_user.Test_user.Name,
-    ///                             WalletSecretId = oci_vault_secret.Test_secret.Id,
+    ///                             CredentialType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialType,
+    ///                             CredentialSourceName = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialSourceName,
+    ///                             PasswordSecretId = testSecret.Id,
+    ///                             Role = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsRole,
+    ///                             UserName = testUser.Name,
+    ///                             WalletSecretId = testSecret.Id,
     ///                         },
-    ///                         DatabaseId = oci_database_database.Test_database.Id,
-    ///                         DatabaseResourceType = @var.Exadata_insight_member_vm_cluster_details_member_database_details_database_resource_type,
-    ///                         DbmPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///                         DefinedTags = @var.Exadata_insight_member_vm_cluster_details_member_database_details_defined_tags,
-    ///                         DeploymentType = @var.Exadata_insight_member_vm_cluster_details_member_database_details_deployment_type,
-    ///                         EntitySource = @var.Exadata_insight_member_vm_cluster_details_member_database_details_entity_source,
-    ///                         FreeformTags = @var.Exadata_insight_member_vm_cluster_details_member_database_details_freeform_tags,
-    ///                         OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///                         ServiceName = oci_core_service.Test_service.Name,
-    ///                         SystemTags = @var.Exadata_insight_member_vm_cluster_details_member_database_details_system_tags,
+    ///                         DatabaseId = testDatabase.Id,
+    ///                         DatabaseResourceType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDatabaseResourceType,
+    ///                         DbmPrivateEndpointId = testPrivateEndpoint.Id,
+    ///                         DefinedTags = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDefinedTags,
+    ///                         DeploymentType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsDeploymentType,
+    ///                         EntitySource = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsEntitySource,
+    ///                         FreeformTags = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsFreeformTags,
+    ///                         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+    ///                         ServiceName = testService.Name,
+    ///                         SystemTags = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsSystemTags,
     ///                     },
     ///                 },
-    ///                 OpsiPrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///                 VmclusterId = oci_opsi_vmcluster.Test_vmcluster.Id,
+    ///                 OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+    ///                 VmclusterId = testVmcluster.Id,
     ///             },
     ///         },
     ///     });

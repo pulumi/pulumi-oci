@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testShapes = Oci.Psql.GetShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Shape_id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = shapeId,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testShapes = Oci.Psql.GetShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Shape_id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = shapeId,
         ///     });
         /// 
         /// });

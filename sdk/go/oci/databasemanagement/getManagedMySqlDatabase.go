@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedMySqlDatabase(ctx, &databasemanagement.GetManagedMySqlDatabaseArgs{
-//				ManagedMySqlDatabaseId: oci_database_management_managed_my_sql_database.Test_managed_my_sql_database.Id,
+//				ManagedMySqlDatabaseId: testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

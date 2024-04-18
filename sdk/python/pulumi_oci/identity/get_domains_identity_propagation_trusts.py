@@ -210,14 +210,14 @@ def get_domains_identity_propagation_trusts(attribute_sets: Optional[Sequence[st
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_propagation_trusts = oci.Identity.get_domains_identity_propagation_trusts(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_propagation_trust_count=var["identity_propagation_trust_identity_propagation_trust_count"],
-        identity_propagation_trust_filter=var["identity_propagation_trust_identity_propagation_trust_filter"],
+    test_identity_propagation_trusts = oci.Identity.get_domains_identity_propagation_trusts(idcs_endpoint=test_domain["url"],
+        identity_propagation_trust_count=identity_propagation_trust_identity_propagation_trust_count,
+        identity_propagation_trust_filter=identity_propagation_trust_identity_propagation_trust_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["identity_propagation_trust_authorization"],
-        resource_type_schema_version=var["identity_propagation_trust_resource_type_schema_version"],
-        start_index=var["identity_propagation_trust_start_index"])
+        authorization=identity_propagation_trust_authorization,
+        resource_type_schema_version=identity_propagation_trust_resource_type_schema_version,
+        start_index=identity_propagation_trust_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_identity_propagation_trusts_output(attribute_sets: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_identity_propagation_trusts = oci.Identity.get_domains_identity_propagation_trusts(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        identity_propagation_trust_count=var["identity_propagation_trust_identity_propagation_trust_count"],
-        identity_propagation_trust_filter=var["identity_propagation_trust_identity_propagation_trust_filter"],
+    test_identity_propagation_trusts = oci.Identity.get_domains_identity_propagation_trusts(idcs_endpoint=test_domain["url"],
+        identity_propagation_trust_count=identity_propagation_trust_identity_propagation_trust_count,
+        identity_propagation_trust_filter=identity_propagation_trust_identity_propagation_trust_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["identity_propagation_trust_authorization"],
-        resource_type_schema_version=var["identity_propagation_trust_resource_type_schema_version"],
-        start_index=var["identity_propagation_trust_start_index"])
+        authorization=identity_propagation_trust_authorization,
+        resource_type_schema_version=identity_propagation_trust_resource_type_schema_version,
+        start_index=identity_propagation_trust_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

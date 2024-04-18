@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaintenanceRunHistories = oci.Database.getDatabaseMaintenanceRunHistories({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.maintenance_run_history_availability_domain,
- *     maintenanceType: _var.maintenance_run_history_maintenance_type,
- *     state: _var.maintenance_run_history_state,
- *     targetResourceId: oci_database_target_resource.test_target_resource.id,
- *     targetResourceType: _var.maintenance_run_history_target_resource_type,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: maintenanceRunHistoryAvailabilityDomain,
+ *     maintenanceType: maintenanceRunHistoryMaintenanceType,
+ *     state: maintenanceRunHistoryState,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: maintenanceRunHistoryTargetResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaintenanceRunHistories = oci.Database.getDatabaseMaintenanceRunHistories({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.maintenance_run_history_availability_domain,
- *     maintenanceType: _var.maintenance_run_history_maintenance_type,
- *     state: _var.maintenance_run_history_state,
- *     targetResourceId: oci_database_target_resource.test_target_resource.id,
- *     targetResourceType: _var.maintenance_run_history_target_resource_type,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: maintenanceRunHistoryAvailabilityDomain,
+ *     maintenanceType: maintenanceRunHistoryMaintenanceType,
+ *     state: maintenanceRunHistoryState,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: maintenanceRunHistoryTargetResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

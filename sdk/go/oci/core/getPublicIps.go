@@ -50,11 +50,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPublicIps(ctx, &core.GetPublicIpsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				Scope:              _var.Public_ip_scope,
-//				AvailabilityDomain: pulumi.StringRef(_var.Public_ip_availability_domain),
-//				Lifetime:           pulumi.StringRef(_var.Public_ip_lifetime),
-//				PublicIpPoolId:     pulumi.StringRef(oci_core_public_ip_pool.Test_public_ip_pool.Id),
+//				CompartmentId:      compartmentId,
+//				Scope:              publicIpScope,
+//				AvailabilityDomain: pulumi.StringRef(publicIpAvailabilityDomain),
+//				Lifetime:           pulumi.StringRef(publicIpLifetime),
+//				PublicIpPoolId:     pulumi.StringRef(testPublicIpPool.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

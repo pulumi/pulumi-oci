@@ -46,11 +46,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseSoftwareImage = new AutonomousDatabaseSoftwareImage(&#34;testAutonomousDatabaseSoftwareImage&#34;, AutonomousDatabaseSoftwareImageArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.autonomous_database_software_image_display_name())
- *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
- *             .sourceCdbId(oci_database_source_cdb.test_source_cdb().id())
- *             .definedTags(var_.autonomous_database_software_image_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
+ *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
+ *             .sourceCdbId(testSourceCdb.id())
+ *             .definedTags(autonomousDatabaseSoftwareImageDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testFilesystemSnapshotPolicy = Oci.FileStorage.GetFilesystemSnapshotPolicy.Invoke(new()
         ///     {
-        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testFilesystemSnapshotPolicy = Oci.FileStorage.GetFilesystemSnapshotPolicy.Invoke(new()
         ///     {
-        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.Id,
         ///     });
         /// 
         /// });

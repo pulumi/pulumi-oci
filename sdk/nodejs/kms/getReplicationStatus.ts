@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationStatus = oci.Kms.getReplicationStatus({
- *     replicationId: oci_kms_replication.test_replication.id,
- *     managementEndpoint: _var.replication_status_management_endpoint,
+ *     replicationId: testReplication.id,
+ *     managementEndpoint: replicationStatusManagementEndpoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetReplicationStatusResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationStatus = oci.Kms.getReplicationStatus({
- *     replicationId: oci_kms_replication.test_replication.id,
- *     managementEndpoint: _var.replication_status_management_endpoint,
+ *     replicationId: testReplication.id,
+ *     managementEndpoint: replicationStatusManagementEndpoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

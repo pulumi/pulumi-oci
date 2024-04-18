@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OperatorAccessControl.GetActions(ctx, &operatoraccesscontrol.GetActionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Operator_action_name),
-//				ResourceType:  pulumi.StringRef(_var.Operator_action_resource_type),
-//				State:         pulumi.StringRef(_var.Operator_action_state),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(operatorActionName),
+//				ResourceType:  pulumi.StringRef(operatorActionResourceType),
+//				State:         pulumi.StringRef(operatorActionState),
 //			}, nil)
 //			if err != nil {
 //				return err

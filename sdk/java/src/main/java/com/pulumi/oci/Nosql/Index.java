@@ -48,13 +48,14 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testIndex = new Index(&#34;testIndex&#34;, IndexArgs.builder()        
  *             .keys(IndexKeyArgs.builder()
- *                 .columnName(var_.index_keys_column_name())
- *                 .jsonFieldType(var_.index_keys_json_field_type())
- *                 .jsonPath(var_.index_keys_json_path())
+ *                 .columnName(indexKeysColumnName)
+ *                 .jsonFieldType(indexKeysJsonFieldType)
+ *                 .jsonPath(indexKeysJsonPath)
  *                 .build())
- *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
- *             .compartmentId(var_.compartment_id())
- *             .isIfNotExists(var_.index_is_if_not_exists())
+ *             .name(indexName)
+ *             .tableNameOrId(testTableNameOr.id())
+ *             .compartmentId(compartmentId)
+ *             .isIfNotExists(indexIsIfNotExists)
  *             .build());
  * 
  *     }

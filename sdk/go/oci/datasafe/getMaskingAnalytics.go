@@ -33,11 +33,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetMaskingAnalytics(ctx, &datasafe.GetMaskingAnalyticsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Masking_analytic_compartment_id_in_subtree),
-//				GroupBy:                pulumi.StringRef(_var.Masking_analytic_group_by),
-//				MaskingPolicyId:        pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(maskingAnalyticCompartmentIdInSubtree),
+//				GroupBy:                pulumi.StringRef(maskingAnalyticGroupBy),
+//				MaskingPolicyId:        pulumi.StringRef(testMaskingPolicy.Id),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

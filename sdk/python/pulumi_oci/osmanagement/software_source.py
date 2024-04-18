@@ -585,22 +585,22 @@ class SoftwareSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_software_source = oci.os_management.SoftwareSource("testSoftwareSource",
-            arch_type=var["software_source_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["software_source_display_name"],
-            checksum_type=var["software_source_checksum_type"],
+        test_software_source = oci.os_management.SoftwareSource("test_software_source",
+            arch_type=software_source_arch_type,
+            compartment_id=compartment_id,
+            display_name=software_source_display_name,
+            checksum_type=software_source_checksum_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["software_source_description"],
+            description=software_source_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            maintainer_email=var["software_source_maintainer_email"],
-            maintainer_name=var["software_source_maintainer_name"],
-            maintainer_phone=var["software_source_maintainer_phone"],
-            parent_id=oci_osmanagement_parent["test_parent"]["id"])
+            maintainer_email=software_source_maintainer_email,
+            maintainer_name=software_source_maintainer_name,
+            maintainer_phone=software_source_maintainer_phone,
+            parent_id=test_parent["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -650,22 +650,22 @@ class SoftwareSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_software_source = oci.os_management.SoftwareSource("testSoftwareSource",
-            arch_type=var["software_source_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["software_source_display_name"],
-            checksum_type=var["software_source_checksum_type"],
+        test_software_source = oci.os_management.SoftwareSource("test_software_source",
+            arch_type=software_source_arch_type,
+            compartment_id=compartment_id,
+            display_name=software_source_display_name,
+            checksum_type=software_source_checksum_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["software_source_description"],
+            description=software_source_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            maintainer_email=var["software_source_maintainer_email"],
-            maintainer_name=var["software_source_maintainer_name"],
-            maintainer_phone=var["software_source_maintainer_phone"],
-            parent_id=oci_osmanagement_parent["test_parent"]["id"])
+            maintainer_email=software_source_maintainer_email,
+            maintainer_name=software_source_maintainer_name,
+            maintainer_phone=software_source_maintainer_phone,
+            parent_id=test_parent["id"])
         ```
         <!--End PulumiCodeChooser -->
 

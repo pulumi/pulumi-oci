@@ -25,55 +25,55 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCloudAutonomousVmCluster = new Oci.Database.CloudAutonomousVmCluster("testCloudAutonomousVmCluster", new()
+    ///     var testCloudAutonomousVmCluster = new Oci.Database.CloudAutonomousVmCluster("test_cloud_autonomous_vm_cluster", new()
     ///     {
-    ///         CloudExadataInfrastructureId = oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Cloud_autonomous_vm_cluster_display_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         AutonomousDataStorageSizeInTbs = @var.Cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
-    ///         ClusterTimeZone = @var.Cloud_autonomous_vm_cluster_cluster_time_zone,
-    ///         ComputeModel = @var.Cloud_autonomous_vm_cluster_compute_model,
-    ///         CpuCoreCountPerNode = @var.Cloud_autonomous_vm_cluster_cpu_core_count_per_node,
-    ///         DbServers = @var.Cloud_autonomous_vm_cluster_db_servers,
-    ///         DefinedTags = @var.Cloud_autonomous_vm_cluster_defined_tags,
-    ///         Description = @var.Cloud_autonomous_vm_cluster_description,
+    ///         CloudExadataInfrastructureId = testCloudExadataInfrastructure.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = cloudAutonomousVmClusterDisplayName,
+    ///         SubnetId = testSubnet.Id,
+    ///         AutonomousDataStorageSizeInTbs = cloudAutonomousVmClusterAutonomousDataStorageSizeInTbs,
+    ///         ClusterTimeZone = cloudAutonomousVmClusterClusterTimeZone,
+    ///         ComputeModel = cloudAutonomousVmClusterComputeModel,
+    ///         CpuCoreCountPerNode = cloudAutonomousVmClusterCpuCoreCountPerNode,
+    ///         DbServers = cloudAutonomousVmClusterDbServers,
+    ///         DefinedTags = cloudAutonomousVmClusterDefinedTags,
+    ///         Description = cloudAutonomousVmClusterDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsMtlsEnabledVmCluster = @var.Cloud_autonomous_vm_cluster_is_mtls_enabled_vm_cluster,
-    ///         LicenseModel = @var.Cloud_autonomous_vm_cluster_license_model,
+    ///         IsMtlsEnabledVmCluster = cloudAutonomousVmClusterIsMtlsEnabledVmCluster,
+    ///         LicenseModel = cloudAutonomousVmClusterLicenseModel,
     ///         MaintenanceWindowDetails = new Oci.Database.Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs
     ///         {
-    ///             CustomActionTimeoutInMins = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins,
+    ///             CustomActionTimeoutInMins = cloudAutonomousVmClusterMaintenanceWindowDetailsCustomActionTimeoutInMins,
     ///             DaysOfWeeks = new[]
     ///             {
     ///                 new Oci.Database.Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs
     ///                 {
-    ///                     Name = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
+    ///                     Name = cloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName,
     ///                 },
     ///             },
-    ///             HoursOfDays = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day,
-    ///             IsCustomActionTimeoutEnabled = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled,
-    ///             IsMonthlyPatchingEnabled = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled,
-    ///             LeadTimeInWeeks = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+    ///             HoursOfDays = cloudAutonomousVmClusterMaintenanceWindowDetailsHoursOfDay,
+    ///             IsCustomActionTimeoutEnabled = cloudAutonomousVmClusterMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+    ///             IsMonthlyPatchingEnabled = cloudAutonomousVmClusterMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+    ///             LeadTimeInWeeks = cloudAutonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks,
     ///             Months = new[]
     ///             {
     ///                 new Oci.Database.Inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs
     ///                 {
-    ///                     Name = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_months_name,
+    ///                     Name = cloudAutonomousVmClusterMaintenanceWindowDetailsMonthsName,
     ///                 },
     ///             },
-    ///             PatchingMode = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_patching_mode,
-    ///             Preference = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_preference,
-    ///             WeeksOfMonths = @var.Cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
+    ///             PatchingMode = cloudAutonomousVmClusterMaintenanceWindowDetailsPatchingMode,
+    ///             Preference = cloudAutonomousVmClusterMaintenanceWindowDetailsPreference,
+    ///             WeeksOfMonths = cloudAutonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
     ///         },
-    ///         MemoryPerOracleComputeUnitInGbs = @var.Cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
-    ///         NsgIds = @var.Cloud_autonomous_vm_cluster_nsg_ids,
-    ///         ScanListenerPortNonTls = @var.Cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
-    ///         ScanListenerPortTls = @var.Cloud_autonomous_vm_cluster_scan_listener_port_tls,
-    ///         TotalContainerDatabases = @var.Cloud_autonomous_vm_cluster_total_container_databases,
+    ///         MemoryPerOracleComputeUnitInGbs = cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs,
+    ///         NsgIds = cloudAutonomousVmClusterNsgIds,
+    ///         ScanListenerPortNonTls = cloudAutonomousVmClusterScanListenerPortNonTls,
+    ///         ScanListenerPortTls = cloudAutonomousVmClusterScanListenerPortTls,
+    ///         TotalContainerDatabases = cloudAutonomousVmClusterTotalContainerDatabases,
     ///     });
     /// 
     /// });

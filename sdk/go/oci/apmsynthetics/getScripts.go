@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetScripts(ctx, &apmsynthetics.GetScriptsArgs{
-//				ApmDomainId: oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-//				ContentType: pulumi.StringRef(_var.Script_content_type),
-//				DisplayName: pulumi.StringRef(_var.Script_display_name),
+//				ApmDomainId: testApmDomain.Id,
+//				ContentType: pulumi.StringRef(scriptContentType),
+//				DisplayName: pulumi.StringRef(scriptDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

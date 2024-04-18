@@ -23,12 +23,12 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousDatabaseSaasAdminUser = new Oci.Database.AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", new()
+    ///     var testAutonomousDatabaseSaasAdminUser = new Oci.Database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", new()
     ///     {
-    ///         AutonomousDatabaseId = oci_database_autonomous_database.Test_autonomous_database.Id,
-    ///         Password = @var.Autonomous_database_saas_admin_user_password,
-    ///         AccessType = @var.Autonomous_database_saas_admin_user_access_type,
-    ///         Duration = @var.Autonomous_database_saas_admin_user_duration,
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         Password = autonomousDatabaseSaasAdminUserPassword,
+    ///         AccessType = autonomousDatabaseSaasAdminUserAccessType,
+    ///         Duration = autonomousDatabaseSaasAdminUserDuration,
     ///     });
     /// 
     /// });

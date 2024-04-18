@@ -25,27 +25,27 @@ namespace Pulumi.Oci.Waf
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWebAppFirewallPolicy = new Oci.Waf.AppFirewallPolicy("testWebAppFirewallPolicy", new()
+    ///     var testWebAppFirewallPolicy = new Oci.Waf.AppFirewallPolicy("test_web_app_firewall_policy", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Actions = new[]
     ///         {
     ///             new Oci.Waf.Inputs.AppFirewallPolicyActionArgs
     ///             {
-    ///                 Name = @var.Web_app_firewall_policy_actions_name,
-    ///                 Type = @var.Web_app_firewall_policy_actions_type,
+    ///                 Name = webAppFirewallPolicyActionsName,
+    ///                 Type = webAppFirewallPolicyActionsType,
     ///                 Body = new Oci.Waf.Inputs.AppFirewallPolicyActionBodyArgs
     ///                 {
-    ///                     Text = @var.Web_app_firewall_policy_actions_body_text,
-    ///                     Type = @var.Web_app_firewall_policy_actions_body_type,
+    ///                     Text = webAppFirewallPolicyActionsBodyText,
+    ///                     Type = webAppFirewallPolicyActionsBodyType,
     ///                 },
-    ///                 Code = @var.Web_app_firewall_policy_actions_code,
+    ///                 Code = webAppFirewallPolicyActionsCode,
     ///                 Headers = new[]
     ///                 {
     ///                     new Oci.Waf.Inputs.AppFirewallPolicyActionHeaderArgs
     ///                     {
-    ///                         Name = @var.Web_app_firewall_policy_actions_headers_name,
-    ///                         Value = @var.Web_app_firewall_policy_actions_headers_value,
+    ///                         Name = webAppFirewallPolicyActionsHeadersName,
+    ///                         Value = webAppFirewallPolicyActionsHeadersValue,
     ///                     },
     ///                 },
     ///             },
@@ -54,71 +54,71 @@ namespace Pulumi.Oci.Waf
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Web_app_firewall_policy_display_name,
+    ///         DisplayName = webAppFirewallPolicyDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         RequestAccessControl = new Oci.Waf.Inputs.AppFirewallPolicyRequestAccessControlArgs
     ///         {
-    ///             DefaultActionName = @var.Web_app_firewall_policy_request_access_control_default_action_name,
+    ///             DefaultActionName = webAppFirewallPolicyRequestAccessControlDefaultActionName,
     ///             Rules = new[]
     ///             {
     ///                 new Oci.Waf.Inputs.AppFirewallPolicyRequestAccessControlRuleArgs
     ///                 {
-    ///                     ActionName = @var.Web_app_firewall_policy_request_access_control_rules_action_name,
-    ///                     Name = @var.Web_app_firewall_policy_request_access_control_rules_name,
-    ///                     Type = @var.Web_app_firewall_policy_request_access_control_rules_type,
-    ///                     Condition = @var.Web_app_firewall_policy_request_access_control_rules_condition,
-    ///                     ConditionLanguage = @var.Web_app_firewall_policy_request_access_control_rules_condition_language,
+    ///                     ActionName = webAppFirewallPolicyRequestAccessControlRulesActionName,
+    ///                     Name = webAppFirewallPolicyRequestAccessControlRulesName,
+    ///                     Type = webAppFirewallPolicyRequestAccessControlRulesType,
+    ///                     Condition = webAppFirewallPolicyRequestAccessControlRulesCondition,
+    ///                     ConditionLanguage = webAppFirewallPolicyRequestAccessControlRulesConditionLanguage,
     ///                 },
     ///             },
     ///         },
     ///         RequestProtection = new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionArgs
     ///         {
-    ///             BodyInspectionSizeLimitExceededActionName = @var.Web_app_firewall_policy_request_protection_body_inspection_size_limit_exceeded_action_name,
-    ///             BodyInspectionSizeLimitInBytes = @var.Web_app_firewall_policy_request_protection_body_inspection_size_limit_in_bytes,
+    ///             BodyInspectionSizeLimitExceededActionName = webAppFirewallPolicyRequestProtectionBodyInspectionSizeLimitExceededActionName,
+    ///             BodyInspectionSizeLimitInBytes = webAppFirewallPolicyRequestProtectionBodyInspectionSizeLimitInBytes,
     ///             Rules = new[]
     ///             {
     ///                 new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleArgs
     ///                 {
-    ///                     ActionName = @var.Web_app_firewall_policy_request_protection_rules_action_name,
-    ///                     Name = @var.Web_app_firewall_policy_request_protection_rules_name,
+    ///                     ActionName = webAppFirewallPolicyRequestProtectionRulesActionName,
+    ///                     Name = webAppFirewallPolicyRequestProtectionRulesName,
     ///                     ProtectionCapabilities = new[]
     ///                     {
     ///                         new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArgs
     ///                         {
-    ///                             Key = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_key,
-    ///                             Version = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_version,
-    ///                             ActionName = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_action_name,
-    ///                             CollaborativeActionThreshold = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_action_threshold,
+    ///                             Key = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesKey,
+    ///                             Version = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesVersion,
+    ///                             ActionName = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesActionName,
+    ///                             CollaborativeActionThreshold = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeActionThreshold,
     ///                             CollaborativeWeights = new[]
     ///                             {
     ///                                 new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs
     ///                                 {
-    ///                                     Key = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_key,
-    ///                                     Weight = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_collaborative_weights_weight,
+    ///                                     Key = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsKey,
+    ///                                     Weight = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsWeight,
     ///                                 },
     ///                             },
     ///                             Exclusions = new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilityExclusionsArgs
     ///                             {
-    ///                                 Args = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_args,
-    ///                                 RequestCookies = @var.Web_app_firewall_policy_request_protection_rules_protection_capabilities_exclusions_request_cookies,
+    ///                                 Args = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsArgs,
+    ///                                 RequestCookies = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsRequestCookies,
     ///                             },
     ///                         },
     ///                     },
-    ///                     Type = @var.Web_app_firewall_policy_request_protection_rules_type,
-    ///                     Condition = @var.Web_app_firewall_policy_request_protection_rules_condition,
-    ///                     ConditionLanguage = @var.Web_app_firewall_policy_request_protection_rules_condition_language,
-    ///                     IsBodyInspectionEnabled = @var.Web_app_firewall_policy_request_protection_rules_is_body_inspection_enabled,
+    ///                     Type = webAppFirewallPolicyRequestProtectionRulesType,
+    ///                     Condition = webAppFirewallPolicyRequestProtectionRulesCondition,
+    ///                     ConditionLanguage = webAppFirewallPolicyRequestProtectionRulesConditionLanguage,
+    ///                     IsBodyInspectionEnabled = webAppFirewallPolicyRequestProtectionRulesIsBodyInspectionEnabled,
     ///                     ProtectionCapabilitySettings = new Oci.Waf.Inputs.AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsArgs
     ///                     {
-    ///                         AllowedHttpMethods = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_allowed_http_methods,
-    ///                         MaxHttpRequestHeaderLength = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_header_length,
-    ///                         MaxHttpRequestHeaders = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_http_request_headers,
-    ///                         MaxNumberOfArguments = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_number_of_arguments,
-    ///                         MaxSingleArgumentLength = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_single_argument_length,
-    ///                         MaxTotalArgumentLength = @var.Web_app_firewall_policy_request_protection_rules_protection_capability_settings_max_total_argument_length,
+    ///                         AllowedHttpMethods = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsAllowedHttpMethods,
+    ///                         MaxHttpRequestHeaderLength = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaderLength,
+    ///                         MaxHttpRequestHeaders = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaders,
+    ///                         MaxNumberOfArguments = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxNumberOfArguments,
+    ///                         MaxSingleArgumentLength = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxSingleArgumentLength,
+    ///                         MaxTotalArgumentLength = webAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsMaxTotalArgumentLength,
     ///                     },
     ///                 },
     ///             },
@@ -129,20 +129,20 @@ namespace Pulumi.Oci.Waf
     ///             {
     ///                 new Oci.Waf.Inputs.AppFirewallPolicyRequestRateLimitingRuleArgs
     ///                 {
-    ///                     ActionName = @var.Web_app_firewall_policy_request_rate_limiting_rules_action_name,
+    ///                     ActionName = webAppFirewallPolicyRequestRateLimitingRulesActionName,
     ///                     Configurations = new[]
     ///                     {
     ///                         new Oci.Waf.Inputs.AppFirewallPolicyRequestRateLimitingRuleConfigurationArgs
     ///                         {
-    ///                             PeriodInSeconds = @var.Web_app_firewall_policy_request_rate_limiting_rules_configurations_period_in_seconds,
-    ///                             RequestsLimit = @var.Web_app_firewall_policy_request_rate_limiting_rules_configurations_requests_limit,
-    ///                             ActionDurationInSeconds = @var.Web_app_firewall_policy_request_rate_limiting_rules_configurations_action_duration_in_seconds,
+    ///                             PeriodInSeconds = webAppFirewallPolicyRequestRateLimitingRulesConfigurationsPeriodInSeconds,
+    ///                             RequestsLimit = webAppFirewallPolicyRequestRateLimitingRulesConfigurationsRequestsLimit,
+    ///                             ActionDurationInSeconds = webAppFirewallPolicyRequestRateLimitingRulesConfigurationsActionDurationInSeconds,
     ///                         },
     ///                     },
-    ///                     Name = @var.Web_app_firewall_policy_request_rate_limiting_rules_name,
-    ///                     Type = @var.Web_app_firewall_policy_request_rate_limiting_rules_type,
-    ///                     Condition = @var.Web_app_firewall_policy_request_rate_limiting_rules_condition,
-    ///                     ConditionLanguage = @var.Web_app_firewall_policy_request_rate_limiting_rules_condition_language,
+    ///                     Name = webAppFirewallPolicyRequestRateLimitingRulesName,
+    ///                     Type = webAppFirewallPolicyRequestRateLimitingRulesType,
+    ///                     Condition = webAppFirewallPolicyRequestRateLimitingRulesCondition,
+    ///                     ConditionLanguage = webAppFirewallPolicyRequestRateLimitingRulesConditionLanguage,
     ///                 },
     ///             },
     ///         },
@@ -152,11 +152,11 @@ namespace Pulumi.Oci.Waf
     ///             {
     ///                 new Oci.Waf.Inputs.AppFirewallPolicyResponseAccessControlRuleArgs
     ///                 {
-    ///                     ActionName = @var.Web_app_firewall_policy_response_access_control_rules_action_name,
-    ///                     Name = @var.Web_app_firewall_policy_response_access_control_rules_name,
-    ///                     Type = @var.Web_app_firewall_policy_response_access_control_rules_type,
-    ///                     Condition = @var.Web_app_firewall_policy_response_access_control_rules_condition,
-    ///                     ConditionLanguage = @var.Web_app_firewall_policy_response_access_control_rules_condition_language,
+    ///                     ActionName = webAppFirewallPolicyResponseAccessControlRulesActionName,
+    ///                     Name = webAppFirewallPolicyResponseAccessControlRulesName,
+    ///                     Type = webAppFirewallPolicyResponseAccessControlRulesType,
+    ///                     Condition = webAppFirewallPolicyResponseAccessControlRulesCondition,
+    ///                     ConditionLanguage = webAppFirewallPolicyResponseAccessControlRulesConditionLanguage,
     ///                 },
     ///             },
     ///         },
@@ -166,48 +166,48 @@ namespace Pulumi.Oci.Waf
     ///             {
     ///                 new Oci.Waf.Inputs.AppFirewallPolicyResponseProtectionRuleArgs
     ///                 {
-    ///                     ActionName = @var.Web_app_firewall_policy_response_protection_rules_action_name,
-    ///                     Name = @var.Web_app_firewall_policy_response_protection_rules_name,
+    ///                     ActionName = webAppFirewallPolicyResponseProtectionRulesActionName,
+    ///                     Name = webAppFirewallPolicyResponseProtectionRulesName,
     ///                     ProtectionCapabilities = new[]
     ///                     {
     ///                         new Oci.Waf.Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArgs
     ///                         {
-    ///                             Key = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_key,
-    ///                             Version = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_version,
-    ///                             ActionName = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_action_name,
-    ///                             CollaborativeActionThreshold = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_action_threshold,
+    ///                             Key = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesKey,
+    ///                             Version = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesVersion,
+    ///                             ActionName = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesActionName,
+    ///                             CollaborativeActionThreshold = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeActionThreshold,
     ///                             CollaborativeWeights = new[]
     ///                             {
     ///                                 new Oci.Waf.Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs
     ///                                 {
-    ///                                     Key = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_key,
-    ///                                     Weight = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_collaborative_weights_weight,
+    ///                                     Key = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsKey,
+    ///                                     Weight = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsWeight,
     ///                                 },
     ///                             },
     ///                             Exclusions = new Oci.Waf.Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilityExclusionsArgs
     ///                             {
-    ///                                 Args = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_args,
-    ///                                 RequestCookies = @var.Web_app_firewall_policy_response_protection_rules_protection_capabilities_exclusions_request_cookies,
+    ///                                 Args = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsArgs,
+    ///                                 RequestCookies = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsRequestCookies,
     ///                             },
     ///                         },
     ///                     },
-    ///                     Type = @var.Web_app_firewall_policy_response_protection_rules_type,
-    ///                     Condition = @var.Web_app_firewall_policy_response_protection_rules_condition,
-    ///                     ConditionLanguage = @var.Web_app_firewall_policy_response_protection_rules_condition_language,
-    ///                     IsBodyInspectionEnabled = @var.Web_app_firewall_policy_response_protection_rules_is_body_inspection_enabled,
+    ///                     Type = webAppFirewallPolicyResponseProtectionRulesType,
+    ///                     Condition = webAppFirewallPolicyResponseProtectionRulesCondition,
+    ///                     ConditionLanguage = webAppFirewallPolicyResponseProtectionRulesConditionLanguage,
+    ///                     IsBodyInspectionEnabled = webAppFirewallPolicyResponseProtectionRulesIsBodyInspectionEnabled,
     ///                     ProtectionCapabilitySettings = new Oci.Waf.Inputs.AppFirewallPolicyResponseProtectionRuleProtectionCapabilitySettingsArgs
     ///                     {
-    ///                         AllowedHttpMethods = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_allowed_http_methods,
-    ///                         MaxHttpRequestHeaderLength = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_header_length,
-    ///                         MaxHttpRequestHeaders = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_http_request_headers,
-    ///                         MaxNumberOfArguments = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_number_of_arguments,
-    ///                         MaxSingleArgumentLength = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_single_argument_length,
-    ///                         MaxTotalArgumentLength = @var.Web_app_firewall_policy_response_protection_rules_protection_capability_settings_max_total_argument_length,
+    ///                         AllowedHttpMethods = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsAllowedHttpMethods,
+    ///                         MaxHttpRequestHeaderLength = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaderLength,
+    ///                         MaxHttpRequestHeaders = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxHttpRequestHeaders,
+    ///                         MaxNumberOfArguments = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxNumberOfArguments,
+    ///                         MaxSingleArgumentLength = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxSingleArgumentLength,
+    ///                         MaxTotalArgumentLength = webAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsMaxTotalArgumentLength,
     ///                     },
     ///                 },
     ///             },
     ///         },
-    ///         SystemTags = @var.Web_app_firewall_policy_system_tags,
+    ///         SystemTags = webAppFirewallPolicySystemTags,
     ///     });
     /// 
     /// });

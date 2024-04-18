@@ -103,9 +103,9 @@ def get_compatible_formats_for_sensitive_type(access_level: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=var["compartment_id"],
-        access_level=var["compatible_formats_for_sensitive_type_access_level"],
-        compartment_id_in_subtree=var["compatible_formats_for_sensitive_type_compartment_id_in_subtree"])
+    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=compartment_id,
+        access_level=compatible_formats_for_sensitive_type_access_level,
+        compartment_id_in_subtree=compatible_formats_for_sensitive_type_compartment_id_in_subtree)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -149,9 +149,9 @@ def get_compatible_formats_for_sensitive_type_output(access_level: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=var["compartment_id"],
-        access_level=var["compatible_formats_for_sensitive_type_access_level"],
-        compartment_id_in_subtree=var["compatible_formats_for_sensitive_type_compartment_id_in_subtree"])
+    test_compatible_formats_for_sensitive_type = oci.DataSafe.get_compatible_formats_for_sensitive_type(compartment_id=compartment_id,
+        access_level=compatible_formats_for_sensitive_type_access_level,
+        compartment_id_in_subtree=compatible_formats_for_sensitive_type_compartment_id_in_subtree)
     ```
     <!--End PulumiCodeChooser -->
 

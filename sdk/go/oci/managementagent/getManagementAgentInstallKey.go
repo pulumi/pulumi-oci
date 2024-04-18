@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentInstallKey(ctx, &managementagent.GetManagementAgentInstallKeyArgs{
-//				ManagementAgentInstallKeyId: oci_management_agent_management_agent_install_key.Test_management_agent_install_key.Id,
+//				ManagementAgentInstallKeyId: testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

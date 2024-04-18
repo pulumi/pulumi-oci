@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProject = new oci.aidocument.Project("testProject", {
- *     compartmentId: _var.compartment_id,
- *     definedTags: _var.project_defined_tags,
- *     description: _var.project_description,
- *     displayName: _var.project_display_name,
- *     freeformTags: _var.project_freeform_tags,
+ * const testProject = new oci.aidocument.Project("test_project", {
+ *     compartmentId: compartmentId,
+ *     definedTags: projectDefinedTags,
+ *     description: projectDescription,
+ *     displayName: projectDisplayName,
+ *     freeformTags: projectFreeformTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

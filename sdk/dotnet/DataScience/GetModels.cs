@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModels = Oci.DataScience.GetModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Model_created_by,
-        ///         DisplayName = @var.Model_display_name,
-        ///         Id = @var.Model_id,
-        ///         ModelVersionSetName = oci_datascience_model_version_set.Test_model_version_set.Name,
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
-        ///         State = @var.Model_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelCreatedBy,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         ModelVersionSetName = testModelVersionSet.Name,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModels = Oci.DataScience.GetModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Model_created_by,
-        ///         DisplayName = @var.Model_display_name,
-        ///         Id = @var.Model_id,
-        ///         ModelVersionSetName = oci_datascience_model_version_set.Test_model_version_set.Name,
-        ///         ProjectId = oci_datascience_project.Test_project.Id,
-        ///         State = @var.Model_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = modelCreatedBy,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         ModelVersionSetName = testModelVersionSet.Name,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
         ///     });
         /// 
         /// });

@@ -18,22 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceApplicationPatch = new oci.dataintegration.WorkspaceApplicationPatch("testWorkspaceApplicationPatch", {
- *     applicationKey: _var.workspace_application_patch_application_key,
- *     identifier: _var.workspace_application_patch_identifier,
- *     objectKeys: _var.workspace_application_patch_object_keys,
- *     patchType: _var.workspace_application_patch_patch_type,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     description: _var.workspace_application_patch_description,
- *     key: _var.workspace_application_patch_key,
- *     modelVersion: _var.workspace_application_patch_model_version,
- *     objectStatus: _var.workspace_application_patch_object_status,
+ * const testWorkspaceApplicationPatch = new oci.dataintegration.WorkspaceApplicationPatch("test_workspace_application_patch", {
+ *     applicationKey: workspaceApplicationPatchApplicationKey,
+ *     identifier: workspaceApplicationPatchIdentifier,
+ *     name: workspaceApplicationPatchName,
+ *     objectKeys: workspaceApplicationPatchObjectKeys,
+ *     patchType: workspaceApplicationPatchPatchType,
+ *     workspaceId: testWorkspace.id,
+ *     description: workspaceApplicationPatchDescription,
+ *     key: workspaceApplicationPatchKey,
+ *     modelVersion: workspaceApplicationPatchModelVersion,
+ *     objectStatus: workspaceApplicationPatchObjectStatus,
  *     registryMetadata: {
- *         aggregatorKey: _var.workspace_application_patch_registry_metadata_aggregator_key,
- *         isFavorite: _var.workspace_application_patch_registry_metadata_is_favorite,
- *         key: _var.workspace_application_patch_registry_metadata_key,
- *         labels: _var.workspace_application_patch_registry_metadata_labels,
- *         registryVersion: _var.workspace_application_patch_registry_metadata_registry_version,
+ *         aggregatorKey: workspaceApplicationPatchRegistryMetadataAggregatorKey,
+ *         isFavorite: workspaceApplicationPatchRegistryMetadataIsFavorite,
+ *         key: workspaceApplicationPatchRegistryMetadataKey,
+ *         labels: workspaceApplicationPatchRegistryMetadataLabels,
+ *         registryVersion: workspaceApplicationPatchRegistryMetadataRegistryVersion,
  *     },
  * });
  * ```

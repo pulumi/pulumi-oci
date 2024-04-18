@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityReservation(ctx, &core.GetComputeCapacityReservationArgs{
-//				CapacityReservationId: oci_core_capacity_reservation.Test_capacity_reservation.Id,
+//				CapacityReservationId: testCapacityReservation.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

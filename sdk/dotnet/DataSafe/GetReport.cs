@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testReport = Oci.DataSafe.GetReport.Invoke(new()
         ///     {
-        ///         ReportId = oci_data_safe_report.Test_report.Id,
+        ///         ReportId = testReportOciDataSafeReport.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testReport = Oci.DataSafe.GetReport.Invoke(new()
         ///     {
-        ///         ReportId = oci_data_safe_report.Test_report.Id,
+        ///         ReportId = testReportOciDataSafeReport.Id,
         ///     });
         /// 
         /// });

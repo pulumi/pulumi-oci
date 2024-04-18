@@ -321,15 +321,15 @@ class Repository(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository = oci.artifacts.Repository("testRepository",
-            compartment_id=var["compartment_id"],
-            is_immutable=var["repository_is_immutable"],
-            repository_type=var["repository_repository_type"],
+        test_repository = oci.artifacts.Repository("test_repository",
+            compartment_id=compartment_id,
+            is_immutable=repository_is_immutable,
+            repository_type=repository_repository_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["repository_description"],
-            display_name=var["repository_display_name"],
+            description=repository_description,
+            display_name=repository_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -376,15 +376,15 @@ class Repository(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository = oci.artifacts.Repository("testRepository",
-            compartment_id=var["compartment_id"],
-            is_immutable=var["repository_is_immutable"],
-            repository_type=var["repository_repository_type"],
+        test_repository = oci.artifacts.Repository("test_repository",
+            compartment_id=compartment_id,
+            is_immutable=repository_is_immutable,
+            repository_type=repository_repository_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["repository_description"],
-            display_name=var["repository_display_name"],
+            description=repository_description,
+            display_name=repository_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

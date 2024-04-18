@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testDbManagementPrivateEndpointAssociatedDatabases = Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DbManagementPrivateEndpointId = testDbManagementPrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testDbManagementPrivateEndpointAssociatedDatabases = Oci.DatabaseManagement.GetDbManagementPrivateEndpointAssociatedDatabases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DbManagementPrivateEndpointId = oci_database_management_db_management_private_endpoint.Test_db_management_private_endpoint.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DbManagementPrivateEndpointId = testDbManagementPrivateEndpoint.Id,
         ///     });
         /// 
         /// });

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaWorkflowJobFact = Oci.MediaServices.GetMediaWorkflowJobFact.Invoke(new()
         ///     {
-        ///         Key = @var.Media_workflow_job_fact_key,
-        ///         MediaWorkflowJobId = oci_media_services_media_workflow_job.Test_media_workflow_job.Id,
+        ///         Key = mediaWorkflowJobFactKey,
+        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaWorkflowJobFact = Oci.MediaServices.GetMediaWorkflowJobFact.Invoke(new()
         ///     {
-        ///         Key = @var.Media_workflow_job_fact_key,
-        ///         MediaWorkflowJobId = oci_media_services_media_workflow_job.Test_media_workflow_job.Id,
+        ///         Key = mediaWorkflowJobFactKey,
+        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
         ///     });
         /// 
         /// });

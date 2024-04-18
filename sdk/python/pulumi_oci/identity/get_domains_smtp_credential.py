@@ -334,12 +334,12 @@ def get_domains_smtp_credential(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        smtp_credential_id=oci_identity_smtp_credential["test_smtp_credential"]["id"],
+    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
+        smtp_credential_id=test_smtp_credential_oci_identity_smtp_credential["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["smtp_credential_authorization"],
-        resource_type_schema_version=var["smtp_credential_resource_type_schema_version"])
+        authorization=smtp_credential_authorization,
+        resource_type_schema_version=smtp_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -409,12 +409,12 @@ def get_domains_smtp_credential_output(attribute_sets: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        smtp_credential_id=oci_identity_smtp_credential["test_smtp_credential"]["id"],
+    test_smtp_credential = oci.Identity.get_domains_smtp_credential(idcs_endpoint=test_domain["url"],
+        smtp_credential_id=test_smtp_credential_oci_identity_smtp_credential["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["smtp_credential_authorization"],
-        resource_type_schema_version=var["smtp_credential_resource_type_schema_version"])
+        authorization=smtp_credential_authorization,
+        resource_type_schema_version=smtp_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

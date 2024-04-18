@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewDataSafeConfiguration(ctx, "testDataSafeConfiguration", &DataSafe.DataSafeConfigurationArgs{
-//				IsEnabled:     pulumi.Any(_var.Data_safe_configuration_is_enabled),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := DataSafe.NewDataSafeConfiguration(ctx, "test_data_safe_configuration", &DataSafe.DataSafeConfigurationArgs{
+//				IsEnabled:     pulumi.Any(dataSafeConfigurationIsEnabled),
+//				CompartmentId: pulumi.Any(compartmentId),
 //			})
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetBackupDestination(ctx, &database.GetBackupDestinationArgs{
-//				BackupDestinationId: oci_database_backup_destination.Test_backup_destination.Id,
+//				BackupDestinationId: testBackupDestinationOciDatabaseBackupDestination.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

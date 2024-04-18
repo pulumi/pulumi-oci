@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProject = new oci.aivision.Project("testProject", {
- *     compartmentId: _var.compartment_id,
+ * const testProject = new oci.aivision.Project("test_project", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.project_description,
- *     displayName: _var.project_display_name,
+ *     description: projectDescription,
+ *     displayName: projectDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

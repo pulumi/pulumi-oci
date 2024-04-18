@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testNotebookSession = Oci.DataScience.GetNotebookSession.Invoke(new()
         ///     {
-        ///         NotebookSessionId = oci_datascience_notebook_session.Test_notebook_session.Id,
+        ///         NotebookSessionId = testNotebookSessionOciDatascienceNotebookSession.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testNotebookSession = Oci.DataScience.GetNotebookSession.Invoke(new()
         ///     {
-        ///         NotebookSessionId = oci_datascience_notebook_session.Test_notebook_session.Id,
+        ///         NotebookSessionId = testNotebookSessionOciDatascienceNotebookSession.Id,
         ///     });
         /// 
         /// });

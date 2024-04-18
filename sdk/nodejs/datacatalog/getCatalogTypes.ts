@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     externalTypeName: _var.catalog_type_external_type_name,
- *     fields: _var.catalog_type_fields,
- *     isApproved: _var.catalog_type_is_approved,
- *     isInternal: _var.catalog_type_is_internal,
- *     isTag: _var.catalog_type_is_tag,
- *     name: _var.catalog_type_name,
- *     state: _var.catalog_type_state,
- *     typeCategory: _var.catalog_type_type_category,
+ *     catalogId: testCatalog.id,
+ *     externalTypeName: catalogTypeExternalTypeName,
+ *     fields: catalogTypeFields,
+ *     isApproved: catalogTypeIsApproved,
+ *     isInternal: catalogTypeIsInternal,
+ *     isTag: catalogTypeIsTag,
+ *     name: catalogTypeName,
+ *     state: catalogTypeState,
+ *     typeCategory: catalogTypeTypeCategory,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -152,15 +152,15 @@ export interface GetCatalogTypesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     externalTypeName: _var.catalog_type_external_type_name,
- *     fields: _var.catalog_type_fields,
- *     isApproved: _var.catalog_type_is_approved,
- *     isInternal: _var.catalog_type_is_internal,
- *     isTag: _var.catalog_type_is_tag,
- *     name: _var.catalog_type_name,
- *     state: _var.catalog_type_state,
- *     typeCategory: _var.catalog_type_type_category,
+ *     catalogId: testCatalog.id,
+ *     externalTypeName: catalogTypeExternalTypeName,
+ *     fields: catalogTypeFields,
+ *     isApproved: catalogTypeIsApproved,
+ *     isInternal: catalogTypeIsInternal,
+ *     isTag: catalogTypeIsTag,
+ *     name: catalogTypeName,
+ *     state: catalogTypeState,
+ *     typeCategory: catalogTypeTypeCategory,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

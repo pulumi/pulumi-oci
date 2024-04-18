@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testClusterNetwork = Oci.Core.GetClusterNetwork.Invoke(new()
         ///     {
-        ///         ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
+        ///         ClusterNetworkId = testClusterNetworkOciCoreClusterNetwork.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testClusterNetwork = Oci.Core.GetClusterNetwork.Invoke(new()
         ///     {
-        ///         ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
+        ///         ClusterNetworkId = testClusterNetworkOciCoreClusterNetwork.Id,
         ///     });
         /// 
         /// });

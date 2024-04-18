@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceGroup = oci.OsManagement.getManagedInstanceGroup({
- *     managedInstanceGroupId: oci_osmanagement_managed_instance_group.test_managed_instance_group.id,
+ *     managedInstanceGroupId: testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,7 +99,7 @@ export interface GetManagedInstanceGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceGroup = oci.OsManagement.getManagedInstanceGroup({
- *     managedInstanceGroupId: oci_osmanagement_managed_instance_group.test_managed_instance_group.id,
+ *     managedInstanceGroupId: testManagedInstanceGroupOciOsmanagementManagedInstanceGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

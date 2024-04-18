@@ -29,11 +29,11 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testConnectionAssignments = Oci.GoldenGate.GetConnectionAssignments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConnectionId = oci_golden_gate_connection.Test_connection.Id,
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         Name = @var.Connection_assignment_name,
-        ///         State = @var.Connection_assignment_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionId = testConnection.Id,
+        ///         DeploymentId = testDeployment.Id,
+        ///         Name = connectionAssignmentName,
+        ///         State = connectionAssignmentState,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testConnectionAssignments = Oci.GoldenGate.GetConnectionAssignments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ConnectionId = oci_golden_gate_connection.Test_connection.Id,
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         Name = @var.Connection_assignment_name,
-        ///         State = @var.Connection_assignment_state,
+        ///         CompartmentId = compartmentId,
+        ///         ConnectionId = testConnection.Id,
+        ///         DeploymentId = testDeployment.Id,
+        ///         Name = connectionAssignmentName,
+        ///         State = connectionAssignmentState,
         ///     });
         /// 
         /// });

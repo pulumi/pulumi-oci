@@ -32,11 +32,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryAnalytic = Oci.DataSafe.GetDiscoveryAnalytic.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
-        ///         GroupBy = @var.Discovery_analytic_group_by,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = discoveryAnalyticCompartmentIdInSubtree,
+        ///         GroupBy = discoveryAnalyticGroupBy,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -67,11 +67,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryAnalytic = Oci.DataSafe.GetDiscoveryAnalytic.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
-        ///         GroupBy = @var.Discovery_analytic_group_by,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = discoveryAnalyticCompartmentIdInSubtree,
+        ///         GroupBy = discoveryAnalyticGroupBy,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyRequests = oci.Identity.getDomainsMyRequests({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myRequestCount: _var.my_request_my_request_count,
- *     myRequestFilter: _var.my_request_my_request_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myRequestCount: myRequestMyRequestCount,
+ *     myRequestFilter: myRequestMyRequestFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_request_authorization,
- *     resourceTypeSchemaVersion: _var.my_request_resource_type_schema_version,
- *     startIndex: _var.my_request_start_index,
+ *     authorization: myRequestAuthorization,
+ *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
+ *     startIndex: myRequestStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,14 +142,14 @@ export interface GetDomainsMyRequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyRequests = oci.Identity.getDomainsMyRequests({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myRequestCount: _var.my_request_my_request_count,
- *     myRequestFilter: _var.my_request_my_request_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myRequestCount: myRequestMyRequestCount,
+ *     myRequestFilter: myRequestMyRequestFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_request_authorization,
- *     resourceTypeSchemaVersion: _var.my_request_resource_type_schema_version,
- *     startIndex: _var.my_request_start_index,
+ *     authorization: myRequestAuthorization,
+ *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
+ *     startIndex: myRequestStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

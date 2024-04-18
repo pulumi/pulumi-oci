@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testHeatWaveCluster = Oci.Mysql.GetHeatWaveCluster.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testHeatWaveCluster = Oci.Mysql.GetHeatWaveCluster.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });

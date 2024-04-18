@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.AiAnomalyDetection.getDetectionModels({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.model_display_name,
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
- *     state: _var.model_state,
+ *     compartmentId: compartmentId,
+ *     displayName: modelDisplayName,
+ *     projectId: testProject.id,
+ *     state: modelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetDetectionModelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.AiAnomalyDetection.getDetectionModels({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.model_display_name,
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
- *     state: _var.model_state,
+ *     compartmentId: compartmentId,
+ *     displayName: modelDisplayName,
+ *     projectId: testProject.id,
+ *     state: modelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

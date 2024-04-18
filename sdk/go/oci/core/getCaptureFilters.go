@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetCaptureFilters(ctx, &core.GetCaptureFiltersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Capture_filter_display_name),
-//				FilterType:    pulumi.StringRef(_var.Capture_filter_filter_type),
-//				State:         pulumi.StringRef(_var.Capture_filter_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(captureFilterDisplayName),
+//				FilterType:    pulumi.StringRef(captureFilterFilterType),
+//				State:         pulumi.StringRef(captureFilterState),
 //			}, nil)
 //			if err != nil {
 //				return err

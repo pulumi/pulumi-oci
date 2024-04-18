@@ -53,8 +53,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
+     *             .budgetId(testBudget.id())
      *             .build());
      * 
      *     }
@@ -96,8 +96,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
+     *             .budgetId(testBudget.id())
      *             .build());
      * 
      *     }
@@ -139,8 +139,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
+     *             .budgetId(testBudget.id())
      *             .build());
      * 
      *     }
@@ -182,8 +182,8 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRule = BudgetFunctions.getAlertRule(GetAlertRuleArgs.builder()
-     *             .alertRuleId(oci_budget_alert_rule.test_alert_rule().id())
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .alertRuleId(testAlertRuleOciBudgetAlertRule.id())
+     *             .budgetId(testBudget.id())
      *             .build());
      * 
      *     }
@@ -225,9 +225,9 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
-     *             .displayName(var_.alert_rule_display_name())
-     *             .state(var_.alert_rule_state())
+     *             .budgetId(testBudget.id())
+     *             .displayName(alertRuleDisplayName)
+     *             .state(alertRuleState)
      *             .build());
      * 
      *     }
@@ -269,9 +269,9 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
-     *             .displayName(var_.alert_rule_display_name())
-     *             .state(var_.alert_rule_state())
+     *             .budgetId(testBudget.id())
+     *             .displayName(alertRuleDisplayName)
+     *             .state(alertRuleState)
      *             .build());
      * 
      *     }
@@ -313,9 +313,9 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
-     *             .displayName(var_.alert_rule_display_name())
-     *             .state(var_.alert_rule_state())
+     *             .budgetId(testBudget.id())
+     *             .displayName(alertRuleDisplayName)
+     *             .state(alertRuleState)
      *             .build());
      * 
      *     }
@@ -357,9 +357,9 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertRules = BudgetFunctions.getAlertRules(GetAlertRulesArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
-     *             .displayName(var_.alert_rule_display_name())
-     *             .state(var_.alert_rule_state())
+     *             .budgetId(testBudget.id())
+     *             .displayName(alertRuleDisplayName)
+     *             .state(alertRuleState)
      *             .build());
      * 
      *     }
@@ -401,7 +401,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .budgetId(testBudgetOciBudgetBudget.id())
      *             .build());
      * 
      *     }
@@ -443,7 +443,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .budgetId(testBudgetOciBudgetBudget.id())
      *             .build());
      * 
      *     }
@@ -485,7 +485,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .budgetId(testBudgetOciBudgetBudget.id())
      *             .build());
      * 
      *     }
@@ -527,7 +527,7 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudget = BudgetFunctions.getBudget(GetBudgetArgs.builder()
-     *             .budgetId(oci_budget_budget.test_budget().id())
+     *             .budgetId(testBudgetOciBudgetBudget.id())
      *             .build());
      * 
      *     }
@@ -575,10 +575,10 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.budget_display_name())
-     *             .state(var_.budget_state())
-     *             .targetType(var_.budget_target_type())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(budgetDisplayName)
+     *             .state(budgetState)
+     *             .targetType(budgetTargetType)
      *             .build());
      * 
      *     }
@@ -626,10 +626,10 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.budget_display_name())
-     *             .state(var_.budget_state())
-     *             .targetType(var_.budget_target_type())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(budgetDisplayName)
+     *             .state(budgetState)
+     *             .targetType(budgetTargetType)
      *             .build());
      * 
      *     }
@@ -677,10 +677,10 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.budget_display_name())
-     *             .state(var_.budget_state())
-     *             .targetType(var_.budget_target_type())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(budgetDisplayName)
+     *             .state(budgetState)
+     *             .targetType(budgetTargetType)
      *             .build());
      * 
      *     }
@@ -728,10 +728,10 @@ public final class BudgetFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBudgets = BudgetFunctions.getBudgets(GetBudgetsArgs.builder()
-     *             .compartmentId(var_.tenancy_ocid())
-     *             .displayName(var_.budget_display_name())
-     *             .state(var_.budget_state())
-     *             .targetType(var_.budget_target_type())
+     *             .compartmentId(tenancyOcid)
+     *             .displayName(budgetDisplayName)
+     *             .state(budgetState)
+     *             .targetType(budgetTargetType)
      *             .build());
      * 
      *     }

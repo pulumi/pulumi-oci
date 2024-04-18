@@ -50,20 +50,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testHttpMonitor = new HttpMonitor(&#34;testHttpMonitor&#34;, HttpMonitorArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.http_monitor_display_name())
- *             .intervalInSeconds(var_.http_monitor_interval_in_seconds())
- *             .protocol(var_.http_monitor_protocol())
- *             .targets(var_.http_monitor_targets())
+ *             .compartmentId(compartmentId)
+ *             .displayName(httpMonitorDisplayName)
+ *             .intervalInSeconds(httpMonitorIntervalInSeconds)
+ *             .protocol(httpMonitorProtocol)
+ *             .targets(httpMonitorTargets)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .headers(var_.http_monitor_headers())
- *             .isEnabled(var_.http_monitor_is_enabled())
- *             .method(var_.http_monitor_method())
- *             .path(var_.http_monitor_path())
- *             .port(var_.http_monitor_port())
- *             .timeoutInSeconds(var_.http_monitor_timeout_in_seconds())
- *             .vantagePointNames(var_.http_monitor_vantage_point_names())
+ *             .headers(httpMonitorHeaders)
+ *             .isEnabled(httpMonitorIsEnabled)
+ *             .method(httpMonitorMethod)
+ *             .path(httpMonitorPath)
+ *             .port(httpMonitorPort)
+ *             .timeoutInSeconds(httpMonitorTimeoutInSeconds)
+ *             .vantagePointNames(httpMonitorVantagePointNames)
  *             .build());
  * 
  *     }

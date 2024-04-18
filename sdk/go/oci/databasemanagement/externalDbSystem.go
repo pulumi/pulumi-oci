@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalDbSystem(ctx, "testExternalDbSystem", &DatabaseManagement.ExternalDbSystemArgs{
-//				CompartmentId:       pulumi.Any(_var.Compartment_id),
-//				DbSystemDiscoveryId: pulumi.Any(oci_database_management_db_system_discovery.Test_db_system_discovery.Id),
+//			_, err := DatabaseManagement.NewExternalDbSystem(ctx, "test_external_db_system", &DatabaseManagement.ExternalDbSystemArgs{
+//				CompartmentId:       pulumi.Any(compartmentId),
+//				DbSystemDiscoveryId: pulumi.Any(testDbSystemDiscovery.Id),
 //				DatabaseManagementConfig: &databasemanagement.ExternalDbSystemDatabaseManagementConfigArgs{
-//					LicenseModel: pulumi.Any(_var.External_db_system_database_management_config_license_model),
+//					LicenseModel: pulumi.Any(externalDbSystemDatabaseManagementConfigLicenseModel),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.External_db_system_display_name),
+//				DisplayName: pulumi.Any(externalDbSystemDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				StackMonitoringConfig: &databasemanagement.ExternalDbSystemStackMonitoringConfigArgs{
-//					IsEnabled: pulumi.Any(_var.External_db_system_stack_monitoring_config_is_enabled),
-//					Metadata:  pulumi.Any(_var.External_db_system_stack_monitoring_config_metadata),
+//					IsEnabled: pulumi.Any(externalDbSystemStackMonitoringConfigIsEnabled),
+//					Metadata:  pulumi.Any(externalDbSystemStackMonitoringConfigMetadata),
 //				},
 //			})
 //			if err != nil {

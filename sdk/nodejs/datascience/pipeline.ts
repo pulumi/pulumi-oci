@@ -18,57 +18,57 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPipeline = new oci.datascience.Pipeline("testPipeline", {
- *     compartmentId: _var.compartment_id,
- *     projectId: oci_datascience_project.test_project.id,
+ * const testPipeline = new oci.datascience.Pipeline("test_pipeline", {
+ *     compartmentId: compartmentId,
+ *     projectId: testProject.id,
  *     stepDetails: [{
- *         stepName: _var.pipeline_step_details_step_name,
- *         stepType: _var.pipeline_step_details_step_type,
- *         dependsOns: _var.pipeline_step_details_depends_on,
- *         description: _var.pipeline_step_details_description,
- *         isArtifactUploaded: _var.pipeline_step_details_is_artifact_uploaded,
- *         jobId: oci_datascience_job.test_job.id,
+ *         stepName: pipelineStepDetailsStepName,
+ *         stepType: pipelineStepDetailsStepType,
+ *         dependsOns: pipelineStepDetailsDependsOn,
+ *         description: pipelineStepDetailsDescription,
+ *         isArtifactUploaded: pipelineStepDetailsIsArtifactUploaded,
+ *         jobId: testJob.id,
  *         stepConfigurationDetails: {
- *             commandLineArguments: _var.pipeline_step_details_step_configuration_details_command_line_arguments,
- *             environmentVariables: _var.pipeline_step_details_step_configuration_details_environment_variables,
- *             maximumRuntimeInMinutes: _var.pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
+ *             commandLineArguments: pipelineStepDetailsStepConfigurationDetailsCommandLineArguments,
+ *             environmentVariables: pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables,
+ *             maximumRuntimeInMinutes: pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
  *         },
  *         stepInfrastructureConfigurationDetails: {
- *             blockStorageSizeInGbs: _var.pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+ *             blockStorageSizeInGbs: pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
  *             shapeConfigDetails: {
- *                 memoryInGbs: _var.pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
- *                 ocpus: _var.pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+ *                 memoryInGbs: pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+ *                 ocpus: pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
  *             },
- *             shapeName: oci_core_shape.test_shape.name,
+ *             shapeName: testShape.name,
  *         },
  *     }],
  *     configurationDetails: {
- *         type: _var.pipeline_configuration_details_type,
- *         commandLineArguments: _var.pipeline_configuration_details_command_line_arguments,
- *         environmentVariables: _var.pipeline_configuration_details_environment_variables,
- *         maximumRuntimeInMinutes: _var.pipeline_configuration_details_maximum_runtime_in_minutes,
+ *         type: pipelineConfigurationDetailsType,
+ *         commandLineArguments: pipelineConfigurationDetailsCommandLineArguments,
+ *         environmentVariables: pipelineConfigurationDetailsEnvironmentVariables,
+ *         maximumRuntimeInMinutes: pipelineConfigurationDetailsMaximumRuntimeInMinutes,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.pipeline_description,
- *     displayName: _var.pipeline_display_name,
+ *     description: pipelineDescription,
+ *     displayName: pipelineDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     infrastructureConfigurationDetails: {
- *         blockStorageSizeInGbs: _var.pipeline_infrastructure_configuration_details_block_storage_size_in_gbs,
- *         shapeName: oci_core_shape.test_shape.name,
+ *         blockStorageSizeInGbs: pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *         shapeName: testShape.name,
  *         shapeConfigDetails: {
- *             memoryInGbs: _var.pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
- *             ocpus: _var.pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
+ *             memoryInGbs: pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+ *             ocpus: pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
  *         },
  *     },
  *     logConfigurationDetails: {
- *         enableAutoLogCreation: _var.pipeline_log_configuration_details_enable_auto_log_creation,
- *         enableLogging: _var.pipeline_log_configuration_details_enable_logging,
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
+ *         enableAutoLogCreation: pipelineLogConfigurationDetailsEnableAutoLogCreation,
+ *         enableLogging: pipelineLogConfigurationDetailsEnableLogging,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
  *     },
  * });
  * ```

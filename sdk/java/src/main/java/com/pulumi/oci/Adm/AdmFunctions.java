@@ -80,7 +80,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciAdmKnowledgeBase.id())
      *             .build());
      * 
      *     }
@@ -122,7 +122,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciAdmKnowledgeBase.id())
      *             .build());
      * 
      *     }
@@ -164,7 +164,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciAdmKnowledgeBase.id())
      *             .build());
      * 
      *     }
@@ -206,7 +206,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBase = AdmFunctions.getKnowledgebase(GetKnowledgebaseArgs.builder()
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
+     *             .knowledgeBaseId(testKnowledgeBaseOciAdmKnowledgeBase.id())
      *             .build());
      * 
      *     }
@@ -249,10 +249,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.knowledge_base_display_name())
-     *             .id(var_.knowledge_base_id())
-     *             .state(var_.knowledge_base_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
      *             .build());
      * 
      *     }
@@ -295,10 +295,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.knowledge_base_display_name())
-     *             .id(var_.knowledge_base_id())
-     *             .state(var_.knowledge_base_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
      *             .build());
      * 
      *     }
@@ -341,10 +341,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.knowledge_base_display_name())
-     *             .id(var_.knowledge_base_id())
-     *             .state(var_.knowledge_base_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
      *             .build());
      * 
      *     }
@@ -387,10 +387,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.knowledge_base_display_name())
-     *             .id(var_.knowledge_base_id())
-     *             .state(var_.knowledge_base_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
      *             .build());
      * 
      *     }
@@ -433,10 +433,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.knowledge_base_display_name())
-     *             .id(var_.knowledge_base_id())
-     *             .state(var_.knowledge_base_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
      *             .build());
      * 
      *     }
@@ -479,10 +479,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKnowledgeBases = AdmFunctions.getKnowledgebases(GetKnowledgebasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.knowledge_base_display_name())
-     *             .id(var_.knowledge_base_id())
-     *             .state(var_.knowledge_base_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(knowledgeBaseDisplayName)
+     *             .id(knowledgeBaseId)
+     *             .state(knowledgeBaseState)
      *             .build());
      * 
      *     }
@@ -524,7 +524,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .remediationRecipeId(testRemediationRecipeOciAdmRemediationRecipe.id())
      *             .build());
      * 
      *     }
@@ -566,7 +566,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .remediationRecipeId(testRemediationRecipeOciAdmRemediationRecipe.id())
      *             .build());
      * 
      *     }
@@ -608,7 +608,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .remediationRecipeId(testRemediationRecipeOciAdmRemediationRecipe.id())
      *             .build());
      * 
      *     }
@@ -650,7 +650,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipe = AdmFunctions.getRemediationRecipe(GetRemediationRecipeArgs.builder()
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
+     *             .remediationRecipeId(testRemediationRecipeOciAdmRemediationRecipe.id())
      *             .build());
      * 
      *     }
@@ -693,10 +693,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_recipe_display_name())
-     *             .id(var_.remediation_recipe_id())
-     *             .state(var_.remediation_recipe_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
      *             .build());
      * 
      *     }
@@ -739,10 +739,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_recipe_display_name())
-     *             .id(var_.remediation_recipe_id())
-     *             .state(var_.remediation_recipe_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
      *             .build());
      * 
      *     }
@@ -785,10 +785,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_recipe_display_name())
-     *             .id(var_.remediation_recipe_id())
-     *             .state(var_.remediation_recipe_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
      *             .build());
      * 
      *     }
@@ -831,10 +831,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_recipe_display_name())
-     *             .id(var_.remediation_recipe_id())
-     *             .state(var_.remediation_recipe_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
      *             .build());
      * 
      *     }
@@ -877,10 +877,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_recipe_display_name())
-     *             .id(var_.remediation_recipe_id())
-     *             .state(var_.remediation_recipe_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
      *             .build());
      * 
      *     }
@@ -923,10 +923,10 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRecipes = AdmFunctions.getRemediationRecipes(GetRemediationRecipesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_recipe_display_name())
-     *             .id(var_.remediation_recipe_id())
-     *             .state(var_.remediation_recipe_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRecipeDisplayName)
+     *             .id(remediationRecipeId)
+     *             .state(remediationRecipeState)
      *             .build());
      * 
      *     }
@@ -968,7 +968,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .remediationRunId(testRemediationRunOciAdmRemediationRun.id())
      *             .build());
      * 
      *     }
@@ -1010,7 +1010,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .remediationRunId(testRemediationRunOciAdmRemediationRun.id())
      *             .build());
      * 
      *     }
@@ -1052,7 +1052,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .remediationRunId(testRemediationRunOciAdmRemediationRun.id())
      *             .build());
      * 
      *     }
@@ -1094,7 +1094,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRun = AdmFunctions.getRemediationRun(GetRemediationRunArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
+     *             .remediationRunId(testRemediationRunOciAdmRemediationRun.id())
      *             .build());
      * 
      *     }
@@ -1136,9 +1136,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
-     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .gav(remediationRunApplicationDependencyRecommendationGav)
+     *             .purl(remediationRunApplicationDependencyRecommendationPurl)
      *             .build());
      * 
      *     }
@@ -1180,9 +1180,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
-     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .gav(remediationRunApplicationDependencyRecommendationGav)
+     *             .purl(remediationRunApplicationDependencyRecommendationPurl)
      *             .build());
      * 
      *     }
@@ -1224,9 +1224,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
-     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .gav(remediationRunApplicationDependencyRecommendationGav)
+     *             .purl(remediationRunApplicationDependencyRecommendationPurl)
      *             .build());
      * 
      *     }
@@ -1268,9 +1268,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunApplicationDependencyRecommendations = AdmFunctions.getRemediationRunApplicationDependencyRecommendations(GetRemediationRunApplicationDependencyRecommendationsArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .gav(var_.remediation_run_application_dependency_recommendation_gav())
-     *             .purl(var_.remediation_run_application_dependency_recommendation_purl())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .gav(remediationRunApplicationDependencyRecommendationGav)
+     *             .purl(remediationRunApplicationDependencyRecommendationPurl)
      *             .build());
      * 
      *     }
@@ -1312,8 +1312,8 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .stageType(remediationRunStageStageType)
      *             .build());
      * 
      *     }
@@ -1355,8 +1355,8 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .stageType(remediationRunStageStageType)
      *             .build());
      * 
      *     }
@@ -1398,8 +1398,8 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .stageType(remediationRunStageStageType)
      *             .build());
      * 
      *     }
@@ -1441,8 +1441,8 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStage = AdmFunctions.getRemediationRunStage(GetRemediationRunStageArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .stageType(var_.remediation_run_stage_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .stageType(remediationRunStageStageType)
      *             .build());
      * 
      *     }
@@ -1484,9 +1484,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .status(var_.remediation_run_stage_status())
-     *             .type(var_.remediation_run_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .status(remediationRunStageStatus)
+     *             .type(remediationRunStageType)
      *             .build());
      * 
      *     }
@@ -1528,9 +1528,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .status(var_.remediation_run_stage_status())
-     *             .type(var_.remediation_run_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .status(remediationRunStageStatus)
+     *             .type(remediationRunStageType)
      *             .build());
      * 
      *     }
@@ -1572,9 +1572,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .status(var_.remediation_run_stage_status())
-     *             .type(var_.remediation_run_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .status(remediationRunStageStatus)
+     *             .type(remediationRunStageType)
      *             .build());
      * 
      *     }
@@ -1616,9 +1616,9 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRunStages = AdmFunctions.getRemediationRunStages(GetRemediationRunStagesArgs.builder()
-     *             .remediationRunId(oci_adm_remediation_run.test_remediation_run().id())
-     *             .status(var_.remediation_run_stage_status())
-     *             .type(var_.remediation_run_stage_type())
+     *             .remediationRunId(testRemediationRun.id())
+     *             .status(remediationRunStageStatus)
+     *             .type(remediationRunStageType)
      *             .build());
      * 
      *     }
@@ -1661,11 +1661,11 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_run_display_name())
-     *             .id(var_.remediation_run_id())
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
-     *             .state(var_.remediation_run_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
      *             .build());
      * 
      *     }
@@ -1708,11 +1708,11 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_run_display_name())
-     *             .id(var_.remediation_run_id())
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
-     *             .state(var_.remediation_run_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
      *             .build());
      * 
      *     }
@@ -1755,11 +1755,11 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_run_display_name())
-     *             .id(var_.remediation_run_id())
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
-     *             .state(var_.remediation_run_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
      *             .build());
      * 
      *     }
@@ -1802,11 +1802,11 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_run_display_name())
-     *             .id(var_.remediation_run_id())
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
-     *             .state(var_.remediation_run_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
      *             .build());
      * 
      *     }
@@ -1849,11 +1849,11 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_run_display_name())
-     *             .id(var_.remediation_run_id())
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
-     *             .state(var_.remediation_run_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
      *             .build());
      * 
      *     }
@@ -1896,11 +1896,11 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRemediationRuns = AdmFunctions.getRemediationRuns(GetRemediationRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.remediation_run_display_name())
-     *             .id(var_.remediation_run_id())
-     *             .remediationRecipeId(oci_adm_remediation_recipe.test_remediation_recipe().id())
-     *             .state(var_.remediation_run_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(remediationRunDisplayName)
+     *             .id(remediationRunId)
+     *             .remediationRecipeId(testRemediationRecipe.id())
+     *             .state(remediationRunState)
      *             .build());
      * 
      *     }
@@ -1942,7 +1942,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAuditOciAdmVulnerabilityAudit.id())
      *             .build());
      * 
      *     }
@@ -1984,7 +1984,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAuditOciAdmVulnerabilityAudit.id())
      *             .build());
      * 
      *     }
@@ -2026,7 +2026,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAuditOciAdmVulnerabilityAudit.id())
      *             .build());
      * 
      *     }
@@ -2068,7 +2068,7 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudit = AdmFunctions.getVulnerabilityAudit(GetVulnerabilityAuditArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAuditOciAdmVulnerabilityAudit.id())
      *             .build());
      * 
      *     }
@@ -2110,15 +2110,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .purl(vulnerabilityAuditApplicationDependencyVulnerabilityPurl)
+     *             .rootNodeId(testRootNode.id())
+     *             .severityGreaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilitySeverityGreaterThanOrEqual)
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2160,15 +2160,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .purl(vulnerabilityAuditApplicationDependencyVulnerabilityPurl)
+     *             .rootNodeId(testRootNode.id())
+     *             .severityGreaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilitySeverityGreaterThanOrEqual)
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2210,15 +2210,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .purl(vulnerabilityAuditApplicationDependencyVulnerabilityPurl)
+     *             .rootNodeId(testRootNode.id())
+     *             .severityGreaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilitySeverityGreaterThanOrEqual)
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2260,15 +2260,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerabilities = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerabilities(GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .purl(var_.vulnerability_audit_application_dependency_vulnerability_purl())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .severityGreaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_severity_greater_than_or_equal())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .purl(vulnerabilityAuditApplicationDependencyVulnerabilityPurl)
+     *             .rootNodeId(testRootNode.id())
+     *             .severityGreaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilitySeverityGreaterThanOrEqual)
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2310,13 +2310,13 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .rootNodeId(testRootNode.id())
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2358,13 +2358,13 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .rootNodeId(testRootNode.id())
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2406,13 +2406,13 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .rootNodeId(testRootNode.id())
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2454,13 +2454,13 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAuditApplicationDependencyVulnerability = AdmFunctions.getVulnerabilityAuditApplicationDependencyVulnerability(GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs.builder()
-     *             .vulnerabilityAuditId(oci_adm_vulnerability_audit.test_vulnerability_audit().id())
-     *             .cvssV2greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v2greater_than_or_equal())
-     *             .cvssV3greaterThanOrEqual(var_.vulnerability_audit_application_dependency_vulnerability_cvss_v3greater_than_or_equal())
-     *             .depth(var_.vulnerability_audit_application_dependency_vulnerability_depth())
-     *             .gav(var_.vulnerability_audit_application_dependency_vulnerability_gav())
-     *             .rootNodeId(oci_adm_root_node.test_root_node().id())
-     *             .vulnerabilityId(oci_adm_vulnerability.test_vulnerability().id())
+     *             .vulnerabilityAuditId(testVulnerabilityAudit.id())
+     *             .cvssV2greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV2greaterThanOrEqual)
+     *             .cvssV3greaterThanOrEqual(vulnerabilityAuditApplicationDependencyVulnerabilityCvssV3greaterThanOrEqual)
+     *             .depth(vulnerabilityAuditApplicationDependencyVulnerabilityDepth)
+     *             .gav(vulnerabilityAuditApplicationDependencyVulnerabilityGav)
+     *             .rootNodeId(testRootNode.id())
+     *             .vulnerabilityId(testVulnerability.id())
      *             .build());
      * 
      *     }
@@ -2503,15 +2503,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vulnerability_audit_display_name())
-     *             .id(var_.vulnerability_audit_id())
-     *             .isSuccess(var_.vulnerability_audit_is_success())
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
-     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
-     *             .state(var_.vulnerability_audit_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2554,15 +2554,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vulnerability_audit_display_name())
-     *             .id(var_.vulnerability_audit_id())
-     *             .isSuccess(var_.vulnerability_audit_is_success())
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
-     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
-     *             .state(var_.vulnerability_audit_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2605,15 +2605,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vulnerability_audit_display_name())
-     *             .id(var_.vulnerability_audit_id())
-     *             .isSuccess(var_.vulnerability_audit_is_success())
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
-     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
-     *             .state(var_.vulnerability_audit_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2656,15 +2656,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vulnerability_audit_display_name())
-     *             .id(var_.vulnerability_audit_id())
-     *             .isSuccess(var_.vulnerability_audit_is_success())
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
-     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
-     *             .state(var_.vulnerability_audit_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2707,15 +2707,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vulnerability_audit_display_name())
-     *             .id(var_.vulnerability_audit_id())
-     *             .isSuccess(var_.vulnerability_audit_is_success())
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
-     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
-     *             .state(var_.vulnerability_audit_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2758,15 +2758,15 @@ public final class AdmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityAudits = AdmFunctions.getVulnerabilityAudits(GetVulnerabilityAuditsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vulnerability_audit_display_name())
-     *             .id(var_.vulnerability_audit_id())
-     *             .isSuccess(var_.vulnerability_audit_is_success())
-     *             .knowledgeBaseId(oci_adm_knowledge_base.test_knowledge_base().id())
-     *             .maxObservedSeverityGreaterThanOrEqualTo(var_.vulnerability_audit_max_observed_severity_greater_than_or_equal_to())
-     *             .state(var_.vulnerability_audit_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.vulnerability_audit_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThanOrEqualTo(var_.vulnerability_audit_time_created_less_than_or_equal_to())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vulnerabilityAuditDisplayName)
+     *             .id(vulnerabilityAuditId)
+     *             .isSuccess(vulnerabilityAuditIsSuccess)
+     *             .knowledgeBaseId(testKnowledgeBase.id())
+     *             .maxObservedSeverityGreaterThanOrEqualTo(vulnerabilityAuditMaxObservedSeverityGreaterThanOrEqualTo)
+     *             .state(vulnerabilityAuditState)
+     *             .timeCreatedGreaterThanOrEqualTo(vulnerabilityAuditTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThanOrEqualTo(vulnerabilityAuditTimeCreatedLessThanOrEqualTo)
      *             .build());
      * 
      *     }

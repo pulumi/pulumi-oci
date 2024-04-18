@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateIp = oci.Core.getPrivateIp({
- *     privateIpId: oci_core_private_ip.test_private_ip.id,
+ *     privateIpId: testPrivateIpOciCorePrivateIp.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetPrivateIpResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateIp = oci.Core.getPrivateIp({
- *     privateIpId: oci_core_private_ip.test_private_ip.id,
+ *     privateIpId: testPrivateIpOciCorePrivateIp.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

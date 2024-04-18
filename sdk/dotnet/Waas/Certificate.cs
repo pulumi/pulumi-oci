@@ -27,21 +27,21 @@ namespace Pulumi.Oci.Waas
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCertificate = new Oci.Waas.Certificate("testCertificate", new()
+    ///     var testCertificate = new Oci.Waas.Certificate("test_certificate", new()
     ///     {
-    ///         CertificateData = @var.Certificate_certificate_data,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         PrivateKeyData = @var.Certificate_private_key_data,
+    ///         CertificateData = certificateCertificateData,
+    ///         CompartmentId = compartmentId,
+    ///         PrivateKeyData = certificatePrivateKeyData,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Certificate_display_name,
+    ///         DisplayName = certificateDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsTrustVerificationDisabled = @var.Certificate_is_trust_verification_disabled,
+    ///         IsTrustVerificationDisabled = certificateIsTrustVerificationDisabled,
     ///     });
     /// 
     /// });

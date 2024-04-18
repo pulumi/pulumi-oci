@@ -32,8 +32,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetFastConnectProviderServiceKey(ctx, &core.GetFastConnectProviderServiceKeyArgs{
-//				ProviderServiceId:      data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-//				ProviderServiceKeyName: _var.Fast_connect_provider_service_key_provider_service_key_name,
+//				ProviderServiceId:      testFastConnectProviderServices.FastConnectProviderServices[0].Id,
+//				ProviderServiceKeyName: fastConnectProviderServiceKeyProviderServiceKeyName,
 //			}, nil)
 //			if err != nil {
 //				return err

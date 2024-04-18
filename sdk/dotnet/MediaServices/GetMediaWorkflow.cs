@@ -29,7 +29,7 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaWorkflow = Oci.MediaServices.GetMediaWorkflow.Invoke(new()
         ///     {
-        ///         MediaWorkflowId = oci_media_services_media_workflow.Test_media_workflow.Id,
+        ///         MediaWorkflowId = testMediaWorkflowOciMediaServicesMediaWorkflow.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaWorkflow = Oci.MediaServices.GetMediaWorkflow.Invoke(new()
         ///     {
-        ///         MediaWorkflowId = oci_media_services_media_workflow.Test_media_workflow.Id,
+        ///         MediaWorkflowId = testMediaWorkflowOciMediaServicesMediaWorkflow.Id,
         ///     });
         /// 
         /// });

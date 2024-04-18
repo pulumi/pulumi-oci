@@ -30,16 +30,16 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentFindingsChangeAuditLogs = Oci.DataSafe.GetSecurityAssessmentFindingsChangeAuditLogs.Invoke(new()
         ///     {
-        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///         FindingKey = @var.Security_assessment_findings_change_audit_log_finding_key,
-        ///         FindingTitle = @var.Security_assessment_findings_change_audit_log_finding_title,
-        ///         IsRiskDeferred = @var.Security_assessment_findings_change_audit_log_is_risk_deferred,
-        ///         ModifiedBy = @var.Security_assessment_findings_change_audit_log_modified_by,
-        ///         Severity = @var.Security_assessment_findings_change_audit_log_severity,
-        ///         TimeUpdatedGreaterThanOrEqualTo = @var.Security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
-        ///         TimeUpdatedLessThan = @var.Security_assessment_findings_change_audit_log_time_updated_less_than,
-        ///         TimeValidUntilGreaterThanOrEqualTo = @var.Security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to,
-        ///         TimeValidUntilLessThan = @var.Security_assessment_findings_change_audit_log_time_valid_until_less_than,
+        ///         SecurityAssessmentId = testSecurityAssessment.Id,
+        ///         FindingKey = securityAssessmentFindingsChangeAuditLogFindingKey,
+        ///         FindingTitle = securityAssessmentFindingsChangeAuditLogFindingTitle,
+        ///         IsRiskDeferred = securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+        ///         ModifiedBy = securityAssessmentFindingsChangeAuditLogModifiedBy,
+        ///         Severity = securityAssessmentFindingsChangeAuditLogSeverity,
+        ///         TimeUpdatedGreaterThanOrEqualTo = securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan,
+        ///         TimeValidUntilGreaterThanOrEqualTo = securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo,
+        ///         TimeValidUntilLessThan = securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan,
         ///     });
         /// 
         /// });
@@ -68,16 +68,16 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityAssessmentFindingsChangeAuditLogs = Oci.DataSafe.GetSecurityAssessmentFindingsChangeAuditLogs.Invoke(new()
         ///     {
-        ///         SecurityAssessmentId = oci_data_safe_security_assessment.Test_security_assessment.Id,
-        ///         FindingKey = @var.Security_assessment_findings_change_audit_log_finding_key,
-        ///         FindingTitle = @var.Security_assessment_findings_change_audit_log_finding_title,
-        ///         IsRiskDeferred = @var.Security_assessment_findings_change_audit_log_is_risk_deferred,
-        ///         ModifiedBy = @var.Security_assessment_findings_change_audit_log_modified_by,
-        ///         Severity = @var.Security_assessment_findings_change_audit_log_severity,
-        ///         TimeUpdatedGreaterThanOrEqualTo = @var.Security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
-        ///         TimeUpdatedLessThan = @var.Security_assessment_findings_change_audit_log_time_updated_less_than,
-        ///         TimeValidUntilGreaterThanOrEqualTo = @var.Security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to,
-        ///         TimeValidUntilLessThan = @var.Security_assessment_findings_change_audit_log_time_valid_until_less_than,
+        ///         SecurityAssessmentId = testSecurityAssessment.Id,
+        ///         FindingKey = securityAssessmentFindingsChangeAuditLogFindingKey,
+        ///         FindingTitle = securityAssessmentFindingsChangeAuditLogFindingTitle,
+        ///         IsRiskDeferred = securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+        ///         ModifiedBy = securityAssessmentFindingsChangeAuditLogModifiedBy,
+        ///         Severity = securityAssessmentFindingsChangeAuditLogSeverity,
+        ///         TimeUpdatedGreaterThanOrEqualTo = securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
+        ///         TimeUpdatedLessThan = securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan,
+        ///         TimeValidUntilGreaterThanOrEqualTo = securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo,
+        ///         TimeValidUntilLessThan = securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan,
         ///     });
         /// 
         /// });

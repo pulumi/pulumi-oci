@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetSoftwareSourcePackageGroups(ctx, &osmanagementhub.GetSoftwareSourcePackageGroupsArgs{
-//				SoftwareSourceId: oci_os_management_hub_software_source.Test_software_source.Id,
-//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-//				GroupTypes:       _var.Software_source_package_group_group_type,
-//				Name:             pulumi.StringRef(_var.Software_source_package_group_name),
-//				NameContains:     pulumi.StringRef(_var.Software_source_package_group_name_contains),
+//				SoftwareSourceId: testSoftwareSource.Id,
+//				CompartmentId:    pulumi.StringRef(compartmentId),
+//				GroupTypes:       softwareSourcePackageGroupGroupType,
+//				Name:             pulumi.StringRef(softwareSourcePackageGroupName),
+//				NameContains:     pulumi.StringRef(softwareSourcePackageGroupNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

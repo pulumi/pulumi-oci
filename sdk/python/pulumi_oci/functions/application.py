@@ -459,29 +459,29 @@ class Application(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_application = oci.functions.Application("testApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["application_display_name"],
-            subnet_ids=var["application_subnet_ids"],
-            config=var["application_config"],
+        test_application = oci.functions.Application("test_application",
+            compartment_id=compartment_id,
+            display_name=application_display_name,
+            subnet_ids=application_subnet_ids,
+            config=application_config,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            network_security_group_ids=var["application_network_security_group_ids"],
+            network_security_group_ids=application_network_security_group_ids,
             image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=var["application_image_policy_config_is_policy_enabled"],
+                is_policy_enabled=application_image_policy_config_is_policy_enabled,
                 key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=oci_kms_key["test_key"]["id"],
+                    kms_key_id=test_key["id"],
                 )],
             ),
-            shape=var["application_shape"],
-            syslog_url=var["application_syslog_url"],
+            shape=application_shape,
+            syslog_url=application_syslog_url,
             trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=oci_functions_domain["test_domain"]["id"],
-                is_enabled=var["application_trace_config_is_enabled"],
+                domain_id=test_domain["id"],
+                is_enabled=application_trace_config_is_enabled,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -524,29 +524,29 @@ class Application(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_application = oci.functions.Application("testApplication",
-            compartment_id=var["compartment_id"],
-            display_name=var["application_display_name"],
-            subnet_ids=var["application_subnet_ids"],
-            config=var["application_config"],
+        test_application = oci.functions.Application("test_application",
+            compartment_id=compartment_id,
+            display_name=application_display_name,
+            subnet_ids=application_subnet_ids,
+            config=application_config,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            network_security_group_ids=var["application_network_security_group_ids"],
+            network_security_group_ids=application_network_security_group_ids,
             image_policy_config=oci.functions.ApplicationImagePolicyConfigArgs(
-                is_policy_enabled=var["application_image_policy_config_is_policy_enabled"],
+                is_policy_enabled=application_image_policy_config_is_policy_enabled,
                 key_details=[oci.functions.ApplicationImagePolicyConfigKeyDetailArgs(
-                    kms_key_id=oci_kms_key["test_key"]["id"],
+                    kms_key_id=test_key["id"],
                 )],
             ),
-            shape=var["application_shape"],
-            syslog_url=var["application_syslog_url"],
+            shape=application_shape,
+            syslog_url=application_syslog_url,
             trace_config=oci.functions.ApplicationTraceConfigArgs(
-                domain_id=oci_functions_domain["test_domain"]["id"],
-                is_enabled=var["application_trace_config_is_enabled"],
+                domain_id=test_domain["id"],
+                is_enabled=application_trace_config_is_enabled,
             ))
         ```
         <!--End PulumiCodeChooser -->

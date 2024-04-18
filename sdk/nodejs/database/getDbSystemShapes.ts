@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemShapes = oci.Database.getDbSystemShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.db_system_shape_availability_domain,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dbSystemShapeAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetDbSystemShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemShapes = oci.Database.getDbSystemShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.db_system_shape_availability_domain,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: dbSystemShapeAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

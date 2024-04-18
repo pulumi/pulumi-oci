@@ -200,9 +200,9 @@ class ApiKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_api_key = oci.identity.ApiKey("testApiKey",
-            key_value=var["api_key_key_value"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_api_key = oci.identity.ApiKey("test_api_key",
+            key_value=api_key_key_value,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -252,9 +252,9 @@ class ApiKey(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_api_key = oci.identity.ApiKey("testApiKey",
-            key_value=var["api_key_key_value"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_api_key = oci.identity.ApiKey("test_api_key",
+            key_value=api_key_key_value,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

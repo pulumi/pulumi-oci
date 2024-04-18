@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOperationsInsightsWarehouses = Oci.Opsi.GetOperationsInsightsWarehouses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Operations_insights_warehouse_display_name,
-        ///         Id = @var.Operations_insights_warehouse_id,
-        ///         States = @var.Operations_insights_warehouse_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = operationsInsightsWarehouseDisplayName,
+        ///         Id = operationsInsightsWarehouseId,
+        ///         States = operationsInsightsWarehouseState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testOperationsInsightsWarehouses = Oci.Opsi.GetOperationsInsightsWarehouses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Operations_insights_warehouse_display_name,
-        ///         Id = @var.Operations_insights_warehouse_id,
-        ///         States = @var.Operations_insights_warehouse_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = operationsInsightsWarehouseDisplayName,
+        ///         Id = operationsInsightsWarehouseId,
+        ///         States = operationsInsightsWarehouseState,
         ///     });
         /// 
         /// });

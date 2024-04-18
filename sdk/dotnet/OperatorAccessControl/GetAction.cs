@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorAction = Oci.OperatorAccessControl.GetAction.Invoke(new()
         ///     {
-        ///         OperatorActionId = oci_operator_access_control_operator_action.Test_operator_action.Id,
+        ///         OperatorActionId = testOperatorActionOciOperatorAccessControlOperatorAction.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorAction = Oci.OperatorAccessControl.GetAction.Invoke(new()
         ///     {
-        ///         OperatorActionId = oci_operator_access_control_operator_action.Test_operator_action.Id,
+        ///         OperatorActionId = testOperatorActionOciOperatorAccessControlOperatorAction.Id,
         ///     });
         /// 
         /// });

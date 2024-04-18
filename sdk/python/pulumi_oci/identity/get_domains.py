@@ -196,15 +196,15 @@ def get_domains(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Identity.get_domains(compartment_id=var["compartment_id"],
-        display_name=var["domain_display_name"],
-        home_region_url=var["domain_home_region_url"],
-        is_hidden_on_login=var["domain_is_hidden_on_login"],
-        license_type=var["domain_license_type"],
-        name=var["domain_name"],
-        state=var["domain_state"],
-        type=var["domain_type"],
-        url=var["domain_url"])
+    test_domains = oci.Identity.get_domains(compartment_id=compartment_id,
+        display_name=domain_display_name,
+        home_region_url=domain_home_region_url,
+        is_hidden_on_login=domain_is_hidden_on_login,
+        license_type=domain_license_type,
+        name=domain_name,
+        state=domain_state,
+        type=domain_type,
+        url=domain_url)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -273,15 +273,15 @@ def get_domains_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_domains = oci.Identity.get_domains(compartment_id=var["compartment_id"],
-        display_name=var["domain_display_name"],
-        home_region_url=var["domain_home_region_url"],
-        is_hidden_on_login=var["domain_is_hidden_on_login"],
-        license_type=var["domain_license_type"],
-        name=var["domain_name"],
-        state=var["domain_state"],
-        type=var["domain_type"],
-        url=var["domain_url"])
+    test_domains = oci.Identity.get_domains(compartment_id=compartment_id,
+        display_name=domain_display_name,
+        home_region_url=domain_home_region_url,
+        is_hidden_on_login=domain_is_hidden_on_login,
+        license_type=domain_license_type,
+        name=domain_name,
+        state=domain_state,
+        type=domain_type,
+        url=domain_url)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseCursorCacheStatements(ctx, &databasemanagement.GetManagedDatabaseCursorCacheStatementsArgs{
-//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
-//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_cursor_cache_statement_opc_named_credential_id),
-//				SqlText:              pulumi.StringRef(_var.Managed_database_cursor_cache_statement_sql_text),
+//				ManagedDatabaseId:    testManagedDatabase.Id,
+//				OpcNamedCredentialId: pulumi.StringRef(managedDatabaseCursorCacheStatementOpcNamedCredentialId),
+//				SqlText:              pulumi.StringRef(managedDatabaseCursorCacheStatementSqlText),
 //			}, nil)
 //			if err != nil {
 //				return err

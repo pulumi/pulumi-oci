@@ -16,19 +16,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEkmsPrivateEndpoint = new oci.kms.EkmsPrivateEndpoint("testEkmsPrivateEndpoint", {
- *     caBundle: _var.ekms_private_endpoint_ca_bundle,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ekms_private_endpoint_display_name,
- *     externalKeyManagerIp: _var.ekms_private_endpoint_external_key_manager_ip,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testEkmsPrivateEndpoint = new oci.kms.EkmsPrivateEndpoint("test_ekms_private_endpoint", {
+ *     caBundle: ekmsPrivateEndpointCaBundle,
+ *     compartmentId: compartmentId,
+ *     displayName: ekmsPrivateEndpointDisplayName,
+ *     externalKeyManagerIp: ekmsPrivateEndpointExternalKeyManagerIp,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     port: _var.ekms_private_endpoint_port,
+ *     port: ekmsPrivateEndpointPort,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

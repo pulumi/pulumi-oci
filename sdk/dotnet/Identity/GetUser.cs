@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUser = Oci.Identity.GetUser.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         UserId = testUserOciIdentityUser.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUser = Oci.Identity.GetUser.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         UserId = testUserOciIdentityUser.Id,
         ///     });
         /// 
         /// });

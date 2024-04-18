@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetHeatWaveCluster(ctx, &mysql.GetHeatWaveClusterArgs{
-//				DbSystemId: oci_database_db_system.Test_db_system.Id,
+//				DbSystemId: testDbSystem.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

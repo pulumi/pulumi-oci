@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVnic(ctx, &core.GetVnicArgs{
-//				VnicId: oci_core_vnic.Test_vnic.Id,
+//				VnicId: testVnicOciCoreVnic.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

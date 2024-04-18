@@ -44,9 +44,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDeploymentCertificate = new DeploymentCertificate(&#34;testDeploymentCertificate&#34;, DeploymentCertificateArgs.builder()        
- *             .certificateContent(var_.deployment_certificate_certificate_content())
- *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
- *             .key(var_.deployment_certificate_key())
+ *             .certificateContent(deploymentCertificateCertificateContent)
+ *             .deploymentId(testDeployment.id())
+ *             .key(deploymentCertificateKey)
  *             .build());
  * 
  *     }

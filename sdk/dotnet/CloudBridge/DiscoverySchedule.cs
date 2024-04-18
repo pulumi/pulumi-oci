@@ -25,15 +25,15 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDiscoverySchedule = new Oci.CloudBridge.DiscoverySchedule("testDiscoverySchedule", new()
+    ///     var testDiscoverySchedule = new Oci.CloudBridge.DiscoverySchedule("test_discovery_schedule", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ExecutionRecurrences = @var.Discovery_schedule_execution_recurrences,
+    ///         CompartmentId = compartmentId,
+    ///         ExecutionRecurrences = discoveryScheduleExecutionRecurrences,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Discovery_schedule_display_name,
+    ///         DisplayName = discoveryScheduleDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

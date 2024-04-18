@@ -46,12 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMigration = new Migration(&#34;testMigration&#34;, MigrationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.migration_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(migrationDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isCompleted(var_.migration_is_completed())
- *             .replicationScheduleId(oci_cloud_migrations_replication_schedule.test_replication_schedule().id())
+ *             .isCompleted(migrationIsCompleted)
+ *             .replicationScheduleId(testReplicationSchedule.id())
  *             .build());
  * 
  *     }

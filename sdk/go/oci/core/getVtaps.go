@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVtaps(ctx, &core.GetVtapsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Vtap_display_name),
-//				IsVtapEnabled: pulumi.BoolRef(_var.Vtap_is_vtap_enabled),
-//				Source:        pulumi.StringRef(_var.Vtap_source),
-//				State:         pulumi.StringRef(_var.Vtap_state),
-//				TargetId:      pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TargetIp:      pulumi.StringRef(_var.Vtap_target_ip),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(vtapDisplayName),
+//				IsVtapEnabled: pulumi.BoolRef(vtapIsVtapEnabled),
+//				Source:        pulumi.StringRef(vtapSource),
+//				State:         pulumi.StringRef(vtapState),
+//				TargetId:      pulumi.StringRef(testTarget.Id),
+//				TargetIp:      pulumi.StringRef(vtapTargetIp),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewClusterCompleteCredentialRotationManagement(ctx, "testClusterCompleteCredentialRotationManagement", &ContainerEngine.ClusterCompleteCredentialRotationManagementArgs{
-//				ClusterId: pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
+//			_, err := ContainerEngine.NewClusterCompleteCredentialRotationManagement(ctx, "test_cluster_complete_credential_rotation_management", &ContainerEngine.ClusterCompleteCredentialRotationManagementArgs{
+//				ClusterId: pulumi.Any(testCluster.Id),
 //			}, pulumi.DependsOn([]pulumi.Resource{
-//				oci_containerengine_cluster_start_credential_rotation_management.Test_cluster_start_credential_rotation_management,
+//				testClusterStartCredentialRotationManagement,
 //			}))
 //			if err != nil {
 //				return err

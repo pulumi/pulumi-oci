@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserDbCredential = Oci.Identity.GetDomainsUserDbCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         UserDbCredentialId = oci_identity_db_credential.Test_db_credential.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserDbCredentialId = testDbCredential.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.User_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.User_db_credential_resource_type_schema_version,
+        ///         Authorization = userDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserDbCredential = Oci.Identity.GetDomainsUserDbCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         UserDbCredentialId = oci_identity_db_credential.Test_db_credential.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserDbCredentialId = testDbCredential.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.User_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.User_db_credential_resource_type_schema_version,
+        ///         Authorization = userDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = userDbCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

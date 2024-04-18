@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testSqlEndpoint = Oci.DataFlow.GetSqlEndpoint.Invoke(new()
         ///     {
-        ///         SqlEndpointId = oci_dataflow_sql_endpoint.Test_sql_endpoint.Id,
+        ///         SqlEndpointId = testSqlEndpointOciDataflowSqlEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testSqlEndpoint = Oci.DataFlow.GetSqlEndpoint.Invoke(new()
         ///     {
-        ///         SqlEndpointId = oci_dataflow_sql_endpoint.Test_sql_endpoint.Id,
+        ///         SqlEndpointId = testSqlEndpointOciDataflowSqlEndpoint.Id,
         ///     });
         /// 
         /// });

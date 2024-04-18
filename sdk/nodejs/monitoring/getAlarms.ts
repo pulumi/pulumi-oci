@@ -27,10 +27,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarms = oci.Monitoring.getAlarms({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.alarm_compartment_id_in_subtree,
- *     displayName: _var.alarm_display_name,
- *     state: _var.alarm_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: alarmCompartmentIdInSubtree,
+ *     displayName: alarmDisplayName,
+ *     state: alarmState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,10 +118,10 @@ export interface GetAlarmsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarms = oci.Monitoring.getAlarms({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.alarm_compartment_id_in_subtree,
- *     displayName: _var.alarm_display_name,
- *     state: _var.alarm_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: alarmCompartmentIdInSubtree,
+ *     displayName: alarmDisplayName,
+ *     state: alarmState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

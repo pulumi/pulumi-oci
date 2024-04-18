@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeBackupPolicyAssignments = Oci.Core.GetVolumeBackupPolicyAssignments.Invoke(new()
         ///     {
-        ///         AssetId = oci_core_volume.Test_volume.Id,
+        ///         AssetId = testVolume.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeBackupPolicyAssignments = Oci.Core.GetVolumeBackupPolicyAssignments.Invoke(new()
         ///     {
-        ///         AssetId = oci_core_volume.Test_volume.Id,
+        ///         AssetId = testVolume.Id,
         ///     });
         /// 
         /// });

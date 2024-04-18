@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputedUsage = oci.OneSubsription.getComputedUsage({
- *     compartmentId: _var.compartment_id,
- *     computedUsageId: oci_onesubscription_computed_usage.test_computed_usage.id,
- *     fields: _var.computed_usage_fields,
+ *     compartmentId: compartmentId,
+ *     computedUsageId: testComputedUsageOciOnesubscriptionComputedUsage.id,
+ *     fields: computedUsageFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -175,9 +175,9 @@ export interface GetComputedUsageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputedUsage = oci.OneSubsription.getComputedUsage({
- *     compartmentId: _var.compartment_id,
- *     computedUsageId: oci_onesubscription_computed_usage.test_computed_usage.id,
- *     fields: _var.computed_usage_fields,
+ *     compartmentId: compartmentId,
+ *     computedUsageId: testComputedUsageOciOnesubscriptionComputedUsage.id,
+ *     fields: computedUsageFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

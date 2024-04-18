@@ -22,19 +22,19 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const test = new oci.database.CloudDatabaseManagement("test", {
- *     databaseId: oci_database_database.test_database.id,
- *     managementType: _var.database_cloud_database_management_details_management_type,
- *     privateEndPointId: _var.database_cloud_database_management_details_private_end_point_id,
- *     serviceName: _var.database_cloud_database_management_details_service_name,
+ *     databaseId: testDatabase.id,
+ *     managementType: databaseCloudDatabaseManagementDetailsManagementType,
+ *     privateEndPointId: databaseCloudDatabaseManagementDetailsPrivateEndPointId,
+ *     serviceName: databaseCloudDatabaseManagementDetailsServiceName,
  *     credentialdetails: {
- *         userName: _var.database_cloud_database_management_details_user_name,
- *         passwordSecretId: _var.database_cloud_database_management_details_password_secret_id,
+ *         userName: databaseCloudDatabaseManagementDetailsUserName,
+ *         passwordSecretId: databaseCloudDatabaseManagementDetailsPasswordSecretId,
  *     },
- *     enableManagement: _var.database_cloud_database_management_details_enable_management,
- *     port: _var.cloud_database_management_port,
- *     protocol: _var.cloud_database_management_protocol,
- *     role: _var.cloud_database_management_role,
- *     sslSecretId: oci_vault_secret.test_secret.id,
+ *     enableManagement: databaseCloudDatabaseManagementDetailsEnableManagement,
+ *     port: cloudDatabaseManagementPort,
+ *     protocol: cloudDatabaseManagementProtocol,
+ *     role: cloudDatabaseManagementRole,
+ *     sslSecretId: testSecret.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

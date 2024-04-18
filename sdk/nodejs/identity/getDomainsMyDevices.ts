@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyDevices = oci.Identity.getDomainsMyDevices({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myDeviceCount: _var.my_device_my_device_count,
- *     myDeviceFilter: _var.my_device_my_device_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myDeviceCount: myDeviceMyDeviceCount,
+ *     myDeviceFilter: myDeviceMyDeviceFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_device_authorization,
- *     resourceTypeSchemaVersion: _var.my_device_resource_type_schema_version,
- *     startIndex: _var.my_device_start_index,
+ *     authorization: myDeviceAuthorization,
+ *     resourceTypeSchemaVersion: myDeviceResourceTypeSchemaVersion,
+ *     startIndex: myDeviceStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsMyDevicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyDevices = oci.Identity.getDomainsMyDevices({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myDeviceCount: _var.my_device_my_device_count,
- *     myDeviceFilter: _var.my_device_my_device_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myDeviceCount: myDeviceMyDeviceCount,
+ *     myDeviceFilter: myDeviceMyDeviceFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_device_authorization,
- *     resourceTypeSchemaVersion: _var.my_device_resource_type_schema_version,
- *     startIndex: _var.my_device_start_index,
+ *     authorization: myDeviceAuthorization,
+ *     resourceTypeSchemaVersion: myDeviceResourceTypeSchemaVersion,
+ *     startIndex: myDeviceStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

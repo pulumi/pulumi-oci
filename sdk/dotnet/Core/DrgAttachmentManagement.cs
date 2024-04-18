@@ -35,14 +35,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrgRpcAttachment = new Oci.Core.DrgAttachmentManagement("testDrgRpcAttachment", new()
+    ///     var testDrgRpcAttachment = new Oci.Core.DrgAttachmentManagement("test_drg_rpc_attachment", new()
     ///     {
     ///         AttachmentType = "REMOTE_PEERING_CONNECTION",
-    ///         CompartmentId = @var.Compartment_ocid,
-    ///         NetworkId = oci_core_remote_peering_connection.Test_rpc.Id,
-    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         CompartmentId = compartmentOcid,
+    ///         NetworkId = testRpc.Id,
+    ///         DrgId = testDrg.Id,
     ///         DisplayName = "MyTestDrgAttachmentForRpc",
-    ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
+    ///         DrgRouteTableId = testDrgRouteTable.Id,
     ///     });
     /// 
     /// });

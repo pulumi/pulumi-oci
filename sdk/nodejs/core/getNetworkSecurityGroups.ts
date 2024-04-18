@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_security_group_display_name,
- *     state: _var.network_security_group_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     vlanId: oci_core_vlan.test_vlan.id,
+ *     compartmentId: compartmentId,
+ *     displayName: networkSecurityGroupDisplayName,
+ *     state: networkSecurityGroupState,
+ *     vcnId: testVcn.id,
+ *     vlanId: testVlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetNetworkSecurityGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.network_security_group_display_name,
- *     state: _var.network_security_group_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     vlanId: oci_core_vlan.test_vlan.id,
+ *     compartmentId: compartmentId,
+ *     displayName: networkSecurityGroupDisplayName,
+ *     state: networkSecurityGroupState,
+ *     vcnId: testVcn.id,
+ *     vlanId: testVlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

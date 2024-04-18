@@ -30,14 +30,14 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataMaskRules = Oci.CloudGuard.GetDataMaskRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Data_mask_rule_access_level,
-        ///         DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
-        ///         DisplayName = @var.Data_mask_rule_display_name,
-        ///         IamGroupId = oci_identity_group.Test_group.Id,
-        ///         State = @var.Data_mask_rule_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TargetType = @var.Data_mask_rule_target_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataMaskRuleAccessLevel,
+        ///         DataMaskRuleStatus = dataMaskRuleDataMaskRuleStatus,
+        ///         DisplayName = dataMaskRuleDisplayName,
+        ///         IamGroupId = testGroup.Id,
+        ///         State = dataMaskRuleState,
+        ///         TargetId = testTarget.Id,
+        ///         TargetType = dataMaskRuleTargetType,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataMaskRules = Oci.CloudGuard.GetDataMaskRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Data_mask_rule_access_level,
-        ///         DataMaskRuleStatus = @var.Data_mask_rule_data_mask_rule_status,
-        ///         DisplayName = @var.Data_mask_rule_display_name,
-        ///         IamGroupId = oci_identity_group.Test_group.Id,
-        ///         State = @var.Data_mask_rule_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TargetType = @var.Data_mask_rule_target_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataMaskRuleAccessLevel,
+        ///         DataMaskRuleStatus = dataMaskRuleDataMaskRuleStatus,
+        ///         DisplayName = dataMaskRuleDisplayName,
+        ///         IamGroupId = testGroup.Id,
+        ///         State = dataMaskRuleState,
+        ///         TargetId = testTarget.Id,
+        ///         TargetType = dataMaskRuleTargetType,
         ///     });
         /// 
         /// });

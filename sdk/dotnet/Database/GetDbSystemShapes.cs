@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemShapes = Oci.Database.GetDbSystemShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Db_system_shape_availability_domain,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dbSystemShapeAvailabilityDomain,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemShapes = Oci.Database.GetDbSystemShapes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Db_system_shape_availability_domain,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dbSystemShapeAvailabilityDomain,
         ///     });
         /// 
         /// });

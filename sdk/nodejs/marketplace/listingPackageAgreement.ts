@@ -17,11 +17,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListingPackageAgreement = new oci.marketplace.ListingPackageAgreement("testListingPackageAgreement", {
- *     agreementId: oci_marketplace_agreement.test_agreement.id,
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     packageVersion: _var.listing_package_agreement_package_version,
- *     compartmentId: _var.compartment_id,
+ * const testListingPackageAgreement = new oci.marketplace.ListingPackageAgreement("test_listing_package_agreement", {
+ *     agreementId: testAgreement.id,
+ *     listingId: testListing.id,
+ *     packageVersion: listingPackageAgreementPackageVersion,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

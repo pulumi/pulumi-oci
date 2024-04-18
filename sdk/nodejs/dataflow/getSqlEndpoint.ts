@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSqlEndpoint = oci.DataFlow.getSqlEndpoint({
- *     sqlEndpointId: oci_dataflow_sql_endpoint.test_sql_endpoint.id,
+ *     sqlEndpointId: testSqlEndpointOciDataflowSqlEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -161,7 +161,7 @@ export interface GetSqlEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSqlEndpoint = oci.DataFlow.getSqlEndpoint({
- *     sqlEndpointId: oci_dataflow_sql_endpoint.test_sql_endpoint.id,
+ *     sqlEndpointId: testSqlEndpointOciDataflowSqlEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

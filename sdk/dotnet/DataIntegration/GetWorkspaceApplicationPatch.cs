@@ -29,9 +29,9 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationPatch = Oci.DataIntegration.GetWorkspaceApplicationPatch.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_patch_application_key,
-        ///         PatchKey = @var.Workspace_application_patch_patch_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         ApplicationKey = workspaceApplicationPatchApplicationKey,
+        ///         PatchKey = workspaceApplicationPatchPatchKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationPatch = Oci.DataIntegration.GetWorkspaceApplicationPatch.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_patch_application_key,
-        ///         PatchKey = @var.Workspace_application_patch_patch_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         ApplicationKey = workspaceApplicationPatchApplicationKey,
+        ///         PatchKey = workspaceApplicationPatchPatchKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });

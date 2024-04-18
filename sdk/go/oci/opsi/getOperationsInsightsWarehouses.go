@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOperationsInsightsWarehouses(ctx, &opsi.GetOperationsInsightsWarehousesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Operations_insights_warehouse_display_name),
-//				Id:            pulumi.StringRef(_var.Operations_insights_warehouse_id),
-//				States:        _var.Operations_insights_warehouse_state,
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(operationsInsightsWarehouseDisplayName),
+//				Id:            pulumi.StringRef(operationsInsightsWarehouseId),
+//				States:        operationsInsightsWarehouseState,
 //			}, nil)
 //			if err != nil {
 //				return err

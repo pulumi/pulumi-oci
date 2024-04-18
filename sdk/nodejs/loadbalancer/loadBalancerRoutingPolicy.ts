@@ -19,16 +19,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLoadBalancerRoutingPolicy = new oci.loadbalancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy", {
- *     conditionLanguageVersion: _var.load_balancer_routing_policy_condition_language_version,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * const testLoadBalancerRoutingPolicy = new oci.loadbalancer.LoadBalancerRoutingPolicy("test_load_balancer_routing_policy", {
+ *     conditionLanguageVersion: loadBalancerRoutingPolicyConditionLanguageVersion,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: loadBalancerRoutingPolicyName,
  *     rules: [{
  *         actions: [{
- *             backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
- *             name: _var.load_balancer_routing_policy_rules_actions_name,
+ *             backendSetName: testBackendSet.name,
+ *             name: loadBalancerRoutingPolicyRulesActionsName,
  *         }],
- *         condition: _var.load_balancer_routing_policy_rules_condition,
- *         name: _var.load_balancer_routing_policy_rules_name,
+ *         condition: loadBalancerRoutingPolicyRulesCondition,
+ *         name: loadBalancerRoutingPolicyRulesName,
  *     }],
  * });
  * ```

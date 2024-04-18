@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpProbe = new oci.healthchecks.HttpProbe("testHttpProbe", {
- *     compartmentId: _var.compartment_id,
- *     protocol: _var.http_probe_protocol,
- *     targets: _var.http_probe_targets,
- *     headers: _var.http_probe_headers,
- *     method: _var.http_probe_method,
- *     path: _var.http_probe_path,
- *     port: _var.http_probe_port,
- *     timeoutInSeconds: _var.http_probe_timeout_in_seconds,
- *     vantagePointNames: _var.http_probe_vantage_point_names,
+ * const testHttpProbe = new oci.healthchecks.HttpProbe("test_http_probe", {
+ *     compartmentId: compartmentId,
+ *     protocol: httpProbeProtocol,
+ *     targets: httpProbeTargets,
+ *     headers: httpProbeHeaders,
+ *     method: httpProbeMethod,
+ *     path: httpProbePath,
+ *     port: httpProbePort,
+ *     timeoutInSeconds: httpProbeTimeoutInSeconds,
+ *     vantagePointNames: httpProbeVantagePointNames,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

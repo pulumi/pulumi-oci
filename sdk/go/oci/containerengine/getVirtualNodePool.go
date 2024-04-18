@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetVirtualNodePool(ctx, &containerengine.GetVirtualNodePoolArgs{
-//				VirtualNodePoolId: oci_containerengine_virtual_node_pool.Test_virtual_node_pool.Id,
+//				VirtualNodePoolId: testVirtualNodePoolOciContainerengineVirtualNodePool.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

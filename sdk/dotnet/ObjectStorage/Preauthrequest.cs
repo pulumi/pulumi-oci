@@ -25,14 +25,15 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPreauthenticatedRequest = new Oci.ObjectStorage.Preauthrequest("testPreauthenticatedRequest", new()
+    ///     var testPreauthenticatedRequest = new Oci.ObjectStorage.Preauthrequest("test_preauthenticated_request", new()
     ///     {
-    ///         AccessType = @var.Preauthenticated_request_access_type,
-    ///         Bucket = @var.Preauthenticated_request_bucket,
-    ///         Namespace = @var.Preauthenticated_request_namespace,
-    ///         TimeExpires = @var.Preauthenticated_request_time_expires,
-    ///         BucketListingAction = @var.Preauthenticated_request_bucket_listing_action,
-    ///         Object = @var.Preauthenticated_request_object,
+    ///         AccessType = preauthenticatedRequestAccessType,
+    ///         Bucket = preauthenticatedRequestBucket,
+    ///         Name = preauthenticatedRequestName,
+    ///         Namespace = preauthenticatedRequestNamespace,
+    ///         TimeExpires = preauthenticatedRequestTimeExpires,
+    ///         BucketListingAction = preauthenticatedRequestBucketListingAction,
+    ///         Object = preauthenticatedRequestObject,
     ///     });
     /// 
     /// });

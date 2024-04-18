@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         HostShapeName = oci_core_shape.Test_shape.Name,
-        ///         Version = @var.Supported_vmware_software_version_version,
+        ///         CompartmentId = compartmentId,
+        ///         HostShapeName = testShape.Name,
+        ///         Version = supportedVmwareSoftwareVersionVersion,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSupportedVmwareSoftwareVersions = Oci.Ocvp.GetSupportedVmwareSoftwareVersions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         HostShapeName = oci_core_shape.Test_shape.Name,
-        ///         Version = @var.Supported_vmware_software_version_version,
+        ///         CompartmentId = compartmentId,
+        ///         HostShapeName = testShape.Name,
+        ///         Version = supportedVmwareSoftwareVersionVersion,
         ///     });
         /// 
         /// });

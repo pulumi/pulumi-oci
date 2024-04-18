@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaces = oci.LogAnalytics.getNamespaces({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetNamespacesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaces = oci.LogAnalytics.getNamespaces({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

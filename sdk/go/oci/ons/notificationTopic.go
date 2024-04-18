@@ -44,12 +44,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Ons.NewNotificationTopic(ctx, "testNotificationTopic", &Ons.NotificationTopicArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Ons.NewNotificationTopic(ctx, "test_notification_topic", &Ons.NotificationTopicArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(notificationTopicName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Notification_topic_description),
+//				Description: pulumi.Any(notificationTopicDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

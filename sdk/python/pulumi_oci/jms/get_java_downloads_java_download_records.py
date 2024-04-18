@@ -178,14 +178,14 @@ def get_java_downloads_java_download_records(architecture: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=var["compartment_id"],
-        architecture=var["java_download_record_architecture"],
-        family_version=var["java_download_record_family_version"],
-        os_family=var["java_download_record_os_family"],
-        package_type_detail=var["java_download_record_package_type_detail"],
-        release_version=var["java_download_record_release_version"],
-        time_end=var["java_download_record_time_end"],
-        time_start=var["java_download_record_time_start"])
+    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
+        architecture=java_download_record_architecture,
+        family_version=java_download_record_family_version,
+        os_family=java_download_record_os_family,
+        package_type_detail=java_download_record_package_type_detail,
+        release_version=java_download_record_release_version,
+        time_end=java_download_record_time_end,
+        time_start=java_download_record_time_start)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -251,14 +251,14 @@ def get_java_downloads_java_download_records_output(architecture: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=var["compartment_id"],
-        architecture=var["java_download_record_architecture"],
-        family_version=var["java_download_record_family_version"],
-        os_family=var["java_download_record_os_family"],
-        package_type_detail=var["java_download_record_package_type_detail"],
-        release_version=var["java_download_record_release_version"],
-        time_end=var["java_download_record_time_end"],
-        time_start=var["java_download_record_time_start"])
+    test_java_download_records = oci.Jms.get_java_downloads_java_download_records(compartment_id=compartment_id,
+        architecture=java_download_record_architecture,
+        family_version=java_download_record_family_version,
+        os_family=java_download_record_os_family,
+        package_type_detail=java_download_record_package_type_detail,
+        release_version=java_download_record_release_version,
+        time_end=java_download_record_time_end,
+        time_start=java_download_record_time_start)
     ```
     <!--End PulumiCodeChooser -->
 

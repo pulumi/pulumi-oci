@@ -25,15 +25,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAppCatalogSubscription = new Oci.Core.AppCatalogSubscription("testAppCatalogSubscription", new()
+    ///     var testAppCatalogSubscription = new Oci.Core.AppCatalogSubscription("test_app_catalog_subscription", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ListingId = data.Oci_core_app_catalog_listing.Test_listing.Id,
-    ///         ListingResourceVersion = @var.App_catalog_subscription_listing_resource_version,
-    ///         OracleTermsOfUseLink = @var.App_catalog_subscription_oracle_terms_of_use_link,
-    ///         Signature = @var.App_catalog_subscription_signature,
-    ///         TimeRetrieved = @var.App_catalog_subscription_time_retrieved,
-    ///         EulaLink = @var.App_catalog_subscription_eula_link,
+    ///         CompartmentId = compartmentId,
+    ///         ListingId = testListing.Id,
+    ///         ListingResourceVersion = appCatalogSubscriptionListingResourceVersion,
+    ///         OracleTermsOfUseLink = appCatalogSubscriptionOracleTermsOfUseLink,
+    ///         Signature = appCatalogSubscriptionSignature,
+    ///         TimeRetrieved = appCatalogSubscriptionTimeRetrieved,
+    ///         EulaLink = appCatalogSubscriptionEulaLink,
     ///     });
     /// 
     /// });

@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
- *     executionId: oci_database_management_execution.test_execution.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlObjectId: oci_objectstorage_object.test_object.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
- *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id,
+ *     executionId: testExecution.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlObjectId: testObject.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
+ *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,11 +105,11 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
- *     executionId: oci_database_management_execution.test_execution.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlObjectId: oci_objectstorage_object.test_object.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
- *     opcNamedCredentialId: _var.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id,
+ *     executionId: testExecution.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlObjectId: testObject.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
+ *     opcNamedCredentialId: managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

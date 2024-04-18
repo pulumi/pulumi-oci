@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetMediaWorkflowConfiguration(ctx, &mediaservices.GetMediaWorkflowConfigurationArgs{
-//				MediaWorkflowConfigurationId: oci_media_services_media_workflow_configuration.Test_media_workflow_configuration.Id,
+//				MediaWorkflowConfigurationId: testMediaWorkflowConfigurationOciMediaServicesMediaWorkflowConfiguration.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

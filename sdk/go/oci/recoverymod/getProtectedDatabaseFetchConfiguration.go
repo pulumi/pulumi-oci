@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetProtectedDatabaseFetchConfiguration(ctx, &recoverymod.GetProtectedDatabaseFetchConfigurationArgs{
-//				ProtectedDatabaseId: oci_recovery_protected_database.Test_protected_database.Id,
+//				ProtectedDatabaseId: testProtectedDatabase.Id,
 //				Base64EncodeContent: pulumi.BoolRef(true),
-//				ConfigurationType:   pulumi.StringRef(_var.Protected_database_fetch_configuration_configuration_type),
+//				ConfigurationType:   pulumi.StringRef(protectedDatabaseFetchConfigurationConfigurationType),
 //			}, nil)
 //			if err != nil {
 //				return err

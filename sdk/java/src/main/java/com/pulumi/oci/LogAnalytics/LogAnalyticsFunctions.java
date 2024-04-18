@@ -128,10 +128,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_categories_list_namespace())
-     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
-     *             .categoryType(var_.log_analytics_categories_list_category_type())
-     *             .name(var_.log_analytics_categories_list_name())
+     *             .namespace(logAnalyticsCategoriesListNamespace)
+     *             .categoryDisplayText(logAnalyticsCategoriesListCategoryDisplayText)
+     *             .categoryType(logAnalyticsCategoriesListCategoryType)
+     *             .name(logAnalyticsCategoriesListName)
      *             .build());
      * 
      *     }
@@ -173,10 +173,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_categories_list_namespace())
-     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
-     *             .categoryType(var_.log_analytics_categories_list_category_type())
-     *             .name(var_.log_analytics_categories_list_name())
+     *             .namespace(logAnalyticsCategoriesListNamespace)
+     *             .categoryDisplayText(logAnalyticsCategoriesListCategoryDisplayText)
+     *             .categoryType(logAnalyticsCategoriesListCategoryType)
+     *             .name(logAnalyticsCategoriesListName)
      *             .build());
      * 
      *     }
@@ -218,10 +218,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_categories_list_namespace())
-     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
-     *             .categoryType(var_.log_analytics_categories_list_category_type())
-     *             .name(var_.log_analytics_categories_list_name())
+     *             .namespace(logAnalyticsCategoriesListNamespace)
+     *             .categoryDisplayText(logAnalyticsCategoriesListCategoryDisplayText)
+     *             .categoryType(logAnalyticsCategoriesListCategoryType)
+     *             .name(logAnalyticsCategoriesListName)
      *             .build());
      * 
      *     }
@@ -263,10 +263,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategoriesList = LogAnalyticsFunctions.getLogAnalyticsCategoriesList(GetLogAnalyticsCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_categories_list_namespace())
-     *             .categoryDisplayText(var_.log_analytics_categories_list_category_display_text())
-     *             .categoryType(var_.log_analytics_categories_list_category_type())
-     *             .name(var_.log_analytics_categories_list_name())
+     *             .namespace(logAnalyticsCategoriesListNamespace)
+     *             .categoryDisplayText(logAnalyticsCategoriesListCategoryDisplayText)
+     *             .categoryType(logAnalyticsCategoriesListCategoryType)
+     *             .name(logAnalyticsCategoriesListName)
      *             .build());
      * 
      *     }
@@ -308,8 +308,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
-     *             .name(var_.log_analytics_category_name())
-     *             .namespace(var_.log_analytics_category_namespace())
+     *             .name(logAnalyticsCategoryName)
+     *             .namespace(logAnalyticsCategoryNamespace)
      *             .build());
      * 
      *     }
@@ -351,8 +351,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
-     *             .name(var_.log_analytics_category_name())
-     *             .namespace(var_.log_analytics_category_namespace())
+     *             .name(logAnalyticsCategoryName)
+     *             .namespace(logAnalyticsCategoryNamespace)
      *             .build());
      * 
      *     }
@@ -394,8 +394,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
-     *             .name(var_.log_analytics_category_name())
-     *             .namespace(var_.log_analytics_category_namespace())
+     *             .name(logAnalyticsCategoryName)
+     *             .namespace(logAnalyticsCategoryNamespace)
      *             .build());
      * 
      *     }
@@ -437,8 +437,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsCategory = LogAnalyticsFunctions.getLogAnalyticsCategory(GetLogAnalyticsCategoryArgs.builder()
-     *             .name(var_.log_analytics_category_name())
-     *             .namespace(var_.log_analytics_category_namespace())
+     *             .name(logAnalyticsCategoryName)
+     *             .namespace(logAnalyticsCategoryNamespace)
      *             .build());
      * 
      *     }
@@ -480,19 +480,19 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entity_namespace())
-     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
-     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
-     *             .hostname(var_.log_analytics_entity_hostname())
-     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
-     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
-     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
-     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
-     *             .name(var_.log_analytics_entity_name())
-     *             .nameContains(var_.log_analytics_entity_name_contains())
-     *             .sourceId(oci_log_analytics_source.test_source().id())
-     *             .state(var_.log_analytics_entity_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(testCloudResource.id())
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
      *             .build());
      * 
      *     }
@@ -534,19 +534,19 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entity_namespace())
-     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
-     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
-     *             .hostname(var_.log_analytics_entity_hostname())
-     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
-     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
-     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
-     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
-     *             .name(var_.log_analytics_entity_name())
-     *             .nameContains(var_.log_analytics_entity_name_contains())
-     *             .sourceId(oci_log_analytics_source.test_source().id())
-     *             .state(var_.log_analytics_entity_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(testCloudResource.id())
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
      *             .build());
      * 
      *     }
@@ -588,19 +588,19 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entity_namespace())
-     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
-     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
-     *             .hostname(var_.log_analytics_entity_hostname())
-     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
-     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
-     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
-     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
-     *             .name(var_.log_analytics_entity_name())
-     *             .nameContains(var_.log_analytics_entity_name_contains())
-     *             .sourceId(oci_log_analytics_source.test_source().id())
-     *             .state(var_.log_analytics_entity_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(testCloudResource.id())
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
      *             .build());
      * 
      *     }
@@ -642,19 +642,19 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntities = LogAnalyticsFunctions.getLogAnalyticsEntities(GetLogAnalyticsEntitiesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entity_namespace())
-     *             .cloudResourceId(oci_log_analytics_cloud_resource.test_cloud_resource().id())
-     *             .entityTypeNames(var_.log_analytics_entity_entity_type_name())
-     *             .hostname(var_.log_analytics_entity_hostname())
-     *             .hostnameContains(var_.log_analytics_entity_hostname_contains())
-     *             .isManagementAgentIdNull(var_.log_analytics_entity_is_management_agent_id_null())
-     *             .lifecycleDetailsContains(var_.log_analytics_entity_lifecycle_details_contains())
-     *             .metadataEquals(var_.log_analytics_entity_metadata_equals())
-     *             .name(var_.log_analytics_entity_name())
-     *             .nameContains(var_.log_analytics_entity_name_contains())
-     *             .sourceId(oci_log_analytics_source.test_source().id())
-     *             .state(var_.log_analytics_entity_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntityNamespace)
+     *             .cloudResourceId(testCloudResource.id())
+     *             .entityTypeNames(logAnalyticsEntityEntityTypeName)
+     *             .hostname(logAnalyticsEntityHostname)
+     *             .hostnameContains(logAnalyticsEntityHostnameContains)
+     *             .isManagementAgentIdNull(logAnalyticsEntityIsManagementAgentIdNull)
+     *             .lifecycleDetailsContains(logAnalyticsEntityLifecycleDetailsContains)
+     *             .metadataEquals(logAnalyticsEntityMetadataEquals)
+     *             .name(logAnalyticsEntityName)
+     *             .nameContains(logAnalyticsEntityNameContains)
+     *             .sourceId(testSource.id())
+     *             .state(logAnalyticsEntityState)
      *             .build());
      * 
      *     }
@@ -696,8 +696,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntitiesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -739,8 +739,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntitiesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -782,8 +782,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntitiesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -825,8 +825,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntitiesSummary = LogAnalyticsFunctions.getLogAnalyticsEntitiesSummary(GetLogAnalyticsEntitiesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_entities_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsEntitiesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -868,8 +868,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityNamespace)
      *             .build());
      * 
      *     }
@@ -911,8 +911,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityNamespace)
      *             .build());
      * 
      *     }
@@ -954,8 +954,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityNamespace)
      *             .build());
      * 
      *     }
@@ -997,8 +997,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_namespace())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityNamespace)
      *             .build());
      * 
      *     }
@@ -1040,10 +1040,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_topology_namespace())
-     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
-     *             .state(var_.log_analytics_entity_topology_state())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityTopologyNamespace)
+     *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
+     *             .state(logAnalyticsEntityTopologyState)
      *             .build());
      * 
      *     }
@@ -1085,10 +1085,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_topology_namespace())
-     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
-     *             .state(var_.log_analytics_entity_topology_state())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityTopologyNamespace)
+     *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
+     *             .state(logAnalyticsEntityTopologyState)
      *             .build());
      * 
      *     }
@@ -1130,10 +1130,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_topology_namespace())
-     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
-     *             .state(var_.log_analytics_entity_topology_state())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityTopologyNamespace)
+     *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
+     *             .state(logAnalyticsEntityTopologyState)
      *             .build());
      * 
      *     }
@@ -1175,10 +1175,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .namespace(var_.log_analytics_entity_topology_namespace())
-     *             .metadataEquals(var_.log_analytics_entity_topology_metadata_equals())
-     *             .state(var_.log_analytics_entity_topology_state())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .namespace(logAnalyticsEntityTopologyNamespace)
+     *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
+     *             .state(logAnalyticsEntityTopologyState)
      *             .build());
      * 
      *     }
@@ -1220,8 +1220,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
      *     }
@@ -1263,8 +1263,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
      *     }
@@ -1306,8 +1306,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
      *     }
@@ -1349,8 +1349,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group().id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
      *     }
@@ -1392,9 +1392,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
-     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupNamespace)
+     *             .displayName(logAnalyticsLogGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1436,9 +1436,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
-     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupNamespace)
+     *             .displayName(logAnalyticsLogGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1480,9 +1480,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
-     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupNamespace)
+     *             .displayName(logAnalyticsLogGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1524,9 +1524,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroups = LogAnalyticsFunctions.getLogAnalyticsLogGroups(GetLogAnalyticsLogGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_group_namespace())
-     *             .displayName(var_.log_analytics_log_group_display_name())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupNamespace)
+     *             .displayName(logAnalyticsLogGroupDisplayName)
      *             .build());
      * 
      *     }
@@ -1568,8 +1568,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupsSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -1611,8 +1611,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupsSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -1654,8 +1654,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupsSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -1697,8 +1697,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroupsSummary = LogAnalyticsFunctions.getLogAnalyticsLogGroupsSummary(GetLogAnalyticsLogGroupsSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_log_groups_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsLogGroupsSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -1740,8 +1740,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
      *     }
@@ -1783,8 +1783,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
      *     }
@@ -1826,8 +1826,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
      *     }
@@ -1869,8 +1869,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule().id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
      *     }
@@ -1912,10 +1912,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
-     *             .name(var_.log_analytics_object_collection_rule_name())
-     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
+     *             .name(logAnalyticsObjectCollectionRuleName)
+     *             .state(logAnalyticsObjectCollectionRuleState)
      *             .build());
      * 
      *     }
@@ -1957,10 +1957,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
-     *             .name(var_.log_analytics_object_collection_rule_name())
-     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
+     *             .name(logAnalyticsObjectCollectionRuleName)
+     *             .state(logAnalyticsObjectCollectionRuleState)
      *             .build());
      * 
      *     }
@@ -2002,10 +2002,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
-     *             .name(var_.log_analytics_object_collection_rule_name())
-     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
+     *             .name(logAnalyticsObjectCollectionRuleName)
+     *             .state(logAnalyticsObjectCollectionRuleState)
      *             .build());
      * 
      *     }
@@ -2047,10 +2047,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRules = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRules(GetLogAnalyticsObjectCollectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.log_analytics_object_collection_rule_namespace())
-     *             .name(var_.log_analytics_object_collection_rule_name())
-     *             .state(var_.log_analytics_object_collection_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
+     *             .name(logAnalyticsObjectCollectionRuleName)
+     *             .state(logAnalyticsObjectCollectionRuleState)
      *             .build());
      * 
      *     }
@@ -2092,7 +2092,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
-     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .namespace(logAnalyticsPreferenceNamespace)
      *             .build());
      * 
      *     }
@@ -2134,7 +2134,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
-     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .namespace(logAnalyticsPreferenceNamespace)
      *             .build());
      * 
      *     }
@@ -2176,7 +2176,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
-     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .namespace(logAnalyticsPreferenceNamespace)
      *             .build());
      * 
      *     }
@@ -2218,7 +2218,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsPreference = LogAnalyticsFunctions.getLogAnalyticsPreference(GetLogAnalyticsPreferenceArgs.builder()
-     *             .namespace(var_.log_analytics_preference_namespace())
+     *             .namespace(logAnalyticsPreferenceNamespace)
      *             .build());
      * 
      *     }
@@ -2260,10 +2260,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
-     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
-     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
-     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .namespace(logAnalyticsResourceCategoriesListNamespace)
+     *             .resourceIds(logAnalyticsResourceCategoriesListResourceIds)
+     *             .resourceTypes(logAnalyticsResourceCategoriesListResourceTypes)
+     *             .resourceCategories(logAnalyticsResourceCategoriesListResourceCategories)
      *             .build());
      * 
      *     }
@@ -2305,10 +2305,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
-     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
-     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
-     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .namespace(logAnalyticsResourceCategoriesListNamespace)
+     *             .resourceIds(logAnalyticsResourceCategoriesListResourceIds)
+     *             .resourceTypes(logAnalyticsResourceCategoriesListResourceTypes)
+     *             .resourceCategories(logAnalyticsResourceCategoriesListResourceCategories)
      *             .build());
      * 
      *     }
@@ -2350,10 +2350,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
-     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
-     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
-     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .namespace(logAnalyticsResourceCategoriesListNamespace)
+     *             .resourceIds(logAnalyticsResourceCategoriesListResourceIds)
+     *             .resourceTypes(logAnalyticsResourceCategoriesListResourceTypes)
+     *             .resourceCategories(logAnalyticsResourceCategoriesListResourceCategories)
      *             .build());
      * 
      *     }
@@ -2395,10 +2395,10 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsResourceCategoriesList = LogAnalyticsFunctions.getLogAnalyticsResourceCategoriesList(GetLogAnalyticsResourceCategoriesListArgs.builder()
-     *             .namespace(var_.log_analytics_resource_categories_list_namespace())
-     *             .resourceIds(var_.log_analytics_resource_categories_list_resource_ids())
-     *             .resourceTypes(var_.log_analytics_resource_categories_list_resource_types())
-     *             .resourceCategories(var_.log_analytics_resource_categories_list_resource_categories())
+     *             .namespace(logAnalyticsResourceCategoriesListNamespace)
+     *             .resourceIds(logAnalyticsResourceCategoriesListResourceIds)
+     *             .resourceTypes(logAnalyticsResourceCategoriesListResourceTypes)
+     *             .resourceCategories(logAnalyticsResourceCategoriesListResourceCategories)
      *             .build());
      * 
      *     }
@@ -2440,7 +2440,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
-     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .namespace(logAnalyticsUnprocessedDataBucketNamespace)
      *             .build());
      * 
      *     }
@@ -2482,7 +2482,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
-     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .namespace(logAnalyticsUnprocessedDataBucketNamespace)
      *             .build());
      * 
      *     }
@@ -2524,7 +2524,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
-     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .namespace(logAnalyticsUnprocessedDataBucketNamespace)
      *             .build());
      * 
      *     }
@@ -2566,7 +2566,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsUnprocessedDataBucket = LogAnalyticsFunctions.getLogAnalyticsUnprocessedDataBucket(GetLogAnalyticsUnprocessedDataBucketArgs.builder()
-     *             .namespace(var_.log_analytics_unprocessed_data_bucket_namespace())
+     *             .namespace(logAnalyticsUnprocessedDataBucketNamespace)
      *             .build());
      * 
      *     }
@@ -2608,7 +2608,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
-     *             .namespace(var_.log_sets_count_namespace())
+     *             .namespace(logSetsCountNamespace)
      *             .build());
      * 
      *     }
@@ -2650,7 +2650,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
-     *             .namespace(var_.log_sets_count_namespace())
+     *             .namespace(logSetsCountNamespace)
      *             .build());
      * 
      *     }
@@ -2692,7 +2692,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
-     *             .namespace(var_.log_sets_count_namespace())
+     *             .namespace(logSetsCountNamespace)
      *             .build());
      * 
      *     }
@@ -2734,7 +2734,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSetsCount = LogAnalyticsFunctions.getLogSetsCount(GetLogSetsCountArgs.builder()
-     *             .namespace(var_.log_sets_count_namespace())
+     *             .namespace(logSetsCountNamespace)
      *             .build());
      * 
      *     }
@@ -2776,7 +2776,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .namespace(var_.namespace_namespace())
+     *             .namespace(namespaceNamespace)
      *             .build());
      * 
      *     }
@@ -2818,7 +2818,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .namespace(var_.namespace_namespace())
+     *             .namespace(namespaceNamespace)
      *             .build());
      * 
      *     }
@@ -2860,7 +2860,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .namespace(var_.namespace_namespace())
+     *             .namespace(namespaceNamespace)
      *             .build());
      * 
      *     }
@@ -2902,7 +2902,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespace = LogAnalyticsFunctions.getNamespace(GetNamespaceArgs.builder()
-     *             .namespace(var_.namespace_namespace())
+     *             .namespace(namespaceNamespace)
      *             .build());
      * 
      *     }
@@ -2944,13 +2944,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
-     *             .namespace(var_.namespace_effective_property_namespace())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
-     *             .name(var_.namespace_effective_property_name())
-     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
-     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .namespace(namespaceEffectivePropertyNamespace)
+     *             .agentId(testAgent.id())
+     *             .entityId(testLogAnalyticsEntity.id())
+     *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
+     *             .name(namespaceEffectivePropertyName)
+     *             .patternId(testPattern.id())
+     *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
      * 
      *     }
@@ -2992,13 +2992,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
-     *             .namespace(var_.namespace_effective_property_namespace())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
-     *             .name(var_.namespace_effective_property_name())
-     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
-     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .namespace(namespaceEffectivePropertyNamespace)
+     *             .agentId(testAgent.id())
+     *             .entityId(testLogAnalyticsEntity.id())
+     *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
+     *             .name(namespaceEffectivePropertyName)
+     *             .patternId(testPattern.id())
+     *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
      * 
      *     }
@@ -3040,13 +3040,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
-     *             .namespace(var_.namespace_effective_property_namespace())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
-     *             .name(var_.namespace_effective_property_name())
-     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
-     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .namespace(namespaceEffectivePropertyNamespace)
+     *             .agentId(testAgent.id())
+     *             .entityId(testLogAnalyticsEntity.id())
+     *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
+     *             .name(namespaceEffectivePropertyName)
+     *             .patternId(testPattern.id())
+     *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
      * 
      *     }
@@ -3088,13 +3088,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
-     *             .namespace(var_.namespace_effective_property_namespace())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .entityId(oci_log_analytics_log_analytics_entity.test_log_analytics_entity().id())
-     *             .isIncludePatterns(var_.namespace_effective_property_is_include_patterns())
-     *             .name(var_.namespace_effective_property_name())
-     *             .patternId(oci_log_analytics_pattern.test_pattern().id())
-     *             .sourceName(var_.namespace_effective_property_source_name())
+     *             .namespace(namespaceEffectivePropertyNamespace)
+     *             .agentId(testAgent.id())
+     *             .entityId(testLogAnalyticsEntity.id())
+     *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
+     *             .name(namespaceEffectivePropertyName)
+     *             .patternId(testPattern.id())
+     *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
      * 
      *     }
@@ -3136,8 +3136,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .ingestTimeRuleId(testRule.id())
+     *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
      *     }
@@ -3179,8 +3179,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .ingestTimeRuleId(testRule.id())
+     *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
      *     }
@@ -3222,8 +3222,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .ingestTimeRuleId(testRule.id())
+     *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
      *     }
@@ -3265,8 +3265,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .ingestTimeRuleId(testRule.id())
+     *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
      *     }
@@ -3308,13 +3308,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
-     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
-     *             .displayName(var_.namespace_ingest_time_rule_display_name())
-     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
-     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
-     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceIngestTimeRuleNamespace)
+     *             .conditionKind(namespaceIngestTimeRuleConditionKind)
+     *             .displayName(namespaceIngestTimeRuleDisplayName)
+     *             .fieldName(namespaceIngestTimeRuleFieldName)
+     *             .fieldValue(namespaceIngestTimeRuleFieldValue)
+     *             .state(namespaceIngestTimeRuleState)
      *             .build());
      * 
      *     }
@@ -3356,13 +3356,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
-     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
-     *             .displayName(var_.namespace_ingest_time_rule_display_name())
-     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
-     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
-     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceIngestTimeRuleNamespace)
+     *             .conditionKind(namespaceIngestTimeRuleConditionKind)
+     *             .displayName(namespaceIngestTimeRuleDisplayName)
+     *             .fieldName(namespaceIngestTimeRuleFieldName)
+     *             .fieldValue(namespaceIngestTimeRuleFieldValue)
+     *             .state(namespaceIngestTimeRuleState)
      *             .build());
      * 
      *     }
@@ -3404,13 +3404,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
-     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
-     *             .displayName(var_.namespace_ingest_time_rule_display_name())
-     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
-     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
-     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceIngestTimeRuleNamespace)
+     *             .conditionKind(namespaceIngestTimeRuleConditionKind)
+     *             .displayName(namespaceIngestTimeRuleDisplayName)
+     *             .fieldName(namespaceIngestTimeRuleFieldName)
+     *             .fieldValue(namespaceIngestTimeRuleFieldValue)
+     *             .state(namespaceIngestTimeRuleState)
      *             .build());
      * 
      *     }
@@ -3452,13 +3452,13 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_ingest_time_rule_namespace())
-     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
-     *             .displayName(var_.namespace_ingest_time_rule_display_name())
-     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
-     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
-     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceIngestTimeRuleNamespace)
+     *             .conditionKind(namespaceIngestTimeRuleConditionKind)
+     *             .displayName(namespaceIngestTimeRuleDisplayName)
+     *             .fieldName(namespaceIngestTimeRuleFieldName)
+     *             .fieldValue(namespaceIngestTimeRuleFieldValue)
+     *             .state(namespaceIngestTimeRuleState)
      *             .build());
      * 
      *     }
@@ -3500,11 +3500,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
-     *             .namespace(var_.namespace_properties_metadata_namespace())
-     *             .constraints(var_.namespace_properties_metadata_constraints())
-     *             .displayText(var_.namespace_properties_metadata_display_text())
-     *             .level(var_.namespace_properties_metadata_level())
-     *             .name(var_.namespace_properties_metadata_name())
+     *             .namespace(namespacePropertiesMetadataNamespace)
+     *             .constraints(namespacePropertiesMetadataConstraints)
+     *             .displayText(namespacePropertiesMetadataDisplayText)
+     *             .level(namespacePropertiesMetadataLevel)
+     *             .name(namespacePropertiesMetadataName)
      *             .build());
      * 
      *     }
@@ -3546,11 +3546,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
-     *             .namespace(var_.namespace_properties_metadata_namespace())
-     *             .constraints(var_.namespace_properties_metadata_constraints())
-     *             .displayText(var_.namespace_properties_metadata_display_text())
-     *             .level(var_.namespace_properties_metadata_level())
-     *             .name(var_.namespace_properties_metadata_name())
+     *             .namespace(namespacePropertiesMetadataNamespace)
+     *             .constraints(namespacePropertiesMetadataConstraints)
+     *             .displayText(namespacePropertiesMetadataDisplayText)
+     *             .level(namespacePropertiesMetadataLevel)
+     *             .name(namespacePropertiesMetadataName)
      *             .build());
      * 
      *     }
@@ -3592,11 +3592,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
-     *             .namespace(var_.namespace_properties_metadata_namespace())
-     *             .constraints(var_.namespace_properties_metadata_constraints())
-     *             .displayText(var_.namespace_properties_metadata_display_text())
-     *             .level(var_.namespace_properties_metadata_level())
-     *             .name(var_.namespace_properties_metadata_name())
+     *             .namespace(namespacePropertiesMetadataNamespace)
+     *             .constraints(namespacePropertiesMetadataConstraints)
+     *             .displayText(namespacePropertiesMetadataDisplayText)
+     *             .level(namespacePropertiesMetadataLevel)
+     *             .name(namespacePropertiesMetadataName)
      *             .build());
      * 
      *     }
@@ -3638,11 +3638,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespacePropertiesMetadata = LogAnalyticsFunctions.getNamespacePropertiesMetadata(GetNamespacePropertiesMetadataArgs.builder()
-     *             .namespace(var_.namespace_properties_metadata_namespace())
-     *             .constraints(var_.namespace_properties_metadata_constraints())
-     *             .displayText(var_.namespace_properties_metadata_display_text())
-     *             .level(var_.namespace_properties_metadata_level())
-     *             .name(var_.namespace_properties_metadata_name())
+     *             .namespace(namespacePropertiesMetadataNamespace)
+     *             .constraints(namespacePropertiesMetadataConstraints)
+     *             .displayText(namespacePropertiesMetadataDisplayText)
+     *             .level(namespacePropertiesMetadataLevel)
+     *             .name(namespacePropertiesMetadataName)
      *             .build());
      * 
      *     }
@@ -3684,12 +3684,12 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rule_namespace())
-     *             .displayName(var_.namespace_rule_display_name())
-     *             .kind(var_.namespace_rule_kind())
-     *             .state(var_.namespace_rule_state())
-     *             .targetService(var_.namespace_rule_target_service())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRuleNamespace)
+     *             .displayName(namespaceRuleDisplayName)
+     *             .kind(namespaceRuleKind)
+     *             .state(namespaceRuleState)
+     *             .targetService(namespaceRuleTargetService)
      *             .build());
      * 
      *     }
@@ -3731,12 +3731,12 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rule_namespace())
-     *             .displayName(var_.namespace_rule_display_name())
-     *             .kind(var_.namespace_rule_kind())
-     *             .state(var_.namespace_rule_state())
-     *             .targetService(var_.namespace_rule_target_service())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRuleNamespace)
+     *             .displayName(namespaceRuleDisplayName)
+     *             .kind(namespaceRuleKind)
+     *             .state(namespaceRuleState)
+     *             .targetService(namespaceRuleTargetService)
      *             .build());
      * 
      *     }
@@ -3778,12 +3778,12 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rule_namespace())
-     *             .displayName(var_.namespace_rule_display_name())
-     *             .kind(var_.namespace_rule_kind())
-     *             .state(var_.namespace_rule_state())
-     *             .targetService(var_.namespace_rule_target_service())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRuleNamespace)
+     *             .displayName(namespaceRuleDisplayName)
+     *             .kind(namespaceRuleKind)
+     *             .state(namespaceRuleState)
+     *             .targetService(namespaceRuleTargetService)
      *             .build());
      * 
      *     }
@@ -3825,12 +3825,12 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rule_namespace())
-     *             .displayName(var_.namespace_rule_display_name())
-     *             .kind(var_.namespace_rule_kind())
-     *             .state(var_.namespace_rule_state())
-     *             .targetService(var_.namespace_rule_target_service())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRuleNamespace)
+     *             .displayName(namespaceRuleDisplayName)
+     *             .kind(namespaceRuleKind)
+     *             .state(namespaceRuleState)
+     *             .targetService(namespaceRuleTargetService)
      *             .build());
      * 
      *     }
@@ -3872,8 +3872,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRulesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -3915,8 +3915,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRulesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -3958,8 +3958,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRulesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -4001,8 +4001,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceRulesSummary = LogAnalyticsFunctions.getNamespaceRulesSummary(GetNamespaceRulesSummaryArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_rules_summary_namespace())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceRulesSummaryNamespace)
      *             .build());
      * 
      *     }
@@ -4044,8 +4044,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .scheduledTaskId(testScheduledTask.id())
      *             .build());
      * 
      *     }
@@ -4087,8 +4087,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .scheduledTaskId(testScheduledTask.id())
      *             .build());
      * 
      *     }
@@ -4130,8 +4130,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .scheduledTaskId(testScheduledTask.id())
      *             .build());
      * 
      *     }
@@ -4173,8 +4173,8 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .scheduledTaskId(oci_log_analytics_scheduled_task.test_scheduled_task().id())
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .scheduledTaskId(testScheduledTask.id())
      *             .build());
      * 
      *     }
@@ -4216,11 +4216,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .displayName(var_.namespace_scheduled_task_display_name())
-     *             .targetService(var_.namespace_scheduled_task_target_service())
-     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .displayName(namespaceScheduledTaskDisplayName)
+     *             .targetService(namespaceScheduledTaskTargetService)
+     *             .taskType(namespaceScheduledTaskTaskType)
      *             .build());
      * 
      *     }
@@ -4262,11 +4262,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .displayName(var_.namespace_scheduled_task_display_name())
-     *             .targetService(var_.namespace_scheduled_task_target_service())
-     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .displayName(namespaceScheduledTaskDisplayName)
+     *             .targetService(namespaceScheduledTaskTargetService)
+     *             .taskType(namespaceScheduledTaskTaskType)
      *             .build());
      * 
      *     }
@@ -4308,11 +4308,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .displayName(var_.namespace_scheduled_task_display_name())
-     *             .targetService(var_.namespace_scheduled_task_target_service())
-     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .displayName(namespaceScheduledTaskDisplayName)
+     *             .targetService(namespaceScheduledTaskTargetService)
+     *             .taskType(namespaceScheduledTaskTaskType)
      *             .build());
      * 
      *     }
@@ -4354,11 +4354,11 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTasks = LogAnalyticsFunctions.getNamespaceScheduledTasks(GetNamespaceScheduledTasksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .namespace(var_.namespace_scheduled_task_namespace())
-     *             .displayName(var_.namespace_scheduled_task_display_name())
-     *             .targetService(var_.namespace_scheduled_task_target_service())
-     *             .taskType(var_.namespace_scheduled_task_task_type())
+     *             .compartmentId(compartmentId)
+     *             .namespace(namespaceScheduledTaskNamespace)
+     *             .displayName(namespaceScheduledTaskDisplayName)
+     *             .targetService(namespaceScheduledTaskTargetService)
+     *             .taskType(namespaceScheduledTaskTaskType)
      *             .build());
      * 
      *     }
@@ -4400,7 +4400,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
-     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .namespace(namespaceStorageEncryptionKeyInfoNamespace)
      *             .build());
      * 
      *     }
@@ -4442,7 +4442,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
-     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .namespace(namespaceStorageEncryptionKeyInfoNamespace)
      *             .build());
      * 
      *     }
@@ -4484,7 +4484,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
-     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .namespace(namespaceStorageEncryptionKeyInfoNamespace)
      *             .build());
      * 
      *     }
@@ -4526,7 +4526,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
-     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .namespace(namespaceStorageEncryptionKeyInfoNamespace)
      *             .build());
      * 
      *     }
@@ -4568,9 +4568,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
-     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
-     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .namespace(namespaceStorageOverlappingRecallNamespace)
+     *             .timeDataEnded(namespaceStorageOverlappingRecallTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageOverlappingRecallTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -4612,9 +4612,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
-     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
-     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .namespace(namespaceStorageOverlappingRecallNamespace)
+     *             .timeDataEnded(namespaceStorageOverlappingRecallTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageOverlappingRecallTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -4656,9 +4656,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
-     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
-     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .namespace(namespaceStorageOverlappingRecallNamespace)
+     *             .timeDataEnded(namespaceStorageOverlappingRecallTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageOverlappingRecallTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -4700,9 +4700,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageOverlappingRecalls = LogAnalyticsFunctions.getNamespaceStorageOverlappingRecalls(GetNamespaceStorageOverlappingRecallsArgs.builder()
-     *             .namespace(var_.namespace_storage_overlapping_recall_namespace())
-     *             .timeDataEnded(var_.namespace_storage_overlapping_recall_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_overlapping_recall_time_data_started())
+     *             .namespace(namespaceStorageOverlappingRecallNamespace)
+     *             .timeDataEnded(namespaceStorageOverlappingRecallTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageOverlappingRecallTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -4744,7 +4744,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
-     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .namespace(namespaceStorageRecallCountNamespace)
      *             .build());
      * 
      *     }
@@ -4786,7 +4786,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
-     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .namespace(namespaceStorageRecallCountNamespace)
      *             .build());
      * 
      *     }
@@ -4828,7 +4828,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
-     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .namespace(namespaceStorageRecallCountNamespace)
      *             .build());
      * 
      *     }
@@ -4870,7 +4870,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecallCount = LogAnalyticsFunctions.getNamespaceStorageRecallCount(GetNamespaceStorageRecallCountArgs.builder()
-     *             .namespace(var_.namespace_storage_recall_count_namespace())
+     *             .namespace(namespaceStorageRecallCountNamespace)
      *             .build());
      * 
      *     }
@@ -4912,9 +4912,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
-     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
-     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .namespace(namespaceStorageRecalledDataSizeNamespace)
+     *             .timeDataEnded(namespaceStorageRecalledDataSizeTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageRecalledDataSizeTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -4956,9 +4956,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
-     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
-     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .namespace(namespaceStorageRecalledDataSizeNamespace)
+     *             .timeDataEnded(namespaceStorageRecalledDataSizeTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageRecalledDataSizeTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -5000,9 +5000,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
-     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
-     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .namespace(namespaceStorageRecalledDataSizeNamespace)
+     *             .timeDataEnded(namespaceStorageRecalledDataSizeTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageRecalledDataSizeTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -5044,9 +5044,9 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceStorageRecalledDataSize = LogAnalyticsFunctions.getNamespaceStorageRecalledDataSize(GetNamespaceStorageRecalledDataSizeArgs.builder()
-     *             .namespace(var_.namespace_storage_recalled_data_size_namespace())
-     *             .timeDataEnded(var_.namespace_storage_recalled_data_size_time_data_ended())
-     *             .timeDataStarted(var_.namespace_storage_recalled_data_size_time_data_started())
+     *             .namespace(namespaceStorageRecalledDataSizeNamespace)
+     *             .timeDataEnded(namespaceStorageRecalledDataSizeTimeDataEnded)
+     *             .timeDataStarted(namespaceStorageRecalledDataSizeTimeDataStarted)
      *             .build());
      * 
      *     }
@@ -5089,7 +5089,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5132,7 +5132,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5175,7 +5175,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5218,7 +5218,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaces = LogAnalyticsFunctions.getNamespaces(GetNamespacesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.autonomous_database_backup_display_name,
- *     state: _var.autonomous_database_backup_state,
- *     type: _var.autonomous_database_backup_type,
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     compartmentId: compartmentId,
+ *     displayName: autonomousDatabaseBackupDisplayName,
+ *     state: autonomousDatabaseBackupState,
+ *     type: autonomousDatabaseBackupType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,11 +116,11 @@ export interface GetAutonomousDatabaseBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseBackups = oci.Database.getAutonomousDatabaseBackups({
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.autonomous_database_backup_display_name,
- *     state: _var.autonomous_database_backup_state,
- *     type: _var.autonomous_database_backup_type,
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     compartmentId: compartmentId,
+ *     displayName: autonomousDatabaseBackupDisplayName,
+ *     state: autonomousDatabaseBackupState,
+ *     type: autonomousDatabaseBackupType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

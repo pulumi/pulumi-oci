@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetNetworkSource(ctx, &identity.GetNetworkSourceArgs{
-//				NetworkSourceId: oci_identity_network_source.Test_network_source.Id,
+//				NetworkSourceId: testNetworkSourceOciIdentityNetworkSource.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

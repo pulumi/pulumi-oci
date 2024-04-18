@@ -31,18 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Optimizer.NewProfile(ctx, "testProfile", &Optimizer.ProfileArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Description:   pulumi.Any(_var.Profile_description),
+//			_, err := Optimizer.NewProfile(ctx, "test_profile", &Optimizer.ProfileArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Description:   pulumi.Any(profileDescription),
 //				LevelsConfiguration: &optimizer.ProfileLevelsConfigurationArgs{
 //					Items: optimizer.ProfileLevelsConfigurationItemArray{
 //						&optimizer.ProfileLevelsConfigurationItemArgs{
-//							Level:            pulumi.Any(_var.Profile_levels_configuration_items_level),
-//							RecommendationId: pulumi.Any(oci_optimizer_recommendation.Test_recommendation.Id),
+//							Level:            pulumi.Any(profileLevelsConfigurationItemsLevel),
+//							RecommendationId: pulumi.Any(testRecommendation.Id),
 //						},
 //					},
 //				},
-//				AggregationIntervalInDays: pulumi.Any(_var.Profile_aggregation_interval_in_days),
+//				Name:                      pulumi.Any(profileName),
+//				AggregationIntervalInDays: pulumi.Any(profileAggregationIntervalInDays),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -50,15 +51,15 @@ import (
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				TargetCompartments: &optimizer.ProfileTargetCompartmentsArgs{
-//					Items: pulumi.Any(_var.Profile_target_compartments_items),
+//					Items: pulumi.Any(profileTargetCompartmentsItems),
 //				},
 //				TargetTags: &optimizer.ProfileTargetTagsArgs{
 //					Items: optimizer.ProfileTargetTagsItemArray{
 //						&optimizer.ProfileTargetTagsItemArgs{
-//							TagDefinitionName: pulumi.Any(_var.Profile_target_tags_items_tag_definition_name),
-//							TagNamespaceName:  pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Name),
-//							TagValueType:      pulumi.Any(_var.Profile_target_tags_items_tag_value_type),
-//							TagValues:         pulumi.Any(_var.Profile_target_tags_items_tag_values),
+//							TagDefinitionName: pulumi.Any(profileTargetTagsItemsTagDefinitionName),
+//							TagNamespaceName:  pulumi.Any(testTagNamespace.Name),
+//							TagValueType:      pulumi.Any(profileTargetTagsItemsTagValueType),
+//							TagValues:         pulumi.Any(profileTargetTagsItemsTagValues),
 //						},
 //					},
 //				},

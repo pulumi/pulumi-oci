@@ -50,14 +50,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFusionEnvironmentFamily = new FusionEnvironmentFamily(&#34;testFusionEnvironmentFamily&#34;, FusionEnvironmentFamilyArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.fusion_environment_family_display_name())
- *             .subscriptionIds(var_.fusion_environment_family_subscription_ids())
+ *             .compartmentId(compartmentId)
+ *             .displayName(fusionEnvironmentFamilyDisplayName)
+ *             .subscriptionIds(fusionEnvironmentFamilySubscriptionIds)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .familyMaintenancePolicy(FusionEnvironmentFamilyFamilyMaintenancePolicyArgs.builder()
- *                 .concurrentMaintenance(var_.fusion_environment_family_family_maintenance_policy_concurrent_maintenance())
- *                 .isMonthlyPatchingEnabled(var_.fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled())
- *                 .quarterlyUpgradeBeginTimes(var_.fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times())
+ *                 .concurrentMaintenance(fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance)
+ *                 .isMonthlyPatchingEnabled(fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled)
+ *                 .quarterlyUpgradeBeginTimes(fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes)
  *                 .build())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());

@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomProtectionRule = new oci.waas.CustomProtectionRule("testCustomProtectionRule", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.custom_protection_rule_display_name,
- *     template: _var.custom_protection_rule_template,
+ * const testCustomProtectionRule = new oci.waas.CustomProtectionRule("test_custom_protection_rule", {
+ *     compartmentId: compartmentId,
+ *     displayName: customProtectionRuleDisplayName,
+ *     template: customProtectionRuleTemplate,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.custom_protection_rule_description,
+ *     description: customProtectionRuleDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

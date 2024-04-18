@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenericArtifactsContent.GetGenericArtifactsContent(ctx, &genericartifactscontent.GetGenericArtifactsContentArgs{
-//				ArtifactId: oci_generic_artifacts_content_artifact.Test_artifact.Id,
+//				ArtifactId: testArtifact.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testScheduledRun = Oci.MeteringComputation.GetScheduledRun.Invoke(new()
         ///     {
-        ///         ScheduledRunId = oci_metering_computation_scheduled_run.Test_scheduled_run.Id,
+        ///         ScheduledRunId = testScheduledRunOciMeteringComputationScheduledRun.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testScheduledRun = Oci.MeteringComputation.GetScheduledRun.Invoke(new()
         ///     {
-        ///         ScheduledRunId = oci_metering_computation_scheduled_run.Test_scheduled_run.Id,
+        ///         ScheduledRunId = testScheduledRunOciMeteringComputationScheduledRun.Id,
         ///     });
         /// 
         /// });

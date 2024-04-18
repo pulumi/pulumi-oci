@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountRecoverySettings = oci.Identity.getDomainsAccountRecoverySettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_recovery_setting_authorization,
- *     resourceTypeSchemaVersion: _var.account_recovery_setting_resource_type_schema_version,
+ *     authorization: accountRecoverySettingAuthorization,
+ *     resourceTypeSchemaVersion: accountRecoverySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,11 +107,11 @@ export interface GetDomainsAccountRecoverySettingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountRecoverySettings = oci.Identity.getDomainsAccountRecoverySettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_recovery_setting_authorization,
- *     resourceTypeSchemaVersion: _var.account_recovery_setting_resource_type_schema_version,
+ *     authorization: accountRecoverySettingAuthorization,
+ *     resourceTypeSchemaVersion: accountRecoverySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,11 +25,11 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBdsInstancePatchAction = new Oci.BigDataService.BdsInstancePatchAction("testBdsInstancePatchAction", new()
+    ///     var testBdsInstancePatchAction = new Oci.BigDataService.BdsInstancePatchAction("test_bds_instance_patch_action", new()
     ///     {
-    ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
-    ///         ClusterAdminPassword = @var.Bds_instance_patch_action_cluster_admin_password,
-    ///         Version = @var.Bds_instance_patch_action_version,
+    ///         BdsInstanceId = testBdsInstance.Id,
+    ///         ClusterAdminPassword = bdsInstancePatchActionClusterAdminPassword,
+    ///         Version = bdsInstancePatchActionVersion,
     ///     });
     /// 
     /// });

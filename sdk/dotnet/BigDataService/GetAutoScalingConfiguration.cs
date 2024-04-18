@@ -30,8 +30,8 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testAutoScalingConfiguration = Oci.BigDataService.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         AutoScalingConfigurationId = testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.Id,
+        ///         BdsInstanceId = testBdsInstance.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testAutoScalingConfiguration = Oci.BigDataService.GetAutoScalingConfiguration.Invoke(new()
         ///     {
-        ///         AutoScalingConfigurationId = oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-        ///         BdsInstanceId = oci_bds_bds_instance.Test_bds_instance.Id,
+        ///         AutoScalingConfigurationId = testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.Id,
+        ///         BdsInstanceId = testBdsInstance.Id,
         ///     });
         /// 
         /// });

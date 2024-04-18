@@ -30,8 +30,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasePeerTargetDatabase = Oci.DataSafe.GetTargetDatabasePeerTargetDatabase.Invoke(new()
         ///     {
-        ///         PeerTargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         PeerTargetDatabaseId = testTargetDatabase.Id,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasePeerTargetDatabase = Oci.DataSafe.GetTargetDatabasePeerTargetDatabase.Invoke(new()
         ///     {
-        ///         PeerTargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
+        ///         PeerTargetDatabaseId = testTargetDatabase.Id,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
         ///     });
         /// 
         /// });

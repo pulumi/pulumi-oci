@@ -175,7 +175,7 @@ def get_inventory(inventory_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory = oci.CloudBridge.get_inventory(inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"])
+    test_inventory = oci.CloudBridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -216,7 +216,7 @@ def get_inventory_output(inventory_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventory = oci.CloudBridge.get_inventory(inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"])
+    test_inventory = oci.CloudBridge.get_inventory(inventory_id=test_inventory_oci_cloud_bridge_inventory["id"])
     ```
     <!--End PulumiCodeChooser -->
 

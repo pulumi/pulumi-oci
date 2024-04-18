@@ -43,14 +43,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyDeployments = Oci.DataSafe.GetSecurityPolicyDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_policy_deployment_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_policy_deployment_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_policy_deployment_display_name,
-        ///         SecurityPolicyDeploymentId = oci_data_safe_security_policy_deployment.Test_security_policy_deployment.Id,
-        ///         SecurityPolicyId = oci_data_safe_security_policy.Test_security_policy.Id,
-        ///         State = @var.Security_policy_deployment_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityPolicyDeploymentAccessLevel,
+        ///         CompartmentIdInSubtree = securityPolicyDeploymentCompartmentIdInSubtree,
+        ///         DisplayName = securityPolicyDeploymentDisplayName,
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
+        ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         State = securityPolicyDeploymentState,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -92,14 +92,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyDeployments = Oci.DataSafe.GetSecurityPolicyDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Security_policy_deployment_access_level,
-        ///         CompartmentIdInSubtree = @var.Security_policy_deployment_compartment_id_in_subtree,
-        ///         DisplayName = @var.Security_policy_deployment_display_name,
-        ///         SecurityPolicyDeploymentId = oci_data_safe_security_policy_deployment.Test_security_policy_deployment.Id,
-        ///         SecurityPolicyId = oci_data_safe_security_policy.Test_security_policy.Id,
-        ///         State = @var.Security_policy_deployment_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = securityPolicyDeploymentAccessLevel,
+        ///         CompartmentIdInSubtree = securityPolicyDeploymentCompartmentIdInSubtree,
+        ///         DisplayName = securityPolicyDeploymentDisplayName,
+        ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
+        ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         State = securityPolicyDeploymentState,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

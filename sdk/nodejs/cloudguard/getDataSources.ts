@@ -33,13 +33,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSources = oci.CloudGuard.getDataSources({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.data_source_access_level,
- *     compartmentIdInSubtree: _var.data_source_compartment_id_in_subtree,
- *     dataSourceFeedProvider: _var.data_source_data_source_feed_provider,
- *     displayName: _var.data_source_display_name,
- *     loggingQueryType: _var.data_source_logging_query_type,
- *     state: _var.data_source_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: dataSourceAccessLevel,
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
+ *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
+ *     displayName: dataSourceDisplayName,
+ *     loggingQueryType: dataSourceLoggingQueryType,
+ *     state: dataSourceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -157,13 +157,13 @@ export interface GetDataSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSources = oci.CloudGuard.getDataSources({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.data_source_access_level,
- *     compartmentIdInSubtree: _var.data_source_compartment_id_in_subtree,
- *     dataSourceFeedProvider: _var.data_source_data_source_feed_provider,
- *     displayName: _var.data_source_display_name,
- *     loggingQueryType: _var.data_source_logging_query_type,
- *     state: _var.data_source_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: dataSourceAccessLevel,
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
+ *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
+ *     displayName: dataSourceDisplayName,
+ *     loggingQueryType: dataSourceLoggingQueryType,
+ *     state: dataSourceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -371,12 +371,12 @@ class RemediationRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_remediation_run = oci.adm.RemediationRun("testRemediationRun",
-            remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
+        test_remediation_run = oci.adm.RemediationRun("test_remediation_run",
+            remediation_recipe_id=test_remediation_recipe["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["remediation_run_display_name"],
+            display_name=remediation_run_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -421,12 +421,12 @@ class RemediationRun(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_remediation_run = oci.adm.RemediationRun("testRemediationRun",
-            remediation_recipe_id=oci_adm_remediation_recipe["test_remediation_recipe"]["id"],
+        test_remediation_run = oci.adm.RemediationRun("test_remediation_run",
+            remediation_recipe_id=test_remediation_recipe["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["remediation_run_display_name"],
+            display_name=remediation_run_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

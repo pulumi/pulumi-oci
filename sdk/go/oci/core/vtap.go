@@ -39,29 +39,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVtap(ctx, "testVtap", &Core.VtapArgs{
-//				CaptureFilterId: pulumi.Any(oci_core_capture_filter.Test_capture_filter.Id),
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				SourceId:        pulumi.Any(oci_core_source.Test_source.Id),
-//				VcnId:           pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := Core.NewVtap(ctx, "test_vtap", &Core.VtapArgs{
+//				CaptureFilterId: pulumi.Any(testCaptureFilter.Id),
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				SourceId:        pulumi.Any(testSource.Id),
+//				VcnId:           pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName:           pulumi.Any(_var.Vtap_display_name),
-//				EncapsulationProtocol: pulumi.Any(_var.Vtap_encapsulation_protocol),
+//				DisplayName:           pulumi.Any(vtapDisplayName),
+//				EncapsulationProtocol: pulumi.Any(vtapEncapsulationProtocol),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsVtapEnabled:                 pulumi.Any(_var.Vtap_is_vtap_enabled),
-//				MaxPacketSize:                 pulumi.Any(_var.Vtap_max_packet_size),
-//				SourcePrivateEndpointIp:       pulumi.Any(_var.Vtap_source_private_endpoint_ip),
-//				SourcePrivateEndpointSubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				SourceType:                    pulumi.Any(_var.Vtap_source_type),
-//				TargetId:                      pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-//				TargetIp:                      pulumi.Any(_var.Vtap_target_ip),
-//				TargetType:                    pulumi.Any(_var.Vtap_target_type),
-//				TrafficMode:                   pulumi.Any(_var.Vtap_traffic_mode),
-//				VxlanNetworkIdentifier:        pulumi.Any(_var.Vtap_vxlan_network_identifier),
+//				IsVtapEnabled:                 pulumi.Any(vtapIsVtapEnabled),
+//				MaxPacketSize:                 pulumi.Any(vtapMaxPacketSize),
+//				SourcePrivateEndpointIp:       pulumi.Any(vtapSourcePrivateEndpointIp),
+//				SourcePrivateEndpointSubnetId: pulumi.Any(testSubnet.Id),
+//				SourceType:                    pulumi.Any(vtapSourceType),
+//				TargetId:                      pulumi.Any(testTarget.Id),
+//				TargetIp:                      pulumi.Any(vtapTargetIp),
+//				TargetType:                    pulumi.Any(vtapTargetType),
+//				TrafficMode:                   pulumi.Any(vtapTrafficMode),
+//				VxlanNetworkIdentifier:        pulumi.Any(vtapVxlanNetworkIdentifier),
 //			})
 //			if err != nil {
 //				return err

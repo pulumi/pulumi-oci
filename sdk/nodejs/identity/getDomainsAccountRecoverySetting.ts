@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountRecoverySetting = oci.Identity.getDomainsAccountRecoverySetting({
- *     accountRecoverySettingId: oci_identity_domains_account_recovery_setting.test_account_recovery_setting.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     accountRecoverySettingId: testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_recovery_setting_authorization,
- *     resourceTypeSchemaVersion: _var.account_recovery_setting_resource_type_schema_version,
+ *     authorization: accountRecoverySettingAuthorization,
+ *     resourceTypeSchemaVersion: accountRecoverySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -164,12 +164,12 @@ export interface GetDomainsAccountRecoverySettingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccountRecoverySetting = oci.Identity.getDomainsAccountRecoverySetting({
- *     accountRecoverySettingId: oci_identity_domains_account_recovery_setting.test_account_recovery_setting.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     accountRecoverySettingId: testAccountRecoverySettingOciIdentityDomainsAccountRecoverySetting.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.account_recovery_setting_authorization,
- *     resourceTypeSchemaVersion: _var.account_recovery_setting_resource_type_schema_version,
+ *     authorization: accountRecoverySettingAuthorization,
+ *     resourceTypeSchemaVersion: accountRecoverySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

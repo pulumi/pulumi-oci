@@ -18,45 +18,46 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIngressGateway = new oci.servicemesh.IngressGateway("testIngressGateway", {
- *     compartmentId: _var.compartment_id,
+ * const testIngressGateway = new oci.servicemesh.IngressGateway("test_ingress_gateway", {
+ *     compartmentId: compartmentId,
  *     hosts: [{
  *         listeners: [{
- *             port: _var.ingress_gateway_hosts_listeners_port,
- *             protocol: _var.ingress_gateway_hosts_listeners_protocol,
+ *             port: ingressGatewayHostsListenersPort,
+ *             protocol: ingressGatewayHostsListenersProtocol,
  *             tls: {
- *                 mode: _var.ingress_gateway_hosts_listeners_tls_mode,
+ *                 mode: ingressGatewayHostsListenersTlsMode,
  *                 clientValidation: {
- *                     subjectAlternateNames: _var.ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names,
+ *                     subjectAlternateNames: ingressGatewayHostsListenersTlsClientValidationSubjectAlternateNames,
  *                     trustedCaBundle: {
- *                         type: _var.ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type,
- *                         caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
- *                         secretName: oci_vault_secret.test_secret.name,
+ *                         type: ingressGatewayHostsListenersTlsClientValidationTrustedCaBundleType,
+ *                         caBundleId: testCaBundle.id,
+ *                         secretName: testSecret.name,
  *                     },
  *                 },
  *                 serverCertificate: {
- *                     type: _var.ingress_gateway_hosts_listeners_tls_server_certificate_type,
- *                     certificateId: oci_certificates_management_certificate.test_certificate.id,
- *                     secretName: oci_vault_secret.test_secret.name,
+ *                     type: ingressGatewayHostsListenersTlsServerCertificateType,
+ *                     certificateId: testCertificate.id,
+ *                     secretName: testSecret.name,
  *                 },
  *             },
  *         }],
- *         name: _var.ingress_gateway_hosts_name,
- *         hostnames: _var.ingress_gateway_hosts_hostnames,
+ *         name: ingressGatewayHostsName,
+ *         hostnames: ingressGatewayHostsHostnames,
  *     }],
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ *     meshId: testMesh.id,
+ *     name: ingressGatewayName,
  *     accessLogging: {
- *         isEnabled: _var.ingress_gateway_access_logging_is_enabled,
+ *         isEnabled: ingressGatewayAccessLoggingIsEnabled,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.ingress_gateway_description,
+ *     description: ingressGatewayDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     mtls: {
- *         maximumValidity: _var.ingress_gateway_mtls_maximum_validity,
+ *         maximumValidity: ingressGatewayMtlsMaximumValidity,
  *     },
  * });
  * ```

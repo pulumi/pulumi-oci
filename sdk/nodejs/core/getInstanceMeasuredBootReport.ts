@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceMeasuredBootReport = oci.Core.getInstanceMeasuredBootReport({
- *     instanceId: oci_core_instance.test_instance.id,
+ *     instanceId: testInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -73,7 +73,7 @@ export interface GetInstanceMeasuredBootReportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceMeasuredBootReport = oci.Core.getInstanceMeasuredBootReport({
- *     instanceId: oci_core_instance.test_instance.id,
+ *     instanceId: testInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

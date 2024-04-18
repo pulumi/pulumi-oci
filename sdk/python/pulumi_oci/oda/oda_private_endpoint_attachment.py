@@ -192,9 +192,9 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_private_endpoint_attachment = oci.oda.OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment",
-            oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
-            oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
+        test_oda_private_endpoint_attachment = oci.oda.OdaPrivateEndpointAttachment("test_oda_private_endpoint_attachment",
+            oda_instance_id=test_oda_instance["id"],
+            oda_private_endpoint_id=test_oda_private_endpoint["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -236,9 +236,9 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oda_private_endpoint_attachment = oci.oda.OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment",
-            oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
-            oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
+        test_oda_private_endpoint_attachment = oci.oda.OdaPrivateEndpointAttachment("test_oda_private_endpoint_attachment",
+            oda_instance_id=test_oda_instance["id"],
+            oda_private_endpoint_id=test_oda_private_endpoint["id"])
         ```
         <!--End PulumiCodeChooser -->
 

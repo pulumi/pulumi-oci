@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubAwrSourcesSummary = Oci.Opsi.GetAwrHubAwrSourcesSummary.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Awr_hub_awr_sources_summary_name,
+        ///         AwrHubId = testAwrHub.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = awrHubAwrSourcesSummaryName,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testAwrHubAwrSourcesSummary = Oci.Opsi.GetAwrHubAwrSourcesSummary.Invoke(new()
         ///     {
-        ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Awr_hub_awr_sources_summary_name,
+        ///         AwrHubId = testAwrHub.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = awrHubAwrSourcesSummaryName,
         ///     });
         /// 
         /// });

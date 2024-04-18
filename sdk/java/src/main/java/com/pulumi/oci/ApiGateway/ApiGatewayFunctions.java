@@ -86,7 +86,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApiOciApigatewayApi.id())
      *             .build());
      * 
      *     }
@@ -128,7 +128,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApiOciApigatewayApi.id())
      *             .build());
      * 
      *     }
@@ -170,7 +170,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApiOciApigatewayApi.id())
      *             .build());
      * 
      *     }
@@ -212,7 +212,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApi = ApiGatewayFunctions.getApi(GetApiArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApiOciApigatewayApi.id())
      *             .build());
      * 
      *     }
@@ -254,7 +254,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -296,7 +296,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -338,7 +338,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -380,7 +380,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiContent = ApiGatewayFunctions.getApiContent(GetApiContentArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -422,7 +422,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -464,7 +464,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -506,7 +506,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -548,7 +548,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiDeploymentSpecification = ApiGatewayFunctions.getApiDeploymentSpecification(GetApiDeploymentSpecificationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -590,7 +590,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -632,7 +632,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -674,7 +674,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -716,7 +716,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiValidation = ApiGatewayFunctions.getApiValidation(GetApiValidationArgs.builder()
-     *             .apiId(oci_apigateway_api.test_api().id())
+     *             .apiId(testApi.id())
      *             .build());
      * 
      *     }
@@ -758,9 +758,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.api_display_name())
-     *             .state(var_.api_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apiDisplayName)
+     *             .state(apiState)
      *             .build());
      * 
      *     }
@@ -802,9 +802,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.api_display_name())
-     *             .state(var_.api_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apiDisplayName)
+     *             .state(apiState)
      *             .build());
      * 
      *     }
@@ -846,9 +846,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.api_display_name())
-     *             .state(var_.api_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apiDisplayName)
+     *             .state(apiState)
      *             .build());
      * 
      *     }
@@ -890,9 +890,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApis = ApiGatewayFunctions.getApis(GetApisArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.api_display_name())
-     *             .state(var_.api_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apiDisplayName)
+     *             .state(apiState)
      *             .build());
      * 
      *     }
@@ -934,7 +934,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.id())
      *             .build());
      * 
      *     }
@@ -976,7 +976,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.id())
      *             .build());
      * 
      *     }
@@ -1018,7 +1018,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.id())
      *             .build());
      * 
      *     }
@@ -1060,7 +1060,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = ApiGatewayFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_apigateway_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciApigatewayCertificate.id())
      *             .build());
      * 
      *     }
@@ -1102,9 +1102,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.certificate_display_name())
-     *             .state(var_.certificate_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(certificateDisplayName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -1146,9 +1146,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.certificate_display_name())
-     *             .state(var_.certificate_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(certificateDisplayName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -1190,9 +1190,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.certificate_display_name())
-     *             .state(var_.certificate_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(certificateDisplayName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -1234,9 +1234,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = ApiGatewayFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.certificate_display_name())
-     *             .state(var_.certificate_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(certificateDisplayName)
+     *             .state(certificateState)
      *             .build());
      * 
      *     }
@@ -1278,7 +1278,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
      *             .build());
      * 
      *     }
@@ -1320,7 +1320,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
      *             .build());
      * 
      *     }
@@ -1362,7 +1362,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
      *             .build());
      * 
      *     }
@@ -1404,7 +1404,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = ApiGatewayFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(oci_apigateway_deployment.test_deployment().id())
+     *             .deploymentId(testDeploymentOciApigatewayDeployment.id())
      *             .build());
      * 
      *     }
@@ -1446,10 +1446,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_display_name())
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
-     *             .state(var_.deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentDisplayName)
+     *             .gatewayId(testGateway.id())
+     *             .state(deploymentState)
      *             .build());
      * 
      *     }
@@ -1491,10 +1491,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_display_name())
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
-     *             .state(var_.deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentDisplayName)
+     *             .gatewayId(testGateway.id())
+     *             .state(deploymentState)
      *             .build());
      * 
      *     }
@@ -1536,10 +1536,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_display_name())
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
-     *             .state(var_.deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentDisplayName)
+     *             .gatewayId(testGateway.id())
+     *             .state(deploymentState)
      *             .build());
      * 
      *     }
@@ -1581,10 +1581,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployments = ApiGatewayFunctions.getDeployments(GetDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.deployment_display_name())
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
-     *             .state(var_.deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(deploymentDisplayName)
+     *             .gatewayId(testGateway.id())
+     *             .state(deploymentState)
      *             .build());
      * 
      *     }
@@ -1626,7 +1626,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.id())
      *             .build());
      * 
      *     }
@@ -1668,7 +1668,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.id())
      *             .build());
      * 
      *     }
@@ -1710,7 +1710,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.id())
      *             .build());
      * 
      *     }
@@ -1752,7 +1752,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateway = ApiGatewayFunctions.getGateway(GetGatewayArgs.builder()
-     *             .gatewayId(oci_apigateway_gateway.test_gateway().id())
+     *             .gatewayId(testGatewayOciApigatewayGateway.id())
      *             .build());
      * 
      *     }
@@ -1794,10 +1794,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
-     *             .displayName(var_.gateway_display_name())
-     *             .state(var_.gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .displayName(gatewayDisplayName)
+     *             .state(gatewayState)
      *             .build());
      * 
      *     }
@@ -1839,10 +1839,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
-     *             .displayName(var_.gateway_display_name())
-     *             .state(var_.gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .displayName(gatewayDisplayName)
+     *             .state(gatewayState)
      *             .build());
      * 
      *     }
@@ -1884,10 +1884,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
-     *             .displayName(var_.gateway_display_name())
-     *             .state(var_.gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .displayName(gatewayDisplayName)
+     *             .state(gatewayState)
      *             .build());
      * 
      *     }
@@ -1929,10 +1929,10 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGateways = ApiGatewayFunctions.getGateways(GetGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .certificateId(var_.oci_apigateway_certificate().test_certificate().id())
-     *             .displayName(var_.gateway_display_name())
-     *             .state(var_.gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .certificateId(ociApigatewayCertificate.testCertificate().id())
+     *             .displayName(gatewayDisplayName)
+     *             .state(gatewayState)
      *             .build());
      * 
      *     }
@@ -1974,7 +1974,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
      *             .build());
      * 
      *     }
@@ -2016,7 +2016,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
      *             .build());
      * 
      *     }
@@ -2058,7 +2058,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
      *             .build());
      * 
      *     }
@@ -2100,7 +2100,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriber = ApiGatewayFunctions.getSubscriber(GetSubscriberArgs.builder()
-     *             .subscriberId(oci_apigateway_subscriber.test_subscriber().id())
+     *             .subscriberId(testSubscriberOciApigatewaySubscriber.id())
      *             .build());
      * 
      *     }
@@ -2142,9 +2142,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subscriber_display_name())
-     *             .state(var_.subscriber_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriberDisplayName)
+     *             .state(subscriberState)
      *             .build());
      * 
      *     }
@@ -2186,9 +2186,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subscriber_display_name())
-     *             .state(var_.subscriber_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriberDisplayName)
+     *             .state(subscriberState)
      *             .build());
      * 
      *     }
@@ -2230,9 +2230,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subscriber_display_name())
-     *             .state(var_.subscriber_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriberDisplayName)
+     *             .state(subscriberState)
      *             .build());
      * 
      *     }
@@ -2274,9 +2274,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscribers = ApiGatewayFunctions.getSubscribers(GetSubscribersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.subscriber_display_name())
-     *             .state(var_.subscriber_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(subscriberDisplayName)
+     *             .state(subscriberState)
      *             .build());
      * 
      *     }
@@ -2318,7 +2318,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
      *             .build());
      * 
      *     }
@@ -2360,7 +2360,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
      *             .build());
      * 
      *     }
@@ -2402,7 +2402,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
      *             .build());
      * 
      *     }
@@ -2444,7 +2444,7 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlan = ApiGatewayFunctions.getUsagePlan(GetUsagePlanArgs.builder()
-     *             .usagePlanId(oci_apigateway_usage_plan.test_usage_plan().id())
+     *             .usagePlanId(testUsagePlanOciApigatewayUsagePlan.id())
      *             .build());
      * 
      *     }
@@ -2486,9 +2486,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.usage_plan_display_name())
-     *             .state(var_.usage_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(usagePlanDisplayName)
+     *             .state(usagePlanState)
      *             .build());
      * 
      *     }
@@ -2530,9 +2530,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.usage_plan_display_name())
-     *             .state(var_.usage_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(usagePlanDisplayName)
+     *             .state(usagePlanState)
      *             .build());
      * 
      *     }
@@ -2574,9 +2574,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.usage_plan_display_name())
-     *             .state(var_.usage_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(usagePlanDisplayName)
+     *             .state(usagePlanState)
      *             .build());
      * 
      *     }
@@ -2618,9 +2618,9 @@ public final class ApiGatewayFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsagePlans = ApiGatewayFunctions.getUsagePlans(GetUsagePlansArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.usage_plan_display_name())
-     *             .state(var_.usage_plan_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(usagePlanDisplayName)
+     *             .state(usagePlanState)
      *             .build());
      * 
      *     }

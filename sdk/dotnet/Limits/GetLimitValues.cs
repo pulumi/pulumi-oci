@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testLimitValues = Oci.Limits.GetLimitValues.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         ServiceName = oci_limits_service.Test_service.Name,
-        ///         AvailabilityDomain = @var.Limit_value_availability_domain,
-        ///         Name = @var.Limit_value_name,
-        ///         ScopeType = @var.Limit_value_scope_type,
+        ///         CompartmentId = tenancyOcid,
+        ///         ServiceName = testService.Name,
+        ///         AvailabilityDomain = limitValueAvailabilityDomain,
+        ///         Name = limitValueName,
+        ///         ScopeType = limitValueScopeType,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testLimitValues = Oci.Limits.GetLimitValues.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         ServiceName = oci_limits_service.Test_service.Name,
-        ///         AvailabilityDomain = @var.Limit_value_availability_domain,
-        ///         Name = @var.Limit_value_name,
-        ///         ScopeType = @var.Limit_value_scope_type,
+        ///         CompartmentId = tenancyOcid,
+        ///         ServiceName = testService.Name,
+        ///         AvailabilityDomain = limitValueAvailabilityDomain,
+        ///         Name = limitValueName,
+        ///         ScopeType = limitValueScopeType,
         ///     });
         /// 
         /// });

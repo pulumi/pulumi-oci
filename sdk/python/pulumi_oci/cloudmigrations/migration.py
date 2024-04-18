@@ -337,17 +337,17 @@ class Migration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_migration = oci.cloud_migrations.Migration("testMigration",
-            compartment_id=var["compartment_id"],
-            display_name=var["migration_display_name"],
+        test_migration = oci.cloud_migrations.Migration("test_migration",
+            compartment_id=compartment_id,
+            display_name=migration_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_completed=var["migration_is_completed"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
+            is_completed=migration_is_completed,
+            replication_schedule_id=test_replication_schedule["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -390,17 +390,17 @@ class Migration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_migration = oci.cloud_migrations.Migration("testMigration",
-            compartment_id=var["compartment_id"],
-            display_name=var["migration_display_name"],
+        test_migration = oci.cloud_migrations.Migration("test_migration",
+            compartment_id=compartment_id,
+            display_name=migration_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_completed=var["migration_is_completed"],
-            replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"])
+            is_completed=migration_is_completed,
+            replication_schedule_id=test_replication_schedule["id"])
         ```
         <!--End PulumiCodeChooser -->
 

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeImageCapabilitySchemas(ctx, &core.GetComputeImageCapabilitySchemasArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Compute_image_capability_schema_display_name),
-//				ImageId:       pulumi.StringRef(oci_core_image.Test_image.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(computeImageCapabilitySchemaDisplayName),
+//				ImageId:       pulumi.StringRef(testImage.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

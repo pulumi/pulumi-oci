@@ -107,8 +107,8 @@ def get_inventories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=var["compartment_id"],
-        state=var["inventory_state"])
+    test_inventories = oci.CloudBridge.get_inventories(compartment_id=compartment_id,
+        state=inventory_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_inventories_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_inventories = oci.CloudBridge.get_inventories(compartment_id=var["compartment_id"],
-        state=var["inventory_state"])
+    test_inventories = oci.CloudBridge.get_inventories(compartment_id=compartment_id,
+        state=inventory_state)
     ```
     <!--End PulumiCodeChooser -->
 

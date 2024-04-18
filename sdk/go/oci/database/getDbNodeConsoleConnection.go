@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbNodeConsoleConnection(ctx, &database.GetDbNodeConsoleConnectionArgs{
-//				DbNodeId: oci_database_db_node.Test_db_node.Id,
-//				Id:       _var.Db_node_console_connection_id,
+//				DbNodeId: testDbNode.Id,
+//				Id:       dbNodeConsoleConnectionId,
 //			}, nil)
 //			if err != nil {
 //				return err

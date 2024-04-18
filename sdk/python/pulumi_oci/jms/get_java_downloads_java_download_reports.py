@@ -130,10 +130,10 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_reports = oci.Jms.get_java_downloads_java_download_reports(compartment_id=var["tenancy_ocid"],
-        display_name=var["java_download_report_display_name"],
-        java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"],
-        state=var["java_download_report_state"])
+    test_java_download_reports = oci.Jms.get_java_downloads_java_download_reports(compartment_id=tenancy_ocid,
+        display_name=java_download_report_display_name,
+        java_download_report_id=test_java_download_report["id"],
+        state=java_download_report_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_java_downloads_java_download_reports_output(compartment_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_reports = oci.Jms.get_java_downloads_java_download_reports(compartment_id=var["tenancy_ocid"],
-        display_name=var["java_download_report_display_name"],
-        java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"],
-        state=var["java_download_report_state"])
+    test_java_download_reports = oci.Jms.get_java_downloads_java_download_reports(compartment_id=tenancy_ocid,
+        display_name=java_download_report_display_name,
+        java_download_report_id=test_java_download_report["id"],
+        state=java_download_report_state)
     ```
     <!--End PulumiCodeChooser -->
 

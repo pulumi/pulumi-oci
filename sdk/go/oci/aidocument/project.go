@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiDocument.NewProject(ctx, "testProject", &AiDocument.ProjectArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DefinedTags:   pulumi.Any(_var.Project_defined_tags),
-//				Description:   pulumi.Any(_var.Project_description),
-//				DisplayName:   pulumi.Any(_var.Project_display_name),
-//				FreeformTags:  pulumi.Any(_var.Project_freeform_tags),
+//			_, err := AiDocument.NewProject(ctx, "test_project", &AiDocument.ProjectArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DefinedTags:   pulumi.Any(projectDefinedTags),
+//				Description:   pulumi.Any(projectDescription),
+//				DisplayName:   pulumi.Any(projectDisplayName),
+//				FreeformTags:  pulumi.Any(projectFreeformTags),
 //			})
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDeploymentBackup(ctx, &goldengate.GetDeploymentBackupArgs{
-//				DeploymentBackupId: oci_golden_gate_deployment_backup.Test_deployment_backup.Id,
+//				DeploymentBackupId: testDeploymentBackupOciGoldenGateDeploymentBackup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

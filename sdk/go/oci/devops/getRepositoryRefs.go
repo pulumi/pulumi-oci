@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryRefs(ctx, &devops.GetRepositoryRefsArgs{
-//				RepositoryId: oci_devops_repository.Test_repository.Id,
-//				CommitId:     pulumi.StringRef(oci_devops_commit.Test_commit.Id),
-//				RefName:      pulumi.StringRef(_var.Repository_ref_ref_name),
-//				RefType:      pulumi.StringRef(_var.Repository_ref_ref_type),
+//				RepositoryId: testRepository.Id,
+//				CommitId:     pulumi.StringRef(testCommit.Id),
+//				RefName:      pulumi.StringRef(repositoryRefRefName),
+//				RefType:      pulumi.StringRef(repositoryRefRefType),
 //			}, nil)
 //			if err != nil {
 //				return err

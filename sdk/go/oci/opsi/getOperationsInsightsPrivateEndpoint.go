@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOperationsInsightsPrivateEndpoint(ctx, &opsi.GetOperationsInsightsPrivateEndpointArgs{
-//				OperationsInsightsPrivateEndpointId: oci_opsi_operations_insights_private_endpoint.Test_operations_insights_private_endpoint.Id,
+//				OperationsInsightsPrivateEndpointId: testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

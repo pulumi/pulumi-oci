@@ -19,51 +19,51 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnection = new oci.databasemigration.Connection("testConnection", {
+ * const testConnection = new oci.databasemigration.Connection("test_connection", {
  *     adminCredentials: {
- *         password: _var.connection_admin_credentials_password,
- *         username: _var.connection_admin_credentials_username,
+ *         password: connectionAdminCredentialsPassword,
+ *         username: connectionAdminCredentialsUsername,
  *     },
- *     compartmentId: _var.compartment_id,
- *     databaseType: _var.connection_database_type,
+ *     compartmentId: compartmentId,
+ *     databaseType: connectionDatabaseType,
  *     vaultDetails: {
- *         compartmentId: _var.compartment_id,
- *         keyId: oci_kms_key.test_key.id,
- *         vaultId: oci_kms_vault.test_vault.id,
+ *         compartmentId: compartmentId,
+ *         keyId: testKey.id,
+ *         vaultId: testVault.id,
  *     },
- *     certificateTdn: _var.connection_certificate_tdn,
+ *     certificateTdn: connectionCertificateTdn,
  *     connectDescriptor: {
- *         connectString: _var.connection_connect_descriptor_connect_string,
- *         databaseServiceName: oci_core_service.test_service.name,
- *         host: _var.connection_connect_descriptor_host,
- *         port: _var.connection_connect_descriptor_port,
+ *         connectString: connectionConnectDescriptorConnectString,
+ *         databaseServiceName: testService.name,
+ *         host: connectionConnectDescriptorHost,
+ *         port: connectionConnectDescriptorPort,
  *     },
- *     databaseId: oci_database_database.test_database.id,
+ *     databaseId: testDatabase.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.connection_display_name,
+ *     displayName: connectionDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     nsgIds: _var.connection_nsg_ids,
+ *     nsgIds: connectionNsgIds,
  *     privateEndpoint: {
- *         compartmentId: _var.compartment_id,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         vcnId: oci_core_vcn.test_vcn.id,
+ *         compartmentId: compartmentId,
+ *         subnetId: testSubnet.id,
+ *         vcnId: testVcn.id,
  *     },
  *     replicationCredentials: {
- *         password: _var.connection_replication_credentials_password,
- *         username: _var.connection_replication_credentials_username,
+ *         password: connectionReplicationCredentialsPassword,
+ *         username: connectionReplicationCredentialsUsername,
  *     },
  *     sshDetails: {
- *         host: _var.connection_ssh_details_host,
- *         sshkey: _var.connection_ssh_details_sshkey,
- *         user: _var.connection_ssh_details_user,
- *         sudoLocation: _var.connection_ssh_details_sudo_location,
+ *         host: connectionSshDetailsHost,
+ *         sshkey: connectionSshDetailsSshkey,
+ *         user: connectionSshDetailsUser,
+ *         sudoLocation: connectionSshDetailsSudoLocation,
  *     },
- *     tlsKeystore: _var.connection_tls_keystore,
- *     tlsWallet: _var.connection_tls_wallet,
+ *     tlsKeystore: connectionTlsKeystore,
+ *     tlsWallet: connectionTlsWallet,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

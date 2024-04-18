@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.operations_insights_private_endpoint_compartment_id_in_subtree,
- *     displayName: _var.operations_insights_private_endpoint_display_name,
- *     isUsedForRacDbs: _var.operations_insights_private_endpoint_is_used_for_rac_dbs,
- *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     states: _var.operations_insights_private_endpoint_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+ *     displayName: operationsInsightsPrivateEndpointDisplayName,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     opsiPrivateEndpointId: testPrivateEndpoint.id,
+ *     states: operationsInsightsPrivateEndpointState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,13 +130,13 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.operations_insights_private_endpoint_compartment_id_in_subtree,
- *     displayName: _var.operations_insights_private_endpoint_display_name,
- *     isUsedForRacDbs: _var.operations_insights_private_endpoint_is_used_for_rac_dbs,
- *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
- *     states: _var.operations_insights_private_endpoint_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
+ *     displayName: operationsInsightsPrivateEndpointDisplayName,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     opsiPrivateEndpointId: testPrivateEndpoint.id,
+ *     states: operationsInsightsPrivateEndpointState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

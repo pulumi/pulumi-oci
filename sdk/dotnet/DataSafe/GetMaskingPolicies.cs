@@ -29,16 +29,16 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPolicies = Oci.DataSafe.GetMaskingPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Masking_policy_access_level,
-        ///         CompartmentIdInSubtree = @var.Masking_policy_compartment_id_in_subtree,
-        ///         DisplayName = @var.Masking_policy_display_name,
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         State = @var.Masking_policy_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Masking_policy_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Masking_policy_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = maskingPolicyAccessLevel,
+        ///         CompartmentIdInSubtree = maskingPolicyCompartmentIdInSubtree,
+        ///         DisplayName = maskingPolicyDisplayName,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = maskingPolicyState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = maskingPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = maskingPolicyTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -66,16 +66,16 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPolicies = Oci.DataSafe.GetMaskingPolicies.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Masking_policy_access_level,
-        ///         CompartmentIdInSubtree = @var.Masking_policy_compartment_id_in_subtree,
-        ///         DisplayName = @var.Masking_policy_display_name,
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         State = @var.Masking_policy_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Masking_policy_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Masking_policy_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = maskingPolicyAccessLevel,
+        ///         CompartmentIdInSubtree = maskingPolicyCompartmentIdInSubtree,
+        ///         DisplayName = maskingPolicyDisplayName,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         State = maskingPolicyState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = maskingPolicyTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = maskingPolicyTimeCreatedLessThan,
         ///     });
         /// 
         /// });

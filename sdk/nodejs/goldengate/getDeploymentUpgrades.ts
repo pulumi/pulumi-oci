@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentUpgrades = oci.GoldenGate.getDeploymentUpgrades({
- *     compartmentId: _var.compartment_id,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     displayName: _var.deployment_upgrade_display_name,
- *     state: _var.deployment_upgrade_state,
+ *     compartmentId: compartmentId,
+ *     deploymentId: testDeployment.id,
+ *     displayName: deploymentUpgradeDisplayName,
+ *     state: deploymentUpgradeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetDeploymentUpgradesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentUpgrades = oci.GoldenGate.getDeploymentUpgrades({
- *     compartmentId: _var.compartment_id,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
- *     displayName: _var.deployment_upgrade_display_name,
- *     state: _var.deployment_upgrade_state,
+ *     compartmentId: compartmentId,
+ *     deploymentId: testDeployment.id,
+ *     displayName: deploymentUpgradeDisplayName,
+ *     state: deploymentUpgradeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Analytics
         /// {
         ///     var testAnalyticsInstancePrivateAccessChannel = Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.Invoke(new()
         ///     {
-        ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-        ///         PrivateAccessChannelKey = @var.Analytics_instance_private_access_channel_private_access_channel_key,
+        ///         AnalyticsInstanceId = testAnalyticsInstance.Id,
+        ///         PrivateAccessChannelKey = analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Analytics
         /// {
         ///     var testAnalyticsInstancePrivateAccessChannel = Oci.Analytics.GetAnalyticsInstancePrivateAccessChannel.Invoke(new()
         ///     {
-        ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-        ///         PrivateAccessChannelKey = @var.Analytics_instance_private_access_channel_private_access_channel_key,
+        ///         AnalyticsInstanceId = testAnalyticsInstance.Id,
+        ///         PrivateAccessChannelKey = analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
         ///     });
         /// 
         /// });

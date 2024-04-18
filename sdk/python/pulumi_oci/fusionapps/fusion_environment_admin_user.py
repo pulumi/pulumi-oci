@@ -271,13 +271,13 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_admin_user = oci.fusion_apps.FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser",
-            email_address=var["fusion_environment_admin_user_email_address"],
-            first_name=var["fusion_environment_admin_user_first_name"],
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            last_name=var["fusion_environment_admin_user_last_name"],
-            password=var["fusion_environment_admin_user_password"],
-            username=var["fusion_environment_admin_user_username"])
+        test_fusion_environment_admin_user = oci.fusion_apps.FusionEnvironmentAdminUser("test_fusion_environment_admin_user",
+            email_address=fusion_environment_admin_user_email_address,
+            first_name=fusion_environment_admin_user_first_name,
+            fusion_environment_id=test_fusion_environment["id"],
+            last_name=fusion_environment_admin_user_last_name,
+            password=fusion_environment_admin_user_password,
+            username=fusion_environment_admin_user_username)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -320,13 +320,13 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_fusion_environment_admin_user = oci.fusion_apps.FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser",
-            email_address=var["fusion_environment_admin_user_email_address"],
-            first_name=var["fusion_environment_admin_user_first_name"],
-            fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
-            last_name=var["fusion_environment_admin_user_last_name"],
-            password=var["fusion_environment_admin_user_password"],
-            username=var["fusion_environment_admin_user_username"])
+        test_fusion_environment_admin_user = oci.fusion_apps.FusionEnvironmentAdminUser("test_fusion_environment_admin_user",
+            email_address=fusion_environment_admin_user_email_address,
+            first_name=fusion_environment_admin_user_first_name,
+            fusion_environment_id=test_fusion_environment["id"],
+            last_name=fusion_environment_admin_user_last_name,
+            password=fusion_environment_admin_user_password,
+            username=fusion_environment_admin_user_username)
         ```
         <!--End PulumiCodeChooser -->
 

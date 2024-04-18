@@ -31,36 +31,37 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewAccessPolicy(ctx, "testAccessPolicy", &ServiceMesh.AccessPolicyArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				MeshId:        pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//			_, err := ServiceMesh.NewAccessPolicy(ctx, "test_access_policy", &ServiceMesh.AccessPolicyArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				MeshId:        pulumi.Any(testMesh.Id),
+//				Name:          pulumi.Any(accessPolicyName),
 //				Rules: servicemesh.AccessPolicyRuleArray{
 //					&servicemesh.AccessPolicyRuleArgs{
-//						Action: pulumi.Any(_var.Access_policy_rules_action),
+//						Action: pulumi.Any(accessPolicyRulesAction),
 //						Destination: &servicemesh.AccessPolicyRuleDestinationArgs{
-//							Type:             pulumi.Any(_var.Access_policy_rules_destination_type),
-//							Hostnames:        pulumi.Any(_var.Access_policy_rules_destination_hostnames),
-//							IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-//							IpAddresses:      pulumi.Any(_var.Access_policy_rules_destination_ip_addresses),
-//							Ports:            pulumi.Any(_var.Access_policy_rules_destination_ports),
-//							Protocol:         pulumi.Any(_var.Access_policy_rules_destination_protocol),
-//							VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//							Type:             pulumi.Any(accessPolicyRulesDestinationType),
+//							Hostnames:        pulumi.Any(accessPolicyRulesDestinationHostnames),
+//							IngressGatewayId: pulumi.Any(testIngressGateway.Id),
+//							IpAddresses:      pulumi.Any(accessPolicyRulesDestinationIpAddresses),
+//							Ports:            pulumi.Any(accessPolicyRulesDestinationPorts),
+//							Protocol:         pulumi.Any(accessPolicyRulesDestinationProtocol),
+//							VirtualServiceId: pulumi.Any(testVirtualService.Id),
 //						},
 //						Source: &servicemesh.AccessPolicyRuleSourceArgs{
-//							Type:             pulumi.Any(_var.Access_policy_rules_source_type),
-//							Hostnames:        pulumi.Any(_var.Access_policy_rules_source_hostnames),
-//							IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
-//							IpAddresses:      pulumi.Any(_var.Access_policy_rules_source_ip_addresses),
-//							Ports:            pulumi.Any(_var.Access_policy_rules_source_ports),
-//							Protocol:         pulumi.Any(_var.Access_policy_rules_source_protocol),
-//							VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//							Type:             pulumi.Any(accessPolicyRulesSourceType),
+//							Hostnames:        pulumi.Any(accessPolicyRulesSourceHostnames),
+//							IngressGatewayId: pulumi.Any(testIngressGateway.Id),
+//							IpAddresses:      pulumi.Any(accessPolicyRulesSourceIpAddresses),
+//							Ports:            pulumi.Any(accessPolicyRulesSourcePorts),
+//							Protocol:         pulumi.Any(accessPolicyRulesSourceProtocol),
+//							VirtualServiceId: pulumi.Any(testVirtualService.Id),
 //						},
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Access_policy_description),
+//				Description: pulumi.Any(accessPolicyDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

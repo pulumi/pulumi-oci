@@ -25,35 +25,35 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVmCluster = new Oci.Database.VmCluster("testVmCluster", new()
+    ///     var testVmCluster = new Oci.Database.VmCluster("test_vm_cluster", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         CpuCoreCount = @var.Vm_cluster_cpu_core_count,
-    ///         DisplayName = @var.Vm_cluster_display_name,
-    ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-    ///         GiVersion = @var.Vm_cluster_gi_version,
-    ///         SshPublicKeys = @var.Vm_cluster_ssh_public_keys,
-    ///         VmClusterNetworkId = oci_database_vm_cluster_network.Test_vm_cluster_network.Id,
+    ///         CompartmentId = compartmentId,
+    ///         CpuCoreCount = vmClusterCpuCoreCount,
+    ///         DisplayName = vmClusterDisplayName,
+    ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+    ///         GiVersion = vmClusterGiVersion,
+    ///         SshPublicKeys = vmClusterSshPublicKeys,
+    ///         VmClusterNetworkId = testVmClusterNetwork.Id,
     ///         DataCollectionOptions = new Oci.Database.Inputs.VmClusterDataCollectionOptionsArgs
     ///         {
-    ///             IsDiagnosticsEventsEnabled = @var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled,
-    ///             IsHealthMonitoringEnabled = @var.Vm_cluster_data_collection_options_is_health_monitoring_enabled,
-    ///             IsIncidentLogsEnabled = @var.Vm_cluster_data_collection_options_is_incident_logs_enabled,
+    ///             IsDiagnosticsEventsEnabled = vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
+    ///             IsHealthMonitoringEnabled = vmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
+    ///             IsIncidentLogsEnabled = vmClusterDataCollectionOptionsIsIncidentLogsEnabled,
     ///         },
-    ///         DataStorageSizeInTbs = @var.Vm_cluster_data_storage_size_in_tbs,
-    ///         DbNodeStorageSizeInGbs = @var.Vm_cluster_db_node_storage_size_in_gbs,
-    ///         DbServers = @var.Vm_cluster_db_servers,
-    ///         DefinedTags = @var.Vm_cluster_defined_tags,
+    ///         DataStorageSizeInTbs = vmClusterDataStorageSizeInTbs,
+    ///         DbNodeStorageSizeInGbs = vmClusterDbNodeStorageSizeInGbs,
+    ///         DbServers = vmClusterDbServers,
+    ///         DefinedTags = vmClusterDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsLocalBackupEnabled = @var.Vm_cluster_is_local_backup_enabled,
-    ///         IsSparseDiskgroupEnabled = @var.Vm_cluster_is_sparse_diskgroup_enabled,
-    ///         LicenseModel = @var.Vm_cluster_license_model,
-    ///         MemorySizeInGbs = @var.Vm_cluster_memory_size_in_gbs,
-    ///         SystemVersion = @var.Vm_cluster_system_version,
-    ///         TimeZone = @var.Vm_cluster_time_zone,
+    ///         IsLocalBackupEnabled = vmClusterIsLocalBackupEnabled,
+    ///         IsSparseDiskgroupEnabled = vmClusterIsSparseDiskgroupEnabled,
+    ///         LicenseModel = vmClusterLicenseModel,
+    ///         MemorySizeInGbs = vmClusterMemorySizeInGbs,
+    ///         SystemVersion = vmClusterSystemVersion,
+    ///         TimeZone = vmClusterTimeZone,
     ///     });
     /// 
     /// });

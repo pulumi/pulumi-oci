@@ -49,21 +49,21 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint(&#34;testDatabaseToolsPrivateEndpoint&#34;, DatabaseToolsPrivateEndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.database_tools_private_endpoint_display_name())
- *             .endpointServiceId(oci_core_service.test_service().id())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(databaseToolsPrivateEndpointDisplayName)
+ *             .endpointServiceId(testService.id())
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.database_tools_private_endpoint_description())
+ *             .description(databaseToolsPrivateEndpointDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .locks(DatabaseToolsPrivateEndpointLockArgs.builder()
- *                 .type(var_.database_tools_private_endpoint_locks_type())
- *                 .message(var_.database_tools_private_endpoint_locks_message())
- *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
- *                 .timeCreated(var_.database_tools_private_endpoint_locks_time_created())
+ *                 .type(databaseToolsPrivateEndpointLocksType)
+ *                 .message(databaseToolsPrivateEndpointLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(databaseToolsPrivateEndpointLocksTimeCreated)
  *                 .build())
- *             .nsgIds(var_.database_tools_private_endpoint_nsg_ids())
- *             .privateEndpointIp(var_.database_tools_private_endpoint_private_endpoint_ip())
+ *             .nsgIds(databaseToolsPrivateEndpointNsgIds)
+ *             .privateEndpointIp(databaseToolsPrivateEndpointPrivateEndpointIp)
  *             .build());
  * 
  *     }

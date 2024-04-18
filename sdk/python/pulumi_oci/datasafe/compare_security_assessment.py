@@ -126,9 +126,9 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compare_security_assessment = oci.data_safe.CompareSecurityAssessment("testCompareSecurityAssessment",
-            comparison_security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-            security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
+        test_compare_security_assessment = oci.data_safe.CompareSecurityAssessment("test_compare_security_assessment",
+            comparison_security_assessment_id=test_security_assessment["id"],
+            security_assessment_id=test_security_assessment["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -168,9 +168,9 @@ class CompareSecurityAssessment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compare_security_assessment = oci.data_safe.CompareSecurityAssessment("testCompareSecurityAssessment",
-            comparison_security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"],
-            security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
+        test_compare_security_assessment = oci.data_safe.CompareSecurityAssessment("test_compare_security_assessment",
+            comparison_security_assessment_id=test_security_assessment["id"],
+            security_assessment_id=test_security_assessment["id"])
         ```
         <!--End PulumiCodeChooser -->
 

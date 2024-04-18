@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeImageCapabilitySchema = oci.Core.getComputeImageCapabilitySchema({
- *     computeImageCapabilitySchemaId: oci_core_compute_image_capability_schema.test_compute_image_capability_schema.id,
- *     isMergeEnabled: _var.compute_image_capability_schema_is_merge_enabled,
+ *     computeImageCapabilitySchemaId: testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id,
+ *     isMergeEnabled: computeImageCapabilitySchemaIsMergeEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,8 +106,8 @@ export interface GetComputeImageCapabilitySchemaResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeImageCapabilitySchema = oci.Core.getComputeImageCapabilitySchema({
- *     computeImageCapabilitySchemaId: oci_core_compute_image_capability_schema.test_compute_image_capability_schema.id,
- *     isMergeEnabled: _var.compute_image_capability_schema_is_merge_enabled,
+ *     computeImageCapabilitySchemaId: testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.id,
+ *     isMergeEnabled: computeImageCapabilitySchemaIsMergeEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

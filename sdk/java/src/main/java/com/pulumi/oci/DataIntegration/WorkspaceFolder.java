@@ -52,20 +52,21 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWorkspaceFolder = new WorkspaceFolder(&#34;testWorkspaceFolder&#34;, WorkspaceFolderArgs.builder()        
- *             .identifier(var_.workspace_folder_identifier())
+ *             .identifier(workspaceFolderIdentifier)
+ *             .name(workspaceFolderName)
  *             .registryMetadata(WorkspaceFolderRegistryMetadataArgs.builder()
- *                 .aggregatorKey(var_.workspace_folder_registry_metadata_aggregator_key())
- *                 .isFavorite(var_.workspace_folder_registry_metadata_is_favorite())
- *                 .key(var_.workspace_folder_registry_metadata_key())
- *                 .labels(var_.workspace_folder_registry_metadata_labels())
- *                 .registryVersion(var_.workspace_folder_registry_metadata_registry_version())
+ *                 .aggregatorKey(workspaceFolderRegistryMetadataAggregatorKey)
+ *                 .isFavorite(workspaceFolderRegistryMetadataIsFavorite)
+ *                 .key(workspaceFolderRegistryMetadataKey)
+ *                 .labels(workspaceFolderRegistryMetadataLabels)
+ *                 .registryVersion(workspaceFolderRegistryMetadataRegistryVersion)
  *                 .build())
- *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
- *             .categoryName(oci_marketplace_category.test_category().name())
- *             .description(var_.workspace_folder_description())
- *             .key(var_.workspace_folder_key())
- *             .modelVersion(var_.workspace_folder_model_version())
- *             .objectStatus(var_.workspace_folder_object_status())
+ *             .workspaceId(testWorkspace.id())
+ *             .categoryName(testCategory.name())
+ *             .description(workspaceFolderDescription)
+ *             .key(workspaceFolderKey)
+ *             .modelVersion(workspaceFolderModelVersion)
+ *             .objectStatus(workspaceFolderObjectStatus)
  *             .build());
  * 
  *     }

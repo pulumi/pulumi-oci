@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
- *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
- *     name: _var.resolver_endpoint_name,
- *     state: _var.resolver_endpoint_state,
+ *     name: resolverEndpointName,
+ *     state: resolverEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetResolverEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResolverEndpoints = oci.Dns.getResolverEndpoints({
- *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     resolverId: testResolver.id,
  *     scope: "PRIVATE",
- *     name: _var.resolver_endpoint_name,
- *     state: _var.resolver_endpoint_state,
+ *     name: resolverEndpointName,
+ *     state: resolverEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testOnPremConnectors = Oci.DataSafe.GetOnpremConnectors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.On_prem_connector_access_level,
-        ///         CompartmentIdInSubtree = @var.On_prem_connector_compartment_id_in_subtree,
-        ///         DisplayName = @var.On_prem_connector_display_name,
-        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-        ///         OnPremConnectorLifecycleState = @var.On_prem_connector_on_prem_connector_lifecycle_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = onPremConnectorAccessLevel,
+        ///         CompartmentIdInSubtree = onPremConnectorCompartmentIdInSubtree,
+        ///         DisplayName = onPremConnectorDisplayName,
+        ///         OnPremConnectorId = testOnPremConnector.Id,
+        ///         OnPremConnectorLifecycleState = onPremConnectorOnPremConnectorLifecycleState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testOnPremConnectors = Oci.DataSafe.GetOnpremConnectors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.On_prem_connector_access_level,
-        ///         CompartmentIdInSubtree = @var.On_prem_connector_compartment_id_in_subtree,
-        ///         DisplayName = @var.On_prem_connector_display_name,
-        ///         OnPremConnectorId = oci_data_safe_on_prem_connector.Test_on_prem_connector.Id,
-        ///         OnPremConnectorLifecycleState = @var.On_prem_connector_on_prem_connector_lifecycle_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = onPremConnectorAccessLevel,
+        ///         CompartmentIdInSubtree = onPremConnectorCompartmentIdInSubtree,
+        ///         DisplayName = onPremConnectorDisplayName,
+        ///         OnPremConnectorId = testOnPremConnector.Id,
+        ///         OnPremConnectorLifecycleState = onPremConnectorOnPremConnectorLifecycleState,
         ///     });
         /// 
         /// });

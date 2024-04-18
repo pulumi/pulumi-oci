@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiLanguage.NewProject(ctx, "testProject", &AiLanguage.ProjectArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := AiLanguage.NewProject(ctx, "test_project", &AiLanguage.ProjectArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Project_description),
-//				DisplayName: pulumi.Any(_var.Project_display_name),
+//				Description: pulumi.Any(projectDescription),
+//				DisplayName: pulumi.Any(projectDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

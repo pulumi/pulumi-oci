@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetEkmsPrivateEndpoints(ctx, &kms.GetEkmsPrivateEndpointsArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetSoftwareSources(ctx, &osmanagement.GetSoftwareSourcesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Software_source_display_name),
-//				State:         pulumi.StringRef(_var.Software_source_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(softwareSourceDisplayName),
+//				State:         pulumi.StringRef(softwareSourceState),
 //			}, nil)
 //			if err != nil {
 //				return err

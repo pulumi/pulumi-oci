@@ -25,11 +25,11 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNamespace = new Oci.LogAnalytics.Namespace("testNamespace", new()
+    ///     var testNamespace = new Oci.LogAnalytics.Namespace("test_namespace", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsOnboarded = @var.Is_onboarded,
-    ///         NamespaceName = @var.Namespace_namespace,
+    ///         CompartmentId = compartmentId,
+    ///         IsOnboarded = isOnboarded,
+    ///         NamespaceName = namespaceNamespace,
     ///     });
     /// 
     /// });

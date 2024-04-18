@@ -25,48 +25,48 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPipelineRun = new Oci.DataScience.PipelineRun("testPipelineRun", new()
+    ///     var testPipelineRun = new Oci.DataScience.PipelineRun("test_pipeline_run", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         PipelineId = oci_datascience_pipeline.Test_pipeline.Id,
+    ///         CompartmentId = compartmentId,
+    ///         PipelineId = testPipeline.Id,
     ///         ConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunConfigurationOverrideDetailsArgs
     ///         {
-    ///             Type = @var.Pipeline_run_configuration_override_details_type,
-    ///             CommandLineArguments = @var.Pipeline_run_configuration_override_details_command_line_arguments,
-    ///             EnvironmentVariables = @var.Pipeline_run_configuration_override_details_environment_variables,
-    ///             MaximumRuntimeInMinutes = @var.Pipeline_run_configuration_override_details_maximum_runtime_in_minutes,
+    ///             Type = pipelineRunConfigurationOverrideDetailsType,
+    ///             CommandLineArguments = pipelineRunConfigurationOverrideDetailsCommandLineArguments,
+    ///             EnvironmentVariables = pipelineRunConfigurationOverrideDetailsEnvironmentVariables,
+    ///             MaximumRuntimeInMinutes = pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Pipeline_run_display_name,
+    ///         DisplayName = pipelineRunDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         LogConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunLogConfigurationOverrideDetailsArgs
     ///         {
-    ///             EnableAutoLogCreation = @var.Pipeline_run_log_configuration_override_details_enable_auto_log_creation,
-    ///             EnableLogging = @var.Pipeline_run_log_configuration_override_details_enable_logging,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             EnableAutoLogCreation = pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
+    ///             EnableLogging = pipelineRunLogConfigurationOverrideDetailsEnableLogging,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         StepOverrideDetails = new[]
     ///         {
     ///             new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailArgs
     ///             {
     ///                 StepConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs
     ///                 {
-    ///                     CommandLineArguments = @var.Pipeline_run_step_override_details_step_configuration_details_command_line_arguments,
-    ///                     EnvironmentVariables = @var.Pipeline_run_step_override_details_step_configuration_details_environment_variables,
-    ///                     MaximumRuntimeInMinutes = @var.Pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
+    ///                     CommandLineArguments = pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments,
+    ///                     EnvironmentVariables = pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables,
+    ///                     MaximumRuntimeInMinutes = pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
     ///                 },
-    ///                 StepName = @var.Pipeline_run_step_override_details_step_name,
+    ///                 StepName = pipelineRunStepOverrideDetailsStepName,
     ///             },
     ///         },
-    ///         SystemTags = @var.Pipeline_run_system_tags,
+    ///         SystemTags = pipelineRunSystemTags,
     ///     });
     /// 
     /// });

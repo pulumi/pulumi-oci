@@ -33,22 +33,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagement.NewSoftwareSource(ctx, "testSoftwareSource", &OsManagement.SoftwareSourceArgs{
-//				ArchType:      pulumi.Any(_var.Software_source_arch_type),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Software_source_display_name),
-//				ChecksumType:  pulumi.Any(_var.Software_source_checksum_type),
+//			_, err := OsManagement.NewSoftwareSource(ctx, "test_software_source", &OsManagement.SoftwareSourceArgs{
+//				ArchType:      pulumi.Any(softwareSourceArchType),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(softwareSourceDisplayName),
+//				ChecksumType:  pulumi.Any(softwareSourceChecksumType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Software_source_description),
+//				Description: pulumi.Any(softwareSourceDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				MaintainerEmail: pulumi.Any(_var.Software_source_maintainer_email),
-//				MaintainerName:  pulumi.Any(_var.Software_source_maintainer_name),
-//				MaintainerPhone: pulumi.Any(_var.Software_source_maintainer_phone),
-//				ParentId:        pulumi.Any(oci_osmanagement_parent.Test_parent.Id),
+//				MaintainerEmail: pulumi.Any(softwareSourceMaintainerEmail),
+//				MaintainerName:  pulumi.Any(softwareSourceMaintainerName),
+//				MaintainerPhone: pulumi.Any(softwareSourceMaintainerPhone),
+//				ParentId:        pulumi.Any(testParent.Id),
 //			})
 //			if err != nil {
 //				return err

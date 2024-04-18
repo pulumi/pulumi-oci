@@ -44,13 +44,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicyReports(ctx, &datasafe.GetSecurityPolicyReportsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Security_policy_report_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Security_policy_report_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Security_policy_report_display_name),
-//				SecurityPolicyReportId: pulumi.StringRef(oci_data_safe_security_policy_report.Test_security_policy_report.Id),
-//				State:                  pulumi.StringRef(_var.Security_policy_report_state),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(securityPolicyReportAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(securityPolicyReportCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(securityPolicyReportDisplayName),
+//				SecurityPolicyReportId: pulumi.StringRef(testSecurityPolicyReport.Id),
+//				State:                  pulumi.StringRef(securityPolicyReportState),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

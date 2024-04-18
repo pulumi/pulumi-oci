@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Oce.GetOceInstances(ctx, &oce.GetOceInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Oce_instance_display_name),
-//				State:         pulumi.StringRef(_var.Oce_instance_state),
-//				TenancyId:     pulumi.StringRef(oci_identity_tenancy.Test_tenancy.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(oceInstanceDisplayName),
+//				State:         pulumi.StringRef(oceInstanceState),
+//				TenancyId:     pulumi.StringRef(testTenancy.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

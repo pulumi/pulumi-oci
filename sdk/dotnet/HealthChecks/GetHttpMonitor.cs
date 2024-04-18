@@ -30,7 +30,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testHttpMonitor = Oci.HealthChecks.GetHttpMonitor.Invoke(new()
         ///     {
-        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///         MonitorId = testMonitor.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testHttpMonitor = Oci.HealthChecks.GetHttpMonitor.Invoke(new()
         ///     {
-        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
+        ///         MonitorId = testMonitor.Id,
         ///     });
         /// 
         /// });

@@ -170,13 +170,13 @@ def get_lifecycle_environments(arch_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=var["lifecycle_environment_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["lifecycle_environment_display_name"],
-        display_name_contains=var["lifecycle_environment_display_name_contains"],
-        lifecycle_environment_id=oci_os_management_hub_lifecycle_environment["test_lifecycle_environment"]["id"],
-        os_family=var["lifecycle_environment_os_family"],
-        state=var["lifecycle_environment_state"])
+    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
+        compartment_id=compartment_id,
+        display_names=lifecycle_environment_display_name,
+        display_name_contains=lifecycle_environment_display_name_contains,
+        lifecycle_environment_id=test_lifecycle_environment["id"],
+        os_family=lifecycle_environment_os_family,
+        state=lifecycle_environment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -237,13 +237,13 @@ def get_lifecycle_environments_output(arch_type: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=var["lifecycle_environment_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["lifecycle_environment_display_name"],
-        display_name_contains=var["lifecycle_environment_display_name_contains"],
-        lifecycle_environment_id=oci_os_management_hub_lifecycle_environment["test_lifecycle_environment"]["id"],
-        os_family=var["lifecycle_environment_os_family"],
-        state=var["lifecycle_environment_state"])
+    test_lifecycle_environments = oci.OsManagementHub.get_lifecycle_environments(arch_type=lifecycle_environment_arch_type,
+        compartment_id=compartment_id,
+        display_names=lifecycle_environment_display_name,
+        display_name_contains=lifecycle_environment_display_name_contains,
+        lifecycle_environment_id=test_lifecycle_environment["id"],
+        os_family=lifecycle_environment_os_family,
+        state=lifecycle_environment_state)
     ```
     <!--End PulumiCodeChooser -->
 

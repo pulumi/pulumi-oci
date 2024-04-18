@@ -175,7 +175,7 @@ def get_sender(sender_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sender = oci.Email.get_sender(sender_id=oci_email_sender["test_sender"]["id"])
+    test_sender = oci.Email.get_sender(sender_id=test_sender_oci_email_sender["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -216,7 +216,7 @@ def get_sender_output(sender_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sender = oci.Email.get_sender(sender_id=oci_email_sender["test_sender"]["id"])
+    test_sender = oci.Email.get_sender(sender_id=test_sender_oci_email_sender["id"])
     ```
     <!--End PulumiCodeChooser -->
 

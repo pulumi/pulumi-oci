@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testCertificate = Oci.Waas.GetCertificate.Invoke(new()
         ///     {
-        ///         CertificateId = oci_waas_certificate.Test_certificate.Id,
+        ///         CertificateId = testCertificateOciWaasCertificate.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testCertificate = Oci.Waas.GetCertificate.Invoke(new()
         ///     {
-        ///         CertificateId = oci_waas_certificate.Test_certificate.Id,
+        ///         CertificateId = testCertificateOciWaasCertificate.Id,
         ///     });
         /// 
         /// });

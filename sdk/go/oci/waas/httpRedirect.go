@@ -31,24 +31,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewHttpRedirect(ctx, "testHttpRedirect", &Waas.HttpRedirectArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Domain:        pulumi.Any(_var.Http_redirect_domain),
+//			_, err := Waas.NewHttpRedirect(ctx, "test_http_redirect", &Waas.HttpRedirectArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Domain:        pulumi.Any(httpRedirectDomain),
 //				Target: &waas.HttpRedirectTargetArgs{
-//					Host:     pulumi.Any(_var.Http_redirect_target_host),
-//					Path:     pulumi.Any(_var.Http_redirect_target_path),
-//					Protocol: pulumi.Any(_var.Http_redirect_target_protocol),
-//					Query:    pulumi.Any(_var.Http_redirect_target_query),
-//					Port:     pulumi.Any(_var.Http_redirect_target_port),
+//					Host:     pulumi.Any(httpRedirectTargetHost),
+//					Path:     pulumi.Any(httpRedirectTargetPath),
+//					Protocol: pulumi.Any(httpRedirectTargetProtocol),
+//					Query:    pulumi.Any(httpRedirectTargetQuery),
+//					Port:     pulumi.Any(httpRedirectTargetPort),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Http_redirect_display_name),
+//				DisplayName: pulumi.Any(httpRedirectDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				ResponseCode: pulumi.Any(_var.Http_redirect_response_code),
+//				ResponseCode: pulumi.Any(httpRedirectResponseCode),
 //			})
 //			if err != nil {
 //				return err

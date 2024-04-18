@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testOneoffPatches = Oci.Database.GetOneoffPatches.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Oneoff_patch_display_name,
-        ///         State = @var.Oneoff_patch_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = oneoffPatchDisplayName,
+        ///         State = oneoffPatchState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testOneoffPatches = Oci.Database.GetOneoffPatches.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Oneoff_patch_display_name,
-        ///         State = @var.Oneoff_patch_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = oneoffPatchDisplayName,
+        ///         State = oneoffPatchState,
         ///     });
         /// 
         /// });

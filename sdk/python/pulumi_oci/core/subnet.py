@@ -811,26 +811,26 @@ class Subnet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subnet = oci.core.Subnet("testSubnet",
-            cidr_block=var["subnet_cidr_block"],
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            availability_domain=var["subnet_availability_domain"],
+        test_subnet = oci.core.Subnet("test_subnet",
+            cidr_block=subnet_cidr_block,
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            availability_domain=subnet_availability_domain,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            dhcp_options_id=oci_core_dhcp_options["test_dhcp_options"]["id"],
-            display_name=var["subnet_display_name"],
-            dns_label=var["subnet_dns_label"],
+            dhcp_options_id=test_dhcp_options["id"],
+            display_name=subnet_display_name,
+            dns_label=subnet_dns_label,
             freeform_tags={
                 "Department": "Finance",
             },
-            ipv6cidr_block=var["subnet_ipv6cidr_block"],
-            ipv6cidr_blocks=var["subnet_ipv6cidr_blocks"],
-            prohibit_internet_ingress=var["subnet_prohibit_internet_ingress"],
-            prohibit_public_ip_on_vnic=var["subnet_prohibit_public_ip_on_vnic"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"],
-            security_list_ids=var["subnet_security_list_ids"])
+            ipv6cidr_block=subnet_ipv6cidr_block,
+            ipv6cidr_blocks=subnet_ipv6cidr_blocks,
+            prohibit_internet_ingress=subnet_prohibit_internet_ingress,
+            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic,
+            route_table_id=test_route_table["id"],
+            security_list_ids=subnet_security_list_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -945,26 +945,26 @@ class Subnet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_subnet = oci.core.Subnet("testSubnet",
-            cidr_block=var["subnet_cidr_block"],
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            availability_domain=var["subnet_availability_domain"],
+        test_subnet = oci.core.Subnet("test_subnet",
+            cidr_block=subnet_cidr_block,
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            availability_domain=subnet_availability_domain,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            dhcp_options_id=oci_core_dhcp_options["test_dhcp_options"]["id"],
-            display_name=var["subnet_display_name"],
-            dns_label=var["subnet_dns_label"],
+            dhcp_options_id=test_dhcp_options["id"],
+            display_name=subnet_display_name,
+            dns_label=subnet_dns_label,
             freeform_tags={
                 "Department": "Finance",
             },
-            ipv6cidr_block=var["subnet_ipv6cidr_block"],
-            ipv6cidr_blocks=var["subnet_ipv6cidr_blocks"],
-            prohibit_internet_ingress=var["subnet_prohibit_internet_ingress"],
-            prohibit_public_ip_on_vnic=var["subnet_prohibit_public_ip_on_vnic"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"],
-            security_list_ids=var["subnet_security_list_ids"])
+            ipv6cidr_block=subnet_ipv6cidr_block,
+            ipv6cidr_blocks=subnet_ipv6cidr_blocks,
+            prohibit_internet_ingress=subnet_prohibit_internet_ingress,
+            prohibit_public_ip_on_vnic=subnet_prohibit_public_ip_on_vnic,
+            route_table_id=test_route_table["id"],
+            security_list_ids=subnet_security_list_ids)
         ```
         <!--End PulumiCodeChooser -->
 

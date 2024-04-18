@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalClusterInstances = oci.DatabaseManagement.getExternalClusterInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_cluster_instance_display_name,
- *     externalClusterId: oci_database_management_external_cluster.test_external_cluster.id,
+ *     compartmentId: compartmentId,
+ *     displayName: externalClusterInstanceDisplayName,
+ *     externalClusterId: testExternalCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,9 +96,9 @@ export interface GetExternalClusterInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalClusterInstances = oci.DatabaseManagement.getExternalClusterInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_cluster_instance_display_name,
- *     externalClusterId: oci_database_management_external_cluster.test_external_cluster.id,
+ *     compartmentId: compartmentId,
+ *     displayName: externalClusterInstanceDisplayName,
+ *     externalClusterId: testExternalCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

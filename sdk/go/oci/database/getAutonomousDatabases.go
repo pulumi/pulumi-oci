@@ -45,18 +45,18 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousDatabases(ctx, &database.GetAutonomousDatabasesArgs{
-//				CompartmentId:                 _var.Compartment_id,
-//				AutonomousContainerDatabaseId: pulumi.StringRef(oci_database_autonomous_container_database.Test_autonomous_container_database.Id),
-//				DbVersion:                     pulumi.StringRef(_var.Autonomous_database_db_version),
-//				DbWorkload:                    pulumi.StringRef(_var.Autonomous_database_db_workload),
-//				DisplayName:                   pulumi.StringRef(_var.Autonomous_database_display_name),
-//				InfrastructureType:            pulumi.StringRef(_var.Autonomous_database_infrastructure_type),
-//				IsDataGuardEnabled:            pulumi.BoolRef(_var.Autonomous_database_is_data_guard_enabled),
-//				IsFreeTier:                    pulumi.BoolRef(_var.Autonomous_database_is_free_tier),
-//				IsRefreshableClone:            pulumi.BoolRef(_var.Autonomous_database_is_refreshable_clone),
-//				IsResourcePoolLeader:          pulumi.BoolRef(_var.Autonomous_database_is_resource_pool_leader),
-//				ResourcePoolLeaderId:          pulumi.StringRef(oci_database_resource_pool_leader.Test_resource_pool_leader.Id),
-//				State:                         pulumi.StringRef(_var.Autonomous_database_state),
+//				CompartmentId:                 compartmentId,
+//				AutonomousContainerDatabaseId: pulumi.StringRef(testAutonomousContainerDatabase.Id),
+//				DbVersion:                     pulumi.StringRef(autonomousDatabaseDbVersion),
+//				DbWorkload:                    pulumi.StringRef(autonomousDatabaseDbWorkload),
+//				DisplayName:                   pulumi.StringRef(autonomousDatabaseDisplayName),
+//				InfrastructureType:            pulumi.StringRef(autonomousDatabaseInfrastructureType),
+//				IsDataGuardEnabled:            pulumi.BoolRef(autonomousDatabaseIsDataGuardEnabled),
+//				IsFreeTier:                    pulumi.BoolRef(autonomousDatabaseIsFreeTier),
+//				IsRefreshableClone:            pulumi.BoolRef(autonomousDatabaseIsRefreshableClone),
+//				IsResourcePoolLeader:          pulumi.BoolRef(autonomousDatabaseIsResourcePoolLeader),
+//				ResourcePoolLeaderId:          pulumi.StringRef(testResourcePoolLeader.Id),
+//				State:                         pulumi.StringRef(autonomousDatabaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

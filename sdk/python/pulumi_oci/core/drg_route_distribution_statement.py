@@ -191,15 +191,15 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_distribution_statement = oci.core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement",
-            drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-            action=var["drg_route_distribution_statement_statements_action"],
+        test_drg_route_distribution_statement = oci.core.DrgRouteDistributionStatement("test_drg_route_distribution_statement",
+            drg_route_distribution_id=test_drg_route_distribution["id"],
+            action=drg_route_distribution_statement_statements_action,
             match_criteria=oci.core.DrgRouteDistributionStatementMatchCriteriaArgs(
-                match_type=var["drg_route_distribution_statement_statements_match_criteria_match_type"],
-                attachment_type=var["drg_route_distribution_statement_statements_match_criteria_attachment_type"],
-                drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"],
+                match_type=drg_route_distribution_statement_statements_match_criteria_match_type,
+                attachment_type=drg_route_distribution_statement_statements_match_criteria_attachment_type,
+                drg_attachment_id=test_drg_attachment["id"],
             ),
-            priority=var["drg_route_distribution_statement_statements_priority"])
+            priority=drg_route_distribution_statement_statements_priority)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -240,15 +240,15 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_distribution_statement = oci.core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement",
-            drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-            action=var["drg_route_distribution_statement_statements_action"],
+        test_drg_route_distribution_statement = oci.core.DrgRouteDistributionStatement("test_drg_route_distribution_statement",
+            drg_route_distribution_id=test_drg_route_distribution["id"],
+            action=drg_route_distribution_statement_statements_action,
             match_criteria=oci.core.DrgRouteDistributionStatementMatchCriteriaArgs(
-                match_type=var["drg_route_distribution_statement_statements_match_criteria_match_type"],
-                attachment_type=var["drg_route_distribution_statement_statements_match_criteria_attachment_type"],
-                drg_attachment_id=oci_core_drg_attachment["test_drg_attachment"]["id"],
+                match_type=drg_route_distribution_statement_statements_match_criteria_match_type,
+                attachment_type=drg_route_distribution_statement_statements_match_criteria_attachment_type,
+                drg_attachment_id=test_drg_attachment["id"],
             ),
-            priority=var["drg_route_distribution_statement_statements_priority"])
+            priority=drg_route_distribution_statement_statements_priority)
         ```
         <!--End PulumiCodeChooser -->
 

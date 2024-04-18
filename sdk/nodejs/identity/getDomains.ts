@@ -20,15 +20,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDomains = oci.Identity.getDomains({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.domain_display_name,
- *     homeRegionUrl: _var.domain_home_region_url,
- *     isHiddenOnLogin: _var.domain_is_hidden_on_login,
- *     licenseType: _var.domain_license_type,
- *     name: _var.domain_name,
- *     state: _var.domain_state,
- *     type: _var.domain_type,
- *     url: _var.domain_url,
+ *     compartmentId: compartmentId,
+ *     displayName: domainDisplayName,
+ *     homeRegionUrl: domainHomeRegionUrl,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     licenseType: domainLicenseType,
+ *     name: domainName,
+ *     state: domainState,
+ *     type: domainType,
+ *     url: domainUrl,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,15 +154,15 @@ export interface GetDomainsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDomains = oci.Identity.getDomains({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.domain_display_name,
- *     homeRegionUrl: _var.domain_home_region_url,
- *     isHiddenOnLogin: _var.domain_is_hidden_on_login,
- *     licenseType: _var.domain_license_type,
- *     name: _var.domain_name,
- *     state: _var.domain_state,
- *     type: _var.domain_type,
- *     url: _var.domain_url,
+ *     compartmentId: compartmentId,
+ *     displayName: domainDisplayName,
+ *     homeRegionUrl: domainHomeRegionUrl,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     licenseType: domainLicenseType,
+ *     name: domainName,
+ *     state: domainState,
+ *     type: domainType,
+ *     url: domainUrl,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

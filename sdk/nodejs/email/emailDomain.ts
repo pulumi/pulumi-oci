@@ -16,12 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmailDomain = new oci.email.EmailDomain("testEmailDomain", {
- *     compartmentId: _var.compartment_id,
+ * const testEmailDomain = new oci.email.EmailDomain("test_email_domain", {
+ *     compartmentId: compartmentId,
+ *     name: emailDomainName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.email_domain_description,
+ *     description: emailDomainDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

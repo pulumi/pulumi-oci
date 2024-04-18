@@ -33,12 +33,12 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testRrsets = Oci.Dns.GetRrsets.Invoke(new()
         ///     {
-        ///         ZoneNameOrId = oci_dns_zone.Test_zone.Id,
-        ///         Domain = @var.Rrset_domain,
-        ///         DomainContains = @var.Rrset_domain,
-        ///         Rtype = @var.Rrset_rtype,
-        ///         Scope = @var.Rrset_scope,
-        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         ZoneNameOrId = testZone.Id,
+        ///         Domain = rrsetDomain,
+        ///         DomainContains = rrsetDomain,
+        ///         Rtype = rrsetRtype,
+        ///         Scope = rrsetScope,
+        ///         ViewId = testView.Id,
         ///     });
         /// 
         /// });
@@ -70,12 +70,12 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testRrsets = Oci.Dns.GetRrsets.Invoke(new()
         ///     {
-        ///         ZoneNameOrId = oci_dns_zone.Test_zone.Id,
-        ///         Domain = @var.Rrset_domain,
-        ///         DomainContains = @var.Rrset_domain,
-        ///         Rtype = @var.Rrset_rtype,
-        ///         Scope = @var.Rrset_scope,
-        ///         ViewId = oci_dns_view.Test_view.Id,
+        ///         ZoneNameOrId = testZone.Id,
+        ///         Domain = rrsetDomain,
+        ///         DomainContains = rrsetDomain,
+        ///         Rtype = rrsetRtype,
+        ///         Scope = rrsetScope,
+        ///         ViewId = testView.Id,
         ///     });
         /// 
         /// });

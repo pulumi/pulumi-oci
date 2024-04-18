@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSource = Oci.OsManagementHub.GetSoftwareSource.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
+        ///         SoftwareSourceId = testSoftwareSourceOciOsManagementHubSoftwareSource.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSource = Oci.OsManagementHub.GetSoftwareSource.Invoke(new()
         ///     {
-        ///         SoftwareSourceId = oci_os_management_hub_software_source.Test_software_source.Id,
+        ///         SoftwareSourceId = testSoftwareSourceOciOsManagementHubSoftwareSource.Id,
         ///     });
         /// 
         /// });

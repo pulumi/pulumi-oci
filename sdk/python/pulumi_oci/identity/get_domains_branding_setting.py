@@ -479,11 +479,11 @@ def get_domains_branding_setting(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi_oci as oci
 
     test_branding_setting = oci.Identity.get_domains_branding_setting(branding_setting_id="BrandingSettings",
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["branding_setting_authorization"],
-        resource_type_schema_version=var["branding_setting_resource_type_schema_version"])
+        authorization=branding_setting_authorization,
+        resource_type_schema_version=branding_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -566,11 +566,11 @@ def get_domains_branding_setting_output(attribute_sets: Optional[pulumi.Input[Op
     import pulumi_oci as oci
 
     test_branding_setting = oci.Identity.get_domains_branding_setting(branding_setting_id="BrandingSettings",
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["branding_setting_authorization"],
-        resource_type_schema_version=var["branding_setting_resource_type_schema_version"])
+        authorization=branding_setting_authorization,
+        resource_type_schema_version=branding_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

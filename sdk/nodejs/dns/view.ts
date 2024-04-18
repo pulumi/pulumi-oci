@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testView = new oci.dns.View("testView", {
- *     compartmentId: _var.compartment_id,
+ * const testView = new oci.dns.View("test_view", {
+ *     compartmentId: compartmentId,
  *     scope: "PRIVATE",
- *     definedTags: _var.view_defined_tags,
- *     displayName: _var.view_display_name,
- *     freeformTags: _var.view_freeform_tags,
+ *     definedTags: viewDefinedTags,
+ *     displayName: viewDisplayName,
+ *     freeformTags: viewFreeformTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

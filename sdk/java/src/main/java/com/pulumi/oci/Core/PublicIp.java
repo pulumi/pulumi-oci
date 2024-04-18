@@ -66,13 +66,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPublicIp = new PublicIp(&#34;testPublicIp&#34;, PublicIpArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .lifetime(var_.public_ip_lifetime())
+ *             .compartmentId(compartmentId)
+ *             .lifetime(publicIpLifetime)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.public_ip_display_name())
+ *             .displayName(publicIpDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .privateIpId(oci_core_private_ip.test_private_ip().id())
- *             .publicIpPoolId(oci_core_public_ip_pool.test_public_ip_pool().id())
+ *             .privateIpId(testPrivateIp.id())
+ *             .publicIpPoolId(testPublicIpPool.id())
  *             .build());
  * 
  *     }

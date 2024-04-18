@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPolicies = oci.DataSafe.getMaskingPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.masking_policy_access_level,
- *     compartmentIdInSubtree: _var.masking_policy_compartment_id_in_subtree,
- *     displayName: _var.masking_policy_display_name,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     state: _var.masking_policy_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.masking_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.masking_policy_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: maskingPolicyAccessLevel,
+ *     compartmentIdInSubtree: maskingPolicyCompartmentIdInSubtree,
+ *     displayName: maskingPolicyDisplayName,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     state: maskingPolicyState,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: maskingPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: maskingPolicyTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,16 +154,16 @@ export interface GetMaskingPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPolicies = oci.DataSafe.getMaskingPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.masking_policy_access_level,
- *     compartmentIdInSubtree: _var.masking_policy_compartment_id_in_subtree,
- *     displayName: _var.masking_policy_display_name,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     state: _var.masking_policy_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.masking_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.masking_policy_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: maskingPolicyAccessLevel,
+ *     compartmentIdInSubtree: maskingPolicyCompartmentIdInSubtree,
+ *     displayName: maskingPolicyDisplayName,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     state: maskingPolicyState,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: maskingPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: maskingPolicyTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

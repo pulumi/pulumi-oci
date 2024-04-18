@@ -120,9 +120,9 @@ def get_certificates(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.ApiGateway.get_certificates(compartment_id=var["compartment_id"],
-        display_name=var["certificate_display_name"],
-        state=var["certificate_state"])
+    test_certificates = oci.ApiGateway.get_certificates(compartment_id=compartment_id,
+        display_name=certificate_display_name,
+        state=certificate_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_certificates_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.ApiGateway.get_certificates(compartment_id=var["compartment_id"],
-        display_name=var["certificate_display_name"],
-        state=var["certificate_state"])
+    test_certificates = oci.ApiGateway.get_certificates(compartment_id=compartment_id,
+        display_name=certificate_display_name,
+        state=certificate_state)
     ```
     <!--End PulumiCodeChooser -->
 

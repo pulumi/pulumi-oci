@@ -25,15 +25,15 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testContainerImageSignature = new Oci.Artifacts.ContainerImageSignature("testContainerImageSignature", new()
+    ///     var testContainerImageSignature = new Oci.Artifacts.ContainerImageSignature("test_container_image_signature", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ImageId = oci_core_image.Test_image.Id,
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         KmsKeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///         Message = @var.Container_image_signature_message,
-    ///         Signature = @var.Container_image_signature_signature,
-    ///         SigningAlgorithm = @var.Container_image_signature_signing_algorithm,
+    ///         CompartmentId = compartmentId,
+    ///         ImageId = testImage.Id,
+    ///         KmsKeyId = testKey.Id,
+    ///         KmsKeyVersionId = testKeyVersion.Id,
+    ///         Message = containerImageSignatureMessage,
+    ///         Signature = containerImageSignatureSignature,
+    ///         SigningAlgorithm = containerImageSignatureSigningAlgorithm,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

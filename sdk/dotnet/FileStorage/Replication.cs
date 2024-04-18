@@ -51,21 +51,21 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testReplication = new Oci.FileStorage.Replication("testReplication", new()
+    ///     var testReplication = new Oci.FileStorage.Replication("test_replication", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SourceId = oci_file_storage_file_system.Test_source.Id,
-    ///         TargetId = oci_file_storage_file_system.Test_target.Id,
+    ///         CompartmentId = compartmentId,
+    ///         SourceId = testSource.Id,
+    ///         TargetId = testTarget.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Replication_display_name,
+    ///         DisplayName = replicationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         ReplicationInterval = @var.Replication_replication_interval,
+    ///         ReplicationInterval = replicationReplicationInterval,
     ///     });
     /// 
     /// });

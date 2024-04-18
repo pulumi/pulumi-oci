@@ -32,8 +32,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlPlanBaselineConfiguration = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfiguration.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
         ///     });
         /// 
         /// });
@@ -64,8 +64,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlPlanBaselineConfiguration = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselineConfiguration.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_plan_baseline_configuration_opc_named_credential_id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId,
         ///     });
         /// 
         /// });

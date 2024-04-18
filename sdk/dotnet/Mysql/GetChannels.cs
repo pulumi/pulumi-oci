@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testChannels = Oci.Mysql.GetChannels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         DisplayName = @var.Channel_display_name,
-        ///         IsEnabled = @var.Channel_is_enabled,
-        ///         State = @var.Channel_state,
+        ///         CompartmentId = compartmentId,
+        ///         ChannelId = testChannel.Id,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = channelDisplayName,
+        ///         IsEnabled = channelIsEnabled,
+        ///         State = channelState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testChannels = Oci.Mysql.GetChannels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-        ///         DisplayName = @var.Channel_display_name,
-        ///         IsEnabled = @var.Channel_is_enabled,
-        ///         State = @var.Channel_state,
+        ///         CompartmentId = compartmentId,
+        ///         ChannelId = testChannel.Id,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = channelDisplayName,
+        ///         IsEnabled = channelIsEnabled,
+        ///         State = channelState,
         ///     });
         /// 
         /// });

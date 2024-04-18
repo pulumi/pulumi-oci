@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModelVersionSet = Oci.DataScience.GetModelVersionSet.Invoke(new()
         ///     {
-        ///         ModelVersionSetId = oci_datascience_model_version_set.Test_model_version_set.Id,
+        ///         ModelVersionSetId = testModelVersionSetOciDatascienceModelVersionSet.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testModelVersionSet = Oci.DataScience.GetModelVersionSet.Invoke(new()
         ///     {
-        ///         ModelVersionSetId = oci_datascience_model_version_set.Test_model_version_set.Id,
+        ///         ModelVersionSetId = testModelVersionSetOciDatascienceModelVersionSet.Id,
         ///     });
         /// 
         /// });

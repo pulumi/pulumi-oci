@@ -31,25 +31,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OperatorAccessControl.NewOperatorControlAssignment(ctx, "testOperatorControlAssignment", &OperatorAccessControl.OperatorControlAssignmentArgs{
-//				CompartmentId:                  pulumi.Any(_var.Compartment_id),
-//				IsEnforcedAlways:               pulumi.Any(_var.Operator_control_assignment_is_enforced_always),
-//				OperatorControlId:              pulumi.Any(oci_operator_access_control_operator_control.Test_operator_control.Id),
-//				ResourceCompartmentId:          pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				ResourceId:                     pulumi.Any(oci_operator_access_control_resource.Test_resource.Id),
-//				ResourceName:                   pulumi.Any(_var.Operator_control_assignment_resource_name),
-//				ResourceType:                   pulumi.Any(_var.Operator_control_assignment_resource_type),
-//				Comment:                        pulumi.Any(_var.Operator_control_assignment_comment),
-//				DefinedTags:                    pulumi.Any(_var.Operator_control_assignment_defined_tags),
-//				FreeformTags:                   pulumi.Any(_var.Operator_control_assignment_freeform_tags),
-//				IsAutoApproveDuringMaintenance: pulumi.Any(_var.Operator_control_assignment_is_auto_approve_during_maintenance),
-//				IsHypervisorLogForwarded:       pulumi.Any(_var.Operator_control_assignment_is_hypervisor_log_forwarded),
-//				IsLogForwarded:                 pulumi.Any(_var.Operator_control_assignment_is_log_forwarded),
-//				RemoteSyslogServerAddress:      pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_address),
-//				RemoteSyslogServerCaCert:       pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_ca_cert),
-//				RemoteSyslogServerPort:         pulumi.Any(_var.Operator_control_assignment_remote_syslog_server_port),
-//				TimeAssignmentFrom:             pulumi.Any(_var.Operator_control_assignment_time_assignment_from),
-//				TimeAssignmentTo:               pulumi.Any(_var.Operator_control_assignment_time_assignment_to),
+//			_, err := OperatorAccessControl.NewOperatorControlAssignment(ctx, "test_operator_control_assignment", &OperatorAccessControl.OperatorControlAssignmentArgs{
+//				CompartmentId:                  pulumi.Any(compartmentId),
+//				IsEnforcedAlways:               pulumi.Any(operatorControlAssignmentIsEnforcedAlways),
+//				OperatorControlId:              pulumi.Any(testOperatorControl.Id),
+//				ResourceCompartmentId:          pulumi.Any(testCompartment.Id),
+//				ResourceId:                     pulumi.Any(testResource.Id),
+//				ResourceName:                   pulumi.Any(operatorControlAssignmentResourceName),
+//				ResourceType:                   pulumi.Any(operatorControlAssignmentResourceType),
+//				Comment:                        pulumi.Any(operatorControlAssignmentComment),
+//				DefinedTags:                    pulumi.Any(operatorControlAssignmentDefinedTags),
+//				FreeformTags:                   pulumi.Any(operatorControlAssignmentFreeformTags),
+//				IsAutoApproveDuringMaintenance: pulumi.Any(operatorControlAssignmentIsAutoApproveDuringMaintenance),
+//				IsHypervisorLogForwarded:       pulumi.Any(operatorControlAssignmentIsHypervisorLogForwarded),
+//				IsLogForwarded:                 pulumi.Any(operatorControlAssignmentIsLogForwarded),
+//				RemoteSyslogServerAddress:      pulumi.Any(operatorControlAssignmentRemoteSyslogServerAddress),
+//				RemoteSyslogServerCaCert:       pulumi.Any(operatorControlAssignmentRemoteSyslogServerCaCert),
+//				RemoteSyslogServerPort:         pulumi.Any(operatorControlAssignmentRemoteSyslogServerPort),
+//				TimeAssignmentFrom:             pulumi.Any(operatorControlAssignmentTimeAssignmentFrom),
+//				TimeAssignmentTo:               pulumi.Any(operatorControlAssignmentTimeAssignmentTo),
 //			})
 //			if err != nil {
 //				return err

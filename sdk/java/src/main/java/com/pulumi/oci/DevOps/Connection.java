@@ -49,20 +49,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConnection = new Connection(&#34;testConnection&#34;, ConnectionArgs.builder()        
- *             .connectionType(var_.connection_connection_type())
- *             .projectId(oci_devops_project.test_project().id())
- *             .accessToken(var_.connection_access_token())
- *             .appPassword(var_.connection_app_password())
- *             .baseUrl(var_.connection_base_url())
+ *             .connectionType(connectionConnectionType)
+ *             .projectId(testProject.id())
+ *             .accessToken(connectionAccessToken)
+ *             .appPassword(connectionAppPassword)
+ *             .baseUrl(connectionBaseUrl)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.connection_description())
- *             .displayName(var_.connection_display_name())
+ *             .description(connectionDescription)
+ *             .displayName(connectionDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .tlsVerifyConfig(ConnectionTlsVerifyConfigArgs.builder()
- *                 .caCertificateBundleId(oci_devops_ca_certificate_bundle.test_ca_certificate_bundle().id())
- *                 .tlsVerifyMode(var_.connection_tls_verify_config_tls_verify_mode())
+ *                 .caCertificateBundleId(testCaCertificateBundle.id())
+ *                 .tlsVerifyMode(connectionTlsVerifyConfigTlsVerifyMode)
  *                 .build())
- *             .username(var_.connection_username())
+ *             .username(connectionUsername)
  *             .build());
  * 
  *     }

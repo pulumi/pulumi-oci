@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testQuota = Oci.Limits.GetQuota.Invoke(new()
         ///     {
-        ///         QuotaId = oci_limits_quota.Test_quota.Id,
+        ///         QuotaId = testQuotaOciLimitsQuota.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Limits
         /// {
         ///     var testQuota = Oci.Limits.GetQuota.Invoke(new()
         ///     {
-        ///         QuotaId = oci_limits_quota.Test_quota.Id,
+        ///         QuotaId = testQuotaOciLimitsQuota.Id,
         ///     });
         /// 
         /// });

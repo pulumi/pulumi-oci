@@ -239,9 +239,9 @@ class Catalog(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_service_catalog = oci.service_catalog.Catalog("testServiceCatalog",
-            compartment_id=var["compartment_id"],
-            display_name=var["service_catalog_display_name"],
+        test_service_catalog = oci.service_catalog.Catalog("test_service_catalog",
+            compartment_id=compartment_id,
+            display_name=service_catalog_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -288,9 +288,9 @@ class Catalog(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_service_catalog = oci.service_catalog.Catalog("testServiceCatalog",
-            compartment_id=var["compartment_id"],
-            display_name=var["service_catalog_display_name"],
+        test_service_catalog = oci.service_catalog.Catalog("test_service_catalog",
+            compartment_id=compartment_id,
+            display_name=service_catalog_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

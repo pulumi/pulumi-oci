@@ -30,11 +30,11 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testUsagelimits = Oci.UsageProxy.GetUsagelimits.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         LimitType = @var.Usagelimit_limit_type,
-        ///         ResourceType = @var.Usagelimit_resource_type,
-        ///         ServiceType = @var.Usagelimit_service_type,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         LimitType = usagelimitLimitType,
+        ///         ResourceType = usagelimitResourceType,
+        ///         ServiceType = usagelimitServiceType,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testUsagelimits = Oci.UsageProxy.GetUsagelimits.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         LimitType = @var.Usagelimit_limit_type,
-        ///         ResourceType = @var.Usagelimit_resource_type,
-        ///         ServiceType = @var.Usagelimit_service_type,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         LimitType = usagelimitLimitType,
+        ///         ResourceType = usagelimitResourceType,
+        ///         ServiceType = usagelimitServiceType,
         ///     });
         /// 
         /// });

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetCrossConnectGroups(ctx, &core.GetCrossConnectGroupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Cross_connect_group_display_name),
-//				State:         pulumi.StringRef(_var.Cross_connect_group_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(crossConnectGroupDisplayName),
+//				State:         pulumi.StringRef(crossConnectGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -123,7 +123,7 @@ def get_cross_connect_status(cross_connect_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
+    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=test_cross_connect["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -159,7 +159,7 @@ def get_cross_connect_status_output(cross_connect_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=oci_core_cross_connect["test_cross_connect"]["id"])
+    test_cross_connect_status = oci.Core.get_cross_connect_status(cross_connect_id=test_cross_connect["id"])
     ```
     <!--End PulumiCodeChooser -->
 

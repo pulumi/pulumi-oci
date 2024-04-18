@@ -127,10 +127,10 @@ def get_actions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=var["compartment_id"],
-        name=var["operator_action_name"],
-        resource_type=var["operator_action_resource_type"],
-        state=var["operator_action_state"])
+    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=compartment_id,
+        name=operator_action_name,
+        resource_type=operator_action_resource_type,
+        state=operator_action_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -178,10 +178,10 @@ def get_actions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=var["compartment_id"],
-        name=var["operator_action_name"],
-        resource_type=var["operator_action_resource_type"],
-        state=var["operator_action_state"])
+    test_operator_actions = oci.OperatorAccessControl.get_actions(compartment_id=compartment_id,
+        name=operator_action_name,
+        resource_type=operator_action_resource_type,
+        state=operator_action_state)
     ```
     <!--End PulumiCodeChooser -->
 

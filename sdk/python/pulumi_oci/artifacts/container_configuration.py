@@ -115,7 +115,7 @@ class ContainerConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
+        test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration")
         ```
         <!--End PulumiCodeChooser -->
 
@@ -147,7 +147,7 @@ class ContainerConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
+        test_container_configuration = oci.artifacts.ContainerConfiguration("test_container_configuration")
         ```
         <!--End PulumiCodeChooser -->
 

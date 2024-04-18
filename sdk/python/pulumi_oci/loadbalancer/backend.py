@@ -365,15 +365,15 @@ class Backend(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backend = oci.load_balancer.Backend("testBackend",
-            backendset_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-            ip_address=var["backend_ip_address"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            port=var["backend_port"],
-            backup=var["backend_backup"],
-            drain=var["backend_drain"],
-            offline=var["backend_offline"],
-            weight=var["backend_weight"])
+        test_backend = oci.load_balancer.Backend("test_backend",
+            backendset_name=test_backend_set["name"],
+            ip_address=backend_ip_address,
+            load_balancer_id=test_load_balancer["id"],
+            port=backend_port,
+            backup=backend_backup,
+            drain=backend_drain,
+            offline=backend_offline,
+            weight=backend_weight)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -422,15 +422,15 @@ class Backend(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backend = oci.load_balancer.Backend("testBackend",
-            backendset_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-            ip_address=var["backend_ip_address"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            port=var["backend_port"],
-            backup=var["backend_backup"],
-            drain=var["backend_drain"],
-            offline=var["backend_offline"],
-            weight=var["backend_weight"])
+        test_backend = oci.load_balancer.Backend("test_backend",
+            backendset_name=test_backend_set["name"],
+            ip_address=backend_ip_address,
+            load_balancer_id=test_load_balancer["id"],
+            port=backend_port,
+            backup=backend_backup,
+            drain=backend_drain,
+            offline=backend_offline,
+            weight=backend_weight)
         ```
         <!--End PulumiCodeChooser -->
 

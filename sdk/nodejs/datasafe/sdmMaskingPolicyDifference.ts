@@ -20,14 +20,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSdmMaskingPolicyDifference = new oci.datasafe.SdmMaskingPolicyDifference("testSdmMaskingPolicyDifference", {
- *     compartmentId: _var.compartment_id,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ * const testSdmMaskingPolicyDifference = new oci.datasafe.SdmMaskingPolicyDifference("test_sdm_masking_policy_difference", {
+ *     compartmentId: compartmentId,
+ *     maskingPolicyId: testMaskingPolicy.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     differenceType: _var.sdm_masking_policy_difference_difference_type,
- *     displayName: _var.sdm_masking_policy_difference_display_name,
+ *     differenceType: sdmMaskingPolicyDifferenceDifferenceType,
+ *     displayName: sdmMaskingPolicyDifferenceDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

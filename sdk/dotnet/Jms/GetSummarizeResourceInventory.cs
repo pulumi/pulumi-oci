@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testSummarizeResourceInventory = Oci.Jms.GetSummarizeResourceInventory.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         TimeEnd = @var.Summarize_resource_inventory_time_end,
-        ///         TimeStart = @var.Summarize_resource_inventory_time_start,
+        ///         CompartmentId = compartmentId,
+        ///         TimeEnd = summarizeResourceInventoryTimeEnd,
+        ///         TimeStart = summarizeResourceInventoryTimeStart,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testSummarizeResourceInventory = Oci.Jms.GetSummarizeResourceInventory.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         TimeEnd = @var.Summarize_resource_inventory_time_end,
-        ///         TimeStart = @var.Summarize_resource_inventory_time_start,
+        ///         CompartmentId = compartmentId,
+        ///         TimeEnd = summarizeResourceInventoryTimeEnd,
+        ///         TimeStart = summarizeResourceInventoryTimeStart,
         ///     });
         /// 
         /// });

@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResourcesListMember(ctx, "testMonitoredResourcesListMember", &StackMonitoring.MonitoredResourcesListMemberArgs{
-//				MonitoredResourceId:   pulumi.Any(oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id),
-//				DestinationResourceId: pulumi.Any(oci_stack_monitoring_destination_resource.Test_destination_resource.Id),
-//				LimitLevel:            pulumi.Any(_var.Monitored_resources_list_member_limit_level),
+//			_, err := StackMonitoring.NewMonitoredResourcesListMember(ctx, "test_monitored_resources_list_member", &StackMonitoring.MonitoredResourcesListMemberArgs{
+//				MonitoredResourceId:   pulumi.Any(testMonitoredResource.Id),
+//				DestinationResourceId: pulumi.Any(testDestinationResource.Id),
+//				LimitLevel:            pulumi.Any(monitoredResourcesListMemberLimitLevel),
 //			})
 //			if err != nil {
 //				return err

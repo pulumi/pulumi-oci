@@ -25,20 +25,20 @@ namespace Pulumi.Oci.Apm
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testApmDomain = new Oci.Apm.ApmDomain("testApmDomain", new()
+    ///     var testApmDomain = new Oci.Apm.ApmDomain("test_apm_domain", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Apm_domain_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = apmDomainDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Apm_domain_description,
+    ///         Description = apmDomainDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsFreeTier = @var.Apm_domain_is_free_tier,
+    ///         IsFreeTier = apmDomainIsFreeTier,
     ///     });
     /// 
     /// });

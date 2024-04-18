@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRecoveryServiceSubnets = oci.RecoveryMod.getRecoveryServiceSubnets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.recovery_service_subnet_display_name,
- *     id: _var.recovery_service_subnet_id,
- *     state: _var.recovery_service_subnet_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: recoveryServiceSubnetDisplayName,
+ *     id: recoveryServiceSubnetId,
+ *     state: recoveryServiceSubnetState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,11 +123,11 @@ export interface GetRecoveryServiceSubnetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRecoveryServiceSubnets = oci.RecoveryMod.getRecoveryServiceSubnets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.recovery_service_subnet_display_name,
- *     id: _var.recovery_service_subnet_id,
- *     state: _var.recovery_service_subnet_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: recoveryServiceSubnetDisplayName,
+ *     id: recoveryServiceSubnetId,
+ *     state: recoveryServiceSubnetState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -49,11 +49,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSdmMaskingPolicyDifference = new SdmMaskingPolicyDifference(&#34;testSdmMaskingPolicyDifference&#34;, SdmMaskingPolicyDifferenceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+ *             .compartmentId(compartmentId)
+ *             .maskingPolicyId(testMaskingPolicy.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .differenceType(var_.sdm_masking_policy_difference_difference_type())
- *             .displayName(var_.sdm_masking_policy_difference_display_name())
+ *             .differenceType(sdmMaskingPolicyDifferenceDifferenceType)
+ *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

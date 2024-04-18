@@ -136,11 +136,11 @@ def get_views(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_views = oci.Dns.get_views(compartment_id=var["compartment_id"],
+    test_views = oci.Dns.get_views(compartment_id=compartment_id,
         scope="PRIVATE",
-        display_name=var["view_display_name"],
-        id=var["view_id"],
-        state=var["view_state"])
+        display_name=view_display_name,
+        id=view_id,
+        state=view_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_views_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_views = oci.Dns.get_views(compartment_id=var["compartment_id"],
+    test_views = oci.Dns.get_views(compartment_id=compartment_id,
         scope="PRIVATE",
-        display_name=var["view_display_name"],
-        id=var["view_id"],
-        state=var["view_state"])
+        display_name=view_display_name,
+        id=view_id,
+        state=view_state)
     ```
     <!--End PulumiCodeChooser -->
 

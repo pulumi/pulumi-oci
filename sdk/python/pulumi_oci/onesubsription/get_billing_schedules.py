@@ -115,9 +115,9 @@ def get_billing_schedules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OneSubsription.get_billing_schedules(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
+    test_billing_schedules = oci.OneSubsription.get_billing_schedules(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        subscribed_service_id=test_subscribed_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -162,9 +162,9 @@ def get_billing_schedules_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OneSubsription.get_billing_schedules(compartment_id=var["compartment_id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"],
-        subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"])
+    test_billing_schedules = oci.OneSubsription.get_billing_schedules(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        subscribed_service_id=test_subscribed_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 

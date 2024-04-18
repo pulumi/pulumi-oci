@@ -132,10 +132,10 @@ def get_sql_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["sql_endpoint_display_name"],
-        sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"],
-        state=var["sql_endpoint_state"])
+    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=compartment_id,
+        display_name=sql_endpoint_display_name,
+        sql_endpoint_id=test_sql_endpoint["id"],
+        state=sql_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -185,10 +185,10 @@ def get_sql_endpoints_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["sql_endpoint_display_name"],
-        sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"],
-        state=var["sql_endpoint_state"])
+    test_sql_endpoints = oci.DataFlow.get_sql_endpoints(compartment_id=compartment_id,
+        display_name=sql_endpoint_display_name,
+        sql_endpoint_id=test_sql_endpoint["id"],
+        state=sql_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 

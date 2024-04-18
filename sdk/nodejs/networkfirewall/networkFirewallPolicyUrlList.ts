@@ -18,11 +18,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyUrlList = new oci.networkfirewall.NetworkFirewallPolicyUrlList("testNetworkFirewallPolicyUrlList", {
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
+ * const testNetworkFirewallPolicyUrlList = new oci.networkfirewall.NetworkFirewallPolicyUrlList("test_network_firewall_policy_url_list", {
+ *     name: networkFirewallPolicyUrlListName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     urls: [{
- *         pattern: _var.network_firewall_policy_url_list_urls_pattern,
- *         type: _var.network_firewall_policy_url_list_urls_type,
+ *         pattern: networkFirewallPolicyUrlListUrlsPattern,
+ *         type: networkFirewallPolicyUrlListUrlsType,
  *     }],
  * });
  * ```

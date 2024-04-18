@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProject = oci.AiVision.getProject({
- *     projectId: oci_ai_vision_project.test_project.id,
+ *     projectId: testProjectOciAiVisionProject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetProjectResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProject = oci.AiVision.getProject({
- *     projectId: oci_ai_vision_project.test_project.id,
+ *     projectId: testProjectOciAiVisionProject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

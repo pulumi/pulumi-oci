@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsagePlan = oci.ApiGateway.getUsagePlan({
- *     usagePlanId: oci_apigateway_usage_plan.test_usage_plan.id,
+ *     usagePlanId: testUsagePlanOciApigatewayUsagePlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,7 +101,7 @@ export interface GetUsagePlanResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsagePlan = oci.ApiGateway.getUsagePlan({
- *     usagePlanId: oci_apigateway_usage_plan.test_usage_plan.id,
+ *     usagePlanId: testUsagePlanOciApigatewayUsagePlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

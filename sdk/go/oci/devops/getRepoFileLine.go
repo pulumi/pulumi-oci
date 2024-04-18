@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepoFileLine(ctx, &devops.GetRepoFileLineArgs{
-//				RepositoryId:    oci_devops_repository.Test_repository.Id,
-//				Revision:        _var.Repo_file_line_revision,
-//				FilePath:        _var.Repo_file_line_file_path,
-//				StartLineNumber: pulumi.IntRef(_var.Repo_file_line_start_line_number),
+//				RepositoryId:    testRepository.Id,
+//				Revision:        repoFileLineRevision,
+//				FilePath:        repoFileLineFilePath,
+//				StartLineNumber: pulumi.IntRef(repoFileLineStartLineNumber),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -30,9 +30,9 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryArchiveContent = Oci.DevOps.GetRepositoryArchiveContent.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         Format = @var.Repository_archive_content_format,
-        ///         RefName = @var.Repository_archive_content_ref_name,
+        ///         RepositoryId = testRepository.Id,
+        ///         Format = repositoryArchiveContentFormat,
+        ///         RefName = repositoryArchiveContentRefName,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryArchiveContent = Oci.DevOps.GetRepositoryArchiveContent.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         Format = @var.Repository_archive_content_format,
-        ///         RefName = @var.Repository_archive_content_ref_name,
+        ///         RepositoryId = testRepository.Id,
+        ///         Format = repositoryArchiveContentFormat,
+        ///         RefName = repositoryArchiveContentRefName,
         ///     });
         /// 
         /// });

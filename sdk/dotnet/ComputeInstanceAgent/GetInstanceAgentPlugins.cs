@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         InstanceagentId = oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-        ///         Name = @var.Instance_agent_plugin_name,
-        ///         Status = @var.Instance_agent_plugin_status,
+        ///         InstanceagentId = testInstanceagent.Id,
+        ///         Name = instanceAgentPluginName,
+        ///         Status = instanceAgentPluginStatus,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {
         ///     var testInstanceAgentPlugins = Oci.ComputeInstanceAgent.GetInstanceAgentPlugins.Invoke(new()
         ///     {
-        ///         InstanceagentId = oci_computeinstanceagent_instanceagent.Test_instanceagent.Id,
-        ///         Name = @var.Instance_agent_plugin_name,
-        ///         Status = @var.Instance_agent_plugin_status,
+        ///         InstanceagentId = testInstanceagent.Id,
+        ///         Name = instanceAgentPluginName,
+        ///         Status = instanceAgentPluginStatus,
         ///     });
         /// 
         /// });

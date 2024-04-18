@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVnic = oci.Core.getVnic({
- *     vnicId: oci_core_vnic.test_vnic.id,
+ *     vnicId: testVnicOciCoreVnic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetVnicResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVnic = oci.Core.getVnic({
- *     vnicId: oci_core_vnic.test_vnic.id,
+ *     vnicId: testVnicOciCoreVnic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

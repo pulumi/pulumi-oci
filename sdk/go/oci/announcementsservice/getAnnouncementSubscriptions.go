@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AnnouncementsService.GetAnnouncementSubscriptions(ctx, &announcementsservice.GetAnnouncementSubscriptionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Announcement_subscription_display_name),
-//				Id:            pulumi.StringRef(_var.Announcement_subscription_id),
-//				State:         pulumi.StringRef(_var.Announcement_subscription_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(announcementSubscriptionDisplayName),
+//				Id:            pulumi.StringRef(announcementSubscriptionId),
+//				State:         pulumi.StringRef(announcementSubscriptionState),
 //			}, nil)
 //			if err != nil {
 //				return err

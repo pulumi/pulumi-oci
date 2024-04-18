@@ -25,10 +25,10 @@ namespace Pulumi.Oci.CloudMigrations
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMigration = new Oci.CloudMigrations.Migration("testMigration", new()
+    ///     var testMigration = new Oci.CloudMigrations.Migration("test_migration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Migration_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = migrationDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -37,8 +37,8 @@ namespace Pulumi.Oci.CloudMigrations
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsCompleted = @var.Migration_is_completed,
-    ///         ReplicationScheduleId = oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id,
+    ///         IsCompleted = migrationIsCompleted,
+    ///         ReplicationScheduleId = testReplicationSchedule.Id,
     ///     });
     /// 
     /// });

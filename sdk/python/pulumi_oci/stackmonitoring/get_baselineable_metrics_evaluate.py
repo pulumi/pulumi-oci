@@ -107,19 +107,19 @@ def get_baselineable_metrics_evaluate(baselineable_metric_id: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
+    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
         items=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemArgs(
             evaluation_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_evaluation_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_evaluation_data_points_value"],
+                timestamp=baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
+                value=baselineable_metrics_evaluate_items_evaluation_data_points_value,
             )],
             training_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_training_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_training_data_points_value"],
+                timestamp=baselineable_metrics_evaluate_items_training_data_points_timestamp,
+                value=baselineable_metrics_evaluate_items_training_data_points_value,
             )],
-            dimensions=var["baselineable_metrics_evaluate_items_dimensions"],
+            dimensions=baselineable_metrics_evaluate_items_dimensions,
         )],
-        resource_id=oci_usage_proxy_resource["test_resource"]["id"])
+        resource_id=test_resource["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,19 +160,19 @@ def get_baselineable_metrics_evaluate_output(baselineable_metric_id: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=oci_stack_monitoring_baselineable_metric["test_baselineable_metric"]["id"],
+    test_baselineable_metrics_evaluate = oci.StackMonitoring.get_baselineable_metrics_evaluate(baselineable_metric_id=test_baselineable_metric["id"],
         items=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemArgs(
             evaluation_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_evaluation_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_evaluation_data_points_value"],
+                timestamp=baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
+                value=baselineable_metrics_evaluate_items_evaluation_data_points_value,
             )],
             training_data_points=[oci.stack_monitoring.GetBaselineableMetricsEvaluateItemTrainingDataPointArgs(
-                timestamp=var["baselineable_metrics_evaluate_items_training_data_points_timestamp"],
-                value=var["baselineable_metrics_evaluate_items_training_data_points_value"],
+                timestamp=baselineable_metrics_evaluate_items_training_data_points_timestamp,
+                value=baselineable_metrics_evaluate_items_training_data_points_value,
             )],
-            dimensions=var["baselineable_metrics_evaluate_items_dimensions"],
+            dimensions=baselineable_metrics_evaluate_items_dimensions,
         )],
-        resource_id=oci_usage_proxy_resource["test_resource"]["id"])
+        resource_id=test_resource["id"])
     ```
     <!--End PulumiCodeChooser -->
 

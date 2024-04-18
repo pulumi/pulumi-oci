@@ -32,8 +32,8 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testFaultDomains = Oci.Identity.GetFaultDomains.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Fault_domain_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = faultDomainAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -64,8 +64,8 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testFaultDomains = Oci.Identity.GetFaultDomains.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Fault_domain_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         AvailabilityDomain = faultDomainAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

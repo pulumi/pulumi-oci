@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiAnomalyDetection.GetAiPrivateEndpoints(ctx, &aianomalydetection.GetAiPrivateEndpointsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Ai_private_endpoint_display_name),
-//				Id:            pulumi.StringRef(_var.Ai_private_endpoint_id),
-//				State:         pulumi.StringRef(_var.Ai_private_endpoint_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(aiPrivateEndpointDisplayName),
+//				Id:            pulumi.StringRef(aiPrivateEndpointId),
+//				State:         pulumi.StringRef(aiPrivateEndpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

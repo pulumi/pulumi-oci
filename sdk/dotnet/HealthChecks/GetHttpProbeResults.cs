@@ -32,10 +32,10 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testHttpProbeResults = Oci.HealthChecks.GetHttpProbeResults.Invoke(new()
         ///     {
-        ///         ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-        ///         StartTimeGreaterThanOrEqualTo = @var.Http_probe_result_start_time_greater_than_or_equal_to,
-        ///         StartTimeLessThanOrEqualTo = @var.Http_probe_result_start_time_less_than_or_equal_to,
-        ///         Target = @var.Http_probe_result_target,
+        ///         ProbeConfigurationId = testProbeConfiguration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = httpProbeResultStartTimeGreaterThanOrEqualTo,
+        ///         StartTimeLessThanOrEqualTo = httpProbeResultStartTimeLessThanOrEqualTo,
+        ///         Target = httpProbeResultTarget,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testHttpProbeResults = Oci.HealthChecks.GetHttpProbeResults.Invoke(new()
         ///     {
-        ///         ProbeConfigurationId = oci_health_checks_probe_configuration.Test_probe_configuration.Id,
-        ///         StartTimeGreaterThanOrEqualTo = @var.Http_probe_result_start_time_greater_than_or_equal_to,
-        ///         StartTimeLessThanOrEqualTo = @var.Http_probe_result_start_time_less_than_or_equal_to,
-        ///         Target = @var.Http_probe_result_target,
+        ///         ProbeConfigurationId = testProbeConfiguration.Id,
+        ///         StartTimeGreaterThanOrEqualTo = httpProbeResultStartTimeGreaterThanOrEqualTo,
+        ///         StartTimeLessThanOrEqualTo = httpProbeResultStartTimeLessThanOrEqualTo,
+        ///         Target = httpProbeResultTarget,
         ///     });
         /// 
         /// });

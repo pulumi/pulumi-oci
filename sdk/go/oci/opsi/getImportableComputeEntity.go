@@ -37,7 +37,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetImportableComputeEntity(ctx, &opsi.GetImportableComputeEntityArgs{
-//				CompartmentId: _var.Compartment_id,
+//				CompartmentId: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

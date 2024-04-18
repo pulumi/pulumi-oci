@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCrossConnect = Oci.Core.GetCrossConnect.Invoke(new()
         ///     {
-        ///         CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
+        ///         CrossConnectId = testCrossConnectOciCoreCrossConnect.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCrossConnect = Oci.Core.GetCrossConnect.Invoke(new()
         ///     {
-        ///         CrossConnectId = oci_core_cross_connect.Test_cross_connect.Id,
+        ///         CrossConnectId = testCrossConnectOciCoreCrossConnect.Id,
         ///     });
         /// 
         /// });

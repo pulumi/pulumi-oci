@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
- *     compartmentId: _var.compartment_id,
- *     hostShapeName: oci_core_shape.test_shape.name,
- *     version: _var.supported_vmware_software_version_version,
+ *     compartmentId: compartmentId,
+ *     hostShapeName: testShape.name,
+ *     version: supportedVmwareSoftwareVersionVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,9 +91,9 @@ export interface GetSupportedVmwareSoftwareVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedVmwareSoftwareVersions = oci.Ocvp.getSupportedVmwareSoftwareVersions({
- *     compartmentId: _var.compartment_id,
- *     hostShapeName: oci_core_shape.test_shape.name,
- *     version: _var.supported_vmware_software_version_version,
+ *     compartmentId: compartmentId,
+ *     hostShapeName: testShape.name,
+ *     version: supportedVmwareSoftwareVersionVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

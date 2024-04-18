@@ -173,14 +173,14 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=var["compartment_id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        artifact_path=var["generic_artifact_artifact_path"],
-        display_name=var["generic_artifact_display_name"],
-        id=var["generic_artifact_id"],
-        sha256=var["generic_artifact_sha256"],
-        state=var["generic_artifact_state"],
-        version=var["generic_artifact_version"])
+    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=compartment_id,
+        repository_id=test_repository["id"],
+        artifact_path=generic_artifact_artifact_path,
+        display_name=generic_artifact_display_name,
+        id=generic_artifact_id,
+        sha256=generic_artifact_sha256,
+        state=generic_artifact_state,
+        version=generic_artifact_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -243,14 +243,14 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=var["compartment_id"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        artifact_path=var["generic_artifact_artifact_path"],
-        display_name=var["generic_artifact_display_name"],
-        id=var["generic_artifact_id"],
-        sha256=var["generic_artifact_sha256"],
-        state=var["generic_artifact_state"],
-        version=var["generic_artifact_version"])
+    test_generic_artifacts = oci.Artifacts.get_generic_artifacts(compartment_id=compartment_id,
+        repository_id=test_repository["id"],
+        artifact_path=generic_artifact_artifact_path,
+        display_name=generic_artifact_display_name,
+        id=generic_artifact_id,
+        sha256=generic_artifact_sha256,
+        state=generic_artifact_state,
+        version=generic_artifact_version)
     ```
     <!--End PulumiCodeChooser -->
 

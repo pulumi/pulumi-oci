@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVbInstance = oci.VisualBuilder.getVbInstance({
- *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
+ *     vbInstanceId: testVbInstanceOciVisualBuilderVbInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -150,7 +150,7 @@ export interface GetVbInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVbInstance = oci.VisualBuilder.getVbInstance({
- *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
+ *     vbInstanceId: testVbInstanceOciVisualBuilderVbInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
- *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
- *     namespace: _var.log_analytics_entity_namespace,
+ *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
+ *     namespace: logAnalyticsEntityNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -156,8 +156,8 @@ export interface GetLogAnalyticsEntityResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsEntity = oci.LogAnalytics.getLogAnalyticsEntity({
- *     logAnalyticsEntityId: oci_log_analytics_log_analytics_entity.test_log_analytics_entity.id,
- *     namespace: _var.log_analytics_entity_namespace,
+ *     logAnalyticsEntityId: testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id,
+ *     namespace: logAnalyticsEntityNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

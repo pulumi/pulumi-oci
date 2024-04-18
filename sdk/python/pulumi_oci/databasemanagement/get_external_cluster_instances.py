@@ -120,9 +120,9 @@ def get_external_cluster_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_cluster_instance_display_name"],
-        external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
+    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=compartment_id,
+        display_name=external_cluster_instance_display_name,
+        external_cluster_id=test_external_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_external_cluster_instances_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_cluster_instance_display_name"],
-        external_cluster_id=oci_database_management_external_cluster["test_external_cluster"]["id"])
+    test_external_cluster_instances = oci.DatabaseManagement.get_external_cluster_instances(compartment_id=compartment_id,
+        display_name=external_cluster_instance_display_name,
+        external_cluster_id=test_external_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

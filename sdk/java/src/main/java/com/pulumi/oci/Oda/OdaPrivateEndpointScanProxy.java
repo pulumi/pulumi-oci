@@ -49,14 +49,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOdaPrivateEndpointScanProxy = new OdaPrivateEndpointScanProxy(&#34;testOdaPrivateEndpointScanProxy&#34;, OdaPrivateEndpointScanProxyArgs.builder()        
- *             .odaPrivateEndpointId(oci_oda_oda_private_endpoint.test_oda_private_endpoint().id())
- *             .protocol(var_.oda_private_endpoint_scan_proxy_protocol())
+ *             .odaPrivateEndpointId(testOdaPrivateEndpoint.id())
+ *             .protocol(odaPrivateEndpointScanProxyProtocol)
  *             .scanListenerInfos(OdaPrivateEndpointScanProxyScanListenerInfoArgs.builder()
- *                 .scanListenerFqdn(var_.oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn())
- *                 .scanListenerIp(var_.oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip())
- *                 .scanListenerPort(var_.oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port())
+ *                 .scanListenerFqdn(odaPrivateEndpointScanProxyScanListenerInfosScanListenerFqdn)
+ *                 .scanListenerIp(odaPrivateEndpointScanProxyScanListenerInfosScanListenerIp)
+ *                 .scanListenerPort(odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort)
  *                 .build())
- *             .scanListenerType(var_.oda_private_endpoint_scan_proxy_scan_listener_type())
+ *             .scanListenerType(odaPrivateEndpointScanProxyScanListenerType)
  *             .build());
  * 
  *     }

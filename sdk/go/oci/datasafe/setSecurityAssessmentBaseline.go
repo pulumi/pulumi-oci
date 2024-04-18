@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSetSecurityAssessmentBaseline(ctx, "testSetSecurityAssessmentBaseline", &DataSafe.SetSecurityAssessmentBaselineArgs{
-//				SecurityAssessmentId: pulumi.Any(oci_data_safe_security_assessment.Test_security_assessment.Id),
-//				AssessmentIds:        pulumi.Any(_var.Set_security_assessment_baseline_assessment_ids),
+//			_, err := DataSafe.NewSetSecurityAssessmentBaseline(ctx, "test_set_security_assessment_baseline", &DataSafe.SetSecurityAssessmentBaselineArgs{
+//				SecurityAssessmentId: pulumi.Any(testSecurityAssessment.Id),
+//				AssessmentIds:        pulumi.Any(setSecurityAssessmentBaselineAssessmentIds),
 //			})
 //			if err != nil {
 //				return err

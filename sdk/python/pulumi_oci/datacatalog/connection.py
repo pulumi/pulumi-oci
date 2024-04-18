@@ -456,15 +456,15 @@ class Connection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection = oci.data_catalog.Connection("testConnection",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            data_asset_key=var["connection_data_asset_key"],
-            display_name=var["connection_display_name"],
-            properties=var["connection_properties"],
-            type_key=var["connection_type_key"],
-            description=var["connection_description"],
-            enc_properties=var["connection_enc_properties"],
-            is_default=var["connection_is_default"])
+        test_connection = oci.data_catalog.Connection("test_connection",
+            catalog_id=test_catalog["id"],
+            data_asset_key=connection_data_asset_key,
+            display_name=connection_display_name,
+            properties=connection_properties,
+            type_key=connection_type_key,
+            description=connection_description,
+            enc_properties=connection_enc_properties,
+            is_default=connection_is_default)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -508,15 +508,15 @@ class Connection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection = oci.data_catalog.Connection("testConnection",
-            catalog_id=oci_datacatalog_catalog["test_catalog"]["id"],
-            data_asset_key=var["connection_data_asset_key"],
-            display_name=var["connection_display_name"],
-            properties=var["connection_properties"],
-            type_key=var["connection_type_key"],
-            description=var["connection_description"],
-            enc_properties=var["connection_enc_properties"],
-            is_default=var["connection_is_default"])
+        test_connection = oci.data_catalog.Connection("test_connection",
+            catalog_id=test_catalog["id"],
+            data_asset_key=connection_data_asset_key,
+            display_name=connection_display_name,
+            properties=connection_properties,
+            type_key=connection_type_key,
+            description=connection_description,
+            enc_properties=connection_enc_properties,
+            is_default=connection_is_default)
         ```
         <!--End PulumiCodeChooser -->
 

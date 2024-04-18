@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Artifacts.GetGenericArtifacts(ctx, &artifacts.GetGenericArtifactsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				RepositoryId:  oci_artifacts_repository.Test_repository.Id,
-//				ArtifactPath:  pulumi.StringRef(_var.Generic_artifact_artifact_path),
-//				DisplayName:   pulumi.StringRef(_var.Generic_artifact_display_name),
-//				Id:            pulumi.StringRef(_var.Generic_artifact_id),
-//				Sha256:        pulumi.StringRef(_var.Generic_artifact_sha256),
-//				State:         pulumi.StringRef(_var.Generic_artifact_state),
-//				Version:       pulumi.StringRef(_var.Generic_artifact_version),
+//				CompartmentId: compartmentId,
+//				RepositoryId:  testRepository.Id,
+//				ArtifactPath:  pulumi.StringRef(genericArtifactArtifactPath),
+//				DisplayName:   pulumi.StringRef(genericArtifactDisplayName),
+//				Id:            pulumi.StringRef(genericArtifactId),
+//				Sha256:        pulumi.StringRef(genericArtifactSha256),
+//				State:         pulumi.StringRef(genericArtifactState),
+//				Version:       pulumi.StringRef(genericArtifactVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

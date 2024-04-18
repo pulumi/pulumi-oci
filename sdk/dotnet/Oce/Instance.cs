@@ -25,30 +25,31 @@ namespace Pulumi.Oci.Oce
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOceInstance = new Oci.Oce.Instance("testOceInstance", new()
+    ///     var testOceInstance = new Oci.Oce.Instance("test_oce_instance", new()
     ///     {
-    ///         AdminEmail = @var.Oce_instance_admin_email,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IdcsAccessToken = @var.Oce_instance_idcs_access_token,
-    ///         ObjectStorageNamespace = @var.Oce_instance_object_storage_namespace,
-    ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-    ///         TenancyName = oci_identity_tenancy.Test_tenancy.Name,
-    ///         AddOnFeatures = @var.Oce_instance_add_on_features,
+    ///         AdminEmail = oceInstanceAdminEmail,
+    ///         CompartmentId = compartmentId,
+    ///         IdcsAccessToken = oceInstanceIdcsAccessToken,
+    ///         Name = oceInstanceName,
+    ///         ObjectStorageNamespace = oceInstanceObjectStorageNamespace,
+    ///         TenancyId = testTenancy.Id,
+    ///         TenancyName = testTenancy.Name,
+    ///         AddOnFeatures = oceInstanceAddOnFeatures,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Oce_instance_description,
-    ///         DrRegion = @var.Oce_instance_dr_region,
+    ///         Description = oceInstanceDescription,
+    ///         DrRegion = oceInstanceDrRegion,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         InstanceAccessType = @var.Oce_instance_instance_access_type,
-    ///         InstanceLicenseType = @var.Oce_instance_instance_license_type,
-    ///         InstanceUsageType = @var.Oce_instance_instance_usage_type,
-    ///         UpgradeSchedule = @var.Oce_instance_upgrade_schedule,
-    ///         WafPrimaryDomain = @var.Oce_instance_waf_primary_domain,
+    ///         InstanceAccessType = oceInstanceInstanceAccessType,
+    ///         InstanceLicenseType = oceInstanceInstanceLicenseType,
+    ///         InstanceUsageType = oceInstanceInstanceUsageType,
+    ///         UpgradeSchedule = oceInstanceUpgradeSchedule,
+    ///         WafPrimaryDomain = oceInstanceWafPrimaryDomain,
     ///     });
     /// 
     /// });

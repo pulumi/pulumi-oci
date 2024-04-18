@@ -16,18 +16,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbsInstance = new oci.vbs.InstVbsInstance("testVbsInstance", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vbs_instance_display_name,
+ * const testVbsInstance = new oci.vbs.InstVbsInstance("test_vbs_instance", {
+ *     compartmentId: compartmentId,
+ *     displayName: vbsInstanceDisplayName,
+ *     name: vbsInstanceName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     idcsAccessToken: _var.vbs_instance_idcs_access_token,
- *     isResourceUsageAgreementGranted: _var.vbs_instance_is_resource_usage_agreement_granted,
- *     resourceCompartmentId: _var.resource_compartment_id,
+ *     idcsAccessToken: vbsInstanceIdcsAccessToken,
+ *     isResourceUsageAgreementGranted: vbsInstanceIsResourceUsageAgreementGranted,
+ *     resourceCompartmentId: resourceCompartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

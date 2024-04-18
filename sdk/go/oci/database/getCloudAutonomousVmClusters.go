@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetCloudAutonomousVmClusters(ctx, &database.GetCloudAutonomousVmClustersArgs{
-//				CompartmentId:                _var.Compartment_id,
-//				AvailabilityDomain:           pulumi.StringRef(_var.Cloud_autonomous_vm_cluster_availability_domain),
-//				CloudExadataInfrastructureId: pulumi.StringRef(oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id),
-//				DisplayName:                  pulumi.StringRef(_var.Cloud_autonomous_vm_cluster_display_name),
-//				State:                        pulumi.StringRef(_var.Cloud_autonomous_vm_cluster_state),
+//				CompartmentId:                compartmentId,
+//				AvailabilityDomain:           pulumi.StringRef(cloudAutonomousVmClusterAvailabilityDomain),
+//				CloudExadataInfrastructureId: pulumi.StringRef(testCloudExadataInfrastructure.Id),
+//				DisplayName:                  pulumi.StringRef(cloudAutonomousVmClusterDisplayName),
+//				State:                        pulumi.StringRef(cloudAutonomousVmClusterState),
 //			}, nil)
 //			if err != nil {
 //				return err

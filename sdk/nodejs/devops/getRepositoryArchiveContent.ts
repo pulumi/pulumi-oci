@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     format: _var.repository_archive_content_format,
- *     refName: _var.repository_archive_content_ref_name,
+ *     repositoryId: testRepository.id,
+ *     format: repositoryArchiveContentFormat,
+ *     refName: repositoryArchiveContentRefName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,9 +77,9 @@ export interface GetRepositoryArchiveContentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositoryArchiveContent = oci.DevOps.getRepositoryArchiveContent({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     format: _var.repository_archive_content_format,
- *     refName: _var.repository_archive_content_ref_name,
+ *     repositoryId: testRepository.id,
+ *     format: repositoryArchiveContentFormat,
+ *     refName: repositoryArchiveContentRefName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

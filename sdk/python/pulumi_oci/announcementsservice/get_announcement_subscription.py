@@ -238,7 +238,7 @@ def get_announcement_subscription(announcement_subscription_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"])
+    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=test_announcement_subscription_oci_announcements_service_announcement_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -286,7 +286,7 @@ def get_announcement_subscription_output(announcement_subscription_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"])
+    test_announcement_subscription = oci.AnnouncementsService.get_announcement_subscription(announcement_subscription_id=test_announcement_subscription_oci_announcements_service_announcement_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 

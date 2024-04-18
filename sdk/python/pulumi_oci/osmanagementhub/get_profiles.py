@@ -193,15 +193,15 @@ def get_profiles(arch_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.OsManagementHub.get_profiles(arch_type=var["profile_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["profile_display_name"],
-        display_name_contains=var["profile_display_name_contains"],
-        os_family=var["profile_os_family"],
-        profile_id=oci_os_management_hub_profile["test_profile"]["id"],
-        profile_types=var["profile_profile_type"],
-        state=var["profile_state"],
-        vendor_name=var["profile_vendor_name"])
+    test_profiles = oci.OsManagementHub.get_profiles(arch_type=profile_arch_type,
+        compartment_id=compartment_id,
+        display_names=profile_display_name,
+        display_name_contains=profile_display_name_contains,
+        os_family=profile_os_family,
+        profile_id=test_profile["id"],
+        profile_types=profile_profile_type,
+        state=profile_state,
+        vendor_name=profile_vendor_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -270,15 +270,15 @@ def get_profiles_output(arch_type: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profiles = oci.OsManagementHub.get_profiles(arch_type=var["profile_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["profile_display_name"],
-        display_name_contains=var["profile_display_name_contains"],
-        os_family=var["profile_os_family"],
-        profile_id=oci_os_management_hub_profile["test_profile"]["id"],
-        profile_types=var["profile_profile_type"],
-        state=var["profile_state"],
-        vendor_name=var["profile_vendor_name"])
+    test_profiles = oci.OsManagementHub.get_profiles(arch_type=profile_arch_type,
+        compartment_id=compartment_id,
+        display_names=profile_display_name,
+        display_name_contains=profile_display_name_contains,
+        os_family=profile_os_family,
+        profile_id=test_profile["id"],
+        profile_types=profile_profile_type,
+        state=profile_state,
+        vendor_name=profile_vendor_name)
     ```
     <!--End PulumiCodeChooser -->
 

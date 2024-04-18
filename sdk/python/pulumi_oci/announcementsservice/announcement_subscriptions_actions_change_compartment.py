@@ -127,9 +127,9 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_announcement_subscriptions_actions_change_compartment = oci.announcements_service.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
-            compartment_id=var["compartment_id"])
+        test_announcement_subscriptions_actions_change_compartment = oci.announcements_service.AnnouncementSubscriptionsActionsChangeCompartment("test_announcement_subscriptions_actions_change_compartment",
+            announcement_subscription_id=test_announcement_subscription["id"],
+            compartment_id=compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -170,9 +170,9 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_announcement_subscriptions_actions_change_compartment = oci.announcements_service.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment",
-            announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
-            compartment_id=var["compartment_id"])
+        test_announcement_subscriptions_actions_change_compartment = oci.announcements_service.AnnouncementSubscriptionsActionsChangeCompartment("test_announcement_subscriptions_actions_change_compartment",
+            announcement_subscription_id=test_announcement_subscription["id"],
+            compartment_id=compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 

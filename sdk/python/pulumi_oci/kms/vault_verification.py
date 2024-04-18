@@ -117,9 +117,9 @@ class VaultVerification(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication = oci.kms.VaultVerification("testReplication",
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            replica_region=var["replica_region"])
+        test_replication = oci.kms.VaultVerification("test_replication",
+            vault_id=test_vault["id"],
+            replica_region=replica_region)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -151,9 +151,9 @@ class VaultVerification(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication = oci.kms.VaultVerification("testReplication",
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            replica_region=var["replica_region"])
+        test_replication = oci.kms.VaultVerification("test_replication",
+            vault_id=test_vault["id"],
+            replica_region=replica_region)
         ```
         <!--End PulumiCodeChooser -->
 

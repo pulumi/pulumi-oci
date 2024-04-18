@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetTagDefaults(ctx, &identity.GetTagDefaultsArgs{
-//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-//				Id:              pulumi.StringRef(_var.Tag_default_id),
-//				State:           pulumi.StringRef(_var.Tag_default_state),
-//				TagDefinitionId: pulumi.StringRef(oci_identity_tag_definition.Test_tag_definition.Id),
+//				CompartmentId:   pulumi.StringRef(compartmentId),
+//				Id:              pulumi.StringRef(tagDefaultId),
+//				State:           pulumi.StringRef(tagDefaultState),
+//				TagDefinitionId: pulumi.StringRef(testTagDefinition.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

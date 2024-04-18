@@ -12,9 +12,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExportSet = new oci.filestorage.ExportSet("testExportSet", {
- *     mountTargetId: oci_file_storage_mount_target.test_mount_target.id,
- *     displayName: _var.export_set_name,
+ * const testExportSet = new oci.filestorage.ExportSet("test_export_set", {
+ *     mountTargetId: testMountTarget.id,
+ *     displayName: exportSetName,
  *     maxFsStatBytes: "23843202333",
  *     maxFsStatFiles: "223442",
  * });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := VnMonitoring.GetPathAnalyzerTest(ctx, &vnmonitoring.GetPathAnalyzerTestArgs{
-//				PathAnalyzerTestId: oci_vn_monitoring_path_analyzer_test.Test_path_analyzer_test.Id,
+//				PathAnalyzerTestId: testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

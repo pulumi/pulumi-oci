@@ -33,18 +33,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.NewEndpoint(ctx, "testEndpoint", &GenerativeAi.EndpointArgs{
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				DedicatedAiClusterId: pulumi.Any(oci_generative_ai_dedicated_ai_cluster.Test_dedicated_ai_cluster.Id),
-//				ModelId:              pulumi.Any(oci_generative_ai_model.Test_model.Id),
+//			_, err := GenerativeAi.NewEndpoint(ctx, "test_endpoint", &GenerativeAi.EndpointArgs{
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DedicatedAiClusterId: pulumi.Any(testDedicatedAiCluster.Id),
+//				ModelId:              pulumi.Any(testModel.Id),
 //				ContentModerationConfig: &generativeai.EndpointContentModerationConfigArgs{
-//					IsEnabled: pulumi.Any(_var.Endpoint_content_moderation_config_is_enabled),
+//					IsEnabled: pulumi.Any(endpointContentModerationConfigIsEnabled),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Endpoint_description),
-//				DisplayName: pulumi.Any(_var.Endpoint_display_name),
+//				Description: pulumi.Any(endpointDescription),
+//				DisplayName: pulumi.Any(endpointDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

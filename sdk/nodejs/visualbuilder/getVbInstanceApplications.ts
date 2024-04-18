@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVbInstanceApplications = oci.VisualBuilder.getVbInstanceApplications({
- *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
+ *     vbInstanceId: testVbInstance.id,
  *     idcsOpenId: "idcs_open_id_value",
  * });
  * ```
@@ -76,7 +76,7 @@ export interface GetVbInstanceApplicationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVbInstanceApplications = oci.VisualBuilder.getVbInstanceApplications({
- *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
+ *     vbInstanceId: testVbInstance.id,
  *     idcsOpenId: "idcs_open_id_value",
  * });
  * ```

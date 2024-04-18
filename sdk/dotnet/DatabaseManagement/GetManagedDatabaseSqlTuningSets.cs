@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningSets = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_set_opc_named_credential_id,
-        ///         Owner = @var.Managed_database_sql_tuning_set_owner,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         NameContains = managedDatabaseSqlTuningSetNameContains,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningSetOpcNamedCredentialId,
+        ///         Owner = managedDatabaseSqlTuningSetOwner,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningSets = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSets.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_set_opc_named_credential_id,
-        ///         Owner = @var.Managed_database_sql_tuning_set_owner,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         NameContains = managedDatabaseSqlTuningSetNameContains,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningSetOpcNamedCredentialId,
+        ///         Owner = managedDatabaseSqlTuningSetOwner,
         ///     });
         /// 
         /// });

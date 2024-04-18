@@ -27,9 +27,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewCompartment(ctx, "testCompartment", &Identity.CompartmentArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Description:   pulumi.Any(_var.Compartment_description),
+//			_, err := Identity.NewCompartment(ctx, "test_compartment", &Identity.CompartmentArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Description:   pulumi.Any(compartmentDescription),
+//				Name:          pulumi.Any(compartmentName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
- *     compartmentId: _var.compartment_id,
- *     autonomousPatchType: _var.autonomous_container_patch_autonomous_patch_type,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     compartmentId: compartmentId,
+ *     autonomousPatchType: autonomousContainerPatchAutonomousPatchType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetAutonomousContainerPatchesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousContainerPatches = oci.Database.getAutonomousContainerPatches({
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
- *     compartmentId: _var.compartment_id,
- *     autonomousPatchType: _var.autonomous_container_patch_autonomous_patch_type,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     compartmentId: compartmentId,
+ *     autonomousPatchType: autonomousContainerPatchAutonomousPatchType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

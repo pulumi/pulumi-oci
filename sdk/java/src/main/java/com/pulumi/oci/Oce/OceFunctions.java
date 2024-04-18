@@ -47,7 +47,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstance = OceFunctions.getOceInstance(GetOceInstanceArgs.builder()
-     *             .oceInstanceId(oci_oce_oce_instance.test_oce_instance().id())
+     *             .oceInstanceId(testOceInstanceOciOceOceInstance.id())
      *             .build());
      * 
      *     }
@@ -215,10 +215,10 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oce_instance_display_name())
-     *             .state(var_.oce_instance_state())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oceInstanceDisplayName)
+     *             .state(oceInstanceState)
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -260,10 +260,10 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oce_instance_display_name())
-     *             .state(var_.oce_instance_state())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oceInstanceDisplayName)
+     *             .state(oceInstanceState)
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -305,10 +305,10 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oce_instance_display_name())
-     *             .state(var_.oce_instance_state())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oceInstanceDisplayName)
+     *             .state(oceInstanceState)
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }
@@ -350,10 +350,10 @@ public final class OceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOceInstances = OceFunctions.getOceInstances(GetOceInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oce_instance_display_name())
-     *             .state(var_.oce_instance_state())
-     *             .tenancyId(oci_identity_tenancy.test_tenancy().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oceInstanceDisplayName)
+     *             .state(oceInstanceState)
+     *             .tenancyId(testTenancy.id())
      *             .build());
      * 
      *     }

@@ -28,9 +28,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserGroupMemberships = oci.Identity.getUserGroupMemberships({
- *     compartmentId: _var.tenancy_ocid,
- *     groupId: oci_identity_group.test_group.id,
- *     userId: oci_identity_user.test_user.id,
+ *     compartmentId: tenancyOcid,
+ *     groupId: testGroup.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,9 +113,9 @@ export interface GetUserGroupMembershipsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserGroupMemberships = oci.Identity.getUserGroupMemberships({
- *     compartmentId: _var.tenancy_ocid,
- *     groupId: oci_identity_group.test_group.id,
- *     userId: oci_identity_user.test_user.id,
+ *     compartmentId: tenancyOcid,
+ *     groupId: testGroup.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

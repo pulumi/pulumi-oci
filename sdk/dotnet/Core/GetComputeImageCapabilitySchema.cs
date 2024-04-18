@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeImageCapabilitySchema = Oci.Core.GetComputeImageCapabilitySchema.Invoke(new()
         ///     {
-        ///         ComputeImageCapabilitySchemaId = oci_core_compute_image_capability_schema.Test_compute_image_capability_schema.Id,
-        ///         IsMergeEnabled = @var.Compute_image_capability_schema_is_merge_enabled,
+        ///         ComputeImageCapabilitySchemaId = testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.Id,
+        ///         IsMergeEnabled = computeImageCapabilitySchemaIsMergeEnabled,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeImageCapabilitySchema = Oci.Core.GetComputeImageCapabilitySchema.Invoke(new()
         ///     {
-        ///         ComputeImageCapabilitySchemaId = oci_core_compute_image_capability_schema.Test_compute_image_capability_schema.Id,
-        ///         IsMergeEnabled = @var.Compute_image_capability_schema_is_merge_enabled,
+        ///         ComputeImageCapabilitySchemaId = testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.Id,
+        ///         IsMergeEnabled = computeImageCapabilitySchemaIsMergeEnabled,
         ///     });
         /// 
         /// });

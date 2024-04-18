@@ -31,29 +31,29 @@ namespace Pulumi.Oci.Jms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFleet = new Oci.Jms.Fleet("testFleet", new()
+    ///     var testFleet = new Oci.Jms.Fleet("test_fleet", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Fleet_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = fleetDisplayName,
     ///         InventoryLog = new Oci.Jms.Inputs.FleetInventoryLogArgs
     ///         {
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Fleet_description,
+    ///         Description = fleetDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsAdvancedFeaturesEnabled = @var.Fleet_is_advanced_features_enabled,
+    ///         IsAdvancedFeaturesEnabled = fleetIsAdvancedFeaturesEnabled,
     ///         OperationLog = new Oci.Jms.Inputs.FleetOperationLogArgs
     ///         {
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
     ///     });
     /// 

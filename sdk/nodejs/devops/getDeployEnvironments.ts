@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployEnvironments = oci.DevOps.getDeployEnvironments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deploy_environment_display_name,
- *     id: _var.deploy_environment_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deploy_environment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deployEnvironmentDisplayName,
+ *     id: deployEnvironmentId,
+ *     projectId: testProject.id,
+ *     state: deployEnvironmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetDeployEnvironmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployEnvironments = oci.DevOps.getDeployEnvironments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deploy_environment_display_name,
- *     id: _var.deploy_environment_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.deploy_environment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deployEnvironmentDisplayName,
+ *     id: deployEnvironmentId,
+ *     projectId: testProject.id,
+ *     state: deployEnvironmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

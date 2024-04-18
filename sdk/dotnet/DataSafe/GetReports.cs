@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testReports = Oci.DataSafe.GetReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Report_access_level,
-        ///         CompartmentIdInSubtree = @var.Report_compartment_id_in_subtree,
-        ///         DisplayName = @var.Report_display_name,
-        ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
-        ///         State = @var.Report_state,
-        ///         Type = @var.Report_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = reportAccessLevel,
+        ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
+        ///         DisplayName = reportDisplayName,
+        ///         ReportDefinitionId = testReportDefinition.Id,
+        ///         State = reportState,
+        ///         Type = reportType,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testReports = Oci.DataSafe.GetReports.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Report_access_level,
-        ///         CompartmentIdInSubtree = @var.Report_compartment_id_in_subtree,
-        ///         DisplayName = @var.Report_display_name,
-        ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
-        ///         State = @var.Report_state,
-        ///         Type = @var.Report_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = reportAccessLevel,
+        ///         CompartmentIdInSubtree = reportCompartmentIdInSubtree,
+        ///         DisplayName = reportDisplayName,
+        ///         ReportDefinitionId = testReportDefinition.Id,
+        ///         State = reportState,
+        ///         Type = reportType,
         ///     });
         /// 
         /// });

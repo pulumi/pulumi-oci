@@ -31,24 +31,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waa.NewAppAccelerationPolicy(ctx, "testWebAppAccelerationPolicy", &Waa.AppAccelerationPolicyArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Waa.NewAppAccelerationPolicy(ctx, "test_web_app_acceleration_policy", &Waa.AppAccelerationPolicyArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Web_app_acceleration_policy_display_name),
+//				DisplayName: pulumi.Any(webAppAccelerationPolicyDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				ResponseCachingPolicy: &waa.AppAccelerationPolicyResponseCachingPolicyArgs{
-//					IsResponseHeaderBasedCachingEnabled: pulumi.Any(_var.Web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled),
+//					IsResponseHeaderBasedCachingEnabled: pulumi.Any(webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled),
 //				},
 //				ResponseCompressionPolicy: &waa.AppAccelerationPolicyResponseCompressionPolicyArgs{
 //					GzipCompression: &waa.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs{
-//						IsEnabled: pulumi.Any(_var.Web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled),
+//						IsEnabled: pulumi.Any(webAppAccelerationPolicyResponseCompressionPolicyGzipCompressionIsEnabled),
 //					},
 //				},
-//				SystemTags: pulumi.Any(_var.Web_app_acceleration_policy_system_tags),
+//				SystemTags: pulumi.Any(webAppAccelerationPolicySystemTags),
 //			})
 //			if err != nil {
 //				return err

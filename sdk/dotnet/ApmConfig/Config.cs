@@ -25,55 +25,55 @@ namespace Pulumi.Oci.ApmConfig
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConfig = new Oci.ApmConfig.Config("testConfig", new()
+    ///     var testConfig = new Oci.ApmConfig.Config("test_config", new()
     ///     {
-    ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-    ///         ConfigType = @var.Config_config_type,
-    ///         DisplayName = @var.Config_display_name,
+    ///         ApmDomainId = testApmDomain.Id,
+    ///         ConfigType = configConfigType,
+    ///         DisplayName = configDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Config_description,
+    ///         Description = configDescription,
     ///         Dimensions = new[]
     ///         {
     ///             new Oci.ApmConfig.Inputs.ConfigDimensionArgs
     ///             {
-    ///                 Name = @var.Config_dimensions_name,
-    ///                 ValueSource = @var.Config_dimensions_value_source,
+    ///                 Name = configDimensionsName,
+    ///                 ValueSource = configDimensionsValueSource,
     ///             },
     ///         },
-    ///         FilterId = oci_apm_config_filter.Test_filter.Id,
-    ///         FilterText = @var.Config_filter_text,
+    ///         FilterId = testFilter.Id,
+    ///         FilterText = configFilterText,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Group = @var.Config_group,
+    ///         Group = configGroup,
     ///         Metrics = new[]
     ///         {
     ///             new Oci.ApmConfig.Inputs.ConfigMetricArgs
     ///             {
-    ///                 Description = @var.Config_metrics_description,
-    ///                 Name = @var.Config_metrics_name,
-    ///                 Unit = @var.Config_metrics_unit,
-    ///                 ValueSource = @var.Config_metrics_value_source,
+    ///                 Description = configMetricsDescription,
+    ///                 Name = configMetricsName,
+    ///                 Unit = configMetricsUnit,
+    ///                 ValueSource = configMetricsValueSource,
     ///             },
     ///         },
-    ///         Namespace = @var.Config_namespace,
-    ///         OpcDryRun = @var.Config_opc_dry_run,
-    ///         Options = @var.Config_options,
+    ///         Namespace = configNamespace,
+    ///         OpcDryRun = configOpcDryRun,
+    ///         Options = configOptions,
     ///         Rules = new[]
     ///         {
     ///             new Oci.ApmConfig.Inputs.ConfigRuleArgs
     ///             {
-    ///                 DisplayName = @var.Config_rules_display_name,
-    ///                 FilterText = @var.Config_rules_filter_text,
-    ///                 IsApplyToErrorSpans = @var.Config_rules_is_apply_to_error_spans,
-    ///                 IsEnabled = @var.Config_rules_is_enabled,
-    ///                 Priority = @var.Config_rules_priority,
-    ///                 SatisfiedResponseTime = @var.Config_rules_satisfied_response_time,
-    ///                 ToleratingResponseTime = @var.Config_rules_tolerating_response_time,
+    ///                 DisplayName = configRulesDisplayName,
+    ///                 FilterText = configRulesFilterText,
+    ///                 IsApplyToErrorSpans = configRulesIsApplyToErrorSpans,
+    ///                 IsEnabled = configRulesIsEnabled,
+    ///                 Priority = configRulesPriority,
+    ///                 SatisfiedResponseTime = configRulesSatisfiedResponseTime,
+    ///                 ToleratingResponseTime = configRulesToleratingResponseTime,
     ///             },
     ///         },
     ///     });

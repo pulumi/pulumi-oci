@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespacePropertiesMetadata(ctx, &loganalytics.GetNamespacePropertiesMetadataArgs{
-//				Namespace:   _var.Namespace_properties_metadata_namespace,
-//				Constraints: pulumi.StringRef(_var.Namespace_properties_metadata_constraints),
-//				DisplayText: pulumi.StringRef(_var.Namespace_properties_metadata_display_text),
-//				Level:       pulumi.StringRef(_var.Namespace_properties_metadata_level),
-//				Name:        pulumi.StringRef(_var.Namespace_properties_metadata_name),
+//				Namespace:   namespacePropertiesMetadataNamespace,
+//				Constraints: pulumi.StringRef(namespacePropertiesMetadataConstraints),
+//				DisplayText: pulumi.StringRef(namespacePropertiesMetadataDisplayText),
+//				Level:       pulumi.StringRef(namespacePropertiesMetadataLevel),
+//				Name:        pulumi.StringRef(namespacePropertiesMetadataName),
 //			}, nil)
 //			if err != nil {
 //				return err

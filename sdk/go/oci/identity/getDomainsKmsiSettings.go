@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsKmsiSettings(ctx, &identity.GetDomainsKmsiSettingsArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
+//				IdcsEndpoint:              testDomain.Url,
 //				AttributeSets:             []interface{}{},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Kmsi_setting_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Kmsi_setting_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(kmsiSettingAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(kmsiSettingResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

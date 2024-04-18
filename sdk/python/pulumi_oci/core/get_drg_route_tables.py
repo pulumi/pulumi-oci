@@ -135,10 +135,10 @@ def get_drg_route_tables(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_table_display_name"],
-        import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-        state=var["drg_route_table_state"])
+    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=test_drg["id"],
+        display_name=drg_route_table_display_name,
+        import_drg_route_distribution_id=test_drg_route_distribution["id"],
+        state=drg_route_table_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -188,10 +188,10 @@ def get_drg_route_tables_output(display_name: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=oci_core_drg["test_drg"]["id"],
-        display_name=var["drg_route_table_display_name"],
-        import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-        state=var["drg_route_table_state"])
+    test_drg_route_tables = oci.Core.get_drg_route_tables(drg_id=test_drg["id"],
+        display_name=drg_route_table_display_name,
+        import_drg_route_distribution_id=test_drg_route_distribution["id"],
+        state=drg_route_table_state)
     ```
     <!--End PulumiCodeChooser -->
 

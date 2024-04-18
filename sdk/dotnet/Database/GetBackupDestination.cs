@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testBackupDestination = Oci.Database.GetBackupDestination.Invoke(new()
         ///     {
-        ///         BackupDestinationId = oci_database_backup_destination.Test_backup_destination.Id,
+        ///         BackupDestinationId = testBackupDestinationOciDatabaseBackupDestination.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testBackupDestination = Oci.Database.GetBackupDestination.Invoke(new()
         ///     {
-        ///         BackupDestinationId = oci_database_backup_destination.Test_backup_destination.Id,
+        ///         BackupDestinationId = testBackupDestinationOciDatabaseBackupDestination.Id,
         ///     });
         /// 
         /// });

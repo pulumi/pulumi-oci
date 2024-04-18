@@ -25,24 +25,24 @@ namespace Pulumi.Oci.Opa
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOpaInstance = new Oci.Opa.OpaInstance("testOpaInstance", new()
+    ///     var testOpaInstance = new Oci.Opa.OpaInstance("test_opa_instance", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Opa_instance_display_name,
-    ///         ShapeName = oci_core_shape.Test_shape.Name,
-    ///         ConsumptionModel = @var.Opa_instance_consumption_model,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = opaInstanceDisplayName,
+    ///         ShapeName = testShape.Name,
+    ///         ConsumptionModel = opaInstanceConsumptionModel,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Opa_instance_description,
+    ///         Description = opaInstanceDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IdcsAt = @var.Opa_instance_idcs_at,
-    ///         IsBreakglassEnabled = @var.Opa_instance_is_breakglass_enabled,
-    ///         MeteringType = @var.Opa_instance_metering_type,
+    ///         IdcsAt = opaInstanceIdcsAt,
+    ///         IsBreakglassEnabled = opaInstanceIsBreakglassEnabled,
+    ///         MeteringType = opaInstanceMeteringType,
     ///     });
     /// 
     /// });

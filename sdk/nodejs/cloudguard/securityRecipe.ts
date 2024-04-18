@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSecurityRecipe = new oci.cloudguard.SecurityRecipe("testSecurityRecipe", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.security_recipe_display_name,
- *     securityPolicies: _var.security_recipe_security_policies,
+ * const testSecurityRecipe = new oci.cloudguard.SecurityRecipe("test_security_recipe", {
+ *     compartmentId: compartmentId,
+ *     displayName: securityRecipeDisplayName,
+ *     securityPolicies: securityRecipeSecurityPolicies,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.security_recipe_description,
+ *     description: securityRecipeDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

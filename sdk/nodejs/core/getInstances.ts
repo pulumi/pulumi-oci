@@ -24,12 +24,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstances = oci.Core.getInstances({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.instance_availability_domain,
- *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
- *     computeClusterId: oci_core_compute_cluster.test_compute_cluster.id,
- *     displayName: _var.instance_display_name,
- *     state: _var.instance_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: instanceAvailabilityDomain,
+ *     capacityReservationId: testCapacityReservation.id,
+ *     computeClusterId: testComputeCluster.id,
+ *     displayName: instanceDisplayName,
+ *     state: instanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,12 +132,12 @@ export interface GetInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstances = oci.Core.getInstances({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.instance_availability_domain,
- *     capacityReservationId: oci_core_capacity_reservation.test_capacity_reservation.id,
- *     computeClusterId: oci_core_compute_cluster.test_compute_cluster.id,
- *     displayName: _var.instance_display_name,
- *     state: _var.instance_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: instanceAvailabilityDomain,
+ *     capacityReservationId: testCapacityReservation.id,
+ *     computeClusterId: testComputeCluster.id,
+ *     displayName: instanceDisplayName,
+ *     state: instanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

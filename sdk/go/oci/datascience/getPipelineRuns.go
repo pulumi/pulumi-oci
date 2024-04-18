@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetPipelineRuns(ctx, &datascience.GetPipelineRunsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Pipeline_run_created_by),
-//				DisplayName:   pulumi.StringRef(_var.Pipeline_run_display_name),
-//				Id:            pulumi.StringRef(_var.Pipeline_run_id),
-//				PipelineId:    pulumi.StringRef(oci_datascience_pipeline.Test_pipeline.Id),
-//				State:         pulumi.StringRef(_var.Pipeline_run_state),
+//				CompartmentId: compartmentId,
+//				CreatedBy:     pulumi.StringRef(pipelineRunCreatedBy),
+//				DisplayName:   pulumi.StringRef(pipelineRunDisplayName),
+//				Id:            pulumi.StringRef(pipelineRunId),
+//				PipelineId:    pulumi.StringRef(testPipeline.Id),
+//				State:         pulumi.StringRef(pipelineRunState),
 //			}, nil)
 //			if err != nil {
 //				return err

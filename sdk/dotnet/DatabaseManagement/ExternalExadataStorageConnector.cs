@@ -25,20 +25,20 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalExadataStorageConnector = new Oci.DatabaseManagement.ExternalExadataStorageConnector("testExternalExadataStorageConnector", new()
+    ///     var testExternalExadataStorageConnector = new Oci.DatabaseManagement.ExternalExadataStorageConnector("test_external_exadata_storage_connector", new()
     ///     {
-    ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-    ///         ConnectionUri = @var.External_exadata_storage_connector_connection_uri,
-    ///         ConnectorName = @var.External_exadata_storage_connector_connector_name,
+    ///         AgentId = testAgent.Id,
+    ///         ConnectionUri = externalExadataStorageConnectorConnectionUri,
+    ///         ConnectorName = externalExadataStorageConnectorConnectorName,
     ///         CredentialInfo = new Oci.DatabaseManagement.Inputs.ExternalExadataStorageConnectorCredentialInfoArgs
     ///         {
-    ///             Password = @var.External_exadata_storage_connector_credential_info_password,
-    ///             Username = @var.External_exadata_storage_connector_credential_info_username,
-    ///             SslTrustStoreLocation = @var.External_exadata_storage_connector_credential_info_ssl_trust_store_location,
-    ///             SslTrustStorePassword = @var.External_exadata_storage_connector_credential_info_ssl_trust_store_password,
-    ///             SslTrustStoreType = @var.External_exadata_storage_connector_credential_info_ssl_trust_store_type,
+    ///             Password = externalExadataStorageConnectorCredentialInfoPassword,
+    ///             Username = externalExadataStorageConnectorCredentialInfoUsername,
+    ///             SslTrustStoreLocation = externalExadataStorageConnectorCredentialInfoSslTrustStoreLocation,
+    ///             SslTrustStorePassword = externalExadataStorageConnectorCredentialInfoSslTrustStorePassword,
+    ///             SslTrustStoreType = externalExadataStorageConnectorCredentialInfoSslTrustStoreType,
     ///         },
-    ///         StorageServerId = oci_database_management_storage_server.Test_storage_server.Id,
+    ///         StorageServerId = testStorageServer.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

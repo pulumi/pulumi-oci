@@ -33,10 +33,10 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testLoadBalancers = Oci.LoadBalancer.GetLoadBalancers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Detail = @var.Load_balancer_detail,
-        ///         DisplayName = @var.Load_balancer_display_name,
-        ///         State = @var.Load_balancer_state,
+        ///         CompartmentId = compartmentId,
+        ///         Detail = loadBalancerDetail,
+        ///         DisplayName = loadBalancerDisplayName,
+        ///         State = loadBalancerState,
         ///     });
         /// 
         /// });
@@ -68,10 +68,10 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testLoadBalancers = Oci.LoadBalancer.GetLoadBalancers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Detail = @var.Load_balancer_detail,
-        ///         DisplayName = @var.Load_balancer_display_name,
-        ///         State = @var.Load_balancer_state,
+        ///         CompartmentId = compartmentId,
+        ///         Detail = loadBalancerDetail,
+        ///         DisplayName = loadBalancerDisplayName,
+        ///         State = loadBalancerState,
         ///     });
         /// 
         /// });

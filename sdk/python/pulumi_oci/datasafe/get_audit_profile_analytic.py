@@ -122,10 +122,10 @@ def get_audit_profile_analytic(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_analytic = oci.DataSafe.get_audit_profile_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_profile_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_profile_analytic_group_by"])
+    test_audit_profile_analytic = oci.DataSafe.get_audit_profile_analytic(compartment_id=compartment_id,
+        access_level=audit_profile_analytic_access_level,
+        compartment_id_in_subtree=audit_profile_analytic_compartment_id_in_subtree,
+        group_bies=audit_profile_analytic_group_by)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -182,10 +182,10 @@ def get_audit_profile_analytic_output(access_level: Optional[pulumi.Input[Option
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_analytic = oci.DataSafe.get_audit_profile_analytic(compartment_id=var["compartment_id"],
-        access_level=var["audit_profile_analytic_access_level"],
-        compartment_id_in_subtree=var["audit_profile_analytic_compartment_id_in_subtree"],
-        group_bies=var["audit_profile_analytic_group_by"])
+    test_audit_profile_analytic = oci.DataSafe.get_audit_profile_analytic(compartment_id=compartment_id,
+        access_level=audit_profile_analytic_access_level,
+        compartment_id_in_subtree=audit_profile_analytic_compartment_id_in_subtree,
+        group_bies=audit_profile_analytic_group_by)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,32 +31,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewVmCluster(ctx, "testVmCluster", &Database.VmClusterArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				CpuCoreCount:            pulumi.Any(_var.Vm_cluster_cpu_core_count),
-//				DisplayName:             pulumi.Any(_var.Vm_cluster_display_name),
-//				ExadataInfrastructureId: pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-//				GiVersion:               pulumi.Any(_var.Vm_cluster_gi_version),
-//				SshPublicKeys:           pulumi.Any(_var.Vm_cluster_ssh_public_keys),
-//				VmClusterNetworkId:      pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
+//			_, err := Database.NewVmCluster(ctx, "test_vm_cluster", &Database.VmClusterArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				CpuCoreCount:            pulumi.Any(vmClusterCpuCoreCount),
+//				DisplayName:             pulumi.Any(vmClusterDisplayName),
+//				ExadataInfrastructureId: pulumi.Any(testExadataInfrastructure.Id),
+//				GiVersion:               pulumi.Any(vmClusterGiVersion),
+//				SshPublicKeys:           pulumi.Any(vmClusterSshPublicKeys),
+//				VmClusterNetworkId:      pulumi.Any(testVmClusterNetwork.Id),
 //				DataCollectionOptions: &database.VmClusterDataCollectionOptionsArgs{
-//					IsDiagnosticsEventsEnabled: pulumi.Any(_var.Vm_cluster_data_collection_options_is_diagnostics_events_enabled),
-//					IsHealthMonitoringEnabled:  pulumi.Any(_var.Vm_cluster_data_collection_options_is_health_monitoring_enabled),
-//					IsIncidentLogsEnabled:      pulumi.Any(_var.Vm_cluster_data_collection_options_is_incident_logs_enabled),
+//					IsDiagnosticsEventsEnabled: pulumi.Any(vmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled),
+//					IsHealthMonitoringEnabled:  pulumi.Any(vmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
+//					IsIncidentLogsEnabled:      pulumi.Any(vmClusterDataCollectionOptionsIsIncidentLogsEnabled),
 //				},
-//				DataStorageSizeInTbs:   pulumi.Any(_var.Vm_cluster_data_storage_size_in_tbs),
-//				DbNodeStorageSizeInGbs: pulumi.Any(_var.Vm_cluster_db_node_storage_size_in_gbs),
-//				DbServers:              pulumi.Any(_var.Vm_cluster_db_servers),
-//				DefinedTags:            pulumi.Any(_var.Vm_cluster_defined_tags),
+//				DataStorageSizeInTbs:   pulumi.Any(vmClusterDataStorageSizeInTbs),
+//				DbNodeStorageSizeInGbs: pulumi.Any(vmClusterDbNodeStorageSizeInGbs),
+//				DbServers:              pulumi.Any(vmClusterDbServers),
+//				DefinedTags:            pulumi.Any(vmClusterDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsLocalBackupEnabled:     pulumi.Any(_var.Vm_cluster_is_local_backup_enabled),
-//				IsSparseDiskgroupEnabled: pulumi.Any(_var.Vm_cluster_is_sparse_diskgroup_enabled),
-//				LicenseModel:             pulumi.Any(_var.Vm_cluster_license_model),
-//				MemorySizeInGbs:          pulumi.Any(_var.Vm_cluster_memory_size_in_gbs),
-//				SystemVersion:            pulumi.Any(_var.Vm_cluster_system_version),
-//				TimeZone:                 pulumi.Any(_var.Vm_cluster_time_zone),
+//				IsLocalBackupEnabled:     pulumi.Any(vmClusterIsLocalBackupEnabled),
+//				IsSparseDiskgroupEnabled: pulumi.Any(vmClusterIsSparseDiskgroupEnabled),
+//				LicenseModel:             pulumi.Any(vmClusterLicenseModel),
+//				MemorySizeInGbs:          pulumi.Any(vmClusterMemorySizeInGbs),
+//				SystemVersion:            pulumi.Any(vmClusterSystemVersion),
+//				TimeZone:                 pulumi.Any(vmClusterTimeZone),
 //			})
 //			if err != nil {
 //				return err

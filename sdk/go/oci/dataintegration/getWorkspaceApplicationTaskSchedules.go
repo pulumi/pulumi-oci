@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceApplicationTaskSchedules(ctx, &dataintegration.GetWorkspaceApplicationTaskSchedulesArgs{
-//				ApplicationKey: _var.Workspace_application_task_schedule_application_key,
-//				WorkspaceId:    oci_dataintegration_workspace.Test_workspace.Id,
-//				Identifiers:    _var.Workspace_application_task_schedule_identifier,
-//				IsEnabled:      pulumi.BoolRef(_var.Workspace_application_task_schedule_is_enabled),
-//				Keys:           _var.Workspace_application_task_schedule_key,
-//				Name:           pulumi.StringRef(_var.Workspace_application_task_schedule_name),
-//				Types:          _var.Workspace_application_task_schedule_type,
+//				ApplicationKey: workspaceApplicationTaskScheduleApplicationKey,
+//				WorkspaceId:    testWorkspace.Id,
+//				Identifiers:    workspaceApplicationTaskScheduleIdentifier,
+//				IsEnabled:      pulumi.BoolRef(workspaceApplicationTaskScheduleIsEnabled),
+//				Keys:           workspaceApplicationTaskScheduleKey,
+//				Name:           pulumi.StringRef(workspaceApplicationTaskScheduleName),
+//				Types:          workspaceApplicationTaskScheduleType,
 //			}, nil)
 //			if err != nil {
 //				return err

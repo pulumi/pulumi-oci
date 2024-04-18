@@ -394,19 +394,20 @@ class Tag(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tag = oci.identity.Tag("testTag",
-            description=var["tag_description"],
-            tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
+        test_tag = oci.identity.Tag("test_tag",
+            description=tag_description,
+            name=tag_name,
+            tag_namespace_id=test_tag_namespace["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_tracking=var["tag_is_cost_tracking"],
+            is_cost_tracking=tag_is_cost_tracking,
             validator=oci.identity.TagValidatorArgs(
-                validator_type=var["tag_validator_validator_type"],
-                values=var["tag_validator_values"],
+                validator_type=tag_validator_validator_type,
+                values=tag_validator_values,
             ),
             is_retired=False)
         ```
@@ -478,19 +479,20 @@ class Tag(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tag = oci.identity.Tag("testTag",
-            description=var["tag_description"],
-            tag_namespace_id=oci_identity_tag_namespace["test_tag_namespace"]["id"],
+        test_tag = oci.identity.Tag("test_tag",
+            description=tag_description,
+            name=tag_name,
+            tag_namespace_id=test_tag_namespace["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_tracking=var["tag_is_cost_tracking"],
+            is_cost_tracking=tag_is_cost_tracking,
             validator=oci.identity.TagValidatorArgs(
-                validator_type=var["tag_validator_validator_type"],
-                values=var["tag_validator_values"],
+                validator_type=tag_validator_validator_type,
+                values=tag_validator_values,
             ),
             is_retired=False)
         ```

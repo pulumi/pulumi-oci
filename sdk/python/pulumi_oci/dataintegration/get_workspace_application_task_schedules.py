@@ -166,13 +166,13 @@ def get_workspace_application_task_schedules(application_key: Optional[str] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedules = oci.DataIntegration.get_workspace_application_task_schedules(application_key=var["workspace_application_task_schedule_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        identifiers=var["workspace_application_task_schedule_identifier"],
-        is_enabled=var["workspace_application_task_schedule_is_enabled"],
-        keys=var["workspace_application_task_schedule_key"],
-        name=var["workspace_application_task_schedule_name"],
-        types=var["workspace_application_task_schedule_type"])
+    test_workspace_application_task_schedules = oci.DataIntegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
+        workspace_id=test_workspace["id"],
+        identifiers=workspace_application_task_schedule_identifier,
+        is_enabled=workspace_application_task_schedule_is_enabled,
+        keys=workspace_application_task_schedule_key,
+        name=workspace_application_task_schedule_name,
+        types=workspace_application_task_schedule_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -232,13 +232,13 @@ def get_workspace_application_task_schedules_output(application_key: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_task_schedules = oci.DataIntegration.get_workspace_application_task_schedules(application_key=var["workspace_application_task_schedule_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        identifiers=var["workspace_application_task_schedule_identifier"],
-        is_enabled=var["workspace_application_task_schedule_is_enabled"],
-        keys=var["workspace_application_task_schedule_key"],
-        name=var["workspace_application_task_schedule_name"],
-        types=var["workspace_application_task_schedule_type"])
+    test_workspace_application_task_schedules = oci.DataIntegration.get_workspace_application_task_schedules(application_key=workspace_application_task_schedule_application_key,
+        workspace_id=test_workspace["id"],
+        identifiers=workspace_application_task_schedule_identifier,
+        is_enabled=workspace_application_task_schedule_is_enabled,
+        keys=workspace_application_task_schedule_key,
+        name=workspace_application_task_schedule_name,
+        types=workspace_application_task_schedule_type)
     ```
     <!--End PulumiCodeChooser -->
 

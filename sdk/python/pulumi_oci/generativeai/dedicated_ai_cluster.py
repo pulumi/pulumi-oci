@@ -459,16 +459,16 @@ class DedicatedAiCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dedicated_ai_cluster = oci.generative_ai.DedicatedAiCluster("testDedicatedAiCluster",
-            compartment_id=var["compartment_id"],
-            type=var["dedicated_ai_cluster_type"],
-            unit_count=var["dedicated_ai_cluster_unit_count"],
-            unit_shape=var["dedicated_ai_cluster_unit_shape"],
+        test_dedicated_ai_cluster = oci.generative_ai.DedicatedAiCluster("test_dedicated_ai_cluster",
+            compartment_id=compartment_id,
+            type=dedicated_ai_cluster_type,
+            unit_count=dedicated_ai_cluster_unit_count,
+            unit_shape=dedicated_ai_cluster_unit_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["dedicated_ai_cluster_description"],
-            display_name=var["dedicated_ai_cluster_display_name"],
+            description=dedicated_ai_cluster_description,
+            display_name=dedicated_ai_cluster_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -526,16 +526,16 @@ class DedicatedAiCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dedicated_ai_cluster = oci.generative_ai.DedicatedAiCluster("testDedicatedAiCluster",
-            compartment_id=var["compartment_id"],
-            type=var["dedicated_ai_cluster_type"],
-            unit_count=var["dedicated_ai_cluster_unit_count"],
-            unit_shape=var["dedicated_ai_cluster_unit_shape"],
+        test_dedicated_ai_cluster = oci.generative_ai.DedicatedAiCluster("test_dedicated_ai_cluster",
+            compartment_id=compartment_id,
+            type=dedicated_ai_cluster_type,
+            unit_count=dedicated_ai_cluster_unit_count,
+            unit_shape=dedicated_ai_cluster_unit_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["dedicated_ai_cluster_description"],
-            display_name=var["dedicated_ai_cluster_display_name"],
+            description=dedicated_ai_cluster_description,
+            display_name=dedicated_ai_cluster_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

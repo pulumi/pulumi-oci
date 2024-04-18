@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testPublishers = Oci.Marketplace.GetPublishers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         PublisherId = oci_marketplace_publisher.Test_publisher.Id,
+        ///         CompartmentId = compartmentId,
+        ///         PublisherId = testPublisher.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testPublishers = Oci.Marketplace.GetPublishers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         PublisherId = oci_marketplace_publisher.Test_publisher.Id,
+        ///         CompartmentId = compartmentId,
+        ///         PublisherId = testPublisher.Id,
         ///     });
         /// 
         /// });

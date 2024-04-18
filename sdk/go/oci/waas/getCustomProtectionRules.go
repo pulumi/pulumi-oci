@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waas.GetCustomProtectionRules(ctx, &waas.GetCustomProtectionRulesArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				DisplayNames:                    _var.Custom_protection_rule_display_names,
-//				Ids:                             _var.Custom_protection_rule_ids,
-//				States:                          _var.Custom_protection_rule_states,
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Custom_protection_rule_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Custom_protection_rule_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				DisplayNames:                    customProtectionRuleDisplayNames,
+//				Ids:                             customProtectionRuleIds,
+//				States:                          customProtectionRuleStates,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(customProtectionRuleTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(customProtectionRuleTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -39,10 +39,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetAlarmHistoryCollection(ctx, &monitoring.GetAlarmHistoryCollectionArgs{
-//				AlarmId:                       oci_monitoring_alarm.Test_alarm.Id,
-//				AlarmHistorytype:              pulumi.StringRef(_var.Alarm_history_collection_alarm_historytype),
-//				TimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Alarm_history_collection_timestamp_greater_than_or_equal_to),
-//				TimestampLessThan:             pulumi.StringRef(_var.Alarm_history_collection_timestamp_less_than),
+//				AlarmId:                       testAlarm.Id,
+//				AlarmHistorytype:              pulumi.StringRef(alarmHistoryCollectionAlarmHistorytype),
+//				TimestampGreaterThanOrEqualTo: pulumi.StringRef(alarmHistoryCollectionTimestampGreaterThanOrEqualTo),
+//				TimestampLessThan:             pulumi.StringRef(alarmHistoryCollectionTimestampLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

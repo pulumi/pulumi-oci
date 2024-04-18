@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualNodePool = oci.ContainerEngine.getVirtualNodePool({
- *     virtualNodePoolId: oci_containerengine_virtual_node_pool.test_virtual_node_pool.id,
+ *     virtualNodePoolId: testVirtualNodePoolOciContainerengineVirtualNodePool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetVirtualNodePoolResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualNodePool = oci.ContainerEngine.getVirtualNodePool({
- *     virtualNodePoolId: oci_containerengine_virtual_node_pool.test_virtual_node_pool.id,
+ *     virtualNodePoolId: testVirtualNodePoolOciContainerengineVirtualNodePool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

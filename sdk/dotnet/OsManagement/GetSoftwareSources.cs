@@ -30,9 +30,9 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testSoftwareSources = Oci.OsManagement.GetSoftwareSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Software_source_display_name,
-        ///         State = @var.Software_source_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = softwareSourceDisplayName,
+        ///         State = softwareSourceState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testSoftwareSources = Oci.OsManagement.GetSoftwareSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Software_source_display_name,
-        ///         State = @var.Software_source_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = softwareSourceDisplayName,
+        ///         State = softwareSourceState,
         ///     });
         /// 
         /// });

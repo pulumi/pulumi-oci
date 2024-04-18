@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservationInstanceShapes = oci.Core.getComputeCapacityReservationInstanceShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.compute_capacity_reservation_instance_shape_availability_domain,
- *     displayName: _var.compute_capacity_reservation_instance_shape_display_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: computeCapacityReservationInstanceShapeAvailabilityDomain,
+ *     displayName: computeCapacityReservationInstanceShapeDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetComputeCapacityReservationInstanceShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeCapacityReservationInstanceShapes = oci.Core.getComputeCapacityReservationInstanceShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.compute_capacity_reservation_instance_shape_availability_domain,
- *     displayName: _var.compute_capacity_reservation_instance_shape_display_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: computeCapacityReservationInstanceShapeAvailabilityDomain,
+ *     displayName: computeCapacityReservationInstanceShapeDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

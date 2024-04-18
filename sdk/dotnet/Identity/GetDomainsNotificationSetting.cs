@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNotificationSetting = Oci.Identity.GetDomainsNotificationSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         NotificationSettingId = oci_identity_domains_notification_setting.Test_notification_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NotificationSettingId = testNotificationSettingOciIdentityDomainsNotificationSetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Notification_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Notification_setting_resource_type_schema_version,
+        ///         Authorization = notificationSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = notificationSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNotificationSetting = Oci.Identity.GetDomainsNotificationSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         NotificationSettingId = oci_identity_domains_notification_setting.Test_notification_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NotificationSettingId = testNotificationSettingOciIdentityDomainsNotificationSetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Notification_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Notification_setting_resource_type_schema_version,
+        ///         Authorization = notificationSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = notificationSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

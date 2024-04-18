@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetEnvironments(ctx, &cloudbridge.GetEnvironmentsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Environment_display_name),
-//				EnvironmentId: pulumi.StringRef(oci_cloud_bridge_environment.Test_environment.Id),
-//				State:         pulumi.StringRef(_var.Environment_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(environmentDisplayName),
+//				EnvironmentId: pulumi.StringRef(testEnvironment.Id),
+//				State:         pulumi.StringRef(environmentState),
 //			}, nil)
 //			if err != nil {
 //				return err

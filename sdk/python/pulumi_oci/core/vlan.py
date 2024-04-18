@@ -460,21 +460,21 @@ class Vlan(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vlan = oci.core.Vlan("testVlan",
-            cidr_block=var["vlan_cidr_block"],
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            availability_domain=var["vlan_availability_domain"],
+        test_vlan = oci.core.Vlan("test_vlan",
+            cidr_block=vlan_cidr_block,
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            availability_domain=vlan_availability_domain,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["vlan_display_name"],
+            display_name=vlan_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            nsg_ids=var["vlan_nsg_ids"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"],
-            vlan_tag=var["vlan_vlan_tag"])
+            nsg_ids=vlan_nsg_ids,
+            route_table_id=test_route_table["id"],
+            vlan_tag=vlan_vlan_tag)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -531,21 +531,21 @@ class Vlan(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vlan = oci.core.Vlan("testVlan",
-            cidr_block=var["vlan_cidr_block"],
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            availability_domain=var["vlan_availability_domain"],
+        test_vlan = oci.core.Vlan("test_vlan",
+            cidr_block=vlan_cidr_block,
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            availability_domain=vlan_availability_domain,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["vlan_display_name"],
+            display_name=vlan_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            nsg_ids=var["vlan_nsg_ids"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"],
-            vlan_tag=var["vlan_vlan_tag"])
+            nsg_ids=vlan_nsg_ids,
+            route_table_id=test_route_table["id"],
+            vlan_tag=vlan_vlan_tag)
         ```
         <!--End PulumiCodeChooser -->
 

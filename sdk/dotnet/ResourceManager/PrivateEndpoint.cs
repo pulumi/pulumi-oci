@@ -25,24 +25,24 @@ namespace Pulumi.Oci.ResourceManager
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPrivateEndpoint = new Oci.ResourceManager.PrivateEndpoint("testPrivateEndpoint", new()
+    ///     var testPrivateEndpoint = new Oci.ResourceManager.PrivateEndpoint("test_private_endpoint", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Private_endpoint_display_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = privateEndpointDisplayName,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Private_endpoint_description,
-    ///         DnsZones = @var.Private_endpoint_dns_zones,
+    ///         Description = privateEndpointDescription,
+    ///         DnsZones = privateEndpointDnsZones,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsUsedWithConfigurationSourceProvider = @var.Private_endpoint_is_used_with_configuration_source_provider,
-    ///         NsgIdLists = @var.Private_endpoint_nsg_id_list,
+    ///         IsUsedWithConfigurationSourceProvider = privateEndpointIsUsedWithConfigurationSourceProvider,
+    ///         NsgIdLists = privateEndpointNsgIdList,
     ///     });
     /// 
     /// });

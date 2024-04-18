@@ -30,7 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogSetsCount = Oci.LogAnalytics.GetLogSetsCount.Invoke(new()
         ///     {
-        ///         Namespace = @var.Log_sets_count_namespace,
+        ///         Namespace = logSetsCountNamespace,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogSetsCount = Oci.LogAnalytics.GetLogSetsCount.Invoke(new()
         ///     {
-        ///         Namespace = @var.Log_sets_count_namespace,
+        ///         Namespace = logSetsCountNamespace,
         ///     });
         /// 
         /// });

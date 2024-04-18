@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRouteTableAttachment = new oci.core.RouteTableAttachment("testRouteTableAttachment", {
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     routeTableId: oci_core_route_table.test_route_table.id,
+ * const testRouteTableAttachment = new oci.core.RouteTableAttachment("test_route_table_attachment", {
+ *     subnetId: testSubnet.id,
+ *     routeTableId: testRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

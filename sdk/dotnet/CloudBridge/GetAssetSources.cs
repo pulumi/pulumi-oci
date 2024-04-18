@@ -30,10 +30,10 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAssetSources = Oci.CloudBridge.GetAssetSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssetSourceId = oci_cloud_bridge_asset_source.Test_asset_source.Id,
-        ///         DisplayName = @var.Asset_source_display_name,
-        ///         State = @var.Asset_source_state,
+        ///         CompartmentId = compartmentId,
+        ///         AssetSourceId = testAssetSource.Id,
+        ///         DisplayName = assetSourceDisplayName,
+        ///         State = assetSourceState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAssetSources = Oci.CloudBridge.GetAssetSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssetSourceId = oci_cloud_bridge_asset_source.Test_asset_source.Id,
-        ///         DisplayName = @var.Asset_source_display_name,
-        ///         State = @var.Asset_source_state,
+        ///         CompartmentId = compartmentId,
+        ///         AssetSourceId = testAssetSource.Id,
+        ///         DisplayName = assetSourceDisplayName,
+        ///         State = assetSourceState,
         ///     });
         /// 
         /// });

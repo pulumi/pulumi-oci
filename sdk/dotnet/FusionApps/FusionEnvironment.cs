@@ -25,50 +25,50 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFusionEnvironment = new Oci.FusionApps.FusionEnvironment("testFusionEnvironment", new()
+    ///     var testFusionEnvironment = new Oci.FusionApps.FusionEnvironment("test_fusion_environment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         CreateFusionEnvironmentAdminUserDetails = new Oci.FusionApps.Inputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs
     ///         {
-    ///             EmailAddress = @var.Fusion_environment_create_fusion_environment_admin_user_details_email_address,
-    ///             FirstName = @var.Fusion_environment_create_fusion_environment_admin_user_details_first_name,
-    ///             LastName = @var.Fusion_environment_create_fusion_environment_admin_user_details_last_name,
-    ///             Password = @var.Fusion_environment_create_fusion_environment_admin_user_details_password,
-    ///             Username = @var.Fusion_environment_create_fusion_environment_admin_user_details_username,
+    ///             EmailAddress = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsEmailAddress,
+    ///             FirstName = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName,
+    ///             LastName = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName,
+    ///             Password = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword,
+    ///             Username = fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername,
     ///         },
-    ///         DisplayName = @var.Fusion_environment_display_name,
-    ///         FusionEnvironmentFamilyId = oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
-    ///         FusionEnvironmentType = @var.Fusion_environment_fusion_environment_type,
-    ///         AdditionalLanguagePacks = @var.Fusion_environment_additional_language_packs,
+    ///         DisplayName = fusionEnvironmentDisplayName,
+    ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
+    ///         FusionEnvironmentType = fusionEnvironmentFusionEnvironmentType,
+    ///         AdditionalLanguagePacks = fusionEnvironmentAdditionalLanguagePacks,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DnsPrefix = @var.Fusion_environment_dns_prefix,
+    ///         DnsPrefix = fusionEnvironmentDnsPrefix,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
+    ///         KmsKeyId = testKey.Id,
     ///         MaintenancePolicy = new Oci.FusionApps.Inputs.FusionEnvironmentMaintenancePolicyArgs
     ///         {
-    ///             EnvironmentMaintenanceOverride = @var.Fusion_environment_maintenance_policy_environment_maintenance_override,
-    ///             MonthlyPatchingOverride = @var.Fusion_environment_maintenance_policy_monthly_patching_override,
+    ///             EnvironmentMaintenanceOverride = fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride,
+    ///             MonthlyPatchingOverride = fusionEnvironmentMaintenancePolicyMonthlyPatchingOverride,
     ///         },
     ///         Rules = new[]
     ///         {
     ///             new Oci.FusionApps.Inputs.FusionEnvironmentRuleArgs
     ///             {
-    ///                 Action = @var.Fusion_environment_rules_action,
+    ///                 Action = fusionEnvironmentRulesAction,
     ///                 Conditions = new[]
     ///                 {
     ///                     new Oci.FusionApps.Inputs.FusionEnvironmentRuleConditionArgs
     ///                     {
-    ///                         AttributeName = @var.Fusion_environment_rules_conditions_attribute_name,
-    ///                         AttributeValue = @var.Fusion_environment_rules_conditions_attribute_value,
+    ///                         AttributeName = fusionEnvironmentRulesConditionsAttributeName,
+    ///                         AttributeValue = fusionEnvironmentRulesConditionsAttributeValue,
     ///                     },
     ///                 },
-    ///                 Description = @var.Fusion_environment_rules_description,
+    ///                 Description = fusionEnvironmentRulesDescription,
     ///             },
     ///         },
     ///     });

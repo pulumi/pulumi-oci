@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSensitiveDataModel(ctx, &datasafe.GetSensitiveDataModelArgs{
-//				SensitiveDataModelId: oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+//				SensitiveDataModelId: testSensitiveDataModelOciDataSafeSensitiveDataModel.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

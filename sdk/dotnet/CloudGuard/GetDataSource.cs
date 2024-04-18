@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataSource = Oci.CloudGuard.GetDataSource.Invoke(new()
         ///     {
-        ///         DataSourceId = oci_cloud_guard_data_source.Test_data_source.Id,
+        ///         DataSourceId = testDataSourceOciCloudGuardDataSource.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testDataSource = Oci.CloudGuard.GetDataSource.Invoke(new()
         ///     {
-        ///         DataSourceId = oci_cloud_guard_data_source.Test_data_source.Id,
+        ///         DataSourceId = testDataSourceOciCloudGuardDataSource.Id,
         ///     });
         /// 
         /// });

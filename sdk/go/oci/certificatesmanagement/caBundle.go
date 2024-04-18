@@ -31,13 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CertificatesManagement.NewCaBundle(ctx, "testCaBundle", &CertificatesManagement.CaBundleArgs{
-//				CaBundlePem:   pulumi.Any(_var.Ca_bundle_ca_bundle_pem),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := CertificatesManagement.NewCaBundle(ctx, "test_ca_bundle", &CertificatesManagement.CaBundleArgs{
+//				CaBundlePem:   pulumi.Any(caBundleCaBundlePem),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(caBundleName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Ca_bundle_description),
+//				Description: pulumi.Any(caBundleDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOneoffPatches = oci.Database.getOneoffPatches({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.oneoff_patch_display_name,
- *     state: _var.oneoff_patch_state,
+ *     compartmentId: compartmentId,
+ *     displayName: oneoffPatchDisplayName,
+ *     state: oneoffPatchState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetOneoffPatchesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOneoffPatches = oci.Database.getOneoffPatches({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.oneoff_patch_display_name,
- *     state: _var.oneoff_patch_state,
+ *     compartmentId: compartmentId,
+ *     displayName: oneoffPatchDisplayName,
+ *     state: oneoffPatchState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

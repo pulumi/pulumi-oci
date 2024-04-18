@@ -212,7 +212,7 @@ def get_build_pipeline(build_pipeline_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"])
+    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=test_build_pipeline_oci_devops_build_pipeline["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -256,7 +256,7 @@ def get_build_pipeline_output(build_pipeline_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=oci_devops_build_pipeline["test_build_pipeline"]["id"])
+    test_build_pipeline = oci.DevOps.get_build_pipeline(build_pipeline_id=test_build_pipeline_oci_devops_build_pipeline["id"])
     ```
     <!--End PulumiCodeChooser -->
 

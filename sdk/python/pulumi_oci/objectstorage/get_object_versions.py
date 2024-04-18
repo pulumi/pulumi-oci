@@ -180,14 +180,14 @@ def get_object_versions(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=var["object_version_bucket"],
-        namespace=var["object_version_namespace"],
-        delimiter=var["object_version_delimiter"],
-        end=var["object_version_end"],
-        fields=var["object_version_fields"],
-        prefix=var["object_version_prefix"],
-        start=var["object_version_start"],
-        start_after=var["object_version_start_after"])
+    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=object_version_bucket,
+        namespace=object_version_namespace,
+        delimiter=object_version_delimiter,
+        end=object_version_end,
+        fields=object_version_fields,
+        prefix=object_version_prefix,
+        start=object_version_start,
+        start_after=object_version_start_after)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -259,14 +259,14 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=var["object_version_bucket"],
-        namespace=var["object_version_namespace"],
-        delimiter=var["object_version_delimiter"],
-        end=var["object_version_end"],
-        fields=var["object_version_fields"],
-        prefix=var["object_version_prefix"],
-        start=var["object_version_start"],
-        start_after=var["object_version_start_after"])
+    test_object_versions = oci.ObjectStorage.get_object_versions(bucket=object_version_bucket,
+        namespace=object_version_namespace,
+        delimiter=object_version_delimiter,
+        end=object_version_end,
+        fields=object_version_fields,
+        prefix=object_version_prefix,
+        start=object_version_start,
+        start_after=object_version_start_after)
     ```
     <!--End PulumiCodeChooser -->
 

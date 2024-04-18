@@ -598,21 +598,22 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_on_premise_vantage_point_worker = oci.apm_synthetics.OnPremiseVantagePointWorker("testOnPremiseVantagePointWorker",
-            apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-            on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"],
-            resource_principal_token_public_key=var["on_premise_vantage_point_worker_resource_principal_token_public_key"],
-            version=var["on_premise_vantage_point_worker_version"],
-            configuration_details=var["on_premise_vantage_point_worker_configuration_details"],
+        test_on_premise_vantage_point_worker = oci.apm_synthetics.OnPremiseVantagePointWorker("test_on_premise_vantage_point_worker",
+            apm_domain_id=test_apm_domain["id"],
+            name=on_premise_vantage_point_worker_name,
+            on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
+            resource_principal_token_public_key=on_premise_vantage_point_worker_resource_principal_token_public_key,
+            version=on_premise_vantage_point_worker_version,
+            configuration_details=on_premise_vantage_point_worker_configuration_details,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=var["on_premise_vantage_point_worker_priority"],
-            status=var["on_premise_vantage_point_worker_status"],
-            worker_type=var["on_premise_vantage_point_worker_worker_type"])
+            priority=on_premise_vantage_point_worker_priority,
+            status=on_premise_vantage_point_worker_status,
+            worker_type=on_premise_vantage_point_worker_worker_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -660,21 +661,22 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_on_premise_vantage_point_worker = oci.apm_synthetics.OnPremiseVantagePointWorker("testOnPremiseVantagePointWorker",
-            apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-            on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"],
-            resource_principal_token_public_key=var["on_premise_vantage_point_worker_resource_principal_token_public_key"],
-            version=var["on_premise_vantage_point_worker_version"],
-            configuration_details=var["on_premise_vantage_point_worker_configuration_details"],
+        test_on_premise_vantage_point_worker = oci.apm_synthetics.OnPremiseVantagePointWorker("test_on_premise_vantage_point_worker",
+            apm_domain_id=test_apm_domain["id"],
+            name=on_premise_vantage_point_worker_name,
+            on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
+            resource_principal_token_public_key=on_premise_vantage_point_worker_resource_principal_token_public_key,
+            version=on_premise_vantage_point_worker_version,
+            configuration_details=on_premise_vantage_point_worker_configuration_details,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=var["on_premise_vantage_point_worker_priority"],
-            status=var["on_premise_vantage_point_worker_status"],
-            worker_type=var["on_premise_vantage_point_worker_worker_type"])
+            priority=on_premise_vantage_point_worker_priority,
+            status=on_premise_vantage_point_worker_status,
+            worker_type=on_premise_vantage_point_worker_worker_type)
         ```
         <!--End PulumiCodeChooser -->
 

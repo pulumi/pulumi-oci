@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedMySqlDatabaseConfigurationData = oci.DatabaseManagement.getManagedMySqlDatabaseConfigurationData({
- *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
+ *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetManagedMySqlDatabaseConfigurationDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedMySqlDatabaseConfigurationData = oci.DatabaseManagement.getManagedMySqlDatabaseConfigurationData({
- *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
+ *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

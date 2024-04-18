@@ -553,7 +553,7 @@ class ManagementAgent(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
+        test_management_agent = oci.management_agent.ManagementAgent("test_management_agent", managed_agent_id=test_managed_agent["id"])
         ```
         <!--End PulumiCodeChooser -->
         ***
@@ -591,7 +591,7 @@ class ManagementAgent(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
+        test_management_agent = oci.management_agent.ManagementAgent("test_management_agent", managed_agent_id=test_managed_agent["id"])
         ```
         <!--End PulumiCodeChooser -->
         ***

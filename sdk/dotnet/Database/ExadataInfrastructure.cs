@@ -26,74 +26,74 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExadataInfrastructure = new Oci.Database.ExadataInfrastructure("testExadataInfrastructure", new()
+    ///     var testExadataInfrastructure = new Oci.Database.ExadataInfrastructure("test_exadata_infrastructure", new()
     ///     {
-    ///         AdminNetworkCidr = @var.Exadata_infrastructure_admin_network_cidr,
-    ///         CloudControlPlaneServer1 = @var.Exadata_infrastructure_cloud_control_plane_server1,
-    ///         CloudControlPlaneServer2 = @var.Exadata_infrastructure_cloud_control_plane_server2,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Exadata_infrastructure_display_name,
-    ///         DnsServers = @var.Exadata_infrastructure_dns_server,
-    ///         Gateway = @var.Exadata_infrastructure_gateway,
-    ///         InfiniBandNetworkCidr = @var.Exadata_infrastructure_infini_band_network_cidr,
-    ///         Netmask = @var.Exadata_infrastructure_netmask,
-    ///         NtpServers = @var.Exadata_infrastructure_ntp_server,
-    ///         Shape = @var.Exadata_infrastructure_shape,
-    ///         TimeZone = @var.Exadata_infrastructure_time_zone,
-    ///         ActivationFile = @var.Exadata_infrastructure_activation_file,
-    ///         ComputeCount = @var.Exadata_infrastructure_compute_count,
+    ///         AdminNetworkCidr = exadataInfrastructureAdminNetworkCidr,
+    ///         CloudControlPlaneServer1 = exadataInfrastructureCloudControlPlaneServer1,
+    ///         CloudControlPlaneServer2 = exadataInfrastructureCloudControlPlaneServer2,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = exadataInfrastructureDisplayName,
+    ///         DnsServers = exadataInfrastructureDnsServer,
+    ///         Gateway = exadataInfrastructureGateway,
+    ///         InfiniBandNetworkCidr = exadataInfrastructureInfiniBandNetworkCidr,
+    ///         Netmask = exadataInfrastructureNetmask,
+    ///         NtpServers = exadataInfrastructureNtpServer,
+    ///         Shape = exadataInfrastructureShape,
+    ///         TimeZone = exadataInfrastructureTimeZone,
+    ///         ActivationFile = exadataInfrastructureActivationFile,
+    ///         ComputeCount = exadataInfrastructureComputeCount,
     ///         Contacts = new[]
     ///         {
     ///             new Oci.Database.Inputs.ExadataInfrastructureContactArgs
     ///             {
-    ///                 Email = @var.Exadata_infrastructure_contacts_email,
-    ///                 IsPrimary = @var.Exadata_infrastructure_contacts_is_primary,
-    ///                 Name = @var.Exadata_infrastructure_contacts_name,
-    ///                 IsContactMosValidated = @var.Exadata_infrastructure_contacts_is_contact_mos_validated,
-    ///                 PhoneNumber = @var.Exadata_infrastructure_contacts_phone_number,
+    ///                 Email = exadataInfrastructureContactsEmail,
+    ///                 IsPrimary = exadataInfrastructureContactsIsPrimary,
+    ///                 Name = exadataInfrastructureContactsName,
+    ///                 IsContactMosValidated = exadataInfrastructureContactsIsContactMosValidated,
+    ///                 PhoneNumber = exadataInfrastructureContactsPhoneNumber,
     ///             },
     ///         },
-    ///         CorporateProxy = @var.Exadata_infrastructure_corporate_proxy,
-    ///         DefinedTags = @var.Exadata_infrastructure_defined_tags,
+    ///         CorporateProxy = exadataInfrastructureCorporateProxy,
+    ///         DefinedTags = exadataInfrastructureDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsCpsOfflineReportEnabled = @var.Exadata_infrastructure_is_cps_offline_report_enabled,
-    ///         IsMultiRackDeployment = @var.Exadata_infrastructure_is_multi_rack_deployment,
+    ///         IsCpsOfflineReportEnabled = exadataInfrastructureIsCpsOfflineReportEnabled,
+    ///         IsMultiRackDeployment = exadataInfrastructureIsMultiRackDeployment,
     ///         MaintenanceWindow = new Oci.Database.Inputs.ExadataInfrastructureMaintenanceWindowArgs
     ///         {
-    ///             CustomActionTimeoutInMins = @var.Exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
+    ///             CustomActionTimeoutInMins = exadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
     ///             DaysOfWeeks = new[]
     ///             {
     ///                 new Oci.Database.Inputs.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs
     ///                 {
-    ///                     Name = @var.Exadata_infrastructure_maintenance_window_days_of_week_name,
+    ///                     Name = exadataInfrastructureMaintenanceWindowDaysOfWeekName,
     ///                 },
     ///             },
-    ///             HoursOfDays = @var.Exadata_infrastructure_maintenance_window_hours_of_day,
-    ///             IsCustomActionTimeoutEnabled = @var.Exadata_infrastructure_maintenance_window_is_custom_action_timeout_enabled,
-    ///             IsMonthlyPatchingEnabled = @var.Exadata_infrastructure_maintenance_window_is_monthly_patching_enabled,
-    ///             LeadTimeInWeeks = @var.Exadata_infrastructure_maintenance_window_lead_time_in_weeks,
+    ///             HoursOfDays = exadataInfrastructureMaintenanceWindowHoursOfDay,
+    ///             IsCustomActionTimeoutEnabled = exadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
+    ///             IsMonthlyPatchingEnabled = exadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
+    ///             LeadTimeInWeeks = exadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
     ///             Months = new[]
     ///             {
     ///                 new Oci.Database.Inputs.ExadataInfrastructureMaintenanceWindowMonthArgs
     ///                 {
-    ///                     Name = @var.Exadata_infrastructure_maintenance_window_months_name,
+    ///                     Name = exadataInfrastructureMaintenanceWindowMonthsName,
     ///                 },
     ///             },
-    ///             PatchingMode = @var.Exadata_infrastructure_maintenance_window_patching_mode,
-    ///             Preference = @var.Exadata_infrastructure_maintenance_window_preference,
-    ///             WeeksOfMonths = @var.Exadata_infrastructure_maintenance_window_weeks_of_month,
+    ///             PatchingMode = exadataInfrastructureMaintenanceWindowPatchingMode,
+    ///             Preference = exadataInfrastructureMaintenanceWindowPreference,
+    ///             WeeksOfMonths = exadataInfrastructureMaintenanceWindowWeeksOfMonth,
     ///         },
-    ///         MultiRackConfigurationFile = @var.Exadata_infrastructure_multi_rack_configuration_file,
+    ///         MultiRackConfigurationFile = exadataInfrastructureMultiRackConfigurationFile,
     ///         NetworkBondingModeDetails = new Oci.Database.Inputs.ExadataInfrastructureNetworkBondingModeDetailsArgs
     ///         {
-    ///             BackupNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_backup_network_bonding_mode,
-    ///             ClientNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_client_network_bonding_mode,
-    ///             DrNetworkBondingMode = @var.Exadata_infrastructure_network_bonding_mode_details_dr_network_bonding_mode,
+    ///             BackupNetworkBondingMode = exadataInfrastructureNetworkBondingModeDetailsBackupNetworkBondingMode,
+    ///             ClientNetworkBondingMode = exadataInfrastructureNetworkBondingModeDetailsClientNetworkBondingMode,
+    ///             DrNetworkBondingMode = exadataInfrastructureNetworkBondingModeDetailsDrNetworkBondingMode,
     ///         },
-    ///         StorageCount = @var.Exadata_infrastructure_storage_count,
+    ///         StorageCount = exadataInfrastructureStorageCount,
     ///     });
     /// 
     /// });

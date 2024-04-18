@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaDownloadsJavaLicense(ctx, &jms.GetJavaDownloadsJavaLicenseArgs{
-//				LicenseType: _var.Java_license_license_type,
+//				LicenseType: javaLicenseLicenseType,
 //			}, nil)
 //			if err != nil {
 //				return err

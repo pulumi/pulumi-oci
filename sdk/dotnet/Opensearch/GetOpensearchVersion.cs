@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Opensearch
         /// {
         ///     var testOpensearchVersion = Oci.Opensearch.GetOpensearchVersion.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Opensearch
         /// {
         ///     var testOpensearchVersion = Oci.Opensearch.GetOpensearchVersion.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

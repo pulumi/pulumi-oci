@@ -29,8 +29,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testSslCipherSuite = Oci.LoadBalancer.GetSslCipherSuite.Invoke(new()
         ///     {
-        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         Name = @var.Ssl_cipher_suite_name,
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///         Name = sslCipherSuiteName,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.LoadBalancer
         /// {
         ///     var testSslCipherSuite = Oci.LoadBalancer.GetSslCipherSuite.Invoke(new()
         ///     {
-        ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-        ///         Name = @var.Ssl_cipher_suite_name,
+        ///         LoadBalancerId = testLoadBalancer.Id,
+        ///         Name = sslCipherSuiteName,
         ///     });
         /// 
         /// });

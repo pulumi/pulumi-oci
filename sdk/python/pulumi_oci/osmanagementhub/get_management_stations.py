@@ -144,12 +144,12 @@ def get_management_stations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=var["compartment_id"],
-        display_name=var["management_station_display_name"],
-        display_name_contains=var["management_station_display_name_contains"],
-        id=var["management_station_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        state=var["management_station_state"])
+    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
+        display_name=management_station_display_name,
+        display_name_contains=management_station_display_name_contains,
+        id=management_station_id,
+        managed_instance_id=test_managed_instance["id"],
+        state=management_station_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -204,12 +204,12 @@ def get_management_stations_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=var["compartment_id"],
-        display_name=var["management_station_display_name"],
-        display_name_contains=var["management_station_display_name_contains"],
-        id=var["management_station_id"],
-        managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"],
-        state=var["management_station_state"])
+    test_management_stations = oci.OsManagementHub.get_management_stations(compartment_id=compartment_id,
+        display_name=management_station_display_name,
+        display_name_contains=management_station_display_name_contains,
+        id=management_station_id,
+        managed_instance_id=test_managed_instance["id"],
+        state=management_station_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGroups = oci.Identity.getDomainsGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     groupCount: _var.group_group_count,
- *     groupFilter: _var.group_group_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     groupCount: groupGroupCount,
+ *     groupFilter: groupGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.group_authorization,
- *     resourceTypeSchemaVersion: _var.group_resource_type_schema_version,
- *     startIndex: _var.group_start_index,
+ *     authorization: groupAuthorization,
+ *     resourceTypeSchemaVersion: groupResourceTypeSchemaVersion,
+ *     startIndex: groupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGroups = oci.Identity.getDomainsGroups({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     groupCount: _var.group_group_count,
- *     groupFilter: _var.group_group_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     groupCount: groupGroupCount,
+ *     groupFilter: groupGroupFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.group_authorization,
- *     resourceTypeSchemaVersion: _var.group_resource_type_schema_version,
- *     startIndex: _var.group_start_index,
+ *     authorization: groupAuthorization,
+ *     resourceTypeSchemaVersion: groupResourceTypeSchemaVersion,
+ *     startIndex: groupStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -487,31 +487,31 @@ class DeployEnvironment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deploy_environment = oci.dev_ops.DeployEnvironment("testDeployEnvironment",
-            deploy_environment_type=var["deploy_environment_deploy_environment_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
+        test_deploy_environment = oci.dev_ops.DeployEnvironment("test_deploy_environment",
+            deploy_environment_type=deploy_environment_deploy_environment_type,
+            project_id=test_project["id"],
+            cluster_id=test_cluster["id"],
             compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
                 items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=var["deploy_environment_compute_instance_group_selectors_items_selector_type"],
-                    compute_instance_ids=var["deploy_environment_compute_instance_group_selectors_items_compute_instance_ids"],
-                    query=var["deploy_environment_compute_instance_group_selectors_items_query"],
-                    region=var["deploy_environment_compute_instance_group_selectors_items_region"],
+                    selector_type=deploy_environment_compute_instance_group_selectors_items_selector_type,
+                    compute_instance_ids=deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
+                    query=deploy_environment_compute_instance_group_selectors_items_query,
+                    region=deploy_environment_compute_instance_group_selectors_items_region,
                 )],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["deploy_environment_description"],
-            display_name=var["deploy_environment_display_name"],
+            description=deploy_environment_description,
+            display_name=deploy_environment_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            function_id=oci_functions_function["test_function"]["id"],
+            function_id=test_function["id"],
             network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=var["deploy_environment_network_channel_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
+                network_channel_type=deploy_environment_network_channel_network_channel_type,
+                subnet_id=test_subnet["id"],
+                nsg_ids=deploy_environment_network_channel_nsg_ids,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -559,31 +559,31 @@ class DeployEnvironment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deploy_environment = oci.dev_ops.DeployEnvironment("testDeployEnvironment",
-            deploy_environment_type=var["deploy_environment_deploy_environment_type"],
-            project_id=oci_devops_project["test_project"]["id"],
-            cluster_id=oci_containerengine_cluster["test_cluster"]["id"],
+        test_deploy_environment = oci.dev_ops.DeployEnvironment("test_deploy_environment",
+            deploy_environment_type=deploy_environment_deploy_environment_type,
+            project_id=test_project["id"],
+            cluster_id=test_cluster["id"],
             compute_instance_group_selectors=oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsArgs(
                 items=[oci.dev_ops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs(
-                    selector_type=var["deploy_environment_compute_instance_group_selectors_items_selector_type"],
-                    compute_instance_ids=var["deploy_environment_compute_instance_group_selectors_items_compute_instance_ids"],
-                    query=var["deploy_environment_compute_instance_group_selectors_items_query"],
-                    region=var["deploy_environment_compute_instance_group_selectors_items_region"],
+                    selector_type=deploy_environment_compute_instance_group_selectors_items_selector_type,
+                    compute_instance_ids=deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
+                    query=deploy_environment_compute_instance_group_selectors_items_query,
+                    region=deploy_environment_compute_instance_group_selectors_items_region,
                 )],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["deploy_environment_description"],
-            display_name=var["deploy_environment_display_name"],
+            description=deploy_environment_description,
+            display_name=deploy_environment_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            function_id=oci_functions_function["test_function"]["id"],
+            function_id=test_function["id"],
             network_channel=oci.dev_ops.DeployEnvironmentNetworkChannelArgs(
-                network_channel_type=var["deploy_environment_network_channel_network_channel_type"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
+                network_channel_type=deploy_environment_network_channel_network_channel_type,
+                subnet_id=test_subnet["id"],
+                nsg_ids=deploy_environment_network_channel_nsg_ids,
             ))
         ```
         <!--End PulumiCodeChooser -->

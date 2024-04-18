@@ -32,23 +32,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCrossConnectGroup = new oci.core.CrossConnectGroup("testCrossConnectGroup", {
- *     compartmentId: _var.compartment_id,
- *     customerReferenceName: _var.cross_connect_group_customer_reference_name,
+ * const testCrossConnectGroup = new oci.core.CrossConnectGroup("test_cross_connect_group", {
+ *     compartmentId: compartmentId,
+ *     customerReferenceName: crossConnectGroupCustomerReferenceName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.cross_connect_group_display_name,
+ *     displayName: crossConnectGroupDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     macsecProperties: {
- *         state: _var.cross_connect_group_macsec_properties_state,
- *         encryptionCipher: _var.cross_connect_group_macsec_properties_encryption_cipher,
- *         isUnprotectedTrafficAllowed: _var.cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+ *         state: crossConnectGroupMacsecPropertiesState,
+ *         encryptionCipher: crossConnectGroupMacsecPropertiesEncryptionCipher,
+ *         isUnprotectedTrafficAllowed: crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed,
  *         primaryKey: {
- *             connectivityAssociationKeySecretId: oci_vault_secret.test_secret.id,
- *             connectivityAssociationNameSecretId: oci_vault_secret.test_secret.id,
+ *             connectivityAssociationKeySecretId: testSecret.id,
+ *             connectivityAssociationNameSecretId: testSecret.id,
  *         },
  *     },
  * });

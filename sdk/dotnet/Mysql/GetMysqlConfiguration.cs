@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlConfiguration = Oci.Mysql.GetMysqlConfiguration.Invoke(new()
         ///     {
-        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         ConfigurationId = mysqlConfigurationId,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlConfiguration = Oci.Mysql.GetMysqlConfiguration.Invoke(new()
         ///     {
-        ///         ConfigurationId = @var.Mysql_configuration_id,
+        ///         ConfigurationId = mysqlConfigurationId,
         ///     });
         /// 
         /// });

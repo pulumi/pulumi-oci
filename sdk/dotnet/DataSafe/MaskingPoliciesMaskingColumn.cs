@@ -44,14 +44,14 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMaskingPoliciesMaskingColumn = new Oci.DataSafe.MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", new()
+    ///     var testMaskingPoliciesMaskingColumn = new Oci.DataSafe.MaskingPoliciesMaskingColumn("test_masking_policies_masking_column", new()
     ///     {
-    ///         ColumnName = @var.Masking_policies_masking_column_column_name,
-    ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
-    ///         Object = @var.Masking_policies_masking_column_object,
-    ///         SchemaName = @var.Masking_policies_masking_column_schema_name,
-    ///         IsMaskingEnabled = @var.Masking_policies_masking_column_is_masking_enabled,
-    ///         MaskingColumnGroup = @var.Masking_policies_masking_column_masking_column_group,
+    ///         ColumnName = maskingPoliciesMaskingColumnColumnName,
+    ///         MaskingPolicyId = testMaskingPolicy.Id,
+    ///         Object = maskingPoliciesMaskingColumnObject,
+    ///         SchemaName = maskingPoliciesMaskingColumnSchemaName,
+    ///         IsMaskingEnabled = maskingPoliciesMaskingColumnIsMaskingEnabled,
+    ///         MaskingColumnGroup = maskingPoliciesMaskingColumnMaskingColumnGroup,
     ///         MaskingFormats = new[]
     ///         {
     ///             new Oci.DataSafe.Inputs.MaskingPoliciesMaskingColumnMaskingFormatArgs
@@ -60,38 +60,38 @@ namespace Pulumi.Oci.DataSafe
     ///                 {
     ///                     new Oci.DataSafe.Inputs.MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs
     ///                     {
-    ///                         Type = @var.Masking_policies_masking_column_masking_formats_format_entries_type,
-    ///                         ColumnName = @var.Masking_policies_masking_column_masking_formats_format_entries_column_name,
-    ///                         Description = @var.Masking_policies_masking_column_masking_formats_format_entries_description,
-    ///                         EndDate = @var.Masking_policies_masking_column_masking_formats_format_entries_end_date,
-    ///                         EndLength = @var.Masking_policies_masking_column_masking_formats_format_entries_end_length,
-    ///                         EndValue = @var.Masking_policies_masking_column_masking_formats_format_entries_end_value,
-    ///                         FixedNumber = @var.Masking_policies_masking_column_masking_formats_format_entries_fixed_number,
-    ///                         FixedString = @var.Masking_policies_masking_column_masking_formats_format_entries_fixed_string,
-    ///                         GroupingColumns = @var.Masking_policies_masking_column_masking_formats_format_entries_grouping_columns,
-    ///                         Length = @var.Masking_policies_masking_column_masking_formats_format_entries_length,
-    ///                         LibraryMaskingFormatId = oci_data_safe_library_masking_format.Test_library_masking_format.Id,
-    ///                         Pattern = @var.Masking_policies_masking_column_masking_formats_format_entries_pattern,
-    ///                         PostProcessingFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_post_processing_function,
-    ///                         RandomLists = @var.Masking_policies_masking_column_masking_formats_format_entries_random_list,
-    ///                         RegularExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_regular_expression,
-    ///                         ReplaceWith = @var.Masking_policies_masking_column_masking_formats_format_entries_replace_with,
-    ///                         SchemaName = @var.Masking_policies_masking_column_masking_formats_format_entries_schema_name,
-    ///                         SqlExpression = @var.Masking_policies_masking_column_masking_formats_format_entries_sql_expression,
-    ///                         StartDate = @var.Masking_policies_masking_column_masking_formats_format_entries_start_date,
-    ///                         StartLength = @var.Masking_policies_masking_column_masking_formats_format_entries_start_length,
-    ///                         StartPosition = @var.Masking_policies_masking_column_masking_formats_format_entries_start_position,
-    ///                         StartValue = @var.Masking_policies_masking_column_masking_formats_format_entries_start_value,
-    ///                         TableName = oci_nosql_table.Test_table.Name,
-    ///                         UserDefinedFunction = @var.Masking_policies_masking_column_masking_formats_format_entries_user_defined_function,
+    ///                         Type = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesType,
+    ///                         ColumnName = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesColumnName,
+    ///                         Description = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesDescription,
+    ///                         EndDate = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndDate,
+    ///                         EndLength = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndLength,
+    ///                         EndValue = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesEndValue,
+    ///                         FixedNumber = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesFixedNumber,
+    ///                         FixedString = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesFixedString,
+    ///                         GroupingColumns = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesGroupingColumns,
+    ///                         Length = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesLength,
+    ///                         LibraryMaskingFormatId = testLibraryMaskingFormat.Id,
+    ///                         Pattern = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesPattern,
+    ///                         PostProcessingFunction = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesPostProcessingFunction,
+    ///                         RandomLists = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesRandomList,
+    ///                         RegularExpression = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesRegularExpression,
+    ///                         ReplaceWith = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesReplaceWith,
+    ///                         SchemaName = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesSchemaName,
+    ///                         SqlExpression = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesSqlExpression,
+    ///                         StartDate = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartDate,
+    ///                         StartLength = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartLength,
+    ///                         StartPosition = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartPosition,
+    ///                         StartValue = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartValue,
+    ///                         TableName = testTable.Name,
+    ///                         UserDefinedFunction = maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesUserDefinedFunction,
     ///                     },
     ///                 },
-    ///                 Condition = @var.Masking_policies_masking_column_masking_formats_condition,
-    ///                 Description = @var.Masking_policies_masking_column_masking_formats_description,
+    ///                 Condition = maskingPoliciesMaskingColumnMaskingFormatsCondition,
+    ///                 Description = maskingPoliciesMaskingColumnMaskingFormatsDescription,
     ///             },
     ///         },
-    ///         ObjectType = @var.Masking_policies_masking_column_object_type,
-    ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+    ///         ObjectType = maskingPoliciesMaskingColumnObjectType,
+    ///         SensitiveTypeId = testSensitiveType.Id,
     ///     });
     /// 
     /// });

@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleets = oci.Jms.getFleets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.fleet_display_name,
- *     displayNameContains: _var.fleet_display_name_contains,
- *     id: _var.fleet_id,
- *     state: _var.fleet_state,
+ *     compartmentId: compartmentId,
+ *     displayName: fleetDisplayName,
+ *     displayNameContains: fleetDisplayNameContains,
+ *     id: fleetId,
+ *     state: fleetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetFleetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleets = oci.Jms.getFleets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.fleet_display_name,
- *     displayNameContains: _var.fleet_display_name_contains,
- *     id: _var.fleet_id,
- *     state: _var.fleet_state,
+ *     compartmentId: compartmentId,
+ *     displayName: fleetDisplayName,
+ *     displayNameContains: fleetDisplayNameContains,
+ *     id: fleetId,
+ *     state: fleetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

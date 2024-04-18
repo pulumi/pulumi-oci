@@ -1375,23 +1375,23 @@ class DomainsCloudGate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_gate = oci.identity.DomainsCloudGate("testCloudGate",
-            display_name=var["cloud_gate_display_name"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_cloud_gate = oci.identity.DomainsCloudGate("test_cloud_gate",
+            display_name=cloud_gate_display_name,
+            idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:CloudGate"],
-            active=var["cloud_gate_active"],
+            active=cloud_gate_active,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["cloud_gate_authorization"],
-            description=var["cloud_gate_description"],
+            authorization=cloud_gate_authorization,
+            description=cloud_gate_description,
             last_modified_time="2000-01-01T00:00:00Z",
-            ocid=var["cloud_gate_ocid"],
-            resource_type_schema_version=var["cloud_gate_resource_type_schema_version"],
+            ocid=cloud_gate_ocid,
+            resource_type_schema_version=cloud_gate_resource_type_schema_version,
             tags=[oci.identity.DomainsCloudGateTagArgs(
-                key=var["cloud_gate_tags_key"],
-                value=var["cloud_gate_tags_value"],
+                key=cloud_gate_tags_key,
+                value=cloud_gate_tags_value,
             )],
-            type=var["cloud_gate_type"])
+            type=cloud_gate_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -1525,23 +1525,23 @@ class DomainsCloudGate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_gate = oci.identity.DomainsCloudGate("testCloudGate",
-            display_name=var["cloud_gate_display_name"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_cloud_gate = oci.identity.DomainsCloudGate("test_cloud_gate",
+            display_name=cloud_gate_display_name,
+            idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:CloudGate"],
-            active=var["cloud_gate_active"],
+            active=cloud_gate_active,
             attribute_sets=["all"],
             attributes="",
-            authorization=var["cloud_gate_authorization"],
-            description=var["cloud_gate_description"],
+            authorization=cloud_gate_authorization,
+            description=cloud_gate_description,
             last_modified_time="2000-01-01T00:00:00Z",
-            ocid=var["cloud_gate_ocid"],
-            resource_type_schema_version=var["cloud_gate_resource_type_schema_version"],
+            ocid=cloud_gate_ocid,
+            resource_type_schema_version=cloud_gate_resource_type_schema_version,
             tags=[oci.identity.DomainsCloudGateTagArgs(
-                key=var["cloud_gate_tags_key"],
-                value=var["cloud_gate_tags_value"],
+                key=cloud_gate_tags_key,
+                value=cloud_gate_tags_value,
             )],
-            type=var["cloud_gate_type"])
+            type=cloud_gate_type)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -31,35 +31,36 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsPolicy(ctx, "testPolicy", &Identity.DomainsPolicyArgs{
-//				IdcsEndpoint: pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
+//			_, err := Identity.NewDomainsPolicy(ctx, "test_policy", &Identity.DomainsPolicyArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Name:         pulumi.Any(policyName),
 //				PolicyType: &identity.DomainsPolicyPolicyTypeArgs{
 //					Value: pulumi.String("IdentityProvider"),
 //				},
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Policy"),
 //				},
-//				Active: pulumi.Any(_var.Policy_active),
+//				Active: pulumi.Any(policyActive),
 //				AttributeSets: pulumi.StringArray{
 //					pulumi.String("all"),
 //				},
 //				Attributes:                pulumi.String(""),
-//				Authorization:             pulumi.Any(_var.Policy_authorization),
-//				Description:               pulumi.Any(_var.Policy_description),
+//				Authorization:             pulumi.Any(policyAuthorization),
+//				Description:               pulumi.Any(policyDescription),
 //				ExternalId:                pulumi.String("externalId"),
-//				Ocid:                      pulumi.Any(_var.Policy_ocid),
-//				PolicyGroovy:              pulumi.Any(_var.Policy_policy_groovy),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Policy_resource_type_schema_version),
+//				Ocid:                      pulumi.Any(policyOcid),
+//				PolicyGroovy:              pulumi.Any(policyPolicyGroovy),
+//				ResourceTypeSchemaVersion: pulumi.Any(policyResourceTypeSchemaVersion),
 //				Rules: identity.DomainsPolicyRuleArray{
 //					&identity.DomainsPolicyRuleArgs{
-//						Sequence: pulumi.Any(_var.Policy_rules_sequence),
+//						Sequence: pulumi.Any(policyRulesSequence),
 //						Value:    pulumi.String("TODO"),
 //					},
 //				},
 //				Tags: identity.DomainsPolicyTagArray{
 //					&identity.DomainsPolicyTagArgs{
-//						Key:   pulumi.Any(_var.Policy_tags_key),
-//						Value: pulumi.Any(_var.Policy_tags_value),
+//						Key:   pulumi.Any(policyTagsKey),
+//						Value: pulumi.Any(policyTagsValue),
 //					},
 //				},
 //			})

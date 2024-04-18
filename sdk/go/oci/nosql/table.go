@@ -31,19 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Nosql.NewTable(ctx, "testTable", &Nosql.TableArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DdlStatement:  pulumi.Any(_var.Table_ddl_statement),
-//				DefinedTags:   pulumi.Any(_var.Table_defined_tags),
+//			_, err := Nosql.NewTable(ctx, "test_table", &Nosql.TableArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DdlStatement:  pulumi.Any(tableDdlStatement),
+//				Name:          pulumi.Any(tableName),
+//				DefinedTags:   pulumi.Any(tableDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsAutoReclaimable: pulumi.Any(_var.Table_is_auto_reclaimable),
+//				IsAutoReclaimable: pulumi.Any(tableIsAutoReclaimable),
 //				TableLimits: &nosql.TableTableLimitsArgs{
-//					MaxReadUnits:    pulumi.Any(_var.Table_table_limits_max_read_units),
-//					MaxStorageInGbs: pulumi.Any(_var.Table_table_limits_max_storage_in_gbs),
-//					MaxWriteUnits:   pulumi.Any(_var.Table_table_limits_max_write_units),
-//					CapacityMode:    pulumi.Any(_var.Table_table_limits_capacity_mode),
+//					MaxReadUnits:    pulumi.Any(tableTableLimitsMaxReadUnits),
+//					MaxStorageInGbs: pulumi.Any(tableTableLimitsMaxStorageInGbs),
+//					MaxWriteUnits:   pulumi.Any(tableTableLimitsMaxWriteUnits),
+//					CapacityMode:    pulumi.Any(tableTableLimitsCapacityMode),
 //				},
 //			})
 //			if err != nil {

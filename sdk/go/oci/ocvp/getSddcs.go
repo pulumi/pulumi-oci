@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSddcs(ctx, &ocvp.GetSddcsArgs{
-//				CompartmentId:             _var.Compartment_id,
-//				ComputeAvailabilityDomain: pulumi.StringRef(_var.Sddc_compute_availability_domain),
-//				DisplayName:               pulumi.StringRef(_var.Sddc_display_name),
-//				State:                     pulumi.StringRef(_var.Sddc_state),
+//				CompartmentId:             compartmentId,
+//				ComputeAvailabilityDomain: pulumi.StringRef(sddcComputeAvailabilityDomain),
+//				DisplayName:               pulumi.StringRef(sddcDisplayName),
+//				State:                     pulumi.StringRef(sddcState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditPolicyManagement = new oci.datasafe.AuditPolicyManagement("testAuditPolicyManagement", {
- *     compartmentId: _var.compartment_id,
- *     targetId: oci_data_safe_target_database.test_target_database.id,
+ * const testAuditPolicyManagement = new oci.datasafe.AuditPolicyManagement("test_audit_policy_management", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTargetDatabase.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.audit_policy_management_description,
- *     displayName: _var.audit_policy_management_display_name,
+ *     description: auditPolicyManagementDescription,
+ *     displayName: auditPolicyManagementDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

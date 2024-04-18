@@ -25,24 +25,24 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLicenseRecord = new Oci.LicenseManager.LicenseRecord("testLicenseRecord", new()
+    ///     var testLicenseRecord = new Oci.LicenseManager.LicenseRecord("test_license_record", new()
     ///     {
-    ///         DisplayName = @var.License_record_display_name,
-    ///         IsPerpetual = @var.License_record_is_perpetual,
-    ///         IsUnlimited = @var.License_record_is_unlimited,
-    ///         ProductLicenseId = oci_license_manager_product_license.Test_product_license.Id,
+    ///         DisplayName = licenseRecordDisplayName,
+    ///         IsPerpetual = licenseRecordIsPerpetual,
+    ///         IsUnlimited = licenseRecordIsUnlimited,
+    ///         ProductLicenseId = testProductLicense.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         ExpirationDate = @var.License_record_expiration_date,
+    ///         ExpirationDate = licenseRecordExpirationDate,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         LicenseCount = @var.License_record_license_count,
-    ///         ProductId = oci_license_manager_product.Test_product.Id,
-    ///         SupportEndDate = @var.License_record_support_end_date,
+    ///         LicenseCount = licenseRecordLicenseCount,
+    ///         ProductId = testProduct.Id,
+    ///         SupportEndDate = licenseRecordSupportEndDate,
     ///     });
     /// 
     /// });

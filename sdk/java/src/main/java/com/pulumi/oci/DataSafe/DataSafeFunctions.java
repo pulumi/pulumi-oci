@@ -367,7 +367,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .alertId(testAlertOciDataSafeAlert.id())
      *             .build());
      * 
      *     }
@@ -409,7 +409,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .alertId(testAlertOciDataSafeAlert.id())
      *             .build());
      * 
      *     }
@@ -451,7 +451,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .alertId(testAlertOciDataSafeAlert.id())
      *             .build());
      * 
      *     }
@@ -493,7 +493,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlert = DataSafeFunctions.getAlert(GetAlertArgs.builder()
-     *             .alertId(oci_data_safe_alert.test_alert().id())
+     *             .alertId(testAlertOciDataSafeAlert.id())
      *             .build());
      * 
      *     }
@@ -535,15 +535,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.alert_analytic_group_by())
-     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
-     *             .scimQuery(var_.alert_analytic_scim_query())
-     *             .summaryFields(var_.alert_analytic_summary_field())
-     *             .timeEnded(var_.alert_analytic_time_ended())
-     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(alertAnalyticCompartmentIdInSubtree)
+     *             .groupBies(alertAnalyticGroupBy)
+     *             .queryTimeZone(alertAnalyticQueryTimeZone)
+     *             .scimQuery(alertAnalyticScimQuery)
+     *             .summaryFields(alertAnalyticSummaryField)
+     *             .timeEnded(alertAnalyticTimeEnded)
+     *             .timeStarted(alertAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -585,15 +585,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.alert_analytic_group_by())
-     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
-     *             .scimQuery(var_.alert_analytic_scim_query())
-     *             .summaryFields(var_.alert_analytic_summary_field())
-     *             .timeEnded(var_.alert_analytic_time_ended())
-     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(alertAnalyticCompartmentIdInSubtree)
+     *             .groupBies(alertAnalyticGroupBy)
+     *             .queryTimeZone(alertAnalyticQueryTimeZone)
+     *             .scimQuery(alertAnalyticScimQuery)
+     *             .summaryFields(alertAnalyticSummaryField)
+     *             .timeEnded(alertAnalyticTimeEnded)
+     *             .timeStarted(alertAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -635,15 +635,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.alert_analytic_group_by())
-     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
-     *             .scimQuery(var_.alert_analytic_scim_query())
-     *             .summaryFields(var_.alert_analytic_summary_field())
-     *             .timeEnded(var_.alert_analytic_time_ended())
-     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(alertAnalyticCompartmentIdInSubtree)
+     *             .groupBies(alertAnalyticGroupBy)
+     *             .queryTimeZone(alertAnalyticQueryTimeZone)
+     *             .scimQuery(alertAnalyticScimQuery)
+     *             .summaryFields(alertAnalyticSummaryField)
+     *             .timeEnded(alertAnalyticTimeEnded)
+     *             .timeStarted(alertAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -685,15 +685,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertAnalytic = DataSafeFunctions.getAlertAnalytic(GetAlertAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.alert_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.alert_analytic_group_by())
-     *             .queryTimeZone(var_.alert_analytic_query_time_zone())
-     *             .scimQuery(var_.alert_analytic_scim_query())
-     *             .summaryFields(var_.alert_analytic_summary_field())
-     *             .timeEnded(var_.alert_analytic_time_ended())
-     *             .timeStarted(var_.alert_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(alertAnalyticCompartmentIdInSubtree)
+     *             .groupBies(alertAnalyticGroupBy)
+     *             .queryTimeZone(alertAnalyticQueryTimeZone)
+     *             .scimQuery(alertAnalyticScimQuery)
+     *             .summaryFields(alertAnalyticSummaryField)
+     *             .timeEnded(alertAnalyticTimeEnded)
+     *             .timeStarted(alertAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -735,16 +735,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_policy_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
-     *             .displayName(var_.alert_policy_display_name())
-     *             .isUserDefined(var_.alert_policy_is_user_defined())
-     *             .state(var_.alert_policy_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
-     *             .type(var_.alert_policy_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertPolicyAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
+     *             .displayName(alertPolicyDisplayName)
+     *             .isUserDefined(alertPolicyIsUserDefined)
+     *             .state(alertPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(alertPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(alertPolicyTimeCreatedLessThan)
+     *             .type(alertPolicyType)
      *             .build());
      * 
      *     }
@@ -786,16 +786,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_policy_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
-     *             .displayName(var_.alert_policy_display_name())
-     *             .isUserDefined(var_.alert_policy_is_user_defined())
-     *             .state(var_.alert_policy_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
-     *             .type(var_.alert_policy_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertPolicyAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
+     *             .displayName(alertPolicyDisplayName)
+     *             .isUserDefined(alertPolicyIsUserDefined)
+     *             .state(alertPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(alertPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(alertPolicyTimeCreatedLessThan)
+     *             .type(alertPolicyType)
      *             .build());
      * 
      *     }
@@ -837,16 +837,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_policy_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
-     *             .displayName(var_.alert_policy_display_name())
-     *             .isUserDefined(var_.alert_policy_is_user_defined())
-     *             .state(var_.alert_policy_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
-     *             .type(var_.alert_policy_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertPolicyAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
+     *             .displayName(alertPolicyDisplayName)
+     *             .isUserDefined(alertPolicyIsUserDefined)
+     *             .state(alertPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(alertPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(alertPolicyTimeCreatedLessThan)
+     *             .type(alertPolicyType)
      *             .build());
      * 
      *     }
@@ -888,16 +888,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicies = DataSafeFunctions.getAlertPolicies(GetAlertPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_policy_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.alert_policy_compartment_id_in_subtree())
-     *             .displayName(var_.alert_policy_display_name())
-     *             .isUserDefined(var_.alert_policy_is_user_defined())
-     *             .state(var_.alert_policy_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.alert_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.alert_policy_time_created_less_than())
-     *             .type(var_.alert_policy_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertPolicyAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(alertPolicyCompartmentIdInSubtree)
+     *             .displayName(alertPolicyDisplayName)
+     *             .isUserDefined(alertPolicyIsUserDefined)
+     *             .state(alertPolicyState)
+     *             .timeCreatedGreaterThanOrEqualTo(alertPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(alertPolicyTimeCreatedLessThan)
+     *             .type(alertPolicyType)
      *             .build());
      * 
      *     }
@@ -939,7 +939,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -981,7 +981,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1023,7 +1023,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1065,7 +1065,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicy = DataSafeFunctions.getAlertPolicy(GetAlertPolicyArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicyOciDataSafeAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1108,7 +1108,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1151,7 +1151,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1194,7 +1194,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1237,7 +1237,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRule = DataSafeFunctions.getAlertPolicyRule(GetAlertPolicyRuleArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1280,7 +1280,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1323,7 +1323,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1366,7 +1366,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1409,7 +1409,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlertPolicyRules = DataSafeFunctions.getAlertPolicyRules(GetAlertPolicyRulesArgs.builder()
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
+     *             .alertPolicyId(testAlertPolicy.id())
      *             .build());
      * 
      *     }
@@ -1451,12 +1451,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_access_level())
-     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
-     *             .fields(var_.alert_field())
-     *             .id(var_.alert_id())
-     *             .scimQuery(var_.alert_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAccessLevel)
+     *             .compartmentIdInSubtree(alertCompartmentIdInSubtree)
+     *             .fields(alertField)
+     *             .id(alertId)
+     *             .scimQuery(alertScimQuery)
      *             .build());
      * 
      *     }
@@ -1498,12 +1498,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_access_level())
-     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
-     *             .fields(var_.alert_field())
-     *             .id(var_.alert_id())
-     *             .scimQuery(var_.alert_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAccessLevel)
+     *             .compartmentIdInSubtree(alertCompartmentIdInSubtree)
+     *             .fields(alertField)
+     *             .id(alertId)
+     *             .scimQuery(alertScimQuery)
      *             .build());
      * 
      *     }
@@ -1545,12 +1545,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_access_level())
-     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
-     *             .fields(var_.alert_field())
-     *             .id(var_.alert_id())
-     *             .scimQuery(var_.alert_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAccessLevel)
+     *             .compartmentIdInSubtree(alertCompartmentIdInSubtree)
+     *             .fields(alertField)
+     *             .id(alertId)
+     *             .scimQuery(alertScimQuery)
      *             .build());
      * 
      *     }
@@ -1592,12 +1592,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAlerts = DataSafeFunctions.getAlerts(GetAlertsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.alert_access_level())
-     *             .compartmentIdInSubtree(var_.alert_compartment_id_in_subtree())
-     *             .fields(var_.alert_field())
-     *             .id(var_.alert_id())
-     *             .scimQuery(var_.alert_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(alertAccessLevel)
+     *             .compartmentIdInSubtree(alertCompartmentIdInSubtree)
+     *             .fields(alertField)
+     *             .id(alertId)
+     *             .scimQuery(alertScimQuery)
      *             .build());
      * 
      *     }
@@ -1639,7 +1639,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
      *             .build());
      * 
      *     }
@@ -1681,7 +1681,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
      *             .build());
      * 
      *     }
@@ -1723,7 +1723,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
      *             .build());
      * 
      *     }
@@ -1765,7 +1765,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrieval = DataSafeFunctions.getAuditArchiveRetrieval(GetAuditArchiveRetrievalArgs.builder()
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id())
      *             .build());
      * 
      *     }
@@ -1807,14 +1807,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_archive_retrieval_access_level())
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
-     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
-     *             .displayName(var_.audit_archive_retrieval_display_name())
-     *             .state(var_.audit_archive_retrieval_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditArchiveRetrievalAccessLevel)
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
+     *             .displayName(auditArchiveRetrievalDisplayName)
+     *             .state(auditArchiveRetrievalState)
+     *             .targetId(testTarget.id())
+     *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
      *     }
@@ -1856,14 +1856,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_archive_retrieval_access_level())
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
-     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
-     *             .displayName(var_.audit_archive_retrieval_display_name())
-     *             .state(var_.audit_archive_retrieval_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditArchiveRetrievalAccessLevel)
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
+     *             .displayName(auditArchiveRetrievalDisplayName)
+     *             .state(auditArchiveRetrievalState)
+     *             .targetId(testTarget.id())
+     *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
      *     }
@@ -1905,14 +1905,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_archive_retrieval_access_level())
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
-     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
-     *             .displayName(var_.audit_archive_retrieval_display_name())
-     *             .state(var_.audit_archive_retrieval_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditArchiveRetrievalAccessLevel)
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
+     *             .displayName(auditArchiveRetrievalDisplayName)
+     *             .state(auditArchiveRetrievalState)
+     *             .targetId(testTarget.id())
+     *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
      *     }
@@ -1954,14 +1954,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditArchiveRetrievals = DataSafeFunctions.getAuditArchiveRetrievals(GetAuditArchiveRetrievalsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_archive_retrieval_access_level())
-     *             .auditArchiveRetrievalId(oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval().id())
-     *             .compartmentIdInSubtree(var_.audit_archive_retrieval_compartment_id_in_subtree())
-     *             .displayName(var_.audit_archive_retrieval_display_name())
-     *             .state(var_.audit_archive_retrieval_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeOfExpiry(var_.audit_archive_retrieval_time_of_expiry())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditArchiveRetrievalAccessLevel)
+     *             .auditArchiveRetrievalId(testAuditArchiveRetrieval.id())
+     *             .compartmentIdInSubtree(auditArchiveRetrievalCompartmentIdInSubtree)
+     *             .displayName(auditArchiveRetrievalDisplayName)
+     *             .state(auditArchiveRetrievalState)
+     *             .targetId(testTarget.id())
+     *             .timeOfExpiry(auditArchiveRetrievalTimeOfExpiry)
      *             .build());
      * 
      *     }
@@ -2015,10 +2015,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2072,10 +2072,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2129,10 +2129,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2186,10 +2186,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvent = DataSafeFunctions.getAuditEvent(GetAuditEventArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2236,15 +2236,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_event_analytic_group_by())
-     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
-     *             .scimQuery(var_.audit_event_analytic_scim_query())
-     *             .summaryFields(var_.audit_event_analytic_summary_field())
-     *             .timeEnded(var_.audit_event_analytic_time_ended())
-     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditEventAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditEventAnalyticGroupBy)
+     *             .queryTimeZone(auditEventAnalyticQueryTimeZone)
+     *             .scimQuery(auditEventAnalyticScimQuery)
+     *             .summaryFields(auditEventAnalyticSummaryField)
+     *             .timeEnded(auditEventAnalyticTimeEnded)
+     *             .timeStarted(auditEventAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -2291,15 +2291,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_event_analytic_group_by())
-     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
-     *             .scimQuery(var_.audit_event_analytic_scim_query())
-     *             .summaryFields(var_.audit_event_analytic_summary_field())
-     *             .timeEnded(var_.audit_event_analytic_time_ended())
-     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditEventAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditEventAnalyticGroupBy)
+     *             .queryTimeZone(auditEventAnalyticQueryTimeZone)
+     *             .scimQuery(auditEventAnalyticScimQuery)
+     *             .summaryFields(auditEventAnalyticSummaryField)
+     *             .timeEnded(auditEventAnalyticTimeEnded)
+     *             .timeStarted(auditEventAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -2346,15 +2346,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_event_analytic_group_by())
-     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
-     *             .scimQuery(var_.audit_event_analytic_scim_query())
-     *             .summaryFields(var_.audit_event_analytic_summary_field())
-     *             .timeEnded(var_.audit_event_analytic_time_ended())
-     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditEventAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditEventAnalyticGroupBy)
+     *             .queryTimeZone(auditEventAnalyticQueryTimeZone)
+     *             .scimQuery(auditEventAnalyticScimQuery)
+     *             .summaryFields(auditEventAnalyticSummaryField)
+     *             .timeEnded(auditEventAnalyticTimeEnded)
+     *             .timeStarted(auditEventAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -2401,15 +2401,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEventAnalytic = DataSafeFunctions.getAuditEventAnalytic(GetAuditEventAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_event_analytic_group_by())
-     *             .queryTimeZone(var_.audit_event_analytic_query_time_zone())
-     *             .scimQuery(var_.audit_event_analytic_scim_query())
-     *             .summaryFields(var_.audit_event_analytic_summary_field())
-     *             .timeEnded(var_.audit_event_analytic_time_ended())
-     *             .timeStarted(var_.audit_event_analytic_time_started())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditEventAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditEventAnalyticGroupBy)
+     *             .queryTimeZone(auditEventAnalyticQueryTimeZone)
+     *             .scimQuery(auditEventAnalyticScimQuery)
+     *             .summaryFields(auditEventAnalyticSummaryField)
+     *             .timeEnded(auditEventAnalyticTimeEnded)
+     *             .timeStarted(auditEventAnalyticTimeStarted)
      *             .build());
      * 
      *     }
@@ -2463,10 +2463,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2520,10 +2520,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2577,10 +2577,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2634,10 +2634,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditEvents = DataSafeFunctions.getAuditEvents(GetAuditEventsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_event_access_level())
-     *             .compartmentIdInSubtree(var_.audit_event_compartment_id_in_subtree())
-     *             .scimQuery(var_.audit_event_scim_query())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditEventAccessLevel)
+     *             .compartmentIdInSubtree(auditEventCompartmentIdInSubtree)
+     *             .scimQuery(auditEventScimQuery)
      *             .build());
      * 
      *     }
@@ -2693,13 +2693,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_policy_access_level())
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
-     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
-     *             .displayName(var_.audit_policy_display_name())
-     *             .state(var_.audit_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditPolicyAccessLevel)
+     *             .auditPolicyId(testAuditPolicy.id())
+     *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
+     *             .displayName(auditPolicyDisplayName)
+     *             .state(auditPolicyState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -2755,13 +2755,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_policy_access_level())
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
-     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
-     *             .displayName(var_.audit_policy_display_name())
-     *             .state(var_.audit_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditPolicyAccessLevel)
+     *             .auditPolicyId(testAuditPolicy.id())
+     *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
+     *             .displayName(auditPolicyDisplayName)
+     *             .state(auditPolicyState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -2817,13 +2817,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_policy_access_level())
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
-     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
-     *             .displayName(var_.audit_policy_display_name())
-     *             .state(var_.audit_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditPolicyAccessLevel)
+     *             .auditPolicyId(testAuditPolicy.id())
+     *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
+     *             .displayName(auditPolicyDisplayName)
+     *             .state(auditPolicyState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -2879,13 +2879,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicies = DataSafeFunctions.getAuditPolicies(GetAuditPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_policy_access_level())
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
-     *             .compartmentIdInSubtree(var_.audit_policy_compartment_id_in_subtree())
-     *             .displayName(var_.audit_policy_display_name())
-     *             .state(var_.audit_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditPolicyAccessLevel)
+     *             .auditPolicyId(testAuditPolicy.id())
+     *             .compartmentIdInSubtree(auditPolicyCompartmentIdInSubtree)
+     *             .displayName(auditPolicyDisplayName)
+     *             .state(auditPolicyState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -2927,7 +2927,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
      *             .build());
      * 
      *     }
@@ -2969,7 +2969,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
      *             .build());
      * 
      *     }
@@ -3011,7 +3011,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
      *             .build());
      * 
      *     }
@@ -3053,7 +3053,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditPolicy = DataSafeFunctions.getAuditPolicy(GetAuditPolicyArgs.builder()
-     *             .auditPolicyId(oci_data_safe_audit_policy.test_audit_policy().id())
+     *             .auditPolicyId(testAuditPolicyOciDataSafeAuditPolicy.id())
      *             .build());
      * 
      *     }
@@ -3095,7 +3095,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
      *             .build());
      * 
      *     }
@@ -3137,7 +3137,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
      *             .build());
      * 
      *     }
@@ -3179,7 +3179,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
      *             .build());
      * 
      *     }
@@ -3221,7 +3221,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfile = DataSafeFunctions.getAuditProfile(GetAuditProfileArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
+     *             .auditProfileId(testAuditProfileOciDataSafeAuditProfile.id())
      *             .build());
      * 
      *     }
@@ -3275,10 +3275,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditProfileAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditProfileAnalyticGroupBy)
      *             .build());
      * 
      *     }
@@ -3332,10 +3332,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditProfileAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditProfileAnalyticGroupBy)
      *             .build());
      * 
      *     }
@@ -3389,10 +3389,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditProfileAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditProfileAnalyticGroupBy)
      *             .build());
      * 
      *     }
@@ -3446,10 +3446,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAnalytic = DataSafeFunctions.getAuditProfileAnalytic(GetAuditProfileAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_profile_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_profile_analytic_group_by())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditProfileAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditProfileAnalyticGroupBy)
      *             .build());
      * 
      *     }
@@ -3491,11 +3491,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3537,11 +3537,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3583,11 +3583,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3629,11 +3629,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolume = DataSafeFunctions.getAuditProfileAvailableAuditVolume(GetAuditProfileAvailableAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3675,11 +3675,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3721,11 +3721,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3767,11 +3767,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3813,11 +3813,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileAvailableAuditVolumes = DataSafeFunctions.getAuditProfileAvailableAuditVolumes(GetAuditProfileAvailableAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_available_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_available_audit_volume_month_in_consideration_less_than())
-     *             .trailLocation(var_.audit_profile_available_audit_volume_trail_location())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileAvailableAuditVolumeMonthInConsiderationLessThan)
+     *             .trailLocation(auditProfileAvailableAuditVolumeTrailLocation)
      *             .build());
      * 
      *     }
@@ -3859,10 +3859,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -3904,10 +3904,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -3949,10 +3949,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -3994,10 +3994,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolume = DataSafeFunctions.getAuditProfileCollectedAuditVolume(GetAuditProfileCollectedAuditVolumeArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -4039,10 +4039,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -4084,10 +4084,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -4129,10 +4129,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -4174,10 +4174,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfileCollectedAuditVolumes = DataSafeFunctions.getAuditProfileCollectedAuditVolumes(GetAuditProfileCollectedAuditVolumesArgs.builder()
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .workRequestId(oci_containerengine_work_request.test_work_request().id())
-     *             .monthInConsiderationGreaterThan(var_.audit_profile_collected_audit_volume_month_in_consideration_greater_than())
-     *             .monthInConsiderationLessThan(var_.audit_profile_collected_audit_volume_month_in_consideration_less_than())
+     *             .auditProfileId(testAuditProfile.id())
+     *             .workRequestId(testWorkRequest.id())
+     *             .monthInConsiderationGreaterThan(auditProfileCollectedAuditVolumeMonthInConsiderationGreaterThan)
+     *             .monthInConsiderationLessThan(auditProfileCollectedAuditVolumeMonthInConsiderationLessThan)
      *             .build());
      * 
      *     }
@@ -4233,16 +4233,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_access_level())
-     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
-     *             .displayName(var_.audit_profile_display_name())
-     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
-     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
-     *             .state(var_.audit_profile_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAccessLevel)
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
+     *             .auditProfileId(testAuditProfile.id())
+     *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
+     *             .displayName(auditProfileDisplayName)
+     *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
+     *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
+     *             .state(auditProfileState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4298,16 +4298,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_access_level())
-     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
-     *             .displayName(var_.audit_profile_display_name())
-     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
-     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
-     *             .state(var_.audit_profile_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAccessLevel)
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
+     *             .auditProfileId(testAuditProfile.id())
+     *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
+     *             .displayName(auditProfileDisplayName)
+     *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
+     *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
+     *             .state(auditProfileState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4363,16 +4363,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_access_level())
-     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
-     *             .displayName(var_.audit_profile_display_name())
-     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
-     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
-     *             .state(var_.audit_profile_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAccessLevel)
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
+     *             .auditProfileId(testAuditProfile.id())
+     *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
+     *             .displayName(auditProfileDisplayName)
+     *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
+     *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
+     *             .state(auditProfileState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4428,16 +4428,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditProfiles = DataSafeFunctions.getAuditProfiles(GetAuditProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_profile_access_level())
-     *             .auditCollectedVolumeGreaterThanOrEqualTo(var_.audit_profile_audit_collected_volume_greater_than_or_equal_to())
-     *             .auditProfileId(oci_data_safe_audit_profile.test_audit_profile().id())
-     *             .compartmentIdInSubtree(var_.audit_profile_compartment_id_in_subtree())
-     *             .displayName(var_.audit_profile_display_name())
-     *             .isOverrideGlobalRetentionSetting(var_.audit_profile_is_override_global_retention_setting())
-     *             .isPaidUsageEnabled(var_.audit_profile_is_paid_usage_enabled())
-     *             .state(var_.audit_profile_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditProfileAccessLevel)
+     *             .auditCollectedVolumeGreaterThanOrEqualTo(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo)
+     *             .auditProfileId(testAuditProfile.id())
+     *             .compartmentIdInSubtree(auditProfileCompartmentIdInSubtree)
+     *             .displayName(auditProfileDisplayName)
+     *             .isOverrideGlobalRetentionSetting(auditProfileIsOverrideGlobalRetentionSetting)
+     *             .isPaidUsageEnabled(auditProfileIsPaidUsageEnabled)
+     *             .state(auditProfileState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4479,7 +4479,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
      *             .build());
      * 
      *     }
@@ -4521,7 +4521,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
      *             .build());
      * 
      *     }
@@ -4563,7 +4563,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
      *             .build());
      * 
      *     }
@@ -4605,7 +4605,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrail = DataSafeFunctions.getAuditTrail(GetAuditTrailArgs.builder()
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
+     *             .auditTrailId(testAuditTrailOciDataSafeAuditTrail.id())
      *             .build());
      * 
      *     }
@@ -4659,11 +4659,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_trail_analytic_group_by())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditTrailAnalyticGroupBy)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4717,11 +4717,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_trail_analytic_group_by())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditTrailAnalyticGroupBy)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4775,11 +4775,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_trail_analytic_group_by())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditTrailAnalyticGroupBy)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4833,11 +4833,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrailAnalytic = DataSafeFunctions.getAuditTrailAnalytic(GetAuditTrailAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.audit_trail_analytic_compartment_id_in_subtree())
-     *             .groupBies(var_.audit_trail_analytic_group_by())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(auditTrailAnalyticCompartmentIdInSubtree)
+     *             .groupBies(auditTrailAnalyticGroupBy)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4892,14 +4892,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_access_level())
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
-     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
-     *             .displayName(var_.audit_trail_display_name())
-     *             .state(var_.audit_trail_state())
-     *             .status(var_.audit_trail_status())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAccessLevel)
+     *             .auditTrailId(testAuditTrail.id())
+     *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
+     *             .displayName(auditTrailDisplayName)
+     *             .state(auditTrailState)
+     *             .status(auditTrailStatus)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -4954,14 +4954,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_access_level())
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
-     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
-     *             .displayName(var_.audit_trail_display_name())
-     *             .state(var_.audit_trail_state())
-     *             .status(var_.audit_trail_status())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAccessLevel)
+     *             .auditTrailId(testAuditTrail.id())
+     *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
+     *             .displayName(auditTrailDisplayName)
+     *             .state(auditTrailState)
+     *             .status(auditTrailStatus)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -5016,14 +5016,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_access_level())
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
-     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
-     *             .displayName(var_.audit_trail_display_name())
-     *             .state(var_.audit_trail_state())
-     *             .status(var_.audit_trail_status())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAccessLevel)
+     *             .auditTrailId(testAuditTrail.id())
+     *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
+     *             .displayName(auditTrailDisplayName)
+     *             .state(auditTrailState)
+     *             .status(auditTrailStatus)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -5078,14 +5078,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAuditTrails = DataSafeFunctions.getAuditTrails(GetAuditTrailsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.audit_trail_access_level())
-     *             .auditTrailId(oci_data_safe_audit_trail.test_audit_trail().id())
-     *             .compartmentIdInSubtree(var_.audit_trail_compartment_id_in_subtree())
-     *             .displayName(var_.audit_trail_display_name())
-     *             .state(var_.audit_trail_state())
-     *             .status(var_.audit_trail_status())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(auditTrailAccessLevel)
+     *             .auditTrailId(testAuditTrail.id())
+     *             .compartmentIdInSubtree(auditTrailCompartmentIdInSubtree)
+     *             .displayName(auditTrailDisplayName)
+     *             .state(auditTrailState)
+     *             .status(auditTrailStatus)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -5400,9 +5400,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compatibleFormatsForSensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(compatibleFormatsForSensitiveTypeCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -5447,9 +5447,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compatibleFormatsForSensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(compatibleFormatsForSensitiveTypeCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -5494,9 +5494,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compatibleFormatsForSensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(compatibleFormatsForSensitiveTypeCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -5541,9 +5541,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompatibleFormatsForSensitiveType = DataSafeFunctions.getCompatibleFormatsForSensitiveType(GetCompatibleFormatsForSensitiveTypeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.compatible_formats_for_sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.compatible_formats_for_sensitive_type_compartment_id_in_subtree())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(compatibleFormatsForSensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(compatibleFormatsForSensitiveTypeCompartmentIdInSubtree)
      *             .build());
      * 
      *     }
@@ -5585,7 +5585,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5627,7 +5627,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5669,7 +5669,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5711,7 +5711,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafeConfiguration = DataSafeFunctions.getDataSafeConfiguration(GetDataSafeConfigurationArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5753,7 +5753,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -5795,7 +5795,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -5837,7 +5837,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -5879,7 +5879,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoint = DataSafeFunctions.getDataSafePrivateEndpoint(GetDataSafePrivateEndpointArgs.builder()
-     *             .dataSafePrivateEndpointId(oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint().id())
+     *             .dataSafePrivateEndpointId(testDataSafePrivateEndpointOciDataSafeDataSafePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -5921,12 +5921,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
-     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
-     *             .displayName(var_.data_safe_private_endpoint_display_name())
-     *             .state(var_.data_safe_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(dataSafePrivateEndpointAccessLevel)
+     *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
+     *             .displayName(dataSafePrivateEndpointDisplayName)
+     *             .state(dataSafePrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -5968,12 +5968,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
-     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
-     *             .displayName(var_.data_safe_private_endpoint_display_name())
-     *             .state(var_.data_safe_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(dataSafePrivateEndpointAccessLevel)
+     *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
+     *             .displayName(dataSafePrivateEndpointDisplayName)
+     *             .state(dataSafePrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -6015,12 +6015,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
-     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
-     *             .displayName(var_.data_safe_private_endpoint_display_name())
-     *             .state(var_.data_safe_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(dataSafePrivateEndpointAccessLevel)
+     *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
+     *             .displayName(dataSafePrivateEndpointDisplayName)
+     *             .state(dataSafePrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -6062,12 +6062,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSafePrivateEndpoints = DataSafeFunctions.getDataSafePrivateEndpoints(GetDataSafePrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.data_safe_private_endpoint_access_level())
-     *             .compartmentIdInSubtree(var_.data_safe_private_endpoint_compartment_id_in_subtree())
-     *             .displayName(var_.data_safe_private_endpoint_display_name())
-     *             .state(var_.data_safe_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(dataSafePrivateEndpointAccessLevel)
+     *             .compartmentIdInSubtree(dataSafePrivateEndpointCompartmentIdInSubtree)
+     *             .displayName(dataSafePrivateEndpointDisplayName)
+     *             .state(dataSafePrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -6111,11 +6111,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6159,11 +6159,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6207,11 +6207,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6255,11 +6255,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytic = DataSafeFunctions.getDiscoveryAnalytic(GetDiscoveryAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6303,13 +6303,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .isCommon(var_.discovery_analytic_is_common())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .isCommon(discoveryAnalyticIsCommon)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6353,13 +6353,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .isCommon(var_.discovery_analytic_is_common())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .isCommon(discoveryAnalyticIsCommon)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6403,13 +6403,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .isCommon(var_.discovery_analytic_is_common())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .isCommon(discoveryAnalyticIsCommon)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6453,13 +6453,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryAnalytics = DataSafeFunctions.getDiscoveryAnalytics(GetDiscoveryAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.discovery_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.discovery_analytic_group_by())
-     *             .isCommon(var_.discovery_analytic_is_common())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(discoveryAnalyticCompartmentIdInSubtree)
+     *             .groupBy(discoveryAnalyticGroupBy)
+     *             .isCommon(discoveryAnalyticIsCommon)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -6501,7 +6501,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -6543,7 +6543,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -6585,7 +6585,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -6627,7 +6627,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJob = DataSafeFunctions.getDiscoveryJob(GetDiscoveryJobArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
+     *             .discoveryJobId(testDiscoveryJobOciDataSafeDiscoveryJob.id())
      *             .build());
      * 
      *     }
@@ -6669,8 +6669,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
      *     }
@@ -6712,8 +6712,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
      *     }
@@ -6755,8 +6755,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
      *     }
@@ -6798,8 +6798,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResult = DataSafeFunctions.getDiscoveryJobsResult(GetDiscoveryJobsResultArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .resultKey(var_.discovery_jobs_result_result_key())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .resultKey(discoveryJobsResultResultKey)
      *             .build());
      * 
      *     }
@@ -6841,13 +6841,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .columnNames(var_.discovery_jobs_result_column_name())
-     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
-     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
-     *             .objects(var_.discovery_jobs_result_object())
-     *             .plannedAction(var_.discovery_jobs_result_planned_action())
-     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .columnNames(discoveryJobsResultColumnName)
+     *             .discoveryType(discoveryJobsResultDiscoveryType)
+     *             .isResultApplied(discoveryJobsResultIsResultApplied)
+     *             .objects(discoveryJobsResultObject)
+     *             .plannedAction(discoveryJobsResultPlannedAction)
+     *             .schemaNames(discoveryJobsResultSchemaName)
      *             .build());
      * 
      *     }
@@ -6889,13 +6889,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .columnNames(var_.discovery_jobs_result_column_name())
-     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
-     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
-     *             .objects(var_.discovery_jobs_result_object())
-     *             .plannedAction(var_.discovery_jobs_result_planned_action())
-     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .columnNames(discoveryJobsResultColumnName)
+     *             .discoveryType(discoveryJobsResultDiscoveryType)
+     *             .isResultApplied(discoveryJobsResultIsResultApplied)
+     *             .objects(discoveryJobsResultObject)
+     *             .plannedAction(discoveryJobsResultPlannedAction)
+     *             .schemaNames(discoveryJobsResultSchemaName)
      *             .build());
      * 
      *     }
@@ -6937,13 +6937,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .columnNames(var_.discovery_jobs_result_column_name())
-     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
-     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
-     *             .objects(var_.discovery_jobs_result_object())
-     *             .plannedAction(var_.discovery_jobs_result_planned_action())
-     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .columnNames(discoveryJobsResultColumnName)
+     *             .discoveryType(discoveryJobsResultDiscoveryType)
+     *             .isResultApplied(discoveryJobsResultIsResultApplied)
+     *             .objects(discoveryJobsResultObject)
+     *             .plannedAction(discoveryJobsResultPlannedAction)
+     *             .schemaNames(discoveryJobsResultSchemaName)
      *             .build());
      * 
      *     }
@@ -6985,13 +6985,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
-     *             .discoveryJobId(oci_data_safe_discovery_job.test_discovery_job().id())
-     *             .columnNames(var_.discovery_jobs_result_column_name())
-     *             .discoveryType(var_.discovery_jobs_result_discovery_type())
-     *             .isResultApplied(var_.discovery_jobs_result_is_result_applied())
-     *             .objects(var_.discovery_jobs_result_object())
-     *             .plannedAction(var_.discovery_jobs_result_planned_action())
-     *             .schemaNames(var_.discovery_jobs_result_schema_name())
+     *             .discoveryJobId(testDiscoveryJob.id())
+     *             .columnNames(discoveryJobsResultColumnName)
+     *             .discoveryType(discoveryJobsResultDiscoveryType)
+     *             .isResultApplied(discoveryJobsResultIsResultApplied)
+     *             .objects(discoveryJobsResultObject)
+     *             .plannedAction(discoveryJobsResultPlannedAction)
+     *             .schemaNames(discoveryJobsResultSchemaName)
      *             .build());
      * 
      *     }
@@ -7033,7 +7033,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
      *             .build());
      * 
      *     }
@@ -7075,7 +7075,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
      *             .build());
      * 
      *     }
@@ -7117,7 +7117,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
      *             .build());
      * 
      *     }
@@ -7159,7 +7159,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormat = DataSafeFunctions.getLibraryMaskingFormat(GetLibraryMaskingFormatArgs.builder()
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
+     *             .libraryMaskingFormatId(testLibraryMaskingFormatOciDataSafeLibraryMaskingFormat.id())
      *             .build());
      * 
      *     }
@@ -7201,15 +7201,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.library_masking_format_access_level())
-     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
-     *             .displayName(var_.library_masking_format_display_name())
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
-     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
-     *             .state(var_.library_masking_format_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(libraryMaskingFormatAccessLevel)
+     *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
+     *             .displayName(libraryMaskingFormatDisplayName)
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
+     *             .state(libraryMaskingFormatState)
+     *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(libraryMaskingFormatTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -7251,15 +7251,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.library_masking_format_access_level())
-     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
-     *             .displayName(var_.library_masking_format_display_name())
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
-     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
-     *             .state(var_.library_masking_format_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(libraryMaskingFormatAccessLevel)
+     *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
+     *             .displayName(libraryMaskingFormatDisplayName)
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
+     *             .state(libraryMaskingFormatState)
+     *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(libraryMaskingFormatTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -7301,15 +7301,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.library_masking_format_access_level())
-     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
-     *             .displayName(var_.library_masking_format_display_name())
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
-     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
-     *             .state(var_.library_masking_format_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(libraryMaskingFormatAccessLevel)
+     *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
+     *             .displayName(libraryMaskingFormatDisplayName)
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
+     *             .state(libraryMaskingFormatState)
+     *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(libraryMaskingFormatTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -7351,15 +7351,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLibraryMaskingFormats = DataSafeFunctions.getLibraryMaskingFormats(GetLibraryMaskingFormatsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.library_masking_format_access_level())
-     *             .compartmentIdInSubtree(var_.library_masking_format_compartment_id_in_subtree())
-     *             .displayName(var_.library_masking_format_display_name())
-     *             .libraryMaskingFormatId(oci_data_safe_library_masking_format.test_library_masking_format().id())
-     *             .libraryMaskingFormatSource(var_.library_masking_format_library_masking_format_source())
-     *             .state(var_.library_masking_format_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.library_masking_format_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.library_masking_format_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(libraryMaskingFormatAccessLevel)
+     *             .compartmentIdInSubtree(libraryMaskingFormatCompartmentIdInSubtree)
+     *             .displayName(libraryMaskingFormatDisplayName)
+     *             .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+     *             .libraryMaskingFormatSource(libraryMaskingFormatLibraryMaskingFormatSource)
+     *             .state(libraryMaskingFormatState)
+     *             .timeCreatedGreaterThanOrEqualTo(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(libraryMaskingFormatTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -7404,15 +7404,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userKey(var_.list_user_grant_user_key())
-     *             .depthLevel(var_.list_user_grant_depth_level())
-     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
-     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
-     *             .grantKey(var_.list_user_grant_grant_key())
-     *             .grantName(var_.list_user_grant_grant_name())
-     *             .privilegeCategory(var_.list_user_grant_privilege_category())
-     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .userKey(listUserGrantUserKey)
+     *             .depthLevel(listUserGrantDepthLevel)
+     *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
+     *             .depthLevelLessThan(listUserGrantDepthLevelLessThan)
+     *             .grantKey(listUserGrantGrantKey)
+     *             .grantName(listUserGrantGrantName)
+     *             .privilegeCategory(listUserGrantPrivilegeCategory)
+     *             .privilegeType(listUserGrantPrivilegeType)
      *             .build());
      * 
      *     }
@@ -7457,15 +7457,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userKey(var_.list_user_grant_user_key())
-     *             .depthLevel(var_.list_user_grant_depth_level())
-     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
-     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
-     *             .grantKey(var_.list_user_grant_grant_key())
-     *             .grantName(var_.list_user_grant_grant_name())
-     *             .privilegeCategory(var_.list_user_grant_privilege_category())
-     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .userKey(listUserGrantUserKey)
+     *             .depthLevel(listUserGrantDepthLevel)
+     *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
+     *             .depthLevelLessThan(listUserGrantDepthLevelLessThan)
+     *             .grantKey(listUserGrantGrantKey)
+     *             .grantName(listUserGrantGrantName)
+     *             .privilegeCategory(listUserGrantPrivilegeCategory)
+     *             .privilegeType(listUserGrantPrivilegeType)
      *             .build());
      * 
      *     }
@@ -7510,15 +7510,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userKey(var_.list_user_grant_user_key())
-     *             .depthLevel(var_.list_user_grant_depth_level())
-     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
-     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
-     *             .grantKey(var_.list_user_grant_grant_key())
-     *             .grantName(var_.list_user_grant_grant_name())
-     *             .privilegeCategory(var_.list_user_grant_privilege_category())
-     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .userKey(listUserGrantUserKey)
+     *             .depthLevel(listUserGrantDepthLevel)
+     *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
+     *             .depthLevelLessThan(listUserGrantDepthLevelLessThan)
+     *             .grantKey(listUserGrantGrantKey)
+     *             .grantName(listUserGrantGrantName)
+     *             .privilegeCategory(listUserGrantPrivilegeCategory)
+     *             .privilegeType(listUserGrantPrivilegeType)
      *             .build());
      * 
      *     }
@@ -7563,15 +7563,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListUserGrants = DataSafeFunctions.getListUserGrants(GetListUserGrantsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userKey(var_.list_user_grant_user_key())
-     *             .depthLevel(var_.list_user_grant_depth_level())
-     *             .depthLevelGreaterThanOrEqualTo(var_.list_user_grant_depth_level_greater_than_or_equal_to())
-     *             .depthLevelLessThan(var_.list_user_grant_depth_level_less_than())
-     *             .grantKey(var_.list_user_grant_grant_key())
-     *             .grantName(var_.list_user_grant_grant_name())
-     *             .privilegeCategory(var_.list_user_grant_privilege_category())
-     *             .privilegeType(var_.list_user_grant_privilege_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .userKey(listUserGrantUserKey)
+     *             .depthLevel(listUserGrantDepthLevel)
+     *             .depthLevelGreaterThanOrEqualTo(listUserGrantDepthLevelGreaterThanOrEqualTo)
+     *             .depthLevelLessThan(listUserGrantDepthLevelLessThan)
+     *             .grantKey(listUserGrantGrantKey)
+     *             .grantName(listUserGrantGrantName)
+     *             .privilegeCategory(listUserGrantPrivilegeCategory)
+     *             .privilegeType(listUserGrantPrivilegeType)
      *             .build());
      * 
      *     }
@@ -7615,11 +7615,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7663,11 +7663,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7711,11 +7711,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7759,11 +7759,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytic = DataSafeFunctions.getMaskingAnalytic(GetMaskingAnalyticArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7807,11 +7807,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7855,11 +7855,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7903,11 +7903,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7951,11 +7951,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingAnalytics = DataSafeFunctions.getMaskingAnalytics(GetMaskingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.masking_analytic_compartment_id_in_subtree())
-     *             .groupBy(var_.masking_analytic_group_by())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(maskingAnalyticCompartmentIdInSubtree)
+     *             .groupBy(maskingAnalyticGroupBy)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -7997,16 +7997,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_policy_access_level())
-     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
-     *             .displayName(var_.masking_policy_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.masking_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(maskingPolicyState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -8048,16 +8048,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_policy_access_level())
-     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
-     *             .displayName(var_.masking_policy_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.masking_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(maskingPolicyState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -8099,16 +8099,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_policy_access_level())
-     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
-     *             .displayName(var_.masking_policy_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.masking_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(maskingPolicyState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -8150,16 +8150,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicies = DataSafeFunctions.getMaskingPolicies(GetMaskingPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_policy_access_level())
-     *             .compartmentIdInSubtree(var_.masking_policy_compartment_id_in_subtree())
-     *             .displayName(var_.masking_policy_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.masking_policy_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingPolicyAccessLevel)
+     *             .compartmentIdInSubtree(maskingPolicyCompartmentIdInSubtree)
+     *             .displayName(maskingPolicyDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(maskingPolicyState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -8201,8 +8201,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
-     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
+     *             .maskingPolicyId(testMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8244,8 +8244,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
-     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
+     *             .maskingPolicyId(testMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8287,8 +8287,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
-     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
+     *             .maskingPolicyId(testMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8330,8 +8330,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumn = DataSafeFunctions.getMaskingPoliciesMaskingColumn(GetMaskingPoliciesMaskingColumnArgs.builder()
-     *             .maskingColumnKey(var_.masking_policies_masking_column_masking_column_key())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingColumnKey(maskingPoliciesMaskingColumnMaskingColumnKey)
+     *             .maskingPolicyId(testMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8373,21 +8373,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .columnNames(var_.masking_policies_masking_column_column_name())
-     *             .dataTypes(var_.masking_policies_masking_column_data_type())
-     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
-     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
-     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
-     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
-     *             .objects(var_.masking_policies_masking_column_object())
-     *             .objectTypes(var_.masking_policies_masking_column_object_type())
-     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPoliciesMaskingColumnColumnName)
+     *             .dataTypes(maskingPoliciesMaskingColumnDataType)
+     *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
+     *             .isSeedRequired(maskingPoliciesMaskingColumnIsSeedRequired)
+     *             .maskingColumnGroups(maskingPoliciesMaskingColumnMaskingColumnGroup)
+     *             .maskingColumnLifecycleState(maskingPoliciesMaskingColumnMaskingColumnLifecycleState)
+     *             .objects(maskingPoliciesMaskingColumnObject)
+     *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
+     *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(maskingPoliciesMaskingColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -8429,21 +8429,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .columnNames(var_.masking_policies_masking_column_column_name())
-     *             .dataTypes(var_.masking_policies_masking_column_data_type())
-     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
-     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
-     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
-     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
-     *             .objects(var_.masking_policies_masking_column_object())
-     *             .objectTypes(var_.masking_policies_masking_column_object_type())
-     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPoliciesMaskingColumnColumnName)
+     *             .dataTypes(maskingPoliciesMaskingColumnDataType)
+     *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
+     *             .isSeedRequired(maskingPoliciesMaskingColumnIsSeedRequired)
+     *             .maskingColumnGroups(maskingPoliciesMaskingColumnMaskingColumnGroup)
+     *             .maskingColumnLifecycleState(maskingPoliciesMaskingColumnMaskingColumnLifecycleState)
+     *             .objects(maskingPoliciesMaskingColumnObject)
+     *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
+     *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(maskingPoliciesMaskingColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -8485,21 +8485,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .columnNames(var_.masking_policies_masking_column_column_name())
-     *             .dataTypes(var_.masking_policies_masking_column_data_type())
-     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
-     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
-     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
-     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
-     *             .objects(var_.masking_policies_masking_column_object())
-     *             .objectTypes(var_.masking_policies_masking_column_object_type())
-     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPoliciesMaskingColumnColumnName)
+     *             .dataTypes(maskingPoliciesMaskingColumnDataType)
+     *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
+     *             .isSeedRequired(maskingPoliciesMaskingColumnIsSeedRequired)
+     *             .maskingColumnGroups(maskingPoliciesMaskingColumnMaskingColumnGroup)
+     *             .maskingColumnLifecycleState(maskingPoliciesMaskingColumnMaskingColumnLifecycleState)
+     *             .objects(maskingPoliciesMaskingColumnObject)
+     *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
+     *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(maskingPoliciesMaskingColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -8541,21 +8541,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPoliciesMaskingColumns = DataSafeFunctions.getMaskingPoliciesMaskingColumns(GetMaskingPoliciesMaskingColumnsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .columnNames(var_.masking_policies_masking_column_column_name())
-     *             .dataTypes(var_.masking_policies_masking_column_data_type())
-     *             .isMaskingEnabled(var_.masking_policies_masking_column_is_masking_enabled())
-     *             .isSeedRequired(var_.masking_policies_masking_column_is_seed_required())
-     *             .maskingColumnGroups(var_.masking_policies_masking_column_masking_column_group())
-     *             .maskingColumnLifecycleState(var_.masking_policies_masking_column_masking_column_lifecycle_state())
-     *             .objects(var_.masking_policies_masking_column_object())
-     *             .objectTypes(var_.masking_policies_masking_column_object_type())
-     *             .schemaNames(var_.masking_policies_masking_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.masking_policies_masking_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.masking_policies_masking_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.masking_policies_masking_column_time_updated_less_than())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .columnNames(maskingPoliciesMaskingColumnColumnName)
+     *             .dataTypes(maskingPoliciesMaskingColumnDataType)
+     *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
+     *             .isSeedRequired(maskingPoliciesMaskingColumnIsSeedRequired)
+     *             .maskingColumnGroups(maskingPoliciesMaskingColumnMaskingColumnGroup)
+     *             .maskingColumnLifecycleState(maskingPoliciesMaskingColumnMaskingColumnLifecycleState)
+     *             .objects(maskingPoliciesMaskingColumnObject)
+     *             .objectTypes(maskingPoliciesMaskingColumnObjectType)
+     *             .schemaNames(maskingPoliciesMaskingColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .timeCreatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(maskingPoliciesMaskingColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(maskingPoliciesMaskingColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(maskingPoliciesMaskingColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -8597,7 +8597,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8639,7 +8639,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8681,7 +8681,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8723,7 +8723,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicy = DataSafeFunctions.getMaskingPolicy(GetMaskingPolicyArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
+     *             .maskingPolicyId(testMaskingPolicyOciDataSafeMaskingPolicy.id())
      *             .build());
      * 
      *     }
@@ -8765,10 +8765,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .objects(var_.masking_policy_masking_object_object())
-     *             .objectTypes(var_.masking_policy_masking_object_object_type())
-     *             .schemaNames(var_.masking_policy_masking_object_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .objects(maskingPolicyMaskingObjectObject)
+     *             .objectTypes(maskingPolicyMaskingObjectObjectType)
+     *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -8810,10 +8810,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .objects(var_.masking_policy_masking_object_object())
-     *             .objectTypes(var_.masking_policy_masking_object_object_type())
-     *             .schemaNames(var_.masking_policy_masking_object_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .objects(maskingPolicyMaskingObjectObject)
+     *             .objectTypes(maskingPolicyMaskingObjectObjectType)
+     *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -8855,10 +8855,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .objects(var_.masking_policy_masking_object_object())
-     *             .objectTypes(var_.masking_policy_masking_object_object_type())
-     *             .schemaNames(var_.masking_policy_masking_object_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .objects(maskingPolicyMaskingObjectObject)
+     *             .objectTypes(maskingPolicyMaskingObjectObjectType)
+     *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -8900,10 +8900,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingObjects = DataSafeFunctions.getMaskingPolicyMaskingObjects(GetMaskingPolicyMaskingObjectsArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .objects(var_.masking_policy_masking_object_object())
-     *             .objectTypes(var_.masking_policy_masking_object_object_type())
-     *             .schemaNames(var_.masking_policy_masking_object_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .objects(maskingPolicyMaskingObjectObject)
+     *             .objectTypes(maskingPolicyMaskingObjectObjectType)
+     *             .schemaNames(maskingPolicyMaskingObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -8945,8 +8945,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .schemaNames(var_.masking_policy_masking_schema_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -8988,8 +8988,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .schemaNames(var_.masking_policy_masking_schema_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -9031,8 +9031,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .schemaNames(var_.masking_policy_masking_schema_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -9074,8 +9074,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingPolicyMaskingSchemas = DataSafeFunctions.getMaskingPolicyMaskingSchemas(GetMaskingPolicyMaskingSchemasArgs.builder()
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .schemaNames(var_.masking_policy_masking_schema_schema_name())
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .schemaNames(maskingPolicyMaskingSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -9117,7 +9117,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
      *             .build());
      * 
      *     }
@@ -9159,7 +9159,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
      *             .build());
      * 
      *     }
@@ -9201,7 +9201,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
      *             .build());
      * 
      *     }
@@ -9243,7 +9243,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReport = DataSafeFunctions.getMaskingReport(GetMaskingReportArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
+     *             .maskingReportId(testMaskingReportOciDataSafeMaskingReport.id())
      *             .build());
      * 
      *     }
@@ -9285,13 +9285,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9333,13 +9333,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9381,13 +9381,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9429,13 +9429,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumns = DataSafeFunctions.getMaskingReportMaskedColumns(GetMaskingReportMaskedColumnsArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9477,11 +9477,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_report_access_level())
-     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -9523,11 +9523,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_report_access_level())
-     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -9569,11 +9569,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_report_access_level())
-     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -9615,11 +9615,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReports = DataSafeFunctions.getMaskingReports(GetMaskingReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.masking_report_access_level())
-     *             .compartmentIdInSubtree(var_.masking_report_compartment_id_in_subtree())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(maskingReportAccessLevel)
+     *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -9661,13 +9661,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9709,13 +9709,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9757,13 +9757,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9805,13 +9805,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaskingReportsMaskedColumn = DataSafeFunctions.getMaskingReportsMaskedColumn(GetMaskingReportsMaskedColumnArgs.builder()
-     *             .maskingReportId(oci_data_safe_masking_report.test_masking_report().id())
-     *             .columnNames(var_.masking_reports_masked_column_column_name())
-     *             .maskingColumnGroups(var_.masking_reports_masked_column_masking_column_group())
-     *             .objects(var_.masking_reports_masked_column_object())
-     *             .objectTypes(var_.masking_reports_masked_column_object_type())
-     *             .schemaNames(var_.masking_reports_masked_column_schema_name())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .maskingReportId(testMaskingReport.id())
+     *             .columnNames(maskingReportsMaskedColumnColumnName)
+     *             .maskingColumnGroups(maskingReportsMaskedColumnMaskingColumnGroup)
+     *             .objects(maskingReportsMaskedColumnObject)
+     *             .objectTypes(maskingReportsMaskedColumnObjectType)
+     *             .schemaNames(maskingReportsMaskedColumnSchemaName)
+     *             .sensitiveTypeId(testSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -9853,7 +9853,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
      *             .build());
      * 
      *     }
@@ -9895,7 +9895,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
      *             .build());
      * 
      *     }
@@ -9937,7 +9937,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
      *             .build());
      * 
      *     }
@@ -9979,7 +9979,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnector = DataSafeFunctions.getOnpremConnector(GetOnpremConnectorArgs.builder()
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
+     *             .onPremConnectorId(testOnPremConnectorOciDataSafeOnPremConnector.id())
      *             .build());
      * 
      *     }
@@ -10021,12 +10021,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.on_prem_connector_access_level())
-     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
-     *             .displayName(var_.on_prem_connector_display_name())
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
-     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(onPremConnectorAccessLevel)
+     *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
+     *             .displayName(onPremConnectorDisplayName)
+     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
      *             .build());
      * 
      *     }
@@ -10068,12 +10068,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.on_prem_connector_access_level())
-     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
-     *             .displayName(var_.on_prem_connector_display_name())
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
-     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(onPremConnectorAccessLevel)
+     *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
+     *             .displayName(onPremConnectorDisplayName)
+     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
      *             .build());
      * 
      *     }
@@ -10115,12 +10115,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.on_prem_connector_access_level())
-     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
-     *             .displayName(var_.on_prem_connector_display_name())
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
-     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(onPremConnectorAccessLevel)
+     *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
+     *             .displayName(onPremConnectorDisplayName)
+     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
      *             .build());
      * 
      *     }
@@ -10162,12 +10162,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremConnectors = DataSafeFunctions.getOnpremConnectors(GetOnpremConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.on_prem_connector_access_level())
-     *             .compartmentIdInSubtree(var_.on_prem_connector_compartment_id_in_subtree())
-     *             .displayName(var_.on_prem_connector_display_name())
-     *             .onPremConnectorId(oci_data_safe_on_prem_connector.test_on_prem_connector().id())
-     *             .onPremConnectorLifecycleState(var_.on_prem_connector_on_prem_connector_lifecycle_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(onPremConnectorAccessLevel)
+     *             .compartmentIdInSubtree(onPremConnectorCompartmentIdInSubtree)
+     *             .displayName(onPremConnectorDisplayName)
+     *             .onPremConnectorId(testOnPremConnector.id())
+     *             .onPremConnectorLifecycleState(onPremConnectorOnPremConnectorLifecycleState)
      *             .build());
      * 
      *     }
@@ -10209,7 +10209,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReportOciDataSafeReport.id())
      *             .build());
      * 
      *     }
@@ -10251,7 +10251,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReportOciDataSafeReport.id())
      *             .build());
      * 
      *     }
@@ -10293,7 +10293,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReportOciDataSafeReport.id())
      *             .build());
      * 
      *     }
@@ -10335,7 +10335,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReport = DataSafeFunctions.getReport(GetReportArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReportOciDataSafeReport.id())
      *             .build());
      * 
      *     }
@@ -10377,7 +10377,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReport.id())
      *             .build());
      * 
      *     }
@@ -10419,7 +10419,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReport.id())
      *             .build());
      * 
      *     }
@@ -10461,7 +10461,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReport.id())
      *             .build());
      * 
      *     }
@@ -10503,7 +10503,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportContent = DataSafeFunctions.getReportContent(GetReportContentArgs.builder()
-     *             .reportId(oci_data_safe_report.test_report().id())
+     *             .reportId(testReport.id())
      *             .build());
      * 
      *     }
@@ -10545,7 +10545,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
      *             .build());
      * 
      *     }
@@ -10587,7 +10587,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
      *             .build());
      * 
      *     }
@@ -10629,7 +10629,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
      *             .build());
      * 
      *     }
@@ -10671,7 +10671,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinition = DataSafeFunctions.getReportDefinition(GetReportDefinitionArgs.builder()
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
+     *             .reportDefinitionId(testReportDefinitionOciDataSafeReportDefinition.id())
      *             .build());
      * 
      *     }
@@ -10715,14 +10715,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_definition_access_level())
-     *             .category(var_.report_definition_category())
-     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
-     *             .dataSource(var_.report_definition_data_source())
-     *             .displayName(var_.report_definition_display_name())
-     *             .isSeeded(var_.report_definition_is_seeded())
-     *             .state(var_.report_definition_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportDefinitionAccessLevel)
+     *             .category(reportDefinitionCategory)
+     *             .compartmentIdInSubtree(reportDefinitionCompartmentIdInSubtree)
+     *             .dataSource(reportDefinitionDataSource)
+     *             .displayName(reportDefinitionDisplayName)
+     *             .isSeeded(reportDefinitionIsSeeded)
+     *             .state(reportDefinitionState)
      *             .build());
      * 
      *     }
@@ -10766,14 +10766,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_definition_access_level())
-     *             .category(var_.report_definition_category())
-     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
-     *             .dataSource(var_.report_definition_data_source())
-     *             .displayName(var_.report_definition_display_name())
-     *             .isSeeded(var_.report_definition_is_seeded())
-     *             .state(var_.report_definition_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportDefinitionAccessLevel)
+     *             .category(reportDefinitionCategory)
+     *             .compartmentIdInSubtree(reportDefinitionCompartmentIdInSubtree)
+     *             .dataSource(reportDefinitionDataSource)
+     *             .displayName(reportDefinitionDisplayName)
+     *             .isSeeded(reportDefinitionIsSeeded)
+     *             .state(reportDefinitionState)
      *             .build());
      * 
      *     }
@@ -10817,14 +10817,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_definition_access_level())
-     *             .category(var_.report_definition_category())
-     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
-     *             .dataSource(var_.report_definition_data_source())
-     *             .displayName(var_.report_definition_display_name())
-     *             .isSeeded(var_.report_definition_is_seeded())
-     *             .state(var_.report_definition_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportDefinitionAccessLevel)
+     *             .category(reportDefinitionCategory)
+     *             .compartmentIdInSubtree(reportDefinitionCompartmentIdInSubtree)
+     *             .dataSource(reportDefinitionDataSource)
+     *             .displayName(reportDefinitionDisplayName)
+     *             .isSeeded(reportDefinitionIsSeeded)
+     *             .state(reportDefinitionState)
      *             .build());
      * 
      *     }
@@ -10868,14 +10868,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReportDefinitions = DataSafeFunctions.getReportDefinitions(GetReportDefinitionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_definition_access_level())
-     *             .category(var_.report_definition_category())
-     *             .compartmentIdInSubtree(var_.report_definition_compartment_id_in_subtree())
-     *             .dataSource(var_.report_definition_data_source())
-     *             .displayName(var_.report_definition_display_name())
-     *             .isSeeded(var_.report_definition_is_seeded())
-     *             .state(var_.report_definition_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportDefinitionAccessLevel)
+     *             .category(reportDefinitionCategory)
+     *             .compartmentIdInSubtree(reportDefinitionCompartmentIdInSubtree)
+     *             .dataSource(reportDefinitionDataSource)
+     *             .displayName(reportDefinitionDisplayName)
+     *             .isSeeded(reportDefinitionIsSeeded)
+     *             .state(reportDefinitionState)
      *             .build());
      * 
      *     }
@@ -10917,13 +10917,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_access_level())
-     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
-     *             .displayName(var_.report_display_name())
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
-     *             .state(var_.report_state())
-     *             .type(var_.report_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportAccessLevel)
+     *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .displayName(reportDisplayName)
+     *             .reportDefinitionId(testReportDefinition.id())
+     *             .state(reportState)
+     *             .type(reportType)
      *             .build());
      * 
      *     }
@@ -10965,13 +10965,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_access_level())
-     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
-     *             .displayName(var_.report_display_name())
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
-     *             .state(var_.report_state())
-     *             .type(var_.report_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportAccessLevel)
+     *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .displayName(reportDisplayName)
+     *             .reportDefinitionId(testReportDefinition.id())
+     *             .state(reportState)
+     *             .type(reportType)
      *             .build());
      * 
      *     }
@@ -11013,13 +11013,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_access_level())
-     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
-     *             .displayName(var_.report_display_name())
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
-     *             .state(var_.report_state())
-     *             .type(var_.report_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportAccessLevel)
+     *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .displayName(reportDisplayName)
+     *             .reportDefinitionId(testReportDefinition.id())
+     *             .state(reportState)
+     *             .type(reportType)
      *             .build());
      * 
      *     }
@@ -11061,13 +11061,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReports = DataSafeFunctions.getReports(GetReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.report_access_level())
-     *             .compartmentIdInSubtree(var_.report_compartment_id_in_subtree())
-     *             .displayName(var_.report_display_name())
-     *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
-     *             .state(var_.report_state())
-     *             .type(var_.report_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(reportAccessLevel)
+     *             .compartmentIdInSubtree(reportCompartmentIdInSubtree)
+     *             .displayName(reportDisplayName)
+     *             .reportDefinitionId(testReportDefinition.id())
+     *             .state(reportState)
+     *             .type(reportType)
      *             .build());
      * 
      *     }
@@ -11109,7 +11109,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11151,7 +11151,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11193,7 +11193,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11235,7 +11235,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifference = DataSafeFunctions.getSdmMaskingPolicyDifference(GetSdmMaskingPolicyDifferenceArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifferenceOciDataSafeSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11277,8 +11277,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
-     *             .differenceColumnKey(var_.sdm_masking_policy_difference_difference_column_difference_column_key())
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11320,8 +11320,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
-     *             .differenceColumnKey(var_.sdm_masking_policy_difference_difference_column_difference_column_key())
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11363,8 +11363,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
-     *             .differenceColumnKey(var_.sdm_masking_policy_difference_difference_column_difference_column_key())
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11406,8 +11406,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumn = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumn(GetSdmMaskingPolicyDifferenceDifferenceColumnArgs.builder()
-     *             .differenceColumnKey(var_.sdm_masking_policy_difference_difference_column_difference_column_key())
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
+     *             .differenceColumnKey(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceColumnKey)
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
      *             .build());
      * 
      *     }
@@ -11449,13 +11449,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
-     *             .columnNames(var_.sdm_masking_policy_difference_difference_column_column_name())
-     *             .differenceType(var_.sdm_masking_policy_difference_difference_column_difference_type())
-     *             .objects(var_.sdm_masking_policy_difference_difference_column_object())
-     *             .plannedAction(var_.sdm_masking_policy_difference_difference_column_planned_action())
-     *             .schemaNames(var_.sdm_masking_policy_difference_difference_column_schema_name())
-     *             .syncStatus(var_.sdm_masking_policy_difference_difference_column_sync_status())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
+     *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
+     *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
+     *             .plannedAction(sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction)
+     *             .schemaNames(sdmMaskingPolicyDifferenceDifferenceColumnSchemaName)
+     *             .syncStatus(sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus)
      *             .build());
      * 
      *     }
@@ -11497,13 +11497,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
-     *             .columnNames(var_.sdm_masking_policy_difference_difference_column_column_name())
-     *             .differenceType(var_.sdm_masking_policy_difference_difference_column_difference_type())
-     *             .objects(var_.sdm_masking_policy_difference_difference_column_object())
-     *             .plannedAction(var_.sdm_masking_policy_difference_difference_column_planned_action())
-     *             .schemaNames(var_.sdm_masking_policy_difference_difference_column_schema_name())
-     *             .syncStatus(var_.sdm_masking_policy_difference_difference_column_sync_status())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
+     *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
+     *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
+     *             .plannedAction(sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction)
+     *             .schemaNames(sdmMaskingPolicyDifferenceDifferenceColumnSchemaName)
+     *             .syncStatus(sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus)
      *             .build());
      * 
      *     }
@@ -11545,13 +11545,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
-     *             .columnNames(var_.sdm_masking_policy_difference_difference_column_column_name())
-     *             .differenceType(var_.sdm_masking_policy_difference_difference_column_difference_type())
-     *             .objects(var_.sdm_masking_policy_difference_difference_column_object())
-     *             .plannedAction(var_.sdm_masking_policy_difference_difference_column_planned_action())
-     *             .schemaNames(var_.sdm_masking_policy_difference_difference_column_schema_name())
-     *             .syncStatus(var_.sdm_masking_policy_difference_difference_column_sync_status())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
+     *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
+     *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
+     *             .plannedAction(sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction)
+     *             .schemaNames(sdmMaskingPolicyDifferenceDifferenceColumnSchemaName)
+     *             .syncStatus(sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus)
      *             .build());
      * 
      *     }
@@ -11593,13 +11593,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferenceDifferenceColumns = DataSafeFunctions.getSdmMaskingPolicyDifferenceDifferenceColumns(GetSdmMaskingPolicyDifferenceDifferenceColumnsArgs.builder()
-     *             .sdmMaskingPolicyDifferenceId(oci_data_safe_sdm_masking_policy_difference.test_sdm_masking_policy_difference().id())
-     *             .columnNames(var_.sdm_masking_policy_difference_difference_column_column_name())
-     *             .differenceType(var_.sdm_masking_policy_difference_difference_column_difference_type())
-     *             .objects(var_.sdm_masking_policy_difference_difference_column_object())
-     *             .plannedAction(var_.sdm_masking_policy_difference_difference_column_planned_action())
-     *             .schemaNames(var_.sdm_masking_policy_difference_difference_column_schema_name())
-     *             .syncStatus(var_.sdm_masking_policy_difference_difference_column_sync_status())
+     *             .sdmMaskingPolicyDifferenceId(testSdmMaskingPolicyDifference.id())
+     *             .columnNames(sdmMaskingPolicyDifferenceDifferenceColumnColumnName)
+     *             .differenceType(sdmMaskingPolicyDifferenceDifferenceColumnDifferenceType)
+     *             .objects(sdmMaskingPolicyDifferenceDifferenceColumnObject)
+     *             .plannedAction(sdmMaskingPolicyDifferenceDifferenceColumnPlannedAction)
+     *             .schemaNames(sdmMaskingPolicyDifferenceDifferenceColumnSchemaName)
+     *             .syncStatus(sdmMaskingPolicyDifferenceDifferenceColumnSyncStatus)
      *             .build());
      * 
      *     }
@@ -11641,13 +11641,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferences = DataSafeFunctions.getSdmMaskingPolicyDifferences(GetSdmMaskingPolicyDifferencesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.sdm_masking_policy_difference_compartment_id_in_subtree())
-     *             .differenceAccessLevel(var_.sdm_masking_policy_difference_difference_access_level())
-     *             .displayName(var_.sdm_masking_policy_difference_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sdm_masking_policy_difference_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
+     *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
+     *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
      *     }
@@ -11689,13 +11689,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferences = DataSafeFunctions.getSdmMaskingPolicyDifferences(GetSdmMaskingPolicyDifferencesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.sdm_masking_policy_difference_compartment_id_in_subtree())
-     *             .differenceAccessLevel(var_.sdm_masking_policy_difference_difference_access_level())
-     *             .displayName(var_.sdm_masking_policy_difference_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sdm_masking_policy_difference_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
+     *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
+     *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
      *     }
@@ -11737,13 +11737,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferences = DataSafeFunctions.getSdmMaskingPolicyDifferences(GetSdmMaskingPolicyDifferencesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.sdm_masking_policy_difference_compartment_id_in_subtree())
-     *             .differenceAccessLevel(var_.sdm_masking_policy_difference_difference_access_level())
-     *             .displayName(var_.sdm_masking_policy_difference_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sdm_masking_policy_difference_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
+     *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
+     *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
      *     }
@@ -11785,13 +11785,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSdmMaskingPolicyDifferences = DataSafeFunctions.getSdmMaskingPolicyDifferences(GetSdmMaskingPolicyDifferencesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .compartmentIdInSubtree(var_.sdm_masking_policy_difference_compartment_id_in_subtree())
-     *             .differenceAccessLevel(var_.sdm_masking_policy_difference_difference_access_level())
-     *             .displayName(var_.sdm_masking_policy_difference_display_name())
-     *             .maskingPolicyId(oci_data_safe_masking_policy.test_masking_policy().id())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sdm_masking_policy_difference_state())
+     *             .compartmentId(compartmentId)
+     *             .compartmentIdInSubtree(sdmMaskingPolicyDifferenceCompartmentIdInSubtree)
+     *             .differenceAccessLevel(sdmMaskingPolicyDifferenceDifferenceAccessLevel)
+     *             .displayName(sdmMaskingPolicyDifferenceDisplayName)
+     *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sdmMaskingPolicyDifferenceState)
      *             .build());
      * 
      *     }
@@ -11833,7 +11833,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -11875,7 +11875,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -11917,7 +11917,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -11959,7 +11959,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessment = DataSafeFunctions.getSecurityAssessment(GetSecurityAssessmentArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .securityAssessmentId(testSecurityAssessmentOciDataSafeSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -12001,8 +12001,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -12044,8 +12044,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -12087,8 +12087,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -12130,8 +12130,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentComparison = DataSafeFunctions.getSecurityAssessmentComparison(GetSecurityAssessmentComparisonArgs.builder()
-     *             .comparisonSecurityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
+     *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
+     *             .securityAssessmentId(testSecurityAssessment.id())
      *             .build());
      * 
      *     }
@@ -12194,14 +12194,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
-     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
-     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
-     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
-     *             .severity(var_.security_assessment_finding_analytic_severity())
-     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentFindingAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKey(securityAssessmentFindingAnalyticFindingKey)
+     *             .groupBy(securityAssessmentFindingAnalyticGroupBy)
+     *             .isTopFinding(securityAssessmentFindingAnalyticIsTopFinding)
+     *             .severity(securityAssessmentFindingAnalyticSeverity)
+     *             .topFindingStatus(securityAssessmentFindingAnalyticTopFindingStatus)
      *             .build());
      * 
      *     }
@@ -12252,14 +12252,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
-     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
-     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
-     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
-     *             .severity(var_.security_assessment_finding_analytic_severity())
-     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentFindingAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKey(securityAssessmentFindingAnalyticFindingKey)
+     *             .groupBy(securityAssessmentFindingAnalyticGroupBy)
+     *             .isTopFinding(securityAssessmentFindingAnalyticIsTopFinding)
+     *             .severity(securityAssessmentFindingAnalyticSeverity)
+     *             .topFindingStatus(securityAssessmentFindingAnalyticTopFindingStatus)
      *             .build());
      * 
      *     }
@@ -12310,14 +12310,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
-     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
-     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
-     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
-     *             .severity(var_.security_assessment_finding_analytic_severity())
-     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentFindingAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKey(securityAssessmentFindingAnalyticFindingKey)
+     *             .groupBy(securityAssessmentFindingAnalyticGroupBy)
+     *             .isTopFinding(securityAssessmentFindingAnalyticIsTopFinding)
+     *             .severity(securityAssessmentFindingAnalyticSeverity)
+     *             .topFindingStatus(securityAssessmentFindingAnalyticTopFindingStatus)
      *             .build());
      * 
      *     }
@@ -12368,14 +12368,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingAnalytics = DataSafeFunctions.getSecurityAssessmentFindingAnalytics(GetSecurityAssessmentFindingAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_finding_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_finding_analytic_compartment_id_in_subtree())
-     *             .findingKey(var_.security_assessment_finding_analytic_finding_key())
-     *             .groupBy(var_.security_assessment_finding_analytic_group_by())
-     *             .isTopFinding(var_.security_assessment_finding_analytic_is_top_finding())
-     *             .severity(var_.security_assessment_finding_analytic_severity())
-     *             .topFindingStatus(var_.security_assessment_finding_analytic_top_finding_status())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentFindingAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentFindingAnalyticCompartmentIdInSubtree)
+     *             .findingKey(securityAssessmentFindingAnalyticFindingKey)
+     *             .groupBy(securityAssessmentFindingAnalyticGroupBy)
+     *             .isTopFinding(securityAssessmentFindingAnalyticIsTopFinding)
+     *             .severity(securityAssessmentFindingAnalyticSeverity)
+     *             .topFindingStatus(securityAssessmentFindingAnalyticTopFindingStatus)
      *             .build());
      * 
      *     }
@@ -12453,16 +12453,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
-     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
-     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
-     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
-     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
-     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
-     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
+     *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
+     *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
+     *             .modifiedBy(securityAssessmentFindingsChangeAuditLogModifiedBy)
+     *             .severity(securityAssessmentFindingsChangeAuditLogSeverity)
+     *             .timeUpdatedGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan)
+     *             .timeValidUntilGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo)
+     *             .timeValidUntilLessThan(securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan)
      *             .build());
      * 
      *     }
@@ -12504,16 +12504,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
-     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
-     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
-     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
-     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
-     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
-     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
+     *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
+     *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
+     *             .modifiedBy(securityAssessmentFindingsChangeAuditLogModifiedBy)
+     *             .severity(securityAssessmentFindingsChangeAuditLogSeverity)
+     *             .timeUpdatedGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan)
+     *             .timeValidUntilGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo)
+     *             .timeValidUntilLessThan(securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan)
      *             .build());
      * 
      *     }
@@ -12555,16 +12555,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
-     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
-     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
-     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
-     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
-     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
-     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
+     *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
+     *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
+     *             .modifiedBy(securityAssessmentFindingsChangeAuditLogModifiedBy)
+     *             .severity(securityAssessmentFindingsChangeAuditLogSeverity)
+     *             .timeUpdatedGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan)
+     *             .timeValidUntilGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo)
+     *             .timeValidUntilLessThan(securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan)
      *             .build());
      * 
      *     }
@@ -12606,16 +12606,16 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentFindingsChangeAuditLogs = DataSafeFunctions.getSecurityAssessmentFindingsChangeAuditLogs(GetSecurityAssessmentFindingsChangeAuditLogsArgs.builder()
-     *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
-     *             .findingKey(var_.security_assessment_findings_change_audit_log_finding_key())
-     *             .findingTitle(var_.security_assessment_findings_change_audit_log_finding_title())
-     *             .isRiskDeferred(var_.security_assessment_findings_change_audit_log_is_risk_deferred())
-     *             .modifiedBy(var_.security_assessment_findings_change_audit_log_modified_by())
-     *             .severity(var_.security_assessment_findings_change_audit_log_severity())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.security_assessment_findings_change_audit_log_time_updated_less_than())
-     *             .timeValidUntilGreaterThanOrEqualTo(var_.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to())
-     *             .timeValidUntilLessThan(var_.security_assessment_findings_change_audit_log_time_valid_until_less_than())
+     *             .securityAssessmentId(testSecurityAssessment.id())
+     *             .findingKey(securityAssessmentFindingsChangeAuditLogFindingKey)
+     *             .findingTitle(securityAssessmentFindingsChangeAuditLogFindingTitle)
+     *             .isRiskDeferred(securityAssessmentFindingsChangeAuditLogIsRiskDeferred)
+     *             .modifiedBy(securityAssessmentFindingsChangeAuditLogModifiedBy)
+     *             .severity(securityAssessmentFindingsChangeAuditLogSeverity)
+     *             .timeUpdatedGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan)
+     *             .timeValidUntilGreaterThanOrEqualTo(securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo)
+     *             .timeValidUntilLessThan(securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan)
      *             .build());
      * 
      *     }
@@ -12664,10 +12664,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -12716,10 +12716,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -12768,10 +12768,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -12820,10 +12820,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatureAnalytics = DataSafeFunctions.getSecurityAssessmentSecurityFeatureAnalytics(GetSecurityAssessmentSecurityFeatureAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -12865,21 +12865,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
-     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
-     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
-     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
-     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
-     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
-     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
-     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
-     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
-     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
-     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
+     *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
+     *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
+     *             .targetsWithFineGrainedAudit(securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit)
+     *             .targetsWithGlobalAuthentication(securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication)
+     *             .targetsWithNetworkEncryption(securityAssessmentSecurityFeatureTargetsWithNetworkEncryption)
+     *             .targetsWithPasswordAuthentication(securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication)
+     *             .targetsWithPrivilegeAnalysis(securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis)
+     *             .targetsWithTablespaceEncryption(securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption)
+     *             .targetsWithTraditionalAudit(securityAssessmentSecurityFeatureTargetsWithTraditionalAudit)
+     *             .targetsWithUnifiedAudit(securityAssessmentSecurityFeatureTargetsWithUnifiedAudit)
      *             .build());
      * 
      *     }
@@ -12921,21 +12921,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
-     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
-     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
-     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
-     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
-     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
-     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
-     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
-     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
-     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
-     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
+     *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
+     *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
+     *             .targetsWithFineGrainedAudit(securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit)
+     *             .targetsWithGlobalAuthentication(securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication)
+     *             .targetsWithNetworkEncryption(securityAssessmentSecurityFeatureTargetsWithNetworkEncryption)
+     *             .targetsWithPasswordAuthentication(securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication)
+     *             .targetsWithPrivilegeAnalysis(securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis)
+     *             .targetsWithTablespaceEncryption(securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption)
+     *             .targetsWithTraditionalAudit(securityAssessmentSecurityFeatureTargetsWithTraditionalAudit)
+     *             .targetsWithUnifiedAudit(securityAssessmentSecurityFeatureTargetsWithUnifiedAudit)
      *             .build());
      * 
      *     }
@@ -12977,21 +12977,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
-     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
-     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
-     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
-     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
-     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
-     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
-     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
-     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
-     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
-     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
+     *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
+     *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
+     *             .targetsWithFineGrainedAudit(securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit)
+     *             .targetsWithGlobalAuthentication(securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication)
+     *             .targetsWithNetworkEncryption(securityAssessmentSecurityFeatureTargetsWithNetworkEncryption)
+     *             .targetsWithPasswordAuthentication(securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication)
+     *             .targetsWithPrivilegeAnalysis(securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis)
+     *             .targetsWithTablespaceEncryption(securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption)
+     *             .targetsWithTraditionalAudit(securityAssessmentSecurityFeatureTargetsWithTraditionalAudit)
+     *             .targetsWithUnifiedAudit(securityAssessmentSecurityFeatureTargetsWithUnifiedAudit)
      *             .build());
      * 
      *     }
@@ -13033,21 +13033,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessmentSecurityFeatures = DataSafeFunctions.getSecurityAssessmentSecurityFeatures(GetSecurityAssessmentSecurityFeaturesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_security_feature_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_security_feature_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .targetsWithColumnEncryption(var_.security_assessment_security_feature_targets_with_column_encryption())
-     *             .targetsWithDatabaseVault(var_.security_assessment_security_feature_targets_with_database_vault())
-     *             .targetsWithExternalAuthentication(var_.security_assessment_security_feature_targets_with_external_authentication())
-     *             .targetsWithFineGrainedAudit(var_.security_assessment_security_feature_targets_with_fine_grained_audit())
-     *             .targetsWithGlobalAuthentication(var_.security_assessment_security_feature_targets_with_global_authentication())
-     *             .targetsWithNetworkEncryption(var_.security_assessment_security_feature_targets_with_network_encryption())
-     *             .targetsWithPasswordAuthentication(var_.security_assessment_security_feature_targets_with_password_authentication())
-     *             .targetsWithPrivilegeAnalysis(var_.security_assessment_security_feature_targets_with_privilege_analysis())
-     *             .targetsWithTablespaceEncryption(var_.security_assessment_security_feature_targets_with_tablespace_encryption())
-     *             .targetsWithTraditionalAudit(var_.security_assessment_security_feature_targets_with_traditional_audit())
-     *             .targetsWithUnifiedAudit(var_.security_assessment_security_feature_targets_with_unified_audit())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentSecurityFeatureAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentSecurityFeatureCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .targetsWithColumnEncryption(securityAssessmentSecurityFeatureTargetsWithColumnEncryption)
+     *             .targetsWithDatabaseVault(securityAssessmentSecurityFeatureTargetsWithDatabaseVault)
+     *             .targetsWithExternalAuthentication(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication)
+     *             .targetsWithFineGrainedAudit(securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit)
+     *             .targetsWithGlobalAuthentication(securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication)
+     *             .targetsWithNetworkEncryption(securityAssessmentSecurityFeatureTargetsWithNetworkEncryption)
+     *             .targetsWithPasswordAuthentication(securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication)
+     *             .targetsWithPrivilegeAnalysis(securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis)
+     *             .targetsWithTablespaceEncryption(securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption)
+     *             .targetsWithTraditionalAudit(securityAssessmentSecurityFeatureTargetsWithTraditionalAudit)
+     *             .targetsWithUnifiedAudit(securityAssessmentSecurityFeatureTargetsWithUnifiedAudit)
      *             .build());
      * 
      *     }
@@ -13103,19 +13103,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.security_assessment_display_name())
-     *             .isBaseline(var_.security_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
-     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
-     *             .state(var_.security_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
-     *             .triggeredBy(var_.security_assessment_triggered_by())
-     *             .type(var_.security_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCompartmentIdInSubtree)
+     *             .displayName(securityAssessmentDisplayName)
+     *             .isBaseline(securityAssessmentIsBaseline)
+     *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
+     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .state(securityAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(securityAssessmentTriggeredBy)
+     *             .type(securityAssessmentType)
      *             .build());
      * 
      *     }
@@ -13171,19 +13171,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.security_assessment_display_name())
-     *             .isBaseline(var_.security_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
-     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
-     *             .state(var_.security_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
-     *             .triggeredBy(var_.security_assessment_triggered_by())
-     *             .type(var_.security_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCompartmentIdInSubtree)
+     *             .displayName(securityAssessmentDisplayName)
+     *             .isBaseline(securityAssessmentIsBaseline)
+     *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
+     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .state(securityAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(securityAssessmentTriggeredBy)
+     *             .type(securityAssessmentType)
      *             .build());
      * 
      *     }
@@ -13239,19 +13239,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.security_assessment_display_name())
-     *             .isBaseline(var_.security_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
-     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
-     *             .state(var_.security_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
-     *             .triggeredBy(var_.security_assessment_triggered_by())
-     *             .type(var_.security_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCompartmentIdInSubtree)
+     *             .displayName(securityAssessmentDisplayName)
+     *             .isBaseline(securityAssessmentIsBaseline)
+     *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
+     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .state(securityAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(securityAssessmentTriggeredBy)
+     *             .type(securityAssessmentType)
      *             .build());
      * 
      *     }
@@ -13307,19 +13307,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityAssessments = DataSafeFunctions.getSecurityAssessments(GetSecurityAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.security_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.security_assessment_display_name())
-     *             .isBaseline(var_.security_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.security_assessment_is_schedule_assessment())
-     *             .scheduleAssessmentId(oci_data_safe_schedule_assessment.test_schedule_assessment().id())
-     *             .state(var_.security_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.security_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.security_assessment_time_created_less_than())
-     *             .triggeredBy(var_.security_assessment_triggered_by())
-     *             .type(var_.security_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(securityAssessmentCompartmentIdInSubtree)
+     *             .displayName(securityAssessmentDisplayName)
+     *             .isBaseline(securityAssessmentIsBaseline)
+     *             .isScheduleAssessment(securityAssessmentIsScheduleAssessment)
+     *             .scheduleAssessmentId(testScheduleAssessment.id())
+     *             .state(securityAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(securityAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(securityAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(securityAssessmentTriggeredBy)
+     *             .type(securityAssessmentType)
      *             .build());
      * 
      *     }
@@ -13374,12 +13374,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_display_name())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyState)
      *             .build());
      * 
      *     }
@@ -13434,12 +13434,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_display_name())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyState)
      *             .build());
      * 
      *     }
@@ -13494,12 +13494,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_display_name())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyState)
      *             .build());
      * 
      *     }
@@ -13554,12 +13554,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicies = DataSafeFunctions.getSecurityPolicies(GetSecurityPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_display_name())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDisplayName)
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyState)
      *             .build());
      * 
      *     }
@@ -13601,7 +13601,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
      *             .build());
      * 
      *     }
@@ -13643,7 +13643,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
      *             .build());
      * 
      *     }
@@ -13685,7 +13685,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
      *             .build());
      * 
      *     }
@@ -13727,7 +13727,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = DataSafeFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
+     *             .securityPolicyId(testSecurityPolicyOciDataSafeSecurityPolicy.id())
      *             .build());
      * 
      *     }
@@ -13769,7 +13769,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
      *             .build());
      * 
      *     }
@@ -13811,7 +13811,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
      *             .build());
      * 
      *     }
@@ -13853,7 +13853,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
      *             .build());
      * 
      *     }
@@ -13895,7 +13895,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployment = DataSafeFunctions.getSecurityPolicyDeployment(GetSecurityPolicyDeploymentArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeploymentOciDataSafeSecurityPolicyDeployment.id())
      *             .build());
      * 
      *     }
@@ -13937,8 +13937,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
      *             .build());
      * 
      *     }
@@ -13980,8 +13980,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
      *             .build());
      * 
      *     }
@@ -14023,8 +14023,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
      *             .build());
      * 
      *     }
@@ -14066,8 +14066,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryState = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryState(GetSecurityPolicyDeploymentSecurityPolicyEntryStateArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyEntryStateId(oci_data_safe_security_policy_entry_state.test_security_policy_entry_state().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyEntryStateId(testSecurityPolicyEntryState.id())
      *             .build());
      * 
      *     }
@@ -14111,9 +14111,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
-     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
      *             .build());
      * 
      *     }
@@ -14157,9 +14157,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
-     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
      *             .build());
      * 
      *     }
@@ -14203,9 +14203,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
-     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
      *             .build());
      * 
      *     }
@@ -14249,9 +14249,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeploymentSecurityPolicyEntryStates = DataSafeFunctions.getSecurityPolicyDeploymentSecurityPolicyEntryStates(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs.builder()
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .deploymentStatus(var_.security_policy_deployment_security_policy_entry_state_deployment_status())
-     *             .securityPolicyEntryId(oci_data_safe_security_policy_entry.test_security_policy_entry().id())
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .deploymentStatus(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus)
+     *             .securityPolicyEntryId(testSecurityPolicyEntry.id())
      *             .build());
      * 
      *     }
@@ -14306,14 +14306,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_deployment_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_deployment_display_name())
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_deployment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyDeploymentAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDeploymentDisplayName)
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyDeploymentState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -14368,14 +14368,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_deployment_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_deployment_display_name())
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_deployment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyDeploymentAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDeploymentDisplayName)
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyDeploymentState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -14430,14 +14430,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_deployment_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_deployment_display_name())
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_deployment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyDeploymentAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDeploymentDisplayName)
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyDeploymentState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -14492,14 +14492,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyDeployments = DataSafeFunctions.getSecurityPolicyDeployments(GetSecurityPolicyDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_deployment_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_deployment_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_deployment_display_name())
-     *             .securityPolicyDeploymentId(oci_data_safe_security_policy_deployment.test_security_policy_deployment().id())
-     *             .securityPolicyId(oci_data_safe_security_policy.test_security_policy().id())
-     *             .state(var_.security_policy_deployment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyDeploymentAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyDeploymentCompartmentIdInSubtree)
+     *             .displayName(securityPolicyDeploymentDisplayName)
+     *             .securityPolicyDeploymentId(testSecurityPolicyDeployment.id())
+     *             .securityPolicyId(testSecurityPolicy.id())
+     *             .state(securityPolicyDeploymentState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -14541,7 +14541,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -14583,7 +14583,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -14625,7 +14625,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -14667,7 +14667,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReport = DataSafeFunctions.getSecurityPolicyReport(GetSecurityPolicyReportArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .securityPolicyReportId(testSecurityPolicyReportOciDataSafeSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -14711,8 +14711,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
      *     }
@@ -14756,8 +14756,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
      *     }
@@ -14801,8 +14801,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
      *     }
@@ -14846,8 +14846,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntries(GetSecurityPolicyReportDatabaseTableAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_table_access_entry_scim_query())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseTableAccessEntryScimQuery)
      *             .build());
      * 
      *     }
@@ -14889,8 +14889,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
-     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -14932,8 +14932,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
-     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -14975,8 +14975,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
-     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15018,8 +15018,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseTableAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseTableAccessEntry(GetSecurityPolicyReportDatabaseTableAccessEntryArgs.builder()
-     *             .databaseTableAccessEntryKey(var_.security_policy_report_database_table_access_entry_database_table_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseTableAccessEntryKey(securityPolicyReportDatabaseTableAccessEntryDatabaseTableAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15063,9 +15063,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15109,9 +15109,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15155,9 +15155,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15201,9 +15201,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntries = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntries(GetSecurityPolicyReportDatabaseViewAccessEntriesArgs.builder()
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .scimQuery(var_.security_policy_report_database_view_access_entry_scim_query())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .scimQuery(securityPolicyReportDatabaseViewAccessEntryScimQuery)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15245,8 +15245,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
-     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15288,8 +15288,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
-     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15331,8 +15331,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
-     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15374,8 +15374,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportDatabaseViewAccessEntry = DataSafeFunctions.getSecurityPolicyReportDatabaseViewAccessEntry(GetSecurityPolicyReportDatabaseViewAccessEntryArgs.builder()
-     *             .databaseViewAccessEntryKey(var_.security_policy_report_database_view_access_entry_database_view_access_entry_key())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .databaseViewAccessEntryKey(securityPolicyReportDatabaseViewAccessEntryDatabaseViewAccessEntryKey)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15419,9 +15419,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
-     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
-     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
+     *             .grantee(securityPolicyReportRoleGrantPathGrantee)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15465,9 +15465,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
-     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
-     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
+     *             .grantee(securityPolicyReportRoleGrantPathGrantee)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15511,9 +15511,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
-     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
-     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
+     *             .grantee(securityPolicyReportRoleGrantPathGrantee)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15557,9 +15557,9 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReportRoleGrantPaths = DataSafeFunctions.getSecurityPolicyReportRoleGrantPaths(GetSecurityPolicyReportRoleGrantPathsArgs.builder()
-     *             .grantedRole(var_.security_policy_report_role_grant_path_granted_role())
-     *             .grantee(var_.security_policy_report_role_grant_path_grantee())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
+     *             .grantedRole(securityPolicyReportRoleGrantPathGrantedRole)
+     *             .grantee(securityPolicyReportRoleGrantPathGrantee)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
      *             .build());
      * 
      *     }
@@ -15614,13 +15614,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_report_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_report_display_name())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .state(var_.security_policy_report_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyReportAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
+     *             .displayName(securityPolicyReportDisplayName)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .state(securityPolicyReportState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15675,13 +15675,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_report_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_report_display_name())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .state(var_.security_policy_report_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyReportAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
+     *             .displayName(securityPolicyReportDisplayName)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .state(securityPolicyReportState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15736,13 +15736,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_report_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_report_display_name())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .state(var_.security_policy_report_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyReportAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
+     *             .displayName(securityPolicyReportDisplayName)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .state(securityPolicyReportState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15797,13 +15797,13 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicyReports = DataSafeFunctions.getSecurityPolicyReports(GetSecurityPolicyReportsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.security_policy_report_access_level())
-     *             .compartmentIdInSubtree(var_.security_policy_report_compartment_id_in_subtree())
-     *             .displayName(var_.security_policy_report_display_name())
-     *             .securityPolicyReportId(oci_data_safe_security_policy_report.test_security_policy_report().id())
-     *             .state(var_.security_policy_report_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(securityPolicyReportAccessLevel)
+     *             .compartmentIdInSubtree(securityPolicyReportCompartmentIdInSubtree)
+     *             .displayName(securityPolicyReportDisplayName)
+     *             .securityPolicyReportId(testSecurityPolicyReport.id())
+     *             .state(securityPolicyReportState)
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -15845,7 +15845,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -15887,7 +15887,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -15929,7 +15929,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -15971,7 +15971,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModel = DataSafeFunctions.getSensitiveDataModel(GetSensitiveDataModelArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveDataModelId(testSensitiveDataModelOciDataSafeSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -16013,10 +16013,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .objects(var_.sensitive_data_model_sensitive_object_object())
-     *             .objectTypes(var_.sensitive_data_model_sensitive_object_object_type())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_object_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .objects(sensitiveDataModelSensitiveObjectObject)
+     *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
+     *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -16058,10 +16058,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .objects(var_.sensitive_data_model_sensitive_object_object())
-     *             .objectTypes(var_.sensitive_data_model_sensitive_object_object_type())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_object_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .objects(sensitiveDataModelSensitiveObjectObject)
+     *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
+     *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -16103,10 +16103,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .objects(var_.sensitive_data_model_sensitive_object_object())
-     *             .objectTypes(var_.sensitive_data_model_sensitive_object_object_type())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_object_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .objects(sensitiveDataModelSensitiveObjectObject)
+     *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
+     *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -16148,10 +16148,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveObjects = DataSafeFunctions.getSensitiveDataModelSensitiveObjects(GetSensitiveDataModelSensitiveObjectsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .objects(var_.sensitive_data_model_sensitive_object_object())
-     *             .objectTypes(var_.sensitive_data_model_sensitive_object_object_type())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_object_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .objects(sensitiveDataModelSensitiveObjectObject)
+     *             .objectTypes(sensitiveDataModelSensitiveObjectObjectType)
+     *             .schemaNames(sensitiveDataModelSensitiveObjectSchemaName)
      *             .build());
      * 
      *     }
@@ -16193,8 +16193,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_schema_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -16236,8 +16236,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_schema_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -16279,8 +16279,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_schema_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -16322,8 +16322,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelSensitiveSchemas = DataSafeFunctions.getSensitiveDataModelSensitiveSchemas(GetSensitiveDataModelSensitiveSchemasArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .schemaNames(var_.sensitive_data_model_sensitive_schema_schema_name())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .schemaNames(sensitiveDataModelSensitiveSchemaSchemaName)
      *             .build());
      * 
      *     }
@@ -16365,15 +16365,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_data_model_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
-     *             .displayName(var_.sensitive_data_model_display_name())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sensitive_data_model_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveDataModelAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
+     *             .displayName(sensitiveDataModelDisplayName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sensitiveDataModelState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -16415,15 +16415,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_data_model_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
-     *             .displayName(var_.sensitive_data_model_display_name())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sensitive_data_model_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveDataModelAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
+     *             .displayName(sensitiveDataModelDisplayName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sensitiveDataModelState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -16465,15 +16465,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_data_model_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
-     *             .displayName(var_.sensitive_data_model_display_name())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sensitive_data_model_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveDataModelAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
+     *             .displayName(sensitiveDataModelDisplayName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sensitiveDataModelState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -16515,15 +16515,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModels = DataSafeFunctions.getSensitiveDataModels(GetSensitiveDataModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_data_model_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_data_model_compartment_id_in_subtree())
-     *             .displayName(var_.sensitive_data_model_display_name())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .state(var_.sensitive_data_model_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_model_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_model_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveDataModelAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveDataModelCompartmentIdInSubtree)
+     *             .displayName(sensitiveDataModelDisplayName)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .state(sensitiveDataModelState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -16565,8 +16565,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
-     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -16608,8 +16608,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
-     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -16651,8 +16651,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
-     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -16694,8 +16694,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumn = DataSafeFunctions.getSensitiveDataModelsSensitiveColumn(GetSensitiveDataModelsSensitiveColumnArgs.builder()
-     *             .sensitiveColumnKey(var_.sensitive_data_models_sensitive_column_sensitive_column_key())
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
+     *             .sensitiveColumnKey(sensitiveDataModelsSensitiveColumnSensitiveColumnKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
      *             .build());
      * 
      *     }
@@ -16737,23 +16737,23 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
-     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
-     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
-     *             .isCaseInSensitive(var_.sensitive_data_models_sensitive_column_is_case_in_sensitive())
-     *             .objects(var_.sensitive_data_models_sensitive_column_object())
-     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
-     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
-     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
-     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
-     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
-     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
+     *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
+     *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
+     *             .objects(sensitiveDataModelsSensitiveColumnObject)
+     *             .objectTypes(sensitiveDataModelsSensitiveColumnObjectType)
+     *             .parentColumnKeys(sensitiveDataModelsSensitiveColumnParentColumnKey)
+     *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
+     *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
+     *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(sensitiveDataModelsSensitiveColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -16795,23 +16795,23 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
-     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
-     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
-     *             .isCaseInSensitive(var_.sensitive_data_models_sensitive_column_is_case_in_sensitive())
-     *             .objects(var_.sensitive_data_models_sensitive_column_object())
-     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
-     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
-     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
-     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
-     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
-     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
+     *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
+     *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
+     *             .objects(sensitiveDataModelsSensitiveColumnObject)
+     *             .objectTypes(sensitiveDataModelsSensitiveColumnObjectType)
+     *             .parentColumnKeys(sensitiveDataModelsSensitiveColumnParentColumnKey)
+     *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
+     *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
+     *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(sensitiveDataModelsSensitiveColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -16853,23 +16853,23 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
-     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
-     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
-     *             .isCaseInSensitive(var_.sensitive_data_models_sensitive_column_is_case_in_sensitive())
-     *             .objects(var_.sensitive_data_models_sensitive_column_object())
-     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
-     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
-     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
-     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
-     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
-     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
+     *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
+     *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
+     *             .objects(sensitiveDataModelsSensitiveColumnObject)
+     *             .objectTypes(sensitiveDataModelsSensitiveColumnObjectType)
+     *             .parentColumnKeys(sensitiveDataModelsSensitiveColumnParentColumnKey)
+     *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
+     *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
+     *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(sensitiveDataModelsSensitiveColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -16911,23 +16911,23 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
-     *             .sensitiveDataModelId(oci_data_safe_sensitive_data_model.test_sensitive_data_model().id())
-     *             .columnGroup(var_.sensitive_data_models_sensitive_column_column_group())
-     *             .columnNames(var_.sensitive_data_models_sensitive_column_column_name())
-     *             .dataTypes(var_.sensitive_data_models_sensitive_column_data_type())
-     *             .isCaseInSensitive(var_.sensitive_data_models_sensitive_column_is_case_in_sensitive())
-     *             .objects(var_.sensitive_data_models_sensitive_column_object())
-     *             .objectTypes(var_.sensitive_data_models_sensitive_column_object_type())
-     *             .parentColumnKeys(var_.sensitive_data_models_sensitive_column_parent_column_key())
-     *             .relationTypes(var_.sensitive_data_models_sensitive_column_relation_type())
-     *             .schemaNames(var_.sensitive_data_models_sensitive_column_schema_name())
-     *             .sensitiveColumnLifecycleState(var_.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state())
-     *             .sensitiveTypeIds(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .statuses(var_.sensitive_data_models_sensitive_column_status())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_data_models_sensitive_column_time_created_less_than())
-     *             .timeUpdatedGreaterThanOrEqualTo(var_.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to())
-     *             .timeUpdatedLessThan(var_.sensitive_data_models_sensitive_column_time_updated_less_than())
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
+     *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
+     *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
+     *             .objects(sensitiveDataModelsSensitiveColumnObject)
+     *             .objectTypes(sensitiveDataModelsSensitiveColumnObjectType)
+     *             .parentColumnKeys(sensitiveDataModelsSensitiveColumnParentColumnKey)
+     *             .relationTypes(sensitiveDataModelsSensitiveColumnRelationType)
+     *             .schemaNames(sensitiveDataModelsSensitiveColumnSchemaName)
+     *             .sensitiveColumnLifecycleState(sensitiveDataModelsSensitiveColumnSensitiveColumnLifecycleState)
+     *             .sensitiveTypeIds(testSensitiveType.id())
+     *             .statuses(sensitiveDataModelsSensitiveColumnStatus)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveDataModelsSensitiveColumnTimeCreatedLessThan)
+     *             .timeUpdatedGreaterThanOrEqualTo(sensitiveDataModelsSensitiveColumnTimeUpdatedGreaterThanOrEqualTo)
+     *             .timeUpdatedLessThan(sensitiveDataModelsSensitiveColumnTimeUpdatedLessThan)
      *             .build());
      * 
      *     }
@@ -16969,7 +16969,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -17011,7 +17011,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -17053,7 +17053,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -17095,7 +17095,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveType = DataSafeFunctions.getSensitiveType(GetSensitiveTypeArgs.builder()
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
+     *             .sensitiveTypeId(testSensitiveTypeOciDataSafeSensitiveType.id())
      *             .build());
      * 
      *     }
@@ -17137,19 +17137,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
-     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
-     *             .displayName(var_.sensitive_type_display_name())
-     *             .entityType(var_.sensitive_type_entity_type())
-     *             .isCommon(var_.sensitive_type_is_common())
-     *             .parentCategoryId(oci_marketplace_category.test_category().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
-     *             .state(var_.sensitive_type_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .displayName(sensitiveTypeDisplayName)
+     *             .entityType(sensitiveTypeEntityType)
+     *             .isCommon(sensitiveTypeIsCommon)
+     *             .parentCategoryId(testCategory.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
+     *             .state(sensitiveTypeState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17191,19 +17191,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
-     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
-     *             .displayName(var_.sensitive_type_display_name())
-     *             .entityType(var_.sensitive_type_entity_type())
-     *             .isCommon(var_.sensitive_type_is_common())
-     *             .parentCategoryId(oci_marketplace_category.test_category().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
-     *             .state(var_.sensitive_type_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .displayName(sensitiveTypeDisplayName)
+     *             .entityType(sensitiveTypeEntityType)
+     *             .isCommon(sensitiveTypeIsCommon)
+     *             .parentCategoryId(testCategory.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
+     *             .state(sensitiveTypeState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17245,19 +17245,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
-     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
-     *             .displayName(var_.sensitive_type_display_name())
-     *             .entityType(var_.sensitive_type_entity_type())
-     *             .isCommon(var_.sensitive_type_is_common())
-     *             .parentCategoryId(oci_marketplace_category.test_category().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
-     *             .state(var_.sensitive_type_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .displayName(sensitiveTypeDisplayName)
+     *             .entityType(sensitiveTypeEntityType)
+     *             .isCommon(sensitiveTypeIsCommon)
+     *             .parentCategoryId(testCategory.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
+     *             .state(sensitiveTypeState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17299,19 +17299,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSensitiveTypes = DataSafeFunctions.getSensitiveTypes(GetSensitiveTypesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.sensitive_type_access_level())
-     *             .compartmentIdInSubtree(var_.sensitive_type_compartment_id_in_subtree())
-     *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
-     *             .displayName(var_.sensitive_type_display_name())
-     *             .entityType(var_.sensitive_type_entity_type())
-     *             .isCommon(var_.sensitive_type_is_common())
-     *             .parentCategoryId(oci_marketplace_category.test_category().id())
-     *             .sensitiveTypeId(oci_data_safe_sensitive_type.test_sensitive_type().id())
-     *             .sensitiveTypeSource(var_.sensitive_type_sensitive_type_source())
-     *             .state(var_.sensitive_type_state())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.sensitive_type_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.sensitive_type_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(sensitiveTypeAccessLevel)
+     *             .compartmentIdInSubtree(sensitiveTypeCompartmentIdInSubtree)
+     *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
+     *             .displayName(sensitiveTypeDisplayName)
+     *             .entityType(sensitiveTypeEntityType)
+     *             .isCommon(sensitiveTypeIsCommon)
+     *             .parentCategoryId(testCategory.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .sensitiveTypeSource(sensitiveTypeSensitiveTypeSource)
+     *             .state(sensitiveTypeState)
+     *             .timeCreatedGreaterThanOrEqualTo(sensitiveTypeTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(sensitiveTypeTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17353,7 +17353,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
      *             .build());
      * 
      *     }
@@ -17395,7 +17395,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
      *             .build());
      * 
      *     }
@@ -17437,7 +17437,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
      *             .build());
      * 
      *     }
@@ -17479,7 +17479,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociation = DataSafeFunctions.getTargetAlertPolicyAssociation(GetTargetAlertPolicyAssociationArgs.builder()
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociationOciDataSafeTargetAlertPolicyAssociation.id())
      *             .build());
      * 
      *     }
@@ -17521,15 +17521,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_alert_policy_association_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
-     *             .state(var_.target_alert_policy_association_state())
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17571,15 +17571,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_alert_policy_association_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
-     *             .state(var_.target_alert_policy_association_state())
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17621,15 +17621,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_alert_policy_association_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
-     *             .state(var_.target_alert_policy_association_state())
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17671,15 +17671,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAlertPolicyAssociations = DataSafeFunctions.getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_alert_policy_association_access_level())
-     *             .alertPolicyId(oci_data_safe_alert_policy.test_alert_policy().id())
-     *             .compartmentIdInSubtree(var_.target_alert_policy_association_compartment_id_in_subtree())
-     *             .state(var_.target_alert_policy_association_state())
-     *             .targetAlertPolicyAssociationId(oci_data_safe_target_alert_policy_association.test_target_alert_policy_association().id())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.target_alert_policy_association_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.target_alert_policy_association_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetAlertPolicyAssociationAccessLevel)
+     *             .alertPolicyId(testAlertPolicy.id())
+     *             .compartmentIdInSubtree(targetAlertPolicyAssociationCompartmentIdInSubtree)
+     *             .state(targetAlertPolicyAssociationState)
+     *             .targetAlertPolicyAssociationId(testTargetAlertPolicyAssociation.id())
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(targetAlertPolicyAssociationTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -17721,7 +17721,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -17763,7 +17763,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -17805,7 +17805,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -17847,7 +17847,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabase = DataSafeFunctions.getTargetDatabase(GetTargetDatabaseArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabaseOciDataSafeTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -17889,8 +17889,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .peerTargetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -17932,8 +17932,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .peerTargetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -17975,8 +17975,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .peerTargetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18018,8 +18018,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabase = DataSafeFunctions.getTargetDatabasePeerTargetDatabase(GetTargetDatabasePeerTargetDatabaseArgs.builder()
-     *             .peerTargetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .peerTargetDatabaseId(testTargetDatabase.id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18061,7 +18061,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18103,7 +18103,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18145,7 +18145,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18187,7 +18187,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasePeerTargetDatabases = DataSafeFunctions.getTargetDatabasePeerTargetDatabases(GetTargetDatabasePeerTargetDatabasesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18241,11 +18241,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .authenticationType(var_.target_database_role_authentication_type())
-     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
-     *             .roleNames(var_.target_database_role_role_name())
-     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .authenticationType(targetDatabaseRoleAuthenticationType)
+     *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
+     *             .roleNames(targetDatabaseRoleRoleName)
+     *             .roleNameContains(targetDatabaseRoleRoleNameContains)
      *             .build());
      * 
      *     }
@@ -18287,11 +18287,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .authenticationType(var_.target_database_role_authentication_type())
-     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
-     *             .roleNames(var_.target_database_role_role_name())
-     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .authenticationType(targetDatabaseRoleAuthenticationType)
+     *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
+     *             .roleNames(targetDatabaseRoleRoleName)
+     *             .roleNameContains(targetDatabaseRoleRoleNameContains)
      *             .build());
      * 
      *     }
@@ -18333,11 +18333,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .authenticationType(var_.target_database_role_authentication_type())
-     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
-     *             .roleNames(var_.target_database_role_role_name())
-     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .authenticationType(targetDatabaseRoleAuthenticationType)
+     *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
+     *             .roleNames(targetDatabaseRoleRoleName)
+     *             .roleNameContains(targetDatabaseRoleRoleNameContains)
      *             .build());
      * 
      *     }
@@ -18379,11 +18379,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabaseRoles = DataSafeFunctions.getTargetDatabaseRoles(GetTargetDatabaseRolesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .authenticationType(var_.target_database_role_authentication_type())
-     *             .isOracleMaintained(var_.target_database_role_is_oracle_maintained())
-     *             .roleNames(var_.target_database_role_role_name())
-     *             .roleNameContains(var_.target_database_role_role_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .authenticationType(targetDatabaseRoleAuthenticationType)
+     *             .isOracleMaintained(targetDatabaseRoleIsOracleMaintained)
+     *             .roleNames(targetDatabaseRoleRoleName)
+     *             .roleNameContains(targetDatabaseRoleRoleNameContains)
      *             .build());
      * 
      *     }
@@ -18425,15 +18425,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_database_access_level())
-     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
-     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
-     *             .databaseType(var_.target_database_database_type())
-     *             .displayName(var_.target_database_display_name())
-     *             .infrastructureType(var_.target_database_infrastructure_type())
-     *             .state(var_.target_database_state())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseAccessLevel)
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
+     *             .databaseType(targetDatabaseDatabaseType)
+     *             .displayName(targetDatabaseDisplayName)
+     *             .infrastructureType(targetDatabaseInfrastructureType)
+     *             .state(targetDatabaseState)
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18475,15 +18475,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_database_access_level())
-     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
-     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
-     *             .databaseType(var_.target_database_database_type())
-     *             .displayName(var_.target_database_display_name())
-     *             .infrastructureType(var_.target_database_infrastructure_type())
-     *             .state(var_.target_database_state())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseAccessLevel)
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
+     *             .databaseType(targetDatabaseDatabaseType)
+     *             .displayName(targetDatabaseDisplayName)
+     *             .infrastructureType(targetDatabaseInfrastructureType)
+     *             .state(targetDatabaseState)
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18525,15 +18525,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_database_access_level())
-     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
-     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
-     *             .databaseType(var_.target_database_database_type())
-     *             .displayName(var_.target_database_display_name())
-     *             .infrastructureType(var_.target_database_infrastructure_type())
-     *             .state(var_.target_database_state())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseAccessLevel)
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
+     *             .databaseType(targetDatabaseDatabaseType)
+     *             .displayName(targetDatabaseDisplayName)
+     *             .infrastructureType(targetDatabaseInfrastructureType)
+     *             .state(targetDatabaseState)
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18575,15 +18575,15 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabases = DataSafeFunctions.getTargetDatabases(GetTargetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.target_database_access_level())
-     *             .associatedResourceId(oci_data_safe_associated_resource.test_associated_resource().id())
-     *             .compartmentIdInSubtree(var_.target_database_compartment_id_in_subtree())
-     *             .databaseType(var_.target_database_database_type())
-     *             .displayName(var_.target_database_display_name())
-     *             .infrastructureType(var_.target_database_infrastructure_type())
-     *             .state(var_.target_database_state())
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(targetDatabaseAccessLevel)
+     *             .associatedResourceId(testAssociatedResource.id())
+     *             .compartmentIdInSubtree(targetDatabaseCompartmentIdInSubtree)
+     *             .databaseType(targetDatabaseDatabaseType)
+     *             .displayName(targetDatabaseDisplayName)
+     *             .infrastructureType(targetDatabaseInfrastructureType)
+     *             .state(targetDatabaseState)
+     *             .targetDatabaseId(testTargetDatabase.id())
      *             .build());
      * 
      *     }
@@ -18625,14 +18625,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .columnNames(var_.target_databases_column_column_name())
-     *             .columnNameContains(var_.target_databases_column_column_name_contains())
-     *             .datatypes(var_.target_databases_column_datatype())
-     *             .schemaNames(var_.target_databases_column_schema_name())
-     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .columnNames(targetDatabasesColumnColumnName)
+     *             .columnNameContains(targetDatabasesColumnColumnNameContains)
+     *             .datatypes(targetDatabasesColumnDatatype)
+     *             .schemaNames(targetDatabasesColumnSchemaName)
+     *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
      *     }
@@ -18674,14 +18674,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .columnNames(var_.target_databases_column_column_name())
-     *             .columnNameContains(var_.target_databases_column_column_name_contains())
-     *             .datatypes(var_.target_databases_column_datatype())
-     *             .schemaNames(var_.target_databases_column_schema_name())
-     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .columnNames(targetDatabasesColumnColumnName)
+     *             .columnNameContains(targetDatabasesColumnColumnNameContains)
+     *             .datatypes(targetDatabasesColumnDatatype)
+     *             .schemaNames(targetDatabasesColumnSchemaName)
+     *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
      *     }
@@ -18723,14 +18723,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .columnNames(var_.target_databases_column_column_name())
-     *             .columnNameContains(var_.target_databases_column_column_name_contains())
-     *             .datatypes(var_.target_databases_column_datatype())
-     *             .schemaNames(var_.target_databases_column_schema_name())
-     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .columnNames(targetDatabasesColumnColumnName)
+     *             .columnNameContains(targetDatabasesColumnColumnNameContains)
+     *             .datatypes(targetDatabasesColumnDatatype)
+     *             .schemaNames(targetDatabasesColumnSchemaName)
+     *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
      *     }
@@ -18772,14 +18772,14 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesColumns = DataSafeFunctions.getTargetDatabasesColumns(GetTargetDatabasesColumnsArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .columnNames(var_.target_databases_column_column_name())
-     *             .columnNameContains(var_.target_databases_column_column_name_contains())
-     *             .datatypes(var_.target_databases_column_datatype())
-     *             .schemaNames(var_.target_databases_column_schema_name())
-     *             .schemaNameContains(var_.target_databases_column_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_column_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .columnNames(targetDatabasesColumnColumnName)
+     *             .columnNameContains(targetDatabasesColumnColumnNameContains)
+     *             .datatypes(targetDatabasesColumnDatatype)
+     *             .schemaNames(targetDatabasesColumnSchemaName)
+     *             .schemaNameContains(targetDatabasesColumnSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesColumnTableNameContains)
      *             .build());
      * 
      *     }
@@ -18821,10 +18821,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
-     *             .schemaNames(var_.target_databases_schema_schema_name())
-     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
+     *             .schemaNames(targetDatabasesSchemaSchemaName)
+     *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
      *             .build());
      * 
      *     }
@@ -18866,10 +18866,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
-     *             .schemaNames(var_.target_databases_schema_schema_name())
-     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
+     *             .schemaNames(targetDatabasesSchemaSchemaName)
+     *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
      *             .build());
      * 
      *     }
@@ -18911,10 +18911,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
-     *             .schemaNames(var_.target_databases_schema_schema_name())
-     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
+     *             .schemaNames(targetDatabasesSchemaSchemaName)
+     *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
      *             .build());
      * 
      *     }
@@ -18956,10 +18956,10 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesSchemas = DataSafeFunctions.getTargetDatabasesSchemas(GetTargetDatabasesSchemasArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .isOracleMaintained(var_.target_databases_schema_is_oracle_maintained())
-     *             .schemaNames(var_.target_databases_schema_schema_name())
-     *             .schemaNameContains(var_.target_databases_schema_schema_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .isOracleMaintained(targetDatabasesSchemaIsOracleMaintained)
+     *             .schemaNames(targetDatabasesSchemaSchemaName)
+     *             .schemaNameContains(targetDatabasesSchemaSchemaNameContains)
      *             .build());
      * 
      *     }
@@ -19001,11 +19001,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .schemaNames(var_.target_databases_table_schema_name())
-     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .schemaNames(targetDatabasesTableSchemaName)
+     *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
      *     }
@@ -19047,11 +19047,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .schemaNames(var_.target_databases_table_schema_name())
-     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .schemaNames(targetDatabasesTableSchemaName)
+     *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
      *     }
@@ -19093,11 +19093,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .schemaNames(var_.target_databases_table_schema_name())
-     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .schemaNames(targetDatabasesTableSchemaName)
+     *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
      *     }
@@ -19139,11 +19139,11 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetDatabasesTables = DataSafeFunctions.getTargetDatabasesTables(GetTargetDatabasesTablesArgs.builder()
-     *             .targetDatabaseId(oci_data_safe_target_database.test_target_database().id())
-     *             .schemaNames(var_.target_databases_table_schema_name())
-     *             .schemaNameContains(var_.target_databases_table_schema_name_contains())
-     *             .tableNames(oci_nosql_table.test_table().name())
-     *             .tableNameContains(var_.target_databases_table_table_name_contains())
+     *             .targetDatabaseId(testTargetDatabase.id())
+     *             .schemaNames(targetDatabasesTableSchemaName)
+     *             .schemaNameContains(targetDatabasesTableSchemaNameContains)
+     *             .tableNames(testTable.name())
+     *             .tableNameContains(targetDatabasesTableTableNameContains)
      *             .build());
      * 
      *     }
@@ -19185,7 +19185,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19227,7 +19227,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19269,7 +19269,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19311,7 +19311,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessment = DataSafeFunctions.getUserAssessment(GetUserAssessmentArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessmentOciDataSafeUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19353,8 +19353,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .comparisonUserAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19396,8 +19396,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .comparisonUserAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19439,8 +19439,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .comparisonUserAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19482,8 +19482,8 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentComparison = DataSafeFunctions.getUserAssessmentComparison(GetUserAssessmentComparisonArgs.builder()
-     *             .comparisonUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .comparisonUserAssessmentId(testUserAssessment.id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -19539,12 +19539,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_analytic_compartment_id_in_subtree())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
+     *             .profileName(testProfile.name())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -19600,12 +19600,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_analytic_compartment_id_in_subtree())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
+     *             .profileName(testProfile.name())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -19661,12 +19661,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_analytic_compartment_id_in_subtree())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
+     *             .profileName(testProfile.name())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -19722,12 +19722,12 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfileAnalytics = DataSafeFunctions.getUserAssessmentProfileAnalytics(GetUserAssessmentProfileAnalyticsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_analytic_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_analytic_compartment_id_in_subtree())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAnalyticAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileAnalyticCompartmentIdInSubtree)
+     *             .profileName(testProfile.name())
+     *             .targetId(testTarget.id())
      *             .build());
      * 
      *     }
@@ -19783,24 +19783,24 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_compartment_id_in_subtree())
-     *             .failedLoginAttemptsGreaterThanOrEqual(var_.user_assessment_profile_failed_login_attempts_greater_than_or_equal())
-     *             .failedLoginAttemptsLessThan(var_.user_assessment_profile_failed_login_attempts_less_than())
-     *             .inactiveAccountTimeGreaterThanOrEqual(var_.user_assessment_profile_inactive_account_time_greater_than_or_equal())
-     *             .inactiveAccountTimeLessThan(var_.user_assessment_profile_inactive_account_time_less_than())
-     *             .isUserCreated(var_.user_assessment_profile_is_user_created())
-     *             .passwordLockTimeGreaterThanOrEqual(var_.user_assessment_profile_password_lock_time_greater_than_or_equal())
-     *             .passwordLockTimeLessThan(var_.user_assessment_profile_password_lock_time_less_than())
-     *             .passwordVerificationFunction(var_.user_assessment_profile_password_verification_function())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .sessionsPerUserGreaterThanOrEqual(var_.user_assessment_profile_sessions_per_user_greater_than_or_equal())
-     *             .sessionsPerUserLessThan(var_.user_assessment_profile_sessions_per_user_less_than())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .userCountGreaterThanOrEqual(var_.user_assessment_profile_user_count_greater_than_or_equal())
-     *             .userCountLessThan(var_.user_assessment_profile_user_count_less_than())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
+     *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
+     *             .failedLoginAttemptsLessThan(userAssessmentProfileFailedLoginAttemptsLessThan)
+     *             .inactiveAccountTimeGreaterThanOrEqual(userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual)
+     *             .inactiveAccountTimeLessThan(userAssessmentProfileInactiveAccountTimeLessThan)
+     *             .isUserCreated(userAssessmentProfileIsUserCreated)
+     *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
+     *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
+     *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
+     *             .profileName(testProfile.name())
+     *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
+     *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
+     *             .targetId(testTarget.id())
+     *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
+     *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
      * 
      *     }
@@ -19856,24 +19856,24 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_compartment_id_in_subtree())
-     *             .failedLoginAttemptsGreaterThanOrEqual(var_.user_assessment_profile_failed_login_attempts_greater_than_or_equal())
-     *             .failedLoginAttemptsLessThan(var_.user_assessment_profile_failed_login_attempts_less_than())
-     *             .inactiveAccountTimeGreaterThanOrEqual(var_.user_assessment_profile_inactive_account_time_greater_than_or_equal())
-     *             .inactiveAccountTimeLessThan(var_.user_assessment_profile_inactive_account_time_less_than())
-     *             .isUserCreated(var_.user_assessment_profile_is_user_created())
-     *             .passwordLockTimeGreaterThanOrEqual(var_.user_assessment_profile_password_lock_time_greater_than_or_equal())
-     *             .passwordLockTimeLessThan(var_.user_assessment_profile_password_lock_time_less_than())
-     *             .passwordVerificationFunction(var_.user_assessment_profile_password_verification_function())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .sessionsPerUserGreaterThanOrEqual(var_.user_assessment_profile_sessions_per_user_greater_than_or_equal())
-     *             .sessionsPerUserLessThan(var_.user_assessment_profile_sessions_per_user_less_than())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .userCountGreaterThanOrEqual(var_.user_assessment_profile_user_count_greater_than_or_equal())
-     *             .userCountLessThan(var_.user_assessment_profile_user_count_less_than())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
+     *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
+     *             .failedLoginAttemptsLessThan(userAssessmentProfileFailedLoginAttemptsLessThan)
+     *             .inactiveAccountTimeGreaterThanOrEqual(userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual)
+     *             .inactiveAccountTimeLessThan(userAssessmentProfileInactiveAccountTimeLessThan)
+     *             .isUserCreated(userAssessmentProfileIsUserCreated)
+     *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
+     *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
+     *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
+     *             .profileName(testProfile.name())
+     *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
+     *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
+     *             .targetId(testTarget.id())
+     *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
+     *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
      * 
      *     }
@@ -19929,24 +19929,24 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_compartment_id_in_subtree())
-     *             .failedLoginAttemptsGreaterThanOrEqual(var_.user_assessment_profile_failed_login_attempts_greater_than_or_equal())
-     *             .failedLoginAttemptsLessThan(var_.user_assessment_profile_failed_login_attempts_less_than())
-     *             .inactiveAccountTimeGreaterThanOrEqual(var_.user_assessment_profile_inactive_account_time_greater_than_or_equal())
-     *             .inactiveAccountTimeLessThan(var_.user_assessment_profile_inactive_account_time_less_than())
-     *             .isUserCreated(var_.user_assessment_profile_is_user_created())
-     *             .passwordLockTimeGreaterThanOrEqual(var_.user_assessment_profile_password_lock_time_greater_than_or_equal())
-     *             .passwordLockTimeLessThan(var_.user_assessment_profile_password_lock_time_less_than())
-     *             .passwordVerificationFunction(var_.user_assessment_profile_password_verification_function())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .sessionsPerUserGreaterThanOrEqual(var_.user_assessment_profile_sessions_per_user_greater_than_or_equal())
-     *             .sessionsPerUserLessThan(var_.user_assessment_profile_sessions_per_user_less_than())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .userCountGreaterThanOrEqual(var_.user_assessment_profile_user_count_greater_than_or_equal())
-     *             .userCountLessThan(var_.user_assessment_profile_user_count_less_than())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
+     *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
+     *             .failedLoginAttemptsLessThan(userAssessmentProfileFailedLoginAttemptsLessThan)
+     *             .inactiveAccountTimeGreaterThanOrEqual(userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual)
+     *             .inactiveAccountTimeLessThan(userAssessmentProfileInactiveAccountTimeLessThan)
+     *             .isUserCreated(userAssessmentProfileIsUserCreated)
+     *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
+     *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
+     *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
+     *             .profileName(testProfile.name())
+     *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
+     *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
+     *             .targetId(testTarget.id())
+     *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
+     *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
      * 
      *     }
@@ -20002,24 +20002,24 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentProfiles = DataSafeFunctions.getUserAssessmentProfiles(GetUserAssessmentProfilesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_profile_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_profile_compartment_id_in_subtree())
-     *             .failedLoginAttemptsGreaterThanOrEqual(var_.user_assessment_profile_failed_login_attempts_greater_than_or_equal())
-     *             .failedLoginAttemptsLessThan(var_.user_assessment_profile_failed_login_attempts_less_than())
-     *             .inactiveAccountTimeGreaterThanOrEqual(var_.user_assessment_profile_inactive_account_time_greater_than_or_equal())
-     *             .inactiveAccountTimeLessThan(var_.user_assessment_profile_inactive_account_time_less_than())
-     *             .isUserCreated(var_.user_assessment_profile_is_user_created())
-     *             .passwordLockTimeGreaterThanOrEqual(var_.user_assessment_profile_password_lock_time_greater_than_or_equal())
-     *             .passwordLockTimeLessThan(var_.user_assessment_profile_password_lock_time_less_than())
-     *             .passwordVerificationFunction(var_.user_assessment_profile_password_verification_function())
-     *             .profileName(oci_optimizer_profile.test_profile().name())
-     *             .sessionsPerUserGreaterThanOrEqual(var_.user_assessment_profile_sessions_per_user_greater_than_or_equal())
-     *             .sessionsPerUserLessThan(var_.user_assessment_profile_sessions_per_user_less_than())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .userCountGreaterThanOrEqual(var_.user_assessment_profile_user_count_greater_than_or_equal())
-     *             .userCountLessThan(var_.user_assessment_profile_user_count_less_than())
+     *             .compartmentId(compartmentId)
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentProfileAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentProfileCompartmentIdInSubtree)
+     *             .failedLoginAttemptsGreaterThanOrEqual(userAssessmentProfileFailedLoginAttemptsGreaterThanOrEqual)
+     *             .failedLoginAttemptsLessThan(userAssessmentProfileFailedLoginAttemptsLessThan)
+     *             .inactiveAccountTimeGreaterThanOrEqual(userAssessmentProfileInactiveAccountTimeGreaterThanOrEqual)
+     *             .inactiveAccountTimeLessThan(userAssessmentProfileInactiveAccountTimeLessThan)
+     *             .isUserCreated(userAssessmentProfileIsUserCreated)
+     *             .passwordLockTimeGreaterThanOrEqual(userAssessmentProfilePasswordLockTimeGreaterThanOrEqual)
+     *             .passwordLockTimeLessThan(userAssessmentProfilePasswordLockTimeLessThan)
+     *             .passwordVerificationFunction(userAssessmentProfilePasswordVerificationFunction)
+     *             .profileName(testProfile.name())
+     *             .sessionsPerUserGreaterThanOrEqual(userAssessmentProfileSessionsPerUserGreaterThanOrEqual)
+     *             .sessionsPerUserLessThan(userAssessmentProfileSessionsPerUserLessThan)
+     *             .targetId(testTarget.id())
+     *             .userCountGreaterThanOrEqual(userAssessmentProfileUserCountGreaterThanOrEqual)
+     *             .userCountLessThan(userAssessmentProfileUserCountLessThan)
      *             .build());
      * 
      *     }
@@ -20061,7 +20061,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -20103,7 +20103,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -20145,7 +20145,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -20187,7 +20187,7 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAccessAnalytics = DataSafeFunctions.getUserAssessmentUserAccessAnalytics(GetUserAssessmentUserAccessAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
+     *             .userAssessmentId(testUserAssessment.id())
      *             .build());
      * 
      *     }
@@ -20243,21 +20243,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
-     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
-     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_analytic_user_category())
-     *             .userKey(var_.user_assessment_user_analytic_user_key())
-     *             .userName(oci_identity_user.test_user().name())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
+     *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
+     *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserAnalyticUserCategory)
+     *             .userKey(userAssessmentUserAnalyticUserKey)
+     *             .userName(testUser.name())
      *             .build());
      * 
      *     }
@@ -20313,21 +20313,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
-     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
-     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_analytic_user_category())
-     *             .userKey(var_.user_assessment_user_analytic_user_key())
-     *             .userName(oci_identity_user.test_user().name())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
+     *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
+     *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserAnalyticUserCategory)
+     *             .userKey(userAssessmentUserAnalyticUserKey)
+     *             .userName(testUser.name())
      *             .build());
      * 
      *     }
@@ -20383,21 +20383,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
-     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
-     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_analytic_user_category())
-     *             .userKey(var_.user_assessment_user_analytic_user_key())
-     *             .userName(oci_identity_user.test_user().name())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
+     *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
+     *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserAnalyticUserCategory)
+     *             .userKey(userAssessmentUserAnalyticUserKey)
+     *             .userName(testUser.name())
      *             .build());
      * 
      *     }
@@ -20453,21 +20453,21 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUserAnalytics = DataSafeFunctions.getUserAssessmentUserAnalytics(GetUserAssessmentUserAnalyticsArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_analytic_access_level())
-     *             .accountStatus(var_.user_assessment_user_analytic_account_status())
-     *             .authenticationType(var_.user_assessment_user_analytic_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_analytic_compartment_id_in_subtree())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_analytic_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_analytic_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_analytic_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_analytic_user_category())
-     *             .userKey(var_.user_assessment_user_analytic_user_key())
-     *             .userName(oci_identity_user.test_user().name())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAnalyticAccessLevel)
+     *             .accountStatus(userAssessmentUserAnalyticAccountStatus)
+     *             .authenticationType(userAssessmentUserAnalyticAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserAnalyticCompartmentIdInSubtree)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserAnalyticTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserAnalyticTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserAnalyticTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserAnalyticUserCategory)
+     *             .userKey(userAssessmentUserAnalyticUserKey)
+     *             .userName(testUser.name())
      *             .build());
      * 
      *     }
@@ -20512,26 +20512,26 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_access_level())
-     *             .accountStatus(var_.user_assessment_user_account_status())
-     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
-     *             .authenticationType(var_.user_assessment_user_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
-     *             .schemaLists(var_.user_assessment_user_schema_list())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_user_category())
-     *             .userKey(var_.user_assessment_user_user_key())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .userProfile(var_.user_assessment_user_user_profile())
-     *             .userRole(var_.user_assessment_user_user_role())
-     *             .userType(var_.user_assessment_user_user_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAccessLevel)
+     *             .accountStatus(userAssessmentUserAccountStatus)
+     *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
+     *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
+     *             .schemaLists(userAssessmentUserSchemaList)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserUserCategory)
+     *             .userKey(userAssessmentUserUserKey)
+     *             .userName(testUser.name())
+     *             .userProfile(userAssessmentUserUserProfile)
+     *             .userRole(userAssessmentUserUserRole)
+     *             .userType(userAssessmentUserUserType)
      *             .build());
      * 
      *     }
@@ -20576,26 +20576,26 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_access_level())
-     *             .accountStatus(var_.user_assessment_user_account_status())
-     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
-     *             .authenticationType(var_.user_assessment_user_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
-     *             .schemaLists(var_.user_assessment_user_schema_list())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_user_category())
-     *             .userKey(var_.user_assessment_user_user_key())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .userProfile(var_.user_assessment_user_user_profile())
-     *             .userRole(var_.user_assessment_user_user_role())
-     *             .userType(var_.user_assessment_user_user_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAccessLevel)
+     *             .accountStatus(userAssessmentUserAccountStatus)
+     *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
+     *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
+     *             .schemaLists(userAssessmentUserSchemaList)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserUserCategory)
+     *             .userKey(userAssessmentUserUserKey)
+     *             .userName(testUser.name())
+     *             .userProfile(userAssessmentUserUserProfile)
+     *             .userRole(userAssessmentUserUserRole)
+     *             .userType(userAssessmentUserUserType)
      *             .build());
      * 
      *     }
@@ -20640,26 +20640,26 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_access_level())
-     *             .accountStatus(var_.user_assessment_user_account_status())
-     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
-     *             .authenticationType(var_.user_assessment_user_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
-     *             .schemaLists(var_.user_assessment_user_schema_list())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_user_category())
-     *             .userKey(var_.user_assessment_user_user_key())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .userProfile(var_.user_assessment_user_user_profile())
-     *             .userRole(var_.user_assessment_user_user_role())
-     *             .userType(var_.user_assessment_user_user_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAccessLevel)
+     *             .accountStatus(userAssessmentUserAccountStatus)
+     *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
+     *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
+     *             .schemaLists(userAssessmentUserSchemaList)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserUserCategory)
+     *             .userKey(userAssessmentUserUserKey)
+     *             .userName(testUser.name())
+     *             .userProfile(userAssessmentUserUserProfile)
+     *             .userRole(userAssessmentUserUserRole)
+     *             .userType(userAssessmentUserUserType)
      *             .build());
      * 
      *     }
@@ -20704,26 +20704,26 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessmentUsers = DataSafeFunctions.getUserAssessmentUsers(GetUserAssessmentUsersArgs.builder()
-     *             .userAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .accessLevel(var_.user_assessment_user_access_level())
-     *             .accountStatus(var_.user_assessment_user_account_status())
-     *             .areAllSchemasAccessible(var_.user_assessment_user_are_all_schemas_accessible())
-     *             .authenticationType(var_.user_assessment_user_authentication_type())
-     *             .compartmentIdInSubtree(var_.user_assessment_user_compartment_id_in_subtree())
-     *             .schemaLists(var_.user_assessment_user_schema_list())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeLastLoginGreaterThanOrEqualTo(var_.user_assessment_user_time_last_login_greater_than_or_equal_to())
-     *             .timeLastLoginLessThan(var_.user_assessment_user_time_last_login_less_than())
-     *             .timePasswordLastChangedGreaterThanOrEqualTo(var_.user_assessment_user_time_password_last_changed_greater_than_or_equal_to())
-     *             .timePasswordLastChangedLessThan(var_.user_assessment_user_time_password_last_changed_less_than())
-     *             .timeUserCreatedGreaterThanOrEqualTo(var_.user_assessment_user_time_user_created_greater_than_or_equal_to())
-     *             .timeUserCreatedLessThan(var_.user_assessment_user_time_user_created_less_than())
-     *             .userCategory(var_.user_assessment_user_user_category())
-     *             .userKey(var_.user_assessment_user_user_key())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .userProfile(var_.user_assessment_user_user_profile())
-     *             .userRole(var_.user_assessment_user_user_role())
-     *             .userType(var_.user_assessment_user_user_type())
+     *             .userAssessmentId(testUserAssessment.id())
+     *             .accessLevel(userAssessmentUserAccessLevel)
+     *             .accountStatus(userAssessmentUserAccountStatus)
+     *             .areAllSchemasAccessible(userAssessmentUserAreAllSchemasAccessible)
+     *             .authenticationType(userAssessmentUserAuthenticationType)
+     *             .compartmentIdInSubtree(userAssessmentUserCompartmentIdInSubtree)
+     *             .schemaLists(userAssessmentUserSchemaList)
+     *             .targetId(testTarget.id())
+     *             .timeLastLoginGreaterThanOrEqualTo(userAssessmentUserTimeLastLoginGreaterThanOrEqualTo)
+     *             .timeLastLoginLessThan(userAssessmentUserTimeLastLoginLessThan)
+     *             .timePasswordLastChangedGreaterThanOrEqualTo(userAssessmentUserTimePasswordLastChangedGreaterThanOrEqualTo)
+     *             .timePasswordLastChangedLessThan(userAssessmentUserTimePasswordLastChangedLessThan)
+     *             .timeUserCreatedGreaterThanOrEqualTo(userAssessmentUserTimeUserCreatedGreaterThanOrEqualTo)
+     *             .timeUserCreatedLessThan(userAssessmentUserTimeUserCreatedLessThan)
+     *             .userCategory(userAssessmentUserUserCategory)
+     *             .userKey(userAssessmentUserUserKey)
+     *             .userName(testUser.name())
+     *             .userProfile(userAssessmentUserUserProfile)
+     *             .userRole(userAssessmentUserUserRole)
+     *             .userType(userAssessmentUserUserType)
      *             .build());
      * 
      *     }
@@ -20779,19 +20779,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.user_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.user_assessment_display_name())
-     *             .isBaseline(var_.user_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
-     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .state(var_.user_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
-     *             .triggeredBy(var_.user_assessment_triggered_by())
-     *             .type(var_.user_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(userAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentCompartmentIdInSubtree)
+     *             .displayName(userAssessmentDisplayName)
+     *             .isBaseline(userAssessmentIsBaseline)
+     *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
+     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .state(userAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(userAssessmentTriggeredBy)
+     *             .type(userAssessmentType)
      *             .build());
      * 
      *     }
@@ -20847,19 +20847,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.user_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.user_assessment_display_name())
-     *             .isBaseline(var_.user_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
-     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .state(var_.user_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
-     *             .triggeredBy(var_.user_assessment_triggered_by())
-     *             .type(var_.user_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(userAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentCompartmentIdInSubtree)
+     *             .displayName(userAssessmentDisplayName)
+     *             .isBaseline(userAssessmentIsBaseline)
+     *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
+     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .state(userAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(userAssessmentTriggeredBy)
+     *             .type(userAssessmentType)
      *             .build());
      * 
      *     }
@@ -20915,19 +20915,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.user_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.user_assessment_display_name())
-     *             .isBaseline(var_.user_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
-     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .state(var_.user_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
-     *             .triggeredBy(var_.user_assessment_triggered_by())
-     *             .type(var_.user_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(userAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentCompartmentIdInSubtree)
+     *             .displayName(userAssessmentDisplayName)
+     *             .isBaseline(userAssessmentIsBaseline)
+     *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
+     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .state(userAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(userAssessmentTriggeredBy)
+     *             .type(userAssessmentType)
      *             .build());
      * 
      *     }
@@ -20983,19 +20983,19 @@ public final class DataSafeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUserAssessments = DataSafeFunctions.getUserAssessments(GetUserAssessmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .accessLevel(var_.user_assessment_access_level())
-     *             .compartmentIdInSubtree(var_.user_assessment_compartment_id_in_subtree())
-     *             .displayName(var_.user_assessment_display_name())
-     *             .isBaseline(var_.user_assessment_is_baseline())
-     *             .isScheduleAssessment(var_.user_assessment_is_schedule_assessment())
-     *             .scheduleUserAssessmentId(oci_data_safe_user_assessment.test_user_assessment().id())
-     *             .state(var_.user_assessment_state())
-     *             .targetId(oci_cloud_guard_target.test_target().id())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.user_assessment_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.user_assessment_time_created_less_than())
-     *             .triggeredBy(var_.user_assessment_triggered_by())
-     *             .type(var_.user_assessment_type())
+     *             .compartmentId(compartmentId)
+     *             .accessLevel(userAssessmentAccessLevel)
+     *             .compartmentIdInSubtree(userAssessmentCompartmentIdInSubtree)
+     *             .displayName(userAssessmentDisplayName)
+     *             .isBaseline(userAssessmentIsBaseline)
+     *             .isScheduleAssessment(userAssessmentIsScheduleAssessment)
+     *             .scheduleUserAssessmentId(testUserAssessment.id())
+     *             .state(userAssessmentState)
+     *             .targetId(testTarget.id())
+     *             .timeCreatedGreaterThanOrEqualTo(userAssessmentTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(userAssessmentTimeCreatedLessThan)
+     *             .triggeredBy(userAssessmentTriggeredBy)
+     *             .type(userAssessmentType)
      *             .build());
      * 
      *     }

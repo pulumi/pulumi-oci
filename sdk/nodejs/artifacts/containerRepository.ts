@@ -18,20 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testContainerRepository = new oci.artifacts.ContainerRepository("testContainerRepository", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.container_repository_display_name,
+ * const testContainerRepository = new oci.artifacts.ContainerRepository("test_container_repository", {
+ *     compartmentId: compartmentId,
+ *     displayName: containerRepositoryDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isImmutable: _var.container_repository_is_immutable,
- *     isPublic: _var.container_repository_is_public,
+ *     isImmutable: containerRepositoryIsImmutable,
+ *     isPublic: containerRepositoryIsPublic,
  *     readme: {
- *         content: _var.container_repository_readme_content,
- *         format: _var.container_repository_readme_format,
+ *         content: containerRepositoryReadmeContent,
+ *         format: containerRepositoryReadmeFormat,
  *     },
  * });
  * ```

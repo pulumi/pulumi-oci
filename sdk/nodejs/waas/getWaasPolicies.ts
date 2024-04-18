@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWaasPolicies = oci.Waas.getWaasPolicies({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.waas_policy_display_names,
- *     ids: _var.waas_policy_ids,
- *     states: _var.waas_policy_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.waas_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.waas_policy_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: waasPolicyDisplayNames,
+ *     ids: waasPolicyIds,
+ *     states: waasPolicyStates,
+ *     timeCreatedGreaterThanOrEqualTo: waasPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: waasPolicyTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,12 +110,12 @@ export interface GetWaasPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWaasPolicies = oci.Waas.getWaasPolicies({
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.waas_policy_display_names,
- *     ids: _var.waas_policy_ids,
- *     states: _var.waas_policy_states,
- *     timeCreatedGreaterThanOrEqualTo: _var.waas_policy_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.waas_policy_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     displayNames: waasPolicyDisplayNames,
+ *     ids: waasPolicyIds,
+ *     states: waasPolicyStates,
+ *     timeCreatedGreaterThanOrEqualTo: waasPolicyTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: waasPolicyTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

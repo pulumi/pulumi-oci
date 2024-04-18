@@ -120,9 +120,9 @@ def get_db_node_console_histories(db_node_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_histories = oci.Database.get_db_node_console_histories(db_node_id=oci_database_db_node["test_db_node"]["id"],
-        display_name=var["db_node_console_history_display_name"],
-        state=var["db_node_console_history_state"])
+    test_db_node_console_histories = oci.Database.get_db_node_console_histories(db_node_id=test_db_node["id"],
+        display_name=db_node_console_history_display_name,
+        state=db_node_console_history_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_db_node_console_histories_output(db_node_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_histories = oci.Database.get_db_node_console_histories(db_node_id=oci_database_db_node["test_db_node"]["id"],
-        display_name=var["db_node_console_history_display_name"],
-        state=var["db_node_console_history_state"])
+    test_db_node_console_histories = oci.Database.get_db_node_console_histories(db_node_id=test_db_node["id"],
+        display_name=db_node_console_history_display_name,
+        state=db_node_console_history_state)
     ```
     <!--End PulumiCodeChooser -->
 

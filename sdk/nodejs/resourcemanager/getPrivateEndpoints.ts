@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoints = oci.ResourceManager.getPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_endpoint_display_name,
- *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: privateEndpointDisplayName,
+ *     privateEndpointId: testPrivateEndpoint.id,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoints = oci.ResourceManager.getPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_endpoint_display_name,
- *     privateEndpointId: oci_resourcemanager_private_endpoint.test_private_endpoint.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: privateEndpointDisplayName,
+ *     privateEndpointId: testPrivateEndpoint.id,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

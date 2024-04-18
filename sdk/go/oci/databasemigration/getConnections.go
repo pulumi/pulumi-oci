@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseMigration.GetConnections(ctx, &databasemigration.GetConnectionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Connection_display_name),
-//				State:         pulumi.StringRef(_var.Connection_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(connectionDisplayName),
+//				State:         pulumi.StringRef(connectionState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testApplicationVip = new ApplicationVip(&#34;testApplicationVip&#34;, ApplicationVipArgs.builder()        
- *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
- *             .hostnameLabel(var_.application_vip_hostname_label())
- *             .subnetId(oci_core_subnet.test_subnet().id())
- *             .dbNodeId(oci_database_db_node.test_db_node().id())
- *             .ipAddress(var_.application_vip_ip_address())
+ *             .cloudVmClusterId(testCloudVmCluster.id())
+ *             .hostnameLabel(applicationVipHostnameLabel)
+ *             .subnetId(testSubnet.id())
+ *             .dbNodeId(testDbNode.id())
+ *             .ipAddress(applicationVipIpAddress)
  *             .build());
  * 
  *     }

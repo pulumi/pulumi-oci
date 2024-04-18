@@ -30,10 +30,10 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testSubscriptionProducts = Oci.UsageProxy.GetSubscriptionProducts.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         UsagePeriodKey = @var.Subscription_product_usage_period_key,
-        ///         Producttype = @var.Subscription_product_producttype,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///         UsagePeriodKey = subscriptionProductUsagePeriodKey,
+        ///         Producttype = subscriptionProductProducttype,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testSubscriptionProducts = Oci.UsageProxy.GetSubscriptionProducts.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
-        ///         TenancyId = oci_identity_tenancy.Test_tenancy.Id,
-        ///         UsagePeriodKey = @var.Subscription_product_usage_period_key,
-        ///         Producttype = @var.Subscription_product_producttype,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         TenancyId = testTenancy.Id,
+        ///         UsagePeriodKey = subscriptionProductUsagePeriodKey,
+        ///         Producttype = subscriptionProductProducttype,
         ///     });
         /// 
         /// });

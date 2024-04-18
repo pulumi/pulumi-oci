@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentDataSource(ctx, &managementagent.GetManagementAgentDataSourceArgs{
-//				DataSourceKey:     _var.Management_agent_data_source_data_source_key,
-//				ManagementAgentId: oci_management_agent_management_agent.Test_management_agent.Id,
+//				DataSourceKey:     managementAgentDataSourceDataSourceKey,
+//				ManagementAgentId: testManagementAgent.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

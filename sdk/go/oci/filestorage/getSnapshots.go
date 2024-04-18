@@ -37,11 +37,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetSnapshots(ctx, &filestorage.GetSnapshotsArgs{
-//				CompartmentId:              pulumi.StringRef(_var.Compartment_id),
-//				FileSystemId:               pulumi.StringRef(oci_file_storage_file_system.Test_file_system.Id),
-//				FilesystemSnapshotPolicyId: pulumi.StringRef(oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id),
-//				Id:                         pulumi.StringRef(_var.Snapshot_id),
-//				State:                      pulumi.StringRef(_var.Snapshot_state),
+//				CompartmentId:              pulumi.StringRef(compartmentId),
+//				FileSystemId:               pulumi.StringRef(testFileSystem.Id),
+//				FilesystemSnapshotPolicyId: pulumi.StringRef(testFilesystemSnapshotPolicy.Id),
+//				Id:                         pulumi.StringRef(snapshotId),
+//				State:                      pulumi.StringRef(snapshotState),
 //			}, nil)
 //			if err != nil {
 //				return err

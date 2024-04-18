@@ -117,9 +117,9 @@ def get_compute_capacity_reservation_instances(availability_domain: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-        availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
-        compartment_id=var["compartment_id"])
+    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=test_capacity_reservation["id"],
+        availability_domain=compute_capacity_reservation_instance_availability_domain,
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_compute_capacity_reservation_instances_output(availability_domain: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=oci_core_capacity_reservation["test_capacity_reservation"]["id"],
-        availability_domain=var["compute_capacity_reservation_instance_availability_domain"],
-        compartment_id=var["compartment_id"])
+    test_compute_capacity_reservation_instances = oci.Core.get_compute_capacity_reservation_instances(capacity_reservation_id=test_capacity_reservation["id"],
+        availability_domain=compute_capacity_reservation_instance_availability_domain,
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

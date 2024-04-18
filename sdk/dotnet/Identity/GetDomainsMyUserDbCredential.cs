@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyUserDbCredential = Oci.Identity.GetDomainsMyUserDbCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyUserDbCredentialId = oci_identity_db_credential.Test_db_credential.Id,
-        ///         Authorization = @var.My_user_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_user_db_credential_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyUserDbCredentialId = testDbCredential.Id,
+        ///         Authorization = myUserDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myUserDbCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyUserDbCredential = Oci.Identity.GetDomainsMyUserDbCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyUserDbCredentialId = oci_identity_db_credential.Test_db_credential.Id,
-        ///         Authorization = @var.My_user_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_user_db_credential_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyUserDbCredentialId = testDbCredential.Id,
+        ///         Authorization = myUserDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myUserDbCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

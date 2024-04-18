@@ -25,11 +25,12 @@ namespace Pulumi.Oci.Limits
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testQuota = new Oci.Limits.Quota("testQuota", new()
+    ///     var testQuota = new Oci.Limits.Quota("test_quota", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Quota_description,
-    ///         Statements = @var.Quota_statements,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = quotaDescription,
+    ///         Name = quotaName,
+    ///         Statements = quotaStatements,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -42,9 +43,9 @@ namespace Pulumi.Oci.Limits
     ///         {
     ///             new Oci.Limits.Inputs.QuotaLockArgs
     ///             {
-    ///                 Type = @var.Quota_locks_type,
-    ///                 Message = @var.Quota_locks_message,
-    ///                 RelatedResourceId = oci_limits_related_resource.Test_related_resource.Id,
+    ///                 Type = quotaLocksType,
+    ///                 Message = quotaLocksMessage,
+    ///                 RelatedResourceId = testRelatedResource.Id,
     ///             },
     ///         },
     ///     });

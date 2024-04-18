@@ -25,13 +25,14 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkFirewallPolicyMappedSecret = new Oci.NetworkFirewall.NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret", new()
+    ///     var testNetworkFirewallPolicyMappedSecret = new Oci.NetworkFirewall.NetworkFirewallPolicyMappedSecret("test_network_firewall_policy_mapped_secret", new()
     ///     {
-    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-    ///         Source = @var.Network_firewall_policy_mapped_secret_source,
-    ///         Type = @var.Network_firewall_policy_mapped_secret_type,
-    ///         VaultSecretId = oci_vault_secret.Test_secret.Id,
-    ///         VersionNumber = @var.Network_firewall_policy_mapped_secret_version_number,
+    ///         Name = networkFirewallPolicyMappedSecretName,
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Source = networkFirewallPolicyMappedSecretSource,
+    ///         Type = networkFirewallPolicyMappedSecretType,
+    ///         VaultSecretId = testSecret.Id,
+    ///         VersionNumber = networkFirewallPolicyMappedSecretVersionNumber,
     ///     });
     /// 
     /// });

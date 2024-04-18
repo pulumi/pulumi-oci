@@ -25,12 +25,12 @@ namespace Pulumi.Oci.Functions
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFunction = new Oci.Functions.Function("testFunction", new()
+    ///     var testFunction = new Oci.Functions.Function("test_function", new()
     ///     {
-    ///         ApplicationId = oci_functions_application.Test_application.Id,
-    ///         DisplayName = @var.Function_display_name,
-    ///         MemoryInMbs = @var.Function_memory_in_mbs,
-    ///         Config = @var.Function_config,
+    ///         ApplicationId = testApplication.Id,
+    ///         DisplayName = functionDisplayName,
+    ///         MemoryInMbs = functionMemoryInMbs,
+    ///         Config = functionConfig,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -39,22 +39,22 @@ namespace Pulumi.Oci.Functions
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Image = @var.Function_image,
-    ///         ImageDigest = @var.Function_image_digest,
+    ///         Image = functionImage,
+    ///         ImageDigest = functionImageDigest,
     ///         ProvisionedConcurrencyConfig = new Oci.Functions.Inputs.FunctionProvisionedConcurrencyConfigArgs
     ///         {
-    ///             Strategy = @var.Function_provisioned_concurrency_config_strategy,
-    ///             Count = @var.Function_provisioned_concurrency_config_count,
+    ///             Strategy = functionProvisionedConcurrencyConfigStrategy,
+    ///             Count = functionProvisionedConcurrencyConfigCount,
     ///         },
     ///         SourceDetails = new Oci.Functions.Inputs.FunctionSourceDetailsArgs
     ///         {
-    ///             PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
-    ///             SourceType = @var.Function_source_details_source_type,
+    ///             PbfListingId = testPbfListing.Id,
+    ///             SourceType = functionSourceDetailsSourceType,
     ///         },
-    ///         TimeoutInSeconds = @var.Function_timeout_in_seconds,
+    ///         TimeoutInSeconds = functionTimeoutInSeconds,
     ///         TraceConfig = new Oci.Functions.Inputs.FunctionTraceConfigArgs
     ///         {
-    ///             IsEnabled = @var.Function_trace_config_is_enabled,
+    ///             IsEnabled = functionTraceConfigIsEnabled,
     ///         },
     ///     });
     /// 

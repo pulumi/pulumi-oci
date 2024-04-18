@@ -554,24 +554,24 @@ class SensitiveDataModel(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sensitive_data_model = oci.data_safe.SensitiveDataModel("testSensitiveDataModel",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            app_suite_name=var["sensitive_data_model_app_suite_name"],
+        test_sensitive_data_model = oci.data_safe.SensitiveDataModel("test_sensitive_data_model",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
+            app_suite_name=sensitive_data_model_app_suite_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["sensitive_data_model_description"],
-            display_name=var["sensitive_data_model_display_name"],
+            description=sensitive_data_model_description,
+            display_name=sensitive_data_model_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_app_defined_relation_discovery_enabled=var["sensitive_data_model_is_app_defined_relation_discovery_enabled"],
-            is_include_all_schemas=var["sensitive_data_model_is_include_all_schemas"],
-            is_include_all_sensitive_types=var["sensitive_data_model_is_include_all_sensitive_types"],
-            is_sample_data_collection_enabled=var["sensitive_data_model_is_sample_data_collection_enabled"],
-            schemas_for_discoveries=var["sensitive_data_model_schemas_for_discovery"],
-            sensitive_type_ids_for_discoveries=var["sensitive_data_model_sensitive_type_ids_for_discovery"])
+            is_app_defined_relation_discovery_enabled=sensitive_data_model_is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=sensitive_data_model_is_include_all_schemas,
+            is_include_all_sensitive_types=sensitive_data_model_is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled,
+            schemas_for_discoveries=sensitive_data_model_schemas_for_discovery,
+            sensitive_type_ids_for_discoveries=sensitive_data_model_sensitive_type_ids_for_discovery)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -623,24 +623,24 @@ class SensitiveDataModel(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_sensitive_data_model = oci.data_safe.SensitiveDataModel("testSensitiveDataModel",
-            compartment_id=var["compartment_id"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            app_suite_name=var["sensitive_data_model_app_suite_name"],
+        test_sensitive_data_model = oci.data_safe.SensitiveDataModel("test_sensitive_data_model",
+            compartment_id=compartment_id,
+            target_id=test_target["id"],
+            app_suite_name=sensitive_data_model_app_suite_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["sensitive_data_model_description"],
-            display_name=var["sensitive_data_model_display_name"],
+            description=sensitive_data_model_description,
+            display_name=sensitive_data_model_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_app_defined_relation_discovery_enabled=var["sensitive_data_model_is_app_defined_relation_discovery_enabled"],
-            is_include_all_schemas=var["sensitive_data_model_is_include_all_schemas"],
-            is_include_all_sensitive_types=var["sensitive_data_model_is_include_all_sensitive_types"],
-            is_sample_data_collection_enabled=var["sensitive_data_model_is_sample_data_collection_enabled"],
-            schemas_for_discoveries=var["sensitive_data_model_schemas_for_discovery"],
-            sensitive_type_ids_for_discoveries=var["sensitive_data_model_sensitive_type_ids_for_discovery"])
+            is_app_defined_relation_discovery_enabled=sensitive_data_model_is_app_defined_relation_discovery_enabled,
+            is_include_all_schemas=sensitive_data_model_is_include_all_schemas,
+            is_include_all_sensitive_types=sensitive_data_model_is_include_all_sensitive_types,
+            is_sample_data_collection_enabled=sensitive_data_model_is_sample_data_collection_enabled,
+            schemas_for_discoveries=sensitive_data_model_schemas_for_discovery,
+            sensitive_type_ids_for_discoveries=sensitive_data_model_sensitive_type_ids_for_discovery)
         ```
         <!--End PulumiCodeChooser -->
 

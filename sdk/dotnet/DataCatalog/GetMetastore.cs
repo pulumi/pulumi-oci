@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testMetastore = Oci.DataCatalog.GetMetastore.Invoke(new()
         ///     {
-        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+        ///         MetastoreId = testMetastoreOciDatacatalogMetastore.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testMetastore = Oci.DataCatalog.GetMetastore.Invoke(new()
         ///     {
-        ///         MetastoreId = oci_datacatalog_metastore.Test_metastore.Id,
+        ///         MetastoreId = testMetastoreOciDatacatalogMetastore.Id,
         ///     });
         /// 
         /// });

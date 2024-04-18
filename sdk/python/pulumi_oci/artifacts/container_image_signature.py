@@ -431,14 +431,14 @@ class ContainerImageSignature(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_image_signature = oci.artifacts.ContainerImageSignature("testContainerImageSignature",
-            compartment_id=var["compartment_id"],
-            image_id=oci_core_image["test_image"]["id"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message=var["container_image_signature_message"],
-            signature=var["container_image_signature_signature"],
-            signing_algorithm=var["container_image_signature_signing_algorithm"],
+        test_container_image_signature = oci.artifacts.ContainerImageSignature("test_container_image_signature",
+            compartment_id=compartment_id,
+            image_id=test_image["id"],
+            kms_key_id=test_key["id"],
+            kms_key_version_id=test_key_version["id"],
+            message=container_image_signature_message,
+            signature=container_image_signature_signature,
+            signing_algorithm=container_image_signature_signing_algorithm,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -490,14 +490,14 @@ class ContainerImageSignature(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_image_signature = oci.artifacts.ContainerImageSignature("testContainerImageSignature",
-            compartment_id=var["compartment_id"],
-            image_id=oci_core_image["test_image"]["id"],
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            kms_key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message=var["container_image_signature_message"],
-            signature=var["container_image_signature_signature"],
-            signing_algorithm=var["container_image_signature_signing_algorithm"],
+        test_container_image_signature = oci.artifacts.ContainerImageSignature("test_container_image_signature",
+            compartment_id=compartment_id,
+            image_id=test_image["id"],
+            kms_key_id=test_key["id"],
+            kms_key_version_id=test_key_version["id"],
+            message=container_image_signature_message,
+            signature=container_image_signature_signature,
+            signing_algorithm=container_image_signature_signing_algorithm,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

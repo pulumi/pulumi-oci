@@ -33,8 +33,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.NewAutonomousContainerDatabaseDataguardAssociationOperation(ctx, "switchover", &Database.AutonomousContainerDatabaseDataguardAssociationOperationArgs{
 //				Operation:                     pulumi.String("switchover"),
-//				AutonomousContainerDatabaseId: pulumi.Any(data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Autonomous_container_database_id),
-//				AutonomousContainerDatabaseDataguardAssociationId: pulumi.Any(data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Id),
+//				AutonomousContainerDatabaseId: pulumi.Any(dataguardAssociations.AutonomousContainerDatabaseDataguardAssociations[0].Autonomous_container_database_id),
+//				AutonomousContainerDatabaseDataguardAssociationId: pulumi.Any(dataguardAssociations.AutonomousContainerDatabaseDataguardAssociations[0].Id),
 //			})
 //			if err != nil {
 //				return err

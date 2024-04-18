@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceConfiguration = Oci.Core.GetInstanceConfiguration.Invoke(new()
         ///     {
-        ///         InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+        ///         InstanceConfigurationId = testInstanceConfigurationOciCoreInstanceConfiguration.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceConfiguration = Oci.Core.GetInstanceConfiguration.Invoke(new()
         ///     {
-        ///         InstanceConfigurationId = oci_core_instance_configuration.Test_instance_configuration.Id,
+        ///         InstanceConfigurationId = testInstanceConfigurationOciCoreInstanceConfiguration.Id,
         ///     });
         /// 
         /// });

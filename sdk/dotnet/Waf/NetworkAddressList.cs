@@ -25,27 +25,27 @@ namespace Pulumi.Oci.Waf
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkAddressList = new Oci.Waf.NetworkAddressList("testNetworkAddressList", new()
+    ///     var testNetworkAddressList = new Oci.Waf.NetworkAddressList("test_network_address_list", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Type = @var.Network_address_list_type,
-    ///         Addresses = @var.Network_address_list_addresses,
+    ///         CompartmentId = compartmentId,
+    ///         Type = networkAddressListType,
+    ///         Addresses = networkAddressListAddresses,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Network_address_list_display_name,
+    ///         DisplayName = networkAddressListDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         SystemTags = @var.Network_address_list_system_tags,
+    ///         SystemTags = networkAddressListSystemTags,
     ///         VcnAddresses = new[]
     ///         {
     ///             new Oci.Waf.Inputs.NetworkAddressListVcnAddressArgs
     ///             {
-    ///                 Addresses = @var.Network_address_list_vcn_addresses_addresses,
-    ///                 VcnId = oci_core_vcn.Test_vcn.Id,
+    ///                 Addresses = networkAddressListVcnAddressesAddresses,
+    ///                 VcnId = testVcn.Id,
     ///             },
     ///         },
     ///     });

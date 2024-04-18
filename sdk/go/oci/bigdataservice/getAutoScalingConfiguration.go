@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetAutoScalingConfiguration(ctx, &bigdataservice.GetAutoScalingConfigurationArgs{
-//				AutoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.Test_auto_scaling_configuration.Id,
-//				BdsInstanceId:              oci_bds_bds_instance.Test_bds_instance.Id,
+//				AutoScalingConfigurationId: testAutoScalingConfigurationOciAutoscalingAutoScalingConfiguration.Id,
+//				BdsInstanceId:              testBdsInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

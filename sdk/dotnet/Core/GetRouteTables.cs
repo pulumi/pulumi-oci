@@ -33,10 +33,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testRouteTables = Oci.Core.GetRouteTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Route_table_display_name,
-        ///         State = @var.Route_table_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = routeTableDisplayName,
+        ///         State = routeTableState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -68,10 +68,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testRouteTables = Oci.Core.GetRouteTables.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Route_table_display_name,
-        ///         State = @var.Route_table_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = routeTableDisplayName,
+        ///         State = routeTableState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

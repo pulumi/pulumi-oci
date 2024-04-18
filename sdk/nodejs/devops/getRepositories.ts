@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositories = oci.DevOps.getRepositories({
- *     compartmentId: _var.compartment_id,
- *     name: _var.repository_name,
- *     projectId: oci_devops_project.test_project.id,
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     state: _var.repository_state,
+ *     compartmentId: compartmentId,
+ *     name: repositoryName,
+ *     projectId: testProject.id,
+ *     repositoryId: testRepository.id,
+ *     state: repositoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,11 +113,11 @@ export interface GetRepositoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepositories = oci.DevOps.getRepositories({
- *     compartmentId: _var.compartment_id,
- *     name: _var.repository_name,
- *     projectId: oci_devops_project.test_project.id,
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     state: _var.repository_state,
+ *     compartmentId: compartmentId,
+ *     name: repositoryName,
+ *     projectId: testProject.id,
+ *     repositoryId: testRepository.id,
+ *     state: repositoryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

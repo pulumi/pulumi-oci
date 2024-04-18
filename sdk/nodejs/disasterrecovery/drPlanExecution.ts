@@ -18,17 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlanExecution = new oci.disasterrecovery.DrPlanExecution("testDrPlanExecution", {
+ * const testDrPlanExecution = new oci.disasterrecovery.DrPlanExecution("test_dr_plan_execution", {
  *     executionOptions: {
- *         planExecutionType: _var.dr_plan_execution_execution_options_plan_execution_type,
- *         arePrechecksEnabled: _var.dr_plan_execution_execution_options_are_prechecks_enabled,
- *         areWarningsIgnored: _var.dr_plan_execution_execution_options_are_warnings_ignored,
+ *         planExecutionType: drPlanExecutionExecutionOptionsPlanExecutionType,
+ *         arePrechecksEnabled: drPlanExecutionExecutionOptionsArePrechecksEnabled,
+ *         areWarningsIgnored: drPlanExecutionExecutionOptionsAreWarningsIgnored,
  *     },
- *     planId: oci_disaster_recovery_plan.test_plan.id,
+ *     planId: testPlan.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.dr_plan_execution_display_name,
+ *     displayName: drPlanExecutionDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

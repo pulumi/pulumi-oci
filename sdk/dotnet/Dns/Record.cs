@@ -31,14 +31,14 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRecord = new Oci.Dns.Record("testRecord", new()
+    ///     var testRecord = new Oci.Dns.Record("test_record", new()
     ///     {
-    ///         ZoneNameOrId = oci_dns_zone_name_or.Test_zone_name_or.Id,
-    ///         Domain = @var.Record_items_domain,
-    ///         Rtype = @var.Record_items_rtype,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Rdata = @var.Record_items_rdata,
-    ///         Ttl = @var.Record_items_ttl,
+    ///         ZoneNameOrId = testZoneNameOr.Id,
+    ///         Domain = recordItemsDomain,
+    ///         Rtype = recordItemsRtype,
+    ///         CompartmentId = compartmentId,
+    ///         Rdata = recordItemsRdata,
+    ///         Ttl = recordItemsTtl,
     ///     });
     /// 
     /// });

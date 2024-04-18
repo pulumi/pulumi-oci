@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaWorkflowJobFacts = oci.MediaServices.getMediaWorkflowJobFacts({
- *     mediaWorkflowJobId: oci_media_services_media_workflow_job.test_media_workflow_job.id,
- *     key: _var.media_workflow_job_fact_key,
- *     type: _var.media_workflow_job_fact_type,
+ *     mediaWorkflowJobId: testMediaWorkflowJob.id,
+ *     key: mediaWorkflowJobFactKey,
+ *     type: mediaWorkflowJobFactType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,9 +97,9 @@ export interface GetMediaWorkflowJobFactsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaWorkflowJobFacts = oci.MediaServices.getMediaWorkflowJobFacts({
- *     mediaWorkflowJobId: oci_media_services_media_workflow_job.test_media_workflow_job.id,
- *     key: _var.media_workflow_job_fact_key,
- *     type: _var.media_workflow_job_fact_type,
+ *     mediaWorkflowJobId: testMediaWorkflowJob.id,
+ *     key: mediaWorkflowJobFactKey,
+ *     type: mediaWorkflowJobFactType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDiscoveryJobsResult = new Oci.DataSafe.DiscoveryJobsResult("testDiscoveryJobsResult");
+    ///     var testDiscoveryJobsResult = new Oci.DataSafe.DiscoveryJobsResult("test_discovery_jobs_result");
     /// 
     /// });
     /// ```

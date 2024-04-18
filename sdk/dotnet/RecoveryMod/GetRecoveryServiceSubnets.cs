@@ -30,11 +30,11 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testRecoveryServiceSubnets = Oci.RecoveryMod.GetRecoveryServiceSubnets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Recovery_service_subnet_display_name,
-        ///         Id = @var.Recovery_service_subnet_id,
-        ///         State = @var.Recovery_service_subnet_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = recoveryServiceSubnetDisplayName,
+        ///         Id = recoveryServiceSubnetId,
+        ///         State = recoveryServiceSubnetState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testRecoveryServiceSubnets = Oci.RecoveryMod.GetRecoveryServiceSubnets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Recovery_service_subnet_display_name,
-        ///         Id = @var.Recovery_service_subnet_id,
-        ///         State = @var.Recovery_service_subnet_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = recoveryServiceSubnetDisplayName,
+        ///         Id = recoveryServiceSubnetId,
+        ///         State = recoveryServiceSubnetState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

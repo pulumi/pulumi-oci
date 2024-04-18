@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LicenseManager.GetTopUtilizedResources(ctx, &licensemanager.GetTopUtilizedResourcesArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Top_utilized_resource_is_compartment_id_in_subtree),
-//				ResourceUnitType:         pulumi.StringRef(_var.Top_utilized_resource_resource_unit_type),
+//				CompartmentId:            compartmentId,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(topUtilizedResourceIsCompartmentIdInSubtree),
+//				ResourceUnitType:         pulumi.StringRef(topUtilizedResourceResourceUnitType),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateApplications = oci.ServiceCatalog.getPrivateApplications({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_application_display_name,
- *     privateApplicationId: oci_service_catalog_private_application.test_private_application.id,
+ *     compartmentId: compartmentId,
+ *     displayName: privateApplicationDisplayName,
+ *     privateApplicationId: testPrivateApplication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetPrivateApplicationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateApplications = oci.ServiceCatalog.getPrivateApplications({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.private_application_display_name,
- *     privateApplicationId: oci_service_catalog_private_application.test_private_application.id,
+ *     compartmentId: compartmentId,
+ *     displayName: privateApplicationDisplayName,
+ *     privateApplicationId: testPrivateApplication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

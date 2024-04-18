@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetUsagePlan(ctx, &apigateway.GetUsagePlanArgs{
-//				UsagePlanId: oci_apigateway_usage_plan.Test_usage_plan.Id,
+//				UsagePlanId: testUsagePlanOciApigatewayUsagePlan.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -77,9 +77,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -121,9 +121,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -165,9 +165,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -209,9 +209,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_network_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -253,9 +253,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
-     *             .ipVersion(var_.backend_set_ip_version())
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .ipVersion(backendSetIpVersion)
      *             .build());
      * 
      *     }
@@ -297,9 +297,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
-     *             .ipVersion(var_.backend_set_ip_version())
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .ipVersion(backendSetIpVersion)
      *             .build());
      * 
      *     }
@@ -341,9 +341,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
-     *             .ipVersion(var_.backend_set_ip_version())
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .ipVersion(backendSetIpVersion)
      *             .build());
      * 
      *     }
@@ -385,9 +385,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
-     *             .ipVersion(var_.backend_set_ip_version())
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .ipVersion(backendSetIpVersion)
      *             .build());
      * 
      *     }
@@ -441,7 +441,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -483,7 +483,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -525,7 +525,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -567,7 +567,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -609,8 +609,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -652,8 +652,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -695,8 +695,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -738,8 +738,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -781,8 +781,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -824,8 +824,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -867,8 +867,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -910,8 +910,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(oci_network_load_balancer_listener.test_listener().name())
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -953,7 +953,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -995,7 +995,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1037,7 +1037,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1079,7 +1079,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1121,7 +1121,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1163,7 +1163,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1205,7 +1205,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1247,7 +1247,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1289,7 +1289,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1331,7 +1331,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1373,7 +1373,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1415,7 +1415,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1457,9 +1457,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_load_balancer_display_name())
-     *             .state(var_.network_load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkLoadBalancerDisplayName)
+     *             .state(networkLoadBalancerState)
      *             .build());
      * 
      *     }
@@ -1501,9 +1501,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_load_balancer_display_name())
-     *             .state(var_.network_load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkLoadBalancerDisplayName)
+     *             .state(networkLoadBalancerState)
      *             .build());
      * 
      *     }
@@ -1545,9 +1545,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_load_balancer_display_name())
-     *             .state(var_.network_load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkLoadBalancerDisplayName)
+     *             .state(networkLoadBalancerState)
      *             .build());
      * 
      *     }
@@ -1589,9 +1589,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancers = NetworkLoadBalancerFunctions.getNetworkLoadBalancers(GetNetworkLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.network_load_balancer_display_name())
-     *             .state(var_.network_load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(networkLoadBalancerDisplayName)
+     *             .state(networkLoadBalancerState)
      *             .build());
      * 
      *     }

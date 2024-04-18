@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceCatalogAssociation = new oci.servicecatalog.CatalogAssociation("testServiceCatalogAssociation", {
- *     entityId: oci_service_catalog_entity.test_entity.id,
- *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
- *     entityType: _var.service_catalog_association_entity_type,
+ * const testServiceCatalogAssociation = new oci.servicecatalog.CatalogAssociation("test_service_catalog_association", {
+ *     entityId: testEntity.id,
+ *     serviceCatalogId: testServiceCatalog.id,
+ *     entityType: serviceCatalogAssociationEntityType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

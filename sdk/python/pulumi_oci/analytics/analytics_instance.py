@@ -536,34 +536,35 @@ class AnalyticsInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_analytics_instance = oci.analytics.AnalyticsInstance("testAnalyticsInstance",
+        test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
             capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=var["analytics_instance_capacity_capacity_type"],
-                capacity_value=var["analytics_instance_capacity_capacity_value"],
+                capacity_type=analytics_instance_capacity_capacity_type,
+                capacity_value=analytics_instance_capacity_capacity_value,
             ),
-            compartment_id=var["compartment_id"],
-            feature_set=var["analytics_instance_feature_set"],
-            idcs_access_token=var["analytics_instance_idcs_access_token"],
-            license_type=var["analytics_instance_license_type"],
+            compartment_id=compartment_id,
+            feature_set=analytics_instance_feature_set,
+            idcs_access_token=analytics_instance_idcs_access_token,
+            license_type=analytics_instance_license_type,
+            name=analytics_instance_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["analytics_instance_description"],
-            email_notification=var["analytics_instance_email_notification"],
+            description=analytics_instance_description,
+            email_notification=analytics_instance_email_notification,
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
+            kms_key_id=test_key["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
-                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-                whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
-                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
+                network_endpoint_type=analytics_instance_network_endpoint_details_network_endpoint_type,
+                network_security_group_ids=analytics_instance_network_endpoint_details_network_security_group_ids,
+                subnet_id=test_subnet["id"],
+                vcn_id=test_vcn["id"],
+                whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_ips,
+                whitelisted_services=analytics_instance_network_endpoint_details_whitelisted_services,
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
-                    whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
+                    id=analytics_instance_network_endpoint_details_whitelisted_vcns_id,
+                    whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
                 )],
             ))
         ```
@@ -616,34 +617,35 @@ class AnalyticsInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_analytics_instance = oci.analytics.AnalyticsInstance("testAnalyticsInstance",
+        test_analytics_instance = oci.analytics.AnalyticsInstance("test_analytics_instance",
             capacity=oci.analytics.AnalyticsInstanceCapacityArgs(
-                capacity_type=var["analytics_instance_capacity_capacity_type"],
-                capacity_value=var["analytics_instance_capacity_capacity_value"],
+                capacity_type=analytics_instance_capacity_capacity_type,
+                capacity_value=analytics_instance_capacity_capacity_value,
             ),
-            compartment_id=var["compartment_id"],
-            feature_set=var["analytics_instance_feature_set"],
-            idcs_access_token=var["analytics_instance_idcs_access_token"],
-            license_type=var["analytics_instance_license_type"],
+            compartment_id=compartment_id,
+            feature_set=analytics_instance_feature_set,
+            idcs_access_token=analytics_instance_idcs_access_token,
+            license_type=analytics_instance_license_type,
+            name=analytics_instance_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["analytics_instance_description"],
-            email_notification=var["analytics_instance_email_notification"],
+            description=analytics_instance_description,
+            email_notification=analytics_instance_email_notification,
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
+            kms_key_id=test_key["id"],
             network_endpoint_details=oci.analytics.AnalyticsInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["analytics_instance_network_endpoint_details_network_endpoint_type"],
-                network_security_group_ids=var["analytics_instance_network_endpoint_details_network_security_group_ids"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
-                whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_ips"],
-                whitelisted_services=var["analytics_instance_network_endpoint_details_whitelisted_services"],
+                network_endpoint_type=analytics_instance_network_endpoint_details_network_endpoint_type,
+                network_security_group_ids=analytics_instance_network_endpoint_details_network_security_group_ids,
+                subnet_id=test_subnet["id"],
+                vcn_id=test_vcn["id"],
+                whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_ips,
+                whitelisted_services=analytics_instance_network_endpoint_details_whitelisted_services,
                 whitelisted_vcns=[oci.analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs(
-                    id=var["analytics_instance_network_endpoint_details_whitelisted_vcns_id"],
-                    whitelisted_ips=var["analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips"],
+                    id=analytics_instance_network_endpoint_details_whitelisted_vcns_id,
+                    whitelisted_ips=analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips,
                 )],
             ))
         ```

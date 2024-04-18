@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemComputePerformances = Oci.Database.GetDbSystemComputePerformances.Invoke(new()
         ///     {
-        ///         DbSystemShape = @var.Db_system_compute_performance_db_system_shape,
+        ///         DbSystemShape = dbSystemComputePerformanceDbSystemShape,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemComputePerformances = Oci.Database.GetDbSystemComputePerformances.Invoke(new()
         ///     {
-        ///         DbSystemShape = @var.Db_system_compute_performance_db_system_shape,
+        ///         DbSystemShape = dbSystemComputePerformanceDbSystemShape,
         ///     });
         /// 
         /// });

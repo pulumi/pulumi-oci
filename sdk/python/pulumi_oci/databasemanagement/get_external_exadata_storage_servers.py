@@ -114,9 +114,9 @@ def get_external_exadata_storage_servers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_servers = oci.DatabaseManagement.get_external_exadata_storage_servers(compartment_id=var["compartment_id"],
-        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-        display_name=var["external_exadata_storage_server_display_name"])
+    test_external_exadata_storage_servers = oci.DatabaseManagement.get_external_exadata_storage_servers(compartment_id=compartment_id,
+        external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
+        display_name=external_exadata_storage_server_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,9 +160,9 @@ def get_external_exadata_storage_servers_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_external_exadata_storage_servers = oci.DatabaseManagement.get_external_exadata_storage_servers(compartment_id=var["compartment_id"],
-        external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-        display_name=var["external_exadata_storage_server_display_name"])
+    test_external_exadata_storage_servers = oci.DatabaseManagement.get_external_exadata_storage_servers(compartment_id=compartment_id,
+        external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
+        display_name=external_exadata_storage_server_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

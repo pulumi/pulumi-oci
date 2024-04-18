@@ -45,15 +45,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackend = new Backend(&#34;testBackend&#34;, BackendArgs.builder()        
- *             .backendSetName(oci_network_load_balancer_backend_set.test_backend_set().name())
- *             .networkLoadBalancerId(oci_network_load_balancer_network_load_balancer.test_network_load_balancer().id())
- *             .port(var_.backend_port())
- *             .ipAddress(var_.backend_ip_address())
- *             .isBackup(var_.backend_is_backup())
- *             .isDrain(var_.backend_is_drain())
- *             .isOffline(var_.backend_is_offline())
- *             .targetId(oci_cloud_guard_target.test_target().id())
- *             .weight(var_.backend_weight())
+ *             .backendSetName(testBackendSet.name())
+ *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+ *             .port(backendPort)
+ *             .ipAddress(backendIpAddress)
+ *             .isBackup(backendIsBackup)
+ *             .isDrain(backendIsDrain)
+ *             .isOffline(backendIsOffline)
+ *             .name(backendName)
+ *             .targetId(testTarget.id())
+ *             .weight(backendWeight)
  *             .build());
  * 
  *     }

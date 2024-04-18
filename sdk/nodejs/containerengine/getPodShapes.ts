@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPodShapes = oci.ContainerEngine.getPodShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.pod_shape_availability_domain,
- *     name: _var.pod_shape_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: podShapeAvailabilityDomain,
+ *     name: podShapeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetPodShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPodShapes = oci.ContainerEngine.getPodShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.pod_shape_availability_domain,
- *     name: _var.pod_shape_name,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: podShapeAvailabilityDomain,
+ *     name: podShapeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

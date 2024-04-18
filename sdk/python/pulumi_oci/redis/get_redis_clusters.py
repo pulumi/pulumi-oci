@@ -121,10 +121,10 @@ def get_redis_clusters(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_clusters = oci.Redis.get_redis_clusters(compartment_id=var["compartment_id"],
-        display_name=var["redis_cluster_display_name"],
-        id=var["redis_cluster_id"],
-        state=var["redis_cluster_state"])
+    test_redis_clusters = oci.Redis.get_redis_clusters(compartment_id=compartment_id,
+        display_name=redis_cluster_display_name,
+        id=redis_cluster_id,
+        state=redis_cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_redis_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_redis_clusters = oci.Redis.get_redis_clusters(compartment_id=var["compartment_id"],
-        display_name=var["redis_cluster_display_name"],
-        id=var["redis_cluster_id"],
-        state=var["redis_cluster_state"])
+    test_redis_clusters = oci.Redis.get_redis_clusters(compartment_id=compartment_id,
+        display_name=redis_cluster_display_name,
+        id=redis_cluster_id,
+        state=redis_cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -44,12 +44,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetGuardTargets(ctx, &cloudguard.GetGuardTargetsArgs{
-//				CompartmentId:                     _var.Compartment_id,
-//				AccessLevel:                       pulumi.StringRef(_var.Target_access_level),
-//				CompartmentIdInSubtree:            pulumi.BoolRef(_var.Target_compartment_id_in_subtree),
-//				DisplayName:                       pulumi.StringRef(_var.Target_display_name),
-//				IsNonSecurityZoneTargetsOnlyQuery: pulumi.BoolRef(_var.Target_is_non_security_zone_targets_only_query),
-//				State:                             pulumi.StringRef(_var.Target_state),
+//				CompartmentId:                     compartmentId,
+//				AccessLevel:                       pulumi.StringRef(targetAccessLevel),
+//				CompartmentIdInSubtree:            pulumi.BoolRef(targetCompartmentIdInSubtree),
+//				DisplayName:                       pulumi.StringRef(targetDisplayName),
+//				IsNonSecurityZoneTargetsOnlyQuery: pulumi.BoolRef(targetIsNonSecurityZoneTargetsOnlyQuery),
+//				State:                             pulumi.StringRef(targetState),
 //			}, nil)
 //			if err != nil {
 //				return err

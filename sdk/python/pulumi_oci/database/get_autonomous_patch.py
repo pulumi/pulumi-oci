@@ -187,7 +187,7 @@ def get_autonomous_patch(autonomous_patch_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=oci_database_autonomous_patch["test_autonomous_patch"]["id"])
+    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -229,7 +229,7 @@ def get_autonomous_patch_output(autonomous_patch_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=oci_database_autonomous_patch["test_autonomous_patch"]["id"])
+    test_autonomous_patch = oci.Database.get_autonomous_patch(autonomous_patch_id=test_autonomous_patch_oci_database_autonomous_patch["id"])
     ```
     <!--End PulumiCodeChooser -->
 

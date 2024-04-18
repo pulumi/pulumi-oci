@@ -47,9 +47,9 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
-     *             .artifactPath(var_.artifact_by_path_artifact_path())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .version(var_.artifact_by_path_version())
+     *             .artifactPath(artifactByPathArtifactPath)
+     *             .repositoryId(testRepository.id())
+     *             .version(artifactByPathVersion)
      *             .build());
      * 
      *     }
@@ -91,9 +91,9 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
-     *             .artifactPath(var_.artifact_by_path_artifact_path())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .version(var_.artifact_by_path_version())
+     *             .artifactPath(artifactByPathArtifactPath)
+     *             .repositoryId(testRepository.id())
+     *             .version(artifactByPathVersion)
      *             .build());
      * 
      *     }
@@ -135,9 +135,9 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
-     *             .artifactPath(var_.artifact_by_path_artifact_path())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .version(var_.artifact_by_path_version())
+     *             .artifactPath(artifactByPathArtifactPath)
+     *             .repositoryId(testRepository.id())
+     *             .version(artifactByPathVersion)
      *             .build());
      * 
      *     }
@@ -179,9 +179,9 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
-     *             .artifactPath(var_.artifact_by_path_artifact_path())
-     *             .repositoryId(oci_artifacts_repository.test_repository().id())
-     *             .version(var_.artifact_by_path_version())
+     *             .artifactPath(artifactByPathArtifactPath)
+     *             .repositoryId(testRepository.id())
+     *             .version(artifactByPathVersion)
      *             .build());
      * 
      *     }
@@ -223,7 +223,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -265,7 +265,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -307,7 +307,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }
@@ -349,7 +349,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(oci_generic_artifacts_content_artifact.test_artifact().id())
+     *             .artifactId(testArtifact.id())
      *             .build());
      * 
      *     }

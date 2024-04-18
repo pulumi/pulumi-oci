@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarm = oci.Monitoring.getAlarm({
- *     alarmId: oci_monitoring_alarm.test_alarm.id,
+ *     alarmId: testAlarmOciMonitoringAlarm.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -181,7 +181,7 @@ export interface GetAlarmResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlarm = oci.Monitoring.getAlarm({
- *     alarmId: oci_monitoring_alarm.test_alarm.id,
+ *     alarmId: testAlarmOciMonitoringAlarm.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -436,20 +436,20 @@ class ContainerRepository(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_repository = oci.artifacts.ContainerRepository("testContainerRepository",
-            compartment_id=var["compartment_id"],
-            display_name=var["container_repository_display_name"],
+        test_container_repository = oci.artifacts.ContainerRepository("test_container_repository",
+            compartment_id=compartment_id,
+            display_name=container_repository_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_immutable=var["container_repository_is_immutable"],
-            is_public=var["container_repository_is_public"],
+            is_immutable=container_repository_is_immutable,
+            is_public=container_repository_is_public,
             readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=var["container_repository_readme_content"],
-                format=var["container_repository_readme_format"],
+                content=container_repository_readme_content,
+                format=container_repository_readme_format,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -490,20 +490,20 @@ class ContainerRepository(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_container_repository = oci.artifacts.ContainerRepository("testContainerRepository",
-            compartment_id=var["compartment_id"],
-            display_name=var["container_repository_display_name"],
+        test_container_repository = oci.artifacts.ContainerRepository("test_container_repository",
+            compartment_id=compartment_id,
+            display_name=container_repository_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            is_immutable=var["container_repository_is_immutable"],
-            is_public=var["container_repository_is_public"],
+            is_immutable=container_repository_is_immutable,
+            is_public=container_repository_is_public,
             readme=oci.artifacts.ContainerRepositoryReadmeArgs(
-                content=var["container_repository_readme_content"],
-                format=var["container_repository_readme_format"],
+                content=container_repository_readme_content,
+                format=container_repository_readme_format,
             ))
         ```
         <!--End PulumiCodeChooser -->

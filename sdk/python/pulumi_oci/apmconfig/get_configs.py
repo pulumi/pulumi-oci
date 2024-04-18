@@ -170,14 +170,14 @@ def get_configs(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_type=var["config_config_type"],
-        defined_tag_equals=var["config_defined_tag_equals"],
-        defined_tag_exists=var["config_defined_tag_exists"],
-        display_name=var["config_display_name"],
-        freeform_tag_equals=var["config_freeform_tag_equals"],
-        freeform_tag_exists=var["config_freeform_tag_exists"],
-        options_group=var["config_options_group"])
+    test_configs = oci.ApmConfig.get_configs(apm_domain_id=test_apm_domain["id"],
+        config_type=config_config_type,
+        defined_tag_equals=config_defined_tag_equals,
+        defined_tag_exists=config_defined_tag_exists,
+        display_name=config_display_name,
+        freeform_tag_equals=config_freeform_tag_equals,
+        freeform_tag_exists=config_freeform_tag_exists,
+        options_group=config_options_group)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -241,14 +241,14 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.ApmConfig.get_configs(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        config_type=var["config_config_type"],
-        defined_tag_equals=var["config_defined_tag_equals"],
-        defined_tag_exists=var["config_defined_tag_exists"],
-        display_name=var["config_display_name"],
-        freeform_tag_equals=var["config_freeform_tag_equals"],
-        freeform_tag_exists=var["config_freeform_tag_exists"],
-        options_group=var["config_options_group"])
+    test_configs = oci.ApmConfig.get_configs(apm_domain_id=test_apm_domain["id"],
+        config_type=config_config_type,
+        defined_tag_equals=config_defined_tag_equals,
+        defined_tag_exists=config_defined_tag_exists,
+        display_name=config_display_name,
+        freeform_tag_equals=config_freeform_tag_equals,
+        freeform_tag_exists=config_freeform_tag_exists,
+        options_group=config_options_group)
     ```
     <!--End PulumiCodeChooser -->
 

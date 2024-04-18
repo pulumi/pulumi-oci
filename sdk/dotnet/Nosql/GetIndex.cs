@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Nosql
         /// {
         ///     var testIndex = Oci.Nosql.GetIndex.Invoke(new()
         ///     {
-        ///         IndexName = oci_nosql_index.Test_index.Name,
-        ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         IndexName = testIndexOciNosqlIndex.Name,
+        ///         TableNameOrId = testTableNameOr.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Nosql
         /// {
         ///     var testIndex = Oci.Nosql.GetIndex.Invoke(new()
         ///     {
-        ///         IndexName = oci_nosql_index.Test_index.Name,
-        ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         IndexName = testIndexOciNosqlIndex.Name,
+        ///         TableNameOrId = testTableNameOr.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

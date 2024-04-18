@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnotationFormats = oci.DataLabellingService.getAnnotationFormats({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetAnnotationFormatsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnotationFormats = oci.DataLabellingService.getAnnotationFormats({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

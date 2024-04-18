@@ -48,16 +48,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCccUpgradeSchedule = new AtCustomerCccUpgradeSchedule(&#34;testCccUpgradeSchedule&#34;, AtCustomerCccUpgradeScheduleArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.ccc_upgrade_schedule_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(cccUpgradeScheduleDisplayName)
  *             .events(AtCustomerCccUpgradeScheduleEventArgs.builder()
- *                 .description(var_.ccc_upgrade_schedule_events_description())
- *                 .scheduleEventDuration(var_.ccc_upgrade_schedule_events_schedule_event_duration())
- *                 .timeStart(var_.ccc_upgrade_schedule_events_time_start())
- *                 .scheduleEventRecurrences(var_.ccc_upgrade_schedule_events_schedule_event_recurrences())
+ *                 .description(cccUpgradeScheduleEventsDescription)
+ *                 .scheduleEventDuration(cccUpgradeScheduleEventsScheduleEventDuration)
+ *                 .timeStart(cccUpgradeScheduleEventsTimeStart)
+ *                 .scheduleEventRecurrences(cccUpgradeScheduleEventsScheduleEventRecurrences)
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.ccc_upgrade_schedule_description())
+ *             .description(cccUpgradeScheduleDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

@@ -147,12 +147,12 @@ def get_model_version_sets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=var["compartment_id"],
-        created_by=var["model_version_set_created_by"],
-        id=var["model_version_set_id"],
-        name=var["model_version_set_name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_version_set_state"])
+    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+        created_by=model_version_set_created_by,
+        id=model_version_set_id,
+        name=model_version_set_name,
+        project_id=test_project["id"],
+        state=model_version_set_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_model_version_sets_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=var["compartment_id"],
-        created_by=var["model_version_set_created_by"],
-        id=var["model_version_set_id"],
-        name=var["model_version_set_name"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["model_version_set_state"])
+    test_model_version_sets = oci.DataScience.get_model_version_sets(compartment_id=compartment_id,
+        created_by=model_version_set_created_by,
+        id=model_version_set_id,
+        name=model_version_set_name,
+        project_id=test_project["id"],
+        state=model_version_set_state)
     ```
     <!--End PulumiCodeChooser -->
 

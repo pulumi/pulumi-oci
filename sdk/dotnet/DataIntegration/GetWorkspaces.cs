@@ -30,9 +30,9 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaces = Oci.DataIntegration.GetWorkspaces.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Workspace_name,
-        ///         State = @var.Workspace_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = workspaceName,
+        ///         State = workspaceState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaces = Oci.DataIntegration.GetWorkspaces.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Workspace_name,
-        ///         State = @var.Workspace_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = workspaceName,
+        ///         State = workspaceState,
         ///     });
         /// 
         /// });

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMySmtpCredential = oci.Identity.getDomainsMySmtpCredential({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySmtpCredentialId: oci_identity_smtp_credential.test_smtp_credential.id,
- *     authorization: _var.my_smtp_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_smtp_credential_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     mySmtpCredentialId: testSmtpCredential.id,
+ *     authorization: mySmtpCredentialAuthorization,
+ *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,10 +154,10 @@ export interface GetDomainsMySmtpCredentialResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMySmtpCredential = oci.Identity.getDomainsMySmtpCredential({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     mySmtpCredentialId: oci_identity_smtp_credential.test_smtp_credential.id,
- *     authorization: _var.my_smtp_credential_authorization,
- *     resourceTypeSchemaVersion: _var.my_smtp_credential_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     mySmtpCredentialId: testSmtpCredential.id,
+ *     authorization: mySmtpCredentialAuthorization,
+ *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

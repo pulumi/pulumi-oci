@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetDbManagementPrivateEndpoints(ctx, &databasemanagement.GetDbManagementPrivateEndpointsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				IsCluster:     pulumi.BoolRef(_var.Db_management_private_endpoint_is_cluster),
-//				Name:          pulumi.StringRef(_var.Db_management_private_endpoint_name),
-//				State:         pulumi.StringRef(_var.Db_management_private_endpoint_state),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId: compartmentId,
+//				IsCluster:     pulumi.BoolRef(dbManagementPrivateEndpointIsCluster),
+//				Name:          pulumi.StringRef(dbManagementPrivateEndpointName),
+//				State:         pulumi.StringRef(dbManagementPrivateEndpointState),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

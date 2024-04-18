@@ -25,28 +25,28 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProcessorJob = new Oci.AiDocument.ProcessorJob("testProcessorJob", new()
+    ///     var testProcessorJob = new Oci.AiDocument.ProcessorJob("test_processor_job", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         InputLocation = new Oci.AiDocument.Inputs.ProcessorJobInputLocationArgs
     ///         {
-    ///             SourceType = @var.Processor_job_input_location_source_type,
-    ///             Data = @var.Processor_job_input_location_data,
+    ///             SourceType = processorJobInputLocationSourceType,
+    ///             Data = processorJobInputLocationData,
     ///             ObjectLocations = new[]
     ///             {
     ///                 new Oci.AiDocument.Inputs.ProcessorJobInputLocationObjectLocationArgs
     ///                 {
-    ///                     Bucket = @var.Processor_job_input_location_object_locations_bucket,
-    ///                     Namespace = @var.Processor_job_input_location_object_locations_namespace,
-    ///                     Object = @var.Processor_job_input_location_object_locations_object,
+    ///                     Bucket = processorJobInputLocationObjectLocationsBucket,
+    ///                     Namespace = processorJobInputLocationObjectLocationsNamespace,
+    ///                     Object = processorJobInputLocationObjectLocationsObject,
     ///                 },
     ///             },
     ///         },
     ///         OutputLocation = new Oci.AiDocument.Inputs.ProcessorJobOutputLocationArgs
     ///         {
-    ///             Bucket = @var.Processor_job_output_location_bucket,
-    ///             Namespace = @var.Processor_job_output_location_namespace,
-    ///             Prefix = @var.Processor_job_output_location_prefix,
+    ///             Bucket = processorJobOutputLocationBucket,
+    ///             Namespace = processorJobOutputLocationNamespace,
+    ///             Prefix = processorJobOutputLocationPrefix,
     ///         },
     ///         ProcessorConfig = new Oci.AiDocument.Inputs.ProcessorJobProcessorConfigArgs
     ///         {
@@ -54,19 +54,19 @@ namespace Pulumi.Oci.AiDocument
     ///             {
     ///                 new Oci.AiDocument.Inputs.ProcessorJobProcessorConfigFeatureArgs
     ///                 {
-    ///                     FeatureType = @var.Processor_job_processor_config_features_feature_type,
-    ///                     GenerateSearchablePdf = @var.Processor_job_processor_config_features_generate_searchable_pdf,
-    ///                     MaxResults = @var.Processor_job_processor_config_features_max_results,
-    ///                     ModelId = oci_ai_document_model.Test_model.Id,
-    ///                     TenancyId = oci_identity_tenancy.Test_tenancy.Id,
+    ///                     FeatureType = processorJobProcessorConfigFeaturesFeatureType,
+    ///                     GenerateSearchablePdf = processorJobProcessorConfigFeaturesGenerateSearchablePdf,
+    ///                     MaxResults = processorJobProcessorConfigFeaturesMaxResults,
+    ///                     ModelId = testModel.Id,
+    ///                     TenancyId = testTenancy.Id,
     ///                 },
     ///             },
-    ///             ProcessorType = @var.Processor_job_processor_config_processor_type,
-    ///             DocumentType = @var.Processor_job_processor_config_document_type,
-    ///             IsZipOutputEnabled = @var.Processor_job_processor_config_is_zip_output_enabled,
-    ///             Language = @var.Processor_job_processor_config_language,
+    ///             ProcessorType = processorJobProcessorConfigProcessorType,
+    ///             DocumentType = processorJobProcessorConfigDocumentType,
+    ///             IsZipOutputEnabled = processorJobProcessorConfigIsZipOutputEnabled,
+    ///             Language = processorJobProcessorConfigLanguage,
     ///         },
-    ///         DisplayName = @var.Processor_job_display_name,
+    ///         DisplayName = processorJobDisplayName,
     ///     });
     /// 
     /// });

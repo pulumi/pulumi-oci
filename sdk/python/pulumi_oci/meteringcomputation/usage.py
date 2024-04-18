@@ -438,26 +438,26 @@ class Usage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage = oci.metering_computation.Usage("testUsage",
-            granularity=var["usage_granularity"],
-            tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-            time_usage_ended=var["usage_time_usage_ended"],
-            time_usage_started=var["usage_time_usage_started"],
-            compartment_depth=var["usage_compartment_depth"],
-            filter=var["usage_filter"],
+        test_usage = oci.metering_computation.Usage("test_usage",
+            granularity=usage_granularity,
+            tenant_id=test_tenant["id"],
+            time_usage_ended=usage_time_usage_ended,
+            time_usage_started=usage_time_usage_started,
+            compartment_depth=usage_compartment_depth,
+            filter=usage_filter,
             forecast=oci.metering_computation.UsageForecastArgs(
-                time_forecast_ended=var["usage_forecast_time_forecast_ended"],
-                forecast_type=var["usage_forecast_forecast_type"],
-                time_forecast_started=var["usage_forecast_time_forecast_started"],
+                time_forecast_ended=usage_forecast_time_forecast_ended,
+                forecast_type=usage_forecast_forecast_type,
+                time_forecast_started=usage_forecast_time_forecast_started,
             ),
-            group_bies=var["usage_group_by"],
+            group_bies=usage_group_by,
             group_by_tags=[oci.metering_computation.UsageGroupByTagArgs(
-                key=var["usage_group_by_tag_key"],
-                namespace=var["usage_group_by_tag_namespace"],
-                value=var["usage_group_by_tag_value"],
+                key=usage_group_by_tag_key,
+                namespace=usage_group_by_tag_namespace,
+                value=usage_group_by_tag_value,
             )],
-            is_aggregate_by_time=var["usage_is_aggregate_by_time"],
-            query_type=var["usage_query_type"])
+            is_aggregate_by_time=usage_is_aggregate_by_time,
+            query_type=usage_query_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -501,26 +501,26 @@ class Usage(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage = oci.metering_computation.Usage("testUsage",
-            granularity=var["usage_granularity"],
-            tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-            time_usage_ended=var["usage_time_usage_ended"],
-            time_usage_started=var["usage_time_usage_started"],
-            compartment_depth=var["usage_compartment_depth"],
-            filter=var["usage_filter"],
+        test_usage = oci.metering_computation.Usage("test_usage",
+            granularity=usage_granularity,
+            tenant_id=test_tenant["id"],
+            time_usage_ended=usage_time_usage_ended,
+            time_usage_started=usage_time_usage_started,
+            compartment_depth=usage_compartment_depth,
+            filter=usage_filter,
             forecast=oci.metering_computation.UsageForecastArgs(
-                time_forecast_ended=var["usage_forecast_time_forecast_ended"],
-                forecast_type=var["usage_forecast_forecast_type"],
-                time_forecast_started=var["usage_forecast_time_forecast_started"],
+                time_forecast_ended=usage_forecast_time_forecast_ended,
+                forecast_type=usage_forecast_forecast_type,
+                time_forecast_started=usage_forecast_time_forecast_started,
             ),
-            group_bies=var["usage_group_by"],
+            group_bies=usage_group_by,
             group_by_tags=[oci.metering_computation.UsageGroupByTagArgs(
-                key=var["usage_group_by_tag_key"],
-                namespace=var["usage_group_by_tag_namespace"],
-                value=var["usage_group_by_tag_value"],
+                key=usage_group_by_tag_key,
+                namespace=usage_group_by_tag_namespace,
+                value=usage_group_by_tag_value,
             )],
-            is_aggregate_by_time=var["usage_is_aggregate_by_time"],
-            query_type=var["usage_query_type"])
+            is_aggregate_by_time=usage_is_aggregate_by_time,
+            query_type=usage_query_type)
         ```
         <!--End PulumiCodeChooser -->
 

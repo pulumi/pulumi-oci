@@ -100,7 +100,7 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=var["compartment_id"])
+    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -135,7 +135,7 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=var["compartment_id"])
+    test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

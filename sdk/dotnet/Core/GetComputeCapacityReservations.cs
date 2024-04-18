@@ -33,10 +33,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityReservations = Oci.Core.GetComputeCapacityReservations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
-        ///         DisplayName = @var.Compute_capacity_reservation_display_name,
-        ///         State = @var.Compute_capacity_reservation_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityReservationAvailabilityDomain,
+        ///         DisplayName = computeCapacityReservationDisplayName,
+        ///         State = computeCapacityReservationState,
         ///     });
         /// 
         /// });
@@ -68,10 +68,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityReservations = Oci.Core.GetComputeCapacityReservations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Compute_capacity_reservation_availability_domain,
-        ///         DisplayName = @var.Compute_capacity_reservation_display_name,
-        ///         State = @var.Compute_capacity_reservation_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeCapacityReservationAvailabilityDomain,
+        ///         DisplayName = computeCapacityReservationDisplayName,
+        ///         State = computeCapacityReservationState,
         ///     });
         /// 
         /// });

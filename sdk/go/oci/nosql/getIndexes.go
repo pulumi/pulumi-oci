@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Nosql.GetIndexes(ctx, &nosql.GetIndexesArgs{
-//				TableNameOrId: oci_nosql_table_name_or.Test_table_name_or.Id,
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				Name:          pulumi.StringRef(_var.Index_name),
-//				State:         pulumi.StringRef(_var.Index_state),
+//				TableNameOrId: testTableNameOr.Id,
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				Name:          pulumi.StringRef(indexName),
+//				State:         pulumi.StringRef(indexState),
 //			}, nil)
 //			if err != nil {
 //				return err

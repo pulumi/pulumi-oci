@@ -115,8 +115,8 @@ def get_bucket_summaries(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=var["compartment_id"],
-        namespace=var["bucket_namespace"])
+    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=compartment_id,
+        namespace=bucket_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -164,8 +164,8 @@ def get_bucket_summaries_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=var["compartment_id"],
-        namespace=var["bucket_namespace"])
+    test_buckets = oci.ObjectStorage.get_bucket_summaries(compartment_id=compartment_id,
+        namespace=bucket_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

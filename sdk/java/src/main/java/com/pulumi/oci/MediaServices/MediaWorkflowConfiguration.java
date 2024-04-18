@@ -49,17 +49,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMediaWorkflowConfiguration = new MediaWorkflowConfiguration(&#34;testMediaWorkflowConfiguration&#34;, MediaWorkflowConfigurationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.media_workflow_configuration_display_name())
- *             .parameters(var_.media_workflow_configuration_parameters())
+ *             .compartmentId(compartmentId)
+ *             .displayName(mediaWorkflowConfigurationDisplayName)
+ *             .parameters(mediaWorkflowConfigurationParameters)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .locks(MediaWorkflowConfigurationLockArgs.builder()
- *                 .compartmentId(var_.compartment_id())
- *                 .type(var_.media_workflow_configuration_locks_type())
- *                 .message(var_.media_workflow_configuration_locks_message())
- *                 .relatedResourceId(oci_usage_proxy_resource.test_resource().id())
- *                 .timeCreated(var_.media_workflow_configuration_locks_time_created())
+ *                 .compartmentId(compartmentId)
+ *                 .type(mediaWorkflowConfigurationLocksType)
+ *                 .message(mediaWorkflowConfigurationLocksMessage)
+ *                 .relatedResourceId(testResource.id())
+ *                 .timeCreated(mediaWorkflowConfigurationLocksTimeCreated)
  *                 .build())
  *             .build());
  * 

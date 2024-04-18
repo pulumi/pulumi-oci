@@ -210,14 +210,14 @@ def get_domains_network_perimeters(attribute_sets: Optional[Sequence[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_network_perimeters = oci.Identity.get_domains_network_perimeters(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        network_perimeter_count=var["network_perimeter_network_perimeter_count"],
-        network_perimeter_filter=var["network_perimeter_network_perimeter_filter"],
+    test_network_perimeters = oci.Identity.get_domains_network_perimeters(idcs_endpoint=test_domain["url"],
+        network_perimeter_count=network_perimeter_network_perimeter_count,
+        network_perimeter_filter=network_perimeter_network_perimeter_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["network_perimeter_authorization"],
-        resource_type_schema_version=var["network_perimeter_resource_type_schema_version"],
-        start_index=var["network_perimeter_start_index"])
+        authorization=network_perimeter_authorization,
+        resource_type_schema_version=network_perimeter_resource_type_schema_version,
+        start_index=network_perimeter_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_network_perimeters_output(attribute_sets: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_network_perimeters = oci.Identity.get_domains_network_perimeters(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        network_perimeter_count=var["network_perimeter_network_perimeter_count"],
-        network_perimeter_filter=var["network_perimeter_network_perimeter_filter"],
+    test_network_perimeters = oci.Identity.get_domains_network_perimeters(idcs_endpoint=test_domain["url"],
+        network_perimeter_count=network_perimeter_network_perimeter_count,
+        network_perimeter_filter=network_perimeter_network_perimeter_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["network_perimeter_authorization"],
-        resource_type_schema_version=var["network_perimeter_resource_type_schema_version"],
-        start_index=var["network_perimeter_start_index"])
+        authorization=network_perimeter_authorization,
+        resource_type_schema_version=network_perimeter_resource_type_schema_version,
+        start_index=network_perimeter_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

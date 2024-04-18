@@ -346,9 +346,9 @@ def get_subscription(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"],
-        subscription_id=oci_osp_gateway_subscription["test_subscription"]["id"])
+    test_subscription = oci.OspGateway.get_subscription(compartment_id=compartment_id,
+        osp_home_region=subscription_osp_home_region,
+        subscription_id=test_subscription_oci_osp_gateway_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -410,9 +410,9 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscription = oci.OspGateway.get_subscription(compartment_id=var["compartment_id"],
-        osp_home_region=var["subscription_osp_home_region"],
-        subscription_id=oci_osp_gateway_subscription["test_subscription"]["id"])
+    test_subscription = oci.OspGateway.get_subscription(compartment_id=compartment_id,
+        osp_home_region=subscription_osp_home_region,
+        subscription_id=test_subscription_oci_osp_gateway_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 

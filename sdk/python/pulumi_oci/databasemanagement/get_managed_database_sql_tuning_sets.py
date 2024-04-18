@@ -127,10 +127,10 @@ def get_managed_database_sql_tuning_sets(filters: Optional[Sequence[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        opc_named_credential_id=var["managed_database_sql_tuning_set_opc_named_credential_id"],
-        owner=var["managed_database_sql_tuning_set_owner"])
+    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=test_managed_database["id"],
+        name_contains=managed_database_sql_tuning_set_name_contains,
+        opc_named_credential_id=managed_database_sql_tuning_set_opc_named_credential_id,
+        owner=managed_database_sql_tuning_set_owner)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -178,10 +178,10 @@ def get_managed_database_sql_tuning_sets_output(filters: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name_contains=var["managed_database_sql_tuning_set_name_contains"],
-        opc_named_credential_id=var["managed_database_sql_tuning_set_opc_named_credential_id"],
-        owner=var["managed_database_sql_tuning_set_owner"])
+    test_managed_database_sql_tuning_sets = oci.DatabaseManagement.get_managed_database_sql_tuning_sets(managed_database_id=test_managed_database["id"],
+        name_contains=managed_database_sql_tuning_set_name_contains,
+        opc_named_credential_id=managed_database_sql_tuning_set_opc_named_credential_id,
+        owner=managed_database_sql_tuning_set_owner)
     ```
     <!--End PulumiCodeChooser -->
 

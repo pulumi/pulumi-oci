@@ -33,25 +33,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.NewHttpMonitor(ctx, "testHttpMonitor", &HealthChecks.HttpMonitorArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				DisplayName:       pulumi.Any(_var.Http_monitor_display_name),
-//				IntervalInSeconds: pulumi.Any(_var.Http_monitor_interval_in_seconds),
-//				Protocol:          pulumi.Any(_var.Http_monitor_protocol),
-//				Targets:           pulumi.Any(_var.Http_monitor_targets),
+//			_, err := HealthChecks.NewHttpMonitor(ctx, "test_http_monitor", &HealthChecks.HttpMonitorArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				DisplayName:       pulumi.Any(httpMonitorDisplayName),
+//				IntervalInSeconds: pulumi.Any(httpMonitorIntervalInSeconds),
+//				Protocol:          pulumi.Any(httpMonitorProtocol),
+//				Targets:           pulumi.Any(httpMonitorTargets),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Headers:           pulumi.Any(_var.Http_monitor_headers),
-//				IsEnabled:         pulumi.Any(_var.Http_monitor_is_enabled),
-//				Method:            pulumi.Any(_var.Http_monitor_method),
-//				Path:              pulumi.Any(_var.Http_monitor_path),
-//				Port:              pulumi.Any(_var.Http_monitor_port),
-//				TimeoutInSeconds:  pulumi.Any(_var.Http_monitor_timeout_in_seconds),
-//				VantagePointNames: pulumi.Any(_var.Http_monitor_vantage_point_names),
+//				Headers:           pulumi.Any(httpMonitorHeaders),
+//				IsEnabled:         pulumi.Any(httpMonitorIsEnabled),
+//				Method:            pulumi.Any(httpMonitorMethod),
+//				Path:              pulumi.Any(httpMonitorPath),
+//				Port:              pulumi.Any(httpMonitorPort),
+//				TimeoutInSeconds:  pulumi.Any(httpMonitorTimeoutInSeconds),
+//				VantagePointNames: pulumi.Any(httpMonitorVantagePointNames),
 //			})
 //			if err != nil {
 //				return err

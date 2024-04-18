@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJob = oci.StackMonitoring.getDiscoveryJob({
- *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
+ *     discoveryJobId: testDiscoveryJobOciStackMonitoringDiscoveryJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,7 +118,7 @@ export interface GetDiscoveryJobResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJob = oci.StackMonitoring.getDiscoveryJob({
- *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
+ *     discoveryJobId: testDiscoveryJobOciStackMonitoringDiscoveryJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

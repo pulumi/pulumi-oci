@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDataSafePrivateEndpoints = Oci.DataSafe.GetDataSafePrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Data_safe_private_endpoint_access_level,
-        ///         CompartmentIdInSubtree = @var.Data_safe_private_endpoint_compartment_id_in_subtree,
-        ///         DisplayName = @var.Data_safe_private_endpoint_display_name,
-        ///         State = @var.Data_safe_private_endpoint_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataSafePrivateEndpointAccessLevel,
+        ///         CompartmentIdInSubtree = dataSafePrivateEndpointCompartmentIdInSubtree,
+        ///         DisplayName = dataSafePrivateEndpointDisplayName,
+        ///         State = dataSafePrivateEndpointState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDataSafePrivateEndpoints = Oci.DataSafe.GetDataSafePrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Data_safe_private_endpoint_access_level,
-        ///         CompartmentIdInSubtree = @var.Data_safe_private_endpoint_compartment_id_in_subtree,
-        ///         DisplayName = @var.Data_safe_private_endpoint_display_name,
-        ///         State = @var.Data_safe_private_endpoint_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = dataSafePrivateEndpointAccessLevel,
+        ///         CompartmentIdInSubtree = dataSafePrivateEndpointCompartmentIdInSubtree,
+        ///         DisplayName = dataSafePrivateEndpointDisplayName,
+        ///         State = dataSafePrivateEndpointState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

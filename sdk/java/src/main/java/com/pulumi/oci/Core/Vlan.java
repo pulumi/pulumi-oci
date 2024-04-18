@@ -47,16 +47,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVlan = new Vlan(&#34;testVlan&#34;, VlanArgs.builder()        
- *             .cidrBlock(var_.vlan_cidr_block())
- *             .compartmentId(var_.compartment_id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
- *             .availabilityDomain(var_.vlan_availability_domain())
+ *             .cidrBlock(vlanCidrBlock)
+ *             .compartmentId(compartmentId)
+ *             .vcnId(testVcn.id())
+ *             .availabilityDomain(vlanAvailabilityDomain)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.vlan_display_name())
+ *             .displayName(vlanDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .nsgIds(var_.vlan_nsg_ids())
- *             .routeTableId(oci_core_route_table.test_route_table().id())
- *             .vlanTag(var_.vlan_vlan_tag())
+ *             .nsgIds(vlanNsgIds)
+ *             .routeTableId(testRouteTable.id())
+ *             .vlanTag(vlanVlanTag)
  *             .build());
  * 
  *     }

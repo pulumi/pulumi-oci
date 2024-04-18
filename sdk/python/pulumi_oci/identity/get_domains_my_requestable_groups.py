@@ -199,12 +199,12 @@ def get_domains_my_requestable_groups(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requestable_groups = oci.Identity.get_domains_my_requestable_groups(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_requestable_group_count=var["my_requestable_group_my_requestable_group_count"],
-        my_requestable_group_filter=var["my_requestable_group_my_requestable_group_filter"],
-        authorization=var["my_requestable_group_authorization"],
-        resource_type_schema_version=var["my_requestable_group_resource_type_schema_version"],
-        start_index=var["my_requestable_group_start_index"])
+    test_my_requestable_groups = oci.Identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
+        my_requestable_group_count=my_requestable_group_my_requestable_group_count,
+        my_requestable_group_filter=my_requestable_group_my_requestable_group_filter,
+        authorization=my_requestable_group_authorization,
+        resource_type_schema_version=my_requestable_group_resource_type_schema_version,
+        start_index=my_requestable_group_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -269,12 +269,12 @@ def get_domains_my_requestable_groups_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_requestable_groups = oci.Identity.get_domains_my_requestable_groups(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_requestable_group_count=var["my_requestable_group_my_requestable_group_count"],
-        my_requestable_group_filter=var["my_requestable_group_my_requestable_group_filter"],
-        authorization=var["my_requestable_group_authorization"],
-        resource_type_schema_version=var["my_requestable_group_resource_type_schema_version"],
-        start_index=var["my_requestable_group_start_index"])
+    test_my_requestable_groups = oci.Identity.get_domains_my_requestable_groups(idcs_endpoint=test_domain["url"],
+        my_requestable_group_count=my_requestable_group_my_requestable_group_count,
+        my_requestable_group_filter=my_requestable_group_my_requestable_group_filter,
+        authorization=my_requestable_group_authorization,
+        resource_type_schema_version=my_requestable_group_resource_type_schema_version,
+        start_index=my_requestable_group_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

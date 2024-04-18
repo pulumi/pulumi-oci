@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityReservationInstanceShapes(ctx, &core.GetComputeCapacityReservationInstanceShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Compute_capacity_reservation_instance_shape_availability_domain),
-//				DisplayName:        pulumi.StringRef(_var.Compute_capacity_reservation_instance_shape_display_name),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(computeCapacityReservationInstanceShapeAvailabilityDomain),
+//				DisplayName:        pulumi.StringRef(computeCapacityReservationInstanceShapeDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

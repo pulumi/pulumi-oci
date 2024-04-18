@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testPublications = Oci.Marketplace.GetPublications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ListingType = @var.Publication_listing_type,
-        ///         Names = @var.Publication_name,
-        ///         OperatingSystems = @var.Publication_operating_systems,
-        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ListingType = publicationListingType,
+        ///         Names = publicationName,
+        ///         OperatingSystems = publicationOperatingSystems,
+        ///         PublicationId = testPublication.Id,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testPublications = Oci.Marketplace.GetPublications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ListingType = @var.Publication_listing_type,
-        ///         Names = @var.Publication_name,
-        ///         OperatingSystems = @var.Publication_operating_systems,
-        ///         PublicationId = oci_marketplace_publication.Test_publication.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ListingType = publicationListingType,
+        ///         Names = publicationName,
+        ///         OperatingSystems = publicationOperatingSystems,
+        ///         PublicationId = testPublication.Id,
         ///     });
         /// 
         /// });

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasesSchemas = oci.DataSafe.getTargetDatabasesSchemas({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     isOracleMaintained: _var.target_databases_schema_is_oracle_maintained,
- *     schemaNames: _var.target_databases_schema_schema_name,
- *     schemaNameContains: _var.target_databases_schema_schema_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained,
+ *     schemaNames: targetDatabasesSchemaSchemaName,
+ *     schemaNameContains: targetDatabasesSchemaSchemaNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetTargetDatabasesSchemasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasesSchemas = oci.DataSafe.getTargetDatabasesSchemas({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     isOracleMaintained: _var.target_databases_schema_is_oracle_maintained,
- *     schemaNames: _var.target_databases_schema_schema_name,
- *     schemaNameContains: _var.target_databases_schema_schema_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     isOracleMaintained: targetDatabasesSchemaIsOracleMaintained,
+ *     schemaNames: targetDatabasesSchemaSchemaName,
+ *     schemaNameContains: targetDatabasesSchemaSchemaNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

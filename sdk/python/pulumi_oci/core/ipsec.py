@@ -478,17 +478,17 @@ class Ipsec(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ip_sec_connection = oci.core.Ipsec("testIpSecConnection",
-            compartment_id=var["compartment_id"],
-            cpe_id=oci_core_cpe["test_cpe"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
-            static_routes=var["ip_sec_connection_static_routes"],
-            cpe_local_identifier=var["ip_sec_connection_cpe_local_identifier"],
-            cpe_local_identifier_type=var["ip_sec_connection_cpe_local_identifier_type"],
+        test_ip_sec_connection = oci.core.Ipsec("test_ip_sec_connection",
+            compartment_id=compartment_id,
+            cpe_id=test_cpe["id"],
+            drg_id=test_drg["id"],
+            static_routes=ip_sec_connection_static_routes,
+            cpe_local_identifier=ip_sec_connection_cpe_local_identifier,
+            cpe_local_identifier_type=ip_sec_connection_cpe_local_identifier_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["ip_sec_connection_display_name"],
+            display_name=ip_sec_connection_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -577,17 +577,17 @@ class Ipsec(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ip_sec_connection = oci.core.Ipsec("testIpSecConnection",
-            compartment_id=var["compartment_id"],
-            cpe_id=oci_core_cpe["test_cpe"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
-            static_routes=var["ip_sec_connection_static_routes"],
-            cpe_local_identifier=var["ip_sec_connection_cpe_local_identifier"],
-            cpe_local_identifier_type=var["ip_sec_connection_cpe_local_identifier_type"],
+        test_ip_sec_connection = oci.core.Ipsec("test_ip_sec_connection",
+            compartment_id=compartment_id,
+            cpe_id=test_cpe["id"],
+            drg_id=test_drg["id"],
+            static_routes=ip_sec_connection_static_routes,
+            cpe_local_identifier=ip_sec_connection_cpe_local_identifier,
+            cpe_local_identifier_type=ip_sec_connection_cpe_local_identifier_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["ip_sec_connection_display_name"],
+            display_name=ip_sec_connection_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

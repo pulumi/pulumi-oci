@@ -25,24 +25,24 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkFirewall = new Oci.NetworkFirewall.NetworkFirewall("testNetworkFirewall", new()
+    ///     var testNetworkFirewall = new Oci.NetworkFirewall.NetworkFirewall("test_network_firewall", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         AvailabilityDomain = @var.Network_firewall_availability_domain,
+    ///         CompartmentId = compartmentId,
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         SubnetId = testSubnet.Id,
+    ///         AvailabilityDomain = networkFirewallAvailabilityDomain,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Network_firewall_display_name,
+    ///         DisplayName = networkFirewallDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Ipv4address = @var.Network_firewall_ipv4address,
-    ///         Ipv6address = @var.Network_firewall_ipv6address,
-    ///         NetworkSecurityGroupIds = @var.Network_firewall_network_security_group_ids,
+    ///         Ipv4address = networkFirewallIpv4address,
+    ///         Ipv6address = networkFirewallIpv6address,
+    ///         NetworkSecurityGroupIds = networkFirewallNetworkSecurityGroupIds,
     ///     });
     /// 
     /// });

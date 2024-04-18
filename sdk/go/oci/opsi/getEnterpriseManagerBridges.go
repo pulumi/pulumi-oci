@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetEnterpriseManagerBridges(ctx, &opsi.GetEnterpriseManagerBridgesArgs{
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Enterprise_manager_bridge_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Enterprise_manager_bridge_display_name),
-//				Id:                     pulumi.StringRef(_var.Enterprise_manager_bridge_id),
-//				States:                 _var.Enterprise_manager_bridge_state,
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(enterpriseManagerBridgeCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(enterpriseManagerBridgeDisplayName),
+//				Id:                     pulumi.StringRef(enterpriseManagerBridgeId),
+//				States:                 enterpriseManagerBridgeState,
 //			}, nil)
 //			if err != nil {
 //				return err

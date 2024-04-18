@@ -25,25 +25,26 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNewsReport = new Oci.Opsi.NewsReport("testNewsReport", new()
+    ///     var testNewsReport = new Oci.Opsi.NewsReport("test_news_report", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         ContentTypes = new Oci.Opsi.Inputs.NewsReportContentTypesArgs
     ///         {
-    ///             CapacityPlanningResources = @var.News_report_content_types_capacity_planning_resources,
-    ///             SqlInsightsFleetAnalysisResources = @var.News_report_content_types_sql_insights_fleet_analysis_resources,
-    ///             SqlInsightsPerformanceDegradationResources = @var.News_report_content_types_sql_insights_performance_degradation_resources,
-    ///             SqlInsightsPlanChangesResources = @var.News_report_content_types_sql_insights_plan_changes_resources,
-    ///             SqlInsightsTopDatabasesResources = @var.News_report_content_types_sql_insights_top_databases_resources,
-    ///             SqlInsightsTopSqlByInsightsResources = @var.News_report_content_types_sql_insights_top_sql_by_insights_resources,
-    ///             SqlInsightsTopSqlResources = @var.News_report_content_types_sql_insights_top_sql_resources,
+    ///             CapacityPlanningResources = newsReportContentTypesCapacityPlanningResources,
+    ///             SqlInsightsFleetAnalysisResources = newsReportContentTypesSqlInsightsFleetAnalysisResources,
+    ///             SqlInsightsPerformanceDegradationResources = newsReportContentTypesSqlInsightsPerformanceDegradationResources,
+    ///             SqlInsightsPlanChangesResources = newsReportContentTypesSqlInsightsPlanChangesResources,
+    ///             SqlInsightsTopDatabasesResources = newsReportContentTypesSqlInsightsTopDatabasesResources,
+    ///             SqlInsightsTopSqlByInsightsResources = newsReportContentTypesSqlInsightsTopSqlByInsightsResources,
+    ///             SqlInsightsTopSqlResources = newsReportContentTypesSqlInsightsTopSqlResources,
     ///         },
-    ///         Description = @var.News_report_description,
-    ///         Locale = @var.News_report_locale,
-    ///         NewsFrequency = @var.News_report_news_frequency,
-    ///         OnsTopicId = oci_opsi_ons_topic.Test_ons_topic.Id,
-    ///         AreChildCompartmentsIncluded = @var.News_report_are_child_compartments_included,
-    ///         DayOfWeek = @var.News_report_day_of_week,
+    ///         Description = newsReportDescription,
+    ///         Locale = newsReportLocale,
+    ///         Name = newsReportName,
+    ///         NewsFrequency = newsReportNewsFrequency,
+    ///         OnsTopicId = testOnsTopic.Id,
+    ///         AreChildCompartmentsIncluded = newsReportAreChildCompartmentsIncluded,
+    ///         DayOfWeek = newsReportDayOfWeek,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -52,7 +53,7 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Status = @var.News_report_status,
+    ///         Status = newsReportStatus,
     ///     });
     /// 
     /// });

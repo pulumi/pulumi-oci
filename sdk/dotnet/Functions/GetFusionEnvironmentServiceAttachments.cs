@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentServiceAttachments = Oci.Functions.GetFusionEnvironmentServiceAttachments.Invoke(new()
         ///     {
-        ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-        ///         DisplayName = @var.Fusion_environment_service_attachment_display_name,
-        ///         ServiceInstanceType = @var.Fusion_environment_service_attachment_service_instance_type,
-        ///         State = @var.Fusion_environment_service_attachment_state,
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentServiceAttachmentDisplayName,
+        ///         ServiceInstanceType = fusionEnvironmentServiceAttachmentServiceInstanceType,
+        ///         State = fusionEnvironmentServiceAttachmentState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentServiceAttachments = Oci.Functions.GetFusionEnvironmentServiceAttachments.Invoke(new()
         ///     {
-        ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-        ///         DisplayName = @var.Fusion_environment_service_attachment_display_name,
-        ///         ServiceInstanceType = @var.Fusion_environment_service_attachment_service_instance_type,
-        ///         State = @var.Fusion_environment_service_attachment_state,
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentServiceAttachmentDisplayName,
+        ///         ServiceInstanceType = fusionEnvironmentServiceAttachmentServiceInstanceType,
+        ///         State = fusionEnvironmentServiceAttachmentState,
         ///     });
         /// 
         /// });

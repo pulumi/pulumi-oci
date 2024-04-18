@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceTasks = oci.DataIntegration.getWorkspaceTasks({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     fields: _var.workspace_task_fields,
- *     folderId: oci_dataintegration_folder.test_folder.id,
- *     identifiers: _var.workspace_task_identifier,
- *     keys: _var.workspace_task_key,
- *     name: _var.workspace_task_name,
- *     types: _var.workspace_task_type,
+ *     workspaceId: testWorkspace.id,
+ *     fields: workspaceTaskFields,
+ *     folderId: testFolder.id,
+ *     identifiers: workspaceTaskIdentifier,
+ *     keys: workspaceTaskKey,
+ *     name: workspaceTaskName,
+ *     types: workspaceTaskType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,13 +129,13 @@ export interface GetWorkspaceTasksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceTasks = oci.DataIntegration.getWorkspaceTasks({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     fields: _var.workspace_task_fields,
- *     folderId: oci_dataintegration_folder.test_folder.id,
- *     identifiers: _var.workspace_task_identifier,
- *     keys: _var.workspace_task_key,
- *     name: _var.workspace_task_name,
- *     types: _var.workspace_task_type,
+ *     workspaceId: testWorkspace.id,
+ *     fields: workspaceTaskFields,
+ *     folderId: testFolder.id,
+ *     identifiers: workspaceTaskIdentifier,
+ *     keys: workspaceTaskKey,
+ *     name: workspaceTaskName,
+ *     types: workspaceTaskType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

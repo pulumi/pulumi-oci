@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationPlanAvailableShape = oci.CloudMigrations.getMigrationPlanAvailableShape({
- *     migrationPlanId: oci_cloud_migrations_migration_plan.test_migration_plan.id,
- *     availabilityDomain: _var.migration_plan_available_shape_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     dvhHostId: oci_cloud_migrations_dvh_host.test_dvh_host.id,
- *     reservedCapacityId: oci_cloud_migrations_reserved_capacity.test_reserved_capacity.id,
+ *     migrationPlanId: testMigrationPlan.id,
+ *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     dvhHostId: testDvhHost.id,
+ *     reservedCapacityId: testReservedCapacity.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -100,11 +100,11 @@ export interface GetMigrationPlanAvailableShapeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationPlanAvailableShape = oci.CloudMigrations.getMigrationPlanAvailableShape({
- *     migrationPlanId: oci_cloud_migrations_migration_plan.test_migration_plan.id,
- *     availabilityDomain: _var.migration_plan_available_shape_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     dvhHostId: oci_cloud_migrations_dvh_host.test_dvh_host.id,
- *     reservedCapacityId: oci_cloud_migrations_reserved_capacity.test_reserved_capacity.id,
+ *     migrationPlanId: testMigrationPlan.id,
+ *     availabilityDomain: migrationPlanAvailableShapeAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     dvhHostId: testDvhHost.id,
+ *     reservedCapacityId: testReservedCapacity.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

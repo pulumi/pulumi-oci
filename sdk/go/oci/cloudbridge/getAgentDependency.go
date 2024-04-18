@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetAgentDependency(ctx, &cloudbridge.GetAgentDependencyArgs{
-//				AgentDependencyId: oci_cloud_bridge_agent_dependency.Test_agent_dependency.Id,
+//				AgentDependencyId: testAgentDependencyOciCloudBridgeAgentDependency.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

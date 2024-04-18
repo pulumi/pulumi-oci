@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUserGroupMembership(ctx, "testUserGroupMembership", &Identity.UserGroupMembershipArgs{
-//				GroupId: pulumi.Any(oci_identity_group.Test_group.Id),
-//				UserId:  pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewUserGroupMembership(ctx, "test_user_group_membership", &Identity.UserGroupMembershipArgs{
+//				GroupId: pulumi.Any(testGroup.Id),
+//				UserId:  pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCondition = oci.Identity.getDomainsCondition({
- *     conditionId: oci_identity_domains_condition.test_condition.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     conditionId: testConditionOciIdentityDomainsCondition.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.condition_authorization,
- *     resourceTypeSchemaVersion: _var.condition_resource_type_schema_version,
+ *     authorization: conditionAuthorization,
+ *     resourceTypeSchemaVersion: conditionResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -184,12 +184,12 @@ export interface GetDomainsConditionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCondition = oci.Identity.getDomainsCondition({
- *     conditionId: oci_identity_domains_condition.test_condition.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     conditionId: testConditionOciIdentityDomainsCondition.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.condition_authorization,
- *     resourceTypeSchemaVersion: _var.condition_resource_type_schema_version,
+ *     authorization: conditionAuthorization,
+ *     resourceTypeSchemaVersion: conditionResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

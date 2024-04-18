@@ -29,10 +29,10 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testPrivateApplicationPackages = Oci.ServiceCatalog.GetPrivateApplicationPackages.Invoke(new()
         ///     {
-        ///         PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
-        ///         DisplayName = @var.Private_application_package_display_name,
-        ///         PackageTypes = @var.Private_application_package_package_type,
-        ///         PrivateApplicationPackageId = oci_service_catalog_private_application_package.Test_private_application_package.Id,
+        ///         PrivateApplicationId = testPrivateApplication.Id,
+        ///         DisplayName = privateApplicationPackageDisplayName,
+        ///         PackageTypes = privateApplicationPackagePackageType,
+        ///         PrivateApplicationPackageId = testPrivateApplicationPackage.Id,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.ServiceCatalog
         /// {
         ///     var testPrivateApplicationPackages = Oci.ServiceCatalog.GetPrivateApplicationPackages.Invoke(new()
         ///     {
-        ///         PrivateApplicationId = oci_service_catalog_private_application.Test_private_application.Id,
-        ///         DisplayName = @var.Private_application_package_display_name,
-        ///         PackageTypes = @var.Private_application_package_package_type,
-        ///         PrivateApplicationPackageId = oci_service_catalog_private_application_package.Test_private_application_package.Id,
+        ///         PrivateApplicationId = testPrivateApplication.Id,
+        ///         DisplayName = privateApplicationPackageDisplayName,
+        ///         PackageTypes = privateApplicationPackagePackageType,
+        ///         PrivateApplicationPackageId = testPrivateApplicationPackage.Id,
         ///     });
         /// 
         /// });

@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAppRole = oci.Identity.getDomainsAppRole({
- *     appRoleId: oci_identity_domains_app_role.test_app_role.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     appRoleId: testAppRoleOciIdentityDomainsAppRole.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.app_role_authorization,
- *     resourceTypeSchemaVersion: _var.app_role_resource_type_schema_version,
+ *     authorization: appRoleAuthorization,
+ *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -200,12 +200,12 @@ export interface GetDomainsAppRoleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAppRole = oci.Identity.getDomainsAppRole({
- *     appRoleId: oci_identity_domains_app_role.test_app_role.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     appRoleId: testAppRoleOciIdentityDomainsAppRole.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.app_role_authorization,
- *     resourceTypeSchemaVersion: _var.app_role_resource_type_schema_version,
+ *     authorization: appRoleAuthorization,
+ *     resourceTypeSchemaVersion: appRoleResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

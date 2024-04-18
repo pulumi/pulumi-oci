@@ -32,29 +32,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GoldenGate.NewDatabaseRegistration(ctx, "testDatabaseRegistration", &GoldenGate.DatabaseRegistrationArgs{
-//				AliasName:        pulumi.Any(_var.Database_registration_alias_name),
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				DisplayName:      pulumi.Any(_var.Database_registration_display_name),
-//				Fqdn:             pulumi.Any(_var.Database_registration_fqdn),
-//				Password:         pulumi.Any(_var.Database_registration_password),
-//				Username:         pulumi.Any(_var.Database_registration_username),
-//				ConnectionString: pulumi.Any(_var.Database_registration_connection_string),
-//				DatabaseId:       pulumi.Any(oci_database_database.Test_database.Id),
+//			_, err := GoldenGate.NewDatabaseRegistration(ctx, "test_database_registration", &GoldenGate.DatabaseRegistrationArgs{
+//				AliasName:        pulumi.Any(databaseRegistrationAliasName),
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DisplayName:      pulumi.Any(databaseRegistrationDisplayName),
+//				Fqdn:             pulumi.Any(databaseRegistrationFqdn),
+//				Password:         pulumi.Any(databaseRegistrationPassword),
+//				Username:         pulumi.Any(databaseRegistrationUsername),
+//				ConnectionString: pulumi.Any(databaseRegistrationConnectionString),
+//				DatabaseId:       pulumi.Any(testDatabase.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Database_registration_description),
+//				Description: pulumi.Any(databaseRegistrationDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IpAddress:           pulumi.Any(_var.Database_registration_ip_address),
-//				KeyId:               pulumi.Any(oci_kms_key.Test_key.Id),
-//				SecretCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				SessionMode:         pulumi.Any(_var.Database_registration_session_mode),
-//				SubnetId:            pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				VaultId:             pulumi.Any(oci_kms_vault.Test_vault.Id),
-//				Wallet:              pulumi.Any(_var.Database_registration_wallet),
+//				IpAddress:           pulumi.Any(databaseRegistrationIpAddress),
+//				KeyId:               pulumi.Any(testKey.Id),
+//				SecretCompartmentId: pulumi.Any(testCompartment.Id),
+//				SessionMode:         pulumi.Any(databaseRegistrationSessionMode),
+//				SubnetId:            pulumi.Any(testSubnet.Id),
+//				VaultId:             pulumi.Any(testVault.Id),
+//				Wallet:              pulumi.Any(databaseRegistrationWallet),
 //			})
 //			if err != nil {
 //				return err

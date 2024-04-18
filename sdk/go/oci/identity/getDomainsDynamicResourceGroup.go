@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsDynamicResourceGroup(ctx, &identity.GetDomainsDynamicResourceGroupArgs{
-//				DynamicResourceGroupId:    oci_identity_group.Test_group.Id,
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
+//				DynamicResourceGroupId:    testGroup.Id,
+//				IdcsEndpoint:              testDomain.Url,
 //				AttributeSets:             []interface{}{},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Dynamic_resource_group_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Dynamic_resource_group_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(dynamicResourceGroupAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(dynamicResourceGroupResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

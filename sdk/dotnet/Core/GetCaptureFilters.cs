@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCaptureFilters = Oci.Core.GetCaptureFilters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Capture_filter_display_name,
-        ///         FilterType = @var.Capture_filter_filter_type,
-        ///         State = @var.Capture_filter_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = captureFilterDisplayName,
+        ///         FilterType = captureFilterFilterType,
+        ///         State = captureFilterState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCaptureFilters = Oci.Core.GetCaptureFilters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Capture_filter_display_name,
-        ///         FilterType = @var.Capture_filter_filter_type,
-        ///         State = @var.Capture_filter_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = captureFilterDisplayName,
+        ///         FilterType = captureFilterFilterType,
+        ///         State = captureFilterState,
         ///     });
         /// 
         /// });

@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeGroupBackups = oci.Core.getVolumeGroupBackups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.volume_group_backup_display_name,
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ *     compartmentId: compartmentId,
+ *     displayName: volumeGroupBackupDisplayName,
+ *     volumeGroupId: testVolumeGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,9 +97,9 @@ export interface GetVolumeGroupBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeGroupBackups = oci.Core.getVolumeGroupBackups({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.volume_group_backup_display_name,
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ *     compartmentId: compartmentId,
+ *     displayName: volumeGroupBackupDisplayName,
+ *     volumeGroupId: testVolumeGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

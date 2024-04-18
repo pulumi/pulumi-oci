@@ -48,12 +48,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgRouteTable = new DrgRouteTable(&#34;testDrgRouteTable&#34;, DrgRouteTableArgs.builder()        
- *             .drgId(oci_core_drg.test_drg().id())
+ *             .drgId(testDrg.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.drg_route_table_display_name())
+ *             .displayName(drgRouteTableDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .importDrgRouteDistributionId(oci_core_drg_route_distribution.test_drg_route_distribution().id())
- *             .isEcmpEnabled(var_.drg_route_table_is_ecmp_enabled())
+ *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+ *             .isEcmpEnabled(drgRouteTableIsEcmpEnabled)
  *             .build());
  * 
  *     }

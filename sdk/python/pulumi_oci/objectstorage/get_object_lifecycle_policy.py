@@ -99,8 +99,8 @@ def get_object_lifecycle_policy(bucket: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
-        namespace=var["object_lifecycle_policy_namespace"])
+    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
+        namespace=object_lifecycle_policy_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -138,8 +138,8 @@ def get_object_lifecycle_policy_output(bucket: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=var["object_lifecycle_policy_bucket"],
-        namespace=var["object_lifecycle_policy_namespace"])
+    test_object_lifecycle_policy = oci.ObjectStorage.get_object_lifecycle_policy(bucket=object_lifecycle_policy_bucket,
+        namespace=object_lifecycle_policy_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsCategory(ctx, &loganalytics.GetLogAnalyticsCategoryArgs{
-//				Name:      _var.Log_analytics_category_name,
-//				Namespace: _var.Log_analytics_category_namespace,
+//				Name:      logAnalyticsCategoryName,
+//				Namespace: logAnalyticsCategoryNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

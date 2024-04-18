@@ -144,12 +144,12 @@ def get_managed_database_sql_tuning_advisor_tasks(filters: Optional[Sequence[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_sql_tuning_advisor_task_name"],
-        opc_named_credential_id=var["managed_database_sql_tuning_advisor_task_opc_named_credential_id"],
-        status=var["managed_database_sql_tuning_advisor_task_status"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
+    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
+        name=managed_database_sql_tuning_advisor_task_name,
+        opc_named_credential_id=managed_database_sql_tuning_advisor_task_opc_named_credential_id,
+        status=managed_database_sql_tuning_advisor_task_status,
+        time_greater_than_or_equal_to=managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
+        time_less_than_or_equal_to=managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,12 +205,12 @@ def get_managed_database_sql_tuning_advisor_tasks_output(filters: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_sql_tuning_advisor_task_name"],
-        opc_named_credential_id=var["managed_database_sql_tuning_advisor_task_opc_named_credential_id"],
-        status=var["managed_database_sql_tuning_advisor_task_status"],
-        time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to"])
+    test_managed_database_sql_tuning_advisor_tasks = oci.DatabaseManagement.get_managed_database_sql_tuning_advisor_tasks(managed_database_id=test_managed_database["id"],
+        name=managed_database_sql_tuning_advisor_task_name,
+        opc_named_credential_id=managed_database_sql_tuning_advisor_task_opc_named_credential_id,
+        status=managed_database_sql_tuning_advisor_task_status,
+        time_greater_than_or_equal_to=managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
+        time_less_than_or_equal_to=managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to)
     ```
     <!--End PulumiCodeChooser -->
 

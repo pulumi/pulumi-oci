@@ -22,27 +22,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFilesystemSnapshotPolicy = new oci.filestorage.FilesystemSnapshotPolicy("testFilesystemSnapshotPolicy", {
- *     availabilityDomain: _var.filesystem_snapshot_policy_availability_domain,
- *     compartmentId: _var.compartment_id,
+ * const testFilesystemSnapshotPolicy = new oci.filestorage.FilesystemSnapshotPolicy("test_filesystem_snapshot_policy", {
+ *     availabilityDomain: filesystemSnapshotPolicyAvailabilityDomain,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.filesystem_snapshot_policy_display_name,
+ *     displayName: filesystemSnapshotPolicyDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     policyPrefix: _var.filesystem_snapshot_policy_policy_prefix,
+ *     policyPrefix: filesystemSnapshotPolicyPolicyPrefix,
  *     schedules: [{
- *         period: _var.filesystem_snapshot_policy_schedules_period,
- *         timeZone: _var.filesystem_snapshot_policy_schedules_time_zone,
- *         dayOfMonth: _var.filesystem_snapshot_policy_schedules_day_of_month,
- *         dayOfWeek: _var.filesystem_snapshot_policy_schedules_day_of_week,
- *         hourOfDay: _var.filesystem_snapshot_policy_schedules_hour_of_day,
- *         month: _var.filesystem_snapshot_policy_schedules_month,
- *         retentionDurationInSeconds: _var.filesystem_snapshot_policy_schedules_retention_duration_in_seconds,
- *         schedulePrefix: _var.filesystem_snapshot_policy_schedules_schedule_prefix,
- *         timeScheduleStart: _var.filesystem_snapshot_policy_schedules_time_schedule_start,
+ *         period: filesystemSnapshotPolicySchedulesPeriod,
+ *         timeZone: filesystemSnapshotPolicySchedulesTimeZone,
+ *         dayOfMonth: filesystemSnapshotPolicySchedulesDayOfMonth,
+ *         dayOfWeek: filesystemSnapshotPolicySchedulesDayOfWeek,
+ *         hourOfDay: filesystemSnapshotPolicySchedulesHourOfDay,
+ *         month: filesystemSnapshotPolicySchedulesMonth,
+ *         retentionDurationInSeconds: filesystemSnapshotPolicySchedulesRetentionDurationInSeconds,
+ *         schedulePrefix: filesystemSnapshotPolicySchedulesSchedulePrefix,
+ *         timeScheduleStart: filesystemSnapshotPolicySchedulesTimeScheduleStart,
  *     }],
  * });
  * ```

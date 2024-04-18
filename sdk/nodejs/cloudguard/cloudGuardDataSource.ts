@@ -18,27 +18,27 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataSource = new oci.cloudguard.CloudGuardDataSource("testDataSource", {
- *     compartmentId: _var.compartment_id,
- *     dataSourceFeedProvider: _var.data_source_data_source_feed_provider,
- *     displayName: _var.data_source_display_name,
+ * const testDataSource = new oci.cloudguard.CloudGuardDataSource("test_data_source", {
+ *     compartmentId: compartmentId,
+ *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
+ *     displayName: dataSourceDisplayName,
  *     dataSourceDetails: {
- *         dataSourceFeedProvider: _var.data_source_data_source_details_data_source_feed_provider,
- *         additionalEntitiesCount: _var.data_source_data_source_details_additional_entities_count,
- *         intervalInMinutes: _var.data_source_data_source_details_interval_in_minutes,
+ *         dataSourceFeedProvider: dataSourceDataSourceDetailsDataSourceFeedProvider,
+ *         additionalEntitiesCount: dataSourceDataSourceDetailsAdditionalEntitiesCount,
+ *         intervalInMinutes: dataSourceDataSourceDetailsIntervalInMinutes,
  *         loggingQueryDetails: {
- *             loggingQueryType: _var.data_source_data_source_details_logging_query_details_logging_query_type,
- *             keyEntitiesCount: _var.data_source_data_source_details_logging_query_details_key_entities_count,
+ *             loggingQueryType: dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType,
+ *             keyEntitiesCount: dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount,
  *         },
- *         loggingQueryType: _var.data_source_data_source_details_logging_query_type,
- *         operator: _var.data_source_data_source_details_operator,
- *         query: _var.data_source_data_source_details_query,
+ *         loggingQueryType: dataSourceDataSourceDetailsLoggingQueryType,
+ *         operator: dataSourceDataSourceDetailsOperator,
+ *         query: dataSourceDataSourceDetailsQuery,
  *         queryStartTime: {
- *             startPolicyType: _var.data_source_data_source_details_query_start_time_start_policy_type,
- *             queryStartTime: _var.data_source_data_source_details_query_start_time_query_start_time,
+ *             startPolicyType: dataSourceDataSourceDetailsQueryStartTimeStartPolicyType,
+ *             queryStartTime: dataSourceDataSourceDetailsQueryStartTimeQueryStartTime,
  *         },
- *         regions: _var.data_source_data_source_details_regions,
- *         threshold: _var.data_source_data_source_details_threshold,
+ *         regions: dataSourceDataSourceDetailsRegions,
+ *         threshold: dataSourceDataSourceDetailsThreshold,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -46,7 +46,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     status: _var.data_source_status,
+ *     status: dataSourceStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

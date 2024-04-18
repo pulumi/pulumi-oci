@@ -44,9 +44,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMetricExtensionMetricExtensionOnGivenResourcesManagement = new MetricExtensionMetricExtensionOnGivenResourcesManagement(&#34;testMetricExtensionMetricExtensionOnGivenResourcesManagement&#34;, MetricExtensionMetricExtensionOnGivenResourcesManagementArgs.builder()        
- *             .metricExtensionId(oci_stack_monitoring_metric_extension.test_metric_extension().id())
- *             .resourceIds(var_.metric_extension_metric_extension_on_given_resources_management_resource_ids())
- *             .enableMetricExtensionOnGivenResources(var_.enable_metric_extension_on_given_resources())
+ *             .metricExtensionId(testMetricExtension.id())
+ *             .resourceIds(metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0])
+ *             .enableMetricExtensionOnGivenResources(enableMetricExtensionOnGivenResources)
  *             .build());
  * 
  *     }

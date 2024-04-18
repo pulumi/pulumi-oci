@@ -53,19 +53,19 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIpSecConnection = new Oci.Core.Ipsec("testIpSecConnection", new()
+    ///     var testIpSecConnection = new Oci.Core.Ipsec("test_ip_sec_connection", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         CpeId = oci_core_cpe.Test_cpe.Id,
-    ///         DrgId = oci_core_drg.Test_drg.Id,
-    ///         StaticRoutes = @var.Ip_sec_connection_static_routes,
-    ///         CpeLocalIdentifier = @var.Ip_sec_connection_cpe_local_identifier,
-    ///         CpeLocalIdentifierType = @var.Ip_sec_connection_cpe_local_identifier_type,
+    ///         CompartmentId = compartmentId,
+    ///         CpeId = testCpe.Id,
+    ///         DrgId = testDrg.Id,
+    ///         StaticRoutes = ipSecConnectionStaticRoutes,
+    ///         CpeLocalIdentifier = ipSecConnectionCpeLocalIdentifier,
+    ///         CpeLocalIdentifierType = ipSecConnectionCpeLocalIdentifierType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Ip_sec_connection_display_name,
+    ///         DisplayName = ipSecConnectionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

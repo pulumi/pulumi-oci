@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamPool = oci.Streaming.getStreamPool({
- *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ *     streamPoolId: testStreamPoolOciStreamingStreamPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetStreamPoolResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStreamPool = oci.Streaming.getStreamPool({
- *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ *     streamPoolId: testStreamPoolOciStreamingStreamPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

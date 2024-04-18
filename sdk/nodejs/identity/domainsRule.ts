@@ -18,35 +18,36 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRule = new oci.identity.DomainsRule("testRule", {
- *     condition: _var.rule_condition,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ * const testRule = new oci.identity.DomainsRule("test_rule", {
+ *     condition: ruleCondition,
+ *     idcsEndpoint: testDomain.url,
+ *     name: ruleName,
  *     policyType: {
  *         value: "SignOn",
  *     },
  *     returns: [{
- *         name: _var.rule_return_name,
- *         value: _var.rule_return_value,
- *         returnGroovy: _var.rule_return_return_groovy,
+ *         name: ruleReturnName,
+ *         value: ruleReturnValue,
+ *         returnGroovy: ruleReturnReturnGroovy,
  *     }],
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Rule"],
- *     active: _var.rule_active,
+ *     active: ruleActive,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.rule_authorization,
+ *     authorization: ruleAuthorization,
  *     conditionGroup: {
  *         type: "Condition",
- *         value: _var.rule_condition_group_value,
+ *         value: ruleConditionGroupValue,
  *     },
- *     description: _var.rule_description,
+ *     description: ruleDescription,
  *     externalId: "externalId",
- *     locked: _var.rule_locked,
- *     ocid: _var.rule_ocid,
- *     resourceTypeSchemaVersion: _var.rule_resource_type_schema_version,
- *     ruleGroovy: _var.rule_rule_groovy,
+ *     locked: ruleLocked,
+ *     ocid: ruleOcid,
+ *     resourceTypeSchemaVersion: ruleResourceTypeSchemaVersion,
+ *     ruleGroovy: ruleRuleGroovy,
  *     tags: [{
- *         key: _var.rule_tags_key,
- *         value: _var.rule_tags_value,
+ *         key: ruleTagsKey,
+ *         value: ruleTagsValue,
  *     }],
  * });
  * ```

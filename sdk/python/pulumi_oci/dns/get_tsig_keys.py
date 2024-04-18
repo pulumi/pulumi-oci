@@ -121,10 +121,10 @@ def get_tsig_keys(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=var["compartment_id"],
-        id=var["tsig_key_id"],
-        name=var["tsig_key_name"],
-        state=var["tsig_key_state"])
+    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=compartment_id,
+        id=tsig_key_id,
+        name=tsig_key_name,
+        state=tsig_key_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_tsig_keys_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=var["compartment_id"],
-        id=var["tsig_key_id"],
-        name=var["tsig_key_name"],
-        state=var["tsig_key_state"])
+    test_tsig_keys = oci.Dns.get_tsig_keys(compartment_id=compartment_id,
+        id=tsig_key_id,
+        name=tsig_key_name,
+        state=tsig_key_state)
     ```
     <!--End PulumiCodeChooser -->
 

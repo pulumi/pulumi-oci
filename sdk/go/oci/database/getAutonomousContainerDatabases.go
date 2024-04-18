@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousContainerDatabases(ctx, &database.GetAutonomousContainerDatabasesArgs{
-//				CompartmentId:                     _var.Compartment_id,
-//				AutonomousExadataInfrastructureId: pulumi.StringRef(oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id),
-//				AutonomousVmClusterId:             pulumi.StringRef(oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id),
-//				AvailabilityDomain:                pulumi.StringRef(_var.Autonomous_container_database_availability_domain),
-//				CloudAutonomousVmClusterId:        pulumi.StringRef(oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id),
-//				DisplayName:                       pulumi.StringRef(_var.Autonomous_container_database_display_name),
-//				InfrastructureType:                pulumi.StringRef(_var.Autonomous_container_database_infrastructure_type),
-//				ServiceLevelAgreementType:         pulumi.StringRef(_var.Autonomous_container_database_service_level_agreement_type),
-//				State:                             pulumi.StringRef(_var.Autonomous_container_database_state),
+//				CompartmentId:                     compartmentId,
+//				AutonomousExadataInfrastructureId: pulumi.StringRef(testAutonomousExadataInfrastructure.Id),
+//				AutonomousVmClusterId:             pulumi.StringRef(testAutonomousVmCluster.Id),
+//				AvailabilityDomain:                pulumi.StringRef(autonomousContainerDatabaseAvailabilityDomain),
+//				CloudAutonomousVmClusterId:        pulumi.StringRef(testCloudAutonomousVmCluster.Id),
+//				DisplayName:                       pulumi.StringRef(autonomousContainerDatabaseDisplayName),
+//				InfrastructureType:                pulumi.StringRef(autonomousContainerDatabaseInfrastructureType),
+//				ServiceLevelAgreementType:         pulumi.StringRef(autonomousContainerDatabaseServiceLevelAgreementType),
+//				State:                             pulumi.StringRef(autonomousContainerDatabaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

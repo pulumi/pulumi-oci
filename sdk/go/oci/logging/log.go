@@ -32,19 +32,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Logging.NewLog(ctx, "testLog", &Logging.LogArgs{
-//				DisplayName: pulumi.Any(_var.Log_display_name),
-//				LogGroupId:  pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//				LogType:     pulumi.Any(_var.Log_log_type),
+//			_, err := Logging.NewLog(ctx, "test_log", &Logging.LogArgs{
+//				DisplayName: pulumi.Any(logDisplayName),
+//				LogGroupId:  pulumi.Any(testLogGroup.Id),
+//				LogType:     pulumi.Any(logLogType),
 //				Configuration: &logging.LogConfigurationArgs{
 //					Source: &logging.LogConfigurationSourceArgs{
-//						Category:   pulumi.Any(_var.Log_configuration_source_category),
-//						Resource:   pulumi.Any(_var.Log_configuration_source_resource),
-//						Service:    pulumi.Any(_var.Log_configuration_source_service),
-//						SourceType: pulumi.Any(_var.Log_configuration_source_source_type),
-//						Parameters: pulumi.Any(_var.Log_configuration_source_parameters),
+//						Category:   pulumi.Any(logConfigurationSourceCategory),
+//						Resource:   pulumi.Any(logConfigurationSourceResource),
+//						Service:    pulumi.Any(logConfigurationSourceService),
+//						SourceType: pulumi.Any(logConfigurationSourceSourceType),
+//						Parameters: pulumi.Any(logConfigurationSourceParameters),
 //					},
-//					CompartmentId: pulumi.Any(_var.Compartment_id),
+//					CompartmentId: pulumi.Any(compartmentId),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
@@ -52,8 +52,8 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsEnabled:         pulumi.Any(_var.Log_is_enabled),
-//				RetentionDuration: pulumi.Any(_var.Log_retention_duration),
+//				IsEnabled:         pulumi.Any(logIsEnabled),
+//				RetentionDuration: pulumi.Any(logRetentionDuration),
 //			})
 //			if err != nil {
 //				return err

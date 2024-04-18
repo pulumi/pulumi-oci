@@ -39,46 +39,46 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Monitoring.NewAlarm(ctx, "testAlarm", &Monitoring.AlarmArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Monitoring.NewAlarm(ctx, "test_alarm", &Monitoring.AlarmArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Destinations: pulumi.StringArray{
-//					oci_ons_notification_topic.Test_notification_topic.Id,
+//					testNotificationTopic.Id,
 //				},
-//				DisplayName:         pulumi.Any(_var.Alarm_display_name),
-//				IsEnabled:           pulumi.Any(_var.Alarm_is_enabled),
-//				MetricCompartmentId: pulumi.Any(_var.Alarm_metric_compartment_id),
-//				Namespace:           pulumi.Any(_var.Alarm_namespace),
-//				Query:               pulumi.Any(_var.Alarm_query),
-//				Severity:            pulumi.Any(_var.Alarm_severity),
-//				Body:                pulumi.Any(_var.Alarm_body),
+//				DisplayName:         pulumi.Any(alarmDisplayName),
+//				IsEnabled:           pulumi.Any(alarmIsEnabled),
+//				MetricCompartmentId: pulumi.Any(alarmMetricCompartmentId),
+//				Namespace:           pulumi.Any(alarmNamespace),
+//				Query:               pulumi.Any(alarmQuery),
+//				Severity:            pulumi.Any(alarmSeverity),
+//				Body:                pulumi.Any(alarmBody),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsNotificationsPerMetricDimensionEnabled: pulumi.Any(_var.Alarm_is_notifications_per_metric_dimension_enabled),
-//				MessageFormat:                            pulumi.Any(_var.Alarm_message_format),
-//				MetricCompartmentIdInSubtree:             pulumi.Any(_var.Alarm_metric_compartment_id_in_subtree),
-//				NotificationVersion:                      pulumi.Any(_var.Alarm_notification_version),
+//				IsNotificationsPerMetricDimensionEnabled: pulumi.Any(alarmIsNotificationsPerMetricDimensionEnabled),
+//				MessageFormat:                            pulumi.Any(alarmMessageFormat),
+//				MetricCompartmentIdInSubtree:             pulumi.Any(alarmMetricCompartmentIdInSubtree),
+//				NotificationVersion:                      pulumi.Any(alarmNotificationVersion),
 //				Overrides: monitoring.AlarmOverrideArray{
 //					&monitoring.AlarmOverrideArgs{
-//						Body:            pulumi.Any(_var.Alarm_overrides_body),
-//						PendingDuration: pulumi.Any(_var.Alarm_overrides_pending_duration),
-//						Query:           pulumi.Any(_var.Alarm_overrides_query),
-//						RuleName:        pulumi.Any(oci_events_rule.Test_rule.Name),
-//						Severity:        pulumi.Any(_var.Alarm_overrides_severity),
+//						Body:            pulumi.Any(alarmOverridesBody),
+//						PendingDuration: pulumi.Any(alarmOverridesPendingDuration),
+//						Query:           pulumi.Any(alarmOverridesQuery),
+//						RuleName:        pulumi.Any(testRule.Name),
+//						Severity:        pulumi.Any(alarmOverridesSeverity),
 //					},
 //				},
-//				PendingDuration:            pulumi.Any(_var.Alarm_pending_duration),
-//				RepeatNotificationDuration: pulumi.Any(_var.Alarm_repeat_notification_duration),
-//				Resolution:                 pulumi.Any(_var.Alarm_resolution),
-//				ResourceGroup:              pulumi.Any(_var.Alarm_resource_group),
-//				RuleName:                   pulumi.Any(oci_events_rule.Test_rule.Name),
+//				PendingDuration:            pulumi.Any(alarmPendingDuration),
+//				RepeatNotificationDuration: pulumi.Any(alarmRepeatNotificationDuration),
+//				Resolution:                 pulumi.Any(alarmResolution),
+//				ResourceGroup:              pulumi.Any(alarmResourceGroup),
+//				RuleName:                   pulumi.Any(testRule.Name),
 //				Suppression: &monitoring.AlarmSuppressionTypeArgs{
-//					TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
-//					TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
-//					Description:       pulumi.Any(_var.Alarm_suppression_description),
+//					TimeSuppressFrom:  pulumi.Any(alarmSuppressionTimeSuppressFrom),
+//					TimeSuppressUntil: pulumi.Any(alarmSuppressionTimeSuppressUntil),
+//					Description:       pulumi.Any(alarmSuppressionDescription),
 //				},
 //			})
 //			if err != nil {

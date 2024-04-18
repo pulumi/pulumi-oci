@@ -362,41 +362,41 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_auto_scaling_configuration = oci.big_data_service.AutoScalingConfiguration("testAutoScalingConfiguration",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["auto_scaling_configuration_cluster_admin_password"],
-            is_enabled=var["auto_scaling_configuration_is_enabled"],
-            node_type=var["auto_scaling_configuration_node_type"],
-            display_name=var["auto_scaling_configuration_display_name"],
+        test_auto_scaling_configuration = oci.big_data_service.AutoScalingConfiguration("test_auto_scaling_configuration",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
+            is_enabled=auto_scaling_configuration_is_enabled,
+            node_type=auto_scaling_configuration_node_type,
+            display_name=auto_scaling_configuration_display_name,
             policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
+                policy_type=auto_scaling_configuration_policy_details_policy_type,
                 scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
+                    memory_step_size=auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
+                        metric_type=auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
+                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            operator=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+                            value=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
                         ),
                     ),
-                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
-                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
+                    min_memory_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+                    min_ocpus_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
                 ),
                 scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
-                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
+                    max_memory_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+                    max_ocpus_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+                    memory_step_size=auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
+                        metric_type=auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
+                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            operator=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+                            value=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
                         ),
                     ),
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
+                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
                 ),
             ))
         ```
@@ -448,41 +448,41 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_auto_scaling_configuration = oci.big_data_service.AutoScalingConfiguration("testAutoScalingConfiguration",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["auto_scaling_configuration_cluster_admin_password"],
-            is_enabled=var["auto_scaling_configuration_is_enabled"],
-            node_type=var["auto_scaling_configuration_node_type"],
-            display_name=var["auto_scaling_configuration_display_name"],
+        test_auto_scaling_configuration = oci.big_data_service.AutoScalingConfiguration("test_auto_scaling_configuration",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=auto_scaling_configuration_cluster_admin_password,
+            is_enabled=auto_scaling_configuration_is_enabled,
+            node_type=auto_scaling_configuration_node_type,
+            display_name=auto_scaling_configuration_display_name,
             policy_details=oci.big_data_service.AutoScalingConfigurationPolicyDetailsArgs(
-                policy_type=var["auto_scaling_configuration_policy_details_policy_type"],
+                policy_type=auto_scaling_configuration_policy_details_policy_type,
                 scale_down_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs(
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_memory_step_size"],
+                    memory_step_size=auto_scaling_configuration_policy_details_scale_down_config_memory_step_size,
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type"],
+                        metric_type=auto_scaling_configuration_policy_details_scale_down_config_metric_metric_type,
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleDownConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value"],
+                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_duration_in_minutes,
+                            operator=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_operator,
+                            value=auto_scaling_configuration_policy_details_scale_down_config_metric_threshold_value,
                         ),
                     ),
-                    min_memory_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node"],
-                    min_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node"],
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size"],
+                    min_memory_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_memory_per_node,
+                    min_ocpus_per_node=auto_scaling_configuration_policy_details_scale_down_config_min_ocpus_per_node,
+                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_down_config_ocpu_step_size,
                 ),
                 scale_up_config=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigArgs(
-                    max_memory_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node"],
-                    max_ocpus_per_node=var["auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node"],
-                    memory_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_memory_step_size"],
+                    max_memory_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_memory_per_node,
+                    max_ocpus_per_node=auto_scaling_configuration_policy_details_scale_up_config_max_ocpus_per_node,
+                    memory_step_size=auto_scaling_configuration_policy_details_scale_up_config_memory_step_size,
                     metric=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type"],
+                        metric_type=auto_scaling_configuration_policy_details_scale_up_config_metric_metric_type,
                         threshold=oci.big_data_service.AutoScalingConfigurationPolicyDetailsScaleUpConfigMetricThresholdArgs(
-                            duration_in_minutes=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes"],
-                            operator=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value"],
+                            duration_in_minutes=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_duration_in_minutes,
+                            operator=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_operator,
+                            value=auto_scaling_configuration_policy_details_scale_up_config_metric_threshold_value,
                         ),
                     ),
-                    ocpu_step_size=var["auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size"],
+                    ocpu_step_size=auto_scaling_configuration_policy_details_scale_up_config_ocpu_step_size,
                 ),
             ))
         ```

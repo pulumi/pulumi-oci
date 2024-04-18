@@ -18,23 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepository = new oci.devops.Repository("testRepository", {
- *     projectId: oci_devops_project.test_project.id,
- *     repositoryType: _var.repository_repository_type,
- *     defaultBranch: _var.repository_default_branch,
+ * const testRepository = new oci.devops.Repository("test_repository", {
+ *     name: repositoryName,
+ *     projectId: testProject.id,
+ *     repositoryType: repositoryRepositoryType,
+ *     defaultBranch: repositoryDefaultBranch,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.repository_description,
+ *     description: repositoryDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     mirrorRepositoryConfig: {
- *         connectorId: oci_devops_connector.test_connector.id,
- *         repositoryUrl: _var.repository_mirror_repository_config_repository_url,
+ *         connectorId: testConnector.id,
+ *         repositoryUrl: repositoryMirrorRepositoryConfigRepositoryUrl,
  *         triggerSchedule: {
- *             scheduleType: _var.repository_mirror_repository_config_trigger_schedule_schedule_type,
- *             customSchedule: _var.repository_mirror_repository_config_trigger_schedule_custom_schedule,
+ *             scheduleType: repositoryMirrorRepositoryConfigTriggerScheduleScheduleType,
+ *             customSchedule: repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule,
  *         },
  *     },
  * });

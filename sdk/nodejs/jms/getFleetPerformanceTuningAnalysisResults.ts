@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     applicationId: oci_dataflow_application.test_application.id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     timeEnd: _var.fleet_performance_tuning_analysis_result_time_end,
- *     timeStart: _var.fleet_performance_tuning_analysis_result_time_start,
+ *     fleetId: testFleet.id,
+ *     applicationId: testApplication.id,
+ *     managedInstanceId: testManagedInstance.id,
+ *     timeEnd: fleetPerformanceTuningAnalysisResultTimeEnd,
+ *     timeStart: fleetPerformanceTuningAnalysisResultTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetFleetPerformanceTuningAnalysisResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetPerformanceTuningAnalysisResults = oci.Jms.getFleetPerformanceTuningAnalysisResults({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     applicationId: oci_dataflow_application.test_application.id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     timeEnd: _var.fleet_performance_tuning_analysis_result_time_end,
- *     timeStart: _var.fleet_performance_tuning_analysis_result_time_start,
+ *     fleetId: testFleet.id,
+ *     applicationId: testApplication.id,
+ *     managedInstanceId: testManagedInstance.id,
+ *     timeEnd: fleetPerformanceTuningAnalysisResultTimeEnd,
+ *     timeStart: fleetPerformanceTuningAnalysisResultTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

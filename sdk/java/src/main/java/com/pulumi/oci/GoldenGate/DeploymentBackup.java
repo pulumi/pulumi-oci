@@ -47,12 +47,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDeploymentBackup = new DeploymentBackup(&#34;testDeploymentBackup&#34;, DeploymentBackupArgs.builder()        
- *             .bucket(var_.deployment_backup_bucket())
- *             .compartmentId(var_.compartment_id())
- *             .deploymentId(oci_golden_gate_deployment.test_deployment().id())
- *             .displayName(var_.deployment_backup_display_name())
- *             .namespace(var_.deployment_backup_namespace())
- *             .object(var_.deployment_backup_object())
+ *             .bucket(deploymentBackupBucket)
+ *             .compartmentId(compartmentId)
+ *             .deploymentId(testDeployment.id())
+ *             .displayName(deploymentBackupDisplayName)
+ *             .namespace(deploymentBackupNamespace)
+ *             .object(deploymentBackupObject)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());

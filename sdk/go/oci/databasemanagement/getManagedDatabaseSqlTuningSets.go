@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningSets(ctx, &databasemanagement.GetManagedDatabaseSqlTuningSetsArgs{
-//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
-//				NameContains:         pulumi.StringRef(_var.Managed_database_sql_tuning_set_name_contains),
-//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_sql_tuning_set_opc_named_credential_id),
-//				Owner:                pulumi.StringRef(_var.Managed_database_sql_tuning_set_owner),
+//				ManagedDatabaseId:    testManagedDatabase.Id,
+//				NameContains:         pulumi.StringRef(managedDatabaseSqlTuningSetNameContains),
+//				OpcNamedCredentialId: pulumi.StringRef(managedDatabaseSqlTuningSetOpcNamedCredentialId),
+//				Owner:                pulumi.StringRef(managedDatabaseSqlTuningSetOwner),
 //			}, nil)
 //			if err != nil {
 //				return err

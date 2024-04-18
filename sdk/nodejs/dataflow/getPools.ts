@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPools = oci.DataFlow.getPools({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.pool_display_name,
- *     displayNameStartsWith: _var.pool_display_name_starts_with,
- *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
- *     state: _var.pool_state,
+ *     compartmentId: compartmentId,
+ *     displayName: poolDisplayName,
+ *     displayNameStartsWith: poolDisplayNameStartsWith,
+ *     ownerPrincipalId: testOwnerPrincipal.id,
+ *     state: poolState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetPoolsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPools = oci.DataFlow.getPools({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.pool_display_name,
- *     displayNameStartsWith: _var.pool_display_name_starts_with,
- *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
- *     state: _var.pool_state,
+ *     compartmentId: compartmentId,
+ *     displayName: poolDisplayName,
+ *     displayNameStartsWith: poolDisplayNameStartsWith,
+ *     ownerPrincipalId: testOwnerPrincipal.id,
+ *     state: poolState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

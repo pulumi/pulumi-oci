@@ -18,40 +18,40 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVmCluster = new oci.database.AutonomousVmCluster("testAutonomousVmCluster", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.autonomous_vm_cluster_display_name,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
- *     autonomousDataStorageSizeInTbs: _var.autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
- *     computeModel: _var.autonomous_vm_cluster_compute_model,
- *     cpuCoreCountPerNode: _var.autonomous_vm_cluster_cpu_core_count_per_node,
- *     dbServers: _var.autonomous_vm_cluster_db_servers,
- *     definedTags: _var.autonomous_vm_cluster_defined_tags,
+ * const testAutonomousVmCluster = new oci.database.AutonomousVmCluster("test_autonomous_vm_cluster", {
+ *     compartmentId: compartmentId,
+ *     displayName: autonomousVmClusterDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     vmClusterNetworkId: testVmClusterNetwork.id,
+ *     autonomousDataStorageSizeInTbs: autonomousVmClusterAutonomousDataStorageSizeInTbs,
+ *     computeModel: autonomousVmClusterComputeModel,
+ *     cpuCoreCountPerNode: autonomousVmClusterCpuCoreCountPerNode,
+ *     dbServers: autonomousVmClusterDbServers,
+ *     definedTags: autonomousVmClusterDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isLocalBackupEnabled: _var.autonomous_vm_cluster_is_local_backup_enabled,
- *     isMtlsEnabled: _var.autonomous_vm_cluster_is_mtls_enabled,
- *     licenseModel: _var.autonomous_vm_cluster_license_model,
+ *     isLocalBackupEnabled: autonomousVmClusterIsLocalBackupEnabled,
+ *     isMtlsEnabled: autonomousVmClusterIsMtlsEnabled,
+ *     licenseModel: autonomousVmClusterLicenseModel,
  *     maintenanceWindowDetails: [{
  *         daysOfWeeks: [{
- *             name: _var.autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
+ *             name: autonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
- *         hoursOfDays: _var.autonomous_vm_cluster_maintenance_window_details_hours_of_day,
- *         leadTimeInWeeks: _var.autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+ *         hoursOfDays: autonomousVmClusterMaintenanceWindowDetailsHoursOfDay,
+ *         leadTimeInWeeks: autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks,
  *         months: [{
- *             name: _var.autonomous_vm_cluster_maintenance_window_details_months_name,
+ *             name: autonomousVmClusterMaintenanceWindowDetailsMonthsName,
  *         }],
- *         patchingMode: _var.autonomous_vm_cluster_maintenance_window_details_patching_mode,
- *         preference: _var.autonomous_vm_cluster_maintenance_window_details_preference,
- *         weeksOfMonths: _var.autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
+ *         patchingMode: autonomousVmClusterMaintenanceWindowDetailsPatchingMode,
+ *         preference: autonomousVmClusterMaintenanceWindowDetailsPreference,
+ *         weeksOfMonths: autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
  *     }],
- *     memoryPerOracleComputeUnitInGbs: _var.autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
- *     scanListenerPortNonTls: _var.autonomous_vm_cluster_scan_listener_port_non_tls,
- *     scanListenerPortTls: _var.autonomous_vm_cluster_scan_listener_port_tls,
- *     timeZone: _var.autonomous_vm_cluster_time_zone,
- *     totalContainerDatabases: _var.autonomous_vm_cluster_total_container_databases,
+ *     memoryPerOracleComputeUnitInGbs: autonomousVmClusterMemoryPerOracleComputeUnitInGbs,
+ *     scanListenerPortNonTls: autonomousVmClusterScanListenerPortNonTls,
+ *     scanListenerPortTls: autonomousVmClusterScanListenerPortTls,
+ *     timeZone: autonomousVmClusterTimeZone,
+ *     totalContainerDatabases: autonomousVmClusterTotalContainerDatabases,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

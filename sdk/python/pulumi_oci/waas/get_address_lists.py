@@ -144,12 +144,12 @@ def get_address_lists(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_lists = oci.Waas.get_address_lists(compartment_id=var["compartment_id"],
-        ids=var["address_list_ids"],
-        names=var["address_list_names"],
-        states=var["address_list_states"],
-        time_created_greater_than_or_equal_to=var["address_list_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["address_list_time_created_less_than"])
+    test_address_lists = oci.Waas.get_address_lists(compartment_id=compartment_id,
+        ids=address_list_ids,
+        names=address_list_names,
+        states=address_list_states,
+        time_created_greater_than_or_equal_to=address_list_time_created_greater_than_or_equal_to,
+        time_created_less_than=address_list_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,12 +205,12 @@ def get_address_lists_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_lists = oci.Waas.get_address_lists(compartment_id=var["compartment_id"],
-        ids=var["address_list_ids"],
-        names=var["address_list_names"],
-        states=var["address_list_states"],
-        time_created_greater_than_or_equal_to=var["address_list_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["address_list_time_created_less_than"])
+    test_address_lists = oci.Waas.get_address_lists(compartment_id=compartment_id,
+        ids=address_list_ids,
+        names=address_list_names,
+        states=address_list_states,
+        time_created_greater_than_or_equal_to=address_list_time_created_greater_than_or_equal_to,
+        time_created_less_than=address_list_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

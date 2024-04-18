@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksFinding = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFinding({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
- *     beginExecId: oci_database_management_begin_exec.test_begin_exec.id,
- *     endExecId: oci_database_management_end_exec.test_end_exec.id,
- *     findingFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
- *     indexHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
- *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_finding_search_period,
- *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
+ *     beginExecId: testBeginExec.id,
+ *     endExecId: testEndExec.id,
+ *     findingFilter: managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter,
+ *     indexHashFilter: managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter,
+ *     searchPeriod: managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod,
+ *     statsHashFilter: managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,14 +121,14 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlTuningAdvisorTasksFinding = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksFinding({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
- *     beginExecId: oci_database_management_begin_exec.test_begin_exec.id,
- *     endExecId: oci_database_management_end_exec.test_end_exec.id,
- *     findingFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_finding_filter,
- *     indexHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter,
- *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_finding_search_period,
- *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     sqlTuningAdvisorTaskId: testSqlTuningAdvisorTask.id,
+ *     beginExecId: testBeginExec.id,
+ *     endExecId: testEndExec.id,
+ *     findingFilter: managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter,
+ *     indexHashFilter: managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter,
+ *     searchPeriod: managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod,
+ *     statsHashFilter: managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

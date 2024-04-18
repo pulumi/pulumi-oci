@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendation = oci.Optimizer.getRecommendation({
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *     recommendationId: testRecommendationOciOptimizerRecommendation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetRecommendationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendation = oci.Optimizer.getRecommendation({
- *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *     recommendationId: testRecommendationOciOptimizerRecommendation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

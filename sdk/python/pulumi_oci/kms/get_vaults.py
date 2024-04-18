@@ -99,7 +99,7 @@ def get_vaults(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vaults = oci.Kms.get_vaults(compartment_id=var["compartment_id"])
+    test_vaults = oci.Kms.get_vaults(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -140,7 +140,7 @@ def get_vaults_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vaults = oci.Kms.get_vaults(compartment_id=var["compartment_id"])
+    test_vaults = oci.Kms.get_vaults(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

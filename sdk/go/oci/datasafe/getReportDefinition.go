@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetReportDefinition(ctx, &datasafe.GetReportDefinitionArgs{
-//				ReportDefinitionId: oci_data_safe_report_definition.Test_report_definition.Id,
+//				ReportDefinitionId: testReportDefinitionOciDataSafeReportDefinition.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -80,8 +80,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -123,8 +123,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -166,8 +166,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -209,8 +209,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoint = ApmSyntheticsFunctions.getDedicatedVantagePoint(GetDedicatedVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dedicatedVantagePointId(oci_apm_synthetics_dedicated_vantage_point.test_dedicated_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dedicatedVantagePointId(testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -252,10 +252,10 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.dedicated_vantage_point_display_name())
-     *             .name(var_.dedicated_vantage_point_name())
-     *             .status(var_.dedicated_vantage_point_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(dedicatedVantagePointDisplayName)
+     *             .name(dedicatedVantagePointName)
+     *             .status(dedicatedVantagePointStatus)
      *             .build());
      * 
      *     }
@@ -297,10 +297,10 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.dedicated_vantage_point_display_name())
-     *             .name(var_.dedicated_vantage_point_name())
-     *             .status(var_.dedicated_vantage_point_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(dedicatedVantagePointDisplayName)
+     *             .name(dedicatedVantagePointName)
+     *             .status(dedicatedVantagePointStatus)
      *             .build());
      * 
      *     }
@@ -342,10 +342,10 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.dedicated_vantage_point_display_name())
-     *             .name(var_.dedicated_vantage_point_name())
-     *             .status(var_.dedicated_vantage_point_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(dedicatedVantagePointDisplayName)
+     *             .name(dedicatedVantagePointName)
+     *             .status(dedicatedVantagePointStatus)
      *             .build());
      * 
      *     }
@@ -387,10 +387,10 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedVantagePoints = ApmSyntheticsFunctions.getDedicatedVantagePoints(GetDedicatedVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.dedicated_vantage_point_display_name())
-     *             .name(var_.dedicated_vantage_point_name())
-     *             .status(var_.dedicated_vantage_point_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(dedicatedVantagePointDisplayName)
+     *             .name(dedicatedVantagePointName)
+     *             .status(dedicatedVantagePointStatus)
      *             .build());
      * 
      *     }
@@ -432,8 +432,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
      *             .build());
      * 
      *     }
@@ -475,8 +475,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
      *             .build());
      * 
      *     }
@@ -518,8 +518,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
      *             .build());
      * 
      *     }
@@ -561,8 +561,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitor = ApmSyntheticsFunctions.getMonitor(GetMonitorArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .monitorId(testMonitorOciApmSyntheticsMonitor.id())
      *             .build());
      * 
      *     }
@@ -604,14 +604,14 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.monitor_display_name())
-     *             .isMaintenanceWindowActive(var_.monitor_is_maintenance_window_active())
-     *             .isMaintenanceWindowSet(var_.monitor_is_maintenance_window_set())
-     *             .monitorType(var_.monitor_monitor_type())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
-     *             .status(var_.monitor_status())
-     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(monitorDisplayName)
+     *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
+     *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
+     *             .monitorType(monitorMonitorType)
+     *             .scriptId(testScript.id())
+     *             .status(monitorStatus)
+     *             .vantagePoint(monitorVantagePoint)
      *             .build());
      * 
      *     }
@@ -653,14 +653,14 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.monitor_display_name())
-     *             .isMaintenanceWindowActive(var_.monitor_is_maintenance_window_active())
-     *             .isMaintenanceWindowSet(var_.monitor_is_maintenance_window_set())
-     *             .monitorType(var_.monitor_monitor_type())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
-     *             .status(var_.monitor_status())
-     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(monitorDisplayName)
+     *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
+     *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
+     *             .monitorType(monitorMonitorType)
+     *             .scriptId(testScript.id())
+     *             .status(monitorStatus)
+     *             .vantagePoint(monitorVantagePoint)
      *             .build());
      * 
      *     }
@@ -702,14 +702,14 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.monitor_display_name())
-     *             .isMaintenanceWindowActive(var_.monitor_is_maintenance_window_active())
-     *             .isMaintenanceWindowSet(var_.monitor_is_maintenance_window_set())
-     *             .monitorType(var_.monitor_monitor_type())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
-     *             .status(var_.monitor_status())
-     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(monitorDisplayName)
+     *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
+     *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
+     *             .monitorType(monitorMonitorType)
+     *             .scriptId(testScript.id())
+     *             .status(monitorStatus)
+     *             .vantagePoint(monitorVantagePoint)
      *             .build());
      * 
      *     }
@@ -751,14 +751,14 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitors = ApmSyntheticsFunctions.getMonitors(GetMonitorsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.monitor_display_name())
-     *             .isMaintenanceWindowActive(var_.monitor_is_maintenance_window_active())
-     *             .isMaintenanceWindowSet(var_.monitor_is_maintenance_window_set())
-     *             .monitorType(var_.monitor_monitor_type())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
-     *             .status(var_.monitor_status())
-     *             .vantagePoint(var_.monitor_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(monitorDisplayName)
+     *             .isMaintenanceWindowActive(monitorIsMaintenanceWindowActive)
+     *             .isMaintenanceWindowSet(monitorIsMaintenanceWindowSet)
+     *             .monitorType(monitorMonitorType)
+     *             .scriptId(testScript.id())
+     *             .status(monitorStatus)
+     *             .vantagePoint(monitorVantagePoint)
      *             .build());
      * 
      *     }
@@ -800,8 +800,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -843,8 +843,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -886,8 +886,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -929,8 +929,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoint = ApmSyntheticsFunctions.getOnPremiseVantagePoint(GetOnPremiseVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePointOciApmSyntheticsOnPremiseVantagePoint.id())
      *             .build());
      * 
      *     }
@@ -972,9 +972,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .workerId(testWorker.id())
      *             .build());
      * 
      *     }
@@ -1016,9 +1016,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .workerId(testWorker.id())
      *             .build());
      * 
      *     }
@@ -1060,9 +1060,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .workerId(testWorker.id())
      *             .build());
      * 
      *     }
@@ -1104,9 +1104,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorker = ApmSyntheticsFunctions.getOnPremiseVantagePointWorker(GetOnPremiseVantagePointWorkerArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .workerId(oci_apm_synthetics_worker.test_worker().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .workerId(testWorker.id())
      *             .build());
      * 
      *     }
@@ -1148,12 +1148,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .capability(var_.on_premise_vantage_point_worker_capability())
-     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
-     *             .name(var_.on_premise_vantage_point_worker_name())
-     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .capability(onPremiseVantagePointWorkerCapability)
+     *             .displayName(onPremiseVantagePointWorkerDisplayName)
+     *             .name(onPremiseVantagePointWorkerName)
+     *             .status(onPremiseVantagePointWorkerStatus)
      *             .build());
      * 
      *     }
@@ -1195,12 +1195,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .capability(var_.on_premise_vantage_point_worker_capability())
-     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
-     *             .name(var_.on_premise_vantage_point_worker_name())
-     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .capability(onPremiseVantagePointWorkerCapability)
+     *             .displayName(onPremiseVantagePointWorkerDisplayName)
+     *             .name(onPremiseVantagePointWorkerName)
+     *             .status(onPremiseVantagePointWorkerStatus)
      *             .build());
      * 
      *     }
@@ -1242,12 +1242,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .capability(var_.on_premise_vantage_point_worker_capability())
-     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
-     *             .name(var_.on_premise_vantage_point_worker_name())
-     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .capability(onPremiseVantagePointWorkerCapability)
+     *             .displayName(onPremiseVantagePointWorkerDisplayName)
+     *             .name(onPremiseVantagePointWorkerName)
+     *             .status(onPremiseVantagePointWorkerStatus)
      *             .build());
      * 
      *     }
@@ -1289,12 +1289,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePointWorkers = ApmSyntheticsFunctions.getOnPremiseVantagePointWorkers(GetOnPremiseVantagePointWorkersArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .onPremiseVantagePointId(oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point().id())
-     *             .capability(var_.on_premise_vantage_point_worker_capability())
-     *             .displayName(var_.on_premise_vantage_point_worker_display_name())
-     *             .name(var_.on_premise_vantage_point_worker_name())
-     *             .status(var_.on_premise_vantage_point_worker_status())
+     *             .apmDomainId(testApmDomain.id())
+     *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+     *             .capability(onPremiseVantagePointWorkerCapability)
+     *             .displayName(onPremiseVantagePointWorkerDisplayName)
+     *             .name(onPremiseVantagePointWorkerName)
+     *             .status(onPremiseVantagePointWorkerStatus)
      *             .build());
      * 
      *     }
@@ -1336,9 +1336,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.on_premise_vantage_point_display_name())
-     *             .name(var_.on_premise_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(onPremiseVantagePointDisplayName)
+     *             .name(onPremiseVantagePointName)
      *             .build());
      * 
      *     }
@@ -1380,9 +1380,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.on_premise_vantage_point_display_name())
-     *             .name(var_.on_premise_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(onPremiseVantagePointDisplayName)
+     *             .name(onPremiseVantagePointName)
      *             .build());
      * 
      *     }
@@ -1424,9 +1424,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.on_premise_vantage_point_display_name())
-     *             .name(var_.on_premise_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(onPremiseVantagePointDisplayName)
+     *             .name(onPremiseVantagePointName)
      *             .build());
      * 
      *     }
@@ -1468,9 +1468,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOnPremiseVantagePoints = ApmSyntheticsFunctions.getOnPremiseVantagePoints(GetOnPremiseVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.on_premise_vantage_point_display_name())
-     *             .name(var_.on_premise_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(onPremiseVantagePointDisplayName)
+     *             .name(onPremiseVantagePointName)
      *             .build());
      * 
      *     }
@@ -1512,12 +1512,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .executionTime(var_.result_execution_time())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
-     *             .resultContentType(var_.result_result_content_type())
-     *             .resultType(var_.result_result_type())
-     *             .vantagePoint(var_.result_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .executionTime(resultExecutionTime)
+     *             .monitorId(testMonitor.id())
+     *             .resultContentType(resultResultContentType)
+     *             .resultType(resultResultType)
+     *             .vantagePoint(resultVantagePoint)
      *             .build());
      * 
      *     }
@@ -1559,12 +1559,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .executionTime(var_.result_execution_time())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
-     *             .resultContentType(var_.result_result_content_type())
-     *             .resultType(var_.result_result_type())
-     *             .vantagePoint(var_.result_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .executionTime(resultExecutionTime)
+     *             .monitorId(testMonitor.id())
+     *             .resultContentType(resultResultContentType)
+     *             .resultType(resultResultType)
+     *             .vantagePoint(resultVantagePoint)
      *             .build());
      * 
      *     }
@@ -1606,12 +1606,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .executionTime(var_.result_execution_time())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
-     *             .resultContentType(var_.result_result_content_type())
-     *             .resultType(var_.result_result_type())
-     *             .vantagePoint(var_.result_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .executionTime(resultExecutionTime)
+     *             .monitorId(testMonitor.id())
+     *             .resultContentType(resultResultContentType)
+     *             .resultType(resultResultType)
+     *             .vantagePoint(resultVantagePoint)
      *             .build());
      * 
      *     }
@@ -1653,12 +1653,12 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResult = ApmSyntheticsFunctions.getResult(GetResultArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .executionTime(var_.result_execution_time())
-     *             .monitorId(oci_apm_synthetics_monitor.test_monitor().id())
-     *             .resultContentType(var_.result_result_content_type())
-     *             .resultType(var_.result_result_type())
-     *             .vantagePoint(var_.result_vantage_point())
+     *             .apmDomainId(testApmDomain.id())
+     *             .executionTime(resultExecutionTime)
+     *             .monitorId(testMonitor.id())
+     *             .resultContentType(resultResultContentType)
+     *             .resultType(resultResultType)
+     *             .vantagePoint(resultVantagePoint)
      *             .build());
      * 
      *     }
@@ -1700,8 +1700,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .scriptId(testScriptOciApmSyntheticsScript.id())
      *             .build());
      * 
      *     }
@@ -1743,8 +1743,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .scriptId(testScriptOciApmSyntheticsScript.id())
      *             .build());
      * 
      *     }
@@ -1786,8 +1786,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .scriptId(testScriptOciApmSyntheticsScript.id())
      *             .build());
      * 
      *     }
@@ -1829,8 +1829,8 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = ApmSyntheticsFunctions.getScript(GetScriptArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .scriptId(oci_apm_synthetics_script.test_script().id())
+     *             .apmDomainId(testApmDomain.id())
+     *             .scriptId(testScriptOciApmSyntheticsScript.id())
      *             .build());
      * 
      *     }
@@ -1872,9 +1872,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .contentType(var_.script_content_type())
-     *             .displayName(var_.script_display_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .contentType(scriptContentType)
+     *             .displayName(scriptDisplayName)
      *             .build());
      * 
      *     }
@@ -1916,9 +1916,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .contentType(var_.script_content_type())
-     *             .displayName(var_.script_display_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .contentType(scriptContentType)
+     *             .displayName(scriptDisplayName)
      *             .build());
      * 
      *     }
@@ -1960,9 +1960,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .contentType(var_.script_content_type())
-     *             .displayName(var_.script_display_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .contentType(scriptContentType)
+     *             .displayName(scriptDisplayName)
      *             .build());
      * 
      *     }
@@ -2004,9 +2004,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScripts = ApmSyntheticsFunctions.getScripts(GetScriptsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .contentType(var_.script_content_type())
-     *             .displayName(var_.script_display_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .contentType(scriptContentType)
+     *             .displayName(scriptDisplayName)
      *             .build());
      * 
      *     }
@@ -2048,9 +2048,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2092,9 +2092,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2136,9 +2136,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2180,9 +2180,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoint = ApmSyntheticsFunctions.getVantagePoint(GetVantagePointArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2224,9 +2224,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2268,9 +2268,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2312,9 +2312,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }
@@ -2356,9 +2356,9 @@ public final class ApmSyntheticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicVantagePoints = ApmSyntheticsFunctions.getVantagePoints(GetVantagePointsArgs.builder()
-     *             .apmDomainId(oci_apm_synthetics_apm_domain.test_apm_domain().id())
-     *             .displayName(var_.public_vantage_point_display_name())
-     *             .name(var_.public_vantage_point_name())
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(publicVantagePointDisplayName)
+     *             .name(publicVantagePointName)
      *             .build());
      * 
      *     }

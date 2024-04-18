@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSdmMaskingPolicyDifferences = oci.DataSafe.getSdmMaskingPolicyDifferences({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.sdm_masking_policy_difference_compartment_id_in_subtree,
- *     differenceAccessLevel: _var.sdm_masking_policy_difference_difference_access_level,
- *     displayName: _var.sdm_masking_policy_difference_display_name,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     state: _var.sdm_masking_policy_difference_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+ *     differenceAccessLevel: sdmMaskingPolicyDifferenceDifferenceAccessLevel,
+ *     displayName: sdmMaskingPolicyDifferenceDisplayName,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     state: sdmMaskingPolicyDifferenceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,13 +129,13 @@ export interface GetSdmMaskingPolicyDifferencesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSdmMaskingPolicyDifferences = oci.DataSafe.getSdmMaskingPolicyDifferences({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.sdm_masking_policy_difference_compartment_id_in_subtree,
- *     differenceAccessLevel: _var.sdm_masking_policy_difference_difference_access_level,
- *     displayName: _var.sdm_masking_policy_difference_display_name,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     state: _var.sdm_masking_policy_difference_state,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
+ *     differenceAccessLevel: sdmMaskingPolicyDifferenceDifferenceAccessLevel,
+ *     displayName: sdmMaskingPolicyDifferenceDisplayName,
+ *     maskingPolicyId: testMaskingPolicy.id,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     state: sdmMaskingPolicyDifferenceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

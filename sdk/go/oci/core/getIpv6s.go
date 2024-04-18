@@ -38,9 +38,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetIpv6s(ctx, &core.GetIpv6sArgs{
-//				IpAddress: pulumi.StringRef(_var.Ipv6_ip_address),
-//				SubnetId:  pulumi.StringRef(oci_core_subnet.Test_subnet.Id),
-//				VnicId:    pulumi.StringRef(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//				IpAddress: pulumi.StringRef(ipv6IpAddress),
+//				SubnetId:  pulumi.StringRef(testSubnet.Id),
+//				VnicId:    pulumi.StringRef(testVnicAttachment.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

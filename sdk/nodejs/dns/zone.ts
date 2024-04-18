@@ -22,23 +22,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testZone = new oci.dns.Zone("testZone", {
- *     compartmentId: _var.compartment_id,
- *     zoneType: _var.zone_zone_type,
- *     definedTags: _var.zone_defined_tags,
+ * const testZone = new oci.dns.Zone("test_zone", {
+ *     compartmentId: compartmentId,
+ *     name: zoneName,
+ *     zoneType: zoneZoneType,
+ *     definedTags: zoneDefinedTags,
  *     externalDownstreams: [{
- *         address: _var.zone_external_downstreams_address,
- *         port: _var.zone_external_downstreams_port,
- *         tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ *         address: zoneExternalDownstreamsAddress,
+ *         port: zoneExternalDownstreamsPort,
+ *         tsigKeyId: testTsigKey.id,
  *     }],
  *     externalMasters: [{
- *         address: _var.zone_external_masters_address,
- *         port: _var.zone_external_masters_port,
- *         tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ *         address: zoneExternalMastersAddress,
+ *         port: zoneExternalMastersPort,
+ *         tsigKeyId: testTsigKey.id,
  *     }],
- *     freeformTags: _var.zone_freeform_tags,
- *     scope: _var.zone_scope,
- *     viewId: oci_dns_view.test_view.id,
+ *     freeformTags: zoneFreeformTags,
+ *     scope: zoneScope,
+ *     viewId: testView.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

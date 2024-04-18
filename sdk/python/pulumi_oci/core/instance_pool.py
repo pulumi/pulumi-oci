@@ -466,44 +466,44 @@ class InstancePool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_instance_pool = oci.core.InstancePool("testInstancePool",
-            compartment_id=var["compartment_id"],
-            instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
+        test_instance_pool = oci.core.InstancePool("test_instance_pool",
+            compartment_id=compartment_id,
+            instance_configuration_id=test_instance_configuration["id"],
             placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                fault_domains=var["instance_pool_placement_configurations_fault_domains"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                availability_domain=instance_pool_placement_configurations_availability_domain,
+                fault_domains=instance_pool_placement_configurations_fault_domains,
+                primary_subnet_id=test_subnet["id"],
                 primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    subnet_id=test_subnet["id"],
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
                 ),
                 secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
+                    subnet_id=test_subnet["id"],
+                    display_name=instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
                 )],
             )],
-            size=var["instance_pool_size"],
+            size=instance_pool_size,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["instance_pool_display_name"],
+            display_name=instance_pool_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            instance_display_name_formatter=var["instance_pool_instance_display_name_formatter"],
-            instance_hostname_formatter=var["instance_pool_instance_hostname_formatter"],
+            instance_display_name_formatter=instance_pool_instance_display_name_formatter,
+            instance_hostname_formatter=instance_pool_instance_hostname_formatter,
             load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                port=var["instance_pool_load_balancers_port"],
-                vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
+                backend_set_name=test_backend_set["name"],
+                load_balancer_id=test_load_balancer["id"],
+                port=instance_pool_load_balancers_port,
+                vnic_selection=instance_pool_load_balancers_vnic_selection,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -558,44 +558,44 @@ class InstancePool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_instance_pool = oci.core.InstancePool("testInstancePool",
-            compartment_id=var["compartment_id"],
-            instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"],
+        test_instance_pool = oci.core.InstancePool("test_instance_pool",
+            compartment_id=compartment_id,
+            instance_configuration_id=test_instance_configuration["id"],
             placement_configurations=[oci.core.InstancePoolPlacementConfigurationArgs(
-                availability_domain=var["instance_pool_placement_configurations_availability_domain"],
-                fault_domains=var["instance_pool_placement_configurations_fault_domains"],
-                primary_subnet_id=oci_core_subnet["test_subnet"]["id"],
+                availability_domain=instance_pool_placement_configurations_availability_domain,
+                fault_domains=instance_pool_placement_configurations_fault_domains,
+                primary_subnet_id=test_subnet["id"],
                 primary_vnic_subnets=oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
+                    subnet_id=test_subnet["id"],
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
                 ),
                 secondary_vnic_subnets=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs(
-                    subnet_id=oci_core_subnet["test_subnet"]["id"],
-                    display_name=var["instance_pool_placement_configurations_secondary_vnic_subnets_display_name"],
+                    subnet_id=test_subnet["id"],
+                    display_name=instance_pool_placement_configurations_secondary_vnic_subnets_display_name,
                     ipv6address_ipv6subnet_cidr_pair_details=[oci.core.InstancePoolPlacementConfigurationSecondaryVnicSubnetIpv6addressIpv6subnetCidrPairDetailArgs(
-                        ipv6subnet_cidr=var["instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr"],
+                        ipv6subnet_cidr=instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     )],
-                    is_assign_ipv6ip=var["instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip"],
+                    is_assign_ipv6ip=instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
                 )],
             )],
-            size=var["instance_pool_size"],
+            size=instance_pool_size,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["instance_pool_display_name"],
+            display_name=instance_pool_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            instance_display_name_formatter=var["instance_pool_instance_display_name_formatter"],
-            instance_hostname_formatter=var["instance_pool_instance_hostname_formatter"],
+            instance_display_name_formatter=instance_pool_instance_display_name_formatter,
+            instance_hostname_formatter=instance_pool_instance_hostname_formatter,
             load_balancers=[oci.core.InstancePoolLoadBalancerArgs(
-                backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-                port=var["instance_pool_load_balancers_port"],
-                vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
+                backend_set_name=test_backend_set["name"],
+                load_balancer_id=test_load_balancer["id"],
+                port=instance_pool_load_balancers_port,
+                vnic_selection=instance_pool_load_balancers_vnic_selection,
             )])
         ```
         <!--End PulumiCodeChooser -->

@@ -16,18 +16,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRemotePeeringConnection = new oci.core.RemotePeeringConnection("testRemotePeeringConnection", {
- *     compartmentId: _var.compartment_id,
- *     drgId: oci_core_drg.test_drg.id,
+ * const testRemotePeeringConnection = new oci.core.RemotePeeringConnection("test_remote_peering_connection", {
+ *     compartmentId: compartmentId,
+ *     drgId: testDrg.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.remote_peering_connection_display_name,
+ *     displayName: remotePeeringConnectionDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     peerId: oci_core_remote_peering_connection.test_remote_peering_connection2.id,
- *     peerRegionName: _var.remote_peering_connection_peer_region_name,
+ *     peerId: testRemotePeeringConnection2.id,
+ *     peerRegionName: remotePeeringConnectionPeerRegionName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

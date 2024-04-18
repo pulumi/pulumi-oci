@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Blockchain.NewPeer(ctx, "testPeer", &Blockchain.PeerArgs{
-//				Ad:                   pulumi.Any(_var.Peer_ad),
-//				BlockchainPlatformId: pulumi.Any(oci_blockchain_blockchain_platform.Test_blockchain_platform.Id),
+//			_, err := Blockchain.NewPeer(ctx, "test_peer", &Blockchain.PeerArgs{
+//				Ad:                   pulumi.Any(peerAd),
+//				BlockchainPlatformId: pulumi.Any(testBlockchainPlatform.Id),
 //				OcpuAllocationParam: &blockchain.PeerOcpuAllocationParamArgs{
-//					OcpuAllocationNumber: pulumi.Any(_var.Peer_ocpu_allocation_param_ocpu_allocation_number),
+//					OcpuAllocationNumber: pulumi.Any(peerOcpuAllocationParamOcpuAllocationNumber),
 //				},
-//				Role:  pulumi.Any(_var.Peer_role),
-//				Alias: pulumi.Any(_var.Peer_alias),
+//				Role:  pulumi.Any(peerRole),
+//				Alias: pulumi.Any(peerAlias),
 //			})
 //			if err != nil {
 //				return err

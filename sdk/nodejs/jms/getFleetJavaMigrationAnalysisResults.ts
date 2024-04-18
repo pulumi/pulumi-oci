@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     timeEnd: _var.fleet_java_migration_analysis_result_time_end,
- *     timeStart: _var.fleet_java_migration_analysis_result_time_start,
+ *     fleetId: testFleet.id,
+ *     managedInstanceId: testManagedInstance.id,
+ *     timeEnd: fleetJavaMigrationAnalysisResultTimeEnd,
+ *     timeStart: fleetJavaMigrationAnalysisResultTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,10 +99,10 @@ export interface GetFleetJavaMigrationAnalysisResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetJavaMigrationAnalysisResults = oci.Jms.getFleetJavaMigrationAnalysisResults({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     timeEnd: _var.fleet_java_migration_analysis_result_time_end,
- *     timeStart: _var.fleet_java_migration_analysis_result_time_start,
+ *     fleetId: testFleet.id,
+ *     managedInstanceId: testManagedInstance.id,
+ *     timeEnd: fleetJavaMigrationAnalysisResultTimeEnd,
+ *     timeStart: fleetJavaMigrationAnalysisResultTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

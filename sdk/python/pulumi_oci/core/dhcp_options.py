@@ -331,6 +331,66 @@ class DhcpOptions(pulumi.CustomResource):
 
         ## Example Usage
 
+        ### VCN Local with Internet
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
+            compartment_id=compartment_id,
+            options=[
+                oci.core.DhcpOptionsOptionArgs(
+                    type="DomainNameServer",
+                    server_type="VcnLocalPlusInternet",
+                ),
+                oci.core.DhcpOptionsOptionArgs(
+                    type="SearchDomain",
+                    search_domain_names=["test.com"],
+                ),
+            ],
+            vcn_id=test_vcn["id"],
+            display_name=dhcp_options_display_name)
+        ```
+        <!--End PulumiCodeChooser -->
+
+        ### Custom DNS Server
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
+            compartment_id=compartment_id,
+            options=[
+                oci.core.DhcpOptionsOptionArgs(
+                    type="DomainNameServer",
+                    server_type="CustomDnsServer",
+                    custom_dns_servers=[
+                        "192.168.0.2",
+                        "192.168.0.11",
+                        "192.168.0.19",
+                    ],
+                ),
+                oci.core.DhcpOptionsOptionArgs(
+                    type="SearchDomain",
+                    search_domain_names=["test.com"],
+                ),
+            ],
+            vcn_id=test_vcn["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=dhcp_options_display_name,
+            domain_name_type=dhcp_options_domain_name_type,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
+        <!--End PulumiCodeChooser -->
+
         ## Import
 
         DhcpOptions can be imported using the `id`, e.g.
@@ -378,6 +438,66 @@ class DhcpOptions(pulumi.CustomResource):
         For more information on configuring a VCN's default DHCP options, see [Managing Default VCN Resources](https://www.terraform.io/docs/providers/oci/guides/managing_default_resources.html)
 
         ## Example Usage
+
+        ### VCN Local with Internet
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
+            compartment_id=compartment_id,
+            options=[
+                oci.core.DhcpOptionsOptionArgs(
+                    type="DomainNameServer",
+                    server_type="VcnLocalPlusInternet",
+                ),
+                oci.core.DhcpOptionsOptionArgs(
+                    type="SearchDomain",
+                    search_domain_names=["test.com"],
+                ),
+            ],
+            vcn_id=test_vcn["id"],
+            display_name=dhcp_options_display_name)
+        ```
+        <!--End PulumiCodeChooser -->
+
+        ### Custom DNS Server
+
+        <!--Start PulumiCodeChooser -->
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_dhcp_options = oci.core.DhcpOptions("test_dhcp_options",
+            compartment_id=compartment_id,
+            options=[
+                oci.core.DhcpOptionsOptionArgs(
+                    type="DomainNameServer",
+                    server_type="CustomDnsServer",
+                    custom_dns_servers=[
+                        "192.168.0.2",
+                        "192.168.0.11",
+                        "192.168.0.19",
+                    ],
+                ),
+                oci.core.DhcpOptionsOptionArgs(
+                    type="SearchDomain",
+                    search_domain_names=["test.com"],
+                ),
+            ],
+            vcn_id=test_vcn["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=dhcp_options_display_name,
+            domain_name_type=dhcp_options_domain_name_type,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
+        <!--End PulumiCodeChooser -->
 
         ## Import
 

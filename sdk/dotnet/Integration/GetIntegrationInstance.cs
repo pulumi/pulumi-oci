@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Integration
         /// {
         ///     var testIntegrationInstance = Oci.Integration.GetIntegrationInstance.Invoke(new()
         ///     {
-        ///         IntegrationInstanceId = oci_integration_integration_instance.Test_integration_instance.Id,
+        ///         IntegrationInstanceId = testIntegrationInstanceOciIntegrationIntegrationInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Integration
         /// {
         ///     var testIntegrationInstance = Oci.Integration.GetIntegrationInstance.Invoke(new()
         ///     {
-        ///         IntegrationInstanceId = oci_integration_integration_instance.Test_integration_instance.Id,
+        ///         IntegrationInstanceId = testIntegrationInstanceOciIntegrationIntegrationInstance.Id,
         ///     });
         /// 
         /// });

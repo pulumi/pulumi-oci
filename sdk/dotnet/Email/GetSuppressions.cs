@@ -32,10 +32,10 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSuppressions = Oci.Email.GetSuppressions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         EmailAddress = @var.Suppression_email_address,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Suppression_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Suppression_time_created_less_than,
+        ///         CompartmentId = tenancyOcid,
+        ///         EmailAddress = suppressionEmailAddress,
+        ///         TimeCreatedGreaterThanOrEqualTo = suppressionTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = suppressionTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSuppressions = Oci.Email.GetSuppressions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         EmailAddress = @var.Suppression_email_address,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Suppression_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Suppression_time_created_less_than,
+        ///         CompartmentId = tenancyOcid,
+        ///         EmailAddress = suppressionEmailAddress,
+        ///         TimeCreatedGreaterThanOrEqualTo = suppressionTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = suppressionTimeCreatedLessThan,
         ///     });
         /// 
         /// });

@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testByoipRanges = oci.Core.getByoipRanges({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.byoip_range_display_name,
- *     state: _var.byoip_range_state,
+ *     compartmentId: compartmentId,
+ *     displayName: byoipRangeDisplayName,
+ *     state: byoipRangeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,9 +97,9 @@ export interface GetByoipRangesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testByoipRanges = oci.Core.getByoipRanges({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.byoip_range_display_name,
- *     state: _var.byoip_range_state,
+ *     compartmentId: compartmentId,
+ *     displayName: byoipRangeDisplayName,
+ *     state: byoipRangeState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

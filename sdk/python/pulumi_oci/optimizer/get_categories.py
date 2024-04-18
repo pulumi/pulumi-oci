@@ -150,12 +150,12 @@ def get_categories(child_tenancy_ids: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Optimizer.get_categories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["category_compartment_id_in_subtree"],
-        child_tenancy_ids=var["category_child_tenancy_ids"],
-        include_organization=var["category_include_organization"],
-        name=var["category_name"],
-        state=var["category_state"])
+    test_categories = oci.Optimizer.get_categories(compartment_id=compartment_id,
+        compartment_id_in_subtree=category_compartment_id_in_subtree,
+        child_tenancy_ids=category_child_tenancy_ids,
+        include_organization=category_include_organization,
+        name=category_name,
+        state=category_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -223,12 +223,12 @@ def get_categories_output(child_tenancy_ids: Optional[pulumi.Input[Optional[Sequ
     import pulumi
     import pulumi_oci as oci
 
-    test_categories = oci.Optimizer.get_categories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["category_compartment_id_in_subtree"],
-        child_tenancy_ids=var["category_child_tenancy_ids"],
-        include_organization=var["category_include_organization"],
-        name=var["category_name"],
-        state=var["category_state"])
+    test_categories = oci.Optimizer.get_categories(compartment_id=compartment_id,
+        compartment_id_in_subtree=category_compartment_id_in_subtree,
+        child_tenancy_ids=category_child_tenancy_ids,
+        include_organization=category_include_organization,
+        name=category_name,
+        state=category_state)
     ```
     <!--End PulumiCodeChooser -->
 

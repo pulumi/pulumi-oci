@@ -124,10 +124,10 @@ def get_management_agent_images(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=var["compartment_id"],
-        install_type=var["management_agent_image_install_type"],
-        name=var["management_agent_image_name"],
-        state=var["management_agent_image_state"])
+    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=compartment_id,
+        install_type=management_agent_image_install_type,
+        name=management_agent_image_name,
+        state=management_agent_image_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -175,10 +175,10 @@ def get_management_agent_images_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=var["compartment_id"],
-        install_type=var["management_agent_image_install_type"],
-        name=var["management_agent_image_name"],
-        state=var["management_agent_image_state"])
+    test_management_agent_images = oci.ManagementAgent.get_management_agent_images(compartment_id=compartment_id,
+        install_type=management_agent_image_install_type,
+        name=management_agent_image_name,
+        state=management_agent_image_state)
     ```
     <!--End PulumiCodeChooser -->
 

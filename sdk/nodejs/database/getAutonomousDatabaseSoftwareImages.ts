@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseSoftwareImages = oci.Database.getAutonomousDatabaseSoftwareImages({
- *     compartmentId: _var.compartment_id,
- *     imageShapeFamily: _var.autonomous_database_software_image_image_shape_family,
- *     displayName: _var.autonomous_database_software_image_display_name,
- *     state: _var.autonomous_database_software_image_state,
+ *     compartmentId: compartmentId,
+ *     imageShapeFamily: autonomousDatabaseSoftwareImageImageShapeFamily,
+ *     displayName: autonomousDatabaseSoftwareImageDisplayName,
+ *     state: autonomousDatabaseSoftwareImageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetAutonomousDatabaseSoftwareImagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseSoftwareImages = oci.Database.getAutonomousDatabaseSoftwareImages({
- *     compartmentId: _var.compartment_id,
- *     imageShapeFamily: _var.autonomous_database_software_image_image_shape_family,
- *     displayName: _var.autonomous_database_software_image_display_name,
- *     state: _var.autonomous_database_software_image_state,
+ *     compartmentId: compartmentId,
+ *     imageShapeFamily: autonomousDatabaseSoftwareImageImageShapeFamily,
+ *     displayName: autonomousDatabaseSoftwareImageDisplayName,
+ *     state: autonomousDatabaseSoftwareImageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

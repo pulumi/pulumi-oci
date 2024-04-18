@@ -143,11 +143,11 @@ def get_default_configurations(configuration_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=oci_psql_configuration["test_configuration"]["id"],
-        db_version=var["default_configuration_db_version"],
-        display_name=var["default_configuration_display_name"],
-        shape=var["default_configuration_shape"],
-        state=var["default_configuration_state"])
+    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
+        db_version=default_configuration_db_version,
+        display_name=default_configuration_display_name,
+        shape=default_configuration_shape,
+        state=default_configuration_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,11 +199,11 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=oci_psql_configuration["test_configuration"]["id"],
-        db_version=var["default_configuration_db_version"],
-        display_name=var["default_configuration_display_name"],
-        shape=var["default_configuration_shape"],
-        state=var["default_configuration_state"])
+    test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
+        db_version=default_configuration_db_version,
+        display_name=default_configuration_display_name,
+        shape=default_configuration_shape,
+        state=default_configuration_state)
     ```
     <!--End PulumiCodeChooser -->
 

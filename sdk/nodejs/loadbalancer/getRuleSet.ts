@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRuleSet = oci.LoadBalancer.getRuleSet({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     name: _var.rule_set_name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: ruleSetName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,8 +77,8 @@ export interface GetRuleSetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRuleSet = oci.LoadBalancer.getRuleSet({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     name: _var.rule_set_name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: ruleSetName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

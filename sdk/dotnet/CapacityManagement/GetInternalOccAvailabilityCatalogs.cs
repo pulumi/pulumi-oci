@@ -29,12 +29,12 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testInternalOccAvailabilityCatalogs = Oci.CapacityManagement.GetInternalOccAvailabilityCatalogs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CatalogState = @var.Internal_occ_availability_catalog_catalog_state,
-        ///         DisplayName = @var.Internal_occ_availability_catalog_display_name,
-        ///         Id = @var.Internal_occ_availability_catalog_id,
-        ///         Namespace = @var.Internal_occ_availability_catalog_namespace,
-        ///         OccCustomerGroupId = oci_capacity_management_occ_customer_group.Test_occ_customer_group.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CatalogState = internalOccAvailabilityCatalogCatalogState,
+        ///         DisplayName = internalOccAvailabilityCatalogDisplayName,
+        ///         Id = internalOccAvailabilityCatalogId,
+        ///         Namespace = internalOccAvailabilityCatalogNamespace,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testInternalOccAvailabilityCatalogs = Oci.CapacityManagement.GetInternalOccAvailabilityCatalogs.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CatalogState = @var.Internal_occ_availability_catalog_catalog_state,
-        ///         DisplayName = @var.Internal_occ_availability_catalog_display_name,
-        ///         Id = @var.Internal_occ_availability_catalog_id,
-        ///         Namespace = @var.Internal_occ_availability_catalog_namespace,
-        ///         OccCustomerGroupId = oci_capacity_management_occ_customer_group.Test_occ_customer_group.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CatalogState = internalOccAvailabilityCatalogCatalogState,
+        ///         DisplayName = internalOccAvailabilityCatalogDisplayName,
+        ///         Id = internalOccAvailabilityCatalogId,
+        ///         Namespace = internalOccAvailabilityCatalogNamespace,
+        ///         OccCustomerGroupId = testOccCustomerGroup.Id,
         ///     });
         /// 
         /// });

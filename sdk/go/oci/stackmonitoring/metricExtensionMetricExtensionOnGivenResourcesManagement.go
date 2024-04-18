@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMetricExtensionMetricExtensionOnGivenResourcesManagement(ctx, "testMetricExtensionMetricExtensionOnGivenResourcesManagement", &StackMonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagementArgs{
-//				MetricExtensionId:                     pulumi.Any(oci_stack_monitoring_metric_extension.Test_metric_extension.Id),
-//				ResourceIds:                           pulumi.Any(_var.Metric_extension_metric_extension_on_given_resources_management_resource_ids),
-//				EnableMetricExtensionOnGivenResources: pulumi.Any(_var.Enable_metric_extension_on_given_resources),
+//			_, err := StackMonitoring.NewMetricExtensionMetricExtensionOnGivenResourcesManagement(ctx, "test_metric_extension_metric_extension_on_given_resources_management", &StackMonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagementArgs{
+//				MetricExtensionId:                     pulumi.Any(testMetricExtension.Id),
+//				ResourceIds:                           pulumi.Any(metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0]),
+//				EnableMetricExtensionOnGivenResources: pulumi.Any(enableMetricExtensionOnGivenResources),
 //			})
 //			if err != nil {
 //				return err

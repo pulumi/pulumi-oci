@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DisasterRecovery.GetDrPlans(ctx, &disasterrecovery.GetDrPlansArgs{
-//				DrProtectionGroupId: oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
-//				DisplayName:         pulumi.StringRef(_var.Dr_plan_display_name),
-//				DrPlanId:            pulumi.StringRef(oci_disaster_recovery_dr_plan.Test_dr_plan.Id),
-//				DrPlanType:          pulumi.StringRef(_var.Dr_plan_dr_plan_type),
-//				State:               pulumi.StringRef(_var.Dr_plan_state),
+//				DrProtectionGroupId: testDrProtectionGroup.Id,
+//				DisplayName:         pulumi.StringRef(drPlanDisplayName),
+//				DrPlanId:            pulumi.StringRef(testDrPlan.Id),
+//				DrPlanType:          pulumi.StringRef(drPlanDrPlanType),
+//				State:               pulumi.StringRef(drPlanState),
 //			}, nil)
 //			if err != nil {
 //				return err

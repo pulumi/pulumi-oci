@@ -25,24 +25,24 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testModel = new Oci.AiAnomalyDetection.Model("testModel", new()
+    ///     var testModel = new Oci.AiAnomalyDetection.Model("test_model", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         ModelTrainingDetails = new Oci.AiAnomalyDetection.Inputs.ModelModelTrainingDetailsArgs
     ///         {
-    ///             DataAssetIds = @var.Model_model_training_details_data_asset_ids,
-    ///             AlgorithmHint = @var.Model_model_training_details_algorithm_hint,
-    ///             TargetFap = @var.Model_model_training_details_target_fap,
-    ///             TrainingFraction = @var.Model_model_training_details_training_fraction,
-    ///             WindowSize = @var.Model_model_training_details_window_size,
+    ///             DataAssetIds = modelModelTrainingDetailsDataAssetIds,
+    ///             AlgorithmHint = modelModelTrainingDetailsAlgorithmHint,
+    ///             TargetFap = modelModelTrainingDetailsTargetFap,
+    ///             TrainingFraction = modelModelTrainingDetailsTrainingFraction,
+    ///             WindowSize = modelModelTrainingDetailsWindowSize,
     ///         },
-    ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Model_description,
-    ///         DisplayName = @var.Model_display_name,
+    ///         Description = modelDescription,
+    ///         DisplayName = modelDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

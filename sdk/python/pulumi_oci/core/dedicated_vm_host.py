@@ -404,15 +404,15 @@ class DedicatedVmHost(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dedicated_vm_host = oci.core.DedicatedVmHost("testDedicatedVmHost",
-            availability_domain=var["dedicated_vm_host_availability_domain"],
-            compartment_id=var["compartment_id"],
-            dedicated_vm_host_shape=var["dedicated_vm_host_dedicated_vm_host_shape"],
+        test_dedicated_vm_host = oci.core.DedicatedVmHost("test_dedicated_vm_host",
+            availability_domain=dedicated_vm_host_availability_domain,
+            compartment_id=compartment_id,
+            dedicated_vm_host_shape=dedicated_vm_host_dedicated_vm_host_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["dedicated_vm_host_display_name"],
-            fault_domain=var["dedicated_vm_host_fault_domain"],
+            display_name=dedicated_vm_host_display_name,
+            fault_domain=dedicated_vm_host_fault_domain,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -466,15 +466,15 @@ class DedicatedVmHost(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dedicated_vm_host = oci.core.DedicatedVmHost("testDedicatedVmHost",
-            availability_domain=var["dedicated_vm_host_availability_domain"],
-            compartment_id=var["compartment_id"],
-            dedicated_vm_host_shape=var["dedicated_vm_host_dedicated_vm_host_shape"],
+        test_dedicated_vm_host = oci.core.DedicatedVmHost("test_dedicated_vm_host",
+            availability_domain=dedicated_vm_host_availability_domain,
+            compartment_id=compartment_id,
+            dedicated_vm_host_shape=dedicated_vm_host_dedicated_vm_host_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["dedicated_vm_host_display_name"],
-            fault_domain=var["dedicated_vm_host_fault_domain"],
+            display_name=dedicated_vm_host_display_name,
+            fault_domain=dedicated_vm_host_fault_domain,
             freeform_tags={
                 "Department": "Finance",
             })

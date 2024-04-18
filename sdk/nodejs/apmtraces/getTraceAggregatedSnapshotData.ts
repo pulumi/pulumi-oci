@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
- *     serverName: _var.trace_aggregated_snapshot_data_server_name,
- *     serviceName: oci_core_service.test_service.name,
- *     spanKey: _var.trace_aggregated_snapshot_data_span_key,
- *     spanName: _var.trace_aggregated_snapshot_data_span_name,
+ *     apmDomainId: testApmDomain.id,
+ *     traceKey: traceAggregatedSnapshotDataTraceKey,
+ *     serverName: traceAggregatedSnapshotDataServerName,
+ *     serviceName: testService.name,
+ *     spanKey: traceAggregatedSnapshotDataSpanKey,
+ *     spanName: traceAggregatedSnapshotDataSpanName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -104,12 +104,12 @@ export interface GetTraceAggregatedSnapshotDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
- *     serverName: _var.trace_aggregated_snapshot_data_server_name,
- *     serviceName: oci_core_service.test_service.name,
- *     spanKey: _var.trace_aggregated_snapshot_data_span_key,
- *     spanName: _var.trace_aggregated_snapshot_data_span_name,
+ *     apmDomainId: testApmDomain.id,
+ *     traceKey: traceAggregatedSnapshotDataTraceKey,
+ *     serverName: traceAggregatedSnapshotDataServerName,
+ *     serviceName: testService.name,
+ *     spanKey: traceAggregatedSnapshotDataSpanKey,
+ *     spanName: traceAggregatedSnapshotDataSpanName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

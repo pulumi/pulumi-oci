@@ -30,8 +30,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
         ///     {
-        ///         StorageManagement = @var.Db_system_storage_performance_storage_management,
-        ///         ShapeType = @var.Db_system_storage_performance_shape_type,
+        ///         StorageManagement = dbSystemStoragePerformanceStorageManagement,
+        ///         ShapeType = dbSystemStoragePerformanceShapeType,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
         ///     {
-        ///         StorageManagement = @var.Db_system_storage_performance_storage_management,
-        ///         ShapeType = @var.Db_system_storage_performance_shape_type,
+        ///         StorageManagement = dbSystemStoragePerformanceStorageManagement,
+        ///         ShapeType = dbSystemStoragePerformanceShapeType,
         ///     });
         /// 
         /// });

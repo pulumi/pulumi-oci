@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousDbVersions(ctx, &database.GetAutonomousDbVersionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DbWorkload:    pulumi.StringRef(_var.Autonomous_db_version_db_workload),
+//				CompartmentId: compartmentId,
+//				DbWorkload:    pulumi.StringRef(autonomousDbVersionDbWorkload),
 //			}, nil)
 //			if err != nil {
 //				return err

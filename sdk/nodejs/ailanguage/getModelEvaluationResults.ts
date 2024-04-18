@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelEvaluationResults = oci.AiLanguage.getModelEvaluationResults({
- *     modelId: oci_ai_language_model.test_model.id,
+ *     modelId: testModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetModelEvaluationResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelEvaluationResults = oci.AiLanguage.getModelEvaluationResults({
- *     modelId: oci_ai_language_model.test_model.id,
+ *     modelId: testModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiAnomalyDetection.GetDetectAnomalyJob(ctx, &aianomalydetection.GetDetectAnomalyJobArgs{
-//				DetectAnomalyJobId: oci_ai_anomaly_detection_detect_anomaly_job.Test_detect_anomaly_job.Id,
+//				DetectAnomalyJobId: testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

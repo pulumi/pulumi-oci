@@ -85,11 +85,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.access_policy_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.access_policy_name())
-     *             .state(var_.access_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .id(accessPolicyId)
+     *             .meshId(testMesh.id())
+     *             .name(accessPolicyName)
+     *             .state(accessPolicyState)
      *             .build());
      * 
      *     }
@@ -131,11 +131,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.access_policy_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.access_policy_name())
-     *             .state(var_.access_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .id(accessPolicyId)
+     *             .meshId(testMesh.id())
+     *             .name(accessPolicyName)
+     *             .state(accessPolicyState)
      *             .build());
      * 
      *     }
@@ -177,11 +177,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.access_policy_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.access_policy_name())
-     *             .state(var_.access_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .id(accessPolicyId)
+     *             .meshId(testMesh.id())
+     *             .name(accessPolicyName)
+     *             .state(accessPolicyState)
      *             .build());
      * 
      *     }
@@ -223,11 +223,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicies = ServiceMeshFunctions.getAccessPolicies(GetAccessPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.access_policy_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.access_policy_name())
-     *             .state(var_.access_policy_state())
+     *             .compartmentId(compartmentId)
+     *             .id(accessPolicyId)
+     *             .meshId(testMesh.id())
+     *             .name(accessPolicyName)
+     *             .state(accessPolicyState)
      *             .build());
      * 
      *     }
@@ -269,7 +269,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
-     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .accessPolicyId(testAccessPolicyOciServiceMeshAccessPolicy.id())
      *             .build());
      * 
      *     }
@@ -311,7 +311,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
-     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .accessPolicyId(testAccessPolicyOciServiceMeshAccessPolicy.id())
      *             .build());
      * 
      *     }
@@ -353,7 +353,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
-     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .accessPolicyId(testAccessPolicyOciServiceMeshAccessPolicy.id())
      *             .build());
      * 
      *     }
@@ -395,7 +395,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessPolicy = ServiceMeshFunctions.getAccessPolicy(GetAccessPolicyArgs.builder()
-     *             .accessPolicyId(oci_service_mesh_access_policy.test_access_policy().id())
+     *             .accessPolicyId(testAccessPolicyOciServiceMeshAccessPolicy.id())
      *             .build());
      * 
      *     }
@@ -437,7 +437,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .ingressGatewayId(testIngressGatewayOciServiceMeshIngressGateway.id())
      *             .build());
      * 
      *     }
@@ -479,7 +479,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .ingressGatewayId(testIngressGatewayOciServiceMeshIngressGateway.id())
      *             .build());
      * 
      *     }
@@ -521,7 +521,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .ingressGatewayId(testIngressGatewayOciServiceMeshIngressGateway.id())
      *             .build());
      * 
      *     }
@@ -563,7 +563,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateway = ServiceMeshFunctions.getIngressGateway(GetIngressGatewayArgs.builder()
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
+     *             .ingressGatewayId(testIngressGatewayOciServiceMeshIngressGateway.id())
      *             .build());
      * 
      *     }
@@ -605,7 +605,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
-     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .ingressGatewayRouteTableId(testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id())
      *             .build());
      * 
      *     }
@@ -647,7 +647,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
-     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .ingressGatewayRouteTableId(testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id())
      *             .build());
      * 
      *     }
@@ -689,7 +689,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
-     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .ingressGatewayRouteTableId(testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id())
      *             .build());
      * 
      *     }
@@ -731,7 +731,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTable = ServiceMeshFunctions.getIngressGatewayRouteTable(GetIngressGatewayRouteTableArgs.builder()
-     *             .ingressGatewayRouteTableId(oci_service_mesh_ingress_gateway_route_table.test_ingress_gateway_route_table().id())
+     *             .ingressGatewayRouteTableId(testIngressGatewayRouteTableOciServiceMeshIngressGatewayRouteTable.id())
      *             .build());
      * 
      *     }
@@ -773,11 +773,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_route_table_id())
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
-     *             .name(var_.ingress_gateway_route_table_name())
-     *             .state(var_.ingress_gateway_route_table_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayRouteTableId)
+     *             .ingressGatewayId(testIngressGateway.id())
+     *             .name(ingressGatewayRouteTableName)
+     *             .state(ingressGatewayRouteTableState)
      *             .build());
      * 
      *     }
@@ -819,11 +819,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_route_table_id())
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
-     *             .name(var_.ingress_gateway_route_table_name())
-     *             .state(var_.ingress_gateway_route_table_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayRouteTableId)
+     *             .ingressGatewayId(testIngressGateway.id())
+     *             .name(ingressGatewayRouteTableName)
+     *             .state(ingressGatewayRouteTableState)
      *             .build());
      * 
      *     }
@@ -865,11 +865,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_route_table_id())
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
-     *             .name(var_.ingress_gateway_route_table_name())
-     *             .state(var_.ingress_gateway_route_table_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayRouteTableId)
+     *             .ingressGatewayId(testIngressGateway.id())
+     *             .name(ingressGatewayRouteTableName)
+     *             .state(ingressGatewayRouteTableState)
      *             .build());
      * 
      *     }
@@ -911,11 +911,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGatewayRouteTables = ServiceMeshFunctions.getIngressGatewayRouteTables(GetIngressGatewayRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_route_table_id())
-     *             .ingressGatewayId(oci_service_mesh_ingress_gateway.test_ingress_gateway().id())
-     *             .name(var_.ingress_gateway_route_table_name())
-     *             .state(var_.ingress_gateway_route_table_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayRouteTableId)
+     *             .ingressGatewayId(testIngressGateway.id())
+     *             .name(ingressGatewayRouteTableName)
+     *             .state(ingressGatewayRouteTableState)
      *             .build());
      * 
      *     }
@@ -957,11 +957,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.ingress_gateway_name())
-     *             .state(var_.ingress_gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayId)
+     *             .meshId(testMesh.id())
+     *             .name(ingressGatewayName)
+     *             .state(ingressGatewayState)
      *             .build());
      * 
      *     }
@@ -1003,11 +1003,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.ingress_gateway_name())
-     *             .state(var_.ingress_gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayId)
+     *             .meshId(testMesh.id())
+     *             .name(ingressGatewayName)
+     *             .state(ingressGatewayState)
      *             .build());
      * 
      *     }
@@ -1049,11 +1049,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.ingress_gateway_name())
-     *             .state(var_.ingress_gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayId)
+     *             .meshId(testMesh.id())
+     *             .name(ingressGatewayName)
+     *             .state(ingressGatewayState)
      *             .build());
      * 
      *     }
@@ -1095,11 +1095,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIngressGateways = ServiceMeshFunctions.getIngressGateways(GetIngressGatewaysArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.ingress_gateway_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.ingress_gateway_name())
-     *             .state(var_.ingress_gateway_state())
+     *             .compartmentId(compartmentId)
+     *             .id(ingressGatewayId)
+     *             .meshId(testMesh.id())
+     *             .name(ingressGatewayName)
+     *             .state(ingressGatewayState)
      *             .build());
      * 
      *     }
@@ -1141,7 +1141,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .meshId(testMeshOciServiceMeshMesh.id())
      *             .build());
      * 
      *     }
@@ -1183,7 +1183,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .meshId(testMeshOciServiceMeshMesh.id())
      *             .build());
      * 
      *     }
@@ -1225,7 +1225,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .meshId(testMeshOciServiceMeshMesh.id())
      *             .build());
      * 
      *     }
@@ -1267,7 +1267,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMesh = ServiceMeshFunctions.getMesh(GetMeshArgs.builder()
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
+     *             .meshId(testMeshOciServiceMeshMesh.id())
      *             .build());
      * 
      *     }
@@ -1309,10 +1309,10 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.mesh_display_name())
-     *             .id(var_.mesh_id())
-     *             .state(var_.mesh_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(meshDisplayName)
+     *             .id(meshId)
+     *             .state(meshState)
      *             .build());
      * 
      *     }
@@ -1354,10 +1354,10 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.mesh_display_name())
-     *             .id(var_.mesh_id())
-     *             .state(var_.mesh_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(meshDisplayName)
+     *             .id(meshId)
+     *             .state(meshState)
      *             .build());
      * 
      *     }
@@ -1399,10 +1399,10 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.mesh_display_name())
-     *             .id(var_.mesh_id())
-     *             .state(var_.mesh_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(meshDisplayName)
+     *             .id(meshId)
+     *             .state(meshState)
      *             .build());
      * 
      *     }
@@ -1444,10 +1444,10 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMeshes = ServiceMeshFunctions.getMeshes(GetMeshesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.mesh_display_name())
-     *             .id(var_.mesh_id())
-     *             .state(var_.mesh_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(meshDisplayName)
+     *             .id(meshId)
+     *             .state(meshState)
      *             .build());
      * 
      *     }
@@ -1723,7 +1723,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
-     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .virtualDeploymentId(testVirtualDeploymentOciServiceMeshVirtualDeployment.id())
      *             .build());
      * 
      *     }
@@ -1765,7 +1765,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
-     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .virtualDeploymentId(testVirtualDeploymentOciServiceMeshVirtualDeployment.id())
      *             .build());
      * 
      *     }
@@ -1807,7 +1807,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
-     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .virtualDeploymentId(testVirtualDeploymentOciServiceMeshVirtualDeployment.id())
      *             .build());
      * 
      *     }
@@ -1849,7 +1849,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployment = ServiceMeshFunctions.getVirtualDeployment(GetVirtualDeploymentArgs.builder()
-     *             .virtualDeploymentId(oci_service_mesh_virtual_deployment.test_virtual_deployment().id())
+     *             .virtualDeploymentId(testVirtualDeploymentOciServiceMeshVirtualDeployment.id())
      *             .build());
      * 
      *     }
@@ -1891,11 +1891,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_deployment_id())
-     *             .name(var_.virtual_deployment_name())
-     *             .state(var_.virtual_deployment_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualDeploymentId)
+     *             .name(virtualDeploymentName)
+     *             .state(virtualDeploymentState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -1937,11 +1937,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_deployment_id())
-     *             .name(var_.virtual_deployment_name())
-     *             .state(var_.virtual_deployment_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualDeploymentId)
+     *             .name(virtualDeploymentName)
+     *             .state(virtualDeploymentState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -1983,11 +1983,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_deployment_id())
-     *             .name(var_.virtual_deployment_name())
-     *             .state(var_.virtual_deployment_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualDeploymentId)
+     *             .name(virtualDeploymentName)
+     *             .state(virtualDeploymentState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2029,11 +2029,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualDeployments = ServiceMeshFunctions.getVirtualDeployments(GetVirtualDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_deployment_id())
-     *             .name(var_.virtual_deployment_name())
-     *             .state(var_.virtual_deployment_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualDeploymentId)
+     *             .name(virtualDeploymentName)
+     *             .state(virtualDeploymentState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2075,7 +2075,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .virtualServiceId(testVirtualServiceOciServiceMeshVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2117,7 +2117,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .virtualServiceId(testVirtualServiceOciServiceMeshVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2159,7 +2159,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .virtualServiceId(testVirtualServiceOciServiceMeshVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2201,7 +2201,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualService = ServiceMeshFunctions.getVirtualService(GetVirtualServiceArgs.builder()
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .virtualServiceId(testVirtualServiceOciServiceMeshVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2243,7 +2243,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
-     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .virtualServiceRouteTableId(testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id())
      *             .build());
      * 
      *     }
@@ -2285,7 +2285,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
-     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .virtualServiceRouteTableId(testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id())
      *             .build());
      * 
      *     }
@@ -2327,7 +2327,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
-     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .virtualServiceRouteTableId(testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id())
      *             .build());
      * 
      *     }
@@ -2369,7 +2369,7 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTable = ServiceMeshFunctions.getVirtualServiceRouteTable(GetVirtualServiceRouteTableArgs.builder()
-     *             .virtualServiceRouteTableId(oci_service_mesh_virtual_service_route_table.test_virtual_service_route_table().id())
+     *             .virtualServiceRouteTableId(testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.id())
      *             .build());
      * 
      *     }
@@ -2411,11 +2411,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_route_table_id())
-     *             .name(var_.virtual_service_route_table_name())
-     *             .state(var_.virtual_service_route_table_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceRouteTableId)
+     *             .name(virtualServiceRouteTableName)
+     *             .state(virtualServiceRouteTableState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2457,11 +2457,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_route_table_id())
-     *             .name(var_.virtual_service_route_table_name())
-     *             .state(var_.virtual_service_route_table_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceRouteTableId)
+     *             .name(virtualServiceRouteTableName)
+     *             .state(virtualServiceRouteTableState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2503,11 +2503,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_route_table_id())
-     *             .name(var_.virtual_service_route_table_name())
-     *             .state(var_.virtual_service_route_table_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceRouteTableId)
+     *             .name(virtualServiceRouteTableName)
+     *             .state(virtualServiceRouteTableState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2549,11 +2549,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServiceRouteTables = ServiceMeshFunctions.getVirtualServiceRouteTables(GetVirtualServiceRouteTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_route_table_id())
-     *             .name(var_.virtual_service_route_table_name())
-     *             .state(var_.virtual_service_route_table_state())
-     *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceRouteTableId)
+     *             .name(virtualServiceRouteTableName)
+     *             .state(virtualServiceRouteTableState)
+     *             .virtualServiceId(testVirtualService.id())
      *             .build());
      * 
      *     }
@@ -2595,11 +2595,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.virtual_service_name())
-     *             .state(var_.virtual_service_state())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceId)
+     *             .meshId(testMesh.id())
+     *             .name(virtualServiceName)
+     *             .state(virtualServiceState)
      *             .build());
      * 
      *     }
@@ -2641,11 +2641,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.virtual_service_name())
-     *             .state(var_.virtual_service_state())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceId)
+     *             .meshId(testMesh.id())
+     *             .name(virtualServiceName)
+     *             .state(virtualServiceState)
      *             .build());
      * 
      *     }
@@ -2687,11 +2687,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.virtual_service_name())
-     *             .state(var_.virtual_service_state())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceId)
+     *             .meshId(testMesh.id())
+     *             .name(virtualServiceName)
+     *             .state(virtualServiceState)
      *             .build());
      * 
      *     }
@@ -2733,11 +2733,11 @@ public final class ServiceMeshFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualServices = ServiceMeshFunctions.getVirtualServices(GetVirtualServicesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.virtual_service_id())
-     *             .meshId(oci_service_mesh_mesh.test_mesh().id())
-     *             .name(var_.virtual_service_name())
-     *             .state(var_.virtual_service_state())
+     *             .compartmentId(compartmentId)
+     *             .id(virtualServiceId)
+     *             .meshId(testMesh.id())
+     *             .name(virtualServiceName)
+     *             .state(virtualServiceState)
      *             .build());
      * 
      *     }

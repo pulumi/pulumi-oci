@@ -53,10 +53,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testActionCreateZoneFromZoneFile = new ActionCreateZoneFromZoneFile(&#34;testActionCreateZoneFromZoneFile&#34;, ActionCreateZoneFromZoneFileArgs.builder()        
- *             .createZoneFromZoneFileDetails(var_.action_create_zone_from_zone_file_create_zone_from_zone_file_details())
- *             .compartmentId(var_.compartment_id())
- *             .scope(var_.action_create_zone_from_zone_file_scope())
- *             .viewId(oci_dns_view.test_view().id())
+ *             .createZoneFromZoneFileDetails(actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails)
+ *             .compartmentId(compartmentId)
+ *             .scope(actionCreateZoneFromZoneFileScope)
+ *             .viewId(testView.id())
  *             .build());
  * 
  *     }

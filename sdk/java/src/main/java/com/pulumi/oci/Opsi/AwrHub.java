@@ -46,12 +46,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAwrHub = new AwrHub(&#34;testAwrHub&#34;, AwrHubArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.awr_hub_display_name())
- *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(awrHubDisplayName)
+ *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .objectStorageBucketName(oci_objectstorage_bucket.test_bucket().name())
+ *             .objectStorageBucketName(testBucket.name())
  *             .build());
  * 
  *     }

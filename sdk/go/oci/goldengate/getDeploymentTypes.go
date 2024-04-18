@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDeploymentTypes(ctx, &goldengate.GetDeploymentTypesArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				DeploymentType: pulumi.StringRef(_var.Deployment_type_deployment_type),
-//				DisplayName:    pulumi.StringRef(_var.Deployment_type_display_name),
-//				OggVersion:     pulumi.StringRef(_var.Deployment_type_ogg_version),
+//				CompartmentId:  compartmentId,
+//				DeploymentType: pulumi.StringRef(deploymentTypeDeploymentType),
+//				DisplayName:    pulumi.StringRef(deploymentTypeDisplayName),
+//				OggVersion:     pulumi.StringRef(deploymentTypeOggVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

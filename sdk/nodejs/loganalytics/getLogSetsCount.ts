@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogSetsCount = oci.LogAnalytics.getLogSetsCount({
- *     namespace: _var.log_sets_count_namespace,
+ *     namespace: logSetsCountNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -67,7 +67,7 @@ export interface GetLogSetsCountResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogSetsCount = oci.LogAnalytics.getLogSetsCount({
- *     namespace: _var.log_sets_count_namespace,
+ *     namespace: logSetsCountNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

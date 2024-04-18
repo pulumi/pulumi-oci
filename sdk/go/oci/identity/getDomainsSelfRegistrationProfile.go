@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsSelfRegistrationProfile(ctx, &identity.GetDomainsSelfRegistrationProfileArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				SelfRegistrationProfileId: oci_optimizer_profile.Test_profile.Id,
+//				IdcsEndpoint:              testDomain.Url,
+//				SelfRegistrationProfileId: testProfile.Id,
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Self_registration_profile_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Self_registration_profile_resource_type_schema_version),
+//				Authorization:             pulumi.StringRef(selfRegistrationProfileAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(selfRegistrationProfileResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

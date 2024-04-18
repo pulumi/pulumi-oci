@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResult = oci.ApmSynthetics.getResult({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     executionTime: _var.result_execution_time,
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
- *     resultContentType: _var.result_result_content_type,
- *     resultType: _var.result_result_type,
- *     vantagePoint: _var.result_vantage_point,
+ *     apmDomainId: testApmDomain.id,
+ *     executionTime: resultExecutionTime,
+ *     monitorId: testMonitor.id,
+ *     resultContentType: resultResultContentType,
+ *     resultType: resultResultType,
+ *     vantagePoint: resultVantagePoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetResultResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResult = oci.ApmSynthetics.getResult({
- *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
- *     executionTime: _var.result_execution_time,
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
- *     resultContentType: _var.result_result_content_type,
- *     resultType: _var.result_result_type,
- *     vantagePoint: _var.result_vantage_point,
+ *     apmDomainId: testApmDomain.id,
+ *     executionTime: resultExecutionTime,
+ *     monitorId: testMonitor.id,
+ *     resultContentType: resultResultContentType,
+ *     resultType: resultResultType,
+ *     vantagePoint: resultVantagePoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

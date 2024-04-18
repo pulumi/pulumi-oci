@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicIpPools = oci.Core.getPublicIpPools({
- *     compartmentId: _var.compartment_id,
- *     byoipRangeId: oci_core_byoip_range.test_byoip_range.id,
- *     displayName: _var.public_ip_pool_display_name,
+ *     compartmentId: compartmentId,
+ *     byoipRangeId: testByoipRange.id,
+ *     displayName: publicIpPoolDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -94,9 +94,9 @@ export interface GetPublicIpPoolsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicIpPools = oci.Core.getPublicIpPools({
- *     compartmentId: _var.compartment_id,
- *     byoipRangeId: oci_core_byoip_range.test_byoip_range.id,
- *     displayName: _var.public_ip_pool_display_name,
+ *     compartmentId: compartmentId,
+ *     byoipRangeId: testByoipRange.id,
+ *     displayName: publicIpPoolDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

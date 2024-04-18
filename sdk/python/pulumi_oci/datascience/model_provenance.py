@@ -291,14 +291,14 @@ class ModelProvenance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model_provenance = oci.data_science.ModelProvenance("testModelProvenance",
-            model_id=oci_datascience_model["test_model"]["id"],
-            git_branch=var["model_provenance_git_branch"],
-            git_commit=var["model_provenance_git_commit"],
-            repository_url=var["model_provenance_repository_url"],
-            script_dir=var["model_provenance_script_dir"],
-            training_id=oci_datascience_training["test_training"]["id"],
-            training_script=var["model_provenance_training_script"])
+        test_model_provenance = oci.data_science.ModelProvenance("test_model_provenance",
+            model_id=test_model["id"],
+            git_branch=model_provenance_git_branch,
+            git_commit=model_provenance_git_commit,
+            repository_url=model_provenance_repository_url,
+            script_dir=model_provenance_script_dir,
+            training_id=test_training["id"],
+            training_script=model_provenance_training_script)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -342,14 +342,14 @@ class ModelProvenance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model_provenance = oci.data_science.ModelProvenance("testModelProvenance",
-            model_id=oci_datascience_model["test_model"]["id"],
-            git_branch=var["model_provenance_git_branch"],
-            git_commit=var["model_provenance_git_commit"],
-            repository_url=var["model_provenance_repository_url"],
-            script_dir=var["model_provenance_script_dir"],
-            training_id=oci_datascience_training["test_training"]["id"],
-            training_script=var["model_provenance_training_script"])
+        test_model_provenance = oci.data_science.ModelProvenance("test_model_provenance",
+            model_id=test_model["id"],
+            git_branch=model_provenance_git_branch,
+            git_commit=model_provenance_git_commit,
+            repository_url=model_provenance_repository_url,
+            script_dir=model_provenance_script_dir,
+            training_id=test_training["id"],
+            training_script=model_provenance_training_script)
         ```
         <!--End PulumiCodeChooser -->
 

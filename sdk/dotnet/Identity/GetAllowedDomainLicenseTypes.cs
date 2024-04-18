@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAllowedDomainLicenseTypes = Oci.Identity.GetAllowedDomainLicenseTypes.Invoke(new()
         ///     {
-        ///         CurrentLicenseTypeName = @var.Allowed_domain_license_type_current_license_type_name,
+        ///         CurrentLicenseTypeName = allowedDomainLicenseTypeCurrentLicenseTypeName,
         ///     });
         /// 
         /// });
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAllowedDomainLicenseTypes = Oci.Identity.GetAllowedDomainLicenseTypes.Invoke(new()
         ///     {
-        ///         CurrentLicenseTypeName = @var.Allowed_domain_license_type_current_license_type_name,
+        ///         CurrentLicenseTypeName = allowedDomainLicenseTypeCurrentLicenseTypeName,
         ///     });
         /// 
         /// });

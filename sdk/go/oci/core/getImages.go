@@ -41,14 +41,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetImages(ctx, &core.GetImagesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				DisplayName:            pulumi.StringRef(_var.Image_display_name),
-//				OperatingSystem:        pulumi.StringRef(_var.Image_operating_system),
-//				OperatingSystemVersion: pulumi.StringRef(_var.Image_operating_system_version),
-//				Shape:                  pulumi.StringRef(_var.Image_shape),
-//				State:                  pulumi.StringRef(_var.Image_state),
-//				SortBy:                 pulumi.StringRef(_var.Image_sort_by),
-//				SortOrder:              pulumi.StringRef(_var.Image_sort_order),
+//				CompartmentId:          compartmentId,
+//				DisplayName:            pulumi.StringRef(imageDisplayName),
+//				OperatingSystem:        pulumi.StringRef(imageOperatingSystem),
+//				OperatingSystemVersion: pulumi.StringRef(imageOperatingSystemVersion),
+//				Shape:                  pulumi.StringRef(imageShape),
+//				State:                  pulumi.StringRef(imageState),
+//				SortBy:                 pulumi.StringRef(imageSortBy),
+//				SortOrder:              pulumi.StringRef(imageSortOrder),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.DatabaseMigration.getConnection({
- *     connectionId: oci_database_migration_connection.test_connection.id,
+ *     connectionId: testConnectionOciDatabaseMigrationConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -148,7 +148,7 @@ export interface GetConnectionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.DatabaseMigration.getConnection({
- *     connectionId: oci_database_migration_connection.test_connection.id,
+ *     connectionId: testConnectionOciDatabaseMigrationConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

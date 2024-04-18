@@ -516,14 +516,14 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pluggable_databases_remote_clone = oci.database.PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone",
-            cloned_pdb_name=var["pluggable_databases_remote_clone_cloned_pdb_name"],
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            source_container_db_admin_password=var["pluggable_databases_remote_clone_source_container_db_admin_password"],
-            target_container_database_id=oci_database_database["test_database"]["id"],
-            pdb_admin_password=var["pluggable_databases_remote_clone_pdb_admin_password"],
-            should_pdb_admin_account_be_locked=var["pluggable_databases_remote_clone_should_pdb_admin_account_be_locked"],
-            target_tde_wallet_password=var["pluggable_databases_remote_clone_target_tde_wallet_password"])
+        test_pluggable_databases_remote_clone = oci.database.PluggableDatabasesRemoteClone("test_pluggable_databases_remote_clone",
+            cloned_pdb_name=pluggable_databases_remote_clone_cloned_pdb_name,
+            pluggable_database_id=test_pluggable_database["id"],
+            source_container_db_admin_password=pluggable_databases_remote_clone_source_container_db_admin_password,
+            target_container_database_id=test_database["id"],
+            pdb_admin_password=pluggable_databases_remote_clone_pdb_admin_password,
+            should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
+            target_tde_wallet_password=pluggable_databases_remote_clone_target_tde_wallet_password)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -565,14 +565,14 @@ class PluggableDatabasesRemoteClone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pluggable_databases_remote_clone = oci.database.PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone",
-            cloned_pdb_name=var["pluggable_databases_remote_clone_cloned_pdb_name"],
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            source_container_db_admin_password=var["pluggable_databases_remote_clone_source_container_db_admin_password"],
-            target_container_database_id=oci_database_database["test_database"]["id"],
-            pdb_admin_password=var["pluggable_databases_remote_clone_pdb_admin_password"],
-            should_pdb_admin_account_be_locked=var["pluggable_databases_remote_clone_should_pdb_admin_account_be_locked"],
-            target_tde_wallet_password=var["pluggable_databases_remote_clone_target_tde_wallet_password"])
+        test_pluggable_databases_remote_clone = oci.database.PluggableDatabasesRemoteClone("test_pluggable_databases_remote_clone",
+            cloned_pdb_name=pluggable_databases_remote_clone_cloned_pdb_name,
+            pluggable_database_id=test_pluggable_database["id"],
+            source_container_db_admin_password=pluggable_databases_remote_clone_source_container_db_admin_password,
+            target_container_database_id=test_database["id"],
+            pdb_admin_password=pluggable_databases_remote_clone_pdb_admin_password,
+            should_pdb_admin_account_be_locked=pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
+            target_tde_wallet_password=pluggable_databases_remote_clone_target_tde_wallet_password)
         ```
         <!--End PulumiCodeChooser -->
 

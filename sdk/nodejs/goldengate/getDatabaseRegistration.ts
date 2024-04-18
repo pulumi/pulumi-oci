@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseRegistration = oci.GoldenGate.getDatabaseRegistration({
- *     databaseRegistrationId: oci_golden_gate_database_registration.test_database_registration.id,
+ *     databaseRegistrationId: testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -159,7 +159,7 @@ export interface GetDatabaseRegistrationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseRegistration = oci.GoldenGate.getDatabaseRegistration({
- *     databaseRegistrationId: oci_golden_gate_database_registration.test_database_registration.id,
+ *     databaseRegistrationId: testDatabaseRegistrationOciGoldenGateDatabaseRegistration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

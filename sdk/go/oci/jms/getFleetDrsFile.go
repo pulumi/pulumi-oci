@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetDrsFile(ctx, &jms.GetFleetDrsFileArgs{
-//				DrsFileKey: _var.Fleet_drs_file_drs_file_key,
-//				FleetId:    oci_jms_fleet.Test_fleet.Id,
+//				DrsFileKey: fleetDrsFileDrsFileKey,
+//				FleetId:    testFleet.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -210,14 +210,14 @@ def get_domains_smtp_credentials(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credentials = oci.Identity.get_domains_smtp_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        smtp_credential_count=var["smtp_credential_smtp_credential_count"],
-        smtp_credential_filter=var["smtp_credential_smtp_credential_filter"],
+    test_smtp_credentials = oci.Identity.get_domains_smtp_credentials(idcs_endpoint=test_domain["url"],
+        smtp_credential_count=smtp_credential_smtp_credential_count,
+        smtp_credential_filter=smtp_credential_smtp_credential_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["smtp_credential_authorization"],
-        resource_type_schema_version=var["smtp_credential_resource_type_schema_version"],
-        start_index=var["smtp_credential_start_index"])
+        authorization=smtp_credential_authorization,
+        resource_type_schema_version=smtp_credential_resource_type_schema_version,
+        start_index=smtp_credential_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_smtp_credentials_output(attribute_sets: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_smtp_credentials = oci.Identity.get_domains_smtp_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        smtp_credential_count=var["smtp_credential_smtp_credential_count"],
-        smtp_credential_filter=var["smtp_credential_smtp_credential_filter"],
+    test_smtp_credentials = oci.Identity.get_domains_smtp_credentials(idcs_endpoint=test_domain["url"],
+        smtp_credential_count=smtp_credential_smtp_credential_count,
+        smtp_credential_filter=smtp_credential_smtp_credential_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["smtp_credential_authorization"],
-        resource_type_schema_version=var["smtp_credential_resource_type_schema_version"],
-        start_index=var["smtp_credential_start_index"])
+        authorization=smtp_credential_authorization,
+        resource_type_schema_version=smtp_credential_resource_type_schema_version,
+        start_index=smtp_credential_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

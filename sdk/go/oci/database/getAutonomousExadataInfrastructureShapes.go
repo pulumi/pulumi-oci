@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousExadataInfrastructureShapes(ctx, &database.GetAutonomousExadataInfrastructureShapesArgs{
-//				AvailabilityDomain: _var.Autonomous_exadata_infrastructure_shape_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: autonomousExadataInfrastructureShapeAvailabilityDomain,
+//				CompartmentId:      compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

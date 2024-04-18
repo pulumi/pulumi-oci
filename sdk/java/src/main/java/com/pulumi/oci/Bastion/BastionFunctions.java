@@ -53,7 +53,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionId(testBastionOciBastionBastion.id())
      *             .build());
      * 
      *     }
@@ -95,7 +95,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionId(testBastionOciBastionBastion.id())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionId(testBastionOciBastionBastion.id())
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
+     *             .bastionId(testBastionOciBastionBastion.id())
      *             .build());
      * 
      *     }
@@ -221,10 +221,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
-     *             .name(var_.bastion_name())
+     *             .compartmentId(compartmentId)
+     *             .bastionId(testBastion.id())
+     *             .bastionLifecycleState(bastionBastionLifecycleState)
+     *             .name(bastionName)
      *             .build());
      * 
      *     }
@@ -266,10 +266,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
-     *             .name(var_.bastion_name())
+     *             .compartmentId(compartmentId)
+     *             .bastionId(testBastion.id())
+     *             .bastionLifecycleState(bastionBastionLifecycleState)
+     *             .name(bastionName)
      *             .build());
      * 
      *     }
@@ -311,10 +311,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
-     *             .name(var_.bastion_name())
+     *             .compartmentId(compartmentId)
+     *             .bastionId(testBastion.id())
+     *             .bastionLifecycleState(bastionBastionLifecycleState)
+     *             .name(bastionName)
      *             .build());
      * 
      *     }
@@ -356,10 +356,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .bastionLifecycleState(var_.bastion_bastion_lifecycle_state())
-     *             .name(var_.bastion_name())
+     *             .compartmentId(compartmentId)
+     *             .bastionId(testBastion.id())
+     *             .bastionLifecycleState(bastionBastionLifecycleState)
+     *             .name(bastionName)
      *             .build());
      * 
      *     }
@@ -401,7 +401,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionId(testSessionOciBastionSession.id())
      *             .build());
      * 
      *     }
@@ -443,7 +443,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionId(testSessionOciBastionSession.id())
      *             .build());
      * 
      *     }
@@ -485,7 +485,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionId(testSessionOciBastionSession.id())
      *             .build());
      * 
      *     }
@@ -527,7 +527,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(oci_bastion_session.test_session().id())
+     *             .sessionId(testSessionOciBastionSession.id())
      *             .build());
      * 
      *     }
@@ -569,10 +569,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .displayName(var_.session_display_name())
-     *             .sessionId(oci_bastion_session.test_session().id())
-     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .bastionId(testBastion.id())
+     *             .displayName(sessionDisplayName)
+     *             .sessionId(testSession.id())
+     *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
      *     }
@@ -614,10 +614,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .displayName(var_.session_display_name())
-     *             .sessionId(oci_bastion_session.test_session().id())
-     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .bastionId(testBastion.id())
+     *             .displayName(sessionDisplayName)
+     *             .sessionId(testSession.id())
+     *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
      *     }
@@ -659,10 +659,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .displayName(var_.session_display_name())
-     *             .sessionId(oci_bastion_session.test_session().id())
-     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .bastionId(testBastion.id())
+     *             .displayName(sessionDisplayName)
+     *             .sessionId(testSession.id())
+     *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
      *     }
@@ -704,10 +704,10 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(oci_bastion_bastion.test_bastion().id())
-     *             .displayName(var_.session_display_name())
-     *             .sessionId(oci_bastion_session.test_session().id())
-     *             .sessionLifecycleState(var_.session_session_lifecycle_state())
+     *             .bastionId(testBastion.id())
+     *             .displayName(sessionDisplayName)
+     *             .sessionId(testSession.id())
+     *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
      *     }

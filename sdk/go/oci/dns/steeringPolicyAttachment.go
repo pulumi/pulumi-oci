@@ -36,11 +36,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewSteeringPolicyAttachment(ctx, "testSteeringPolicyAttachment", &Dns.SteeringPolicyAttachmentArgs{
-//				DomainName:       pulumi.Any(_var.Steering_policy_attachment_domain_name),
-//				SteeringPolicyId: pulumi.Any(oci_dns_steering_policy.Test_steering_policy.Id),
-//				ZoneId:           pulumi.Any(oci_dns_zone.Test_zone.Id),
-//				DisplayName:      pulumi.Any(_var.Steering_policy_attachment_display_name),
+//			_, err := Dns.NewSteeringPolicyAttachment(ctx, "test_steering_policy_attachment", &Dns.SteeringPolicyAttachmentArgs{
+//				DomainName:       pulumi.Any(steeringPolicyAttachmentDomainName),
+//				SteeringPolicyId: pulumi.Any(testSteeringPolicy.Id),
+//				ZoneId:           pulumi.Any(testZone.Id),
+//				DisplayName:      pulumi.Any(steeringPolicyAttachmentDisplayName),
 //			})
 //			if err != nil {
 //				return err

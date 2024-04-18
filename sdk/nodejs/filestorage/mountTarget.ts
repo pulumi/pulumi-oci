@@ -49,38 +49,38 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMountTarget = new oci.filestorage.MountTarget("testMountTarget", {
- *     availabilityDomain: _var.mount_target_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testMountTarget = new oci.filestorage.MountTarget("test_mount_target", {
+ *     availabilityDomain: mountTargetAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.mount_target_display_name,
+ *     displayName: mountTargetDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     hostnameLabel: _var.mount_target_hostname_label,
- *     idmapType: _var.mount_target_idmap_type,
- *     ipAddress: _var.mount_target_ip_address,
+ *     hostnameLabel: mountTargetHostnameLabel,
+ *     idmapType: mountTargetIdmapType,
+ *     ipAddress: mountTargetIpAddress,
  *     kerberos: {
- *         kerberosRealm: _var.mount_target_kerberos_kerberos_realm,
- *         backupKeyTabSecretVersion: _var.mount_target_kerberos_backup_key_tab_secret_version,
- *         currentKeyTabSecretVersion: _var.mount_target_kerberos_current_key_tab_secret_version,
- *         isKerberosEnabled: _var.mount_target_kerberos_is_kerberos_enabled,
- *         keyTabSecretId: oci_vault_secret.test_secret.id,
+ *         kerberosRealm: mountTargetKerberosKerberosRealm,
+ *         backupKeyTabSecretVersion: mountTargetKerberosBackupKeyTabSecretVersion,
+ *         currentKeyTabSecretVersion: mountTargetKerberosCurrentKeyTabSecretVersion,
+ *         isKerberosEnabled: mountTargetKerberosIsKerberosEnabled,
+ *         keyTabSecretId: testSecret.id,
  *     },
  *     ldapIdmap: {
- *         cacheLifetimeSeconds: _var.mount_target_ldap_idmap_cache_lifetime_seconds,
- *         cacheRefreshIntervalSeconds: _var.mount_target_ldap_idmap_cache_refresh_interval_seconds,
- *         groupSearchBase: _var.mount_target_ldap_idmap_group_search_base,
- *         negativeCacheLifetimeSeconds: _var.mount_target_ldap_idmap_negative_cache_lifetime_seconds,
- *         outboundConnector1id: oci_file_storage_outbound_connector1.test_outbound_connector1.id,
- *         outboundConnector2id: oci_file_storage_outbound_connector2.test_outbound_connector2.id,
- *         schemaType: _var.mount_target_ldap_idmap_schema_type,
- *         userSearchBase: _var.mount_target_ldap_idmap_user_search_base,
+ *         cacheLifetimeSeconds: mountTargetLdapIdmapCacheLifetimeSeconds,
+ *         cacheRefreshIntervalSeconds: mountTargetLdapIdmapCacheRefreshIntervalSeconds,
+ *         groupSearchBase: mountTargetLdapIdmapGroupSearchBase,
+ *         negativeCacheLifetimeSeconds: mountTargetLdapIdmapNegativeCacheLifetimeSeconds,
+ *         outboundConnector1id: testOutboundConnector1.id,
+ *         outboundConnector2id: testOutboundConnector2.id,
+ *         schemaType: mountTargetLdapIdmapSchemaType,
+ *         userSearchBase: mountTargetLdapIdmapUserSearchBase,
  *     },
- *     nsgIds: _var.mount_target_nsg_ids,
+ *     nsgIds: mountTargetNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

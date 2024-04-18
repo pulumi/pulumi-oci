@@ -31,11 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsCondition(ctx, "testCondition", &Identity.DomainsConditionArgs{
-//				AttributeName:  pulumi.Any(_var.Condition_attribute_name),
-//				AttributeValue: pulumi.Any(_var.Condition_attribute_value),
-//				IdcsEndpoint:   pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
-//				Operator:       pulumi.Any(_var.Condition_operator),
+//			_, err := Identity.NewDomainsCondition(ctx, "test_condition", &Identity.DomainsConditionArgs{
+//				AttributeName:  pulumi.Any(conditionAttributeName),
+//				AttributeValue: pulumi.Any(conditionAttributeValue),
+//				IdcsEndpoint:   pulumi.Any(testDomain.Url),
+//				Name:           pulumi.Any(conditionName),
+//				Operator:       pulumi.Any(conditionOperator),
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Condition"),
 //				},
@@ -43,16 +44,16 @@ import (
 //					pulumi.String("all"),
 //				},
 //				Attributes:                pulumi.String(""),
-//				Authorization:             pulumi.Any(_var.Condition_authorization),
-//				Description:               pulumi.Any(_var.Condition_description),
-//				EvaluateConditionIf:       pulumi.Any(_var.Condition_evaluate_condition_if),
+//				Authorization:             pulumi.Any(conditionAuthorization),
+//				Description:               pulumi.Any(conditionDescription),
+//				EvaluateConditionIf:       pulumi.Any(conditionEvaluateConditionIf),
 //				ExternalId:                pulumi.String("externalId"),
-//				Ocid:                      pulumi.Any(_var.Condition_ocid),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Condition_resource_type_schema_version),
+//				Ocid:                      pulumi.Any(conditionOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(conditionResourceTypeSchemaVersion),
 //				Tags: identity.DomainsConditionTagArray{
 //					&identity.DomainsConditionTagArgs{
-//						Key:   pulumi.Any(_var.Condition_tags_key),
-//						Value: pulumi.Any(_var.Condition_tags_value),
+//						Key:   pulumi.Any(conditionTagsKey),
+//						Value: pulumi.Any(conditionTagsValue),
 //					},
 //				},
 //			})

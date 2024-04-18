@@ -25,21 +25,21 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDeployEnvironment = new Oci.DevOps.DeployEnvironment("testDeployEnvironment", new()
+    ///     var testDeployEnvironment = new Oci.DevOps.DeployEnvironment("test_deploy_environment", new()
     ///     {
-    ///         DeployEnvironmentType = @var.Deploy_environment_deploy_environment_type,
-    ///         ProjectId = oci_devops_project.Test_project.Id,
-    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+    ///         DeployEnvironmentType = deployEnvironmentDeployEnvironmentType,
+    ///         ProjectId = testProject.Id,
+    ///         ClusterId = testCluster.Id,
     ///         ComputeInstanceGroupSelectors = new Oci.DevOps.Inputs.DeployEnvironmentComputeInstanceGroupSelectorsArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.DevOps.Inputs.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs
     ///                 {
-    ///                     SelectorType = @var.Deploy_environment_compute_instance_group_selectors_items_selector_type,
-    ///                     ComputeInstanceIds = @var.Deploy_environment_compute_instance_group_selectors_items_compute_instance_ids,
-    ///                     Query = @var.Deploy_environment_compute_instance_group_selectors_items_query,
-    ///                     Region = @var.Deploy_environment_compute_instance_group_selectors_items_region,
+    ///                     SelectorType = deployEnvironmentComputeInstanceGroupSelectorsItemsSelectorType,
+    ///                     ComputeInstanceIds = deployEnvironmentComputeInstanceGroupSelectorsItemsComputeInstanceIds,
+    ///                     Query = deployEnvironmentComputeInstanceGroupSelectorsItemsQuery,
+    ///                     Region = deployEnvironmentComputeInstanceGroupSelectorsItemsRegion,
     ///                 },
     ///             },
     ///         },
@@ -47,18 +47,18 @@ namespace Pulumi.Oci.DevOps
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Deploy_environment_description,
-    ///         DisplayName = @var.Deploy_environment_display_name,
+    ///         Description = deployEnvironmentDescription,
+    ///         DisplayName = deployEnvironmentDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         FunctionId = oci_functions_function.Test_function.Id,
+    ///         FunctionId = testFunction.Id,
     ///         NetworkChannel = new Oci.DevOps.Inputs.DeployEnvironmentNetworkChannelArgs
     ///         {
-    ///             NetworkChannelType = @var.Deploy_environment_network_channel_network_channel_type,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NsgIds = @var.Deploy_environment_network_channel_nsg_ids,
+    ///             NetworkChannelType = deployEnvironmentNetworkChannelNetworkChannelType,
+    ///             SubnetId = testSubnet.Id,
+    ///             NsgIds = deployEnvironmentNetworkChannelNsgIds,
     ///         },
     ///     });
     /// 

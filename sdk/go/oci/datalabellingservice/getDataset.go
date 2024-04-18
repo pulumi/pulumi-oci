@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataLabellingService.GetDataset(ctx, &datalabellingservice.GetDatasetArgs{
-//				DatasetId: oci_data_labeling_service_dataset.Test_dataset.Id,
+//				DatasetId: testDatasetOciDataLabelingServiceDataset.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

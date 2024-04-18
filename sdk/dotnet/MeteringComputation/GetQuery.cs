@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testQuery = Oci.MeteringComputation.GetQuery.Invoke(new()
         ///     {
-        ///         QueryId = oci_metering_computation_query.Test_query.Id,
+        ///         QueryId = testQueryOciMeteringComputationQuery.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testQuery = Oci.MeteringComputation.GetQuery.Invoke(new()
         ///     {
-        ///         QueryId = oci_metering_computation_query.Test_query.Id,
+        ///         QueryId = testQueryOciMeteringComputationQuery.Id,
         ///     });
         /// 
         /// });

@@ -45,12 +45,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIpv6 = new Ipv6(&#34;testIpv6&#34;, Ipv6Args.builder()        
- *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().id())
+ *             .vnicId(testVnicAttachment.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.ipv6_display_name())
+ *             .displayName(ipv6DisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .ipAddress(var_.ipv6_ip_address())
- *             .ipv6subnetCidr(var_.ipv6_ipv6subnet_cidr())
+ *             .ipAddress(ipv6IpAddress)
+ *             .ipv6subnetCidr(ipv6Ipv6subnetCidr)
  *             .build());
  * 
  *     }

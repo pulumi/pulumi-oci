@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaFamilies = Oci.Jms.GetJavaFamilies.Invoke(new()
         ///     {
-        ///         DisplayName = @var.Java_family_display_name,
-        ///         FamilyVersion = @var.Java_family_family_version,
-        ///         IsSupportedVersion = @var.Java_family_is_supported_version,
+        ///         DisplayName = javaFamilyDisplayName,
+        ///         FamilyVersion = javaFamilyFamilyVersion,
+        ///         IsSupportedVersion = javaFamilyIsSupportedVersion,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaFamilies = Oci.Jms.GetJavaFamilies.Invoke(new()
         ///     {
-        ///         DisplayName = @var.Java_family_display_name,
-        ///         FamilyVersion = @var.Java_family_family_version,
-        ///         IsSupportedVersion = @var.Java_family_is_supported_version,
+        ///         DisplayName = javaFamilyDisplayName,
+        ///         FamilyVersion = javaFamilyFamilyVersion,
+        ///         IsSupportedVersion = javaFamilyIsSupportedVersion,
         ///     });
         /// 
         /// });

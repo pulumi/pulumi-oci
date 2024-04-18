@@ -52,14 +52,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testComputeCapacityTopology = new ComputeCapacityTopology(&#34;testComputeCapacityTopology&#34;, ComputeCapacityTopologyArgs.builder()        
- *             .availabilityDomain(var_.compute_capacity_topology_availability_domain())
+ *             .availabilityDomain(computeCapacityTopologyAvailabilityDomain)
  *             .capacitySource(ComputeCapacityTopologyCapacitySourceArgs.builder()
- *                 .capacityType(var_.compute_capacity_topology_capacity_source_capacity_type())
- *                 .compartmentId(var_.compartment_id())
+ *                 .capacityType(computeCapacityTopologyCapacitySourceCapacityType)
+ *                 .compartmentId(compartmentId)
  *                 .build())
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.compute_capacity_topology_display_name())
+ *             .displayName(computeCapacityTopologyDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

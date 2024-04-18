@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DisasterRecovery.GetDrPlanExecution(ctx, &disasterrecovery.GetDrPlanExecutionArgs{
-//				DrPlanExecutionId: oci_disaster_recovery_dr_plan_execution.Test_dr_plan_execution.Id,
+//				DrPlanExecutionId: testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

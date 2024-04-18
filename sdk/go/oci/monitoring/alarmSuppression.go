@@ -38,19 +38,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Monitoring.NewAlarmSuppression(ctx, "testAlarmSuppression", &Monitoring.AlarmSuppressionArgs{
+//			_, err := Monitoring.NewAlarmSuppression(ctx, "test_alarm_suppression", &Monitoring.AlarmSuppressionArgs{
 //				AlarmSuppressionTarget: &monitoring.AlarmSuppressionAlarmSuppressionTargetArgs{
-//					AlarmId:    pulumi.Any(oci_monitoring_alarm.Test_alarm.Id),
-//					TargetType: pulumi.Any(_var.Alarm_suppression_alarm_suppression_target_target_type),
+//					AlarmId:    pulumi.Any(testAlarm.Id),
+//					TargetType: pulumi.Any(alarmSuppressionAlarmSuppressionTargetTargetType),
 //				},
-//				Dimensions:        pulumi.Any(_var.Alarm_suppression_dimensions),
-//				DisplayName:       pulumi.Any(_var.Alarm_suppression_display_name),
-//				TimeSuppressFrom:  pulumi.Any(_var.Alarm_suppression_time_suppress_from),
-//				TimeSuppressUntil: pulumi.Any(_var.Alarm_suppression_time_suppress_until),
+//				Dimensions:        pulumi.Any(alarmSuppressionDimensions),
+//				DisplayName:       pulumi.Any(alarmSuppressionDisplayName),
+//				TimeSuppressFrom:  pulumi.Any(alarmSuppressionTimeSuppressFrom),
+//				TimeSuppressUntil: pulumi.Any(alarmSuppressionTimeSuppressUntil),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Alarm_suppression_description),
+//				Description: pulumi.Any(alarmSuppressionDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

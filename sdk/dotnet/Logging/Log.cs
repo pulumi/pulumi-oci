@@ -26,22 +26,22 @@ namespace Pulumi.Oci.Logging
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLog = new Oci.Logging.Log("testLog", new()
+    ///     var testLog = new Oci.Logging.Log("test_log", new()
     ///     {
-    ///         DisplayName = @var.Log_display_name,
-    ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///         LogType = @var.Log_log_type,
+    ///         DisplayName = logDisplayName,
+    ///         LogGroupId = testLogGroup.Id,
+    ///         LogType = logLogType,
     ///         Configuration = new Oci.Logging.Inputs.LogConfigurationArgs
     ///         {
     ///             Source = new Oci.Logging.Inputs.LogConfigurationSourceArgs
     ///             {
-    ///                 Category = @var.Log_configuration_source_category,
-    ///                 Resource = @var.Log_configuration_source_resource,
-    ///                 Service = @var.Log_configuration_source_service,
-    ///                 SourceType = @var.Log_configuration_source_source_type,
-    ///                 Parameters = @var.Log_configuration_source_parameters,
+    ///                 Category = logConfigurationSourceCategory,
+    ///                 Resource = logConfigurationSourceResource,
+    ///                 Service = logConfigurationSourceService,
+    ///                 SourceType = logConfigurationSourceSourceType,
+    ///                 Parameters = logConfigurationSourceParameters,
     ///             },
-    ///             CompartmentId = @var.Compartment_id,
+    ///             CompartmentId = compartmentId,
     ///         },
     ///         DefinedTags = 
     ///         {
@@ -51,8 +51,8 @@ namespace Pulumi.Oci.Logging
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsEnabled = @var.Log_is_enabled,
-    ///         RetentionDuration = @var.Log_retention_duration,
+    ///         IsEnabled = logIsEnabled,
+    ///         RetentionDuration = logRetentionDuration,
     ///     });
     /// 
     /// });

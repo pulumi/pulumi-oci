@@ -153,12 +153,12 @@ def get_container_repositories(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_repository_compartment_id_in_subtree"],
-        display_name=var["container_repository_display_name"],
-        is_public=var["container_repository_is_public"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        state=var["container_repository_state"])
+    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_repository_compartment_id_in_subtree,
+        display_name=container_repository_display_name,
+        is_public=container_repository_is_public,
+        repository_id=test_repository["id"],
+        state=container_repository_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -214,12 +214,12 @@ def get_container_repositories_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["container_repository_compartment_id_in_subtree"],
-        display_name=var["container_repository_display_name"],
-        is_public=var["container_repository_is_public"],
-        repository_id=oci_artifacts_repository["test_repository"]["id"],
-        state=var["container_repository_state"])
+    test_container_repositories = oci.Artifacts.get_container_repositories(compartment_id=compartment_id,
+        compartment_id_in_subtree=container_repository_compartment_id_in_subtree,
+        display_name=container_repository_display_name,
+        is_public=container_repository_is_public,
+        repository_id=test_repository["id"],
+        state=container_repository_state)
     ```
     <!--End PulumiCodeChooser -->
 

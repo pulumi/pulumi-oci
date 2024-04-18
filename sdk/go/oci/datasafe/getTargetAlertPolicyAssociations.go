@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetTargetAlertPolicyAssociations(ctx, &datasafe.GetTargetAlertPolicyAssociationsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.Target_alert_policy_association_access_level),
-//				AlertPolicyId:                   pulumi.StringRef(oci_data_safe_alert_policy.Test_alert_policy.Id),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Target_alert_policy_association_compartment_id_in_subtree),
-//				State:                           pulumi.StringRef(_var.Target_alert_policy_association_state),
-//				TargetAlertPolicyAssociationId:  pulumi.StringRef(oci_data_safe_target_alert_policy_association.Test_target_alert_policy_association.Id),
-//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Target_alert_policy_association_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Target_alert_policy_association_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(targetAlertPolicyAssociationAccessLevel),
+//				AlertPolicyId:                   pulumi.StringRef(testAlertPolicy.Id),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(targetAlertPolicyAssociationCompartmentIdInSubtree),
+//				State:                           pulumi.StringRef(targetAlertPolicyAssociationState),
+//				TargetAlertPolicyAssociationId:  pulumi.StringRef(testTargetAlertPolicyAssociation.Id),
+//				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(targetAlertPolicyAssociationTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,50 +31,50 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataFlow.NewInvokeRun(ctx, "testInvokeRun", &DataFlow.InvokeRunArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ApplicationId: pulumi.Any(oci_dataflow_application.Test_application.Id),
+//			_, err := DataFlow.NewInvokeRun(ctx, "test_invoke_run", &DataFlow.InvokeRunArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ApplicationId: pulumi.Any(testApplication.Id),
 //				ApplicationLogConfig: &dataflow.InvokeRunApplicationLogConfigArgs{
-//					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//					LogGroupId: pulumi.Any(testLogGroup.Id),
+//					LogId:      pulumi.Any(testLog.Id),
 //				},
-//				ArchiveUri:    pulumi.Any(_var.Invoke_run_archive_uri),
-//				Arguments:     pulumi.Any(_var.Invoke_run_arguments),
-//				Configuration: pulumi.Any(_var.Invoke_run_configuration),
+//				ArchiveUri:    pulumi.Any(invokeRunArchiveUri),
+//				Arguments:     pulumi.Any(invokeRunArguments),
+//				Configuration: pulumi.Any(invokeRunConfiguration),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Invoke_run_display_name),
-//				DriverShape: pulumi.Any(_var.Invoke_run_driver_shape),
+//				DisplayName: pulumi.Any(invokeRunDisplayName),
+//				DriverShape: pulumi.Any(invokeRunDriverShape),
 //				DriverShapeConfig: &dataflow.InvokeRunDriverShapeConfigArgs{
-//					MemoryInGbs: pulumi.Any(_var.Invoke_run_driver_shape_config_memory_in_gbs),
-//					Ocpus:       pulumi.Any(_var.Invoke_run_driver_shape_config_ocpus),
+//					MemoryInGbs: pulumi.Any(invokeRunDriverShapeConfigMemoryInGbs),
+//					Ocpus:       pulumi.Any(invokeRunDriverShapeConfigOcpus),
 //				},
-//				Execute:       pulumi.Any(_var.Invoke_run_execute),
-//				ExecutorShape: pulumi.Any(_var.Invoke_run_executor_shape),
+//				Execute:       pulumi.Any(invokeRunExecute),
+//				ExecutorShape: pulumi.Any(invokeRunExecutorShape),
 //				ExecutorShapeConfig: &dataflow.InvokeRunExecutorShapeConfigArgs{
-//					MemoryInGbs: pulumi.Any(_var.Invoke_run_executor_shape_config_memory_in_gbs),
-//					Ocpus:       pulumi.Any(_var.Invoke_run_executor_shape_config_ocpus),
+//					MemoryInGbs: pulumi.Any(invokeRunExecutorShapeConfigMemoryInGbs),
+//					Ocpus:       pulumi.Any(invokeRunExecutorShapeConfigOcpus),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IdleTimeoutInMinutes: pulumi.Any(_var.Invoke_run_idle_timeout_in_minutes),
-//				LogsBucketUri:        pulumi.Any(_var.Invoke_run_logs_bucket_uri),
-//				MaxDurationInMinutes: pulumi.Any(_var.Invoke_run_max_duration_in_minutes),
-//				MetastoreId:          pulumi.Any(_var.Metastore_id),
-//				NumExecutors:         pulumi.Any(_var.Invoke_run_num_executors),
-//				OpcParentRptUrl:      pulumi.Any(_var.Invoke_run_opc_parent_rpt_url),
+//				IdleTimeoutInMinutes: pulumi.Any(invokeRunIdleTimeoutInMinutes),
+//				LogsBucketUri:        pulumi.Any(invokeRunLogsBucketUri),
+//				MaxDurationInMinutes: pulumi.Any(invokeRunMaxDurationInMinutes),
+//				MetastoreId:          pulumi.Any(metastoreId),
+//				NumExecutors:         pulumi.Any(invokeRunNumExecutors),
+//				OpcParentRptUrl:      pulumi.Any(invokeRunOpcParentRptUrl),
 //				Parameters: dataflow.InvokeRunParameterArray{
 //					&dataflow.InvokeRunParameterArgs{
-//						Name:  pulumi.Any(_var.Invoke_run_parameters_name),
-//						Value: pulumi.Any(_var.Invoke_run_parameters_value),
+//						Name:  pulumi.Any(invokeRunParametersName),
+//						Value: pulumi.Any(invokeRunParametersValue),
 //					},
 //				},
-//				PoolId:             pulumi.Any(oci_dataflow_pool.Test_pool.Id),
-//				SparkVersion:       pulumi.Any(_var.Invoke_run_spark_version),
-//				Type:               pulumi.Any(_var.Invoke_run_type),
-//				WarehouseBucketUri: pulumi.Any(_var.Invoke_run_warehouse_bucket_uri),
+//				PoolId:             pulumi.Any(testPool.Id),
+//				SparkVersion:       pulumi.Any(invokeRunSparkVersion),
+//				Type:               pulumi.Any(invokeRunType),
+//				WarehouseBucketUri: pulumi.Any(invokeRunWarehouseBucketUri),
 //			})
 //			if err != nil {
 //				return err

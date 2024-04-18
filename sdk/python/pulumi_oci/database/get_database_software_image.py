@@ -268,7 +268,7 @@ def get_database_software_image(database_software_image_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"])
+    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -317,7 +317,7 @@ def get_database_software_image_output(database_software_image_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=oci_database_database_software_image["test_database_software_image"]["id"])
+    test_database_software_image = oci.Database.get_database_software_image(database_software_image_id=test_database_software_image_oci_database_database_software_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 

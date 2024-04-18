@@ -31,31 +31,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.NewBackendSet(ctx, "testBackendSet", &NetworkLoadBalancer.BackendSetArgs{
+//			_, err := NetworkLoadBalancer.NewBackendSet(ctx, "test_backend_set", &NetworkLoadBalancer.BackendSetArgs{
 //				HealthChecker: &networkloadbalancer.BackendSetHealthCheckerArgs{
-//					Protocol: pulumi.Any(_var.Backend_set_health_checker_protocol),
+//					Protocol: pulumi.Any(backendSetHealthCheckerProtocol),
 //					Dns: &networkloadbalancer.BackendSetHealthCheckerDnsArgs{
-//						DomainName:        pulumi.Any(oci_identity_domain.Test_domain.Name),
-//						QueryClass:        pulumi.Any(_var.Backend_set_health_checker_dns_query_class),
-//						QueryType:         pulumi.Any(_var.Backend_set_health_checker_dns_query_type),
-//						Rcodes:            pulumi.Any(_var.Backend_set_health_checker_dns_rcodes),
-//						TransportProtocol: pulumi.Any(_var.Backend_set_health_checker_dns_transport_protocol),
+//						DomainName:        pulumi.Any(testDomain.Name),
+//						QueryClass:        pulumi.Any(backendSetHealthCheckerDnsQueryClass),
+//						QueryType:         pulumi.Any(backendSetHealthCheckerDnsQueryType),
+//						Rcodes:            pulumi.Any(backendSetHealthCheckerDnsRcodes),
+//						TransportProtocol: pulumi.Any(backendSetHealthCheckerDnsTransportProtocol),
 //					},
-//					IntervalInMillis:  pulumi.Any(_var.Backend_set_health_checker_interval_in_millis),
-//					Port:              pulumi.Any(_var.Backend_set_health_checker_port),
-//					RequestData:       pulumi.Any(_var.Backend_set_health_checker_request_data),
-//					ResponseBodyRegex: pulumi.Any(_var.Backend_set_health_checker_response_body_regex),
-//					ResponseData:      pulumi.Any(_var.Backend_set_health_checker_response_data),
-//					Retries:           pulumi.Any(_var.Backend_set_health_checker_retries),
-//					ReturnCode:        pulumi.Any(_var.Backend_set_health_checker_return_code),
-//					TimeoutInMillis:   pulumi.Any(_var.Backend_set_health_checker_timeout_in_millis),
-//					UrlPath:           pulumi.Any(_var.Backend_set_health_checker_url_path),
+//					IntervalInMillis:  pulumi.Any(backendSetHealthCheckerIntervalInMillis),
+//					Port:              pulumi.Any(backendSetHealthCheckerPort),
+//					RequestData:       pulumi.Any(backendSetHealthCheckerRequestData),
+//					ResponseBodyRegex: pulumi.Any(backendSetHealthCheckerResponseBodyRegex),
+//					ResponseData:      pulumi.Any(backendSetHealthCheckerResponseData),
+//					Retries:           pulumi.Any(backendSetHealthCheckerRetries),
+//					ReturnCode:        pulumi.Any(backendSetHealthCheckerReturnCode),
+//					TimeoutInMillis:   pulumi.Any(backendSetHealthCheckerTimeoutInMillis),
+//					UrlPath:           pulumi.Any(backendSetHealthCheckerUrlPath),
 //				},
-//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-//				Policy:                pulumi.Any(_var.Backend_set_policy),
-//				IpVersion:             pulumi.Any(_var.Backend_set_ip_version),
-//				IsFailOpen:            pulumi.Any(_var.Backend_set_is_fail_open),
-//				IsPreserveSource:      pulumi.Any(_var.Backend_set_is_preserve_source),
+//				Name:                  pulumi.Any(backendSetName),
+//				NetworkLoadBalancerId: pulumi.Any(testNetworkLoadBalancer.Id),
+//				Policy:                pulumi.Any(backendSetPolicy),
+//				IpVersion:             pulumi.Any(backendSetIpVersion),
+//				IsFailOpen:            pulumi.Any(backendSetIsFailOpen),
+//				IsPreserveSource:      pulumi.Any(backendSetIsPreserveSource),
 //			})
 //			if err != nil {
 //				return err

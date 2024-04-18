@@ -29,8 +29,8 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testSubscriptions = Oci.OspGateway.GetSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OspHomeRegion = @var.Subscription_osp_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         OspHomeRegion = subscriptionOspHomeRegion,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testSubscriptions = Oci.OspGateway.GetSubscriptions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         OspHomeRegion = @var.Subscription_osp_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         OspHomeRegion = subscriptionOspHomeRegion,
         ///     });
         /// 
         /// });

@@ -31,26 +31,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := RecoveryMod.NewProtectedDatabase(ctx, "testProtectedDatabase", &RecoveryMod.ProtectedDatabaseArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DbUniqueName:       pulumi.Any(_var.Protected_database_db_unique_name),
-//				DisplayName:        pulumi.Any(_var.Protected_database_display_name),
-//				Password:           pulumi.Any(_var.Protected_database_password),
-//				ProtectionPolicyId: pulumi.Any(oci_recovery_protection_policy.Test_protection_policy.Id),
+//			_, err := RecoveryMod.NewProtectedDatabase(ctx, "test_protected_database", &RecoveryMod.ProtectedDatabaseArgs{
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				DbUniqueName:       pulumi.Any(protectedDatabaseDbUniqueName),
+//				DisplayName:        pulumi.Any(protectedDatabaseDisplayName),
+//				Password:           pulumi.Any(protectedDatabasePassword),
+//				ProtectionPolicyId: pulumi.Any(testProtectionPolicy.Id),
 //				RecoveryServiceSubnets: recoverymod.ProtectedDatabaseRecoveryServiceSubnetArray{
 //					&recoverymod.ProtectedDatabaseRecoveryServiceSubnetArgs{
-//						RecoveryServiceSubnetId: pulumi.Any(oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id),
+//						RecoveryServiceSubnetId: pulumi.Any(testRecoveryServiceSubnet.Id),
 //					},
 //				},
-//				DatabaseId:   pulumi.Any(oci_database_database.Test_database.Id),
-//				DatabaseSize: pulumi.Any(_var.Protected_database_database_size),
+//				DatabaseId:   pulumi.Any(testDatabase.Id),
+//				DatabaseSize: pulumi.Any(protectedDatabaseDatabaseSize),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsRedoLogsShipped: pulumi.Any(_var.Protected_database_is_redo_logs_shipped),
+//				IsRedoLogsShipped: pulumi.Any(protectedDatabaseIsRedoLogsShipped),
 //			})
 //			if err != nil {
 //				return err

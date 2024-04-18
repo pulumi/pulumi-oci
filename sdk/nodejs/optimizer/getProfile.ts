@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProfile = oci.Optimizer.getProfile({
- *     profileId: oci_optimizer_profile.test_profile.id,
+ *     profileId: testProfileOciOptimizerProfile.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,7 +114,7 @@ export interface GetProfileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProfile = oci.Optimizer.getProfile({
- *     profileId: oci_optimizer_profile.test_profile.id,
+ *     profileId: testProfileOciOptimizerProfile.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

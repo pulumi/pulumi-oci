@@ -25,11 +25,12 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkFirewallPolicyAddressList = new Oci.NetworkFirewall.NetworkFirewallPolicyAddressList("testNetworkFirewallPolicyAddressList", new()
+    ///     var testNetworkFirewallPolicyAddressList = new Oci.NetworkFirewall.NetworkFirewallPolicyAddressList("test_network_firewall_policy_address_list", new()
     ///     {
-    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-    ///         Type = @var.Network_firewall_policy_address_list_type,
-    ///         Addresses = @var.Network_firewall_policy_address_list_addresses,
+    ///         Name = networkFirewallPolicyAddressListName,
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Type = networkFirewallPolicyAddressListType,
+    ///         Addresses = networkFirewallPolicyAddressListAddresses,
     ///     });
     /// 
     /// });

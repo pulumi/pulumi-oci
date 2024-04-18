@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetMonitoredResourceType(ctx, &stackmonitoring.GetMonitoredResourceTypeArgs{
-//				MonitoredResourceTypeId: oci_stack_monitoring_monitored_resource_type.Test_monitored_resource_type.Id,
+//				MonitoredResourceTypeId: testMonitoredResourceTypeOciStackMonitoringMonitoredResourceType.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

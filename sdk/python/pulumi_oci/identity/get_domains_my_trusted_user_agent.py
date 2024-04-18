@@ -370,12 +370,12 @@ def get_domains_my_trusted_user_agent(attribute_sets: Optional[Sequence[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_trusted_user_agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
+    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
+        my_trusted_user_agent_id=test_agent["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["my_trusted_user_agent_authorization"],
-        resource_type_schema_version=var["my_trusted_user_agent_resource_type_schema_version"])
+        authorization=my_trusted_user_agent_authorization,
+        resource_type_schema_version=my_trusted_user_agent_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -448,12 +448,12 @@ def get_domains_my_trusted_user_agent_output(attribute_sets: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_trusted_user_agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
+    test_my_trusted_user_agent = oci.Identity.get_domains_my_trusted_user_agent(idcs_endpoint=test_domain["url"],
+        my_trusted_user_agent_id=test_agent["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["my_trusted_user_agent_authorization"],
-        resource_type_schema_version=var["my_trusted_user_agent_resource_type_schema_version"])
+        authorization=my_trusted_user_agent_authorization,
+        resource_type_schema_version=my_trusted_user_agent_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

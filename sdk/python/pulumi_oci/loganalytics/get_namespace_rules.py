@@ -156,12 +156,12 @@ def get_namespace_rules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rule_namespace"],
-        display_name=var["namespace_rule_display_name"],
-        kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"],
-        target_service=var["namespace_rule_target_service"])
+    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=compartment_id,
+        namespace=namespace_rule_namespace,
+        display_name=namespace_rule_display_name,
+        kind=namespace_rule_kind,
+        state=namespace_rule_state,
+        target_service=namespace_rule_target_service)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_namespace_rules_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=var["compartment_id"],
-        namespace=var["namespace_rule_namespace"],
-        display_name=var["namespace_rule_display_name"],
-        kind=var["namespace_rule_kind"],
-        state=var["namespace_rule_state"],
-        target_service=var["namespace_rule_target_service"])
+    test_namespace_rules = oci.LogAnalytics.get_namespace_rules(compartment_id=compartment_id,
+        namespace=namespace_rule_namespace,
+        display_name=namespace_rule_display_name,
+        kind=namespace_rule_kind,
+        state=namespace_rule_state,
+        target_service=namespace_rule_target_service)
     ```
     <!--End PulumiCodeChooser -->
 

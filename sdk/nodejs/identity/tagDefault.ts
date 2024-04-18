@@ -23,11 +23,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTagDefault = new oci.identity.TagDefault("testTagDefault", {
- *     compartmentId: _var.compartment_id,
- *     tagDefinitionId: oci_identity_tag_definition.test_tag_definition.id,
- *     value: _var.tag_default_value,
- *     isRequired: _var.tag_default_is_required,
+ * const testTagDefault = new oci.identity.TagDefault("test_tag_default", {
+ *     compartmentId: compartmentId,
+ *     tagDefinitionId: testTagDefinition.id,
+ *     value: tagDefaultValue,
+ *     isRequired: tagDefaultIsRequired,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

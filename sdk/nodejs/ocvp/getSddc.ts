@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSddc = oci.Ocvp.getSddc({
- *     sddcId: oci_ocvp_sddc.test_sddc.id,
+ *     sddcId: testSddcOciOcvpSddc.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -366,7 +366,7 @@ export interface GetSddcResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSddc = oci.Ocvp.getSddc({
- *     sddcId: oci_ocvp_sddc.test_sddc.id,
+ *     sddcId: testSddcOciOcvpSddc.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

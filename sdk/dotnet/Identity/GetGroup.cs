@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testGroup = Oci.Identity.GetGroup.Invoke(new()
         ///     {
-        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///         GroupId = testGroupOciIdentityGroup.Id,
         ///     });
         /// 
         /// });
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testGroup = Oci.Identity.GetGroup.Invoke(new()
         ///     {
-        ///         GroupId = oci_identity_group.Test_group.Id,
+        ///         GroupId = testGroupOciIdentityGroup.Id,
         ///     });
         /// 
         /// });

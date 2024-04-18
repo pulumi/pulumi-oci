@@ -299,11 +299,11 @@ class InvokeFunction(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_invoke_function = oci.functions.InvokeFunction("testInvokeFunction",
-            function_id=oci_functions_function["test_function"]["id"],
-            invoke_function_body=var["invoke_function_invoke_function_body"],
-            fn_intent=var["invoke_function_fn_intent"],
-            fn_invoke_type=var["invoke_function_fn_invoke_type"],
+        test_invoke_function = oci.functions.InvokeFunction("test_invoke_function",
+            function_id=test_function["id"],
+            invoke_function_body=invoke_function_invoke_function_body,
+            fn_intent=invoke_function_fn_intent,
+            fn_invoke_type=invoke_function_fn_invoke_type,
             base64_encode_content=False)
         ```
         <!--End PulumiCodeChooser -->
@@ -341,11 +341,11 @@ class InvokeFunction(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_invoke_function = oci.functions.InvokeFunction("testInvokeFunction",
-            function_id=oci_functions_function["test_function"]["id"],
-            invoke_function_body=var["invoke_function_invoke_function_body"],
-            fn_intent=var["invoke_function_fn_intent"],
-            fn_invoke_type=var["invoke_function_fn_invoke_type"],
+        test_invoke_function = oci.functions.InvokeFunction("test_invoke_function",
+            function_id=test_function["id"],
+            invoke_function_body=invoke_function_invoke_function_body,
+            fn_intent=invoke_function_fn_intent,
+            fn_invoke_type=invoke_function_fn_invoke_type,
             base64_encode_content=False)
         ```
         <!--End PulumiCodeChooser -->

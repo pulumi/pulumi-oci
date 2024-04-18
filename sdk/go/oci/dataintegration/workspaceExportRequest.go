@@ -31,16 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspaceExportRequest(ctx, "testWorkspaceExportRequest", &DataIntegration.WorkspaceExportRequestArgs{
-//				Bucket:                   pulumi.Any(_var.Workspace_export_request_bucket),
-//				WorkspaceId:              pulumi.Any(oci_dataintegration_workspace.Test_workspace.Id),
-//				AreReferencesIncluded:    pulumi.Any(_var.Workspace_export_request_are_references_included),
-//				FileName:                 pulumi.Any(_var.Workspace_export_request_file_name),
-//				Filters:                  pulumi.Any(_var.Workspace_export_request_filters),
-//				IsObjectOverwriteEnabled: pulumi.Any(_var.Workspace_export_request_is_object_overwrite_enabled),
-//				ObjectKeys:               pulumi.Any(_var.Workspace_export_request_object_keys),
-//				ObjectStorageRegion:      pulumi.Any(_var.Workspace_export_request_object_storage_region),
-//				ObjectStorageTenancyId:   pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
+//			_, err := DataIntegration.NewWorkspaceExportRequest(ctx, "test_workspace_export_request", &DataIntegration.WorkspaceExportRequestArgs{
+//				Bucket:                   pulumi.Any(workspaceExportRequestBucket),
+//				WorkspaceId:              pulumi.Any(testWorkspace.Id),
+//				AreReferencesIncluded:    pulumi.Any(workspaceExportRequestAreReferencesIncluded),
+//				FileName:                 pulumi.Any(workspaceExportRequestFileName),
+//				Filters:                  pulumi.Any(workspaceExportRequestFilters),
+//				IsObjectOverwriteEnabled: pulumi.Any(workspaceExportRequestIsObjectOverwriteEnabled),
+//				ObjectKeys:               pulumi.Any(workspaceExportRequestObjectKeys),
+//				ObjectStorageRegion:      pulumi.Any(workspaceExportRequestObjectStorageRegion),
+//				ObjectStorageTenancyId:   pulumi.Any(testTenancy.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -45,19 +45,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetUserAssessments(ctx, &datasafe.GetUserAssessmentsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.User_assessment_access_level),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.User_assessment_compartment_id_in_subtree),
-//				DisplayName:                     pulumi.StringRef(_var.User_assessment_display_name),
-//				IsBaseline:                      pulumi.BoolRef(_var.User_assessment_is_baseline),
-//				IsScheduleAssessment:            pulumi.BoolRef(_var.User_assessment_is_schedule_assessment),
-//				ScheduleUserAssessmentId:        pulumi.StringRef(oci_data_safe_user_assessment.Test_user_assessment.Id),
-//				State:                           pulumi.StringRef(_var.User_assessment_state),
-//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.User_assessment_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.User_assessment_time_created_less_than),
-//				TriggeredBy:                     pulumi.StringRef(_var.User_assessment_triggered_by),
-//				Type:                            pulumi.StringRef(_var.User_assessment_type),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(userAssessmentAccessLevel),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(userAssessmentCompartmentIdInSubtree),
+//				DisplayName:                     pulumi.StringRef(userAssessmentDisplayName),
+//				IsBaseline:                      pulumi.BoolRef(userAssessmentIsBaseline),
+//				IsScheduleAssessment:            pulumi.BoolRef(userAssessmentIsScheduleAssessment),
+//				ScheduleUserAssessmentId:        pulumi.StringRef(testUserAssessment.Id),
+//				State:                           pulumi.StringRef(userAssessmentState),
+//				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(userAssessmentTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(userAssessmentTimeCreatedLessThan),
+//				TriggeredBy:                     pulumi.StringRef(userAssessmentTriggeredBy),
+//				Type:                            pulumi.StringRef(userAssessmentType),
 //			}, nil)
 //			if err != nil {
 //				return err

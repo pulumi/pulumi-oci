@@ -144,12 +144,12 @@ def get_custom_protection_rules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=var["compartment_id"],
-        display_names=var["custom_protection_rule_display_names"],
-        ids=var["custom_protection_rule_ids"],
-        states=var["custom_protection_rule_states"],
-        time_created_greater_than_or_equal_to=var["custom_protection_rule_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["custom_protection_rule_time_created_less_than"])
+    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=compartment_id,
+        display_names=custom_protection_rule_display_names,
+        ids=custom_protection_rule_ids,
+        states=custom_protection_rule_states,
+        time_created_greater_than_or_equal_to=custom_protection_rule_time_created_greater_than_or_equal_to,
+        time_created_less_than=custom_protection_rule_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,12 +205,12 @@ def get_custom_protection_rules_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=var["compartment_id"],
-        display_names=var["custom_protection_rule_display_names"],
-        ids=var["custom_protection_rule_ids"],
-        states=var["custom_protection_rule_states"],
-        time_created_greater_than_or_equal_to=var["custom_protection_rule_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["custom_protection_rule_time_created_less_than"])
+    test_custom_protection_rules = oci.Waas.get_custom_protection_rules(compartment_id=compartment_id,
+        display_names=custom_protection_rule_display_names,
+        ids=custom_protection_rule_ids,
+        states=custom_protection_rule_states,
+        time_created_greater_than_or_equal_to=custom_protection_rule_time_created_greater_than_or_equal_to,
+        time_created_less_than=custom_protection_rule_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

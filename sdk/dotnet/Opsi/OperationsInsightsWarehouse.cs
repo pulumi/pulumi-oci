@@ -27,11 +27,11 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOperationsInsightsWarehouse = new Oci.Opsi.OperationsInsightsWarehouse("testOperationsInsightsWarehouse", new()
+    ///     var testOperationsInsightsWarehouse = new Oci.Opsi.OperationsInsightsWarehouse("test_operations_insights_warehouse", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         CpuAllocated = @var.Operations_insights_warehouse_cpu_allocated,
-    ///         DisplayName = @var.Operations_insights_warehouse_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         CpuAllocated = operationsInsightsWarehouseCpuAllocated,
+    ///         DisplayName = operationsInsightsWarehouseDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Opsi
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         StorageAllocatedInGbs = @var.Operations_insights_warehouse_storage_allocated_in_gbs,
+    ///         StorageAllocatedInGbs = operationsInsightsWarehouseStorageAllocatedInGbs,
     ///     });
     /// 
     /// });

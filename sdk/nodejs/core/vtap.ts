@@ -24,29 +24,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVtap = new oci.core.Vtap("testVtap", {
- *     captureFilterId: oci_core_capture_filter.test_capture_filter.id,
- *     compartmentId: _var.compartment_id,
- *     sourceId: oci_core_source.test_source.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testVtap = new oci.core.Vtap("test_vtap", {
+ *     captureFilterId: testCaptureFilter.id,
+ *     compartmentId: compartmentId,
+ *     sourceId: testSource.id,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.vtap_display_name,
- *     encapsulationProtocol: _var.vtap_encapsulation_protocol,
+ *     displayName: vtapDisplayName,
+ *     encapsulationProtocol: vtapEncapsulationProtocol,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isVtapEnabled: _var.vtap_is_vtap_enabled,
- *     maxPacketSize: _var.vtap_max_packet_size,
- *     sourcePrivateEndpointIp: _var.vtap_source_private_endpoint_ip,
- *     sourcePrivateEndpointSubnetId: oci_core_subnet.test_subnet.id,
- *     sourceType: _var.vtap_source_type,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetIp: _var.vtap_target_ip,
- *     targetType: _var.vtap_target_type,
- *     trafficMode: _var.vtap_traffic_mode,
- *     vxlanNetworkIdentifier: _var.vtap_vxlan_network_identifier,
+ *     isVtapEnabled: vtapIsVtapEnabled,
+ *     maxPacketSize: vtapMaxPacketSize,
+ *     sourcePrivateEndpointIp: vtapSourcePrivateEndpointIp,
+ *     sourcePrivateEndpointSubnetId: testSubnet.id,
+ *     sourceType: vtapSourceType,
+ *     targetId: testTarget.id,
+ *     targetIp: vtapTargetIp,
+ *     targetType: vtapTargetType,
+ *     trafficMode: vtapTrafficMode,
+ *     vxlanNetworkIdentifier: vtapVxlanNetworkIdentifier,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

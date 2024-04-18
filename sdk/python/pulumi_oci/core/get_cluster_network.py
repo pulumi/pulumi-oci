@@ -209,7 +209,7 @@ def get_cluster_network(cluster_network_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network = oci.Core.get_cluster_network(cluster_network_id=oci_core_cluster_network["test_cluster_network"]["id"])
+    test_cluster_network = oci.Core.get_cluster_network(cluster_network_id=test_cluster_network_oci_core_cluster_network["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -253,7 +253,7 @@ def get_cluster_network_output(cluster_network_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_cluster_network = oci.Core.get_cluster_network(cluster_network_id=oci_core_cluster_network["test_cluster_network"]["id"])
+    test_cluster_network = oci.Core.get_cluster_network(cluster_network_id=test_cluster_network_oci_core_cluster_network["id"])
     ```
     <!--End PulumiCodeChooser -->
 

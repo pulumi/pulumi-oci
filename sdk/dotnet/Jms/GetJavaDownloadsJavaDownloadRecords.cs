@@ -32,14 +32,14 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadRecords = Oci.Jms.GetJavaDownloadsJavaDownloadRecords.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Architecture = @var.Java_download_record_architecture,
-        ///         FamilyVersion = @var.Java_download_record_family_version,
-        ///         OsFamily = @var.Java_download_record_os_family,
-        ///         PackageTypeDetail = @var.Java_download_record_package_type_detail,
-        ///         ReleaseVersion = @var.Java_download_record_release_version,
-        ///         TimeEnd = @var.Java_download_record_time_end,
-        ///         TimeStart = @var.Java_download_record_time_start,
+        ///         CompartmentId = compartmentId,
+        ///         Architecture = javaDownloadRecordArchitecture,
+        ///         FamilyVersion = javaDownloadRecordFamilyVersion,
+        ///         OsFamily = javaDownloadRecordOsFamily,
+        ///         PackageTypeDetail = javaDownloadRecordPackageTypeDetail,
+        ///         ReleaseVersion = javaDownloadRecordReleaseVersion,
+        ///         TimeEnd = javaDownloadRecordTimeEnd,
+        ///         TimeStart = javaDownloadRecordTimeStart,
         ///     });
         /// 
         /// });
@@ -70,14 +70,14 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaDownloadRecords = Oci.Jms.GetJavaDownloadsJavaDownloadRecords.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Architecture = @var.Java_download_record_architecture,
-        ///         FamilyVersion = @var.Java_download_record_family_version,
-        ///         OsFamily = @var.Java_download_record_os_family,
-        ///         PackageTypeDetail = @var.Java_download_record_package_type_detail,
-        ///         ReleaseVersion = @var.Java_download_record_release_version,
-        ///         TimeEnd = @var.Java_download_record_time_end,
-        ///         TimeStart = @var.Java_download_record_time_start,
+        ///         CompartmentId = compartmentId,
+        ///         Architecture = javaDownloadRecordArchitecture,
+        ///         FamilyVersion = javaDownloadRecordFamilyVersion,
+        ///         OsFamily = javaDownloadRecordOsFamily,
+        ///         PackageTypeDetail = javaDownloadRecordPackageTypeDetail,
+        ///         ReleaseVersion = javaDownloadRecordReleaseVersion,
+        ///         TimeEnd = javaDownloadRecordTimeEnd,
+        ///         TimeStart = javaDownloadRecordTimeStart,
         ///     });
         /// 
         /// });

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOutboundConnector = oci.FileStorage.getOutboundConnector({
- *     outboundConnectorId: oci_file_storage_outbound_connector.test_outbound_connector.id,
+ *     outboundConnectorId: testOutboundConnectorOciFileStorageOutboundConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetOutboundConnectorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOutboundConnector = oci.FileStorage.getOutboundConnector({
- *     outboundConnectorId: oci_file_storage_outbound_connector.test_outbound_connector.id,
+ *     outboundConnectorId: testOutboundConnectorOciFileStorageOutboundConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpointAttachment = new oci.oda.OdaPrivateEndpointAttachment("testOdaPrivateEndpointAttachment", {
- *     odaInstanceId: oci_oda_oda_instance.test_oda_instance.id,
- *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
+ * const testOdaPrivateEndpointAttachment = new oci.oda.OdaPrivateEndpointAttachment("test_oda_private_endpoint_attachment", {
+ *     odaInstanceId: testOdaInstance.id,
+ *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

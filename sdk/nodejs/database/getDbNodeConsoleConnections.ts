@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodeConsoleConnections = oci.Database.getDbNodeConsoleConnections({
- *     dbNodeId: oci_database_db_node.test_db_node.id,
+ *     dbNodeId: testDbNode.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetDbNodeConsoleConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbNodeConsoleConnections = oci.Database.getDbNodeConsoleConnections({
- *     dbNodeId: oci_database_db_node.test_db_node.id,
+ *     dbNodeId: testDbNode.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -340,17 +340,17 @@ class DrgRouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_table = oci.core.DrgRouteTable("testDrgRouteTable",
-            drg_id=oci_core_drg["test_drg"]["id"],
+        test_drg_route_table = oci.core.DrgRouteTable("test_drg_route_table",
+            drg_id=test_drg["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["drg_route_table_display_name"],
+            display_name=drg_route_table_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-            is_ecmp_enabled=var["drg_route_table_is_ecmp_enabled"])
+            import_drg_route_distribution_id=test_drg_route_distribution["id"],
+            is_ecmp_enabled=drg_route_table_is_ecmp_enabled)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -395,17 +395,17 @@ class DrgRouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_route_table = oci.core.DrgRouteTable("testDrgRouteTable",
-            drg_id=oci_core_drg["test_drg"]["id"],
+        test_drg_route_table = oci.core.DrgRouteTable("test_drg_route_table",
+            drg_id=test_drg["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["drg_route_table_display_name"],
+            display_name=drg_route_table_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            import_drg_route_distribution_id=oci_core_drg_route_distribution["test_drg_route_distribution"]["id"],
-            is_ecmp_enabled=var["drg_route_table_is_ecmp_enabled"])
+            import_drg_route_distribution_id=test_drg_route_distribution["id"],
+            is_ecmp_enabled=drg_route_table_is_ecmp_enabled)
         ```
         <!--End PulumiCodeChooser -->
 

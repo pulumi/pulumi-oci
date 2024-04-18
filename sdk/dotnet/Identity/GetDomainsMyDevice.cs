@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyDevice = Oci.Identity.GetDomainsMyDevice.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyDeviceId = oci_identity_domains_my_device.Test_my_device.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyDeviceId = testMyDeviceOciIdentityDomainsMyDevice.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_device_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_device_resource_type_schema_version,
+        ///         Authorization = myDeviceAuthorization,
+        ///         ResourceTypeSchemaVersion = myDeviceResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyDevice = Oci.Identity.GetDomainsMyDevice.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyDeviceId = oci_identity_domains_my_device.Test_my_device.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyDeviceId = testMyDeviceOciIdentityDomainsMyDevice.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.My_device_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_device_resource_type_schema_version,
+        ///         Authorization = myDeviceAuthorization,
+        ///         ResourceTypeSchemaVersion = myDeviceResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

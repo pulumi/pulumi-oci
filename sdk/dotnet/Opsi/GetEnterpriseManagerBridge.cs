@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testEnterpriseManagerBridge = Oci.Opsi.GetEnterpriseManagerBridge.Invoke(new()
         ///     {
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testEnterpriseManagerBridge = Oci.Opsi.GetEnterpriseManagerBridge.Invoke(new()
         ///     {
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.Id,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := EmWarehouse.GetResourceUsage(ctx, &emwarehouse.GetResourceUsageArgs{
-//				EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
+//				EmWarehouseId: testEmWarehouse.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

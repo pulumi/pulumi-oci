@@ -133,10 +133,10 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_endpoint_service_display_name"],
-        name=var["database_tools_endpoint_service_name"],
-        state=var["database_tools_endpoint_service_state"])
+    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=compartment_id,
+        display_name=database_tools_endpoint_service_display_name,
+        name=database_tools_endpoint_service_name,
+        state=database_tools_endpoint_service_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_endpoint_service_display_name"],
-        name=var["database_tools_endpoint_service_name"],
-        state=var["database_tools_endpoint_service_state"])
+    test_database_tools_endpoint_services = oci.DatabaseTools.get_database_tools_endpoint_services(compartment_id=compartment_id,
+        display_name=database_tools_endpoint_service_display_name,
+        name=database_tools_endpoint_service_name,
+        state=database_tools_endpoint_service_state)
     ```
     <!--End PulumiCodeChooser -->
 

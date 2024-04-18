@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OneSubsription.GetRatecards(ctx, &onesubsription.GetRatecardsArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
-//				PartNumber:     pulumi.StringRef(_var.Ratecard_part_number),
-//				TimeFrom:       pulumi.StringRef(_var.Ratecard_time_from),
-//				TimeTo:         pulumi.StringRef(_var.Ratecard_time_to),
+//				CompartmentId:  compartmentId,
+//				SubscriptionId: testSubscription.Id,
+//				PartNumber:     pulumi.StringRef(ratecardPartNumber),
+//				TimeFrom:       pulumi.StringRef(ratecardTimeFrom),
+//				TimeTo:         pulumi.StringRef(ratecardTimeTo),
 //			}, nil)
 //			if err != nil {
 //				return err

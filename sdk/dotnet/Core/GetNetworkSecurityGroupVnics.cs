@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroupVnics = Oci.Core.GetNetworkSecurityGroupVnics.Invoke(new()
         ///     {
-        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroup.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testNetworkSecurityGroupVnics = Oci.Core.GetNetworkSecurityGroupVnics.Invoke(new()
         ///     {
-        ///         NetworkSecurityGroupId = oci_core_network_security_group.Test_network_security_group.Id,
+        ///         NetworkSecurityGroupId = testNetworkSecurityGroup.Id,
         ///     });
         /// 
         /// });

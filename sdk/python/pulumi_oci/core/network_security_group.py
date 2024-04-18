@@ -256,13 +256,13 @@ class NetworkSecurityGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_security_group = oci.core.NetworkSecurityGroup("testNetworkSecurityGroup",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_network_security_group = oci.core.NetworkSecurityGroup("test_network_security_group",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["network_security_group_display_name"],
+            display_name=network_security_group_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -307,13 +307,13 @@ class NetworkSecurityGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_security_group = oci.core.NetworkSecurityGroup("testNetworkSecurityGroup",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_network_security_group = oci.core.NetworkSecurityGroup("test_network_security_group",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["network_security_group_display_name"],
+            display_name=network_security_group_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

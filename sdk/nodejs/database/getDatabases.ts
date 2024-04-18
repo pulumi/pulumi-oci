@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabases = oci.Database.getDatabases({
- *     compartmentId: _var.compartment_id,
- *     dbHomeId: oci_database_db_home.test_db_home.id,
- *     dbName: _var.database_db_name,
- *     state: _var.database_state,
- *     systemId: oci_database_system.test_system.id,
+ *     compartmentId: compartmentId,
+ *     dbHomeId: testDbHome.id,
+ *     dbName: databaseDbName,
+ *     state: databaseState,
+ *     systemId: testSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabases = oci.Database.getDatabases({
- *     compartmentId: _var.compartment_id,
- *     dbHomeId: oci_database_db_home.test_db_home.id,
- *     dbName: _var.database_db_name,
- *     state: _var.database_state,
- *     systemId: oci_database_system.test_system.id,
+ *     compartmentId: compartmentId,
+ *     dbHomeId: testDbHome.id,
+ *     dbName: databaseDbName,
+ *     state: databaseState,
+ *     systemId: testSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

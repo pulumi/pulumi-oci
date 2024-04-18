@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVirtualCircuit(ctx, &core.GetVirtualCircuitArgs{
-//				VirtualCircuitId: oci_core_virtual_circuit.Test_virtual_circuit.Id,
+//				VirtualCircuitId: testVirtualCircuitOciCoreVirtualCircuit.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

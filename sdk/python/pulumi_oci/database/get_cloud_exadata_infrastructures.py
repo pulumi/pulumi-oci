@@ -133,10 +133,10 @@ def get_cloud_exadata_infrastructures(cluster_placement_group_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=var["compartment_id"],
-        cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
-        display_name=var["cloud_exadata_infrastructure_display_name"],
-        state=var["cloud_exadata_infrastructure_state"])
+    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=compartment_id,
+        cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
+        display_name=cloud_exadata_infrastructure_display_name,
+        state=cloud_exadata_infrastructure_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_cloud_exadata_infrastructures_output(cluster_placement_group_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=var["compartment_id"],
-        cluster_placement_group_id=var["cloud_exadata_infrastructure_cluster_placement_group_id"],
-        display_name=var["cloud_exadata_infrastructure_display_name"],
-        state=var["cloud_exadata_infrastructure_state"])
+    test_cloud_exadata_infrastructures = oci.Database.get_cloud_exadata_infrastructures(compartment_id=compartment_id,
+        cluster_placement_group_id=cloud_exadata_infrastructure_cluster_placement_group_id,
+        display_name=cloud_exadata_infrastructure_display_name,
+        state=cloud_exadata_infrastructure_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     operation: _var.fleet_blocklist_operation,
+ *     fleetId: testFleet.id,
+ *     managedInstanceId: testManagedInstance.id,
+ *     operation: fleetBlocklistOperation,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetFleetBlocklistsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
- *     operation: _var.fleet_blocklist_operation,
+ *     fleetId: testFleet.id,
+ *     managedInstanceId: testManagedInstance.id,
+ *     operation: fleetBlocklistOperation,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceStorageOverlappingRecalls = oci.LogAnalytics.getNamespaceStorageOverlappingRecalls({
- *     namespace: _var.namespace_storage_overlapping_recall_namespace,
- *     timeDataEnded: _var.namespace_storage_overlapping_recall_time_data_ended,
- *     timeDataStarted: _var.namespace_storage_overlapping_recall_time_data_started,
+ *     namespace: namespaceStorageOverlappingRecallNamespace,
+ *     timeDataEnded: namespaceStorageOverlappingRecallTimeDataEnded,
+ *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetNamespaceStorageOverlappingRecallsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceStorageOverlappingRecalls = oci.LogAnalytics.getNamespaceStorageOverlappingRecalls({
- *     namespace: _var.namespace_storage_overlapping_recall_namespace,
- *     timeDataEnded: _var.namespace_storage_overlapping_recall_time_data_ended,
- *     timeDataStarted: _var.namespace_storage_overlapping_recall_time_data_started,
+ *     namespace: namespaceStorageOverlappingRecallNamespace,
+ *     timeDataEnded: namespaceStorageOverlappingRecallTimeDataEnded,
+ *     timeDataStarted: namespaceStorageOverlappingRecallTimeDataStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

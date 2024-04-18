@@ -21,28 +21,28 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMyRequest = new oci.identity.DomainsMyRequest("testMyRequest", {
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     justification: _var.my_request_justification,
+ * const testMyRequest = new oci.identity.DomainsMyRequest("test_my_request", {
+ *     approvalDetails: [{}],
+ *     idcsEndpoint: testDomain.url,
+ *     justification: myRequestJustification,
  *     requesting: {
- *         type: _var.my_request_requesting_type,
- *         value: oci_identity_domains_group.group_to_request.id,
- *         description: _var.my_request_requesting_description,
+ *         type: myRequestRequestingType,
+ *         value: groupToRequest.id,
+ *         description: myRequestRequestingDescription,
  *     },
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Request"],
- *     action: _var.my_request_action,
- *     approvalDetails: [{}],
+ *     action: myRequestAction,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.my_request_authorization,
- *     ocid: _var.my_request_ocid,
+ *     authorization: myRequestAuthorization,
+ *     ocid: myRequestOcid,
  *     requestor: {
- *         value: _var.my_request_requestor_value,
+ *         value: myRequestRequestorValue,
  *     },
- *     resourceTypeSchemaVersion: _var.my_request_resource_type_schema_version,
+ *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
  *     tags: [{
- *         key: _var.my_request_tags_key,
- *         value: _var.my_request_tags_value,
+ *         key: myRequestTagsKey,
+ *         value: myRequestTagsValue,
  *     }],
  * });
  * ```

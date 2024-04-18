@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserRoles = oci.DatabaseManagement.getManagedDatabaseUserRoles({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_role_name,
- *     opcNamedCredentialId: _var.managed_database_user_role_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserRoleName,
+ *     opcNamedCredentialId: managedDatabaseUserRoleOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,10 +96,10 @@ export interface GetManagedDatabaseUserRolesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserRoles = oci.DatabaseManagement.getManagedDatabaseUserRoles({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_role_name,
- *     opcNamedCredentialId: _var.managed_database_user_role_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserRoleName,
+ *     opcNamedCredentialId: managedDatabaseUserRoleOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

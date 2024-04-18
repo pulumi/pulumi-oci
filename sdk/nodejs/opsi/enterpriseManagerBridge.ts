@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEnterpriseManagerBridge = new oci.opsi.EnterpriseManagerBridge("testEnterpriseManagerBridge", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.enterprise_manager_bridge_display_name,
- *     objectStorageBucketName: oci_objectstorage_bucket.test_bucket.name,
+ * const testEnterpriseManagerBridge = new oci.opsi.EnterpriseManagerBridge("test_enterprise_manager_bridge", {
+ *     compartmentId: compartmentId,
+ *     displayName: enterpriseManagerBridgeDisplayName,
+ *     objectStorageBucketName: testBucket.name,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.enterprise_manager_bridge_description,
+ *     description: enterpriseManagerBridgeDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

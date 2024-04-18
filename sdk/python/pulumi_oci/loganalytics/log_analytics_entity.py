@@ -650,30 +650,31 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("testLogAnalyticsEntity",
-            compartment_id=var["compartment_id"],
-            entity_type_name=var["log_analytics_entity_entity_type_name"],
-            namespace=var["log_analytics_entity_namespace"],
-            cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
+        test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("test_log_analytics_entity",
+            compartment_id=compartment_id,
+            entity_type_name=log_analytics_entity_entity_type_name,
+            name=log_analytics_entity_name,
+            namespace=log_analytics_entity_namespace,
+            cloud_resource_id=test_cloud_resource["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            hostname=var["log_analytics_entity_hostname"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            hostname=log_analytics_entity_hostname,
+            management_agent_id=test_management_agent["id"],
             metadata=oci.log_analytics.LogAnalyticsEntityMetadataArgs(
                 items=[oci.log_analytics.LogAnalyticsEntityMetadataItemArgs(
-                    name=var["log_analytics_entity_metadata_items_name"],
-                    type=var["log_analytics_entity_metadata_items_type"],
-                    value=var["log_analytics_entity_metadata_items_value"],
+                    name=log_analytics_entity_metadata_items_name,
+                    type=log_analytics_entity_metadata_items_type,
+                    value=log_analytics_entity_metadata_items_value,
                 )],
             ),
-            properties=var["log_analytics_entity_properties"],
-            source_id=oci_log_analytics_source["test_source"]["id"],
-            time_last_discovered=var["log_analytics_entity_time_last_discovered"],
-            timezone_region=var["log_analytics_entity_timezone_region"])
+            properties=log_analytics_entity_properties,
+            source_id=test_source["id"],
+            time_last_discovered=log_analytics_entity_time_last_discovered,
+            timezone_region=log_analytics_entity_timezone_region)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -724,30 +725,31 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("testLogAnalyticsEntity",
-            compartment_id=var["compartment_id"],
-            entity_type_name=var["log_analytics_entity_entity_type_name"],
-            namespace=var["log_analytics_entity_namespace"],
-            cloud_resource_id=oci_log_analytics_cloud_resource["test_cloud_resource"]["id"],
+        test_log_analytics_entity = oci.log_analytics.LogAnalyticsEntity("test_log_analytics_entity",
+            compartment_id=compartment_id,
+            entity_type_name=log_analytics_entity_entity_type_name,
+            name=log_analytics_entity_name,
+            namespace=log_analytics_entity_namespace,
+            cloud_resource_id=test_cloud_resource["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            hostname=var["log_analytics_entity_hostname"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
+            hostname=log_analytics_entity_hostname,
+            management_agent_id=test_management_agent["id"],
             metadata=oci.log_analytics.LogAnalyticsEntityMetadataArgs(
                 items=[oci.log_analytics.LogAnalyticsEntityMetadataItemArgs(
-                    name=var["log_analytics_entity_metadata_items_name"],
-                    type=var["log_analytics_entity_metadata_items_type"],
-                    value=var["log_analytics_entity_metadata_items_value"],
+                    name=log_analytics_entity_metadata_items_name,
+                    type=log_analytics_entity_metadata_items_type,
+                    value=log_analytics_entity_metadata_items_value,
                 )],
             ),
-            properties=var["log_analytics_entity_properties"],
-            source_id=oci_log_analytics_source["test_source"]["id"],
-            time_last_discovered=var["log_analytics_entity_time_last_discovered"],
-            timezone_region=var["log_analytics_entity_timezone_region"])
+            properties=log_analytics_entity_properties,
+            source_id=test_source["id"],
+            time_last_discovered=log_analytics_entity_time_last_discovered,
+            timezone_region=log_analytics_entity_timezone_region)
         ```
         <!--End PulumiCodeChooser -->
 

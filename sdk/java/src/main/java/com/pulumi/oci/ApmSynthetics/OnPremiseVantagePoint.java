@@ -47,11 +47,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOnPremiseVantagePoint = new OnPremiseVantagePoint(&#34;testOnPremiseVantagePoint&#34;, OnPremiseVantagePointArgs.builder()        
- *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+ *             .apmDomainId(testApmDomain.id())
+ *             .name(onPremiseVantagePointName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.on_premise_vantage_point_description())
+ *             .description(onPremiseVantagePointDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .type(var_.on_premise_vantage_point_type())
+ *             .type(onPremiseVantagePointType)
  *             .build());
  * 
  *     }

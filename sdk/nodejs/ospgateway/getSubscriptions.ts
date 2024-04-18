@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptions = oci.OspGateway.getSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     ospHomeRegion: _var.subscription_osp_home_region,
+ *     compartmentId: compartmentId,
+ *     ospHomeRegion: subscriptionOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptions = oci.OspGateway.getSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     ospHomeRegion: _var.subscription_osp_home_region,
+ *     compartmentId: compartmentId,
+ *     ospHomeRegion: subscriptionOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

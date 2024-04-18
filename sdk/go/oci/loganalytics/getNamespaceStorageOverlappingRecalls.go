@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceStorageOverlappingRecalls(ctx, &loganalytics.GetNamespaceStorageOverlappingRecallsArgs{
-//				Namespace:       _var.Namespace_storage_overlapping_recall_namespace,
-//				TimeDataEnded:   pulumi.StringRef(_var.Namespace_storage_overlapping_recall_time_data_ended),
-//				TimeDataStarted: pulumi.StringRef(_var.Namespace_storage_overlapping_recall_time_data_started),
+//				Namespace:       namespaceStorageOverlappingRecallNamespace,
+//				TimeDataEnded:   pulumi.StringRef(namespaceStorageOverlappingRecallTimeDataEnded),
+//				TimeDataStarted: pulumi.StringRef(namespaceStorageOverlappingRecallTimeDataStarted),
 //			}, nil)
 //			if err != nil {
 //				return err

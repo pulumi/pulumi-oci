@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testNamedCredentials = Oci.DatabaseManagement.GetNamedCredentials.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssociatedResource = @var.Named_credential_associated_resource,
-        ///         Name = @var.Named_credential_name,
-        ///         Scope = @var.Named_credential_scope,
-        ///         Type = @var.Named_credential_type,
+        ///         CompartmentId = compartmentId,
+        ///         AssociatedResource = namedCredentialAssociatedResource,
+        ///         Name = namedCredentialName,
+        ///         Scope = namedCredentialScope,
+        ///         Type = namedCredentialType,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testNamedCredentials = Oci.DatabaseManagement.GetNamedCredentials.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AssociatedResource = @var.Named_credential_associated_resource,
-        ///         Name = @var.Named_credential_name,
-        ///         Scope = @var.Named_credential_scope,
-        ///         Type = @var.Named_credential_type,
+        ///         CompartmentId = compartmentId,
+        ///         AssociatedResource = namedCredentialAssociatedResource,
+        ///         Name = namedCredentialName,
+        ///         Scope = namedCredentialScope,
+        ///         Type = namedCredentialType,
         ///     });
         /// 
         /// });

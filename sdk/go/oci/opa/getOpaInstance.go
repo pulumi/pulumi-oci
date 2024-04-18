@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opa.GetOpaInstance(ctx, &opa.GetOpaInstanceArgs{
-//				OpaInstanceId: oci_opa_opa_instance.Test_opa_instance.Id,
+//				OpaInstanceId: testOpaInstanceOciOpaOpaInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

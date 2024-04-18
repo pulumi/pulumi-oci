@@ -48,14 +48,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConnection = new Connection(&#34;testConnection&#34;, ConnectionArgs.builder()        
- *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
- *             .dataAssetKey(var_.connection_data_asset_key())
- *             .displayName(var_.connection_display_name())
- *             .properties(var_.connection_properties())
- *             .typeKey(var_.connection_type_key())
- *             .description(var_.connection_description())
- *             .encProperties(var_.connection_enc_properties())
- *             .isDefault(var_.connection_is_default())
+ *             .catalogId(testCatalog.id())
+ *             .dataAssetKey(connectionDataAssetKey)
+ *             .displayName(connectionDisplayName)
+ *             .properties(connectionProperties)
+ *             .typeKey(connectionTypeKey)
+ *             .description(connectionDescription)
+ *             .encProperties(connectionEncProperties)
+ *             .isDefault(connectionIsDefault)
  *             .build());
  * 
  *     }

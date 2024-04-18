@@ -896,7 +896,7 @@ def get_sddc(sddc_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddc = oci.Ocvp.get_sddc(sddc_id=oci_ocvp_sddc["test_sddc"]["id"])
+    test_sddc = oci.Ocvp.get_sddc(sddc_id=test_sddc_oci_ocvp_sddc["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -990,7 +990,7 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sddc = oci.Ocvp.get_sddc(sddc_id=oci_ocvp_sddc["test_sddc"]["id"])
+    test_sddc = oci.Ocvp.get_sddc(sddc_id=test_sddc_oci_ocvp_sddc["id"])
     ```
     <!--End PulumiCodeChooser -->
 

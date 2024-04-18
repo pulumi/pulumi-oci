@@ -31,11 +31,11 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testAcceptedAgreements = Oci.Marketplace.GetAcceptedAgreements.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-        ///         DisplayName = @var.Accepted_agreement_display_name,
-        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///         PackageVersion = @var.Accepted_agreement_package_version,
+        ///         CompartmentId = compartmentId,
+        ///         AcceptedAgreementId = testAcceptedAgreement.Id,
+        ///         DisplayName = acceptedAgreementDisplayName,
+        ///         ListingId = testListing.Id,
+        ///         PackageVersion = acceptedAgreementPackageVersion,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testAcceptedAgreements = Oci.Marketplace.GetAcceptedAgreements.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
-        ///         DisplayName = @var.Accepted_agreement_display_name,
-        ///         ListingId = oci_marketplace_listing.Test_listing.Id,
-        ///         PackageVersion = @var.Accepted_agreement_package_version,
+        ///         CompartmentId = compartmentId,
+        ///         AcceptedAgreementId = testAcceptedAgreement.Id,
+        ///         DisplayName = acceptedAgreementDisplayName,
+        ///         ListingId = testListing.Id,
+        ///         PackageVersion = acceptedAgreementPackageVersion,
         ///     });
         /// 
         /// });

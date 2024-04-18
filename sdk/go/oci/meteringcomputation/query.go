@@ -31,39 +31,39 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewQuery(ctx, "testQuery", &MeteringComputation.QueryArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := MeteringComputation.NewQuery(ctx, "test_query", &MeteringComputation.QueryArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				QueryDefinition: &meteringcomputation.QueryQueryDefinitionArgs{
 //					CostAnalysisUi: &meteringcomputation.QueryQueryDefinitionCostAnalysisUiArgs{
-//						Graph:             pulumi.Any(_var.Query_query_definition_cost_analysis_ui_graph),
-//						IsCumulativeGraph: pulumi.Any(_var.Query_query_definition_cost_analysis_ui_is_cumulative_graph),
+//						Graph:             pulumi.Any(queryQueryDefinitionCostAnalysisUiGraph),
+//						IsCumulativeGraph: pulumi.Any(queryQueryDefinitionCostAnalysisUiIsCumulativeGraph),
 //					},
-//					DisplayName: pulumi.Any(_var.Query_query_definition_display_name),
+//					DisplayName: pulumi.Any(queryQueryDefinitionDisplayName),
 //					ReportQuery: &meteringcomputation.QueryQueryDefinitionReportQueryArgs{
-//						Granularity:      pulumi.Any(_var.Query_query_definition_report_query_granularity),
-//						TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
-//						CompartmentDepth: pulumi.Any(_var.Query_query_definition_report_query_compartment_depth),
-//						DateRangeName:    pulumi.Any(_var.Query_query_definition_report_query_date_range_name),
-//						Filter:           pulumi.Any(_var.Query_query_definition_report_query_filter),
+//						Granularity:      pulumi.Any(queryQueryDefinitionReportQueryGranularity),
+//						TenantId:         pulumi.Any(testTenant.Id),
+//						CompartmentDepth: pulumi.Any(queryQueryDefinitionReportQueryCompartmentDepth),
+//						DateRangeName:    pulumi.Any(queryQueryDefinitionReportQueryDateRangeName),
+//						Filter:           pulumi.Any(queryQueryDefinitionReportQueryFilter),
 //						Forecast: &meteringcomputation.QueryQueryDefinitionReportQueryForecastArgs{
-//							TimeForecastEnded:   pulumi.Any(_var.Query_query_definition_report_query_forecast_time_forecast_ended),
-//							ForecastType:        pulumi.Any(_var.Query_query_definition_report_query_forecast_forecast_type),
-//							TimeForecastStarted: pulumi.Any(_var.Query_query_definition_report_query_forecast_time_forecast_started),
+//							TimeForecastEnded:   pulumi.Any(queryQueryDefinitionReportQueryForecastTimeForecastEnded),
+//							ForecastType:        pulumi.Any(queryQueryDefinitionReportQueryForecastForecastType),
+//							TimeForecastStarted: pulumi.Any(queryQueryDefinitionReportQueryForecastTimeForecastStarted),
 //						},
-//						GroupBies: pulumi.Any(_var.Query_query_definition_report_query_group_by),
+//						GroupBies: pulumi.Any(queryQueryDefinitionReportQueryGroupBy),
 //						GroupByTags: meteringcomputation.QueryQueryDefinitionReportQueryGroupByTagArray{
 //							&meteringcomputation.QueryQueryDefinitionReportQueryGroupByTagArgs{
-//								Key:       pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_key),
-//								Namespace: pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_namespace),
-//								Value:     pulumi.Any(_var.Query_query_definition_report_query_group_by_tag_value),
+//								Key:       pulumi.Any(queryQueryDefinitionReportQueryGroupByTagKey),
+//								Namespace: pulumi.Any(queryQueryDefinitionReportQueryGroupByTagNamespace),
+//								Value:     pulumi.Any(queryQueryDefinitionReportQueryGroupByTagValue),
 //							},
 //						},
-//						IsAggregateByTime: pulumi.Any(_var.Query_query_definition_report_query_is_aggregate_by_time),
-//						QueryType:         pulumi.Any(_var.Query_query_definition_report_query_query_type),
-//						TimeUsageEnded:    pulumi.Any(_var.Query_query_definition_report_query_time_usage_ended),
-//						TimeUsageStarted:  pulumi.Any(_var.Query_query_definition_report_query_time_usage_started),
+//						IsAggregateByTime: pulumi.Any(queryQueryDefinitionReportQueryIsAggregateByTime),
+//						QueryType:         pulumi.Any(queryQueryDefinitionReportQueryQueryType),
+//						TimeUsageEnded:    pulumi.Any(queryQueryDefinitionReportQueryTimeUsageEnded),
+//						TimeUsageStarted:  pulumi.Any(queryQueryDefinitionReportQueryTimeUsageStarted),
 //					},
-//					Version: pulumi.Any(_var.Query_query_definition_version),
+//					Version: pulumi.Any(queryQueryDefinitionVersion),
 //				},
 //			})
 //			if err != nil {

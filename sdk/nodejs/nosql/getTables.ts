@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTables = oci.Nosql.getTables({
- *     compartmentId: _var.compartment_id,
- *     name: _var.table_name,
- *     state: _var.table_state,
+ *     compartmentId: compartmentId,
+ *     name: tableName,
+ *     state: tableState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetTablesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTables = oci.Nosql.getTables({
- *     compartmentId: _var.compartment_id,
- *     name: _var.table_name,
- *     state: _var.table_state,
+ *     compartmentId: compartmentId,
+ *     name: tableName,
+ *     state: tableState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

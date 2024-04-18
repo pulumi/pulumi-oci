@@ -16,11 +16,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrgRouteTableRouteRule = new oci.core.DrgRouteTableRouteRule("testDrgRouteTableRouteRule", {
- *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
- *     destination: _var.drg_route_table_route_rule_route_rules_destination,
- *     destinationType: _var.drg_route_table_route_rule_route_rules_destination_type,
- *     nextHopDrgAttachmentId: oci_core_drg_attachment.test_drg_attachment.id,
+ * const testDrgRouteTableRouteRule = new oci.core.DrgRouteTableRouteRule("test_drg_route_table_route_rule", {
+ *     drgRouteTableId: testDrgRouteTable.id,
+ *     destination: drgRouteTableRouteRuleRouteRulesDestination,
+ *     destinationType: drgRouteTableRouteRuleRouteRulesDestinationType,
+ *     nextHopDrgAttachmentId: testDrgAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

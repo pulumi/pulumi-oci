@@ -32,12 +32,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewPluggableDatabasesLocalClone(ctx, "testPluggableDatabasesLocalClone", &Database.PluggableDatabasesLocalCloneArgs{
-//				ClonedPdbName:                 pulumi.Any(_var.Pluggable_databases_local_clone_cloned_pdb_name),
-//				PluggableDatabaseId:           pulumi.Any(oci_database_pluggable_database.Test_pluggable_database.Id),
-//				PdbAdminPassword:              pulumi.Any(_var.Pluggable_databases_local_clone_pdb_admin_password),
-//				ShouldPdbAdminAccountBeLocked: pulumi.Any(_var.Pluggable_databases_local_clone_should_pdb_admin_account_be_locked),
-//				TargetTdeWalletPassword:       pulumi.Any(_var.Pluggable_databases_local_clone_target_tde_wallet_password),
+//			_, err := Database.NewPluggableDatabasesLocalClone(ctx, "test_pluggable_databases_local_clone", &Database.PluggableDatabasesLocalCloneArgs{
+//				ClonedPdbName:                 pulumi.Any(pluggableDatabasesLocalCloneClonedPdbName),
+//				PluggableDatabaseId:           pulumi.Any(testPluggableDatabase.Id),
+//				PdbAdminPassword:              pulumi.Any(pluggableDatabasesLocalClonePdbAdminPassword),
+//				ShouldPdbAdminAccountBeLocked: pulumi.Any(pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked),
+//				TargetTdeWalletPassword:       pulumi.Any(pluggableDatabasesLocalCloneTargetTdeWalletPassword),
 //			})
 //			if err != nil {
 //				return err

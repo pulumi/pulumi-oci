@@ -47,11 +47,11 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCompartments = Oci.Identity.GetCompartments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Compartment_access_level,
-        ///         CompartmentIdInSubtree = @var.Compartment_compartment_id_in_subtree,
-        ///         Name = @var.Compartment_name,
-        ///         State = @var.Compartment_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = compartmentAccessLevel,
+        ///         CompartmentIdInSubtree = compartmentCompartmentIdInSubtree,
+        ///         Name = compartmentName,
+        ///         State = compartmentState,
         ///     });
         /// 
         /// });
@@ -97,11 +97,11 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCompartments = Oci.Identity.GetCompartments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Compartment_access_level,
-        ///         CompartmentIdInSubtree = @var.Compartment_compartment_id_in_subtree,
-        ///         Name = @var.Compartment_name,
-        ///         State = @var.Compartment_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = compartmentAccessLevel,
+        ///         CompartmentIdInSubtree = compartmentCompartmentIdInSubtree,
+        ///         Name = compartmentName,
+        ///         State = compartmentState,
         ///     });
         /// 
         /// });

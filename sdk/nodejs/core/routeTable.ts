@@ -34,22 +34,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRouteTable = new oci.core.RouteTable("testRouteTable", {
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testRouteTable = new oci.core.RouteTable("test_route_table", {
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.route_table_display_name,
+ *     displayName: routeTableDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     routeRules: [{
- *         networkEntityId: oci_core_internet_gateway.test_internet_gateway.id,
- *         cidrBlock: _var.route_table_route_rules_cidr_block,
- *         description: _var.route_table_route_rules_description,
- *         destination: _var.route_table_route_rules_destination,
- *         destinationType: _var.route_table_route_rules_destination_type,
+ *         networkEntityId: testInternetGateway.id,
+ *         cidrBlock: routeTableRouteRulesCidrBlock,
+ *         description: routeTableRouteRulesDescription,
+ *         destination: routeTableRouteRulesDestination,
+ *         destinationType: routeTableRouteRulesDestinationType,
  *     }],
  * });
  * ```

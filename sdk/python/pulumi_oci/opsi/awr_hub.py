@@ -369,17 +369,17 @@ class AwrHub(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_awr_hub = oci.opsi.AwrHub("testAwrHub",
-            compartment_id=var["compartment_id"],
-            display_name=var["awr_hub_display_name"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        test_awr_hub = oci.opsi.AwrHub("test_awr_hub",
+            compartment_id=compartment_id,
+            display_name=awr_hub_display_name,
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"])
+            object_storage_bucket_name=test_bucket["name"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -423,17 +423,17 @@ class AwrHub(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_awr_hub = oci.opsi.AwrHub("testAwrHub",
-            compartment_id=var["compartment_id"],
-            display_name=var["awr_hub_display_name"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        test_awr_hub = oci.opsi.AwrHub("test_awr_hub",
+            compartment_id=compartment_id,
+            display_name=awr_hub_display_name,
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            object_storage_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"])
+            object_storage_bucket_name=test_bucket["name"])
         ```
         <!--End PulumiCodeChooser -->
 

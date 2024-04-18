@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModel = oci.AiAnomalyDetection.getDetectionModel({
- *     modelId: oci_ai_anomaly_detection_model.test_model.id,
+ *     modelId: testModelOciAiAnomalyDetectionModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetDetectionModelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModel = oci.AiAnomalyDetection.getDetectionModel({
- *     modelId: oci_ai_anomaly_detection_model.test_model.id,
+ *     modelId: testModelOciAiAnomalyDetectionModel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

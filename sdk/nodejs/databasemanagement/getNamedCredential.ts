@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamedCredential = oci.DatabaseManagement.getNamedCredential({
- *     namedCredentialId: oci_database_management_named_credential.test_named_credential.id,
+ *     namedCredentialId: testNamedCredentialOciDatabaseManagementNamedCredential.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetNamedCredentialResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamedCredential = oci.DatabaseManagement.getNamedCredential({
- *     namedCredentialId: oci_database_management_named_credential.test_named_credential.id,
+ *     namedCredentialId: testNamedCredentialOciDatabaseManagementNamedCredential.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

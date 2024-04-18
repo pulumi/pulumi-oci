@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDrgRouteTableRouteRules(ctx, &core.GetDrgRouteTableRouteRulesArgs{
-//				DrgRouteTableId: oci_core_drg_route_table.Test_drg_route_table.Id,
-//				RouteType:       pulumi.StringRef(_var.Drg_route_table_route_rule_route_type),
+//				DrgRouteTableId: testDrgRouteTable.Id,
+//				RouteType:       pulumi.StringRef(drgRouteTableRouteRuleRouteType),
 //			}, nil)
 //			if err != nil {
 //				return err

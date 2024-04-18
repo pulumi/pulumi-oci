@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
- *     name: _var.identity_provider_group_name,
- *     state: _var.identity_provider_group_state,
+ *     identityProviderId: testIdentityProvider.id,
+ *     name: identityProviderGroupName,
+ *     state: identityProviderGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,9 +96,9 @@ export interface GetIdentityProviderGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProviderGroups = oci.Identity.getIdentityProviderGroups({
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
- *     name: _var.identity_provider_group_name,
- *     state: _var.identity_provider_group_state,
+ *     identityProviderId: testIdentityProvider.id,
+ *     name: identityProviderGroupName,
+ *     state: identityProviderGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

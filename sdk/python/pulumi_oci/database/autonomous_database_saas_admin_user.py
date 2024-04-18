@@ -281,11 +281,11 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            password=var["autonomous_database_saas_admin_user_password"],
-            access_type=var["autonomous_database_saas_admin_user_access_type"],
-            duration=var["autonomous_database_saas_admin_user_duration"])
+        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
+            autonomous_database_id=test_autonomous_database["id"],
+            password=autonomous_database_saas_admin_user_password,
+            access_type=autonomous_database_saas_admin_user_access_type,
+            duration=autonomous_database_saas_admin_user_duration)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -322,11 +322,11 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            password=var["autonomous_database_saas_admin_user_password"],
-            access_type=var["autonomous_database_saas_admin_user_access_type"],
-            duration=var["autonomous_database_saas_admin_user_duration"])
+        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
+            autonomous_database_id=test_autonomous_database["id"],
+            password=autonomous_database_saas_admin_user_password,
+            access_type=autonomous_database_saas_admin_user_access_type,
+            duration=autonomous_database_saas_admin_user_duration)
         ```
         <!--End PulumiCodeChooser -->
 

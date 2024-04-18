@@ -18,16 +18,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWorkspaceExportRequest = new oci.dataintegration.WorkspaceExportRequest("testWorkspaceExportRequest", {
- *     bucket: _var.workspace_export_request_bucket,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     areReferencesIncluded: _var.workspace_export_request_are_references_included,
- *     fileName: _var.workspace_export_request_file_name,
- *     filters: _var.workspace_export_request_filters,
- *     isObjectOverwriteEnabled: _var.workspace_export_request_is_object_overwrite_enabled,
- *     objectKeys: _var.workspace_export_request_object_keys,
- *     objectStorageRegion: _var.workspace_export_request_object_storage_region,
- *     objectStorageTenancyId: oci_identity_tenancy.test_tenancy.id,
+ * const testWorkspaceExportRequest = new oci.dataintegration.WorkspaceExportRequest("test_workspace_export_request", {
+ *     bucket: workspaceExportRequestBucket,
+ *     workspaceId: testWorkspace.id,
+ *     areReferencesIncluded: workspaceExportRequestAreReferencesIncluded,
+ *     fileName: workspaceExportRequestFileName,
+ *     filters: workspaceExportRequestFilters,
+ *     isObjectOverwriteEnabled: workspaceExportRequestIsObjectOverwriteEnabled,
+ *     objectKeys: workspaceExportRequestObjectKeys,
+ *     objectStorageRegion: workspaceExportRequestObjectStorageRegion,
+ *     objectStorageTenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

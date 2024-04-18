@@ -164,16 +164,16 @@ class ComputeCapacityReport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_capacity_report = oci.core.ComputeCapacityReport("testComputeCapacityReport",
-            availability_domain=var["compute_capacity_report_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_compute_capacity_report = oci.core.ComputeCapacityReport("test_compute_capacity_report",
+            availability_domain=compute_capacity_report_availability_domain,
+            compartment_id=compartment_id,
             shape_availabilities=[oci.core.ComputeCapacityReportShapeAvailabilityArgs(
-                instance_shape=var["compute_capacity_report_shape_availabilities_instance_shape"],
-                fault_domain=var["compute_capacity_report_shape_availabilities_fault_domain"],
+                instance_shape=compute_capacity_report_shape_availabilities_instance_shape,
+                fault_domain=compute_capacity_report_shape_availabilities_fault_domain,
                 instance_shape_config=oci.core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs"],
-                    nvmes=var["compute_capacity_report_shape_availabilities_instance_shape_config_nvmes"],
-                    ocpus=var["compute_capacity_report_shape_availabilities_instance_shape_config_ocpus"],
+                    memory_in_gbs=compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
+                    nvmes=compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    ocpus=compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
                 ),
             )])
         ```
@@ -216,16 +216,16 @@ class ComputeCapacityReport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_capacity_report = oci.core.ComputeCapacityReport("testComputeCapacityReport",
-            availability_domain=var["compute_capacity_report_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_compute_capacity_report = oci.core.ComputeCapacityReport("test_compute_capacity_report",
+            availability_domain=compute_capacity_report_availability_domain,
+            compartment_id=compartment_id,
             shape_availabilities=[oci.core.ComputeCapacityReportShapeAvailabilityArgs(
-                instance_shape=var["compute_capacity_report_shape_availabilities_instance_shape"],
-                fault_domain=var["compute_capacity_report_shape_availabilities_fault_domain"],
+                instance_shape=compute_capacity_report_shape_availabilities_instance_shape,
+                fault_domain=compute_capacity_report_shape_availabilities_fault_domain,
                 instance_shape_config=oci.core.ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs(
-                    memory_in_gbs=var["compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs"],
-                    nvmes=var["compute_capacity_report_shape_availabilities_instance_shape_config_nvmes"],
-                    ocpus=var["compute_capacity_report_shape_availabilities_instance_shape_config_ocpus"],
+                    memory_in_gbs=compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs,
+                    nvmes=compute_capacity_report_shape_availabilities_instance_shape_config_nvmes,
+                    ocpus=compute_capacity_report_shape_availabilities_instance_shape_config_ocpus,
                 ),
             )])
         ```

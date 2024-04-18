@@ -412,7 +412,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
-     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .applicationVipId(testApplicationVipOciDatabaseApplicationVip.id())
      *             .build());
      * 
      *     }
@@ -454,7 +454,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
-     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .applicationVipId(testApplicationVipOciDatabaseApplicationVip.id())
      *             .build());
      * 
      *     }
@@ -496,7 +496,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
-     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .applicationVipId(testApplicationVipOciDatabaseApplicationVip.id())
      *             .build());
      * 
      *     }
@@ -538,7 +538,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVip = DatabaseFunctions.getApplicationVip(GetApplicationVipArgs.builder()
-     *             .applicationVipId(oci_database_application_vip.test_application_vip().id())
+     *             .applicationVipId(testApplicationVipOciDatabaseApplicationVip.id())
      *             .build());
      * 
      *     }
@@ -580,9 +580,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.application_vip_state())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(applicationVipState)
      *             .build());
      * 
      *     }
@@ -624,9 +624,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.application_vip_state())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(applicationVipState)
      *             .build());
      * 
      *     }
@@ -668,9 +668,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.application_vip_state())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(applicationVipState)
      *             .build());
      * 
      *     }
@@ -712,9 +712,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplicationVips = DatabaseFunctions.getApplicationVips(GetApplicationVipsArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.application_vip_state())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(applicationVipState)
      *             .build());
      * 
      *     }
@@ -756,9 +756,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
-     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
-     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
-     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
      *             .build());
      * 
      *     }
@@ -800,9 +800,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
-     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
-     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
-     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
      *             .build());
      * 
      *     }
@@ -844,9 +844,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
-     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
-     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
-     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
      *             .build());
      * 
      *     }
@@ -888,9 +888,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
-     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
-     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
-     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
      *             .build());
      * 
      *     }
@@ -932,9 +932,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
-     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
-     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
-     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
      *             .build());
      * 
      *     }
@@ -976,9 +976,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseCharacterSets = DatabaseFunctions.getAutonomousCharacterSets(GetAutonomousCharacterSetsArgs.builder()
-     *             .characterSetType(var_.autonomous_database_character_set_character_set_type())
-     *             .isDedicated(var_.autonomous_database_character_set_is_dedicated())
-     *             .isShared(var_.autonomous_database_character_set_is_shared())
+     *             .characterSetType(autonomousDatabaseCharacterSetCharacterSetType)
+     *             .isDedicated(autonomousDatabaseCharacterSetIsDedicated)
+     *             .isShared(autonomousDatabaseCharacterSetIsShared)
      *             .build());
      * 
      *     }
@@ -1020,7 +1020,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1062,7 +1062,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1104,7 +1104,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1146,7 +1146,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabase = DatabaseFunctions.getAutonomousContainerDatabase(GetAutonomousContainerDatabaseArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabaseOciDatabaseAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1188,8 +1188,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseDataguardAssociationId(testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1231,8 +1231,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseDataguardAssociationId(testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1274,8 +1274,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseDataguardAssociationId(testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1317,8 +1317,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociation(GetAutonomousContainerDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousContainerDatabaseDataguardAssociationId(oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association().id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseDataguardAssociationId(testAutonomousContainerDatabaseDataguardAssociationOciDatabaseAutonomousContainerDatabaseDataguardAssociation.id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1360,7 +1360,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1402,7 +1402,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1444,7 +1444,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1486,7 +1486,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousContainerDatabaseDataguardAssociations(GetAutonomousContainerDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1528,7 +1528,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1570,7 +1570,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1612,7 +1612,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1654,7 +1654,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseResourceUsage = DatabaseFunctions.getAutonomousContainerDatabaseResourceUsage(GetAutonomousContainerDatabaseResourceUsageArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -1696,8 +1696,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .compartmentId(compartmentId)
+     *             .serviceComponent(autonomousContainerDatabaseVersionServiceComponent)
      *             .build());
      * 
      *     }
@@ -1739,8 +1739,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .compartmentId(compartmentId)
+     *             .serviceComponent(autonomousContainerDatabaseVersionServiceComponent)
      *             .build());
      * 
      *     }
@@ -1782,8 +1782,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .compartmentId(compartmentId)
+     *             .serviceComponent(autonomousContainerDatabaseVersionServiceComponent)
      *             .build());
      * 
      *     }
@@ -1825,8 +1825,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabaseVersions = DatabaseFunctions.getAutonomousContainerDatabaseVersions(GetAutonomousContainerDatabaseVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .serviceComponent(var_.autonomous_container_database_version_service_component())
+     *             .compartmentId(compartmentId)
+     *             .serviceComponent(autonomousContainerDatabaseVersionServiceComponent)
      *             .build());
      * 
      *     }
@@ -1868,15 +1868,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .displayName(var_.autonomous_container_database_display_name())
-     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
-     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
-     *             .state(var_.autonomous_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .availabilityDomain(autonomousContainerDatabaseAvailabilityDomain)
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .displayName(autonomousContainerDatabaseDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseInfrastructureType)
+     *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+     *             .state(autonomousContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -1918,15 +1918,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .displayName(var_.autonomous_container_database_display_name())
-     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
-     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
-     *             .state(var_.autonomous_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .availabilityDomain(autonomousContainerDatabaseAvailabilityDomain)
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .displayName(autonomousContainerDatabaseDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseInfrastructureType)
+     *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+     *             .state(autonomousContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -1968,15 +1968,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .displayName(var_.autonomous_container_database_display_name())
-     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
-     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
-     *             .state(var_.autonomous_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .availabilityDomain(autonomousContainerDatabaseAvailabilityDomain)
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .displayName(autonomousContainerDatabaseDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseInfrastructureType)
+     *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+     *             .state(autonomousContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -2018,15 +2018,15 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerDatabases = DatabaseFunctions.getAutonomousContainerDatabases(GetAutonomousContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .availabilityDomain(var_.autonomous_container_database_availability_domain())
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .displayName(var_.autonomous_container_database_display_name())
-     *             .infrastructureType(var_.autonomous_container_database_infrastructure_type())
-     *             .serviceLevelAgreementType(var_.autonomous_container_database_service_level_agreement_type())
-     *             .state(var_.autonomous_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .availabilityDomain(autonomousContainerDatabaseAvailabilityDomain)
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .displayName(autonomousContainerDatabaseDisplayName)
+     *             .infrastructureType(autonomousContainerDatabaseInfrastructureType)
+     *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+     *             .state(autonomousContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -2068,9 +2068,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .autonomousPatchType(autonomousContainerPatchAutonomousPatchType)
      *             .build());
      * 
      *     }
@@ -2112,9 +2112,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .autonomousPatchType(autonomousContainerPatchAutonomousPatchType)
      *             .build());
      * 
      *     }
@@ -2156,9 +2156,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .autonomousPatchType(autonomousContainerPatchAutonomousPatchType)
      *             .build());
      * 
      *     }
@@ -2200,9 +2200,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousContainerPatches = DatabaseFunctions.getAutonomousContainerPatches(GetAutonomousContainerPatchesArgs.builder()
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousPatchType(var_.autonomous_container_patch_autonomous_patch_type())
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .autonomousPatchType(autonomousContainerPatchAutonomousPatchType)
      *             .build());
      * 
      *     }
@@ -2244,7 +2244,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabaseOciDatabaseAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2286,7 +2286,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabaseOciDatabaseAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2328,7 +2328,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabaseOciDatabaseAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2370,7 +2370,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabase = DatabaseFunctions.getAutonomousDatabase(GetAutonomousDatabaseArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabaseOciDatabaseAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2412,7 +2412,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
-     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .autonomousDatabaseBackupId(testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id())
      *             .build());
      * 
      *     }
@@ -2454,7 +2454,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
-     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .autonomousDatabaseBackupId(testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id())
      *             .build());
      * 
      *     }
@@ -2496,7 +2496,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
-     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .autonomousDatabaseBackupId(testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id())
      *             .build());
      * 
      *     }
@@ -2538,7 +2538,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackup = DatabaseFunctions.getAutonomousDatabaseBackup(GetAutonomousDatabaseBackupArgs.builder()
-     *             .autonomousDatabaseBackupId(oci_database_autonomous_database_backup.test_autonomous_database_backup().id())
+     *             .autonomousDatabaseBackupId(testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id())
      *             .build());
      * 
      *     }
@@ -2580,11 +2580,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_database_backup_display_name())
-     *             .state(var_.autonomous_database_backup_state())
-     *             .type(var_.autonomous_database_backup_type())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
      *             .build());
      * 
      *     }
@@ -2626,11 +2626,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_database_backup_display_name())
-     *             .state(var_.autonomous_database_backup_state())
-     *             .type(var_.autonomous_database_backup_type())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
      *             .build());
      * 
      *     }
@@ -2672,11 +2672,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_database_backup_display_name())
-     *             .state(var_.autonomous_database_backup_state())
-     *             .type(var_.autonomous_database_backup_type())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
      *             .build());
      * 
      *     }
@@ -2718,11 +2718,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_database_backup_display_name())
-     *             .state(var_.autonomous_database_backup_state())
-     *             .type(var_.autonomous_database_backup_type())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
      *             .build());
      * 
      *     }
@@ -2764,11 +2764,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_database_backup_display_name())
-     *             .state(var_.autonomous_database_backup_state())
-     *             .type(var_.autonomous_database_backup_type())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
      *             .build());
      * 
      *     }
@@ -2810,11 +2810,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseBackups = DatabaseFunctions.getAutonomousDatabaseBackups(GetAutonomousDatabaseBackupsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_database_backup_display_name())
-     *             .state(var_.autonomous_database_backup_state())
-     *             .type(var_.autonomous_database_backup_type())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousDatabaseBackupDisplayName)
+     *             .state(autonomousDatabaseBackupState)
+     *             .type(autonomousDatabaseBackupType)
      *             .build());
      * 
      *     }
@@ -2856,8 +2856,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseDataguardAssociationId(testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2899,8 +2899,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseDataguardAssociationId(testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2942,8 +2942,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseDataguardAssociationId(testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -2985,8 +2985,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociation = DatabaseFunctions.getAutonomousDatabaseDataguardAssociation(GetAutonomousDatabaseDataguardAssociationArgs.builder()
-     *             .autonomousDatabaseDataguardAssociationId(oci_database_autonomous_database_dataguard_association.test_autonomous_database_dataguard_association().id())
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseDataguardAssociationId(testAutonomousDatabaseDataguardAssociationOciDatabaseAutonomousDatabaseDataguardAssociation.id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3028,7 +3028,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3070,7 +3070,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3112,7 +3112,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3154,7 +3154,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseDataguardAssociations = DatabaseFunctions.getAutonomousDatabaseDataguardAssociations(GetAutonomousDatabaseDataguardAssociationsArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3196,7 +3196,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3238,7 +3238,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3280,7 +3280,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3322,7 +3322,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseInstanceWalletManagement = DatabaseFunctions.getAutonomousDatabaseInstanceWalletManagement(GetAutonomousDatabaseInstanceWalletManagementArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3364,7 +3364,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3406,7 +3406,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3448,7 +3448,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3490,7 +3490,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseRefreshableClones = DatabaseFunctions.getAutonomousDatabaseRefreshableClones(GetAutonomousDatabaseRefreshableClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
      *             .build());
      * 
      *     }
@@ -3766,7 +3766,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
-     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .autonomousDatabaseSoftwareImageId(testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -3808,7 +3808,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
-     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .autonomousDatabaseSoftwareImageId(testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -3850,7 +3850,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
-     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .autonomousDatabaseSoftwareImageId(testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -3892,7 +3892,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImage = DatabaseFunctions.getAutonomousDatabaseSoftwareImage(GetAutonomousDatabaseSoftwareImageArgs.builder()
-     *             .autonomousDatabaseSoftwareImageId(oci_database_autonomous_database_software_image.test_autonomous_database_software_image().id())
+     *             .autonomousDatabaseSoftwareImageId(testAutonomousDatabaseSoftwareImageOciDatabaseAutonomousDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -3934,10 +3934,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
-     *             .displayName(var_.autonomous_database_software_image_display_name())
-     *             .state(var_.autonomous_database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
+     *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
+     *             .state(autonomousDatabaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -3979,10 +3979,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
-     *             .displayName(var_.autonomous_database_software_image_display_name())
-     *             .state(var_.autonomous_database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
+     *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
+     *             .state(autonomousDatabaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -4024,10 +4024,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
-     *             .displayName(var_.autonomous_database_software_image_display_name())
-     *             .state(var_.autonomous_database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
+     *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
+     *             .state(autonomousDatabaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -4069,10 +4069,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseSoftwareImages = DatabaseFunctions.getAutonomousDatabaseSoftwareImages(GetAutonomousDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .imageShapeFamily(var_.autonomous_database_software_image_image_shape_family())
-     *             .displayName(var_.autonomous_database_software_image_display_name())
-     *             .state(var_.autonomous_database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
+     *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
+     *             .state(autonomousDatabaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -4116,11 +4116,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .password(var_.autonomous_database_wallet_password())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .password(autonomousDatabaseWalletPassword)
      *             .base64EncodeContent(&#34;false&#34;)
-     *             .generateType(var_.autonomous_database_wallet_generate_type())
-     *             .isRegional(var_.autonomous_database_wallet_is_regional())
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
      *             .build());
      * 
      *     }
@@ -4164,11 +4164,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .password(var_.autonomous_database_wallet_password())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .password(autonomousDatabaseWalletPassword)
      *             .base64EncodeContent(&#34;false&#34;)
-     *             .generateType(var_.autonomous_database_wallet_generate_type())
-     *             .isRegional(var_.autonomous_database_wallet_is_regional())
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
      *             .build());
      * 
      *     }
@@ -4212,11 +4212,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .password(var_.autonomous_database_wallet_password())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .password(autonomousDatabaseWalletPassword)
      *             .base64EncodeContent(&#34;false&#34;)
-     *             .generateType(var_.autonomous_database_wallet_generate_type())
-     *             .isRegional(var_.autonomous_database_wallet_is_regional())
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
      *             .build());
      * 
      *     }
@@ -4260,11 +4260,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .password(var_.autonomous_database_wallet_password())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .password(autonomousDatabaseWalletPassword)
      *             .base64EncodeContent(&#34;false&#34;)
-     *             .generateType(var_.autonomous_database_wallet_generate_type())
-     *             .isRegional(var_.autonomous_database_wallet_is_regional())
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
      *             .build());
      * 
      *     }
@@ -4318,18 +4318,18 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .dbVersion(var_.autonomous_database_db_version())
-     *             .dbWorkload(var_.autonomous_database_db_workload())
-     *             .displayName(var_.autonomous_database_display_name())
-     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
-     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
-     *             .isFreeTier(var_.autonomous_database_is_free_tier())
-     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
-     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
-     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
-     *             .state(var_.autonomous_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .dbVersion(autonomousDatabaseDbVersion)
+     *             .dbWorkload(autonomousDatabaseDbWorkload)
+     *             .displayName(autonomousDatabaseDisplayName)
+     *             .infrastructureType(autonomousDatabaseInfrastructureType)
+     *             .isDataGuardEnabled(autonomousDatabaseIsDataGuardEnabled)
+     *             .isFreeTier(autonomousDatabaseIsFreeTier)
+     *             .isRefreshableClone(autonomousDatabaseIsRefreshableClone)
+     *             .isResourcePoolLeader(autonomousDatabaseIsResourcePoolLeader)
+     *             .resourcePoolLeaderId(testResourcePoolLeader.id())
+     *             .state(autonomousDatabaseState)
      *             .build());
      * 
      *     }
@@ -4383,18 +4383,18 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .dbVersion(var_.autonomous_database_db_version())
-     *             .dbWorkload(var_.autonomous_database_db_workload())
-     *             .displayName(var_.autonomous_database_display_name())
-     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
-     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
-     *             .isFreeTier(var_.autonomous_database_is_free_tier())
-     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
-     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
-     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
-     *             .state(var_.autonomous_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .dbVersion(autonomousDatabaseDbVersion)
+     *             .dbWorkload(autonomousDatabaseDbWorkload)
+     *             .displayName(autonomousDatabaseDisplayName)
+     *             .infrastructureType(autonomousDatabaseInfrastructureType)
+     *             .isDataGuardEnabled(autonomousDatabaseIsDataGuardEnabled)
+     *             .isFreeTier(autonomousDatabaseIsFreeTier)
+     *             .isRefreshableClone(autonomousDatabaseIsRefreshableClone)
+     *             .isResourcePoolLeader(autonomousDatabaseIsResourcePoolLeader)
+     *             .resourcePoolLeaderId(testResourcePoolLeader.id())
+     *             .state(autonomousDatabaseState)
      *             .build());
      * 
      *     }
@@ -4448,18 +4448,18 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .dbVersion(var_.autonomous_database_db_version())
-     *             .dbWorkload(var_.autonomous_database_db_workload())
-     *             .displayName(var_.autonomous_database_display_name())
-     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
-     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
-     *             .isFreeTier(var_.autonomous_database_is_free_tier())
-     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
-     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
-     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
-     *             .state(var_.autonomous_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .dbVersion(autonomousDatabaseDbVersion)
+     *             .dbWorkload(autonomousDatabaseDbWorkload)
+     *             .displayName(autonomousDatabaseDisplayName)
+     *             .infrastructureType(autonomousDatabaseInfrastructureType)
+     *             .isDataGuardEnabled(autonomousDatabaseIsDataGuardEnabled)
+     *             .isFreeTier(autonomousDatabaseIsFreeTier)
+     *             .isRefreshableClone(autonomousDatabaseIsRefreshableClone)
+     *             .isResourcePoolLeader(autonomousDatabaseIsResourcePoolLeader)
+     *             .resourcePoolLeaderId(testResourcePoolLeader.id())
+     *             .state(autonomousDatabaseState)
      *             .build());
      * 
      *     }
@@ -4513,18 +4513,18 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabases = DatabaseFunctions.getAutonomousDatabases(GetAutonomousDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .autonomousContainerDatabaseId(oci_database_autonomous_container_database.test_autonomous_container_database().id())
-     *             .dbVersion(var_.autonomous_database_db_version())
-     *             .dbWorkload(var_.autonomous_database_db_workload())
-     *             .displayName(var_.autonomous_database_display_name())
-     *             .infrastructureType(var_.autonomous_database_infrastructure_type())
-     *             .isDataGuardEnabled(var_.autonomous_database_is_data_guard_enabled())
-     *             .isFreeTier(var_.autonomous_database_is_free_tier())
-     *             .isRefreshableClone(var_.autonomous_database_is_refreshable_clone())
-     *             .isResourcePoolLeader(var_.autonomous_database_is_resource_pool_leader())
-     *             .resourcePoolLeaderId(oci_database_resource_pool_leader.test_resource_pool_leader().id())
-     *             .state(var_.autonomous_database_state())
+     *             .compartmentId(compartmentId)
+     *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+     *             .dbVersion(autonomousDatabaseDbVersion)
+     *             .dbWorkload(autonomousDatabaseDbWorkload)
+     *             .displayName(autonomousDatabaseDisplayName)
+     *             .infrastructureType(autonomousDatabaseInfrastructureType)
+     *             .isDataGuardEnabled(autonomousDatabaseIsDataGuardEnabled)
+     *             .isFreeTier(autonomousDatabaseIsFreeTier)
+     *             .isRefreshableClone(autonomousDatabaseIsRefreshableClone)
+     *             .isResourcePoolLeader(autonomousDatabaseIsResourcePoolLeader)
+     *             .resourcePoolLeaderId(testResourcePoolLeader.id())
+     *             .state(autonomousDatabaseState)
      *             .build());
      * 
      *     }
@@ -4566,11 +4566,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .cloneType(var_.autonomous_databases_clone_clone_type())
-     *             .displayName(var_.autonomous_databases_clone_display_name())
-     *             .state(var_.autonomous_databases_clone_state())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .cloneType(autonomousDatabasesCloneCloneType)
+     *             .displayName(autonomousDatabasesCloneDisplayName)
+     *             .state(autonomousDatabasesCloneState)
      *             .build());
      * 
      *     }
@@ -4612,11 +4612,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .cloneType(var_.autonomous_databases_clone_clone_type())
-     *             .displayName(var_.autonomous_databases_clone_display_name())
-     *             .state(var_.autonomous_databases_clone_state())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .cloneType(autonomousDatabasesCloneCloneType)
+     *             .displayName(autonomousDatabasesCloneDisplayName)
+     *             .state(autonomousDatabasesCloneState)
      *             .build());
      * 
      *     }
@@ -4658,11 +4658,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .cloneType(var_.autonomous_databases_clone_clone_type())
-     *             .displayName(var_.autonomous_databases_clone_display_name())
-     *             .state(var_.autonomous_databases_clone_state())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .cloneType(autonomousDatabasesCloneCloneType)
+     *             .displayName(autonomousDatabasesCloneDisplayName)
+     *             .state(autonomousDatabasesCloneState)
      *             .build());
      * 
      *     }
@@ -4704,11 +4704,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDatabasesClones = DatabaseFunctions.getAutonomousDatabasesClones(GetAutonomousDatabasesClonesArgs.builder()
-     *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .cloneType(var_.autonomous_databases_clone_clone_type())
-     *             .displayName(var_.autonomous_databases_clone_display_name())
-     *             .state(var_.autonomous_databases_clone_state())
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .compartmentId(compartmentId)
+     *             .cloneType(autonomousDatabasesCloneCloneType)
+     *             .displayName(autonomousDatabasesCloneDisplayName)
+     *             .state(autonomousDatabasesCloneState)
      *             .build());
      * 
      *     }
@@ -4751,7 +4751,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -4794,7 +4794,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -4837,7 +4837,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -4880,7 +4880,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbPreviewVersions = DatabaseFunctions.getAutonomousDbPreviewVersions(GetAutonomousDbPreviewVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -4922,8 +4922,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .compartmentId(compartmentId)
+     *             .dbWorkload(autonomousDbVersionDbWorkload)
      *             .build());
      * 
      *     }
@@ -4965,8 +4965,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .compartmentId(compartmentId)
+     *             .dbWorkload(autonomousDbVersionDbWorkload)
      *             .build());
      * 
      *     }
@@ -5008,8 +5008,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .compartmentId(compartmentId)
+     *             .dbWorkload(autonomousDbVersionDbWorkload)
      *             .build());
      * 
      *     }
@@ -5051,8 +5051,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousDbVersions = DatabaseFunctions.getAutonomousDbVersions(GetAutonomousDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbWorkload(var_.autonomous_db_version_db_workload())
+     *             .compartmentId(compartmentId)
+     *             .dbWorkload(autonomousDbVersionDbWorkload)
      *             .build());
      * 
      *     }
@@ -5094,7 +5094,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5136,7 +5136,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5178,7 +5178,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5220,7 +5220,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructure = DatabaseFunctions.getAutonomousExadataInfrastructure(GetAutonomousExadataInfrastructureArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5262,7 +5262,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5304,7 +5304,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5346,7 +5346,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5388,7 +5388,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureOcpu = DatabaseFunctions.getAutonomousExadataInfrastructureOcpu(GetAutonomousExadataInfrastructureOcpuArgs.builder()
-     *             .autonomousExadataInfrastructureId(oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure().id())
+     *             .autonomousExadataInfrastructureId(testAutonomousExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5430,8 +5430,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(autonomousExadataInfrastructureShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5473,8 +5473,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(autonomousExadataInfrastructureShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5516,8 +5516,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(autonomousExadataInfrastructureShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5559,8 +5559,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructureShapes = DatabaseFunctions.getAutonomousExadataInfrastructureShapes(GetAutonomousExadataInfrastructureShapesArgs.builder()
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_shape_availability_domain())
-     *             .compartmentId(var_.compartment_id())
+     *             .availabilityDomain(autonomousExadataInfrastructureShapeAvailabilityDomain)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -5602,10 +5602,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
-     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
-     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
+     *             .displayName(autonomousExadataInfrastructureDisplayName)
+     *             .state(autonomousExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -5647,10 +5647,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
-     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
-     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
+     *             .displayName(autonomousExadataInfrastructureDisplayName)
+     *             .state(autonomousExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -5692,10 +5692,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
-     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
-     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
+     *             .displayName(autonomousExadataInfrastructureDisplayName)
+     *             .state(autonomousExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -5737,10 +5737,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousExadataInfrastructures = DatabaseFunctions.getAutonomousExadataInfrastructures(GetAutonomousExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.autonomous_exadata_infrastructure_availability_domain())
-     *             .displayName(var_.autonomous_exadata_infrastructure_display_name())
-     *             .state(var_.autonomous_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
+     *             .displayName(autonomousExadataInfrastructureDisplayName)
+     *             .state(autonomousExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -5782,7 +5782,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
-     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .autonomousPatchId(testAutonomousPatchOciDatabaseAutonomousPatch.id())
      *             .build());
      * 
      *     }
@@ -5824,7 +5824,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
-     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .autonomousPatchId(testAutonomousPatchOciDatabaseAutonomousPatch.id())
      *             .build());
      * 
      *     }
@@ -5866,7 +5866,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
-     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .autonomousPatchId(testAutonomousPatchOciDatabaseAutonomousPatch.id())
      *             .build());
      * 
      *     }
@@ -5908,7 +5908,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousPatch = DatabaseFunctions.getAutonomousPatch(GetAutonomousPatchArgs.builder()
-     *             .autonomousPatchId(oci_database_autonomous_patch.test_autonomous_patch().id())
+     *             .autonomousPatchId(testAutonomousPatchOciDatabaseAutonomousPatch.id())
      *             .build());
      * 
      *     }
@@ -5950,7 +5950,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
-     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .autonomousVirtualMachineId(testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id())
      *             .build());
      * 
      *     }
@@ -5992,7 +5992,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
-     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .autonomousVirtualMachineId(testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id())
      *             .build());
      * 
      *     }
@@ -6034,7 +6034,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
-     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .autonomousVirtualMachineId(testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id())
      *             .build());
      * 
      *     }
@@ -6076,7 +6076,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachine = DatabaseFunctions.getAutonomousVirtualMachine(GetAutonomousVirtualMachineArgs.builder()
-     *             .autonomousVirtualMachineId(oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine().id())
+     *             .autonomousVirtualMachineId(testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id())
      *             .build());
      * 
      *     }
@@ -6118,9 +6118,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.autonomous_virtual_machine_state())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(autonomousVirtualMachineState)
      *             .build());
      * 
      *     }
@@ -6162,9 +6162,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.autonomous_virtual_machine_state())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(autonomousVirtualMachineState)
      *             .build());
      * 
      *     }
@@ -6206,9 +6206,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.autonomous_virtual_machine_state())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(autonomousVirtualMachineState)
      *             .build());
      * 
      *     }
@@ -6250,9 +6250,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVirtualMachines = DatabaseFunctions.getAutonomousVirtualMachines(GetAutonomousVirtualMachinesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.autonomous_virtual_machine_state())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .state(autonomousVirtualMachineState)
      *             .build());
      * 
      *     }
@@ -6294,7 +6294,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6336,7 +6336,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6378,7 +6378,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6420,7 +6420,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmCluster = DatabaseFunctions.getAutonomousVmCluster(GetAutonomousVmClusterArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmClusterOciDatabaseAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6462,8 +6462,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6505,8 +6505,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6548,8 +6548,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6591,8 +6591,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getAutonomousVmClusterAcdResourceUsages(GetAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -6634,7 +6634,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterResourceUsage = DatabaseFunctions.getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6676,7 +6676,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterResourceUsage = DatabaseFunctions.getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6718,7 +6718,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterResourceUsage = DatabaseFunctions.getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6760,7 +6760,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusterResourceUsage = DatabaseFunctions.getAutonomousVmClusterResourceUsage(GetAutonomousVmClusterResourceUsageArgs.builder()
-     *             .autonomousVmClusterId(oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster().id())
+     *             .autonomousVmClusterId(testAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -6802,10 +6802,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousVmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(autonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -6847,10 +6847,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousVmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(autonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -6892,10 +6892,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousVmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(autonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -6937,10 +6937,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAutonomousVmClusters = DatabaseFunctions.getAutonomousVmClusters(GetAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.autonomous_vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(autonomousVmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(autonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -6982,7 +6982,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
-     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .backupDestinationId(testBackupDestinationOciDatabaseBackupDestination.id())
      *             .build());
      * 
      *     }
@@ -7024,7 +7024,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
-     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .backupDestinationId(testBackupDestinationOciDatabaseBackupDestination.id())
      *             .build());
      * 
      *     }
@@ -7066,7 +7066,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
-     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .backupDestinationId(testBackupDestinationOciDatabaseBackupDestination.id())
      *             .build());
      * 
      *     }
@@ -7108,7 +7108,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestination = DatabaseFunctions.getBackupDestination(GetBackupDestinationArgs.builder()
-     *             .backupDestinationId(oci_database_backup_destination.test_backup_destination().id())
+     *             .backupDestinationId(testBackupDestinationOciDatabaseBackupDestination.id())
      *             .build());
      * 
      *     }
@@ -7150,8 +7150,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .type(var_.backup_destination_type())
+     *             .compartmentId(compartmentId)
+     *             .type(backupDestinationType)
      *             .build());
      * 
      *     }
@@ -7193,8 +7193,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .type(var_.backup_destination_type())
+     *             .compartmentId(compartmentId)
+     *             .type(backupDestinationType)
      *             .build());
      * 
      *     }
@@ -7236,8 +7236,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .type(var_.backup_destination_type())
+     *             .compartmentId(compartmentId)
+     *             .type(backupDestinationType)
      *             .build());
      * 
      *     }
@@ -7279,8 +7279,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackupDestinations = DatabaseFunctions.getBackupDestinations(GetBackupDestinationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .type(var_.backup_destination_type())
+     *             .compartmentId(compartmentId)
+     *             .type(backupDestinationType)
      *             .build());
      * 
      *     }
@@ -7322,8 +7322,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -7365,8 +7365,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -7408,8 +7408,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -7451,8 +7451,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -7494,8 +7494,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -7537,8 +7537,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -7580,7 +7580,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmClusterOciDatabaseCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -7622,7 +7622,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmClusterOciDatabaseCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -7664,7 +7664,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmClusterOciDatabaseCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -7706,7 +7706,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmCluster = DatabaseFunctions.getCloudAutonomousVmCluster(GetCloudAutonomousVmClusterArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmClusterOciDatabaseCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -7749,8 +7749,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -7793,8 +7793,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -7837,8 +7837,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -7881,8 +7881,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterAcdResourceUsages = DatabaseFunctions.getCloudAutonomousVmClusterAcdResourceUsages(GetCloudAutonomousVmClusterAcdResourceUsagesArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -7924,7 +7924,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -7966,7 +7966,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8008,7 +8008,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8050,7 +8050,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusterResourceUsage = DatabaseFunctions.getCloudAutonomousVmClusterResourceUsage(GetCloudAutonomousVmClusterResourceUsageArgs.builder()
-     *             .cloudAutonomousVmClusterId(oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster().id())
+     *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8092,11 +8092,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
-     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -8138,11 +8138,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
-     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -8184,11 +8184,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
-     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -8230,11 +8230,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudAutonomousVmClusters = DatabaseFunctions.getCloudAutonomousVmClusters(GetCloudAutonomousVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.cloud_autonomous_vm_cluster_availability_domain())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
-     *             .state(var_.cloud_autonomous_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(cloudAutonomousVmClusterAvailabilityDomain)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudAutonomousVmClusterDisplayName)
+     *             .state(cloudAutonomousVmClusterState)
      *             .build());
      * 
      *     }
@@ -8276,7 +8276,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -8318,7 +8318,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -8360,7 +8360,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -8402,7 +8402,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructure = DatabaseFunctions.getCloudExadataInfrastructure(GetCloudExadataInfrastructureArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructureOciDatabaseCloudExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -8444,8 +8444,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .dbServers(cloudExadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -8487,8 +8487,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .dbServers(cloudExadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -8530,8 +8530,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .dbServers(cloudExadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -8573,8 +8573,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getCloudExadataInfrastructureUnAllocatedResource(GetCloudExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .dbServers(var_.cloud_exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .dbServers(cloudExadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -8616,10 +8616,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
-     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
-     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(cloudExadataInfrastructureClusterPlacementGroupId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .state(cloudExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -8661,10 +8661,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
-     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
-     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(cloudExadataInfrastructureClusterPlacementGroupId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .state(cloudExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -8706,10 +8706,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
-     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
-     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(cloudExadataInfrastructureClusterPlacementGroupId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .state(cloudExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -8751,10 +8751,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudExadataInfrastructures = DatabaseFunctions.getCloudExadataInfrastructures(GetCloudExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .clusterPlacementGroupId(var_.cloud_exadata_infrastructure_cluster_placement_group_id())
-     *             .displayName(var_.cloud_exadata_infrastructure_display_name())
-     *             .state(var_.cloud_exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .clusterPlacementGroupId(cloudExadataInfrastructureClusterPlacementGroupId)
+     *             .displayName(cloudExadataInfrastructureDisplayName)
+     *             .state(cloudExadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -8796,7 +8796,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmClusterOciDatabaseCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8838,7 +8838,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmClusterOciDatabaseCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8880,7 +8880,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmClusterOciDatabaseCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8922,7 +8922,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmCluster = DatabaseFunctions.getCloudVmCluster(GetCloudVmClusterArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmClusterOciDatabaseCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -8967,7 +8967,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -9012,7 +9012,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -9057,7 +9057,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -9102,7 +9102,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusterIormConfig = DatabaseFunctions.getCloudVmClusterIormConfig(GetCloudVmClusterIormConfigArgs.builder()
-     *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+     *             .cloudVmClusterId(testCloudVmCluster.id())
      *             .build());
      * 
      *     }
@@ -9144,10 +9144,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_vm_cluster_display_name())
-     *             .state(var_.cloud_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudVmClusterDisplayName)
+     *             .state(cloudVmClusterState)
      *             .build());
      * 
      *     }
@@ -9189,10 +9189,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_vm_cluster_display_name())
-     *             .state(var_.cloud_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudVmClusterDisplayName)
+     *             .state(cloudVmClusterState)
      *             .build());
      * 
      *     }
@@ -9234,10 +9234,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_vm_cluster_display_name())
-     *             .state(var_.cloud_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudVmClusterDisplayName)
+     *             .state(cloudVmClusterState)
      *             .build());
      * 
      *     }
@@ -9279,10 +9279,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCloudVmClusters = DatabaseFunctions.getCloudVmClusters(GetCloudVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .cloudExadataInfrastructureId(oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure().id())
-     *             .displayName(var_.cloud_vm_cluster_display_name())
-     *             .state(var_.cloud_vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+     *             .displayName(cloudVmClusterDisplayName)
+     *             .state(cloudVmClusterState)
      *             .build());
      * 
      *     }
@@ -9324,8 +9324,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
-     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .dataGuardAssociationId(testDataGuardAssociationOciDatabaseDataGuardAssociation.id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9367,8 +9367,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
-     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .dataGuardAssociationId(testDataGuardAssociationOciDatabaseDataGuardAssociation.id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9410,8 +9410,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
-     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .dataGuardAssociationId(testDataGuardAssociationOciDatabaseDataGuardAssociation.id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9453,8 +9453,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociation = DatabaseFunctions.getDataGuardAssociation(GetDataGuardAssociationArgs.builder()
-     *             .dataGuardAssociationId(oci_database_data_guard_association.test_data_guard_association().id())
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .dataGuardAssociationId(testDataGuardAssociationOciDatabaseDataGuardAssociation.id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9496,7 +9496,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9538,7 +9538,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9580,7 +9580,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9622,7 +9622,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataGuardAssociations = DatabaseFunctions.getDataGuardAssociations(GetDataGuardAssociationsArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
+     *             .databaseId(testDatabase.id())
      *             .build());
      * 
      *     }
@@ -9664,7 +9664,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
-     *             .databaseId(var_.database_id())
+     *             .databaseId(databaseId)
      *             .build());
      * 
      *     }
@@ -9706,7 +9706,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
-     *             .databaseId(var_.database_id())
+     *             .databaseId(databaseId)
      *             .build());
      * 
      *     }
@@ -9748,7 +9748,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
-     *             .databaseId(var_.database_id())
+     *             .databaseId(databaseId)
      *             .build());
      * 
      *     }
@@ -9790,7 +9790,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabase = DatabaseFunctions.getDatabase(GetDatabaseArgs.builder()
-     *             .databaseId(var_.database_id())
+     *             .databaseId(databaseId)
      *             .build());
      * 
      *     }
@@ -9832,12 +9832,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
-     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
-     *             .state(var_.maintenance_run_history_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunHistoryAvailabilityDomain)
+     *             .maintenanceType(maintenanceRunHistoryMaintenanceType)
+     *             .state(maintenanceRunHistoryState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunHistoryTargetResourceType)
      *             .build());
      * 
      *     }
@@ -9879,12 +9879,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
-     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
-     *             .state(var_.maintenance_run_history_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunHistoryAvailabilityDomain)
+     *             .maintenanceType(maintenanceRunHistoryMaintenanceType)
+     *             .state(maintenanceRunHistoryState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunHistoryTargetResourceType)
      *             .build());
      * 
      *     }
@@ -9926,12 +9926,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
-     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
-     *             .state(var_.maintenance_run_history_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunHistoryAvailabilityDomain)
+     *             .maintenanceType(maintenanceRunHistoryMaintenanceType)
+     *             .state(maintenanceRunHistoryState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunHistoryTargetResourceType)
      *             .build());
      * 
      *     }
@@ -9973,12 +9973,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistories = DatabaseFunctions.getDatabaseMaintenanceRunHistories(GetDatabaseMaintenanceRunHistoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_history_availability_domain())
-     *             .maintenanceType(var_.maintenance_run_history_maintenance_type())
-     *             .state(var_.maintenance_run_history_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_history_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunHistoryAvailabilityDomain)
+     *             .maintenanceType(maintenanceRunHistoryMaintenanceType)
+     *             .state(maintenanceRunHistoryState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunHistoryTargetResourceType)
      *             .build());
      * 
      *     }
@@ -10020,7 +10020,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
-     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .maintenanceRunHistoryId(testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id())
      *             .build());
      * 
      *     }
@@ -10062,7 +10062,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
-     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .maintenanceRunHistoryId(testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id())
      *             .build());
      * 
      *     }
@@ -10104,7 +10104,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
-     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .maintenanceRunHistoryId(testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id())
      *             .build());
      * 
      *     }
@@ -10146,7 +10146,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRunHistory = DatabaseFunctions.getDatabaseMaintenanceRunHistory(GetDatabaseMaintenanceRunHistoryArgs.builder()
-     *             .maintenanceRunHistoryId(oci_database_maintenance_run_history.test_maintenance_run_history().id())
+     *             .maintenanceRunHistoryId(testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.id())
      *             .build());
      * 
      *     }
@@ -10188,9 +10188,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
-     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionAction(databasePdbConversionHistoryEntryPdbConversionAction)
+     *             .state(databasePdbConversionHistoryEntryState)
      *             .build());
      * 
      *     }
@@ -10232,9 +10232,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
-     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionAction(databasePdbConversionHistoryEntryPdbConversionAction)
+     *             .state(databasePdbConversionHistoryEntryState)
      *             .build());
      * 
      *     }
@@ -10276,9 +10276,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
-     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionAction(databasePdbConversionHistoryEntryPdbConversionAction)
+     *             .state(databasePdbConversionHistoryEntryState)
      *             .build());
      * 
      *     }
@@ -10320,9 +10320,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntries = DatabaseFunctions.getDatabasePdbConversionHistoryEntries(GetDatabasePdbConversionHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionAction(var_.database_pdb_conversion_history_entry_pdb_conversion_action())
-     *             .state(var_.database_pdb_conversion_history_entry_state())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionAction(databasePdbConversionHistoryEntryPdbConversionAction)
+     *             .state(databasePdbConversionHistoryEntryState)
      *             .build());
      * 
      *     }
@@ -10364,8 +10364,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionHistoryEntryId(testPdbConversionHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -10407,8 +10407,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionHistoryEntryId(testPdbConversionHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -10450,8 +10450,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionHistoryEntryId(testPdbConversionHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -10493,8 +10493,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabasePdbConversionHistoryEntry = DatabaseFunctions.getDatabasePdbConversionHistoryEntry(GetDatabasePdbConversionHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbConversionHistoryEntryId(oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .pdbConversionHistoryEntryId(testPdbConversionHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -10536,7 +10536,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
-     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .databaseSoftwareImageId(testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -10578,7 +10578,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
-     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .databaseSoftwareImageId(testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -10620,7 +10620,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
-     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .databaseSoftwareImageId(testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -10662,7 +10662,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImage = DatabaseFunctions.getDatabaseSoftwareImage(GetDatabaseSoftwareImageArgs.builder()
-     *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
+     *             .databaseSoftwareImageId(testDatabaseSoftwareImageOciDatabaseDatabaseSoftwareImage.id())
      *             .build());
      * 
      *     }
@@ -10704,12 +10704,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_software_image_display_name())
-     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
-     *             .imageType(var_.database_software_image_image_type())
-     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
-     *             .state(var_.database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseSoftwareImageDisplayName)
+     *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
+     *             .imageType(databaseSoftwareImageImageType)
+     *             .isUpgradeSupported(databaseSoftwareImageIsUpgradeSupported)
+     *             .state(databaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -10751,12 +10751,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_software_image_display_name())
-     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
-     *             .imageType(var_.database_software_image_image_type())
-     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
-     *             .state(var_.database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseSoftwareImageDisplayName)
+     *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
+     *             .imageType(databaseSoftwareImageImageType)
+     *             .isUpgradeSupported(databaseSoftwareImageIsUpgradeSupported)
+     *             .state(databaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -10798,12 +10798,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_software_image_display_name())
-     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
-     *             .imageType(var_.database_software_image_image_type())
-     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
-     *             .state(var_.database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseSoftwareImageDisplayName)
+     *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
+     *             .imageType(databaseSoftwareImageImageType)
+     *             .isUpgradeSupported(databaseSoftwareImageIsUpgradeSupported)
+     *             .state(databaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -10845,12 +10845,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseSoftwareImages = DatabaseFunctions.getDatabaseSoftwareImages(GetDatabaseSoftwareImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.database_software_image_display_name())
-     *             .imageShapeFamily(var_.database_software_image_image_shape_family())
-     *             .imageType(var_.database_software_image_image_type())
-     *             .isUpgradeSupported(var_.database_software_image_is_upgrade_supported())
-     *             .state(var_.database_software_image_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(databaseSoftwareImageDisplayName)
+     *             .imageShapeFamily(databaseSoftwareImageImageShapeFamily)
+     *             .imageType(databaseSoftwareImageImageType)
+     *             .isUpgradeSupported(databaseSoftwareImageIsUpgradeSupported)
+     *             .state(databaseSoftwareImageState)
      *             .build());
      * 
      *     }
@@ -10892,9 +10892,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .state(var_.database_upgrade_history_entry_state())
-     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .databaseId(testDatabase.id())
+     *             .state(databaseUpgradeHistoryEntryState)
+     *             .upgradeAction(databaseUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -10936,9 +10936,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .state(var_.database_upgrade_history_entry_state())
-     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .databaseId(testDatabase.id())
+     *             .state(databaseUpgradeHistoryEntryState)
+     *             .upgradeAction(databaseUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -10980,9 +10980,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .state(var_.database_upgrade_history_entry_state())
-     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .databaseId(testDatabase.id())
+     *             .state(databaseUpgradeHistoryEntryState)
+     *             .upgradeAction(databaseUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -11024,9 +11024,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntries = DatabaseFunctions.getDatabaseUpgradeHistoryEntries(GetDatabaseUpgradeHistoryEntriesArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .state(var_.database_upgrade_history_entry_state())
-     *             .upgradeAction(var_.database_upgrade_history_entry_upgrade_action())
+     *             .databaseId(testDatabase.id())
+     *             .state(databaseUpgradeHistoryEntryState)
+     *             .upgradeAction(databaseUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -11068,8 +11068,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -11111,8 +11111,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -11154,8 +11154,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -11197,8 +11197,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseUpgradeHistoryEntry = DatabaseFunctions.getDatabaseUpgradeHistoryEntry(GetDatabaseUpgradeHistoryEntryArgs.builder()
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .databaseId(testDatabase.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -11240,11 +11240,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
-     *             .dbName(var_.database_db_name())
-     *             .state(var_.database_state())
-     *             .systemId(oci_database_system.test_system().id())
+     *             .compartmentId(compartmentId)
+     *             .dbHomeId(testDbHome.id())
+     *             .dbName(databaseDbName)
+     *             .state(databaseState)
+     *             .systemId(testSystem.id())
      *             .build());
      * 
      *     }
@@ -11286,11 +11286,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
-     *             .dbName(var_.database_db_name())
-     *             .state(var_.database_state())
-     *             .systemId(oci_database_system.test_system().id())
+     *             .compartmentId(compartmentId)
+     *             .dbHomeId(testDbHome.id())
+     *             .dbName(databaseDbName)
+     *             .state(databaseState)
+     *             .systemId(testSystem.id())
      *             .build());
      * 
      *     }
@@ -11332,11 +11332,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
-     *             .dbName(var_.database_db_name())
-     *             .state(var_.database_state())
-     *             .systemId(oci_database_system.test_system().id())
+     *             .compartmentId(compartmentId)
+     *             .dbHomeId(testDbHome.id())
+     *             .dbName(databaseDbName)
+     *             .state(databaseState)
+     *             .systemId(testSystem.id())
      *             .build());
      * 
      *     }
@@ -11378,11 +11378,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabases = DatabaseFunctions.getDatabases(GetDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
-     *             .dbName(var_.database_db_name())
-     *             .state(var_.database_state())
-     *             .systemId(oci_database_system.test_system().id())
+     *             .compartmentId(compartmentId)
+     *             .dbHomeId(testDbHome.id())
+     *             .dbName(databaseDbName)
+     *             .state(databaseState)
+     *             .systemId(testSystem.id())
      *             .build());
      * 
      *     }
@@ -11424,7 +11424,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
-     *             .dbHomeId(var_.db_home_id())
+     *             .dbHomeId(dbHomeId)
      *             .build());
      * 
      *     }
@@ -11466,7 +11466,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
-     *             .dbHomeId(var_.db_home_id())
+     *             .dbHomeId(dbHomeId)
      *             .build());
      * 
      *     }
@@ -11508,7 +11508,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
-     *             .dbHomeId(var_.db_home_id())
+     *             .dbHomeId(dbHomeId)
      *             .build());
      * 
      *     }
@@ -11550,7 +11550,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHome = DatabaseFunctions.getDbHome(GetDbHomeArgs.builder()
-     *             .dbHomeId(var_.db_home_id())
+     *             .dbHomeId(dbHomeId)
      *             .build());
      * 
      *     }
@@ -11592,7 +11592,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11634,7 +11634,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11676,7 +11676,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11718,7 +11718,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatchHistoryEntries = DatabaseFunctions.getDbHomePatchHistoryEntries(GetDbHomePatchHistoryEntriesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11760,7 +11760,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11802,7 +11802,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11844,7 +11844,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11886,7 +11886,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbHomePatches = DatabaseFunctions.getDbHomePatches(GetDbHomePatchesArgs.builder()
-     *             .dbHomeId(oci_database_db_home.test_db_home().id())
+     *             .dbHomeId(testDbHome.id())
      *             .build());
      * 
      *     }
@@ -11964,7 +11964,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
-     *             .dbNodeId(var_.db_node_id())
+     *             .dbNodeId(dbNodeId)
      *             .build());
      * 
      *     }
@@ -12006,7 +12006,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
-     *             .dbNodeId(var_.db_node_id())
+     *             .dbNodeId(dbNodeId)
      *             .build());
      * 
      *     }
@@ -12048,7 +12048,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
-     *             .dbNodeId(var_.db_node_id())
+     *             .dbNodeId(dbNodeId)
      *             .build());
      * 
      *     }
@@ -12090,7 +12090,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNode = DatabaseFunctions.getDbNode(GetDbNodeArgs.builder()
-     *             .dbNodeId(var_.db_node_id())
+     *             .dbNodeId(dbNodeId)
      *             .build());
      * 
      *     }
@@ -12132,8 +12132,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .id(var_.db_node_console_connection_id())
+     *             .dbNodeId(testDbNode.id())
+     *             .id(dbNodeConsoleConnectionId)
      *             .build());
      * 
      *     }
@@ -12175,8 +12175,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .id(var_.db_node_console_connection_id())
+     *             .dbNodeId(testDbNode.id())
+     *             .id(dbNodeConsoleConnectionId)
      *             .build());
      * 
      *     }
@@ -12218,8 +12218,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .id(var_.db_node_console_connection_id())
+     *             .dbNodeId(testDbNode.id())
+     *             .id(dbNodeConsoleConnectionId)
      *             .build());
      * 
      *     }
@@ -12261,8 +12261,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnection = DatabaseFunctions.getDbNodeConsoleConnection(GetDbNodeConsoleConnectionArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .id(var_.db_node_console_connection_id())
+     *             .dbNodeId(testDbNode.id())
+     *             .id(dbNodeConsoleConnectionId)
      *             .build());
      * 
      *     }
@@ -12304,7 +12304,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12346,7 +12346,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12388,7 +12388,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12430,7 +12430,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleConnections = DatabaseFunctions.getDbNodeConsoleConnections(GetDbNodeConsoleConnectionsArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12472,9 +12472,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .displayName(var_.db_node_console_history_display_name())
-     *             .state(var_.db_node_console_history_state())
+     *             .dbNodeId(testDbNode.id())
+     *             .displayName(dbNodeConsoleHistoryDisplayName)
+     *             .state(dbNodeConsoleHistoryState)
      *             .build());
      * 
      *     }
@@ -12516,9 +12516,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .displayName(var_.db_node_console_history_display_name())
-     *             .state(var_.db_node_console_history_state())
+     *             .dbNodeId(testDbNode.id())
+     *             .displayName(dbNodeConsoleHistoryDisplayName)
+     *             .state(dbNodeConsoleHistoryState)
      *             .build());
      * 
      *     }
@@ -12560,9 +12560,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .displayName(var_.db_node_console_history_display_name())
-     *             .state(var_.db_node_console_history_state())
+     *             .dbNodeId(testDbNode.id())
+     *             .displayName(dbNodeConsoleHistoryDisplayName)
+     *             .state(dbNodeConsoleHistoryState)
      *             .build());
      * 
      *     }
@@ -12604,9 +12604,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistories = DatabaseFunctions.getDbNodeConsoleHistories(GetDbNodeConsoleHistoriesArgs.builder()
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
-     *             .displayName(var_.db_node_console_history_display_name())
-     *             .state(var_.db_node_console_history_state())
+     *             .dbNodeId(testDbNode.id())
+     *             .displayName(dbNodeConsoleHistoryDisplayName)
+     *             .state(dbNodeConsoleHistoryState)
      *             .build());
      * 
      *     }
@@ -12648,8 +12648,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12691,8 +12691,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12734,8 +12734,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12777,8 +12777,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistory = DatabaseFunctions.getDbNodeConsoleHistory(GetDbNodeConsoleHistoryArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12820,8 +12820,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12863,8 +12863,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12906,8 +12906,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12949,8 +12949,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodeConsoleHistoryContent = DatabaseFunctions.getDbNodeConsoleHistoryContent(GetDbNodeConsoleHistoryContentArgs.builder()
-     *             .consoleHistoryId(oci_core_console_history.test_console_history().id())
-     *             .dbNodeId(oci_database_db_node.test_db_node().id())
+     *             .consoleHistoryId(testConsoleHistory.id())
+     *             .dbNodeId(testDbNode.id())
      *             .build());
      * 
      *     }
@@ -12992,11 +12992,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_node_state())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .dbServerId(testDbServer.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbNodeState)
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -13038,11 +13038,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_node_state())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .dbServerId(testDbServer.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbNodeState)
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -13084,11 +13084,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_node_state())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .dbServerId(testDbServer.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbNodeState)
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -13130,11 +13130,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbNodes = DatabaseFunctions.getDbNodes(GetDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_node_state())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .dbServerId(testDbServer.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbNodeState)
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -13176,8 +13176,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServerId(testDbServerOciDatabaseDbServer.id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -13219,8 +13219,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServerId(testDbServerOciDatabaseDbServer.id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -13262,8 +13262,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServerId(testDbServerOciDatabaseDbServer.id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -13305,8 +13305,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServer = DatabaseFunctions.getDbServer(GetDbServerArgs.builder()
-     *             .dbServerId(oci_database_db_server.test_db_server().id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .dbServerId(testDbServerOciDatabaseDbServer.id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -13348,10 +13348,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.db_server_display_name())
-     *             .state(var_.db_server_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(dbServerDisplayName)
+     *             .state(dbServerState)
      *             .build());
      * 
      *     }
@@ -13393,10 +13393,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.db_server_display_name())
-     *             .state(var_.db_server_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(dbServerDisplayName)
+     *             .state(dbServerState)
      *             .build());
      * 
      *     }
@@ -13438,10 +13438,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.db_server_display_name())
-     *             .state(var_.db_server_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(dbServerDisplayName)
+     *             .state(dbServerState)
      *             .build());
      * 
      *     }
@@ -13483,10 +13483,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbServers = DatabaseFunctions.getDbServers(GetDbServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.db_server_display_name())
-     *             .state(var_.db_server_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(dbServerDisplayName)
+     *             .state(dbServerState)
      *             .build());
      * 
      *     }
@@ -13528,7 +13528,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
-     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
      *             .build());
      * 
      *     }
@@ -13570,7 +13570,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
-     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
      *             .build());
      * 
      *     }
@@ -13612,7 +13612,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
-     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
      *             .build());
      * 
      *     }
@@ -13654,7 +13654,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
-     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
      *             .build());
      * 
      *     }
@@ -13696,7 +13696,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
-     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
      *             .build());
      * 
      *     }
@@ -13738,7 +13738,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemComputePerformances = DatabaseFunctions.getDbSystemComputePerformances(GetDbSystemComputePerformancesArgs.builder()
-     *             .dbSystemShape(var_.db_system_compute_performance_db_system_shape())
+     *             .dbSystemShape(dbSystemComputePerformanceDbSystemShape)
      *             .build());
      * 
      *     }
@@ -13780,7 +13780,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -13822,7 +13822,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -13864,7 +13864,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -13906,7 +13906,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatchHistoryEntries = DatabaseFunctions.getDbSystemHistoryEntries(GetDbSystemHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -13948,7 +13948,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -13990,7 +13990,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -14032,7 +14032,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -14074,7 +14074,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPatches = DatabaseFunctions.getDbSystemPatches(GetDbSystemPatchesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -14116,8 +14116,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -14159,8 +14159,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -14202,8 +14202,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -14245,8 +14245,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -14288,8 +14288,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(var_.db_system_storage_performance_storage_management())
-     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
      *             .build());
      * 
      *     }
@@ -14331,8 +14331,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(var_.db_system_storage_performance_storage_management())
-     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
      *             .build());
      * 
      *     }
@@ -14374,8 +14374,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(var_.db_system_storage_performance_storage_management())
-     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
      *             .build());
      * 
      *     }
@@ -14417,8 +14417,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
-     *             .storageManagement(var_.db_system_storage_performance_storage_management())
-     *             .shapeType(var_.db_system_storage_performance_shape_type())
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
      *             .build());
      * 
      *     }
@@ -14464,11 +14464,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_availability_domain())
-     *             .backupId(oci_database_backup.test_backup().id())
-     *             .displayName(var_.db_system_display_name())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemAvailabilityDomain)
+     *             .backupId(testBackup.id())
+     *             .displayName(dbSystemDisplayName)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -14514,11 +14514,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_availability_domain())
-     *             .backupId(oci_database_backup.test_backup().id())
-     *             .displayName(var_.db_system_display_name())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemAvailabilityDomain)
+     *             .backupId(testBackup.id())
+     *             .displayName(dbSystemDisplayName)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -14564,11 +14564,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_availability_domain())
-     *             .backupId(oci_database_backup.test_backup().id())
-     *             .displayName(var_.db_system_display_name())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemAvailabilityDomain)
+     *             .backupId(testBackup.id())
+     *             .displayName(dbSystemDisplayName)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -14614,11 +14614,11 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystems = DatabaseFunctions.getDbSystems(GetDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.db_system_availability_domain())
-     *             .backupId(oci_database_backup.test_backup().id())
-     *             .displayName(var_.db_system_display_name())
-     *             .state(var_.db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(dbSystemAvailabilityDomain)
+     *             .backupId(testBackup.id())
+     *             .displayName(dbSystemDisplayName)
+     *             .state(dbSystemState)
      *             .build());
      * 
      *     }
@@ -14660,9 +14660,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_systems_upgrade_history_entry_state())
-     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbSystemsUpgradeHistoryEntryState)
+     *             .upgradeAction(dbSystemsUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -14704,9 +14704,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_systems_upgrade_history_entry_state())
-     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbSystemsUpgradeHistoryEntryState)
+     *             .upgradeAction(dbSystemsUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -14748,9 +14748,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_systems_upgrade_history_entry_state())
-     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbSystemsUpgradeHistoryEntryState)
+     *             .upgradeAction(dbSystemsUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -14792,9 +14792,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntries = DatabaseFunctions.getDbSystemsUpgradeHistoryEntries(GetDbSystemsUpgradeHistoryEntriesArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .state(var_.db_systems_upgrade_history_entry_state())
-     *             .upgradeAction(var_.db_systems_upgrade_history_entry_upgrade_action())
+     *             .dbSystemId(testDbSystem.id())
+     *             .state(dbSystemsUpgradeHistoryEntryState)
+     *             .upgradeAction(dbSystemsUpgradeHistoryEntryUpgradeAction)
      *             .build());
      * 
      *     }
@@ -14836,8 +14836,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -14879,8 +14879,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -14922,8 +14922,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -14965,8 +14965,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemsUpgradeHistoryEntry = DatabaseFunctions.getDbSystemsUpgradeHistoryEntry(GetDbSystemsUpgradeHistoryEntryArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .upgradeHistoryEntryId(oci_database_upgrade_history_entry.test_upgrade_history_entry().id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .upgradeHistoryEntryId(testUpgradeHistoryEntry.id())
      *             .build());
      * 
      *     }
@@ -15008,12 +15008,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .dbSystemShape(var_.db_version_db_system_shape())
-     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
-     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
-     *             .storageManagement(var_.db_version_storage_management())
+     *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemShape(dbVersionDbSystemShape)
+     *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
+     *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
      *     }
@@ -15055,12 +15055,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .dbSystemShape(var_.db_version_db_system_shape())
-     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
-     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
-     *             .storageManagement(var_.db_version_storage_management())
+     *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemShape(dbVersionDbSystemShape)
+     *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
+     *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
      *     }
@@ -15102,12 +15102,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .dbSystemShape(var_.db_version_db_system_shape())
-     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
-     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
-     *             .storageManagement(var_.db_version_storage_management())
+     *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemShape(dbVersionDbSystemShape)
+     *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
+     *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
      *     }
@@ -15149,12 +15149,12 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbVersions = DatabaseFunctions.getDbVersions(GetDbVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .dbSystemShape(var_.db_version_db_system_shape())
-     *             .isDatabaseSoftwareImageSupported(var_.db_version_is_database_software_image_supported())
-     *             .isUpgradeSupported(var_.db_version_is_upgrade_supported())
-     *             .storageManagement(var_.db_version_storage_management())
+     *             .compartmentId(compartmentId)
+     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemShape(dbVersionDbSystemShape)
+     *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
+     *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
      *     }
@@ -15197,8 +15197,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
+     *             .excludedFields(exadataInfrastructureExcludedFields)
      *             .build());
      * 
      *     }
@@ -15241,8 +15241,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
+     *             .excludedFields(exadataInfrastructureExcludedFields)
      *             .build());
      * 
      *     }
@@ -15285,8 +15285,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
+     *             .excludedFields(exadataInfrastructureExcludedFields)
      *             .build());
      * 
      *     }
@@ -15329,8 +15329,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
+     *             .excludedFields(exadataInfrastructureExcludedFields)
      *             .build());
      * 
      *     }
@@ -15372,7 +15372,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -15415,7 +15415,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -15458,7 +15458,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -15501,7 +15501,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureDownloadConfigFile = DatabaseFunctions.getExadataInfrastructureDownloadConfigFile(GetExadataInfrastructureDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -15544,8 +15544,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .dbServers(exadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -15587,8 +15587,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .dbServers(exadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -15630,8 +15630,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .dbServers(exadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -15673,8 +15673,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructureUnAllocatedResource = DatabaseFunctions.getExadataInfrastructureUnAllocatedResource(GetExadataInfrastructureUnAllocatedResourceArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .dbServers(var_.exadata_infrastructure_un_allocated_resource_db_servers())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .dbServers(exadataInfrastructureUnAllocatedResourceDbServers)
      *             .build());
      * 
      *     }
@@ -15717,10 +15717,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.exadata_infrastructure_display_name())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
-     *             .state(var_.exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -15763,10 +15763,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.exadata_infrastructure_display_name())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
-     *             .state(var_.exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -15809,10 +15809,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.exadata_infrastructure_display_name())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
-     *             .state(var_.exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -15855,10 +15855,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.exadata_infrastructure_display_name())
-     *             .excludedFields(var_.exadata_infrastructure_excluded_fields())
-     *             .state(var_.exadata_infrastructure_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
      *             .build());
      * 
      *     }
@@ -15908,7 +15908,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -15958,7 +15958,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -16008,7 +16008,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -16058,7 +16058,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataIormConfig = DatabaseFunctions.getExadataIormConfig(GetExadataIormConfigArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -16100,7 +16100,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .externalContainerDatabaseId(testExternalContainerDatabaseOciDatabaseExternalContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16142,7 +16142,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .externalContainerDatabaseId(testExternalContainerDatabaseOciDatabaseExternalContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16184,7 +16184,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .externalContainerDatabaseId(testExternalContainerDatabaseOciDatabaseExternalContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16226,7 +16226,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabase = DatabaseFunctions.getExternalContainerDatabase(GetExternalContainerDatabaseArgs.builder()
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
+     *             .externalContainerDatabaseId(testExternalContainerDatabaseOciDatabaseExternalContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16268,9 +16268,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_container_database_display_name())
-     *             .state(var_.external_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalContainerDatabaseDisplayName)
+     *             .state(externalContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -16312,9 +16312,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_container_database_display_name())
-     *             .state(var_.external_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalContainerDatabaseDisplayName)
+     *             .state(externalContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -16356,9 +16356,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_container_database_display_name())
-     *             .state(var_.external_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalContainerDatabaseDisplayName)
+     *             .state(externalContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -16400,9 +16400,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalContainerDatabases = DatabaseFunctions.getExternalContainerDatabases(GetExternalContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_container_database_display_name())
-     *             .state(var_.external_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalContainerDatabaseDisplayName)
+     *             .state(externalContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -16444,7 +16444,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
-     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .externalDatabaseConnectorId(testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id())
      *             .build());
      * 
      *     }
@@ -16486,7 +16486,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
-     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .externalDatabaseConnectorId(testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id())
      *             .build());
      * 
      *     }
@@ -16528,7 +16528,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
-     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .externalDatabaseConnectorId(testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id())
      *             .build());
      * 
      *     }
@@ -16570,7 +16570,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnector = DatabaseFunctions.getExternalDatabaseConnector(GetExternalDatabaseConnectorArgs.builder()
-     *             .externalDatabaseConnectorId(oci_database_external_database_connector.test_external_database_connector().id())
+     *             .externalDatabaseConnectorId(testExternalDatabaseConnectorOciDatabaseExternalDatabaseConnector.id())
      *             .build());
      * 
      *     }
@@ -16612,10 +16612,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalDatabaseId(oci_database_database.test_database().id())
-     *             .displayName(var_.external_database_connector_display_name())
-     *             .state(var_.external_database_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .externalDatabaseId(testDatabase.id())
+     *             .displayName(externalDatabaseConnectorDisplayName)
+     *             .state(externalDatabaseConnectorState)
      *             .build());
      * 
      *     }
@@ -16657,10 +16657,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalDatabaseId(oci_database_database.test_database().id())
-     *             .displayName(var_.external_database_connector_display_name())
-     *             .state(var_.external_database_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .externalDatabaseId(testDatabase.id())
+     *             .displayName(externalDatabaseConnectorDisplayName)
+     *             .state(externalDatabaseConnectorState)
      *             .build());
      * 
      *     }
@@ -16702,10 +16702,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalDatabaseId(oci_database_database.test_database().id())
-     *             .displayName(var_.external_database_connector_display_name())
-     *             .state(var_.external_database_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .externalDatabaseId(testDatabase.id())
+     *             .displayName(externalDatabaseConnectorDisplayName)
+     *             .state(externalDatabaseConnectorState)
      *             .build());
      * 
      *     }
@@ -16747,10 +16747,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabaseConnectors = DatabaseFunctions.getExternalDatabaseConnectors(GetExternalDatabaseConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalDatabaseId(oci_database_database.test_database().id())
-     *             .displayName(var_.external_database_connector_display_name())
-     *             .state(var_.external_database_connector_state())
+     *             .compartmentId(compartmentId)
+     *             .externalDatabaseId(testDatabase.id())
+     *             .displayName(externalDatabaseConnectorDisplayName)
+     *             .state(externalDatabaseConnectorState)
      *             .build());
      * 
      *     }
@@ -16792,7 +16792,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
-     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .externalNonContainerDatabaseId(testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16834,7 +16834,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
-     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .externalNonContainerDatabaseId(testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16876,7 +16876,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
-     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .externalNonContainerDatabaseId(testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16918,7 +16918,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabase = DatabaseFunctions.getExternalNonContainerDatabase(GetExternalNonContainerDatabaseArgs.builder()
-     *             .externalNonContainerDatabaseId(oci_database_external_non_container_database.test_external_non_container_database().id())
+     *             .externalNonContainerDatabaseId(testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.id())
      *             .build());
      * 
      *     }
@@ -16960,9 +16960,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_non_container_database_display_name())
-     *             .state(var_.external_non_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalNonContainerDatabaseDisplayName)
+     *             .state(externalNonContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -17004,9 +17004,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_non_container_database_display_name())
-     *             .state(var_.external_non_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalNonContainerDatabaseDisplayName)
+     *             .state(externalNonContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -17048,9 +17048,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_non_container_database_display_name())
-     *             .state(var_.external_non_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalNonContainerDatabaseDisplayName)
+     *             .state(externalNonContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -17092,9 +17092,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalNonContainerDatabases = DatabaseFunctions.getExternalNonContainerDatabases(GetExternalNonContainerDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_non_container_database_display_name())
-     *             .state(var_.external_non_container_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalNonContainerDatabaseDisplayName)
+     *             .state(externalNonContainerDatabaseState)
      *             .build());
      * 
      *     }
@@ -17137,7 +17137,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
-     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .externalPluggableDatabaseId(testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -17180,7 +17180,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
-     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .externalPluggableDatabaseId(testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -17223,7 +17223,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
-     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .externalPluggableDatabaseId(testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -17266,7 +17266,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabase = DatabaseFunctions.getExternalPluggableDatabase(GetExternalPluggableDatabaseArgs.builder()
-     *             .externalPluggableDatabaseId(oci_database_external_pluggable_database.test_external_pluggable_database().id())
+     *             .externalPluggableDatabaseId(testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -17309,10 +17309,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_pluggable_database_display_name())
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
-     *             .state(var_.external_pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalPluggableDatabaseDisplayName)
+     *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+     *             .state(externalPluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -17355,10 +17355,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_pluggable_database_display_name())
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
-     *             .state(var_.external_pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalPluggableDatabaseDisplayName)
+     *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+     *             .state(externalPluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -17401,10 +17401,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_pluggable_database_display_name())
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
-     *             .state(var_.external_pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalPluggableDatabaseDisplayName)
+     *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+     *             .state(externalPluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -17447,10 +17447,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalPluggableDatabases = DatabaseFunctions.getExternalPluggableDatabases(GetExternalPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_pluggable_database_display_name())
-     *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
-     *             .state(var_.external_pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalPluggableDatabaseDisplayName)
+     *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+     *             .state(externalPluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -17492,8 +17492,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.flex_component_name())
+     *             .compartmentId(compartmentId)
+     *             .name(flexComponentName)
      *             .build());
      * 
      *     }
@@ -17535,8 +17535,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.flex_component_name())
+     *             .compartmentId(compartmentId)
+     *             .name(flexComponentName)
      *             .build());
      * 
      *     }
@@ -17578,8 +17578,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.flex_component_name())
+     *             .compartmentId(compartmentId)
+     *             .name(flexComponentName)
      *             .build());
      * 
      *     }
@@ -17621,8 +17621,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFlexComponents = DatabaseFunctions.getFlexComponents(GetFlexComponentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.flex_component_name())
+     *             .compartmentId(compartmentId)
+     *             .name(flexComponentName)
      *             .build());
      * 
      *     }
@@ -17664,8 +17664,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .shape(var_.gi_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .shape(giVersionShape)
      *             .build());
      * 
      *     }
@@ -17707,8 +17707,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .shape(var_.gi_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .shape(giVersionShape)
      *             .build());
      * 
      *     }
@@ -17750,8 +17750,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .shape(var_.gi_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .shape(giVersionShape)
      *             .build());
      * 
      *     }
@@ -17793,8 +17793,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .shape(var_.gi_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .shape(giVersionShape)
      *             .build());
      * 
      *     }
@@ -17837,9 +17837,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureTargetVersion = DatabaseFunctions.getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.infrastructure_target_version_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(infrastructureTargetVersionTargetResourceType)
      *             .build());
      * 
      *     }
@@ -17882,9 +17882,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureTargetVersion = DatabaseFunctions.getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.infrastructure_target_version_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(infrastructureTargetVersionTargetResourceType)
      *             .build());
      * 
      *     }
@@ -17927,9 +17927,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureTargetVersion = DatabaseFunctions.getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.infrastructure_target_version_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(infrastructureTargetVersionTargetResourceType)
      *             .build());
      * 
      *     }
@@ -17972,9 +17972,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureTargetVersion = DatabaseFunctions.getInfrastructureTargetVersion(GetInfrastructureTargetVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.infrastructure_target_version_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(infrastructureTargetVersionTargetResourceType)
      *             .build());
      * 
      *     }
@@ -18016,7 +18016,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
-     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .keyStoreId(testKeyStoreOciDatabaseKeyStore.id())
      *             .build());
      * 
      *     }
@@ -18058,7 +18058,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
-     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .keyStoreId(testKeyStoreOciDatabaseKeyStore.id())
      *             .build());
      * 
      *     }
@@ -18100,7 +18100,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
-     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .keyStoreId(testKeyStoreOciDatabaseKeyStore.id())
      *             .build());
      * 
      *     }
@@ -18142,7 +18142,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStore = DatabaseFunctions.getKeyStore(GetKeyStoreArgs.builder()
-     *             .keyStoreId(oci_database_key_store.test_key_store().id())
+     *             .keyStoreId(testKeyStoreOciDatabaseKeyStore.id())
      *             .build());
      * 
      *     }
@@ -18184,7 +18184,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18226,7 +18226,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18268,7 +18268,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18310,7 +18310,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKeyStores = DatabaseFunctions.getKeyStores(GetKeyStoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18352,7 +18352,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
-     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .maintenanceRunId(testMaintenanceRunOciDatabaseMaintenanceRun.id())
      *             .build());
      * 
      *     }
@@ -18394,7 +18394,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
-     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .maintenanceRunId(testMaintenanceRunOciDatabaseMaintenanceRun.id())
      *             .build());
      * 
      *     }
@@ -18436,7 +18436,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
-     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .maintenanceRunId(testMaintenanceRunOciDatabaseMaintenanceRun.id())
      *             .build());
      * 
      *     }
@@ -18478,7 +18478,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRun = DatabaseFunctions.getMaintenanceRun(GetMaintenanceRunArgs.builder()
-     *             .maintenanceRunId(oci_database_maintenance_run.test_maintenance_run().id())
+     *             .maintenanceRunId(testMaintenanceRunOciDatabaseMaintenanceRun.id())
      *             .build());
      * 
      *     }
@@ -18520,13 +18520,13 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_availability_domain())
-     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
-     *             .maintenanceType(var_.maintenance_run_maintenance_type())
-     *             .state(var_.maintenance_run_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
+     *             .maintenanceType(maintenanceRunMaintenanceType)
+     *             .state(maintenanceRunState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunTargetResourceType)
      *             .build());
      * 
      *     }
@@ -18568,13 +18568,13 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_availability_domain())
-     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
-     *             .maintenanceType(var_.maintenance_run_maintenance_type())
-     *             .state(var_.maintenance_run_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
+     *             .maintenanceType(maintenanceRunMaintenanceType)
+     *             .state(maintenanceRunState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunTargetResourceType)
      *             .build());
      * 
      *     }
@@ -18616,13 +18616,13 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_availability_domain())
-     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
-     *             .maintenanceType(var_.maintenance_run_maintenance_type())
-     *             .state(var_.maintenance_run_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
+     *             .maintenanceType(maintenanceRunMaintenanceType)
+     *             .state(maintenanceRunState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunTargetResourceType)
      *             .build());
      * 
      *     }
@@ -18664,13 +18664,13 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceRuns = DatabaseFunctions.getMaintenanceRuns(GetMaintenanceRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.maintenance_run_availability_domain())
-     *             .maintenanceSubtype(var_.maintenance_run_maintenance_subtype())
-     *             .maintenanceType(var_.maintenance_run_maintenance_type())
-     *             .state(var_.maintenance_run_state())
-     *             .targetResourceId(oci_database_target_resource.test_target_resource().id())
-     *             .targetResourceType(var_.maintenance_run_target_resource_type())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(maintenanceRunAvailabilityDomain)
+     *             .maintenanceSubtype(maintenanceRunMaintenanceSubtype)
+     *             .maintenanceType(maintenanceRunMaintenanceType)
+     *             .state(maintenanceRunState)
+     *             .targetResourceId(testTargetResource.id())
+     *             .targetResourceType(maintenanceRunTargetResourceType)
      *             .build());
      * 
      *     }
@@ -18712,8 +18712,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredential = DatabaseFunctions.getManagedPreferredCredential(GetManagedPreferredCredentialArgs.builder()
-     *             .credentialName(var_.managed_database_preferred_credential_credential_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .credentialName(managedDatabasePreferredCredentialCredentialName)
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -18755,8 +18755,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredential = DatabaseFunctions.getManagedPreferredCredential(GetManagedPreferredCredentialArgs.builder()
-     *             .credentialName(var_.managed_database_preferred_credential_credential_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .credentialName(managedDatabasePreferredCredentialCredentialName)
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -18798,8 +18798,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredential = DatabaseFunctions.getManagedPreferredCredential(GetManagedPreferredCredentialArgs.builder()
-     *             .credentialName(var_.managed_database_preferred_credential_credential_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .credentialName(managedDatabasePreferredCredentialCredentialName)
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -18841,8 +18841,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredential = DatabaseFunctions.getManagedPreferredCredential(GetManagedPreferredCredentialArgs.builder()
-     *             .credentialName(var_.managed_database_preferred_credential_credential_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .credentialName(managedDatabasePreferredCredentialCredentialName)
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -18884,7 +18884,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredentials = DatabaseFunctions.getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -18926,7 +18926,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredentials = DatabaseFunctions.getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -18968,7 +18968,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredentials = DatabaseFunctions.getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -19010,7 +19010,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasePreferredCredentials = DatabaseFunctions.getManagedPreferredCredentials(GetManagedPreferredCredentialsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -19052,7 +19052,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
-     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .oneoffPatchId(testOneoffPatchOciDatabaseOneoffPatch.id())
      *             .build());
      * 
      *     }
@@ -19094,7 +19094,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
-     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .oneoffPatchId(testOneoffPatchOciDatabaseOneoffPatch.id())
      *             .build());
      * 
      *     }
@@ -19136,7 +19136,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
-     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .oneoffPatchId(testOneoffPatchOciDatabaseOneoffPatch.id())
      *             .build());
      * 
      *     }
@@ -19178,7 +19178,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatch = DatabaseFunctions.getOneoffPatch(GetOneoffPatchArgs.builder()
-     *             .oneoffPatchId(oci_database_oneoff_patch.test_oneoff_patch().id())
+     *             .oneoffPatchId(testOneoffPatchOciDatabaseOneoffPatch.id())
      *             .build());
      * 
      *     }
@@ -19220,9 +19220,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oneoff_patch_display_name())
-     *             .state(var_.oneoff_patch_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oneoffPatchDisplayName)
+     *             .state(oneoffPatchState)
      *             .build());
      * 
      *     }
@@ -19264,9 +19264,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oneoff_patch_display_name())
-     *             .state(var_.oneoff_patch_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oneoffPatchDisplayName)
+     *             .state(oneoffPatchState)
      *             .build());
      * 
      *     }
@@ -19308,9 +19308,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oneoff_patch_display_name())
-     *             .state(var_.oneoff_patch_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oneoffPatchDisplayName)
+     *             .state(oneoffPatchState)
      *             .build());
      * 
      *     }
@@ -19352,9 +19352,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOneoffPatches = DatabaseFunctions.getOneoffPatches(GetOneoffPatchesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.oneoff_patch_display_name())
-     *             .state(var_.oneoff_patch_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(oneoffPatchDisplayName)
+     *             .state(oneoffPatchState)
      *             .build());
      * 
      *     }
@@ -19396,7 +19396,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
-     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .pluggableDatabaseId(testPluggableDatabaseOciDatabasePluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -19438,7 +19438,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
-     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .pluggableDatabaseId(testPluggableDatabaseOciDatabasePluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -19480,7 +19480,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
-     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .pluggableDatabaseId(testPluggableDatabaseOciDatabasePluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -19522,7 +19522,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabase = DatabaseFunctions.getPluggableDatabase(GetPluggableDatabaseArgs.builder()
-     *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
+     *             .pluggableDatabaseId(testPluggableDatabaseOciDatabasePluggableDatabase.id())
      *             .build());
      * 
      *     }
@@ -19564,10 +19564,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbName(var_.pluggable_database_pdb_name())
-     *             .state(var_.pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -19609,10 +19609,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbName(var_.pluggable_database_pdb_name())
-     *             .state(var_.pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -19654,10 +19654,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbName(var_.pluggable_database_pdb_name())
-     *             .state(var_.pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -19699,10 +19699,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbName(var_.pluggable_database_pdb_name())
-     *             .state(var_.pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -19744,10 +19744,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbName(var_.pluggable_database_pdb_name())
-     *             .state(var_.pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -19789,10 +19789,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPluggableDatabases = DatabaseFunctions.getPluggableDatabases(GetPluggableDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .databaseId(oci_database_database.test_database().id())
-     *             .pdbName(var_.pluggable_database_pdb_name())
-     *             .state(var_.pluggable_database_state())
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.id())
+     *             .pdbName(pluggableDatabasePdbName)
+     *             .state(pluggableDatabaseState)
      *             .build());
      * 
      *     }
@@ -19834,9 +19834,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .giVersion(var_.system_version_gi_version())
-     *             .shape(var_.system_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionGiVersion)
+     *             .shape(systemVersionShape)
      *             .build());
      * 
      *     }
@@ -19878,9 +19878,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .giVersion(var_.system_version_gi_version())
-     *             .shape(var_.system_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionGiVersion)
+     *             .shape(systemVersionShape)
      *             .build());
      * 
      *     }
@@ -19922,9 +19922,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .giVersion(var_.system_version_gi_version())
-     *             .shape(var_.system_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionGiVersion)
+     *             .shape(systemVersionShape)
      *             .build());
      * 
      *     }
@@ -19966,9 +19966,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSystemVersions = DatabaseFunctions.getSystemVersions(GetSystemVersionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .giVersion(var_.system_version_gi_version())
-     *             .shape(var_.system_version_shape())
+     *             .compartmentId(compartmentId)
+     *             .giVersion(systemVersionGiVersion)
+     *             .shape(systemVersionShape)
      *             .build());
      * 
      *     }
@@ -20010,7 +20010,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmClusterOciDatabaseVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20052,7 +20052,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmClusterOciDatabaseVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20094,7 +20094,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmClusterOciDatabaseVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20136,7 +20136,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmCluster = DatabaseFunctions.getVmCluster(GetVmClusterArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmClusterOciDatabaseVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20179,8 +20179,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDatabaseVmClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -20223,8 +20223,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDatabaseVmClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -20267,8 +20267,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDatabaseVmClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -20311,8 +20311,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = DatabaseFunctions.getVmClusterNetwork(GetVmClusterNetworkArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDatabaseVmClusterNetwork.id())
      *             .build());
      * 
      *     }
@@ -20354,8 +20354,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetwork.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -20398,8 +20398,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetwork.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -20442,8 +20442,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetwork.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -20486,8 +20486,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworkDownloadConfigFile = DatabaseFunctions.getVmClusterNetworkDownloadConfigFile(GetVmClusterNetworkDownloadConfigFileArgs.builder()
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .vmClusterNetworkId(oci_database_vm_cluster_network.test_vm_cluster_network().id())
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .vmClusterNetworkId(testVmClusterNetwork.id())
      *             .base64EncodeContent(&#34;false&#34;)
      *             .build());
      * 
@@ -20530,10 +20530,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.vm_cluster_network_display_name())
-     *             .state(var_.vm_cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .state(vmClusterNetworkState)
      *             .build());
      * 
      *     }
@@ -20575,10 +20575,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.vm_cluster_network_display_name())
-     *             .state(var_.vm_cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .state(vmClusterNetworkState)
      *             .build());
      * 
      *     }
@@ -20620,10 +20620,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.vm_cluster_network_display_name())
-     *             .state(var_.vm_cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .state(vmClusterNetworkState)
      *             .build());
      * 
      *     }
@@ -20665,10 +20665,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetworks = DatabaseFunctions.getVmClusterNetworks(GetVmClusterNetworksArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .displayName(var_.vm_cluster_network_display_name())
-     *             .state(var_.vm_cluster_network_state())
+     *             .compartmentId(compartmentId)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .displayName(vmClusterNetworkDisplayName)
+     *             .state(vmClusterNetworkState)
      *             .build());
      * 
      *     }
@@ -20710,8 +20710,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
-     *             .patchId(oci_database_patch.test_patch().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchId(testPatch.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20753,8 +20753,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
-     *             .patchId(oci_database_patch.test_patch().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchId(testPatch.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20796,8 +20796,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
-     *             .patchId(oci_database_patch.test_patch().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchId(testPatch.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20839,8 +20839,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatch = DatabaseFunctions.getVmClusterPatch(GetVmClusterPatchArgs.builder()
-     *             .patchId(oci_database_patch.test_patch().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchId(testPatch.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20882,7 +20882,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20924,7 +20924,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -20966,7 +20966,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21008,7 +21008,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntries = DatabaseFunctions.getVmClusterPatchHistoryEntries(GetVmClusterPatchHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21050,8 +21050,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
-     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchHistoryEntryId(testPatchHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21093,8 +21093,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
-     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchHistoryEntryId(testPatchHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21136,8 +21136,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
-     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchHistoryEntryId(testPatchHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21179,8 +21179,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatchHistoryEntry = DatabaseFunctions.getVmClusterPatchHistoryEntry(GetVmClusterPatchHistoryEntryArgs.builder()
-     *             .patchHistoryEntryId(oci_database_patch_history_entry.test_patch_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .patchHistoryEntryId(testPatchHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21222,7 +21222,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21264,7 +21264,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21306,7 +21306,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21348,7 +21348,7 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterPatches = DatabaseFunctions.getVmClusterPatches(GetVmClusterPatchesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21426,8 +21426,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
-     *             .updateId(oci_database_update.test_update().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateId(testUpdate.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21469,8 +21469,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
-     *             .updateId(oci_database_update.test_update().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateId(testUpdate.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21512,8 +21512,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
-     *             .updateId(oci_database_update.test_update().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateId(testUpdate.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21555,8 +21555,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdate = DatabaseFunctions.getVmClusterUpdate(GetVmClusterUpdateArgs.builder()
-     *             .updateId(oci_database_update.test_update().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateId(testUpdate.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21598,9 +21598,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_history_entry_state())
-     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateHistoryEntryState)
+     *             .updateType(vmClusterUpdateHistoryEntryUpdateType)
      *             .build());
      * 
      *     }
@@ -21642,9 +21642,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_history_entry_state())
-     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateHistoryEntryState)
+     *             .updateType(vmClusterUpdateHistoryEntryUpdateType)
      *             .build());
      * 
      *     }
@@ -21686,9 +21686,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_history_entry_state())
-     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateHistoryEntryState)
+     *             .updateType(vmClusterUpdateHistoryEntryUpdateType)
      *             .build());
      * 
      *     }
@@ -21730,9 +21730,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntries = DatabaseFunctions.getVmClusterUpdateHistoryEntries(GetVmClusterUpdateHistoryEntriesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_history_entry_state())
-     *             .updateType(var_.vm_cluster_update_history_entry_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateHistoryEntryState)
+     *             .updateType(vmClusterUpdateHistoryEntryUpdateType)
      *             .build());
      * 
      *     }
@@ -21774,8 +21774,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
-     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21817,8 +21817,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
-     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21860,8 +21860,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
-     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21903,8 +21903,8 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdateHistoryEntry = DatabaseFunctions.getVmClusterUpdateHistoryEntry(GetVmClusterUpdateHistoryEntryArgs.builder()
-     *             .updateHistoryEntryId(oci_database_update_history_entry.test_update_history_entry().id())
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .vmClusterId(testVmCluster.id())
      *             .build());
      * 
      *     }
@@ -21946,9 +21946,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_state())
-     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateState)
+     *             .updateType(vmClusterUpdateUpdateType)
      *             .build());
      * 
      *     }
@@ -21990,9 +21990,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_state())
-     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateState)
+     *             .updateType(vmClusterUpdateUpdateType)
      *             .build());
      * 
      *     }
@@ -22034,9 +22034,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_state())
-     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateState)
+     *             .updateType(vmClusterUpdateUpdateType)
      *             .build());
      * 
      *     }
@@ -22078,9 +22078,9 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterUpdates = DatabaseFunctions.getVmClusterUpdates(GetVmClusterUpdatesArgs.builder()
-     *             .vmClusterId(oci_database_vm_cluster.test_vm_cluster().id())
-     *             .state(var_.vm_cluster_update_state())
-     *             .updateType(var_.vm_cluster_update_update_type())
+     *             .vmClusterId(testVmCluster.id())
+     *             .state(vmClusterUpdateState)
+     *             .updateType(vmClusterUpdateUpdateType)
      *             .build());
      * 
      *     }
@@ -22123,10 +22123,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(vmClusterState)
      *             .build());
      * 
      *     }
@@ -22169,10 +22169,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(vmClusterState)
      *             .build());
      * 
      *     }
@@ -22215,10 +22215,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(vmClusterState)
      *             .build());
      * 
      *     }
@@ -22261,10 +22261,10 @@ public final class DatabaseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusters = DatabaseFunctions.getVmClusters(GetVmClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.vm_cluster_display_name())
-     *             .exadataInfrastructureId(oci_database_exadata_infrastructure.test_exadata_infrastructure().id())
-     *             .state(var_.vm_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(vmClusterDisplayName)
+     *             .exadataInfrastructureId(testExadataInfrastructure.id())
+     *             .state(vmClusterState)
      *             .build());
      * 
      *     }

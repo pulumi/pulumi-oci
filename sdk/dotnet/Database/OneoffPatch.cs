@@ -25,18 +25,18 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOneoffPatch = new Oci.Database.OneoffPatch("testOneoffPatch", new()
+    ///     var testOneoffPatch = new Oci.Database.OneoffPatch("test_oneoff_patch", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbVersion = @var.Oneoff_patch_db_version,
-    ///         DisplayName = @var.Oneoff_patch_display_name,
-    ///         ReleaseUpdate = @var.Oneoff_patch_release_update,
-    ///         DefinedTags = @var.Oneoff_patch_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DbVersion = oneoffPatchDbVersion,
+    ///         DisplayName = oneoffPatchDisplayName,
+    ///         ReleaseUpdate = oneoffPatchReleaseUpdate,
+    ///         DefinedTags = oneoffPatchDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         OneOffPatches = @var.Oneoff_patch_one_off_patches,
+    ///         OneOffPatches = oneoffPatchOneOffPatches,
     ///     });
     /// 
     /// });

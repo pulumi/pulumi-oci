@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetAlertPolicyAssociations = oci.DataSafe.getTargetAlertPolicyAssociations({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.target_alert_policy_association_access_level,
- *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
- *     compartmentIdInSubtree: _var.target_alert_policy_association_compartment_id_in_subtree,
- *     state: _var.target_alert_policy_association_state,
- *     targetAlertPolicyAssociationId: oci_data_safe_target_alert_policy_association.test_target_alert_policy_association.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.target_alert_policy_association_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.target_alert_policy_association_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetAlertPolicyAssociationAccessLevel,
+ *     alertPolicyId: testAlertPolicy.id,
+ *     compartmentIdInSubtree: targetAlertPolicyAssociationCompartmentIdInSubtree,
+ *     state: targetAlertPolicyAssociationState,
+ *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociation.id,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: targetAlertPolicyAssociationTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,15 +141,15 @@ export interface GetTargetAlertPolicyAssociationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetAlertPolicyAssociations = oci.DataSafe.getTargetAlertPolicyAssociations({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.target_alert_policy_association_access_level,
- *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
- *     compartmentIdInSubtree: _var.target_alert_policy_association_compartment_id_in_subtree,
- *     state: _var.target_alert_policy_association_state,
- *     targetAlertPolicyAssociationId: oci_data_safe_target_alert_policy_association.test_target_alert_policy_association.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.target_alert_policy_association_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.target_alert_policy_association_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetAlertPolicyAssociationAccessLevel,
+ *     alertPolicyId: testAlertPolicy.id,
+ *     compartmentIdInSubtree: targetAlertPolicyAssociationCompartmentIdInSubtree,
+ *     state: targetAlertPolicyAssociationState,
+ *     targetAlertPolicyAssociationId: testTargetAlertPolicyAssociation.id,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: targetAlertPolicyAssociationTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: targetAlertPolicyAssociationTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testBuildRuns = Oci.DevOps.GetBuildRuns.Invoke(new()
         ///     {
-        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Build_run_display_name,
-        ///         Id = @var.Build_run_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Build_run_state,
+        ///         BuildPipelineId = testBuildPipeline.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = buildRunDisplayName,
+        ///         Id = buildRunId,
+        ///         ProjectId = testProject.Id,
+        ///         State = buildRunState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testBuildRuns = Oci.DevOps.GetBuildRuns.Invoke(new()
         ///     {
-        ///         BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Build_run_display_name,
-        ///         Id = @var.Build_run_id,
-        ///         ProjectId = oci_devops_project.Test_project.Id,
-        ///         State = @var.Build_run_state,
+        ///         BuildPipelineId = testBuildPipeline.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = buildRunDisplayName,
+        ///         Id = buildRunId,
+        ///         ProjectId = testProject.Id,
+        ///         State = buildRunState,
         ///     });
         /// 
         /// });

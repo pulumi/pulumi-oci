@@ -18,31 +18,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = new oci.datascience.Model("testModel", {
- *     compartmentId: _var.compartment_id,
- *     projectId: oci_datascience_project.test_project.id,
+ * const testModel = new oci.datascience.Model("test_model", {
+ *     compartmentId: compartmentId,
+ *     projectId: testProject.id,
  *     customMetadataLists: [{
- *         category: _var.model_custom_metadata_list_category,
- *         description: _var.model_custom_metadata_list_description,
- *         key: _var.model_custom_metadata_list_key,
- *         value: _var.model_custom_metadata_list_value,
+ *         category: modelCustomMetadataListCategory,
+ *         description: modelCustomMetadataListDescription,
+ *         key: modelCustomMetadataListKey,
+ *         value: modelCustomMetadataListValue,
  *     }],
  *     definedMetadataLists: [{
- *         category: _var.model_defined_metadata_list_category,
- *         description: _var.model_defined_metadata_list_description,
- *         key: _var.model_defined_metadata_list_key,
- *         value: _var.model_defined_metadata_list_value,
+ *         category: modelDefinedMetadataListCategory,
+ *         description: modelDefinedMetadataListDescription,
+ *         key: modelDefinedMetadataListKey,
+ *         value: modelDefinedMetadataListValue,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.model_description,
- *     displayName: _var.model_display_name,
+ *     description: modelDescription,
+ *     displayName: modelDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     inputSchema: _var.model_input_schema,
- *     outputSchema: _var.model_output_schema,
+ *     inputSchema: modelInputSchema,
+ *     outputSchema: modelOutputSchema,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

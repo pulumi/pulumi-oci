@@ -120,9 +120,9 @@ def get_external_asm_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_asm_instance_display_name"],
-        external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=compartment_id,
+        display_name=external_asm_instance_display_name,
+        external_asm_id=test_external_asm["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_external_asm_instances_output(compartment_id: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=var["compartment_id"],
-        display_name=var["external_asm_instance_display_name"],
-        external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"])
+    test_external_asm_instances = oci.DatabaseManagement.get_external_asm_instances(compartment_id=compartment_id,
+        display_name=external_asm_instance_display_name,
+        external_asm_id=test_external_asm["id"])
     ```
     <!--End PulumiCodeChooser -->
 

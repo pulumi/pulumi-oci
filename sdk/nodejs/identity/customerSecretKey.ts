@@ -26,9 +26,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCustomerSecretKey = new oci.identity.CustomerSecretKey("testCustomerSecretKey", {
- *     displayName: _var.customer_secret_key_display_name,
- *     userId: oci_identity_user.test_user.id,
+ * const testCustomerSecretKey = new oci.identity.CustomerSecretKey("test_customer_secret_key", {
+ *     displayName: customerSecretKeyDisplayName,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,10 +31,10 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCaBundles = Oci.CertificatesManagement.GetCaBundles.Invoke(new()
         ///     {
-        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Ca_bundle_name,
-        ///         State = @var.Ca_bundle_state,
+        ///         CaBundleId = testCaBundle.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = caBundleName,
+        ///         State = caBundleState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCaBundles = Oci.CertificatesManagement.GetCaBundles.Invoke(new()
         ///     {
-        ///         CaBundleId = oci_certificates_management_ca_bundle.Test_ca_bundle.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Ca_bundle_name,
-        ///         State = @var.Ca_bundle_state,
+        ///         CaBundleId = testCaBundle.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = caBundleName,
+        ///         State = caBundleState,
         ///     });
         /// 
         /// });

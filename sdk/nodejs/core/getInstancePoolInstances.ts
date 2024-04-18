@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstancePoolInstances = oci.Core.getInstancePoolInstances({
- *     compartmentId: _var.compartment_id,
- *     instancePoolId: oci_core_instance_pool.test_instance_pool.id,
- *     displayName: _var.instance_pool_instance_display_name,
+ *     compartmentId: compartmentId,
+ *     instancePoolId: testInstancePool.id,
+ *     displayName: instancePoolInstanceDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetInstancePoolInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstancePoolInstances = oci.Core.getInstancePoolInstances({
- *     compartmentId: _var.compartment_id,
- *     instancePoolId: oci_core_instance_pool.test_instance_pool.id,
- *     displayName: _var.instance_pool_instance_display_name,
+ *     compartmentId: compartmentId,
+ *     instancePoolId: testInstancePool.id,
+ *     displayName: instancePoolInstanceDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,42 +18,42 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIntegrationInstance = new oci.integration.IntegrationInstance("testIntegrationInstance", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.integration_instance_display_name,
- *     integrationInstanceType: _var.integration_instance_integration_instance_type,
- *     isByol: _var.integration_instance_is_byol,
- *     messagePacks: _var.integration_instance_message_packs,
+ * const testIntegrationInstance = new oci.integration.IntegrationInstance("test_integration_instance", {
+ *     compartmentId: compartmentId,
+ *     displayName: integrationInstanceDisplayName,
+ *     integrationInstanceType: integrationInstanceIntegrationInstanceType,
+ *     isByol: integrationInstanceIsByol,
+ *     messagePacks: integrationInstanceMessagePacks,
  *     alternateCustomEndpoints: [{
- *         hostname: _var.integration_instance_alternate_custom_endpoints_hostname,
- *         certificateSecretId: oci_vault_secret.test_secret.id,
+ *         hostname: integrationInstanceAlternateCustomEndpointsHostname,
+ *         certificateSecretId: testSecret.id,
  *     }],
- *     consumptionModel: _var.integration_instance_consumption_model,
+ *     consumptionModel: integrationInstanceConsumptionModel,
  *     customEndpoint: {
- *         hostname: _var.integration_instance_custom_endpoint_hostname,
- *         certificateSecretId: oci_vault_secret.test_secret.id,
+ *         hostname: integrationInstanceCustomEndpointHostname,
+ *         certificateSecretId: testSecret.id,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     domainId: oci_identity_domain.test_domain.id,
+ *     domainId: testDomain.id,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     idcsAt: _var.integration_instance_idcs_at,
- *     isFileServerEnabled: _var.integration_instance_is_file_server_enabled,
- *     isVisualBuilderEnabled: _var.integration_instance_is_visual_builder_enabled,
+ *     idcsAt: integrationInstanceIdcsAt,
+ *     isFileServerEnabled: integrationInstanceIsFileServerEnabled,
+ *     isVisualBuilderEnabled: integrationInstanceIsVisualBuilderEnabled,
  *     networkEndpointDetails: {
- *         networkEndpointType: _var.integration_instance_network_endpoint_details_network_endpoint_type,
- *         allowlistedHttpIps: _var.integration_instance_network_endpoint_details_allowlisted_http_ips,
+ *         networkEndpointType: integrationInstanceNetworkEndpointDetailsNetworkEndpointType,
+ *         allowlistedHttpIps: integrationInstanceNetworkEndpointDetailsAllowlistedHttpIps,
  *         allowlistedHttpVcns: [{
- *             id: _var.integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
- *             allowlistedIps: _var.integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
+ *             id: integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsId,
+ *             allowlistedIps: integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps,
  *         }],
- *         isIntegrationVcnAllowlisted: _var.integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
+ *         isIntegrationVcnAllowlisted: integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted,
  *     },
- *     shape: _var.integration_instance_shape,
- *     state: _var.integration_instance_target_state,
+ *     shape: integrationInstanceShape,
+ *     state: integrationInstanceTargetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

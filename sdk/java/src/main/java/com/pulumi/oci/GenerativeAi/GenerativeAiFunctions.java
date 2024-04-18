@@ -59,7 +59,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster().id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
      *             .build());
      * 
      *     }
@@ -101,7 +101,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster().id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
      *             .build());
      * 
      *     }
@@ -143,7 +143,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster().id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiCluster = GenerativeAiFunctions.getDedicatedAiCluster(GetDedicatedAiClusterArgs.builder()
-     *             .dedicatedAiClusterId(oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster().id())
+     *             .dedicatedAiClusterId(testDedicatedAiClusterOciGenerativeAiDedicatedAiCluster.id())
      *             .build());
      * 
      *     }
@@ -227,10 +227,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dedicated_ai_cluster_display_name())
-     *             .id(var_.dedicated_ai_cluster_id())
-     *             .state(var_.dedicated_ai_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dedicatedAiClusterDisplayName)
+     *             .id(dedicatedAiClusterId)
+     *             .state(dedicatedAiClusterState)
      *             .build());
      * 
      *     }
@@ -272,10 +272,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dedicated_ai_cluster_display_name())
-     *             .id(var_.dedicated_ai_cluster_id())
-     *             .state(var_.dedicated_ai_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dedicatedAiClusterDisplayName)
+     *             .id(dedicatedAiClusterId)
+     *             .state(dedicatedAiClusterState)
      *             .build());
      * 
      *     }
@@ -317,10 +317,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dedicated_ai_cluster_display_name())
-     *             .id(var_.dedicated_ai_cluster_id())
-     *             .state(var_.dedicated_ai_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dedicatedAiClusterDisplayName)
+     *             .id(dedicatedAiClusterId)
+     *             .state(dedicatedAiClusterState)
      *             .build());
      * 
      *     }
@@ -362,10 +362,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.dedicated_ai_cluster_display_name())
-     *             .id(var_.dedicated_ai_cluster_id())
-     *             .state(var_.dedicated_ai_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dedicatedAiClusterDisplayName)
+     *             .id(dedicatedAiClusterId)
+     *             .state(dedicatedAiClusterState)
      *             .build());
      * 
      *     }
@@ -407,7 +407,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_generative_ai_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
      *             .build());
      * 
      *     }
@@ -449,7 +449,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_generative_ai_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
      *             .build());
      * 
      *     }
@@ -491,7 +491,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_generative_ai_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
      *             .build());
      * 
      *     }
@@ -533,7 +533,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = GenerativeAiFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_generative_ai_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciGenerativeAiEndpoint.id())
      *             .build());
      * 
      *     }
@@ -575,10 +575,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .id(var_.endpoint_id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .id(endpointId)
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -620,10 +620,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .id(var_.endpoint_id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .id(endpointId)
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -665,10 +665,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .id(var_.endpoint_id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .id(endpointId)
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -710,10 +710,10 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = GenerativeAiFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .id(var_.endpoint_id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .id(endpointId)
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -755,7 +755,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_generative_ai_model.test_model().id())
+     *             .modelId(testModelOciGenerativeAiModel.id())
      *             .build());
      * 
      *     }
@@ -797,7 +797,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_generative_ai_model.test_model().id())
+     *             .modelId(testModelOciGenerativeAiModel.id())
      *             .build());
      * 
      *     }
@@ -839,7 +839,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_generative_ai_model.test_model().id())
+     *             .modelId(testModelOciGenerativeAiModel.id())
      *             .build());
      * 
      *     }
@@ -881,7 +881,7 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = GenerativeAiFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_generative_ai_model.test_model().id())
+     *             .modelId(testModelOciGenerativeAiModel.id())
      *             .build());
      * 
      *     }
@@ -923,12 +923,12 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = GenerativeAiFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capabilities(var_.model_capability())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .state(var_.model_state())
-     *             .vendor(var_.model_vendor())
+     *             .compartmentId(compartmentId)
+     *             .capabilities(modelCapability)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .state(modelState)
+     *             .vendor(modelVendor)
      *             .build());
      * 
      *     }
@@ -970,12 +970,12 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = GenerativeAiFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capabilities(var_.model_capability())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .state(var_.model_state())
-     *             .vendor(var_.model_vendor())
+     *             .compartmentId(compartmentId)
+     *             .capabilities(modelCapability)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .state(modelState)
+     *             .vendor(modelVendor)
      *             .build());
      * 
      *     }
@@ -1017,12 +1017,12 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = GenerativeAiFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capabilities(var_.model_capability())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .state(var_.model_state())
-     *             .vendor(var_.model_vendor())
+     *             .compartmentId(compartmentId)
+     *             .capabilities(modelCapability)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .state(modelState)
+     *             .vendor(modelVendor)
      *             .build());
      * 
      *     }
@@ -1064,12 +1064,12 @@ public final class GenerativeAiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = GenerativeAiFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capabilities(var_.model_capability())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .state(var_.model_state())
-     *             .vendor(var_.model_vendor())
+     *             .compartmentId(compartmentId)
+     *             .capabilities(modelCapability)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .state(modelState)
+     *             .vendor(modelVendor)
      *             .build());
      * 
      *     }

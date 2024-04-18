@@ -400,14 +400,14 @@ class EmWarehouse(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_em_warehouse = oci.em_warehouse.EmWarehouse("testEmWarehouse",
-            compartment_id=var["compartment_id"],
-            em_bridge_id=oci_em_warehouse_em_bridge["test_em_bridge"]["id"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        test_em_warehouse = oci.em_warehouse.EmWarehouse("test_em_warehouse",
+            compartment_id=compartment_id,
+            em_bridge_id=test_em_bridge["id"],
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["em_warehouse_display_name"],
+            display_name=em_warehouse_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -453,14 +453,14 @@ class EmWarehouse(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_em_warehouse = oci.em_warehouse.EmWarehouse("testEmWarehouse",
-            compartment_id=var["compartment_id"],
-            em_bridge_id=oci_em_warehouse_em_bridge["test_em_bridge"]["id"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        test_em_warehouse = oci.em_warehouse.EmWarehouse("test_em_warehouse",
+            compartment_id=compartment_id,
+            em_bridge_id=test_em_bridge["id"],
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["em_warehouse_display_name"],
+            display_name=em_warehouse_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

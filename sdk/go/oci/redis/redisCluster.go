@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Redis.NewRedisCluster(ctx, "testRedisCluster", &Redis.RedisClusterArgs{
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				DisplayName:     pulumi.Any(_var.Redis_cluster_display_name),
-//				NodeCount:       pulumi.Any(_var.Redis_cluster_node_count),
-//				NodeMemoryInGbs: pulumi.Any(_var.Redis_cluster_node_memory_in_gbs),
-//				SoftwareVersion: pulumi.Any(_var.Redis_cluster_software_version),
-//				SubnetId:        pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := Redis.NewRedisCluster(ctx, "test_redis_cluster", &Redis.RedisClusterArgs{
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				DisplayName:     pulumi.Any(redisClusterDisplayName),
+//				NodeCount:       pulumi.Any(redisClusterNodeCount),
+//				NodeMemoryInGbs: pulumi.Any(redisClusterNodeMemoryInGbs),
+//				SoftwareVersion: pulumi.Any(redisClusterSoftwareVersion),
+//				SubnetId:        pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				NsgIds: pulumi.Any(_var.Redis_cluster_nsg_ids),
+//				NsgIds: pulumi.Any(redisClusterNsgIds),
 //			})
 //			if err != nil {
 //				return err

@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditArchiveRetrieval = oci.DataSafe.getAuditArchiveRetrieval({
- *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
+ *     auditArchiveRetrievalId: testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -127,7 +127,7 @@ export interface GetAuditArchiveRetrievalResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditArchiveRetrieval = oci.DataSafe.getAuditArchiveRetrieval({
- *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
+ *     auditArchiveRetrievalId: testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

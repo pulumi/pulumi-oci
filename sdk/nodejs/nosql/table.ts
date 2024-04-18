@@ -18,19 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTable = new oci.nosql.Table("testTable", {
- *     compartmentId: _var.compartment_id,
- *     ddlStatement: _var.table_ddl_statement,
- *     definedTags: _var.table_defined_tags,
+ * const testTable = new oci.nosql.Table("test_table", {
+ *     compartmentId: compartmentId,
+ *     ddlStatement: tableDdlStatement,
+ *     name: tableName,
+ *     definedTags: tableDefinedTags,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAutoReclaimable: _var.table_is_auto_reclaimable,
+ *     isAutoReclaimable: tableIsAutoReclaimable,
  *     tableLimits: {
- *         maxReadUnits: _var.table_table_limits_max_read_units,
- *         maxStorageInGbs: _var.table_table_limits_max_storage_in_gbs,
- *         maxWriteUnits: _var.table_table_limits_max_write_units,
- *         capacityMode: _var.table_table_limits_capacity_mode,
+ *         maxReadUnits: tableTableLimitsMaxReadUnits,
+ *         maxStorageInGbs: tableTableLimitsMaxStorageInGbs,
+ *         maxWriteUnits: tableTableLimitsMaxWriteUnits,
+ *         capacityMode: tableTableLimitsCapacityMode,
  *     },
  * });
  * ```

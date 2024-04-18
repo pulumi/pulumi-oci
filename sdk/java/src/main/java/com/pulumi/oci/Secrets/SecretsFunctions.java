@@ -48,10 +48,10 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
-     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
-     *             .stage(var_.secretbundle_stage())
-     *             .versionNumber(var_.secretbundle_version_number())
+     *             .secretId(testSecret.id())
+     *             .secretVersionName(testSecretVersion.name())
+     *             .stage(secretbundleStage)
+     *             .versionNumber(secretbundleVersionNumber)
      *             .build());
      * 
      *     }
@@ -94,10 +94,10 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
-     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
-     *             .stage(var_.secretbundle_stage())
-     *             .versionNumber(var_.secretbundle_version_number())
+     *             .secretId(testSecret.id())
+     *             .secretVersionName(testSecretVersion.name())
+     *             .stage(secretbundleStage)
+     *             .versionNumber(secretbundleVersionNumber)
      *             .build());
      * 
      *     }
@@ -140,10 +140,10 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
-     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
-     *             .stage(var_.secretbundle_stage())
-     *             .versionNumber(var_.secretbundle_version_number())
+     *             .secretId(testSecret.id())
+     *             .secretVersionName(testSecretVersion.name())
+     *             .stage(secretbundleStage)
+     *             .versionNumber(secretbundleVersionNumber)
      *             .build());
      * 
      *     }
@@ -186,10 +186,10 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundle = SecretsFunctions.getSecretbundle(GetSecretbundleArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
-     *             .secretVersionName(oci_vault_secret_version.test_secret_version().name())
-     *             .stage(var_.secretbundle_stage())
-     *             .versionNumber(var_.secretbundle_version_number())
+     *             .secretId(testSecret.id())
+     *             .secretVersionName(testSecretVersion.name())
+     *             .stage(secretbundleStage)
+     *             .versionNumber(secretbundleVersionNumber)
      *             .build());
      * 
      *     }
@@ -231,7 +231,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretId(testSecret.id())
      *             .build());
      * 
      *     }
@@ -273,7 +273,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretId(testSecret.id())
      *             .build());
      * 
      *     }
@@ -315,7 +315,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretId(testSecret.id())
      *             .build());
      * 
      *     }
@@ -357,7 +357,7 @@ public final class SecretsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecretbundleVersions = SecretsFunctions.getSecretbundleVersions(GetSecretbundleVersionsArgs.builder()
-     *             .secretId(oci_vault_secret.test_secret().id())
+     *             .secretId(testSecret.id())
      *             .build());
      * 
      *     }

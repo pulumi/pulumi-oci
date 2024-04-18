@@ -284,7 +284,7 @@ def get_virtual_node_pool(virtual_node_pool_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=oci_containerengine_virtual_node_pool["test_virtual_node_pool"]["id"])
+    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=test_virtual_node_pool_oci_containerengine_virtual_node_pool["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -334,7 +334,7 @@ def get_virtual_node_pool_output(virtual_node_pool_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=oci_containerengine_virtual_node_pool["test_virtual_node_pool"]["id"])
+    test_virtual_node_pool = oci.ContainerEngine.get_virtual_node_pool(virtual_node_pool_id=test_virtual_node_pool_oci_containerengine_virtual_node_pool["id"])
     ```
     <!--End PulumiCodeChooser -->
 

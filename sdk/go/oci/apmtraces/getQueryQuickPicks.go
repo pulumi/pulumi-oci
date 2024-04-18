@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmTraces.GetQueryQuickPicks(ctx, &apmtraces.GetQueryQuickPicksArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//				ApmDomainId: testApmDomain.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,15 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetLibraryMaskingFormats(ctx, &datasafe.GetLibraryMaskingFormatsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.Library_masking_format_access_level),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Library_masking_format_compartment_id_in_subtree),
-//				DisplayName:                     pulumi.StringRef(_var.Library_masking_format_display_name),
-//				LibraryMaskingFormatId:          pulumi.StringRef(oci_data_safe_library_masking_format.Test_library_masking_format.Id),
-//				LibraryMaskingFormatSource:      pulumi.StringRef(_var.Library_masking_format_library_masking_format_source),
-//				State:                           pulumi.StringRef(_var.Library_masking_format_state),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Library_masking_format_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Library_masking_format_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(libraryMaskingFormatAccessLevel),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(libraryMaskingFormatCompartmentIdInSubtree),
+//				DisplayName:                     pulumi.StringRef(libraryMaskingFormatDisplayName),
+//				LibraryMaskingFormatId:          pulumi.StringRef(testLibraryMaskingFormat.Id),
+//				LibraryMaskingFormatSource:      pulumi.StringRef(libraryMaskingFormatLibraryMaskingFormatSource),
+//				State:                           pulumi.StringRef(libraryMaskingFormatState),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(libraryMaskingFormatTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -76,7 +76,7 @@ def get_configuration(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Audit.get_configuration(compartment_id=var["tenancy_ocid"])
+    test_configuration = oci.Audit.get_configuration(compartment_id=tenancy_ocid)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -109,7 +109,7 @@ def get_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.Audit.get_configuration(compartment_id=var["tenancy_ocid"])
+    test_configuration = oci.Audit.get_configuration(compartment_id=tenancy_ocid)
     ```
     <!--End PulumiCodeChooser -->
 

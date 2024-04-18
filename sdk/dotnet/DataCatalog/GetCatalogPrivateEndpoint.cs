@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogPrivateEndpoint = Oci.DataCatalog.GetCatalogPrivateEndpoint.Invoke(new()
         ///     {
-        ///         CatalogPrivateEndpointId = oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
+        ///         CatalogPrivateEndpointId = testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testCatalogPrivateEndpoint = Oci.DataCatalog.GetCatalogPrivateEndpoint.Invoke(new()
         ///     {
-        ///         CatalogPrivateEndpointId = oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
+        ///         CatalogPrivateEndpointId = testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.Id,
         ///     });
         /// 
         /// });

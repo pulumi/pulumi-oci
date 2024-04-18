@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetTenancy(ctx, &identity.GetTenancyArgs{
-//				TenancyId: _var.Tenancy_ocid,
+//				TenancyId: tenancyOcid,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -341,7 +341,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -383,7 +383,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -425,7 +425,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -467,7 +467,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoint = DatabaseManagementFunctions.getDbManagementPrivateEndpoint(GetDbManagementPrivateEndpointArgs.builder()
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpointOciDatabaseManagementDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -509,8 +509,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -552,8 +552,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -595,8 +595,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -638,8 +638,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabase = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabase(GetDbManagementPrivateEndpointAssociatedDatabaseArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -681,8 +681,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -724,8 +724,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -767,8 +767,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -810,8 +810,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpointAssociatedDatabases = DatabaseManagementFunctions.getDbManagementPrivateEndpointAssociatedDatabases(GetDbManagementPrivateEndpointAssociatedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .dbManagementPrivateEndpointId(oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint().id())
+     *             .compartmentId(compartmentId)
+     *             .dbManagementPrivateEndpointId(testDbManagementPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -853,11 +853,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
-     *             .name(var_.db_management_private_endpoint_name())
-     *             .state(var_.db_management_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .isCluster(dbManagementPrivateEndpointIsCluster)
+     *             .name(dbManagementPrivateEndpointName)
+     *             .state(dbManagementPrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -899,11 +899,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
-     *             .name(var_.db_management_private_endpoint_name())
-     *             .state(var_.db_management_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .isCluster(dbManagementPrivateEndpointIsCluster)
+     *             .name(dbManagementPrivateEndpointName)
+     *             .state(dbManagementPrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -945,11 +945,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
-     *             .name(var_.db_management_private_endpoint_name())
-     *             .state(var_.db_management_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .isCluster(dbManagementPrivateEndpointIsCluster)
+     *             .name(dbManagementPrivateEndpointName)
+     *             .state(dbManagementPrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -991,11 +991,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbManagementPrivateEndpoints = DatabaseManagementFunctions.getDbManagementPrivateEndpoints(GetDbManagementPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .isCluster(var_.db_management_private_endpoint_is_cluster())
-     *             .name(var_.db_management_private_endpoint_name())
-     *             .state(var_.db_management_private_endpoint_state())
-     *             .vcnId(oci_core_vcn.test_vcn().id())
+     *             .compartmentId(compartmentId)
+     *             .isCluster(dbManagementPrivateEndpointIsCluster)
+     *             .name(dbManagementPrivateEndpointName)
+     *             .state(dbManagementPrivateEndpointState)
+     *             .vcnId(testVcn.id())
      *             .build());
      * 
      *     }
@@ -1037,7 +1037,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1079,7 +1079,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1121,7 +1121,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1163,7 +1163,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsm = DatabaseManagementFunctions.getExternalAsm(GetExternalAsmArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .externalAsmId(testExternalAsmOciDatabaseManagementExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1205,8 +1205,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1248,8 +1248,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1291,8 +1291,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1334,8 +1334,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmConfiguration = DatabaseManagementFunctions.getExternalAsmConfiguration(GetExternalAsmConfigurationArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_configuration_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1377,8 +1377,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1420,8 +1420,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1463,8 +1463,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1506,8 +1506,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmDiskGroups = DatabaseManagementFunctions.getExternalAsmDiskGroups(GetExternalAsmDiskGroupsArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_disk_group_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmDiskGroupOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -1549,7 +1549,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
      *             .build());
      * 
      *     }
@@ -1591,7 +1591,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
      *             .build());
      * 
      *     }
@@ -1633,7 +1633,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
      *             .build());
      * 
      *     }
@@ -1675,7 +1675,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstance = DatabaseManagementFunctions.getExternalAsmInstance(GetExternalAsmInstanceArgs.builder()
-     *             .externalAsmInstanceId(oci_database_management_external_asm_instance.test_external_asm_instance().id())
+     *             .externalAsmInstanceId(testExternalAsmInstanceOciDatabaseManagementExternalAsmInstance.id())
      *             .build());
      * 
      *     }
@@ -1717,9 +1717,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_instance_display_name())
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1761,9 +1761,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_instance_display_name())
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1805,9 +1805,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_instance_display_name())
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1849,9 +1849,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_instance_display_name())
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1893,9 +1893,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_instance_display_name())
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1937,9 +1937,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmInstances = DatabaseManagementFunctions.getExternalAsmInstances(GetExternalAsmInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_instance_display_name())
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmInstanceDisplayName)
+     *             .externalAsmId(testExternalAsm.id())
      *             .build());
      * 
      *     }
@@ -1981,8 +1981,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -2024,8 +2024,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -2067,8 +2067,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -2110,8 +2110,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsmUsers = DatabaseManagementFunctions.getExternalAsmUsers(GetExternalAsmUsersArgs.builder()
-     *             .externalAsmId(oci_database_management_external_asm.test_external_asm().id())
-     *             .opcNamedCredentialId(var_.external_asm_user_opc_named_credential_id())
+     *             .externalAsmId(testExternalAsm.id())
+     *             .opcNamedCredentialId(externalAsmUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -2153,9 +2153,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -2197,9 +2197,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -2241,9 +2241,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -2285,9 +2285,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -2329,9 +2329,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -2373,9 +2373,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalAsms = DatabaseManagementFunctions.getExternalAsms(GetExternalAsmsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_asm_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalAsmDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -2417,7 +2417,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2459,7 +2459,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2501,7 +2501,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2543,7 +2543,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalCluster = DatabaseManagementFunctions.getExternalCluster(GetExternalClusterArgs.builder()
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .externalClusterId(testExternalClusterOciDatabaseManagementExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2585,7 +2585,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
      *             .build());
      * 
      *     }
@@ -2627,7 +2627,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
      *             .build());
      * 
      *     }
@@ -2669,7 +2669,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
      *             .build());
      * 
      *     }
@@ -2711,7 +2711,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstance = DatabaseManagementFunctions.getExternalClusterInstance(GetExternalClusterInstanceArgs.builder()
-     *             .externalClusterInstanceId(oci_database_management_external_cluster_instance.test_external_cluster_instance().id())
+     *             .externalClusterInstanceId(testExternalClusterInstanceOciDatabaseManagementExternalClusterInstance.id())
      *             .build());
      * 
      *     }
@@ -2753,9 +2753,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_instance_display_name())
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2797,9 +2797,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_instance_display_name())
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2841,9 +2841,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_instance_display_name())
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2885,9 +2885,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_instance_display_name())
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2929,9 +2929,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_instance_display_name())
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -2973,9 +2973,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusterInstances = DatabaseManagementFunctions.getExternalClusterInstances(GetExternalClusterInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_instance_display_name())
-     *             .externalClusterId(oci_database_management_external_cluster.test_external_cluster().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterInstanceDisplayName)
+     *             .externalClusterId(testExternalCluster.id())
      *             .build());
      * 
      *     }
@@ -3017,9 +3017,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3061,9 +3061,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3105,9 +3105,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3149,9 +3149,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3193,9 +3193,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3237,9 +3237,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalClusters = DatabaseManagementFunctions.getExternalClusters(GetExternalClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_cluster_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalClusterDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3281,9 +3281,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_database_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3325,9 +3325,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_database_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3369,9 +3369,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_database_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3413,9 +3413,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_database_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3457,9 +3457,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_database_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3501,9 +3501,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDatabases = DatabaseManagementFunctions.getExternalDatabases(GetExternalDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_database_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDatabaseDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3545,7 +3545,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
      *             .build());
      * 
      *     }
@@ -3587,7 +3587,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
      *             .build());
      * 
      *     }
@@ -3629,7 +3629,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
      *             .build());
      * 
      *     }
@@ -3671,7 +3671,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHome = DatabaseManagementFunctions.getExternalDbHome(GetExternalDbHomeArgs.builder()
-     *             .externalDbHomeId(oci_database_management_external_db_home.test_external_db_home().id())
+     *             .externalDbHomeId(testExternalDbHomeOciDatabaseManagementExternalDbHome.id())
      *             .build());
      * 
      *     }
@@ -3713,9 +3713,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_home_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3757,9 +3757,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_home_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3801,9 +3801,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_home_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3845,9 +3845,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_home_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3889,9 +3889,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_home_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3933,9 +3933,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbHomes = DatabaseManagementFunctions.getExternalDbHomes(GetExternalDbHomesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_home_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbHomeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -3977,7 +3977,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
      *             .build());
      * 
      *     }
@@ -4019,7 +4019,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
      *             .build());
      * 
      *     }
@@ -4061,7 +4061,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
      *             .build());
      * 
      *     }
@@ -4103,7 +4103,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNode = DatabaseManagementFunctions.getExternalDbNode(GetExternalDbNodeArgs.builder()
-     *             .externalDbNodeId(oci_database_management_external_db_node.test_external_db_node().id())
+     *             .externalDbNodeId(testExternalDbNodeOciDatabaseManagementExternalDbNode.id())
      *             .build());
      * 
      *     }
@@ -4145,9 +4145,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_node_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4189,9 +4189,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_node_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4233,9 +4233,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_node_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4277,9 +4277,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_node_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4321,9 +4321,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_node_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4365,9 +4365,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbNodes = DatabaseManagementFunctions.getExternalDbNodes(GetExternalDbNodesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_node_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbNodeDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4409,7 +4409,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4451,7 +4451,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4493,7 +4493,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4535,7 +4535,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystem = DatabaseManagementFunctions.getExternalDbSystem(GetExternalDbSystemArgs.builder()
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .externalDbSystemId(testExternalDbSystemOciDatabaseManagementExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4577,7 +4577,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
      *             .build());
      * 
      *     }
@@ -4619,7 +4619,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
      *             .build());
      * 
      *     }
@@ -4661,7 +4661,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
      *             .build());
      * 
      *     }
@@ -4703,7 +4703,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnector = DatabaseManagementFunctions.getExternalDbSystemConnector(GetExternalDbSystemConnectorArgs.builder()
-     *             .externalDbSystemConnectorId(oci_database_management_external_db_system_connector.test_external_db_system_connector().id())
+     *             .externalDbSystemConnectorId(testExternalDbSystemConnectorOciDatabaseManagementExternalDbSystemConnector.id())
      *             .build());
      * 
      *     }
@@ -4745,9 +4745,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_connector_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4789,9 +4789,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_connector_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4833,9 +4833,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_connector_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4877,9 +4877,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_connector_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4921,9 +4921,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_connector_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -4965,9 +4965,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemConnectors = DatabaseManagementFunctions.getExternalDbSystemConnectors(GetExternalDbSystemConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_connector_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemConnectorDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -5009,8 +5009,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDiscoveryDisplayName)
      *             .build());
      * 
      *     }
@@ -5052,8 +5052,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDiscoveryDisplayName)
      *             .build());
      * 
      *     }
@@ -5095,8 +5095,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDiscoveryDisplayName)
      *             .build());
      * 
      *     }
@@ -5138,8 +5138,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscoveries = DatabaseManagementFunctions.getExternalDbSystemDiscoveries(GetExternalDbSystemDiscoveriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_discovery_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDiscoveryDisplayName)
      *             .build());
      * 
      *     }
@@ -5181,7 +5181,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
      *             .build());
      * 
      *     }
@@ -5223,7 +5223,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
      *             .build());
      * 
      *     }
@@ -5265,7 +5265,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
      *             .build());
      * 
      *     }
@@ -5307,7 +5307,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystemDiscovery = DatabaseManagementFunctions.getExternalDbSystemDiscovery(GetExternalDbSystemDiscoveryArgs.builder()
-     *             .externalDbSystemDiscoveryId(oci_database_management_external_db_system_discovery.test_external_db_system_discovery().id())
+     *             .externalDbSystemDiscoveryId(testExternalDbSystemDiscoveryOciDatabaseManagementExternalDbSystemDiscovery.id())
      *             .build());
      * 
      *     }
@@ -5349,8 +5349,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDisplayName)
      *             .build());
      * 
      *     }
@@ -5392,8 +5392,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDisplayName)
      *             .build());
      * 
      *     }
@@ -5435,8 +5435,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDisplayName)
      *             .build());
      * 
      *     }
@@ -5478,8 +5478,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalDbSystems = DatabaseManagementFunctions.getExternalDbSystems(GetExternalDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_db_system_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalDbSystemDisplayName)
      *             .build());
      * 
      *     }
@@ -5522,7 +5522,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5565,7 +5565,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5608,7 +5608,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5651,7 +5651,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructure = DatabaseManagementFunctions.getExternalExadataInfrastructure(GetExternalExadataInfrastructureArgs.builder()
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructureOciDatabaseManagementExternalExadataInfrastructure.id())
      *             .build());
      * 
      *     }
@@ -5693,8 +5693,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalExadataInfrastructureDisplayName)
      *             .build());
      * 
      *     }
@@ -5736,8 +5736,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalExadataInfrastructureDisplayName)
      *             .build());
      * 
      *     }
@@ -5779,8 +5779,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalExadataInfrastructureDisplayName)
      *             .build());
      * 
      *     }
@@ -5822,8 +5822,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataInfrastructures = DatabaseManagementFunctions.getExternalExadataInfrastructures(GetExternalExadataInfrastructuresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_exadata_infrastructure_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalExadataInfrastructureDisplayName)
      *             .build());
      * 
      *     }
@@ -5865,7 +5865,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
      *             .build());
      * 
      *     }
@@ -5907,7 +5907,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
      *             .build());
      * 
      *     }
@@ -5949,7 +5949,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
      *             .build());
      * 
      *     }
@@ -5991,7 +5991,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnector = DatabaseManagementFunctions.getExternalExadataStorageConnector(GetExternalExadataStorageConnectorArgs.builder()
-     *             .externalExadataStorageConnectorId(oci_database_management_external_exadata_storage_connector.test_external_exadata_storage_connector().id())
+     *             .externalExadataStorageConnectorId(testExternalExadataStorageConnectorOciDatabaseManagementExternalExadataStorageConnector.id())
      *             .build());
      * 
      *     }
@@ -6033,9 +6033,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
      *     }
@@ -6077,9 +6077,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
      *     }
@@ -6121,9 +6121,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
      *     }
@@ -6165,9 +6165,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageConnectors = DatabaseManagementFunctions.getExternalExadataStorageConnectors(GetExternalExadataStorageConnectorsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_connector_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageConnectorDisplayName)
      *             .build());
      * 
      *     }
@@ -6209,7 +6209,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
      *             .build());
      * 
      *     }
@@ -6251,7 +6251,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
      *             .build());
      * 
      *     }
@@ -6293,7 +6293,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
      *             .build());
      * 
      *     }
@@ -6335,7 +6335,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageGrid = DatabaseManagementFunctions.getExternalExadataStorageGrid(GetExternalExadataStorageGridArgs.builder()
-     *             .externalExadataStorageGridId(oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid().id())
+     *             .externalExadataStorageGridId(testExternalExadataStorageGridOciDatabaseManagementExternalExadataStorageGrid.id())
      *             .build());
      * 
      *     }
@@ -6377,7 +6377,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6419,7 +6419,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6461,7 +6461,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6503,7 +6503,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServer = DatabaseManagementFunctions.getExternalExadataStorageServer(GetExternalExadataStorageServerArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServerOciDatabaseManagementExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6545,7 +6545,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6587,7 +6587,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6629,7 +6629,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6671,7 +6671,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerIormPlan = DatabaseManagementFunctions.getExternalExadataStorageServerIormPlan(GetExternalExadataStorageServerIormPlanArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6713,7 +6713,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6755,7 +6755,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6797,7 +6797,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6839,7 +6839,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerOpenAlertHistory = DatabaseManagementFunctions.getExternalExadataStorageServerOpenAlertHistory(GetExternalExadataStorageServerOpenAlertHistoryArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6881,7 +6881,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6923,7 +6923,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -6965,7 +6965,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -7007,7 +7007,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServerTopSqlCpuActivity = DatabaseManagementFunctions.getExternalExadataStorageServerTopSqlCpuActivity(GetExternalExadataStorageServerTopSqlCpuActivityArgs.builder()
-     *             .externalExadataStorageServerId(oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server().id())
+     *             .externalExadataStorageServerId(testExternalExadataStorageServer.id())
      *             .build());
      * 
      *     }
@@ -7049,9 +7049,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
      *     }
@@ -7093,9 +7093,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
      *     }
@@ -7137,9 +7137,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
      *     }
@@ -7181,9 +7181,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalExadataStorageServers = DatabaseManagementFunctions.getExternalExadataStorageServers(GetExternalExadataStorageServersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .displayName(var_.external_exadata_storage_server_display_name())
+     *             .compartmentId(compartmentId)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .displayName(externalExadataStorageServerDisplayName)
      *             .build());
      * 
      *     }
@@ -7225,7 +7225,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
      *             .build());
      * 
      *     }
@@ -7267,7 +7267,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
      *             .build());
      * 
      *     }
@@ -7309,7 +7309,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
      *             .build());
      * 
      *     }
@@ -7351,7 +7351,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListener = DatabaseManagementFunctions.getExternalListener(GetExternalListenerArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
+     *             .externalListenerId(testExternalListenerOciDatabaseManagementExternalListener.id())
      *             .build());
      * 
      *     }
@@ -7394,9 +7394,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
+     *             .externalListenerId(testExternalListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -7439,9 +7439,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
+     *             .externalListenerId(testExternalListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -7484,9 +7484,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
+     *             .externalListenerId(testExternalListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -7529,9 +7529,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListenerServices = DatabaseManagementFunctions.getExternalListenerServices(GetExternalListenerServicesArgs.builder()
-     *             .externalListenerId(oci_database_management_external_listener.test_external_listener().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.external_listener_service_opc_named_credential_id())
+     *             .externalListenerId(testExternalListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(externalListenerServiceOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -7573,9 +7573,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_listener_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -7617,9 +7617,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_listener_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -7661,9 +7661,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_listener_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -7705,9 +7705,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_listener_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -7749,9 +7749,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_listener_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -7793,9 +7793,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExternalListeners = DatabaseManagementFunctions.getExternalListeners(GetExternalListenersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.external_listener_display_name())
-     *             .externalDbSystemId(oci_database_management_external_db_system.test_external_db_system().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(externalListenerDisplayName)
+     *             .externalDbSystemId(testExternalDbSystem.id())
      *             .build());
      * 
      *     }
@@ -7837,13 +7837,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -7885,13 +7885,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -7933,13 +7933,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -7981,13 +7981,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatus = DatabaseManagementFunctions.getJobExecutionsStatus(GetJobExecutionsStatusArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -8029,13 +8029,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -8077,13 +8077,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -8125,13 +8125,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -8173,13 +8173,13 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobExecutionsStatuses = DatabaseManagementFunctions.getJobExecutionsStatuses(GetJobExecutionsStatusesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .endTime(var_.job_executions_status_end_time())
-     *             .startTime(var_.job_executions_status_start_time())
-     *             .id(var_.job_executions_status_id())
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.job_executions_status_name())
+     *             .compartmentId(compartmentId)
+     *             .endTime(jobExecutionsStatusEndTime)
+     *             .startTime(jobExecutionsStatusStartTime)
+     *             .id(jobExecutionsStatusId)
+     *             .managedDatabaseGroupId(testManagedDatabaseGroup.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(jobExecutionsStatusName)
      *             .build());
      * 
      *     }
@@ -8221,7 +8221,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -8263,7 +8263,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -8305,7 +8305,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -8347,7 +8347,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabase = DatabaseManagementFunctions.getManagedDatabase(GetManagedDatabaseArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabaseOciDatabaseManagementManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -8390,9 +8390,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8435,9 +8435,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8480,9 +8480,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8525,9 +8525,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTask = DatabaseManagementFunctions.getManagedDatabaseAddmTask(GetManagedDatabaseAddmTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8570,9 +8570,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8615,9 +8615,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8660,9 +8660,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8705,9 +8705,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAddmTasks = DatabaseManagementFunctions.getManagedDatabaseAddmTasks(GetManagedDatabaseAddmTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .timeEnd(var_.managed_database_addm_task_time_end())
-     *             .timeStart(var_.managed_database_addm_task_time_start())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .timeEnd(managedDatabaseAddmTaskTimeEnd)
+     *             .timeStart(managedDatabaseAddmTaskTimeStart)
      *             .build());
      * 
      *     }
@@ -8749,14 +8749,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -8798,14 +8798,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -8847,14 +8847,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -8896,14 +8896,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCount = DatabaseManagementFunctions.getManagedDatabaseAlertLogCount(GetManagedDatabaseAlertLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -8945,14 +8945,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -8994,14 +8994,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -9043,14 +9043,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -9092,14 +9092,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAlertLogCounts = DatabaseManagementFunctions.getManagedDatabaseAlertLogCounts(GetManagedDatabaseAlertLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_alert_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_alert_log_count_is_regular_expression())
-     *             .levelFilter(var_.managed_database_alert_log_count_level_filter())
-     *             .logSearchText(var_.managed_database_alert_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_alert_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_alert_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_alert_log_count_type_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAlertLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAlertLogCountIsRegularExpression)
+     *             .levelFilter(managedDatabaseAlertLogCountLevelFilter)
+     *             .logSearchText(managedDatabaseAlertLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAlertLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAlertLogCountTypeFilter)
      *             .build());
      * 
      *     }
@@ -9141,14 +9141,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9190,14 +9190,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9239,14 +9239,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9288,14 +9288,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCount = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCount(GetManagedDatabaseAttentionLogCountArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9337,14 +9337,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9386,14 +9386,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9435,14 +9435,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9484,14 +9484,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseAttentionLogCounts = DatabaseManagementFunctions.getManagedDatabaseAttentionLogCounts(GetManagedDatabaseAttentionLogCountsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .groupBy(var_.managed_database_attention_log_count_group_by())
-     *             .isRegularExpression(var_.managed_database_attention_log_count_is_regular_expression())
-     *             .logSearchText(var_.managed_database_attention_log_count_log_search_text())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_attention_log_count_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_attention_log_count_time_less_than_or_equal_to())
-     *             .typeFilter(var_.managed_database_attention_log_count_type_filter())
-     *             .urgencyFilter(var_.managed_database_attention_log_count_urgency_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .groupBy(managedDatabaseAttentionLogCountGroupBy)
+     *             .isRegularExpression(managedDatabaseAttentionLogCountIsRegularExpression)
+     *             .logSearchText(managedDatabaseAttentionLogCountLogSearchText)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseAttentionLogCountTimeLessThanOrEqualTo)
+     *             .typeFilter(managedDatabaseAttentionLogCountTypeFilter)
+     *             .urgencyFilter(managedDatabaseAttentionLogCountUrgencyFilter)
      *             .build());
      * 
      *     }
@@ -9533,9 +9533,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
-     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
+     *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
      * 
      *     }
@@ -9577,9 +9577,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
-     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
+     *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
      * 
      *     }
@@ -9621,9 +9621,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
-     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
+     *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
      * 
      *     }
@@ -9665,9 +9665,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseCursorCacheStatements = DatabaseManagementFunctions.getManagedDatabaseCursorCacheStatements(GetManagedDatabaseCursorCacheStatementsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_cursor_cache_statement_opc_named_credential_id())
-     *             .sqlText(var_.managed_database_cursor_cache_statement_sql_text())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseCursorCacheStatementOpcNamedCredentialId)
+     *             .sqlText(managedDatabaseCursorCacheStatementSqlText)
      *             .build());
      * 
      *     }
@@ -9709,7 +9709,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
      *             .build());
      * 
      *     }
@@ -9751,7 +9751,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
      *             .build());
      * 
      *     }
@@ -9793,7 +9793,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
      *             .build());
      * 
      *     }
@@ -9835,7 +9835,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroup = DatabaseManagementFunctions.getManagedDatabaseGroup(GetManagedDatabaseGroupArgs.builder()
-     *             .managedDatabaseGroupId(oci_database_management_managed_database_group.test_managed_database_group().id())
+     *             .managedDatabaseGroupId(testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.id())
      *             .build());
      * 
      *     }
@@ -9880,10 +9880,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.managed_database_group_id())
-     *             .name(var_.managed_database_group_name())
-     *             .state(var_.managed_database_group_state())
+     *             .compartmentId(compartmentId)
+     *             .id(managedDatabaseGroupId)
+     *             .name(managedDatabaseGroupName)
+     *             .state(managedDatabaseGroupState)
      *             .build());
      * 
      *     }
@@ -9928,10 +9928,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.managed_database_group_id())
-     *             .name(var_.managed_database_group_name())
-     *             .state(var_.managed_database_group_state())
+     *             .compartmentId(compartmentId)
+     *             .id(managedDatabaseGroupId)
+     *             .name(managedDatabaseGroupName)
+     *             .state(managedDatabaseGroupState)
      *             .build());
      * 
      *     }
@@ -9976,10 +9976,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.managed_database_group_id())
-     *             .name(var_.managed_database_group_name())
-     *             .state(var_.managed_database_group_state())
+     *             .compartmentId(compartmentId)
+     *             .id(managedDatabaseGroupId)
+     *             .name(managedDatabaseGroupName)
+     *             .state(managedDatabaseGroupState)
      *             .build());
      * 
      *     }
@@ -10024,10 +10024,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseGroups = DatabaseManagementFunctions.getManagedDatabaseGroups(GetManagedDatabaseGroupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .id(var_.managed_database_group_id())
-     *             .name(var_.managed_database_group_name())
-     *             .state(var_.managed_database_group_state())
+     *             .compartmentId(compartmentId)
+     *             .id(managedDatabaseGroupId)
+     *             .name(managedDatabaseGroupName)
+     *             .state(managedDatabaseGroupState)
      *             .build());
      * 
      *     }
@@ -10070,9 +10070,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
      *     }
@@ -10115,9 +10115,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
      *     }
@@ -10160,9 +10160,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
      *     }
@@ -10205,9 +10205,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecution = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecution(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionTaskName)
      *             .build());
      * 
      *     }
@@ -10249,9 +10249,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
      *     }
@@ -10293,9 +10293,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
      *     }
@@ -10337,9 +10337,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
      *     }
@@ -10381,9 +10381,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptArgs.builder()
-     *             .executionName(var_.managed_database_optimizer_statistics_advisor_execution_script_execution_name())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .taskName(var_.managed_database_optimizer_statistics_advisor_execution_script_task_name())
+     *             .executionName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .taskName(managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName)
      *             .build());
      * 
      *     }
@@ -10427,9 +10427,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -10473,9 +10473,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -10519,9 +10519,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -10565,9 +10565,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsAdvisorExecutions = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsAdvisorExecutions(GetManagedDatabaseOptimizerStatisticsAdvisorExecutionsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_advisor_execution_start_time_greater_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsAdvisorExecutionStartTimeGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -10614,11 +10614,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
-     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
      *             .build());
      * 
      *     }
@@ -10665,11 +10665,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
-     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
      *             .build());
      * 
      *     }
@@ -10716,11 +10716,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
-     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
      *             .build());
      * 
      *     }
@@ -10767,11 +10767,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionAggregations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionAggregations(GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs.builder()
-     *             .groupType(var_.managed_database_optimizer_statistics_collection_aggregation_group_type())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_aggregation_task_type())
+     *             .groupType(managedDatabaseOptimizerStatisticsCollectionAggregationGroupType)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationEndTimeLessThanOrEqualTo)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionAggregationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionAggregationTaskType)
      *             .build());
      * 
      *     }
@@ -10813,8 +10813,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
      *             .build());
      * 
      *     }
@@ -10856,8 +10856,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
      *             .build());
      * 
      *     }
@@ -10899,8 +10899,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
      *             .build());
      * 
      *     }
@@ -10942,8 +10942,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperation = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperation(GetManagedDatabaseOptimizerStatisticsCollectionOperationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .optimizerStatisticsCollectionOperationId(oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .optimizerStatisticsCollectionOperationId(testOptimizerStatisticsCollectionOperation.id())
      *             .build());
      * 
      *     }
@@ -10991,11 +10991,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
-     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
+     *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionOperationTaskType)
      *             .build());
      * 
      *     }
@@ -11043,11 +11043,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
-     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
+     *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionOperationTaskType)
      *             .build());
      * 
      *     }
@@ -11095,11 +11095,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
-     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
+     *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionOperationTaskType)
      *             .build());
      * 
      *     }
@@ -11147,11 +11147,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseOptimizerStatisticsCollectionOperations = DatabaseManagementFunctions.getManagedDatabaseOptimizerStatisticsCollectionOperations(GetManagedDatabaseOptimizerStatisticsCollectionOperationsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .endTimeLessThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to())
-     *             .filterBy(var_.managed_database_optimizer_statistics_collection_operation_filter_by())
-     *             .startTimeGreaterThanOrEqualTo(var_.managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to())
-     *             .taskType(var_.managed_database_optimizer_statistics_collection_operation_task_type())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .endTimeLessThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo)
+     *             .filterBy(managedDatabaseOptimizerStatisticsCollectionOperationFilterBy)
+     *             .startTimeGreaterThanOrEqualTo(managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo)
+     *             .taskType(managedDatabaseOptimizerStatisticsCollectionOperationTaskType)
      *             .build());
      * 
      *     }
@@ -11193,9 +11193,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11237,9 +11237,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11281,9 +11281,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11325,9 +11325,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaseline = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaseline(GetManagedDatabaseSqlPlanBaselineArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11371,8 +11371,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11416,8 +11416,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11461,8 +11461,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11506,8 +11506,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineConfiguration = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineConfiguration(GetManagedDatabaseSqlPlanBaselineConfigurationArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_configuration_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineConfigurationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11549,9 +11549,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_plan_baseline_job_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlPlanBaselineJobName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11593,9 +11593,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_plan_baseline_job_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlPlanBaselineJobName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11637,9 +11637,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_plan_baseline_job_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlPlanBaselineJobName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11681,9 +11681,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselineJobs = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselineJobs(GetManagedDatabaseSqlPlanBaselineJobsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_plan_baseline_job_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_job_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlPlanBaselineJobName)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -11725,21 +11725,21 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
-     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
-     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
-     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
-     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
-     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
-     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
-     *             .origin(var_.managed_database_sql_plan_baseline_origin())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
-     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
-     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
-     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
      *             .build());
      * 
      *     }
@@ -11781,21 +11781,21 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
-     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
-     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
-     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
-     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
-     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
-     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
-     *             .origin(var_.managed_database_sql_plan_baseline_origin())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
-     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
-     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
-     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
      *             .build());
      * 
      *     }
@@ -11837,21 +11837,21 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
-     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
-     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
-     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
-     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
-     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
-     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
-     *             .origin(var_.managed_database_sql_plan_baseline_origin())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
-     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
-     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
-     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
      *             .build());
      * 
      *     }
@@ -11893,21 +11893,21 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAccepted(var_.managed_database_sql_plan_baseline_is_accepted())
-     *             .isAdaptive(var_.managed_database_sql_plan_baseline_is_adaptive())
-     *             .isAutoPurged(var_.managed_database_sql_plan_baseline_is_auto_purged())
-     *             .isEnabled(var_.managed_database_sql_plan_baseline_is_enabled())
-     *             .isFixed(var_.managed_database_sql_plan_baseline_is_fixed())
-     *             .isNeverExecuted(var_.managed_database_sql_plan_baseline_is_never_executed())
-     *             .isReproduced(var_.managed_database_sql_plan_baseline_is_reproduced())
-     *             .opcNamedCredentialId(var_.managed_database_sql_plan_baseline_opc_named_credential_id())
-     *             .origin(var_.managed_database_sql_plan_baseline_origin())
-     *             .planName(var_.managed_database_sql_plan_baseline_plan_name())
-     *             .sqlHandle(var_.managed_database_sql_plan_baseline_sql_handle())
-     *             .sqlText(var_.managed_database_sql_plan_baseline_sql_text())
-     *             .timeLastExecutedGreaterThan(var_.managed_database_sql_plan_baseline_time_last_executed_greater_than())
-     *             .timeLastExecutedLessThan(var_.managed_database_sql_plan_baseline_time_last_executed_less_than())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
      *             .build());
      * 
      *     }
@@ -11949,11 +11949,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -11995,11 +11995,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12041,11 +12041,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12087,11 +12087,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTask = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTask(GetManagedDatabaseSqlTuningAdvisorTaskArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12133,12 +12133,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12180,12 +12180,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12227,12 +12227,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12274,12 +12274,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasks = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasks(GetManagedDatabaseSqlTuningAdvisorTasksArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_sql_tuning_advisor_task_name())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_task_opc_named_credential_id())
-     *             .status(var_.managed_database_sql_tuning_advisor_task_status())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseSqlTuningAdvisorTaskName)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTaskOpcNamedCredentialId)
+     *             .status(managedDatabaseSqlTuningAdvisorTaskStatus)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTaskTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -12323,11 +12323,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -12371,11 +12371,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -12419,11 +12419,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -12467,11 +12467,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparision = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_execution_plan_stats_comparision_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisionOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -12513,14 +12513,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12562,14 +12562,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12611,14 +12611,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12660,14 +12660,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFinding = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFinding(GetManagedDatabaseSqlTuningAdvisorTasksFindingArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12709,15 +12709,15 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12759,15 +12759,15 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12809,15 +12809,15 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12859,15 +12859,15 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksFindings = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksFindings(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecId(oci_database_management_begin_exec.test_begin_exec().id())
-     *             .endExecId(oci_database_management_end_exec.test_end_exec().id())
-     *             .findingFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_finding_filter())
-     *             .indexHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_index_hash_filter())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_finding_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_finding_search_period())
-     *             .statsHashFilter(var_.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecId(testBeginExec.id())
+     *             .endExecId(testEndExec.id())
+     *             .findingFilter(managedDatabaseSqlTuningAdvisorTasksFindingFindingFilter)
+     *             .indexHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingIndexHashFilter)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksFindingOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksFindingSearchPeriod)
+     *             .statsHashFilter(managedDatabaseSqlTuningAdvisorTasksFindingStatsHashFilter)
      *             .build());
      * 
      *     }
@@ -12910,10 +12910,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
      *             .build());
      * 
      *     }
@@ -12956,10 +12956,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
      *             .build());
      * 
      *     }
@@ -13002,10 +13002,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
      *             .build());
      * 
      *     }
@@ -13048,10 +13048,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendation = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendation(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
      *             .build());
      * 
      *     }
@@ -13094,11 +13094,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13141,11 +13141,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13188,11 +13188,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13235,11 +13235,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksRecommendations = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksRecommendations(GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs.builder()
-     *             .executionId(oci_database_management_execution.test_execution().id())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_recommendation_opc_named_credential_id())
+     *             .executionId(testExecution.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksRecommendationOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13281,11 +13281,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
-     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
+     *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13327,11 +13327,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
-     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
+     *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13373,11 +13373,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
-     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
+     *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13419,11 +13419,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan(GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanArgs.builder()
-     *             .attribute(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute())
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlObjectId(oci_objectstorage_object.test_object().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id())
+     *             .attribute(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute)
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlObjectId(testObject.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -13465,14 +13465,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
-     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
+     *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -13514,14 +13514,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
-     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
+     *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -13563,14 +13563,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
-     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
+     *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -13612,14 +13612,14 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = DatabaseManagementFunctions.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .sqlTuningAdvisorTaskId(oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task().id())
-     *             .beginExecIdGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to())
-     *             .endExecIdLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id())
-     *             .searchPeriod(var_.managed_database_sql_tuning_advisor_tasks_summary_report_search_period())
-     *             .timeGreaterThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to())
-     *             .timeLessThanOrEqualTo(var_.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .sqlTuningAdvisorTaskId(testSqlTuningAdvisorTask.id())
+     *             .beginExecIdGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo)
+     *             .endExecIdLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId)
+     *             .searchPeriod(managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod)
+     *             .timeGreaterThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo)
+     *             .timeLessThanOrEqualTo(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -13661,9 +13661,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13705,9 +13705,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13749,9 +13749,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13793,9 +13793,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSet = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSet(GetManagedDatabaseSqlTuningSetArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13837,10 +13837,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13882,10 +13882,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13927,10 +13927,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -13972,10 +13972,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseSqlTuningSets = DatabaseManagementFunctions.getManagedDatabaseSqlTuningSets(GetManagedDatabaseSqlTuningSetsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .nameContains(var_.managed_database_sql_tuning_set_name_contains())
-     *             .opcNamedCredentialId(var_.managed_database_sql_tuning_set_opc_named_credential_id())
-     *             .owner(var_.managed_database_sql_tuning_set_owner())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .nameContains(managedDatabaseSqlTuningSetNameContains)
+     *             .opcNamedCredentialId(managedDatabaseSqlTuningSetOpcNamedCredentialId)
+     *             .owner(managedDatabaseSqlTuningSetOwner)
      *             .build());
      * 
      *     }
@@ -14018,7 +14018,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -14061,7 +14061,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -14104,7 +14104,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -14147,7 +14147,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseTableStatistics = DatabaseManagementFunctions.getManagedDatabaseTableStatistics(GetManagedDatabaseTableStatisticsArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
+     *             .managedDatabaseId(testManagedDatabase.id())
      *             .build());
      * 
      *     }
@@ -14189,9 +14189,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14233,9 +14233,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14277,9 +14277,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14321,9 +14321,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUser = DatabaseManagementFunctions.getManagedDatabaseUser(GetManagedDatabaseUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14365,9 +14365,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
      *     }
@@ -14409,9 +14409,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
      *     }
@@ -14453,9 +14453,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
      *     }
@@ -14497,9 +14497,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivilege(GetManagedDatabaseUserConsumerGroupPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
      *             .build());
      * 
      *     }
@@ -14541,10 +14541,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14586,10 +14586,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14631,10 +14631,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14676,10 +14676,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserConsumerGroupPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserConsumerGroupPrivileges(GetManagedDatabaseUserConsumerGroupPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_consumer_group_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_consumer_group_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserConsumerGroupPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserConsumerGroupPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14721,9 +14721,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
      *     }
@@ -14765,9 +14765,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
      *     }
@@ -14809,9 +14809,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
      *     }
@@ -14853,9 +14853,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainer = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainer(GetManagedDatabaseUserDataAccessContainerArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
      *             .build());
      * 
      *     }
@@ -14897,10 +14897,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
+     *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14942,10 +14942,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
+     *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -14987,10 +14987,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
+     *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15032,10 +15032,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserDataAccessContainers = DatabaseManagementFunctions.getManagedDatabaseUserDataAccessContainers(GetManagedDatabaseUserDataAccessContainersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_data_access_container_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_data_access_container_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserDataAccessContainerName)
+     *             .opcNamedCredentialId(managedDatabaseUserDataAccessContainerOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15077,9 +15077,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
      *     }
@@ -15121,9 +15121,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
      *     }
@@ -15165,9 +15165,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
      *     }
@@ -15209,9 +15209,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivilege = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivilege(GetManagedDatabaseUserObjectPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
      *             .build());
      * 
      *     }
@@ -15253,10 +15253,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15298,10 +15298,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15343,10 +15343,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15388,10 +15388,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserObjectPrivileges = DatabaseManagementFunctions.getManagedDatabaseUserObjectPrivileges(GetManagedDatabaseUserObjectPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_object_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_object_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserObjectPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15433,9 +15433,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
      *     }
@@ -15477,9 +15477,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
      *     }
@@ -15521,9 +15521,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
      *     }
@@ -15565,9 +15565,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUser = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUser(GetManagedDatabaseUserProxiedForUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
      *             .build());
      * 
      *     }
@@ -15609,10 +15609,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15654,10 +15654,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15699,10 +15699,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15744,10 +15744,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserProxiedForUsers = DatabaseManagementFunctions.getManagedDatabaseUserProxiedForUsers(GetManagedDatabaseUserProxiedForUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_proxied_for_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_proxied_for_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserProxiedForUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserProxiedForUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -15789,9 +15789,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
      *     }
@@ -15833,9 +15833,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
      *     }
@@ -15877,9 +15877,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
      *     }
@@ -15921,9 +15921,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRole = DatabaseManagementFunctions.getManagedDatabaseUserRole(GetManagedDatabaseUserRoleArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
      *             .build());
      * 
      *     }
@@ -15965,10 +15965,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
+     *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16010,10 +16010,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
+     *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16055,10 +16055,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
+     *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16100,10 +16100,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUserRoles = DatabaseManagementFunctions.getManagedDatabaseUserRoles(GetManagedDatabaseUserRolesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_database_user_role_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_role_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabaseUserRoleName)
+     *             .opcNamedCredentialId(managedDatabaseUserRoleOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16145,9 +16145,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16189,9 +16189,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16233,9 +16233,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16277,9 +16277,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabaseUsers = DatabaseManagementFunctions.getManagedDatabaseUsers(GetManagedDatabaseUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_database_user_name())
-     *             .opcNamedCredentialId(var_.managed_database_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabaseUserName)
+     *             .opcNamedCredentialId(managedDatabaseUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -16326,12 +16326,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.managed_database_deployment_type())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .id(var_.managed_database_id())
-     *             .managementOption(var_.managed_database_management_option())
-     *             .name(var_.managed_database_name())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(managedDatabaseDeploymentType)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .id(managedDatabaseId)
+     *             .managementOption(managedDatabaseManagementOption)
+     *             .name(managedDatabaseName)
      *             .build());
      * 
      *     }
@@ -16378,12 +16378,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.managed_database_deployment_type())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .id(var_.managed_database_id())
-     *             .managementOption(var_.managed_database_management_option())
-     *             .name(var_.managed_database_name())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(managedDatabaseDeploymentType)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .id(managedDatabaseId)
+     *             .managementOption(managedDatabaseManagementOption)
+     *             .name(managedDatabaseName)
      *             .build());
      * 
      *     }
@@ -16430,12 +16430,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.managed_database_deployment_type())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .id(var_.managed_database_id())
-     *             .managementOption(var_.managed_database_management_option())
-     *             .name(var_.managed_database_name())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(managedDatabaseDeploymentType)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .id(managedDatabaseId)
+     *             .managementOption(managedDatabaseManagementOption)
+     *             .name(managedDatabaseName)
      *             .build());
      * 
      *     }
@@ -16482,12 +16482,12 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabases = DatabaseManagementFunctions.getManagedDatabases(GetManagedDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .deploymentType(var_.managed_database_deployment_type())
-     *             .externalExadataInfrastructureId(oci_database_management_external_exadata_infrastructure.test_external_exadata_infrastructure().id())
-     *             .id(var_.managed_database_id())
-     *             .managementOption(var_.managed_database_management_option())
-     *             .name(var_.managed_database_name())
+     *             .compartmentId(compartmentId)
+     *             .deploymentType(managedDatabaseDeploymentType)
+     *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
+     *             .id(managedDatabaseId)
+     *             .managementOption(managedDatabaseManagementOption)
+     *             .name(managedDatabaseName)
      *             .build());
      * 
      *     }
@@ -16529,8 +16529,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16572,8 +16572,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16615,8 +16615,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16658,8 +16658,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperties = DatabaseManagementFunctions.getManagedDatabasesAsmProperties(GetManagedDatabasesAsmPropertiesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16701,8 +16701,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16744,8 +16744,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16787,8 +16787,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16830,8 +16830,8 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesAsmProperty = DatabaseManagementFunctions.getManagedDatabasesAsmProperty(GetManagedDatabasesAsmPropertyArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .name(var_.managed_databases_asm_property_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .name(managedDatabasesAsmPropertyName)
      *             .build());
      * 
      *     }
@@ -16873,10 +16873,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -16918,10 +16918,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -16963,10 +16963,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -17008,10 +17008,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameter = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameter(GetManagedDatabasesDatabaseParameterArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -17053,11 +17053,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -17099,11 +17099,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -17145,11 +17145,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -17191,11 +17191,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesDatabaseParameters = DatabaseManagementFunctions.getManagedDatabasesDatabaseParameters(GetManagedDatabasesDatabaseParametersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .isAllowedValuesIncluded(var_.managed_databases_database_parameter_is_allowed_values_included())
-     *             .name(var_.managed_databases_database_parameter_name())
-     *             .opcNamedCredentialId(var_.managed_databases_database_parameter_opc_named_credential_id())
-     *             .source(var_.managed_databases_database_parameter_source())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .isAllowedValuesIncluded(managedDatabasesDatabaseParameterIsAllowedValuesIncluded)
+     *             .name(managedDatabasesDatabaseParameterName)
+     *             .opcNamedCredentialId(managedDatabasesDatabaseParameterOpcNamedCredentialId)
+     *             .source(managedDatabasesDatabaseParameterSource)
      *             .build());
      * 
      *     }
@@ -17237,9 +17237,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
      *     }
@@ -17281,9 +17281,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
      *     }
@@ -17325,9 +17325,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
      *     }
@@ -17369,9 +17369,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUser = DatabaseManagementFunctions.getManagedDatabasesUserProxyUser(GetManagedDatabasesUserProxyUserArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
      *             .build());
      * 
      *     }
@@ -17413,10 +17413,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
+     *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17458,10 +17458,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
+     *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17503,10 +17503,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
+     *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17548,10 +17548,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserProxyUsers = DatabaseManagementFunctions.getManagedDatabasesUserProxyUsers(GetManagedDatabasesUserProxyUsersArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_proxy_user_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_proxy_user_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserProxyUserName)
+     *             .opcNamedCredentialId(managedDatabasesUserProxyUserOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17593,9 +17593,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
      *     }
@@ -17637,9 +17637,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
      *     }
@@ -17681,9 +17681,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
      *     }
@@ -17725,9 +17725,9 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivilege = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivilege(GetManagedDatabasesUserSystemPrivilegeArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
      *             .build());
      * 
      *     }
@@ -17769,10 +17769,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17814,10 +17814,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17859,10 +17859,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17904,10 +17904,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedDatabasesUserSystemPrivileges = DatabaseManagementFunctions.getManagedDatabasesUserSystemPrivileges(GetManagedDatabasesUserSystemPrivilegesArgs.builder()
-     *             .managedDatabaseId(oci_database_management_managed_database.test_managed_database().id())
-     *             .userName(oci_identity_user.test_user().name())
-     *             .name(var_.managed_databases_user_system_privilege_name())
-     *             .opcNamedCredentialId(var_.managed_databases_user_system_privilege_opc_named_credential_id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .userName(testUser.name())
+     *             .name(managedDatabasesUserSystemPrivilegeName)
+     *             .opcNamedCredentialId(managedDatabasesUserSystemPrivilegeOpcNamedCredentialId)
      *             .build());
      * 
      *     }
@@ -17949,7 +17949,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -17991,7 +17991,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18033,7 +18033,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18075,7 +18075,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabase = DatabaseManagementFunctions.getManagedMySqlDatabase(GetManagedMySqlDatabaseArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabaseOciDatabaseManagementManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18117,7 +18117,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18159,7 +18159,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18201,7 +18201,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18243,7 +18243,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseConfigurationData = DatabaseManagementFunctions.getManagedMySqlDatabaseConfigurationData(GetManagedMySqlDatabaseConfigurationDataArgs.builder()
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
      *             .build());
      * 
      *     }
@@ -18285,10 +18285,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
-     *             .endTime(var_.managed_my_sql_database_sql_data_end_time())
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
-     *             .startTime(var_.managed_my_sql_database_sql_data_start_time())
-     *             .filterColumn(var_.managed_my_sql_database_sql_data_filter_column())
+     *             .endTime(managedMySqlDatabaseSqlDataEndTime)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .startTime(managedMySqlDatabaseSqlDataStartTime)
+     *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
      * 
      *     }
@@ -18330,10 +18330,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
-     *             .endTime(var_.managed_my_sql_database_sql_data_end_time())
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
-     *             .startTime(var_.managed_my_sql_database_sql_data_start_time())
-     *             .filterColumn(var_.managed_my_sql_database_sql_data_filter_column())
+     *             .endTime(managedMySqlDatabaseSqlDataEndTime)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .startTime(managedMySqlDatabaseSqlDataStartTime)
+     *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
      * 
      *     }
@@ -18375,10 +18375,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
-     *             .endTime(var_.managed_my_sql_database_sql_data_end_time())
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
-     *             .startTime(var_.managed_my_sql_database_sql_data_start_time())
-     *             .filterColumn(var_.managed_my_sql_database_sql_data_filter_column())
+     *             .endTime(managedMySqlDatabaseSqlDataEndTime)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .startTime(managedMySqlDatabaseSqlDataStartTime)
+     *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
      * 
      *     }
@@ -18420,10 +18420,10 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabaseSqlData = DatabaseManagementFunctions.getManagedMySqlDatabaseSqlData(GetManagedMySqlDatabaseSqlDataArgs.builder()
-     *             .endTime(var_.managed_my_sql_database_sql_data_end_time())
-     *             .managedMySqlDatabaseId(oci_database_management_managed_my_sql_database.test_managed_my_sql_database().id())
-     *             .startTime(var_.managed_my_sql_database_sql_data_start_time())
-     *             .filterColumn(var_.managed_my_sql_database_sql_data_filter_column())
+     *             .endTime(managedMySqlDatabaseSqlDataEndTime)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .startTime(managedMySqlDatabaseSqlDataStartTime)
+     *             .filterColumn(managedMySqlDatabaseSqlDataFilterColumn)
      *             .build());
      * 
      *     }
@@ -18465,7 +18465,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18507,7 +18507,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18549,7 +18549,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18591,7 +18591,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedMySqlDatabases = DatabaseManagementFunctions.getManagedMySqlDatabases(GetManagedMySqlDatabasesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -18633,7 +18633,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
      *             .build());
      * 
      *     }
@@ -18675,7 +18675,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
      *             .build());
      * 
      *     }
@@ -18717,7 +18717,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
      *             .build());
      * 
      *     }
@@ -18759,7 +18759,7 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredential = DatabaseManagementFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
-     *             .namedCredentialId(oci_database_management_named_credential.test_named_credential().id())
+     *             .namedCredentialId(testNamedCredentialOciDatabaseManagementNamedCredential.id())
      *             .build());
      * 
      *     }
@@ -18801,11 +18801,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .associatedResource(var_.named_credential_associated_resource())
-     *             .name(var_.named_credential_name())
-     *             .scope(var_.named_credential_scope())
-     *             .type(var_.named_credential_type())
+     *             .compartmentId(compartmentId)
+     *             .associatedResource(namedCredentialAssociatedResource)
+     *             .name(namedCredentialName)
+     *             .scope(namedCredentialScope)
+     *             .type(namedCredentialType)
      *             .build());
      * 
      *     }
@@ -18847,11 +18847,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .associatedResource(var_.named_credential_associated_resource())
-     *             .name(var_.named_credential_name())
-     *             .scope(var_.named_credential_scope())
-     *             .type(var_.named_credential_type())
+     *             .compartmentId(compartmentId)
+     *             .associatedResource(namedCredentialAssociatedResource)
+     *             .name(namedCredentialName)
+     *             .scope(namedCredentialScope)
+     *             .type(namedCredentialType)
      *             .build());
      * 
      *     }
@@ -18893,11 +18893,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .associatedResource(var_.named_credential_associated_resource())
-     *             .name(var_.named_credential_name())
-     *             .scope(var_.named_credential_scope())
-     *             .type(var_.named_credential_type())
+     *             .compartmentId(compartmentId)
+     *             .associatedResource(namedCredentialAssociatedResource)
+     *             .name(namedCredentialName)
+     *             .scope(namedCredentialScope)
+     *             .type(namedCredentialType)
      *             .build());
      * 
      *     }
@@ -18939,11 +18939,11 @@ public final class DatabaseManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamedCredentials = DatabaseManagementFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .associatedResource(var_.named_credential_associated_resource())
-     *             .name(var_.named_credential_name())
-     *             .scope(var_.named_credential_scope())
-     *             .type(var_.named_credential_type())
+     *             .compartmentId(compartmentId)
+     *             .associatedResource(namedCredentialAssociatedResource)
+     *             .name(namedCredentialName)
+     *             .scope(namedCredentialScope)
+     *             .type(namedCredentialType)
      *             .build());
      * 
      *     }

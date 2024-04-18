@@ -38,14 +38,14 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testMetricData = Oci.Monitoring.GetMetricData.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Metric_data_namespace,
-        ///         Query = @var.Metric_data_query,
-        ///         CompartmentIdInSubtree = @var.Metric_data_compartment_id_in_subtree,
-        ///         EndTime = @var.Metric_data_end_time,
-        ///         Resolution = @var.Metric_data_resolution,
-        ///         ResourceGroup = @var.Metric_data_resource_group,
-        ///         StartTime = @var.Metric_data_start_time,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = metricDataNamespace,
+        ///         Query = metricDataQuery,
+        ///         CompartmentIdInSubtree = metricDataCompartmentIdInSubtree,
+        ///         EndTime = metricDataEndTime,
+        ///         Resolution = metricDataResolution,
+        ///         ResourceGroup = metricDataResourceGroup,
+        ///         StartTime = metricDataStartTime,
         ///     });
         /// 
         /// });
@@ -82,14 +82,14 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testMetricData = Oci.Monitoring.GetMetricData.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Metric_data_namespace,
-        ///         Query = @var.Metric_data_query,
-        ///         CompartmentIdInSubtree = @var.Metric_data_compartment_id_in_subtree,
-        ///         EndTime = @var.Metric_data_end_time,
-        ///         Resolution = @var.Metric_data_resolution,
-        ///         ResourceGroup = @var.Metric_data_resource_group,
-        ///         StartTime = @var.Metric_data_start_time,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = metricDataNamespace,
+        ///         Query = metricDataQuery,
+        ///         CompartmentIdInSubtree = metricDataCompartmentIdInSubtree,
+        ///         EndTime = metricDataEndTime,
+        ///         Resolution = metricDataResolution,
+        ///         ResourceGroup = metricDataResourceGroup,
+        ///         StartTime = metricDataStartTime,
         ///     });
         /// 
         /// });

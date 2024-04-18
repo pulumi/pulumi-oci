@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEncryptedData = oci.Kms.getEncryptedData({
- *     cryptoEndpoint: _var.encrypted_data_crypto_endpoint,
- *     keyId: oci_kms_key.test_key.id,
- *     plaintext: _var.encrypted_data_plaintext,
- *     associatedData: _var.encrypted_data_associated_data,
+ *     cryptoEndpoint: encryptedDataCryptoEndpoint,
+ *     keyId: testKey.id,
+ *     plaintext: encryptedDataPlaintext,
+ *     associatedData: encryptedDataAssociatedData,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,10 +92,10 @@ export interface GetEncryptedDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEncryptedData = oci.Kms.getEncryptedData({
- *     cryptoEndpoint: _var.encrypted_data_crypto_endpoint,
- *     keyId: oci_kms_key.test_key.id,
- *     plaintext: _var.encrypted_data_plaintext,
- *     associatedData: _var.encrypted_data_associated_data,
+ *     cryptoEndpoint: encryptedDataCryptoEndpoint,
+ *     keyId: testKey.id,
+ *     plaintext: encryptedDataPlaintext,
+ *     associatedData: encryptedDataAssociatedData,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

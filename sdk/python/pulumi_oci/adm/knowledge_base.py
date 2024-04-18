@@ -256,12 +256,12 @@ class KnowledgeBase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_knowledge_base = oci.adm.KnowledgeBase("testKnowledgeBase",
-            compartment_id=var["compartment_id"],
+        test_knowledge_base = oci.adm.KnowledgeBase("test_knowledge_base",
+            compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["knowledge_base_display_name"],
+            display_name=knowledge_base_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -305,12 +305,12 @@ class KnowledgeBase(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_knowledge_base = oci.adm.KnowledgeBase("testKnowledgeBase",
-            compartment_id=var["compartment_id"],
+        test_knowledge_base = oci.adm.KnowledgeBase("test_knowledge_base",
+            compartment_id=compartment_id,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["knowledge_base_display_name"],
+            display_name=knowledge_base_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

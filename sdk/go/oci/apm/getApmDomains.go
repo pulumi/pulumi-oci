@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Apm.GetApmDomains(ctx, &apm.GetApmDomainsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Apm_domain_display_name),
-//				State:         pulumi.StringRef(_var.Apm_domain_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(apmDomainDisplayName),
+//				State:         pulumi.StringRef(apmDomainState),
 //			}, nil)
 //			if err != nil {
 //				return err

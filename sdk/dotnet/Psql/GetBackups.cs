@@ -30,13 +30,13 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testBackups = Oci.Psql.GetBackups.Invoke(new()
         ///     {
-        ///         BackupId = oci_psql_backup.Test_backup.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Backup_display_name,
-        ///         Id = @var.Backup_id,
-        ///         State = @var.Backup_state,
-        ///         TimeEnded = @var.Backup_time_ended,
-        ///         TimeStarted = @var.Backup_time_started,
+        ///         BackupId = testBackup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = backupDisplayName,
+        ///         Id = backupId,
+        ///         State = backupState,
+        ///         TimeEnded = backupTimeEnded,
+        ///         TimeStarted = backupTimeStarted,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.Psql
         /// {
         ///     var testBackups = Oci.Psql.GetBackups.Invoke(new()
         ///     {
-        ///         BackupId = oci_psql_backup.Test_backup.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Backup_display_name,
-        ///         Id = @var.Backup_id,
-        ///         State = @var.Backup_state,
-        ///         TimeEnded = @var.Backup_time_ended,
-        ///         TimeStarted = @var.Backup_time_started,
+        ///         BackupId = testBackup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = backupDisplayName,
+        ///         Id = backupId,
+        ///         State = backupState,
+        ///         TimeEnded = backupTimeEnded,
+        ///         TimeStarted = backupTimeStarted,
         ///     });
         /// 
         /// });

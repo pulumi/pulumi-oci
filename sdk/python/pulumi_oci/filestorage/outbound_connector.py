@@ -439,24 +439,24 @@ class OutboundConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_outbound_connector = oci.file_storage.OutboundConnector("testOutboundConnector",
-            availability_domain=var["outbound_connector_availability_domain"],
-            bind_distinguished_name=var["outbound_connector_bind_distinguished_name"],
-            compartment_id=var["compartment_id"],
-            connector_type=var["outbound_connector_connector_type"],
+        test_outbound_connector = oci.file_storage.OutboundConnector("test_outbound_connector",
+            availability_domain=outbound_connector_availability_domain,
+            bind_distinguished_name=outbound_connector_bind_distinguished_name,
+            compartment_id=compartment_id,
+            connector_type=outbound_connector_connector_type,
             endpoints=[oci.file_storage.OutboundConnectorEndpointArgs(
-                hostname=var["outbound_connector_endpoints_hostname"],
-                port=var["outbound_connector_endpoints_port"],
+                hostname=outbound_connector_endpoints_hostname,
+                port=outbound_connector_endpoints_port,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["outbound_connector_display_name"],
+            display_name=outbound_connector_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            password_secret_id=oci_vault_secret["test_secret"]["id"],
-            password_secret_version=var["outbound_connector_password_secret_version"])
+            password_secret_id=test_secret["id"],
+            password_secret_version=outbound_connector_password_secret_version)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -522,24 +522,24 @@ class OutboundConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_outbound_connector = oci.file_storage.OutboundConnector("testOutboundConnector",
-            availability_domain=var["outbound_connector_availability_domain"],
-            bind_distinguished_name=var["outbound_connector_bind_distinguished_name"],
-            compartment_id=var["compartment_id"],
-            connector_type=var["outbound_connector_connector_type"],
+        test_outbound_connector = oci.file_storage.OutboundConnector("test_outbound_connector",
+            availability_domain=outbound_connector_availability_domain,
+            bind_distinguished_name=outbound_connector_bind_distinguished_name,
+            compartment_id=compartment_id,
+            connector_type=outbound_connector_connector_type,
             endpoints=[oci.file_storage.OutboundConnectorEndpointArgs(
-                hostname=var["outbound_connector_endpoints_hostname"],
-                port=var["outbound_connector_endpoints_port"],
+                hostname=outbound_connector_endpoints_hostname,
+                port=outbound_connector_endpoints_port,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["outbound_connector_display_name"],
+            display_name=outbound_connector_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            password_secret_id=oci_vault_secret["test_secret"]["id"],
-            password_secret_version=var["outbound_connector_password_secret_version"])
+            password_secret_id=test_secret["id"],
+            password_secret_version=outbound_connector_password_secret_version)
         ```
         <!--End PulumiCodeChooser -->
 

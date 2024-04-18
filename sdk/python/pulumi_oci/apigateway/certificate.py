@@ -385,18 +385,18 @@ class Certificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_certificate = oci.api_gateway.Certificate("testCertificate",
-            certificate=var["certificate_certificate"],
-            compartment_id=var["compartment_id"],
+        test_certificate = oci.api_gateway.Certificate("test_certificate",
+            certificate=certificate_certificate,
+            compartment_id=compartment_id,
+            private_key=certificate_private_key,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["certificate_display_name"],
+            display_name=certificate_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            intermediate_certificates=var["certificate_intermediate_certificates"],
-            private_key=var["certificate_private_key"])
+            intermediate_certificates=certificate_intermediate_certificates)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -440,18 +440,18 @@ class Certificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_certificate = oci.api_gateway.Certificate("testCertificate",
-            certificate=var["certificate_certificate"],
-            compartment_id=var["compartment_id"],
+        test_certificate = oci.api_gateway.Certificate("test_certificate",
+            certificate=certificate_certificate,
+            compartment_id=compartment_id,
+            private_key=certificate_private_key,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["certificate_display_name"],
+            display_name=certificate_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            intermediate_certificates=var["certificate_intermediate_certificates"],
-            private_key=var["certificate_private_key"])
+            intermediate_certificates=certificate_intermediate_certificates)
         ```
         <!--End PulumiCodeChooser -->
 

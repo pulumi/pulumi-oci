@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewLogAnalyticsLogGroup(ctx, "testLogAnalyticsLogGroup", &LogAnalytics.LogAnalyticsLogGroupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Log_analytics_log_group_display_name),
-//				Namespace:     pulumi.Any(_var.Log_analytics_log_group_namespace),
+//			_, err := LogAnalytics.NewLogAnalyticsLogGroup(ctx, "test_log_analytics_log_group", &LogAnalytics.LogAnalyticsLogGroupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(logAnalyticsLogGroupDisplayName),
+//				Namespace:     pulumi.Any(logAnalyticsLogGroupNamespace),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Log_analytics_log_group_description),
+//				Description: pulumi.Any(logAnalyticsLogGroupDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

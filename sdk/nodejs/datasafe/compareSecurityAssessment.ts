@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompareSecurityAssessment = new oci.datasafe.CompareSecurityAssessment("testCompareSecurityAssessment", {
- *     comparisonSecurityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
- *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
+ * const testCompareSecurityAssessment = new oci.datasafe.CompareSecurityAssessment("test_compare_security_assessment", {
+ *     comparisonSecurityAssessmentId: testSecurityAssessment.id,
+ *     securityAssessmentId: testSecurityAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

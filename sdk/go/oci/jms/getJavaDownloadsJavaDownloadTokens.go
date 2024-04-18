@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaDownloadsJavaDownloadTokens(ctx, &jms.GetJavaDownloadsJavaDownloadTokensArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				DisplayName:   pulumi.StringRef(_var.Java_download_token_display_name),
-//				FamilyVersion: pulumi.StringRef(_var.Java_download_token_family_version),
-//				Id:            pulumi.StringRef(_var.Java_download_token_id),
-//				SearchByUser:  pulumi.StringRef(_var.Java_download_token_search_by_user),
-//				State:         pulumi.StringRef(_var.Java_download_token_state),
-//				Value:         pulumi.StringRef(_var.Java_download_token_value),
+//				CompartmentId: tenancyOcid,
+//				DisplayName:   pulumi.StringRef(javaDownloadTokenDisplayName),
+//				FamilyVersion: pulumi.StringRef(javaDownloadTokenFamilyVersion),
+//				Id:            pulumi.StringRef(javaDownloadTokenId),
+//				SearchByUser:  pulumi.StringRef(javaDownloadTokenSearchByUser),
+//				State:         pulumi.StringRef(javaDownloadTokenState),
+//				Value:         pulumi.StringRef(javaDownloadTokenValue),
 //			}, nil)
 //			if err != nil {
 //				return err

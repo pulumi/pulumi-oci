@@ -20,13 +20,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLifecycleEnvironments = oci.OsManagementHub.getLifecycleEnvironments({
- *     archType: _var.lifecycle_environment_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.lifecycle_environment_display_name,
- *     displayNameContains: _var.lifecycle_environment_display_name_contains,
- *     lifecycleEnvironmentId: oci_os_management_hub_lifecycle_environment.test_lifecycle_environment.id,
- *     osFamily: _var.lifecycle_environment_os_family,
- *     state: _var.lifecycle_environment_state,
+ *     archType: lifecycleEnvironmentArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: lifecycleEnvironmentDisplayName,
+ *     displayNameContains: lifecycleEnvironmentDisplayNameContains,
+ *     lifecycleEnvironmentId: testLifecycleEnvironment.id,
+ *     osFamily: lifecycleEnvironmentOsFamily,
+ *     state: lifecycleEnvironmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,13 +135,13 @@ export interface GetLifecycleEnvironmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLifecycleEnvironments = oci.OsManagementHub.getLifecycleEnvironments({
- *     archType: _var.lifecycle_environment_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayNames: _var.lifecycle_environment_display_name,
- *     displayNameContains: _var.lifecycle_environment_display_name_contains,
- *     lifecycleEnvironmentId: oci_os_management_hub_lifecycle_environment.test_lifecycle_environment.id,
- *     osFamily: _var.lifecycle_environment_os_family,
- *     state: _var.lifecycle_environment_state,
+ *     archType: lifecycleEnvironmentArchType,
+ *     compartmentId: compartmentId,
+ *     displayNames: lifecycleEnvironmentDisplayName,
+ *     displayNameContains: lifecycleEnvironmentDisplayNameContains,
+ *     lifecycleEnvironmentId: testLifecycleEnvironment.id,
+ *     osFamily: lifecycleEnvironmentOsFamily,
+ *     state: lifecycleEnvironmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

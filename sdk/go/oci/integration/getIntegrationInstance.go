@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Integration.GetIntegrationInstance(ctx, &integration.GetIntegrationInstanceArgs{
-//				IntegrationInstanceId: oci_integration_integration_instance.Test_integration_instance.Id,
+//				IntegrationInstanceId: testIntegrationInstanceOciIntegrationIntegrationInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

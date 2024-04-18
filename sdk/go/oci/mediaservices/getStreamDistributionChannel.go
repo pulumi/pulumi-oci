@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetStreamDistributionChannel(ctx, &mediaservices.GetStreamDistributionChannelArgs{
-//				StreamDistributionChannelId: oci_media_services_stream_distribution_channel.Test_stream_distribution_channel.Id,
+//				StreamDistributionChannelId: testStreamDistributionChannelOciMediaServicesStreamDistributionChannel.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

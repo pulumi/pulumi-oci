@@ -34,28 +34,28 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMaskingPolicy = new oci.datasafe.MaskingPolicy("testMaskingPolicy", {
+ * const testMaskingPolicy = new oci.datasafe.MaskingPolicy("test_masking_policy", {
  *     columnSources: [{
- *         columnSource: _var.masking_policy_column_source_column_source,
- *         sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *         targetId: oci_cloud_guard_target.test_target.id,
+ *         columnSource: maskingPolicyColumnSourceColumnSource,
+ *         sensitiveDataModelId: testSensitiveDataModel.id,
+ *         targetId: testTarget.id,
  *     }],
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.masking_policy_description,
- *     displayName: _var.masking_policy_display_name,
+ *     description: maskingPolicyDescription,
+ *     displayName: maskingPolicyDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isDropTempTablesEnabled: _var.masking_policy_is_drop_temp_tables_enabled,
- *     isRedoLoggingEnabled: _var.masking_policy_is_redo_logging_enabled,
- *     isRefreshStatsEnabled: _var.masking_policy_is_refresh_stats_enabled,
- *     parallelDegree: _var.masking_policy_parallel_degree,
- *     postMaskingScript: _var.masking_policy_post_masking_script,
- *     preMaskingScript: _var.masking_policy_pre_masking_script,
- *     recompile: _var.masking_policy_recompile,
+ *     isDropTempTablesEnabled: maskingPolicyIsDropTempTablesEnabled,
+ *     isRedoLoggingEnabled: maskingPolicyIsRedoLoggingEnabled,
+ *     isRefreshStatsEnabled: maskingPolicyIsRefreshStatsEnabled,
+ *     parallelDegree: maskingPolicyParallelDegree,
+ *     postMaskingScript: maskingPolicyPostMaskingScript,
+ *     preMaskingScript: maskingPolicyPreMaskingScript,
+ *     recompile: maskingPolicyRecompile,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

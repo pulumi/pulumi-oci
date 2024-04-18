@@ -30,10 +30,10 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentUpgrades = Oci.GoldenGate.GetDeploymentUpgrades.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         DisplayName = @var.Deployment_upgrade_display_name,
-        ///         State = @var.Deployment_upgrade_state,
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentId = testDeployment.Id,
+        ///         DisplayName = deploymentUpgradeDisplayName,
+        ///         State = deploymentUpgradeState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentUpgrades = Oci.GoldenGate.GetDeploymentUpgrades.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
-        ///         DisplayName = @var.Deployment_upgrade_display_name,
-        ///         State = @var.Deployment_upgrade_state,
+        ///         CompartmentId = compartmentId,
+        ///         DeploymentId = testDeployment.Id,
+        ///         DisplayName = deploymentUpgradeDisplayName,
+        ///         State = deploymentUpgradeState,
         ///     });
         /// 
         /// });

@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testAddressLists = Oci.Waas.GetAddressLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Ids = @var.Address_list_ids,
-        ///         Names = @var.Address_list_names,
-        ///         States = @var.Address_list_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Address_list_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Address_list_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         Ids = addressListIds,
+        ///         Names = addressListNames,
+        ///         States = addressListStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = addressListTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = addressListTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testAddressLists = Oci.Waas.GetAddressLists.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Ids = @var.Address_list_ids,
-        ///         Names = @var.Address_list_names,
-        ///         States = @var.Address_list_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Address_list_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Address_list_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         Ids = addressListIds,
+        ///         Names = addressListNames,
+        ///         States = addressListStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = addressListTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = addressListTimeCreatedLessThan,
         ///     });
         /// 
         /// });

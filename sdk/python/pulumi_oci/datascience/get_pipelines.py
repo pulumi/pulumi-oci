@@ -147,12 +147,12 @@ def get_pipelines(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.DataScience.get_pipelines(compartment_id=var["compartment_id"],
-        created_by=var["pipeline_created_by"],
-        display_name=var["pipeline_display_name"],
-        id=var["pipeline_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["pipeline_state"])
+    test_pipelines = oci.DataScience.get_pipelines(compartment_id=compartment_id,
+        created_by=pipeline_created_by,
+        display_name=pipeline_display_name,
+        id=pipeline_id,
+        project_id=test_project["id"],
+        state=pipeline_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_pipelines_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pipelines = oci.DataScience.get_pipelines(compartment_id=var["compartment_id"],
-        created_by=var["pipeline_created_by"],
-        display_name=var["pipeline_display_name"],
-        id=var["pipeline_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["pipeline_state"])
+    test_pipelines = oci.DataScience.get_pipelines(compartment_id=compartment_id,
+        created_by=pipeline_created_by,
+        display_name=pipeline_display_name,
+        id=pipeline_id,
+        project_id=test_project["id"],
+        state=pipeline_state)
     ```
     <!--End PulumiCodeChooser -->
 

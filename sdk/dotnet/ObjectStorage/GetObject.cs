@@ -30,16 +30,16 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObject = Oci.ObjectStorage.GetObject.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_bucket,
-        ///         Namespace = @var.Object_namespace,
-        ///         Object = @var.Object_object,
-        ///         HttpResponseCacheControl = @var.Object_http_response_cache_control,
-        ///         HttpResponseContentDisposition = @var.Object_http_response_content_disposition,
-        ///         HttpResponseContentEncoding = @var.Object_http_response_content_encoding,
-        ///         HttpResponseContentLanguage = @var.Object_http_response_content_language,
-        ///         HttpResponseContentType = @var.Object_http_response_content_type,
-        ///         HttpResponseExpires = @var.Object_http_response_expires,
-        ///         VersionId = oci_objectstorage_version.Test_version.Id,
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Object = objectObject,
+        ///         HttpResponseCacheControl = objectHttpResponseCacheControl,
+        ///         HttpResponseContentDisposition = objectHttpResponseContentDisposition,
+        ///         HttpResponseContentEncoding = objectHttpResponseContentEncoding,
+        ///         HttpResponseContentLanguage = objectHttpResponseContentLanguage,
+        ///         HttpResponseContentType = objectHttpResponseContentType,
+        ///         HttpResponseExpires = objectHttpResponseExpires,
+        ///         VersionId = testVersion.Id,
         ///     });
         /// 
         /// });
@@ -68,16 +68,16 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testObject = Oci.ObjectStorage.GetObject.Invoke(new()
         ///     {
-        ///         Bucket = @var.Object_bucket,
-        ///         Namespace = @var.Object_namespace,
-        ///         Object = @var.Object_object,
-        ///         HttpResponseCacheControl = @var.Object_http_response_cache_control,
-        ///         HttpResponseContentDisposition = @var.Object_http_response_content_disposition,
-        ///         HttpResponseContentEncoding = @var.Object_http_response_content_encoding,
-        ///         HttpResponseContentLanguage = @var.Object_http_response_content_language,
-        ///         HttpResponseContentType = @var.Object_http_response_content_type,
-        ///         HttpResponseExpires = @var.Object_http_response_expires,
-        ///         VersionId = oci_objectstorage_version.Test_version.Id,
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Object = objectObject,
+        ///         HttpResponseCacheControl = objectHttpResponseCacheControl,
+        ///         HttpResponseContentDisposition = objectHttpResponseContentDisposition,
+        ///         HttpResponseContentEncoding = objectHttpResponseContentEncoding,
+        ///         HttpResponseContentLanguage = objectHttpResponseContentLanguage,
+        ///         HttpResponseContentType = objectHttpResponseContentType,
+        ///         HttpResponseExpires = objectHttpResponseExpires,
+        ///         VersionId = testVersion.Id,
         ///     });
         /// 
         /// });

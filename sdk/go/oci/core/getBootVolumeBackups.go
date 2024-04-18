@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetBootVolumeBackups(ctx, &core.GetBootVolumeBackupsArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				BootVolumeId:             pulumi.StringRef(oci_core_boot_volume.Test_boot_volume.Id),
-//				DisplayName:              pulumi.StringRef(_var.Boot_volume_backup_display_name),
-//				SourceBootVolumeBackupId: pulumi.StringRef(oci_core_boot_volume_backup.Test_boot_volume_backup.Id),
-//				State:                    pulumi.StringRef(_var.Boot_volume_backup_state),
+//				CompartmentId:            compartmentId,
+//				BootVolumeId:             pulumi.StringRef(testBootVolume.Id),
+//				DisplayName:              pulumi.StringRef(bootVolumeBackupDisplayName),
+//				SourceBootVolumeBackupId: pulumi.StringRef(testBootVolumeBackup.Id),
+//				State:                    pulumi.StringRef(bootVolumeBackupState),
 //			}, nil)
 //			if err != nil {
 //				return err

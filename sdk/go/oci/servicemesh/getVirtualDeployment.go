@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetVirtualDeployment(ctx, &servicemesh.GetVirtualDeploymentArgs{
-//				VirtualDeploymentId: oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
+//				VirtualDeploymentId: testVirtualDeploymentOciServiceMeshVirtualDeployment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

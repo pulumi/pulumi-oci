@@ -25,37 +25,37 @@ namespace Pulumi.Oci.Autoscaling
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutoScalingConfiguration = new Oci.Autoscaling.AutoScalingConfiguration("testAutoScalingConfiguration", new()
+    ///     var testAutoScalingConfiguration = new Oci.Autoscaling.AutoScalingConfiguration("test_auto_scaling_configuration", new()
     ///     {
     ///         AutoScalingResources = new Oci.Autoscaling.Inputs.AutoScalingConfigurationAutoScalingResourcesArgs
     ///         {
-    ///             Id = @var.Auto_scaling_configuration_auto_scaling_resources_id,
-    ///             Type = @var.Auto_scaling_configuration_auto_scaling_resources_type,
+    ///             Id = autoScalingConfigurationAutoScalingResourcesId,
+    ///             Type = autoScalingConfigurationAutoScalingResourcesType,
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Policies = new[]
     ///         {
     ///             new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyArgs
     ///             {
-    ///                 PolicyType = @var.Auto_scaling_configuration_policies_policy_type,
+    ///                 PolicyType = autoScalingConfigurationPoliciesPolicyType,
     ///                 Capacity = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyCapacityArgs
     ///                 {
-    ///                     Initial = @var.Auto_scaling_configuration_policies_capacity_initial,
-    ///                     Max = @var.Auto_scaling_configuration_policies_capacity_max,
-    ///                     Min = @var.Auto_scaling_configuration_policies_capacity_min,
+    ///                     Initial = autoScalingConfigurationPoliciesCapacityInitial,
+    ///                     Max = autoScalingConfigurationPoliciesCapacityMax,
+    ///                     Min = autoScalingConfigurationPoliciesCapacityMin,
     ///                 },
-    ///                 DisplayName = @var.Auto_scaling_configuration_policies_display_name,
+    ///                 DisplayName = autoScalingConfigurationPoliciesDisplayName,
     ///                 ExecutionSchedule = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyExecutionScheduleArgs
     ///                 {
-    ///                     Expression = @var.Auto_scaling_configuration_policies_execution_schedule_expression,
-    ///                     Timezone = @var.Auto_scaling_configuration_policies_execution_schedule_timezone,
-    ///                     Type = @var.Auto_scaling_configuration_policies_execution_schedule_type,
+    ///                     Expression = autoScalingConfigurationPoliciesExecutionScheduleExpression,
+    ///                     Timezone = autoScalingConfigurationPoliciesExecutionScheduleTimezone,
+    ///                     Type = autoScalingConfigurationPoliciesExecutionScheduleType,
     ///                 },
-    ///                 IsEnabled = @var.Auto_scaling_configuration_policies_is_enabled,
+    ///                 IsEnabled = autoScalingConfigurationPoliciesIsEnabled,
     ///                 ResourceAction = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyResourceActionArgs
     ///                 {
-    ///                     Action = @var.Auto_scaling_configuration_policies_resource_action_action,
-    ///                     ActionType = @var.Auto_scaling_configuration_policies_resource_action_action_type,
+    ///                     Action = autoScalingConfigurationPoliciesResourceActionAction,
+    ///                     ActionType = autoScalingConfigurationPoliciesResourceActionActionType,
     ///                 },
     ///                 Rules = new[]
     ///                 {
@@ -63,34 +63,34 @@ namespace Pulumi.Oci.Autoscaling
     ///                     {
     ///                         Action = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleActionArgs
     ///                         {
-    ///                             Type = @var.Auto_scaling_configuration_policies_rules_action_type,
-    ///                             Value = @var.Auto_scaling_configuration_policies_rules_action_value,
+    ///                             Type = autoScalingConfigurationPoliciesRulesActionType,
+    ///                             Value = autoScalingConfigurationPoliciesRulesActionValue,
     ///                         },
-    ///                         DisplayName = @var.Auto_scaling_configuration_policies_rules_display_name,
+    ///                         DisplayName = autoScalingConfigurationPoliciesRulesDisplayName,
     ///                         Metric = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricArgs
     ///                         {
-    ///                             MetricType = @var.Auto_scaling_configuration_policies_rules_metric_metric_type,
+    ///                             MetricType = autoScalingConfigurationPoliciesRulesMetricMetricType,
     ///                             Threshold = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs
     ///                             {
-    ///                                 Operator = @var.Auto_scaling_configuration_policies_rules_metric_threshold_operator,
-    ///                                 Value = @var.Auto_scaling_configuration_policies_rules_metric_threshold_value,
+    ///                                 Operator = autoScalingConfigurationPoliciesRulesMetricThresholdOperator,
+    ///                                 Value = autoScalingConfigurationPoliciesRulesMetricThresholdValue,
     ///                             },
     ///                         },
     ///                     },
     ///                 },
     ///             },
     ///         },
-    ///         CoolDownInSeconds = @var.Auto_scaling_configuration_cool_down_in_seconds,
+    ///         CoolDownInSeconds = autoScalingConfigurationCoolDownInSeconds,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Auto_scaling_configuration_display_name,
+    ///         DisplayName = autoScalingConfigurationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsEnabled = @var.Auto_scaling_configuration_is_enabled,
+    ///         IsEnabled = autoScalingConfigurationIsEnabled,
     ///     });
     /// 
     /// });

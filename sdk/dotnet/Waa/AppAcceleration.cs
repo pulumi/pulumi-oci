@@ -25,22 +25,22 @@ namespace Pulumi.Oci.Waa
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWebAppAcceleration = new Oci.Waa.AppAcceleration("testWebAppAcceleration", new()
+    ///     var testWebAppAcceleration = new Oci.Waa.AppAcceleration("test_web_app_acceleration", new()
     ///     {
-    ///         BackendType = @var.Web_app_acceleration_backend_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         WebAppAccelerationPolicyId = oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+    ///         BackendType = webAppAccelerationBackendType,
+    ///         CompartmentId = compartmentId,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         WebAppAccelerationPolicyId = testWebAppAccelerationPolicy.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Web_app_acceleration_display_name,
+    ///         DisplayName = webAppAccelerationDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         SystemTags = @var.Web_app_acceleration_system_tags,
+    ///         SystemTags = webAppAccelerationSystemTags,
     ///     });
     /// 
     /// });

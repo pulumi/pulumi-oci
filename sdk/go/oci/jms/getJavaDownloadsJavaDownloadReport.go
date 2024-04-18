@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetJavaDownloadsJavaDownloadReport(ctx, &jms.GetJavaDownloadsJavaDownloadReportArgs{
-//				JavaDownloadReportId: oci_jms_java_downloads_java_download_report.Test_java_download_report.Id,
+//				JavaDownloadReportId: testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

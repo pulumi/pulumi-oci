@@ -49,15 +49,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEndpoint = new Endpoint(&#34;testEndpoint&#34;, EndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dedicatedAiClusterId(oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster().id())
- *             .modelId(oci_generative_ai_model.test_model().id())
+ *             .compartmentId(compartmentId)
+ *             .dedicatedAiClusterId(testDedicatedAiCluster.id())
+ *             .modelId(testModel.id())
  *             .contentModerationConfig(EndpointContentModerationConfigArgs.builder()
- *                 .isEnabled(var_.endpoint_content_moderation_config_is_enabled())
+ *                 .isEnabled(endpointContentModerationConfigIsEnabled)
  *                 .build())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.endpoint_description())
- *             .displayName(var_.endpoint_display_name())
+ *             .description(endpointDescription)
+ *             .displayName(endpointDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

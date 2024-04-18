@@ -459,18 +459,18 @@ class Replication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication = oci.file_storage.Replication("testReplication",
-            compartment_id=var["compartment_id"],
-            source_id=oci_file_storage_file_system["test_source"]["id"],
-            target_id=oci_file_storage_file_system["test_target"]["id"],
+        test_replication = oci.file_storage.Replication("test_replication",
+            compartment_id=compartment_id,
+            source_id=test_source["id"],
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["replication_display_name"],
+            display_name=replication_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            replication_interval=var["replication_replication_interval"])
+            replication_interval=replication_replication_interval)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -540,18 +540,18 @@ class Replication(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication = oci.file_storage.Replication("testReplication",
-            compartment_id=var["compartment_id"],
-            source_id=oci_file_storage_file_system["test_source"]["id"],
-            target_id=oci_file_storage_file_system["test_target"]["id"],
+        test_replication = oci.file_storage.Replication("test_replication",
+            compartment_id=compartment_id,
+            source_id=test_source["id"],
+            target_id=test_target["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["replication_display_name"],
+            display_name=replication_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            replication_interval=var["replication_replication_interval"])
+            replication_interval=replication_replication_interval)
         ```
         <!--End PulumiCodeChooser -->
 

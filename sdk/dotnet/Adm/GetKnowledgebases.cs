@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testKnowledgeBases = Oci.Adm.GetKnowledgebases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Knowledge_base_display_name,
-        ///         Id = @var.Knowledge_base_id,
-        ///         State = @var.Knowledge_base_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = knowledgeBaseDisplayName,
+        ///         Id = knowledgeBaseId,
+        ///         State = knowledgeBaseState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testKnowledgeBases = Oci.Adm.GetKnowledgebases.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Knowledge_base_display_name,
-        ///         Id = @var.Knowledge_base_id,
-        ///         State = @var.Knowledge_base_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = knowledgeBaseDisplayName,
+        ///         Id = knowledgeBaseId,
+        ///         State = knowledgeBaseState,
         ///     });
         /// 
         /// });

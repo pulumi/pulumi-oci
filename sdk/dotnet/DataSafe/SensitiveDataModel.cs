@@ -27,27 +27,27 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSensitiveDataModel = new Oci.DataSafe.SensitiveDataModel("testSensitiveDataModel", new()
+    ///     var testSensitiveDataModel = new Oci.DataSafe.SensitiveDataModel("test_sensitive_data_model", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///         AppSuiteName = @var.Sensitive_data_model_app_suite_name,
+    ///         CompartmentId = compartmentId,
+    ///         TargetId = testTarget.Id,
+    ///         AppSuiteName = sensitiveDataModelAppSuiteName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Sensitive_data_model_description,
-    ///         DisplayName = @var.Sensitive_data_model_display_name,
+    ///         Description = sensitiveDataModelDescription,
+    ///         DisplayName = sensitiveDataModelDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsAppDefinedRelationDiscoveryEnabled = @var.Sensitive_data_model_is_app_defined_relation_discovery_enabled,
-    ///         IsIncludeAllSchemas = @var.Sensitive_data_model_is_include_all_schemas,
-    ///         IsIncludeAllSensitiveTypes = @var.Sensitive_data_model_is_include_all_sensitive_types,
-    ///         IsSampleDataCollectionEnabled = @var.Sensitive_data_model_is_sample_data_collection_enabled,
-    ///         SchemasForDiscoveries = @var.Sensitive_data_model_schemas_for_discovery,
-    ///         SensitiveTypeIdsForDiscoveries = @var.Sensitive_data_model_sensitive_type_ids_for_discovery,
+    ///         IsAppDefinedRelationDiscoveryEnabled = sensitiveDataModelIsAppDefinedRelationDiscoveryEnabled,
+    ///         IsIncludeAllSchemas = sensitiveDataModelIsIncludeAllSchemas,
+    ///         IsIncludeAllSensitiveTypes = sensitiveDataModelIsIncludeAllSensitiveTypes,
+    ///         IsSampleDataCollectionEnabled = sensitiveDataModelIsSampleDataCollectionEnabled,
+    ///         SchemasForDiscoveries = sensitiveDataModelSchemasForDiscovery,
+    ///         SensitiveTypeIdsForDiscoveries = sensitiveDataModelSensitiveTypeIdsForDiscovery,
     ///     });
     /// 
     /// });

@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsCollectionOperation = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperation.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OptimizerStatisticsCollectionOperationId = oci_database_management_optimizer_statistics_collection_operation.Test_optimizer_statistics_collection_operation.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OptimizerStatisticsCollectionOperationId = testOptimizerStatisticsCollectionOperation.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsCollectionOperation = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperation.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OptimizerStatisticsCollectionOperationId = oci_database_management_optimizer_statistics_collection_operation.Test_optimizer_statistics_collection_operation.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OptimizerStatisticsCollectionOperationId = testOptimizerStatisticsCollectionOperation.Id,
         ///     });
         /// 
         /// });

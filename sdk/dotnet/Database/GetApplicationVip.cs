@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testApplicationVip = Oci.Database.GetApplicationVip.Invoke(new()
         ///     {
-        ///         ApplicationVipId = oci_database_application_vip.Test_application_vip.Id,
+        ///         ApplicationVipId = testApplicationVipOciDatabaseApplicationVip.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testApplicationVip = Oci.Database.GetApplicationVip.Invoke(new()
         ///     {
-        ///         ApplicationVipId = oci_database_application_vip.Test_application_vip.Id,
+        ///         ApplicationVipId = testApplicationVipOciDatabaseApplicationVip.Id,
         ///     });
         /// 
         /// });

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetMonitoredResources(ctx, &stackmonitoring.GetMonitoredResourcesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Monitored_resource_name),
-//				Status:        pulumi.StringRef(_var.Monitored_resource_status),
-//				WorkRequestId: pulumi.StringRef(oci_containerengine_work_request.Test_work_request.Id),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(monitoredResourceName),
+//				Status:        pulumi.StringRef(monitoredResourceStatus),
+//				WorkRequestId: pulumi.StringRef(testWorkRequest.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

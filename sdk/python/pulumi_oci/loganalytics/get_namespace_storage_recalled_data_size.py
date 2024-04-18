@@ -117,9 +117,9 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=var["namespace_storage_recalled_data_size_namespace"],
-        time_data_ended=var["namespace_storage_recalled_data_size_time_data_ended"],
-        time_data_started=var["namespace_storage_recalled_data_size_time_data_started"])
+    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=namespace_storage_recalled_data_size_namespace,
+        time_data_ended=namespace_storage_recalled_data_size_time_data_ended,
+        time_data_started=namespace_storage_recalled_data_size_time_data_started)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -161,9 +161,9 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=var["namespace_storage_recalled_data_size_namespace"],
-        time_data_ended=var["namespace_storage_recalled_data_size_time_data_ended"],
-        time_data_started=var["namespace_storage_recalled_data_size_time_data_started"])
+    test_namespace_storage_recalled_data_size = oci.LogAnalytics.get_namespace_storage_recalled_data_size(namespace=namespace_storage_recalled_data_size_namespace,
+        time_data_ended=namespace_storage_recalled_data_size_time_data_ended,
+        time_data_started=namespace_storage_recalled_data_size_time_data_started)
     ```
     <!--End PulumiCodeChooser -->
 

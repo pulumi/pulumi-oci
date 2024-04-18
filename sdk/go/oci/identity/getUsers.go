@@ -33,11 +33,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetUsers(ctx, &identity.GetUsersArgs{
-//				CompartmentId:      _var.Tenancy_ocid,
-//				ExternalIdentifier: pulumi.StringRef(_var.User_external_identifier),
-//				IdentityProviderId: pulumi.StringRef(oci_identity_identity_provider.Test_identity_provider.Id),
-//				Name:               pulumi.StringRef(_var.User_name),
-//				State:              pulumi.StringRef(_var.User_state),
+//				CompartmentId:      tenancyOcid,
+//				ExternalIdentifier: pulumi.StringRef(userExternalIdentifier),
+//				IdentityProviderId: pulumi.StringRef(testIdentityProvider.Id),
+//				Name:               pulumi.StringRef(userName),
+//				State:              pulumi.StringRef(userState),
 //			}, nil)
 //			if err != nil {
 //				return err

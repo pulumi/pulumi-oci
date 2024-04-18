@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfigs = oci.ApmConfig.getConfigs({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     configType: _var.config_config_type,
- *     definedTagEquals: _var.config_defined_tag_equals,
- *     definedTagExists: _var.config_defined_tag_exists,
- *     displayName: _var.config_display_name,
- *     freeformTagEquals: _var.config_freeform_tag_equals,
- *     freeformTagExists: _var.config_freeform_tag_exists,
- *     optionsGroup: _var.config_options_group,
+ *     apmDomainId: testApmDomain.id,
+ *     configType: configConfigType,
+ *     definedTagEquals: configDefinedTagEquals,
+ *     definedTagExists: configDefinedTagExists,
+ *     displayName: configDisplayName,
+ *     freeformTagEquals: configFreeformTagEquals,
+ *     freeformTagExists: configFreeformTagExists,
+ *     optionsGroup: configOptionsGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,14 +130,14 @@ export interface GetConfigsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfigs = oci.ApmConfig.getConfigs({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     configType: _var.config_config_type,
- *     definedTagEquals: _var.config_defined_tag_equals,
- *     definedTagExists: _var.config_defined_tag_exists,
- *     displayName: _var.config_display_name,
- *     freeformTagEquals: _var.config_freeform_tag_equals,
- *     freeformTagExists: _var.config_freeform_tag_exists,
- *     optionsGroup: _var.config_options_group,
+ *     apmDomainId: testApmDomain.id,
+ *     configType: configConfigType,
+ *     definedTagEquals: configDefinedTagEquals,
+ *     definedTagExists: configDefinedTagExists,
+ *     displayName: configDisplayName,
+ *     freeformTagEquals: configFreeformTagEquals,
+ *     freeformTagExists: configFreeformTagExists,
+ *     optionsGroup: configOptionsGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

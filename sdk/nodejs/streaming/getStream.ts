@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStream = oci.Streaming.getStream({
- *     streamId: oci_streaming_stream.test_stream.id,
+ *     streamId: testStreamOciStreamingStream.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetStreamResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStream = oci.Streaming.getStream({
- *     streamId: oci_streaming_stream.test_stream.id,
+ *     streamId: testStreamOciStreamingStream.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

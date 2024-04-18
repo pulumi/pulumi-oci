@@ -18,20 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildPipeline = new oci.devops.BuildPipeline("testBuildPipeline", {
- *     projectId: oci_devops_project.test_project.id,
+ * const testBuildPipeline = new oci.devops.BuildPipeline("test_build_pipeline", {
+ *     projectId: testProject.id,
  *     buildPipelineParameters: {
  *         items: [{
- *             defaultValue: _var.build_pipeline_build_pipeline_parameters_items_default_value,
- *             name: _var.build_pipeline_build_pipeline_parameters_items_name,
- *             description: _var.build_pipeline_build_pipeline_parameters_items_description,
+ *             defaultValue: buildPipelineBuildPipelineParametersItemsDefaultValue,
+ *             name: buildPipelineBuildPipelineParametersItemsName,
+ *             description: buildPipelineBuildPipelineParametersItemsDescription,
  *         }],
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.build_pipeline_description,
- *     displayName: _var.build_pipeline_display_name,
+ *     description: buildPipelineDescription,
+ *     displayName: buildPipelineDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

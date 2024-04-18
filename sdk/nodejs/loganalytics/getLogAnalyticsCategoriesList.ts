@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsCategoriesList = oci.LogAnalytics.getLogAnalyticsCategoriesList({
- *     namespace: _var.log_analytics_categories_list_namespace,
- *     categoryDisplayText: _var.log_analytics_categories_list_category_display_text,
- *     categoryType: _var.log_analytics_categories_list_category_type,
- *     name: _var.log_analytics_categories_list_name,
+ *     namespace: logAnalyticsCategoriesListNamespace,
+ *     categoryDisplayText: logAnalyticsCategoriesListCategoryDisplayText,
+ *     categoryType: logAnalyticsCategoriesListCategoryType,
+ *     name: logAnalyticsCategoriesListName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,10 +93,10 @@ export interface GetLogAnalyticsCategoriesListResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsCategoriesList = oci.LogAnalytics.getLogAnalyticsCategoriesList({
- *     namespace: _var.log_analytics_categories_list_namespace,
- *     categoryDisplayText: _var.log_analytics_categories_list_category_display_text,
- *     categoryType: _var.log_analytics_categories_list_category_type,
- *     name: _var.log_analytics_categories_list_name,
+ *     namespace: logAnalyticsCategoriesListNamespace,
+ *     categoryDisplayText: logAnalyticsCategoriesListCategoryDisplayText,
+ *     categoryType: logAnalyticsCategoriesListCategoryType,
+ *     name: logAnalyticsCategoriesListName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

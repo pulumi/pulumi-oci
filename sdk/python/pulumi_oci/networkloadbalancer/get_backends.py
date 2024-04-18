@@ -101,8 +101,8 @@ def get_backends(backend_set_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
+    test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=test_backend_set["name"],
+        network_load_balancer_id=test_network_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_backends_output(backend_set_name: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-        network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
+    test_backends = oci.NetworkLoadBalancer.get_backends(backend_set_name=test_backend_set["name"],
+        network_load_balancer_id=test_network_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 

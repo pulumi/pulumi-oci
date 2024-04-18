@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDataAsset = new oci.datacatalog.DataAsset("testDataAsset", {
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     displayName: _var.data_asset_display_name,
- *     typeKey: _var.data_asset_type_key,
- *     description: _var.data_asset_description,
- *     properties: _var.data_asset_properties,
+ * const testDataAsset = new oci.datacatalog.DataAsset("test_data_asset", {
+ *     catalogId: testCatalog.id,
+ *     displayName: dataAssetDisplayName,
+ *     typeKey: dataAssetTypeKey,
+ *     description: dataAssetDescription,
+ *     properties: dataAssetProperties,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

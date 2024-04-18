@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstances = oci.BigDataService.getBdsInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.bds_instance_display_name,
- *     state: _var.bds_instance_state,
+ *     compartmentId: compartmentId,
+ *     displayName: bdsInstanceDisplayName,
+ *     state: bdsInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetBdsInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBdsInstances = oci.BigDataService.getBdsInstances({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.bds_instance_display_name,
- *     state: _var.bds_instance_state,
+ *     compartmentId: compartmentId,
+ *     displayName: bdsInstanceDisplayName,
+ *     state: bdsInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

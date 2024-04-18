@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsers = oci.Identity.getUsers({
- *     compartmentId: _var.tenancy_ocid,
- *     externalIdentifier: _var.user_external_identifier,
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
- *     name: _var.user_name,
- *     state: _var.user_state,
+ *     compartmentId: tenancyOcid,
+ *     externalIdentifier: userExternalIdentifier,
+ *     identityProviderId: testIdentityProvider.id,
+ *     name: userName,
+ *     state: userState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,11 +119,11 @@ export interface GetUsersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsers = oci.Identity.getUsers({
- *     compartmentId: _var.tenancy_ocid,
- *     externalIdentifier: _var.user_external_identifier,
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
- *     name: _var.user_name,
- *     state: _var.user_state,
+ *     compartmentId: tenancyOcid,
+ *     externalIdentifier: userExternalIdentifier,
+ *     identityProviderId: testIdentityProvider.id,
+ *     name: userName,
+ *     state: userState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

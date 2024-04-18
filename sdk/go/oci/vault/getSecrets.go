@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Vault.GetSecrets(ctx, &vault.GetSecretsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Name:          pulumi.StringRef(_var.Secret_name),
-//				State:         pulumi.StringRef(_var.Secret_state),
-//				VaultId:       pulumi.StringRef(oci_kms_vault.Test_vault.Id),
+//				CompartmentId: compartmentId,
+//				Name:          pulumi.StringRef(secretName),
+//				State:         pulumi.StringRef(secretState),
+//				VaultId:       pulumi.StringRef(testVault.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

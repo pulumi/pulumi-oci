@@ -116,10 +116,10 @@ def get_profile_level(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["profile_level_compartment_id_in_subtree"],
-        name=var["profile_level_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
+    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=compartment_id,
+        compartment_id_in_subtree=profile_level_compartment_id_in_subtree,
+        name=profile_level_name,
+        recommendation_name=test_recommendation["name"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,10 +166,10 @@ def get_profile_level_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["profile_level_compartment_id_in_subtree"],
-        name=var["profile_level_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
+    test_profile_level = oci.Optimizer.get_profile_level(compartment_id=compartment_id,
+        compartment_id_in_subtree=profile_level_compartment_id_in_subtree,
+        name=profile_level_name,
+        recommendation_name=test_recommendation["name"])
     ```
     <!--End PulumiCodeChooser -->
 

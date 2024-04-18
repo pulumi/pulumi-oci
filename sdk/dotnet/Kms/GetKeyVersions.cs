@@ -36,8 +36,8 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testKeyVersions = Oci.Kms.GetKeyVersions.Invoke(new()
         ///     {
-        ///         KeyId = oci_kms_key.Test_key.Id,
-        ///         ManagementEndpoint = @var.Key_version_management_endpoint,
+        ///         KeyId = testKey.Id,
+        ///         ManagementEndpoint = keyVersionManagementEndpoint,
         ///     });
         /// 
         /// });
@@ -72,8 +72,8 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testKeyVersions = Oci.Kms.GetKeyVersions.Invoke(new()
         ///     {
-        ///         KeyId = oci_kms_key.Test_key.Id,
-        ///         ManagementEndpoint = @var.Key_version_management_endpoint,
+        ///         KeyId = testKey.Id,
+        ///         ManagementEndpoint = keyVersionManagementEndpoint,
         ///     });
         /// 
         /// });

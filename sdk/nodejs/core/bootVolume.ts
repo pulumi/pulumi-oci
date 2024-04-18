@@ -21,33 +21,33 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBootVolume = new oci.core.BootVolume("testBootVolume", {
- *     compartmentId: _var.compartment_id,
+ * const testBootVolume = new oci.core.BootVolume("test_boot_volume", {
+ *     compartmentId: compartmentId,
  *     sourceDetails: {
- *         id: _var.boot_volume_source_details_id,
- *         type: _var.boot_volume_source_details_type,
+ *         id: bootVolumeSourceDetailsId,
+ *         type: bootVolumeSourceDetailsType,
  *     },
  *     autotunePolicies: [{
- *         autotuneType: _var.boot_volume_autotune_policies_autotune_type,
- *         maxVpusPerGb: _var.boot_volume_autotune_policies_max_vpus_per_gb,
+ *         autotuneType: bootVolumeAutotunePoliciesAutotuneType,
+ *         maxVpusPerGb: bootVolumeAutotunePoliciesMaxVpusPerGb,
  *     }],
- *     availabilityDomain: _var.boot_volume_availability_domain,
- *     backupPolicyId: data.oci_core_volume_backup_policies.test_volume_backup_policies.volume_backup_policies[0].id,
+ *     availabilityDomain: bootVolumeAvailabilityDomain,
+ *     backupPolicyId: testVolumeBackupPolicies.volumeBackupPolicies[0].id,
  *     bootVolumeReplicas: [{
- *         availabilityDomain: _var.boot_volume_boot_volume_replicas_availability_domain,
- *         displayName: _var.boot_volume_boot_volume_replicas_display_name,
+ *         availabilityDomain: bootVolumeBootVolumeReplicasAvailabilityDomain,
+ *         displayName: bootVolumeBootVolumeReplicasDisplayName,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.boot_volume_display_name,
+ *     displayName: bootVolumeDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoTuneEnabled: _var.boot_volume_is_auto_tune_enabled,
- *     kmsKeyId: oci_kms_key.test_key.id,
- *     sizeInGbs: _var.boot_volume_size_in_gbs,
- *     vpusPerGb: _var.boot_volume_vpus_per_gb,
+ *     isAutoTuneEnabled: bootVolumeIsAutoTuneEnabled,
+ *     kmsKeyId: testKey.id,
+ *     sizeInGbs: bootVolumeSizeInGbs,
+ *     vpusPerGb: bootVolumeVpusPerGb,
  *     bootVolumeReplicasDeletion: true,
  * });
  * ```

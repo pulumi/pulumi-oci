@@ -127,9 +127,9 @@ def get_address_rule(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=var["compartment_id"],
-        country_code=var["address_rule_country_code"],
-        osp_home_region=var["address_rule_osp_home_region"])
+    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=compartment_id,
+        country_code=address_rule_country_code,
+        osp_home_region=address_rule_osp_home_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -172,9 +172,9 @@ def get_address_rule_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=var["compartment_id"],
-        country_code=var["address_rule_country_code"],
-        osp_home_region=var["address_rule_osp_home_region"])
+    test_address_rule = oci.OspGateway.get_address_rule(compartment_id=compartment_id,
+        country_code=address_rule_country_code,
+        osp_home_region=address_rule_osp_home_region)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -16,15 +16,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackend = new oci.loadbalancer.Backend("testBackend", {
- *     backendsetName: oci_load_balancer_backend_set.test_backend_set.name,
- *     ipAddress: _var.backend_ip_address,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     port: _var.backend_port,
- *     backup: _var.backend_backup,
- *     drain: _var.backend_drain,
- *     offline: _var.backend_offline,
- *     weight: _var.backend_weight,
+ * const testBackend = new oci.loadbalancer.Backend("test_backend", {
+ *     backendsetName: testBackendSet.name,
+ *     ipAddress: backendIpAddress,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     port: backendPort,
+ *     backup: backendBackup,
+ *     drain: backendDrain,
+ *     offline: backendOffline,
+ *     weight: backendWeight,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

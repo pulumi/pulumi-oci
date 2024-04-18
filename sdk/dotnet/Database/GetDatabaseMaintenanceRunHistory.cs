@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testMaintenanceRunHistory = Oci.Database.GetDatabaseMaintenanceRunHistory.Invoke(new()
         ///     {
-        ///         MaintenanceRunHistoryId = oci_database_maintenance_run_history.Test_maintenance_run_history.Id,
+        ///         MaintenanceRunHistoryId = testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testMaintenanceRunHistory = Oci.Database.GetDatabaseMaintenanceRunHistory.Invoke(new()
         ///     {
-        ///         MaintenanceRunHistoryId = oci_database_maintenance_run_history.Test_maintenance_run_history.Id,
+        ///         MaintenanceRunHistoryId = testMaintenanceRunHistoryOciDatabaseMaintenanceRunHistory.Id,
         ///     });
         /// 
         /// });

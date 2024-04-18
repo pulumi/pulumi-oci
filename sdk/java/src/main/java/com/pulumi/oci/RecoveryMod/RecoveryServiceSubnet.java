@@ -45,10 +45,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRecoveryServiceSubnet = new RecoveryServiceSubnet(&#34;testRecoveryServiceSubnet&#34;, RecoveryServiceSubnetArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.recovery_service_subnet_display_name())
- *             .subnetId(oci_core_subnet.test_subnet().id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .compartmentId(compartmentId)
+ *             .displayName(recoveryServiceSubnetDisplayName)
+ *             .subnetId(testSubnet.id())
+ *             .vcnId(testVcn.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());

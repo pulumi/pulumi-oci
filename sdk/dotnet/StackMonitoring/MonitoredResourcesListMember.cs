@@ -25,11 +25,11 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitoredResourcesListMember = new Oci.StackMonitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember", new()
+    ///     var testMonitoredResourcesListMember = new Oci.StackMonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member", new()
     ///     {
-    ///         MonitoredResourceId = oci_stack_monitoring_monitored_resource.Test_monitored_resource.Id,
-    ///         DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
-    ///         LimitLevel = @var.Monitored_resources_list_member_limit_level,
+    ///         MonitoredResourceId = testMonitoredResource.Id,
+    ///         DestinationResourceId = testDestinationResource.Id,
+    ///         LimitLevel = monitoredResourcesListMemberLimitLevel,
     ///     });
     /// 
     /// });

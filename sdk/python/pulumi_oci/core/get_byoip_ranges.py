@@ -121,9 +121,9 @@ def get_byoip_ranges(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_ranges = oci.Core.get_byoip_ranges(compartment_id=var["compartment_id"],
-        display_name=var["byoip_range_display_name"],
-        state=var["byoip_range_state"])
+    test_byoip_ranges = oci.Core.get_byoip_ranges(compartment_id=compartment_id,
+        display_name=byoip_range_display_name,
+        state=byoip_range_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -168,9 +168,9 @@ def get_byoip_ranges_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_byoip_ranges = oci.Core.get_byoip_ranges(compartment_id=var["compartment_id"],
-        display_name=var["byoip_range_display_name"],
-        state=var["byoip_range_state"])
+    test_byoip_ranges = oci.Core.get_byoip_ranges(compartment_id=compartment_id,
+        display_name=byoip_range_display_name,
+        state=byoip_range_state)
     ```
     <!--End PulumiCodeChooser -->
 

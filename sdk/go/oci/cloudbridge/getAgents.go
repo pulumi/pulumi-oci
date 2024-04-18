@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetAgents(ctx, &cloudbridge.GetAgentsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				AgentId:       pulumi.StringRef(oci_cloud_bridge_agent.Test_agent.Id),
-//				DisplayName:   pulumi.StringRef(_var.Agent_display_name),
-//				EnvironmentId: pulumi.StringRef(oci_cloud_bridge_environment.Test_environment.Id),
-//				State:         pulumi.StringRef(_var.Agent_state),
+//				CompartmentId: compartmentId,
+//				AgentId:       pulumi.StringRef(testAgent.Id),
+//				DisplayName:   pulumi.StringRef(agentDisplayName),
+//				EnvironmentId: pulumi.StringRef(testEnvironment.Id),
+//				State:         pulumi.StringRef(agentState),
 //			}, nil)
 //			if err != nil {
 //				return err

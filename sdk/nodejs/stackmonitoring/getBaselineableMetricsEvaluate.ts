@@ -19,19 +19,19 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBaselineableMetricsEvaluate = oci.StackMonitoring.getBaselineableMetricsEvaluate({
- *     baselineableMetricId: oci_stack_monitoring_baselineable_metric.test_baselineable_metric.id,
+ *     baselineableMetricId: testBaselineableMetric.id,
  *     items: [{
  *         evaluationDataPoints: [{
- *             timestamp: _var.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
- *             value: _var.baselineable_metrics_evaluate_items_evaluation_data_points_value,
+ *             timestamp: baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp,
+ *             value: baselineableMetricsEvaluateItemsEvaluationDataPointsValue,
  *         }],
  *         trainingDataPoints: [{
- *             timestamp: _var.baselineable_metrics_evaluate_items_training_data_points_timestamp,
- *             value: _var.baselineable_metrics_evaluate_items_training_data_points_value,
+ *             timestamp: baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp,
+ *             value: baselineableMetricsEvaluateItemsTrainingDataPointsValue,
  *         }],
- *         dimensions: _var.baselineable_metrics_evaluate_items_dimensions,
+ *         dimensions: baselineableMetricsEvaluateItemsDimensions,
  *     }],
- *     resourceId: oci_usage_proxy_resource.test_resource.id,
+ *     resourceId: testResource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,19 +99,19 @@ export interface GetBaselineableMetricsEvaluateResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBaselineableMetricsEvaluate = oci.StackMonitoring.getBaselineableMetricsEvaluate({
- *     baselineableMetricId: oci_stack_monitoring_baselineable_metric.test_baselineable_metric.id,
+ *     baselineableMetricId: testBaselineableMetric.id,
  *     items: [{
  *         evaluationDataPoints: [{
- *             timestamp: _var.baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
- *             value: _var.baselineable_metrics_evaluate_items_evaluation_data_points_value,
+ *             timestamp: baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp,
+ *             value: baselineableMetricsEvaluateItemsEvaluationDataPointsValue,
  *         }],
  *         trainingDataPoints: [{
- *             timestamp: _var.baselineable_metrics_evaluate_items_training_data_points_timestamp,
- *             value: _var.baselineable_metrics_evaluate_items_training_data_points_value,
+ *             timestamp: baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp,
+ *             value: baselineableMetricsEvaluateItemsTrainingDataPointsValue,
  *         }],
- *         dimensions: _var.baselineable_metrics_evaluate_items_dimensions,
+ *         dimensions: baselineableMetricsEvaluateItemsDimensions,
  *     }],
- *     resourceId: oci_usage_proxy_resource.test_resource.id,
+ *     resourceId: testResource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

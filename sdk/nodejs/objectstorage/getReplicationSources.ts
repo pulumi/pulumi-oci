@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationSources = oci.ObjectStorage.getReplicationSources({
- *     bucket: _var.replication_source_bucket,
- *     namespace: _var.replication_source_namespace,
+ *     bucket: replicationSourceBucket,
+ *     namespace: replicationSourceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetReplicationSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationSources = oci.ObjectStorage.getReplicationSources({
- *     bucket: _var.replication_source_bucket,
- *     namespace: _var.replication_source_namespace,
+ *     bucket: replicationSourceBucket,
+ *     namespace: replicationSourceNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

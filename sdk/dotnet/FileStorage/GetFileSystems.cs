@@ -31,14 +31,14 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testFileSystems = Oci.FileStorage.GetFileSystems.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.File_system_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.File_system_display_name,
-        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
-        ///         Id = @var.File_system_id,
-        ///         ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
-        ///         State = @var.File_system_state,
+        ///         AvailabilityDomain = fileSystemAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fileSystemDisplayName,
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicy.Id,
+        ///         Id = fileSystemId,
+        ///         ParentFileSystemId = testFileSystem.Id,
+        ///         SourceSnapshotId = testSnapshot.Id,
+        ///         State = fileSystemState,
         ///     });
         /// 
         /// });
@@ -68,14 +68,14 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testFileSystems = Oci.FileStorage.GetFileSystems.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.File_system_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.File_system_display_name,
-        ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
-        ///         Id = @var.File_system_id,
-        ///         ParentFileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
-        ///         State = @var.File_system_state,
+        ///         AvailabilityDomain = fileSystemAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fileSystemDisplayName,
+        ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicy.Id,
+        ///         Id = fileSystemId,
+        ///         ParentFileSystemId = testFileSystem.Id,
+        ///         SourceSnapshotId = testSnapshot.Id,
+        ///         State = fileSystemState,
         ///     });
         /// 
         /// });

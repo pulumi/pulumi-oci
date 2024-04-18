@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceAgentPlugins = oci.ComputeInstanceAgent.getInstanceAgentPlugins({
- *     instanceagentId: oci_computeinstanceagent_instanceagent.test_instanceagent.id,
- *     name: _var.instance_agent_plugin_name,
- *     status: _var.instance_agent_plugin_status,
+ *     instanceagentId: testInstanceagent.id,
+ *     name: instanceAgentPluginName,
+ *     status: instanceAgentPluginStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetInstanceAgentPluginsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceAgentPlugins = oci.ComputeInstanceAgent.getInstanceAgentPlugins({
- *     instanceagentId: oci_computeinstanceagent_instanceagent.test_instanceagent.id,
- *     name: _var.instance_agent_plugin_name,
- *     status: _var.instance_agent_plugin_status,
+ *     instanceagentId: testInstanceagent.id,
+ *     name: instanceAgentPluginName,
+ *     status: instanceAgentPluginStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

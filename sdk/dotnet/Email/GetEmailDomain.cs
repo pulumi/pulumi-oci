@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testEmailDomain = Oci.Email.GetEmailDomain.Invoke(new()
         ///     {
-        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+        ///         EmailDomainId = testEmailDomainOciEmailEmailDomain.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testEmailDomain = Oci.Email.GetEmailDomain.Invoke(new()
         ///     {
-        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+        ///         EmailDomainId = testEmailDomainOciEmailEmailDomain.Id,
         ///     });
         /// 
         /// });

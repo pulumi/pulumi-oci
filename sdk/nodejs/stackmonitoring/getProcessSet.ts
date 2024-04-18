@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProcessSet = oci.StackMonitoring.getProcessSet({
- *     processSetId: oci_stack_monitoring_process_set.test_process_set.id,
+ *     processSetId: testProcessSetOciStackMonitoringProcessSet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,7 +105,7 @@ export interface GetProcessSetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProcessSet = oci.StackMonitoring.getProcessSet({
- *     processSetId: oci_stack_monitoring_process_set.test_process_set.id,
+ *     processSetId: testProcessSetOciStackMonitoringProcessSet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

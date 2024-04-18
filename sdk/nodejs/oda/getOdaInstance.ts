@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaInstance = oci.Oda.getOdaInstance({
- *     odaInstanceId: oci_oda_oda_instance.test_oda_instance.id,
+ *     odaInstanceId: testOdaInstanceOciOdaOdaInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -153,7 +153,7 @@ export interface GetOdaInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaInstance = oci.Oda.getOdaInstance({
- *     odaInstanceId: oci_oda_oda_instance.test_oda_instance.id,
+ *     odaInstanceId: testOdaInstanceOciOdaOdaInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

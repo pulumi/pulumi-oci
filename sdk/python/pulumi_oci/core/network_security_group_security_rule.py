@@ -536,38 +536,38 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_security_group_security_rule = oci.core.NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule",
-            network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
-            direction=var["network_security_group_security_rule_direction"],
-            protocol=var["network_security_group_security_rule_protocol"],
-            description=var["network_security_group_security_rule_description"],
-            destination=var["network_security_group_security_rule_destination"],
-            destination_type=var["network_security_group_security_rule_destination_type"],
+        test_network_security_group_security_rule = oci.core.NetworkSecurityGroupSecurityRule("test_network_security_group_security_rule",
+            network_security_group_id=test_network_security_group["id"],
+            direction=network_security_group_security_rule_direction,
+            protocol=network_security_group_security_rule_protocol,
+            description=network_security_group_security_rule_description,
+            destination=network_security_group_security_rule_destination,
+            destination_type=network_security_group_security_rule_destination_type,
             icmp_options=oci.core.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs(
-                type=var["network_security_group_security_rule_icmp_options_type"],
-                code=var["network_security_group_security_rule_icmp_options_code"],
+                type=network_security_group_security_rule_icmp_options_type,
+                code=network_security_group_security_rule_icmp_options_code,
             ),
-            source=var["network_security_group_security_rule_source"],
-            source_type=var["network_security_group_security_rule_source_type"],
-            stateless=var["network_security_group_security_rule_stateless"],
+            source=network_security_group_security_rule_source,
+            source_type=network_security_group_security_rule_source_type,
+            stateless=network_security_group_security_rule_stateless,
             tcp_options=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs(
-                    max=var["network_security_group_security_rule_tcp_options_destination_port_range_max"],
-                    min=var["network_security_group_security_rule_tcp_options_destination_port_range_min"],
+                    max=network_security_group_security_rule_tcp_options_destination_port_range_max,
+                    min=network_security_group_security_rule_tcp_options_destination_port_range_min,
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs(
-                    max=var["network_security_group_security_rule_tcp_options_source_port_range_max"],
-                    min=var["network_security_group_security_rule_tcp_options_source_port_range_min"],
+                    max=network_security_group_security_rule_tcp_options_source_port_range_max,
+                    min=network_security_group_security_rule_tcp_options_source_port_range_min,
                 ),
             ),
             udp_options=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs(
-                    max=var["network_security_group_security_rule_udp_options_destination_port_range_max"],
-                    min=var["network_security_group_security_rule_udp_options_destination_port_range_min"],
+                    max=network_security_group_security_rule_udp_options_destination_port_range_max,
+                    min=network_security_group_security_rule_udp_options_destination_port_range_min,
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs(
-                    max=var["network_security_group_security_rule_udp_options_source_port_range_max"],
-                    min=var["network_security_group_security_rule_udp_options_source_port_range_min"],
+                    max=network_security_group_security_rule_udp_options_source_port_range_max,
+                    min=network_security_group_security_rule_udp_options_source_port_range_min,
                 ),
             ))
         ```
@@ -630,38 +630,38 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_security_group_security_rule = oci.core.NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule",
-            network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"],
-            direction=var["network_security_group_security_rule_direction"],
-            protocol=var["network_security_group_security_rule_protocol"],
-            description=var["network_security_group_security_rule_description"],
-            destination=var["network_security_group_security_rule_destination"],
-            destination_type=var["network_security_group_security_rule_destination_type"],
+        test_network_security_group_security_rule = oci.core.NetworkSecurityGroupSecurityRule("test_network_security_group_security_rule",
+            network_security_group_id=test_network_security_group["id"],
+            direction=network_security_group_security_rule_direction,
+            protocol=network_security_group_security_rule_protocol,
+            description=network_security_group_security_rule_description,
+            destination=network_security_group_security_rule_destination,
+            destination_type=network_security_group_security_rule_destination_type,
             icmp_options=oci.core.NetworkSecurityGroupSecurityRuleIcmpOptionsArgs(
-                type=var["network_security_group_security_rule_icmp_options_type"],
-                code=var["network_security_group_security_rule_icmp_options_code"],
+                type=network_security_group_security_rule_icmp_options_type,
+                code=network_security_group_security_rule_icmp_options_code,
             ),
-            source=var["network_security_group_security_rule_source"],
-            source_type=var["network_security_group_security_rule_source_type"],
-            stateless=var["network_security_group_security_rule_stateless"],
+            source=network_security_group_security_rule_source,
+            source_type=network_security_group_security_rule_source_type,
+            stateless=network_security_group_security_rule_stateless,
             tcp_options=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs(
-                    max=var["network_security_group_security_rule_tcp_options_destination_port_range_max"],
-                    min=var["network_security_group_security_rule_tcp_options_destination_port_range_min"],
+                    max=network_security_group_security_rule_tcp_options_destination_port_range_max,
+                    min=network_security_group_security_rule_tcp_options_destination_port_range_min,
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleTcpOptionsSourcePortRangeArgs(
-                    max=var["network_security_group_security_rule_tcp_options_source_port_range_max"],
-                    min=var["network_security_group_security_rule_tcp_options_source_port_range_min"],
+                    max=network_security_group_security_rule_tcp_options_source_port_range_max,
+                    min=network_security_group_security_rule_tcp_options_source_port_range_min,
                 ),
             ),
             udp_options=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsArgs(
                 destination_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsDestinationPortRangeArgs(
-                    max=var["network_security_group_security_rule_udp_options_destination_port_range_max"],
-                    min=var["network_security_group_security_rule_udp_options_destination_port_range_min"],
+                    max=network_security_group_security_rule_udp_options_destination_port_range_max,
+                    min=network_security_group_security_rule_udp_options_destination_port_range_min,
                 ),
                 source_port_range=oci.core.NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRangeArgs(
-                    max=var["network_security_group_security_rule_udp_options_source_port_range_max"],
-                    min=var["network_security_group_security_rule_udp_options_source_port_range_min"],
+                    max=network_security_group_security_rule_udp_options_source_port_range_max,
+                    min=network_security_group_security_rule_udp_options_source_port_range_min,
                 ),
             ))
         ```

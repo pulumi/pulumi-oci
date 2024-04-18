@@ -31,24 +31,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewDataMaskRule(ctx, "testDataMaskRule", &CloudGuard.DataMaskRuleArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DataMaskCategories: pulumi.Any(_var.Data_mask_rule_data_mask_categories),
-//				DisplayName:        pulumi.Any(_var.Data_mask_rule_display_name),
-//				IamGroupId:         pulumi.Any(oci_identity_group.Test_group.Id),
+//			_, err := CloudGuard.NewDataMaskRule(ctx, "test_data_mask_rule", &CloudGuard.DataMaskRuleArgs{
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				DataMaskCategories: pulumi.Any(dataMaskRuleDataMaskCategories),
+//				DisplayName:        pulumi.Any(dataMaskRuleDisplayName),
+//				IamGroupId:         pulumi.Any(testGroup.Id),
 //				TargetSelected: &cloudguard.DataMaskRuleTargetSelectedArgs{
-//					Kind:   pulumi.Any(_var.Data_mask_rule_target_selected_kind),
-//					Values: pulumi.Any(_var.Data_mask_rule_target_selected_values),
+//					Kind:   pulumi.Any(dataMaskRuleTargetSelectedKind),
+//					Values: pulumi.Any(dataMaskRuleTargetSelectedValues),
 //				},
-//				DataMaskRuleStatus: pulumi.Any(_var.Data_mask_rule_data_mask_rule_status),
+//				DataMaskRuleStatus: pulumi.Any(dataMaskRuleDataMaskRuleStatus),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Data_mask_rule_description),
+//				Description: pulumi.Any(dataMaskRuleDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				State: pulumi.Any(_var.Data_mask_rule_state),
+//				State: pulumi.Any(dataMaskRuleState),
 //			})
 //			if err != nil {
 //				return err

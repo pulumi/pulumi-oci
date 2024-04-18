@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeGroupReplica = oci.Core.getVolumeGroupReplica({
- *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ *     volumeGroupReplicaId: testVolumeGroupReplicaOciCoreVolumeGroupReplica.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,7 +109,7 @@ export interface GetVolumeGroupReplicaResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumeGroupReplica = oci.Core.getVolumeGroupReplica({
- *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ *     volumeGroupReplicaId: testVolumeGroupReplicaOciCoreVolumeGroupReplica.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

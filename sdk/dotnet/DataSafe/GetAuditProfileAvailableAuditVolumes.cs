@@ -29,11 +29,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditProfileAvailableAuditVolumes = Oci.DataSafe.GetAuditProfileAvailableAuditVolumes.Invoke(new()
         ///     {
-        ///         AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
-        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
-        ///         MonthInConsiderationGreaterThan = @var.Audit_profile_available_audit_volume_month_in_consideration_greater_than,
-        ///         MonthInConsiderationLessThan = @var.Audit_profile_available_audit_volume_month_in_consideration_less_than,
-        ///         TrailLocation = @var.Audit_profile_available_audit_volume_trail_location,
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         WorkRequestId = testWorkRequest.Id,
+        ///         MonthInConsiderationGreaterThan = auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan,
+        ///         MonthInConsiderationLessThan = auditProfileAvailableAuditVolumeMonthInConsiderationLessThan,
+        ///         TrailLocation = auditProfileAvailableAuditVolumeTrailLocation,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditProfileAvailableAuditVolumes = Oci.DataSafe.GetAuditProfileAvailableAuditVolumes.Invoke(new()
         ///     {
-        ///         AuditProfileId = oci_data_safe_audit_profile.Test_audit_profile.Id,
-        ///         WorkRequestId = oci_containerengine_work_request.Test_work_request.Id,
-        ///         MonthInConsiderationGreaterThan = @var.Audit_profile_available_audit_volume_month_in_consideration_greater_than,
-        ///         MonthInConsiderationLessThan = @var.Audit_profile_available_audit_volume_month_in_consideration_less_than,
-        ///         TrailLocation = @var.Audit_profile_available_audit_volume_trail_location,
+        ///         AuditProfileId = testAuditProfile.Id,
+        ///         WorkRequestId = testWorkRequest.Id,
+        ///         MonthInConsiderationGreaterThan = auditProfileAvailableAuditVolumeMonthInConsiderationGreaterThan,
+        ///         MonthInConsiderationLessThan = auditProfileAvailableAuditVolumeMonthInConsiderationLessThan,
+        ///         TrailLocation = auditProfileAvailableAuditVolumeTrailLocation,
         ///     });
         /// 
         /// });

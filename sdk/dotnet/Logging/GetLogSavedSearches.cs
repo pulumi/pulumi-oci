@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogSavedSearches = Oci.Logging.GetLogSavedSearches.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
-        ///         Name = @var.Log_saved_search_name,
+        ///         CompartmentId = compartmentId,
+        ///         LogSavedSearchId = testLogSavedSearch.Id,
+        ///         Name = logSavedSearchName,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogSavedSearches = Oci.Logging.GetLogSavedSearches.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         LogSavedSearchId = oci_logging_log_saved_search.Test_log_saved_search.Id,
-        ///         Name = @var.Log_saved_search_name,
+        ///         CompartmentId = compartmentId,
+        ///         LogSavedSearchId = testLogSavedSearch.Id,
+        ///         Name = logSavedSearchName,
         ///     });
         /// 
         /// });

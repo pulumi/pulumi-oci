@@ -124,9 +124,9 @@ def get_instance_available_plugin(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=var["instance_available_plugin_os_name"],
-        os_version=var["instance_available_plugin_os_version"],
-        name=var["instance_available_plugin_name"])
+    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
+        os_version=instance_available_plugin_os_version,
+        name=instance_available_plugin_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -173,9 +173,9 @@ def get_instance_available_plugin_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=var["instance_available_plugin_os_name"],
-        os_version=var["instance_available_plugin_os_version"],
-        name=var["instance_available_plugin_name"])
+    test_instance_available_plugins = oci.ComputeInstanceAgent.get_instance_available_plugin(os_name=instance_available_plugin_os_name,
+        os_version=instance_available_plugin_os_version,
+        name=instance_available_plugin_name)
     ```
     <!--End PulumiCodeChooser -->
 

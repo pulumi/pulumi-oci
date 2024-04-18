@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDbSystemDiscoveries = oci.DatabaseManagement.getExternalDbSystemDiscoveries({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_db_system_discovery_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: externalDbSystemDiscoveryDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetExternalDbSystemDiscoveriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDbSystemDiscoveries = oci.DatabaseManagement.getExternalDbSystemDiscoveries({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_db_system_discovery_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: externalDbSystemDiscoveryDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

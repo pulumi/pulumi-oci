@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualServiceRouteTables = oci.ServiceMesh.getVirtualServiceRouteTables({
- *     compartmentId: _var.compartment_id,
- *     id: _var.virtual_service_route_table_id,
- *     name: _var.virtual_service_route_table_name,
- *     state: _var.virtual_service_route_table_state,
- *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *     compartmentId: compartmentId,
+ *     id: virtualServiceRouteTableId,
+ *     name: virtualServiceRouteTableName,
+ *     state: virtualServiceRouteTableState,
+ *     virtualServiceId: testVirtualService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetVirtualServiceRouteTablesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVirtualServiceRouteTables = oci.ServiceMesh.getVirtualServiceRouteTables({
- *     compartmentId: _var.compartment_id,
- *     id: _var.virtual_service_route_table_id,
- *     name: _var.virtual_service_route_table_name,
- *     state: _var.virtual_service_route_table_state,
- *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *     compartmentId: compartmentId,
+ *     id: virtualServiceRouteTableId,
+ *     name: virtualServiceRouteTableName,
+ *     state: virtualServiceRouteTableState,
+ *     virtualServiceId: testVirtualService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

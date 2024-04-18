@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetDiscoverySchedule(ctx, &cloudbridge.GetDiscoveryScheduleArgs{
-//				DiscoveryScheduleId: oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id,
+//				DiscoveryScheduleId: testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

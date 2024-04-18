@@ -240,9 +240,9 @@ class DataSafeConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_safe_configuration = oci.data_safe.DataSafeConfiguration("testDataSafeConfiguration",
-            is_enabled=var["data_safe_configuration_is_enabled"],
-            compartment_id=var["compartment_id"])
+        test_data_safe_configuration = oci.data_safe.DataSafeConfiguration("test_data_safe_configuration",
+            is_enabled=data_safe_configuration_is_enabled,
+            compartment_id=compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -277,9 +277,9 @@ class DataSafeConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_safe_configuration = oci.data_safe.DataSafeConfiguration("testDataSafeConfiguration",
-            is_enabled=var["data_safe_configuration_is_enabled"],
-            compartment_id=var["compartment_id"])
+        test_data_safe_configuration = oci.data_safe.DataSafeConfiguration("test_data_safe_configuration",
+            is_enabled=data_safe_configuration_is_enabled,
+            compartment_id=compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 

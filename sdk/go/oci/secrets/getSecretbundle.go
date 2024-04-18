@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Secrets.GetSecretbundle(ctx, &secrets.GetSecretbundleArgs{
-//				SecretId:          oci_vault_secret.Test_secret.Id,
-//				SecretVersionName: pulumi.StringRef(oci_vault_secret_version.Test_secret_version.Name),
-//				Stage:             pulumi.StringRef(_var.Secretbundle_stage),
-//				VersionNumber:     pulumi.StringRef(_var.Secretbundle_version_number),
+//				SecretId:          testSecret.Id,
+//				SecretVersionName: pulumi.StringRef(testSecretVersion.Name),
+//				Stage:             pulumi.StringRef(secretbundleStage),
+//				VersionNumber:     pulumi.StringRef(secretbundleVersionNumber),
 //			}, nil)
 //			if err != nil {
 //				return err

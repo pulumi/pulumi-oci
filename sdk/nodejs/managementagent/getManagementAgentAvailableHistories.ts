@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
- *     timeAvailabilityStatusEndedGreaterThan: _var.management_agent_available_history_time_availability_status_ended_greater_than,
- *     timeAvailabilityStatusStartedLessThan: _var.management_agent_available_history_time_availability_status_started_less_than,
+ *     managementAgentId: testManagementAgent.id,
+ *     timeAvailabilityStatusEndedGreaterThan: managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
+ *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetManagementAgentAvailableHistoriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
- *     timeAvailabilityStatusEndedGreaterThan: _var.management_agent_available_history_time_availability_status_ended_greater_than,
- *     timeAvailabilityStatusStartedLessThan: _var.management_agent_available_history_time_availability_status_started_less_than,
+ *     managementAgentId: testManagementAgent.id,
+ *     timeAvailabilityStatusEndedGreaterThan: managementAgentAvailableHistoryTimeAvailabilityStatusEndedGreaterThan,
+ *     timeAvailabilityStatusStartedLessThan: managementAgentAvailableHistoryTimeAvailabilityStatusStartedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

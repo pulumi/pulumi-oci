@@ -31,18 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicyDecryptionProfile(ctx, "testNetworkFirewallPolicyDecryptionProfile", &NetworkFirewall.NetworkFirewallPolicyDecryptionProfileArgs{
-//				NetworkFirewallPolicyId:            pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-//				Type:                               pulumi.Any(_var.Network_firewall_policy_decryption_profile_type),
-//				AreCertificateExtensionsRestricted: pulumi.Any(_var.Network_firewall_policy_decryption_profile_are_certificate_extensions_restricted),
-//				IsAutoIncludeAltName:               pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_auto_include_alt_name),
-//				IsExpiredCertificateBlocked:        pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_expired_certificate_blocked),
-//				IsOutOfCapacityBlocked:             pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_out_of_capacity_blocked),
-//				IsRevocationStatusTimeoutBlocked:   pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked),
-//				IsUnknownRevocationStatusBlocked:   pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked),
-//				IsUnsupportedCipherBlocked:         pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked),
-//				IsUnsupportedVersionBlocked:        pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_unsupported_version_blocked),
-//				IsUntrustedIssuerBlocked:           pulumi.Any(_var.Network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked),
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicyDecryptionProfile(ctx, "test_network_firewall_policy_decryption_profile", &NetworkFirewall.NetworkFirewallPolicyDecryptionProfileArgs{
+//				Name:                               pulumi.Any(networkFirewallPolicyDecryptionProfileName),
+//				NetworkFirewallPolicyId:            pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Type:                               pulumi.Any(networkFirewallPolicyDecryptionProfileType),
+//				AreCertificateExtensionsRestricted: pulumi.Any(networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted),
+//				IsAutoIncludeAltName:               pulumi.Any(networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName),
+//				IsExpiredCertificateBlocked:        pulumi.Any(networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked),
+//				IsOutOfCapacityBlocked:             pulumi.Any(networkFirewallPolicyDecryptionProfileIsOutOfCapacityBlocked),
+//				IsRevocationStatusTimeoutBlocked:   pulumi.Any(networkFirewallPolicyDecryptionProfileIsRevocationStatusTimeoutBlocked),
+//				IsUnknownRevocationStatusBlocked:   pulumi.Any(networkFirewallPolicyDecryptionProfileIsUnknownRevocationStatusBlocked),
+//				IsUnsupportedCipherBlocked:         pulumi.Any(networkFirewallPolicyDecryptionProfileIsUnsupportedCipherBlocked),
+//				IsUnsupportedVersionBlocked:        pulumi.Any(networkFirewallPolicyDecryptionProfileIsUnsupportedVersionBlocked),
+//				IsUntrustedIssuerBlocked:           pulumi.Any(networkFirewallPolicyDecryptionProfileIsUntrustedIssuerBlocked),
 //			})
 //			if err != nil {
 //				return err

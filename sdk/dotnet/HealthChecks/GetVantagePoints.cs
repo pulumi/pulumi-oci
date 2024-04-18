@@ -30,8 +30,8 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testVantagePoints = Oci.HealthChecks.GetVantagePoints.Invoke(new()
         ///     {
-        ///         DisplayName = @var.Vantage_point_display_name,
-        ///         Name = @var.Vantage_point_name,
+        ///         DisplayName = vantagePointDisplayName,
+        ///         Name = vantagePointName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testVantagePoints = Oci.HealthChecks.GetVantagePoints.Invoke(new()
         ///     {
-        ///         DisplayName = @var.Vantage_point_display_name,
-        ///         Name = @var.Vantage_point_name,
+        ///         DisplayName = vantagePointDisplayName,
+        ///         Name = vantagePointName,
         ///     });
         /// 
         /// });

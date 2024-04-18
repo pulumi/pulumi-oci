@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkSecurityGroup = new oci.core.NetworkSecurityGroup("testNetworkSecurityGroup", {
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testNetworkSecurityGroup = new oci.core.NetworkSecurityGroup("test_network_security_group", {
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.network_security_group_display_name,
+ *     displayName: networkSecurityGroupDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

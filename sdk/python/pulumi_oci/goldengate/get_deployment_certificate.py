@@ -305,8 +305,8 @@ def get_deployment_certificate(certificate_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=var["deployment_certificate_certificate_key"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
+    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
+        deployment_id=test_deployment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -361,8 +361,8 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=var["deployment_certificate_certificate_key"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
+    test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=deployment_certificate_certificate_key,
+        deployment_id=test_deployment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

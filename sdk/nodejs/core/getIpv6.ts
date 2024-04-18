@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6 = oci.Core.getIpv6({
- *     ipv6id: oci_core_ipv6.test_ipv6.id,
+ *     ipv6id: testIpv6OciCoreIpv6.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,7 +106,7 @@ export interface GetIpv6Result {
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6 = oci.Core.getIpv6({
- *     ipv6id: oci_core_ipv6.test_ipv6.id,
+ *     ipv6id: testIpv6OciCoreIpv6.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

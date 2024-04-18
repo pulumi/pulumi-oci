@@ -121,9 +121,9 @@ def get_compute_clusters(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_clusters = oci.Core.get_compute_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_cluster_availability_domain"],
-        display_name=var["compute_cluster_display_name"])
+    test_compute_clusters = oci.Core.get_compute_clusters(compartment_id=compartment_id,
+        availability_domain=compute_cluster_availability_domain,
+        display_name=compute_cluster_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -168,9 +168,9 @@ def get_compute_clusters_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_clusters = oci.Core.get_compute_clusters(compartment_id=var["compartment_id"],
-        availability_domain=var["compute_cluster_availability_domain"],
-        display_name=var["compute_cluster_display_name"])
+    test_compute_clusters = oci.Core.get_compute_clusters(compartment_id=compartment_id,
+        availability_domain=compute_cluster_availability_domain,
+        display_name=compute_cluster_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

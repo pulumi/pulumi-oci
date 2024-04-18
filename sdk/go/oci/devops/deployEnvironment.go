@@ -31,33 +31,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewDeployEnvironment(ctx, "testDeployEnvironment", &DevOps.DeployEnvironmentArgs{
-//				DeployEnvironmentType: pulumi.Any(_var.Deploy_environment_deploy_environment_type),
-//				ProjectId:             pulumi.Any(oci_devops_project.Test_project.Id),
-//				ClusterId:             pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
+//			_, err := DevOps.NewDeployEnvironment(ctx, "test_deploy_environment", &DevOps.DeployEnvironmentArgs{
+//				DeployEnvironmentType: pulumi.Any(deployEnvironmentDeployEnvironmentType),
+//				ProjectId:             pulumi.Any(testProject.Id),
+//				ClusterId:             pulumi.Any(testCluster.Id),
 //				ComputeInstanceGroupSelectors: &devops.DeployEnvironmentComputeInstanceGroupSelectorsArgs{
 //					Items: devops.DeployEnvironmentComputeInstanceGroupSelectorsItemArray{
 //						&devops.DeployEnvironmentComputeInstanceGroupSelectorsItemArgs{
-//							SelectorType:       pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_selector_type),
-//							ComputeInstanceIds: pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_compute_instance_ids),
-//							Query:              pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_query),
-//							Region:             pulumi.Any(_var.Deploy_environment_compute_instance_group_selectors_items_region),
+//							SelectorType:       pulumi.Any(deployEnvironmentComputeInstanceGroupSelectorsItemsSelectorType),
+//							ComputeInstanceIds: pulumi.Any(deployEnvironmentComputeInstanceGroupSelectorsItemsComputeInstanceIds),
+//							Query:              pulumi.Any(deployEnvironmentComputeInstanceGroupSelectorsItemsQuery),
+//							Region:             pulumi.Any(deployEnvironmentComputeInstanceGroupSelectorsItemsRegion),
 //						},
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Deploy_environment_description),
-//				DisplayName: pulumi.Any(_var.Deploy_environment_display_name),
+//				Description: pulumi.Any(deployEnvironmentDescription),
+//				DisplayName: pulumi.Any(deployEnvironmentDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				FunctionId: pulumi.Any(oci_functions_function.Test_function.Id),
+//				FunctionId: pulumi.Any(testFunction.Id),
 //				NetworkChannel: &devops.DeployEnvironmentNetworkChannelArgs{
-//					NetworkChannelType: pulumi.Any(_var.Deploy_environment_network_channel_network_channel_type),
-//					SubnetId:           pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					NsgIds:             pulumi.Any(_var.Deploy_environment_network_channel_nsg_ids),
+//					NetworkChannelType: pulumi.Any(deployEnvironmentNetworkChannelNetworkChannelType),
+//					SubnetId:           pulumi.Any(testSubnet.Id),
+//					NsgIds:             pulumi.Any(deployEnvironmentNetworkChannelNsgIds),
 //				},
 //			})
 //			if err != nil {

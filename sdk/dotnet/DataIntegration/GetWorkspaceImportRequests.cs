@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceImportRequests = Oci.DataIntegration.GetWorkspaceImportRequests.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         ImportStatus = @var.Workspace_import_request_import_status,
-        ///         Name = @var.Workspace_import_request_name,
-        ///         Projection = @var.Workspace_import_request_projection,
-        ///         TimeEndedInMillis = @var.Workspace_import_request_time_ended_in_millis,
-        ///         TimeStartedInMillis = @var.Workspace_import_request_time_started_in_millis,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         ImportStatus = workspaceImportRequestImportStatus,
+        ///         Name = workspaceImportRequestName,
+        ///         Projection = workspaceImportRequestProjection,
+        ///         TimeEndedInMillis = workspaceImportRequestTimeEndedInMillis,
+        ///         TimeStartedInMillis = workspaceImportRequestTimeStartedInMillis,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceImportRequests = Oci.DataIntegration.GetWorkspaceImportRequests.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         ImportStatus = @var.Workspace_import_request_import_status,
-        ///         Name = @var.Workspace_import_request_name,
-        ///         Projection = @var.Workspace_import_request_projection,
-        ///         TimeEndedInMillis = @var.Workspace_import_request_time_ended_in_millis,
-        ///         TimeStartedInMillis = @var.Workspace_import_request_time_started_in_millis,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         ImportStatus = workspaceImportRequestImportStatus,
+        ///         Name = workspaceImportRequestName,
+        ///         Projection = workspaceImportRequestProjection,
+        ///         TimeEndedInMillis = workspaceImportRequestTimeEndedInMillis,
+        ///         TimeStartedInMillis = workspaceImportRequestTimeStartedInMillis,
         ///     });
         /// 
         /// });

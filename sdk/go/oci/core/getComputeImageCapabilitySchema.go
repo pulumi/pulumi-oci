@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeImageCapabilitySchema(ctx, &core.GetComputeImageCapabilitySchemaArgs{
-//				ComputeImageCapabilitySchemaId: oci_core_compute_image_capability_schema.Test_compute_image_capability_schema.Id,
-//				IsMergeEnabled:                 pulumi.StringRef(_var.Compute_image_capability_schema_is_merge_enabled),
+//				ComputeImageCapabilitySchemaId: testComputeImageCapabilitySchemaOciCoreComputeImageCapabilitySchema.Id,
+//				IsMergeEnabled:                 pulumi.StringRef(computeImageCapabilitySchemaIsMergeEnabled),
 //			}, nil)
 //			if err != nil {
 //				return err

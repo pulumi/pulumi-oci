@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testMeshes = Oci.ServiceMesh.GetMeshes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Mesh_display_name,
-        ///         Id = @var.Mesh_id,
-        ///         State = @var.Mesh_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = meshDisplayName,
+        ///         Id = meshId,
+        ///         State = meshState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testMeshes = Oci.ServiceMesh.GetMeshes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Mesh_display_name,
-        ///         Id = @var.Mesh_id,
-        ///         State = @var.Mesh_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = meshDisplayName,
+        ///         Id = meshId,
+        ///         State = meshState,
         ///     });
         /// 
         /// });

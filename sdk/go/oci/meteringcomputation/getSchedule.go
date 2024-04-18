@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetSchedule(ctx, &meteringcomputation.GetScheduleArgs{
-//				ScheduleId: oci_metering_computation_schedule.Test_schedule.Id,
+//				ScheduleId: testScheduleOciMeteringComputationSchedule.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

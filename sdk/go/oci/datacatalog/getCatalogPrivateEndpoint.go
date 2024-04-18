@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetCatalogPrivateEndpoint(ctx, &datacatalog.GetCatalogPrivateEndpointArgs{
-//				CatalogPrivateEndpointId: oci_datacatalog_catalog_private_endpoint.Test_catalog_private_endpoint.Id,
+//				CatalogPrivateEndpointId: testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

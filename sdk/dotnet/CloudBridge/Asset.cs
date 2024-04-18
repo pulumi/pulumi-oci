@@ -25,137 +25,137 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAsset = new Oci.CloudBridge.Asset("testAsset", new()
+    ///     var testAsset = new Oci.CloudBridge.Asset("test_asset", new()
     ///     {
-    ///         AssetType = @var.Asset_asset_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ExternalAssetKey = @var.Asset_external_asset_key,
-    ///         InventoryId = oci_cloud_bridge_inventory.Test_inventory.Id,
-    ///         SourceKey = @var.Asset_source_key,
-    ///         AssetSourceIds = @var.Asset_asset_source_ids,
+    ///         AssetType = assetAssetType,
+    ///         CompartmentId = compartmentId,
+    ///         ExternalAssetKey = assetExternalAssetKey,
+    ///         InventoryId = testInventory.Id,
+    ///         SourceKey = assetSourceKey,
+    ///         AssetSourceIds = assetAssetSourceIds,
     ///         Compute = new Oci.CloudBridge.Inputs.AssetComputeArgs
     ///         {
-    ///             ConnectedNetworks = @var.Asset_compute_connected_networks,
-    ///             CoresCount = @var.Asset_compute_cores_count,
-    ///             CpuModel = @var.Asset_compute_cpu_model,
-    ///             Description = @var.Asset_compute_description,
+    ///             ConnectedNetworks = assetComputeConnectedNetworks,
+    ///             CoresCount = assetComputeCoresCount,
+    ///             CpuModel = assetComputeCpuModel,
+    ///             Description = assetComputeDescription,
     ///             Disks = new[]
     ///             {
     ///                 new Oci.CloudBridge.Inputs.AssetComputeDiskArgs
     ///                 {
-    ///                     BootOrder = @var.Asset_compute_disks_boot_order,
-    ///                     Location = @var.Asset_compute_disks_location,
-    ///                     Name = @var.Asset_compute_disks_name,
-    ///                     PersistentMode = @var.Asset_compute_disks_persistent_mode,
-    ///                     SizeInMbs = @var.Asset_compute_disks_size_in_mbs,
-    ///                     Uuid = @var.Asset_compute_disks_uuid,
-    ///                     UuidLun = @var.Asset_compute_disks_uuid_lun,
+    ///                     BootOrder = assetComputeDisksBootOrder,
+    ///                     Location = assetComputeDisksLocation,
+    ///                     Name = assetComputeDisksName,
+    ///                     PersistentMode = assetComputeDisksPersistentMode,
+    ///                     SizeInMbs = assetComputeDisksSizeInMbs,
+    ///                     Uuid = assetComputeDisksUuid,
+    ///                     UuidLun = assetComputeDisksUuidLun,
     ///                 },
     ///             },
-    ///             DisksCount = @var.Asset_compute_disks_count,
-    ///             DnsName = @var.Asset_compute_dns_name,
-    ///             Firmware = @var.Asset_compute_firmware,
+    ///             DisksCount = assetComputeDisksCount,
+    ///             DnsName = assetComputeDnsName,
+    ///             Firmware = assetComputeFirmware,
     ///             GpuDevices = new[]
     ///             {
     ///                 new Oci.CloudBridge.Inputs.AssetComputeGpuDeviceArgs
     ///                 {
-    ///                     CoresCount = @var.Asset_compute_gpu_devices_cores_count,
-    ///                     Description = @var.Asset_compute_gpu_devices_description,
-    ///                     Manufacturer = @var.Asset_compute_gpu_devices_manufacturer,
-    ///                     MemoryInMbs = @var.Asset_compute_gpu_devices_memory_in_mbs,
-    ///                     Name = @var.Asset_compute_gpu_devices_name,
+    ///                     CoresCount = assetComputeGpuDevicesCoresCount,
+    ///                     Description = assetComputeGpuDevicesDescription,
+    ///                     Manufacturer = assetComputeGpuDevicesManufacturer,
+    ///                     MemoryInMbs = assetComputeGpuDevicesMemoryInMbs,
+    ///                     Name = assetComputeGpuDevicesName,
     ///                 },
     ///             },
-    ///             GpuDevicesCount = @var.Asset_compute_gpu_devices_count,
-    ///             GuestState = @var.Asset_compute_guest_state,
-    ///             HardwareVersion = @var.Asset_compute_hardware_version,
-    ///             HostName = @var.Asset_compute_host_name,
-    ///             IsPmemEnabled = @var.Asset_compute_is_pmem_enabled,
-    ///             IsTpmEnabled = @var.Asset_compute_is_tpm_enabled,
-    ///             LatencySensitivity = @var.Asset_compute_latency_sensitivity,
-    ///             MemoryInMbs = @var.Asset_compute_memory_in_mbs,
+    ///             GpuDevicesCount = assetComputeGpuDevicesCount,
+    ///             GuestState = assetComputeGuestState,
+    ///             HardwareVersion = assetComputeHardwareVersion,
+    ///             HostName = assetComputeHostName,
+    ///             IsPmemEnabled = assetComputeIsPmemEnabled,
+    ///             IsTpmEnabled = assetComputeIsTpmEnabled,
+    ///             LatencySensitivity = assetComputeLatencySensitivity,
+    ///             MemoryInMbs = assetComputeMemoryInMbs,
     ///             Nics = new[]
     ///             {
     ///                 new Oci.CloudBridge.Inputs.AssetComputeNicArgs
     ///                 {
-    ///                     IpAddresses = @var.Asset_compute_nics_ip_addresses,
-    ///                     Label = @var.Asset_compute_nics_label,
-    ///                     MacAddress = @var.Asset_compute_nics_mac_address,
-    ///                     MacAddressType = @var.Asset_compute_nics_mac_address_type,
-    ///                     NetworkName = @var.Asset_compute_nics_network_name,
-    ///                     SwitchName = @var.Asset_compute_nics_switch_name,
+    ///                     IpAddresses = assetComputeNicsIpAddresses,
+    ///                     Label = assetComputeNicsLabel,
+    ///                     MacAddress = assetComputeNicsMacAddress,
+    ///                     MacAddressType = assetComputeNicsMacAddressType,
+    ///                     NetworkName = assetComputeNicsNetworkName,
+    ///                     SwitchName = assetComputeNicsSwitchName,
     ///                 },
     ///             },
-    ///             NicsCount = @var.Asset_compute_nics_count,
+    ///             NicsCount = assetComputeNicsCount,
     ///             NvdimmController = new Oci.CloudBridge.Inputs.AssetComputeNvdimmControllerArgs
     ///             {
-    ///                 BusNumber = @var.Asset_compute_nvdimm_controller_bus_number,
-    ///                 Label = @var.Asset_compute_nvdimm_controller_label,
+    ///                 BusNumber = assetComputeNvdimmControllerBusNumber,
+    ///                 Label = assetComputeNvdimmControllerLabel,
     ///             },
     ///             Nvdimms = new[]
     ///             {
     ///                 new Oci.CloudBridge.Inputs.AssetComputeNvdimmArgs
     ///                 {
-    ///                     ControllerKey = @var.Asset_compute_nvdimms_controller_key,
-    ///                     Label = @var.Asset_compute_nvdimms_label,
-    ///                     UnitNumber = @var.Asset_compute_nvdimms_unit_number,
+    ///                     ControllerKey = assetComputeNvdimmsControllerKey,
+    ///                     Label = assetComputeNvdimmsLabel,
+    ///                     UnitNumber = assetComputeNvdimmsUnitNumber,
     ///                 },
     ///             },
-    ///             OperatingSystem = @var.Asset_compute_operating_system,
-    ///             OperatingSystemVersion = @var.Asset_compute_operating_system_version,
-    ///             PmemInMbs = @var.Asset_compute_pmem_in_mbs,
-    ///             PowerState = @var.Asset_compute_power_state,
-    ///             PrimaryIp = @var.Asset_compute_primary_ip,
+    ///             OperatingSystem = assetComputeOperatingSystem,
+    ///             OperatingSystemVersion = assetComputeOperatingSystemVersion,
+    ///             PmemInMbs = assetComputePmemInMbs,
+    ///             PowerState = assetComputePowerState,
+    ///             PrimaryIp = assetComputePrimaryIp,
     ///             ScsiController = new Oci.CloudBridge.Inputs.AssetComputeScsiControllerArgs
     ///             {
-    ///                 Label = @var.Asset_compute_scsi_controller_label,
-    ///                 SharedBus = @var.Asset_compute_scsi_controller_shared_bus,
-    ///                 UnitNumber = @var.Asset_compute_scsi_controller_unit_number,
+    ///                 Label = assetComputeScsiControllerLabel,
+    ///                 SharedBus = assetComputeScsiControllerSharedBus,
+    ///                 UnitNumber = assetComputeScsiControllerUnitNumber,
     ///             },
-    ///             StorageProvisionedInMbs = @var.Asset_compute_storage_provisioned_in_mbs,
-    ///             ThreadsPerCoreCount = @var.Asset_compute_threads_per_core_count,
+    ///             StorageProvisionedInMbs = assetComputeStorageProvisionedInMbs,
+    ///             ThreadsPerCoreCount = assetComputeThreadsPerCoreCount,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Asset_display_name,
+    ///         DisplayName = assetDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         Vm = new Oci.CloudBridge.Inputs.AssetVmArgs
     ///         {
-    ///             HypervisorHost = @var.Asset_vm_hypervisor_host,
-    ///             HypervisorVendor = @var.Asset_vm_hypervisor_vendor,
-    ///             HypervisorVersion = @var.Asset_vm_hypervisor_version,
+    ///             HypervisorHost = assetVmHypervisorHost,
+    ///             HypervisorVendor = assetVmHypervisorVendor,
+    ///             HypervisorVersion = assetVmHypervisorVersion,
     ///         },
     ///         VmwareVcenter = new Oci.CloudBridge.Inputs.AssetVmwareVcenterArgs
     ///         {
-    ///             DataCenter = @var.Asset_vmware_vcenter_data_center,
-    ///             VcenterKey = @var.Asset_vmware_vcenter_vcenter_key,
-    ///             VcenterVersion = @var.Asset_vmware_vcenter_vcenter_version,
+    ///             DataCenter = assetVmwareVcenterDataCenter,
+    ///             VcenterKey = assetVmwareVcenterVcenterKey,
+    ///             VcenterVersion = assetVmwareVcenterVcenterVersion,
     ///         },
     ///         VmwareVm = new Oci.CloudBridge.Inputs.AssetVmwareVmArgs
     ///         {
-    ///             Cluster = @var.Asset_vmware_vm_cluster,
-    ///             CustomerFields = @var.Asset_vmware_vm_customer_fields,
+    ///             Cluster = assetVmwareVmCluster,
+    ///             CustomerFields = assetVmwareVmCustomerFields,
     ///             CustomerTags = new[]
     ///             {
     ///                 new Oci.CloudBridge.Inputs.AssetVmwareVmCustomerTagArgs
     ///                 {
-    ///                     Description = @var.Asset_vmware_vm_customer_tags_description,
-    ///                     Name = @var.Asset_vmware_vm_customer_tags_name,
+    ///                     Description = assetVmwareVmCustomerTagsDescription,
+    ///                     Name = assetVmwareVmCustomerTagsName,
     ///                 },
     ///             },
-    ///             FaultToleranceBandwidth = @var.Asset_vmware_vm_fault_tolerance_bandwidth,
-    ///             FaultToleranceSecondaryLatency = @var.Asset_vmware_vm_fault_tolerance_secondary_latency,
-    ///             FaultToleranceState = @var.Asset_vmware_vm_fault_tolerance_state,
-    ///             InstanceUuid = @var.Asset_vmware_vm_instance_uuid,
-    ///             IsDisksCbtEnabled = @var.Asset_vmware_vm_is_disks_cbt_enabled,
-    ///             IsDisksUuidEnabled = @var.Asset_vmware_vm_is_disks_uuid_enabled,
-    ///             Path = @var.Asset_vmware_vm_path,
-    ///             VmwareToolsStatus = @var.Asset_vmware_vm_vmware_tools_status,
+    ///             FaultToleranceBandwidth = assetVmwareVmFaultToleranceBandwidth,
+    ///             FaultToleranceSecondaryLatency = assetVmwareVmFaultToleranceSecondaryLatency,
+    ///             FaultToleranceState = assetVmwareVmFaultToleranceState,
+    ///             InstanceUuid = assetVmwareVmInstanceUuid,
+    ///             IsDisksCbtEnabled = assetVmwareVmIsDisksCbtEnabled,
+    ///             IsDisksUuidEnabled = assetVmwareVmIsDisksUuidEnabled,
+    ///             Path = assetVmwareVmPath,
+    ///             VmwareToolsStatus = assetVmwareVmVmwareToolsStatus,
     ///         },
     ///     });
     /// 

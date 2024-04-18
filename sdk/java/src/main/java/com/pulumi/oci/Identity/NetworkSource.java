@@ -63,13 +63,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkSource = new NetworkSource(&#34;testNetworkSource&#34;, NetworkSourceArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .description(var_.network_source_description())
+ *             .compartmentId(tenancyOcid)
+ *             .description(networkSourceDescription)
+ *             .name(networkSourceName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .publicSourceLists(var_.network_source_public_source_list())
- *             .services(var_.network_source_services())
- *             .virtualSourceLists(var_.network_source_virtual_source_list())
+ *             .publicSourceLists(networkSourcePublicSourceList)
+ *             .services(networkSourceServices)
+ *             .virtualSourceLists(networkSourceVirtualSourceList)
  *             .build());
  * 
  *     }

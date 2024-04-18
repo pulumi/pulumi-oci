@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAccountMgmtInfos = Oci.Identity.GetDomainsAccountMgmtInfos.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AccountMgmtInfoCount = @var.Account_mgmt_info_account_mgmt_info_count,
-        ///         AccountMgmtInfoFilter = @var.Account_mgmt_info_account_mgmt_info_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AccountMgmtInfoCount = accountMgmtInfoAccountMgmtInfoCount,
+        ///         AccountMgmtInfoFilter = accountMgmtInfoAccountMgmtInfoFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Account_mgmt_info_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Account_mgmt_info_resource_type_schema_version,
-        ///         StartIndex = @var.Account_mgmt_info_start_index,
+        ///         Authorization = accountMgmtInfoAuthorization,
+        ///         ResourceTypeSchemaVersion = accountMgmtInfoResourceTypeSchemaVersion,
+        ///         StartIndex = accountMgmtInfoStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAccountMgmtInfos = Oci.Identity.GetDomainsAccountMgmtInfos.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         AccountMgmtInfoCount = @var.Account_mgmt_info_account_mgmt_info_count,
-        ///         AccountMgmtInfoFilter = @var.Account_mgmt_info_account_mgmt_info_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         AccountMgmtInfoCount = accountMgmtInfoAccountMgmtInfoCount,
+        ///         AccountMgmtInfoFilter = accountMgmtInfoAccountMgmtInfoFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Account_mgmt_info_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Account_mgmt_info_resource_type_schema_version,
-        ///         StartIndex = @var.Account_mgmt_info_start_index,
+        ///         Authorization = accountMgmtInfoAuthorization,
+        ///         ResourceTypeSchemaVersion = accountMgmtInfoResourceTypeSchemaVersion,
+        ///         StartIndex = accountMgmtInfoStartIndex,
         ///     });
         /// 
         /// });

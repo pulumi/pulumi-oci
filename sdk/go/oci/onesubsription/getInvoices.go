@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OneSubsription.GetInvoices(ctx, &onesubsription.GetInvoicesArgs{
-//				ArCustomerTransactionId: oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
-//				CompartmentId:           _var.Compartment_id,
-//				Fields:                  _var.Invoice_fields,
-//				TimeFrom:                pulumi.StringRef(_var.Invoice_time_from),
-//				TimeTo:                  pulumi.StringRef(_var.Invoice_time_to),
+//				ArCustomerTransactionId: testArCustomerTransaction.Id,
+//				CompartmentId:           compartmentId,
+//				Fields:                  invoiceFields,
+//				TimeFrom:                pulumi.StringRef(invoiceTimeFrom),
+//				TimeTo:                  pulumi.StringRef(invoiceTimeTo),
 //			}, nil)
 //			if err != nil {
 //				return err

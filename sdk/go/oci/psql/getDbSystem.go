@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetDbSystem(ctx, &psql.GetDbSystemArgs{
-//				DbSystemId:     oci_psql_db_system.Test_db_system.Id,
-//				ExcludedFields: pulumi.StringRef(_var.Db_system_excluded_fields),
+//				DbSystemId:     testDbSystemOciPsqlDbSystem.Id,
+//				ExcludedFields: pulumi.StringRef(dbSystemExcludedFields),
 //			}, nil)
 //			if err != nil {
 //				return err

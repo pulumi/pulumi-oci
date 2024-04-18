@@ -31,40 +31,40 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewPipelineRun(ctx, "testPipelineRun", &DataScience.PipelineRunArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				PipelineId:    pulumi.Any(oci_datascience_pipeline.Test_pipeline.Id),
+//			_, err := DataScience.NewPipelineRun(ctx, "test_pipeline_run", &DataScience.PipelineRunArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				PipelineId:    pulumi.Any(testPipeline.Id),
 //				ConfigurationOverrideDetails: &datascience.PipelineRunConfigurationOverrideDetailsArgs{
-//					Type:                    pulumi.Any(_var.Pipeline_run_configuration_override_details_type),
-//					CommandLineArguments:    pulumi.Any(_var.Pipeline_run_configuration_override_details_command_line_arguments),
-//					EnvironmentVariables:    pulumi.Any(_var.Pipeline_run_configuration_override_details_environment_variables),
-//					MaximumRuntimeInMinutes: pulumi.Any(_var.Pipeline_run_configuration_override_details_maximum_runtime_in_minutes),
+//					Type:                    pulumi.Any(pipelineRunConfigurationOverrideDetailsType),
+//					CommandLineArguments:    pulumi.Any(pipelineRunConfigurationOverrideDetailsCommandLineArguments),
+//					EnvironmentVariables:    pulumi.Any(pipelineRunConfigurationOverrideDetailsEnvironmentVariables),
+//					MaximumRuntimeInMinutes: pulumi.Any(pipelineRunConfigurationOverrideDetailsMaximumRuntimeInMinutes),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Pipeline_run_display_name),
+//				DisplayName: pulumi.Any(pipelineRunDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				LogConfigurationOverrideDetails: &datascience.PipelineRunLogConfigurationOverrideDetailsArgs{
-//					EnableAutoLogCreation: pulumi.Any(_var.Pipeline_run_log_configuration_override_details_enable_auto_log_creation),
-//					EnableLogging:         pulumi.Any(_var.Pipeline_run_log_configuration_override_details_enable_logging),
-//					LogGroupId:            pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogId:                 pulumi.Any(oci_logging_log.Test_log.Id),
+//					EnableAutoLogCreation: pulumi.Any(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation),
+//					EnableLogging:         pulumi.Any(pipelineRunLogConfigurationOverrideDetailsEnableLogging),
+//					LogGroupId:            pulumi.Any(testLogGroup.Id),
+//					LogId:                 pulumi.Any(testLog.Id),
 //				},
-//				ProjectId: pulumi.Any(oci_datascience_project.Test_project.Id),
+//				ProjectId: pulumi.Any(testProject.Id),
 //				StepOverrideDetails: datascience.PipelineRunStepOverrideDetailArray{
 //					&datascience.PipelineRunStepOverrideDetailArgs{
 //						StepConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs{
-//							CommandLineArguments:    pulumi.Any(_var.Pipeline_run_step_override_details_step_configuration_details_command_line_arguments),
-//							EnvironmentVariables:    pulumi.Any(_var.Pipeline_run_step_override_details_step_configuration_details_environment_variables),
-//							MaximumRuntimeInMinutes: pulumi.Any(_var.Pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes),
+//							CommandLineArguments:    pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsCommandLineArguments),
+//							EnvironmentVariables:    pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsEnvironmentVariables),
+//							MaximumRuntimeInMinutes: pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes),
 //						},
-//						StepName: pulumi.Any(_var.Pipeline_run_step_override_details_step_name),
+//						StepName: pulumi.Any(pipelineRunStepOverrideDetailsStepName),
 //					},
 //				},
-//				SystemTags: pulumi.Any(_var.Pipeline_run_system_tags),
+//				SystemTags: pulumi.Any(pipelineRunSystemTags),
 //			})
 //			if err != nil {
 //				return err

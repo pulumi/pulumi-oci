@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testFlexComponents = Oci.Database.GetFlexComponents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Flex_component_name,
+        ///         CompartmentId = compartmentId,
+        ///         Name = flexComponentName,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testFlexComponents = Oci.Database.GetFlexComponents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Flex_component_name,
+        ///         CompartmentId = compartmentId,
+        ///         Name = flexComponentName,
         ///     });
         /// 
         /// });

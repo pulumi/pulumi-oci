@@ -387,12 +387,12 @@ class Script(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_script = oci.apm_synthetics.Script("testScript",
-            apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-            content=var["script_content"],
-            content_type=var["script_content_type"],
-            display_name=var["script_display_name"],
-            content_file_name=var["script_content_file_name"],
+        test_script = oci.apm_synthetics.Script("test_script",
+            apm_domain_id=test_apm_domain["id"],
+            content=script_content,
+            content_type=script_content_type,
+            display_name=script_display_name,
+            content_file_name=script_content_file_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -400,9 +400,9 @@ class Script(pulumi.CustomResource):
                 "bar-key": "value",
             },
             parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=var["script_parameters_param_name"],
-                is_secret=var["script_parameters_is_secret"],
-                param_value=var["script_parameters_param_value"],
+                param_name=script_parameters_param_name,
+                is_secret=script_parameters_is_secret,
+                param_value=script_parameters_param_value,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -444,12 +444,12 @@ class Script(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_script = oci.apm_synthetics.Script("testScript",
-            apm_domain_id=oci_apm_synthetics_apm_domain["test_apm_domain"]["id"],
-            content=var["script_content"],
-            content_type=var["script_content_type"],
-            display_name=var["script_display_name"],
-            content_file_name=var["script_content_file_name"],
+        test_script = oci.apm_synthetics.Script("test_script",
+            apm_domain_id=test_apm_domain["id"],
+            content=script_content,
+            content_type=script_content_type,
+            display_name=script_display_name,
+            content_file_name=script_content_file_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -457,9 +457,9 @@ class Script(pulumi.CustomResource):
                 "bar-key": "value",
             },
             parameters=[oci.apm_synthetics.ScriptParameterArgs(
-                param_name=var["script_parameters_param_name"],
-                is_secret=var["script_parameters_is_secret"],
-                param_value=var["script_parameters_param_value"],
+                param_name=script_parameters_param_name,
+                is_secret=script_parameters_is_secret,
+                param_value=script_parameters_param_value,
             )])
         ```
         <!--End PulumiCodeChooser -->

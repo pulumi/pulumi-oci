@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousPatch(ctx, &database.GetAutonomousPatchArgs{
-//				AutonomousPatchId: oci_database_autonomous_patch.Test_autonomous_patch.Id,
+//				AutonomousPatchId: testAutonomousPatchOciDatabaseAutonomousPatch.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

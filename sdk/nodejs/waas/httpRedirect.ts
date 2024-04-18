@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testHttpRedirect = new oci.waas.HttpRedirect("testHttpRedirect", {
- *     compartmentId: _var.compartment_id,
- *     domain: _var.http_redirect_domain,
+ * const testHttpRedirect = new oci.waas.HttpRedirect("test_http_redirect", {
+ *     compartmentId: compartmentId,
+ *     domain: httpRedirectDomain,
  *     target: {
- *         host: _var.http_redirect_target_host,
- *         path: _var.http_redirect_target_path,
- *         protocol: _var.http_redirect_target_protocol,
- *         query: _var.http_redirect_target_query,
- *         port: _var.http_redirect_target_port,
+ *         host: httpRedirectTargetHost,
+ *         path: httpRedirectTargetPath,
+ *         protocol: httpRedirectTargetProtocol,
+ *         query: httpRedirectTargetQuery,
+ *         port: httpRedirectTargetPort,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.http_redirect_display_name,
+ *     displayName: httpRedirectDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     responseCode: _var.http_redirect_response_code,
+ *     responseCode: httpRedirectResponseCode,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -41,10 +41,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkSource = new Oci.Identity.NetworkSource("testNetworkSource", new()
+    ///     var testNetworkSource = new Oci.Identity.NetworkSource("test_network_source", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Network_source_description,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = networkSourceDescription,
+    ///         Name = networkSourceName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -53,9 +54,9 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         PublicSourceLists = @var.Network_source_public_source_list,
-    ///         Services = @var.Network_source_services,
-    ///         VirtualSourceLists = @var.Network_source_virtual_source_list,
+    ///         PublicSourceLists = networkSourcePublicSourceList,
+    ///         Services = networkSourceServices,
+    ///         VirtualSourceLists = networkSourceVirtualSourceList,
     ///     });
     /// 
     /// });

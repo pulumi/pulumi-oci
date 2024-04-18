@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testStreamPool = Oci.Streaming.GetStreamPool.Invoke(new()
         ///     {
-        ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+        ///         StreamPoolId = testStreamPoolOciStreamingStreamPool.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testStreamPool = Oci.Streaming.GetStreamPool.Invoke(new()
         ///     {
-        ///         StreamPoolId = oci_streaming_stream_pool.Test_stream_pool.Id,
+        ///         StreamPoolId = testStreamPoolOciStreamingStreamPool.Id,
         ///     });
         /// 
         /// });

@@ -29,10 +29,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Migration_display_name,
-        ///         LifecycleDetails = @var.Migration_lifecycle_details,
-        ///         State = @var.Migration_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationDisplayName,
+        ///         LifecycleDetails = migrationLifecycleDetails,
+        ///         State = migrationState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Migration_display_name,
-        ///         LifecycleDetails = @var.Migration_lifecycle_details,
-        ///         State = @var.Migration_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationDisplayName,
+        ///         LifecycleDetails = migrationLifecycleDetails,
+        ///         State = migrationState,
         ///     });
         /// 
         /// });

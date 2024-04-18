@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModelProvenance = new oci.datascience.ModelProvenance("testModelProvenance", {
- *     modelId: oci_datascience_model.test_model.id,
- *     gitBranch: _var.model_provenance_git_branch,
- *     gitCommit: _var.model_provenance_git_commit,
- *     repositoryUrl: _var.model_provenance_repository_url,
- *     scriptDir: _var.model_provenance_script_dir,
- *     trainingId: oci_datascience_training.test_training.id,
- *     trainingScript: _var.model_provenance_training_script,
+ * const testModelProvenance = new oci.datascience.ModelProvenance("test_model_provenance", {
+ *     modelId: testModel.id,
+ *     gitBranch: modelProvenanceGitBranch,
+ *     gitCommit: modelProvenanceGitCommit,
+ *     repositoryUrl: modelProvenanceRepositoryUrl,
+ *     scriptDir: modelProvenanceScriptDir,
+ *     trainingId: testTraining.id,
+ *     trainingScript: modelProvenanceTrainingScript,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

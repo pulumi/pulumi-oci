@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsMyPendingApprovals(ctx, &identity.GetDomainsMyPendingApprovalsArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				MyPendingApprovalCount:    pulumi.IntRef(_var.My_pending_approval_my_pending_approval_count),
-//				MyPendingApprovalFilter:   pulumi.StringRef(_var.My_pending_approval_my_pending_approval_filter),
-//				Authorization:             pulumi.StringRef(_var.My_pending_approval_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.My_pending_approval_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.My_pending_approval_start_index),
+//				IdcsEndpoint:              testDomain.Url,
+//				MyPendingApprovalCount:    pulumi.IntRef(myPendingApprovalMyPendingApprovalCount),
+//				MyPendingApprovalFilter:   pulumi.StringRef(myPendingApprovalMyPendingApprovalFilter),
+//				Authorization:             pulumi.StringRef(myPendingApprovalAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(myPendingApprovalResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(myPendingApprovalStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

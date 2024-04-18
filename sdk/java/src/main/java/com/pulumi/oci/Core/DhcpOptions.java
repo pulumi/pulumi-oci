@@ -37,6 +37,103 @@ import javax.annotation.Nullable;
  * 
  * ## Example Usage
  * 
+ * ### VCN Local with Internet
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DhcpOptions;
+ * import com.pulumi.oci.Core.DhcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.DhcpOptionsOptionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDhcpOptions = new DhcpOptions(&#34;testDhcpOptions&#34;, DhcpOptionsArgs.builder()        
+ *             .compartmentId(compartmentId)
+ *             .options(            
+ *                 DhcpOptionsOptionArgs.builder()
+ *                     .type(&#34;DomainNameServer&#34;)
+ *                     .serverType(&#34;VcnLocalPlusInternet&#34;)
+ *                     .build(),
+ *                 DhcpOptionsOptionArgs.builder()
+ *                     .type(&#34;SearchDomain&#34;)
+ *                     .searchDomainNames(&#34;test.com&#34;)
+ *                     .build())
+ *             .vcnId(testVcn.id())
+ *             .displayName(dhcpOptionsDisplayName)
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
+ * ### Custom DNS Server
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Core.DhcpOptions;
+ * import com.pulumi.oci.Core.DhcpOptionsArgs;
+ * import com.pulumi.oci.Core.inputs.DhcpOptionsOptionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDhcpOptions = new DhcpOptions(&#34;testDhcpOptions&#34;, DhcpOptionsArgs.builder()        
+ *             .compartmentId(compartmentId)
+ *             .options(            
+ *                 DhcpOptionsOptionArgs.builder()
+ *                     .type(&#34;DomainNameServer&#34;)
+ *                     .serverType(&#34;CustomDnsServer&#34;)
+ *                     .customDnsServers(                    
+ *                         &#34;192.168.0.2&#34;,
+ *                         &#34;192.168.0.11&#34;,
+ *                         &#34;192.168.0.19&#34;)
+ *                     .build(),
+ *                 DhcpOptionsOptionArgs.builder()
+ *                     .type(&#34;SearchDomain&#34;)
+ *                     .searchDomainNames(&#34;test.com&#34;)
+ *                     .build())
+ *             .vcnId(testVcn.id())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .displayName(dhcpOptionsDisplayName)
+ *             .domainNameType(dhcpOptionsDomainNameType)
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  * ## Import
  * 
  * DhcpOptions can be imported using the `id`, e.g.

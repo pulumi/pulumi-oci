@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalClusterInstances(ctx, &databasemanagement.GetExternalClusterInstancesArgs{
-//				CompartmentId:     pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:       pulumi.StringRef(_var.External_cluster_instance_display_name),
-//				ExternalClusterId: pulumi.StringRef(oci_database_management_external_cluster.Test_external_cluster.Id),
+//				CompartmentId:     pulumi.StringRef(compartmentId),
+//				DisplayName:       pulumi.StringRef(externalClusterInstanceDisplayName),
+//				ExternalClusterId: pulumi.StringRef(testExternalCluster.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

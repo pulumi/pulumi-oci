@@ -29,7 +29,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualService = Oci.ServiceMesh.GetVirtualService.Invoke(new()
         ///     {
-        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///         VirtualServiceId = testVirtualServiceOciServiceMeshVirtualService.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualService = Oci.ServiceMesh.GetVirtualService.Invoke(new()
         ///     {
-        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///         VirtualServiceId = testVirtualServiceOciServiceMeshVirtualService.Id,
         ///     });
         /// 
         /// });

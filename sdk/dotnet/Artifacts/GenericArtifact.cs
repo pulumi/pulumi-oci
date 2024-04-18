@@ -23,9 +23,9 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testGenericArtifact = new Oci.Artifacts.GenericArtifact("testGenericArtifact", new()
+    ///     var testGenericArtifact = new Oci.Artifacts.GenericArtifact("test_generic_artifact", new()
     ///     {
-    ///         ArtifactId = oci_artifacts_artifact.Test_artifact.Id,
+    ///         ArtifactId = testArtifact.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

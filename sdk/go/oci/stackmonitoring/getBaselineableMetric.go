@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetBaselineableMetric(ctx, &stackmonitoring.GetBaselineableMetricArgs{
-//				BaselineableMetricId: oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
+//				BaselineableMetricId: testBaselineableMetricOciStackMonitoringBaselineableMetric.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

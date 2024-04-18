@@ -274,12 +274,12 @@ def get_domains_user_attributes_setting(attribute_sets: Optional[Sequence[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_user_attributes_setting = oci.Identity.get_domains_user_attributes_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_attributes_setting_id=oci_identity_domains_user_attributes_setting["test_user_attributes_setting"]["id"],
+    test_user_attributes_setting = oci.Identity.get_domains_user_attributes_setting(idcs_endpoint=test_domain["url"],
+        user_attributes_setting_id=test_user_attributes_setting_oci_identity_domains_user_attributes_setting["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["user_attributes_setting_authorization"],
-        resource_type_schema_version=var["user_attributes_setting_resource_type_schema_version"])
+        authorization=user_attributes_setting_authorization,
+        resource_type_schema_version=user_attributes_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -344,12 +344,12 @@ def get_domains_user_attributes_setting_output(attribute_sets: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_user_attributes_setting = oci.Identity.get_domains_user_attributes_setting(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_attributes_setting_id=oci_identity_domains_user_attributes_setting["test_user_attributes_setting"]["id"],
+    test_user_attributes_setting = oci.Identity.get_domains_user_attributes_setting(idcs_endpoint=test_domain["url"],
+        user_attributes_setting_id=test_user_attributes_setting_oci_identity_domains_user_attributes_setting["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["user_attributes_setting_authorization"],
-        resource_type_schema_version=var["user_attributes_setting_resource_type_schema_version"])
+        authorization=user_attributes_setting_authorization,
+        resource_type_schema_version=user_attributes_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

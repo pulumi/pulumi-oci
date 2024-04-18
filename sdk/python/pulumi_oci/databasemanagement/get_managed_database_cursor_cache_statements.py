@@ -124,9 +124,9 @@ def get_managed_database_cursor_cache_statements(filters: Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        opc_named_credential_id=var["managed_database_cursor_cache_statement_opc_named_credential_id"],
-        sql_text=var["managed_database_cursor_cache_statement_sql_text"])
+    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
+        opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
+        sql_text=managed_database_cursor_cache_statement_sql_text)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -173,9 +173,9 @@ def get_managed_database_cursor_cache_statements_output(filters: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        opc_named_credential_id=var["managed_database_cursor_cache_statement_opc_named_credential_id"],
-        sql_text=var["managed_database_cursor_cache_statement_sql_text"])
+    test_managed_database_cursor_cache_statements = oci.DatabaseManagement.get_managed_database_cursor_cache_statements(managed_database_id=test_managed_database["id"],
+        opc_named_credential_id=managed_database_cursor_cache_statement_opc_named_credential_id,
+        sql_text=managed_database_cursor_cache_statement_sql_text)
     ```
     <!--End PulumiCodeChooser -->
 

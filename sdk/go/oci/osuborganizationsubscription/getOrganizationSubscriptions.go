@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsubOrganizationSubscription.GetOrganizationSubscriptions(ctx, &osuborganizationsubscription.GetOrganizationSubscriptionsArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				SubscriptionIds:  _var.Organization_subscription_subscription_ids,
-//				XOneOriginRegion: pulumi.StringRef(_var.Organization_subscription_x_one_origin_region),
+//				CompartmentId:    compartmentId,
+//				SubscriptionIds:  organizationSubscriptionSubscriptionIds,
+//				XOneOriginRegion: pulumi.StringRef(organizationSubscriptionXOneOriginRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

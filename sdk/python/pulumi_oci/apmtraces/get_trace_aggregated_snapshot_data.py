@@ -130,12 +130,12 @@ def get_trace_aggregated_snapshot_data(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_aggregated_snapshot_data_trace_key"],
-        server_name=var["trace_aggregated_snapshot_data_server_name"],
-        service_name=oci_core_service["test_service"]["name"],
-        span_key=var["trace_aggregated_snapshot_data_span_key"],
-        span_name=var["trace_aggregated_snapshot_data_span_name"])
+    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
+        trace_key=trace_aggregated_snapshot_data_trace_key,
+        server_name=trace_aggregated_snapshot_data_server_name,
+        service_name=test_service["name"],
+        span_key=trace_aggregated_snapshot_data_span_key,
+        span_name=trace_aggregated_snapshot_data_span_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -188,12 +188,12 @@ def get_trace_aggregated_snapshot_data_output(apm_domain_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_aggregated_snapshot_data_trace_key"],
-        server_name=var["trace_aggregated_snapshot_data_server_name"],
-        service_name=oci_core_service["test_service"]["name"],
-        span_key=var["trace_aggregated_snapshot_data_span_key"],
-        span_name=var["trace_aggregated_snapshot_data_span_name"])
+    test_trace_aggregated_snapshot_data = oci.ApmTraces.get_trace_aggregated_snapshot_data(apm_domain_id=test_apm_domain["id"],
+        trace_key=trace_aggregated_snapshot_data_trace_key,
+        server_name=trace_aggregated_snapshot_data_server_name,
+        service_name=test_service["name"],
+        span_key=trace_aggregated_snapshot_data_span_key,
+        span_name=trace_aggregated_snapshot_data_span_name)
     ```
     <!--End PulumiCodeChooser -->
 

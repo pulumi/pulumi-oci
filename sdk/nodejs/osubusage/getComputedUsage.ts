@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputedUsage = oci.OsubUsage.getComputedUsage({
- *     compartmentId: _var.compartment_id,
- *     computedUsageId: oci_osub_usage_computed_usage.test_computed_usage.id,
- *     fields: _var.computed_usage_fields,
- *     xOneOriginRegion: _var.computed_usage_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     computedUsageId: testComputedUsageOciOsubUsageComputedUsage.id,
+ *     fields: computedUsageFields,
+ *     xOneOriginRegion: computedUsageXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -182,10 +182,10 @@ export interface GetComputedUsageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputedUsage = oci.OsubUsage.getComputedUsage({
- *     compartmentId: _var.compartment_id,
- *     computedUsageId: oci_osub_usage_computed_usage.test_computed_usage.id,
- *     fields: _var.computed_usage_fields,
- *     xOneOriginRegion: _var.computed_usage_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     computedUsageId: testComputedUsageOciOsubUsageComputedUsage.id,
+ *     fields: computedUsageFields,
+ *     xOneOriginRegion: computedUsageXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

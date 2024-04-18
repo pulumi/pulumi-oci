@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testConnectHarnesses = Oci.Streaming.GetConnectHarnesses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Connect_harness_id,
-        ///         Name = @var.Connect_harness_name,
-        ///         State = @var.Connect_harness_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = connectHarnessId,
+        ///         Name = connectHarnessName,
+        ///         State = connectHarnessState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testConnectHarnesses = Oci.Streaming.GetConnectHarnesses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Connect_harness_id,
-        ///         Name = @var.Connect_harness_name,
-        ///         State = @var.Connect_harness_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = connectHarnessId,
+        ///         Name = connectHarnessName,
+        ///         State = connectHarnessState,
         ///     });
         /// 
         /// });

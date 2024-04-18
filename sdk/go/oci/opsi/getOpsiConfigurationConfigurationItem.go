@@ -32,11 +32,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOpsiConfigurationConfigurationItem(ctx, &opsi.GetOpsiConfigurationConfigurationItemArgs{
-//				CompartmentId:                 pulumi.StringRef(_var.Compartment_id),
-//				ConfigItemFields:              _var.Opsi_configuration_configuration_item_config_item_field,
-//				ConfigItemsApplicableContexts: _var.Opsi_configuration_configuration_item_config_items_applicable_context,
-//				Name:                          pulumi.StringRef(_var.Opsi_configuration_configuration_item_name),
-//				OpsiConfigType:                _var.Opsi_configuration_configuration_item_opsi_config_type,
+//				CompartmentId:                 pulumi.StringRef(compartmentId),
+//				ConfigItemFields:              opsiConfigurationConfigurationItemConfigItemField,
+//				ConfigItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+//				Name:                          pulumi.StringRef(opsiConfigurationConfigurationItemName),
+//				OpsiConfigType:                opsiConfigurationConfigurationItemOpsiConfigType,
 //			}, nil)
 //			if err != nil {
 //				return err

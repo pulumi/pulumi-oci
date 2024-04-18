@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedHostShapes(ctx, &ocvp.GetSupportedHostShapesArgs{
-//				CompartmentId:             _var.Compartment_id,
-//				InitialHostShapeName:      pulumi.StringRef(oci_core_shape.Test_shape.Name),
-//				IsSingleHostSddcSupported: pulumi.BoolRef(_var.Supported_host_shape_is_single_host_sddc_supported),
-//				Name:                      pulumi.StringRef(_var.Supported_host_shape_name),
+//				CompartmentId:             compartmentId,
+//				InitialHostShapeName:      pulumi.StringRef(testShape.Name),
+//				IsSingleHostSddcSupported: pulumi.BoolRef(supportedHostShapeIsSingleHostSddcSupported),
+//				Name:                      pulumi.StringRef(supportedHostShapeName),
 //			}, nil)
 //			if err != nil {
 //				return err

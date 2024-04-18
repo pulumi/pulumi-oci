@@ -360,7 +360,7 @@ def get_integration_instance(integration_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=oci_integration_integration_instance["test_integration_instance"]["id"])
+    test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=test_integration_instance_oci_integration_integration_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -417,7 +417,7 @@ def get_integration_instance_output(integration_instance_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=oci_integration_integration_instance["test_integration_instance"]["id"])
+    test_integration_instance = oci.Integration.get_integration_instance(integration_instance_id=test_integration_instance_oci_integration_integration_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 

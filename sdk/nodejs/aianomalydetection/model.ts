@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = new oci.aianomalydetection.Model("testModel", {
- *     compartmentId: _var.compartment_id,
+ * const testModel = new oci.aianomalydetection.Model("test_model", {
+ *     compartmentId: compartmentId,
  *     modelTrainingDetails: {
- *         dataAssetIds: _var.model_model_training_details_data_asset_ids,
- *         algorithmHint: _var.model_model_training_details_algorithm_hint,
- *         targetFap: _var.model_model_training_details_target_fap,
- *         trainingFraction: _var.model_model_training_details_training_fraction,
- *         windowSize: _var.model_model_training_details_window_size,
+ *         dataAssetIds: modelModelTrainingDetailsDataAssetIds,
+ *         algorithmHint: modelModelTrainingDetailsAlgorithmHint,
+ *         targetFap: modelModelTrainingDetailsTargetFap,
+ *         trainingFraction: modelModelTrainingDetailsTrainingFraction,
+ *         windowSize: modelModelTrainingDetailsWindowSize,
  *     },
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
+ *     projectId: testProject.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.model_description,
- *     displayName: _var.model_display_name,
+ *     description: modelDescription,
+ *     displayName: modelDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

@@ -492,8 +492,8 @@ def get_data_guard_association(data_guard_association_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=oci_database_data_guard_association["test_data_guard_association"]["id"],
-        database_id=oci_database_database["test_database"]["id"])
+    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=test_data_guard_association_oci_database_data_guard_association["id"],
+        database_id=test_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -570,8 +570,8 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=oci_database_data_guard_association["test_data_guard_association"]["id"],
-        database_id=oci_database_database["test_database"]["id"])
+    test_data_guard_association = oci.Database.get_data_guard_association(data_guard_association_id=test_data_guard_association_oci_database_data_guard_association["id"],
+        database_id=test_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

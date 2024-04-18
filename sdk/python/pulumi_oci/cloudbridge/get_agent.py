@@ -287,7 +287,7 @@ def get_agent(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.CloudBridge.get_agent(agent_id=oci_cloud_bridge_agent["test_agent"]["id"])
+    test_agent = oci.CloudBridge.get_agent(agent_id=test_agent_oci_cloud_bridge_agent["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -337,7 +337,7 @@ def get_agent_output(agent_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_agent = oci.CloudBridge.get_agent(agent_id=oci_cloud_bridge_agent["test_agent"]["id"])
+    test_agent = oci.CloudBridge.get_agent(agent_id=test_agent_oci_cloud_bridge_agent["id"])
     ```
     <!--End PulumiCodeChooser -->
 

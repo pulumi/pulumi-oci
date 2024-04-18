@@ -30,13 +30,13 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceTasks = Oci.DataIntegration.GetWorkspaceTasks.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Fields = @var.Workspace_task_fields,
-        ///         FolderId = oci_dataintegration_folder.Test_folder.Id,
-        ///         Identifiers = @var.Workspace_task_identifier,
-        ///         Keys = @var.Workspace_task_key,
-        ///         Name = @var.Workspace_task_name,
-        ///         Types = @var.Workspace_task_type,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceTaskFields,
+        ///         FolderId = testFolder.Id,
+        ///         Identifiers = workspaceTaskIdentifier,
+        ///         Keys = workspaceTaskKey,
+        ///         Name = workspaceTaskName,
+        ///         Types = workspaceTaskType,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceTasks = Oci.DataIntegration.GetWorkspaceTasks.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Fields = @var.Workspace_task_fields,
-        ///         FolderId = oci_dataintegration_folder.Test_folder.Id,
-        ///         Identifiers = @var.Workspace_task_identifier,
-        ///         Keys = @var.Workspace_task_key,
-        ///         Name = @var.Workspace_task_name,
-        ///         Types = @var.Workspace_task_type,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Fields = workspaceTaskFields,
+        ///         FolderId = testFolder.Id,
+        ///         Identifiers = workspaceTaskIdentifier,
+        ///         Keys = workspaceTaskKey,
+        ///         Name = workspaceTaskName,
+        ///         Types = workspaceTaskType,
         ///     });
         /// 
         /// });

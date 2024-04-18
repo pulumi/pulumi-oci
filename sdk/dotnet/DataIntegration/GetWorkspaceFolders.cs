@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceFolders = Oci.DataIntegration.GetWorkspaceFolders.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         AggregatorKey = @var.Workspace_folder_aggregator_key,
-        ///         Fields = @var.Workspace_folder_fields,
-        ///         Identifiers = @var.Workspace_folder_identifier,
-        ///         Name = @var.Workspace_folder_name,
-        ///         NameContains = @var.Workspace_folder_name_contains,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         AggregatorKey = workspaceFolderAggregatorKey,
+        ///         Fields = workspaceFolderFields,
+        ///         Identifiers = workspaceFolderIdentifier,
+        ///         Name = workspaceFolderName,
+        ///         NameContains = workspaceFolderNameContains,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceFolders = Oci.DataIntegration.GetWorkspaceFolders.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         AggregatorKey = @var.Workspace_folder_aggregator_key,
-        ///         Fields = @var.Workspace_folder_fields,
-        ///         Identifiers = @var.Workspace_folder_identifier,
-        ///         Name = @var.Workspace_folder_name,
-        ///         NameContains = @var.Workspace_folder_name_contains,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         AggregatorKey = workspaceFolderAggregatorKey,
+        ///         Fields = workspaceFolderFields,
+        ///         Identifiers = workspaceFolderIdentifier,
+        ///         Name = workspaceFolderName,
+        ///         NameContains = workspaceFolderNameContains,
         ///     });
         /// 
         /// });

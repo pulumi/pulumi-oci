@@ -762,29 +762,29 @@ class DatabaseRegistration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_database_registration = oci.golden_gate.DatabaseRegistration("testDatabaseRegistration",
-            alias_name=var["database_registration_alias_name"],
-            compartment_id=var["compartment_id"],
-            display_name=var["database_registration_display_name"],
-            fqdn=var["database_registration_fqdn"],
-            password=var["database_registration_password"],
-            username=var["database_registration_username"],
-            connection_string=var["database_registration_connection_string"],
-            database_id=oci_database_database["test_database"]["id"],
+        test_database_registration = oci.golden_gate.DatabaseRegistration("test_database_registration",
+            alias_name=database_registration_alias_name,
+            compartment_id=compartment_id,
+            display_name=database_registration_display_name,
+            fqdn=database_registration_fqdn,
+            password=database_registration_password,
+            username=database_registration_username,
+            connection_string=database_registration_connection_string,
+            database_id=test_database["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["database_registration_description"],
+            description=database_registration_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            ip_address=var["database_registration_ip_address"],
-            key_id=oci_kms_key["test_key"]["id"],
-            secret_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            session_mode=var["database_registration_session_mode"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            wallet=var["database_registration_wallet"])
+            ip_address=database_registration_ip_address,
+            key_id=test_key["id"],
+            secret_compartment_id=test_compartment["id"],
+            session_mode=database_registration_session_mode,
+            subnet_id=test_subnet["id"],
+            vault_id=test_vault["id"],
+            wallet=database_registration_wallet)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -840,29 +840,29 @@ class DatabaseRegistration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_database_registration = oci.golden_gate.DatabaseRegistration("testDatabaseRegistration",
-            alias_name=var["database_registration_alias_name"],
-            compartment_id=var["compartment_id"],
-            display_name=var["database_registration_display_name"],
-            fqdn=var["database_registration_fqdn"],
-            password=var["database_registration_password"],
-            username=var["database_registration_username"],
-            connection_string=var["database_registration_connection_string"],
-            database_id=oci_database_database["test_database"]["id"],
+        test_database_registration = oci.golden_gate.DatabaseRegistration("test_database_registration",
+            alias_name=database_registration_alias_name,
+            compartment_id=compartment_id,
+            display_name=database_registration_display_name,
+            fqdn=database_registration_fqdn,
+            password=database_registration_password,
+            username=database_registration_username,
+            connection_string=database_registration_connection_string,
+            database_id=test_database["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["database_registration_description"],
+            description=database_registration_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            ip_address=var["database_registration_ip_address"],
-            key_id=oci_kms_key["test_key"]["id"],
-            secret_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            session_mode=var["database_registration_session_mode"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vault_id=oci_kms_vault["test_vault"]["id"],
-            wallet=var["database_registration_wallet"])
+            ip_address=database_registration_ip_address,
+            key_id=test_key["id"],
+            secret_compartment_id=test_compartment["id"],
+            session_mode=database_registration_session_mode,
+            subnet_id=test_subnet["id"],
+            vault_id=test_vault["id"],
+            wallet=database_registration_wallet)
         ```
         <!--End PulumiCodeChooser -->
 

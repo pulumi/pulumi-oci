@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkFirewall.GetNetworkFirewall(ctx, &networkfirewall.GetNetworkFirewallArgs{
-//				NetworkFirewallId: oci_network_firewall_network_firewall.Test_network_firewall.Id,
+//				NetworkFirewallId: testNetworkFirewallOciNetworkFirewallNetworkFirewall.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

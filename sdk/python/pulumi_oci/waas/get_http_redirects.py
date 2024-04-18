@@ -144,12 +144,12 @@ def get_http_redirects(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=var["compartment_id"],
-        display_names=var["http_redirect_display_names"],
-        ids=var["http_redirect_ids"],
-        states=var["http_redirect_states"],
-        time_created_greater_than_or_equal_to=var["http_redirect_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["http_redirect_time_created_less_than"])
+    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=compartment_id,
+        display_names=http_redirect_display_names,
+        ids=http_redirect_ids,
+        states=http_redirect_states,
+        time_created_greater_than_or_equal_to=http_redirect_time_created_greater_than_or_equal_to,
+        time_created_less_than=http_redirect_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -205,12 +205,12 @@ def get_http_redirects_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=var["compartment_id"],
-        display_names=var["http_redirect_display_names"],
-        ids=var["http_redirect_ids"],
-        states=var["http_redirect_states"],
-        time_created_greater_than_or_equal_to=var["http_redirect_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["http_redirect_time_created_less_than"])
+    test_http_redirects = oci.Waas.get_http_redirects(compartment_id=compartment_id,
+        display_names=http_redirect_display_names,
+        ids=http_redirect_ids,
+        states=http_redirect_states,
+        time_created_greater_than_or_equal_to=http_redirect_time_created_greater_than_or_equal_to,
+        time_created_less_than=http_redirect_time_created_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

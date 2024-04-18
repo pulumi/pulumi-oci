@@ -25,12 +25,12 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsResourceCategoriesManagement = new Oci.LogAnalytics.LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", new()
+    ///     var testLogAnalyticsResourceCategoriesManagement = new Oci.LogAnalytics.LogAnalyticsResourceCategoriesManagement("test_log_analytics_resource_categories_management", new()
     ///     {
-    ///         Namespace = @var.Log_analytics_resource_categories_management_namespace,
-    ///         ResourceId = oci_log_analytics_resource_categories_management_resource_id,
-    ///         ResourceType = @var.Log_analytics_resource_categories_management_resource_type,
-    ///         ResourceCategories = @var.Log_analytics_resource_categories_management_resource_categories,
+    ///         Namespace = logAnalyticsResourceCategoriesManagementNamespace,
+    ///         ResourceId = ociLogAnalyticsResourceCategoriesManagementResourceId,
+    ///         ResourceType = logAnalyticsResourceCategoriesManagementResourceType,
+    ///         ResourceCategories = logAnalyticsResourceCategoriesManagementResourceCategories,
     ///     });
     /// 
     /// });

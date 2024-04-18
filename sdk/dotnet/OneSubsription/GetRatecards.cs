@@ -31,11 +31,11 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testRatecards = Oci.OneSubsription.GetRatecards.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         PartNumber = @var.Ratecard_part_number,
-        ///         TimeFrom = @var.Ratecard_time_from,
-        ///         TimeTo = @var.Ratecard_time_to,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         PartNumber = ratecardPartNumber,
+        ///         TimeFrom = ratecardTimeFrom,
+        ///         TimeTo = ratecardTimeTo,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testRatecards = Oci.OneSubsription.GetRatecards.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
-        ///         PartNumber = @var.Ratecard_part_number,
-        ///         TimeFrom = @var.Ratecard_time_from,
-        ///         TimeTo = @var.Ratecard_time_to,
+        ///         CompartmentId = compartmentId,
+        ///         SubscriptionId = testSubscription.Id,
+        ///         PartNumber = ratecardPartNumber,
+        ///         TimeFrom = ratecardTimeFrom,
+        ///         TimeTo = ratecardTimeTo,
         ///     });
         /// 
         /// });

@@ -1401,8 +1401,8 @@ def get_subscribed_service(fields: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"],
-        fields=var["subscribed_service_fields"])
+    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
+        fields=subscribed_service_fields)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -1548,8 +1548,8 @@ def get_subscribed_service_output(fields: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=oci_onesubscription_subscribed_service["test_subscribed_service"]["id"],
-        fields=var["subscribed_service_fields"])
+    test_subscribed_service = oci.OneSubsription.get_subscribed_service(subscribed_service_id=test_subscribed_service_oci_onesubscription_subscribed_service["id"],
+        fields=subscribed_service_fields)
     ```
     <!--End PulumiCodeChooser -->
 

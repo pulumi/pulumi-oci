@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testChannel = oci.Mysql.getChannel({
- *     channelId: oci_mysql_channel.test_channel.id,
+ *     channelId: testChannelOciMysqlChannel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,7 +114,7 @@ export interface GetChannelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testChannel = oci.Mysql.getChannel({
- *     channelId: oci_mysql_channel.test_channel.id,
+ *     channelId: testChannelOciMysqlChannel.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

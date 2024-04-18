@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAuthenticationPolicy = Oci.Identity.GetAuthenticationPolicy.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAuthenticationPolicy = Oci.Identity.GetAuthenticationPolicy.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });

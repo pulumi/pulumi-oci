@@ -16,11 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplicationPolicy = new oci.objectstorage.ReplicationPolicy("testReplicationPolicy", {
- *     bucket: _var.replication_policy_bucket,
- *     destinationBucketName: oci_objectstorage_bucket.test_bucket.name,
- *     destinationRegionName: oci_identity_region.test_region.name,
- *     namespace: _var.replication_policy_namespace,
+ * const testReplicationPolicy = new oci.objectstorage.ReplicationPolicy("test_replication_policy", {
+ *     bucket: replicationPolicyBucket,
+ *     destinationBucketName: testBucket.name,
+ *     destinationRegionName: testRegion.name,
+ *     name: replicationPolicyName,
+ *     namespace: replicationPolicyNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

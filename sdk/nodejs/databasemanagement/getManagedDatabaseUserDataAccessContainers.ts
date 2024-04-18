@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserDataAccessContainers = oci.DatabaseManagement.getManagedDatabaseUserDataAccessContainers({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_data_access_container_name,
- *     opcNamedCredentialId: _var.managed_database_user_data_access_container_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserDataAccessContainerName,
+ *     opcNamedCredentialId: managedDatabaseUserDataAccessContainerOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,10 +96,10 @@ export interface GetManagedDatabaseUserDataAccessContainersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseUserDataAccessContainers = oci.DatabaseManagement.getManagedDatabaseUserDataAccessContainers({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     userName: oci_identity_user.test_user.name,
- *     name: _var.managed_database_user_data_access_container_name,
- *     opcNamedCredentialId: _var.managed_database_user_data_access_container_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     userName: testUser.name,
+ *     name: managedDatabaseUserDataAccessContainerName,
+ *     opcNamedCredentialId: managedDatabaseUserDataAccessContainerOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -18,57 +18,57 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBuildPipelineStage = new oci.devops.BuildPipelineStage("testBuildPipelineStage", {
- *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
+ * const testBuildPipelineStage = new oci.devops.BuildPipelineStage("test_build_pipeline_stage", {
+ *     buildPipelineId: testBuildPipeline.id,
  *     buildPipelineStagePredecessorCollection: {
  *         items: [{
- *             id: _var.build_pipeline_stage_build_pipeline_stage_predecessor_collection_items_id,
+ *             id: buildPipelineStageBuildPipelineStagePredecessorCollectionItemsId,
  *         }],
  *     },
- *     buildPipelineStageType: _var.build_pipeline_stage_build_pipeline_stage_type,
+ *     buildPipelineStageType: buildPipelineStageBuildPipelineStageType,
  *     buildRunnerShapeConfig: {
- *         buildRunnerType: _var.build_pipeline_stage_build_runner_shape_config_build_runner_type,
- *         memoryInGbs: _var.build_pipeline_stage_build_runner_shape_config_memory_in_gbs,
- *         ocpus: _var.build_pipeline_stage_build_runner_shape_config_ocpus,
+ *         buildRunnerType: buildPipelineStageBuildRunnerShapeConfigBuildRunnerType,
+ *         memoryInGbs: buildPipelineStageBuildRunnerShapeConfigMemoryInGbs,
+ *         ocpus: buildPipelineStageBuildRunnerShapeConfigOcpus,
  *     },
  *     buildSourceCollection: {
  *         items: [{
- *             connectionType: _var.build_pipeline_stage_build_source_collection_items_connection_type,
- *             branch: _var.build_pipeline_stage_build_source_collection_items_branch,
- *             connectionId: oci_devops_connection.test_connection.id,
- *             name: _var.build_pipeline_stage_build_source_collection_items_name,
- *             repositoryId: oci_artifacts_repository.test_repository.id,
- *             repositoryUrl: _var.build_pipeline_stage_build_source_collection_items_repository_url,
+ *             connectionType: buildPipelineStageBuildSourceCollectionItemsConnectionType,
+ *             branch: buildPipelineStageBuildSourceCollectionItemsBranch,
+ *             connectionId: testConnection.id,
+ *             name: buildPipelineStageBuildSourceCollectionItemsName,
+ *             repositoryId: testRepository.id,
+ *             repositoryUrl: buildPipelineStageBuildSourceCollectionItemsRepositoryUrl,
  *         }],
  *     },
- *     buildSpecFile: _var.build_pipeline_stage_build_spec_file,
+ *     buildSpecFile: buildPipelineStageBuildSpecFile,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     deliverArtifactCollection: {
  *         items: [{
- *             artifactId: oci_devops_artifact.test_artifact.id,
- *             artifactName: _var.build_pipeline_stage_deliver_artifact_collection_items_artifact_name,
+ *             artifactId: testArtifact.id,
+ *             artifactName: buildPipelineStageDeliverArtifactCollectionItemsArtifactName,
  *         }],
  *     },
- *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
- *     description: _var.build_pipeline_stage_description,
- *     displayName: _var.build_pipeline_stage_display_name,
+ *     deployPipelineId: testDeployPipeline.id,
+ *     description: buildPipelineStageDescription,
+ *     displayName: buildPipelineStageDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     image: _var.build_pipeline_stage_image,
- *     isPassAllParametersEnabled: _var.build_pipeline_stage_is_pass_all_parameters_enabled,
- *     primaryBuildSource: _var.build_pipeline_stage_primary_build_source,
+ *     image: buildPipelineStageImage,
+ *     isPassAllParametersEnabled: buildPipelineStageIsPassAllParametersEnabled,
+ *     primaryBuildSource: buildPipelineStagePrimaryBuildSource,
  *     privateAccessConfig: {
- *         networkChannelType: _var.build_pipeline_stage_private_access_config_network_channel_type,
- *         subnetId: oci_core_subnet.test_subnet.id,
- *         nsgIds: _var.build_pipeline_stage_private_access_config_nsg_ids,
+ *         networkChannelType: buildPipelineStagePrivateAccessConfigNetworkChannelType,
+ *         subnetId: testSubnet.id,
+ *         nsgIds: buildPipelineStagePrivateAccessConfigNsgIds,
  *     },
- *     stageExecutionTimeoutInSeconds: _var.build_pipeline_stage_stage_execution_timeout_in_seconds,
+ *     stageExecutionTimeoutInSeconds: buildPipelineStageStageExecutionTimeoutInSeconds,
  *     waitCriteria: {
- *         waitDuration: _var.build_pipeline_stage_wait_criteria_wait_duration,
- *         waitType: _var.build_pipeline_stage_wait_criteria_wait_type,
+ *         waitDuration: buildPipelineStageWaitCriteriaWaitDuration,
+ *         waitType: buildPipelineStageWaitCriteriaWaitType,
  *     },
  * });
  * ```

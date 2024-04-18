@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOutboundConnectors = oci.FileStorage.getOutboundConnectors({
- *     availabilityDomain: _var.outbound_connector_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.outbound_connector_display_name,
- *     id: _var.outbound_connector_id,
- *     state: _var.outbound_connector_state,
+ *     availabilityDomain: outboundConnectorAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: outboundConnectorDisplayName,
+ *     id: outboundConnectorId,
+ *     state: outboundConnectorState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetOutboundConnectorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOutboundConnectors = oci.FileStorage.getOutboundConnectors({
- *     availabilityDomain: _var.outbound_connector_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.outbound_connector_display_name,
- *     id: _var.outbound_connector_id,
- *     state: _var.outbound_connector_state,
+ *     availabilityDomain: outboundConnectorAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: outboundConnectorDisplayName,
+ *     id: outboundConnectorId,
+ *     state: outboundConnectorState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

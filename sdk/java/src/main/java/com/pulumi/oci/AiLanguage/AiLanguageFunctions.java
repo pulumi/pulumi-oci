@@ -65,7 +65,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = AiLanguageFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciAiLanguageEndpoint.id())
      *             .build());
      * 
      *     }
@@ -107,7 +107,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = AiLanguageFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciAiLanguageEndpoint.id())
      *             .build());
      * 
      *     }
@@ -149,7 +149,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = AiLanguageFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciAiLanguageEndpoint.id())
      *             .build());
      * 
      *     }
@@ -191,7 +191,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoint = AiLanguageFunctions.getEndpoint(GetEndpointArgs.builder()
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
+     *             .endpointId(testEndpointOciAiLanguageEndpoint.id())
      *             .build());
      * 
      *     }
@@ -233,12 +233,12 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = AiLanguageFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .endpointId(testEndpoint.id())
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -280,12 +280,12 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = AiLanguageFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .endpointId(testEndpoint.id())
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -327,12 +327,12 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = AiLanguageFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .endpointId(testEndpoint.id())
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -374,12 +374,12 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEndpoints = AiLanguageFunctions.getEndpoints(GetEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.endpoint_display_name())
-     *             .endpointId(oci_ai_language_endpoint.test_endpoint().id())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(endpointDisplayName)
+     *             .endpointId(testEndpoint.id())
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(endpointState)
      *             .build());
      * 
      *     }
@@ -421,7 +421,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiLanguageFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModelOciAiLanguageModel.id())
      *             .build());
      * 
      *     }
@@ -463,7 +463,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiLanguageFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModelOciAiLanguageModel.id())
      *             .build());
      * 
      *     }
@@ -505,7 +505,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiLanguageFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModelOciAiLanguageModel.id())
      *             .build());
      * 
      *     }
@@ -547,7 +547,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiLanguageFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModelOciAiLanguageModel.id())
      *             .build());
      * 
      *     }
@@ -589,7 +589,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -631,7 +631,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -673,7 +673,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -715,7 +715,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelEvaluationResults = AiLanguageFunctions.getModelEvaluationResults(GetModelEvaluationResultsArgs.builder()
-     *             .modelId(oci_ai_language_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -757,7 +757,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelType = AiLanguageFunctions.getModelType(GetModelTypeArgs.builder()
-     *             .modelType(var_.model_type_model_type())
+     *             .modelType(modelTypeModelType)
      *             .build());
      * 
      *     }
@@ -799,7 +799,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelType = AiLanguageFunctions.getModelType(GetModelTypeArgs.builder()
-     *             .modelType(var_.model_type_model_type())
+     *             .modelType(modelTypeModelType)
      *             .build());
      * 
      *     }
@@ -841,7 +841,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelType = AiLanguageFunctions.getModelType(GetModelTypeArgs.builder()
-     *             .modelType(var_.model_type_model_type())
+     *             .modelType(modelTypeModelType)
      *             .build());
      * 
      *     }
@@ -883,7 +883,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelType = AiLanguageFunctions.getModelType(GetModelTypeArgs.builder()
-     *             .modelType(var_.model_type_model_type())
+     *             .modelType(modelTypeModelType)
      *             .build());
      * 
      *     }
@@ -925,11 +925,11 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiLanguageFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -971,11 +971,11 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiLanguageFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1017,11 +1017,11 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiLanguageFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1063,11 +1063,11 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiLanguageFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .modelId(oci_ai_language_model.test_model().id())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1109,7 +1109,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiLanguageFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_ai_language_project.test_project().id())
+     *             .projectId(testProjectOciAiLanguageProject.id())
      *             .build());
      * 
      *     }
@@ -1151,7 +1151,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiLanguageFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_ai_language_project.test_project().id())
+     *             .projectId(testProjectOciAiLanguageProject.id())
      *             .build());
      * 
      *     }
@@ -1193,7 +1193,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiLanguageFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_ai_language_project.test_project().id())
+     *             .projectId(testProjectOciAiLanguageProject.id())
      *             .build());
      * 
      *     }
@@ -1235,7 +1235,7 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiLanguageFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_ai_language_project.test_project().id())
+     *             .projectId(testProjectOciAiLanguageProject.id())
      *             .build());
      * 
      *     }
@@ -1277,10 +1277,10 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiLanguageFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -1322,10 +1322,10 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiLanguageFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -1367,10 +1367,10 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiLanguageFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -1412,10 +1412,10 @@ public final class AiLanguageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiLanguageFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .projectId(oci_ai_language_project.test_project().id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(projectState)
      *             .build());
      * 
      *     }

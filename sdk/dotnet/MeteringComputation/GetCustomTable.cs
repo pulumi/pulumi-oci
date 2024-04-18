@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testCustomTable = Oci.MeteringComputation.GetCustomTable.Invoke(new()
         ///     {
-        ///         CustomTableId = oci_metering_computation_custom_table.Test_custom_table.Id,
+        ///         CustomTableId = testCustomTableOciMeteringComputationCustomTable.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testCustomTable = Oci.MeteringComputation.GetCustomTable.Invoke(new()
         ///     {
-        ///         CustomTableId = oci_metering_computation_custom_table.Test_custom_table.Id,
+        ///         CustomTableId = testCustomTableOciMeteringComputationCustomTable.Id,
         ///     });
         /// 
         /// });

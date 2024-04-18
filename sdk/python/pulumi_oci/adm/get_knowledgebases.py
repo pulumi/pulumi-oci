@@ -122,10 +122,10 @@ def get_knowledgebases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.Adm.get_knowledgebases(compartment_id=var["compartment_id"],
-        display_name=var["knowledge_base_display_name"],
-        id=var["knowledge_base_id"],
-        state=var["knowledge_base_state"])
+    test_knowledge_bases = oci.Adm.get_knowledgebases(compartment_id=compartment_id,
+        display_name=knowledge_base_display_name,
+        id=knowledge_base_id,
+        state=knowledge_base_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -173,10 +173,10 @@ def get_knowledgebases_output(compartment_id: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_knowledge_bases = oci.Adm.get_knowledgebases(compartment_id=var["compartment_id"],
-        display_name=var["knowledge_base_display_name"],
-        id=var["knowledge_base_id"],
-        state=var["knowledge_base_state"])
+    test_knowledge_bases = oci.Adm.get_knowledgebases(compartment_id=compartment_id,
+        display_name=knowledge_base_display_name,
+        id=knowledge_base_id,
+        state=knowledge_base_state)
     ```
     <!--End PulumiCodeChooser -->
 

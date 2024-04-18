@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Functions.NewInvokeFunction(ctx, "testInvokeFunction", &Functions.InvokeFunctionArgs{
-//				FunctionId:          pulumi.Any(oci_functions_function.Test_function.Id),
-//				InvokeFunctionBody:  pulumi.Any(_var.Invoke_function_invoke_function_body),
-//				FnIntent:            pulumi.Any(_var.Invoke_function_fn_intent),
-//				FnInvokeType:        pulumi.Any(_var.Invoke_function_fn_invoke_type),
+//			_, err := Functions.NewInvokeFunction(ctx, "test_invoke_function", &Functions.InvokeFunctionArgs{
+//				FunctionId:          pulumi.Any(testFunction.Id),
+//				InvokeFunctionBody:  pulumi.Any(invokeFunctionInvokeFunctionBody),
+//				FnIntent:            pulumi.Any(invokeFunctionFnIntent),
+//				FnInvokeType:        pulumi.Any(invokeFunctionFnInvokeType),
 //				Base64EncodeContent: pulumi.Bool(false),
 //			})
 //			if err != nil {

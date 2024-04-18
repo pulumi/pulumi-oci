@@ -38,8 +38,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testBuckets = Oci.ObjectStorage.GetBucketSummaries.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Bucket_namespace,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = bucketNamespace,
         ///     });
         /// 
         /// });
@@ -76,8 +76,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testBuckets = Oci.ObjectStorage.GetBucketSummaries.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Bucket_namespace,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = bucketNamespace,
         ///     });
         /// 
         /// });

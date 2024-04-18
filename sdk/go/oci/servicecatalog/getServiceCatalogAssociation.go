@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceCatalog.GetServiceCatalogAssociation(ctx, &servicecatalog.GetServiceCatalogAssociationArgs{
-//				ServiceCatalogAssociationId: oci_service_catalog_service_catalog_association.Test_service_catalog_association.Id,
+//				ServiceCatalogAssociationId: testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

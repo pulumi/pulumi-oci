@@ -188,7 +188,7 @@ def get_cross_connect_group(cross_connect_group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_group = oci.Core.get_cross_connect_group(cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
+    test_cross_connect_group = oci.Core.get_cross_connect_group(cross_connect_group_id=test_cross_connect_group_oci_core_cross_connect_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -230,7 +230,7 @@ def get_cross_connect_group_output(cross_connect_group_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_cross_connect_group = oci.Core.get_cross_connect_group(cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
+    test_cross_connect_group = oci.Core.get_cross_connect_group(cross_connect_group_id=test_cross_connect_group_oci_core_cross_connect_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

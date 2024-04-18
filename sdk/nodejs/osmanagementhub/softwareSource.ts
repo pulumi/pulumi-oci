@@ -18,41 +18,41 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSoftwareSource = new oci.osmanagementhub.SoftwareSource("testSoftwareSource", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.software_source_display_name,
- *     softwareSourceType: _var.software_source_software_source_type,
+ * const testSoftwareSource = new oci.osmanagementhub.SoftwareSource("test_software_source", {
+ *     compartmentId: compartmentId,
+ *     displayName: softwareSourceDisplayName,
+ *     softwareSourceType: softwareSourceSoftwareSourceType,
  *     vendorSoftwareSources: [{
- *         displayName: _var.software_source_vendor_software_sources_display_name,
- *         id: _var.software_source_vendor_software_sources_id,
+ *         displayName: softwareSourceVendorSoftwareSourcesDisplayName,
+ *         id: softwareSourceVendorSoftwareSourcesId,
  *     }],
  *     customSoftwareSourceFilter: {
  *         moduleStreamProfileFilters: [{
- *             filterType: _var.software_source_custom_software_source_filter_module_stream_profile_filters_filter_type,
- *             moduleName: _var.software_source_custom_software_source_filter_module_stream_profile_filters_module_name,
- *             profileName: oci_os_management_hub_profile.test_profile.name,
- *             streamName: oci_streaming_stream.test_stream.name,
+ *             filterType: softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersFilterType,
+ *             moduleName: softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersModuleName,
+ *             profileName: testProfile.name,
+ *             streamName: testStream.name,
  *         }],
  *         packageFilters: [{
- *             filterType: _var.software_source_custom_software_source_filter_package_filters_filter_type,
- *             packageName: _var.software_source_custom_software_source_filter_package_filters_package_name,
- *             packageNamePattern: _var.software_source_custom_software_source_filter_package_filters_package_name_pattern,
- *             packageVersion: _var.software_source_custom_software_source_filter_package_filters_package_version,
+ *             filterType: softwareSourceCustomSoftwareSourceFilterPackageFiltersFilterType,
+ *             packageName: softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageName,
+ *             packageNamePattern: softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageNamePattern,
+ *             packageVersion: softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageVersion,
  *         }],
  *         packageGroupFilters: [{
- *             filterType: _var.software_source_custom_software_source_filter_package_group_filters_filter_type,
- *             packageGroups: _var.software_source_custom_software_source_filter_package_group_filters_package_groups,
+ *             filterType: softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersFilterType,
+ *             packageGroups: softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersPackageGroups,
  *         }],
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.software_source_description,
+ *     description: softwareSourceDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutomaticallyUpdated: _var.software_source_is_automatically_updated,
- *     softwareSourceVersion: _var.software_source_software_source_version,
+ *     isAutomaticallyUpdated: softwareSourceIsAutomaticallyUpdated,
+ *     softwareSourceVersion: softwareSourceSoftwareSourceVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

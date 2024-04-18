@@ -115,9 +115,9 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=var["compartment_id"],
-        email_recipients_group_id=oci_identity_group["test_group"]["id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
+    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
+        email_recipients_group_id=test_group["id"],
+        subscription_id=test_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -159,9 +159,9 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=var["compartment_id"],
-        email_recipients_group_id=oci_identity_group["test_group"]["id"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
+    test_usage_statement_email_recipients_group = oci.MeteringComputation.get_usage_statement_email_recipients_group(compartment_id=compartment_id,
+        email_recipients_group_id=test_group["id"],
+        subscription_id=test_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 

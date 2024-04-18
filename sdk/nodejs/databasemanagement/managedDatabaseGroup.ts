@@ -19,17 +19,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedDatabaseGroup = new oci.databasemanagement.ManagedDatabaseGroup("testManagedDatabaseGroup", {
- *     compartmentId: _var.compartment_id,
+ * const testManagedDatabaseGroup = new oci.databasemanagement.ManagedDatabaseGroup("test_managed_database_group", {
+ *     compartmentId: compartmentId,
+ *     name: managedDatabaseGroupName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.managed_database_group_description,
+ *     description: managedDatabaseGroupDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     managedDatabases: [{
- *         id: _var.managed_database_id,
+ *         id: managedDatabaseId,
  *     }],
  * });
  * ```

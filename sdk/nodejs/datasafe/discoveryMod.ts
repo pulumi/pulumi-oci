@@ -20,23 +20,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDiscoveryJob = new oci.datasafe.DiscoveryMod("testDiscoveryJob", {
- *     compartmentId: _var.compartment_id,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ * const testDiscoveryJob = new oci.datasafe.DiscoveryMod("test_discovery_job", {
+ *     compartmentId: compartmentId,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     discoveryType: _var.discovery_job_discovery_type,
- *     displayName: _var.discovery_job_display_name,
+ *     discoveryType: discoveryJobDiscoveryType,
+ *     displayName: discoveryJobDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAppDefinedRelationDiscoveryEnabled: _var.discovery_job_is_app_defined_relation_discovery_enabled,
- *     isIncludeAllSchemas: _var.discovery_job_is_include_all_schemas,
- *     isIncludeAllSensitiveTypes: _var.discovery_job_is_include_all_sensitive_types,
- *     isSampleDataCollectionEnabled: _var.discovery_job_is_sample_data_collection_enabled,
- *     schemasForDiscoveries: _var.discovery_job_schemas_for_discovery,
- *     sensitiveTypeIdsForDiscoveries: _var.discovery_job_sensitive_type_ids_for_discovery,
+ *     isAppDefinedRelationDiscoveryEnabled: discoveryJobIsAppDefinedRelationDiscoveryEnabled,
+ *     isIncludeAllSchemas: discoveryJobIsIncludeAllSchemas,
+ *     isIncludeAllSensitiveTypes: discoveryJobIsIncludeAllSensitiveTypes,
+ *     isSampleDataCollectionEnabled: discoveryJobIsSampleDataCollectionEnabled,
+ *     schemasForDiscoveries: discoveryJobSchemasForDiscovery,
+ *     sensitiveTypeIdsForDiscoveries: discoveryJobSensitiveTypeIdsForDiscovery,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

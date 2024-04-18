@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OneSubsription.GetCommitment(ctx, &onesubsription.GetCommitmentArgs{
-//				CommitmentId: oci_onesubscription_commitment.Test_commitment.Id,
+//				CommitmentId: testCommitmentOciOnesubscriptionCommitment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

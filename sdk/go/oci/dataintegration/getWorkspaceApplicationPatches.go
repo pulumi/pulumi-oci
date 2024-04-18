@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceApplicationPatches(ctx, &dataintegration.GetWorkspaceApplicationPatchesArgs{
-//				ApplicationKey: _var.Workspace_application_patch_application_key,
-//				WorkspaceId:    oci_dataintegration_workspace.Test_workspace.Id,
-//				Fields:         _var.Workspace_application_patch_fields,
-//				Identifiers:    _var.Workspace_application_patch_identifier,
-//				Name:           pulumi.StringRef(_var.Workspace_application_patch_name),
+//				ApplicationKey: workspaceApplicationPatchApplicationKey,
+//				WorkspaceId:    testWorkspace.Id,
+//				Fields:         workspaceApplicationPatchFields,
+//				Identifiers:    workspaceApplicationPatchIdentifier,
+//				Name:           pulumi.StringRef(workspaceApplicationPatchName),
 //			}, nil)
 //			if err != nil {
 //				return err

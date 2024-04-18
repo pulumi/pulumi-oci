@@ -25,26 +25,26 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testObjectLifecyclePolicy = new Oci.ObjectStorage.ObjectLifecyclePolicy("testObjectLifecyclePolicy", new()
+    ///     var testObjectLifecyclePolicy = new Oci.ObjectStorage.ObjectLifecyclePolicy("test_object_lifecycle_policy", new()
     ///     {
-    ///         Bucket = @var.Object_lifecycle_policy_bucket,
-    ///         Namespace = @var.Object_lifecycle_policy_namespace,
+    ///         Bucket = objectLifecyclePolicyBucket,
+    ///         Namespace = objectLifecyclePolicyNamespace,
     ///         Rules = new[]
     ///         {
     ///             new Oci.ObjectStorage.Inputs.ObjectLifecyclePolicyRuleArgs
     ///             {
-    ///                 Action = @var.Object_lifecycle_policy_rules_action,
-    ///                 IsEnabled = @var.Object_lifecycle_policy_rules_is_enabled,
-    ///                 Name = @var.Object_lifecycle_policy_rules_name,
-    ///                 TimeAmount = @var.Object_lifecycle_policy_rules_time_amount,
-    ///                 TimeUnit = @var.Object_lifecycle_policy_rules_time_unit,
+    ///                 Action = objectLifecyclePolicyRulesAction,
+    ///                 IsEnabled = objectLifecyclePolicyRulesIsEnabled,
+    ///                 Name = objectLifecyclePolicyRulesName,
+    ///                 TimeAmount = objectLifecyclePolicyRulesTimeAmount,
+    ///                 TimeUnit = objectLifecyclePolicyRulesTimeUnit,
     ///                 ObjectNameFilter = new Oci.ObjectStorage.Inputs.ObjectLifecyclePolicyRuleObjectNameFilterArgs
     ///                 {
-    ///                     ExclusionPatterns = @var.Object_lifecycle_policy_rules_object_name_filter_exclusion_patterns,
-    ///                     InclusionPatterns = @var.Object_lifecycle_policy_rules_object_name_filter_inclusion_patterns,
-    ///                     InclusionPrefixes = @var.Object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes,
+    ///                     ExclusionPatterns = objectLifecyclePolicyRulesObjectNameFilterExclusionPatterns,
+    ///                     InclusionPatterns = objectLifecyclePolicyRulesObjectNameFilterInclusionPatterns,
+    ///                     InclusionPrefixes = objectLifecyclePolicyRulesObjectNameFilterInclusionPrefixes,
     ///                 },
-    ///                 Target = @var.Object_lifecycle_policy_rules_target,
+    ///                 Target = objectLifecyclePolicyRulesTarget,
     ///             },
     ///         },
     ///     });

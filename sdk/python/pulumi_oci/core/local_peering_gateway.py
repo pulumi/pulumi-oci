@@ -418,18 +418,18 @@ class LocalPeeringGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_local_peering_gateway = oci.core.LocalPeeringGateway("testLocalPeeringGateway",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_local_peering_gateway = oci.core.LocalPeeringGateway("test_local_peering_gateway",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["local_peering_gateway_display_name"],
+            display_name=local_peering_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            peer_id=oci_core_local_peering_gateway["test_local_peering_gateway2"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            peer_id=test_local_peering_gateway2["id"],
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -477,18 +477,18 @@ class LocalPeeringGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_local_peering_gateway = oci.core.LocalPeeringGateway("testLocalPeeringGateway",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_local_peering_gateway = oci.core.LocalPeeringGateway("test_local_peering_gateway",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["local_peering_gateway_display_name"],
+            display_name=local_peering_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            peer_id=oci_core_local_peering_gateway["test_local_peering_gateway2"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            peer_id=test_local_peering_gateway2["id"],
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 

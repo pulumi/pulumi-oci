@@ -30,11 +30,11 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testInvoices = Oci.OneSubsription.GetInvoices.Invoke(new()
         ///     {
-        ///         ArCustomerTransactionId = oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Fields = @var.Invoice_fields,
-        ///         TimeFrom = @var.Invoice_time_from,
-        ///         TimeTo = @var.Invoice_time_to,
+        ///         ArCustomerTransactionId = testArCustomerTransaction.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Fields = invoiceFields,
+        ///         TimeFrom = invoiceTimeFrom,
+        ///         TimeTo = invoiceTimeTo,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testInvoices = Oci.OneSubsription.GetInvoices.Invoke(new()
         ///     {
-        ///         ArCustomerTransactionId = oci_onesubscription_ar_customer_transaction.Test_ar_customer_transaction.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Fields = @var.Invoice_fields,
-        ///         TimeFrom = @var.Invoice_time_from,
-        ///         TimeTo = @var.Invoice_time_to,
+        ///         ArCustomerTransactionId = testArCustomerTransaction.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Fields = invoiceFields,
+        ///         TimeFrom = invoiceTimeFrom,
+        ///         TimeTo = invoiceTimeTo,
         ///     });
         /// 
         /// });

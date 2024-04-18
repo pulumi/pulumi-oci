@@ -20,25 +20,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncementSubscription = new oci.announcementsservice.AnnouncementSubscription("testAnnouncementSubscription", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.announcement_subscription_display_name,
- *     onsTopicId: oci_ons_notification_topic.test_notification_topic.id,
+ * const testAnnouncementSubscription = new oci.announcementsservice.AnnouncementSubscription("test_announcement_subscription", {
+ *     compartmentId: compartmentId,
+ *     displayName: announcementSubscriptionDisplayName,
+ *     onsTopicId: testNotificationTopic.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.announcement_subscription_description,
+ *     description: announcementSubscriptionDescription,
  *     filterGroups: {
  *         filters: [{
- *             type: _var.announcement_subscription_filter_groups_filters_type,
- *             value: _var.announcement_subscription_filter_groups_filters_value,
+ *             type: announcementSubscriptionFilterGroupsFiltersType,
+ *             value: announcementSubscriptionFilterGroupsFiltersValue,
  *         }],
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     preferredLanguage: _var.announcement_subscription_preferred_language,
- *     preferredTimeZone: _var.announcement_subscription_preferred_time_zone,
+ *     preferredLanguage: announcementSubscriptionPreferredLanguage,
+ *     preferredTimeZone: announcementSubscriptionPreferredTimeZone,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

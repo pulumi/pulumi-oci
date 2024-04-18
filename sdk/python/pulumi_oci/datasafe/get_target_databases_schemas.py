@@ -127,10 +127,10 @@ def get_target_databases_schemas(filters: Optional[Sequence[pulumi.InputType['Ge
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        is_oracle_maintained=var["target_databases_schema_is_oracle_maintained"],
-        schema_names=var["target_databases_schema_schema_name"],
-        schema_name_contains=var["target_databases_schema_schema_name_contains"])
+    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
+        is_oracle_maintained=target_databases_schema_is_oracle_maintained,
+        schema_names=target_databases_schema_schema_name,
+        schema_name_contains=target_databases_schema_schema_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -178,10 +178,10 @@ def get_target_databases_schemas_output(filters: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=oci_data_safe_target_database["test_target_database"]["id"],
-        is_oracle_maintained=var["target_databases_schema_is_oracle_maintained"],
-        schema_names=var["target_databases_schema_schema_name"],
-        schema_name_contains=var["target_databases_schema_schema_name_contains"])
+    test_target_databases_schemas = oci.DataSafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
+        is_oracle_maintained=target_databases_schema_is_oracle_maintained,
+        schema_names=target_databases_schema_schema_name,
+        schema_name_contains=target_databases_schema_schema_name_contains)
     ```
     <!--End PulumiCodeChooser -->
 

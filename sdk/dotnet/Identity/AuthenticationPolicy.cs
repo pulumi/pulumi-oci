@@ -25,21 +25,21 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAuthenticationPolicy = new Oci.Identity.AuthenticationPolicy("testAuthenticationPolicy", new()
+    ///     var testAuthenticationPolicy = new Oci.Identity.AuthenticationPolicy("test_authentication_policy", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
+    ///         CompartmentId = tenancyOcid,
     ///         NetworkPolicy = new Oci.Identity.Inputs.AuthenticationPolicyNetworkPolicyArgs
     ///         {
-    ///             NetworkSourceIds = @var.Authentication_policy_network_policy_network_source_ids,
+    ///             NetworkSourceIds = authenticationPolicyNetworkPolicyNetworkSourceIds,
     ///         },
     ///         PasswordPolicy = new Oci.Identity.Inputs.AuthenticationPolicyPasswordPolicyArgs
     ///         {
-    ///             IsLowercaseCharactersRequired = @var.Authentication_policy_password_policy_is_lowercase_characters_required,
-    ///             IsNumericCharactersRequired = @var.Authentication_policy_password_policy_is_numeric_characters_required,
-    ///             IsSpecialCharactersRequired = @var.Authentication_policy_password_policy_is_special_characters_required,
-    ///             IsUppercaseCharactersRequired = @var.Authentication_policy_password_policy_is_uppercase_characters_required,
-    ///             IsUsernameContainmentAllowed = @var.Authentication_policy_password_policy_is_username_containment_allowed,
-    ///             MinimumPasswordLength = @var.Authentication_policy_password_policy_minimum_password_length,
+    ///             IsLowercaseCharactersRequired = authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired,
+    ///             IsNumericCharactersRequired = authenticationPolicyPasswordPolicyIsNumericCharactersRequired,
+    ///             IsSpecialCharactersRequired = authenticationPolicyPasswordPolicyIsSpecialCharactersRequired,
+    ///             IsUppercaseCharactersRequired = authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired,
+    ///             IsUsernameContainmentAllowed = authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed,
+    ///             MinimumPasswordLength = authenticationPolicyPasswordPolicyMinimumPasswordLength,
     ///         },
     ///     });
     /// 

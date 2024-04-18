@@ -31,13 +31,13 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testExadataInsights = Oci.Opsi.GetExadataInsights.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Exadata_insight_compartment_id_in_subtree,
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         ExadataTypes = @var.Exadata_insight_exadata_type,
-        ///         Id = @var.Exadata_insight_id,
-        ///         States = @var.Exadata_insight_state,
-        ///         Statuses = @var.Exadata_insight_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = exadataInsightCompartmentIdInSubtree,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataTypes = exadataInsightExadataType,
+        ///         Id = exadataInsightId,
+        ///         States = exadataInsightState,
+        ///         Statuses = exadataInsightStatus,
         ///     });
         /// 
         /// });
@@ -67,13 +67,13 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testExadataInsights = Oci.Opsi.GetExadataInsights.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Exadata_insight_compartment_id_in_subtree,
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         ExadataTypes = @var.Exadata_insight_exadata_type,
-        ///         Id = @var.Exadata_insight_id,
-        ///         States = @var.Exadata_insight_state,
-        ///         Statuses = @var.Exadata_insight_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = exadataInsightCompartmentIdInSubtree,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataTypes = exadataInsightExadataType,
+        ///         Id = exadataInsightId,
+        ///         States = exadataInsightState,
+        ///         Statuses = exadataInsightStatus,
         ///     });
         /// 
         /// });

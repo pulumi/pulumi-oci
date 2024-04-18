@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedMySqlDatabaseSqlData = oci.DatabaseManagement.getManagedMySqlDatabaseSqlData({
- *     endTime: _var.managed_my_sql_database_sql_data_end_time,
- *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
- *     startTime: _var.managed_my_sql_database_sql_data_start_time,
- *     filterColumn: _var.managed_my_sql_database_sql_data_filter_column,
+ *     endTime: managedMySqlDatabaseSqlDataEndTime,
+ *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
+ *     startTime: managedMySqlDatabaseSqlDataStartTime,
+ *     filterColumn: managedMySqlDatabaseSqlDataFilterColumn,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetManagedMySqlDatabaseSqlDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedMySqlDatabaseSqlData = oci.DatabaseManagement.getManagedMySqlDatabaseSqlData({
- *     endTime: _var.managed_my_sql_database_sql_data_end_time,
- *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
- *     startTime: _var.managed_my_sql_database_sql_data_start_time,
- *     filterColumn: _var.managed_my_sql_database_sql_data_filter_column,
+ *     endTime: managedMySqlDatabaseSqlDataEndTime,
+ *     managedMySqlDatabaseId: testManagedMySqlDatabase.id,
+ *     startTime: managedMySqlDatabaseSqlDataStartTime,
+ *     filterColumn: managedMySqlDatabaseSqlDataFilterColumn,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -35,12 +35,12 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testKeys = Oci.Kms.GetKeys.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ManagementEndpoint = @var.Key_management_endpoint,
-        ///         Algorithm = @var.Key_algorithm,
-        ///         Length = @var.Key_length,
-        ///         CurveId = oci_kms_curve.Test_curve.Id,
-        ///         ProtectionMode = @var.Key_protection_mode,
+        ///         CompartmentId = compartmentId,
+        ///         ManagementEndpoint = keyManagementEndpoint,
+        ///         Algorithm = keyAlgorithm,
+        ///         Length = keyLength,
+        ///         CurveId = testCurve.Id,
+        ///         ProtectionMode = keyProtectionMode,
         ///     });
         /// 
         /// });
@@ -74,12 +74,12 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testKeys = Oci.Kms.GetKeys.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ManagementEndpoint = @var.Key_management_endpoint,
-        ///         Algorithm = @var.Key_algorithm,
-        ///         Length = @var.Key_length,
-        ///         CurveId = oci_kms_curve.Test_curve.Id,
-        ///         ProtectionMode = @var.Key_protection_mode,
+        ///         CompartmentId = compartmentId,
+        ///         ManagementEndpoint = keyManagementEndpoint,
+        ///         Algorithm = keyAlgorithm,
+        ///         Length = keyLength,
+        ///         CurveId = testCurve.Id,
+        ///         ProtectionMode = keyProtectionMode,
         ///     });
         /// 
         /// });

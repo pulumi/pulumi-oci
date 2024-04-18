@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceConfiguration = oci.Core.getInstanceConfiguration({
- *     instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
+ *     instanceConfigurationId: testInstanceConfigurationOciCoreInstanceConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,7 +92,7 @@ export interface GetInstanceConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceConfiguration = oci.Core.getInstanceConfiguration({
- *     instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
+ *     instanceConfigurationId: testInstanceConfigurationOciCoreInstanceConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

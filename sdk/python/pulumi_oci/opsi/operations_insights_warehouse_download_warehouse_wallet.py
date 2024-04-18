@@ -125,9 +125,9 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse_download_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet",
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            operations_insights_warehouse_wallet_password=var["operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password"])
+        test_operations_insights_warehouse_download_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("test_operations_insights_warehouse_download_warehouse_wallet",
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+            operations_insights_warehouse_wallet_password=operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse_download_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet",
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-            operations_insights_warehouse_wallet_password=var["operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password"])
+        test_operations_insights_warehouse_download_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("test_operations_insights_warehouse_download_warehouse_wallet",
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+            operations_insights_warehouse_wallet_password=operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password)
         ```
         <!--End PulumiCodeChooser -->
 

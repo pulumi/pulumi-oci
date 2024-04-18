@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOnPremConnector = oci.DataSafe.getOnpremConnector({
- *     onPremConnectorId: oci_data_safe_on_prem_connector.test_on_prem_connector.id,
+ *     onPremConnectorId: testOnPremConnectorOciDataSafeOnPremConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetOnpremConnectorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOnPremConnector = oci.DataSafe.getOnpremConnector({
- *     onPremConnectorId: oci_data_safe_on_prem_connector.test_on_prem_connector.id,
+ *     onPremConnectorId: testOnPremConnectorOciDataSafeOnPremConnector.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

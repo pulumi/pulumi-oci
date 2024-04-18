@@ -322,12 +322,12 @@ def get_domains_approval_workflow_step(approval_workflow_step_id: Optional[str] 
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_step = oci.Identity.get_domains_approval_workflow_step(approval_workflow_step_id=oci_identity_domains_approval_workflow_step["test_approval_workflow_step"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_approval_workflow_step = oci.Identity.get_domains_approval_workflow_step(approval_workflow_step_id=test_approval_workflow_step_oci_identity_domains_approval_workflow_step["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_step_authorization"],
-        resource_type_schema_version=var["approval_workflow_step_resource_type_schema_version"])
+        authorization=approval_workflow_step_authorization,
+        resource_type_schema_version=approval_workflow_step_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -396,12 +396,12 @@ def get_domains_approval_workflow_step_output(approval_workflow_step_id: Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_step = oci.Identity.get_domains_approval_workflow_step(approval_workflow_step_id=oci_identity_domains_approval_workflow_step["test_approval_workflow_step"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_approval_workflow_step = oci.Identity.get_domains_approval_workflow_step(approval_workflow_step_id=test_approval_workflow_step_oci_identity_domains_approval_workflow_step["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_step_authorization"],
-        resource_type_schema_version=var["approval_workflow_step_resource_type_schema_version"])
+        authorization=approval_workflow_step_authorization,
+        resource_type_schema_version=approval_workflow_step_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

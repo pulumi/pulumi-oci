@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInventory = oci.CloudBridge.getInventory({
- *     inventoryId: oci_cloud_bridge_inventory.test_inventory.id,
+ *     inventoryId: testInventoryOciCloudBridgeInventory.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,7 +99,7 @@ export interface GetInventoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInventory = oci.CloudBridge.getInventory({
- *     inventoryId: oci_cloud_bridge_inventory.test_inventory.id,
+ *     inventoryId: testInventoryOciCloudBridgeInventory.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

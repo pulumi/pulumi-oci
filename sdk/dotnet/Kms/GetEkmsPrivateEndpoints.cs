@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testEkmsPrivateEndpoints = Oci.Kms.GetEkmsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testEkmsPrivateEndpoints = Oci.Kms.GetEkmsPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

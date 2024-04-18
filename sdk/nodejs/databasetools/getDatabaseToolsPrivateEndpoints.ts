@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsPrivateEndpoints = oci.DatabaseTools.getDatabaseToolsPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_private_endpoint_display_name,
- *     endpointServiceId: oci_core_service.test_service.id,
- *     state: _var.database_tools_private_endpoint_state,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsPrivateEndpointDisplayName,
+ *     endpointServiceId: testService.id,
+ *     state: databaseToolsPrivateEndpointState,
+ *     subnetId: testSubnet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetDatabaseToolsPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabaseToolsPrivateEndpoints = oci.DatabaseTools.getDatabaseToolsPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.database_tools_private_endpoint_display_name,
- *     endpointServiceId: oci_core_service.test_service.id,
- *     state: _var.database_tools_private_endpoint_state,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ *     compartmentId: compartmentId,
+ *     displayName: databaseToolsPrivateEndpointDisplayName,
+ *     endpointServiceId: testService.id,
+ *     state: databaseToolsPrivateEndpointState,
+ *     subnetId: testSubnet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

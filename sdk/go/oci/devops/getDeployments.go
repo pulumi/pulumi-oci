@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetDeployments(ctx, &devops.GetDeploymentsArgs{
-//				CompartmentId:                   pulumi.StringRef(_var.Compartment_id),
-//				DeployPipelineId:                pulumi.StringRef(oci_devops_deploy_pipeline.Test_deploy_pipeline.Id),
-//				DisplayName:                     pulumi.StringRef(_var.Deployment_display_name),
-//				Id:                              pulumi.StringRef(_var.Deployment_id),
-//				ProjectId:                       pulumi.StringRef(oci_devops_project.Test_project.Id),
-//				State:                           pulumi.StringRef(_var.Deployment_state),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Deployment_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Deployment_time_created_less_than),
+//				CompartmentId:                   pulumi.StringRef(compartmentId),
+//				DeployPipelineId:                pulumi.StringRef(testDeployPipeline.Id),
+//				DisplayName:                     pulumi.StringRef(deploymentDisplayName),
+//				Id:                              pulumi.StringRef(deploymentId),
+//				ProjectId:                       pulumi.StringRef(testProject.Id),
+//				State:                           pulumi.StringRef(deploymentState),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(deploymentTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(deploymentTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

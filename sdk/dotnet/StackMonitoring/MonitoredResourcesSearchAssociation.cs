@@ -25,16 +25,16 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitoredResourcesSearchAssociation = new Oci.StackMonitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", new()
+    ///     var testMonitoredResourcesSearchAssociation = new Oci.StackMonitoring.MonitoredResourcesSearchAssociation("test_monitored_resources_search_association", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         AssociationType = @var.Monitored_resources_search_association_association_type,
-    ///         DestinationResourceId = oci_stack_monitoring_destination_resource.Test_destination_resource.Id,
-    ///         DestinationResourceName = @var.Monitored_resources_search_association_destination_resource_name,
-    ///         DestinationResourceType = @var.Monitored_resources_search_association_destination_resource_type,
-    ///         SourceResourceId = oci_stack_monitoring_source_resource.Test_source_resource.Id,
-    ///         SourceResourceName = @var.Monitored_resources_search_association_source_resource_name,
-    ///         SourceResourceType = @var.Monitored_resources_search_association_source_resource_type,
+    ///         CompartmentId = compartmentId,
+    ///         AssociationType = monitoredResourcesSearchAssociationAssociationType,
+    ///         DestinationResourceId = testDestinationResource.Id,
+    ///         DestinationResourceName = monitoredResourcesSearchAssociationDestinationResourceName,
+    ///         DestinationResourceType = monitoredResourcesSearchAssociationDestinationResourceType,
+    ///         SourceResourceId = testSourceResource.Id,
+    ///         SourceResourceName = monitoredResourcesSearchAssociationSourceResourceName,
+    ///         SourceResourceType = monitoredResourcesSearchAssociationSourceResourceType,
     ///     });
     /// 
     /// });

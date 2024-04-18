@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     authenticationType: _var.target_database_role_authentication_type,
- *     isOracleMaintained: _var.target_database_role_is_oracle_maintained,
- *     roleNames: _var.target_database_role_role_name,
- *     roleNameContains: _var.target_database_role_role_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     authenticationType: targetDatabaseRoleAuthenticationType,
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
+ *     roleNames: targetDatabaseRoleRoleName,
+ *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetTargetDatabaseRolesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     authenticationType: _var.target_database_role_authentication_type,
- *     isOracleMaintained: _var.target_database_role_is_oracle_maintained,
- *     roleNames: _var.target_database_role_role_name,
- *     roleNameContains: _var.target_database_role_role_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     authenticationType: targetDatabaseRoleAuthenticationType,
+ *     isOracleMaintained: targetDatabaseRoleIsOracleMaintained,
+ *     roleNames: targetDatabaseRoleRoleName,
+ *     roleNameContains: targetDatabaseRoleRoleNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -43,29 +43,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "testManagedDatabasesChangeDatabaseParameter", &DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs{
-//				ManagedDatabaseId: pulumi.Any(oci_database_management_managed_database.Test_managed_database.Id),
+//			_, err := DatabaseManagement.NewManagedDatabasesChangeDatabaseParameter(ctx, "test_managed_databases_change_database_parameter", &DatabaseManagement.ManagedDatabasesChangeDatabaseParameterArgs{
+//				ManagedDatabaseId: pulumi.Any(testManagedDatabase.Id),
 //				Parameters: databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArray{
 //					&databasemanagement.ManagedDatabasesChangeDatabaseParameterParameterArgs{
-//						Name:          pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_name),
-//						Value:         pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_value),
-//						UpdateComment: pulumi.Any(_var.Managed_databases_change_database_parameter_parameters_update_comment),
+//						Name:          pulumi.Any(managedDatabasesChangeDatabaseParameterParametersName),
+//						Value:         pulumi.Any(managedDatabasesChangeDatabaseParameterParametersValue),
+//						UpdateComment: pulumi.Any(managedDatabasesChangeDatabaseParameterParametersUpdateComment),
 //					},
 //				},
-//				Scope: pulumi.Any(_var.Managed_databases_change_database_parameter_scope),
+//				Scope: pulumi.Any(managedDatabasesChangeDatabaseParameterScope),
 //				Credentials: &databasemanagement.ManagedDatabasesChangeDatabaseParameterCredentialsArgs{
-//					Password: pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_password),
-//					Role:     pulumi.Any(_var.Managed_databases_change_database_parameter_credentials_role),
-//					SecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					UserName: pulumi.Any(oci_identity_user.Test_user.Name),
+//					Password: pulumi.Any(managedDatabasesChangeDatabaseParameterCredentialsPassword),
+//					Role:     pulumi.Any(managedDatabasesChangeDatabaseParameterCredentialsRole),
+//					SecretId: pulumi.Any(testSecret.Id),
+//					UserName: pulumi.Any(testUser.Name),
 //				},
 //				DatabaseCredential: &databasemanagement.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs{
-//					CredentialType:    pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_credential_type),
-//					NamedCredentialId: pulumi.Any(oci_database_management_named_credential.Test_named_credential.Id),
-//					Password:          pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_password),
-//					PasswordSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Role:              pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_role),
-//					Username:          pulumi.Any(_var.Managed_databases_change_database_parameter_database_credential_username),
+//					CredentialType:    pulumi.Any(managedDatabasesChangeDatabaseParameterDatabaseCredentialCredentialType),
+//					NamedCredentialId: pulumi.Any(testNamedCredential.Id),
+//					Password:          pulumi.Any(managedDatabasesChangeDatabaseParameterDatabaseCredentialPassword),
+//					PasswordSecretId:  pulumi.Any(testSecret.Id),
+//					Role:              pulumi.Any(managedDatabasesChangeDatabaseParameterDatabaseCredentialRole),
+//					Username:          pulumi.Any(managedDatabasesChangeDatabaseParameterDatabaseCredentialUsername),
 //				},
 //			})
 //			if err != nil {

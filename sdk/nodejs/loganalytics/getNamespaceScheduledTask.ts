@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceScheduledTask = oci.LogAnalytics.getNamespaceScheduledTask({
- *     namespace: _var.namespace_scheduled_task_namespace,
- *     scheduledTaskId: oci_log_analytics_scheduled_task.test_scheduled_task.id,
+ *     namespace: namespaceScheduledTaskNamespace,
+ *     scheduledTaskId: testScheduledTask.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,8 +135,8 @@ export interface GetNamespaceScheduledTaskResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceScheduledTask = oci.LogAnalytics.getNamespaceScheduledTask({
- *     namespace: _var.namespace_scheduled_task_namespace,
- *     scheduledTaskId: oci_log_analytics_scheduled_task.test_scheduled_task.id,
+ *     namespace: namespaceScheduledTaskNamespace,
+ *     scheduledTaskId: testScheduledTask.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

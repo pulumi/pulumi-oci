@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenerateScopedAccessToken = new oci.identitydataplane.GeneratedScopedAccessToken("testGenerateScopedAccessToken", {
- *     publicKey: _var.generate_scoped_access_token_public_key,
- *     scope: _var.generate_scoped_access_token_scope,
+ * const testGenerateScopedAccessToken = new oci.identitydataplane.GeneratedScopedAccessToken("test_generate_scoped_access_token", {
+ *     publicKey: generateScopedAccessTokenPublicKey,
+ *     scope: generateScopedAccessTokenScope,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

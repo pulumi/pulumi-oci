@@ -32,12 +32,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicies = oci.DataSafe.getSecurityPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_policy_access_level,
- *     compartmentIdInSubtree: _var.security_policy_compartment_id_in_subtree,
- *     displayName: _var.security_policy_display_name,
- *     securityPolicyId: oci_data_safe_security_policy.test_security_policy.id,
- *     state: _var.security_policy_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityPolicyAccessLevel,
+ *     compartmentIdInSubtree: securityPolicyCompartmentIdInSubtree,
+ *     displayName: securityPolicyDisplayName,
+ *     securityPolicyId: testSecurityPolicy.id,
+ *     state: securityPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,12 +142,12 @@ export interface GetSecurityPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicies = oci.DataSafe.getSecurityPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_policy_access_level,
- *     compartmentIdInSubtree: _var.security_policy_compartment_id_in_subtree,
- *     displayName: _var.security_policy_display_name,
- *     securityPolicyId: oci_data_safe_security_policy.test_security_policy.id,
- *     state: _var.security_policy_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityPolicyAccessLevel,
+ *     compartmentIdInSubtree: securityPolicyCompartmentIdInSubtree,
+ *     displayName: securityPolicyDisplayName,
+ *     securityPolicyId: testSecurityPolicy.id,
+ *     state: securityPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

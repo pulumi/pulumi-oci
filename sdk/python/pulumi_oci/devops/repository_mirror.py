@@ -93,7 +93,7 @@ class RepositoryMirror(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository_mirror = oci.dev_ops.RepositoryMirror("testRepositoryMirror", repository_id=oci_devops_repository["test_repository"]["id"])
+        test_repository_mirror = oci.dev_ops.RepositoryMirror("test_repository_mirror", repository_id=test_repository["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -131,7 +131,7 @@ class RepositoryMirror(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository_mirror = oci.dev_ops.RepositoryMirror("testRepositoryMirror", repository_id=oci_devops_repository["test_repository"]["id"])
+        test_repository_mirror = oci.dev_ops.RepositoryMirror("test_repository_mirror", repository_id=test_repository["id"])
         ```
         <!--End PulumiCodeChooser -->
 

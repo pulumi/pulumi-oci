@@ -585,31 +585,31 @@ class Model(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model = oci.data_science.Model("testModel",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
+        test_model = oci.data_science.Model("test_model",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
             custom_metadata_lists=[oci.data_science.ModelCustomMetadataListArgs(
-                category=var["model_custom_metadata_list_category"],
-                description=var["model_custom_metadata_list_description"],
-                key=var["model_custom_metadata_list_key"],
-                value=var["model_custom_metadata_list_value"],
+                category=model_custom_metadata_list_category,
+                description=model_custom_metadata_list_description,
+                key=model_custom_metadata_list_key,
+                value=model_custom_metadata_list_value,
             )],
             defined_metadata_lists=[oci.data_science.ModelDefinedMetadataListArgs(
-                category=var["model_defined_metadata_list_category"],
-                description=var["model_defined_metadata_list_description"],
-                key=var["model_defined_metadata_list_key"],
-                value=var["model_defined_metadata_list_value"],
+                category=model_defined_metadata_list_category,
+                description=model_defined_metadata_list_description,
+                key=model_defined_metadata_list_key,
+                value=model_defined_metadata_list_value,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
+            description=model_description,
+            display_name=model_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            input_schema=var["model_input_schema"],
-            output_schema=var["model_output_schema"])
+            input_schema=model_input_schema,
+            output_schema=model_output_schema)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -659,31 +659,31 @@ class Model(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model = oci.data_science.Model("testModel",
-            compartment_id=var["compartment_id"],
-            project_id=oci_datascience_project["test_project"]["id"],
+        test_model = oci.data_science.Model("test_model",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
             custom_metadata_lists=[oci.data_science.ModelCustomMetadataListArgs(
-                category=var["model_custom_metadata_list_category"],
-                description=var["model_custom_metadata_list_description"],
-                key=var["model_custom_metadata_list_key"],
-                value=var["model_custom_metadata_list_value"],
+                category=model_custom_metadata_list_category,
+                description=model_custom_metadata_list_description,
+                key=model_custom_metadata_list_key,
+                value=model_custom_metadata_list_value,
             )],
             defined_metadata_lists=[oci.data_science.ModelDefinedMetadataListArgs(
-                category=var["model_defined_metadata_list_category"],
-                description=var["model_defined_metadata_list_description"],
-                key=var["model_defined_metadata_list_key"],
-                value=var["model_defined_metadata_list_value"],
+                category=model_defined_metadata_list_category,
+                description=model_defined_metadata_list_description,
+                key=model_defined_metadata_list_key,
+                value=model_defined_metadata_list_value,
             )],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
+            description=model_description,
+            display_name=model_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            input_schema=var["model_input_schema"],
-            output_schema=var["model_output_schema"])
+            input_schema=model_input_schema,
+            output_schema=model_output_schema)
         ```
         <!--End PulumiCodeChooser -->
 

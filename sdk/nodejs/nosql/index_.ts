@@ -18,15 +18,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIndex = new oci.nosql.Index("testIndex", {
+ * const testIndex = new oci.nosql.Index("test_index", {
  *     keys: [{
- *         columnName: _var.index_keys_column_name,
- *         jsonFieldType: _var.index_keys_json_field_type,
- *         jsonPath: _var.index_keys_json_path,
+ *         columnName: indexKeysColumnName,
+ *         jsonFieldType: indexKeysJsonFieldType,
+ *         jsonPath: indexKeysJsonPath,
  *     }],
- *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
- *     compartmentId: _var.compartment_id,
- *     isIfNotExists: _var.index_is_if_not_exists,
+ *     name: indexName,
+ *     tableNameOrId: testTableNameOr.id,
+ *     compartmentId: compartmentId,
+ *     isIfNotExists: indexIsIfNotExists,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

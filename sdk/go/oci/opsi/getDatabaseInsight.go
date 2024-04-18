@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetDatabaseInsight(ctx, &opsi.GetDatabaseInsightArgs{
-//				DatabaseInsightId: oci_opsi_database_insight.Test_database_insight.Id,
+//				DatabaseInsightId: testDatabaseInsightOciOpsiDatabaseInsight.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

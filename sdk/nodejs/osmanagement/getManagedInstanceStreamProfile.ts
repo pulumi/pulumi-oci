@@ -42,12 +42,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceStreamProfiles = oci.OsManagement.getManagedInstanceStreamProfile({
- *     managedInstanceId: _var.managed_instance_id,
- *     compartmentId: _var.compartment_id,
- *     moduleName: _var.managed_instance_module_name,
- *     profileName: _var.managed_instance_module_stream_profile_name,
- *     profileStatus: _var.managed_instance_profile_status,
- *     streamName: _var.managed_instance_module_stream_name,
+ *     managedInstanceId: managedInstanceId,
+ *     compartmentId: compartmentId,
+ *     moduleName: managedInstanceModuleName,
+ *     profileName: managedInstanceModuleStreamProfileName,
+ *     profileStatus: managedInstanceProfileStatus,
+ *     streamName: managedInstanceModuleStreamName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -166,12 +166,12 @@ export interface GetManagedInstanceStreamProfileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstanceStreamProfiles = oci.OsManagement.getManagedInstanceStreamProfile({
- *     managedInstanceId: _var.managed_instance_id,
- *     compartmentId: _var.compartment_id,
- *     moduleName: _var.managed_instance_module_name,
- *     profileName: _var.managed_instance_module_stream_profile_name,
- *     profileStatus: _var.managed_instance_profile_status,
- *     streamName: _var.managed_instance_module_stream_name,
+ *     managedInstanceId: managedInstanceId,
+ *     compartmentId: compartmentId,
+ *     moduleName: managedInstanceModuleName,
+ *     profileName: managedInstanceModuleStreamProfileName,
+ *     profileStatus: managedInstanceProfileStatus,
+ *     streamName: managedInstanceModuleStreamName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

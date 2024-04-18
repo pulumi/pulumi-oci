@@ -418,17 +418,17 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse = oci.opsi.OperationsInsightsWarehouse("testOperationsInsightsWarehouse",
-            compartment_id=var["compartment_id"],
-            cpu_allocated=var["operations_insights_warehouse_cpu_allocated"],
-            display_name=var["operations_insights_warehouse_display_name"],
+        test_operations_insights_warehouse = oci.opsi.OperationsInsightsWarehouse("test_operations_insights_warehouse",
+            compartment_id=compartment_id,
+            cpu_allocated=operations_insights_warehouse_cpu_allocated,
+            display_name=operations_insights_warehouse_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            storage_allocated_in_gbs=var["operations_insights_warehouse_storage_allocated_in_gbs"])
+            storage_allocated_in_gbs=operations_insights_warehouse_storage_allocated_in_gbs)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -473,17 +473,17 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse = oci.opsi.OperationsInsightsWarehouse("testOperationsInsightsWarehouse",
-            compartment_id=var["compartment_id"],
-            cpu_allocated=var["operations_insights_warehouse_cpu_allocated"],
-            display_name=var["operations_insights_warehouse_display_name"],
+        test_operations_insights_warehouse = oci.opsi.OperationsInsightsWarehouse("test_operations_insights_warehouse",
+            compartment_id=compartment_id,
+            cpu_allocated=operations_insights_warehouse_cpu_allocated,
+            display_name=operations_insights_warehouse_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            storage_allocated_in_gbs=var["operations_insights_warehouse_storage_allocated_in_gbs"])
+            storage_allocated_in_gbs=operations_insights_warehouse_storage_allocated_in_gbs)
         ```
         <!--End PulumiCodeChooser -->
 

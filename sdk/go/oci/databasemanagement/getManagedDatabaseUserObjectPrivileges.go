@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseUserObjectPrivileges(ctx, &databasemanagement.GetManagedDatabaseUserObjectPrivilegesArgs{
-//				ManagedDatabaseId:    oci_database_management_managed_database.Test_managed_database.Id,
-//				UserName:             oci_identity_user.Test_user.Name,
-//				Name:                 pulumi.StringRef(_var.Managed_database_user_object_privilege_name),
-//				OpcNamedCredentialId: pulumi.StringRef(_var.Managed_database_user_object_privilege_opc_named_credential_id),
+//				ManagedDatabaseId:    testManagedDatabase.Id,
+//				UserName:             testUser.Name,
+//				Name:                 pulumi.StringRef(managedDatabaseUserObjectPrivilegeName),
+//				OpcNamedCredentialId: pulumi.StringRef(managedDatabaseUserObjectPrivilegeOpcNamedCredentialId),
 //			}, nil)
 //			if err != nil {
 //				return err

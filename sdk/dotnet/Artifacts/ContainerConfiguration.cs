@@ -23,7 +23,7 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testContainerConfiguration = new Oci.Artifacts.ContainerConfiguration("testContainerConfiguration");
+    ///     var testContainerConfiguration = new Oci.Artifacts.ContainerConfiguration("test_container_configuration");
     /// 
     /// });
     /// ```

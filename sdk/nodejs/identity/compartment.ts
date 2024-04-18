@@ -12,9 +12,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCompartment = new oci.identity.Compartment("testCompartment", {
- *     compartmentId: _var.compartment_id,
- *     description: _var.compartment_description,
+ * const testCompartment = new oci.identity.Compartment("test_compartment", {
+ *     compartmentId: compartmentId,
+ *     description: compartmentDescription,
+ *     name: compartmentName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

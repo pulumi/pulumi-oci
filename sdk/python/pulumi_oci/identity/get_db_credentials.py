@@ -117,9 +117,9 @@ def get_db_credentials(filters: Optional[Sequence[pulumi.InputType['GetDbCredent
     import pulumi
     import pulumi_oci as oci
 
-    test_db_credentials = oci.Identity.get_db_credentials(user_id=oci_identity_user["test_user"]["id"],
-        name=var["db_credential_name"],
-        state=var["db_credential_state"])
+    test_db_credentials = oci.Identity.get_db_credentials(user_id=test_user["id"],
+        name=db_credential_name,
+        state=db_credential_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_db_credentials_output(filters: Optional[pulumi.Input[Optional[Sequence[p
     import pulumi
     import pulumi_oci as oci
 
-    test_db_credentials = oci.Identity.get_db_credentials(user_id=oci_identity_user["test_user"]["id"],
-        name=var["db_credential_name"],
-        state=var["db_credential_state"])
+    test_db_credentials = oci.Identity.get_db_credentials(user_id=test_user["id"],
+        name=db_credential_name,
+        state=db_credential_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -205,16 +205,17 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy",
-            condition_language_version=var["load_balancer_routing_policy_condition_language_version"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+        test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("test_load_balancer_routing_policy",
+            condition_language_version=load_balancer_routing_policy_condition_language_version,
+            load_balancer_id=test_load_balancer["id"],
+            name=load_balancer_routing_policy_name,
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                    name=var["load_balancer_routing_policy_rules_actions_name"],
+                    backend_set_name=test_backend_set["name"],
+                    name=load_balancer_routing_policy_rules_actions_name,
                 )],
-                condition=var["load_balancer_routing_policy_rules_condition"],
-                name=var["load_balancer_routing_policy_rules_name"],
+                condition=load_balancer_routing_policy_rules_condition,
+                name=load_balancer_routing_policy_rules_name,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -257,16 +258,17 @@ class LoadBalancerRoutingPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("testLoadBalancerRoutingPolicy",
-            condition_language_version=var["load_balancer_routing_policy_condition_language_version"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
+        test_load_balancer_routing_policy = oci.load_balancer.LoadBalancerRoutingPolicy("test_load_balancer_routing_policy",
+            condition_language_version=load_balancer_routing_policy_condition_language_version,
+            load_balancer_id=test_load_balancer["id"],
+            name=load_balancer_routing_policy_name,
             rules=[oci.load_balancer.LoadBalancerRoutingPolicyRuleArgs(
                 actions=[oci.load_balancer.LoadBalancerRoutingPolicyRuleActionArgs(
-                    backend_set_name=oci_load_balancer_backend_set["test_backend_set"]["name"],
-                    name=var["load_balancer_routing_policy_rules_actions_name"],
+                    backend_set_name=test_backend_set["name"],
+                    name=load_balancer_routing_policy_rules_actions_name,
                 )],
-                condition=var["load_balancer_routing_policy_rules_condition"],
-                name=var["load_balancer_routing_policy_rules_name"],
+                condition=load_balancer_routing_policy_rules_condition,
+                name=load_balancer_routing_policy_rules_name,
             )])
         ```
         <!--End PulumiCodeChooser -->

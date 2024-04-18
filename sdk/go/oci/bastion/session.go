@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Bastion.NewSession(ctx, "testSession", &Bastion.SessionArgs{
-//				BastionId: pulumi.Any(oci_bastion_bastion.Test_bastion.Id),
+//			_, err := Bastion.NewSession(ctx, "test_session", &Bastion.SessionArgs{
+//				BastionId: pulumi.Any(testBastion.Id),
 //				KeyDetails: &bastion.SessionKeyDetailsArgs{
-//					PublicKeyContent: pulumi.Any(_var.Session_key_details_public_key_content),
+//					PublicKeyContent: pulumi.Any(sessionKeyDetailsPublicKeyContent),
 //				},
 //				TargetResourceDetails: &bastion.SessionTargetResourceDetailsArgs{
-//					SessionType:                           pulumi.Any(_var.Session_target_resource_details_session_type),
-//					TargetResourceFqdn:                    pulumi.Any(_var.Session_target_resource_details_target_resource_fqdn),
-//					TargetResourceId:                      pulumi.Any(oci_bastion_target_resource.Test_target_resource.Id),
-//					TargetResourceOperatingSystemUserName: pulumi.Any(oci_identity_user.Test_user.Name),
-//					TargetResourcePort:                    pulumi.Any(_var.Session_target_resource_details_target_resource_port),
-//					TargetResourcePrivateIpAddress:        pulumi.Any(_var.Session_target_resource_details_target_resource_private_ip_address),
+//					SessionType:                           pulumi.Any(sessionTargetResourceDetailsSessionType),
+//					TargetResourceFqdn:                    pulumi.Any(sessionTargetResourceDetailsTargetResourceFqdn),
+//					TargetResourceId:                      pulumi.Any(testTargetResource.Id),
+//					TargetResourceOperatingSystemUserName: pulumi.Any(testUser.Name),
+//					TargetResourcePort:                    pulumi.Any(sessionTargetResourceDetailsTargetResourcePort),
+//					TargetResourcePrivateIpAddress:        pulumi.Any(sessionTargetResourceDetailsTargetResourcePrivateIpAddress),
 //				},
-//				DisplayName:         pulumi.Any(_var.Session_display_name),
-//				KeyType:             pulumi.Any(_var.Session_key_type),
-//				SessionTtlInSeconds: pulumi.Any(_var.Session_session_ttl_in_seconds),
+//				DisplayName:         pulumi.Any(sessionDisplayName),
+//				KeyType:             pulumi.Any(sessionKeyType),
+//				SessionTtlInSeconds: pulumi.Any(sessionSessionTtlInSeconds),
 //			})
 //			if err != nil {
 //				return err

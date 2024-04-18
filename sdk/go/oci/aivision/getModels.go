@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiVision.GetModels(ctx, &aivision.GetModelsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Model_display_name),
-//				Id:            pulumi.StringRef(_var.Model_id),
-//				ProjectId:     pulumi.StringRef(oci_ai_vision_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Model_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(modelDisplayName),
+//				Id:            pulumi.StringRef(modelId),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(modelState),
 //			}, nil)
 //			if err != nil {
 //				return err

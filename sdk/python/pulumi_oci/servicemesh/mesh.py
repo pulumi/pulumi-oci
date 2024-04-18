@@ -355,21 +355,21 @@ class Mesh(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mesh = oci.service_mesh.Mesh("testMesh",
+        test_mesh = oci.service_mesh.Mesh("test_mesh",
             certificate_authorities=[oci.service_mesh.MeshCertificateAuthorityArgs(
-                id=var["mesh_certificate_authorities_id"],
+                id=mesh_certificate_authorities_id,
             )],
-            compartment_id=var["compartment_id"],
-            display_name=var["mesh_display_name"],
+            compartment_id=compartment_id,
+            display_name=mesh_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["mesh_description"],
+            description=mesh_description,
             freeform_tags={
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.MeshMtlsArgs(
-                minimum=var["mesh_mtls_minimum"],
+                minimum=mesh_mtls_minimum,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -410,21 +410,21 @@ class Mesh(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_mesh = oci.service_mesh.Mesh("testMesh",
+        test_mesh = oci.service_mesh.Mesh("test_mesh",
             certificate_authorities=[oci.service_mesh.MeshCertificateAuthorityArgs(
-                id=var["mesh_certificate_authorities_id"],
+                id=mesh_certificate_authorities_id,
             )],
-            compartment_id=var["compartment_id"],
-            display_name=var["mesh_display_name"],
+            compartment_id=compartment_id,
+            display_name=mesh_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["mesh_description"],
+            description=mesh_description,
             freeform_tags={
                 "bar-key": "value",
             },
             mtls=oci.service_mesh.MeshMtlsArgs(
-                minimum=var["mesh_mtls_minimum"],
+                minimum=mesh_mtls_minimum,
             ))
         ```
         <!--End PulumiCodeChooser -->

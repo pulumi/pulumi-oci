@@ -259,7 +259,7 @@ def get_replication(replication_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication = oci.FileStorage.get_replication(replication_id=oci_file_storage_replication["test_replication"]["id"])
+    test_replication = oci.FileStorage.get_replication(replication_id=test_replication_oci_file_storage_replication["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -307,7 +307,7 @@ def get_replication_output(replication_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication = oci.FileStorage.get_replication(replication_id=oci_file_storage_replication["test_replication"]["id"])
+    test_replication = oci.FileStorage.get_replication(replication_id=test_replication_oci_file_storage_replication["id"])
     ```
     <!--End PulumiCodeChooser -->
 

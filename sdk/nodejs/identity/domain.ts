@@ -33,25 +33,25 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomain = new oci.identity.Domain("testDomain", {
- *     compartmentId: _var.compartment_id,
- *     description: _var.domain_description,
- *     displayName: _var.domain_display_name,
- *     homeRegion: _var.domain_home_region,
- *     licenseType: _var.domain_license_type,
- *     adminEmail: _var.domain_admin_email,
- *     adminFirstName: _var.domain_admin_first_name,
- *     adminLastName: _var.domain_admin_last_name,
- *     adminUserName: oci_identity_user.test_user.name,
+ * const testDomain = new oci.identity.Domain("test_domain", {
+ *     compartmentId: compartmentId,
+ *     description: domainDescription,
+ *     displayName: domainDisplayName,
+ *     homeRegion: domainHomeRegion,
+ *     licenseType: domainLicenseType,
+ *     adminEmail: domainAdminEmail,
+ *     adminFirstName: domainAdminFirstName,
+ *     adminLastName: domainAdminLastName,
+ *     adminUserName: testUser.name,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isHiddenOnLogin: _var.domain_is_hidden_on_login,
- *     isNotificationBypassed: _var.domain_is_notification_bypassed,
- *     isPrimaryEmailRequired: _var.domain_is_primary_email_required,
+ *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     isNotificationBypassed: domainIsNotificationBypassed,
+ *     isPrimaryEmailRequired: domainIsPrimaryEmailRequired,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Sch.GetConnectorPlugins(ctx, &sch.GetConnectorPluginsArgs{
-//				DisplayName: pulumi.StringRef(_var.Connector_plugin_display_name),
-//				Name:        pulumi.StringRef(_var.Connector_plugin_name),
-//				State:       pulumi.StringRef(_var.Connector_plugin_state),
+//				DisplayName: pulumi.StringRef(connectorPluginDisplayName),
+//				Name:        pulumi.StringRef(connectorPluginName),
+//				State:       pulumi.StringRef(connectorPluginState),
 //			}, nil)
 //			if err != nil {
 //				return err

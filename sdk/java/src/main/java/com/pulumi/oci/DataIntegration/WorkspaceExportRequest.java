@@ -49,15 +49,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWorkspaceExportRequest = new WorkspaceExportRequest(&#34;testWorkspaceExportRequest&#34;, WorkspaceExportRequestArgs.builder()        
- *             .bucket(var_.workspace_export_request_bucket())
- *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
- *             .areReferencesIncluded(var_.workspace_export_request_are_references_included())
- *             .fileName(var_.workspace_export_request_file_name())
- *             .filters(var_.workspace_export_request_filters())
- *             .isObjectOverwriteEnabled(var_.workspace_export_request_is_object_overwrite_enabled())
- *             .objectKeys(var_.workspace_export_request_object_keys())
- *             .objectStorageRegion(var_.workspace_export_request_object_storage_region())
- *             .objectStorageTenancyId(oci_identity_tenancy.test_tenancy().id())
+ *             .bucket(workspaceExportRequestBucket)
+ *             .workspaceId(testWorkspace.id())
+ *             .areReferencesIncluded(workspaceExportRequestAreReferencesIncluded)
+ *             .fileName(workspaceExportRequestFileName)
+ *             .filters(workspaceExportRequestFilters)
+ *             .isObjectOverwriteEnabled(workspaceExportRequestIsObjectOverwriteEnabled)
+ *             .objectKeys(workspaceExportRequestObjectKeys)
+ *             .objectStorageRegion(workspaceExportRequestObjectStorageRegion)
+ *             .objectStorageTenancyId(testTenancy.id())
  *             .build());
  * 
  *     }

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetNetworkSecurityGroupVnics(ctx, &core.GetNetworkSecurityGroupVnicsArgs{
-//				NetworkSecurityGroupId: oci_core_network_security_group.Test_network_security_group.Id,
+//				NetworkSecurityGroupId: testNetworkSecurityGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

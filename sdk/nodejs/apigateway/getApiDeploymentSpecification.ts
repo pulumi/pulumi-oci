@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApiDeploymentSpecification = oci.ApiGateway.getApiDeploymentSpecification({
- *     apiId: oci_apigateway_api.test_api.id,
+ *     apiId: testApi.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetApiDeploymentSpecificationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApiDeploymentSpecification = oci.ApiGateway.getApiDeploymentSpecification({
- *     apiId: oci_apigateway_api.test_api.id,
+ *     apiId: testApi.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

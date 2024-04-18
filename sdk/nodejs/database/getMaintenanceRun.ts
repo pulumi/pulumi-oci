@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaintenanceRun = oci.Database.getMaintenanceRun({
- *     maintenanceRunId: oci_database_maintenance_run.test_maintenance_run.id,
+ *     maintenanceRunId: testMaintenanceRunOciDatabaseMaintenanceRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -178,7 +178,7 @@ export interface GetMaintenanceRunResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaintenanceRun = oci.Database.getMaintenanceRun({
- *     maintenanceRunId: oci_database_maintenance_run.test_maintenance_run.id,
+ *     maintenanceRunId: testMaintenanceRunOciDatabaseMaintenanceRun.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

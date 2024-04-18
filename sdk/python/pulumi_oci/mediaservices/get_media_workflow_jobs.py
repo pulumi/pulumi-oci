@@ -134,11 +134,11 @@ def get_media_workflow_jobs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_jobs = oci.MediaServices.get_media_workflow_jobs(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_job_display_name"],
-        id=var["media_workflow_job_id"],
-        media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        state=var["media_workflow_job_state"])
+    test_media_workflow_jobs = oci.MediaServices.get_media_workflow_jobs(compartment_id=compartment_id,
+        display_name=media_workflow_job_display_name,
+        id=media_workflow_job_id,
+        media_workflow_id=test_media_workflow["id"],
+        state=media_workflow_job_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_media_workflow_jobs_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_media_workflow_jobs = oci.MediaServices.get_media_workflow_jobs(compartment_id=var["compartment_id"],
-        display_name=var["media_workflow_job_display_name"],
-        id=var["media_workflow_job_id"],
-        media_workflow_id=oci_media_services_media_workflow["test_media_workflow"]["id"],
-        state=var["media_workflow_job_state"])
+    test_media_workflow_jobs = oci.MediaServices.get_media_workflow_jobs(compartment_id=compartment_id,
+        display_name=media_workflow_job_display_name,
+        id=media_workflow_job_id,
+        media_workflow_id=test_media_workflow["id"],
+        state=media_workflow_job_state)
     ```
     <!--End PulumiCodeChooser -->
 

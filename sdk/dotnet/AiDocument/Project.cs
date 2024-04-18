@@ -25,13 +25,13 @@ namespace Pulumi.Oci.AiDocument
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProject = new Oci.AiDocument.Project("testProject", new()
+    ///     var testProject = new Oci.AiDocument.Project("test_project", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DefinedTags = @var.Project_defined_tags,
-    ///         Description = @var.Project_description,
-    ///         DisplayName = @var.Project_display_name,
-    ///         FreeformTags = @var.Project_freeform_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DefinedTags = projectDefinedTags,
+    ///         Description = projectDescription,
+    ///         DisplayName = projectDisplayName,
+    ///         FreeformTags = projectFreeformTags,
     ///     });
     /// 
     /// });

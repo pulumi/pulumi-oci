@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVlan = Oci.Core.GetVlan.Invoke(new()
         ///     {
-        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///         VlanId = testVlanOciCoreVlan.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVlan = Oci.Core.GetVlan.Invoke(new()
         ///     {
-        ///         VlanId = oci_core_vlan.Test_vlan.Id,
+        ///         VlanId = testVlanOciCoreVlan.Id,
         ///     });
         /// 
         /// });

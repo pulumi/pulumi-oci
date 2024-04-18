@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCrossConnectPortSpeedShapes = Oci.Core.GetCrossConnectPortSpeedShape.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCrossConnectPortSpeedShapes = Oci.Core.GetCrossConnectPortSpeedShape.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

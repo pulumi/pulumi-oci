@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGateways = oci.ApiGateway.getGateways({
- *     compartmentId: _var.compartment_id,
- *     certificateId: _var.oci_apigateway_certificate.test_certificate.id,
- *     displayName: _var.gateway_display_name,
- *     state: _var.gateway_state,
+ *     compartmentId: compartmentId,
+ *     certificateId: ociApigatewayCertificate.testCertificate.id,
+ *     displayName: gatewayDisplayName,
+ *     state: gatewayState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetGatewaysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGateways = oci.ApiGateway.getGateways({
- *     compartmentId: _var.compartment_id,
- *     certificateId: _var.oci_apigateway_certificate.test_certificate.id,
- *     displayName: _var.gateway_display_name,
- *     state: _var.gateway_state,
+ *     compartmentId: compartmentId,
+ *     certificateId: ociApigatewayCertificate.testCertificate.id,
+ *     displayName: gatewayDisplayName,
+ *     state: gatewayState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

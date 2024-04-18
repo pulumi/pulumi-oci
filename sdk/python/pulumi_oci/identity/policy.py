@@ -403,17 +403,18 @@ class Policy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_policy = oci.identity.Policy("testPolicy",
-            compartment_id=var["tenancy_ocid"],
-            description=var["policy_description"],
-            statements=var["policy_statements"],
+        test_policy = oci.identity.Policy("test_policy",
+            compartment_id=tenancy_ocid,
+            description=policy_description,
+            name=policy_name,
+            statements=policy_statements,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            version_date=var["policy_version_date"])
+            version_date=policy_version_date)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -469,17 +470,18 @@ class Policy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_policy = oci.identity.Policy("testPolicy",
-            compartment_id=var["tenancy_ocid"],
-            description=var["policy_description"],
-            statements=var["policy_statements"],
+        test_policy = oci.identity.Policy("test_policy",
+            compartment_id=tenancy_ocid,
+            description=policy_description,
+            name=policy_name,
+            statements=policy_statements,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             freeform_tags={
                 "Department": "Finance",
             },
-            version_date=var["policy_version_date"])
+            version_date=policy_version_date)
         ```
         <!--End PulumiCodeChooser -->
 

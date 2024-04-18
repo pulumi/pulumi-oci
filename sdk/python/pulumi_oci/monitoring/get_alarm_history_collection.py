@@ -133,10 +133,10 @@ def get_alarm_history_collection(alarm_historytype: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_history_collection = oci.Monitoring.get_alarm_history_collection(alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-        alarm_historytype=var["alarm_history_collection_alarm_historytype"],
-        timestamp_greater_than_or_equal_to=var["alarm_history_collection_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than=var["alarm_history_collection_timestamp_less_than"])
+    test_alarm_history_collection = oci.Monitoring.get_alarm_history_collection(alarm_id=test_alarm["id"],
+        alarm_historytype=alarm_history_collection_alarm_historytype,
+        timestamp_greater_than_or_equal_to=alarm_history_collection_timestamp_greater_than_or_equal_to,
+        timestamp_less_than=alarm_history_collection_timestamp_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -190,10 +190,10 @@ def get_alarm_history_collection_output(alarm_historytype: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_history_collection = oci.Monitoring.get_alarm_history_collection(alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-        alarm_historytype=var["alarm_history_collection_alarm_historytype"],
-        timestamp_greater_than_or_equal_to=var["alarm_history_collection_timestamp_greater_than_or_equal_to"],
-        timestamp_less_than=var["alarm_history_collection_timestamp_less_than"])
+    test_alarm_history_collection = oci.Monitoring.get_alarm_history_collection(alarm_id=test_alarm["id"],
+        alarm_historytype=alarm_history_collection_alarm_historytype,
+        timestamp_greater_than_or_equal_to=alarm_history_collection_timestamp_greater_than_or_equal_to,
+        timestamp_less_than=alarm_history_collection_timestamp_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

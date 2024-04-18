@@ -101,8 +101,8 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"])
+    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -142,8 +142,8 @@ def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_i
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
-        compartment_id=var["compartment_id"])
+    test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

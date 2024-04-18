@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetStreamDistributionChannels(ctx, &mediaservices.GetStreamDistributionChannelsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Stream_distribution_channel_display_name),
-//				Id:            pulumi.StringRef(_var.Stream_distribution_channel_id),
-//				State:         pulumi.StringRef(_var.Stream_distribution_channel_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(streamDistributionChannelDisplayName),
+//				Id:            pulumi.StringRef(streamDistributionChannelId),
+//				State:         pulumi.StringRef(streamDistributionChannelState),
 //			}, nil)
 //			if err != nil {
 //				return err

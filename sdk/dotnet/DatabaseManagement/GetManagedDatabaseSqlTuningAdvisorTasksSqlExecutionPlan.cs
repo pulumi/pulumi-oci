@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.Invoke(new()
         ///     {
-        ///         Attribute = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
-        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id,
+        ///         Attribute = managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlObjectId = testObject.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan.Invoke(new()
         ///     {
-        ///         Attribute = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_attribute,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         SqlObjectId = oci_objectstorage_object.Test_object.Id,
-        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_sql_execution_plan_opc_named_credential_id,
+        ///         Attribute = managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanAttribute,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlObjectId = testObject.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanOpcNamedCredentialId,
         ///     });
         /// 
         /// });

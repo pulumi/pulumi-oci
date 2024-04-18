@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetChannel(ctx, &mysql.GetChannelArgs{
-//				ChannelId: oci_mysql_channel.Test_channel.Id,
+//				ChannelId: testChannelOciMysqlChannel.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

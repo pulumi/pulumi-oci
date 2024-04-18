@@ -47,13 +47,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLocalPeeringGateway = new LocalPeeringGateway(&#34;testLocalPeeringGateway&#34;, LocalPeeringGatewayArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .vcnId(oci_core_vcn.test_vcn().id())
+ *             .compartmentId(compartmentId)
+ *             .vcnId(testVcn.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.local_peering_gateway_display_name())
+ *             .displayName(localPeeringGatewayDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .peerId(oci_core_local_peering_gateway.test_local_peering_gateway2().id())
- *             .routeTableId(oci_core_route_table.test_route_table().id())
+ *             .peerId(testLocalPeeringGateway2.id())
+ *             .routeTableId(testRouteTable.id())
  *             .build());
  * 
  *     }

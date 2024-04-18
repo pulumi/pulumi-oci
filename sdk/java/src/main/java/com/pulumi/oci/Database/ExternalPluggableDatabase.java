@@ -50,12 +50,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalPluggableDatabase = new ExternalPluggableDatabase(&#34;testExternalPluggableDatabase&#34;, ExternalPluggableDatabaseArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.external_pluggable_database_display_name())
- *             .externalContainerDatabaseId(oci_database_external_container_database.test_external_container_database().id())
- *             .definedTags(var_.external_pluggable_database_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .displayName(externalPluggableDatabaseDisplayName)
+ *             .externalContainerDatabaseId(testExternalContainerDatabase.id())
+ *             .definedTags(externalPluggableDatabaseDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .sourceId(oci_database_source.test_source().id())
+ *             .sourceId(testSource.id())
  *             .build());
  * 
  *     }

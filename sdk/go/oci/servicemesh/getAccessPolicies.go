@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetAccessPolicies(ctx, &servicemesh.GetAccessPoliciesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Access_policy_id),
-//				MeshId:        pulumi.StringRef(oci_service_mesh_mesh.Test_mesh.Id),
-//				Name:          pulumi.StringRef(_var.Access_policy_name),
-//				State:         pulumi.StringRef(_var.Access_policy_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(accessPolicyId),
+//				MeshId:        pulumi.StringRef(testMesh.Id),
+//				Name:          pulumi.StringRef(accessPolicyName),
+//				State:         pulumi.StringRef(accessPolicyState),
 //			}, nil)
 //			if err != nil {
 //				return err

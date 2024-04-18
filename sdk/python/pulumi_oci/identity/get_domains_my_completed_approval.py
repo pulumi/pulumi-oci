@@ -362,10 +362,10 @@ def get_domains_my_completed_approval(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_completed_approval = oci.Identity.get_domains_my_completed_approval(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_completed_approval_id=oci_identity_domains_my_completed_approval["test_my_completed_approval"]["id"],
-        authorization=var["my_completed_approval_authorization"],
-        resource_type_schema_version=var["my_completed_approval_resource_type_schema_version"])
+    test_my_completed_approval = oci.Identity.get_domains_my_completed_approval(idcs_endpoint=test_domain["url"],
+        my_completed_approval_id=test_my_completed_approval_oci_identity_domains_my_completed_approval["id"],
+        authorization=my_completed_approval_authorization,
+        resource_type_schema_version=my_completed_approval_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -431,10 +431,10 @@ def get_domains_my_completed_approval_output(authorization: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_my_completed_approval = oci.Identity.get_domains_my_completed_approval(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_completed_approval_id=oci_identity_domains_my_completed_approval["test_my_completed_approval"]["id"],
-        authorization=var["my_completed_approval_authorization"],
-        resource_type_schema_version=var["my_completed_approval_resource_type_schema_version"])
+    test_my_completed_approval = oci.Identity.get_domains_my_completed_approval(idcs_endpoint=test_domain["url"],
+        my_completed_approval_id=test_my_completed_approval_oci_identity_domains_my_completed_approval["id"],
+        authorization=my_completed_approval_authorization,
+        resource_type_schema_version=my_completed_approval_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

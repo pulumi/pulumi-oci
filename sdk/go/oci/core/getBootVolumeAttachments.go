@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetBootVolumeAttachments(ctx, &core.GetBootVolumeAttachmentsArgs{
-//				AvailabilityDomain: _var.Boot_volume_attachment_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
-//				BootVolumeId:       pulumi.StringRef(oci_core_boot_volume.Test_boot_volume.Id),
-//				InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
+//				AvailabilityDomain: bootVolumeAttachmentAvailabilityDomain,
+//				CompartmentId:      compartmentId,
+//				BootVolumeId:       pulumi.StringRef(testBootVolume.Id),
+//				InstanceId:         pulumi.StringRef(testInstance.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

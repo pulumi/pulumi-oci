@@ -16,15 +16,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnection = new oci.datacatalog.Connection("testConnection", {
- *     catalogId: oci_datacatalog_catalog.test_catalog.id,
- *     dataAssetKey: _var.connection_data_asset_key,
- *     displayName: _var.connection_display_name,
- *     properties: _var.connection_properties,
- *     typeKey: _var.connection_type_key,
- *     description: _var.connection_description,
- *     encProperties: _var.connection_enc_properties,
- *     isDefault: _var.connection_is_default,
+ * const testConnection = new oci.datacatalog.Connection("test_connection", {
+ *     catalogId: testCatalog.id,
+ *     dataAssetKey: connectionDataAssetKey,
+ *     displayName: connectionDisplayName,
+ *     properties: connectionProperties,
+ *     typeKey: connectionTypeKey,
+ *     description: connectionDescription,
+ *     encProperties: connectionEncProperties,
+ *     isDefault: connectionIsDefault,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

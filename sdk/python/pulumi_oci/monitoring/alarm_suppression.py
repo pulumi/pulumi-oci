@@ -417,19 +417,19 @@ class AlarmSuppression(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_alarm_suppression = oci.monitoring.AlarmSuppression("testAlarmSuppression",
+        test_alarm_suppression = oci.monitoring.AlarmSuppression("test_alarm_suppression",
             alarm_suppression_target=oci.monitoring.AlarmSuppressionAlarmSuppressionTargetArgs(
-                alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-                target_type=var["alarm_suppression_alarm_suppression_target_target_type"],
+                alarm_id=test_alarm["id"],
+                target_type=alarm_suppression_alarm_suppression_target_target_type,
             ),
-            dimensions=var["alarm_suppression_dimensions"],
-            display_name=var["alarm_suppression_display_name"],
-            time_suppress_from=var["alarm_suppression_time_suppress_from"],
-            time_suppress_until=var["alarm_suppression_time_suppress_until"],
+            dimensions=alarm_suppression_dimensions,
+            display_name=alarm_suppression_display_name,
+            time_suppress_from=alarm_suppression_time_suppress_from,
+            time_suppress_until=alarm_suppression_time_suppress_until,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["alarm_suppression_description"],
+            description=alarm_suppression_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -490,19 +490,19 @@ class AlarmSuppression(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_alarm_suppression = oci.monitoring.AlarmSuppression("testAlarmSuppression",
+        test_alarm_suppression = oci.monitoring.AlarmSuppression("test_alarm_suppression",
             alarm_suppression_target=oci.monitoring.AlarmSuppressionAlarmSuppressionTargetArgs(
-                alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-                target_type=var["alarm_suppression_alarm_suppression_target_target_type"],
+                alarm_id=test_alarm["id"],
+                target_type=alarm_suppression_alarm_suppression_target_target_type,
             ),
-            dimensions=var["alarm_suppression_dimensions"],
-            display_name=var["alarm_suppression_display_name"],
-            time_suppress_from=var["alarm_suppression_time_suppress_from"],
-            time_suppress_until=var["alarm_suppression_time_suppress_until"],
+            dimensions=alarm_suppression_dimensions,
+            display_name=alarm_suppression_display_name,
+            time_suppress_from=alarm_suppression_time_suppress_from,
+            time_suppress_until=alarm_suppression_time_suppress_until,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["alarm_suppression_description"],
+            description=alarm_suppression_description,
             freeform_tags={
                 "Department": "Finance",
             })

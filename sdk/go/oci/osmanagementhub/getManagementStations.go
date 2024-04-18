@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagementStations(ctx, &osmanagementhub.GetManagementStationsArgs{
-//				CompartmentId:       pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:         pulumi.StringRef(_var.Management_station_display_name),
-//				DisplayNameContains: pulumi.StringRef(_var.Management_station_display_name_contains),
-//				Id:                  pulumi.StringRef(_var.Management_station_id),
-//				ManagedInstanceId:   pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-//				State:               pulumi.StringRef(_var.Management_station_state),
+//				CompartmentId:       pulumi.StringRef(compartmentId),
+//				DisplayName:         pulumi.StringRef(managementStationDisplayName),
+//				DisplayNameContains: pulumi.StringRef(managementStationDisplayNameContains),
+//				Id:                  pulumi.StringRef(managementStationId),
+//				ManagedInstanceId:   pulumi.StringRef(testManagedInstance.Id),
+//				State:               pulumi.StringRef(managementStationState),
 //			}, nil)
 //			if err != nil {
 //				return err

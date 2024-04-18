@@ -130,10 +130,10 @@ def get_replication_schedules(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=var["compartment_id"],
-        display_name=var["replication_schedule_display_name"],
-        replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-        state=var["replication_schedule_state"])
+    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=compartment_id,
+        display_name=replication_schedule_display_name,
+        replication_schedule_id=test_replication_schedule["id"],
+        state=replication_schedule_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_replication_schedules_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=var["compartment_id"],
-        display_name=var["replication_schedule_display_name"],
-        replication_schedule_id=oci_cloud_migrations_replication_schedule["test_replication_schedule"]["id"],
-        state=var["replication_schedule_state"])
+    test_replication_schedules = oci.CloudMigrations.get_replication_schedules(compartment_id=compartment_id,
+        display_name=replication_schedule_display_name,
+        replication_schedule_id=test_replication_schedule["id"],
+        state=replication_schedule_state)
     ```
     <!--End PulumiCodeChooser -->
 

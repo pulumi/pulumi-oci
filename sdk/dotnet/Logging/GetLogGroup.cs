@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogGroup = Oci.Logging.GetLogGroup.Invoke(new()
         ///     {
-        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+        ///         LogGroupId = testLogGroupOciLoggingLogGroup.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogGroup = Oci.Logging.GetLogGroup.Invoke(new()
         ///     {
-        ///         LogGroupId = oci_logging_log_group.Test_log_group.Id,
+        ///         LogGroupId = testLogGroupOciLoggingLogGroup.Id,
         ///     });
         /// 
         /// });

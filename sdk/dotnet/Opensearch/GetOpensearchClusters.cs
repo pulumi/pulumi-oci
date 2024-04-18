@@ -44,10 +44,10 @@ namespace Pulumi.Oci.Opensearch
         /// {
         ///     var testOpensearchClusters = Oci.Opensearch.GetOpensearchClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Opensearch_cluster_display_name,
-        ///         Id = @var.Opensearch_cluster_id,
-        ///         State = @var.Opensearch_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opensearchClusterDisplayName,
+        ///         Id = opensearchClusterId,
+        ///         State = opensearchClusterState,
         ///     });
         /// 
         /// });
@@ -90,10 +90,10 @@ namespace Pulumi.Oci.Opensearch
         /// {
         ///     var testOpensearchClusters = Oci.Opensearch.GetOpensearchClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Opensearch_cluster_display_name,
-        ///         Id = @var.Opensearch_cluster_id,
-        ///         State = @var.Opensearch_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opensearchClusterDisplayName,
+        ///         Id = opensearchClusterId,
+        ///         State = opensearchClusterState,
         ///     });
         /// 
         /// });

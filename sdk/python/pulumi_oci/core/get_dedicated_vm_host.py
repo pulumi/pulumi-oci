@@ -223,7 +223,7 @@ def get_dedicated_vm_host(dedicated_vm_host_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
+    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=test_dedicated_vm_host_oci_core_dedicated_vm_host["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -268,7 +268,7 @@ def get_dedicated_vm_host_output(dedicated_vm_host_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=oci_core_dedicated_vm_host["test_dedicated_vm_host"]["id"])
+    test_dedicated_vm_host = oci.Core.get_dedicated_vm_host(dedicated_vm_host_id=test_dedicated_vm_host_oci_core_dedicated_vm_host["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testGateways = Oci.ApiGateway.GetGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CertificateId = @var.Oci_apigateway_certificate.Test_certificate.Id,
-        ///         DisplayName = @var.Gateway_display_name,
-        ///         State = @var.Gateway_state,
+        ///         CompartmentId = compartmentId,
+        ///         CertificateId = ociApigatewayCertificate.TestCertificate.Id,
+        ///         DisplayName = gatewayDisplayName,
+        ///         State = gatewayState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testGateways = Oci.ApiGateway.GetGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CertificateId = @var.Oci_apigateway_certificate.Test_certificate.Id,
-        ///         DisplayName = @var.Gateway_display_name,
-        ///         State = @var.Gateway_state,
+        ///         CompartmentId = compartmentId,
+        ///         CertificateId = ociApigatewayCertificate.TestCertificate.Id,
+        ///         DisplayName = gatewayDisplayName,
+        ///         State = gatewayState,
         ///     });
         /// 
         /// });

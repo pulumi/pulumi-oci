@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Bastion.GetSession(ctx, &bastion.GetSessionArgs{
-//				SessionId: oci_bastion_session.Test_session.Id,
+//				SessionId: testSessionOciBastionSession.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseTools.GetDatabaseToolsConnection(ctx, &databasetools.GetDatabaseToolsConnectionArgs{
-//				DatabaseToolsConnectionId: oci_database_tools_database_tools_connection.Test_database_tools_connection.Id,
+//				DatabaseToolsConnectionId: testDatabaseToolsConnectionOciDatabaseToolsDatabaseToolsConnection.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

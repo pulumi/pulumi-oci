@@ -25,40 +25,40 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTrigger = new Oci.DevOps.Trigger("testTrigger", new()
+    ///     var testTrigger = new Oci.DevOps.Trigger("test_trigger", new()
     ///     {
     ///         Actions = new[]
     ///         {
     ///             new Oci.DevOps.Inputs.TriggerActionArgs
     ///             {
-    ///                 BuildPipelineId = oci_devops_build_pipeline.Test_build_pipeline.Id,
-    ///                 Type = @var.Trigger_actions_type,
+    ///                 BuildPipelineId = testBuildPipeline.Id,
+    ///                 Type = triggerActionsType,
     ///                 Filter = new Oci.DevOps.Inputs.TriggerActionFilterArgs
     ///                 {
-    ///                     TriggerSource = @var.Trigger_actions_filter_trigger_source,
-    ///                     Events = @var.Trigger_actions_filter_events,
+    ///                     TriggerSource = triggerActionsFilterTriggerSource,
+    ///                     Events = triggerActionsFilterEvents,
     ///                     Include = new Oci.DevOps.Inputs.TriggerActionFilterIncludeArgs
     ///                     {
-    ///                         BaseRef = @var.Trigger_actions_filter_include_base_ref,
-    ///                         HeadRef = @var.Trigger_actions_filter_include_head_ref,
-    ///                         RepositoryName = oci_devops_repository.Test_repository.Name,
+    ///                         BaseRef = triggerActionsFilterIncludeBaseRef,
+    ///                         HeadRef = triggerActionsFilterIncludeHeadRef,
+    ///                         RepositoryName = testRepository.Name,
     ///                     },
     ///                 },
     ///             },
     ///         },
-    ///         ProjectId = oci_devops_project.Test_project.Id,
-    ///         TriggerSource = @var.Trigger_trigger_source,
+    ///         ProjectId = testProject.Id,
+    ///         TriggerSource = triggerTriggerSource,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Trigger_description,
-    ///         DisplayName = @var.Trigger_display_name,
+    ///         Description = triggerDescription,
+    ///         DisplayName = triggerDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
+    ///         RepositoryId = testRepositoryOciArtifactsRepository.Id,
     ///     });
     /// 
     /// });

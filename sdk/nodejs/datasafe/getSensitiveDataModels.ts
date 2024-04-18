@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveDataModels = oci.DataSafe.getSensitiveDataModels({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.sensitive_data_model_access_level,
- *     compartmentIdInSubtree: _var.sensitive_data_model_compartment_id_in_subtree,
- *     displayName: _var.sensitive_data_model_display_name,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     state: _var.sensitive_data_model_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_data_model_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.sensitive_data_model_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: sensitiveDataModelAccessLevel,
+ *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree,
+ *     displayName: sensitiveDataModelDisplayName,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     state: sensitiveDataModelState,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: sensitiveDataModelTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: sensitiveDataModelTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -144,15 +144,15 @@ export interface GetSensitiveDataModelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveDataModels = oci.DataSafe.getSensitiveDataModels({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.sensitive_data_model_access_level,
- *     compartmentIdInSubtree: _var.sensitive_data_model_compartment_id_in_subtree,
- *     displayName: _var.sensitive_data_model_display_name,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     state: _var.sensitive_data_model_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_data_model_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.sensitive_data_model_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: sensitiveDataModelAccessLevel,
+ *     compartmentIdInSubtree: sensitiveDataModelCompartmentIdInSubtree,
+ *     displayName: sensitiveDataModelDisplayName,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     state: sensitiveDataModelState,
+ *     targetId: testTarget.id,
+ *     timeCreatedGreaterThanOrEqualTo: sensitiveDataModelTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: sensitiveDataModelTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

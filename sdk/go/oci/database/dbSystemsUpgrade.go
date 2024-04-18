@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewDbSystemsUpgrade(ctx, "testDbSystemsUpgrade", &Database.DbSystemsUpgradeArgs{
-//				Action:                              pulumi.Any(_var.Db_systems_upgrade_action),
-//				DbSystemId:                          pulumi.Any(oci_database_db_system.Test_db_system.Id),
-//				IsSnapshotRetentionDaysForceUpdated: pulumi.Any(_var.Db_systems_upgrade_is_snapshot_retention_days_force_updated),
-//				NewGiVersion:                        pulumi.Any(_var.Db_systems_upgrade_new_gi_version),
-//				SnapshotRetentionPeriodInDays:       pulumi.Any(_var.Db_systems_upgrade_snapshot_retention_period_in_days),
+//			_, err := Database.NewDbSystemsUpgrade(ctx, "test_db_systems_upgrade", &Database.DbSystemsUpgradeArgs{
+//				Action:                              pulumi.Any(dbSystemsUpgradeAction),
+//				DbSystemId:                          pulumi.Any(testDbSystem.Id),
+//				IsSnapshotRetentionDaysForceUpdated: pulumi.Any(dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated),
+//				NewGiVersion:                        pulumi.Any(dbSystemsUpgradeNewGiVersion),
+//				SnapshotRetentionPeriodInDays:       pulumi.Any(dbSystemsUpgradeSnapshotRetentionPeriodInDays),
 //			})
 //			if err != nil {
 //				return err

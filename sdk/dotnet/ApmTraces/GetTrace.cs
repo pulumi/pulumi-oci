@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testTrace = Oci.ApmTraces.GetTrace.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         TraceKey = @var.Trace_trace_key,
-        ///         TimeTraceStartedGreaterThanOrEqualTo = @var.Trace_time_trace_started_greater_than_or_equal_to,
-        ///         TimeTraceStartedLessThan = @var.Trace_time_trace_started_less_than,
-        ///         TraceNamespace = @var.Trace_trace_namespace,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceTraceKey,
+        ///         TimeTraceStartedGreaterThanOrEqualTo = traceTimeTraceStartedGreaterThanOrEqualTo,
+        ///         TimeTraceStartedLessThan = traceTimeTraceStartedLessThan,
+        ///         TraceNamespace = traceTraceNamespace,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testTrace = Oci.ApmTraces.GetTrace.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         TraceKey = @var.Trace_trace_key,
-        ///         TimeTraceStartedGreaterThanOrEqualTo = @var.Trace_time_trace_started_greater_than_or_equal_to,
-        ///         TimeTraceStartedLessThan = @var.Trace_time_trace_started_less_than,
-        ///         TraceNamespace = @var.Trace_trace_namespace,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceTraceKey,
+        ///         TimeTraceStartedGreaterThanOrEqualTo = traceTimeTraceStartedGreaterThanOrEqualTo,
+        ///         TimeTraceStartedLessThan = traceTimeTraceStartedLessThan,
+        ///         TraceNamespace = traceTraceNamespace,
         ///     });
         /// 
         /// });

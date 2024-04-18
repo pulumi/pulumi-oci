@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetNodePool(ctx, &containerengine.GetNodePoolArgs{
-//				NodePoolId: oci_containerengine_node_pool.Test_node_pool.Id,
+//				NodePoolId: testNodePoolOciContainerengineNodePool.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -165,13 +165,13 @@ def get_monitored_resource_types(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=var["compartment_id"],
-        exclude_fields=var["monitored_resource_type_exclude_fields"],
-        fields=var["monitored_resource_type_fields"],
-        is_exclude_system_types=var["monitored_resource_type_is_exclude_system_types"],
-        metric_namespace=var["monitored_resource_type_metric_namespace"],
-        name=var["monitored_resource_type_name"],
-        status=var["monitored_resource_type_status"])
+    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=compartment_id,
+        exclude_fields=monitored_resource_type_exclude_fields,
+        fields=monitored_resource_type_fields,
+        is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
+        metric_namespace=monitored_resource_type_metric_namespace,
+        name=monitored_resource_type_name,
+        status=monitored_resource_type_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -238,13 +238,13 @@ def get_monitored_resource_types_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=var["compartment_id"],
-        exclude_fields=var["monitored_resource_type_exclude_fields"],
-        fields=var["monitored_resource_type_fields"],
-        is_exclude_system_types=var["monitored_resource_type_is_exclude_system_types"],
-        metric_namespace=var["monitored_resource_type_metric_namespace"],
-        name=var["monitored_resource_type_name"],
-        status=var["monitored_resource_type_status"])
+    test_monitored_resource_types = oci.StackMonitoring.get_monitored_resource_types(compartment_id=compartment_id,
+        exclude_fields=monitored_resource_type_exclude_fields,
+        fields=monitored_resource_type_fields,
+        is_exclude_system_types=monitored_resource_type_is_exclude_system_types,
+        metric_namespace=monitored_resource_type_metric_namespace,
+        name=monitored_resource_type_name,
+        status=monitored_resource_type_status)
     ```
     <!--End PulumiCodeChooser -->
 

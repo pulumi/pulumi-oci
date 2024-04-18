@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetDiscoverySchedules(ctx, &cloudbridge.GetDiscoverySchedulesArgs{
-//				CompartmentId:       _var.Compartment_id,
-//				DiscoveryScheduleId: pulumi.StringRef(oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id),
-//				DisplayName:         pulumi.StringRef(_var.Discovery_schedule_display_name),
-//				State:               pulumi.StringRef(_var.Discovery_schedule_state),
+//				CompartmentId:       compartmentId,
+//				DiscoveryScheduleId: pulumi.StringRef(testDiscoverySchedule.Id),
+//				DisplayName:         pulumi.StringRef(discoveryScheduleDisplayName),
+//				State:               pulumi.StringRef(discoveryScheduleState),
 //			}, nil)
 //			if err != nil {
 //				return err

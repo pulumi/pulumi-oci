@@ -32,14 +32,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagedInstanceGroups(ctx, &osmanagementhub.GetManagedInstanceGroupsArgs{
-//				ArchType:               pulumi.StringRef(_var.Managed_instance_group_arch_type),
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				DisplayNames:           _var.Managed_instance_group_display_name,
-//				DisplayNameContains:    pulumi.StringRef(_var.Managed_instance_group_display_name_contains),
-//				ManagedInstanceGroupId: pulumi.StringRef(oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id),
-//				OsFamily:               pulumi.StringRef(_var.Managed_instance_group_os_family),
-//				SoftwareSourceId:       pulumi.StringRef(oci_os_management_hub_software_source.Test_software_source.Id),
-//				State:                  pulumi.StringRef(_var.Managed_instance_group_state),
+//				ArchType:               pulumi.StringRef(managedInstanceGroupArchType),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				DisplayNames:           managedInstanceGroupDisplayName,
+//				DisplayNameContains:    pulumi.StringRef(managedInstanceGroupDisplayNameContains),
+//				ManagedInstanceGroupId: pulumi.StringRef(testManagedInstanceGroup.Id),
+//				OsFamily:               pulumi.StringRef(managedInstanceGroupOsFamily),
+//				SoftwareSourceId:       pulumi.StringRef(testSoftwareSource.Id),
+//				State:                  pulumi.StringRef(managedInstanceGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

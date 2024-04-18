@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalPluggableDatabases = oci.Database.getExternalPluggableDatabases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_pluggable_database_display_name,
- *     externalContainerDatabaseId: oci_database_external_container_database.test_external_container_database.id,
- *     state: _var.external_pluggable_database_state,
+ *     compartmentId: compartmentId,
+ *     displayName: externalPluggableDatabaseDisplayName,
+ *     externalContainerDatabaseId: testExternalContainerDatabase.id,
+ *     state: externalPluggableDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetExternalPluggableDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalPluggableDatabases = oci.Database.getExternalPluggableDatabases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_pluggable_database_display_name,
- *     externalContainerDatabaseId: oci_database_external_container_database.test_external_container_database.id,
- *     state: _var.external_pluggable_database_state,
+ *     compartmentId: compartmentId,
+ *     displayName: externalPluggableDatabaseDisplayName,
+ *     externalContainerDatabaseId: testExternalContainerDatabase.id,
+ *     state: externalPluggableDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

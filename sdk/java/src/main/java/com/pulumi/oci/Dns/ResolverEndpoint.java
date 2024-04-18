@@ -46,15 +46,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testResolverEndpoint = new ResolverEndpoint(&#34;testResolverEndpoint&#34;, ResolverEndpointArgs.builder()        
- *             .isForwarding(var_.resolver_endpoint_is_forwarding())
- *             .isListening(var_.resolver_endpoint_is_listening())
- *             .resolverId(oci_dns_resolver.test_resolver().id())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .isForwarding(resolverEndpointIsForwarding)
+ *             .isListening(resolverEndpointIsListening)
+ *             .name(resolverEndpointName)
+ *             .resolverId(testResolver.id())
+ *             .subnetId(testSubnet.id())
  *             .scope(&#34;PRIVATE&#34;)
- *             .endpointType(var_.resolver_endpoint_endpoint_type())
- *             .forwardingAddress(var_.resolver_endpoint_forwarding_address())
- *             .listeningAddress(var_.resolver_endpoint_listening_address())
- *             .nsgIds(var_.resolver_endpoint_nsg_ids())
+ *             .endpointType(resolverEndpointEndpointType)
+ *             .forwardingAddress(resolverEndpointForwardingAddress)
+ *             .listeningAddress(resolverEndpointListeningAddress)
+ *             .nsgIds(resolverEndpointNsgIds)
  *             .build());
  * 
  *     }

@@ -39,7 +39,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetCpeDeviceShape(ctx, &core.GetCpeDeviceShapeArgs{
-//				CpeDeviceShapeId: oci_core_cpe_device_shape.Test_cpe_device_shape.Id,
+//				CpeDeviceShapeId: testCpeDeviceShapeOciCoreCpeDeviceShape.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

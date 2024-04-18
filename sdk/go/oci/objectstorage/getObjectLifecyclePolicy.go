@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetObjectLifecyclePolicy(ctx, &objectstorage.GetObjectLifecyclePolicyArgs{
-//				Bucket:    _var.Object_lifecycle_policy_bucket,
-//				Namespace: _var.Object_lifecycle_policy_namespace,
+//				Bucket:    objectLifecyclePolicyBucket,
+//				Namespace: objectLifecyclePolicyNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

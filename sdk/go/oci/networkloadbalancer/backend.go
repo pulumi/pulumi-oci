@@ -31,16 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.NewBackend(ctx, "testBackend", &NetworkLoadBalancer.BackendArgs{
-//				BackendSetName:        pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
-//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-//				Port:                  pulumi.Any(_var.Backend_port),
-//				IpAddress:             pulumi.Any(_var.Backend_ip_address),
-//				IsBackup:              pulumi.Any(_var.Backend_is_backup),
-//				IsDrain:               pulumi.Any(_var.Backend_is_drain),
-//				IsOffline:             pulumi.Any(_var.Backend_is_offline),
-//				TargetId:              pulumi.Any(oci_cloud_guard_target.Test_target.Id),
-//				Weight:                pulumi.Any(_var.Backend_weight),
+//			_, err := NetworkLoadBalancer.NewBackend(ctx, "test_backend", &NetworkLoadBalancer.BackendArgs{
+//				BackendSetName:        pulumi.Any(testBackendSet.Name),
+//				NetworkLoadBalancerId: pulumi.Any(testNetworkLoadBalancer.Id),
+//				Port:                  pulumi.Any(backendPort),
+//				IpAddress:             pulumi.Any(backendIpAddress),
+//				IsBackup:              pulumi.Any(backendIsBackup),
+//				IsDrain:               pulumi.Any(backendIsDrain),
+//				IsOffline:             pulumi.Any(backendIsOffline),
+//				Name:                  pulumi.Any(backendName),
+//				TargetId:              pulumi.Any(testTarget.Id),
+//				Weight:                pulumi.Any(backendWeight),
 //			})
 //			if err != nil {
 //				return err

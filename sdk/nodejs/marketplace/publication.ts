@@ -18,28 +18,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublication = new oci.marketplace.Publication("testPublication", {
- *     compartmentId: _var.compartment_id,
- *     isAgreementAcknowledged: _var.publication_is_agreement_acknowledged,
- *     listingType: _var.publication_listing_type,
+ * const testPublication = new oci.marketplace.Publication("test_publication", {
+ *     compartmentId: compartmentId,
+ *     isAgreementAcknowledged: publicationIsAgreementAcknowledged,
+ *     listingType: publicationListingType,
+ *     name: publicationName,
  *     packageDetails: {
  *         eulas: [{
- *             eulaType: _var.publication_package_details_eula_eula_type,
- *             licenseText: _var.publication_package_details_eula_license_text,
+ *             eulaType: publicationPackageDetailsEulaEulaType,
+ *             licenseText: publicationPackageDetailsEulaLicenseText,
  *         }],
  *         operatingSystem: {
- *             name: _var.publication_package_details_operating_system_name,
+ *             name: publicationPackageDetailsOperatingSystemName,
  *         },
- *         packageType: _var.publication_package_details_package_type,
- *         packageVersion: _var.publication_package_details_package_version,
- *         imageId: oci_core_image.test_image.id,
+ *         packageType: publicationPackageDetailsPackageType,
+ *         packageVersion: publicationPackageDetailsPackageVersion,
+ *         imageId: testImage.id,
  *     },
- *     shortDescription: _var.publication_short_description,
+ *     shortDescription: publicationShortDescription,
  *     supportContacts: [{
- *         email: _var.publication_support_contacts_email,
- *         name: _var.publication_support_contacts_name,
- *         phone: _var.publication_support_contacts_phone,
- *         subject: _var.publication_support_contacts_subject,
+ *         email: publicationSupportContactsEmail,
+ *         name: publicationSupportContactsName,
+ *         phone: publicationSupportContactsPhone,
+ *         subject: publicationSupportContactsSubject,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -47,7 +48,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     longDescription: _var.publication_long_description,
+ *     longDescription: publicationLongDescription,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

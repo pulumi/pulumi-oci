@@ -33,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstanceConsoleConnections(ctx, &core.GetInstanceConsoleConnectionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				InstanceId:    pulumi.StringRef(oci_core_instance.Test_instance.Id),
+//				CompartmentId: compartmentId,
+//				InstanceId:    pulumi.StringRef(testInstance.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -125,7 +125,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
+     *             .applicationId(testApplicationOciFunctionsApplication.id())
      *             .build());
      * 
      *     }
@@ -167,7 +167,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
+     *             .applicationId(testApplicationOciFunctionsApplication.id())
      *             .build());
      * 
      *     }
@@ -209,7 +209,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
+     *             .applicationId(testApplicationOciFunctionsApplication.id())
      *             .build());
      * 
      *     }
@@ -251,7 +251,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplication = FunctionsFunctions.getApplication(GetApplicationArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
+     *             .applicationId(testApplicationOciFunctionsApplication.id())
      *             .build());
      * 
      *     }
@@ -293,10 +293,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.application_display_name())
-     *             .id(var_.application_id())
-     *             .state(var_.application_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applicationDisplayName)
+     *             .id(applicationId)
+     *             .state(applicationState)
      *             .build());
      * 
      *     }
@@ -338,10 +338,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.application_display_name())
-     *             .id(var_.application_id())
-     *             .state(var_.application_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applicationDisplayName)
+     *             .id(applicationId)
+     *             .state(applicationState)
      *             .build());
      * 
      *     }
@@ -383,10 +383,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.application_display_name())
-     *             .id(var_.application_id())
-     *             .state(var_.application_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applicationDisplayName)
+     *             .id(applicationId)
+     *             .state(applicationState)
      *             .build());
      * 
      *     }
@@ -428,10 +428,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplications = FunctionsFunctions.getApplications(GetApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.application_display_name())
-     *             .id(var_.application_id())
-     *             .state(var_.application_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applicationDisplayName)
+     *             .id(applicationId)
+     *             .state(applicationState)
      *             .build());
      * 
      *     }
@@ -473,7 +473,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
-     *             .functionId(oci_functions_function.test_function().id())
+     *             .functionId(testFunctionOciFunctionsFunction.id())
      *             .build());
      * 
      *     }
@@ -515,7 +515,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
-     *             .functionId(oci_functions_function.test_function().id())
+     *             .functionId(testFunctionOciFunctionsFunction.id())
      *             .build());
      * 
      *     }
@@ -557,7 +557,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
-     *             .functionId(oci_functions_function.test_function().id())
+     *             .functionId(testFunctionOciFunctionsFunction.id())
      *             .build());
      * 
      *     }
@@ -599,7 +599,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunction = FunctionsFunctions.getFunction(GetFunctionArgs.builder()
-     *             .functionId(oci_functions_function.test_function().id())
+     *             .functionId(testFunctionOciFunctionsFunction.id())
      *             .build());
      * 
      *     }
@@ -641,10 +641,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
-     *             .displayName(var_.function_display_name())
-     *             .id(var_.function_id())
-     *             .state(var_.function_state())
+     *             .applicationId(testApplication.id())
+     *             .displayName(functionDisplayName)
+     *             .id(functionId)
+     *             .state(functionState)
      *             .build());
      * 
      *     }
@@ -686,10 +686,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
-     *             .displayName(var_.function_display_name())
-     *             .id(var_.function_id())
-     *             .state(var_.function_state())
+     *             .applicationId(testApplication.id())
+     *             .displayName(functionDisplayName)
+     *             .id(functionId)
+     *             .state(functionState)
      *             .build());
      * 
      *     }
@@ -731,10 +731,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
-     *             .displayName(var_.function_display_name())
-     *             .id(var_.function_id())
-     *             .state(var_.function_state())
+     *             .applicationId(testApplication.id())
+     *             .displayName(functionDisplayName)
+     *             .id(functionId)
+     *             .state(functionState)
      *             .build());
      * 
      *     }
@@ -776,10 +776,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFunctions = FunctionsFunctions.getFunctions(GetFunctionsArgs.builder()
-     *             .applicationId(oci_functions_application.test_application().id())
-     *             .displayName(var_.function_display_name())
-     *             .id(var_.function_id())
-     *             .state(var_.function_state())
+     *             .applicationId(testApplication.id())
+     *             .displayName(functionDisplayName)
+     *             .id(functionId)
+     *             .state(functionState)
      *             .build());
      * 
      *     }
@@ -821,7 +821,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironment = FunctionsFunctions.getFusionEnvironment(GetFusionEnvironmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironmentOciFusionAppsFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -863,7 +863,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironment = FunctionsFunctions.getFusionEnvironment(GetFusionEnvironmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironmentOciFusionAppsFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -905,7 +905,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironment = FunctionsFunctions.getFusionEnvironment(GetFusionEnvironmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironmentOciFusionAppsFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -947,7 +947,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironment = FunctionsFunctions.getFusionEnvironment(GetFusionEnvironmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironmentOciFusionAppsFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -989,7 +989,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUser = FunctionsFunctions.getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1031,7 +1031,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUser = FunctionsFunctions.getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1073,7 +1073,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUser = FunctionsFunctions.getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1115,7 +1115,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUser = FunctionsFunctions.getFusionEnvironmentAdminUser(GetFusionEnvironmentAdminUserArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1157,7 +1157,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUsers = FunctionsFunctions.getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1199,7 +1199,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUsers = FunctionsFunctions.getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1241,7 +1241,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUsers = FunctionsFunctions.getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1283,7 +1283,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentAdminUsers = FunctionsFunctions.getFusionEnvironmentAdminUsers(GetFusionEnvironmentAdminUsersArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1325,8 +1325,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivities = FunctionsFunctions.getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .state(var_.fusion_environment_data_masking_activity_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .state(fusionEnvironmentDataMaskingActivityState)
      *             .build());
      * 
      *     }
@@ -1368,8 +1368,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivities = FunctionsFunctions.getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .state(var_.fusion_environment_data_masking_activity_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .state(fusionEnvironmentDataMaskingActivityState)
      *             .build());
      * 
      *     }
@@ -1411,8 +1411,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivities = FunctionsFunctions.getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .state(var_.fusion_environment_data_masking_activity_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .state(fusionEnvironmentDataMaskingActivityState)
      *             .build());
      * 
      *     }
@@ -1454,8 +1454,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivities = FunctionsFunctions.getFusionEnvironmentDataMaskingActivities(GetFusionEnvironmentDataMaskingActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .state(var_.fusion_environment_data_masking_activity_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .state(fusionEnvironmentDataMaskingActivityState)
      *             .build());
      * 
      *     }
@@ -1497,8 +1497,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivity = FunctionsFunctions.getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs.builder()
-     *             .dataMaskingActivityId(oci_fusion_apps_data_masking_activity.test_data_masking_activity().id())
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .dataMaskingActivityId(testDataMaskingActivity.id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1540,8 +1540,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivity = FunctionsFunctions.getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs.builder()
-     *             .dataMaskingActivityId(oci_fusion_apps_data_masking_activity.test_data_masking_activity().id())
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .dataMaskingActivityId(testDataMaskingActivity.id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1583,8 +1583,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivity = FunctionsFunctions.getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs.builder()
-     *             .dataMaskingActivityId(oci_fusion_apps_data_masking_activity.test_data_masking_activity().id())
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .dataMaskingActivityId(testDataMaskingActivity.id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1626,8 +1626,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentDataMaskingActivity = FunctionsFunctions.getFusionEnvironmentDataMaskingActivity(GetFusionEnvironmentDataMaskingActivityArgs.builder()
-     *             .dataMaskingActivityId(oci_fusion_apps_data_masking_activity.test_data_masking_activity().id())
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .dataMaskingActivityId(testDataMaskingActivity.id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -1669,10 +1669,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilies = FunctionsFunctions.getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_family_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_family_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentFamilyDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentFamilyState)
      *             .build());
      * 
      *     }
@@ -1714,10 +1714,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilies = FunctionsFunctions.getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_family_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_family_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentFamilyDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentFamilyState)
      *             .build());
      * 
      *     }
@@ -1759,10 +1759,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilies = FunctionsFunctions.getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_family_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_family_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentFamilyDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentFamilyState)
      *             .build());
      * 
      *     }
@@ -1804,10 +1804,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilies = FunctionsFunctions.getFusionEnvironmentFamilies(GetFusionEnvironmentFamiliesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_family_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_family_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentFamilyDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentFamilyState)
      *             .build());
      * 
      *     }
@@ -1849,7 +1849,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamily = FunctionsFunctions.getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -1891,7 +1891,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamily = FunctionsFunctions.getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -1933,7 +1933,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamily = FunctionsFunctions.getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -1975,7 +1975,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamily = FunctionsFunctions.getFusionEnvironmentFamily(GetFusionEnvironmentFamilyArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2017,7 +2017,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilyLimitsAndUsage = FunctionsFunctions.getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2059,7 +2059,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilyLimitsAndUsage = FunctionsFunctions.getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2101,7 +2101,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilyLimitsAndUsage = FunctionsFunctions.getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2143,7 +2143,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilyLimitsAndUsage = FunctionsFunctions.getFusionEnvironmentFamilyLimitsAndUsage(GetFusionEnvironmentFamilyLimitsAndUsageArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2185,7 +2185,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilySubscriptionDetail = FunctionsFunctions.getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2227,7 +2227,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilySubscriptionDetail = FunctionsFunctions.getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2269,7 +2269,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilySubscriptionDetail = FunctionsFunctions.getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2311,7 +2311,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentFamilySubscriptionDetail = FunctionsFunctions.getFusionEnvironmentFamilySubscriptionDetail(GetFusionEnvironmentFamilySubscriptionDetailArgs.builder()
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
      *             .build());
      * 
      *     }
@@ -2353,11 +2353,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivities = FunctionsFunctions.getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_refresh_activity_display_name())
-     *             .state(var_.fusion_environment_refresh_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentRefreshActivityDisplayName)
+     *             .state(fusionEnvironmentRefreshActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2399,11 +2399,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivities = FunctionsFunctions.getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_refresh_activity_display_name())
-     *             .state(var_.fusion_environment_refresh_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentRefreshActivityDisplayName)
+     *             .state(fusionEnvironmentRefreshActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2445,11 +2445,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivities = FunctionsFunctions.getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_refresh_activity_display_name())
-     *             .state(var_.fusion_environment_refresh_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentRefreshActivityDisplayName)
+     *             .state(fusionEnvironmentRefreshActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2491,11 +2491,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivities = FunctionsFunctions.getFusionEnvironmentRefreshActivities(GetFusionEnvironmentRefreshActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_refresh_activity_display_name())
-     *             .state(var_.fusion_environment_refresh_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentRefreshActivityDisplayName)
+     *             .state(fusionEnvironmentRefreshActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2537,8 +2537,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivity = FunctionsFunctions.getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .refreshActivityId(oci_fusion_apps_refresh_activity.test_refresh_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .refreshActivityId(testRefreshActivity.id())
      *             .build());
      * 
      *     }
@@ -2580,8 +2580,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivity = FunctionsFunctions.getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .refreshActivityId(oci_fusion_apps_refresh_activity.test_refresh_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .refreshActivityId(testRefreshActivity.id())
      *             .build());
      * 
      *     }
@@ -2623,8 +2623,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivity = FunctionsFunctions.getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .refreshActivityId(oci_fusion_apps_refresh_activity.test_refresh_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .refreshActivityId(testRefreshActivity.id())
      *             .build());
      * 
      *     }
@@ -2666,8 +2666,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentRefreshActivity = FunctionsFunctions.getFusionEnvironmentRefreshActivity(GetFusionEnvironmentRefreshActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .refreshActivityId(oci_fusion_apps_refresh_activity.test_refresh_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .refreshActivityId(testRefreshActivity.id())
      *             .build());
      * 
      *     }
@@ -2709,12 +2709,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivities = FunctionsFunctions.getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_scheduled_activity_display_name())
-     *             .runCycle(var_.fusion_environment_scheduled_activity_run_cycle())
-     *             .state(var_.fusion_environment_scheduled_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentScheduledActivityDisplayName)
+     *             .runCycle(fusionEnvironmentScheduledActivityRunCycle)
+     *             .state(fusionEnvironmentScheduledActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2756,12 +2756,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivities = FunctionsFunctions.getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_scheduled_activity_display_name())
-     *             .runCycle(var_.fusion_environment_scheduled_activity_run_cycle())
-     *             .state(var_.fusion_environment_scheduled_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentScheduledActivityDisplayName)
+     *             .runCycle(fusionEnvironmentScheduledActivityRunCycle)
+     *             .state(fusionEnvironmentScheduledActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2803,12 +2803,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivities = FunctionsFunctions.getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_scheduled_activity_display_name())
-     *             .runCycle(var_.fusion_environment_scheduled_activity_run_cycle())
-     *             .state(var_.fusion_environment_scheduled_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentScheduledActivityDisplayName)
+     *             .runCycle(fusionEnvironmentScheduledActivityRunCycle)
+     *             .state(fusionEnvironmentScheduledActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2850,12 +2850,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivities = FunctionsFunctions.getFusionEnvironmentScheduledActivities(GetFusionEnvironmentScheduledActivitiesArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_scheduled_activity_display_name())
-     *             .runCycle(var_.fusion_environment_scheduled_activity_run_cycle())
-     *             .state(var_.fusion_environment_scheduled_activity_state())
-     *             .timeExpectedFinishLessThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to())
-     *             .timeScheduledStartGreaterThanOrEqualTo(var_.fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentScheduledActivityDisplayName)
+     *             .runCycle(fusionEnvironmentScheduledActivityRunCycle)
+     *             .state(fusionEnvironmentScheduledActivityState)
+     *             .timeExpectedFinishLessThanOrEqualTo(fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo)
+     *             .timeScheduledStartGreaterThanOrEqualTo(fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -2897,8 +2897,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivity = FunctionsFunctions.getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .scheduledActivityId(oci_fusion_apps_scheduled_activity.test_scheduled_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .scheduledActivityId(testScheduledActivity.id())
      *             .build());
      * 
      *     }
@@ -2940,8 +2940,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivity = FunctionsFunctions.getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .scheduledActivityId(oci_fusion_apps_scheduled_activity.test_scheduled_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .scheduledActivityId(testScheduledActivity.id())
      *             .build());
      * 
      *     }
@@ -2983,8 +2983,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivity = FunctionsFunctions.getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .scheduledActivityId(oci_fusion_apps_scheduled_activity.test_scheduled_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .scheduledActivityId(testScheduledActivity.id())
      *             .build());
      * 
      *     }
@@ -3026,8 +3026,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentScheduledActivity = FunctionsFunctions.getFusionEnvironmentScheduledActivity(GetFusionEnvironmentScheduledActivityArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .scheduledActivityId(oci_fusion_apps_scheduled_activity.test_scheduled_activity().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .scheduledActivityId(testScheduledActivity.id())
      *             .build());
      * 
      *     }
@@ -3069,8 +3069,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachment = FunctionsFunctions.getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .serviceAttachmentId(oci_fusion_apps_service_attachment.test_service_attachment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .serviceAttachmentId(testServiceAttachment.id())
      *             .build());
      * 
      *     }
@@ -3112,8 +3112,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachment = FunctionsFunctions.getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .serviceAttachmentId(oci_fusion_apps_service_attachment.test_service_attachment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .serviceAttachmentId(testServiceAttachment.id())
      *             .build());
      * 
      *     }
@@ -3155,8 +3155,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachment = FunctionsFunctions.getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .serviceAttachmentId(oci_fusion_apps_service_attachment.test_service_attachment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .serviceAttachmentId(testServiceAttachment.id())
      *             .build());
      * 
      *     }
@@ -3198,8 +3198,8 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachment = FunctionsFunctions.getFusionEnvironmentServiceAttachment(GetFusionEnvironmentServiceAttachmentArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .serviceAttachmentId(oci_fusion_apps_service_attachment.test_service_attachment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .serviceAttachmentId(testServiceAttachment.id())
      *             .build());
      * 
      *     }
@@ -3241,10 +3241,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachments = FunctionsFunctions.getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_service_attachment_display_name())
-     *             .serviceInstanceType(var_.fusion_environment_service_attachment_service_instance_type())
-     *             .state(var_.fusion_environment_service_attachment_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentServiceAttachmentDisplayName)
+     *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
+     *             .state(fusionEnvironmentServiceAttachmentState)
      *             .build());
      * 
      *     }
@@ -3286,10 +3286,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachments = FunctionsFunctions.getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_service_attachment_display_name())
-     *             .serviceInstanceType(var_.fusion_environment_service_attachment_service_instance_type())
-     *             .state(var_.fusion_environment_service_attachment_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentServiceAttachmentDisplayName)
+     *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
+     *             .state(fusionEnvironmentServiceAttachmentState)
      *             .build());
      * 
      *     }
@@ -3331,10 +3331,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachments = FunctionsFunctions.getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_service_attachment_display_name())
-     *             .serviceInstanceType(var_.fusion_environment_service_attachment_service_instance_type())
-     *             .state(var_.fusion_environment_service_attachment_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentServiceAttachmentDisplayName)
+     *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
+     *             .state(fusionEnvironmentServiceAttachmentState)
      *             .build());
      * 
      *     }
@@ -3376,10 +3376,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentServiceAttachments = FunctionsFunctions.getFusionEnvironmentServiceAttachments(GetFusionEnvironmentServiceAttachmentsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
-     *             .displayName(var_.fusion_environment_service_attachment_display_name())
-     *             .serviceInstanceType(var_.fusion_environment_service_attachment_service_instance_type())
-     *             .state(var_.fusion_environment_service_attachment_state())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
+     *             .displayName(fusionEnvironmentServiceAttachmentDisplayName)
+     *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
+     *             .state(fusionEnvironmentServiceAttachmentState)
      *             .build());
      * 
      *     }
@@ -3421,7 +3421,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentStatus = FunctionsFunctions.getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3463,7 +3463,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentStatus = FunctionsFunctions.getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3505,7 +3505,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentStatus = FunctionsFunctions.getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3547,7 +3547,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentStatus = FunctionsFunctions.getFusionEnvironmentStatus(GetFusionEnvironmentStatusArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3589,7 +3589,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefresh = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3631,7 +3631,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefresh = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3673,7 +3673,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefresh = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3715,7 +3715,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefresh = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefresh(GetFusionEnvironmentTimeAvailableForRefreshArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3757,7 +3757,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefreshs = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3799,7 +3799,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefreshs = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3841,7 +3841,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefreshs = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3883,7 +3883,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironmentTimeAvailableForRefreshs = FunctionsFunctions.getFusionEnvironmentTimeAvailableForRefreshs(GetFusionEnvironmentTimeAvailableForRefreshsArgs.builder()
-     *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
+     *             .fusionEnvironmentId(testFusionEnvironment.id())
      *             .build());
      * 
      *     }
@@ -3925,10 +3925,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironments = FunctionsFunctions.getFusionEnvironments(GetFusionEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentState)
      *             .build());
      * 
      *     }
@@ -3970,10 +3970,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironments = FunctionsFunctions.getFusionEnvironments(GetFusionEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentState)
      *             .build());
      * 
      *     }
@@ -4015,10 +4015,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironments = FunctionsFunctions.getFusionEnvironments(GetFusionEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentState)
      *             .build());
      * 
      *     }
@@ -4060,10 +4060,10 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFusionEnvironments = FunctionsFunctions.getFusionEnvironments(GetFusionEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.fusion_environment_display_name())
-     *             .fusionEnvironmentFamilyId(oci_fusion_apps_fusion_environment_family.test_fusion_environment_family().id())
-     *             .state(var_.fusion_environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(fusionEnvironmentDisplayName)
+     *             .fusionEnvironmentFamilyId(testFusionEnvironmentFamily.id())
+     *             .state(fusionEnvironmentState)
      *             .build());
      * 
      *     }
@@ -4105,7 +4105,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .pbfListingId(testPbfListingOciFunctionsPbfListing.id())
      *             .build());
      * 
      *     }
@@ -4147,7 +4147,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .pbfListingId(testPbfListingOciFunctionsPbfListing.id())
      *             .build());
      * 
      *     }
@@ -4189,7 +4189,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .pbfListingId(testPbfListingOciFunctionsPbfListing.id())
      *             .build());
      * 
      *     }
@@ -4231,7 +4231,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListing = FunctionsFunctions.getPbfListing(GetPbfListingArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
+     *             .pbfListingId(testPbfListingOciFunctionsPbfListing.id())
      *             .build());
      * 
      *     }
@@ -4273,7 +4273,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
-     *             .name(var_.pbf_listing_trigger_name())
+     *             .name(pbfListingTriggerName)
      *             .build());
      * 
      *     }
@@ -4315,7 +4315,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
-     *             .name(var_.pbf_listing_trigger_name())
+     *             .name(pbfListingTriggerName)
      *             .build());
      * 
      *     }
@@ -4357,7 +4357,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
-     *             .name(var_.pbf_listing_trigger_name())
+     *             .name(pbfListingTriggerName)
      *             .build());
      * 
      *     }
@@ -4399,7 +4399,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
-     *             .name(var_.pbf_listing_trigger_name())
+     *             .name(pbfListingTriggerName)
      *             .build());
      * 
      *     }
@@ -4441,7 +4441,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
-     *             .name(var_.pbf_listing_trigger_name())
+     *             .name(pbfListingTriggerName)
      *             .build());
      * 
      *     }
@@ -4483,7 +4483,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingTriggers = FunctionsFunctions.getPbfListingTriggers(GetPbfListingTriggersArgs.builder()
-     *             .name(var_.pbf_listing_trigger_name())
+     *             .name(pbfListingTriggerName)
      *             .build());
      * 
      *     }
@@ -4525,7 +4525,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .pbfListingVersionId(testPbfListingVersionOciFunctionsPbfListingVersion.id())
      *             .build());
      * 
      *     }
@@ -4567,7 +4567,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .pbfListingVersionId(testPbfListingVersionOciFunctionsPbfListingVersion.id())
      *             .build());
      * 
      *     }
@@ -4609,7 +4609,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .pbfListingVersionId(testPbfListingVersionOciFunctionsPbfListingVersion.id())
      *             .build());
      * 
      *     }
@@ -4651,7 +4651,7 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersion = FunctionsFunctions.getPbfListingVersion(GetPbfListingVersionArgs.builder()
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
+     *             .pbfListingVersionId(testPbfListingVersionOciFunctionsPbfListingVersion.id())
      *             .build());
      * 
      *     }
@@ -4697,11 +4697,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
-     *             .name(var_.pbf_listing_version_name())
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
-     *             .state(var_.pbf_listing_version_state())
+     *             .pbfListingId(testPbfListing.id())
+     *             .isCurrentVersion(pbfListingVersionIsCurrentVersion)
+     *             .name(pbfListingVersionName)
+     *             .pbfListingVersionId(testPbfListingVersion.id())
+     *             .state(pbfListingVersionState)
      *             .build());
      * 
      *     }
@@ -4747,11 +4747,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
-     *             .name(var_.pbf_listing_version_name())
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
-     *             .state(var_.pbf_listing_version_state())
+     *             .pbfListingId(testPbfListing.id())
+     *             .isCurrentVersion(pbfListingVersionIsCurrentVersion)
+     *             .name(pbfListingVersionName)
+     *             .pbfListingVersionId(testPbfListingVersion.id())
+     *             .state(pbfListingVersionState)
      *             .build());
      * 
      *     }
@@ -4797,11 +4797,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
-     *             .name(var_.pbf_listing_version_name())
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
-     *             .state(var_.pbf_listing_version_state())
+     *             .pbfListingId(testPbfListing.id())
+     *             .isCurrentVersion(pbfListingVersionIsCurrentVersion)
+     *             .name(pbfListingVersionName)
+     *             .pbfListingVersionId(testPbfListingVersion.id())
+     *             .state(pbfListingVersionState)
      *             .build());
      * 
      *     }
@@ -4847,11 +4847,11 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListingVersions = FunctionsFunctions.getPbfListingVersions(GetPbfListingVersionsArgs.builder()
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .isCurrentVersion(var_.pbf_listing_version_is_current_version())
-     *             .name(var_.pbf_listing_version_name())
-     *             .pbfListingVersionId(oci_functions_pbf_listing_version.test_pbf_listing_version().id())
-     *             .state(var_.pbf_listing_version_state())
+     *             .pbfListingId(testPbfListing.id())
+     *             .isCurrentVersion(pbfListingVersionIsCurrentVersion)
+     *             .name(pbfListingVersionName)
+     *             .pbfListingVersionId(testPbfListingVersion.id())
+     *             .state(pbfListingVersionState)
      *             .build());
      * 
      *     }
@@ -4894,12 +4894,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
-     *             .name(var_.pbf_listing_name())
-     *             .nameContains(var_.pbf_listing_name_contains())
-     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .state(var_.pbf_listing_state())
-     *             .triggers(var_.pbf_listing_trigger())
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
      *             .build());
      * 
      *     }
@@ -4942,12 +4942,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
-     *             .name(var_.pbf_listing_name())
-     *             .nameContains(var_.pbf_listing_name_contains())
-     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .state(var_.pbf_listing_state())
-     *             .triggers(var_.pbf_listing_trigger())
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
      *             .build());
      * 
      *     }
@@ -4990,12 +4990,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
-     *             .name(var_.pbf_listing_name())
-     *             .nameContains(var_.pbf_listing_name_contains())
-     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .state(var_.pbf_listing_state())
-     *             .triggers(var_.pbf_listing_trigger())
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
      *             .build());
      * 
      *     }
@@ -5038,12 +5038,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
-     *             .name(var_.pbf_listing_name())
-     *             .nameContains(var_.pbf_listing_name_contains())
-     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .state(var_.pbf_listing_state())
-     *             .triggers(var_.pbf_listing_trigger())
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
      *             .build());
      * 
      *     }
@@ -5086,12 +5086,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
-     *             .name(var_.pbf_listing_name())
-     *             .nameContains(var_.pbf_listing_name_contains())
-     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .state(var_.pbf_listing_state())
-     *             .triggers(var_.pbf_listing_trigger())
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
      *             .build());
      * 
      *     }
@@ -5134,12 +5134,12 @@ public final class FunctionsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPbfListings = FunctionsFunctions.getPbfListings(GetPbfListingsArgs.builder()
-     *             .name(var_.pbf_listing_name())
-     *             .nameContains(var_.pbf_listing_name_contains())
-     *             .nameStartsWith(var_.pbf_listing_name_starts_with())
-     *             .pbfListingId(oci_functions_pbf_listing.test_pbf_listing().id())
-     *             .state(var_.pbf_listing_state())
-     *             .triggers(var_.pbf_listing_trigger())
+     *             .name(pbfListingName)
+     *             .nameContains(pbfListingNameContains)
+     *             .nameStartsWith(pbfListingNameStartsWith)
+     *             .pbfListingId(testPbfListing.id())
+     *             .state(pbfListingState)
+     *             .triggers(pbfListingTrigger)
      *             .build());
      * 
      *     }

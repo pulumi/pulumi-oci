@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBootVolumeAttachments = Oci.Core.GetBootVolumeAttachments.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Boot_volume_attachment_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         AvailabilityDomain = bootVolumeAttachmentAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         BootVolumeId = testBootVolume.Id,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });
@@ -65,10 +65,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBootVolumeAttachments = Oci.Core.GetBootVolumeAttachments.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Boot_volume_attachment_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BootVolumeId = oci_core_boot_volume.Test_boot_volume.Id,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
+        ///         AvailabilityDomain = bootVolumeAttachmentAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         BootVolumeId = testBootVolume.Id,
+        ///         InstanceId = testInstance.Id,
         ///     });
         /// 
         /// });

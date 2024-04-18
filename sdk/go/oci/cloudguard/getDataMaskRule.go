@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetDataMaskRule(ctx, &cloudguard.GetDataMaskRuleArgs{
-//				DataMaskRuleId: oci_cloud_guard_data_mask_rule.Test_data_mask_rule.Id,
+//				DataMaskRuleId: testDataMaskRuleOciCloudGuardDataMaskRule.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

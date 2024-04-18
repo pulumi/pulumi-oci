@@ -368,7 +368,7 @@ def get_managed_instance(managed_instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"])
+    test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=test_managed_instance_oci_osmanagement_managed_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -425,7 +425,7 @@ def get_managed_instance_output(managed_instance_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=oci_osmanagement_managed_instance["test_managed_instance"]["id"])
+    test_managed_instance = oci.OsManagement.get_managed_instance(managed_instance_id=test_managed_instance_oci_osmanagement_managed_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 

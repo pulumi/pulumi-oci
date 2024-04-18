@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewNetworkSecurityGroup(ctx, "testNetworkSecurityGroup", &Core.NetworkSecurityGroupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := Core.NewNetworkSecurityGroup(ctx, "test_network_security_group", &Core.NetworkSecurityGroupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Network_security_group_display_name),
+//				DisplayName: pulumi.Any(networkSecurityGroupDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

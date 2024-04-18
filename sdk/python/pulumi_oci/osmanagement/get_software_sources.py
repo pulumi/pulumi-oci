@@ -120,9 +120,9 @@ def get_software_sources(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_sources = oci.OsManagement.get_software_sources(compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        state=var["software_source_state"])
+    test_software_sources = oci.OsManagement.get_software_sources(compartment_id=compartment_id,
+        display_name=software_source_display_name,
+        state=software_source_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_software_sources_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_software_sources = oci.OsManagement.get_software_sources(compartment_id=var["compartment_id"],
-        display_name=var["software_source_display_name"],
-        state=var["software_source_state"])
+    test_software_sources = oci.OsManagement.get_software_sources(compartment_id=compartment_id,
+        display_name=software_source_display_name,
+        state=software_source_state)
     ```
     <!--End PulumiCodeChooser -->
 

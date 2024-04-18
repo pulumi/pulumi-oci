@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalpluggabledatabasesStackMonitoring = new oci.database.ExternalPluggableDatabasesStackMonitoring("testExternalpluggabledatabasesStackMonitoring", {
- *     externalDatabaseConnectorId: oci_database_external_database_connector.test_external_database_connector.id,
- *     externalPluggableDatabaseId: oci_database_external_pluggable_database.test_external_pluggable_database.id,
+ * const testExternalpluggabledatabasesStackMonitoring = new oci.database.ExternalPluggableDatabasesStackMonitoring("test_externalpluggabledatabases_stack_monitoring", {
+ *     externalDatabaseConnectorId: testExternalDatabaseConnector.id,
+ *     externalPluggableDatabaseId: testExternalPluggableDatabase.id,
  *     enableStackMonitoring: true,
  * });
  * ```

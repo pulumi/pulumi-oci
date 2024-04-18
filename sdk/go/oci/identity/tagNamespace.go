@@ -44,9 +44,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewTagNamespace(ctx, "testTagNamespace", &Identity.TagNamespaceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Description:   pulumi.Any(_var.Tag_namespace_description),
+//			_, err := Identity.NewTagNamespace(ctx, "test_tag_namespace", &Identity.TagNamespaceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Description:   pulumi.Any(tagNamespaceDescription),
+//				Name:          pulumi.Any(tagNamespaceName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

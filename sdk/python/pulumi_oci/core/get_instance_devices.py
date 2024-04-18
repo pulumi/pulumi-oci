@@ -117,9 +117,9 @@ def get_instance_devices(filters: Optional[Sequence[pulumi.InputType['GetInstanc
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=oci_core_instance["test_instance"]["id"],
-        is_available=var["instance_device_is_available"],
-        name=var["instance_device_name"])
+    test_instance_devices = oci.Core.get_instance_devices(instance_id=test_instance["id"],
+        is_available=instance_device_is_available,
+        name=instance_device_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_instance_devices_output(filters: Optional[pulumi.Input[Optional[Sequence
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_devices = oci.Core.get_instance_devices(instance_id=oci_core_instance["test_instance"]["id"],
-        is_available=var["instance_device_is_available"],
-        name=var["instance_device_name"])
+    test_instance_devices = oci.Core.get_instance_devices(instance_id=test_instance["id"],
+        is_available=instance_device_is_available,
+        name=instance_device_name)
     ```
     <!--End PulumiCodeChooser -->
 

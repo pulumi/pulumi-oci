@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgentPlugins(ctx, &managementagent.GetManagementAgentPluginsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				AgentId:       pulumi.StringRef(_var.Management_agent_id),
-//				DisplayName:   pulumi.StringRef(_var.Management_agent_plugin_display_name),
-//				PlatformTypes: _var.Management_agent_plugin_platform_type,
-//				State:         pulumi.StringRef(_var.Management_agent_plugin_state),
+//				CompartmentId: compartmentId,
+//				AgentId:       pulumi.StringRef(managementAgentId),
+//				DisplayName:   pulumi.StringRef(managementAgentPluginDisplayName),
+//				PlatformTypes: managementAgentPluginPlatformType,
+//				State:         pulumi.StringRef(managementAgentPluginState),
 //			}, nil)
 //			if err != nil {
 //				return err

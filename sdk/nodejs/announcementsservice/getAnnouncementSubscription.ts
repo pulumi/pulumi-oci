@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncementSubscription = oci.AnnouncementsService.getAnnouncementSubscription({
- *     announcementSubscriptionId: oci_announcements_service_announcement_subscription.test_announcement_subscription.id,
+ *     announcementSubscriptionId: testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetAnnouncementSubscriptionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncementSubscription = oci.AnnouncementsService.getAnnouncementSubscription({
- *     announcementSubscriptionId: oci_announcements_service_announcement_subscription.test_announcement_subscription.id,
+ *     announcementSubscriptionId: testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

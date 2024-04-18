@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waf.GetNetworkAddressLists(ctx, &waf.GetNetworkAddressListsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Network_address_list_display_name),
-//				Id:            pulumi.StringRef(_var.Network_address_list_id),
-//				States:        _var.Network_address_list_state,
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(networkAddressListDisplayName),
+//				Id:            pulumi.StringRef(networkAddressListId),
+//				States:        networkAddressListState,
 //			}, nil)
 //			if err != nil {
 //				return err

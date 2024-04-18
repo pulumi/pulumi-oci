@@ -29,11 +29,11 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccAvailabilityCatalogOccAvailabilities = Oci.CapacityManagement.GetOccAvailabilityCatalogOccAvailabilities.Invoke(new()
         ///     {
-        ///         OccAvailabilityCatalogId = oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
-        ///         DateExpectedCapacityHandover = @var.Occ_availability_catalog_occ_availability_date_expected_capacity_handover,
-        ///         ResourceName = oci_usage_proxy_resource.Test_resource.Name,
-        ///         ResourceType = @var.Occ_availability_catalog_occ_availability_resource_type,
-        ///         WorkloadType = @var.Occ_availability_catalog_occ_availability_workload_type,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+        ///         DateExpectedCapacityHandover = occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
+        ///         ResourceName = testResource.Name,
+        ///         ResourceType = occAvailabilityCatalogOccAvailabilityResourceType,
+        ///         WorkloadType = occAvailabilityCatalogOccAvailabilityWorkloadType,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccAvailabilityCatalogOccAvailabilities = Oci.CapacityManagement.GetOccAvailabilityCatalogOccAvailabilities.Invoke(new()
         ///     {
-        ///         OccAvailabilityCatalogId = oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
-        ///         DateExpectedCapacityHandover = @var.Occ_availability_catalog_occ_availability_date_expected_capacity_handover,
-        ///         ResourceName = oci_usage_proxy_resource.Test_resource.Name,
-        ///         ResourceType = @var.Occ_availability_catalog_occ_availability_resource_type,
-        ///         WorkloadType = @var.Occ_availability_catalog_occ_availability_workload_type,
+        ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+        ///         DateExpectedCapacityHandover = occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover,
+        ///         ResourceName = testResource.Name,
+        ///         ResourceType = occAvailabilityCatalogOccAvailabilityResourceType,
+        ///         WorkloadType = occAvailabilityCatalogOccAvailabilityWorkloadType,
         ///     });
         /// 
         /// });

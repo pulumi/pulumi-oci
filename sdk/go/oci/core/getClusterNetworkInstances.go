@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetClusterNetworkInstances(ctx, &core.GetClusterNetworkInstancesArgs{
-//				ClusterNetworkId: oci_core_cluster_network.Test_cluster_network.Id,
-//				CompartmentId:    _var.Compartment_id,
-//				DisplayName:      pulumi.StringRef(_var.Cluster_network_instance_display_name),
+//				ClusterNetworkId: testClusterNetwork.Id,
+//				CompartmentId:    compartmentId,
+//				DisplayName:      pulumi.StringRef(clusterNetworkInstanceDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

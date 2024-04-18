@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentRefreshActivities = Oci.Functions.GetFusionEnvironmentRefreshActivities.Invoke(new()
         ///     {
-        ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-        ///         DisplayName = @var.Fusion_environment_refresh_activity_display_name,
-        ///         State = @var.Fusion_environment_refresh_activity_state,
-        ///         TimeExpectedFinishLessThanOrEqualTo = @var.Fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,
-        ///         TimeScheduledStartGreaterThanOrEqualTo = @var.Fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to,
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentRefreshActivityDisplayName,
+        ///         State = fusionEnvironmentRefreshActivityState,
+        ///         TimeExpectedFinishLessThanOrEqualTo = fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo,
+        ///         TimeScheduledStartGreaterThanOrEqualTo = fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentRefreshActivities = Oci.Functions.GetFusionEnvironmentRefreshActivities.Invoke(new()
         ///     {
-        ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-        ///         DisplayName = @var.Fusion_environment_refresh_activity_display_name,
-        ///         State = @var.Fusion_environment_refresh_activity_state,
-        ///         TimeExpectedFinishLessThanOrEqualTo = @var.Fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to,
-        ///         TimeScheduledStartGreaterThanOrEqualTo = @var.Fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to,
+        ///         FusionEnvironmentId = testFusionEnvironment.Id,
+        ///         DisplayName = fusionEnvironmentRefreshActivityDisplayName,
+        ///         State = fusionEnvironmentRefreshActivityState,
+        ///         TimeExpectedFinishLessThanOrEqualTo = fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo,
+        ///         TimeScheduledStartGreaterThanOrEqualTo = fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo,
         ///     });
         /// 
         /// });

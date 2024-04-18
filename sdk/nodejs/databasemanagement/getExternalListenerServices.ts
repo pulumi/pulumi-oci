@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
- *     externalListenerId: oci_database_management_external_listener.test_external_listener.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     opcNamedCredentialId: _var.external_listener_service_opc_named_credential_id,
+ *     externalListenerId: testExternalListener.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     opcNamedCredentialId: externalListenerServiceOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,9 +91,9 @@ export interface GetExternalListenerServicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalListenerServices = oci.DatabaseManagement.getExternalListenerServices({
- *     externalListenerId: oci_database_management_external_listener.test_external_listener.id,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     opcNamedCredentialId: _var.external_listener_service_opc_named_credential_id,
+ *     externalListenerId: testExternalListener.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     opcNamedCredentialId: externalListenerServiceOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

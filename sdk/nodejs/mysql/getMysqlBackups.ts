@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlBackups = oci.Mysql.getMysqlBackups({
- *     compartmentId: _var.compartment_id,
- *     backupId: oci_mysql_mysql_backup.test_backup.id,
- *     creationType: _var.mysql_backup_creation_type,
- *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
- *     displayName: _var.mysql_backup_display_name,
- *     state: _var.mysql_backup_state,
+ *     compartmentId: compartmentId,
+ *     backupId: testBackup.id,
+ *     creationType: mysqlBackupCreationType,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: mysqlBackupDisplayName,
+ *     state: mysqlBackupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetMysqlBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlBackups = oci.Mysql.getMysqlBackups({
- *     compartmentId: _var.compartment_id,
- *     backupId: oci_mysql_mysql_backup.test_backup.id,
- *     creationType: _var.mysql_backup_creation_type,
- *     dbSystemId: oci_mysql_mysql_db_system.test_db_system.id,
- *     displayName: _var.mysql_backup_display_name,
- *     state: _var.mysql_backup_state,
+ *     compartmentId: compartmentId,
+ *     backupId: testBackup.id,
+ *     creationType: mysqlBackupCreationType,
+ *     dbSystemId: testDbSystem.id,
+ *     displayName: mysqlBackupDisplayName,
+ *     state: mysqlBackupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

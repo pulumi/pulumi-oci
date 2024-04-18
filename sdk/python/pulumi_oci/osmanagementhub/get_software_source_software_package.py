@@ -246,8 +246,8 @@ def get_software_source_software_package(software_package_name: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=var["software_source_software_package_software_package_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
+    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=software_source_software_package_software_package_name,
+        software_source_id=test_software_source["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -297,8 +297,8 @@ def get_software_source_software_package_output(software_package_name: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=var["software_source_software_package_software_package_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
+    test_software_source_software_package = oci.OsManagementHub.get_software_source_software_package(software_package_name=software_source_software_package_software_package_name,
+        software_source_id=test_software_source["id"])
     ```
     <!--End PulumiCodeChooser -->
 

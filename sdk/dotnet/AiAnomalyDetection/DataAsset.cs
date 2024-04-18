@@ -25,51 +25,51 @@ namespace Pulumi.Oci.AiAnomalyDetection
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataAsset = new Oci.AiAnomalyDetection.DataAsset("testDataAsset", new()
+    ///     var testDataAsset = new Oci.AiAnomalyDetection.DataAsset("test_data_asset", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DataSourceDetails = new Oci.AiAnomalyDetection.Inputs.DataAssetDataSourceDetailsArgs
     ///         {
-    ///             DataSourceType = @var.Data_asset_data_source_details_data_source_type,
-    ///             AtpPasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///             AtpUserName = oci_identity_user.Test_user.Name,
-    ///             Bucket = @var.Data_asset_data_source_details_bucket,
-    ///             CwalletFileSecretId = oci_vault_secret.Test_secret.Id,
-    ///             DatabaseName = oci_database_database.Test_database.Name,
-    ///             EwalletFileSecretId = oci_vault_secret.Test_secret.Id,
-    ///             KeyStoreFileSecretId = oci_vault_secret.Test_secret.Id,
-    ///             MeasurementName = @var.Data_asset_data_source_details_measurement_name,
-    ///             Namespace = @var.Data_asset_data_source_details_namespace,
-    ///             Object = @var.Data_asset_data_source_details_object,
-    ///             OjdbcFileSecretId = oci_vault_secret.Test_secret.Id,
-    ///             PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///             TableName = oci_nosql_table.Test_table.Name,
-    ///             TnsnamesFileSecretId = oci_vault_secret.Test_secret.Id,
-    ///             TruststoreFileSecretId = oci_vault_secret.Test_secret.Id,
-    ///             Url = @var.Data_asset_data_source_details_url,
-    ///             UserName = oci_identity_user.Test_user.Name,
+    ///             DataSourceType = dataAssetDataSourceDetailsDataSourceType,
+    ///             AtpPasswordSecretId = testSecret.Id,
+    ///             AtpUserName = testUser.Name,
+    ///             Bucket = dataAssetDataSourceDetailsBucket,
+    ///             CwalletFileSecretId = testSecret.Id,
+    ///             DatabaseName = testDatabase.Name,
+    ///             EwalletFileSecretId = testSecret.Id,
+    ///             KeyStoreFileSecretId = testSecret.Id,
+    ///             MeasurementName = dataAssetDataSourceDetailsMeasurementName,
+    ///             Namespace = dataAssetDataSourceDetailsNamespace,
+    ///             Object = dataAssetDataSourceDetailsObject,
+    ///             OjdbcFileSecretId = testSecret.Id,
+    ///             PasswordSecretId = testSecret.Id,
+    ///             TableName = testTable.Name,
+    ///             TnsnamesFileSecretId = testSecret.Id,
+    ///             TruststoreFileSecretId = testSecret.Id,
+    ///             Url = dataAssetDataSourceDetailsUrl,
+    ///             UserName = testUser.Name,
     ///             VersionSpecificDetails = new Oci.AiAnomalyDetection.Inputs.DataAssetDataSourceDetailsVersionSpecificDetailsArgs
     ///             {
-    ///                 InfluxVersion = @var.Data_asset_data_source_details_version_specific_details_influx_version,
-    ///                 Bucket = @var.Data_asset_data_source_details_version_specific_details_bucket,
-    ///                 DatabaseName = oci_database_database.Test_database.Name,
-    ///                 OrganizationName = @var.Data_asset_data_source_details_version_specific_details_organization_name,
-    ///                 RetentionPolicyName = oci_identity_policy.Test_policy.Name,
+    ///                 InfluxVersion = dataAssetDataSourceDetailsVersionSpecificDetailsInfluxVersion,
+    ///                 Bucket = dataAssetDataSourceDetailsVersionSpecificDetailsBucket,
+    ///                 DatabaseName = testDatabase.Name,
+    ///                 OrganizationName = dataAssetDataSourceDetailsVersionSpecificDetailsOrganizationName,
+    ///                 RetentionPolicyName = testPolicy.Name,
     ///             },
-    ///             WalletPasswordSecretId = oci_vault_secret.Test_secret.Id,
+    ///             WalletPasswordSecretId = testSecret.Id,
     ///         },
-    ///         ProjectId = oci_ai_anomaly_detection_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Data_asset_description,
-    ///         DisplayName = @var.Data_asset_display_name,
+    ///         Description = dataAssetDescription,
+    ///         DisplayName = dataAssetDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///         PrivateEndpointId = testPrivateEndpoint.Id,
     ///     });
     /// 
     /// });

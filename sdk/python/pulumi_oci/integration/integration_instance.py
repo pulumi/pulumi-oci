@@ -772,42 +772,42 @@ class IntegrationInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_integration_instance = oci.integration.IntegrationInstance("testIntegrationInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["integration_instance_display_name"],
-            integration_instance_type=var["integration_instance_integration_instance_type"],
-            is_byol=var["integration_instance_is_byol"],
-            message_packs=var["integration_instance_message_packs"],
+        test_integration_instance = oci.integration.IntegrationInstance("test_integration_instance",
+            compartment_id=compartment_id,
+            display_name=integration_instance_display_name,
+            integration_instance_type=integration_instance_integration_instance_type,
+            is_byol=integration_instance_is_byol,
+            message_packs=integration_instance_message_packs,
             alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=var["integration_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=integration_instance_alternate_custom_endpoints_hostname,
+                certificate_secret_id=test_secret["id"],
             )],
-            consumption_model=var["integration_instance_consumption_model"],
+            consumption_model=integration_instance_consumption_model,
             custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=var["integration_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=integration_instance_custom_endpoint_hostname,
+                certificate_secret_id=test_secret["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            domain_id=oci_identity_domain["test_domain"]["id"],
+            domain_id=test_domain["id"],
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_at=var["integration_instance_idcs_at"],
-            is_file_server_enabled=var["integration_instance_is_file_server_enabled"],
-            is_visual_builder_enabled=var["integration_instance_is_visual_builder_enabled"],
+            idcs_at=integration_instance_idcs_at,
+            is_file_server_enabled=integration_instance_is_file_server_enabled,
+            is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
             network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["integration_instance_network_endpoint_details_network_endpoint_type"],
-                allowlisted_http_ips=var["integration_instance_network_endpoint_details_allowlisted_http_ips"],
+                network_endpoint_type=integration_instance_network_endpoint_details_network_endpoint_type,
+                allowlisted_http_ips=integration_instance_network_endpoint_details_allowlisted_http_ips,
                 allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_id"],
-                    allowlisted_ips=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips"],
+                    id=integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
+                    allowlisted_ips=integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
                 )],
-                is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
+                is_integration_vcn_allowlisted=integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
             ),
-            shape=var["integration_instance_shape"],
-            state=var["integration_instance_target_state"])
+            shape=integration_instance_shape,
+            state=integration_instance_target_state)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -864,42 +864,42 @@ class IntegrationInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_integration_instance = oci.integration.IntegrationInstance("testIntegrationInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["integration_instance_display_name"],
-            integration_instance_type=var["integration_instance_integration_instance_type"],
-            is_byol=var["integration_instance_is_byol"],
-            message_packs=var["integration_instance_message_packs"],
+        test_integration_instance = oci.integration.IntegrationInstance("test_integration_instance",
+            compartment_id=compartment_id,
+            display_name=integration_instance_display_name,
+            integration_instance_type=integration_instance_integration_instance_type,
+            is_byol=integration_instance_is_byol,
+            message_packs=integration_instance_message_packs,
             alternate_custom_endpoints=[oci.integration.IntegrationInstanceAlternateCustomEndpointArgs(
-                hostname=var["integration_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=integration_instance_alternate_custom_endpoints_hostname,
+                certificate_secret_id=test_secret["id"],
             )],
-            consumption_model=var["integration_instance_consumption_model"],
+            consumption_model=integration_instance_consumption_model,
             custom_endpoint=oci.integration.IntegrationInstanceCustomEndpointArgs(
-                hostname=var["integration_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=integration_instance_custom_endpoint_hostname,
+                certificate_secret_id=test_secret["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            domain_id=oci_identity_domain["test_domain"]["id"],
+            domain_id=test_domain["id"],
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_at=var["integration_instance_idcs_at"],
-            is_file_server_enabled=var["integration_instance_is_file_server_enabled"],
-            is_visual_builder_enabled=var["integration_instance_is_visual_builder_enabled"],
+            idcs_at=integration_instance_idcs_at,
+            is_file_server_enabled=integration_instance_is_file_server_enabled,
+            is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
             network_endpoint_details=oci.integration.IntegrationInstanceNetworkEndpointDetailsArgs(
-                network_endpoint_type=var["integration_instance_network_endpoint_details_network_endpoint_type"],
-                allowlisted_http_ips=var["integration_instance_network_endpoint_details_allowlisted_http_ips"],
+                network_endpoint_type=integration_instance_network_endpoint_details_network_endpoint_type,
+                allowlisted_http_ips=integration_instance_network_endpoint_details_allowlisted_http_ips,
                 allowlisted_http_vcns=[oci.integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs(
-                    id=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_id"],
-                    allowlisted_ips=var["integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips"],
+                    id=integration_instance_network_endpoint_details_allowlisted_http_vcns_id,
+                    allowlisted_ips=integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips,
                 )],
-                is_integration_vcn_allowlisted=var["integration_instance_network_endpoint_details_is_integration_vcn_allowlisted"],
+                is_integration_vcn_allowlisted=integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
             ),
-            shape=var["integration_instance_shape"],
-            state=var["integration_instance_target_state"])
+            shape=integration_instance_shape,
+            state=integration_instance_target_state)
         ```
         <!--End PulumiCodeChooser -->
 

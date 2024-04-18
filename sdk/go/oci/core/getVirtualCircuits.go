@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVirtualCircuits(ctx, &core.GetVirtualCircuitsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Virtual_circuit_display_name),
-//				State:         pulumi.StringRef(_var.Virtual_circuit_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(virtualCircuitDisplayName),
+//				State:         pulumi.StringRef(virtualCircuitState),
 //			}, nil)
 //			if err != nil {
 //				return err

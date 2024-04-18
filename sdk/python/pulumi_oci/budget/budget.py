@@ -660,25 +660,25 @@ class Budget(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_budget = oci.budget.Budget("testBudget",
-            amount=var["budget_amount"],
-            compartment_id=var["tenancy_ocid"],
-            reset_period=var["budget_reset_period"],
-            budget_processing_period_start_offset=var["budget_budget_processing_period_start_offset"],
+        test_budget = oci.budget.Budget("test_budget",
+            amount=budget_amount,
+            compartment_id=tenancy_ocid,
+            reset_period=budget_reset_period,
+            budget_processing_period_start_offset=budget_budget_processing_period_start_offset,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["budget_description"],
-            display_name=var["budget_display_name"],
-            end_date=var["budget_end_date"],
+            description=budget_description,
+            display_name=budget_display_name,
+            end_date=budget_end_date,
             freeform_tags={
                 "Department": "Finance",
             },
-            processing_period_type=var["budget_processing_period_type"],
-            start_date=var["budget_start_date"],
-            target_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            target_type=var["budget_target_type"],
-            targets=var["budget_targets"])
+            processing_period_type=budget_processing_period_type,
+            start_date=budget_start_date,
+            target_compartment_id=test_compartment["id"],
+            target_type=budget_target_type,
+            targets=budget_targets)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -729,25 +729,25 @@ class Budget(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_budget = oci.budget.Budget("testBudget",
-            amount=var["budget_amount"],
-            compartment_id=var["tenancy_ocid"],
-            reset_period=var["budget_reset_period"],
-            budget_processing_period_start_offset=var["budget_budget_processing_period_start_offset"],
+        test_budget = oci.budget.Budget("test_budget",
+            amount=budget_amount,
+            compartment_id=tenancy_ocid,
+            reset_period=budget_reset_period,
+            budget_processing_period_start_offset=budget_budget_processing_period_start_offset,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["budget_description"],
-            display_name=var["budget_display_name"],
-            end_date=var["budget_end_date"],
+            description=budget_description,
+            display_name=budget_display_name,
+            end_date=budget_end_date,
             freeform_tags={
                 "Department": "Finance",
             },
-            processing_period_type=var["budget_processing_period_type"],
-            start_date=var["budget_start_date"],
-            target_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            target_type=var["budget_target_type"],
-            targets=var["budget_targets"])
+            processing_period_type=budget_processing_period_type,
+            start_date=budget_start_date,
+            target_compartment_id=test_compartment["id"],
+            target_type=budget_target_type,
+            targets=budget_targets)
         ```
         <!--End PulumiCodeChooser -->
 

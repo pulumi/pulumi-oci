@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataStorageServerIormPlan = oci.DatabaseManagement.getExternalExadataStorageServerIormPlan({
- *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
+ *     externalExadataStorageServerId: testExternalExadataStorageServer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetExternalExadataStorageServerIormPlanResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalExadataStorageServerIormPlan = oci.DatabaseManagement.getExternalExadataStorageServerIormPlan({
- *     externalExadataStorageServerId: oci_database_management_external_exadata_storage_server.test_external_exadata_storage_server.id,
+ *     externalExadataStorageServerId: testExternalExadataStorageServer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

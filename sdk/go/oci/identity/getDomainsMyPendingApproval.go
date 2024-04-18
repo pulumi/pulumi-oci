@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsMyPendingApproval(ctx, &identity.GetDomainsMyPendingApprovalArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				MyPendingApprovalId:       oci_identity_domains_my_pending_approval.Test_my_pending_approval.Id,
-//				Authorization:             pulumi.StringRef(_var.My_pending_approval_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.My_pending_approval_resource_type_schema_version),
+//				IdcsEndpoint:              testDomain.Url,
+//				MyPendingApprovalId:       testMyPendingApprovalOciIdentityDomainsMyPendingApproval.Id,
+//				Authorization:             pulumi.StringRef(myPendingApprovalAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(myPendingApprovalResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

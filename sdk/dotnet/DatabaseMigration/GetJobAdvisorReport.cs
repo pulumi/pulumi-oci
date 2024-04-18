@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testJobAdvisorReport = Oci.DatabaseMigration.GetJobAdvisorReport.Invoke(new()
         ///     {
-        ///         JobId = oci_database_migration_job.Test_job.Id,
+        ///         JobId = testJob.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {
         ///     var testJobAdvisorReport = Oci.DatabaseMigration.GetJobAdvisorReport.Invoke(new()
         ///     {
-        ///         JobId = oci_database_migration_job.Test_job.Id,
+        ///         JobId = testJob.Id,
         ///     });
         /// 
         /// });

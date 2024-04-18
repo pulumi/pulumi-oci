@@ -290,15 +290,16 @@ class Index(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_index = oci.nosql.Index("testIndex",
+        test_index = oci.nosql.Index("test_index",
             keys=[oci.nosql.IndexKeyArgs(
-                column_name=var["index_keys_column_name"],
-                json_field_type=var["index_keys_json_field_type"],
-                json_path=var["index_keys_json_path"],
+                column_name=index_keys_column_name,
+                json_field_type=index_keys_json_field_type,
+                json_path=index_keys_json_path,
             )],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            is_if_not_exists=var["index_is_if_not_exists"])
+            name=index_name,
+            table_name_or_id=test_table_name_or["id"],
+            compartment_id=compartment_id,
+            is_if_not_exists=index_is_if_not_exists)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -340,15 +341,16 @@ class Index(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_index = oci.nosql.Index("testIndex",
+        test_index = oci.nosql.Index("test_index",
             keys=[oci.nosql.IndexKeyArgs(
-                column_name=var["index_keys_column_name"],
-                json_field_type=var["index_keys_json_field_type"],
-                json_path=var["index_keys_json_path"],
+                column_name=index_keys_column_name,
+                json_field_type=index_keys_json_field_type,
+                json_path=index_keys_json_path,
             )],
-            table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
-            compartment_id=var["compartment_id"],
-            is_if_not_exists=var["index_is_if_not_exists"])
+            name=index_name,
+            table_name_or_id=test_table_name_or["id"],
+            compartment_id=compartment_id,
+            is_if_not_exists=index_is_if_not_exists)
         ```
         <!--End PulumiCodeChooser -->
 

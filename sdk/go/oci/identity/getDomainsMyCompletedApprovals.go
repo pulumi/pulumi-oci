@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsMyCompletedApprovals(ctx, &identity.GetDomainsMyCompletedApprovalsArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				MyCompletedApprovalCount:  pulumi.IntRef(_var.My_completed_approval_my_completed_approval_count),
-//				MyCompletedApprovalFilter: pulumi.StringRef(_var.My_completed_approval_my_completed_approval_filter),
-//				Authorization:             pulumi.StringRef(_var.My_completed_approval_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.My_completed_approval_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.My_completed_approval_start_index),
+//				IdcsEndpoint:              testDomain.Url,
+//				MyCompletedApprovalCount:  pulumi.IntRef(myCompletedApprovalMyCompletedApprovalCount),
+//				MyCompletedApprovalFilter: pulumi.StringRef(myCompletedApprovalMyCompletedApprovalFilter),
+//				Authorization:             pulumi.StringRef(myCompletedApprovalAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(myCompletedApprovalResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(myCompletedApprovalStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

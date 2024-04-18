@@ -374,10 +374,10 @@ def get_domains_oauth_partner_certificate(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_partner_certificate = oci.Identity.get_domains_oauth_partner_certificate(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        o_auth_partner_certificate_id=oci_identity_domains_oauth_partner_certificate["test_oauth_partner_certificate"]["id"],
-        authorization=var["oauth_partner_certificate_authorization"],
-        resource_type_schema_version=var["oauth_partner_certificate_resource_type_schema_version"])
+    test_oauth_partner_certificate = oci.Identity.get_domains_oauth_partner_certificate(idcs_endpoint=test_domain["url"],
+        o_auth_partner_certificate_id=test_oauth_partner_certificate_oci_identity_domains_oauth_partner_certificate["id"],
+        authorization=oauth_partner_certificate_authorization,
+        resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -444,10 +444,10 @@ def get_domains_oauth_partner_certificate_output(authorization: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth_partner_certificate = oci.Identity.get_domains_oauth_partner_certificate(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        o_auth_partner_certificate_id=oci_identity_domains_oauth_partner_certificate["test_oauth_partner_certificate"]["id"],
-        authorization=var["oauth_partner_certificate_authorization"],
-        resource_type_schema_version=var["oauth_partner_certificate_resource_type_schema_version"])
+    test_oauth_partner_certificate = oci.Identity.get_domains_oauth_partner_certificate(idcs_endpoint=test_domain["url"],
+        o_auth_partner_certificate_id=test_oauth_partner_certificate_oci_identity_domains_oauth_partner_certificate["id"],
+        authorization=oauth_partner_certificate_authorization,
+        resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

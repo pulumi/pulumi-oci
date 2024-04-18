@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTargetAlertPolicyAssociation = new TargetAlertPolicyAssociation(&#34;testTargetAlertPolicyAssociation&#34;, TargetAlertPolicyAssociationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .isEnabled(var_.target_alert_policy_association_is_enabled())
- *             .policyId(oci_identity_policy.test_policy().id())
- *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .compartmentId(compartmentId)
+ *             .isEnabled(targetAlertPolicyAssociationIsEnabled)
+ *             .policyId(testPolicy.id())
+ *             .targetId(testTarget.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.target_alert_policy_association_description())
- *             .displayName(var_.target_alert_policy_association_display_name())
+ *             .description(targetAlertPolicyAssociationDescription)
+ *             .displayName(targetAlertPolicyAssociationDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

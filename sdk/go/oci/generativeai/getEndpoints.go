@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenerativeAi.GetEndpoints(ctx, &generativeai.GetEndpointsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Endpoint_display_name),
-//				Id:            pulumi.StringRef(_var.Endpoint_id),
-//				State:         pulumi.StringRef(_var.Endpoint_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(endpointDisplayName),
+//				Id:            pulumi.StringRef(endpointId),
+//				State:         pulumi.StringRef(endpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

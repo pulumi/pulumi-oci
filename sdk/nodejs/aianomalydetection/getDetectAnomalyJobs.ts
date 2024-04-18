@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDetectAnomalyJobs = oci.AiAnomalyDetection.getDetectAnomalyJobs({
- *     compartmentId: _var.compartment_id,
- *     detectAnomalyJobId: oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job.id,
- *     displayName: _var.detect_anomaly_job_display_name,
- *     modelId: oci_ai_anomaly_detection_model.test_model.id,
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
- *     state: _var.detect_anomaly_job_state,
+ *     compartmentId: compartmentId,
+ *     detectAnomalyJobId: testDetectAnomalyJob.id,
+ *     displayName: detectAnomalyJobDisplayName,
+ *     modelId: testModel.id,
+ *     projectId: testProject.id,
+ *     state: detectAnomalyJobState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetDetectAnomalyJobsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDetectAnomalyJobs = oci.AiAnomalyDetection.getDetectAnomalyJobs({
- *     compartmentId: _var.compartment_id,
- *     detectAnomalyJobId: oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job.id,
- *     displayName: _var.detect_anomaly_job_display_name,
- *     modelId: oci_ai_anomaly_detection_model.test_model.id,
- *     projectId: oci_ai_anomaly_detection_project.test_project.id,
- *     state: _var.detect_anomaly_job_state,
+ *     compartmentId: compartmentId,
+ *     detectAnomalyJobId: testDetectAnomalyJob.id,
+ *     displayName: detectAnomalyJobDisplayName,
+ *     modelId: testModel.id,
+ *     projectId: testProject.id,
+ *     state: detectAnomalyJobState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

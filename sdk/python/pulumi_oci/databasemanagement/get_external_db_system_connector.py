@@ -248,7 +248,7 @@ def get_external_db_system_connector(external_db_system_connector_id: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_connector = oci.DatabaseManagement.get_external_db_system_connector(external_db_system_connector_id=oci_database_management_external_db_system_connector["test_external_db_system_connector"]["id"])
+    test_external_db_system_connector = oci.DatabaseManagement.get_external_db_system_connector(external_db_system_connector_id=test_external_db_system_connector_oci_database_management_external_db_system_connector["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -295,7 +295,7 @@ def get_external_db_system_connector_output(external_db_system_connector_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_external_db_system_connector = oci.DatabaseManagement.get_external_db_system_connector(external_db_system_connector_id=oci_database_management_external_db_system_connector["test_external_db_system_connector"]["id"])
+    test_external_db_system_connector = oci.DatabaseManagement.get_external_db_system_connector(external_db_system_connector_id=test_external_db_system_connector_oci_database_management_external_db_system_connector["id"])
     ```
     <!--End PulumiCodeChooser -->
 

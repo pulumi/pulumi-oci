@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDedicatedVmHostShapes(ctx, &core.GetDedicatedVmHostShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Dedicated_vm_host_shape_availability_domain),
-//				InstanceShapeName:  pulumi.StringRef(_var.Dedicated_vm_host_shape_instance_shape_name),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(dedicatedVmHostShapeAvailabilityDomain),
+//				InstanceShapeName:  pulumi.StringRef(dedicatedVmHostShapeInstanceShapeName),
 //			}, nil)
 //			if err != nil {
 //				return err

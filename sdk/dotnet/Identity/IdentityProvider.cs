@@ -40,19 +40,20 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIdentityProvider = new Oci.Identity.IdentityProvider("testIdentityProvider", new()
+    ///     var testIdentityProvider = new Oci.Identity.IdentityProvider("test_identity_provider", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         Description = @var.Identity_provider_description,
-    ///         Metadata = @var.Identity_provider_metadata,
-    ///         MetadataUrl = @var.Identity_provider_metadata_url,
-    ///         ProductType = @var.Identity_provider_product_type,
-    ///         Protocol = @var.Identity_provider_protocol,
+    ///         CompartmentId = tenancyOcid,
+    ///         Description = identityProviderDescription,
+    ///         Metadata = identityProviderMetadata,
+    ///         MetadataUrl = identityProviderMetadataUrl,
+    ///         Name = identityProviderName,
+    ///         ProductType = identityProviderProductType,
+    ///         Protocol = identityProviderProtocol,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         FreeformAttributes = @var.Identity_provider_freeform_attributes,
+    ///         FreeformAttributes = identityProviderFreeformAttributes,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

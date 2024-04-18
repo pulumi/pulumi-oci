@@ -53,13 +53,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabasesRemoteClone = new PluggableDatabasesRemoteClone(&#34;testPluggableDatabasesRemoteClone&#34;, PluggableDatabasesRemoteCloneArgs.builder()        
- *             .clonedPdbName(var_.pluggable_databases_remote_clone_cloned_pdb_name())
- *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
- *             .sourceContainerDbAdminPassword(var_.pluggable_databases_remote_clone_source_container_db_admin_password())
- *             .targetContainerDatabaseId(oci_database_database.test_database().id())
- *             .pdbAdminPassword(var_.pluggable_databases_remote_clone_pdb_admin_password())
- *             .shouldPdbAdminAccountBeLocked(var_.pluggable_databases_remote_clone_should_pdb_admin_account_be_locked())
- *             .targetTdeWalletPassword(var_.pluggable_databases_remote_clone_target_tde_wallet_password())
+ *             .clonedPdbName(pluggableDatabasesRemoteCloneClonedPdbName)
+ *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .sourceContainerDbAdminPassword(pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword)
+ *             .targetContainerDatabaseId(testDatabase.id())
+ *             .pdbAdminPassword(pluggableDatabasesRemoteClonePdbAdminPassword)
+ *             .shouldPdbAdminAccountBeLocked(pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked)
+ *             .targetTdeWalletPassword(pluggableDatabasesRemoteCloneTargetTdeWalletPassword)
  *             .build());
  * 
  *     }

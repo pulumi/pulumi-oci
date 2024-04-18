@@ -49,18 +49,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testModel = new Model(&#34;testModel&#34;, ModelArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .modelTrainingDetails(ModelModelTrainingDetailsArgs.builder()
- *                 .dataAssetIds(var_.model_model_training_details_data_asset_ids())
- *                 .algorithmHint(var_.model_model_training_details_algorithm_hint())
- *                 .targetFap(var_.model_model_training_details_target_fap())
- *                 .trainingFraction(var_.model_model_training_details_training_fraction())
- *                 .windowSize(var_.model_model_training_details_window_size())
+ *                 .dataAssetIds(modelModelTrainingDetailsDataAssetIds)
+ *                 .algorithmHint(modelModelTrainingDetailsAlgorithmHint)
+ *                 .targetFap(modelModelTrainingDetailsTargetFap)
+ *                 .trainingFraction(modelModelTrainingDetailsTrainingFraction)
+ *                 .windowSize(modelModelTrainingDetailsWindowSize)
  *                 .build())
- *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+ *             .projectId(testProject.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.model_description())
- *             .displayName(var_.model_display_name())
+ *             .description(modelDescription)
+ *             .displayName(modelDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentType = Oci.GoldenGate.GetDeploymentType.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Deployment_type_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deploymentTypeDisplayName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentType = Oci.GoldenGate.GetDeploymentType.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Deployment_type_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = deploymentTypeDisplayName,
         ///     });
         /// 
         /// });

@@ -49,13 +49,13 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSubscriber = new Subscriber(&#34;testSubscriber&#34;, SubscriberArgs.builder()        
  *             .clients(SubscriberClientArgs.builder()
- *                 .name(var_.subscriber_clients_name())
- *                 .token(var_.subscriber_clients_token())
+ *                 .name(subscriberClientsName)
+ *                 .token(subscriberClientsToken)
  *                 .build())
- *             .compartmentId(var_.compartment_id())
- *             .usagePlans(var_.subscriber_usage_plans())
+ *             .compartmentId(compartmentId)
+ *             .usagePlans(subscriberUsagePlans)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.subscriber_display_name())
+ *             .displayName(subscriberDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

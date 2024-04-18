@@ -25,12 +25,13 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBaselineableMetric = new Oci.StackMonitoring.BaselineableMetric("testBaselineableMetric", new()
+    ///     var testBaselineableMetric = new Oci.StackMonitoring.BaselineableMetric("test_baselineable_metric", new()
     ///     {
-    ///         Column = @var.Baselineable_metric_column,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Namespace = @var.Baselineable_metric_namespace,
-    ///         ResourceGroup = @var.Baselineable_metric_resource_group,
+    ///         Column = baselineableMetricColumn,
+    ///         CompartmentId = compartmentId,
+    ///         Name = baselineableMetricName,
+    ///         Namespace = baselineableMetricNamespace,
+    ///         ResourceGroup = baselineableMetricResourceGroup,
     ///     });
     /// 
     /// });

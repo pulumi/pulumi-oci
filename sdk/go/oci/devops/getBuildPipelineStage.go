@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetBuildPipelineStage(ctx, &devops.GetBuildPipelineStageArgs{
-//				BuildPipelineStageId: oci_devops_build_pipeline_stage.Test_build_pipeline_stage.Id,
+//				BuildPipelineStageId: testBuildPipelineStageOciDevopsBuildPipelineStage.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

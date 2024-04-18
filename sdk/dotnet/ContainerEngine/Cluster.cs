@@ -14,6 +14,103 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// Create a new cluster.
     /// 
+    /// ## Example Usage
+    /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCluster = new Oci.ContainerEngine.Cluster("test_cluster", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         KubernetesVersion = clusterKubernetesVersion,
+    ///         Name = clusterName,
+    ///         VcnId = testVcn.Id,
+    ///         ClusterPodNetworkOptions = new[]
+    ///         {
+    ///             new Oci.ContainerEngine.Inputs.ClusterClusterPodNetworkOptionArgs
+    ///             {
+    ///                 CniType = clusterClusterPodNetworkOptionsCniType,
+    ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         EndpointConfig = new Oci.ContainerEngine.Inputs.ClusterEndpointConfigArgs
+    ///         {
+    ///             IsPublicIpEnabled = clusterEndpointConfigIsPublicIpEnabled,
+    ///             NsgIds = clusterEndpointConfigNsgIds,
+    ///             SubnetId = testSubnet.Id,
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         ImagePolicyConfig = new Oci.ContainerEngine.Inputs.ClusterImagePolicyConfigArgs
+    ///         {
+    ///             IsPolicyEnabled = clusterImagePolicyConfigIsPolicyEnabled,
+    ///             KeyDetails = new[]
+    ///             {
+    ///                 new Oci.ContainerEngine.Inputs.ClusterImagePolicyConfigKeyDetailArgs
+    ///                 {
+    ///                     KmsKeyId = testKey.Id,
+    ///                 },
+    ///             },
+    ///         },
+    ///         KmsKeyId = testKey.Id,
+    ///         Options = new Oci.ContainerEngine.Inputs.ClusterOptionsArgs
+    ///         {
+    ///             AddOns = new Oci.ContainerEngine.Inputs.ClusterOptionsAddOnsArgs
+    ///             {
+    ///                 IsKubernetesDashboardEnabled = clusterOptionsAddOnsIsKubernetesDashboardEnabled,
+    ///                 IsTillerEnabled = clusterOptionsAddOnsIsTillerEnabled,
+    ///             },
+    ///             AdmissionControllerOptions = new Oci.ContainerEngine.Inputs.ClusterOptionsAdmissionControllerOptionsArgs
+    ///             {
+    ///                 IsPodSecurityPolicyEnabled = clusterOptionsAdmissionControllerOptionsIsPodSecurityPolicyEnabled,
+    ///             },
+    ///             KubernetesNetworkConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsKubernetesNetworkConfigArgs
+    ///             {
+    ///                 PodsCidr = clusterOptionsKubernetesNetworkConfigPodsCidr,
+    ///                 ServicesCidr = clusterOptionsKubernetesNetworkConfigServicesCidr,
+    ///             },
+    ///             PersistentVolumeConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsPersistentVolumeConfigArgs
+    ///             {
+    ///                 DefinedTags = 
+    ///                 {
+    ///                     { "Operations.CostCenter", "42" },
+    ///                 },
+    ///                 FreeformTags = 
+    ///                 {
+    ///                     { "Department", "Finance" },
+    ///                 },
+    ///             },
+    ///             ServiceLbConfig = new Oci.ContainerEngine.Inputs.ClusterOptionsServiceLbConfigArgs
+    ///             {
+    ///                 DefinedTags = 
+    ///                 {
+    ///                     { "Operations.CostCenter", "42" },
+    ///                 },
+    ///                 FreeformTags = 
+    ///                 {
+    ///                     { "Department", "Finance" },
+    ///                 },
+    ///             },
+    ///             ServiceLbSubnetIds = clusterOptionsServiceLbSubnetIds,
+    ///         },
+    ///         Type = clusterType,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
     /// ## Import
     /// 
     /// Clusters can be imported using the `id`, e.g.

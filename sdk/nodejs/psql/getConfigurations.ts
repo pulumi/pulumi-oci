@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfigurations = oci.Psql.getConfigurations({
- *     compartmentId: _var.compartment_id,
- *     configurationId: oci_psql_configuration.test_configuration.id,
- *     dbVersion: _var.configuration_db_version,
- *     displayName: _var.configuration_display_name,
- *     shape: _var.configuration_shape,
- *     state: _var.configuration_state,
+ *     compartmentId: compartmentId,
+ *     configurationId: testConfiguration.id,
+ *     dbVersion: configurationDbVersion,
+ *     displayName: configurationDisplayName,
+ *     shape: configurationShape,
+ *     state: configurationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,12 +123,12 @@ export interface GetConfigurationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfigurations = oci.Psql.getConfigurations({
- *     compartmentId: _var.compartment_id,
- *     configurationId: oci_psql_configuration.test_configuration.id,
- *     dbVersion: _var.configuration_db_version,
- *     displayName: _var.configuration_display_name,
- *     shape: _var.configuration_shape,
- *     state: _var.configuration_state,
+ *     compartmentId: compartmentId,
+ *     configurationId: testConfiguration.id,
+ *     dbVersion: configurationDbVersion,
+ *     displayName: configurationDisplayName,
+ *     shape: configurationShape,
+ *     state: configurationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

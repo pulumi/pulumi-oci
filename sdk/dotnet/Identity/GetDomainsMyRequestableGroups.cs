@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyRequestableGroups = Oci.Identity.GetDomainsMyRequestableGroups.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyRequestableGroupCount = @var.My_requestable_group_my_requestable_group_count,
-        ///         MyRequestableGroupFilter = @var.My_requestable_group_my_requestable_group_filter,
-        ///         Authorization = @var.My_requestable_group_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_requestable_group_resource_type_schema_version,
-        ///         StartIndex = @var.My_requestable_group_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyRequestableGroupCount = myRequestableGroupMyRequestableGroupCount,
+        ///         MyRequestableGroupFilter = myRequestableGroupMyRequestableGroupFilter,
+        ///         Authorization = myRequestableGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = myRequestableGroupResourceTypeSchemaVersion,
+        ///         StartIndex = myRequestableGroupStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyRequestableGroups = Oci.Identity.GetDomainsMyRequestableGroups.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyRequestableGroupCount = @var.My_requestable_group_my_requestable_group_count,
-        ///         MyRequestableGroupFilter = @var.My_requestable_group_my_requestable_group_filter,
-        ///         Authorization = @var.My_requestable_group_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_requestable_group_resource_type_schema_version,
-        ///         StartIndex = @var.My_requestable_group_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyRequestableGroupCount = myRequestableGroupMyRequestableGroupCount,
+        ///         MyRequestableGroupFilter = myRequestableGroupMyRequestableGroupFilter,
+        ///         Authorization = myRequestableGroupAuthorization,
+        ///         ResourceTypeSchemaVersion = myRequestableGroupResourceTypeSchemaVersion,
+        ///         StartIndex = myRequestableGroupStartIndex,
         ///     });
         /// 
         /// });

@@ -45,9 +45,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testClusterWorkloadMapping = new ClusterWorkloadMapping(&#34;testClusterWorkloadMapping&#34;, ClusterWorkloadMappingArgs.builder()        
- *             .clusterId(oci_containerengine_cluster.test_cluster().id())
- *             .mappedCompartmentId(oci_identity_compartment.test_compartment().id())
- *             .namespace(var_.cluster_workload_mapping_namespace())
+ *             .clusterId(testCluster.id())
+ *             .mappedCompartmentId(testCompartment.id())
+ *             .namespace(clusterWorkloadMappingNamespace)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := IdentityDataPlane.NewGeneratedScopedAccessToken(ctx, "testGenerateScopedAccessToken", &IdentityDataPlane.GeneratedScopedAccessTokenArgs{
-//				PublicKey: pulumi.Any(_var.Generate_scoped_access_token_public_key),
-//				Scope:     pulumi.Any(_var.Generate_scoped_access_token_scope),
+//			_, err := IdentityDataPlane.NewGeneratedScopedAccessToken(ctx, "test_generate_scoped_access_token", &IdentityDataPlane.GeneratedScopedAccessTokenArgs{
+//				PublicKey: pulumi.Any(generateScopedAccessTokenPublicKey),
+//				Scope:     pulumi.Any(generateScopedAccessTokenScope),
 //			})
 //			if err != nil {
 //				return err

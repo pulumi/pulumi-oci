@@ -25,29 +25,29 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalDatabaseConnector = new Oci.Database.ExternalDatabaseConnector("testExternalDatabaseConnector", new()
+    ///     var testExternalDatabaseConnector = new Oci.Database.ExternalDatabaseConnector("test_external_database_connector", new()
     ///     {
     ///         ConnectionCredentials = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionCredentialsArgs
     ///         {
-    ///             CredentialName = @var.External_database_connector_connection_credentials_credential_name,
-    ///             CredentialType = @var.External_database_connector_connection_credentials_credential_type,
-    ///             Password = @var.External_database_connector_connection_credentials_password,
-    ///             Role = @var.External_database_connector_connection_credentials_role,
-    ///             SslSecretId = oci_vault_secret.Test_secret.Id,
-    ///             Username = @var.External_database_connector_connection_credentials_username,
+    ///             CredentialName = externalDatabaseConnectorConnectionCredentialsCredentialName,
+    ///             CredentialType = externalDatabaseConnectorConnectionCredentialsCredentialType,
+    ///             Password = externalDatabaseConnectorConnectionCredentialsPassword,
+    ///             Role = externalDatabaseConnectorConnectionCredentialsRole,
+    ///             SslSecretId = testSecret.Id,
+    ///             Username = externalDatabaseConnectorConnectionCredentialsUsername,
     ///         },
     ///         ConnectionString = new Oci.Database.Inputs.ExternalDatabaseConnectorConnectionStringArgs
     ///         {
-    ///             Hostname = @var.External_database_connector_connection_string_hostname,
-    ///             Port = @var.External_database_connector_connection_string_port,
-    ///             Protocol = @var.External_database_connector_connection_string_protocol,
-    ///             Service = @var.External_database_connector_connection_string_service,
+    ///             Hostname = externalDatabaseConnectorConnectionStringHostname,
+    ///             Port = externalDatabaseConnectorConnectionStringPort,
+    ///             Protocol = externalDatabaseConnectorConnectionStringProtocol,
+    ///             Service = externalDatabaseConnectorConnectionStringService,
     ///         },
-    ///         ConnectorAgentId = oci_database_connector_agent.Test_connector_agent.Id,
-    ///         DisplayName = @var.External_database_connector_display_name,
-    ///         ExternalDatabaseId = oci_database_database.Test_database.Id,
-    ///         ConnectorType = @var.External_database_connector_connector_type,
-    ///         DefinedTags = @var.External_database_connector_defined_tags,
+    ///         ConnectorAgentId = testConnectorAgent.Id,
+    ///         DisplayName = externalDatabaseConnectorDisplayName,
+    ///         ExternalDatabaseId = testDatabase.Id,
+    ///         ConnectorType = externalDatabaseConnectorConnectorType,
+    ///         DefinedTags = externalDatabaseConnectorDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

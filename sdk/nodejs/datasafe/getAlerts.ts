@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlerts = oci.DataSafe.getAlerts({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.alert_access_level,
- *     compartmentIdInSubtree: _var.alert_compartment_id_in_subtree,
- *     fields: _var.alert_field,
- *     id: _var.alert_id,
- *     scimQuery: _var.alert_scim_query,
+ *     compartmentId: compartmentId,
+ *     accessLevel: alertAccessLevel,
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
+ *     fields: alertField,
+ *     id: alertId,
+ *     scimQuery: alertScimQuery,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,12 +111,12 @@ export interface GetAlertsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlerts = oci.DataSafe.getAlerts({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.alert_access_level,
- *     compartmentIdInSubtree: _var.alert_compartment_id_in_subtree,
- *     fields: _var.alert_field,
- *     id: _var.alert_id,
- *     scimQuery: _var.alert_scim_query,
+ *     compartmentId: compartmentId,
+ *     accessLevel: alertAccessLevel,
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
+ *     fields: alertField,
+ *     id: alertId,
+ *     scimQuery: alertScimQuery,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

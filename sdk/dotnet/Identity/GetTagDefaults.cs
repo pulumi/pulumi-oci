@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTagDefaults = Oci.Identity.GetTagDefaults.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Tag_default_id,
-        ///         State = @var.Tag_default_state,
-        ///         TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = tagDefaultId,
+        ///         State = tagDefaultState,
+        ///         TagDefinitionId = testTagDefinition.Id,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testTagDefaults = Oci.Identity.GetTagDefaults.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Tag_default_id,
-        ///         State = @var.Tag_default_state,
-        ///         TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = tagDefaultId,
+        ///         State = tagDefaultState,
+        ///         TagDefinitionId = testTagDefinition.Id,
         ///     });
         /// 
         /// });

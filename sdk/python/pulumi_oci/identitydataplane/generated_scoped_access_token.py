@@ -141,9 +141,9 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_generate_scoped_access_token = oci.identity_data_plane.GeneratedScopedAccessToken("testGenerateScopedAccessToken",
-            public_key=var["generate_scoped_access_token_public_key"],
-            scope=var["generate_scoped_access_token_scope"])
+        test_generate_scoped_access_token = oci.identity_data_plane.GeneratedScopedAccessToken("test_generate_scoped_access_token",
+            public_key=generate_scoped_access_token_public_key,
+            scope=generate_scoped_access_token_scope)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -182,9 +182,9 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_generate_scoped_access_token = oci.identity_data_plane.GeneratedScopedAccessToken("testGenerateScopedAccessToken",
-            public_key=var["generate_scoped_access_token_public_key"],
-            scope=var["generate_scoped_access_token_scope"])
+        test_generate_scoped_access_token = oci.identity_data_plane.GeneratedScopedAccessToken("test_generate_scoped_access_token",
+            public_key=generate_scoped_access_token_public_key,
+            scope=generate_scoped_access_token_scope)
         ```
         <!--End PulumiCodeChooser -->
 

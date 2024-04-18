@@ -148,7 +148,8 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
+    # Filter on Subnet OCID
+    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=private_ip_subnet_id)
     ```
     <!--End PulumiCodeChooser -->
     <!--Start PulumiCodeChooser -->
@@ -156,7 +157,8 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
+    # Filter on VNIC OCID
+    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=test_vnic["id"])
     ```
     <!--End PulumiCodeChooser -->
     <!--Start PulumiCodeChooser -->
@@ -164,10 +166,11 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=var["private_ip_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
+    # Filter on private IP address and Subnet OCID
+    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+        subnet_id=test_subnet["id"],
+        vlan_id=test_vlan["id"],
+        vnic_id=test_vnic_attachment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -230,7 +233,8 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
+    # Filter on Subnet OCID
+    test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=private_ip_subnet_id)
     ```
     <!--End PulumiCodeChooser -->
     <!--Start PulumiCodeChooser -->
@@ -238,7 +242,8 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
+    # Filter on VNIC OCID
+    test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=test_vnic["id"])
     ```
     <!--End PulumiCodeChooser -->
     <!--Start PulumiCodeChooser -->
@@ -246,10 +251,11 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=var["private_ip_ip_address"],
-        subnet_id=oci_core_subnet["test_subnet"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"],
-        vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
+    # Filter on private IP address and Subnet OCID
+    test_private_ips_by_ip_address = oci.Core.get_private_ips(ip_address=private_ip_ip_address,
+        subnet_id=test_subnet["id"],
+        vlan_id=test_vlan["id"],
+        vnic_id=test_vnic_attachment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

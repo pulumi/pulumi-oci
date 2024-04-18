@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataStorageConnector = new oci.databasemanagement.ExternalExadataStorageConnector("testExternalExadataStorageConnector", {
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     connectionUri: _var.external_exadata_storage_connector_connection_uri,
- *     connectorName: _var.external_exadata_storage_connector_connector_name,
+ * const testExternalExadataStorageConnector = new oci.databasemanagement.ExternalExadataStorageConnector("test_external_exadata_storage_connector", {
+ *     agentId: testAgent.id,
+ *     connectionUri: externalExadataStorageConnectorConnectionUri,
+ *     connectorName: externalExadataStorageConnectorConnectorName,
  *     credentialInfo: {
- *         password: _var.external_exadata_storage_connector_credential_info_password,
- *         username: _var.external_exadata_storage_connector_credential_info_username,
- *         sslTrustStoreLocation: _var.external_exadata_storage_connector_credential_info_ssl_trust_store_location,
- *         sslTrustStorePassword: _var.external_exadata_storage_connector_credential_info_ssl_trust_store_password,
- *         sslTrustStoreType: _var.external_exadata_storage_connector_credential_info_ssl_trust_store_type,
+ *         password: externalExadataStorageConnectorCredentialInfoPassword,
+ *         username: externalExadataStorageConnectorCredentialInfoUsername,
+ *         sslTrustStoreLocation: externalExadataStorageConnectorCredentialInfoSslTrustStoreLocation,
+ *         sslTrustStorePassword: externalExadataStorageConnectorCredentialInfoSslTrustStorePassword,
+ *         sslTrustStoreType: externalExadataStorageConnectorCredentialInfoSslTrustStoreType,
  *     },
- *     storageServerId: oci_database_management_storage_server.test_storage_server.id,
+ *     storageServerId: testStorageServer.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Database
     /// {
     ///     var testExadataInfrastructure = Oci.Database.GetExadataInfrastructure.Invoke(new()
     ///     {
-    ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+    ///         ExadataInfrastructureId = testExadataInfrastructureOciDatabaseExadataInfrastructure.Id,
     ///     });
     /// 
     /// });

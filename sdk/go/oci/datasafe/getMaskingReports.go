@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetMaskingReports(ctx, &datasafe.GetMaskingReportsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Masking_report_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Masking_report_compartment_id_in_subtree),
-//				MaskingPolicyId:        pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(maskingReportAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(maskingReportCompartmentIdInSubtree),
+//				MaskingPolicyId:        pulumi.StringRef(testMaskingPolicy.Id),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

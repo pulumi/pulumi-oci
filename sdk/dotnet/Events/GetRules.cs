@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Events
         /// {
         ///     var testRules = Oci.Events.GetRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Rule_display_name,
-        ///         State = @var.Rule_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = ruleDisplayName,
+        ///         State = ruleState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Events
         /// {
         ///     var testRules = Oci.Events.GetRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Rule_display_name,
-        ///         State = @var.Rule_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = ruleDisplayName,
+        ///         State = ruleState,
         ///     });
         /// 
         /// });

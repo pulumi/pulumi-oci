@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewAuthenticationPolicy(ctx, "testAuthenticationPolicy", &Identity.AuthenticationPolicyArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
+//			_, err := Identity.NewAuthenticationPolicy(ctx, "test_authentication_policy", &Identity.AuthenticationPolicyArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
 //				NetworkPolicy: &identity.AuthenticationPolicyNetworkPolicyArgs{
-//					NetworkSourceIds: pulumi.Any(_var.Authentication_policy_network_policy_network_source_ids),
+//					NetworkSourceIds: pulumi.Any(authenticationPolicyNetworkPolicyNetworkSourceIds),
 //				},
 //				PasswordPolicy: &identity.AuthenticationPolicyPasswordPolicyArgs{
-//					IsLowercaseCharactersRequired: pulumi.Any(_var.Authentication_policy_password_policy_is_lowercase_characters_required),
-//					IsNumericCharactersRequired:   pulumi.Any(_var.Authentication_policy_password_policy_is_numeric_characters_required),
-//					IsSpecialCharactersRequired:   pulumi.Any(_var.Authentication_policy_password_policy_is_special_characters_required),
-//					IsUppercaseCharactersRequired: pulumi.Any(_var.Authentication_policy_password_policy_is_uppercase_characters_required),
-//					IsUsernameContainmentAllowed:  pulumi.Any(_var.Authentication_policy_password_policy_is_username_containment_allowed),
-//					MinimumPasswordLength:         pulumi.Any(_var.Authentication_policy_password_policy_minimum_password_length),
+//					IsLowercaseCharactersRequired: pulumi.Any(authenticationPolicyPasswordPolicyIsLowercaseCharactersRequired),
+//					IsNumericCharactersRequired:   pulumi.Any(authenticationPolicyPasswordPolicyIsNumericCharactersRequired),
+//					IsSpecialCharactersRequired:   pulumi.Any(authenticationPolicyPasswordPolicyIsSpecialCharactersRequired),
+//					IsUppercaseCharactersRequired: pulumi.Any(authenticationPolicyPasswordPolicyIsUppercaseCharactersRequired),
+//					IsUsernameContainmentAllowed:  pulumi.Any(authenticationPolicyPasswordPolicyIsUsernameContainmentAllowed),
+//					MinimumPasswordLength:         pulumi.Any(authenticationPolicyPasswordPolicyMinimumPasswordLength),
 //				},
 //			})
 //			if err != nil {

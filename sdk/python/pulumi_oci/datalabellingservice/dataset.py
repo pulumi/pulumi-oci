@@ -550,49 +550,49 @@ class Dataset(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dataset = oci.data_labelling_service.Dataset("testDataset",
-            annotation_format=var["dataset_annotation_format"],
-            compartment_id=var["compartment_id"],
+        test_dataset = oci.data_labelling_service.Dataset("test_dataset",
+            annotation_format=dataset_annotation_format,
+            compartment_id=compartment_id,
             dataset_format_details=oci.data_labelling_service.DatasetDatasetFormatDetailsArgs(
-                format_type=var["dataset_dataset_format_details_format_type"],
+                format_type=dataset_dataset_format_details_format_type,
                 text_file_type_metadata=oci.data_labelling_service.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs(
-                    column_index=var["dataset_dataset_format_details_text_file_type_metadata_column_index"],
-                    format_type=var["dataset_dataset_format_details_text_file_type_metadata_format_type"],
-                    column_delimiter=var["dataset_dataset_format_details_text_file_type_metadata_column_delimiter"],
-                    column_name=var["dataset_dataset_format_details_text_file_type_metadata_column_name"],
-                    escape_character=var["dataset_dataset_format_details_text_file_type_metadata_escape_character"],
-                    line_delimiter=var["dataset_dataset_format_details_text_file_type_metadata_line_delimiter"],
+                    column_index=dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    format_type=dataset_dataset_format_details_text_file_type_metadata_format_type,
+                    column_delimiter=dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+                    column_name=dataset_dataset_format_details_text_file_type_metadata_column_name,
+                    escape_character=dataset_dataset_format_details_text_file_type_metadata_escape_character,
+                    line_delimiter=dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
                 ),
             ),
             dataset_source_details=oci.data_labelling_service.DatasetDatasetSourceDetailsArgs(
-                bucket=var["dataset_dataset_source_details_bucket"],
-                namespace=var["dataset_dataset_source_details_namespace"],
-                source_type=var["dataset_dataset_source_details_source_type"],
-                prefix=var["dataset_dataset_source_details_prefix"],
+                bucket=dataset_dataset_source_details_bucket,
+                namespace=dataset_dataset_source_details_namespace,
+                source_type=dataset_dataset_source_details_source_type,
+                prefix=dataset_dataset_source_details_prefix,
             ),
             label_set=oci.data_labelling_service.DatasetLabelSetArgs(
                 items=[oci.data_labelling_service.DatasetLabelSetItemArgs(
-                    name=var["dataset_label_set_items_name"],
+                    name=dataset_label_set_items_name,
                 )],
             ),
-            defined_tags=var["dataset_defined_tags"],
-            description=var["dataset_description"],
-            display_name=var["dataset_display_name"],
-            freeform_tags=var["dataset_freeform_tags"],
+            defined_tags=dataset_defined_tags,
+            description=dataset_description,
+            display_name=dataset_display_name,
+            freeform_tags=dataset_freeform_tags,
             initial_import_dataset_configuration=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationArgs(
                 import_format=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportFormatArgs(
-                    name=var["dataset_initial_import_dataset_configuration_import_format_name"],
-                    version=var["dataset_initial_import_dataset_configuration_import_format_version"],
+                    name=dataset_initial_import_dataset_configuration_import_format_name,
+                    version=dataset_initial_import_dataset_configuration_import_format_version,
                 ),
                 import_metadata_path=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs(
-                    bucket=var["dataset_initial_import_dataset_configuration_import_metadata_path_bucket"],
-                    namespace=var["dataset_initial_import_dataset_configuration_import_metadata_path_namespace"],
-                    path=var["dataset_initial_import_dataset_configuration_import_metadata_path_path"],
-                    source_type=var["dataset_initial_import_dataset_configuration_import_metadata_path_source_type"],
+                    bucket=dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
+                    namespace=dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
+                    path=dataset_initial_import_dataset_configuration_import_metadata_path_path,
+                    source_type=dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
                 ),
             ),
             initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
-            labeling_instructions=var["dataset_labeling_instructions"])
+            labeling_instructions=dataset_labeling_instructions)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -641,49 +641,49 @@ class Dataset(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dataset = oci.data_labelling_service.Dataset("testDataset",
-            annotation_format=var["dataset_annotation_format"],
-            compartment_id=var["compartment_id"],
+        test_dataset = oci.data_labelling_service.Dataset("test_dataset",
+            annotation_format=dataset_annotation_format,
+            compartment_id=compartment_id,
             dataset_format_details=oci.data_labelling_service.DatasetDatasetFormatDetailsArgs(
-                format_type=var["dataset_dataset_format_details_format_type"],
+                format_type=dataset_dataset_format_details_format_type,
                 text_file_type_metadata=oci.data_labelling_service.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs(
-                    column_index=var["dataset_dataset_format_details_text_file_type_metadata_column_index"],
-                    format_type=var["dataset_dataset_format_details_text_file_type_metadata_format_type"],
-                    column_delimiter=var["dataset_dataset_format_details_text_file_type_metadata_column_delimiter"],
-                    column_name=var["dataset_dataset_format_details_text_file_type_metadata_column_name"],
-                    escape_character=var["dataset_dataset_format_details_text_file_type_metadata_escape_character"],
-                    line_delimiter=var["dataset_dataset_format_details_text_file_type_metadata_line_delimiter"],
+                    column_index=dataset_dataset_format_details_text_file_type_metadata_column_index,
+                    format_type=dataset_dataset_format_details_text_file_type_metadata_format_type,
+                    column_delimiter=dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
+                    column_name=dataset_dataset_format_details_text_file_type_metadata_column_name,
+                    escape_character=dataset_dataset_format_details_text_file_type_metadata_escape_character,
+                    line_delimiter=dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
                 ),
             ),
             dataset_source_details=oci.data_labelling_service.DatasetDatasetSourceDetailsArgs(
-                bucket=var["dataset_dataset_source_details_bucket"],
-                namespace=var["dataset_dataset_source_details_namespace"],
-                source_type=var["dataset_dataset_source_details_source_type"],
-                prefix=var["dataset_dataset_source_details_prefix"],
+                bucket=dataset_dataset_source_details_bucket,
+                namespace=dataset_dataset_source_details_namespace,
+                source_type=dataset_dataset_source_details_source_type,
+                prefix=dataset_dataset_source_details_prefix,
             ),
             label_set=oci.data_labelling_service.DatasetLabelSetArgs(
                 items=[oci.data_labelling_service.DatasetLabelSetItemArgs(
-                    name=var["dataset_label_set_items_name"],
+                    name=dataset_label_set_items_name,
                 )],
             ),
-            defined_tags=var["dataset_defined_tags"],
-            description=var["dataset_description"],
-            display_name=var["dataset_display_name"],
-            freeform_tags=var["dataset_freeform_tags"],
+            defined_tags=dataset_defined_tags,
+            description=dataset_description,
+            display_name=dataset_display_name,
+            freeform_tags=dataset_freeform_tags,
             initial_import_dataset_configuration=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationArgs(
                 import_format=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportFormatArgs(
-                    name=var["dataset_initial_import_dataset_configuration_import_format_name"],
-                    version=var["dataset_initial_import_dataset_configuration_import_format_version"],
+                    name=dataset_initial_import_dataset_configuration_import_format_name,
+                    version=dataset_initial_import_dataset_configuration_import_format_version,
                 ),
                 import_metadata_path=oci.data_labelling_service.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs(
-                    bucket=var["dataset_initial_import_dataset_configuration_import_metadata_path_bucket"],
-                    namespace=var["dataset_initial_import_dataset_configuration_import_metadata_path_namespace"],
-                    path=var["dataset_initial_import_dataset_configuration_import_metadata_path_path"],
-                    source_type=var["dataset_initial_import_dataset_configuration_import_metadata_path_source_type"],
+                    bucket=dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
+                    namespace=dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
+                    path=dataset_initial_import_dataset_configuration_import_metadata_path_path,
+                    source_type=dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
                 ),
             ),
             initial_record_generation_configuration=oci.data_labelling_service.DatasetInitialRecordGenerationConfigurationArgs(),
-            labeling_instructions=var["dataset_labeling_instructions"])
+            labeling_instructions=dataset_labeling_instructions)
         ```
         <!--End PulumiCodeChooser -->
 

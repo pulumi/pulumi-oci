@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataInfrastructure = oci.Database.getExadataInfrastructure({
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     exadataInfrastructureId: testExadataInfrastructureOciDatabaseExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

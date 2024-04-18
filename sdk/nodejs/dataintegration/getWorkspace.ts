@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspace = oci.DataIntegration.getWorkspace({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     workspaceId: testWorkspaceOciDataintegrationWorkspace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,7 +136,7 @@ export interface GetWorkspaceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspace = oci.DataIntegration.getWorkspace({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
+ *     workspaceId: testWorkspaceOciDataintegrationWorkspace.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

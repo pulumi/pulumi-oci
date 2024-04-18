@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetMaskingPolicyMaskingSchemas(ctx, &datasafe.GetMaskingPolicyMaskingSchemasArgs{
-//				MaskingPolicyId: oci_data_safe_masking_policy.Test_masking_policy.Id,
-//				SchemaNames:     _var.Masking_policy_masking_schema_schema_name,
+//				MaskingPolicyId: testMaskingPolicy.Id,
+//				SchemaNames:     maskingPolicyMaskingSchemaSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

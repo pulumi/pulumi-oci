@@ -130,10 +130,10 @@ def get_configs(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=var["compartment_id"],
-        display_name=var["config_display_name"],
-        state=var["config_state"],
-        type=var["config_type"])
+    test_configs = oci.StackMonitoring.get_configs(compartment_id=compartment_id,
+        display_name=config_display_name,
+        state=config_state,
+        type=config_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_configs_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configs = oci.StackMonitoring.get_configs(compartment_id=var["compartment_id"],
-        display_name=var["config_display_name"],
-        state=var["config_state"],
-        type=var["config_type"])
+    test_configs = oci.StackMonitoring.get_configs(compartment_id=compartment_id,
+        display_name=config_display_name,
+        state=config_state,
+        type=config_type)
     ```
     <!--End PulumiCodeChooser -->
 

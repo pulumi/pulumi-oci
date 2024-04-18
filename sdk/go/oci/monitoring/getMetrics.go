@@ -39,13 +39,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetMetrics(ctx, &monitoring.GetMetricsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Metric_compartment_id_in_subtree),
-//				DimensionFilters:       _var.Metric_dimension_filters,
-//				GroupBies:              _var.Metric_group_by,
-//				Name:                   pulumi.StringRef(_var.Metric_name),
-//				Namespace:              pulumi.StringRef(_var.Metric_namespace),
-//				ResourceGroup:          pulumi.StringRef(_var.Metric_resource_group),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(metricCompartmentIdInSubtree),
+//				DimensionFilters:       metricDimensionFilters,
+//				GroupBies:              metricGroupBy,
+//				Name:                   pulumi.StringRef(metricName),
+//				Namespace:              pulumi.StringRef(metricNamespace),
+//				ResourceGroup:          pulumi.StringRef(metricResourceGroup),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewClusterStartCredentialRotationManagement(ctx, "testClusterStartCredentialRotationManagement", &ContainerEngine.ClusterStartCredentialRotationManagementArgs{
-//				AutoCompletionDelayDuration: pulumi.Any(_var.Cluster_start_credential_rotation_management_auto_completion_delay_duration),
-//				ClusterId:                   pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
+//			_, err := ContainerEngine.NewClusterStartCredentialRotationManagement(ctx, "test_cluster_start_credential_rotation_management", &ContainerEngine.ClusterStartCredentialRotationManagementArgs{
+//				AutoCompletionDelayDuration: pulumi.Any(clusterStartCredentialRotationManagementAutoCompletionDelayDuration),
+//				ClusterId:                   pulumi.Any(testCluster.Id),
 //			})
 //			if err != nil {
 //				return err

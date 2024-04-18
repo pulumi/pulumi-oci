@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEmWarehouse = new EmWarehouse(&#34;testEmWarehouse&#34;, EmWarehouseArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .emBridgeId(oci_em_warehouse_em_bridge.test_em_bridge().id())
- *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
+ *             .compartmentId(compartmentId)
+ *             .emBridgeId(testEmBridge.id())
+ *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.em_warehouse_display_name())
+ *             .displayName(emWarehouseDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

@@ -200,15 +200,15 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_statement_email_recipients_group = oci.metering_computation.UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup",
-            compartment_id=var["compartment_id"],
+        test_usage_statement_email_recipients_group = oci.metering_computation.UsageStatementEmailRecipientsGroup("test_usage_statement_email_recipients_group",
+            compartment_id=compartment_id,
             recipients_lists=[oci.metering_computation.UsageStatementEmailRecipientsGroupRecipientsListArgs(
-                email_id=oci_metering_computation_email["test_email"]["id"],
-                state=var["usage_statement_email_recipients_group_recipients_list_state"],
-                first_name=var["usage_statement_email_recipients_group_recipients_list_first_name"],
-                last_name=var["usage_statement_email_recipients_group_recipients_list_last_name"],
+                email_id=test_email["id"],
+                state=usage_statement_email_recipients_group_recipients_list_state,
+                first_name=usage_statement_email_recipients_group_recipients_list_first_name,
+                last_name=usage_statement_email_recipients_group_recipients_list_last_name,
             )],
-            subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
+            subscription_id=test_subscription["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -248,15 +248,15 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_usage_statement_email_recipients_group = oci.metering_computation.UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup",
-            compartment_id=var["compartment_id"],
+        test_usage_statement_email_recipients_group = oci.metering_computation.UsageStatementEmailRecipientsGroup("test_usage_statement_email_recipients_group",
+            compartment_id=compartment_id,
             recipients_lists=[oci.metering_computation.UsageStatementEmailRecipientsGroupRecipientsListArgs(
-                email_id=oci_metering_computation_email["test_email"]["id"],
-                state=var["usage_statement_email_recipients_group_recipients_list_state"],
-                first_name=var["usage_statement_email_recipients_group_recipients_list_first_name"],
-                last_name=var["usage_statement_email_recipients_group_recipients_list_last_name"],
+                email_id=test_email["id"],
+                state=usage_statement_email_recipients_group_recipients_list_state,
+                first_name=usage_statement_email_recipients_group_recipients_list_first_name,
+                last_name=usage_statement_email_recipients_group_recipients_list_last_name,
             )],
-            subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
+            subscription_id=test_subscription["id"])
         ```
         <!--End PulumiCodeChooser -->
 

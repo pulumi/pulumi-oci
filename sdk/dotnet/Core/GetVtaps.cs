@@ -30,14 +30,14 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVtaps = Oci.Core.GetVtaps.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vtap_display_name,
-        ///         IsVtapEnabled = @var.Vtap_is_vtap_enabled,
-        ///         Source = @var.Vtap_source,
-        ///         State = @var.Vtap_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TargetIp = @var.Vtap_target_ip,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vtapDisplayName,
+        ///         IsVtapEnabled = vtapIsVtapEnabled,
+        ///         Source = vtapSource,
+        ///         State = vtapState,
+        ///         TargetId = testTarget.Id,
+        ///         TargetIp = vtapTargetIp,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVtaps = Oci.Core.GetVtaps.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vtap_display_name,
-        ///         IsVtapEnabled = @var.Vtap_is_vtap_enabled,
-        ///         Source = @var.Vtap_source,
-        ///         State = @var.Vtap_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TargetIp = @var.Vtap_target_ip,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vtapDisplayName,
+        ///         IsVtapEnabled = vtapIsVtapEnabled,
+        ///         Source = vtapSource,
+        ///         State = vtapState,
+        ///         TargetId = testTarget.Id,
+        ///         TargetIp = vtapTargetIp,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

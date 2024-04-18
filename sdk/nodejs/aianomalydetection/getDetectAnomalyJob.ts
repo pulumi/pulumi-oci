@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDetectAnomalyJob = oci.AiAnomalyDetection.getDetectAnomalyJob({
- *     detectAnomalyJobId: oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job.id,
+ *     detectAnomalyJobId: testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,7 +129,7 @@ export interface GetDetectAnomalyJobResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDetectAnomalyJob = oci.AiAnomalyDetection.getDetectAnomalyJob({
- *     detectAnomalyJobId: oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job.id,
+ *     detectAnomalyJobId: testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

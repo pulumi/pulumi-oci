@@ -74,11 +74,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .instanceId(oci_core_instance.test_instance().id())
+ *             .compartmentId(compartmentId)
+ *             .instanceId(testInstance.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.image_display_name())
- *             .launchMode(var_.image_launch_mode())
+ *             .displayName(imageDisplayName)
+ *             .launchMode(imageLaunchMode)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 
@@ -112,17 +112,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.image_display_name())
- *             .launchMode(var_.image_launch_mode())
+ *             .compartmentId(compartmentId)
+ *             .displayName(imageDisplayName)
+ *             .launchMode(imageLaunchMode)
  *             .imageSourceDetails(ImageImageSourceDetailsArgs.builder()
  *                 .sourceType(&#34;objectStorageTuple&#34;)
- *                 .bucketName(var_.bucket_name())
- *                 .namespaceName(var_.namespace())
- *                 .objectName(var_.object_name())
- *                 .operatingSystem(var_.image_image_source_details_operating_system())
- *                 .operatingSystemVersion(var_.image_image_source_details_operating_system_version())
- *                 .sourceImageType(var_.source_image_type())
+ *                 .bucketName(bucketName)
+ *                 .namespaceName(namespace)
+ *                 .objectName(objectName)
+ *                 .operatingSystem(imageImageSourceDetailsOperatingSystem)
+ *                 .operatingSystemVersion(imageImageSourceDetailsOperatingSystemVersion)
+ *                 .sourceImageType(sourceImageType)
  *                 .build())
  *             .build());
  * 
@@ -156,15 +156,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testImage = new Image(&#34;testImage&#34;, ImageArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.image_display_name())
- *             .launchMode(var_.image_launch_mode())
+ *             .compartmentId(compartmentId)
+ *             .displayName(imageDisplayName)
+ *             .launchMode(imageLaunchMode)
  *             .imageSourceDetails(ImageImageSourceDetailsArgs.builder()
  *                 .sourceType(&#34;objectStorageUri&#34;)
- *                 .sourceUri(var_.source_uri())
- *                 .operatingSystem(var_.image_image_source_details_operating_system())
- *                 .operatingSystemVersion(var_.image_image_source_details_operating_system_version())
- *                 .sourceImageType(var_.source_image_type())
+ *                 .sourceUri(sourceUri)
+ *                 .operatingSystem(imageImageSourceDetailsOperatingSystem)
+ *                 .operatingSystemVersion(imageImageSourceDetailsOperatingSystemVersion)
+ *                 .sourceImageType(sourceImageType)
  *                 .build())
  *             .build());
  * 

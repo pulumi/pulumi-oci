@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetOnPremiseVantagePointWorkers(ctx, &apmsynthetics.GetOnPremiseVantagePointWorkersArgs{
-//				ApmDomainId:             oci_apm_apm_domain.Test_apm_domain.Id,
-//				OnPremiseVantagePointId: oci_apm_synthetics_on_premise_vantage_point.Test_on_premise_vantage_point.Id,
-//				Capability:              pulumi.StringRef(_var.On_premise_vantage_point_worker_capability),
-//				DisplayName:             pulumi.StringRef(_var.On_premise_vantage_point_worker_display_name),
-//				Name:                    pulumi.StringRef(_var.On_premise_vantage_point_worker_name),
-//				Status:                  pulumi.StringRef(_var.On_premise_vantage_point_worker_status),
+//				ApmDomainId:             testApmDomain.Id,
+//				OnPremiseVantagePointId: testOnPremiseVantagePoint.Id,
+//				Capability:              pulumi.StringRef(onPremiseVantagePointWorkerCapability),
+//				DisplayName:             pulumi.StringRef(onPremiseVantagePointWorkerDisplayName),
+//				Name:                    pulumi.StringRef(onPremiseVantagePointWorkerName),
+//				Status:                  pulumi.StringRef(onPremiseVantagePointWorkerStatus),
 //			}, nil)
 //			if err != nil {
 //				return err

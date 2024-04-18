@@ -298,12 +298,12 @@ def get_domains_approval_workflow_assignment(approval_workflow_assignment_id: Op
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignment = oci.Identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=oci_identity_domains_approval_workflow_assignment["test_approval_workflow_assignment"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_approval_workflow_assignment = oci.Identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=test_approval_workflow_assignment_oci_identity_domains_approval_workflow_assignment["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_assignment_authorization"],
-        resource_type_schema_version=var["approval_workflow_assignment_resource_type_schema_version"])
+        authorization=approval_workflow_assignment_authorization,
+        resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -370,12 +370,12 @@ def get_domains_approval_workflow_assignment_output(approval_workflow_assignment
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow_assignment = oci.Identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=oci_identity_domains_approval_workflow_assignment["test_approval_workflow_assignment"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_approval_workflow_assignment = oci.Identity.get_domains_approval_workflow_assignment(approval_workflow_assignment_id=test_approval_workflow_assignment_oci_identity_domains_approval_workflow_assignment["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_assignment_authorization"],
-        resource_type_schema_version=var["approval_workflow_assignment_resource_type_schema_version"])
+        authorization=approval_workflow_assignment_authorization,
+        resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

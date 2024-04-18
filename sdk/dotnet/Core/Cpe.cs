@@ -39,21 +39,21 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCpe = new Oci.Core.Cpe("testCpe", new()
+    ///     var testCpe = new Oci.Core.Cpe("test_cpe", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IpAddress = @var.Cpe_ip_address,
-    ///         CpeDeviceShapeId = data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id,
+    ///         CompartmentId = compartmentId,
+    ///         IpAddress = cpeIpAddress,
+    ///         CpeDeviceShapeId = testCpeDeviceShapes.CpeDeviceShapes[0].CpeDeviceShapeId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Cpe_display_name,
+    ///         DisplayName = cpeDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsPrivate = @var.Cpe_is_private,
+    ///         IsPrivate = cpeIsPrivate,
     ///     });
     /// 
     /// });

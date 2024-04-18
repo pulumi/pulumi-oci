@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataIormConfig = oci.Database.getExadataIormConfig({
- *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -94,7 +94,7 @@ export interface GetExadataIormConfigResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExadataIormConfig = oci.Database.getExadataIormConfig({
- *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

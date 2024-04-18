@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentInstallKeys = Oci.ManagementAgent.GetManagementAgentInstallKeys.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Management_agent_install_key_access_level,
-        ///         CompartmentIdInSubtree = @var.Management_agent_install_key_compartment_id_in_subtree,
-        ///         DisplayName = @var.Management_agent_install_key_display_name,
-        ///         State = @var.Management_agent_install_key_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = managementAgentInstallKeyAccessLevel,
+        ///         CompartmentIdInSubtree = managementAgentInstallKeyCompartmentIdInSubtree,
+        ///         DisplayName = managementAgentInstallKeyDisplayName,
+        ///         State = managementAgentInstallKeyState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentInstallKeys = Oci.ManagementAgent.GetManagementAgentInstallKeys.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Management_agent_install_key_access_level,
-        ///         CompartmentIdInSubtree = @var.Management_agent_install_key_compartment_id_in_subtree,
-        ///         DisplayName = @var.Management_agent_install_key_display_name,
-        ///         State = @var.Management_agent_install_key_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = managementAgentInstallKeyAccessLevel,
+        ///         CompartmentIdInSubtree = managementAgentInstallKeyCompartmentIdInSubtree,
+        ///         DisplayName = managementAgentInstallKeyDisplayName,
+        ///         State = managementAgentInstallKeyState,
         ///     });
         /// 
         /// });

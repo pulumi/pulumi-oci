@@ -26,10 +26,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentSecurityFeatureAnalytics = oci.DataSafe.getSecurityAssessmentSecurityFeatureAnalytics({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_security_feature_analytic_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_security_feature_analytic_compartment_id_in_subtree,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentSecurityFeatureAnalyticAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetSecurityAssessmentSecurityFeatureAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentSecurityFeatureAnalytics = oci.DataSafe.getSecurityAssessmentSecurityFeatureAnalytics({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_assessment_security_feature_analytic_access_level,
- *     compartmentIdInSubtree: _var.security_assessment_security_feature_analytic_compartment_id_in_subtree,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityAssessmentSecurityFeatureAnalyticAccessLevel,
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

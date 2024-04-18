@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlDbSystem = Oci.Mysql.GetMysqlDbSystem.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlDbSystem = Oci.Mysql.GetMysqlDbSystem.Invoke(new()
         ///     {
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
+        ///         DbSystemId = testDbSystem.Id,
         ///     });
         /// 
         /// });

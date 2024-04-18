@@ -32,10 +32,10 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testStacks = Oci.ResourceManager.GetStacks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Stack_display_name,
-        ///         Id = @var.Stack_id,
-        ///         State = @var.Stack_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = stackDisplayName,
+        ///         Id = stackId,
+        ///         State = stackState,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.ResourceManager
         /// {
         ///     var testStacks = Oci.ResourceManager.GetStacks.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Stack_display_name,
-        ///         Id = @var.Stack_id,
-        ///         State = @var.Stack_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = stackDisplayName,
+        ///         Id = stackId,
+        ///         State = stackState,
         ///     });
         /// 
         /// });

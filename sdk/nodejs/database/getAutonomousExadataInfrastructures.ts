@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousExadataInfrastructures = oci.Database.getAutonomousExadataInfrastructures({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.autonomous_exadata_infrastructure_availability_domain,
- *     displayName: _var.autonomous_exadata_infrastructure_display_name,
- *     state: _var.autonomous_exadata_infrastructure_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: autonomousExadataInfrastructureAvailabilityDomain,
+ *     displayName: autonomousExadataInfrastructureDisplayName,
+ *     state: autonomousExadataInfrastructureState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetAutonomousExadataInfrastructuresResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousExadataInfrastructures = oci.Database.getAutonomousExadataInfrastructures({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.autonomous_exadata_infrastructure_availability_domain,
- *     displayName: _var.autonomous_exadata_infrastructure_display_name,
- *     state: _var.autonomous_exadata_infrastructure_state,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: autonomousExadataInfrastructureAvailabilityDomain,
+ *     displayName: autonomousExadataInfrastructureDisplayName,
+ *     state: autonomousExadataInfrastructureState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

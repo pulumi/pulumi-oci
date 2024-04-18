@@ -388,35 +388,36 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ingress_gateway_route_table = oci.service_mesh.IngressGatewayRouteTable("testIngressGatewayRouteTable",
-            compartment_id=var["compartment_id"],
-            ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
+        test_ingress_gateway_route_table = oci.service_mesh.IngressGatewayRouteTable("test_ingress_gateway_route_table",
+            compartment_id=compartment_id,
+            ingress_gateway_id=test_ingress_gateway["id"],
+            name=ingress_gateway_route_table_name,
             route_rules=[oci.service_mesh.IngressGatewayRouteTableRouteRuleArgs(
                 destinations=[oci.service_mesh.IngressGatewayRouteTableRouteRuleDestinationArgs(
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                    port=var["ingress_gateway_route_table_route_rules_destinations_port"],
-                    weight=var["ingress_gateway_route_table_route_rules_destinations_weight"],
+                    virtual_service_id=test_virtual_service["id"],
+                    port=ingress_gateway_route_table_route_rules_destinations_port,
+                    weight=ingress_gateway_route_table_route_rules_destinations_weight,
                 )],
-                type=var["ingress_gateway_route_table_route_rules_type"],
+                type=ingress_gateway_route_table_route_rules_type,
                 ingress_gateway_host=oci.service_mesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs(
-                    name=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_name"],
-                    port=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_port"],
+                    name=ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
+                    port=ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
                 ),
-                is_grpc=var["ingress_gateway_route_table_route_rules_is_grpc"],
-                is_host_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_host_rewrite_enabled"],
-                is_path_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_path_rewrite_enabled"],
-                path=var["ingress_gateway_route_table_route_rules_path"],
-                path_type=var["ingress_gateway_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["ingress_gateway_route_table_route_rules_request_timeout_in_ms"],
+                is_grpc=ingress_gateway_route_table_route_rules_is_grpc,
+                is_host_rewrite_enabled=ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
+                is_path_rewrite_enabled=ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
+                path=ingress_gateway_route_table_route_rules_path,
+                path_type=ingress_gateway_route_table_route_rules_path_type,
+                request_timeout_in_ms=ingress_gateway_route_table_route_rules_request_timeout_in_ms,
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ingress_gateway_route_table_description"],
+            description=ingress_gateway_route_table_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=var["ingress_gateway_route_table_priority"])
+            priority=ingress_gateway_route_table_priority)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -457,35 +458,36 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ingress_gateway_route_table = oci.service_mesh.IngressGatewayRouteTable("testIngressGatewayRouteTable",
-            compartment_id=var["compartment_id"],
-            ingress_gateway_id=oci_service_mesh_ingress_gateway["test_ingress_gateway"]["id"],
+        test_ingress_gateway_route_table = oci.service_mesh.IngressGatewayRouteTable("test_ingress_gateway_route_table",
+            compartment_id=compartment_id,
+            ingress_gateway_id=test_ingress_gateway["id"],
+            name=ingress_gateway_route_table_name,
             route_rules=[oci.service_mesh.IngressGatewayRouteTableRouteRuleArgs(
                 destinations=[oci.service_mesh.IngressGatewayRouteTableRouteRuleDestinationArgs(
-                    virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
-                    port=var["ingress_gateway_route_table_route_rules_destinations_port"],
-                    weight=var["ingress_gateway_route_table_route_rules_destinations_weight"],
+                    virtual_service_id=test_virtual_service["id"],
+                    port=ingress_gateway_route_table_route_rules_destinations_port,
+                    weight=ingress_gateway_route_table_route_rules_destinations_weight,
                 )],
-                type=var["ingress_gateway_route_table_route_rules_type"],
+                type=ingress_gateway_route_table_route_rules_type,
                 ingress_gateway_host=oci.service_mesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs(
-                    name=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_name"],
-                    port=var["ingress_gateway_route_table_route_rules_ingress_gateway_host_port"],
+                    name=ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
+                    port=ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
                 ),
-                is_grpc=var["ingress_gateway_route_table_route_rules_is_grpc"],
-                is_host_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_host_rewrite_enabled"],
-                is_path_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_path_rewrite_enabled"],
-                path=var["ingress_gateway_route_table_route_rules_path"],
-                path_type=var["ingress_gateway_route_table_route_rules_path_type"],
-                request_timeout_in_ms=var["ingress_gateway_route_table_route_rules_request_timeout_in_ms"],
+                is_grpc=ingress_gateway_route_table_route_rules_is_grpc,
+                is_host_rewrite_enabled=ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
+                is_path_rewrite_enabled=ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
+                path=ingress_gateway_route_table_route_rules_path,
+                path_type=ingress_gateway_route_table_route_rules_path_type,
+                request_timeout_in_ms=ingress_gateway_route_table_route_rules_request_timeout_in_ms,
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ingress_gateway_route_table_description"],
+            description=ingress_gateway_route_table_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            priority=var["ingress_gateway_route_table_priority"])
+            priority=ingress_gateway_route_table_priority)
         ```
         <!--End PulumiCodeChooser -->
 

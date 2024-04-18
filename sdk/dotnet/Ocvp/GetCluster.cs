@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testCluster = Oci.Ocvp.GetCluster.Invoke(new()
         ///     {
-        ///         ClusterId = oci_ocvp_cluster.Test_cluster.Id,
+        ///         ClusterId = testClusterOciOcvpCluster.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testCluster = Oci.Ocvp.GetCluster.Invoke(new()
         ///     {
-        ///         ClusterId = oci_ocvp_cluster.Test_cluster.Id,
+        ///         ClusterId = testClusterOciOcvpCluster.Id,
         ///     });
         /// 
         /// });

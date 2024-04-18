@@ -30,13 +30,13 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccInfrastructures = Oci.ComputeCloud.GetAtCustomerCccInfrastructures.Invoke(new()
         ///     {
-        ///         AccessLevel = @var.Ccc_infrastructure_access_level,
-        ///         CccInfrastructureId = oci_compute_cloud_at_customer_ccc_infrastructure.Test_ccc_infrastructure.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Ccc_infrastructure_compartment_id_in_subtree,
-        ///         DisplayName = @var.Ccc_infrastructure_display_name,
-        ///         DisplayNameContains = @var.Ccc_infrastructure_display_name_contains,
-        ///         State = @var.Ccc_infrastructure_state,
+        ///         AccessLevel = cccInfrastructureAccessLevel,
+        ///         CccInfrastructureId = testCccInfrastructure.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = cccInfrastructureCompartmentIdInSubtree,
+        ///         DisplayName = cccInfrastructureDisplayName,
+        ///         DisplayNameContains = cccInfrastructureDisplayNameContains,
+        ///         State = cccInfrastructureState,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccInfrastructures = Oci.ComputeCloud.GetAtCustomerCccInfrastructures.Invoke(new()
         ///     {
-        ///         AccessLevel = @var.Ccc_infrastructure_access_level,
-        ///         CccInfrastructureId = oci_compute_cloud_at_customer_ccc_infrastructure.Test_ccc_infrastructure.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Ccc_infrastructure_compartment_id_in_subtree,
-        ///         DisplayName = @var.Ccc_infrastructure_display_name,
-        ///         DisplayNameContains = @var.Ccc_infrastructure_display_name_contains,
-        ///         State = @var.Ccc_infrastructure_state,
+        ///         AccessLevel = cccInfrastructureAccessLevel,
+        ///         CccInfrastructureId = testCccInfrastructure.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = cccInfrastructureCompartmentIdInSubtree,
+        ///         DisplayName = cccInfrastructureDisplayName,
+        ///         DisplayNameContains = cccInfrastructureDisplayNameContains,
+        ///         State = cccInfrastructureState,
         ///     });
         /// 
         /// });

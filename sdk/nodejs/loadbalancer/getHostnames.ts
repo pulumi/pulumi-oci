@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHostnames = oci.LoadBalancer.getHostnames({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetHostnamesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHostnames = oci.LoadBalancer.getHostnames({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

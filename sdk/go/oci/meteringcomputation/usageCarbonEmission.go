@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsageCarbonEmission(ctx, "testUsageCarbonEmission", &MeteringComputation.UsageCarbonEmissionArgs{
-//				TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
-//				TimeUsageEnded:   pulumi.Any(_var.Usage_carbon_emission_time_usage_ended),
-//				TimeUsageStarted: pulumi.Any(_var.Usage_carbon_emission_time_usage_started),
-//				CompartmentDepth: pulumi.Any(_var.Usage_carbon_emission_compartment_depth),
-//				GroupBies:        pulumi.Any(_var.Usage_carbon_emission_group_by),
+//			_, err := MeteringComputation.NewUsageCarbonEmission(ctx, "test_usage_carbon_emission", &MeteringComputation.UsageCarbonEmissionArgs{
+//				TenantId:         pulumi.Any(testTenant.Id),
+//				TimeUsageEnded:   pulumi.Any(usageCarbonEmissionTimeUsageEnded),
+//				TimeUsageStarted: pulumi.Any(usageCarbonEmissionTimeUsageStarted),
+//				CompartmentDepth: pulumi.Any(usageCarbonEmissionCompartmentDepth),
+//				GroupBies:        pulumi.Any(usageCarbonEmissionGroupBy),
 //				GroupByTags: meteringcomputation.UsageCarbonEmissionGroupByTagArray{
 //					&meteringcomputation.UsageCarbonEmissionGroupByTagArgs{
-//						Key:       pulumi.Any(_var.Usage_carbon_emission_group_by_tag_key),
-//						Namespace: pulumi.Any(_var.Usage_carbon_emission_group_by_tag_namespace),
-//						Value:     pulumi.Any(_var.Usage_carbon_emission_group_by_tag_value),
+//						Key:       pulumi.Any(usageCarbonEmissionGroupByTagKey),
+//						Namespace: pulumi.Any(usageCarbonEmissionGroupByTagNamespace),
+//						Value:     pulumi.Any(usageCarbonEmissionGroupByTagValue),
 //					},
 //				},
-//				IsAggregateByTime:         pulumi.Any(_var.Usage_carbon_emission_is_aggregate_by_time),
-//				UsageCarbonEmissionFilter: pulumi.Any(_var.Usage_carbon_emission_usage_carbon_emission_filter),
+//				IsAggregateByTime:         pulumi.Any(usageCarbonEmissionIsAggregateByTime),
+//				UsageCarbonEmissionFilter: pulumi.Any(usageCarbonEmissionUsageCarbonEmissionFilter),
 //			})
 //			if err != nil {
 //				return err

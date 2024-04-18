@@ -301,8 +301,8 @@ class GenericArtifact(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_generic_artifact = oci.artifacts.GenericArtifact("testGenericArtifact",
-            artifact_id=oci_artifacts_artifact["test_artifact"]["id"],
+        test_generic_artifact = oci.artifacts.GenericArtifact("test_generic_artifact",
+            artifact_id=test_artifact["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -346,8 +346,8 @@ class GenericArtifact(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_generic_artifact = oci.artifacts.GenericArtifact("testGenericArtifact",
-            artifact_id=oci_artifacts_artifact["test_artifact"]["id"],
+        test_generic_artifact = oci.artifacts.GenericArtifact("test_generic_artifact",
+            artifact_id=test_artifact["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },

@@ -235,7 +235,7 @@ def get_ping_monitor(monitor_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
+    test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=test_monitor["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -281,7 +281,7 @@ def get_ping_monitor_output(monitor_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=oci_apm_synthetics_monitor["test_monitor"]["id"])
+    test_ping_monitor = oci.HealthChecks.get_ping_monitor(monitor_id=test_monitor["id"])
     ```
     <!--End PulumiCodeChooser -->
 

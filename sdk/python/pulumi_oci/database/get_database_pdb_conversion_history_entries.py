@@ -114,9 +114,9 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=oci_database_database["test_database"]["id"],
-        pdb_conversion_action=var["database_pdb_conversion_history_entry_pdb_conversion_action"],
-        state=var["database_pdb_conversion_history_entry_state"])
+    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
+        pdb_conversion_action=database_pdb_conversion_history_entry_pdb_conversion_action,
+        state=database_pdb_conversion_history_entry_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,9 +160,9 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=oci_database_database["test_database"]["id"],
-        pdb_conversion_action=var["database_pdb_conversion_history_entry_pdb_conversion_action"],
-        state=var["database_pdb_conversion_history_entry_state"])
+    test_database_pdb_conversion_history_entries = oci.Database.get_database_pdb_conversion_history_entries(database_id=test_database["id"],
+        pdb_conversion_action=database_pdb_conversion_history_entry_pdb_conversion_action,
+        state=database_pdb_conversion_history_entry_state)
     ```
     <!--End PulumiCodeChooser -->
 

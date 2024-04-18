@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetReplica(ctx, &mysql.GetReplicaArgs{
-//				ReplicaId: oci_mysql_replica.Test_replica.Id,
+//				ReplicaId: testReplicaOciMysqlReplica.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

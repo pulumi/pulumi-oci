@@ -567,21 +567,21 @@ class OpaInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_opa_instance = oci.opa.OpaInstance("testOpaInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["opa_instance_display_name"],
-            shape_name=oci_core_shape["test_shape"]["name"],
-            consumption_model=var["opa_instance_consumption_model"],
+        test_opa_instance = oci.opa.OpaInstance("test_opa_instance",
+            compartment_id=compartment_id,
+            display_name=opa_instance_display_name,
+            shape_name=test_shape["name"],
+            consumption_model=opa_instance_consumption_model,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["opa_instance_description"],
+            description=opa_instance_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_at=var["opa_instance_idcs_at"],
-            is_breakglass_enabled=var["opa_instance_is_breakglass_enabled"],
-            metering_type=var["opa_instance_metering_type"])
+            idcs_at=opa_instance_idcs_at,
+            is_breakglass_enabled=opa_instance_is_breakglass_enabled,
+            metering_type=opa_instance_metering_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -629,21 +629,21 @@ class OpaInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_opa_instance = oci.opa.OpaInstance("testOpaInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["opa_instance_display_name"],
-            shape_name=oci_core_shape["test_shape"]["name"],
-            consumption_model=var["opa_instance_consumption_model"],
+        test_opa_instance = oci.opa.OpaInstance("test_opa_instance",
+            compartment_id=compartment_id,
+            display_name=opa_instance_display_name,
+            shape_name=test_shape["name"],
+            consumption_model=opa_instance_consumption_model,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["opa_instance_description"],
+            description=opa_instance_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_at=var["opa_instance_idcs_at"],
-            is_breakglass_enabled=var["opa_instance_is_breakglass_enabled"],
-            metering_type=var["opa_instance_metering_type"])
+            idcs_at=opa_instance_idcs_at,
+            is_breakglass_enabled=opa_instance_is_breakglass_enabled,
+            metering_type=opa_instance_metering_type)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -31,30 +31,31 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewNewsReport(ctx, "testNewsReport", &Opsi.NewsReportArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Opsi.NewNewsReport(ctx, "test_news_report", &Opsi.NewsReportArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				ContentTypes: &opsi.NewsReportContentTypesArgs{
-//					CapacityPlanningResources:                  pulumi.Any(_var.News_report_content_types_capacity_planning_resources),
-//					SqlInsightsFleetAnalysisResources:          pulumi.Any(_var.News_report_content_types_sql_insights_fleet_analysis_resources),
-//					SqlInsightsPerformanceDegradationResources: pulumi.Any(_var.News_report_content_types_sql_insights_performance_degradation_resources),
-//					SqlInsightsPlanChangesResources:            pulumi.Any(_var.News_report_content_types_sql_insights_plan_changes_resources),
-//					SqlInsightsTopDatabasesResources:           pulumi.Any(_var.News_report_content_types_sql_insights_top_databases_resources),
-//					SqlInsightsTopSqlByInsightsResources:       pulumi.Any(_var.News_report_content_types_sql_insights_top_sql_by_insights_resources),
-//					SqlInsightsTopSqlResources:                 pulumi.Any(_var.News_report_content_types_sql_insights_top_sql_resources),
+//					CapacityPlanningResources:                  pulumi.Any(newsReportContentTypesCapacityPlanningResources),
+//					SqlInsightsFleetAnalysisResources:          pulumi.Any(newsReportContentTypesSqlInsightsFleetAnalysisResources),
+//					SqlInsightsPerformanceDegradationResources: pulumi.Any(newsReportContentTypesSqlInsightsPerformanceDegradationResources),
+//					SqlInsightsPlanChangesResources:            pulumi.Any(newsReportContentTypesSqlInsightsPlanChangesResources),
+//					SqlInsightsTopDatabasesResources:           pulumi.Any(newsReportContentTypesSqlInsightsTopDatabasesResources),
+//					SqlInsightsTopSqlByInsightsResources:       pulumi.Any(newsReportContentTypesSqlInsightsTopSqlByInsightsResources),
+//					SqlInsightsTopSqlResources:                 pulumi.Any(newsReportContentTypesSqlInsightsTopSqlResources),
 //				},
-//				Description:                  pulumi.Any(_var.News_report_description),
-//				Locale:                       pulumi.Any(_var.News_report_locale),
-//				NewsFrequency:                pulumi.Any(_var.News_report_news_frequency),
-//				OnsTopicId:                   pulumi.Any(oci_opsi_ons_topic.Test_ons_topic.Id),
-//				AreChildCompartmentsIncluded: pulumi.Any(_var.News_report_are_child_compartments_included),
-//				DayOfWeek:                    pulumi.Any(_var.News_report_day_of_week),
+//				Description:                  pulumi.Any(newsReportDescription),
+//				Locale:                       pulumi.Any(newsReportLocale),
+//				Name:                         pulumi.Any(newsReportName),
+//				NewsFrequency:                pulumi.Any(newsReportNewsFrequency),
+//				OnsTopicId:                   pulumi.Any(testOnsTopic.Id),
+//				AreChildCompartmentsIncluded: pulumi.Any(newsReportAreChildCompartmentsIncluded),
+//				DayOfWeek:                    pulumi.Any(newsReportDayOfWeek),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Status: pulumi.Any(_var.News_report_status),
+//				Status: pulumi.Any(newsReportStatus),
 //			})
 //			if err != nil {
 //				return err

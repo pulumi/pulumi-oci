@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedSkus = oci.Ocvp.getSupportedSkus({
- *     compartmentId: _var.compartment_id,
- *     hostShapeName: oci_core_shape.test_shape.name,
+ *     compartmentId: compartmentId,
+ *     hostShapeName: testShape.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -81,8 +81,8 @@ export interface GetSupportedSkusResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedSkus = oci.Ocvp.getSupportedSkus({
- *     compartmentId: _var.compartment_id,
- *     hostShapeName: oci_core_shape.test_shape.name,
+ *     compartmentId: compartmentId,
+ *     hostShapeName: testShape.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

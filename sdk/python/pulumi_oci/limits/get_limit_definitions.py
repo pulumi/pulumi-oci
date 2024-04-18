@@ -119,9 +119,9 @@ def get_limit_definitions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=var["tenancy_ocid"],
-        name=var["limit_definition_name"],
-        service_name=oci_limits_service["test_service"]["name"])
+    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
+        name=limit_definition_name,
+        service_name=test_service["name"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -167,9 +167,9 @@ def get_limit_definitions_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=var["tenancy_ocid"],
-        name=var["limit_definition_name"],
-        service_name=oci_limits_service["test_service"]["name"])
+    test_limit_definitions = oci.Limits.get_limit_definitions(compartment_id=tenancy_ocid,
+        name=limit_definition_name,
+        service_name=test_service["name"])
     ```
     <!--End PulumiCodeChooser -->
 

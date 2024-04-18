@@ -37,24 +37,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Jms.NewFleet(ctx, "testFleet", &Jms.FleetArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Fleet_display_name),
+//			_, err := Jms.NewFleet(ctx, "test_fleet", &Jms.FleetArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(fleetDisplayName),
 //				InventoryLog: &jms.FleetInventoryLogArgs{
-//					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//					LogGroupId: pulumi.Any(testLogGroup.Id),
+//					LogId:      pulumi.Any(testLog.Id),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Fleet_description),
+//				Description: pulumi.Any(fleetDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsAdvancedFeaturesEnabled: pulumi.Any(_var.Fleet_is_advanced_features_enabled),
+//				IsAdvancedFeaturesEnabled: pulumi.Any(fleetIsAdvancedFeaturesEnabled),
 //				OperationLog: &jms.FleetOperationLogArgs{
-//					LogGroupId: pulumi.Any(oci_logging_log_group.Test_log_group.Id),
-//					LogId:      pulumi.Any(oci_logging_log.Test_log.Id),
+//					LogGroupId: pulumi.Any(testLogGroup.Id),
+//					LogId:      pulumi.Any(testLog.Id),
 //				},
 //			})
 //			if err != nil {

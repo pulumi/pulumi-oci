@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetRegionSubscriptions(ctx, &identity.GetRegionSubscriptionsArgs{
-//				TenancyId: oci_identity_tenancy.Test_tenancy.Id,
+//				TenancyId: testTenancy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

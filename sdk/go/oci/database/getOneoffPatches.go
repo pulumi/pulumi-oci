@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetOneoffPatches(ctx, &database.GetOneoffPatchesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Oneoff_patch_display_name),
-//				State:         pulumi.StringRef(_var.Oneoff_patch_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(oneoffPatchDisplayName),
+//				State:         pulumi.StringRef(oneoffPatchState),
 //			}, nil)
 //			if err != nil {
 //				return err

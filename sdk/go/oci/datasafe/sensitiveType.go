@@ -33,24 +33,24 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSensitiveType(ctx, "testSensitiveType", &DataSafe.SensitiveTypeArgs{
-//				CompartmentId:          pulumi.Any(_var.Compartment_id),
-//				EntityType:             pulumi.Any(_var.Sensitive_type_entity_type),
-//				CommentPattern:         pulumi.Any(_var.Sensitive_type_comment_pattern),
-//				DataPattern:            pulumi.Any(_var.Sensitive_type_data_pattern),
-//				DefaultMaskingFormatId: pulumi.Any(oci_data_safe_default_masking_format.Test_default_masking_format.Id),
+//			_, err := DataSafe.NewSensitiveType(ctx, "test_sensitive_type", &DataSafe.SensitiveTypeArgs{
+//				CompartmentId:          pulumi.Any(compartmentId),
+//				EntityType:             pulumi.Any(sensitiveTypeEntityType),
+//				CommentPattern:         pulumi.Any(sensitiveTypeCommentPattern),
+//				DataPattern:            pulumi.Any(sensitiveTypeDataPattern),
+//				DefaultMaskingFormatId: pulumi.Any(testDefaultMaskingFormat.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Sensitive_type_description),
-//				DisplayName: pulumi.Any(_var.Sensitive_type_display_name),
+//				Description: pulumi.Any(sensitiveTypeDescription),
+//				DisplayName: pulumi.Any(sensitiveTypeDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				NamePattern:      pulumi.Any(_var.Sensitive_type_name_pattern),
-//				ParentCategoryId: pulumi.Any(oci_marketplace_category.Test_category.Id),
-//				SearchType:       pulumi.Any(_var.Sensitive_type_search_type),
-//				ShortName:        pulumi.Any(_var.Sensitive_type_short_name),
+//				NamePattern:      pulumi.Any(sensitiveTypeNamePattern),
+//				ParentCategoryId: pulumi.Any(testCategory.Id),
+//				SearchType:       pulumi.Any(sensitiveTypeSearchType),
+//				ShortName:        pulumi.Any(sensitiveTypeShortName),
 //			})
 //			if err != nil {
 //				return err

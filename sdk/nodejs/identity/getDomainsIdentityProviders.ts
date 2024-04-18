@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProviders = oci.Identity.getDomainsIdentityProviders({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityProviderCount: _var.identity_provider_identity_provider_count,
- *     identityProviderFilter: _var.identity_provider_identity_provider_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     identityProviderCount: identityProviderIdentityProviderCount,
+ *     identityProviderFilter: identityProviderIdentityProviderFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.identity_provider_authorization,
- *     resourceTypeSchemaVersion: _var.identity_provider_resource_type_schema_version,
- *     startIndex: _var.identity_provider_start_index,
+ *     authorization: identityProviderAuthorization,
+ *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
+ *     startIndex: identityProviderStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsIdentityProvidersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProviders = oci.Identity.getDomainsIdentityProviders({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityProviderCount: _var.identity_provider_identity_provider_count,
- *     identityProviderFilter: _var.identity_provider_identity_provider_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     identityProviderCount: identityProviderIdentityProviderCount,
+ *     identityProviderFilter: identityProviderIdentityProviderFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.identity_provider_authorization,
- *     resourceTypeSchemaVersion: _var.identity_provider_resource_type_schema_version,
- *     startIndex: _var.identity_provider_start_index,
+ *     authorization: identityProviderAuthorization,
+ *     resourceTypeSchemaVersion: identityProviderResourceTypeSchemaVersion,
+ *     startIndex: identityProviderStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

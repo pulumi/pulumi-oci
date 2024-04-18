@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waas.GetAddressLists(ctx, &waas.GetAddressListsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				Ids:                             _var.Address_list_ids,
-//				Names:                           _var.Address_list_names,
-//				States:                          _var.Address_list_states,
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Address_list_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Address_list_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				Ids:                             addressListIds,
+//				Names:                           addressListNames,
+//				States:                          addressListStates,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(addressListTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(addressListTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

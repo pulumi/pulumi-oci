@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGateServer = Oci.Identity.GetDomainsCloudGateServer.Invoke(new()
         ///     {
-        ///         CloudGateServerId = oci_identity_domains_cloud_gate_server.Test_cloud_gate_server.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         CloudGateServerId = testCloudGateServerOciIdentityDomainsCloudGateServer.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_server_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_server_resource_type_schema_version,
+        ///         Authorization = cloudGateServerAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateServerResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGateServer = Oci.Identity.GetDomainsCloudGateServer.Invoke(new()
         ///     {
-        ///         CloudGateServerId = oci_identity_domains_cloud_gate_server.Test_cloud_gate_server.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         CloudGateServerId = testCloudGateServerOciIdentityDomainsCloudGateServer.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_server_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_server_resource_type_schema_version,
+        ///         Authorization = cloudGateServerAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateServerResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

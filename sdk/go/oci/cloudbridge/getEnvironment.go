@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudBridge.GetEnvironment(ctx, &cloudbridge.GetEnvironmentArgs{
-//				EnvironmentId: oci_cloud_bridge_environment.Test_environment.Id,
+//				EnvironmentId: testEnvironmentOciCloudBridgeEnvironment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

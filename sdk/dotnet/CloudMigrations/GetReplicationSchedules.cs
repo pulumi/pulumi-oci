@@ -30,10 +30,10 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testReplicationSchedules = Oci.CloudMigrations.GetReplicationSchedules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Replication_schedule_display_name,
-        ///         ReplicationScheduleId = oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id,
-        ///         State = @var.Replication_schedule_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationScheduleDisplayName,
+        ///         ReplicationScheduleId = testReplicationSchedule.Id,
+        ///         State = replicationScheduleState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testReplicationSchedules = Oci.CloudMigrations.GetReplicationSchedules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Replication_schedule_display_name,
-        ///         ReplicationScheduleId = oci_cloud_migrations_replication_schedule.Test_replication_schedule.Id,
-        ///         State = @var.Replication_schedule_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationScheduleDisplayName,
+        ///         ReplicationScheduleId = testReplicationSchedule.Id,
+        ///         State = replicationScheduleState,
         ///     });
         /// 
         /// });

@@ -25,14 +25,14 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFusionEnvironmentAdminUser = new Oci.FusionApps.FusionEnvironmentAdminUser("testFusionEnvironmentAdminUser", new()
+    ///     var testFusionEnvironmentAdminUser = new Oci.FusionApps.FusionEnvironmentAdminUser("test_fusion_environment_admin_user", new()
     ///     {
-    ///         EmailAddress = @var.Fusion_environment_admin_user_email_address,
-    ///         FirstName = @var.Fusion_environment_admin_user_first_name,
-    ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-    ///         LastName = @var.Fusion_environment_admin_user_last_name,
-    ///         Password = @var.Fusion_environment_admin_user_password,
-    ///         Username = @var.Fusion_environment_admin_user_username,
+    ///         EmailAddress = fusionEnvironmentAdminUserEmailAddress,
+    ///         FirstName = fusionEnvironmentAdminUserFirstName,
+    ///         FusionEnvironmentId = testFusionEnvironment.Id,
+    ///         LastName = fusionEnvironmentAdminUserLastName,
+    ///         Password = fusionEnvironmentAdminUserPassword,
+    ///         Username = fusionEnvironmentAdminUserUsername,
     ///     });
     /// 
     /// });

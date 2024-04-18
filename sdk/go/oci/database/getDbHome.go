@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbHome(ctx, &database.GetDbHomeArgs{
-//				DbHomeId: _var.Db_home_id,
+//				DbHomeId: dbHomeId,
 //			}, nil)
 //			if err != nil {
 //				return err

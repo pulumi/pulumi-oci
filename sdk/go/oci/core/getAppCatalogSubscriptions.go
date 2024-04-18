@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetAppCatalogSubscriptions(ctx, &core.GetAppCatalogSubscriptionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				ListingId:     pulumi.StringRef(data.Oci_core_app_catalog_listing.Test_listing.Id),
+//				CompartmentId: compartmentId,
+//				ListingId:     pulumi.StringRef(testListing.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

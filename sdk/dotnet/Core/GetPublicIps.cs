@@ -49,11 +49,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPublicIps = Oci.Core.GetPublicIps.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Scope = @var.Public_ip_scope,
-        ///         AvailabilityDomain = @var.Public_ip_availability_domain,
-        ///         Lifetime = @var.Public_ip_lifetime,
-        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Scope = publicIpScope,
+        ///         AvailabilityDomain = publicIpAvailabilityDomain,
+        ///         Lifetime = publicIpLifetime,
+        ///         PublicIpPoolId = testPublicIpPool.Id,
         ///     });
         /// 
         /// });
@@ -101,11 +101,11 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPublicIps = Oci.Core.GetPublicIps.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Scope = @var.Public_ip_scope,
-        ///         AvailabilityDomain = @var.Public_ip_availability_domain,
-        ///         Lifetime = @var.Public_ip_lifetime,
-        ///         PublicIpPoolId = oci_core_public_ip_pool.Test_public_ip_pool.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Scope = publicIpScope,
+        ///         AvailabilityDomain = publicIpAvailabilityDomain,
+        ///         Lifetime = publicIpLifetime,
+        ///         PublicIpPoolId = testPublicIpPool.Id,
         ///     });
         /// 
         /// });

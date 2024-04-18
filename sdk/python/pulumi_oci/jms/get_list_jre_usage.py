@@ -136,12 +136,12 @@ def get_list_jre_usage(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=oci_dataflow_application["test_application"]["id"],
-        application_name=oci_dataflow_application["test_application"]["name"],
-        compartment_id=var["compartment_id"],
-        host_id=oci_jms_host["test_host"]["id"],
-        time_end=var["list_jre_usage_time_end"],
-        time_start=var["list_jre_usage_time_start"])
+    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=test_application["id"],
+        application_name=test_application["name"],
+        compartment_id=compartment_id,
+        host_id=test_host["id"],
+        time_end=list_jre_usage_time_end,
+        time_start=list_jre_usage_time_start)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -194,12 +194,12 @@ def get_list_jre_usage_output(application_id: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=oci_dataflow_application["test_application"]["id"],
-        application_name=oci_dataflow_application["test_application"]["name"],
-        compartment_id=var["compartment_id"],
-        host_id=oci_jms_host["test_host"]["id"],
-        time_end=var["list_jre_usage_time_end"],
-        time_start=var["list_jre_usage_time_start"])
+    test_list_jre_usage = oci.Jms.get_list_jre_usage(application_id=test_application["id"],
+        application_name=test_application["name"],
+        compartment_id=compartment_id,
+        host_id=test_host["id"],
+        time_end=list_jre_usage_time_end,
+        time_start=list_jre_usage_time_start)
     ```
     <!--End PulumiCodeChooser -->
 

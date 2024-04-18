@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testCertificates = Oci.Waas.GetCertificates.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Certificate_display_names,
-        ///         Ids = @var.Certificate_ids,
-        ///         States = @var.Certificate_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Certificate_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Certificate_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = certificateDisplayNames,
+        ///         Ids = certificateIds,
+        ///         States = certificateStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = certificateTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = certificateTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testCertificates = Oci.Waas.GetCertificates.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Certificate_display_names,
-        ///         Ids = @var.Certificate_ids,
-        ///         States = @var.Certificate_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Certificate_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Certificate_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = certificateDisplayNames,
+        ///         Ids = certificateIds,
+        ///         States = certificateStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = certificateTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = certificateTimeCreatedLessThan,
         ///     });
         /// 
         /// });

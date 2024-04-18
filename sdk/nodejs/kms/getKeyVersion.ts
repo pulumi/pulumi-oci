@@ -24,9 +24,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testKeyVersion = oci.Kms.getKeyVersion({
- *     keyId: oci_kms_key.test_key.id,
- *     keyVersionId: oci_kms_key_version.test_key_version.id,
- *     managementEndpoint: _var.key_version_management_endpoint,
+ *     keyId: testKey.id,
+ *     keyVersionId: testKeyVersionOciKmsKeyVersion.id,
+ *     managementEndpoint: keyVersionManagementEndpoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -144,9 +144,9 @@ export interface GetKeyVersionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testKeyVersion = oci.Kms.getKeyVersion({
- *     keyId: oci_kms_key.test_key.id,
- *     keyVersionId: oci_kms_key_version.test_key_version.id,
- *     managementEndpoint: _var.key_version_management_endpoint,
+ *     keyId: testKey.id,
+ *     keyVersionId: testKeyVersionOciKmsKeyVersion.id,
+ *     managementEndpoint: keyVersionManagementEndpoint,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

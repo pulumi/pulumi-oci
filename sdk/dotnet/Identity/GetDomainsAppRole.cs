@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAppRole = Oci.Identity.GetDomainsAppRole.Invoke(new()
         ///     {
-        ///         AppRoleId = oci_identity_domains_app_role.Test_app_role.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AppRoleId = testAppRoleOciIdentityDomainsAppRole.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_role_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_role_resource_type_schema_version,
+        ///         Authorization = appRoleAuthorization,
+        ///         ResourceTypeSchemaVersion = appRoleResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testAppRole = Oci.Identity.GetDomainsAppRole.Invoke(new()
         ///     {
-        ///         AppRoleId = oci_identity_domains_app_role.Test_app_role.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         AppRoleId = testAppRoleOciIdentityDomainsAppRole.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.App_role_authorization,
-        ///         ResourceTypeSchemaVersion = @var.App_role_resource_type_schema_version,
+        ///         Authorization = appRoleAuthorization,
+        ///         ResourceTypeSchemaVersion = appRoleResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

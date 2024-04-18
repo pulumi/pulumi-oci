@@ -121,10 +121,10 @@ def get_inst_vbs_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=var["compartment_id"],
-        id=var["vbs_instance_id"],
-        name=var["vbs_instance_name"],
-        state=var["vbs_instance_state"])
+    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=compartment_id,
+        id=vbs_instance_id,
+        name=vbs_instance_name,
+        state=vbs_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_inst_vbs_instances_output(compartment_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=var["compartment_id"],
-        id=var["vbs_instance_id"],
-        name=var["vbs_instance_name"],
-        state=var["vbs_instance_state"])
+    test_vbs_instances = oci.Vbs.get_inst_vbs_instances(compartment_id=compartment_id,
+        id=vbs_instance_id,
+        name=vbs_instance_name,
+        state=vbs_instance_state)
     ```
     <!--End PulumiCodeChooser -->
 

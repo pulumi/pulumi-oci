@@ -31,29 +31,29 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsCloudGate(ctx, "testCloudGate", &Identity.DomainsCloudGateArgs{
-//				DisplayName:  pulumi.Any(_var.Cloud_gate_display_name),
-//				IdcsEndpoint: pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
+//			_, err := Identity.NewDomainsCloudGate(ctx, "test_cloud_gate", &Identity.DomainsCloudGateArgs{
+//				DisplayName:  pulumi.Any(cloudGateDisplayName),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:CloudGate"),
 //				},
-//				Active: pulumi.Any(_var.Cloud_gate_active),
+//				Active: pulumi.Any(cloudGateActive),
 //				AttributeSets: pulumi.StringArray{
 //					pulumi.String("all"),
 //				},
 //				Attributes:                pulumi.String(""),
-//				Authorization:             pulumi.Any(_var.Cloud_gate_authorization),
-//				Description:               pulumi.Any(_var.Cloud_gate_description),
+//				Authorization:             pulumi.Any(cloudGateAuthorization),
+//				Description:               pulumi.Any(cloudGateDescription),
 //				LastModifiedTime:          pulumi.String("2000-01-01T00:00:00Z"),
-//				Ocid:                      pulumi.Any(_var.Cloud_gate_ocid),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Cloud_gate_resource_type_schema_version),
+//				Ocid:                      pulumi.Any(cloudGateOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(cloudGateResourceTypeSchemaVersion),
 //				Tags: identity.DomainsCloudGateTagArray{
 //					&identity.DomainsCloudGateTagArgs{
-//						Key:   pulumi.Any(_var.Cloud_gate_tags_key),
-//						Value: pulumi.Any(_var.Cloud_gate_tags_value),
+//						Key:   pulumi.Any(cloudGateTagsKey),
+//						Value: pulumi.Any(cloudGateTagsValue),
 //					},
 //				},
-//				Type: pulumi.Any(_var.Cloud_gate_type),
+//				Type: pulumi.Any(cloudGateType),
 //			})
 //			if err != nil {
 //				return err

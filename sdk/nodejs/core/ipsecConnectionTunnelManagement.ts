@@ -32,21 +32,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIpSecConnectionTunnel = new oci.core.IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", {
- *     ipsecId: oci_core_ipsec.test_ipsec.id,
- *     tunnelId: data.oci_core_ipsec_connection_tunnels.test_ip_sec_connection_tunnels.ip_sec_connection_tunnels[0].id,
- *     routing: _var.ip_sec_connection_tunnel_management_routing,
+ * const testIpSecConnectionTunnel = new oci.core.IpsecConnectionTunnelManagement("test_ip_sec_connection_tunnel", {
+ *     ipsecId: testIpsec.id,
+ *     tunnelId: testIpSecConnectionTunnels.ipSecConnectionTunnels[0].id,
+ *     routing: ipSecConnectionTunnelManagementRouting,
  *     bgpSessionInfos: [{
- *         customerBgpAsn: _var.ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn,
- *         customerInterfaceIp: _var.ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip,
- *         oracleInterfaceIp: _var.ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip,
+ *         customerBgpAsn: ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn,
+ *         customerInterfaceIp: ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp,
+ *         oracleInterfaceIp: ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp,
  *     }],
- *     displayName: _var.ip_sec_connection_tunnel_management_display_name,
+ *     displayName: ipSecConnectionTunnelManagementDisplayName,
  *     encryptionDomainConfig: {
- *         cpeTrafficSelectors: _var.ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector,
- *         oracleTrafficSelectors: _var.ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector,
+ *         cpeTrafficSelectors: ipSecConnectionTunnelManagementEncryptionDomainConfigCpeTrafficSelector,
+ *         oracleTrafficSelectors: ipSecConnectionTunnelManagementEncryptionDomainConfigOracleTrafficSelector,
  *     },
- *     sharedSecret: _var.ip_sec_connection_tunnel_management_shared_secret,
+ *     sharedSecret: ipSecConnectionTunnelManagementSharedSecret,
  *     ikeVersion: "V1",
  * });
  * ```

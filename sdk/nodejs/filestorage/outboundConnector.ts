@@ -37,24 +37,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOutboundConnector = new oci.filestorage.OutboundConnector("testOutboundConnector", {
- *     availabilityDomain: _var.outbound_connector_availability_domain,
- *     bindDistinguishedName: _var.outbound_connector_bind_distinguished_name,
- *     compartmentId: _var.compartment_id,
- *     connectorType: _var.outbound_connector_connector_type,
+ * const testOutboundConnector = new oci.filestorage.OutboundConnector("test_outbound_connector", {
+ *     availabilityDomain: outboundConnectorAvailabilityDomain,
+ *     bindDistinguishedName: outboundConnectorBindDistinguishedName,
+ *     compartmentId: compartmentId,
+ *     connectorType: outboundConnectorConnectorType,
  *     endpoints: [{
- *         hostname: _var.outbound_connector_endpoints_hostname,
- *         port: _var.outbound_connector_endpoints_port,
+ *         hostname: outboundConnectorEndpointsHostname,
+ *         port: outboundConnectorEndpointsPort,
  *     }],
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.outbound_connector_display_name,
+ *     displayName: outboundConnectorDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     passwordSecretId: oci_vault_secret.test_secret.id,
- *     passwordSecretVersion: _var.outbound_connector_password_secret_version,
+ *     passwordSecretId: testSecret.id,
+ *     passwordSecretVersion: outboundConnectorPasswordSecretVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

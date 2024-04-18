@@ -522,27 +522,27 @@ class OpsiConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_opsi_configuration = oci.opsi.OpsiConfiguration("testOpsiConfiguration",
-            opsi_config_type=var["opsi_configuration_opsi_config_type"],
-            compartment_id=var["compartment_id"],
-            config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
-            config_item_fields=var["opsi_configuration_config_item_field"],
+        test_opsi_configuration = oci.opsi.OpsiConfiguration("test_opsi_configuration",
+            opsi_config_type=opsi_configuration_opsi_config_type,
+            compartment_id=compartment_id,
+            config_item_custom_statuses=opsi_configuration_config_item_custom_status,
+            config_item_fields=opsi_configuration_config_item_field,
             config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=var["opsi_configuration_config_items_config_item_type"],
-                name=var["opsi_configuration_config_items_name"],
-                value=var["opsi_configuration_config_items_value"],
+                config_item_type=opsi_configuration_config_items_config_item_type,
+                name=opsi_configuration_config_items_name,
+                value=opsi_configuration_config_items_value,
             )],
-            config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
+            config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["opsi_configuration_description"],
-            display_name=var["opsi_configuration_display_name"],
+            description=opsi_configuration_description,
+            display_name=opsi_configuration_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            opsi_config_fields=var["opsi_configuration_opsi_config_field"],
-            system_tags=var["opsi_configuration_system_tags"])
+            opsi_config_fields=opsi_configuration_opsi_config_field,
+            system_tags=opsi_configuration_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -591,27 +591,27 @@ class OpsiConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_opsi_configuration = oci.opsi.OpsiConfiguration("testOpsiConfiguration",
-            opsi_config_type=var["opsi_configuration_opsi_config_type"],
-            compartment_id=var["compartment_id"],
-            config_item_custom_statuses=var["opsi_configuration_config_item_custom_status"],
-            config_item_fields=var["opsi_configuration_config_item_field"],
+        test_opsi_configuration = oci.opsi.OpsiConfiguration("test_opsi_configuration",
+            opsi_config_type=opsi_configuration_opsi_config_type,
+            compartment_id=compartment_id,
+            config_item_custom_statuses=opsi_configuration_config_item_custom_status,
+            config_item_fields=opsi_configuration_config_item_field,
             config_items=[oci.opsi.OpsiConfigurationConfigItemArgs(
-                config_item_type=var["opsi_configuration_config_items_config_item_type"],
-                name=var["opsi_configuration_config_items_name"],
-                value=var["opsi_configuration_config_items_value"],
+                config_item_type=opsi_configuration_config_items_config_item_type,
+                name=opsi_configuration_config_items_name,
+                value=opsi_configuration_config_items_value,
             )],
-            config_items_applicable_contexts=var["opsi_configuration_config_items_applicable_context"],
+            config_items_applicable_contexts=opsi_configuration_config_items_applicable_context,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["opsi_configuration_description"],
-            display_name=var["opsi_configuration_display_name"],
+            description=opsi_configuration_description,
+            display_name=opsi_configuration_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            opsi_config_fields=var["opsi_configuration_opsi_config_field"],
-            system_tags=var["opsi_configuration_system_tags"])
+            opsi_config_fields=opsi_configuration_opsi_config_field,
+            system_tags=opsi_configuration_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

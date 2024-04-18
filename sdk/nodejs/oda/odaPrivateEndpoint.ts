@@ -19,18 +19,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaPrivateEndpoint = new oci.oda.OdaPrivateEndpoint("testOdaPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testOdaPrivateEndpoint = new oci.oda.OdaPrivateEndpoint("test_oda_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.oda_private_endpoint_description,
- *     displayName: _var.oda_private_endpoint_display_name,
+ *     description: odaPrivateEndpointDescription,
+ *     displayName: odaPrivateEndpointDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     nsgIds: _var.oda_private_endpoint_nsg_ids,
+ *     nsgIds: odaPrivateEndpointNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

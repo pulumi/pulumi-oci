@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
- *     compartmentId: _var.compartment_id,
- *     enabledOnResourceId: oci_usage_proxy_resource.test_resource.id,
- *     name: _var.metric_extension_name,
- *     resourceType: _var.metric_extension_resource_type,
- *     state: _var.metric_extension_state,
- *     status: _var.metric_extension_status,
+ *     compartmentId: compartmentId,
+ *     enabledOnResourceId: testResource.id,
+ *     name: metricExtensionName,
+ *     resourceType: metricExtensionResourceType,
+ *     state: metricExtensionState,
+ *     status: metricExtensionStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetMetricExtensionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMetricExtensions = oci.StackMonitoring.getMetricExtensions({
- *     compartmentId: _var.compartment_id,
- *     enabledOnResourceId: oci_usage_proxy_resource.test_resource.id,
- *     name: _var.metric_extension_name,
- *     resourceType: _var.metric_extension_resource_type,
- *     state: _var.metric_extension_state,
- *     status: _var.metric_extension_status,
+ *     compartmentId: compartmentId,
+ *     enabledOnResourceId: testResource.id,
+ *     name: metricExtensionName,
+ *     resourceType: metricExtensionResourceType,
+ *     state: metricExtensionState,
+ *     status: metricExtensionStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

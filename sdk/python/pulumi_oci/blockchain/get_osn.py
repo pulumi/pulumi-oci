@@ -123,8 +123,8 @@ def get_osn(blockchain_platform_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        osn_id=oci_blockchain_osn["test_osn"]["id"])
+    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=test_blockchain_platform["id"],
+        osn_id=test_osn_oci_blockchain_osn["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -164,8 +164,8 @@ def get_osn_output(blockchain_platform_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=oci_blockchain_blockchain_platform["test_blockchain_platform"]["id"],
-        osn_id=oci_blockchain_osn["test_osn"]["id"])
+    test_osn = oci.Blockchain.get_osn(blockchain_platform_id=test_blockchain_platform["id"],
+        osn_id=test_osn_oci_blockchain_osn["id"])
     ```
     <!--End PulumiCodeChooser -->
 

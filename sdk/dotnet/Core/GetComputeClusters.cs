@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeClusters = Oci.Core.GetComputeClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Compute_cluster_availability_domain,
-        ///         DisplayName = @var.Compute_cluster_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeClusterAvailabilityDomain,
+        ///         DisplayName = computeClusterDisplayName,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeClusters = Oci.Core.GetComputeClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Compute_cluster_availability_domain,
-        ///         DisplayName = @var.Compute_cluster_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = computeClusterAvailabilityDomain,
+        ///         DisplayName = computeClusterDisplayName,
         ///     });
         /// 
         /// });

@@ -481,13 +481,13 @@ class Agent(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_agent = oci.cloud_bridge.Agent("testAgent",
-            agent_type=var["agent_agent_type"],
-            agent_version=var["agent_agent_version"],
-            compartment_id=var["compartment_id"],
-            display_name=var["agent_display_name"],
-            environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-            os_version=var["agent_os_version"],
+        test_agent = oci.cloud_bridge.Agent("test_agent",
+            agent_type=agent_agent_type,
+            agent_version=agent_agent_version,
+            compartment_id=compartment_id,
+            display_name=agent_display_name,
+            environment_id=test_environment["id"],
+            os_version=agent_os_version,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -538,13 +538,13 @@ class Agent(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_agent = oci.cloud_bridge.Agent("testAgent",
-            agent_type=var["agent_agent_type"],
-            agent_version=var["agent_agent_version"],
-            compartment_id=var["compartment_id"],
-            display_name=var["agent_display_name"],
-            environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-            os_version=var["agent_os_version"],
+        test_agent = oci.cloud_bridge.Agent("test_agent",
+            agent_type=agent_agent_type,
+            agent_version=agent_agent_version,
+            compartment_id=compartment_id,
+            display_name=agent_display_name,
+            environment_id=test_environment["id"],
+            os_version=agent_os_version,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

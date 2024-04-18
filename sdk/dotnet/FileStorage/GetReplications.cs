@@ -30,12 +30,12 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testReplications = Oci.FileStorage.GetReplications.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Replication_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Replication_display_name,
-        ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///         Id = @var.Replication_id,
-        ///         State = @var.Replication_state,
+        ///         AvailabilityDomain = replicationAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationDisplayName,
+        ///         FileSystemId = testFileSystem.Id,
+        ///         Id = replicationId,
+        ///         State = replicationState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testReplications = Oci.FileStorage.GetReplications.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Replication_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Replication_display_name,
-        ///         FileSystemId = oci_file_storage_file_system.Test_file_system.Id,
-        ///         Id = @var.Replication_id,
-        ///         State = @var.Replication_state,
+        ///         AvailabilityDomain = replicationAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = replicationDisplayName,
+        ///         FileSystemId = testFileSystem.Id,
+        ///         Id = replicationId,
+        ///         State = replicationState,
         ///     });
         /// 
         /// });

@@ -91,7 +91,7 @@ def get_listeners(filters: Optional[Sequence[pulumi.InputType['GetListenersFilte
     import pulumi
     import pulumi_oci as oci
 
-    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
+    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=test_network_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_listeners_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
+    test_listeners = oci.NetworkLoadBalancer.get_listeners(network_load_balancer_id=test_network_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 

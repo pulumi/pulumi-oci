@@ -40,47 +40,47 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSecurityList = new Oci.Core.SecurityList("testSecurityList", new()
+    ///     var testSecurityList = new Oci.Core.SecurityList("test_security_list", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Security_list_display_name,
+    ///         DisplayName = securityListDisplayName,
     ///         EgressSecurityRules = new[]
     ///         {
     ///             new Oci.Core.Inputs.SecurityListEgressSecurityRuleArgs
     ///             {
-    ///                 Destination = @var.Security_list_egress_security_rules_destination,
-    ///                 Protocol = @var.Security_list_egress_security_rules_protocol,
-    ///                 Description = @var.Security_list_egress_security_rules_description,
-    ///                 DestinationType = @var.Security_list_egress_security_rules_destination_type,
+    ///                 Destination = securityListEgressSecurityRulesDestination,
+    ///                 Protocol = securityListEgressSecurityRulesProtocol,
+    ///                 Description = securityListEgressSecurityRulesDescription,
+    ///                 DestinationType = securityListEgressSecurityRulesDestinationType,
     ///                 IcmpOptions = new Oci.Core.Inputs.SecurityListEgressSecurityRuleIcmpOptionsArgs
     ///                 {
-    ///                     Type = @var.Security_list_egress_security_rules_icmp_options_type,
-    ///                     Code = @var.Security_list_egress_security_rules_icmp_options_code,
+    ///                     Type = securityListEgressSecurityRulesIcmpOptionsType,
+    ///                     Code = securityListEgressSecurityRulesIcmpOptionsCode,
     ///                 },
-    ///                 Stateless = @var.Security_list_egress_security_rules_stateless,
+    ///                 Stateless = securityListEgressSecurityRulesStateless,
     ///                 TcpOptions = new Oci.Core.Inputs.SecurityListEgressSecurityRuleTcpOptionsArgs
     ///                 {
-    ///                     Max = @var.Security_list_egress_security_rules_tcp_options_destination_port_range_max,
-    ///                     Min = @var.Security_list_egress_security_rules_tcp_options_destination_port_range_min,
+    ///                     Max = securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMax,
+    ///                     Min = securityListEgressSecurityRulesTcpOptionsDestinationPortRangeMin,
     ///                     SourcePortRange = new Oci.Core.Inputs.SecurityListEgressSecurityRuleTcpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Security_list_egress_security_rules_tcp_options_source_port_range_max,
-    ///                         Min = @var.Security_list_egress_security_rules_tcp_options_source_port_range_min,
+    ///                         Max = securityListEgressSecurityRulesTcpOptionsSourcePortRangeMax,
+    ///                         Min = securityListEgressSecurityRulesTcpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///                 UdpOptions = new Oci.Core.Inputs.SecurityListEgressSecurityRuleUdpOptionsArgs
     ///                 {
-    ///                     Max = @var.Security_list_egress_security_rules_udp_options_destination_port_range_max,
-    ///                     Min = @var.Security_list_egress_security_rules_udp_options_destination_port_range_min,
+    ///                     Max = securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMax,
+    ///                     Min = securityListEgressSecurityRulesUdpOptionsDestinationPortRangeMin,
     ///                     SourcePortRange = new Oci.Core.Inputs.SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Security_list_egress_security_rules_udp_options_source_port_range_max,
-    ///                         Min = @var.Security_list_egress_security_rules_udp_options_source_port_range_min,
+    ///                         Max = securityListEgressSecurityRulesUdpOptionsSourcePortRangeMax,
+    ///                         Min = securityListEgressSecurityRulesUdpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///             },
@@ -93,34 +93,34 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             new Oci.Core.Inputs.SecurityListIngressSecurityRuleArgs
     ///             {
-    ///                 Protocol = @var.Security_list_ingress_security_rules_protocol,
-    ///                 Source = @var.Security_list_ingress_security_rules_source,
-    ///                 Description = @var.Security_list_ingress_security_rules_description,
+    ///                 Protocol = securityListIngressSecurityRulesProtocol,
+    ///                 Source = securityListIngressSecurityRulesSource,
+    ///                 Description = securityListIngressSecurityRulesDescription,
     ///                 IcmpOptions = new Oci.Core.Inputs.SecurityListIngressSecurityRuleIcmpOptionsArgs
     ///                 {
-    ///                     Type = @var.Security_list_ingress_security_rules_icmp_options_type,
-    ///                     Code = @var.Security_list_ingress_security_rules_icmp_options_code,
+    ///                     Type = securityListIngressSecurityRulesIcmpOptionsType,
+    ///                     Code = securityListIngressSecurityRulesIcmpOptionsCode,
     ///                 },
-    ///                 SourceType = @var.Security_list_ingress_security_rules_source_type,
-    ///                 Stateless = @var.Security_list_ingress_security_rules_stateless,
+    ///                 SourceType = securityListIngressSecurityRulesSourceType,
+    ///                 Stateless = securityListIngressSecurityRulesStateless,
     ///                 TcpOptions = new Oci.Core.Inputs.SecurityListIngressSecurityRuleTcpOptionsArgs
     ///                 {
-    ///                     Max = @var.Security_list_ingress_security_rules_tcp_options_destination_port_range_max,
-    ///                     Min = @var.Security_list_ingress_security_rules_tcp_options_destination_port_range_min,
+    ///                     Max = securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMax,
+    ///                     Min = securityListIngressSecurityRulesTcpOptionsDestinationPortRangeMin,
     ///                     SourcePortRange = new Oci.Core.Inputs.SecurityListIngressSecurityRuleTcpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Security_list_ingress_security_rules_tcp_options_source_port_range_max,
-    ///                         Min = @var.Security_list_ingress_security_rules_tcp_options_source_port_range_min,
+    ///                         Max = securityListIngressSecurityRulesTcpOptionsSourcePortRangeMax,
+    ///                         Min = securityListIngressSecurityRulesTcpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///                 UdpOptions = new Oci.Core.Inputs.SecurityListIngressSecurityRuleUdpOptionsArgs
     ///                 {
-    ///                     Max = @var.Security_list_ingress_security_rules_udp_options_destination_port_range_max,
-    ///                     Min = @var.Security_list_ingress_security_rules_udp_options_destination_port_range_min,
+    ///                     Max = securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMax,
+    ///                     Min = securityListIngressSecurityRulesUdpOptionsDestinationPortRangeMin,
     ///                     SourcePortRange = new Oci.Core.Inputs.SecurityListIngressSecurityRuleUdpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Security_list_ingress_security_rules_udp_options_source_port_range_max,
-    ///                         Min = @var.Security_list_ingress_security_rules_udp_options_source_port_range_min,
+    ///                         Max = securityListIngressSecurityRulesUdpOptionsSourcePortRangeMax,
+    ///                         Min = securityListIngressSecurityRulesUdpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///             },

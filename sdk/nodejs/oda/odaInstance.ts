@@ -21,19 +21,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOdaInstance = new oci.oda.OdaInstance("testOdaInstance", {
- *     compartmentId: _var.compartment_id,
+ * const testOdaInstance = new oci.oda.OdaInstance("test_oda_instance", {
+ *     compartmentId: compartmentId,
  *     shapeName: "DEVELOPMENT",
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.oda_instance_description,
- *     displayName: _var.oda_instance_display_name,
+ *     description: odaInstanceDescription,
+ *     displayName: odaInstanceDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     identityDomain: _var.oda_instance_identity_domain,
- *     isRoleBasedAccess: _var.oda_instance_is_role_based_access,
+ *     identityDomain: odaInstanceIdentityDomain,
+ *     isRoleBasedAccess: odaInstanceIsRoleBasedAccess,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutoScalingConfigurations = oci.Autoscaling.getAutoScalingConfigurations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.auto_scaling_configuration_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: autoScalingConfigurationDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetAutoScalingConfigurationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutoScalingConfigurations = oci.Autoscaling.getAutoScalingConfigurations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.auto_scaling_configuration_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: autoScalingConfigurationDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

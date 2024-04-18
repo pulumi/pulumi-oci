@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.GetKnowledgebases(ctx, &adm.GetKnowledgebasesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Knowledge_base_display_name),
-//				Id:            pulumi.StringRef(_var.Knowledge_base_id),
-//				State:         pulumi.StringRef(_var.Knowledge_base_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(knowledgeBaseDisplayName),
+//				Id:            pulumi.StringRef(knowledgeBaseId),
+//				State:         pulumi.StringRef(knowledgeBaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiAnomalyDetection.GetDetectionProjects(ctx, &aianomalydetection.GetDetectionProjectsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Project_display_name),
-//				State:         pulumi.StringRef(_var.Project_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(projectDisplayName),
+//				State:         pulumi.StringRef(projectState),
 //			}, nil)
 //			if err != nil {
 //				return err

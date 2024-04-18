@@ -20,12 +20,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncementSubscriptionsFilterGroup = new oci.announcementsservice.AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", {
- *     announcementSubscriptionId: oci_announcements_service_announcement_subscription.test_announcement_subscription.id,
+ * const testAnnouncementSubscriptionsFilterGroup = new oci.announcementsservice.AnnouncementSubscriptionsFilterGroup("test_announcement_subscriptions_filter_group", {
+ *     announcementSubscriptionId: testAnnouncementSubscription.id,
  *     filters: [{
- *         type: _var.announcement_subscriptions_filter_group_filters_type,
- *         value: _var.announcement_subscriptions_filter_group_filters_value,
+ *         type: announcementSubscriptionsFilterGroupFiltersType,
+ *         value: announcementSubscriptionsFilterGroupFiltersValue,
  *     }],
+ *     name: announcementSubscriptionsFilterGroupName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

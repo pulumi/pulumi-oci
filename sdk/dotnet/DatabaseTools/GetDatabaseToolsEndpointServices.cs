@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DatabaseTools
         /// {
         ///     var testDatabaseToolsEndpointServices = Oci.DatabaseTools.GetDatabaseToolsEndpointServices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_tools_endpoint_service_display_name,
-        ///         Name = @var.Database_tools_endpoint_service_name,
-        ///         State = @var.Database_tools_endpoint_service_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsEndpointServiceDisplayName,
+        ///         Name = databaseToolsEndpointServiceName,
+        ///         State = databaseToolsEndpointServiceState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DatabaseTools
         /// {
         ///     var testDatabaseToolsEndpointServices = Oci.DatabaseTools.GetDatabaseToolsEndpointServices.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Database_tools_endpoint_service_display_name,
-        ///         Name = @var.Database_tools_endpoint_service_name,
-        ///         State = @var.Database_tools_endpoint_service_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = databaseToolsEndpointServiceDisplayName,
+        ///         Name = databaseToolsEndpointServiceName,
+        ///         State = databaseToolsEndpointServiceState,
         ///     });
         /// 
         /// });

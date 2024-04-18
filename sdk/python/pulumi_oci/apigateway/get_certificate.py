@@ -220,7 +220,7 @@ def get_certificate(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.ApiGateway.get_certificate(certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
+    test_certificate = oci.ApiGateway.get_certificate(certificate_id=test_certificate_oci_apigateway_certificate["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -265,7 +265,7 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate = oci.ApiGateway.get_certificate(certificate_id=oci_apigateway_certificate["test_certificate"]["id"])
+    test_certificate = oci.ApiGateway.get_certificate(certificate_id=test_certificate_oci_apigateway_certificate["id"])
     ```
     <!--End PulumiCodeChooser -->
 

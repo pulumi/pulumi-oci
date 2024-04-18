@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalPluggableDatabase = new oci.database.ExternalPluggableDatabase("testExternalPluggableDatabase", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_pluggable_database_display_name,
- *     externalContainerDatabaseId: oci_database_external_container_database.test_external_container_database.id,
- *     definedTags: _var.external_pluggable_database_defined_tags,
+ * const testExternalPluggableDatabase = new oci.database.ExternalPluggableDatabase("test_external_pluggable_database", {
+ *     compartmentId: compartmentId,
+ *     displayName: externalPluggableDatabaseDisplayName,
+ *     externalContainerDatabaseId: testExternalContainerDatabase.id,
+ *     definedTags: externalPluggableDatabaseDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     sourceId: oci_database_source.test_source.id,
+ *     sourceId: testSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

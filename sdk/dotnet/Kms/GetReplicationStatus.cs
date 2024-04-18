@@ -33,8 +33,8 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testReplicationStatus = Oci.Kms.GetReplicationStatus.Invoke(new()
         ///     {
-        ///         ReplicationId = oci_kms_replication.Test_replication.Id,
-        ///         ManagementEndpoint = @var.Replication_status_management_endpoint,
+        ///         ReplicationId = testReplication.Id,
+        ///         ManagementEndpoint = replicationStatusManagementEndpoint,
         ///     });
         /// 
         /// });
@@ -66,8 +66,8 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testReplicationStatus = Oci.Kms.GetReplicationStatus.Invoke(new()
         ///     {
-        ///         ReplicationId = oci_kms_replication.Test_replication.Id,
-        ///         ManagementEndpoint = @var.Replication_status_management_endpoint,
+        ///         ReplicationId = testReplication.Id,
+        ///         ManagementEndpoint = replicationStatusManagementEndpoint,
         ///     });
         /// 
         /// });

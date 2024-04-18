@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFaultDomains = oci.Identity.getFaultDomains({
- *     availabilityDomain: _var.fault_domain_availability_domain,
- *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: faultDomainAvailabilityDomain,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,8 +89,8 @@ export interface GetFaultDomainsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFaultDomains = oci.Identity.getFaultDomains({
- *     availabilityDomain: _var.fault_domain_availability_domain,
- *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: faultDomainAvailabilityDomain,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

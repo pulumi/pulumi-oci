@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Audit
         /// {
         ///     var testConfiguration = Oci.Audit.GetConfiguration.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Audit
         /// {
         ///     var testConfiguration = Oci.Audit.GetConfiguration.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
+        ///         CompartmentId = tenancyOcid,
         ///     });
         /// 
         /// });

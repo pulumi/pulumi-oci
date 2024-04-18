@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBillingSchedules = oci.OneSubsription.getBillingSchedules({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     subscribedServiceId: testSubscribedService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,9 +91,9 @@ export interface GetBillingSchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBillingSchedules = oci.OneSubsription.getBillingSchedules({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     subscribedServiceId: testSubscribedService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

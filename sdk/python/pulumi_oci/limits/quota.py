@@ -335,10 +335,11 @@ class Quota(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_quota = oci.limits.Quota("testQuota",
-            compartment_id=var["tenancy_ocid"],
-            description=var["quota_description"],
-            statements=var["quota_statements"],
+        test_quota = oci.limits.Quota("test_quota",
+            compartment_id=tenancy_ocid,
+            description=quota_description,
+            name=quota_name,
+            statements=quota_statements,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -346,9 +347,9 @@ class Quota(pulumi.CustomResource):
                 "Department": "Finance",
             },
             locks=[oci.limits.QuotaLockArgs(
-                type=var["quota_locks_type"],
-                message=var["quota_locks_message"],
-                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
+                type=quota_locks_type,
+                message=quota_locks_message,
+                related_resource_id=test_related_resource["id"],
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -392,10 +393,11 @@ class Quota(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_quota = oci.limits.Quota("testQuota",
-            compartment_id=var["tenancy_ocid"],
-            description=var["quota_description"],
-            statements=var["quota_statements"],
+        test_quota = oci.limits.Quota("test_quota",
+            compartment_id=tenancy_ocid,
+            description=quota_description,
+            name=quota_name,
+            statements=quota_statements,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -403,9 +405,9 @@ class Quota(pulumi.CustomResource):
                 "Department": "Finance",
             },
             locks=[oci.limits.QuotaLockArgs(
-                type=var["quota_locks_type"],
-                message=var["quota_locks_message"],
-                related_resource_id=oci_limits_related_resource["test_related_resource"]["id"],
+                type=quota_locks_type,
+                message=quota_locks_message,
+                related_resource_id=test_related_resource["id"],
             )])
         ```
         <!--End PulumiCodeChooser -->

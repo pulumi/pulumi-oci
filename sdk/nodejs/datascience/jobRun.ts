@@ -18,37 +18,37 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testJobRun = new oci.datascience.JobRun("testJobRun", {
- *     compartmentId: _var.compartment_id,
- *     jobId: oci_datascience_job.test_job.id,
- *     projectId: oci_datascience_project.test_project.id,
- *     asynchronous: _var.asynchronous,
+ * const testJobRun = new oci.datascience.JobRun("test_job_run", {
+ *     compartmentId: compartmentId,
+ *     jobId: testJob.id,
+ *     projectId: testProject.id,
+ *     asynchronous: asynchronous,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.job_run_display_name,
+ *     displayName: jobRunDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     jobConfigurationOverrideDetails: {
- *         jobType: _var.job_run_job_configuration_override_details_job_type,
- *         commandLineArguments: _var.job_run_job_configuration_override_details_command_line_arguments,
- *         environmentVariables: _var.job_run_job_configuration_override_details_environment_variables,
- *         maximumRuntimeInMinutes: _var.job_run_job_configuration_override_details_maximum_runtime_in_minutes,
+ *         jobType: jobRunJobConfigurationOverrideDetailsJobType,
+ *         commandLineArguments: jobRunJobConfigurationOverrideDetailsCommandLineArguments,
+ *         environmentVariables: jobRunJobConfigurationOverrideDetailsEnvironmentVariables,
+ *         maximumRuntimeInMinutes: jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes,
  *     },
  *     jobEnvironmentConfigurationOverrideDetails: {
- *         image: _var.job_run_job_environment_configuration_override_details_image,
- *         jobEnvironmentType: _var.job_run_job_environment_configuration_override_details_job_environment_type,
- *         cmds: _var.job_run_job_environment_configuration_override_details_cmd,
- *         entrypoints: _var.job_run_job_environment_configuration_override_details_entrypoint,
- *         imageDigest: _var.job_run_job_environment_configuration_override_details_image_digest,
- *         imageSignatureId: oci_datascience_image_signature.test_image_signature.id,
+ *         image: jobRunJobEnvironmentConfigurationOverrideDetailsImage,
+ *         jobEnvironmentType: jobRunJobEnvironmentConfigurationOverrideDetailsJobEnvironmentType,
+ *         cmds: jobRunJobEnvironmentConfigurationOverrideDetailsCmd,
+ *         entrypoints: jobRunJobEnvironmentConfigurationOverrideDetailsEntrypoint,
+ *         imageDigest: jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest,
+ *         imageSignatureId: testImageSignature.id,
  *     },
  *     jobLogConfigurationOverrideDetails: {
- *         enableAutoLogCreation: _var.job_run_job_log_configuration_override_details_enable_auto_log_creation,
- *         enableLogging: _var.job_run_job_log_configuration_override_details_enable_logging,
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
+ *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
+ *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
  *     },
  * });
  * ```

@@ -308,7 +308,7 @@ def get_dr_plan_execution(dr_plan_execution_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"])
+    test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=test_dr_plan_execution_oci_disaster_recovery_dr_plan_execution["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -360,7 +360,7 @@ def get_dr_plan_execution_output(dr_plan_execution_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=oci_disaster_recovery_dr_plan_execution["test_dr_plan_execution"]["id"])
+    test_dr_plan_execution = oci.DisasterRecovery.get_dr_plan_execution(dr_plan_execution_id=test_dr_plan_execution_oci_disaster_recovery_dr_plan_execution["id"])
     ```
     <!--End PulumiCodeChooser -->
 

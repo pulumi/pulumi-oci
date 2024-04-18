@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testManagedDatabasePreferredCredentials = Oci.Database.GetManagedPreferredCredentials.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testManagedDatabasePreferredCredentials = Oci.Database.GetManagedPreferredCredentials.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
         ///     });
         /// 
         /// });

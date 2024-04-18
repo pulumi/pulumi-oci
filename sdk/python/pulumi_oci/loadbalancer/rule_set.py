@@ -173,33 +173,34 @@ class RuleSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rule_set = oci.load_balancer.RuleSet("testRuleSet",
+        test_rule_set = oci.load_balancer.RuleSet("test_rule_set",
             items=[oci.load_balancer.RuleSetItemArgs(
-                action=var["rule_set_items_action"],
-                allowed_methods=var["rule_set_items_allowed_methods"],
-                are_invalid_characters_allowed=var["rule_set_items_are_invalid_characters_allowed"],
+                action=rule_set_items_action,
+                allowed_methods=rule_set_items_allowed_methods,
+                are_invalid_characters_allowed=rule_set_items_are_invalid_characters_allowed,
                 conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=var["rule_set_items_conditions_attribute_name"],
-                    attribute_value=var["rule_set_items_conditions_attribute_value"],
-                    operator=var["rule_set_items_conditions_operator"],
+                    attribute_name=rule_set_items_conditions_attribute_name,
+                    attribute_value=rule_set_items_conditions_attribute_value,
+                    operator=rule_set_items_conditions_operator,
                 )],
-                description=var["rule_set_items_description"],
-                header=var["rule_set_items_header"],
-                http_large_header_size_in_kb=var["rule_set_items_http_large_header_size_in_kb"],
-                prefix=var["rule_set_items_prefix"],
+                description=rule_set_items_description,
+                header=rule_set_items_header,
+                http_large_header_size_in_kb=rule_set_items_http_large_header_size_in_kb,
+                prefix=rule_set_items_prefix,
                 redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=var["rule_set_items_redirect_uri_host"],
-                    path=var["rule_set_items_redirect_uri_path"],
-                    port=var["rule_set_items_redirect_uri_port"],
-                    protocol=var["rule_set_items_redirect_uri_protocol"],
-                    query=var["rule_set_items_redirect_uri_query"],
+                    host=rule_set_items_redirect_uri_host,
+                    path=rule_set_items_redirect_uri_path,
+                    port=rule_set_items_redirect_uri_port,
+                    protocol=rule_set_items_redirect_uri_protocol,
+                    query=rule_set_items_redirect_uri_query,
                 ),
-                response_code=var["rule_set_items_response_code"],
-                status_code=var["rule_set_items_status_code"],
-                suffix=var["rule_set_items_suffix"],
-                value=var["rule_set_items_value"],
+                response_code=rule_set_items_response_code,
+                status_code=rule_set_items_status_code,
+                suffix=rule_set_items_suffix,
+                value=rule_set_items_value,
             )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+            load_balancer_id=test_load_balancer["id"],
+            name=rule_set_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -240,33 +241,34 @@ class RuleSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_rule_set = oci.load_balancer.RuleSet("testRuleSet",
+        test_rule_set = oci.load_balancer.RuleSet("test_rule_set",
             items=[oci.load_balancer.RuleSetItemArgs(
-                action=var["rule_set_items_action"],
-                allowed_methods=var["rule_set_items_allowed_methods"],
-                are_invalid_characters_allowed=var["rule_set_items_are_invalid_characters_allowed"],
+                action=rule_set_items_action,
+                allowed_methods=rule_set_items_allowed_methods,
+                are_invalid_characters_allowed=rule_set_items_are_invalid_characters_allowed,
                 conditions=[oci.load_balancer.RuleSetItemConditionArgs(
-                    attribute_name=var["rule_set_items_conditions_attribute_name"],
-                    attribute_value=var["rule_set_items_conditions_attribute_value"],
-                    operator=var["rule_set_items_conditions_operator"],
+                    attribute_name=rule_set_items_conditions_attribute_name,
+                    attribute_value=rule_set_items_conditions_attribute_value,
+                    operator=rule_set_items_conditions_operator,
                 )],
-                description=var["rule_set_items_description"],
-                header=var["rule_set_items_header"],
-                http_large_header_size_in_kb=var["rule_set_items_http_large_header_size_in_kb"],
-                prefix=var["rule_set_items_prefix"],
+                description=rule_set_items_description,
+                header=rule_set_items_header,
+                http_large_header_size_in_kb=rule_set_items_http_large_header_size_in_kb,
+                prefix=rule_set_items_prefix,
                 redirect_uri=oci.load_balancer.RuleSetItemRedirectUriArgs(
-                    host=var["rule_set_items_redirect_uri_host"],
-                    path=var["rule_set_items_redirect_uri_path"],
-                    port=var["rule_set_items_redirect_uri_port"],
-                    protocol=var["rule_set_items_redirect_uri_protocol"],
-                    query=var["rule_set_items_redirect_uri_query"],
+                    host=rule_set_items_redirect_uri_host,
+                    path=rule_set_items_redirect_uri_path,
+                    port=rule_set_items_redirect_uri_port,
+                    protocol=rule_set_items_redirect_uri_protocol,
+                    query=rule_set_items_redirect_uri_query,
                 ),
-                response_code=var["rule_set_items_response_code"],
-                status_code=var["rule_set_items_status_code"],
-                suffix=var["rule_set_items_suffix"],
-                value=var["rule_set_items_value"],
+                response_code=rule_set_items_response_code,
+                status_code=rule_set_items_status_code,
+                suffix=rule_set_items_suffix,
+                value=rule_set_items_value,
             )],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+            load_balancer_id=test_load_balancer["id"],
+            name=rule_set_name)
         ```
         <!--End PulumiCodeChooser -->
 

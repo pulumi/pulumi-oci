@@ -52,19 +52,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewTag(ctx, "testTag", &Identity.TagArgs{
-//				Description:    pulumi.Any(_var.Tag_description),
-//				TagNamespaceId: pulumi.Any(oci_identity_tag_namespace.Test_tag_namespace.Id),
+//			_, err := Identity.NewTag(ctx, "test_tag", &Identity.TagArgs{
+//				Description:    pulumi.Any(tagDescription),
+//				Name:           pulumi.Any(tagName),
+//				TagNamespaceId: pulumi.Any(testTagNamespace.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsCostTracking: pulumi.Any(_var.Tag_is_cost_tracking),
+//				IsCostTracking: pulumi.Any(tagIsCostTracking),
 //				Validator: &identity.TagValidatorArgs{
-//					ValidatorType: pulumi.Any(_var.Tag_validator_validator_type),
-//					Values:        pulumi.Any(_var.Tag_validator_values),
+//					ValidatorType: pulumi.Any(tagValidatorValidatorType),
+//					Values:        pulumi.Any(tagValidatorValues),
 //				},
 //				IsRetired: pulumi.Bool(false),
 //			})

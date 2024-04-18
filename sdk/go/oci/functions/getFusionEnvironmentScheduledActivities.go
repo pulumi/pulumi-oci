@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentScheduledActivities(ctx, &functions.GetFusionEnvironmentScheduledActivitiesArgs{
-//				FusionEnvironmentId:                    oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-//				DisplayName:                            pulumi.StringRef(_var.Fusion_environment_scheduled_activity_display_name),
-//				RunCycle:                               pulumi.StringRef(_var.Fusion_environment_scheduled_activity_run_cycle),
-//				State:                                  pulumi.StringRef(_var.Fusion_environment_scheduled_activity_state),
-//				TimeExpectedFinishLessThanOrEqualTo:    pulumi.StringRef(_var.Fusion_environment_scheduled_activity_time_expected_finish_less_than_or_equal_to),
-//				TimeScheduledStartGreaterThanOrEqualTo: pulumi.StringRef(_var.Fusion_environment_scheduled_activity_time_scheduled_start_greater_than_or_equal_to),
+//				FusionEnvironmentId:                    testFusionEnvironment.Id,
+//				DisplayName:                            pulumi.StringRef(fusionEnvironmentScheduledActivityDisplayName),
+//				RunCycle:                               pulumi.StringRef(fusionEnvironmentScheduledActivityRunCycle),
+//				State:                                  pulumi.StringRef(fusionEnvironmentScheduledActivityState),
+//				TimeExpectedFinishLessThanOrEqualTo:    pulumi.StringRef(fusionEnvironmentScheduledActivityTimeExpectedFinishLessThanOrEqualTo),
+//				TimeScheduledStartGreaterThanOrEqualTo: pulumi.StringRef(fusionEnvironmentScheduledActivityTimeScheduledStartGreaterThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err

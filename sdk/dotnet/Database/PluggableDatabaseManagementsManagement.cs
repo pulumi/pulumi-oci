@@ -25,21 +25,21 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPluggableDatabasePluggabledatabasemanagementsManagement = new Oci.Database.PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement", new()
+    ///     var testPluggableDatabasePluggabledatabasemanagementsManagement = new Oci.Database.PluggableDatabaseManagementsManagement("test_pluggable_database_pluggabledatabasemanagements_management", new()
     ///     {
-    ///         PluggableDatabaseId = oci_database_pluggable_database.Test_pluggable_database.Id,
-    ///         EnablePluggabledatabasemanagement = @var.Enable_pluggabledatabasemanagement,
+    ///         PluggableDatabaseId = testPluggableDatabase.Id,
+    ///         EnablePluggabledatabasemanagement = enablePluggabledatabasemanagement,
     ///         CredentialDetails = new Oci.Database.Inputs.PluggableDatabaseManagementsManagementCredentialDetailsArgs
     ///         {
-    ///             PasswordSecretId = oci_vault_secret.Test_secret.Id,
-    ///             UserName = oci_identity_user.Test_user.Name,
+    ///             PasswordSecretId = testSecret.Id,
+    ///             UserName = testUser.Name,
     ///         },
-    ///         PrivateEndPointId = oci_database_private_end_point.Test_private_end_point.Id,
-    ///         ServiceName = oci_core_service.Test_service.Name,
-    ///         Port = @var.Pluggable_database_pluggabledatabasemanagements_management_port,
-    ///         Protocol = @var.Pluggable_database_pluggabledatabasemanagements_management_protocol,
-    ///         Role = @var.Pluggable_database_pluggabledatabasemanagements_management_role,
-    ///         SslSecretId = oci_vault_secret.Test_secret.Id,
+    ///         PrivateEndPointId = testPrivateEndPoint.Id,
+    ///         ServiceName = testService.Name,
+    ///         Port = pluggableDatabasePluggabledatabasemanagementsManagementPort,
+    ///         Protocol = pluggableDatabasePluggabledatabasemanagementsManagementProtocol,
+    ///         Role = pluggableDatabasePluggabledatabasemanagementsManagementRole,
+    ///         SslSecretId = testSecret.Id,
     ///     });
     /// 
     /// });

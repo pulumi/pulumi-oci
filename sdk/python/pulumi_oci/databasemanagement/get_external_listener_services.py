@@ -115,9 +115,9 @@ def get_external_listener_services(external_listener_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=oci_database_management_external_listener["test_external_listener"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        opc_named_credential_id=var["external_listener_service_opc_named_credential_id"])
+    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=test_external_listener["id"],
+        managed_database_id=test_managed_database["id"],
+        opc_named_credential_id=external_listener_service_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -162,9 +162,9 @@ def get_external_listener_services_output(external_listener_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=oci_database_management_external_listener["test_external_listener"]["id"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        opc_named_credential_id=var["external_listener_service_opc_named_credential_id"])
+    test_external_listener_services = oci.DatabaseManagement.get_external_listener_services(external_listener_id=test_external_listener["id"],
+        managed_database_id=test_managed_database["id"],
+        opc_named_credential_id=external_listener_service_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 

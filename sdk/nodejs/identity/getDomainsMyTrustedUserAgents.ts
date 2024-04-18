@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyTrustedUserAgents = oci.Identity.getDomainsMyTrustedUserAgents({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myTrustedUserAgentCount: _var.my_trusted_user_agent_my_trusted_user_agent_count,
- *     myTrustedUserAgentFilter: _var.my_trusted_user_agent_my_trusted_user_agent_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myTrustedUserAgentCount: myTrustedUserAgentMyTrustedUserAgentCount,
+ *     myTrustedUserAgentFilter: myTrustedUserAgentMyTrustedUserAgentFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_trusted_user_agent_authorization,
- *     resourceTypeSchemaVersion: _var.my_trusted_user_agent_resource_type_schema_version,
- *     startIndex: _var.my_trusted_user_agent_start_index,
+ *     authorization: myTrustedUserAgentAuthorization,
+ *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
+ *     startIndex: myTrustedUserAgentStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsMyTrustedUserAgentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyTrustedUserAgents = oci.Identity.getDomainsMyTrustedUserAgents({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myTrustedUserAgentCount: _var.my_trusted_user_agent_my_trusted_user_agent_count,
- *     myTrustedUserAgentFilter: _var.my_trusted_user_agent_my_trusted_user_agent_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     myTrustedUserAgentCount: myTrustedUserAgentMyTrustedUserAgentCount,
+ *     myTrustedUserAgentFilter: myTrustedUserAgentMyTrustedUserAgentFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.my_trusted_user_agent_authorization,
- *     resourceTypeSchemaVersion: _var.my_trusted_user_agent_resource_type_schema_version,
- *     startIndex: _var.my_trusted_user_agent_start_index,
+ *     authorization: myTrustedUserAgentAuthorization,
+ *     resourceTypeSchemaVersion: myTrustedUserAgentResourceTypeSchemaVersion,
+ *     startIndex: myTrustedUserAgentStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

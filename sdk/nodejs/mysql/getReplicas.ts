@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicas = oci.Mysql.getReplicas({
- *     compartmentId: _var.compartment_id,
- *     configurationId: oci_mysql_mysql_configuration.test_mysql_configuration.id,
- *     dbSystemId: oci_mysql_mysql_db_system.test_mysql_db_system.id,
- *     displayName: _var.replica_display_name,
- *     isUpToDate: _var.replica_is_up_to_date,
- *     replicaId: oci_mysql_replica.test_replica.id,
- *     state: _var.replica_state,
+ *     compartmentId: compartmentId,
+ *     configurationId: testMysqlConfiguration.id,
+ *     dbSystemId: testMysqlDbSystem.id,
+ *     displayName: replicaDisplayName,
+ *     isUpToDate: replicaIsUpToDate,
+ *     replicaId: testReplica.id,
+ *     state: replicaState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,13 +129,13 @@ export interface GetReplicasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicas = oci.Mysql.getReplicas({
- *     compartmentId: _var.compartment_id,
- *     configurationId: oci_mysql_mysql_configuration.test_mysql_configuration.id,
- *     dbSystemId: oci_mysql_mysql_db_system.test_mysql_db_system.id,
- *     displayName: _var.replica_display_name,
- *     isUpToDate: _var.replica_is_up_to_date,
- *     replicaId: oci_mysql_replica.test_replica.id,
- *     state: _var.replica_state,
+ *     compartmentId: compartmentId,
+ *     configurationId: testMysqlConfiguration.id,
+ *     dbSystemId: testMysqlDbSystem.id,
+ *     displayName: replicaDisplayName,
+ *     isUpToDate: replicaIsUpToDate,
+ *     replicaId: testReplica.id,
+ *     state: replicaState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -108,8 +108,8 @@ def get_certificate_versions(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        version_number=var["certificate_version_version_number"])
+    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=test_certificate["id"],
+        version_number=certificate_version_version_number)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -150,8 +150,8 @@ def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        version_number=var["certificate_version_version_number"])
+    test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=test_certificate["id"],
+        version_number=certificate_version_version_number)
     ```
     <!--End PulumiCodeChooser -->
 

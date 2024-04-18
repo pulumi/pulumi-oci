@@ -648,25 +648,25 @@ class Vcn(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vcn = oci.core.Vcn("testVcn",
-            compartment_id=var["compartment_id"],
+        test_vcn = oci.core.Vcn("test_vcn",
+            compartment_id=compartment_id,
             byoipv6cidr_details=[oci.core.VcnByoipv6cidrDetailArgs(
-                byoipv6range_id=oci_core_byoipv6range["test_byoipv6range"]["id"],
-                ipv6cidr_block=var["vcn_byoipv6cidr_details_ipv6cidr_block"],
+                byoipv6range_id=test_byoipv6range["id"],
+                ipv6cidr_block=vcn_byoipv6cidr_details_ipv6cidr_block,
             )],
-            cidr_block=var["vcn_cidr_block"],
-            cidr_blocks=var["vcn_cidr_blocks"],
+            cidr_block=vcn_cidr_block,
+            cidr_blocks=vcn_cidr_blocks,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["vcn_display_name"],
-            dns_label=var["vcn_dns_label"],
+            display_name=vcn_display_name,
+            dns_label=vcn_dns_label,
             freeform_tags={
                 "Department": "Finance",
             },
-            ipv6private_cidr_blocks=var["vcn_ipv6private_cidr_blocks"],
-            is_ipv6enabled=var["vcn_is_ipv6enabled"],
-            is_oracle_gua_allocation_enabled=var["vcn_is_oracle_gua_allocation_enabled"])
+            ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
+            is_ipv6enabled=vcn_is_ipv6enabled,
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -767,25 +767,25 @@ class Vcn(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vcn = oci.core.Vcn("testVcn",
-            compartment_id=var["compartment_id"],
+        test_vcn = oci.core.Vcn("test_vcn",
+            compartment_id=compartment_id,
             byoipv6cidr_details=[oci.core.VcnByoipv6cidrDetailArgs(
-                byoipv6range_id=oci_core_byoipv6range["test_byoipv6range"]["id"],
-                ipv6cidr_block=var["vcn_byoipv6cidr_details_ipv6cidr_block"],
+                byoipv6range_id=test_byoipv6range["id"],
+                ipv6cidr_block=vcn_byoipv6cidr_details_ipv6cidr_block,
             )],
-            cidr_block=var["vcn_cidr_block"],
-            cidr_blocks=var["vcn_cidr_blocks"],
+            cidr_block=vcn_cidr_block,
+            cidr_blocks=vcn_cidr_blocks,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["vcn_display_name"],
-            dns_label=var["vcn_dns_label"],
+            display_name=vcn_display_name,
+            dns_label=vcn_dns_label,
             freeform_tags={
                 "Department": "Finance",
             },
-            ipv6private_cidr_blocks=var["vcn_ipv6private_cidr_blocks"],
-            is_ipv6enabled=var["vcn_is_ipv6enabled"],
-            is_oracle_gua_allocation_enabled=var["vcn_is_oracle_gua_allocation_enabled"])
+            ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
+            is_ipv6enabled=vcn_is_ipv6enabled,
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -147,12 +147,12 @@ def get_onprem_connectors(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=var["compartment_id"],
-        access_level=var["on_prem_connector_access_level"],
-        compartment_id_in_subtree=var["on_prem_connector_compartment_id_in_subtree"],
-        display_name=var["on_prem_connector_display_name"],
-        on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"],
-        on_prem_connector_lifecycle_state=var["on_prem_connector_on_prem_connector_lifecycle_state"])
+    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=compartment_id,
+        access_level=on_prem_connector_access_level,
+        compartment_id_in_subtree=on_prem_connector_compartment_id_in_subtree,
+        display_name=on_prem_connector_display_name,
+        on_prem_connector_id=test_on_prem_connector["id"],
+        on_prem_connector_lifecycle_state=on_prem_connector_on_prem_connector_lifecycle_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -208,12 +208,12 @@ def get_onprem_connectors_output(access_level: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=var["compartment_id"],
-        access_level=var["on_prem_connector_access_level"],
-        compartment_id_in_subtree=var["on_prem_connector_compartment_id_in_subtree"],
-        display_name=var["on_prem_connector_display_name"],
-        on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"],
-        on_prem_connector_lifecycle_state=var["on_prem_connector_on_prem_connector_lifecycle_state"])
+    test_on_prem_connectors = oci.DataSafe.get_onprem_connectors(compartment_id=compartment_id,
+        access_level=on_prem_connector_access_level,
+        compartment_id_in_subtree=on_prem_connector_compartment_id_in_subtree,
+        display_name=on_prem_connector_display_name,
+        on_prem_connector_id=test_on_prem_connector["id"],
+        on_prem_connector_lifecycle_state=on_prem_connector_on_prem_connector_lifecycle_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -323,31 +323,32 @@ class BackendSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
+        test_backend_set = oci.network_load_balancer.BackendSet("test_backend_set",
             health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
+                protocol=backend_set_health_checker_protocol,
                 dns=oci.network_load_balancer.BackendSetHealthCheckerDnsArgs(
-                    domain_name=oci_identity_domain["test_domain"]["name"],
-                    query_class=var["backend_set_health_checker_dns_query_class"],
-                    query_type=var["backend_set_health_checker_dns_query_type"],
-                    rcodes=var["backend_set_health_checker_dns_rcodes"],
-                    transport_protocol=var["backend_set_health_checker_dns_transport_protocol"],
+                    domain_name=test_domain["name"],
+                    query_class=backend_set_health_checker_dns_query_class,
+                    query_type=backend_set_health_checker_dns_query_type,
+                    rcodes=backend_set_health_checker_dns_rcodes,
+                    transport_protocol=backend_set_health_checker_dns_transport_protocol,
                 ),
-                interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
-                port=var["backend_set_health_checker_port"],
-                request_data=var["backend_set_health_checker_request_data"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                response_data=var["backend_set_health_checker_response_data"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
+                interval_in_millis=backend_set_health_checker_interval_in_millis,
+                port=backend_set_health_checker_port,
+                request_data=backend_set_health_checker_request_data,
+                response_body_regex=backend_set_health_checker_response_body_regex,
+                response_data=backend_set_health_checker_response_data,
+                retries=backend_set_health_checker_retries,
+                return_code=backend_set_health_checker_return_code,
+                timeout_in_millis=backend_set_health_checker_timeout_in_millis,
+                url_path=backend_set_health_checker_url_path,
             ),
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            policy=var["backend_set_policy"],
-            ip_version=var["backend_set_ip_version"],
-            is_fail_open=var["backend_set_is_fail_open"],
-            is_preserve_source=var["backend_set_is_preserve_source"])
+            name=backend_set_name,
+            network_load_balancer_id=test_network_load_balancer["id"],
+            policy=backend_set_policy,
+            ip_version=backend_set_ip_version,
+            is_fail_open=backend_set_is_fail_open,
+            is_preserve_source=backend_set_is_preserve_source)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -395,31 +396,32 @@ class BackendSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backend_set = oci.network_load_balancer.BackendSet("testBackendSet",
+        test_backend_set = oci.network_load_balancer.BackendSet("test_backend_set",
             health_checker=oci.network_load_balancer.BackendSetHealthCheckerArgs(
-                protocol=var["backend_set_health_checker_protocol"],
+                protocol=backend_set_health_checker_protocol,
                 dns=oci.network_load_balancer.BackendSetHealthCheckerDnsArgs(
-                    domain_name=oci_identity_domain["test_domain"]["name"],
-                    query_class=var["backend_set_health_checker_dns_query_class"],
-                    query_type=var["backend_set_health_checker_dns_query_type"],
-                    rcodes=var["backend_set_health_checker_dns_rcodes"],
-                    transport_protocol=var["backend_set_health_checker_dns_transport_protocol"],
+                    domain_name=test_domain["name"],
+                    query_class=backend_set_health_checker_dns_query_class,
+                    query_type=backend_set_health_checker_dns_query_type,
+                    rcodes=backend_set_health_checker_dns_rcodes,
+                    transport_protocol=backend_set_health_checker_dns_transport_protocol,
                 ),
-                interval_in_millis=var["backend_set_health_checker_interval_in_millis"],
-                port=var["backend_set_health_checker_port"],
-                request_data=var["backend_set_health_checker_request_data"],
-                response_body_regex=var["backend_set_health_checker_response_body_regex"],
-                response_data=var["backend_set_health_checker_response_data"],
-                retries=var["backend_set_health_checker_retries"],
-                return_code=var["backend_set_health_checker_return_code"],
-                timeout_in_millis=var["backend_set_health_checker_timeout_in_millis"],
-                url_path=var["backend_set_health_checker_url_path"],
+                interval_in_millis=backend_set_health_checker_interval_in_millis,
+                port=backend_set_health_checker_port,
+                request_data=backend_set_health_checker_request_data,
+                response_body_regex=backend_set_health_checker_response_body_regex,
+                response_data=backend_set_health_checker_response_data,
+                retries=backend_set_health_checker_retries,
+                return_code=backend_set_health_checker_return_code,
+                timeout_in_millis=backend_set_health_checker_timeout_in_millis,
+                url_path=backend_set_health_checker_url_path,
             ),
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            policy=var["backend_set_policy"],
-            ip_version=var["backend_set_ip_version"],
-            is_fail_open=var["backend_set_is_fail_open"],
-            is_preserve_source=var["backend_set_is_preserve_source"])
+            name=backend_set_name,
+            network_load_balancer_id=test_network_load_balancer["id"],
+            policy=backend_set_policy,
+            ip_version=backend_set_ip_version,
+            is_fail_open=backend_set_is_fail_open,
+            is_preserve_source=backend_set_is_preserve_source)
         ```
         <!--End PulumiCodeChooser -->
 

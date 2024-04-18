@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataMaskRules = oci.CloudGuard.getDataMaskRules({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.data_mask_rule_access_level,
- *     dataMaskRuleStatus: _var.data_mask_rule_data_mask_rule_status,
- *     displayName: _var.data_mask_rule_display_name,
- *     iamGroupId: oci_identity_group.test_group.id,
- *     state: _var.data_mask_rule_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetType: _var.data_mask_rule_target_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: dataMaskRuleAccessLevel,
+ *     dataMaskRuleStatus: dataMaskRuleDataMaskRuleStatus,
+ *     displayName: dataMaskRuleDisplayName,
+ *     iamGroupId: testGroup.id,
+ *     state: dataMaskRuleState,
+ *     targetId: testTarget.id,
+ *     targetType: dataMaskRuleTargetType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,14 +136,14 @@ export interface GetDataMaskRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataMaskRules = oci.CloudGuard.getDataMaskRules({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.data_mask_rule_access_level,
- *     dataMaskRuleStatus: _var.data_mask_rule_data_mask_rule_status,
- *     displayName: _var.data_mask_rule_display_name,
- *     iamGroupId: oci_identity_group.test_group.id,
- *     state: _var.data_mask_rule_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     targetType: _var.data_mask_rule_target_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: dataMaskRuleAccessLevel,
+ *     dataMaskRuleStatus: dataMaskRuleDataMaskRuleStatus,
+ *     displayName: dataMaskRuleDisplayName,
+ *     iamGroupId: testGroup.id,
+ *     state: dataMaskRuleState,
+ *     targetId: testTarget.id,
+ *     targetType: dataMaskRuleTargetType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

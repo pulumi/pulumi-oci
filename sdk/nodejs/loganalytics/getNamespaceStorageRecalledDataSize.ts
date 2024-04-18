@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceStorageRecalledDataSize = oci.LogAnalytics.getNamespaceStorageRecalledDataSize({
- *     namespace: _var.namespace_storage_recalled_data_size_namespace,
- *     timeDataEnded: _var.namespace_storage_recalled_data_size_time_data_ended,
- *     timeDataStarted: _var.namespace_storage_recalled_data_size_time_data_started,
+ *     namespace: namespaceStorageRecalledDataSizeNamespace,
+ *     timeDataEnded: namespaceStorageRecalledDataSizeTimeDataEnded,
+ *     timeDataStarted: namespaceStorageRecalledDataSizeTimeDataStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -91,9 +91,9 @@ export interface GetNamespaceStorageRecalledDataSizeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceStorageRecalledDataSize = oci.LogAnalytics.getNamespaceStorageRecalledDataSize({
- *     namespace: _var.namespace_storage_recalled_data_size_namespace,
- *     timeDataEnded: _var.namespace_storage_recalled_data_size_time_data_ended,
- *     timeDataStarted: _var.namespace_storage_recalled_data_size_time_data_started,
+ *     namespace: namespaceStorageRecalledDataSizeNamespace,
+ *     timeDataEnded: namespaceStorageRecalledDataSizeTimeDataEnded,
+ *     timeDataStarted: namespaceStorageRecalledDataSizeTimeDataStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

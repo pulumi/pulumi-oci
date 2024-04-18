@@ -176,14 +176,14 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=var["compartment_id"],
-        assignable_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        assignable_deployment_type=var["connection_assignable_deployment_type"],
-        assigned_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        connection_types=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        state=var["connection_state"],
-        technology_types=var["connection_technology_type"])
+    test_connections = oci.GoldenGate.get_connections(compartment_id=compartment_id,
+        assignable_deployment_id=test_deployment["id"],
+        assignable_deployment_type=connection_assignable_deployment_type,
+        assigned_deployment_id=test_deployment["id"],
+        connection_types=connection_connection_type,
+        display_name=connection_display_name,
+        state=connection_state,
+        technology_types=connection_technology_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -247,14 +247,14 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_connections = oci.GoldenGate.get_connections(compartment_id=var["compartment_id"],
-        assignable_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        assignable_deployment_type=var["connection_assignable_deployment_type"],
-        assigned_deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        connection_types=var["connection_connection_type"],
-        display_name=var["connection_display_name"],
-        state=var["connection_state"],
-        technology_types=var["connection_technology_type"])
+    test_connections = oci.GoldenGate.get_connections(compartment_id=compartment_id,
+        assignable_deployment_id=test_deployment["id"],
+        assignable_deployment_type=connection_assignable_deployment_type,
+        assigned_deployment_id=test_deployment["id"],
+        connection_types=connection_connection_type,
+        display_name=connection_display_name,
+        state=connection_state,
+        technology_types=connection_technology_type)
     ```
     <!--End PulumiCodeChooser -->
 

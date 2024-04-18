@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalExadataStorageConnectors(ctx, &databasemanagement.GetExternalExadataStorageConnectorsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				ExternalExadataInfrastructureId: oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id,
-//				DisplayName:                     pulumi.StringRef(_var.External_exadata_storage_connector_display_name),
+//				CompartmentId:                   compartmentId,
+//				ExternalExadataInfrastructureId: testExternalExadataInfrastructure.Id,
+//				DisplayName:                     pulumi.StringRef(externalExadataStorageConnectorDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

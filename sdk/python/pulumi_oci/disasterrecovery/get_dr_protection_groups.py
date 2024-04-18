@@ -156,12 +156,12 @@ def get_dr_protection_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
-        display_name=var["dr_protection_group_display_name"],
-        dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        lifecycle_sub_state=var["dr_protection_group_lifecycle_sub_state"],
-        role=var["dr_protection_group_role"],
-        state=var["dr_protection_group_state"])
+    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=compartment_id,
+        display_name=dr_protection_group_display_name,
+        dr_protection_group_id=test_dr_protection_group["id"],
+        lifecycle_sub_state=dr_protection_group_lifecycle_sub_state,
+        role=dr_protection_group_role,
+        state=dr_protection_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_dr_protection_groups_output(compartment_id: Optional[pulumi.Input[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=var["compartment_id"],
-        display_name=var["dr_protection_group_display_name"],
-        dr_protection_group_id=oci_disaster_recovery_dr_protection_group["test_dr_protection_group"]["id"],
-        lifecycle_sub_state=var["dr_protection_group_lifecycle_sub_state"],
-        role=var["dr_protection_group_role"],
-        state=var["dr_protection_group_state"])
+    test_dr_protection_groups = oci.DisasterRecovery.get_dr_protection_groups(compartment_id=compartment_id,
+        display_name=dr_protection_group_display_name,
+        dr_protection_group_id=test_dr_protection_group["id"],
+        lifecycle_sub_state=dr_protection_group_lifecycle_sub_state,
+        role=dr_protection_group_role,
+        state=dr_protection_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

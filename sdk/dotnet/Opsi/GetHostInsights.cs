@@ -31,14 +31,14 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testHostInsights = Oci.Opsi.GetHostInsights.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Host_insight_compartment_id_in_subtree,
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///         HostTypes = @var.Host_insight_host_type,
-        ///         Id = @var.Host_insight_id,
-        ///         States = @var.Host_insight_state,
-        ///         Statuses = @var.Host_insight_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = hostInsightCompartmentIdInSubtree,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataInsightId = testExadataInsight.Id,
+        ///         HostTypes = hostInsightHostType,
+        ///         Id = hostInsightId,
+        ///         States = hostInsightState,
+        ///         Statuses = hostInsightStatus,
         ///     });
         /// 
         /// });
@@ -68,14 +68,14 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testHostInsights = Oci.Opsi.GetHostInsights.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Host_insight_compartment_id_in_subtree,
-        ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-        ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
-        ///         HostTypes = @var.Host_insight_host_type,
-        ///         Id = @var.Host_insight_id,
-        ///         States = @var.Host_insight_state,
-        ///         Statuses = @var.Host_insight_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = hostInsightCompartmentIdInSubtree,
+        ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+        ///         ExadataInsightId = testExadataInsight.Id,
+        ///         HostTypes = hostInsightHostType,
+        ///         Id = hostInsightId,
+        ///         States = hostInsightState,
+        ///         Statuses = hostInsightStatus,
         ///     });
         /// 
         /// });

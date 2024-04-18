@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetBdsInstances(ctx, &bigdataservice.GetBdsInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Bds_instance_display_name),
-//				State:         pulumi.StringRef(_var.Bds_instance_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(bdsInstanceDisplayName),
+//				State:         pulumi.StringRef(bdsInstanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

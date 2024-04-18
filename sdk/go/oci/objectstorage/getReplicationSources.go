@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetReplicationSources(ctx, &objectstorage.GetReplicationSourcesArgs{
-//				Bucket:    _var.Replication_source_bucket,
-//				Namespace: _var.Replication_source_namespace,
+//				Bucket:    replicationSourceBucket,
+//				Namespace: replicationSourceNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

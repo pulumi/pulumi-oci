@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBuildRuns = oci.DevOps.getBuildRuns({
- *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.build_run_display_name,
- *     id: _var.build_run_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.build_run_state,
+ *     buildPipelineId: testBuildPipeline.id,
+ *     compartmentId: compartmentId,
+ *     displayName: buildRunDisplayName,
+ *     id: buildRunId,
+ *     projectId: testProject.id,
+ *     state: buildRunState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,12 +128,12 @@ export interface GetBuildRunsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBuildRuns = oci.DevOps.getBuildRuns({
- *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.build_run_display_name,
- *     id: _var.build_run_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.build_run_state,
+ *     buildPipelineId: testBuildPipeline.id,
+ *     compartmentId: compartmentId,
+ *     displayName: buildRunDisplayName,
+ *     id: buildRunId,
+ *     projectId: testProject.id,
+ *     state: buildRunState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

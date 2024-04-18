@@ -35,9 +35,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementDashboard.NewManagementDashboardsImport(ctx, "testManagementDashboardsImport", &ManagementDashboard.ManagementDashboardsImportArgs{
-//				ImportDetails:     pulumi.Any(_var.Sample_import_details),
-//				ImportDetailsFile: pulumi.Any(_var.Sample_import_details_file_path),
+//			_, err := ManagementDashboard.NewManagementDashboardsImport(ctx, "test_management_dashboards_import", &ManagementDashboard.ManagementDashboardsImportArgs{
+//				ImportDetails:     pulumi.Any(sampleImportDetails),
+//				ImportDetailsFile: pulumi.Any(sampleImportDetailsFilePath),
 //			})
 //			if err != nil {
 //				return err

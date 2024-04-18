@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudMigrations.GetMigrationAssets(ctx, &cloudmigrations.GetMigrationAssetsArgs{
-//				DisplayName:      pulumi.StringRef(_var.Migration_asset_display_name),
-//				MigrationAssetId: pulumi.StringRef(oci_cloud_migrations_migration_asset.Test_migration_asset.Id),
-//				MigrationId:      pulumi.StringRef(oci_cloud_migrations_migration.Test_migration.Id),
-//				State:            pulumi.StringRef(_var.Migration_asset_state),
+//				DisplayName:      pulumi.StringRef(migrationAssetDisplayName),
+//				MigrationAssetId: pulumi.StringRef(testMigrationAsset.Id),
+//				MigrationId:      pulumi.StringRef(testMigration.Id),
+//				State:            pulumi.StringRef(migrationAssetState),
 //			}, nil)
 //			if err != nil {
 //				return err

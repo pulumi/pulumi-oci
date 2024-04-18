@@ -26,9 +26,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6s = oci.Core.getIpv6s({
- *     ipAddress: _var.ipv6_ip_address,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ *     ipAddress: ipv6IpAddress,
+ *     subnetId: testSubnet.id,
+ *     vnicId: testVnicAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,9 +110,9 @@ export interface GetIpv6sResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6s = oci.Core.getIpv6s({
- *     ipAddress: _var.ipv6_ip_address,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ *     ipAddress: ipv6IpAddress,
+ *     subnetId: testSubnet.id,
+ *     vnicId: testVnicAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

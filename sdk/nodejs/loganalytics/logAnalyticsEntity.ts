@@ -18,30 +18,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsEntity = new oci.loganalytics.LogAnalyticsEntity("testLogAnalyticsEntity", {
- *     compartmentId: _var.compartment_id,
- *     entityTypeName: _var.log_analytics_entity_entity_type_name,
- *     namespace: _var.log_analytics_entity_namespace,
- *     cloudResourceId: oci_log_analytics_cloud_resource.test_cloud_resource.id,
+ * const testLogAnalyticsEntity = new oci.loganalytics.LogAnalyticsEntity("test_log_analytics_entity", {
+ *     compartmentId: compartmentId,
+ *     entityTypeName: logAnalyticsEntityEntityTypeName,
+ *     name: logAnalyticsEntityName,
+ *     namespace: logAnalyticsEntityNamespace,
+ *     cloudResourceId: testCloudResource.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     hostname: _var.log_analytics_entity_hostname,
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
+ *     hostname: logAnalyticsEntityHostname,
+ *     managementAgentId: testManagementAgent.id,
  *     metadata: {
  *         items: [{
- *             name: _var.log_analytics_entity_metadata_items_name,
- *             type: _var.log_analytics_entity_metadata_items_type,
- *             value: _var.log_analytics_entity_metadata_items_value,
+ *             name: logAnalyticsEntityMetadataItemsName,
+ *             type: logAnalyticsEntityMetadataItemsType,
+ *             value: logAnalyticsEntityMetadataItemsValue,
  *         }],
  *     },
- *     properties: _var.log_analytics_entity_properties,
- *     sourceId: oci_log_analytics_source.test_source.id,
- *     timeLastDiscovered: _var.log_analytics_entity_time_last_discovered,
- *     timezoneRegion: _var.log_analytics_entity_timezone_region,
+ *     properties: logAnalyticsEntityProperties,
+ *     sourceId: testSource.id,
+ *     timeLastDiscovered: logAnalyticsEntityTimeLastDiscovered,
+ *     timezoneRegion: logAnalyticsEntityTimezoneRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

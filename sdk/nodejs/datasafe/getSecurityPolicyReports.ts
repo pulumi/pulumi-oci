@@ -32,13 +32,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReports = oci.DataSafe.getSecurityPolicyReports({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_policy_report_access_level,
- *     compartmentIdInSubtree: _var.security_policy_report_compartment_id_in_subtree,
- *     displayName: _var.security_policy_report_display_name,
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
- *     state: _var.security_policy_report_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityPolicyReportAccessLevel,
+ *     compartmentIdInSubtree: securityPolicyReportCompartmentIdInSubtree,
+ *     displayName: securityPolicyReportDisplayName,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
+ *     state: securityPolicyReportState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -152,13 +152,13 @@ export interface GetSecurityPolicyReportsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyReports = oci.DataSafe.getSecurityPolicyReports({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_policy_report_access_level,
- *     compartmentIdInSubtree: _var.security_policy_report_compartment_id_in_subtree,
- *     displayName: _var.security_policy_report_display_name,
- *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
- *     state: _var.security_policy_report_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityPolicyReportAccessLevel,
+ *     compartmentIdInSubtree: securityPolicyReportCompartmentIdInSubtree,
+ *     displayName: securityPolicyReportDisplayName,
+ *     securityPolicyReportId: testSecurityPolicyReport.id,
+ *     state: securityPolicyReportState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

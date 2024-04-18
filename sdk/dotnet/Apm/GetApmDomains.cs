@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Apm
         /// {
         ///     var testApmDomains = Oci.Apm.GetApmDomains.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Apm_domain_display_name,
-        ///         State = @var.Apm_domain_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = apmDomainDisplayName,
+        ///         State = apmDomainState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Apm
         /// {
         ///     var testApmDomains = Oci.Apm.GetApmDomains.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Apm_domain_display_name,
-        ///         State = @var.Apm_domain_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = apmDomainDisplayName,
+        ///         State = apmDomainState,
         ///     });
         /// 
         /// });

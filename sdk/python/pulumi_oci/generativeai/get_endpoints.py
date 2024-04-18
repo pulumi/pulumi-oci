@@ -121,10 +121,10 @@ def get_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["endpoint_display_name"],
-        id=var["endpoint_id"],
-        state=var["endpoint_state"])
+    test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=compartment_id,
+        display_name=endpoint_display_name,
+        id=endpoint_id,
+        state=endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["endpoint_display_name"],
-        id=var["endpoint_id"],
-        state=var["endpoint_state"])
+    test_endpoints = oci.GenerativeAi.get_endpoints(compartment_id=compartment_id,
+        display_name=endpoint_display_name,
+        id=endpoint_id,
+        state=endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 

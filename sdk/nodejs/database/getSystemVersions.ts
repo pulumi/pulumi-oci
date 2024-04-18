@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSystemVersions = oci.Database.getSystemVersions({
- *     compartmentId: _var.compartment_id,
- *     giVersion: _var.system_version_gi_version,
- *     shape: _var.system_version_shape,
+ *     compartmentId: compartmentId,
+ *     giVersion: systemVersionGiVersion,
+ *     shape: systemVersionShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetSystemVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSystemVersions = oci.Database.getSystemVersions({
- *     compartmentId: _var.compartment_id,
- *     giVersion: _var.system_version_gi_version,
- *     shape: _var.system_version_shape,
+ *     compartmentId: compartmentId,
+ *     giVersion: systemVersionGiVersion,
+ *     shape: systemVersionShape,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

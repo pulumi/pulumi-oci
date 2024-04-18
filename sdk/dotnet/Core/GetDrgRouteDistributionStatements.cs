@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDrgRouteDistributionStatements = Oci.Core.GetDrgRouteDistributionStatements.Invoke(new()
         ///     {
-        ///         DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+        ///         DrgRouteDistributionId = testDrgRouteDistribution.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDrgRouteDistributionStatements = Oci.Core.GetDrgRouteDistributionStatements.Invoke(new()
         ///     {
-        ///         DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
+        ///         DrgRouteDistributionId = testDrgRouteDistribution.Id,
         ///     });
         /// 
         /// });

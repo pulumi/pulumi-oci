@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRatecards = oci.OneSubsription.getRatecards({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     partNumber: _var.ratecard_part_number,
- *     timeFrom: _var.ratecard_time_from,
- *     timeTo: _var.ratecard_time_to,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     partNumber: ratecardPartNumber,
+ *     timeFrom: ratecardTimeFrom,
+ *     timeTo: ratecardTimeTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,11 +105,11 @@ export interface GetRatecardsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRatecards = oci.OneSubsription.getRatecards({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_onesubscription_subscription.test_subscription.id,
- *     partNumber: _var.ratecard_part_number,
- *     timeFrom: _var.ratecard_time_from,
- *     timeTo: _var.ratecard_time_to,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     partNumber: ratecardPartNumber,
+ *     timeFrom: ratecardTimeFrom,
+ *     timeTo: ratecardTimeTo,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

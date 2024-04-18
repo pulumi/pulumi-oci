@@ -481,23 +481,23 @@ class BackupDestination(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backup_destination = oci.database.BackupDestination("testBackupDestination",
-            compartment_id=var["compartment_id"],
-            display_name=var["backup_destination_display_name"],
-            type=var["backup_destination_type"],
-            connection_string=var["backup_destination_connection_string"],
-            defined_tags=var["backup_destination_defined_tags"],
+        test_backup_destination = oci.database.BackupDestination("test_backup_destination",
+            compartment_id=compartment_id,
+            display_name=backup_destination_display_name,
+            type=backup_destination_type,
+            connection_string=backup_destination_connection_string,
+            defined_tags=backup_destination_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            local_mount_point_path=var["backup_destination_local_mount_point_path"],
+            local_mount_point_path=backup_destination_local_mount_point_path,
             mount_type_details=oci.database.BackupDestinationMountTypeDetailsArgs(
-                mount_type=var["backup_destination_mount_type_details_mount_type"],
-                local_mount_point_path=var["backup_destination_mount_type_details_local_mount_point_path"],
-                nfs_servers=var["backup_destination_mount_type_details_nfs_server"],
-                nfs_server_export=var["backup_destination_mount_type_details_nfs_server_export"],
+                mount_type=backup_destination_mount_type_details_mount_type,
+                local_mount_point_path=backup_destination_mount_type_details_local_mount_point_path,
+                nfs_servers=backup_destination_mount_type_details_nfs_server,
+                nfs_server_export=backup_destination_mount_type_details_nfs_server_export,
             ),
-            vpc_users=var["backup_destination_vpc_users"])
+            vpc_users=backup_destination_vpc_users)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -543,23 +543,23 @@ class BackupDestination(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backup_destination = oci.database.BackupDestination("testBackupDestination",
-            compartment_id=var["compartment_id"],
-            display_name=var["backup_destination_display_name"],
-            type=var["backup_destination_type"],
-            connection_string=var["backup_destination_connection_string"],
-            defined_tags=var["backup_destination_defined_tags"],
+        test_backup_destination = oci.database.BackupDestination("test_backup_destination",
+            compartment_id=compartment_id,
+            display_name=backup_destination_display_name,
+            type=backup_destination_type,
+            connection_string=backup_destination_connection_string,
+            defined_tags=backup_destination_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            local_mount_point_path=var["backup_destination_local_mount_point_path"],
+            local_mount_point_path=backup_destination_local_mount_point_path,
             mount_type_details=oci.database.BackupDestinationMountTypeDetailsArgs(
-                mount_type=var["backup_destination_mount_type_details_mount_type"],
-                local_mount_point_path=var["backup_destination_mount_type_details_local_mount_point_path"],
-                nfs_servers=var["backup_destination_mount_type_details_nfs_server"],
-                nfs_server_export=var["backup_destination_mount_type_details_nfs_server_export"],
+                mount_type=backup_destination_mount_type_details_mount_type,
+                local_mount_point_path=backup_destination_mount_type_details_local_mount_point_path,
+                nfs_servers=backup_destination_mount_type_details_nfs_server,
+                nfs_server_export=backup_destination_mount_type_details_nfs_server_export,
             ),
-            vpc_users=var["backup_destination_vpc_users"])
+            vpc_users=backup_destination_vpc_users)
         ```
         <!--End PulumiCodeChooser -->
 

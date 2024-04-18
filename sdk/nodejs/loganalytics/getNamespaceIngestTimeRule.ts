@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceIngestTimeRule = oci.LogAnalytics.getNamespaceIngestTimeRule({
- *     ingestTimeRuleId: oci_events_rule.test_rule.id,
- *     namespace: _var.namespace_ingest_time_rule_namespace,
+ *     ingestTimeRuleId: testRule.id,
+ *     namespace: namespaceIngestTimeRuleNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,8 +119,8 @@ export interface GetNamespaceIngestTimeRuleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceIngestTimeRule = oci.LogAnalytics.getNamespaceIngestTimeRule({
- *     ingestTimeRuleId: oci_events_rule.test_rule.id,
- *     namespace: _var.namespace_ingest_time_rule_namespace,
+ *     ingestTimeRuleId: testRule.id,
+ *     namespace: namespaceIngestTimeRuleNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

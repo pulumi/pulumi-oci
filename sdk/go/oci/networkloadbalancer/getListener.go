@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := NetworkLoadBalancer.GetListener(ctx, &networkloadbalancer.GetListenerArgs{
-//				ListenerName:          oci_network_load_balancer_listener.Test_listener.Name,
-//				NetworkLoadBalancerId: oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
+//				ListenerName:          testListenerOciNetworkLoadBalancerListener.Name,
+//				NetworkLoadBalancerId: testNetworkLoadBalancer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

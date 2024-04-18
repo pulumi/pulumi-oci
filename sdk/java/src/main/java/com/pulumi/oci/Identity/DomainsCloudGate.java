@@ -56,22 +56,22 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudGate = new DomainsCloudGate(&#34;testCloudGate&#34;, DomainsCloudGateArgs.builder()        
- *             .displayName(var_.cloud_gate_display_name())
- *             .idcsEndpoint(data.oci_identity_domain().test_domain().url())
+ *             .displayName(cloudGateDisplayName)
+ *             .idcsEndpoint(testDomain.url())
  *             .schemas(&#34;urn:ietf:params:scim:schemas:oracle:idcs:CloudGate&#34;)
- *             .active(var_.cloud_gate_active())
+ *             .active(cloudGateActive)
  *             .attributeSets(&#34;all&#34;)
  *             .attributes(&#34;&#34;)
- *             .authorization(var_.cloud_gate_authorization())
- *             .description(var_.cloud_gate_description())
+ *             .authorization(cloudGateAuthorization)
+ *             .description(cloudGateDescription)
  *             .lastModifiedTime(&#34;2000-01-01T00:00:00Z&#34;)
- *             .ocid(var_.cloud_gate_ocid())
- *             .resourceTypeSchemaVersion(var_.cloud_gate_resource_type_schema_version())
+ *             .ocid(cloudGateOcid)
+ *             .resourceTypeSchemaVersion(cloudGateResourceTypeSchemaVersion)
  *             .tags(DomainsCloudGateTagArgs.builder()
- *                 .key(var_.cloud_gate_tags_key())
- *                 .value(var_.cloud_gate_tags_value())
+ *                 .key(cloudGateTagsKey)
+ *                 .value(cloudGateTagsValue)
  *                 .build())
- *             .type(var_.cloud_gate_type())
+ *             .type(cloudGateType)
  *             .build());
  * 
  *     }

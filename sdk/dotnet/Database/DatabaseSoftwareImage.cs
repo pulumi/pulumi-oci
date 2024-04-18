@@ -25,22 +25,22 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDatabaseSoftwareImage = new Oci.Database.DatabaseSoftwareImage("testDatabaseSoftwareImage", new()
+    ///     var testDatabaseSoftwareImage = new Oci.Database.DatabaseSoftwareImage("test_database_software_image", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Database_software_image_display_name,
-    ///         DatabaseSoftwareImageOneOffPatches = @var.Database_software_image_database_software_image_one_off_patches,
-    ///         DatabaseVersion = @var.Database_software_image_database_version,
-    ///         DefinedTags = @var.Database_software_image_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = databaseSoftwareImageDisplayName,
+    ///         DatabaseSoftwareImageOneOffPatches = databaseSoftwareImageDatabaseSoftwareImageOneOffPatches,
+    ///         DatabaseVersion = databaseSoftwareImageDatabaseVersion,
+    ///         DefinedTags = databaseSoftwareImageDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         ImageShapeFamily = @var.Database_software_image_image_shape_family,
-    ///         ImageType = @var.Database_software_image_image_type,
-    ///         LsInventory = @var.Database_software_image_ls_inventory,
-    ///         PatchSet = @var.Database_software_image_patch_set,
-    ///         SourceDbHomeId = oci_database_db_home.Test_db_home.Id,
+    ///         ImageShapeFamily = databaseSoftwareImageImageShapeFamily,
+    ///         ImageType = databaseSoftwareImageImageType,
+    ///         LsInventory = databaseSoftwareImageLsInventory,
+    ///         PatchSet = databaseSoftwareImagePatchSet,
+    ///         SourceDbHomeId = testDbHome.Id,
     ///     });
     /// 
     /// });

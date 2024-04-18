@@ -25,14 +25,14 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPublicIpPool = new Oci.Core.PublicIpPool("testPublicIpPool", new()
+    ///     var testPublicIpPool = new Oci.Core.PublicIpPool("test_public_ip_pool", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Public_ip_pool_display_name,
+    ///         DisplayName = publicIpPoolDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

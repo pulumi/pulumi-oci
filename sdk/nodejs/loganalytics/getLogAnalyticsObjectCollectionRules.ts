@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_object_collection_rule_namespace,
- *     name: _var.log_analytics_object_collection_rule_name,
- *     state: _var.log_analytics_object_collection_rule_state,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsObjectCollectionRuleNamespace,
+ *     name: logAnalyticsObjectCollectionRuleName,
+ *     state: logAnalyticsObjectCollectionRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.log_analytics_object_collection_rule_namespace,
- *     name: _var.log_analytics_object_collection_rule_name,
- *     state: _var.log_analytics_object_collection_rule_state,
+ *     compartmentId: compartmentId,
+ *     namespace: logAnalyticsObjectCollectionRuleNamespace,
+ *     name: logAnalyticsObjectCollectionRuleName,
+ *     state: logAnalyticsObjectCollectionRuleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

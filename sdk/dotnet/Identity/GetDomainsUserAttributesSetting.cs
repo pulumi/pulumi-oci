@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserAttributesSetting = Oci.Identity.GetDomainsUserAttributesSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         UserAttributesSettingId = oci_identity_domains_user_attributes_setting.Test_user_attributes_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserAttributesSettingId = testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.User_attributes_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.User_attributes_setting_resource_type_schema_version,
+        ///         Authorization = userAttributesSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = userAttributesSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUserAttributesSetting = Oci.Identity.GetDomainsUserAttributesSetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         UserAttributesSettingId = oci_identity_domains_user_attributes_setting.Test_user_attributes_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserAttributesSettingId = testUserAttributesSettingOciIdentityDomainsUserAttributesSetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.User_attributes_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.User_attributes_setting_resource_type_schema_version,
+        ///         Authorization = userAttributesSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = userAttributesSettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVlans = oci.Core.getVlans({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vlan_display_name,
- *     state: _var.vlan_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: vlanDisplayName,
+ *     state: vlanState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetVlansResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVlans = oci.Core.getVlans({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vlan_display_name,
- *     state: _var.vlan_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: vlanDisplayName,
+ *     state: vlanState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

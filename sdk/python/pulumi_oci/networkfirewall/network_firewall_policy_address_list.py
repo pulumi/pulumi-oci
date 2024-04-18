@@ -222,10 +222,11 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_address_list = oci.network_firewall.NetworkFirewallPolicyAddressList("testNetworkFirewallPolicyAddressList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_address_list_type"],
-            addresses=var["network_firewall_policy_address_list_addresses"])
+        test_network_firewall_policy_address_list = oci.network_firewall.NetworkFirewallPolicyAddressList("test_network_firewall_policy_address_list",
+            name=network_firewall_policy_address_list_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            type=network_firewall_policy_address_list_type,
+            addresses=network_firewall_policy_address_list_addresses)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -266,10 +267,11 @@ class NetworkFirewallPolicyAddressList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_address_list = oci.network_firewall.NetworkFirewallPolicyAddressList("testNetworkFirewallPolicyAddressList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            type=var["network_firewall_policy_address_list_type"],
-            addresses=var["network_firewall_policy_address_list_addresses"])
+        test_network_firewall_policy_address_list = oci.network_firewall.NetworkFirewallPolicyAddressList("test_network_firewall_policy_address_list",
+            name=network_firewall_policy_address_list_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            type=network_firewall_policy_address_list_type,
+            addresses=network_firewall_policy_address_list_addresses)
         ```
         <!--End PulumiCodeChooser -->
 

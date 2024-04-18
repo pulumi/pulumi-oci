@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadReports = oci.Jms.getJavaDownloadsJavaDownloadReports({
- *     compartmentId: _var.tenancy_ocid,
- *     displayName: _var.java_download_report_display_name,
- *     javaDownloadReportId: oci_jms_java_downloads_java_download_report.test_java_download_report.id,
- *     state: _var.java_download_report_state,
+ *     compartmentId: tenancyOcid,
+ *     displayName: javaDownloadReportDisplayName,
+ *     javaDownloadReportId: testJavaDownloadReport.id,
+ *     state: javaDownloadReportState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetJavaDownloadsJavaDownloadReportsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testJavaDownloadReports = oci.Jms.getJavaDownloadsJavaDownloadReports({
- *     compartmentId: _var.tenancy_ocid,
- *     displayName: _var.java_download_report_display_name,
- *     javaDownloadReportId: oci_jms_java_downloads_java_download_report.test_java_download_report.id,
- *     state: _var.java_download_report_state,
+ *     compartmentId: tenancyOcid,
+ *     displayName: javaDownloadReportDisplayName,
+ *     javaDownloadReportId: testJavaDownloadReport.id,
+ *     state: javaDownloadReportState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

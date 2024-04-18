@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDedicatedVmHost = Oci.Core.GetDedicatedVmHost.Invoke(new()
         ///     {
-        ///         DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+        ///         DedicatedVmHostId = testDedicatedVmHostOciCoreDedicatedVmHost.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDedicatedVmHost = Oci.Core.GetDedicatedVmHost.Invoke(new()
         ///     {
-        ///         DedicatedVmHostId = oci_core_dedicated_vm_host.Test_dedicated_vm_host.Id,
+        ///         DedicatedVmHostId = testDedicatedVmHostOciCoreDedicatedVmHost.Id,
         ///     });
         /// 
         /// });

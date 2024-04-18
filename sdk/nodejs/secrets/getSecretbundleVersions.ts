@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecretbundleVersions = oci.Secrets.getSecretbundleVersions({
- *     secretId: oci_vault_secret.test_secret.id,
+ *     secretId: testSecret.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetSecretbundleVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecretbundleVersions = oci.Secrets.getSecretbundleVersions({
- *     secretId: oci_vault_secret.test_secret.id,
+ *     secretId: testSecret.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

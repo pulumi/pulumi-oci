@@ -33,9 +33,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AnnouncementsService.NewAnnouncementSubscriptionsActionsChangeCompartment(ctx, "testAnnouncementSubscriptionsActionsChangeCompartment", &AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartmentArgs{
-//				AnnouncementSubscriptionId: pulumi.Any(oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id),
-//				CompartmentId:              pulumi.Any(_var.Compartment_id),
+//			_, err := AnnouncementsService.NewAnnouncementSubscriptionsActionsChangeCompartment(ctx, "test_announcement_subscriptions_actions_change_compartment", &AnnouncementsService.AnnouncementSubscriptionsActionsChangeCompartmentArgs{
+//				AnnouncementSubscriptionId: pulumi.Any(testAnnouncementSubscription.Id),
+//				CompartmentId:              pulumi.Any(compartmentId),
 //			})
 //			if err != nil {
 //				return err

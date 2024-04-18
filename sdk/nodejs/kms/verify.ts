@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVerify = new oci.kms.Verify("testVerify", {
- *     cryptoEndpoint: _var.verify_message_crypto_endpoint,
- *     keyId: oci_kms_key.test_key.id,
- *     keyVersionId: oci_kms_key_version.test_key_version.id,
- *     message: _var.verify_message,
- *     signature: _var.verify_signature,
- *     signingAlgorithm: _var.verify_signing_algorithm,
- *     messageType: _var.verify_message_type,
+ * const testVerify = new oci.kms.Verify("test_verify", {
+ *     cryptoEndpoint: verifyMessageCryptoEndpoint,
+ *     keyId: testKey.id,
+ *     keyVersionId: testKeyVersion.id,
+ *     message: verifyMessage,
+ *     signature: verifySignature,
+ *     signingAlgorithm: verifySigningAlgorithm,
+ *     messageType: verifyMessageType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

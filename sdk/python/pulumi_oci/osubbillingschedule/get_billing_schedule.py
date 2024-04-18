@@ -122,10 +122,10 @@ def get_billing_schedule(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=var["compartment_id"],
-        subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        subscribed_service_id=oci_core_service["test_service"]["id"],
-        x_one_origin_region=var["billing_schedule_x_one_origin_region"])
+    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        subscribed_service_id=test_service["id"],
+        x_one_origin_region=billing_schedule_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -174,10 +174,10 @@ def get_billing_schedule_output(compartment_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=var["compartment_id"],
-        subscription_id=oci_ons_subscription["test_subscription"]["id"],
-        subscribed_service_id=oci_core_service["test_service"]["id"],
-        x_one_origin_region=var["billing_schedule_x_one_origin_region"])
+    test_billing_schedules = oci.OsubBillingSchedule.get_billing_schedule(compartment_id=compartment_id,
+        subscription_id=test_subscription["id"],
+        subscribed_service_id=test_service["id"],
+        x_one_origin_region=billing_schedule_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 

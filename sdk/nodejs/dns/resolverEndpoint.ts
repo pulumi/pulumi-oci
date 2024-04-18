@@ -16,16 +16,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testResolverEndpoint = new oci.dns.ResolverEndpoint("testResolverEndpoint", {
- *     isForwarding: _var.resolver_endpoint_is_forwarding,
- *     isListening: _var.resolver_endpoint_is_listening,
- *     resolverId: oci_dns_resolver.test_resolver.id,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testResolverEndpoint = new oci.dns.ResolverEndpoint("test_resolver_endpoint", {
+ *     isForwarding: resolverEndpointIsForwarding,
+ *     isListening: resolverEndpointIsListening,
+ *     name: resolverEndpointName,
+ *     resolverId: testResolver.id,
+ *     subnetId: testSubnet.id,
  *     scope: "PRIVATE",
- *     endpointType: _var.resolver_endpoint_endpoint_type,
- *     forwardingAddress: _var.resolver_endpoint_forwarding_address,
- *     listeningAddress: _var.resolver_endpoint_listening_address,
- *     nsgIds: _var.resolver_endpoint_nsg_ids,
+ *     endpointType: resolverEndpointEndpointType,
+ *     forwardingAddress: resolverEndpointForwardingAddress,
+ *     listeningAddress: resolverEndpointListeningAddress,
+ *     nsgIds: resolverEndpointNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

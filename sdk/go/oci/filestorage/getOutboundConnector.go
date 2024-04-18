@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetOutboundConnector(ctx, &filestorage.GetOutboundConnectorArgs{
-//				OutboundConnectorId: oci_file_storage_outbound_connector.Test_outbound_connector.Id,
+//				OutboundConnectorId: testOutboundConnectorOciFileStorageOutboundConnector.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

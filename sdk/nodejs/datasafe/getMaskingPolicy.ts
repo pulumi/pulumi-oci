@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPolicy = oci.DataSafe.getMaskingPolicy({
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     maskingPolicyId: testMaskingPolicyOciDataSafeMaskingPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,7 +130,7 @@ export interface GetMaskingPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPolicy = oci.DataSafe.getMaskingPolicy({
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     maskingPolicyId: testMaskingPolicyOciDataSafeMaskingPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

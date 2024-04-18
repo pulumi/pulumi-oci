@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiAnomalyDetection.GetDetectAnomalyJobs(ctx, &aianomalydetection.GetDetectAnomalyJobsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				DetectAnomalyJobId: pulumi.StringRef(oci_ai_anomaly_detection_detect_anomaly_job.Test_detect_anomaly_job.Id),
-//				DisplayName:        pulumi.StringRef(_var.Detect_anomaly_job_display_name),
-//				ModelId:            pulumi.StringRef(oci_ai_anomaly_detection_model.Test_model.Id),
-//				ProjectId:          pulumi.StringRef(oci_ai_anomaly_detection_project.Test_project.Id),
-//				State:              pulumi.StringRef(_var.Detect_anomaly_job_state),
+//				CompartmentId:      compartmentId,
+//				DetectAnomalyJobId: pulumi.StringRef(testDetectAnomalyJob.Id),
+//				DisplayName:        pulumi.StringRef(detectAnomalyJobDisplayName),
+//				ModelId:            pulumi.StringRef(testModel.Id),
+//				ProjectId:          pulumi.StringRef(testProject.Id),
+//				State:              pulumi.StringRef(detectAnomalyJobState),
 //			}, nil)
 //			if err != nil {
 //				return err

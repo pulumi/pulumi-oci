@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testHttpRedirects = Oci.Waas.GetHttpRedirects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Http_redirect_display_names,
-        ///         Ids = @var.Http_redirect_ids,
-        ///         States = @var.Http_redirect_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Http_redirect_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Http_redirect_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = httpRedirectDisplayNames,
+        ///         Ids = httpRedirectIds,
+        ///         States = httpRedirectStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = httpRedirectTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = httpRedirectTimeCreatedLessThan,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testHttpRedirects = Oci.Waas.GetHttpRedirects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayNames = @var.Http_redirect_display_names,
-        ///         Ids = @var.Http_redirect_ids,
-        ///         States = @var.Http_redirect_states,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.Http_redirect_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.Http_redirect_time_created_less_than,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayNames = httpRedirectDisplayNames,
+        ///         Ids = httpRedirectIds,
+        ///         States = httpRedirectStates,
+        ///         TimeCreatedGreaterThanOrEqualTo = httpRedirectTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = httpRedirectTimeCreatedLessThan,
         ///     });
         /// 
         /// });

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testSecurityZone = Oci.CloudGuard.GetSecurityZone.Invoke(new()
         ///     {
-        ///         SecurityZoneId = oci_cloud_guard_security_zone.Test_security_zone.Id,
+        ///         SecurityZoneId = testSecurityZoneOciCloudGuardSecurityZone.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testSecurityZone = Oci.CloudGuard.GetSecurityZone.Invoke(new()
         ///     {
-        ///         SecurityZoneId = oci_cloud_guard_security_zone.Test_security_zone.Id,
+        ///         SecurityZoneId = testSecurityZoneOciCloudGuardSecurityZone.Id,
         ///     });
         /// 
         /// });

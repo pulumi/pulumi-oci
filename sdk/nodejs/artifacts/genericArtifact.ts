@@ -14,8 +14,8 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testGenericArtifact = new oci.artifacts.GenericArtifact("testGenericArtifact", {
- *     artifactId: oci_artifacts_artifact.test_artifact.id,
+ * const testGenericArtifact = new oci.artifacts.GenericArtifact("test_generic_artifact", {
+ *     artifactId: testArtifact.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

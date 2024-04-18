@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetSystemMediaWorkflow(ctx, &mediaservices.GetSystemMediaWorkflowArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				Name:          pulumi.StringRef(_var.System_media_workflow_name),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				Name:          pulumi.StringRef(systemMediaWorkflowName),
 //			}, nil)
 //			if err != nil {
 //				return err

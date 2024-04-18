@@ -33,7 +33,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AnnouncementsService.GetAnnouncementSubscription(ctx, &announcementsservice.GetAnnouncementSubscriptionArgs{
-//				AnnouncementSubscriptionId: oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
+//				AnnouncementSubscriptionId: testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

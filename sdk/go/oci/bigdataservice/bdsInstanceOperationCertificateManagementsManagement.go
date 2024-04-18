@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewBdsInstanceOperationCertificateManagementsManagement(ctx, "testBdsInstanceOperationCertificateManagementsManagement", &BigDataService.BdsInstanceOperationCertificateManagementsManagementArgs{
-//				BdsInstanceId:                        pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-//				ClusterAdminPassword:                 pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_cluster_admin_password),
-//				Services:                             pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_services),
-//				EnableOperationCertificateManagement: pulumi.Any(_var.Enable_operation_certificate_management),
-//				RenewOperationCertificateManagement:  pulumi.Any(_var.Renew_operation_certificate_management),
+//			_, err := BigDataService.NewBdsInstanceOperationCertificateManagementsManagement(ctx, "test_bds_instance_operation_certificate_managements_management", &BigDataService.BdsInstanceOperationCertificateManagementsManagementArgs{
+//				BdsInstanceId:                        pulumi.Any(testBdsInstance.Id),
+//				ClusterAdminPassword:                 pulumi.Any(bdsInstanceOperationCertificateManagementsManagementClusterAdminPassword),
+//				Services:                             pulumi.Any(bdsInstanceOperationCertificateManagementsManagementServices),
+//				EnableOperationCertificateManagement: pulumi.Any(enableOperationCertificateManagement),
+//				RenewOperationCertificateManagement:  pulumi.Any(renewOperationCertificateManagement),
 //				HostCertDetails: bigdataservice.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{
 //					&bigdataservice.BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{
-//						Certificate: pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_host_cert_details_certificate),
-//						HostName:    pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_host_cert_details_host_name),
-//						PrivateKey:  pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_host_cert_details_private_key),
+//						Certificate: pulumi.Any(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsCertificate),
+//						HostName:    pulumi.Any(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsHostName),
+//						PrivateKey:  pulumi.Any(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey),
 //					},
 //				},
-//				RootCertificate:   pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_root_certificate),
-//				ServerKeyPassword: pulumi.Any(_var.Bds_instance_operation_certificate_managements_management_server_key_password),
+//				RootCertificate:   pulumi.Any(bdsInstanceOperationCertificateManagementsManagementRootCertificate),
+//				ServerKeyPassword: pulumi.Any(bdsInstanceOperationCertificateManagementsManagementServerKeyPassword),
 //			})
 //			if err != nil {
 //				return err

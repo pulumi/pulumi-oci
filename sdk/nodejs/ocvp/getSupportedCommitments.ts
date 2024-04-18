@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedCommitments = oci.Ocvp.getSupportedCommitments({
- *     compartmentId: _var.compartment_id,
- *     hostShapeName: oci_core_shape.test_shape.name,
+ *     compartmentId: compartmentId,
+ *     hostShapeName: testShape.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetSupportedCommitmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedCommitments = oci.Ocvp.getSupportedCommitments({
- *     compartmentId: _var.compartment_id,
- *     hostShapeName: oci_core_shape.test_shape.name,
+ *     compartmentId: compartmentId,
+ *     hostShapeName: testShape.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

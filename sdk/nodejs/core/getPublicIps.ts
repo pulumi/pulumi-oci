@@ -38,11 +38,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicIps = oci.Core.getPublicIps({
- *     compartmentId: _var.compartment_id,
- *     scope: _var.public_ip_scope,
- *     availabilityDomain: _var.public_ip_availability_domain,
- *     lifetime: _var.public_ip_lifetime,
- *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
+ *     compartmentId: compartmentId,
+ *     scope: publicIpScope,
+ *     availabilityDomain: publicIpAvailabilityDomain,
+ *     lifetime: publicIpLifetime,
+ *     publicIpPoolId: testPublicIpPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -153,11 +153,11 @@ export interface GetPublicIpsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPublicIps = oci.Core.getPublicIps({
- *     compartmentId: _var.compartment_id,
- *     scope: _var.public_ip_scope,
- *     availabilityDomain: _var.public_ip_availability_domain,
- *     lifetime: _var.public_ip_lifetime,
- *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
+ *     compartmentId: compartmentId,
+ *     scope: publicIpScope,
+ *     availabilityDomain: publicIpAvailabilityDomain,
+ *     lifetime: publicIpLifetime,
+ *     publicIpPoolId: testPublicIpPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

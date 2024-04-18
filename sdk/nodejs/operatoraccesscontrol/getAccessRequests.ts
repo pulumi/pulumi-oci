@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessRequests = oci.OperatorAccessControl.getAccessRequests({
- *     compartmentId: _var.compartment_id,
- *     resourceName: _var.access_request_resource_name,
- *     resourceType: _var.access_request_resource_type,
- *     state: _var.access_request_state,
- *     timeEnd: _var.access_request_time_end,
- *     timeStart: _var.access_request_time_start,
+ *     compartmentId: compartmentId,
+ *     resourceName: accessRequestResourceName,
+ *     resourceType: accessRequestResourceType,
+ *     state: accessRequestState,
+ *     timeEnd: accessRequestTimeEnd,
+ *     timeStart: accessRequestTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetAccessRequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAccessRequests = oci.OperatorAccessControl.getAccessRequests({
- *     compartmentId: _var.compartment_id,
- *     resourceName: _var.access_request_resource_name,
- *     resourceType: _var.access_request_resource_type,
- *     state: _var.access_request_state,
- *     timeEnd: _var.access_request_time_end,
- *     timeStart: _var.access_request_time_start,
+ *     compartmentId: compartmentId,
+ *     resourceName: accessRequestResourceName,
+ *     resourceType: accessRequestResourceType,
+ *     state: accessRequestState,
+ *     timeEnd: accessRequestTimeEnd,
+ *     timeStart: accessRequestTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

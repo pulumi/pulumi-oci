@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LicenseManager.NewProductLicense(ctx, "testProductLicense", &LicenseManager.ProductLicenseArgs{
-//				CompartmentId:  pulumi.Any(_var.Compartment_id),
-//				DisplayName:    pulumi.Any(_var.Product_license_display_name),
-//				IsVendorOracle: pulumi.Any(_var.Product_license_is_vendor_oracle),
-//				LicenseUnit:    pulumi.Any(_var.Product_license_license_unit),
+//			_, err := LicenseManager.NewProductLicense(ctx, "test_product_license", &LicenseManager.ProductLicenseArgs{
+//				CompartmentId:  pulumi.Any(compartmentId),
+//				DisplayName:    pulumi.Any(productLicenseDisplayName),
+//				IsVendorOracle: pulumi.Any(productLicenseIsVendorOracle),
+//				LicenseUnit:    pulumi.Any(productLicenseLicenseUnit),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -44,11 +44,11 @@ import (
 //				},
 //				Images: licensemanager.ProductLicenseImageArray{
 //					&licensemanager.ProductLicenseImageArgs{
-//						ListingId:      pulumi.Any(oci_marketplace_listing.Test_listing.Id),
-//						PackageVersion: pulumi.Any(_var.Product_license_images_package_version),
+//						ListingId:      pulumi.Any(testListing.Id),
+//						PackageVersion: pulumi.Any(productLicenseImagesPackageVersion),
 //					},
 //				},
-//				VendorName: pulumi.Any(_var.Product_license_vendor_name),
+//				VendorName: pulumi.Any(productLicenseVendorName),
 //			})
 //			if err != nil {
 //				return err

@@ -133,10 +133,10 @@ def get_capture_filters(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=var["compartment_id"],
-        display_name=var["capture_filter_display_name"],
-        filter_type=var["capture_filter_filter_type"],
-        state=var["capture_filter_state"])
+    test_capture_filters = oci.Core.get_capture_filters(compartment_id=compartment_id,
+        display_name=capture_filter_display_name,
+        filter_type=capture_filter_filter_type,
+        state=capture_filter_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_capture_filters_output(compartment_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_capture_filters = oci.Core.get_capture_filters(compartment_id=var["compartment_id"],
-        display_name=var["capture_filter_display_name"],
-        filter_type=var["capture_filter_filter_type"],
-        state=var["capture_filter_state"])
+    test_capture_filters = oci.Core.get_capture_filters(compartment_id=compartment_id,
+        display_name=capture_filter_display_name,
+        filter_type=capture_filter_filter_type,
+        state=capture_filter_state)
     ```
     <!--End PulumiCodeChooser -->
 

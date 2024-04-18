@@ -19,21 +19,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExport = new oci.filestorage.Export("testExport", {
- *     exportSetId: oci_file_storage_export_set.test_export_set.id,
- *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
- *     path: _var.export_path,
+ * const testExport = new oci.filestorage.Export("test_export", {
+ *     exportSetId: testExportSet.id,
+ *     fileSystemId: testFileSystem.id,
+ *     path: exportPath,
  *     exportOptions: [{
- *         source: _var.export_export_options_source,
- *         access: _var.export_export_options_access,
- *         allowedAuths: _var.export_export_options_allowed_auth,
- *         anonymousGid: _var.export_export_options_anonymous_gid,
- *         anonymousUid: _var.export_export_options_anonymous_uid,
- *         identitySquash: _var.export_export_options_identity_squash,
- *         isAnonymousAccessAllowed: _var.export_export_options_is_anonymous_access_allowed,
- *         requirePrivilegedSourcePort: _var.export_export_options_require_privileged_source_port,
+ *         source: exportExportOptionsSource,
+ *         access: exportExportOptionsAccess,
+ *         allowedAuths: exportExportOptionsAllowedAuth,
+ *         anonymousGid: exportExportOptionsAnonymousGid,
+ *         anonymousUid: exportExportOptionsAnonymousUid,
+ *         identitySquash: exportExportOptionsIdentitySquash,
+ *         isAnonymousAccessAllowed: exportExportOptionsIsAnonymousAccessAllowed,
+ *         requirePrivilegedSourcePort: exportExportOptionsRequirePrivilegedSourcePort,
  *     }],
- *     isIdmapGroupsForSysAuth: _var.export_is_idmap_groups_for_sys_auth,
+ *     isIdmapGroupsForSysAuth: exportIsIdmapGroupsForSysAuth,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

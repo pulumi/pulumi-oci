@@ -167,7 +167,7 @@ def get_group(group_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_group = oci.Identity.get_group(group_id=oci_identity_group["test_group"]["id"])
+    test_group = oci.Identity.get_group(group_id=test_group_oci_identity_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -211,7 +211,7 @@ def get_group_output(group_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_group = oci.Identity.get_group(group_id=oci_identity_group["test_group"]["id"])
+    test_group = oci.Identity.get_group(group_id=test_group_oci_identity_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

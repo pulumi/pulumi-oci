@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testProfiles = Oci.Optimizer.GetProfiles.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Profile_name,
-        ///         State = @var.Profile_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = profileName,
+        ///         State = profileState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testProfiles = Oci.Optimizer.GetProfiles.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Profile_name,
-        ///         State = @var.Profile_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = profileName,
+        ///         State = profileState,
         ///     });
         /// 
         /// });

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testNetworkAddressList = Oci.Waf.GetNetworkAddressList.Invoke(new()
         ///     {
-        ///         NetworkAddressListId = oci_waf_network_address_list.Test_network_address_list.Id,
+        ///         NetworkAddressListId = testNetworkAddressListOciWafNetworkAddressList.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testNetworkAddressList = Oci.Waf.GetNetworkAddressList.Invoke(new()
         ///     {
-        ///         NetworkAddressListId = oci_waf_network_address_list.Test_network_address_list.Id,
+        ///         NetworkAddressListId = testNetworkAddressListOciWafNetworkAddressList.Id,
         ///     });
         /// 
         /// });

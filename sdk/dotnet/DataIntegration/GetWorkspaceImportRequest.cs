@@ -30,8 +30,8 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceImportRequest = Oci.DataIntegration.GetWorkspaceImportRequest.Invoke(new()
         ///     {
-        ///         ImportRequestKey = @var.Workspace_import_request_import_request_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         ImportRequestKey = workspaceImportRequestImportRequestKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceImportRequest = Oci.DataIntegration.GetWorkspaceImportRequest.Invoke(new()
         ///     {
-        ///         ImportRequestKey = @var.Workspace_import_request_import_request_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         ImportRequestKey = workspaceImportRequestImportRequestKey,
+        ///         WorkspaceId = testWorkspace.Id,
         ///     });
         /// 
         /// });

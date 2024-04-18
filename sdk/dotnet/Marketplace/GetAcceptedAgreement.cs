@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testAcceptedAgreement = Oci.Marketplace.GetAcceptedAgreement.Invoke(new()
         ///     {
-        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+        ///         AcceptedAgreementId = testAcceptedAgreementOciMarketplaceAcceptedAgreement.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Marketplace
         /// {
         ///     var testAcceptedAgreement = Oci.Marketplace.GetAcceptedAgreement.Invoke(new()
         ///     {
-        ///         AcceptedAgreementId = oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+        ///         AcceptedAgreementId = testAcceptedAgreementOciMarketplaceAcceptedAgreement.Id,
         ///     });
         /// 
         /// });

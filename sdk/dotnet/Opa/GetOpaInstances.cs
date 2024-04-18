@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Opa
         /// {
         ///     var testOpaInstances = Oci.Opa.GetOpaInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Opa_instance_display_name,
-        ///         Id = @var.Opa_instance_id,
-        ///         State = @var.Opa_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opaInstanceDisplayName,
+        ///         Id = opaInstanceId,
+        ///         State = opaInstanceState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Opa
         /// {
         ///     var testOpaInstances = Oci.Opa.GetOpaInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Opa_instance_display_name,
-        ///         Id = @var.Opa_instance_id,
-        ///         State = @var.Opa_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = opaInstanceDisplayName,
+        ///         Id = opaInstanceId,
+        ///         State = opaInstanceState,
         ///     });
         /// 
         /// });

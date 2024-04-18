@@ -36,11 +36,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsCollectionOperations = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperations.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
-        ///         FilterBy = @var.Managed_database_optimizer_statistics_collection_operation_filter_by,
-        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,
-        ///         TaskType = @var.Managed_database_optimizer_statistics_collection_operation_task_type,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
+        ///         FilterBy = managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo,
+        ///         TaskType = managedDatabaseOptimizerStatisticsCollectionOperationTaskType,
         ///     });
         /// 
         /// });
@@ -75,11 +75,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseOptimizerStatisticsCollectionOperations = Oci.DatabaseManagement.GetManagedDatabaseOptimizerStatisticsCollectionOperations.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         EndTimeLessThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_operation_end_time_less_than_or_equal_to,
-        ///         FilterBy = @var.Managed_database_optimizer_statistics_collection_operation_filter_by,
-        ///         StartTimeGreaterThanOrEqualTo = @var.Managed_database_optimizer_statistics_collection_operation_start_time_greater_than_or_equal_to,
-        ///         TaskType = @var.Managed_database_optimizer_statistics_collection_operation_task_type,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         EndTimeLessThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionOperationEndTimeLessThanOrEqualTo,
+        ///         FilterBy = managedDatabaseOptimizerStatisticsCollectionOperationFilterBy,
+        ///         StartTimeGreaterThanOrEqualTo = managedDatabaseOptimizerStatisticsCollectionOperationStartTimeGreaterThanOrEqualTo,
+        ///         TaskType = managedDatabaseOptimizerStatisticsCollectionOperationTaskType,
         ///     });
         /// 
         /// });

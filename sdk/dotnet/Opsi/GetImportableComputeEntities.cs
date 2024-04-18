@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testImportableComputeEntities = Oci.Opsi.GetImportableComputeEntities.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Opsi
         /// {
         ///     var testImportableComputeEntities = Oci.Opsi.GetImportableComputeEntities.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

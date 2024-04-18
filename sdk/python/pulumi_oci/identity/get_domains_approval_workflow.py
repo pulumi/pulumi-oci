@@ -310,12 +310,12 @@ def get_domains_approval_workflow(approval_workflow_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow = oci.Identity.get_domains_approval_workflow(approval_workflow_id=oci_identity_domains_approval_workflow["test_approval_workflow"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_approval_workflow = oci.Identity.get_domains_approval_workflow(approval_workflow_id=test_approval_workflow_oci_identity_domains_approval_workflow["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_authorization"],
-        resource_type_schema_version=var["approval_workflow_resource_type_schema_version"])
+        authorization=approval_workflow_authorization,
+        resource_type_schema_version=approval_workflow_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -383,12 +383,12 @@ def get_domains_approval_workflow_output(approval_workflow_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_approval_workflow = oci.Identity.get_domains_approval_workflow(approval_workflow_id=oci_identity_domains_approval_workflow["test_approval_workflow"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_approval_workflow = oci.Identity.get_domains_approval_workflow(approval_workflow_id=test_approval_workflow_oci_identity_domains_approval_workflow["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["approval_workflow_authorization"],
-        resource_type_schema_version=var["approval_workflow_resource_type_schema_version"])
+        authorization=approval_workflow_authorization,
+        resource_type_schema_version=approval_workflow_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

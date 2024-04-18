@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceRules = oci.LogAnalytics.getNamespaceRules({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_rule_namespace,
- *     displayName: _var.namespace_rule_display_name,
- *     kind: _var.namespace_rule_kind,
- *     state: _var.namespace_rule_state,
- *     targetService: _var.namespace_rule_target_service,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceRuleNamespace,
+ *     displayName: namespaceRuleDisplayName,
+ *     kind: namespaceRuleKind,
+ *     state: namespaceRuleState,
+ *     targetService: namespaceRuleTargetService,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetNamespaceRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceRules = oci.LogAnalytics.getNamespaceRules({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_rule_namespace,
- *     displayName: _var.namespace_rule_display_name,
- *     kind: _var.namespace_rule_kind,
- *     state: _var.namespace_rule_state,
- *     targetService: _var.namespace_rule_target_service,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceRuleNamespace,
+ *     displayName: namespaceRuleDisplayName,
+ *     kind: namespaceRuleKind,
+ *     state: namespaceRuleState,
+ *     targetService: namespaceRuleTargetService,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

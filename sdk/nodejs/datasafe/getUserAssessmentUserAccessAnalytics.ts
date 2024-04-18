@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentUserAccessAnalytics = oci.DataSafe.getUserAssessmentUserAccessAnalytics({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     userAssessmentId: testUserAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetUserAssessmentUserAccessAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentUserAccessAnalytics = oci.DataSafe.getUserAssessmentUserAccessAnalytics({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     userAssessmentId: testUserAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

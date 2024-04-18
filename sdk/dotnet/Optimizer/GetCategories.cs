@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testCategories = Oci.Optimizer.GetCategories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
-        ///         ChildTenancyIds = @var.Category_child_tenancy_ids,
-        ///         IncludeOrganization = @var.Category_include_organization,
-        ///         Name = @var.Category_name,
-        ///         State = @var.Category_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = categoryCompartmentIdInSubtree,
+        ///         ChildTenancyIds = categoryChildTenancyIds,
+        ///         IncludeOrganization = categoryIncludeOrganization,
+        ///         Name = categoryName,
+        ///         State = categoryState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testCategories = Oci.Optimizer.GetCategories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Category_compartment_id_in_subtree,
-        ///         ChildTenancyIds = @var.Category_child_tenancy_ids,
-        ///         IncludeOrganization = @var.Category_include_organization,
-        ///         Name = @var.Category_name,
-        ///         State = @var.Category_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = categoryCompartmentIdInSubtree,
+        ///         ChildTenancyIds = categoryChildTenancyIds,
+        ///         IncludeOrganization = categoryIncludeOrganization,
+        ///         Name = categoryName,
+        ///         State = categoryState,
         ///     });
         /// 
         /// });

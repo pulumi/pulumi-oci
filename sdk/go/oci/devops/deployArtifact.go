@@ -31,32 +31,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewDeployArtifact(ctx, "testDeployArtifact", &DevOps.DeployArtifactArgs{
-//				ArgumentSubstitutionMode: pulumi.Any(_var.Deploy_artifact_argument_substitution_mode),
+//			_, err := DevOps.NewDeployArtifact(ctx, "test_deploy_artifact", &DevOps.DeployArtifactArgs{
+//				ArgumentSubstitutionMode: pulumi.Any(deployArtifactArgumentSubstitutionMode),
 //				DeployArtifactSource: &devops.DeployArtifactDeployArtifactSourceArgs{
-//					DeployArtifactSourceType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type),
-//					Base64encodedContent:     pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_base64encoded_content),
-//					ChartUrl:                 pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_chart_url),
-//					DeployArtifactPath:       pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path),
-//					DeployArtifactVersion:    pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version),
-//					HelmArtifactSourceType:   pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_artifact_source_type),
+//					DeployArtifactSourceType: pulumi.Any(deployArtifactDeployArtifactSourceDeployArtifactSourceType),
+//					Base64encodedContent:     pulumi.Any(deployArtifactDeployArtifactSourceBase64encodedContent),
+//					ChartUrl:                 pulumi.Any(deployArtifactDeployArtifactSourceChartUrl),
+//					DeployArtifactPath:       pulumi.Any(deployArtifactDeployArtifactSourceDeployArtifactPath),
+//					DeployArtifactVersion:    pulumi.Any(deployArtifactDeployArtifactSourceDeployArtifactVersion),
+//					HelmArtifactSourceType:   pulumi.Any(deployArtifactDeployArtifactSourceHelmArtifactSourceType),
 //					HelmVerificationKeySource: &devops.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs{
-//						VerificationKeySourceType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type),
-//						CurrentPublicKey:          pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key),
-//						PreviousPublicKey:         pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key),
-//						VaultSecretId:             pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						VerificationKeySourceType: pulumi.Any(deployArtifactDeployArtifactSourceHelmVerificationKeySourceVerificationKeySourceType),
+//						CurrentPublicKey:          pulumi.Any(deployArtifactDeployArtifactSourceHelmVerificationKeySourceCurrentPublicKey),
+//						PreviousPublicKey:         pulumi.Any(deployArtifactDeployArtifactSourceHelmVerificationKeySourcePreviousPublicKey),
+//						VaultSecretId:             pulumi.Any(testSecret.Id),
 //					},
-//					ImageDigest:  pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_digest),
-//					ImageUri:     pulumi.Any(_var.Deploy_artifact_deploy_artifact_source_image_uri),
-//					RepositoryId: pulumi.Any(oci_devops_repository.Test_repository.Id),
+//					ImageDigest:  pulumi.Any(deployArtifactDeployArtifactSourceImageDigest),
+//					ImageUri:     pulumi.Any(deployArtifactDeployArtifactSourceImageUri),
+//					RepositoryId: pulumi.Any(testRepository.Id),
 //				},
-//				DeployArtifactType: pulumi.Any(_var.Deploy_artifact_deploy_artifact_type),
-//				ProjectId:          pulumi.Any(oci_devops_project.Test_project.Id),
+//				DeployArtifactType: pulumi.Any(deployArtifactDeployArtifactType),
+//				ProjectId:          pulumi.Any(testProject.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Deploy_artifact_description),
-//				DisplayName: pulumi.Any(_var.Deploy_artifact_display_name),
+//				Description: pulumi.Any(deployArtifactDescription),
+//				DisplayName: pulumi.Any(deployArtifactDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

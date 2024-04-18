@@ -33,14 +33,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewCloudVmClusterIormConfig(ctx, "testCloudVmClusterIormConfig", &Database.CloudVmClusterIormConfigArgs{
+//			_, err := Database.NewCloudVmClusterIormConfig(ctx, "test_cloud_vm_cluster_iorm_config", &Database.CloudVmClusterIormConfigArgs{
 //				DbPlans: database.CloudVmClusterIormConfigDbPlanArray{
 //					&database.CloudVmClusterIormConfigDbPlanArgs{
-//						DbName: pulumi.Any(_var.Cloud_vm_cluster_iorm_config_db_plans_db_name),
-//						Share:  pulumi.Any(_var.Cloud_vm_cluster_iorm_config_db_plans_share),
+//						DbName: pulumi.Any(cloudVmClusterIormConfigDbPlansDbName),
+//						Share:  pulumi.Any(cloudVmClusterIormConfigDbPlansShare),
 //					},
 //				},
-//				CloudVmClusterId: pulumi.Any(oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id),
+//				CloudVmClusterId: pulumi.Any(testCloudVmCluster.Id),
 //				Objective:        pulumi.String("AUTO"),
 //			})
 //			if err != nil {

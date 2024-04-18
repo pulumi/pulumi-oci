@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetCloudExadataInfrastructureUnAllocatedResource(ctx, &database.GetCloudExadataInfrastructureUnAllocatedResourceArgs{
-//				CloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.Test_cloud_exadata_infrastructure.Id,
-//				DbServers:                    _var.Cloud_exadata_infrastructure_un_allocated_resource_db_servers,
+//				CloudExadataInfrastructureId: testCloudExadataInfrastructure.Id,
+//				DbServers:                    cloudExadataInfrastructureUnAllocatedResourceDbServers,
 //			}, nil)
 //			if err != nil {
 //				return err

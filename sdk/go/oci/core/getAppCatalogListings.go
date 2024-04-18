@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetAppCatalogListings(ctx, &core.GetAppCatalogListingsArgs{
-//				DisplayName:   pulumi.StringRef(_var.App_catalog_listing_display_name),
-//				PublisherName: pulumi.StringRef(_var.App_catalog_listing_publisher_name),
-//				PublisherType: pulumi.StringRef(_var.App_catalog_listing_publisher_type),
+//				DisplayName:   pulumi.StringRef(appCatalogListingDisplayName),
+//				PublisherName: pulumi.StringRef(appCatalogListingPublisherName),
+//				PublisherType: pulumi.StringRef(appCatalogListingPublisherType),
 //			}, nil)
 //			if err != nil {
 //				return err

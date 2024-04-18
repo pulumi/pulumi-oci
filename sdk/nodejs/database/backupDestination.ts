@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBackupDestination = new oci.database.BackupDestination("testBackupDestination", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.backup_destination_display_name,
- *     type: _var.backup_destination_type,
- *     connectionString: _var.backup_destination_connection_string,
- *     definedTags: _var.backup_destination_defined_tags,
+ * const testBackupDestination = new oci.database.BackupDestination("test_backup_destination", {
+ *     compartmentId: compartmentId,
+ *     displayName: backupDestinationDisplayName,
+ *     type: backupDestinationType,
+ *     connectionString: backupDestinationConnectionString,
+ *     definedTags: backupDestinationDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     localMountPointPath: _var.backup_destination_local_mount_point_path,
+ *     localMountPointPath: backupDestinationLocalMountPointPath,
  *     mountTypeDetails: {
- *         mountType: _var.backup_destination_mount_type_details_mount_type,
- *         localMountPointPath: _var.backup_destination_mount_type_details_local_mount_point_path,
- *         nfsServers: _var.backup_destination_mount_type_details_nfs_server,
- *         nfsServerExport: _var.backup_destination_mount_type_details_nfs_server_export,
+ *         mountType: backupDestinationMountTypeDetailsMountType,
+ *         localMountPointPath: backupDestinationMountTypeDetailsLocalMountPointPath,
+ *         nfsServers: backupDestinationMountTypeDetailsNfsServer,
+ *         nfsServerExport: backupDestinationMountTypeDetailsNfsServerExport,
  *     },
- *     vpcUsers: _var.backup_destination_vpc_users,
+ *     vpcUsers: backupDestinationVpcUsers,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

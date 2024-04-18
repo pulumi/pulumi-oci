@@ -34,9 +34,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewSuppression(ctx, "testSuppression", &Email.SuppressionArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				EmailAddress:  pulumi.Any(_var.Suppression_email_address),
+//			_, err := Email.NewSuppression(ctx, "test_suppression", &Email.SuppressionArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				EmailAddress:  pulumi.Any(suppressionEmailAddress),
 //			})
 //			if err != nil {
 //				return err

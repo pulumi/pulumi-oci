@@ -30,9 +30,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testMetastores = Oci.DataCatalog.GetMetastores.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Metastore_display_name,
-        ///         State = @var.Metastore_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = metastoreDisplayName,
+        ///         State = metastoreState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testMetastores = Oci.DataCatalog.GetMetastores.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Metastore_display_name,
-        ///         State = @var.Metastore_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = metastoreDisplayName,
+        ///         State = metastoreState,
         ///     });
         /// 
         /// });

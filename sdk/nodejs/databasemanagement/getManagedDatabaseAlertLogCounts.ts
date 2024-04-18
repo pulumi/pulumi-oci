@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseAlertLogCounts = oci.DatabaseManagement.getManagedDatabaseAlertLogCounts({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     groupBy: _var.managed_database_alert_log_count_group_by,
- *     isRegularExpression: _var.managed_database_alert_log_count_is_regular_expression,
- *     levelFilter: _var.managed_database_alert_log_count_level_filter,
- *     logSearchText: _var.managed_database_alert_log_count_log_search_text,
- *     timeGreaterThanOrEqualTo: _var.managed_database_alert_log_count_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.managed_database_alert_log_count_time_less_than_or_equal_to,
- *     typeFilter: _var.managed_database_alert_log_count_type_filter,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     groupBy: managedDatabaseAlertLogCountGroupBy,
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
+ *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
+ *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
+ *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: managedDatabaseAlertLogCountTimeLessThanOrEqualTo,
+ *     typeFilter: managedDatabaseAlertLogCountTypeFilter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,14 +124,14 @@ export interface GetManagedDatabaseAlertLogCountsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseAlertLogCounts = oci.DatabaseManagement.getManagedDatabaseAlertLogCounts({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     groupBy: _var.managed_database_alert_log_count_group_by,
- *     isRegularExpression: _var.managed_database_alert_log_count_is_regular_expression,
- *     levelFilter: _var.managed_database_alert_log_count_level_filter,
- *     logSearchText: _var.managed_database_alert_log_count_log_search_text,
- *     timeGreaterThanOrEqualTo: _var.managed_database_alert_log_count_time_greater_than_or_equal_to,
- *     timeLessThanOrEqualTo: _var.managed_database_alert_log_count_time_less_than_or_equal_to,
- *     typeFilter: _var.managed_database_alert_log_count_type_filter,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     groupBy: managedDatabaseAlertLogCountGroupBy,
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
+ *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
+ *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
+ *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
+ *     timeLessThanOrEqualTo: managedDatabaseAlertLogCountTimeLessThanOrEqualTo,
+ *     typeFilter: managedDatabaseAlertLogCountTypeFilter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

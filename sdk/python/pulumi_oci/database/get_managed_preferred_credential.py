@@ -165,8 +165,8 @@ def get_managed_preferred_credential(credential_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=var["managed_database_preferred_credential_credential_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=managed_database_preferred_credential_credential_name,
+        managed_database_id=test_managed_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -212,8 +212,8 @@ def get_managed_preferred_credential_output(credential_name: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=var["managed_database_preferred_credential_credential_name"],
-        managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"])
+    test_managed_database_preferred_credential = oci.Database.get_managed_preferred_credential(credential_name=managed_database_preferred_credential_credential_name,
+        managed_database_id=test_managed_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,16 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApmSynthetics.NewOnPremiseVantagePoint(ctx, "testOnPremiseVantagePoint", &ApmSynthetics.OnPremiseVantagePointArgs{
-//				ApmDomainId: pulumi.Any(oci_apm_apm_domain.Test_apm_domain.Id),
+//			_, err := ApmSynthetics.NewOnPremiseVantagePoint(ctx, "test_on_premise_vantage_point", &ApmSynthetics.OnPremiseVantagePointArgs{
+//				ApmDomainId: pulumi.Any(testApmDomain.Id),
+//				Name:        pulumi.Any(onPremiseVantagePointName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.On_premise_vantage_point_description),
+//				Description: pulumi.Any(onPremiseVantagePointDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Type: pulumi.Any(_var.On_premise_vantage_point_type),
+//				Type: pulumi.Any(onPremiseVantagePointType),
 //			})
 //			if err != nil {
 //				return err

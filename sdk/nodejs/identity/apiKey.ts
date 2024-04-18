@@ -27,9 +27,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApiKey = new oci.identity.ApiKey("testApiKey", {
- *     keyValue: _var.api_key_key_value,
- *     userId: oci_identity_user.test_user.id,
+ * const testApiKey = new oci.identity.ApiKey("test_api_key", {
+ *     keyValue: apiKeyKeyValue,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

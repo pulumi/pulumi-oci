@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Nosql.NewTableReplica(ctx, "testTableReplica", &Nosql.TableReplicaArgs{
-//				Region:        pulumi.Any(_var.Table_replica_region),
-//				TableNameOrId: pulumi.Any(oci_nosql_table_name_or.Test_table_name_or.Id),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				MaxReadUnits:  pulumi.Any(_var.Table_replica_max_read_units),
-//				MaxWriteUnits: pulumi.Any(_var.Table_replica_max_write_units),
+//			_, err := Nosql.NewTableReplica(ctx, "test_table_replica", &Nosql.TableReplicaArgs{
+//				Region:        pulumi.Any(tableReplicaRegion),
+//				TableNameOrId: pulumi.Any(testTableNameOr.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				MaxReadUnits:  pulumi.Any(tableReplicaMaxReadUnits),
+//				MaxWriteUnits: pulumi.Any(tableReplicaMaxWriteUnits),
 //			})
 //			if err != nil {
 //				return err

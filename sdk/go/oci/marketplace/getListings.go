@@ -45,17 +45,17 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetListings(ctx, &marketplace.GetListingsArgs{
-//				Categories:       _var.Listing_category,
-//				CompartmentId:    pulumi.StringRef(_var.Compartment_id),
-//				ImageId:          pulumi.StringRef(oci_core_image.Test_image.Id),
-//				IsFeatured:       pulumi.BoolRef(_var.Listing_is_featured),
-//				ListingId:        pulumi.StringRef(oci_marketplace_listing.Test_listing.Id),
-//				ListingTypes:     _var.Listing_listing_types,
-//				Names:            _var.Listing_name,
-//				OperatingSystems: _var.Listing_operating_systems,
-//				PackageType:      pulumi.StringRef(_var.Listing_package_type),
-//				Pricings:         _var.Listing_pricing,
-//				PublisherId:      pulumi.StringRef(oci_marketplace_publisher.Test_publisher.Id),
+//				Categories:       listingCategory,
+//				CompartmentId:    pulumi.StringRef(compartmentId),
+//				ImageId:          pulumi.StringRef(testImage.Id),
+//				IsFeatured:       pulumi.BoolRef(listingIsFeatured),
+//				ListingId:        pulumi.StringRef(testListing.Id),
+//				ListingTypes:     listingListingTypes,
+//				Names:            listingName,
+//				OperatingSystems: listingOperatingSystems,
+//				PackageType:      pulumi.StringRef(listingPackageType),
+//				Pricings:         listingPricing,
+//				PublisherId:      pulumi.StringRef(testPublisher.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

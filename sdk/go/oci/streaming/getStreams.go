@@ -34,11 +34,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.GetStreams(ctx, &streaming.GetStreamsArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				Id:            pulumi.StringRef(_var.Stream_id),
-//				Name:          pulumi.StringRef(_var.Stream_name),
-//				State:         pulumi.StringRef(_var.Stream_state),
-//				StreamPoolId:  pulumi.StringRef(oci_streaming_stream_pool.Test_stream_pool.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				Id:            pulumi.StringRef(streamId),
+//				Name:          pulumi.StringRef(streamName),
+//				State:         pulumi.StringRef(streamState),
+//				StreamPoolId:  pulumi.StringRef(testStreamPool.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -29,8 +29,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testAddon = Oci.ContainerEngine.GetAddon.Invoke(new()
         ///     {
-        ///         AddonName = oci_containerengine_addon.Test_addon.Name,
-        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+        ///         AddonName = testAddonOciContainerengineAddon.Name,
+        ///         ClusterId = testCluster.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testAddon = Oci.ContainerEngine.GetAddon.Invoke(new()
         ///     {
-        ///         AddonName = oci_containerengine_addon.Test_addon.Name,
-        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
+        ///         AddonName = testAddonOciContainerengineAddon.Name,
+        ///         ClusterId = testCluster.Id,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.GetCatalog(ctx, &datacatalog.GetCatalogArgs{
-//				CatalogId: oci_datacatalog_catalog.Test_catalog.Id,
+//				CatalogId: testCatalogOciDatacatalogCatalog.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

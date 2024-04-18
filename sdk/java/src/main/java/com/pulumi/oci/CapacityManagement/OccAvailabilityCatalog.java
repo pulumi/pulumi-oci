@@ -49,16 +49,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOccAvailabilityCatalog = new OccAvailabilityCatalog(&#34;testOccAvailabilityCatalog&#34;, OccAvailabilityCatalogArgs.builder()        
- *             .base64encodedCatalogDetails(var_.occ_availability_catalog_base64encoded_catalog_details())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.occ_availability_catalog_display_name())
- *             .namespace(var_.occ_availability_catalog_namespace())
- *             .occCustomerGroupId(oci_capacity_management_occ_customer_group.test_occ_customer_group().id())
+ *             .base64encodedCatalogDetails(occAvailabilityCatalogBase64encodedCatalogDetails)
+ *             .compartmentId(compartmentId)
+ *             .displayName(occAvailabilityCatalogDisplayName)
+ *             .namespace(occAvailabilityCatalogNamespace)
+ *             .occCustomerGroupId(testOccCustomerGroup.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.occ_availability_catalog_description())
+ *             .description(occAvailabilityCatalogDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .metadataDetails(OccAvailabilityCatalogMetadataDetailsArgs.builder()
- *                 .formatVersion(var_.occ_availability_catalog_metadata_details_format_version())
+ *                 .formatVersion(occAvailabilityCatalogMetadataDetailsFormatVersion)
  *                 .build())
  *             .build());
  * 

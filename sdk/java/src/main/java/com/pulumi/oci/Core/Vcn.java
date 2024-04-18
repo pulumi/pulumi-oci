@@ -88,20 +88,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVcn = new Vcn(&#34;testVcn&#34;, VcnArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .byoipv6cidrDetails(VcnByoipv6cidrDetailArgs.builder()
- *                 .byoipv6rangeId(oci_core_byoipv6range.test_byoipv6range().id())
- *                 .ipv6cidrBlock(var_.vcn_byoipv6cidr_details_ipv6cidr_block())
+ *                 .byoipv6rangeId(testByoipv6range.id())
+ *                 .ipv6cidrBlock(vcnByoipv6cidrDetailsIpv6cidrBlock)
  *                 .build())
- *             .cidrBlock(var_.vcn_cidr_block())
- *             .cidrBlocks(var_.vcn_cidr_blocks())
+ *             .cidrBlock(vcnCidrBlock)
+ *             .cidrBlocks(vcnCidrBlocks)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.vcn_display_name())
- *             .dnsLabel(var_.vcn_dns_label())
+ *             .displayName(vcnDisplayName)
+ *             .dnsLabel(vcnDnsLabel)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .ipv6privateCidrBlocks(var_.vcn_ipv6private_cidr_blocks())
- *             .isIpv6enabled(var_.vcn_is_ipv6enabled())
- *             .isOracleGuaAllocationEnabled(var_.vcn_is_oracle_gua_allocation_enabled())
+ *             .ipv6privateCidrBlocks(vcnIpv6privateCidrBlocks)
+ *             .isIpv6enabled(vcnIsIpv6enabled)
+ *             .isOracleGuaAllocationEnabled(vcnIsOracleGuaAllocationEnabled)
  *             .build());
  * 
  *     }

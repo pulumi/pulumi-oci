@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetShapes(ctx, &core.GetShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Shape_availability_domain),
-//				ImageId:            pulumi.StringRef(oci_core_image.Test_image.Id),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(shapeAvailabilityDomain),
+//				ImageId:            pulumi.StringRef(testImage.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

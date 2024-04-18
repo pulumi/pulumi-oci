@@ -157,9 +157,9 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_externalpluggabledatabases_stack_monitoring = oci.database.ExternalPluggableDatabasesStackMonitoring("testExternalpluggabledatabasesStackMonitoring",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"],
+        test_externalpluggabledatabases_stack_monitoring = oci.database.ExternalPluggableDatabasesStackMonitoring("test_externalpluggabledatabases_stack_monitoring",
+            external_database_connector_id=test_external_database_connector["id"],
+            external_pluggable_database_id=test_external_pluggable_database["id"],
             enable_stack_monitoring=True)
         ```
         <!--End PulumiCodeChooser -->
@@ -196,9 +196,9 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_externalpluggabledatabases_stack_monitoring = oci.database.ExternalPluggableDatabasesStackMonitoring("testExternalpluggabledatabasesStackMonitoring",
-            external_database_connector_id=oci_database_external_database_connector["test_external_database_connector"]["id"],
-            external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"],
+        test_externalpluggabledatabases_stack_monitoring = oci.database.ExternalPluggableDatabasesStackMonitoring("test_externalpluggabledatabases_stack_monitoring",
+            external_database_connector_id=test_external_database_connector["id"],
+            external_pluggable_database_id=test_external_pluggable_database["id"],
             enable_stack_monitoring=True)
         ```
         <!--End PulumiCodeChooser -->

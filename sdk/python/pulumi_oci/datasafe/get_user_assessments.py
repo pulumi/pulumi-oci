@@ -255,19 +255,19 @@ def get_user_assessments(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=var["compartment_id"],
-        access_level=var["user_assessment_access_level"],
-        compartment_id_in_subtree=var["user_assessment_compartment_id_in_subtree"],
-        display_name=var["user_assessment_display_name"],
-        is_baseline=var["user_assessment_is_baseline"],
-        is_schedule_assessment=var["user_assessment_is_schedule_assessment"],
-        schedule_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        state=var["user_assessment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["user_assessment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["user_assessment_time_created_less_than"],
-        triggered_by=var["user_assessment_triggered_by"],
-        type=var["user_assessment_type"])
+    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=compartment_id,
+        access_level=user_assessment_access_level,
+        compartment_id_in_subtree=user_assessment_compartment_id_in_subtree,
+        display_name=user_assessment_display_name,
+        is_baseline=user_assessment_is_baseline,
+        is_schedule_assessment=user_assessment_is_schedule_assessment,
+        schedule_user_assessment_id=test_user_assessment["id"],
+        state=user_assessment_state,
+        target_id=test_target["id"],
+        time_created_greater_than_or_equal_to=user_assessment_time_created_greater_than_or_equal_to,
+        time_created_less_than=user_assessment_time_created_less_than,
+        triggered_by=user_assessment_triggered_by,
+        type=user_assessment_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -370,19 +370,19 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=var["compartment_id"],
-        access_level=var["user_assessment_access_level"],
-        compartment_id_in_subtree=var["user_assessment_compartment_id_in_subtree"],
-        display_name=var["user_assessment_display_name"],
-        is_baseline=var["user_assessment_is_baseline"],
-        is_schedule_assessment=var["user_assessment_is_schedule_assessment"],
-        schedule_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
-        state=var["user_assessment_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_created_greater_than_or_equal_to=var["user_assessment_time_created_greater_than_or_equal_to"],
-        time_created_less_than=var["user_assessment_time_created_less_than"],
-        triggered_by=var["user_assessment_triggered_by"],
-        type=var["user_assessment_type"])
+    test_user_assessments = oci.DataSafe.get_user_assessments(compartment_id=compartment_id,
+        access_level=user_assessment_access_level,
+        compartment_id_in_subtree=user_assessment_compartment_id_in_subtree,
+        display_name=user_assessment_display_name,
+        is_baseline=user_assessment_is_baseline,
+        is_schedule_assessment=user_assessment_is_schedule_assessment,
+        schedule_user_assessment_id=test_user_assessment["id"],
+        state=user_assessment_state,
+        target_id=test_target["id"],
+        time_created_greater_than_or_equal_to=user_assessment_time_created_greater_than_or_equal_to,
+        time_created_less_than=user_assessment_time_created_less_than,
+        triggered_by=user_assessment_triggered_by,
+        type=user_assessment_type)
     ```
     <!--End PulumiCodeChooser -->
 

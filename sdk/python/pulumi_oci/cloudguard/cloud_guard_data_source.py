@@ -395,27 +395,27 @@ class CloudGuardDataSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_source = oci.cloud_guard.CloudGuardDataSource("testDataSource",
-            compartment_id=var["compartment_id"],
-            data_source_feed_provider=var["data_source_data_source_feed_provider"],
-            display_name=var["data_source_display_name"],
+        test_data_source = oci.cloud_guard.CloudGuardDataSource("test_data_source",
+            compartment_id=compartment_id,
+            data_source_feed_provider=data_source_data_source_feed_provider,
+            display_name=data_source_display_name,
             data_source_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsArgs(
-                data_source_feed_provider=var["data_source_data_source_details_data_source_feed_provider"],
-                additional_entities_count=var["data_source_data_source_details_additional_entities_count"],
-                interval_in_minutes=var["data_source_data_source_details_interval_in_minutes"],
+                data_source_feed_provider=data_source_data_source_details_data_source_feed_provider,
+                additional_entities_count=data_source_data_source_details_additional_entities_count,
+                interval_in_minutes=data_source_data_source_details_interval_in_minutes,
                 logging_query_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs(
-                    logging_query_type=var["data_source_data_source_details_logging_query_details_logging_query_type"],
-                    key_entities_count=var["data_source_data_source_details_logging_query_details_key_entities_count"],
+                    logging_query_type=data_source_data_source_details_logging_query_details_logging_query_type,
+                    key_entities_count=data_source_data_source_details_logging_query_details_key_entities_count,
                 ),
-                logging_query_type=var["data_source_data_source_details_logging_query_type"],
-                operator=var["data_source_data_source_details_operator"],
-                query=var["data_source_data_source_details_query"],
+                logging_query_type=data_source_data_source_details_logging_query_type,
+                operator=data_source_data_source_details_operator,
+                query=data_source_data_source_details_query,
                 query_start_time=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs(
-                    start_policy_type=var["data_source_data_source_details_query_start_time_start_policy_type"],
-                    query_start_time=var["data_source_data_source_details_query_start_time_query_start_time"],
+                    start_policy_type=data_source_data_source_details_query_start_time_start_policy_type,
+                    query_start_time=data_source_data_source_details_query_start_time_query_start_time,
                 ),
-                regions=var["data_source_data_source_details_regions"],
-                threshold=var["data_source_data_source_details_threshold"],
+                regions=data_source_data_source_details_regions,
+                threshold=data_source_data_source_details_threshold,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -423,7 +423,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            status=var["data_source_status"])
+            status=data_source_status)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -469,27 +469,27 @@ class CloudGuardDataSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_source = oci.cloud_guard.CloudGuardDataSource("testDataSource",
-            compartment_id=var["compartment_id"],
-            data_source_feed_provider=var["data_source_data_source_feed_provider"],
-            display_name=var["data_source_display_name"],
+        test_data_source = oci.cloud_guard.CloudGuardDataSource("test_data_source",
+            compartment_id=compartment_id,
+            data_source_feed_provider=data_source_data_source_feed_provider,
+            display_name=data_source_display_name,
             data_source_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsArgs(
-                data_source_feed_provider=var["data_source_data_source_details_data_source_feed_provider"],
-                additional_entities_count=var["data_source_data_source_details_additional_entities_count"],
-                interval_in_minutes=var["data_source_data_source_details_interval_in_minutes"],
+                data_source_feed_provider=data_source_data_source_details_data_source_feed_provider,
+                additional_entities_count=data_source_data_source_details_additional_entities_count,
+                interval_in_minutes=data_source_data_source_details_interval_in_minutes,
                 logging_query_details=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs(
-                    logging_query_type=var["data_source_data_source_details_logging_query_details_logging_query_type"],
-                    key_entities_count=var["data_source_data_source_details_logging_query_details_key_entities_count"],
+                    logging_query_type=data_source_data_source_details_logging_query_details_logging_query_type,
+                    key_entities_count=data_source_data_source_details_logging_query_details_key_entities_count,
                 ),
-                logging_query_type=var["data_source_data_source_details_logging_query_type"],
-                operator=var["data_source_data_source_details_operator"],
-                query=var["data_source_data_source_details_query"],
+                logging_query_type=data_source_data_source_details_logging_query_type,
+                operator=data_source_data_source_details_operator,
+                query=data_source_data_source_details_query,
                 query_start_time=oci.cloud_guard.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs(
-                    start_policy_type=var["data_source_data_source_details_query_start_time_start_policy_type"],
-                    query_start_time=var["data_source_data_source_details_query_start_time_query_start_time"],
+                    start_policy_type=data_source_data_source_details_query_start_time_start_policy_type,
+                    query_start_time=data_source_data_source_details_query_start_time_query_start_time,
                 ),
-                regions=var["data_source_data_source_details_regions"],
-                threshold=var["data_source_data_source_details_threshold"],
+                regions=data_source_data_source_details_regions,
+                threshold=data_source_data_source_details_threshold,
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -497,7 +497,7 @@ class CloudGuardDataSource(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            status=var["data_source_status"])
+            status=data_source_status)
         ```
         <!--End PulumiCodeChooser -->
 

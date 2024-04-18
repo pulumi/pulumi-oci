@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVbInstance = new oci.visualbuilder.VbInstance("testVbInstance", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vb_instance_display_name,
- *     nodeCount: _var.vb_instance_node_count,
+ * const testVbInstance = new oci.visualbuilder.VbInstance("test_vb_instance", {
+ *     compartmentId: compartmentId,
+ *     displayName: vbInstanceDisplayName,
+ *     nodeCount: vbInstanceNodeCount,
  *     alternateCustomEndpoints: [{
- *         hostname: _var.vb_instance_alternate_custom_endpoints_hostname,
- *         certificateSecretId: oci_vault_secret.test_secret.id,
+ *         hostname: vbInstanceAlternateCustomEndpointsHostname,
+ *         certificateSecretId: testSecret.id,
  *     }],
- *     consumptionModel: _var.vb_instance_consumption_model,
+ *     consumptionModel: vbInstanceConsumptionModel,
  *     customEndpoint: {
- *         hostname: _var.vb_instance_custom_endpoint_hostname,
- *         certificateSecretId: oci_vault_secret.test_secret.id,
+ *         hostname: vbInstanceCustomEndpointHostname,
+ *         certificateSecretId: testSecret.id,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
@@ -37,8 +37,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     idcsOpenId: oci_visual_builder_idcs_open.test_idcs_open.id,
- *     isVisualBuilderEnabled: _var.vb_instance_is_visual_builder_enabled,
+ *     idcsOpenId: testIdcsOpen.id,
+ *     isVisualBuilderEnabled: vbInstanceIsVisualBuilderEnabled,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

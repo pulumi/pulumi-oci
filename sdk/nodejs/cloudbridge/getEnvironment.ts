@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEnvironment = oci.CloudBridge.getEnvironment({
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
+ *     environmentId: testEnvironmentOciCloudBridgeEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,7 +99,7 @@ export interface GetEnvironmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEnvironment = oci.CloudBridge.getEnvironment({
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
+ *     environmentId: testEnvironmentOciCloudBridgeEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

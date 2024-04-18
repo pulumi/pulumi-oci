@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUiPassword = oci.Identity.getUiPassword({
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetUiPasswordResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUiPassword = oci.Identity.getUiPassword({
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

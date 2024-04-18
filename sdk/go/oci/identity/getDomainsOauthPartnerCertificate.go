@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsOauthPartnerCertificate(ctx, &identity.GetDomainsOauthPartnerCertificateArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				OAuthPartnerCertificateId: oci_identity_domains_oauth_partner_certificate.Test_oauth_partner_certificate.Id,
-//				Authorization:             pulumi.StringRef(_var.Oauth_partner_certificate_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Oauth_partner_certificate_resource_type_schema_version),
+//				IdcsEndpoint:              testDomain.Url,
+//				OAuthPartnerCertificateId: testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.Id,
+//				Authorization:             pulumi.StringRef(oauthPartnerCertificateAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(oauthPartnerCertificateResourceTypeSchemaVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

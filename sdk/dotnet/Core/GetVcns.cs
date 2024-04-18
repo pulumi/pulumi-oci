@@ -34,9 +34,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVcns = Oci.Core.GetVcns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vcn_display_name,
-        ///         State = @var.Vcn_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vcnDisplayName,
+        ///         State = vcnState,
         ///     });
         /// 
         /// });
@@ -69,9 +69,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVcns = Oci.Core.GetVcns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vcn_display_name,
-        ///         State = @var.Vcn_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vcnDisplayName,
+        ///         State = vcnState,
         ///     });
         /// 
         /// });

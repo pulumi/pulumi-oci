@@ -189,10 +189,10 @@ def get_secretbundle(secret_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_name=oci_vault_secret_version["test_secret_version"]["name"],
-        stage=var["secretbundle_stage"],
-        version_number=var["secretbundle_version_number"])
+    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=test_secret["id"],
+        secret_version_name=test_secret_version["name"],
+        stage=secretbundle_stage,
+        version_number=secretbundle_version_number)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -244,10 +244,10 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=oci_vault_secret["test_secret"]["id"],
-        secret_version_name=oci_vault_secret_version["test_secret_version"]["name"],
-        stage=var["secretbundle_stage"],
-        version_number=var["secretbundle_version_number"])
+    test_secretbundle = oci.Secrets.get_secretbundle(secret_id=test_secret["id"],
+        secret_version_name=test_secret_version["name"],
+        stage=secretbundle_stage,
+        version_number=secretbundle_version_number)
     ```
     <!--End PulumiCodeChooser -->
 

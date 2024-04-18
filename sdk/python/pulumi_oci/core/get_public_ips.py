@@ -165,11 +165,11 @@ def get_public_ips(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=var["compartment_id"],
-        scope=var["public_ip_scope"],
-        availability_domain=var["public_ip_availability_domain"],
-        lifetime=var["public_ip_lifetime"],
-        public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+    test_public_ips = oci.Core.get_public_ips(compartment_id=compartment_id,
+        scope=public_ip_scope,
+        availability_domain=public_ip_availability_domain,
+        lifetime=public_ip_lifetime,
+        public_ip_pool_id=test_public_ip_pool["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -240,11 +240,11 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_public_ips = oci.Core.get_public_ips(compartment_id=var["compartment_id"],
-        scope=var["public_ip_scope"],
-        availability_domain=var["public_ip_availability_domain"],
-        lifetime=var["public_ip_lifetime"],
-        public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
+    test_public_ips = oci.Core.get_public_ips(compartment_id=compartment_id,
+        scope=public_ip_scope,
+        availability_domain=public_ip_availability_domain,
+        lifetime=public_ip_lifetime,
+        public_ip_pool_id=test_public_ip_pool["id"])
     ```
     <!--End PulumiCodeChooser -->
 

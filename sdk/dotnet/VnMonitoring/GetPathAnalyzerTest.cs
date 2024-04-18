@@ -29,7 +29,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// {
         ///     var testPathAnalyzerTest = Oci.VnMonitoring.GetPathAnalyzerTest.Invoke(new()
         ///     {
-        ///         PathAnalyzerTestId = oci_vn_monitoring_path_analyzer_test.Test_path_analyzer_test.Id,
+        ///         PathAnalyzerTestId = testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.VnMonitoring
         /// {
         ///     var testPathAnalyzerTest = Oci.VnMonitoring.GetPathAnalyzerTest.Invoke(new()
         ///     {
-        ///         PathAnalyzerTestId = oci_vn_monitoring_path_analyzer_test.Test_path_analyzer_test.Id,
+        ///         PathAnalyzerTestId = testPathAnalyzerTestOciVnMonitoringPathAnalyzerTest.Id,
         ///     });
         /// 
         /// });

@@ -1306,14 +1306,14 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oauth_client_certificate = oci.identity.DomainsOauthClientCertificate("testOauthClientCertificate",
-            certificate_alias=var["oauth_client_certificate_certificate_alias"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_oauth_client_certificate = oci.identity.DomainsOauthClientCertificate("test_oauth_client_certificate",
+            certificate_alias=oauth_client_certificate_certificate_alias,
+            idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate"],
-            x509base64certificate=var["oauth_client_certificate_x509base64certificate"],
-            authorization=var["oauth_client_certificate_authorization"],
+            x509base64certificate=oauth_client_certificate_x509base64certificate,
+            authorization=oauth_client_certificate_authorization,
             external_id="externalId",
-            resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
+            resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -1455,14 +1455,14 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oauth_client_certificate = oci.identity.DomainsOauthClientCertificate("testOauthClientCertificate",
-            certificate_alias=var["oauth_client_certificate_certificate_alias"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_oauth_client_certificate = oci.identity.DomainsOauthClientCertificate("test_oauth_client_certificate",
+            certificate_alias=oauth_client_certificate_certificate_alias,
+            idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate"],
-            x509base64certificate=var["oauth_client_certificate_x509base64certificate"],
-            authorization=var["oauth_client_certificate_authorization"],
+            x509base64certificate=oauth_client_certificate_x509base64certificate,
+            authorization=oauth_client_certificate_authorization,
             external_id="externalId",
-            resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
+            resource_type_schema_version=oauth_client_certificate_resource_type_schema_version)
         ```
         <!--End PulumiCodeChooser -->
 

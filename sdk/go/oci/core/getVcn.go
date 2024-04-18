@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVcn(ctx, &core.GetVcnArgs{
-//				VcnId: oci_core_vcn.Test_vcn.Id,
+//				VcnId: testVcnOciCoreVcn.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

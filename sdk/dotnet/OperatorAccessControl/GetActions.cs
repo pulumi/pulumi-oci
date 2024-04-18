@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorActions = Oci.OperatorAccessControl.GetActions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Operator_action_name,
-        ///         ResourceType = @var.Operator_action_resource_type,
-        ///         State = @var.Operator_action_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = operatorActionName,
+        ///         ResourceType = operatorActionResourceType,
+        ///         State = operatorActionState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {
         ///     var testOperatorActions = Oci.OperatorAccessControl.GetActions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Operator_action_name,
-        ///         ResourceType = @var.Operator_action_resource_type,
-        ///         State = @var.Operator_action_state,
+        ///         CompartmentId = compartmentId,
+        ///         Name = operatorActionName,
+        ///         ResourceType = operatorActionResourceType,
+        ///         State = operatorActionState,
         ///     });
         /// 
         /// });

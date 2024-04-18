@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousDatabaseRegionalWalletManagement = new Oci.Database.AutonomousDatabaseRegionalWalletManagement("testAutonomousDatabaseRegionalWalletManagement", new()
+    ///     var testAutonomousDatabaseRegionalWalletManagement = new Oci.Database.AutonomousDatabaseRegionalWalletManagement("test_autonomous_database_regional_wallet_management", new()
     ///     {
-    ///         GracePeriod = @var.Autonomous_database_regional_wallet_management_grace_period,
-    ///         ShouldRotate = @var.Autonomous_database_regional_wallet_management_should_rotate,
+    ///         GracePeriod = autonomousDatabaseRegionalWalletManagementGracePeriod,
+    ///         ShouldRotate = autonomousDatabaseRegionalWalletManagementShouldRotate,
     ///     });
     /// 
     /// });

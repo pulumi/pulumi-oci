@@ -120,9 +120,9 @@ def get_subscribers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribers = oci.ApiGateway.get_subscribers(compartment_id=var["compartment_id"],
-        display_name=var["subscriber_display_name"],
-        state=var["subscriber_state"])
+    test_subscribers = oci.ApiGateway.get_subscribers(compartment_id=compartment_id,
+        display_name=subscriber_display_name,
+        state=subscriber_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_subscribers_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscribers = oci.ApiGateway.get_subscribers(compartment_id=var["compartment_id"],
-        display_name=var["subscriber_display_name"],
-        state=var["subscriber_state"])
+    test_subscribers = oci.ApiGateway.get_subscribers(compartment_id=compartment_id,
+        display_name=subscriber_display_name,
+        state=subscriber_state)
     ```
     <!--End PulumiCodeChooser -->
 

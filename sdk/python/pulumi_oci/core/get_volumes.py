@@ -146,11 +146,11 @@ def get_volumes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_display_name"],
-        state=var["volume_state"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
+    test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+        compartment_id=compartment_id,
+        display_name=volume_display_name,
+        state=volume_state,
+        volume_group_id=test_volume_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -202,11 +202,11 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_volumes = oci.Core.get_volumes(availability_domain=var["volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_display_name"],
-        state=var["volume_state"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
+    test_volumes = oci.Core.get_volumes(availability_domain=volume_availability_domain,
+        compartment_id=compartment_id,
+        display_name=volume_display_name,
+        state=volume_state,
+        volume_group_id=test_volume_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

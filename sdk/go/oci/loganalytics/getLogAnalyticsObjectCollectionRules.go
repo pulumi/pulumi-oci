@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsObjectCollectionRules(ctx, &loganalytics.GetLogAnalyticsObjectCollectionRulesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Log_analytics_object_collection_rule_namespace,
-//				Name:          pulumi.StringRef(_var.Log_analytics_object_collection_rule_name),
-//				State:         pulumi.StringRef(_var.Log_analytics_object_collection_rule_state),
+//				CompartmentId: compartmentId,
+//				Namespace:     logAnalyticsObjectCollectionRuleNamespace,
+//				Name:          pulumi.StringRef(logAnalyticsObjectCollectionRuleName),
+//				State:         pulumi.StringRef(logAnalyticsObjectCollectionRuleState),
 //			}, nil)
 //			if err != nil {
 //				return err

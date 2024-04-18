@@ -35,11 +35,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetPbfListingVersions(ctx, &functions.GetPbfListingVersionsArgs{
-//				PbfListingId:        oci_functions_pbf_listing.Test_pbf_listing.Id,
-//				IsCurrentVersion:    pulumi.BoolRef(_var.Pbf_listing_version_is_current_version),
-//				Name:                pulumi.StringRef(_var.Pbf_listing_version_name),
-//				PbfListingVersionId: pulumi.StringRef(oci_functions_pbf_listing_version.Test_pbf_listing_version.Id),
-//				State:               pulumi.StringRef(_var.Pbf_listing_version_state),
+//				PbfListingId:        testPbfListing.Id,
+//				IsCurrentVersion:    pulumi.BoolRef(pbfListingVersionIsCurrentVersion),
+//				Name:                pulumi.StringRef(pbfListingVersionName),
+//				PbfListingVersionId: pulumi.StringRef(testPbfListingVersion.Id),
+//				State:               pulumi.StringRef(pbfListingVersionState),
 //			}, nil)
 //			if err != nil {
 //				return err

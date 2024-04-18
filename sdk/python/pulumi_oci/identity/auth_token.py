@@ -214,9 +214,9 @@ class AuthToken(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_auth_token = oci.identity.AuthToken("testAuthToken",
-            description=var["auth_token_description"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_auth_token = oci.identity.AuthToken("test_auth_token",
+            description=auth_token_description,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -264,9 +264,9 @@ class AuthToken(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_auth_token = oci.identity.AuthToken("testAuthToken",
-            description=var["auth_token_description"],
-            user_id=oci_identity_user["test_user"]["id"])
+        test_auth_token = oci.identity.AuthToken("test_auth_token",
+            description=auth_token_description,
+            user_id=test_user["id"])
         ```
         <!--End PulumiCodeChooser -->
 

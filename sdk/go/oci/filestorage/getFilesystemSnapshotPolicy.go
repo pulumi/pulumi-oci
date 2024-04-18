@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := FileStorage.GetFilesystemSnapshotPolicy(ctx, &filestorage.GetFilesystemSnapshotPolicyArgs{
-//				FilesystemSnapshotPolicyId: oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
+//				FilesystemSnapshotPolicyId: testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

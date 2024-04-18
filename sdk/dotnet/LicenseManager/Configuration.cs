@@ -25,10 +25,10 @@ namespace Pulumi.Oci.LicenseManager
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConfiguration = new Oci.LicenseManager.Configuration("testConfiguration", new()
+    ///     var testConfiguration = new Oci.LicenseManager.Configuration("test_configuration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EmailIds = @var.Configuration_email_ids,
+    ///         CompartmentId = compartmentId,
+    ///         EmailIds = configurationEmailIds,
     ///     });
     /// 
     /// });

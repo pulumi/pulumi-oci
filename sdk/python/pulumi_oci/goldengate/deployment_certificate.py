@@ -429,10 +429,10 @@ class DeploymentCertificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deployment_certificate = oci.golden_gate.DeploymentCertificate("testDeploymentCertificate",
-            certificate_content=var["deployment_certificate_certificate_content"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-            key=var["deployment_certificate_key"])
+        test_deployment_certificate = oci.golden_gate.DeploymentCertificate("test_deployment_certificate",
+            certificate_content=deployment_certificate_certificate_content,
+            deployment_id=test_deployment["id"],
+            key=deployment_certificate_key)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -472,10 +472,10 @@ class DeploymentCertificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_deployment_certificate = oci.golden_gate.DeploymentCertificate("testDeploymentCertificate",
-            certificate_content=var["deployment_certificate_certificate_content"],
-            deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-            key=var["deployment_certificate_key"])
+        test_deployment_certificate = oci.golden_gate.DeploymentCertificate("test_deployment_certificate",
+            certificate_content=deployment_certificate_certificate_content,
+            deployment_id=test_deployment["id"],
+            key=deployment_certificate_key)
         ```
         <!--End PulumiCodeChooser -->
 

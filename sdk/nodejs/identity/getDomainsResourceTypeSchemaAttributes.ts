@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceTypeSchemaAttributes = oci.Identity.getDomainsResourceTypeSchemaAttributes({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     resourceTypeSchemaAttributeCount: _var.resource_type_schema_attribute_resource_type_schema_attribute_count,
- *     resourceTypeSchemaAttributeFilter: _var.resource_type_schema_attribute_resource_type_schema_attribute_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     resourceTypeSchemaAttributeCount: resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+ *     resourceTypeSchemaAttributeFilter: resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.resource_type_schema_attribute_authorization,
- *     resourceTypeSchemaVersion: _var.resource_type_schema_attribute_resource_type_schema_version,
- *     startIndex: _var.resource_type_schema_attribute_start_index,
+ *     authorization: resourceTypeSchemaAttributeAuthorization,
+ *     resourceTypeSchemaVersion: resourceTypeSchemaAttributeResourceTypeSchemaVersion,
+ *     startIndex: resourceTypeSchemaAttributeStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,14 +142,14 @@ export interface GetDomainsResourceTypeSchemaAttributesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceTypeSchemaAttributes = oci.Identity.getDomainsResourceTypeSchemaAttributes({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     resourceTypeSchemaAttributeCount: _var.resource_type_schema_attribute_resource_type_schema_attribute_count,
- *     resourceTypeSchemaAttributeFilter: _var.resource_type_schema_attribute_resource_type_schema_attribute_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     resourceTypeSchemaAttributeCount: resourceTypeSchemaAttributeResourceTypeSchemaAttributeCount,
+ *     resourceTypeSchemaAttributeFilter: resourceTypeSchemaAttributeResourceTypeSchemaAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.resource_type_schema_attribute_authorization,
- *     resourceTypeSchemaVersion: _var.resource_type_schema_attribute_resource_type_schema_version,
- *     startIndex: _var.resource_type_schema_attribute_start_index,
+ *     authorization: resourceTypeSchemaAttributeAuthorization,
+ *     resourceTypeSchemaVersion: resourceTypeSchemaAttributeResourceTypeSchemaVersion,
+ *     startIndex: resourceTypeSchemaAttributeStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendationStrategies = oci.Optimizer.getRecommendationStrategies({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.recommendation_strategy_compartment_id_in_subtree,
- *     name: _var.recommendation_strategy_name,
- *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+ *     name: recommendationStrategyName,
+ *     recommendationName: testRecommendation.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -98,10 +98,10 @@ export interface GetRecommendationStrategiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRecommendationStrategies = oci.Optimizer.getRecommendationStrategies({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.recommendation_strategy_compartment_id_in_subtree,
- *     name: _var.recommendation_strategy_name,
- *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
+ *     name: recommendationStrategyName,
+ *     recommendationName: testRecommendation.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

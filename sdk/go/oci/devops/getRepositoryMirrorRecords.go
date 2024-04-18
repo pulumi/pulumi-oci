@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryMirrorRecords(ctx, &devops.GetRepositoryMirrorRecordsArgs{
-//				RepositoryId: oci_devops_repository.Test_repository.Id,
+//				RepositoryId: testRepository.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

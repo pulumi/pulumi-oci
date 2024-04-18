@@ -317,7 +317,7 @@ def get_pluggable_database(pluggable_database_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"])
+    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=test_pluggable_database_oci_database_pluggable_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -372,7 +372,7 @@ def get_pluggable_database_output(pluggable_database_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"])
+    test_pluggable_database = oci.Database.get_pluggable_database(pluggable_database_id=test_pluggable_database_oci_database_pluggable_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

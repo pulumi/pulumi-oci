@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testClusterNetworkInstances = Oci.Core.GetClusterNetworkInstances.Invoke(new()
         ///     {
-        ///         ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Cluster_network_instance_display_name,
+        ///         ClusterNetworkId = testClusterNetwork.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterNetworkInstanceDisplayName,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testClusterNetworkInstances = Oci.Core.GetClusterNetworkInstances.Invoke(new()
         ///     {
-        ///         ClusterNetworkId = oci_core_cluster_network.Test_cluster_network.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Cluster_network_instance_display_name,
+        ///         ClusterNetworkId = testClusterNetwork.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = clusterNetworkInstanceDisplayName,
         ///     });
         /// 
         /// });

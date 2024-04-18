@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentPluginCount = oci.ManagementAgent.getManagementAgentPluginCount({
- *     compartmentId: _var.compartment_id,
- *     groupBy: _var.management_agent_plugin_count_group_by,
+ *     compartmentId: compartmentId,
+ *     groupBy: managementAgentPluginCountGroupBy,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -78,8 +78,8 @@ export interface GetManagementAgentPluginCountResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentPluginCount = oci.ManagementAgent.getManagementAgentPluginCount({
- *     compartmentId: _var.compartment_id,
- *     groupBy: _var.management_agent_plugin_count_group_by,
+ *     compartmentId: compartmentId,
+ *     groupBy: managementAgentPluginCountGroupBy,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

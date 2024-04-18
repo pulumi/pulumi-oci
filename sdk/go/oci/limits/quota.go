@@ -31,10 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Limits.NewQuota(ctx, "testQuota", &Limits.QuotaArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.Quota_description),
-//				Statements:    pulumi.Any(_var.Quota_statements),
+//			_, err := Limits.NewQuota(ctx, "test_quota", &Limits.QuotaArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(quotaDescription),
+//				Name:          pulumi.Any(quotaName),
+//				Statements:    pulumi.Any(quotaStatements),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -43,9 +44,9 @@ import (
 //				},
 //				Locks: limits.QuotaLockArray{
 //					&limits.QuotaLockArgs{
-//						Type:              pulumi.Any(_var.Quota_locks_type),
-//						Message:           pulumi.Any(_var.Quota_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_limits_related_resource.Test_related_resource.Id),
+//						Type:              pulumi.Any(quotaLocksType),
+//						Message:           pulumi.Any(quotaLocksMessage),
+//						RelatedResourceId: pulumi.Any(testRelatedResource.Id),
 //					},
 //				},
 //			})

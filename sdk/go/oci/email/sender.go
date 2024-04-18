@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewSender(ctx, "testSender", &Email.SenderArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				EmailAddress:  pulumi.Any(_var.Sender_email_address),
+//			_, err := Email.NewSender(ctx, "test_sender", &Email.SenderArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				EmailAddress:  pulumi.Any(senderEmailAddress),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

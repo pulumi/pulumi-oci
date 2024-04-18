@@ -449,18 +449,18 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_exadata_storage_connector = oci.database_management.ExternalExadataStorageConnector("testExternalExadataStorageConnector",
-            agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-            connection_uri=var["external_exadata_storage_connector_connection_uri"],
-            connector_name=var["external_exadata_storage_connector_connector_name"],
+        test_external_exadata_storage_connector = oci.database_management.ExternalExadataStorageConnector("test_external_exadata_storage_connector",
+            agent_id=test_agent["id"],
+            connection_uri=external_exadata_storage_connector_connection_uri,
+            connector_name=external_exadata_storage_connector_connector_name,
             credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=var["external_exadata_storage_connector_credential_info_password"],
-                username=var["external_exadata_storage_connector_credential_info_username"],
-                ssl_trust_store_location=var["external_exadata_storage_connector_credential_info_ssl_trust_store_location"],
-                ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
-                ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
+                password=external_exadata_storage_connector_credential_info_password,
+                username=external_exadata_storage_connector_credential_info_username,
+                ssl_trust_store_location=external_exadata_storage_connector_credential_info_ssl_trust_store_location,
+                ssl_trust_store_password=external_exadata_storage_connector_credential_info_ssl_trust_store_password,
+                ssl_trust_store_type=external_exadata_storage_connector_credential_info_ssl_trust_store_type,
             ),
-            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"],
+            storage_server_id=test_storage_server["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -510,18 +510,18 @@ class ExternalExadataStorageConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_exadata_storage_connector = oci.database_management.ExternalExadataStorageConnector("testExternalExadataStorageConnector",
-            agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-            connection_uri=var["external_exadata_storage_connector_connection_uri"],
-            connector_name=var["external_exadata_storage_connector_connector_name"],
+        test_external_exadata_storage_connector = oci.database_management.ExternalExadataStorageConnector("test_external_exadata_storage_connector",
+            agent_id=test_agent["id"],
+            connection_uri=external_exadata_storage_connector_connection_uri,
+            connector_name=external_exadata_storage_connector_connector_name,
             credential_info=oci.database_management.ExternalExadataStorageConnectorCredentialInfoArgs(
-                password=var["external_exadata_storage_connector_credential_info_password"],
-                username=var["external_exadata_storage_connector_credential_info_username"],
-                ssl_trust_store_location=var["external_exadata_storage_connector_credential_info_ssl_trust_store_location"],
-                ssl_trust_store_password=var["external_exadata_storage_connector_credential_info_ssl_trust_store_password"],
-                ssl_trust_store_type=var["external_exadata_storage_connector_credential_info_ssl_trust_store_type"],
+                password=external_exadata_storage_connector_credential_info_password,
+                username=external_exadata_storage_connector_credential_info_username,
+                ssl_trust_store_location=external_exadata_storage_connector_credential_info_ssl_trust_store_location,
+                ssl_trust_store_password=external_exadata_storage_connector_credential_info_ssl_trust_store_password,
+                ssl_trust_store_type=external_exadata_storage_connector_credential_info_ssl_trust_store_type,
             ),
-            storage_server_id=oci_database_management_storage_server["test_storage_server"]["id"],
+            storage_server_id=test_storage_server["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },

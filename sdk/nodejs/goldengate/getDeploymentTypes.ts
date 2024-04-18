@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentTypes = oci.GoldenGate.getDeploymentTypes({
- *     compartmentId: _var.compartment_id,
- *     deploymentType: _var.deployment_type_deployment_type,
- *     displayName: _var.deployment_type_display_name,
- *     oggVersion: _var.deployment_type_ogg_version,
+ *     compartmentId: compartmentId,
+ *     deploymentType: deploymentTypeDeploymentType,
+ *     displayName: deploymentTypeDisplayName,
+ *     oggVersion: deploymentTypeOggVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetDeploymentTypesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeploymentTypes = oci.GoldenGate.getDeploymentTypes({
- *     compartmentId: _var.compartment_id,
- *     deploymentType: _var.deployment_type_deployment_type,
- *     displayName: _var.deployment_type_display_name,
- *     oggVersion: _var.deployment_type_ogg_version,
+ *     compartmentId: compartmentId,
+ *     deploymentType: deploymentTypeDeploymentType,
+ *     displayName: deploymentTypeDisplayName,
+ *     oggVersion: deploymentTypeOggVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditEvents = oci.Audit.getEvents({
- *     compartmentId: _var.compartment_id,
- *     endTime: _var.audit_event_end_time,
- *     startTime: _var.audit_event_start_time,
+ *     compartmentId: compartmentId,
+ *     endTime: auditEventEndTime,
+ *     startTime: auditEventStartTime,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetEventsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditEvents = oci.Audit.getEvents({
- *     compartmentId: _var.compartment_id,
- *     endTime: _var.audit_event_end_time,
- *     startTime: _var.audit_event_start_time,
+ *     compartmentId: compartmentId,
+ *     endTime: auditEventEndTime,
+ *     startTime: auditEventStartTime,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

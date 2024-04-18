@@ -113,10 +113,10 @@ def get_audit_profile_collected_audit_volume(audit_profile_id: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_collected_audit_volume = oci.DataSafe.get_audit_profile_collected_audit_volume(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"],
-        month_in_consideration_greater_than=var["audit_profile_collected_audit_volume_month_in_consideration_greater_than"],
-        month_in_consideration_less_than=var["audit_profile_collected_audit_volume_month_in_consideration_less_than"])
+    test_audit_profile_collected_audit_volume = oci.DataSafe.get_audit_profile_collected_audit_volume(audit_profile_id=test_audit_profile["id"],
+        work_request_id=test_work_request["id"],
+        month_in_consideration_greater_than=audit_profile_collected_audit_volume_month_in_consideration_greater_than,
+        month_in_consideration_less_than=audit_profile_collected_audit_volume_month_in_consideration_less_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -165,10 +165,10 @@ def get_audit_profile_collected_audit_volume_output(audit_profile_id: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_collected_audit_volume = oci.DataSafe.get_audit_profile_collected_audit_volume(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"],
-        month_in_consideration_greater_than=var["audit_profile_collected_audit_volume_month_in_consideration_greater_than"],
-        month_in_consideration_less_than=var["audit_profile_collected_audit_volume_month_in_consideration_less_than"])
+    test_audit_profile_collected_audit_volume = oci.DataSafe.get_audit_profile_collected_audit_volume(audit_profile_id=test_audit_profile["id"],
+        work_request_id=test_work_request["id"],
+        month_in_consideration_greater_than=audit_profile_collected_audit_volume_month_in_consideration_greater_than,
+        month_in_consideration_less_than=audit_profile_collected_audit_volume_month_in_consideration_less_than)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -363,10 +363,10 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_media_workflow_configuration = oci.media_services.MediaWorkflowConfiguration("testMediaWorkflowConfiguration",
-            compartment_id=var["compartment_id"],
-            display_name=var["media_workflow_configuration_display_name"],
-            parameters=var["media_workflow_configuration_parameters"],
+        test_media_workflow_configuration = oci.media_services.MediaWorkflowConfiguration("test_media_workflow_configuration",
+            compartment_id=compartment_id,
+            display_name=media_workflow_configuration_display_name,
+            parameters=media_workflow_configuration_parameters,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -374,11 +374,11 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                 "bar-key": "value",
             },
             locks=[oci.media_services.MediaWorkflowConfigurationLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["media_workflow_configuration_locks_type"],
-                message=var["media_workflow_configuration_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["media_workflow_configuration_locks_time_created"],
+                compartment_id=compartment_id,
+                type=media_workflow_configuration_locks_type,
+                message=media_workflow_configuration_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=media_workflow_configuration_locks_time_created,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -422,10 +422,10 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_media_workflow_configuration = oci.media_services.MediaWorkflowConfiguration("testMediaWorkflowConfiguration",
-            compartment_id=var["compartment_id"],
-            display_name=var["media_workflow_configuration_display_name"],
-            parameters=var["media_workflow_configuration_parameters"],
+        test_media_workflow_configuration = oci.media_services.MediaWorkflowConfiguration("test_media_workflow_configuration",
+            compartment_id=compartment_id,
+            display_name=media_workflow_configuration_display_name,
+            parameters=media_workflow_configuration_parameters,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -433,11 +433,11 @@ class MediaWorkflowConfiguration(pulumi.CustomResource):
                 "bar-key": "value",
             },
             locks=[oci.media_services.MediaWorkflowConfigurationLockArgs(
-                compartment_id=var["compartment_id"],
-                type=var["media_workflow_configuration_locks_type"],
-                message=var["media_workflow_configuration_locks_message"],
-                related_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
-                time_created=var["media_workflow_configuration_locks_time_created"],
+                compartment_id=compartment_id,
+                type=media_workflow_configuration_locks_type,
+                message=media_workflow_configuration_locks_message,
+                related_resource_id=test_resource["id"],
+                time_created=media_workflow_configuration_locks_time_created,
             )])
         ```
         <!--End PulumiCodeChooser -->

@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testWebAppAccelerationPolicy = new oci.waa.AppAccelerationPolicy("testWebAppAccelerationPolicy", {
- *     compartmentId: _var.compartment_id,
+ * const testWebAppAccelerationPolicy = new oci.waa.AppAccelerationPolicy("test_web_app_acceleration_policy", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.web_app_acceleration_policy_display_name,
+ *     displayName: webAppAccelerationPolicyDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     responseCachingPolicy: {
- *         isResponseHeaderBasedCachingEnabled: _var.web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+ *         isResponseHeaderBasedCachingEnabled: webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled,
  *     },
  *     responseCompressionPolicy: {
  *         gzipCompression: {
- *             isEnabled: _var.web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
+ *             isEnabled: webAppAccelerationPolicyResponseCompressionPolicyGzipCompressionIsEnabled,
  *         },
  *     },
- *     systemTags: _var.web_app_acceleration_policy_system_tags,
+ *     systemTags: webAppAccelerationPolicySystemTags,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

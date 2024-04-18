@@ -31,12 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkLoadBalancer.NewListener(ctx, "testListener", &NetworkLoadBalancer.ListenerArgs{
-//				DefaultBackendSetName: pulumi.Any(oci_network_load_balancer_backend_set.Test_backend_set.Name),
-//				NetworkLoadBalancerId: pulumi.Any(oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id),
-//				Port:                  pulumi.Any(_var.Listener_port),
-//				Protocol:              pulumi.Any(_var.Listener_protocol),
-//				IpVersion:             pulumi.Any(_var.Listener_ip_version),
+//			_, err := NetworkLoadBalancer.NewListener(ctx, "test_listener", &NetworkLoadBalancer.ListenerArgs{
+//				DefaultBackendSetName: pulumi.Any(testBackendSet.Name),
+//				Name:                  pulumi.Any(listenerName),
+//				NetworkLoadBalancerId: pulumi.Any(testNetworkLoadBalancer.Id),
+//				Port:                  pulumi.Any(listenerPort),
+//				Protocol:              pulumi.Any(listenerProtocol),
+//				IpVersion:             pulumi.Any(listenerIpVersion),
 //			})
 //			if err != nil {
 //				return err

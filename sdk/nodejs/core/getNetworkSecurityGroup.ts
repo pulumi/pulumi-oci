@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroup = oci.Core.getNetworkSecurityGroup({
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ *     networkSecurityGroupId: testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetNetworkSecurityGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroup = oci.Core.getNetworkSecurityGroup({
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ *     networkSecurityGroupId: testNetworkSecurityGroupOciCoreNetworkSecurityGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

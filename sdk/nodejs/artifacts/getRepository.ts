@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepository = oci.Artifacts.getRepository({
- *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     repositoryId: testRepositoryOciArtifactsRepository.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,7 +99,7 @@ export interface GetRepositoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepository = oci.Artifacts.getRepository({
- *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     repositoryId: testRepositoryOciArtifactsRepository.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

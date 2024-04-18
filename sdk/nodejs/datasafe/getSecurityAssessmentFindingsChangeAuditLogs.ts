@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentFindingsChangeAuditLogs = oci.DataSafe.getSecurityAssessmentFindingsChangeAuditLogs({
- *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
- *     findingKey: _var.security_assessment_findings_change_audit_log_finding_key,
- *     findingTitle: _var.security_assessment_findings_change_audit_log_finding_title,
- *     isRiskDeferred: _var.security_assessment_findings_change_audit_log_is_risk_deferred,
- *     modifiedBy: _var.security_assessment_findings_change_audit_log_modified_by,
- *     severity: _var.security_assessment_findings_change_audit_log_severity,
- *     timeUpdatedGreaterThanOrEqualTo: _var.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
- *     timeUpdatedLessThan: _var.security_assessment_findings_change_audit_log_time_updated_less_than,
- *     timeValidUntilGreaterThanOrEqualTo: _var.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to,
- *     timeValidUntilLessThan: _var.security_assessment_findings_change_audit_log_time_valid_until_less_than,
+ *     securityAssessmentId: testSecurityAssessment.id,
+ *     findingKey: securityAssessmentFindingsChangeAuditLogFindingKey,
+ *     findingTitle: securityAssessmentFindingsChangeAuditLogFindingTitle,
+ *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+ *     modifiedBy: securityAssessmentFindingsChangeAuditLogModifiedBy,
+ *     severity: securityAssessmentFindingsChangeAuditLogSeverity,
+ *     timeUpdatedGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
+ *     timeUpdatedLessThan: securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan,
+ *     timeValidUntilGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo,
+ *     timeValidUntilLessThan: securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,16 +154,16 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityAssessmentFindingsChangeAuditLogs = oci.DataSafe.getSecurityAssessmentFindingsChangeAuditLogs({
- *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
- *     findingKey: _var.security_assessment_findings_change_audit_log_finding_key,
- *     findingTitle: _var.security_assessment_findings_change_audit_log_finding_title,
- *     isRiskDeferred: _var.security_assessment_findings_change_audit_log_is_risk_deferred,
- *     modifiedBy: _var.security_assessment_findings_change_audit_log_modified_by,
- *     severity: _var.security_assessment_findings_change_audit_log_severity,
- *     timeUpdatedGreaterThanOrEqualTo: _var.security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to,
- *     timeUpdatedLessThan: _var.security_assessment_findings_change_audit_log_time_updated_less_than,
- *     timeValidUntilGreaterThanOrEqualTo: _var.security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to,
- *     timeValidUntilLessThan: _var.security_assessment_findings_change_audit_log_time_valid_until_less_than,
+ *     securityAssessmentId: testSecurityAssessment.id,
+ *     findingKey: securityAssessmentFindingsChangeAuditLogFindingKey,
+ *     findingTitle: securityAssessmentFindingsChangeAuditLogFindingTitle,
+ *     isRiskDeferred: securityAssessmentFindingsChangeAuditLogIsRiskDeferred,
+ *     modifiedBy: securityAssessmentFindingsChangeAuditLogModifiedBy,
+ *     severity: securityAssessmentFindingsChangeAuditLogSeverity,
+ *     timeUpdatedGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo,
+ *     timeUpdatedLessThan: securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan,
+ *     timeValidUntilGreaterThanOrEqualTo: securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo,
+ *     timeValidUntilLessThan: securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

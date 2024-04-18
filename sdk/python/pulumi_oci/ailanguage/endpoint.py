@@ -386,18 +386,18 @@ class Endpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_endpoint = oci.ai_language.Endpoint("testEndpoint",
-            compartment_id=var["compartment_id"],
-            model_id=oci_ai_language_model["test_model"]["id"],
+        test_endpoint = oci.ai_language.Endpoint("test_endpoint",
+            compartment_id=compartment_id,
+            model_id=test_model["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["endpoint_description"],
-            display_name=var["endpoint_display_name"],
+            description=endpoint_description,
+            display_name=endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            inference_units=var["endpoint_inference_units"])
+            inference_units=endpoint_inference_units)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -441,18 +441,18 @@ class Endpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_endpoint = oci.ai_language.Endpoint("testEndpoint",
-            compartment_id=var["compartment_id"],
-            model_id=oci_ai_language_model["test_model"]["id"],
+        test_endpoint = oci.ai_language.Endpoint("test_endpoint",
+            compartment_id=compartment_id,
+            model_id=test_model["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["endpoint_description"],
-            display_name=var["endpoint_display_name"],
+            description=endpoint_description,
+            display_name=endpoint_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            inference_units=var["endpoint_inference_units"])
+            inference_units=endpoint_inference_units)
         ```
         <!--End PulumiCodeChooser -->
 

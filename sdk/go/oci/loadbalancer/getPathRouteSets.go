@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetPathRouteSets(ctx, &loadbalancer.GetPathRouteSetsArgs{
-//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//				LoadBalancerId: testLoadBalancer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

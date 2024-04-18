@@ -111,9 +111,9 @@ def get_network_firewall_policy_security_rules(display_name: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_security_rules = oci.NetworkFirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_security_rule_display_name"],
-        security_rule_priority_order=var["network_firewall_policy_security_rule_security_rule_priority_order"])
+    test_network_firewall_policy_security_rules = oci.NetworkFirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+        display_name=network_firewall_policy_security_rule_display_name,
+        security_rule_priority_order=network_firewall_policy_security_rule_security_rule_priority_order)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -157,9 +157,9 @@ def get_network_firewall_policy_security_rules_output(display_name: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_network_firewall_policy_security_rules = oci.NetworkFirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-        display_name=var["network_firewall_policy_security_rule_display_name"],
-        security_rule_priority_order=var["network_firewall_policy_security_rule_security_rule_priority_order"])
+    test_network_firewall_policy_security_rules = oci.NetworkFirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
+        display_name=network_firewall_policy_security_rule_display_name,
+        security_rule_priority_order=network_firewall_policy_security_rule_security_rule_priority_order)
     ```
     <!--End PulumiCodeChooser -->
 

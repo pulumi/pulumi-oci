@@ -420,10 +420,10 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system_connector = oci.database_management.ExternalDbSystemConnector("testExternalDbSystemConnector",
-            connector_type=var["external_db_system_connector_connector_type"],
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            display_name=var["external_db_system_connector_display_name"])
+        test_external_db_system_connector = oci.database_management.ExternalDbSystemConnector("test_external_db_system_connector",
+            connector_type=external_db_system_connector_connector_type,
+            external_db_system_id=test_external_db_system["id"],
+            display_name=external_db_system_connector_display_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -467,10 +467,10 @@ class ExternalDbSystemConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system_connector = oci.database_management.ExternalDbSystemConnector("testExternalDbSystemConnector",
-            connector_type=var["external_db_system_connector_connector_type"],
-            external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"],
-            display_name=var["external_db_system_connector_display_name"])
+        test_external_db_system_connector = oci.database_management.ExternalDbSystemConnector("test_external_db_system_connector",
+            connector_type=external_db_system_connector_connector_type,
+            external_db_system_id=test_external_db_system["id"],
+            display_name=external_db_system_connector_display_name)
         ```
         <!--End PulumiCodeChooser -->
 

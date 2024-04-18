@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDbNodeConsoleHistory = new oci.database.DbNodeConsoleHistory("testDbNodeConsoleHistory", {
- *     dbNodeId: oci_database_db_node.test_db_node.id,
- *     displayName: _var.db_node_console_history_display_name,
- *     definedTags: _var.db_node_console_history_defined_tags,
+ * const testDbNodeConsoleHistory = new oci.database.DbNodeConsoleHistory("test_db_node_console_history", {
+ *     dbNodeId: testDbNode.id,
+ *     displayName: dbNodeConsoleHistoryDisplayName,
+ *     definedTags: dbNodeConsoleHistoryDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

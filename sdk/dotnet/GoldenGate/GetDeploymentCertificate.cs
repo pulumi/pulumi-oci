@@ -30,8 +30,8 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentCertificate = Oci.GoldenGate.GetDeploymentCertificate.Invoke(new()
         ///     {
-        ///         CertificateKey = @var.Deployment_certificate_certificate_key,
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+        ///         CertificateKey = deploymentCertificateCertificateKey,
+        ///         DeploymentId = testDeployment.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.GoldenGate
         /// {
         ///     var testDeploymentCertificate = Oci.GoldenGate.GetDeploymentCertificate.Invoke(new()
         ///     {
-        ///         CertificateKey = @var.Deployment_certificate_certificate_key,
-        ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+        ///         CertificateKey = deploymentCertificateCertificateKey,
+        ///         DeploymentId = testDeployment.Id,
         ///     });
         /// 
         /// });

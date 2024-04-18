@@ -34,10 +34,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.GetShapes(ctx, &mysql.GetShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Shape_availability_domain),
-//				IsSupportedFors:    _var.Shape_is_supported_for,
-//				Name:               pulumi.StringRef(_var.Shape_name),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(shapeAvailabilityDomain),
+//				IsSupportedFors:    shapeIsSupportedFor,
+//				Name:               pulumi.StringRef(shapeName),
 //			}, nil)
 //			if err != nil {
 //				return err

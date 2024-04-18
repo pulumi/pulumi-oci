@@ -18,23 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualService = new oci.servicemesh.VirtualService("testVirtualService", {
- *     compartmentId: _var.compartment_id,
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ * const testVirtualService = new oci.servicemesh.VirtualService("test_virtual_service", {
+ *     compartmentId: compartmentId,
+ *     meshId: testMesh.id,
+ *     name: virtualServiceName,
  *     defaultRoutingPolicy: {
- *         type: _var.virtual_service_default_routing_policy_type,
+ *         type: virtualServiceDefaultRoutingPolicyType,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.virtual_service_description,
+ *     description: virtualServiceDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     hosts: _var.virtual_service_hosts,
+ *     hosts: virtualServiceHosts,
  *     mtls: {
- *         mode: _var.virtual_service_mtls_mode,
- *         maximumValidity: _var.virtual_service_mtls_maximum_validity,
+ *         mode: virtualServiceMtlsMode,
+ *         maximumValidity: virtualServiceMtlsMaximumValidity,
  *     },
  * });
  * ```

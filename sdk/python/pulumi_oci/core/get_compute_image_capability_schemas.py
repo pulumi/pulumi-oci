@@ -120,9 +120,9 @@ def get_compute_image_capability_schemas(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=var["compartment_id"],
-        display_name=var["compute_image_capability_schema_display_name"],
-        image_id=oci_core_image["test_image"]["id"])
+    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=compartment_id,
+        display_name=compute_image_capability_schema_display_name,
+        image_id=test_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_compute_image_capability_schemas_output(compartment_id: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=var["compartment_id"],
-        display_name=var["compute_image_capability_schema_display_name"],
-        image_id=oci_core_image["test_image"]["id"])
+    test_compute_image_capability_schemas = oci.Core.get_compute_image_capability_schemas(compartment_id=compartment_id,
+        display_name=compute_image_capability_schema_display_name,
+        image_id=test_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 

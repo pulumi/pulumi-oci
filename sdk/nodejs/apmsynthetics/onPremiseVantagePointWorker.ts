@@ -18,21 +18,22 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremiseVantagePointWorker = new oci.apmsynthetics.OnPremiseVantagePointWorker("testOnPremiseVantagePointWorker", {
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     onPremiseVantagePointId: oci_apm_synthetics_on_premise_vantage_point.test_on_premise_vantage_point.id,
- *     resourcePrincipalTokenPublicKey: _var.on_premise_vantage_point_worker_resource_principal_token_public_key,
- *     version: _var.on_premise_vantage_point_worker_version,
- *     configurationDetails: _var.on_premise_vantage_point_worker_configuration_details,
+ * const testOnPremiseVantagePointWorker = new oci.apmsynthetics.OnPremiseVantagePointWorker("test_on_premise_vantage_point_worker", {
+ *     apmDomainId: testApmDomain.id,
+ *     name: onPremiseVantagePointWorkerName,
+ *     onPremiseVantagePointId: testOnPremiseVantagePoint.id,
+ *     resourcePrincipalTokenPublicKey: onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey,
+ *     version: onPremiseVantagePointWorkerVersion,
+ *     configurationDetails: onPremiseVantagePointWorkerConfigurationDetails,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     priority: _var.on_premise_vantage_point_worker_priority,
- *     status: _var.on_premise_vantage_point_worker_status,
- *     workerType: _var.on_premise_vantage_point_worker_worker_type,
+ *     priority: onPremiseVantagePointWorkerPriority,
+ *     status: onPremiseVantagePointWorkerStatus,
+ *     workerType: onPremiseVantagePointWorkerWorkerType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

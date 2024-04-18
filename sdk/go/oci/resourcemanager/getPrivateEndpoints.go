@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ResourceManager.GetPrivateEndpoints(ctx, &resourcemanager.GetPrivateEndpointsArgs{
-//				CompartmentId:     pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:       pulumi.StringRef(_var.Private_endpoint_display_name),
-//				PrivateEndpointId: pulumi.StringRef(oci_resourcemanager_private_endpoint.Test_private_endpoint.Id),
-//				VcnId:             pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId:     pulumi.StringRef(compartmentId),
+//				DisplayName:       pulumi.StringRef(privateEndpointDisplayName),
+//				PrivateEndpointId: pulumi.StringRef(testPrivateEndpoint.Id),
+//				VcnId:             pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

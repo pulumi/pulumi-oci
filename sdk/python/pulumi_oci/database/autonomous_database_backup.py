@@ -499,11 +499,11 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            display_name=var["autonomous_database_backup_display_name"],
-            is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
-            retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
+        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup",
+            autonomous_database_id=test_autonomous_database["id"],
+            display_name=autonomous_database_backup_display_name,
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
+            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -545,11 +545,11 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("testAutonomousDatabaseBackup",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            display_name=var["autonomous_database_backup_display_name"],
-            is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
-            retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
+        test_autonomous_database_backup = oci.database.AutonomousDatabaseBackup("test_autonomous_database_backup",
+            autonomous_database_id=test_autonomous_database["id"],
+            display_name=autonomous_database_backup_display_name,
+            is_long_term_backup=autonomous_database_backup_is_long_term_backup,
+            retention_period_in_days=autonomous_database_backup_retention_period_in_days)
         ```
         <!--End PulumiCodeChooser -->
 

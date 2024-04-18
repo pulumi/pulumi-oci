@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveDataModelSensitiveObjects = Oci.DataSafe.GetSensitiveDataModelSensitiveObjects.Invoke(new()
         ///     {
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         Objects = @var.Sensitive_data_model_sensitive_object_object,
-        ///         ObjectTypes = @var.Sensitive_data_model_sensitive_object_object_type,
-        ///         SchemaNames = @var.Sensitive_data_model_sensitive_object_schema_name,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         Objects = sensitiveDataModelSensitiveObjectObject,
+        ///         ObjectTypes = sensitiveDataModelSensitiveObjectObjectType,
+        ///         SchemaNames = sensitiveDataModelSensitiveObjectSchemaName,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveDataModelSensitiveObjects = Oci.DataSafe.GetSensitiveDataModelSensitiveObjects.Invoke(new()
         ///     {
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         Objects = @var.Sensitive_data_model_sensitive_object_object,
-        ///         ObjectTypes = @var.Sensitive_data_model_sensitive_object_object_type,
-        ///         SchemaNames = @var.Sensitive_data_model_sensitive_object_schema_name,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         Objects = sensitiveDataModelSensitiveObjectObject,
+        ///         ObjectTypes = sensitiveDataModelSensitiveObjectObjectType,
+        ///         SchemaNames = sensitiveDataModelSensitiveObjectSchemaName,
         ///     });
         /// 
         /// });

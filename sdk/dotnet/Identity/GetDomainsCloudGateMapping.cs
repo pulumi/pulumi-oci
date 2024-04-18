@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGateMapping = Oci.Identity.GetDomainsCloudGateMapping.Invoke(new()
         ///     {
-        ///         CloudGateMappingId = oci_identity_domains_cloud_gate_mapping.Test_cloud_gate_mapping.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         CloudGateMappingId = testCloudGateMappingOciIdentityDomainsCloudGateMapping.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_mapping_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_mapping_resource_type_schema_version,
+        ///         Authorization = cloudGateMappingAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCloudGateMapping = Oci.Identity.GetDomainsCloudGateMapping.Invoke(new()
         ///     {
-        ///         CloudGateMappingId = oci_identity_domains_cloud_gate_mapping.Test_cloud_gate_mapping.Id,
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+        ///         CloudGateMappingId = testCloudGateMappingOciIdentityDomainsCloudGateMapping.Id,
+        ///         IdcsEndpoint = testDomain.Url,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Cloud_gate_mapping_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Cloud_gate_mapping_resource_type_schema_version,
+        ///         Authorization = cloudGateMappingAuthorization,
+        ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

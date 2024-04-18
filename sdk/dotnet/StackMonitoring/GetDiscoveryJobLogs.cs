@@ -30,8 +30,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testDiscoveryJobLogs = Oci.StackMonitoring.GetDiscoveryJobLogs.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
-        ///         LogType = @var.Discovery_job_log_log_type,
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         LogType = discoveryJobLogLogType,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testDiscoveryJobLogs = Oci.StackMonitoring.GetDiscoveryJobLogs.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_stack_monitoring_discovery_job.Test_discovery_job.Id,
-        ///         LogType = @var.Discovery_job_log_log_type,
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         LogType = discoveryJobLogLogType,
         ///     });
         /// 
         /// });

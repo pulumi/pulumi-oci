@@ -143,9 +143,9 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment",
-            asset_id=oci_core_volume["test_volume"]["id"],
-            policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
+        test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment",
+            asset_id=test_volume["id"],
+            policy_id=test_volume_backup_policy["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -186,9 +186,9 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment",
-            asset_id=oci_core_volume["test_volume"]["id"],
-            policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
+        test_volume_backup_policy_assignment = oci.core.VolumeBackupPolicyAssignment("test_volume_backup_policy_assignment",
+            asset_id=test_volume["id"],
+            policy_id=test_volume_backup_policy["id"])
         ```
         <!--End PulumiCodeChooser -->
 

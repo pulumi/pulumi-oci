@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousDatabaseBackups(ctx, &database.GetAutonomousDatabaseBackupsArgs{
-//				AutonomousDatabaseId: pulumi.StringRef(oci_database_autonomous_database.Test_autonomous_database.Id),
-//				CompartmentId:        pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:          pulumi.StringRef(_var.Autonomous_database_backup_display_name),
-//				State:                pulumi.StringRef(_var.Autonomous_database_backup_state),
-//				Type:                 pulumi.StringRef(_var.Autonomous_database_backup_type),
+//				AutonomousDatabaseId: pulumi.StringRef(testAutonomousDatabase.Id),
+//				CompartmentId:        pulumi.StringRef(compartmentId),
+//				DisplayName:          pulumi.StringRef(autonomousDatabaseBackupDisplayName),
+//				State:                pulumi.StringRef(autonomousDatabaseBackupState),
+//				Type:                 pulumi.StringRef(autonomousDatabaseBackupType),
 //			}, nil)
 //			if err != nil {
 //				return err

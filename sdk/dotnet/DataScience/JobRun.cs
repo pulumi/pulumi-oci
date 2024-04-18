@@ -25,43 +25,43 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testJobRun = new Oci.DataScience.JobRun("testJobRun", new()
+    ///     var testJobRun = new Oci.DataScience.JobRun("test_job_run", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         JobId = oci_datascience_job.Test_job.Id,
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
-    ///         Asynchronous = @var.Asynchronous,
+    ///         CompartmentId = compartmentId,
+    ///         JobId = testJob.Id,
+    ///         ProjectId = testProject.Id,
+    ///         Asynchronous = asynchronous,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Job_run_display_name,
+    ///         DisplayName = jobRunDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         JobConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobConfigurationOverrideDetailsArgs
     ///         {
-    ///             JobType = @var.Job_run_job_configuration_override_details_job_type,
-    ///             CommandLineArguments = @var.Job_run_job_configuration_override_details_command_line_arguments,
-    ///             EnvironmentVariables = @var.Job_run_job_configuration_override_details_environment_variables,
-    ///             MaximumRuntimeInMinutes = @var.Job_run_job_configuration_override_details_maximum_runtime_in_minutes,
+    ///             JobType = jobRunJobConfigurationOverrideDetailsJobType,
+    ///             CommandLineArguments = jobRunJobConfigurationOverrideDetailsCommandLineArguments,
+    ///             EnvironmentVariables = jobRunJobConfigurationOverrideDetailsEnvironmentVariables,
+    ///             MaximumRuntimeInMinutes = jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes,
     ///         },
     ///         JobEnvironmentConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs
     ///         {
-    ///             Image = @var.Job_run_job_environment_configuration_override_details_image,
-    ///             JobEnvironmentType = @var.Job_run_job_environment_configuration_override_details_job_environment_type,
-    ///             Cmds = @var.Job_run_job_environment_configuration_override_details_cmd,
-    ///             Entrypoints = @var.Job_run_job_environment_configuration_override_details_entrypoint,
-    ///             ImageDigest = @var.Job_run_job_environment_configuration_override_details_image_digest,
-    ///             ImageSignatureId = oci_datascience_image_signature.Test_image_signature.Id,
+    ///             Image = jobRunJobEnvironmentConfigurationOverrideDetailsImage,
+    ///             JobEnvironmentType = jobRunJobEnvironmentConfigurationOverrideDetailsJobEnvironmentType,
+    ///             Cmds = jobRunJobEnvironmentConfigurationOverrideDetailsCmd,
+    ///             Entrypoints = jobRunJobEnvironmentConfigurationOverrideDetailsEntrypoint,
+    ///             ImageDigest = jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest,
+    ///             ImageSignatureId = testImageSignature.Id,
     ///         },
     ///         JobLogConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobLogConfigurationOverrideDetailsArgs
     ///         {
-    ///             EnableAutoLogCreation = @var.Job_run_job_log_configuration_override_details_enable_auto_log_creation,
-    ///             EnableLogging = @var.Job_run_job_log_configuration_override_details_enable_logging,
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             EnableAutoLogCreation = jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
+    ///             EnableLogging = jobRunJobLogConfigurationOverrideDetailsEnableLogging,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
     ///     });
     /// 

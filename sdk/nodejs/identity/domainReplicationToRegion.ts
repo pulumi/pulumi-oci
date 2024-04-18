@@ -28,9 +28,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDomainReplicationToRegion = new oci.identity.DomainReplicationToRegion("testDomainReplicationToRegion", {
- *     domainId: oci_identity_domain.test_domain.id,
- *     replicaRegion: _var.domain_replication_to_region_replica_region,
+ * const testDomainReplicationToRegion = new oci.identity.DomainReplicationToRegion("test_domain_replication_to_region", {
+ *     domainId: testDomain.id,
+ *     replicaRegion: domainReplicationToRegionReplicaRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

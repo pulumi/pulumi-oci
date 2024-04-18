@@ -122,9 +122,9 @@ def get_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_groups(compartment_id=var["tenancy_ocid"],
-        name=var["group_name"],
-        state=var["group_state"])
+    test_groups = oci.Identity.get_groups(compartment_id=tenancy_ocid,
+        name=group_name,
+        state=group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -170,9 +170,9 @@ def get_groups_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_groups = oci.Identity.get_groups(compartment_id=var["tenancy_ocid"],
-        name=var["group_name"],
-        state=var["group_state"])
+    test_groups = oci.Identity.get_groups(compartment_id=tenancy_ocid,
+        name=group_name,
+        state=group_state)
     ```
     <!--End PulumiCodeChooser -->
 

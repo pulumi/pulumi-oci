@@ -29,7 +29,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testRecoveryServiceSubnet = Oci.RecoveryMod.GetRecoveryServiceSubnet.Invoke(new()
         ///     {
-        ///         RecoveryServiceSubnetId = oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.RecoveryMod
         /// {
         ///     var testRecoveryServiceSubnet = Oci.RecoveryMod.GetRecoveryServiceSubnet.Invoke(new()
         ///     {
-        ///         RecoveryServiceSubnetId = oci_recovery_recovery_service_subnet.Test_recovery_service_subnet.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.Id,
         ///     });
         /// 
         /// });

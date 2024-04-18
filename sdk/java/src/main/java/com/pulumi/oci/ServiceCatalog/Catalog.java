@@ -45,8 +45,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testServiceCatalog = new Catalog(&#34;testServiceCatalog&#34;, CatalogArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.service_catalog_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(serviceCatalogDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());

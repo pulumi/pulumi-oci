@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Container_repository_compartment_id_in_subtree,
-        ///         DisplayName = @var.Container_repository_display_name,
-        ///         IsPublic = @var.Container_repository_is_public,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         State = @var.Container_repository_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,
+        ///         DisplayName = containerRepositoryDisplayName,
+        ///         IsPublic = containerRepositoryIsPublic,
+        ///         RepositoryId = testRepository.Id,
+        ///         State = containerRepositoryState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Container_repository_compartment_id_in_subtree,
-        ///         DisplayName = @var.Container_repository_display_name,
-        ///         IsPublic = @var.Container_repository_is_public,
-        ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-        ///         State = @var.Container_repository_state,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,
+        ///         DisplayName = containerRepositoryDisplayName,
+        ///         IsPublic = containerRepositoryIsPublic,
+        ///         RepositoryId = testRepository.Id,
+        ///         State = containerRepositoryState,
         ///     });
         /// 
         /// });

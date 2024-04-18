@@ -35,27 +35,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewZone(ctx, "testZone", &Dns.ZoneArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ZoneType:      pulumi.Any(_var.Zone_zone_type),
-//				DefinedTags:   pulumi.Any(_var.Zone_defined_tags),
+//			_, err := Dns.NewZone(ctx, "test_zone", &Dns.ZoneArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(zoneName),
+//				ZoneType:      pulumi.Any(zoneZoneType),
+//				DefinedTags:   pulumi.Any(zoneDefinedTags),
 //				ExternalDownstreams: dns.ZoneExternalDownstreamArray{
 //					&dns.ZoneExternalDownstreamArgs{
-//						Address:   pulumi.Any(_var.Zone_external_downstreams_address),
-//						Port:      pulumi.Any(_var.Zone_external_downstreams_port),
-//						TsigKeyId: pulumi.Any(oci_dns_tsig_key.Test_tsig_key.Id),
+//						Address:   pulumi.Any(zoneExternalDownstreamsAddress),
+//						Port:      pulumi.Any(zoneExternalDownstreamsPort),
+//						TsigKeyId: pulumi.Any(testTsigKey.Id),
 //					},
 //				},
 //				ExternalMasters: dns.ZoneExternalMasterArray{
 //					&dns.ZoneExternalMasterArgs{
-//						Address:   pulumi.Any(_var.Zone_external_masters_address),
-//						Port:      pulumi.Any(_var.Zone_external_masters_port),
-//						TsigKeyId: pulumi.Any(oci_dns_tsig_key.Test_tsig_key.Id),
+//						Address:   pulumi.Any(zoneExternalMastersAddress),
+//						Port:      pulumi.Any(zoneExternalMastersPort),
+//						TsigKeyId: pulumi.Any(testTsigKey.Id),
 //					},
 //				},
-//				FreeformTags: pulumi.Any(_var.Zone_freeform_tags),
-//				Scope:        pulumi.Any(_var.Zone_scope),
-//				ViewId:       pulumi.Any(oci_dns_view.Test_view.Id),
+//				FreeformTags: pulumi.Any(zoneFreeformTags),
+//				Scope:        pulumi.Any(zoneScope),
+//				ViewId:       pulumi.Any(testView.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomain(ctx, &identity.GetDomainArgs{
-//				DomainId: oci_identity_domain.Test_domain.Id,
+//				DomainId: testDomainOciIdentityDomain.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

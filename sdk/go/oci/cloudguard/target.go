@@ -31,54 +31,54 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewTarget(ctx, "testTarget", &CloudGuard.TargetArgs{
-//				CompartmentId:      pulumi.Any(_var.Compartment_id),
-//				DisplayName:        pulumi.Any(_var.Target_display_name),
-//				TargetResourceId:   pulumi.Any(oci_cloud_guard_target_resource.Test_target_resource.Id),
-//				TargetResourceType: pulumi.Any(_var.Target_target_resource_type),
+//			_, err := CloudGuard.NewTarget(ctx, "test_target", &CloudGuard.TargetArgs{
+//				CompartmentId:      pulumi.Any(compartmentId),
+//				DisplayName:        pulumi.Any(targetDisplayName),
+//				TargetResourceId:   pulumi.Any(testTargetResource.Id),
+//				TargetResourceType: pulumi.Any(targetTargetResourceType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Target_description),
+//				Description: pulumi.Any(targetDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				State: pulumi.Any(_var.Target_state),
+//				State: pulumi.Any(targetState),
 //				TargetDetectorRecipes: cloudguard.TargetTargetDetectorRecipeArray{
 //					&cloudguard.TargetTargetDetectorRecipeArgs{
-//						DetectorRecipeId: pulumi.Any(oci_cloud_guard_detector_recipe.Test_detector_recipe.Id),
+//						DetectorRecipeId: pulumi.Any(testDetectorRecipe.Id),
 //						DetectorRules: cloudguard.TargetTargetDetectorRecipeDetectorRuleArray{
 //							&cloudguard.TargetTargetDetectorRecipeDetectorRuleArgs{
 //								Details: &cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsArgs{
 //									ConditionGroups: cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray{
 //										&cloudguard.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs{
-//											CompartmentId: pulumi.Any(_var.Compartment_id),
-//											Condition:     pulumi.Any(_var.Target_target_detector_recipes_detector_rules_details_condition_groups_condition),
+//											CompartmentId: pulumi.Any(compartmentId),
+//											Condition:     pulumi.Any(targetTargetDetectorRecipesDetectorRulesDetailsConditionGroupsCondition),
 //										},
 //									},
 //								},
-//								DetectorRuleId: pulumi.Any(oci_events_rule.Test_rule.Id),
+//								DetectorRuleId: pulumi.Any(testRule.Id),
 //							},
 //						},
 //					},
 //				},
 //				TargetResponderRecipes: cloudguard.TargetTargetResponderRecipeArray{
 //					&cloudguard.TargetTargetResponderRecipeArgs{
-//						ResponderRecipeId: pulumi.Any(oci_cloud_guard_responder_recipe.Test_responder_recipe.Id),
+//						ResponderRecipeId: pulumi.Any(testResponderRecipe.Id),
 //						ResponderRules: cloudguard.TargetTargetResponderRecipeResponderRuleArray{
 //							&cloudguard.TargetTargetResponderRecipeResponderRuleArgs{
 //								Details: &cloudguard.TargetTargetResponderRecipeResponderRuleDetailsArgs{
-//									Condition: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_condition),
+//									Condition: pulumi.Any(targetTargetResponderRecipesResponderRulesDetailsCondition),
 //									Configurations: cloudguard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArray{
 //										&cloudguard.TargetTargetResponderRecipeResponderRuleDetailsConfigurationArgs{
-//											ConfigKey: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_config_key),
-//											Name:      pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_name),
-//											Value:     pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_configurations_value),
+//											ConfigKey: pulumi.Any(targetTargetResponderRecipesResponderRulesDetailsConfigurationsConfigKey),
+//											Name:      pulumi.Any(targetTargetResponderRecipesResponderRulesDetailsConfigurationsName),
+//											Value:     pulumi.Any(targetTargetResponderRecipesResponderRulesDetailsConfigurationsValue),
 //										},
 //									},
-//									Mode: pulumi.Any(_var.Target_target_responder_recipes_responder_rules_details_mode),
+//									Mode: pulumi.Any(targetTargetResponderRecipesResponderRulesDetailsMode),
 //								},
-//								ResponderRuleId: pulumi.Any(oci_events_rule.Test_rule.Id),
+//								ResponderRuleId: pulumi.Any(testRule.Id),
 //							},
 //						},
 //					},

@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetCryptoAnalysisResult = oci.Jms.getFleetCryptoAnalysisResult({
- *     cryptoAnalysisResultId: oci_apm_synthetics_result.test_result.id,
- *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     cryptoAnalysisResultId: testResult.id,
+ *     fleetId: testFleet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,8 +133,8 @@ export interface GetFleetCryptoAnalysisResultResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetCryptoAnalysisResult = oci.Jms.getFleetCryptoAnalysisResult({
- *     cryptoAnalysisResultId: oci_apm_synthetics_result.test_result.id,
- *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     cryptoAnalysisResultId: testResult.id,
+ *     fleetId: testFleet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

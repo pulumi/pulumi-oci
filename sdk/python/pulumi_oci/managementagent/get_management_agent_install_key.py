@@ -211,7 +211,7 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=oci_management_agent_management_agent_install_key["test_management_agent_install_key"]["id"])
+    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=test_management_agent_install_key_oci_management_agent_management_agent_install_key["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,7 +255,7 @@ def get_management_agent_install_key_output(management_agent_install_key_id: Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=oci_management_agent_management_agent_install_key["test_management_agent_install_key"]["id"])
+    test_management_agent_install_key = oci.ManagementAgent.get_management_agent_install_key(management_agent_install_key_id=test_management_agent_install_key_oci_management_agent_management_agent_install_key["id"])
     ```
     <!--End PulumiCodeChooser -->
 

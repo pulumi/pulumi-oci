@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetInvokeRuns(ctx, &dataflow.GetInvokeRunsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				ApplicationId:          pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-//				DisplayName:            pulumi.StringRef(_var.Invoke_run_display_name),
-//				DisplayNameStartsWith:  pulumi.StringRef(_var.Invoke_run_display_name_starts_with),
-//				OwnerPrincipalId:       pulumi.StringRef(oci_dataflow_owner_principal.Test_owner_principal.Id),
-//				PoolId:                 pulumi.StringRef(oci_dataflow_pool.Test_pool.Id),
-//				State:                  pulumi.StringRef(_var.Invoke_run_state),
-//				TimeCreatedGreaterThan: pulumi.StringRef(_var.Invoke_run_time_created_greater_than),
+//				CompartmentId:          compartmentId,
+//				ApplicationId:          pulumi.StringRef(testApplication.Id),
+//				DisplayName:            pulumi.StringRef(invokeRunDisplayName),
+//				DisplayNameStartsWith:  pulumi.StringRef(invokeRunDisplayNameStartsWith),
+//				OwnerPrincipalId:       pulumi.StringRef(testOwnerPrincipal.Id),
+//				PoolId:                 pulumi.StringRef(testPool.Id),
+//				State:                  pulumi.StringRef(invokeRunState),
+//				TimeCreatedGreaterThan: pulumi.StringRef(invokeRunTimeCreatedGreaterThan),
 //			}, nil)
 //			if err != nil {
 //				return err

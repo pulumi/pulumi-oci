@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetVirtualServiceRouteTable(ctx, &servicemesh.GetVirtualServiceRouteTableArgs{
-//				VirtualServiceRouteTableId: oci_service_mesh_virtual_service_route_table.Test_virtual_service_route_table.Id,
+//				VirtualServiceRouteTableId: testVirtualServiceRouteTableOciServiceMeshVirtualServiceRouteTable.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

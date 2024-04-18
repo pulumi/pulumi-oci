@@ -130,10 +130,10 @@ def get_pluggable_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"],
-        pdb_name=var["pluggable_database_pdb_name"],
-        state=var["pluggable_database_state"])
+    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=compartment_id,
+        database_id=test_database["id"],
+        pdb_name=pluggable_database_pdb_name,
+        state=pluggable_database_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_pluggable_databases_output(compartment_id: Optional[pulumi.Input[Optiona
     import pulumi
     import pulumi_oci as oci
 
-    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=var["compartment_id"],
-        database_id=oci_database_database["test_database"]["id"],
-        pdb_name=var["pluggable_database_pdb_name"],
-        state=var["pluggable_database_state"])
+    test_pluggable_databases = oci.Database.get_pluggable_databases(compartment_id=compartment_id,
+        database_id=test_database["id"],
+        pdb_name=pluggable_database_pdb_name,
+        state=pluggable_database_state)
     ```
     <!--End PulumiCodeChooser -->
 

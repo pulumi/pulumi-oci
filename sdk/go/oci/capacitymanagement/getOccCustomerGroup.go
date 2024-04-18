@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CapacityManagement.GetOccCustomerGroup(ctx, &capacitymanagement.GetOccCustomerGroupArgs{
-//				OccCustomerGroupId: oci_capacity_management_occ_customer_group.Test_occ_customer_group.Id,
+//				OccCustomerGroupId: testOccCustomerGroupOciCapacityManagementOccCustomerGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

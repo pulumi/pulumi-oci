@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Waas.NewAddressList(ctx, "testAddressList", &Waas.AddressListArgs{
-//				Addresses:     pulumi.Any(_var.Address_list_addresses),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Address_list_display_name),
+//			_, err := Waas.NewAddressList(ctx, "test_address_list", &Waas.AddressListArgs{
+//				Addresses:     pulumi.Any(addressListAddresses),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(addressListDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

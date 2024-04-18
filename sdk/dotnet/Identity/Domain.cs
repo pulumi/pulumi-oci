@@ -40,17 +40,17 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDomain = new Oci.Identity.Domain("testDomain", new()
+    ///     var testDomain = new Oci.Identity.Domain("test_domain", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Description = @var.Domain_description,
-    ///         DisplayName = @var.Domain_display_name,
-    ///         HomeRegion = @var.Domain_home_region,
-    ///         LicenseType = @var.Domain_license_type,
-    ///         AdminEmail = @var.Domain_admin_email,
-    ///         AdminFirstName = @var.Domain_admin_first_name,
-    ///         AdminLastName = @var.Domain_admin_last_name,
-    ///         AdminUserName = oci_identity_user.Test_user.Name,
+    ///         CompartmentId = compartmentId,
+    ///         Description = domainDescription,
+    ///         DisplayName = domainDisplayName,
+    ///         HomeRegion = domainHomeRegion,
+    ///         LicenseType = domainLicenseType,
+    ///         AdminEmail = domainAdminEmail,
+    ///         AdminFirstName = domainAdminFirstName,
+    ///         AdminLastName = domainAdminLastName,
+    ///         AdminUserName = testUser.Name,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsHiddenOnLogin = @var.Domain_is_hidden_on_login,
-    ///         IsNotificationBypassed = @var.Domain_is_notification_bypassed,
-    ///         IsPrimaryEmailRequired = @var.Domain_is_primary_email_required,
+    ///         IsHiddenOnLogin = domainIsHiddenOnLogin,
+    ///         IsNotificationBypassed = domainIsNotificationBypassed,
+    ///         IsPrimaryEmailRequired = domainIsPrimaryEmailRequired,
     ///     });
     /// 
     /// });

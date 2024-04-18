@@ -236,7 +236,7 @@ def get_deploy_pipeline(deploy_pipeline_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"])
+    test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=test_deploy_pipeline_oci_devops_deploy_pipeline["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_deploy_pipeline_output(deploy_pipeline_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"])
+    test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=test_deploy_pipeline_oci_devops_deploy_pipeline["id"])
     ```
     <!--End PulumiCodeChooser -->
 

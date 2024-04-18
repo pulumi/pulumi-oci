@@ -113,10 +113,10 @@ def get_recommendation_strategy(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
-        name=var["recommendation_strategy_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
+    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
+        name=recommendation_strategy_name,
+        recommendation_name=test_recommendation["name"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,10 +163,10 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["recommendation_strategy_compartment_id_in_subtree"],
-        name=var["recommendation_strategy_name"],
-        recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
+    test_recommendation_strategy = oci.Optimizer.get_recommendation_strategy(compartment_id=compartment_id,
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
+        name=recommendation_strategy_name,
+        recommendation_name=test_recommendation["name"])
     ```
     <!--End PulumiCodeChooser -->
 

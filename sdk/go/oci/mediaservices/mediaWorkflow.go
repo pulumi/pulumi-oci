@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MediaServices.NewMediaWorkflow(ctx, "testMediaWorkflow", &MediaServices.MediaWorkflowArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Media_workflow_display_name),
+//			_, err := MediaServices.NewMediaWorkflow(ctx, "test_media_workflow", &MediaServices.MediaWorkflowArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(mediaWorkflowDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -42,24 +42,24 @@ import (
 //				},
 //				Locks: mediaservices.MediaWorkflowLockArray{
 //					&mediaservices.MediaWorkflowLockArgs{
-//						CompartmentId:     pulumi.Any(_var.Compartment_id),
-//						Type:              pulumi.Any(_var.Media_workflow_locks_type),
-//						Message:           pulumi.Any(_var.Media_workflow_locks_message),
-//						RelatedResourceId: pulumi.Any(oci_usage_proxy_resource.Test_resource.Id),
-//						TimeCreated:       pulumi.Any(_var.Media_workflow_locks_time_created),
+//						CompartmentId:     pulumi.Any(compartmentId),
+//						Type:              pulumi.Any(mediaWorkflowLocksType),
+//						Message:           pulumi.Any(mediaWorkflowLocksMessage),
+//						RelatedResourceId: pulumi.Any(testResource.Id),
+//						TimeCreated:       pulumi.Any(mediaWorkflowLocksTimeCreated),
 //					},
 //				},
-//				MediaWorkflowConfigurationIds: pulumi.Any(_var.Media_workflow_media_workflow_configuration_ids),
-//				Parameters:                    pulumi.Any(_var.Media_workflow_parameters),
+//				MediaWorkflowConfigurationIds: pulumi.Any(mediaWorkflowMediaWorkflowConfigurationIds),
+//				Parameters:                    pulumi.Any(mediaWorkflowParameters),
 //				Tasks: mediaservices.MediaWorkflowTaskArray{
 //					&mediaservices.MediaWorkflowTaskArgs{
-//						Key:                                 pulumi.Any(_var.Media_workflow_tasks_key),
-//						Parameters:                          pulumi.Any(_var.Media_workflow_tasks_parameters),
-//						Type:                                pulumi.Any(_var.Media_workflow_tasks_type),
-//						Version:                             pulumi.Any(_var.Media_workflow_tasks_version),
-//						EnableParameterReference:            pulumi.Any(_var.Media_workflow_tasks_enable_parameter_reference),
-//						EnableWhenReferencedParameterEquals: pulumi.Any(_var.Media_workflow_tasks_enable_when_referenced_parameter_equals),
-//						Prerequisites:                       pulumi.Any(_var.Media_workflow_tasks_prerequisites),
+//						Key:                                 pulumi.Any(mediaWorkflowTasksKey),
+//						Parameters:                          pulumi.Any(mediaWorkflowTasksParameters),
+//						Type:                                pulumi.Any(mediaWorkflowTasksType),
+//						Version:                             pulumi.Any(mediaWorkflowTasksVersion),
+//						EnableParameterReference:            pulumi.Any(mediaWorkflowTasksEnableParameterReference),
+//						EnableWhenReferencedParameterEquals: pulumi.Any(mediaWorkflowTasksEnableWhenReferencedParameterEquals),
+//						Prerequisites:                       pulumi.Any(mediaWorkflowTasksPrerequisites),
 //					},
 //				},
 //			})

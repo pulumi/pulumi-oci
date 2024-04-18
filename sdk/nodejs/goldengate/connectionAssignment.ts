@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConnectionAssignment = new oci.goldengate.ConnectionAssignment("testConnectionAssignment", {
- *     connectionId: oci_golden_gate_connection.test_connection.id,
- *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
+ * const testConnectionAssignment = new oci.goldengate.ConnectionAssignment("test_connection_assignment", {
+ *     connectionId: testConnection.id,
+ *     deploymentId: testDeployment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

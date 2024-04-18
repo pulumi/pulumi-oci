@@ -22,9 +22,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPingMonitors = oci.HealthChecks.getPingMonitors({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ping_monitor_display_name,
- *     homeRegion: _var.ping_monitor_home_region,
+ *     compartmentId: compartmentId,
+ *     displayName: pingMonitorDisplayName,
+ *     homeRegion: pingMonitorHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,9 +101,9 @@ export interface GetPingMonitorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPingMonitors = oci.HealthChecks.getPingMonitors({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ping_monitor_display_name,
- *     homeRegion: _var.ping_monitor_home_region,
+ *     compartmentId: compartmentId,
+ *     displayName: pingMonitorDisplayName,
+ *     homeRegion: pingMonitorHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

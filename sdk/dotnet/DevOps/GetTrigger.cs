@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testTrigger = Oci.DevOps.GetTrigger.Invoke(new()
         ///     {
-        ///         TriggerId = oci_devops_trigger.Test_trigger.Id,
+        ///         TriggerId = testTriggerOciDevopsTrigger.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testTrigger = Oci.DevOps.GetTrigger.Invoke(new()
         ///     {
-        ///         TriggerId = oci_devops_trigger.Test_trigger.Id,
+        ///         TriggerId = testTriggerOciDevopsTrigger.Id,
         ///     });
         /// 
         /// });

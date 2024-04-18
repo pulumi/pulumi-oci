@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLifecycleEnvironment = new oci.osmanagementhub.LifecycleEnvironment("testLifecycleEnvironment", {
- *     archType: _var.lifecycle_environment_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.lifecycle_environment_display_name,
- *     osFamily: _var.lifecycle_environment_os_family,
+ * const testLifecycleEnvironment = new oci.osmanagementhub.LifecycleEnvironment("test_lifecycle_environment", {
+ *     archType: lifecycleEnvironmentArchType,
+ *     compartmentId: compartmentId,
+ *     displayName: lifecycleEnvironmentDisplayName,
+ *     osFamily: lifecycleEnvironmentOsFamily,
  *     stages: [{
- *         displayName: _var.lifecycle_environment_stages_display_name,
- *         rank: _var.lifecycle_environment_stages_rank,
+ *         displayName: lifecycleEnvironmentStagesDisplayName,
+ *         rank: lifecycleEnvironmentStagesRank,
  *         definedTags: {
  *             "Operations.CostCenter": "42",
  *         },
@@ -33,11 +33,11 @@ import * as utilities from "../utilities";
  *             Department: "Finance",
  *         },
  *     }],
- *     vendorName: _var.lifecycle_environment_vendor_name,
+ *     vendorName: lifecycleEnvironmentVendorName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.lifecycle_environment_description,
+ *     description: lifecycleEnvironmentDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

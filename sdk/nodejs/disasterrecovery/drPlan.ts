@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDrPlan = new oci.disasterrecovery.DrPlan("testDrPlan", {
- *     displayName: _var.dr_plan_display_name,
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
- *     type: _var.dr_plan_type,
+ * const testDrPlan = new oci.disasterrecovery.DrPlan("test_dr_plan", {
+ *     displayName: drPlanDisplayName,
+ *     drProtectionGroupId: testDrProtectionGroup.id,
+ *     type: drPlanType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

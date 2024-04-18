@@ -14,9 +14,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testConfiguration = new oci.audit.Configuration("testConfiguration", {
- *     compartmentId: _var.tenancy_ocid,
- *     retentionPeriodDays: _var.configuration_retention_period_days,
+ * const testConfiguration = new oci.audit.Configuration("test_configuration", {
+ *     compartmentId: tenancyOcid,
+ *     retentionPeriodDays: configurationRetentionPeriodDays,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

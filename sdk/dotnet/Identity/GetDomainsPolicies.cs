@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testPolicies = Oci.Identity.GetDomainsPolicies.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         PolicyCount = @var.Policy_policy_count,
-        ///         PolicyFilter = @var.Policy_policy_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PolicyCount = policyPolicyCount,
+        ///         PolicyFilter = policyPolicyFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Policy_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Policy_resource_type_schema_version,
-        ///         StartIndex = @var.Policy_start_index,
+        ///         Authorization = policyAuthorization,
+        ///         ResourceTypeSchemaVersion = policyResourceTypeSchemaVersion,
+        ///         StartIndex = policyStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testPolicies = Oci.Identity.GetDomainsPolicies.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         PolicyCount = @var.Policy_policy_count,
-        ///         PolicyFilter = @var.Policy_policy_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PolicyCount = policyPolicyCount,
+        ///         PolicyFilter = policyPolicyFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Policy_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Policy_resource_type_schema_version,
-        ///         StartIndex = @var.Policy_start_index,
+        ///         Authorization = policyAuthorization,
+        ///         ResourceTypeSchemaVersion = policyResourceTypeSchemaVersion,
+        ///         StartIndex = policyStartIndex,
         ///     });
         /// 
         /// });

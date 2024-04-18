@@ -30,20 +30,20 @@ namespace Pulumi.Oci.Database
     /// {
     ///     var test = new Oci.Database.CloudDatabaseManagement("test", new()
     ///     {
-    ///         DatabaseId = oci_database_database.Test_database.Id,
-    ///         ManagementType = @var.Database_cloud_database_management_details_management_type,
-    ///         PrivateEndPointId = @var.Database_cloud_database_management_details_private_end_point_id,
-    ///         ServiceName = @var.Database_cloud_database_management_details_service_name,
+    ///         DatabaseId = testDatabase.Id,
+    ///         ManagementType = databaseCloudDatabaseManagementDetailsManagementType,
+    ///         PrivateEndPointId = databaseCloudDatabaseManagementDetailsPrivateEndPointId,
+    ///         ServiceName = databaseCloudDatabaseManagementDetailsServiceName,
     ///         Credentialdetails = new Oci.Database.Inputs.CloudDatabaseManagementCredentialdetailsArgs
     ///         {
-    ///             UserName = @var.Database_cloud_database_management_details_user_name,
-    ///             PasswordSecretId = @var.Database_cloud_database_management_details_password_secret_id,
+    ///             UserName = databaseCloudDatabaseManagementDetailsUserName,
+    ///             PasswordSecretId = databaseCloudDatabaseManagementDetailsPasswordSecretId,
     ///         },
-    ///         EnableManagement = @var.Database_cloud_database_management_details_enable_management,
-    ///         Port = @var.Cloud_database_management_port,
-    ///         Protocol = @var.Cloud_database_management_protocol,
-    ///         Role = @var.Cloud_database_management_role,
-    ///         SslSecretId = oci_vault_secret.Test_secret.Id,
+    ///         EnableManagement = databaseCloudDatabaseManagementDetailsEnableManagement,
+    ///         Port = cloudDatabaseManagementPort,
+    ///         Protocol = cloudDatabaseManagementProtocol,
+    ///         Role = cloudDatabaseManagementRole,
+    ///         SslSecretId = testSecret.Id,
     ///     });
     /// 
     /// });

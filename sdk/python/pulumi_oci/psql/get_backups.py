@@ -151,13 +151,13 @@ def get_backups(backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Psql.get_backups(backup_id=oci_psql_backup["test_backup"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["backup_display_name"],
-        id=var["backup_id"],
-        state=var["backup_state"],
-        time_ended=var["backup_time_ended"],
-        time_started=var["backup_time_started"])
+    test_backups = oci.Psql.get_backups(backup_id=test_backup["id"],
+        compartment_id=compartment_id,
+        display_name=backup_display_name,
+        id=backup_id,
+        state=backup_state,
+        time_ended=backup_time_ended,
+        time_started=backup_time_started)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -216,13 +216,13 @@ def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backups = oci.Psql.get_backups(backup_id=oci_psql_backup["test_backup"]["id"],
-        compartment_id=var["compartment_id"],
-        display_name=var["backup_display_name"],
-        id=var["backup_id"],
-        state=var["backup_state"],
-        time_ended=var["backup_time_ended"],
-        time_started=var["backup_time_started"])
+    test_backups = oci.Psql.get_backups(backup_id=test_backup["id"],
+        compartment_id=compartment_id,
+        display_name=backup_display_name,
+        id=backup_id,
+        state=backup_state,
+        time_ended=backup_time_ended,
+        time_started=backup_time_started)
     ```
     <!--End PulumiCodeChooser -->
 

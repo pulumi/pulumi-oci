@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
- *     compartmentId: _var.compartment_id,
- *     clusterPlacementGroupId: _var.cloud_exadata_infrastructure_cluster_placement_group_id,
- *     displayName: _var.cloud_exadata_infrastructure_display_name,
- *     state: _var.cloud_exadata_infrastructure_state,
+ *     compartmentId: compartmentId,
+ *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
+ *     displayName: cloudExadataInfrastructureDisplayName,
+ *     state: cloudExadataInfrastructureState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetCloudExadataInfrastructuresResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCloudExadataInfrastructures = oci.Database.getCloudExadataInfrastructures({
- *     compartmentId: _var.compartment_id,
- *     clusterPlacementGroupId: _var.cloud_exadata_infrastructure_cluster_placement_group_id,
- *     displayName: _var.cloud_exadata_infrastructure_display_name,
- *     state: _var.cloud_exadata_infrastructure_state,
+ *     compartmentId: compartmentId,
+ *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
+ *     displayName: cloudExadataInfrastructureDisplayName,
+ *     state: cloudExadataInfrastructureState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

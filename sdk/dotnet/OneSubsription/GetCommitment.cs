@@ -30,7 +30,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testCommitment = Oci.OneSubsription.GetCommitment.Invoke(new()
         ///     {
-        ///         CommitmentId = oci_onesubscription_commitment.Test_commitment.Id,
+        ///         CommitmentId = testCommitmentOciOnesubscriptionCommitment.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {
         ///     var testCommitment = Oci.OneSubsription.GetCommitment.Invoke(new()
         ///     {
-        ///         CommitmentId = oci_onesubscription_commitment.Test_commitment.Id,
+        ///         CommitmentId = testCommitmentOciOnesubscriptionCommitment.Id,
         ///     });
         /// 
         /// });

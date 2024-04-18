@@ -29,7 +29,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// {
         ///     var testEndpoint = Oci.GenerativeAi.GetEndpoint.Invoke(new()
         ///     {
-        ///         EndpointId = oci_generative_ai_endpoint.Test_endpoint.Id,
+        ///         EndpointId = testEndpointOciGenerativeAiEndpoint.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// {
         ///     var testEndpoint = Oci.GenerativeAi.GetEndpoint.Invoke(new()
         ///     {
-        ///         EndpointId = oci_generative_ai_endpoint.Test_endpoint.Id,
+        ///         EndpointId = testEndpointOciGenerativeAiEndpoint.Id,
         ///     });
         /// 
         /// });

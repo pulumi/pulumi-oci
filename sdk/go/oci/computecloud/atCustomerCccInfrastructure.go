@@ -32,17 +32,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ComputeCloud.NewAtCustomerCccInfrastructure(ctx, "testCccInfrastructure", &ComputeCloud.AtCustomerCccInfrastructureArgs{
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				DisplayName:          pulumi.Any(_var.Ccc_infrastructure_display_name),
-//				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				CccUpgradeScheduleId: pulumi.Any(oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id),
-//				ConnectionDetails:    pulumi.Any(_var.Ccc_infrastructure_connection_details),
-//				ConnectionState:      pulumi.Any(_var.Ccc_infrastructure_connection_state),
+//			_, err := ComputeCloud.NewAtCustomerCccInfrastructure(ctx, "test_ccc_infrastructure", &ComputeCloud.AtCustomerCccInfrastructureArgs{
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DisplayName:          pulumi.Any(cccInfrastructureDisplayName),
+//				SubnetId:             pulumi.Any(testSubnet.Id),
+//				CccUpgradeScheduleId: pulumi.Any(testCccUpgradeSchedule.Id),
+//				ConnectionDetails:    pulumi.Any(cccInfrastructureConnectionDetails),
+//				ConnectionState:      pulumi.Any(cccInfrastructureConnectionState),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Ccc_infrastructure_description),
+//				Description: pulumi.Any(cccInfrastructureDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

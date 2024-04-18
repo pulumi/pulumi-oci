@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
- *     compartmentId: _var.compartment_id,
- *     capacityType: _var.analytics_instance_capacity_type,
- *     featureSet: _var.analytics_instance_feature_set,
- *     name: _var.analytics_instance_name,
- *     state: _var.analytics_instance_state,
+ *     compartmentId: compartmentId,
+ *     capacityType: analyticsInstanceCapacityType,
+ *     featureSet: analyticsInstanceFeatureSet,
+ *     name: analyticsInstanceName,
+ *     state: analyticsInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetAnalyticsInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
- *     compartmentId: _var.compartment_id,
- *     capacityType: _var.analytics_instance_capacity_type,
- *     featureSet: _var.analytics_instance_feature_set,
- *     name: _var.analytics_instance_name,
- *     state: _var.analytics_instance_state,
+ *     compartmentId: compartmentId,
+ *     capacityType: analyticsInstanceCapacityType,
+ *     featureSet: analyticsInstanceFeatureSet,
+ *     name: analyticsInstanceName,
+ *     state: analyticsInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

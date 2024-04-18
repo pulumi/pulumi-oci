@@ -25,37 +25,37 @@ namespace Pulumi.Oci.CloudBridge
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAssetSource = new Oci.CloudBridge.AssetSource("testAssetSource", new()
+    ///     var testAssetSource = new Oci.CloudBridge.AssetSource("test_asset_source", new()
     ///     {
-    ///         AssetsCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AssetsCompartmentId = testCompartment.Id,
+    ///         CompartmentId = compartmentId,
     ///         DiscoveryCredentials = new Oci.CloudBridge.Inputs.AssetSourceDiscoveryCredentialsArgs
     ///         {
-    ///             SecretId = oci_vault_secret.Test_secret.Id,
-    ///             Type = @var.Asset_source_discovery_credentials_type,
+    ///             SecretId = testSecret.Id,
+    ///             Type = assetSourceDiscoveryCredentialsType,
     ///         },
-    ///         EnvironmentId = oci_cloud_bridge_environment.Test_environment.Id,
-    ///         InventoryId = oci_cloud_bridge_inventory.Test_inventory.Id,
-    ///         Type = @var.Asset_source_type,
-    ///         VcenterEndpoint = @var.Asset_source_vcenter_endpoint,
-    ///         AreHistoricalMetricsCollected = @var.Asset_source_are_historical_metrics_collected,
-    ///         AreRealtimeMetricsCollected = @var.Asset_source_are_realtime_metrics_collected,
+    ///         EnvironmentId = testEnvironment.Id,
+    ///         InventoryId = testInventory.Id,
+    ///         Type = assetSourceType,
+    ///         VcenterEndpoint = assetSourceVcenterEndpoint,
+    ///         AreHistoricalMetricsCollected = assetSourceAreHistoricalMetricsCollected,
+    ///         AreRealtimeMetricsCollected = assetSourceAreRealtimeMetricsCollected,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DiscoveryScheduleId = oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id,
-    ///         DisplayName = @var.Asset_source_display_name,
+    ///         DiscoveryScheduleId = testDiscoverySchedule.Id,
+    ///         DisplayName = assetSourceDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         ReplicationCredentials = new Oci.CloudBridge.Inputs.AssetSourceReplicationCredentialsArgs
     ///         {
-    ///             SecretId = oci_vault_secret.Test_secret.Id,
-    ///             Type = @var.Asset_source_replication_credentials_type,
+    ///             SecretId = testSecret.Id,
+    ///             Type = assetSourceReplicationCredentialsType,
     ///         },
-    ///         SystemTags = @var.Asset_source_system_tags,
+    ///         SystemTags = assetSourceSystemTags,
     ///     });
     /// 
     /// });

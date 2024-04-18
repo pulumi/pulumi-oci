@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQuotas = oci.Limits.getQuotas({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.quota_name,
- *     state: _var.quota_state,
+ *     compartmentId: tenancyOcid,
+ *     name: quotaName,
+ *     state: quotaState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetQuotasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQuotas = oci.Limits.getQuotas({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.quota_name,
- *     state: _var.quota_state,
+ *     compartmentId: tenancyOcid,
+ *     name: quotaName,
+ *     state: quotaState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

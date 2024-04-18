@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsageStatementEmailRecipientsGroup(ctx, "testUsageStatementEmailRecipientsGroup", &MeteringComputation.UsageStatementEmailRecipientsGroupArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := MeteringComputation.NewUsageStatementEmailRecipientsGroup(ctx, "test_usage_statement_email_recipients_group", &MeteringComputation.UsageStatementEmailRecipientsGroupArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				RecipientsLists: meteringcomputation.UsageStatementEmailRecipientsGroupRecipientsListArray{
 //					&meteringcomputation.UsageStatementEmailRecipientsGroupRecipientsListArgs{
-//						EmailId:   pulumi.Any(oci_metering_computation_email.Test_email.Id),
-//						State:     pulumi.Any(_var.Usage_statement_email_recipients_group_recipients_list_state),
-//						FirstName: pulumi.Any(_var.Usage_statement_email_recipients_group_recipients_list_first_name),
-//						LastName:  pulumi.Any(_var.Usage_statement_email_recipients_group_recipients_list_last_name),
+//						EmailId:   pulumi.Any(testEmail.Id),
+//						State:     pulumi.Any(usageStatementEmailRecipientsGroupRecipientsListState),
+//						FirstName: pulumi.Any(usageStatementEmailRecipientsGroupRecipientsListFirstName),
+//						LastName:  pulumi.Any(usageStatementEmailRecipientsGroupRecipientsListLastName),
 //					},
 //				},
-//				SubscriptionId: pulumi.Any(oci_onesubscription_subscription.Test_subscription.Id),
+//				SubscriptionId: pulumi.Any(testSubscription.Id),
 //			})
 //			if err != nil {
 //				return err

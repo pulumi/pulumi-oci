@@ -31,33 +31,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewTrigger(ctx, "testTrigger", &DevOps.TriggerArgs{
+//			_, err := DevOps.NewTrigger(ctx, "test_trigger", &DevOps.TriggerArgs{
 //				Actions: devops.TriggerActionArray{
 //					&devops.TriggerActionArgs{
-//						BuildPipelineId: pulumi.Any(oci_devops_build_pipeline.Test_build_pipeline.Id),
-//						Type:            pulumi.Any(_var.Trigger_actions_type),
+//						BuildPipelineId: pulumi.Any(testBuildPipeline.Id),
+//						Type:            pulumi.Any(triggerActionsType),
 //						Filter: &devops.TriggerActionFilterArgs{
-//							TriggerSource: pulumi.Any(_var.Trigger_actions_filter_trigger_source),
-//							Events:        pulumi.Any(_var.Trigger_actions_filter_events),
+//							TriggerSource: pulumi.Any(triggerActionsFilterTriggerSource),
+//							Events:        pulumi.Any(triggerActionsFilterEvents),
 //							Include: &devops.TriggerActionFilterIncludeArgs{
-//								BaseRef:        pulumi.Any(_var.Trigger_actions_filter_include_base_ref),
-//								HeadRef:        pulumi.Any(_var.Trigger_actions_filter_include_head_ref),
-//								RepositoryName: pulumi.Any(oci_devops_repository.Test_repository.Name),
+//								BaseRef:        pulumi.Any(triggerActionsFilterIncludeBaseRef),
+//								HeadRef:        pulumi.Any(triggerActionsFilterIncludeHeadRef),
+//								RepositoryName: pulumi.Any(testRepository.Name),
 //							},
 //						},
 //					},
 //				},
-//				ProjectId:     pulumi.Any(oci_devops_project.Test_project.Id),
-//				TriggerSource: pulumi.Any(_var.Trigger_trigger_source),
+//				ProjectId:     pulumi.Any(testProject.Id),
+//				TriggerSource: pulumi.Any(triggerTriggerSource),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Trigger_description),
-//				DisplayName: pulumi.Any(_var.Trigger_display_name),
+//				Description: pulumi.Any(triggerDescription),
+//				DisplayName: pulumi.Any(triggerDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				RepositoryId: pulumi.Any(oci_artifacts_repository.Test_repository.Id),
+//				RepositoryId: pulumi.Any(testRepositoryOciArtifactsRepository.Id),
 //			})
 //			if err != nil {
 //				return err

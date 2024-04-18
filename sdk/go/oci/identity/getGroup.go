@@ -35,7 +35,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetGroup(ctx, &identity.GetGroupArgs{
-//				GroupId: oci_identity_group.Test_group.Id,
+//				GroupId: testGroupOciIdentityGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

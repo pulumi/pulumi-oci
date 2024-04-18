@@ -29,32 +29,33 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testZone = new Oci.Dns.Zone("testZone", new()
+    ///     var testZone = new Oci.Dns.Zone("test_zone", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ZoneType = @var.Zone_zone_type,
-    ///         DefinedTags = @var.Zone_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         Name = zoneName,
+    ///         ZoneType = zoneZoneType,
+    ///         DefinedTags = zoneDefinedTags,
     ///         ExternalDownstreams = new[]
     ///         {
     ///             new Oci.Dns.Inputs.ZoneExternalDownstreamArgs
     ///             {
-    ///                 Address = @var.Zone_external_downstreams_address,
-    ///                 Port = @var.Zone_external_downstreams_port,
-    ///                 TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+    ///                 Address = zoneExternalDownstreamsAddress,
+    ///                 Port = zoneExternalDownstreamsPort,
+    ///                 TsigKeyId = testTsigKey.Id,
     ///             },
     ///         },
     ///         ExternalMasters = new[]
     ///         {
     ///             new Oci.Dns.Inputs.ZoneExternalMasterArgs
     ///             {
-    ///                 Address = @var.Zone_external_masters_address,
-    ///                 Port = @var.Zone_external_masters_port,
-    ///                 TsigKeyId = oci_dns_tsig_key.Test_tsig_key.Id,
+    ///                 Address = zoneExternalMastersAddress,
+    ///                 Port = zoneExternalMastersPort,
+    ///                 TsigKeyId = testTsigKey.Id,
     ///             },
     ///         },
-    ///         FreeformTags = @var.Zone_freeform_tags,
-    ///         Scope = @var.Zone_scope,
-    ///         ViewId = oci_dns_view.Test_view.Id,
+    ///         FreeformTags = zoneFreeformTags,
+    ///         Scope = zoneScope,
+    ///         ViewId = testView.Id,
     ///     });
     /// 
     /// });

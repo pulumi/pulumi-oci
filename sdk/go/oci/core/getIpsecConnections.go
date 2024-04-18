@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetIpsecConnections(ctx, &core.GetIpsecConnectionsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CpeId:         pulumi.StringRef(oci_core_cpe.Test_cpe.Id),
-//				DrgId:         pulumi.StringRef(oci_core_drg.Test_drg.Id),
+//				CompartmentId: compartmentId,
+//				CpeId:         pulumi.StringRef(testCpe.Id),
+//				DrgId:         pulumi.StringRef(testDrg.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

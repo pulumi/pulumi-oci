@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceGateways = oci.Core.getServiceGateways({
- *     compartmentId: _var.compartment_id,
- *     state: _var.service_gateway_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     state: serviceGatewayState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,9 +97,9 @@ export interface GetServiceGatewaysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceGateways = oci.Core.getServiceGateways({
- *     compartmentId: _var.compartment_id,
- *     state: _var.service_gateway_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     state: serviceGatewayState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

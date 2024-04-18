@@ -32,7 +32,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {
         ///     var testAnnouncementSubscription = Oci.AnnouncementsService.GetAnnouncementSubscription.Invoke(new()
         ///     {
-        ///         AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
+        ///         AnnouncementSubscriptionId = testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {
         ///     var testAnnouncementSubscription = Oci.AnnouncementsService.GetAnnouncementSubscription.Invoke(new()
         ///     {
-        ///         AnnouncementSubscriptionId = oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id,
+        ///         AnnouncementSubscriptionId = testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.Id,
         ///     });
         /// 
         /// });

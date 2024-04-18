@@ -214,17 +214,17 @@ def get_listings(categories: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=var["listing_category"],
-        compartment_id=var["compartment_id"],
-        image_id=oci_core_image["test_image"]["id"],
-        is_featured=var["listing_is_featured"],
-        listing_id=oci_marketplace_listing["test_listing"]["id"],
-        listing_types=var["listing_listing_types"],
-        names=var["listing_name"],
-        operating_systems=var["listing_operating_systems"],
-        package_type=var["listing_package_type"],
-        pricings=var["listing_pricing"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
+    test_listings = oci.Marketplace.get_listings(categories=listing_category,
+        compartment_id=compartment_id,
+        image_id=test_image["id"],
+        is_featured=listing_is_featured,
+        listing_id=test_listing["id"],
+        listing_types=listing_listing_types,
+        names=listing_name,
+        operating_systems=listing_operating_systems,
+        package_type=listing_package_type,
+        pricings=listing_pricing,
+        publisher_id=test_publisher["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -314,17 +314,17 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_listings = oci.Marketplace.get_listings(categories=var["listing_category"],
-        compartment_id=var["compartment_id"],
-        image_id=oci_core_image["test_image"]["id"],
-        is_featured=var["listing_is_featured"],
-        listing_id=oci_marketplace_listing["test_listing"]["id"],
-        listing_types=var["listing_listing_types"],
-        names=var["listing_name"],
-        operating_systems=var["listing_operating_systems"],
-        package_type=var["listing_package_type"],
-        pricings=var["listing_pricing"],
-        publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
+    test_listings = oci.Marketplace.get_listings(categories=listing_category,
+        compartment_id=compartment_id,
+        image_id=test_image["id"],
+        is_featured=listing_is_featured,
+        listing_id=test_listing["id"],
+        listing_types=listing_listing_types,
+        names=listing_name,
+        operating_systems=listing_operating_systems,
+        package_type=listing_package_type,
+        pricings=listing_pricing,
+        publisher_id=test_publisher["id"])
     ```
     <!--End PulumiCodeChooser -->
 

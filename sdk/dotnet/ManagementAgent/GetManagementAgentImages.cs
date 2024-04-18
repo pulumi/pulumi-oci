@@ -30,10 +30,10 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentImages = Oci.ManagementAgent.GetManagementAgentImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InstallType = @var.Management_agent_image_install_type,
-        ///         Name = @var.Management_agent_image_name,
-        ///         State = @var.Management_agent_image_state,
+        ///         CompartmentId = compartmentId,
+        ///         InstallType = managementAgentImageInstallType,
+        ///         Name = managementAgentImageName,
+        ///         State = managementAgentImageState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentImages = Oci.ManagementAgent.GetManagementAgentImages.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         InstallType = @var.Management_agent_image_install_type,
-        ///         Name = @var.Management_agent_image_name,
-        ///         State = @var.Management_agent_image_state,
+        ///         CompartmentId = compartmentId,
+        ///         InstallType = managementAgentImageInstallType,
+        ///         Name = managementAgentImageName,
+        ///         State = managementAgentImageState,
         ///     });
         /// 
         /// });

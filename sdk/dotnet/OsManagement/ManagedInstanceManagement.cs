@@ -36,28 +36,28 @@ namespace Pulumi.Oci.OsManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagedInstanceManagement = new Oci.OsManagement.ManagedInstanceManagement("testManagedInstanceManagement", new()
+    ///     var testManagedInstanceManagement = new Oci.OsManagement.ManagedInstanceManagement("test_managed_instance_management", new()
     ///     {
-    ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
+    ///         ManagedInstanceId = testManagedInstance.Id,
     ///         ParentSoftwareSource = new Oci.OsManagement.Inputs.ManagedInstanceManagementParentSoftwareSourceArgs
     ///         {
-    ///             Id = oci_osmanagement_software_source.Test_parent_software_source.Id,
-    ///             Name = oci_osmanagement_software_source.Test_parent_software_source.Display_name,
+    ///             Id = testParentSoftwareSource.Id,
+    ///             Name = testParentSoftwareSource.DisplayName,
     ///         },
     ///         ManagedInstanceGroups = new[]
     ///         {
     ///             new Oci.OsManagement.Inputs.ManagedInstanceManagementManagedInstanceGroupArgs
     ///             {
-    ///                 Id = oci_osmanagement_managed_instance_group.Test_managed_instance_group.Id,
-    ///                 DisplayName = @var.Managed_instance_group_display_name,
+    ///                 Id = testManagedInstanceGroup.Id,
+    ///                 DisplayName = managedInstanceGroupDisplayName,
     ///             },
     ///         },
     ///         ChildSoftwareSources = new[]
     ///         {
     ///             new Oci.OsManagement.Inputs.ManagedInstanceManagementChildSoftwareSourceArgs
     ///             {
-    ///                 Id = oci_osmanagement_software_source.Test_software_source_child.Id,
-    ///                 Name = oci_osmanagement_software_source.Test_software_source_child.Display_name,
+    ///                 Id = testSoftwareSourceChild.Id,
+    ///                 Name = testSoftwareSourceChild.DisplayName,
     ///             },
     ///         },
     ///     });

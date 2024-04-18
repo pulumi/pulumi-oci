@@ -34,17 +34,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Oda.NewOdaPrivateEndpointScanProxy(ctx, "testOdaPrivateEndpointScanProxy", &Oda.OdaPrivateEndpointScanProxyArgs{
-//				OdaPrivateEndpointId: pulumi.Any(oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id),
-//				Protocol:             pulumi.Any(_var.Oda_private_endpoint_scan_proxy_protocol),
+//			_, err := Oda.NewOdaPrivateEndpointScanProxy(ctx, "test_oda_private_endpoint_scan_proxy", &Oda.OdaPrivateEndpointScanProxyArgs{
+//				OdaPrivateEndpointId: pulumi.Any(testOdaPrivateEndpoint.Id),
+//				Protocol:             pulumi.Any(odaPrivateEndpointScanProxyProtocol),
 //				ScanListenerInfos: oda.OdaPrivateEndpointScanProxyScanListenerInfoArray{
 //					&oda.OdaPrivateEndpointScanProxyScanListenerInfoArgs{
-//						ScanListenerFqdn: pulumi.Any(_var.Oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_fqdn),
-//						ScanListenerIp:   pulumi.Any(_var.Oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_ip),
-//						ScanListenerPort: pulumi.Any(_var.Oda_private_endpoint_scan_proxy_scan_listener_infos_scan_listener_port),
+//						ScanListenerFqdn: pulumi.Any(odaPrivateEndpointScanProxyScanListenerInfosScanListenerFqdn),
+//						ScanListenerIp:   pulumi.Any(odaPrivateEndpointScanProxyScanListenerInfosScanListenerIp),
+//						ScanListenerPort: pulumi.Any(odaPrivateEndpointScanProxyScanListenerInfosScanListenerPort),
 //					},
 //				},
-//				ScanListenerType: pulumi.Any(_var.Oda_private_endpoint_scan_proxy_scan_listener_type),
+//				ScanListenerType: pulumi.Any(odaPrivateEndpointScanProxyScanListenerType),
 //			})
 //			if err != nil {
 //				return err

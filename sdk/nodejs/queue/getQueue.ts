@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQueue = oci.Queue.getQueue({
- *     queueId: oci_queue_queue.test_queue.id,
+ *     queueId: testQueueOciQueueQueue.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,7 +129,7 @@ export interface GetQueueResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQueue = oci.Queue.getQueue({
- *     queueId: oci_queue_queue.test_queue.id,
+ *     queueId: testQueueOciQueueQueue.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

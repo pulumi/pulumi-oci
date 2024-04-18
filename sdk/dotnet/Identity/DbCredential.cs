@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDbCredential = new Oci.Identity.DbCredential("testDbCredential", new()
+    ///     var testDbCredential = new Oci.Identity.DbCredential("test_db_credential", new()
     ///     {
-    ///         Description = @var.Db_credential_description,
-    ///         Password = @var.Db_credential_password,
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         Description = dbCredentialDescription,
+    ///         Password = dbCredentialPassword,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

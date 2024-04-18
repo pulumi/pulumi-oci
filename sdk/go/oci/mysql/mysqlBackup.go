@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Mysql.NewMysqlBackup(ctx, "testMysqlBackup", &Mysql.MysqlBackupArgs{
-//				DbSystemId: pulumi.Any(oci_mysql_mysql_db_system.Test_db_system.Id),
-//				BackupType: pulumi.Any(_var.Mysql_backup_backup_type),
+//			_, err := Mysql.NewMysqlBackup(ctx, "test_mysql_backup", &Mysql.MysqlBackupArgs{
+//				DbSystemId: pulumi.Any(testDbSystem.Id),
+//				BackupType: pulumi.Any(mysqlBackupBackupType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Mysql_backup_description),
-//				DisplayName: pulumi.Any(_var.Mysql_backup_display_name),
+//				Description: pulumi.Any(mysqlBackupDescription),
+//				DisplayName: pulumi.Any(mysqlBackupDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				RetentionInDays: pulumi.Any(_var.Mysql_backup_retention_in_days),
+//				RetentionInDays: pulumi.Any(mysqlBackupRetentionInDays),
 //			})
 //			if err != nil {
 //				return err

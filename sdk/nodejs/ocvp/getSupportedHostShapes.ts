@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
- *     compartmentId: _var.compartment_id,
- *     initialHostShapeName: oci_core_shape.test_shape.name,
- *     isSingleHostSddcSupported: _var.supported_host_shape_is_single_host_sddc_supported,
- *     name: _var.supported_host_shape_name,
+ *     compartmentId: compartmentId,
+ *     initialHostShapeName: testShape.name,
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
+ *     name: supportedHostShapeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,10 +110,10 @@ export interface GetSupportedHostShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
- *     compartmentId: _var.compartment_id,
- *     initialHostShapeName: oci_core_shape.test_shape.name,
- *     isSingleHostSddcSupported: _var.supported_host_shape_is_single_host_sddc_supported,
- *     name: _var.supported_host_shape_name,
+ *     compartmentId: compartmentId,
+ *     initialHostShapeName: testShape.name,
+ *     isSingleHostSddcSupported: supportedHostShapeIsSingleHostSddcSupported,
+ *     name: supportedHostShapeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

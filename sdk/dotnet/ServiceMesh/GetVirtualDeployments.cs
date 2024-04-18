@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualDeployments = Oci.ServiceMesh.GetVirtualDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Virtual_deployment_id,
-        ///         Name = @var.Virtual_deployment_name,
-        ///         State = @var.Virtual_deployment_state,
-        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = virtualDeploymentId,
+        ///         Name = virtualDeploymentName,
+        ///         State = virtualDeploymentState,
+        ///         VirtualServiceId = testVirtualService.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ServiceMesh
         /// {
         ///     var testVirtualDeployments = Oci.ServiceMesh.GetVirtualDeployments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Virtual_deployment_id,
-        ///         Name = @var.Virtual_deployment_name,
-        ///         State = @var.Virtual_deployment_state,
-        ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Id = virtualDeploymentId,
+        ///         Name = virtualDeploymentName,
+        ///         State = virtualDeploymentState,
+        ///         VirtualServiceId = testVirtualService.Id,
         ///     });
         /// 
         /// });

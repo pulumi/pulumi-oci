@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := UsageProxy.GetResourceQuotas(ctx, &usageproxy.GetResourceQuotasArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				ServiceName:        oci_core_service.Test_service.Name,
-//				ServiceEntitlement: pulumi.StringRef(_var.Resource_quota_service_entitlement),
+//				CompartmentId:      compartmentId,
+//				ServiceName:        testService.Name,
+//				ServiceEntitlement: pulumi.StringRef(resourceQuotaServiceEntitlement),
 //			}, nil)
 //			if err != nil {
 //				return err

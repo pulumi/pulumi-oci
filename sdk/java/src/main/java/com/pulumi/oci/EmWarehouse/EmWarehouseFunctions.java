@@ -56,7 +56,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouseOciEmWarehouseEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -98,7 +98,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouseOciEmWarehouseEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -140,7 +140,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouseOciEmWarehouseEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -182,7 +182,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouse = EmWarehouseFunctions.getEmWarehouse(GetEmWarehouseArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouseOciEmWarehouseEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -224,11 +224,11 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_display_name())
-     *             .id(var_.em_warehouse_id())
-     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
-     *             .state(var_.em_warehouse_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseDisplayName)
+     *             .id(emWarehouseId)
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .state(emWarehouseState)
      *             .build());
      * 
      *     }
@@ -270,11 +270,11 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_display_name())
-     *             .id(var_.em_warehouse_id())
-     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
-     *             .state(var_.em_warehouse_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseDisplayName)
+     *             .id(emWarehouseId)
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .state(emWarehouseState)
      *             .build());
      * 
      *     }
@@ -316,11 +316,11 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_display_name())
-     *             .id(var_.em_warehouse_id())
-     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
-     *             .state(var_.em_warehouse_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseDisplayName)
+     *             .id(emWarehouseId)
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .state(emWarehouseState)
      *             .build());
      * 
      *     }
@@ -362,11 +362,11 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_display_name())
-     *             .id(var_.em_warehouse_id())
-     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
-     *             .state(var_.em_warehouse_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseDisplayName)
+     *             .id(emWarehouseId)
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .state(emWarehouseState)
      *             .build());
      * 
      *     }
@@ -408,11 +408,11 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_display_name())
-     *             .id(var_.em_warehouse_id())
-     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
-     *             .state(var_.em_warehouse_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseDisplayName)
+     *             .id(emWarehouseId)
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .state(emWarehouseState)
      *             .build());
      * 
      *     }
@@ -454,11 +454,11 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouses = EmWarehouseFunctions.getEmWarehouses(GetEmWarehousesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_display_name())
-     *             .id(var_.em_warehouse_id())
-     *             .operationsInsightsWarehouseId(oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse().id())
-     *             .state(var_.em_warehouse_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseDisplayName)
+     *             .id(emWarehouseId)
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .state(emWarehouseState)
      *             .build());
      * 
      *     }
@@ -500,9 +500,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -544,9 +544,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -588,9 +588,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -632,9 +632,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRun = EmWarehouseFunctions.getEtlRun(GetEtlRunArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -676,9 +676,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -720,9 +720,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -764,9 +764,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -808,9 +808,9 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseEtlRuns = EmWarehouseFunctions.getEtlRuns(GetEtlRunsArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.em_warehouse_etl_run_display_name())
+     *             .emWarehouseId(testEmWarehouse.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(emWarehouseEtlRunDisplayName)
      *             .build());
      * 
      *     }
@@ -852,7 +852,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -894,7 +894,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -936,7 +936,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouse.id())
      *             .build());
      * 
      *     }
@@ -978,7 +978,7 @@ public final class EmWarehouseFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEmWarehouseResourceUsage = EmWarehouseFunctions.getResourceUsage(GetResourceUsageArgs.builder()
-     *             .emWarehouseId(oci_em_warehouse_em_warehouse.test_em_warehouse().id())
+     *             .emWarehouseId(testEmWarehouse.id())
      *             .build());
      * 
      *     }

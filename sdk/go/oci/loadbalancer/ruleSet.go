@@ -32,37 +32,38 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LoadBalancer.NewRuleSet(ctx, "testRuleSet", &LoadBalancer.RuleSetArgs{
+//			_, err := LoadBalancer.NewRuleSet(ctx, "test_rule_set", &LoadBalancer.RuleSetArgs{
 //				Items: loadbalancer.RuleSetItemArray{
 //					&loadbalancer.RuleSetItemArgs{
-//						Action:                      pulumi.Any(_var.Rule_set_items_action),
-//						AllowedMethods:              pulumi.Any(_var.Rule_set_items_allowed_methods),
-//						AreInvalidCharactersAllowed: pulumi.Any(_var.Rule_set_items_are_invalid_characters_allowed),
+//						Action:                      pulumi.Any(ruleSetItemsAction),
+//						AllowedMethods:              pulumi.Any(ruleSetItemsAllowedMethods),
+//						AreInvalidCharactersAllowed: pulumi.Any(ruleSetItemsAreInvalidCharactersAllowed),
 //						Conditions: loadbalancer.RuleSetItemConditionArray{
 //							&loadbalancer.RuleSetItemConditionArgs{
-//								AttributeName:  pulumi.Any(_var.Rule_set_items_conditions_attribute_name),
-//								AttributeValue: pulumi.Any(_var.Rule_set_items_conditions_attribute_value),
-//								Operator:       pulumi.Any(_var.Rule_set_items_conditions_operator),
+//								AttributeName:  pulumi.Any(ruleSetItemsConditionsAttributeName),
+//								AttributeValue: pulumi.Any(ruleSetItemsConditionsAttributeValue),
+//								Operator:       pulumi.Any(ruleSetItemsConditionsOperator),
 //							},
 //						},
-//						Description:             pulumi.Any(_var.Rule_set_items_description),
-//						Header:                  pulumi.Any(_var.Rule_set_items_header),
-//						HttpLargeHeaderSizeInKb: pulumi.Any(_var.Rule_set_items_http_large_header_size_in_kb),
-//						Prefix:                  pulumi.Any(_var.Rule_set_items_prefix),
+//						Description:             pulumi.Any(ruleSetItemsDescription),
+//						Header:                  pulumi.Any(ruleSetItemsHeader),
+//						HttpLargeHeaderSizeInKb: pulumi.Any(ruleSetItemsHttpLargeHeaderSizeInKb),
+//						Prefix:                  pulumi.Any(ruleSetItemsPrefix),
 //						RedirectUri: &loadbalancer.RuleSetItemRedirectUriArgs{
-//							Host:     pulumi.Any(_var.Rule_set_items_redirect_uri_host),
-//							Path:     pulumi.Any(_var.Rule_set_items_redirect_uri_path),
-//							Port:     pulumi.Any(_var.Rule_set_items_redirect_uri_port),
-//							Protocol: pulumi.Any(_var.Rule_set_items_redirect_uri_protocol),
-//							Query:    pulumi.Any(_var.Rule_set_items_redirect_uri_query),
+//							Host:     pulumi.Any(ruleSetItemsRedirectUriHost),
+//							Path:     pulumi.Any(ruleSetItemsRedirectUriPath),
+//							Port:     pulumi.Any(ruleSetItemsRedirectUriPort),
+//							Protocol: pulumi.Any(ruleSetItemsRedirectUriProtocol),
+//							Query:    pulumi.Any(ruleSetItemsRedirectUriQuery),
 //						},
-//						ResponseCode: pulumi.Any(_var.Rule_set_items_response_code),
-//						StatusCode:   pulumi.Any(_var.Rule_set_items_status_code),
-//						Suffix:       pulumi.Any(_var.Rule_set_items_suffix),
-//						Value:        pulumi.Any(_var.Rule_set_items_value),
+//						ResponseCode: pulumi.Any(ruleSetItemsResponseCode),
+//						StatusCode:   pulumi.Any(ruleSetItemsStatusCode),
+//						Suffix:       pulumi.Any(ruleSetItemsSuffix),
+//						Value:        pulumi.Any(ruleSetItemsValue),
 //					},
 //				},
-//				LoadBalancerId: pulumi.Any(oci_load_balancer_load_balancer.Test_load_balancer.Id),
+//				LoadBalancerId: pulumi.Any(testLoadBalancer.Id),
+//				Name:           pulumi.Any(ruleSetName),
 //			})
 //			if err != nil {
 //				return err

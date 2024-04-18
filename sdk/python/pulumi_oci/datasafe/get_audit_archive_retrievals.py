@@ -176,14 +176,14 @@ def get_audit_archive_retrievals(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=var["compartment_id"],
-        access_level=var["audit_archive_retrieval_access_level"],
-        audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"],
-        compartment_id_in_subtree=var["audit_archive_retrieval_compartment_id_in_subtree"],
-        display_name=var["audit_archive_retrieval_display_name"],
-        state=var["audit_archive_retrieval_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_of_expiry=var["audit_archive_retrieval_time_of_expiry"])
+    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=compartment_id,
+        access_level=audit_archive_retrieval_access_level,
+        audit_archive_retrieval_id=test_audit_archive_retrieval["id"],
+        compartment_id_in_subtree=audit_archive_retrieval_compartment_id_in_subtree,
+        display_name=audit_archive_retrieval_display_name,
+        state=audit_archive_retrieval_state,
+        target_id=test_target["id"],
+        time_of_expiry=audit_archive_retrieval_time_of_expiry)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -247,14 +247,14 @@ def get_audit_archive_retrievals_output(access_level: Optional[pulumi.Input[Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=var["compartment_id"],
-        access_level=var["audit_archive_retrieval_access_level"],
-        audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"],
-        compartment_id_in_subtree=var["audit_archive_retrieval_compartment_id_in_subtree"],
-        display_name=var["audit_archive_retrieval_display_name"],
-        state=var["audit_archive_retrieval_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"],
-        time_of_expiry=var["audit_archive_retrieval_time_of_expiry"])
+    test_audit_archive_retrievals = oci.DataSafe.get_audit_archive_retrievals(compartment_id=compartment_id,
+        access_level=audit_archive_retrieval_access_level,
+        audit_archive_retrieval_id=test_audit_archive_retrieval["id"],
+        compartment_id_in_subtree=audit_archive_retrieval_compartment_id_in_subtree,
+        display_name=audit_archive_retrieval_display_name,
+        state=audit_archive_retrieval_state,
+        target_id=test_target["id"],
+        time_of_expiry=audit_archive_retrieval_time_of_expiry)
     ```
     <!--End PulumiCodeChooser -->
 

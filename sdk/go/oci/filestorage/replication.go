@@ -57,18 +57,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewReplication(ctx, "testReplication", &FileStorage.ReplicationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				SourceId:      pulumi.Any(oci_file_storage_file_system.Test_source.Id),
-//				TargetId:      pulumi.Any(oci_file_storage_file_system.Test_target.Id),
+//			_, err := FileStorage.NewReplication(ctx, "test_replication", &FileStorage.ReplicationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				SourceId:      pulumi.Any(testSource.Id),
+//				TargetId:      pulumi.Any(testTarget.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Replication_display_name),
+//				DisplayName: pulumi.Any(replicationDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				ReplicationInterval: pulumi.Any(_var.Replication_replication_interval),
+//				ReplicationInterval: pulumi.Any(replicationReplicationInterval),
 //			})
 //			if err != nil {
 //				return err

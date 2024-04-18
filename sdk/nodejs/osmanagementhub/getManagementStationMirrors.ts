@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementStationMirrors = oci.OsManagementHub.getManagementStationMirrors({
- *     managementStationId: oci_os_management_hub_management_station.test_management_station.id,
- *     displayName: _var.management_station_mirror_display_name,
- *     displayNameContains: _var.management_station_mirror_display_name_contains,
- *     mirrorStates: _var.management_station_mirror_mirror_states,
+ *     managementStationId: testManagementStation.id,
+ *     displayName: managementStationMirrorDisplayName,
+ *     displayNameContains: managementStationMirrorDisplayNameContains,
+ *     mirrorStates: managementStationMirrorMirrorStates,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,10 +96,10 @@ export interface GetManagementStationMirrorsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementStationMirrors = oci.OsManagementHub.getManagementStationMirrors({
- *     managementStationId: oci_os_management_hub_management_station.test_management_station.id,
- *     displayName: _var.management_station_mirror_display_name,
- *     displayNameContains: _var.management_station_mirror_display_name_contains,
- *     mirrorStates: _var.management_station_mirror_mirror_states,
+ *     managementStationId: testManagementStation.id,
+ *     displayName: managementStationMirrorDisplayName,
+ *     displayNameContains: managementStationMirrorDisplayNameContains,
+ *     mirrorStates: managementStationMirrorMirrorStates,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

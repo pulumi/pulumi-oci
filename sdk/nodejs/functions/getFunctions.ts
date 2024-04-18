@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFunctions = oci.Functions.getFunctions({
- *     applicationId: oci_functions_application.test_application.id,
- *     displayName: _var.function_display_name,
- *     id: _var.function_id,
- *     state: _var.function_state,
+ *     applicationId: testApplication.id,
+ *     displayName: functionDisplayName,
+ *     id: functionId,
+ *     state: functionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetFunctionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFunctions = oci.Functions.getFunctions({
- *     applicationId: oci_functions_application.test_application.id,
- *     displayName: _var.function_display_name,
- *     id: _var.function_id,
- *     state: _var.function_state,
+ *     applicationId: testApplication.id,
+ *     displayName: functionDisplayName,
+ *     id: functionId,
+ *     state: functionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

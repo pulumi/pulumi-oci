@@ -31,18 +31,18 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetInstallationSites(ctx, &jms.GetInstallationSitesArgs{
-//				FleetId:           oci_jms_fleet.Test_fleet.Id,
-//				ApplicationId:     pulumi.StringRef(oci_dataflow_application.Test_application.Id),
-//				InstallationPath:  pulumi.StringRef(_var.Fleet_installation_site_installation_path),
-//				JreDistribution:   pulumi.StringRef(_var.Fleet_installation_site_jre_distribution),
-//				JreSecurityStatus: pulumi.StringRef(_var.Fleet_installation_site_jre_security_status),
-//				JreVendor:         pulumi.StringRef(_var.Fleet_installation_site_jre_vendor),
-//				JreVersion:        pulumi.StringRef(_var.Fleet_installation_site_jre_version),
-//				ManagedInstanceId: pulumi.StringRef(oci_osmanagement_managed_instance.Test_managed_instance.Id),
-//				OsFamilies:        _var.Fleet_installation_site_os_family,
-//				PathContains:      pulumi.StringRef(_var.Fleet_installation_site_path_contains),
-//				TimeEnd:           pulumi.StringRef(_var.Fleet_installation_site_time_end),
-//				TimeStart:         pulumi.StringRef(_var.Fleet_installation_site_time_start),
+//				FleetId:           testFleet.Id,
+//				ApplicationId:     pulumi.StringRef(testApplication.Id),
+//				InstallationPath:  pulumi.StringRef(fleetInstallationSiteInstallationPath),
+//				JreDistribution:   pulumi.StringRef(fleetInstallationSiteJreDistribution),
+//				JreSecurityStatus: pulumi.StringRef(fleetInstallationSiteJreSecurityStatus),
+//				JreVendor:         pulumi.StringRef(fleetInstallationSiteJreVendor),
+//				JreVersion:        pulumi.StringRef(fleetInstallationSiteJreVersion),
+//				ManagedInstanceId: pulumi.StringRef(testManagedInstance.Id),
+//				OsFamilies:        fleetInstallationSiteOsFamily,
+//				PathContains:      pulumi.StringRef(fleetInstallationSitePathContains),
+//				TimeEnd:           pulumi.StringRef(fleetInstallationSiteTimeEnd),
+//				TimeStart:         pulumi.StringRef(fleetInstallationSiteTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -32,35 +32,36 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Analytics.NewAnalyticsInstance(ctx, "testAnalyticsInstance", &Analytics.AnalyticsInstanceArgs{
+//			_, err := Analytics.NewAnalyticsInstance(ctx, "test_analytics_instance", &Analytics.AnalyticsInstanceArgs{
 //				Capacity: &analytics.AnalyticsInstanceCapacityArgs{
-//					CapacityType:  pulumi.Any(_var.Analytics_instance_capacity_capacity_type),
-//					CapacityValue: pulumi.Any(_var.Analytics_instance_capacity_capacity_value),
+//					CapacityType:  pulumi.Any(analyticsInstanceCapacityCapacityType),
+//					CapacityValue: pulumi.Any(analyticsInstanceCapacityCapacityValue),
 //				},
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				FeatureSet:      pulumi.Any(_var.Analytics_instance_feature_set),
-//				IdcsAccessToken: pulumi.Any(_var.Analytics_instance_idcs_access_token),
-//				LicenseType:     pulumi.Any(_var.Analytics_instance_license_type),
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				FeatureSet:      pulumi.Any(analyticsInstanceFeatureSet),
+//				IdcsAccessToken: pulumi.Any(analyticsInstanceIdcsAccessToken),
+//				LicenseType:     pulumi.Any(analyticsInstanceLicenseType),
+//				Name:            pulumi.Any(analyticsInstanceName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description:       pulumi.Any(_var.Analytics_instance_description),
-//				EmailNotification: pulumi.Any(_var.Analytics_instance_email_notification),
+//				Description:       pulumi.Any(analyticsInstanceDescription),
+//				EmailNotification: pulumi.Any(analyticsInstanceEmailNotification),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//				KmsKeyId: pulumi.Any(testKey.Id),
 //				NetworkEndpointDetails: &analytics.AnalyticsInstanceNetworkEndpointDetailsArgs{
-//					NetworkEndpointType:     pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_endpoint_type),
-//					NetworkSecurityGroupIds: pulumi.Any(_var.Analytics_instance_network_endpoint_details_network_security_group_ids),
-//					SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//					WhitelistedIps:          pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_ips),
-//					WhitelistedServices:     pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_services),
+//					NetworkEndpointType:     pulumi.Any(analyticsInstanceNetworkEndpointDetailsNetworkEndpointType),
+//					NetworkSecurityGroupIds: pulumi.Any(analyticsInstanceNetworkEndpointDetailsNetworkSecurityGroupIds),
+//					SubnetId:                pulumi.Any(testSubnet.Id),
+//					VcnId:                   pulumi.Any(testVcn.Id),
+//					WhitelistedIps:          pulumi.Any(analyticsInstanceNetworkEndpointDetailsWhitelistedIps),
+//					WhitelistedServices:     pulumi.Any(analyticsInstanceNetworkEndpointDetailsWhitelistedServices),
 //					WhitelistedVcns: analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArray{
 //						&analytics.AnalyticsInstanceNetworkEndpointDetailsWhitelistedVcnArgs{
-//							Id:             pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_id),
-//							WhitelistedIps: pulumi.Any(_var.Analytics_instance_network_endpoint_details_whitelisted_vcns_whitelisted_ips),
+//							Id:             pulumi.Any(analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsId),
+//							WhitelistedIps: pulumi.Any(analyticsInstanceNetworkEndpointDetailsWhitelistedVcnsWhitelistedIps),
 //						},
 //					},
 //				},

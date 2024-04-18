@@ -430,19 +430,20 @@ class WorkspaceProject(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_project = oci.data_integration.WorkspaceProject("testWorkspaceProject",
-            identifier=var["workspace_project_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            description=var["workspace_project_description"],
-            key=var["workspace_project_key"],
-            model_version=var["workspace_project_model_version"],
-            object_status=var["workspace_project_object_status"],
+        test_workspace_project = oci.data_integration.WorkspaceProject("test_workspace_project",
+            identifier=workspace_project_identifier,
+            name=workspace_project_name,
+            workspace_id=test_workspace["id"],
+            description=workspace_project_description,
+            key=workspace_project_key,
+            model_version=workspace_project_model_version,
+            object_status=workspace_project_object_status,
             registry_metadata=oci.data_integration.WorkspaceProjectRegistryMetadataArgs(
-                aggregator_key=var["workspace_project_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_project_registry_metadata_is_favorite"],
-                key=var["workspace_project_registry_metadata_key"],
-                labels=var["workspace_project_registry_metadata_labels"],
-                registry_version=var["workspace_project_registry_metadata_registry_version"],
+                aggregator_key=workspace_project_registry_metadata_aggregator_key,
+                is_favorite=workspace_project_registry_metadata_is_favorite,
+                key=workspace_project_registry_metadata_key,
+                labels=workspace_project_registry_metadata_labels,
+                registry_version=workspace_project_registry_metadata_registry_version,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -488,19 +489,20 @@ class WorkspaceProject(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_workspace_project = oci.data_integration.WorkspaceProject("testWorkspaceProject",
-            identifier=var["workspace_project_identifier"],
-            workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-            description=var["workspace_project_description"],
-            key=var["workspace_project_key"],
-            model_version=var["workspace_project_model_version"],
-            object_status=var["workspace_project_object_status"],
+        test_workspace_project = oci.data_integration.WorkspaceProject("test_workspace_project",
+            identifier=workspace_project_identifier,
+            name=workspace_project_name,
+            workspace_id=test_workspace["id"],
+            description=workspace_project_description,
+            key=workspace_project_key,
+            model_version=workspace_project_model_version,
+            object_status=workspace_project_object_status,
             registry_metadata=oci.data_integration.WorkspaceProjectRegistryMetadataArgs(
-                aggregator_key=var["workspace_project_registry_metadata_aggregator_key"],
-                is_favorite=var["workspace_project_registry_metadata_is_favorite"],
-                key=var["workspace_project_registry_metadata_key"],
-                labels=var["workspace_project_registry_metadata_labels"],
-                registry_version=var["workspace_project_registry_metadata_registry_version"],
+                aggregator_key=workspace_project_registry_metadata_aggregator_key,
+                is_favorite=workspace_project_registry_metadata_is_favorite,
+                key=workspace_project_registry_metadata_key,
+                labels=workspace_project_registry_metadata_labels,
+                registry_version=workspace_project_registry_metadata_registry_version,
             ))
         ```
         <!--End PulumiCodeChooser -->

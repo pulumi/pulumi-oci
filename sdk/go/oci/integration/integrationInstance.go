@@ -31,46 +31,46 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Integration.NewIntegrationInstance(ctx, "testIntegrationInstance", &Integration.IntegrationInstanceArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				DisplayName:             pulumi.Any(_var.Integration_instance_display_name),
-//				IntegrationInstanceType: pulumi.Any(_var.Integration_instance_integration_instance_type),
-//				IsByol:                  pulumi.Any(_var.Integration_instance_is_byol),
-//				MessagePacks:            pulumi.Any(_var.Integration_instance_message_packs),
+//			_, err := Integration.NewIntegrationInstance(ctx, "test_integration_instance", &Integration.IntegrationInstanceArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				DisplayName:             pulumi.Any(integrationInstanceDisplayName),
+//				IntegrationInstanceType: pulumi.Any(integrationInstanceIntegrationInstanceType),
+//				IsByol:                  pulumi.Any(integrationInstanceIsByol),
+//				MessagePacks:            pulumi.Any(integrationInstanceMessagePacks),
 //				AlternateCustomEndpoints: integration.IntegrationInstanceAlternateCustomEndpointArray{
 //					&integration.IntegrationInstanceAlternateCustomEndpointArgs{
-//						Hostname:            pulumi.Any(_var.Integration_instance_alternate_custom_endpoints_hostname),
-//						CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						Hostname:            pulumi.Any(integrationInstanceAlternateCustomEndpointsHostname),
+//						CertificateSecretId: pulumi.Any(testSecret.Id),
 //					},
 //				},
-//				ConsumptionModel: pulumi.Any(_var.Integration_instance_consumption_model),
+//				ConsumptionModel: pulumi.Any(integrationInstanceConsumptionModel),
 //				CustomEndpoint: &integration.IntegrationInstanceCustomEndpointArgs{
-//					Hostname:            pulumi.Any(_var.Integration_instance_custom_endpoint_hostname),
-//					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Hostname:            pulumi.Any(integrationInstanceCustomEndpointHostname),
+//					CertificateSecretId: pulumi.Any(testSecret.Id),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DomainId: pulumi.Any(oci_identity_domain.Test_domain.Id),
+//				DomainId: pulumi.Any(testDomain.Id),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IdcsAt:                 pulumi.Any(_var.Integration_instance_idcs_at),
-//				IsFileServerEnabled:    pulumi.Any(_var.Integration_instance_is_file_server_enabled),
-//				IsVisualBuilderEnabled: pulumi.Any(_var.Integration_instance_is_visual_builder_enabled),
+//				IdcsAt:                 pulumi.Any(integrationInstanceIdcsAt),
+//				IsFileServerEnabled:    pulumi.Any(integrationInstanceIsFileServerEnabled),
+//				IsVisualBuilderEnabled: pulumi.Any(integrationInstanceIsVisualBuilderEnabled),
 //				NetworkEndpointDetails: &integration.IntegrationInstanceNetworkEndpointDetailsArgs{
-//					NetworkEndpointType: pulumi.Any(_var.Integration_instance_network_endpoint_details_network_endpoint_type),
-//					AllowlistedHttpIps:  pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_ips),
+//					NetworkEndpointType: pulumi.Any(integrationInstanceNetworkEndpointDetailsNetworkEndpointType),
+//					AllowlistedHttpIps:  pulumi.Any(integrationInstanceNetworkEndpointDetailsAllowlistedHttpIps),
 //					AllowlistedHttpVcns: integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArray{
 //						&integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs{
-//							Id:             pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_id),
-//							AllowlistedIps: pulumi.Any(_var.Integration_instance_network_endpoint_details_allowlisted_http_vcns_allowlisted_ips),
+//							Id:             pulumi.Any(integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsId),
+//							AllowlistedIps: pulumi.Any(integrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnsAllowlistedIps),
 //						},
 //					},
-//					IsIntegrationVcnAllowlisted: pulumi.Any(_var.Integration_instance_network_endpoint_details_is_integration_vcn_allowlisted),
+//					IsIntegrationVcnAllowlisted: pulumi.Any(integrationInstanceNetworkEndpointDetailsIsIntegrationVcnAllowlisted),
 //				},
-//				Shape: pulumi.Any(_var.Integration_instance_shape),
-//				State: pulumi.Any(_var.Integration_instance_target_state),
+//				Shape: pulumi.Any(integrationInstanceShape),
+//				State: pulumi.Any(integrationInstanceTargetState),
 //			})
 //			if err != nil {
 //				return err

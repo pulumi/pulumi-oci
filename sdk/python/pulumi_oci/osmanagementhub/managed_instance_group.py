@@ -499,21 +499,21 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_instance_group = oci.os_management_hub.ManagedInstanceGroup("testManagedInstanceGroup",
-            arch_type=var["managed_instance_group_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["managed_instance_group_display_name"],
-            os_family=var["managed_instance_group_os_family"],
+        test_managed_instance_group = oci.os_management_hub.ManagedInstanceGroup("test_managed_instance_group",
             software_source_ids=[{}],
-            vendor_name=var["managed_instance_group_vendor_name"],
+            arch_type=managed_instance_group_arch_type,
+            compartment_id=compartment_id,
+            display_name=managed_instance_group_display_name,
+            os_family=managed_instance_group_os_family,
+            vendor_name=managed_instance_group_vendor_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["managed_instance_group_description"],
+            description=managed_instance_group_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
+            managed_instance_ids=managed_instance_group_managed_instance_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -560,21 +560,21 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_instance_group = oci.os_management_hub.ManagedInstanceGroup("testManagedInstanceGroup",
-            arch_type=var["managed_instance_group_arch_type"],
-            compartment_id=var["compartment_id"],
-            display_name=var["managed_instance_group_display_name"],
-            os_family=var["managed_instance_group_os_family"],
+        test_managed_instance_group = oci.os_management_hub.ManagedInstanceGroup("test_managed_instance_group",
             software_source_ids=[{}],
-            vendor_name=var["managed_instance_group_vendor_name"],
+            arch_type=managed_instance_group_arch_type,
+            compartment_id=compartment_id,
+            display_name=managed_instance_group_display_name,
+            os_family=managed_instance_group_os_family,
+            vendor_name=managed_instance_group_vendor_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["managed_instance_group_description"],
+            description=managed_instance_group_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
+            managed_instance_ids=managed_instance_group_managed_instance_ids)
         ```
         <!--End PulumiCodeChooser -->
 

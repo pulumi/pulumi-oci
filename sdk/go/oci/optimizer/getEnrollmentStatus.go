@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetEnrollmentStatus(ctx, &optimizer.GetEnrollmentStatusArgs{
-//				EnrollmentStatusId: oci_optimizer_enrollment_status.Test_enrollment_status.Id,
+//				EnrollmentStatusId: testEnrollmentStatusOciOptimizerEnrollmentStatus.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testBdsInstanceApiKey = new oci.bigdataservice.BdsInstanceApiKey("testBdsInstanceApiKey", {
- *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
- *     keyAlias: _var.bds_instance_api_key_key_alias,
- *     passphrase: _var.bds_instance_api_key_passphrase,
- *     userId: oci_identity_user.test_user.id,
- *     defaultRegion: _var.bds_instance_api_key_default_region,
+ * const testBdsInstanceApiKey = new oci.bigdataservice.BdsInstanceApiKey("test_bds_instance_api_key", {
+ *     bdsInstanceId: testBdsInstance.id,
+ *     keyAlias: bdsInstanceApiKeyKeyAlias,
+ *     passphrase: bdsInstanceApiKeyPassphrase,
+ *     userId: testUser.id,
+ *     defaultRegion: bdsInstanceApiKeyDefaultRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

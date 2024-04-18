@@ -156,12 +156,12 @@ def get_configurations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configurations = oci.Psql.get_configurations(compartment_id=var["compartment_id"],
-        configuration_id=oci_psql_configuration["test_configuration"]["id"],
-        db_version=var["configuration_db_version"],
-        display_name=var["configuration_display_name"],
-        shape=var["configuration_shape"],
-        state=var["configuration_state"])
+    test_configurations = oci.Psql.get_configurations(compartment_id=compartment_id,
+        configuration_id=test_configuration["id"],
+        db_version=configuration_db_version,
+        display_name=configuration_display_name,
+        shape=configuration_shape,
+        state=configuration_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_configurations_output(compartment_id: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_configurations = oci.Psql.get_configurations(compartment_id=var["compartment_id"],
-        configuration_id=oci_psql_configuration["test_configuration"]["id"],
-        db_version=var["configuration_db_version"],
-        display_name=var["configuration_display_name"],
-        shape=var["configuration_shape"],
-        state=var["configuration_state"])
+    test_configurations = oci.Psql.get_configurations(compartment_id=compartment_id,
+        configuration_id=test_configuration["id"],
+        db_version=configuration_db_version,
+        display_name=configuration_display_name,
+        shape=configuration_shape,
+        state=configuration_state)
     ```
     <!--End PulumiCodeChooser -->
 

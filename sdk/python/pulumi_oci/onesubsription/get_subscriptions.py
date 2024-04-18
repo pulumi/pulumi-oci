@@ -134,11 +134,11 @@ def get_subscriptions(buyer_email: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=var["compartment_id"],
-        buyer_email=var["subscription_buyer_email"],
-        is_commit_info_required=var["subscription_is_commit_info_required"],
-        plan_number=var["subscription_plan_number"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
+    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=compartment_id,
+        buyer_email=subscription_buyer_email,
+        is_commit_info_required=subscription_is_commit_info_required,
+        plan_number=subscription_plan_number,
+        subscription_id=test_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -193,11 +193,11 @@ def get_subscriptions_output(buyer_email: Optional[pulumi.Input[Optional[str]]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=var["compartment_id"],
-        buyer_email=var["subscription_buyer_email"],
-        is_commit_info_required=var["subscription_is_commit_info_required"],
-        plan_number=var["subscription_plan_number"],
-        subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
+    test_subscriptions = oci.OneSubsription.get_subscriptions(compartment_id=compartment_id,
+        buyer_email=subscription_buyer_email,
+        is_commit_info_required=subscription_is_commit_info_required,
+        plan_number=subscription_plan_number,
+        subscription_id=test_subscription["id"])
     ```
     <!--End PulumiCodeChooser -->
 

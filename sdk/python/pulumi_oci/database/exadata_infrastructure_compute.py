@@ -807,7 +807,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
+        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -834,7 +834,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"])
+        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"])
         ```
         <!--End PulumiCodeChooser -->
 

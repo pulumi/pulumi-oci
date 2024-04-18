@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAllowedDomainLicenseTypes = oci.Identity.getAllowedDomainLicenseTypes({
- *     currentLicenseTypeName: _var.allowed_domain_license_type_current_license_type_name,
+ *     currentLicenseTypeName: allowedDomainLicenseTypeCurrentLicenseTypeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -83,7 +83,7 @@ export interface GetAllowedDomainLicenseTypesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAllowedDomainLicenseTypes = oci.Identity.getAllowedDomainLicenseTypes({
- *     currentLicenseTypeName: _var.allowed_domain_license_type_current_license_type_name,
+ *     currentLicenseTypeName: allowedDomainLicenseTypeCurrentLicenseTypeName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

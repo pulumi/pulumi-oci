@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
- *     entityId: oci_service_catalog_entity.test_entity.id,
- *     entityType: _var.service_catalog_association_entity_type,
- *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
- *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ *     entityId: testEntity.id,
+ *     entityType: serviceCatalogAssociationEntityType,
+ *     serviceCatalogAssociationId: testServiceCatalogAssociation.id,
+ *     serviceCatalogId: testServiceCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,10 +103,10 @@ export interface GetServiceCatalogAssociationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
- *     entityId: oci_service_catalog_entity.test_entity.id,
- *     entityType: _var.service_catalog_association_entity_type,
- *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
- *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ *     entityId: testEntity.id,
+ *     entityType: serviceCatalogAssociationEntityType,
+ *     serviceCatalogAssociationId: testServiceCatalogAssociation.id,
+ *     serviceCatalogId: testServiceCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

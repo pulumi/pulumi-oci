@@ -18,10 +18,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalNonContainerDatabase = new oci.database.ExternalNonContainerDatabase("testExternalNonContainerDatabase", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_non_container_database_display_name,
- *     definedTags: _var.external_non_container_database_defined_tags,
+ * const testExternalNonContainerDatabase = new oci.database.ExternalNonContainerDatabase("test_external_non_container_database", {
+ *     compartmentId: compartmentId,
+ *     displayName: externalNonContainerDatabaseDisplayName,
+ *     definedTags: externalNonContainerDatabaseDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

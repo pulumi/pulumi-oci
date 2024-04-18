@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagement.GetManagedInstanceEventReport(ctx, &osmanagement.GetManagedInstanceEventReportArgs{
-//				CompartmentId:                       _var.Compartment_id,
-//				ManagedInstanceId:                   oci_osmanagement_managed_instance.Test_managed_instance.Id,
-//				LatestTimestampGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_instance_event_report_latest_timestamp_greater_than_or_equal_to),
-//				LatestTimestampLessThan:             pulumi.StringRef(_var.Managed_instance_event_report_latest_timestamp_less_than),
+//				CompartmentId:                       compartmentId,
+//				ManagedInstanceId:                   testManagedInstance.Id,
+//				LatestTimestampGreaterThanOrEqualTo: pulumi.StringRef(managedInstanceEventReportLatestTimestampGreaterThanOrEqualTo),
+//				LatestTimestampLessThan:             pulumi.StringRef(managedInstanceEventReportLatestTimestampLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

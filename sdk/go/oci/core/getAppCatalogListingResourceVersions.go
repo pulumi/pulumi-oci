@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetAppCatalogListingResourceVersions(ctx, &core.GetAppCatalogListingResourceVersionsArgs{
-//				ListingId: data.Oci_core_app_catalog_listing.Test_listing.Id,
+//				ListingId: testListing.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -199,7 +199,7 @@ def get_migration(migration_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.CloudMigrations.get_migration(migration_id=oci_cloud_migrations_migration["test_migration"]["id"])
+    test_migration = oci.CloudMigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,7 +242,7 @@ def get_migration_output(migration_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_migration = oci.CloudMigrations.get_migration(migration_id=oci_cloud_migrations_migration["test_migration"]["id"])
+    test_migration = oci.CloudMigrations.get_migration(migration_id=test_migration_oci_cloud_migrations_migration["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -29,7 +29,7 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Artifacts.NewContainerConfiguration(ctx, "testContainerConfiguration", nil)
+//			_, err := Artifacts.NewContainerConfiguration(ctx, "test_container_configuration", nil)
 //			if err != nil {
 //				return err
 //			}

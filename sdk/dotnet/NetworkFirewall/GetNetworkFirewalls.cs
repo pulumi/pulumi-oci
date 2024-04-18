@@ -30,12 +30,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewalls = Oci.NetworkFirewall.GetNetworkFirewalls.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Network_firewall_availability_domain,
-        ///         DisplayName = @var.Network_firewall_display_name,
-        ///         Id = @var.Network_firewall_id,
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///         State = @var.Network_firewall_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = networkFirewallAvailabilityDomain,
+        ///         DisplayName = networkFirewallDisplayName,
+        ///         Id = networkFirewallId,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         State = networkFirewallState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewalls = Oci.NetworkFirewall.GetNetworkFirewalls.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Network_firewall_availability_domain,
-        ///         DisplayName = @var.Network_firewall_display_name,
-        ///         Id = @var.Network_firewall_id,
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///         State = @var.Network_firewall_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = networkFirewallAvailabilityDomain,
+        ///         DisplayName = networkFirewallDisplayName,
+        ///         Id = networkFirewallId,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         State = networkFirewallState,
         ///     });
         /// 
         /// });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Oda.GetOdaInstance(ctx, &oda.GetOdaInstanceArgs{
-//				OdaInstanceId: oci_oda_oda_instance.Test_oda_instance.Id,
+//				OdaInstanceId: testOdaInstanceOciOdaOdaInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

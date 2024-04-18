@@ -27,24 +27,24 @@ namespace Pulumi.Oci.AnnouncementsService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAnnouncementSubscription = new Oci.AnnouncementsService.AnnouncementSubscription("testAnnouncementSubscription", new()
+    ///     var testAnnouncementSubscription = new Oci.AnnouncementsService.AnnouncementSubscription("test_announcement_subscription", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Announcement_subscription_display_name,
-    ///         OnsTopicId = oci_ons_notification_topic.Test_notification_topic.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = announcementSubscriptionDisplayName,
+    ///         OnsTopicId = testNotificationTopic.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Announcement_subscription_description,
+    ///         Description = announcementSubscriptionDescription,
     ///         FilterGroups = new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionFilterGroupsArgs
     ///         {
     ///             Filters = new[]
     ///             {
     ///                 new Oci.AnnouncementsService.Inputs.AnnouncementSubscriptionFilterGroupsFilterArgs
     ///                 {
-    ///                     Type = @var.Announcement_subscription_filter_groups_filters_type,
-    ///                     Value = @var.Announcement_subscription_filter_groups_filters_value,
+    ///                     Type = announcementSubscriptionFilterGroupsFiltersType,
+    ///                     Value = announcementSubscriptionFilterGroupsFiltersValue,
     ///                 },
     ///             },
     ///         },
@@ -52,8 +52,8 @@ namespace Pulumi.Oci.AnnouncementsService
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         PreferredLanguage = @var.Announcement_subscription_preferred_language,
-    ///         PreferredTimeZone = @var.Announcement_subscription_preferred_time_zone,
+    ///         PreferredLanguage = announcementSubscriptionPreferredLanguage,
+    ///         PreferredTimeZone = announcementSubscriptionPreferredTimeZone,
     ///     });
     /// 
     /// });

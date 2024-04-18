@@ -29,18 +29,19 @@ namespace Pulumi.Oci.Email
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDkim = new Oci.Email.Dkim("testDkim", new()
+    ///     var testDkim = new Oci.Email.Dkim("test_dkim", new()
     ///     {
-    ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
+    ///         EmailDomainId = testEmailDomain.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Dkim_description,
+    ///         Description = dkimDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Name = dkimName,
     ///     });
     /// 
     /// });

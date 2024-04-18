@@ -45,20 +45,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCustomTable = new CustomTable(&#34;testCustomTable&#34;, CustomTableArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .savedCustomTable(CustomTableSavedCustomTableArgs.builder()
- *                 .displayName(var_.custom_table_saved_custom_table_display_name())
- *                 .columnGroupBies(var_.custom_table_saved_custom_table_column_group_by())
- *                 .compartmentDepth(var_.custom_table_saved_custom_table_compartment_depth())
+ *                 .displayName(customTableSavedCustomTableDisplayName)
+ *                 .columnGroupBies(customTableSavedCustomTableColumnGroupBy)
+ *                 .compartmentDepth(customTableSavedCustomTableCompartmentDepth)
  *                 .groupByTags(CustomTableSavedCustomTableGroupByTagArgs.builder()
- *                     .key(var_.custom_table_saved_custom_table_group_by_tag_key())
- *                     .namespace(var_.custom_table_saved_custom_table_group_by_tag_namespace())
- *                     .value(var_.custom_table_saved_custom_table_group_by_tag_value())
+ *                     .key(customTableSavedCustomTableGroupByTagKey)
+ *                     .namespace(customTableSavedCustomTableGroupByTagNamespace)
+ *                     .value(customTableSavedCustomTableGroupByTagValue)
  *                     .build())
- *                 .rowGroupBies(var_.custom_table_saved_custom_table_row_group_by())
- *                 .version(var_.custom_table_saved_custom_table_version())
+ *                 .rowGroupBies(customTableSavedCustomTableRowGroupBy)
+ *                 .version(customTableSavedCustomTableVersion)
  *                 .build())
- *             .savedReportId(oci_metering_computation_saved_report.test_saved_report().id())
+ *             .savedReportId(testSavedReport.id())
  *             .build());
  * 
  *     }

@@ -480,17 +480,18 @@ class IdentityProvider(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_identity_provider = oci.identity.IdentityProvider("testIdentityProvider",
-            compartment_id=var["tenancy_ocid"],
-            description=var["identity_provider_description"],
-            metadata=var["identity_provider_metadata"],
-            metadata_url=var["identity_provider_metadata_url"],
-            product_type=var["identity_provider_product_type"],
-            protocol=var["identity_provider_protocol"],
+        test_identity_provider = oci.identity.IdentityProvider("test_identity_provider",
+            compartment_id=tenancy_ocid,
+            description=identity_provider_description,
+            metadata=identity_provider_metadata,
+            metadata_url=identity_provider_metadata_url,
+            name=identity_provider_name,
+            product_type=identity_provider_product_type,
+            protocol=identity_provider_protocol,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            freeform_attributes=var["identity_provider_freeform_attributes"],
+            freeform_attributes=identity_provider_freeform_attributes,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -555,17 +556,18 @@ class IdentityProvider(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_identity_provider = oci.identity.IdentityProvider("testIdentityProvider",
-            compartment_id=var["tenancy_ocid"],
-            description=var["identity_provider_description"],
-            metadata=var["identity_provider_metadata"],
-            metadata_url=var["identity_provider_metadata_url"],
-            product_type=var["identity_provider_product_type"],
-            protocol=var["identity_provider_protocol"],
+        test_identity_provider = oci.identity.IdentityProvider("test_identity_provider",
+            compartment_id=tenancy_ocid,
+            description=identity_provider_description,
+            metadata=identity_provider_metadata,
+            metadata_url=identity_provider_metadata_url,
+            name=identity_provider_name,
+            product_type=identity_provider_product_type,
+            protocol=identity_provider_protocol,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            freeform_attributes=var["identity_provider_freeform_attributes"],
+            freeform_attributes=identity_provider_freeform_attributes,
             freeform_tags={
                 "Department": "Finance",
             })

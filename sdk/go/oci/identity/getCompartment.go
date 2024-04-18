@@ -38,7 +38,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetCompartment(ctx, &identity.GetCompartmentArgs{
-//				Id: _var.Compartment_id,
+//				Id: compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

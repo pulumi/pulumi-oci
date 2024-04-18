@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRedisCluster = oci.Redis.getRedisCluster({
- *     redisClusterId: oci_redis_redis_cluster.test_redis_cluster.id,
+ *     redisClusterId: testRedisClusterOciRedisRedisCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,7 +141,7 @@ export interface GetRedisClusterResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRedisCluster = oci.Redis.getRedisCluster({
- *     redisClusterId: oci_redis_redis_cluster.test_redis_cluster.id,
+ *     redisClusterId: testRedisClusterOciRedisRedisCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

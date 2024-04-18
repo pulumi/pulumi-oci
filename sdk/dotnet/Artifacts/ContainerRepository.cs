@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Artifacts
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testContainerRepository = new Oci.Artifacts.ContainerRepository("testContainerRepository", new()
+    ///     var testContainerRepository = new Oci.Artifacts.ContainerRepository("test_container_repository", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Container_repository_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = containerRepositoryDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -37,12 +37,12 @@ namespace Pulumi.Oci.Artifacts
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsImmutable = @var.Container_repository_is_immutable,
-    ///         IsPublic = @var.Container_repository_is_public,
+    ///         IsImmutable = containerRepositoryIsImmutable,
+    ///         IsPublic = containerRepositoryIsPublic,
     ///         Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs
     ///         {
-    ///             Content = @var.Container_repository_readme_content,
-    ///             Format = @var.Container_repository_readme_format,
+    ///             Content = containerRepositoryReadmeContent,
+    ///             Format = containerRepositoryReadmeFormat,
     ///         },
     ///     });
     /// 

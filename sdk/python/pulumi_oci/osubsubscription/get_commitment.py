@@ -159,9 +159,9 @@ def get_commitment(commitment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitment = oci.OsubSubscription.get_commitment(commitment_id=oci_osub_subscription_commitment["test_commitment"]["id"],
-        x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
-        x_one_origin_region=var["commitment_x_one_origin_region"])
+    test_commitment = oci.OsubSubscription.get_commitment(commitment_id=test_commitment_oci_osub_subscription_commitment["id"],
+        x_one_gateway_subscription_id=commitment_x_one_gateway_subscription_id,
+        x_one_origin_region=commitment_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,9 +207,9 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_commitment = oci.OsubSubscription.get_commitment(commitment_id=oci_osub_subscription_commitment["test_commitment"]["id"],
-        x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
-        x_one_origin_region=var["commitment_x_one_origin_region"])
+    test_commitment = oci.OsubSubscription.get_commitment(commitment_id=test_commitment_oci_osub_subscription_commitment["id"],
+        x_one_gateway_subscription_id=commitment_x_one_gateway_subscription_id,
+        x_one_origin_region=commitment_x_one_origin_region)
     ```
     <!--End PulumiCodeChooser -->
 

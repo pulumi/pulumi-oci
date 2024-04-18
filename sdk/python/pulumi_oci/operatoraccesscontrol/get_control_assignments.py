@@ -143,11 +143,11 @@ def get_control_assignments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=var["compartment_id"],
-        operator_control_name=oci_operator_access_control_operator_control["test_operator_control"]["name"],
-        resource_name=var["operator_control_assignment_resource_name"],
-        resource_type=var["operator_control_assignment_resource_type"],
-        state=var["operator_control_assignment_state"])
+    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=compartment_id,
+        operator_control_name=test_operator_control["name"],
+        resource_name=operator_control_assignment_resource_name,
+        resource_type=operator_control_assignment_resource_type,
+        state=operator_control_assignment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,11 +199,11 @@ def get_control_assignments_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=var["compartment_id"],
-        operator_control_name=oci_operator_access_control_operator_control["test_operator_control"]["name"],
-        resource_name=var["operator_control_assignment_resource_name"],
-        resource_type=var["operator_control_assignment_resource_type"],
-        state=var["operator_control_assignment_state"])
+    test_operator_control_assignments = oci.OperatorAccessControl.get_control_assignments(compartment_id=compartment_id,
+        operator_control_name=test_operator_control["name"],
+        resource_name=operator_control_assignment_resource_name,
+        resource_type=operator_control_assignment_resource_type,
+        state=operator_control_assignment_state)
     ```
     <!--End PulumiCodeChooser -->
 

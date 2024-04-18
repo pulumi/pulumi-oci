@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMediaWorkflow = new oci.mediaservices.MediaWorkflow("testMediaWorkflow", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.media_workflow_display_name,
+ * const testMediaWorkflow = new oci.mediaservices.MediaWorkflow("test_media_workflow", {
+ *     compartmentId: compartmentId,
+ *     displayName: mediaWorkflowDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -28,22 +28,22 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     locks: [{
- *         compartmentId: _var.compartment_id,
- *         type: _var.media_workflow_locks_type,
- *         message: _var.media_workflow_locks_message,
- *         relatedResourceId: oci_usage_proxy_resource.test_resource.id,
- *         timeCreated: _var.media_workflow_locks_time_created,
+ *         compartmentId: compartmentId,
+ *         type: mediaWorkflowLocksType,
+ *         message: mediaWorkflowLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: mediaWorkflowLocksTimeCreated,
  *     }],
- *     mediaWorkflowConfigurationIds: _var.media_workflow_media_workflow_configuration_ids,
- *     parameters: _var.media_workflow_parameters,
+ *     mediaWorkflowConfigurationIds: mediaWorkflowMediaWorkflowConfigurationIds,
+ *     parameters: mediaWorkflowParameters,
  *     tasks: [{
- *         key: _var.media_workflow_tasks_key,
- *         parameters: _var.media_workflow_tasks_parameters,
- *         type: _var.media_workflow_tasks_type,
- *         version: _var.media_workflow_tasks_version,
- *         enableParameterReference: _var.media_workflow_tasks_enable_parameter_reference,
- *         enableWhenReferencedParameterEquals: _var.media_workflow_tasks_enable_when_referenced_parameter_equals,
- *         prerequisites: _var.media_workflow_tasks_prerequisites,
+ *         key: mediaWorkflowTasksKey,
+ *         parameters: mediaWorkflowTasksParameters,
+ *         type: mediaWorkflowTasksType,
+ *         version: mediaWorkflowTasksVersion,
+ *         enableParameterReference: mediaWorkflowTasksEnableParameterReference,
+ *         enableWhenReferencedParameterEquals: mediaWorkflowTasksEnableWhenReferencedParameterEquals,
+ *         prerequisites: mediaWorkflowTasksPrerequisites,
  *     }],
  * });
  * ```

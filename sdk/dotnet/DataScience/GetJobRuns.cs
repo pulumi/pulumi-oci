@@ -29,12 +29,12 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testJobRuns = Oci.DataScience.GetJobRuns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Job_run_created_by,
-        ///         DisplayName = @var.Job_run_display_name,
-        ///         Id = @var.Job_run_id,
-        ///         JobId = oci_datascience_job.Test_job.Id,
-        ///         State = @var.Job_run_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = jobRunCreatedBy,
+        ///         DisplayName = jobRunDisplayName,
+        ///         Id = jobRunId,
+        ///         JobId = testJob.Id,
+        ///         State = jobRunState,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testJobRuns = Oci.DataScience.GetJobRuns.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Job_run_created_by,
-        ///         DisplayName = @var.Job_run_display_name,
-        ///         Id = @var.Job_run_id,
-        ///         JobId = oci_datascience_job.Test_job.Id,
-        ///         State = @var.Job_run_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = jobRunCreatedBy,
+        ///         DisplayName = jobRunDisplayName,
+        ///         Id = jobRunId,
+        ///         JobId = testJob.Id,
+        ///         State = jobRunState,
         ///     });
         /// 
         /// });

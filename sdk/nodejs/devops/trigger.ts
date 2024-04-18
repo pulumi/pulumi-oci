@@ -18,31 +18,31 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testTrigger = new oci.devops.Trigger("testTrigger", {
+ * const testTrigger = new oci.devops.Trigger("test_trigger", {
  *     actions: [{
- *         buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
- *         type: _var.trigger_actions_type,
+ *         buildPipelineId: testBuildPipeline.id,
+ *         type: triggerActionsType,
  *         filter: {
- *             triggerSource: _var.trigger_actions_filter_trigger_source,
- *             events: _var.trigger_actions_filter_events,
+ *             triggerSource: triggerActionsFilterTriggerSource,
+ *             events: triggerActionsFilterEvents,
  *             include: {
- *                 baseRef: _var.trigger_actions_filter_include_base_ref,
- *                 headRef: _var.trigger_actions_filter_include_head_ref,
- *                 repositoryName: oci_devops_repository.test_repository.name,
+ *                 baseRef: triggerActionsFilterIncludeBaseRef,
+ *                 headRef: triggerActionsFilterIncludeHeadRef,
+ *                 repositoryName: testRepository.name,
  *             },
  *         },
  *     }],
- *     projectId: oci_devops_project.test_project.id,
- *     triggerSource: _var.trigger_trigger_source,
+ *     projectId: testProject.id,
+ *     triggerSource: triggerTriggerSource,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.trigger_description,
- *     displayName: _var.trigger_display_name,
+ *     description: triggerDescription,
+ *     displayName: triggerDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     repositoryId: testRepositoryOciArtifactsRepository.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -120,9 +120,9 @@ def get_managed_instances(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instances = oci.OsManagement.get_managed_instances(compartment_id=var["compartment_id"],
-        display_name=var["managed_instance_display_name"],
-        os_family=var["managed_instance_os_family"])
+    test_managed_instances = oci.OsManagement.get_managed_instances(compartment_id=compartment_id,
+        display_name=managed_instance_display_name,
+        os_family=managed_instance_os_family)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_managed_instances_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instances = oci.OsManagement.get_managed_instances(compartment_id=var["compartment_id"],
-        display_name=var["managed_instance_display_name"],
-        os_family=var["managed_instance_os_family"])
+    test_managed_instances = oci.OsManagement.get_managed_instances(compartment_id=compartment_id,
+        display_name=managed_instance_display_name,
+        os_family=managed_instance_os_family)
     ```
     <!--End PulumiCodeChooser -->
 

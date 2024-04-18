@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalDbHome(ctx, &databasemanagement.GetExternalDbHomeArgs{
-//				ExternalDbHomeId: oci_database_management_external_db_home.Test_external_db_home.Id,
+//				ExternalDbHomeId: testExternalDbHomeOciDatabaseManagementExternalDbHome.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

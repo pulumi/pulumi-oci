@@ -32,34 +32,34 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAutonomousContainerDatabaseDataguardAssociation = new Oci.Database.AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", new()
+    ///     var testAutonomousContainerDatabaseDataguardAssociation = new Oci.Database.AutonomousContainerDatabaseDataguardAssociation("test_autonomous_container_database_dataguard_association", new()
     ///     {
-    ///         AutonomousContainerDatabaseId = oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-    ///         PeerAutonomousContainerDatabaseDisplayName = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_display_name,
-    ///         ProtectionMode = @var.Autonomous_container_database_dataguard_association_protection_mode,
-    ///         FastStartFailOverLagLimitInSeconds = @var.Autonomous_container_database_dataguard_association_fast_start_fail_over_lag_limit_in_seconds,
-    ///         IsAutomaticFailoverEnabled = @var.Autonomous_container_database_dataguard_association_is_automatic_failover_enabled,
+    ///         AutonomousContainerDatabaseId = testAutonomousContainerDatabase.Id,
+    ///         PeerAutonomousContainerDatabaseDisplayName = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName,
+    ///         ProtectionMode = autonomousContainerDatabaseDataguardAssociationProtectionMode,
+    ///         FastStartFailOverLagLimitInSeconds = autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds,
+    ///         IsAutomaticFailoverEnabled = autonomousContainerDatabaseDataguardAssociationIsAutomaticFailoverEnabled,
     ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs
     ///         {
     ///             BackupDestinationDetails = new[]
     ///             {
     ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
     ///                 {
-    ///                     Type = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_type,
-    ///                     DbrsPolicyId = oci_identity_policy.Test_policy.Id,
-    ///                     Id = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_id,
-    ///                     InternetProxy = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
-    ///                     VpcPassword = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
-    ///                     VpcUser = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+    ///                     Type = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+    ///                     DbrsPolicyId = testPolicy.Id,
+    ///                     Id = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+    ///                     InternetProxy = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                     VpcPassword = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+    ///                     VpcUser = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
     ///                 },
     ///             },
-    ///             RecoveryWindowInDays = @var.Autonomous_container_database_dataguard_association_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+    ///             RecoveryWindowInDays = autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
     ///         },
-    ///         PeerAutonomousContainerDatabaseCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         PeerAutonomousVmClusterId = oci_database_autonomous_vm_cluster.Test_autonomous_vm_cluster.Id,
-    ///         PeerCloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-    ///         PeerDbUniqueName = @var.Autonomous_container_database_dataguard_association_peer_db_unique_name,
-    ///         StandbyMaintenanceBufferInDays = @var.Autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days,
+    ///         PeerAutonomousContainerDatabaseCompartmentId = testCompartment.Id,
+    ///         PeerAutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///         PeerDbUniqueName = autonomousContainerDatabaseDataguardAssociationPeerDbUniqueName,
+    ///         StandbyMaintenanceBufferInDays = autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays,
     ///     });
     /// 
     /// });

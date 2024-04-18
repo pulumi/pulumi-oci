@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLibraryMaskingFormats = oci.DataSafe.getLibraryMaskingFormats({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.library_masking_format_access_level,
- *     compartmentIdInSubtree: _var.library_masking_format_compartment_id_in_subtree,
- *     displayName: _var.library_masking_format_display_name,
- *     libraryMaskingFormatId: oci_data_safe_library_masking_format.test_library_masking_format.id,
- *     libraryMaskingFormatSource: _var.library_masking_format_library_masking_format_source,
- *     state: _var.library_masking_format_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.library_masking_format_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.library_masking_format_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: libraryMaskingFormatAccessLevel,
+ *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree,
+ *     displayName: libraryMaskingFormatDisplayName,
+ *     libraryMaskingFormatId: testLibraryMaskingFormat.id,
+ *     libraryMaskingFormatSource: libraryMaskingFormatLibraryMaskingFormatSource,
+ *     state: libraryMaskingFormatState,
+ *     timeCreatedGreaterThanOrEqualTo: libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: libraryMaskingFormatTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -144,15 +144,15 @@ export interface GetLibraryMaskingFormatsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLibraryMaskingFormats = oci.DataSafe.getLibraryMaskingFormats({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.library_masking_format_access_level,
- *     compartmentIdInSubtree: _var.library_masking_format_compartment_id_in_subtree,
- *     displayName: _var.library_masking_format_display_name,
- *     libraryMaskingFormatId: oci_data_safe_library_masking_format.test_library_masking_format.id,
- *     libraryMaskingFormatSource: _var.library_masking_format_library_masking_format_source,
- *     state: _var.library_masking_format_state,
- *     timeCreatedGreaterThanOrEqualTo: _var.library_masking_format_time_created_greater_than_or_equal_to,
- *     timeCreatedLessThan: _var.library_masking_format_time_created_less_than,
+ *     compartmentId: compartmentId,
+ *     accessLevel: libraryMaskingFormatAccessLevel,
+ *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree,
+ *     displayName: libraryMaskingFormatDisplayName,
+ *     libraryMaskingFormatId: testLibraryMaskingFormat.id,
+ *     libraryMaskingFormatSource: libraryMaskingFormatLibraryMaskingFormatSource,
+ *     state: libraryMaskingFormatState,
+ *     timeCreatedGreaterThanOrEqualTo: libraryMaskingFormatTimeCreatedGreaterThanOrEqualTo,
+ *     timeCreatedLessThan: libraryMaskingFormatTimeCreatedLessThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

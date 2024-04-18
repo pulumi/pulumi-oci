@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testReplica = new oci.mysql.Replica("testReplica", {
- *     dbSystemId: oci_mysql_mysql_db_system.test_mysql_db_system.id,
+ * const testReplica = new oci.mysql.Replica("test_replica", {
+ *     dbSystemId: testMysqlDbSystem.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.replica_description,
- *     displayName: _var.replica_display_name,
+ *     description: replicaDescription,
+ *     displayName: replicaDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isDeleteProtected: _var.replica_is_delete_protected,
+ *     isDeleteProtected: replicaIsDeleteProtected,
  *     replicaOverrides: {
- *         configurationId: oci_mysql_mysql_configuration.test_mysql_configuration.id,
- *         mysqlVersion: _var.replica_replica_overrides_mysql_version,
- *         shapeName: oci_mysql_shape.test_shape.name,
+ *         configurationId: testMysqlConfiguration.id,
+ *         mysqlVersion: replicaReplicaOverridesMysqlVersion,
+ *         shapeName: testShape.name,
  *     },
  * });
  * ```

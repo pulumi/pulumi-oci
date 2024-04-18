@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Events
         /// {
         ///     var testRule = Oci.Events.GetRule.Invoke(new()
         ///     {
-        ///         RuleId = oci_events_rule.Test_rule.Id,
+        ///         RuleId = testRuleOciEventsRule.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Events
         /// {
         ///     var testRule = Oci.Events.GetRule.Invoke(new()
         ///     {
-        ///         RuleId = oci_events_rule.Test_rule.Id,
+        ///         RuleId = testRuleOciEventsRule.Id,
         ///     });
         /// 
         /// });

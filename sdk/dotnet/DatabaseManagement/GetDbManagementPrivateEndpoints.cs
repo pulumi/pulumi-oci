@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testDbManagementPrivateEndpoints = Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
-        ///         Name = @var.Db_management_private_endpoint_name,
-        ///         State = @var.Db_management_private_endpoint_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+        ///         Name = dbManagementPrivateEndpointName,
+        ///         State = dbManagementPrivateEndpointState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testDbManagementPrivateEndpoints = Oci.DatabaseManagement.GetDbManagementPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IsCluster = @var.Db_management_private_endpoint_is_cluster,
-        ///         Name = @var.Db_management_private_endpoint_name,
-        ///         State = @var.Db_management_private_endpoint_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IsCluster = dbManagementPrivateEndpointIsCluster,
+        ///         Name = dbManagementPrivateEndpointName,
+        ///         State = dbManagementPrivateEndpointState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

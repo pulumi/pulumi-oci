@@ -47,11 +47,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAwrHubSource = new AwrHubSource(&#34;testAwrHubSource&#34;, AwrHubSourceArgs.builder()        
- *             .awrHubId(oci_opsi_awr_hub.test_awr_hub().id())
- *             .compartmentId(var_.compartment_id())
- *             .type(var_.awr_hub_source_type())
- *             .associatedOpsiId(oci_opsi_associated_opsi.test_associated_opsi().id())
- *             .associatedResourceId(oci_usage_proxy_resource.test_resource().id())
+ *             .awrHubId(testAwrHub.id())
+ *             .compartmentId(compartmentId)
+ *             .name(awrHubSourceName)
+ *             .type(awrHubSourceType)
+ *             .associatedOpsiId(testAssociatedOpsi.id())
+ *             .associatedResourceId(testResource.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());

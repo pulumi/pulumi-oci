@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetAcceptedAgreement(ctx, &marketplace.GetAcceptedAgreementArgs{
-//				AcceptedAgreementId: oci_marketplace_accepted_agreement.Test_accepted_agreement.Id,
+//				AcceptedAgreementId: testAcceptedAgreementOciMarketplaceAcceptedAgreement.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

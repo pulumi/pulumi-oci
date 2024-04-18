@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceCatalog.NewPrivateApplication(ctx, "testPrivateApplication", &ServiceCatalog.PrivateApplicationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Private_application_display_name),
+//			_, err := ServiceCatalog.NewPrivateApplication(ctx, "test_private_application", &ServiceCatalog.PrivateApplicationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(privateApplicationDisplayName),
 //				PackageDetails: &servicecatalog.PrivateApplicationPackageDetailsArgs{
-//					PackageType:          pulumi.Any(_var.Private_application_package_details_package_type),
-//					Version:              pulumi.Any(_var.Private_application_package_details_version),
-//					ZipFileBase64encoded: pulumi.Any(_var.Private_application_package_details_zip_file_base64encoded),
+//					PackageType:          pulumi.Any(privateApplicationPackageDetailsPackageType),
+//					Version:              pulumi.Any(privateApplicationPackageDetailsVersion),
+//					ZipFileBase64encoded: pulumi.Any(privateApplicationPackageDetailsZipFileBase64encoded),
 //				},
-//				ShortDescription: pulumi.Any(_var.Private_application_short_description),
+//				ShortDescription: pulumi.Any(privateApplicationShortDescription),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				LogoFileBase64encoded: pulumi.Any(_var.Private_application_logo_file_base64encoded),
-//				LongDescription:       pulumi.Any(_var.Private_application_long_description),
+//				LogoFileBase64encoded: pulumi.Any(privateApplicationLogoFileBase64encoded),
+//				LongDescription:       pulumi.Any(privateApplicationLongDescription),
 //			})
 //			if err != nil {
 //				return err

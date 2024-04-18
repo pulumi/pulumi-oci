@@ -25,25 +25,25 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testStreamCdnConfig = new Oci.MediaServices.StreamCdnConfig("testStreamCdnConfig", new()
+    ///     var testStreamCdnConfig = new Oci.MediaServices.StreamCdnConfig("test_stream_cdn_config", new()
     ///     {
     ///         Config = new Oci.MediaServices.Inputs.StreamCdnConfigConfigArgs
     ///         {
-    ///             Type = @var.Stream_cdn_config_config_type,
-    ///             EdgeHostname = @var.Stream_cdn_config_config_edge_hostname,
-    ///             EdgePathPrefix = @var.Stream_cdn_config_config_edge_path_prefix,
-    ///             EdgeTokenKey = @var.Stream_cdn_config_config_edge_token_key,
-    ///             EdgeTokenSalt = @var.Stream_cdn_config_config_edge_token_salt,
-    ///             IsEdgeTokenAuth = @var.Stream_cdn_config_config_is_edge_token_auth,
-    ///             OriginAuthSecretKeyA = @var.Stream_cdn_config_config_origin_auth_secret_key_a,
-    ///             OriginAuthSecretKeyB = @var.Stream_cdn_config_config_origin_auth_secret_key_b,
-    ///             OriginAuthSecretKeyNonceA = @var.Stream_cdn_config_config_origin_auth_secret_key_nonce_a,
-    ///             OriginAuthSecretKeyNonceB = @var.Stream_cdn_config_config_origin_auth_secret_key_nonce_b,
-    ///             OriginAuthSignEncryption = @var.Stream_cdn_config_config_origin_auth_sign_encryption,
-    ///             OriginAuthSignType = @var.Stream_cdn_config_config_origin_auth_sign_type,
+    ///             Type = streamCdnConfigConfigType,
+    ///             EdgeHostname = streamCdnConfigConfigEdgeHostname,
+    ///             EdgePathPrefix = streamCdnConfigConfigEdgePathPrefix,
+    ///             EdgeTokenKey = streamCdnConfigConfigEdgeTokenKey,
+    ///             EdgeTokenSalt = streamCdnConfigConfigEdgeTokenSalt,
+    ///             IsEdgeTokenAuth = streamCdnConfigConfigIsEdgeTokenAuth,
+    ///             OriginAuthSecretKeyA = streamCdnConfigConfigOriginAuthSecretKeyA,
+    ///             OriginAuthSecretKeyB = streamCdnConfigConfigOriginAuthSecretKeyB,
+    ///             OriginAuthSecretKeyNonceA = streamCdnConfigConfigOriginAuthSecretKeyNonceA,
+    ///             OriginAuthSecretKeyNonceB = streamCdnConfigConfigOriginAuthSecretKeyNonceB,
+    ///             OriginAuthSignEncryption = streamCdnConfigConfigOriginAuthSignEncryption,
+    ///             OriginAuthSignType = streamCdnConfigConfigOriginAuthSignType,
     ///         },
-    ///         DisplayName = @var.Stream_cdn_config_display_name,
-    ///         DistributionChannelId = oci_mysql_channel.Test_channel.Id,
+    ///         DisplayName = streamCdnConfigDisplayName,
+    ///         DistributionChannelId = testChannel.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -52,16 +52,16 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsEnabled = @var.Stream_cdn_config_is_enabled,
+    ///         IsEnabled = streamCdnConfigIsEnabled,
     ///         Locks = new[]
     ///         {
     ///             new Oci.MediaServices.Inputs.StreamCdnConfigLockArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 Type = @var.Stream_cdn_config_locks_type,
-    ///                 Message = @var.Stream_cdn_config_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Stream_cdn_config_locks_time_created,
+    ///                 CompartmentId = compartmentId,
+    ///                 Type = streamCdnConfigLocksType,
+    ///                 Message = streamCdnConfigLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = streamCdnConfigLocksTimeCreated,
     ///             },
     ///         },
     ///     });

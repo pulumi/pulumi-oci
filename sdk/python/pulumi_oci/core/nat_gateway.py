@@ -380,19 +380,19 @@ class NatGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_nat_gateway = oci.core.NatGateway("testNatGateway",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            block_traffic=var["nat_gateway_block_traffic"],
+        test_nat_gateway = oci.core.NatGateway("test_nat_gateway",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            block_traffic=nat_gateway_block_traffic,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["nat_gateway_display_name"],
+            display_name=nat_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            public_ip_id=oci_core_public_ip["test_public_ip"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            public_ip_id=test_public_ip["id"],
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -440,19 +440,19 @@ class NatGateway(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_nat_gateway = oci.core.NatGateway("testNatGateway",
-            compartment_id=var["compartment_id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
-            block_traffic=var["nat_gateway_block_traffic"],
+        test_nat_gateway = oci.core.NatGateway("test_nat_gateway",
+            compartment_id=compartment_id,
+            vcn_id=test_vcn["id"],
+            block_traffic=nat_gateway_block_traffic,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["nat_gateway_display_name"],
+            display_name=nat_gateway_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            public_ip_id=oci_core_public_ip["test_public_ip"]["id"],
-            route_table_id=oci_core_route_table["test_route_table"]["id"])
+            public_ip_id=test_public_ip["id"],
+            route_table_id=test_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 

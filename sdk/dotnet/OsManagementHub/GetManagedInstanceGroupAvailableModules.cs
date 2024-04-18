@@ -31,10 +31,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroupAvailableModules = Oci.OsManagementHub.GetManagedInstanceGroupAvailableModules.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Managed_instance_group_available_module_name,
-        ///         NameContains = @var.Managed_instance_group_available_module_name_contains,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = managedInstanceGroupAvailableModuleName,
+        ///         NameContains = managedInstanceGroupAvailableModuleNameContains,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagedInstanceGroupAvailableModules = Oci.OsManagementHub.GetManagedInstanceGroupAvailableModules.Invoke(new()
         ///     {
-        ///         ManagedInstanceGroupId = oci_os_management_hub_managed_instance_group.Test_managed_instance_group.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Managed_instance_group_available_module_name,
-        ///         NameContains = @var.Managed_instance_group_available_module_name_contains,
+        ///         ManagedInstanceGroupId = testManagedInstanceGroup.Id,
+        ///         CompartmentId = compartmentId,
+        ///         Name = managedInstanceGroupAvailableModuleName,
+        ///         NameContains = managedInstanceGroupAvailableModuleNameContains,
         ///     });
         /// 
         /// });

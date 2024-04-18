@@ -25,19 +25,19 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVolumeAttachment = new Oci.Core.VolumeAttachment("testVolumeAttachment", new()
+    ///     var testVolumeAttachment = new Oci.Core.VolumeAttachment("test_volume_attachment", new()
     ///     {
-    ///         AttachmentType = @var.Volume_attachment_attachment_type,
-    ///         InstanceId = oci_core_instance.Test_instance.Id,
-    ///         VolumeId = oci_core_volume.Test_volume.Id,
-    ///         Device = @var.Volume_attachment_device,
-    ///         DisplayName = @var.Volume_attachment_display_name,
-    ///         EncryptionInTransitType = @var.Volume_attachment_encryption_in_transit_type,
-    ///         IsAgentAutoIscsiLoginEnabled = @var.Volume_attachment_is_agent_auto_iscsi_login_enabled,
-    ///         IsPvEncryptionInTransitEnabled = @var.Volume_attachment_is_pv_encryption_in_transit_enabled,
-    ///         IsReadOnly = @var.Volume_attachment_is_read_only,
-    ///         IsShareable = @var.Volume_attachment_is_shareable,
-    ///         UseChap = @var.Volume_attachment_use_chap,
+    ///         AttachmentType = volumeAttachmentAttachmentType,
+    ///         InstanceId = testInstance.Id,
+    ///         VolumeId = testVolume.Id,
+    ///         Device = volumeAttachmentDevice,
+    ///         DisplayName = volumeAttachmentDisplayName,
+    ///         EncryptionInTransitType = volumeAttachmentEncryptionInTransitType,
+    ///         IsAgentAutoIscsiLoginEnabled = volumeAttachmentIsAgentAutoIscsiLoginEnabled,
+    ///         IsPvEncryptionInTransitEnabled = volumeAttachmentIsPvEncryptionInTransitEnabled,
+    ///         IsReadOnly = volumeAttachmentIsReadOnly,
+    ///         IsShareable = volumeAttachmentIsShareable,
+    ///         UseChap = volumeAttachmentUseChap,
     ///     });
     /// 
     /// });

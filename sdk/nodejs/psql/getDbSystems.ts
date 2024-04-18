@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystems = oci.Psql.getDbSystems({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.db_system_display_name,
- *     id: _var.db_system_id,
- *     state: _var.db_system_state,
+ *     compartmentId: compartmentId,
+ *     displayName: dbSystemDisplayName,
+ *     id: dbSystemId,
+ *     state: dbSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetDbSystemsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystems = oci.Psql.getDbSystems({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.db_system_display_name,
- *     id: _var.db_system_id,
- *     state: _var.db_system_state,
+ *     compartmentId: compartmentId,
+ *     displayName: dbSystemDisplayName,
+ *     id: dbSystemId,
+ *     state: dbSystemState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDrProtectionGroup = oci.DisasterRecovery.getDrProtectionGroup({
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
+ *     drProtectionGroupId: testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -127,7 +127,7 @@ export interface GetDrProtectionGroupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDrProtectionGroup = oci.DisasterRecovery.getDrProtectionGroup({
- *     drProtectionGroupId: oci_disaster_recovery_dr_protection_group.test_dr_protection_group.id,
+ *     drProtectionGroupId: testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

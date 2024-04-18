@@ -239,11 +239,11 @@ class ListingPackageAgreement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_listing_package_agreement = oci.marketplace.ListingPackageAgreement("testListingPackageAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["listing_package_agreement_package_version"],
-            compartment_id=var["compartment_id"])
+        test_listing_package_agreement = oci.marketplace.ListingPackageAgreement("test_listing_package_agreement",
+            agreement_id=test_agreement["id"],
+            listing_id=test_listing["id"],
+            package_version=listing_package_agreement_package_version,
+            compartment_id=compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -277,11 +277,11 @@ class ListingPackageAgreement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_listing_package_agreement = oci.marketplace.ListingPackageAgreement("testListingPackageAgreement",
-            agreement_id=oci_marketplace_agreement["test_agreement"]["id"],
-            listing_id=oci_marketplace_listing["test_listing"]["id"],
-            package_version=var["listing_package_agreement_package_version"],
-            compartment_id=var["compartment_id"])
+        test_listing_package_agreement = oci.marketplace.ListingPackageAgreement("test_listing_package_agreement",
+            agreement_id=test_agreement["id"],
+            listing_id=test_listing["id"],
+            package_version=listing_package_agreement_package_version,
+            compartment_id=compartment_id)
         ```
         <!--End PulumiCodeChooser -->
 

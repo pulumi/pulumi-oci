@@ -43,13 +43,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testModelProvenance = new ModelProvenance(&#34;testModelProvenance&#34;, ModelProvenanceArgs.builder()        
- *             .modelId(oci_datascience_model.test_model().id())
- *             .gitBranch(var_.model_provenance_git_branch())
- *             .gitCommit(var_.model_provenance_git_commit())
- *             .repositoryUrl(var_.model_provenance_repository_url())
- *             .scriptDir(var_.model_provenance_script_dir())
- *             .trainingId(oci_datascience_training.test_training().id())
- *             .trainingScript(var_.model_provenance_training_script())
+ *             .modelId(testModel.id())
+ *             .gitBranch(modelProvenanceGitBranch)
+ *             .gitCommit(modelProvenanceGitCommit)
+ *             .repositoryUrl(modelProvenanceRepositoryUrl)
+ *             .scriptDir(modelProvenanceScriptDir)
+ *             .trainingId(testTraining.id())
+ *             .trainingScript(modelProvenanceTrainingScript)
  *             .build());
  * 
  *     }

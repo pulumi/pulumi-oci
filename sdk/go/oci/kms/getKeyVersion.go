@@ -36,9 +36,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetKeyVersion(ctx, &kms.GetKeyVersionArgs{
-//				KeyId:              oci_kms_key.Test_key.Id,
-//				KeyVersionId:       oci_kms_key_version.Test_key_version.Id,
-//				ManagementEndpoint: _var.Key_version_management_endpoint,
+//				KeyId:              testKey.Id,
+//				KeyVersionId:       testKeyVersionOciKmsKeyVersion.Id,
+//				ManagementEndpoint: keyVersionManagementEndpoint,
 //			}, nil)
 //			if err != nil {
 //				return err

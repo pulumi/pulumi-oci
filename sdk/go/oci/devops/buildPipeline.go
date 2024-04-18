@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DevOps.NewBuildPipeline(ctx, "testBuildPipeline", &DevOps.BuildPipelineArgs{
-//				ProjectId: pulumi.Any(oci_devops_project.Test_project.Id),
+//			_, err := DevOps.NewBuildPipeline(ctx, "test_build_pipeline", &DevOps.BuildPipelineArgs{
+//				ProjectId: pulumi.Any(testProject.Id),
 //				BuildPipelineParameters: &devops.BuildPipelineBuildPipelineParametersArgs{
 //					Items: devops.BuildPipelineBuildPipelineParametersItemArray{
 //						&devops.BuildPipelineBuildPipelineParametersItemArgs{
-//							DefaultValue: pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_default_value),
-//							Name:         pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_name),
-//							Description:  pulumi.Any(_var.Build_pipeline_build_pipeline_parameters_items_description),
+//							DefaultValue: pulumi.Any(buildPipelineBuildPipelineParametersItemsDefaultValue),
+//							Name:         pulumi.Any(buildPipelineBuildPipelineParametersItemsName),
+//							Description:  pulumi.Any(buildPipelineBuildPipelineParametersItemsDescription),
 //						},
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Build_pipeline_description),
-//				DisplayName: pulumi.Any(_var.Build_pipeline_display_name),
+//				Description: pulumi.Any(buildPipelineDescription),
+//				DisplayName: pulumi.Any(buildPipelineDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

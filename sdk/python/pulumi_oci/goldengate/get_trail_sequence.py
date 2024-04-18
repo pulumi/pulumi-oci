@@ -125,10 +125,10 @@ def get_trail_sequence(deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequence = oci.GoldenGate.get_trail_sequence(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_sequence_display_name"],
-        trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
+    test_trail_sequence = oci.GoldenGate.get_trail_sequence(deployment_id=test_deployment["id"],
+        trail_file_id=test_trail_file["id"],
+        display_name=trail_sequence_display_name,
+        trail_sequence_id=test_trail_sequence_oci_golden_gate_trail_sequence["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -174,10 +174,10 @@ def get_trail_sequence_output(deployment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_sequence = oci.GoldenGate.get_trail_sequence(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_sequence_display_name"],
-        trail_sequence_id=oci_golden_gate_trail_sequence["test_trail_sequence"]["id"])
+    test_trail_sequence = oci.GoldenGate.get_trail_sequence(deployment_id=test_deployment["id"],
+        trail_file_id=test_trail_file["id"],
+        display_name=trail_sequence_display_name,
+        trail_sequence_id=test_trail_sequence_oci_golden_gate_trail_sequence["id"])
     ```
     <!--End PulumiCodeChooser -->
 

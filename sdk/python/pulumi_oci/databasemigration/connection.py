@@ -693,51 +693,51 @@ class Connection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection = oci.database_migration.Connection("testConnection",
+        test_connection = oci.database_migration.Connection("test_connection",
             admin_credentials=oci.database_migration.ConnectionAdminCredentialsArgs(
-                password=var["connection_admin_credentials_password"],
-                username=var["connection_admin_credentials_username"],
+                password=connection_admin_credentials_password,
+                username=connection_admin_credentials_username,
             ),
-            compartment_id=var["compartment_id"],
-            database_type=var["connection_database_type"],
+            compartment_id=compartment_id,
+            database_type=connection_database_type,
             vault_details=oci.database_migration.ConnectionVaultDetailsArgs(
-                compartment_id=var["compartment_id"],
-                key_id=oci_kms_key["test_key"]["id"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                compartment_id=compartment_id,
+                key_id=test_key["id"],
+                vault_id=test_vault["id"],
             ),
-            certificate_tdn=var["connection_certificate_tdn"],
+            certificate_tdn=connection_certificate_tdn,
             connect_descriptor=oci.database_migration.ConnectionConnectDescriptorArgs(
-                connect_string=var["connection_connect_descriptor_connect_string"],
-                database_service_name=oci_core_service["test_service"]["name"],
-                host=var["connection_connect_descriptor_host"],
-                port=var["connection_connect_descriptor_port"],
+                connect_string=connection_connect_descriptor_connect_string,
+                database_service_name=test_service["name"],
+                host=connection_connect_descriptor_host,
+                port=connection_connect_descriptor_port,
             ),
-            database_id=oci_database_database["test_database"]["id"],
+            database_id=test_database["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["connection_display_name"],
+            display_name=connection_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["connection_nsg_ids"],
+            nsg_ids=connection_nsg_ids,
             private_endpoint=oci.database_migration.ConnectionPrivateEndpointArgs(
-                compartment_id=var["compartment_id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                compartment_id=compartment_id,
+                subnet_id=test_subnet["id"],
+                vcn_id=test_vcn["id"],
             ),
             replication_credentials=oci.database_migration.ConnectionReplicationCredentialsArgs(
-                password=var["connection_replication_credentials_password"],
-                username=var["connection_replication_credentials_username"],
+                password=connection_replication_credentials_password,
+                username=connection_replication_credentials_username,
             ),
             ssh_details=oci.database_migration.ConnectionSshDetailsArgs(
-                host=var["connection_ssh_details_host"],
-                sshkey=var["connection_ssh_details_sshkey"],
-                user=var["connection_ssh_details_user"],
-                sudo_location=var["connection_ssh_details_sudo_location"],
+                host=connection_ssh_details_host,
+                sshkey=connection_ssh_details_sshkey,
+                user=connection_ssh_details_user,
+                sudo_location=connection_ssh_details_sudo_location,
             ),
-            tls_keystore=var["connection_tls_keystore"],
-            tls_wallet=var["connection_tls_wallet"])
+            tls_keystore=connection_tls_keystore,
+            tls_wallet=connection_tls_wallet)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -787,51 +787,51 @@ class Connection(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_connection = oci.database_migration.Connection("testConnection",
+        test_connection = oci.database_migration.Connection("test_connection",
             admin_credentials=oci.database_migration.ConnectionAdminCredentialsArgs(
-                password=var["connection_admin_credentials_password"],
-                username=var["connection_admin_credentials_username"],
+                password=connection_admin_credentials_password,
+                username=connection_admin_credentials_username,
             ),
-            compartment_id=var["compartment_id"],
-            database_type=var["connection_database_type"],
+            compartment_id=compartment_id,
+            database_type=connection_database_type,
             vault_details=oci.database_migration.ConnectionVaultDetailsArgs(
-                compartment_id=var["compartment_id"],
-                key_id=oci_kms_key["test_key"]["id"],
-                vault_id=oci_kms_vault["test_vault"]["id"],
+                compartment_id=compartment_id,
+                key_id=test_key["id"],
+                vault_id=test_vault["id"],
             ),
-            certificate_tdn=var["connection_certificate_tdn"],
+            certificate_tdn=connection_certificate_tdn,
             connect_descriptor=oci.database_migration.ConnectionConnectDescriptorArgs(
-                connect_string=var["connection_connect_descriptor_connect_string"],
-                database_service_name=oci_core_service["test_service"]["name"],
-                host=var["connection_connect_descriptor_host"],
-                port=var["connection_connect_descriptor_port"],
+                connect_string=connection_connect_descriptor_connect_string,
+                database_service_name=test_service["name"],
+                host=connection_connect_descriptor_host,
+                port=connection_connect_descriptor_port,
             ),
-            database_id=oci_database_database["test_database"]["id"],
+            database_id=test_database["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["connection_display_name"],
+            display_name=connection_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
-            nsg_ids=var["connection_nsg_ids"],
+            nsg_ids=connection_nsg_ids,
             private_endpoint=oci.database_migration.ConnectionPrivateEndpointArgs(
-                compartment_id=var["compartment_id"],
-                subnet_id=oci_core_subnet["test_subnet"]["id"],
-                vcn_id=oci_core_vcn["test_vcn"]["id"],
+                compartment_id=compartment_id,
+                subnet_id=test_subnet["id"],
+                vcn_id=test_vcn["id"],
             ),
             replication_credentials=oci.database_migration.ConnectionReplicationCredentialsArgs(
-                password=var["connection_replication_credentials_password"],
-                username=var["connection_replication_credentials_username"],
+                password=connection_replication_credentials_password,
+                username=connection_replication_credentials_username,
             ),
             ssh_details=oci.database_migration.ConnectionSshDetailsArgs(
-                host=var["connection_ssh_details_host"],
-                sshkey=var["connection_ssh_details_sshkey"],
-                user=var["connection_ssh_details_user"],
-                sudo_location=var["connection_ssh_details_sudo_location"],
+                host=connection_ssh_details_host,
+                sshkey=connection_ssh_details_sshkey,
+                user=connection_ssh_details_user,
+                sudo_location=connection_ssh_details_sudo_location,
             ),
-            tls_keystore=var["connection_tls_keystore"],
-            tls_wallet=var["connection_tls_wallet"])
+            tls_keystore=connection_tls_keystore,
+            tls_wallet=connection_tls_wallet)
         ```
         <!--End PulumiCodeChooser -->
 

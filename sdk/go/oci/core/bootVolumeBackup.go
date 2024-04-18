@@ -35,17 +35,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewBootVolumeBackup(ctx, "testBootVolumeBackup", &Core.BootVolumeBackupArgs{
-//				BootVolumeId: pulumi.Any(oci_core_boot_volume.Test_boot_volume.Id),
+//			_, err := Core.NewBootVolumeBackup(ctx, "test_boot_volume_backup", &Core.BootVolumeBackupArgs{
+//				BootVolumeId: pulumi.Any(testBootVolume.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Boot_volume_backup_display_name),
+//				DisplayName: pulumi.Any(bootVolumeBackupDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
-//				Type:     pulumi.Any(_var.Boot_volume_backup_type),
+//				KmsKeyId: pulumi.Any(testKey.Id),
+//				Type:     pulumi.Any(bootVolumeBackupType),
 //			})
 //			if err != nil {
 //				return err

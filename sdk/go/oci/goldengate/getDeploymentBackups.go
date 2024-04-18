@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetDeploymentBackups(ctx, &goldengate.GetDeploymentBackupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DeploymentId:  pulumi.StringRef(oci_golden_gate_deployment.Test_deployment.Id),
-//				DisplayName:   pulumi.StringRef(_var.Deployment_backup_display_name),
-//				State:         pulumi.StringRef(_var.Deployment_backup_state),
+//				CompartmentId: compartmentId,
+//				DeploymentId:  pulumi.StringRef(testDeployment.Id),
+//				DisplayName:   pulumi.StringRef(deploymentBackupDisplayName),
+//				State:         pulumi.StringRef(deploymentBackupState),
 //			}, nil)
 //			if err != nil {
 //				return err

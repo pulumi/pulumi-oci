@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfiguration = oci.MeteringComputation.getConfiguration({
- *     tenantId: oci_metering_computation_tenant.test_tenant.id,
+ *     tenantId: testTenant.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,7 +69,7 @@ export interface GetConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfiguration = oci.MeteringComputation.getConfiguration({
- *     tenantId: oci_metering_computation_tenant.test_tenant.id,
+ *     tenantId: testTenant.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

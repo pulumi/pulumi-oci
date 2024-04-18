@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetDecryptedData(ctx, &kms.GetDecryptedDataArgs{
-//				Ciphertext:     _var.Decrypted_data_ciphertext,
-//				CryptoEndpoint: _var.Decrypted_data_crypto_endpoint,
-//				KeyId:          oci_kms_key.Test_key.Id,
-//				AssociatedData: _var.Decrypted_data_associated_data,
+//				Ciphertext:     decryptedDataCiphertext,
+//				CryptoEndpoint: decryptedDataCryptoEndpoint,
+//				KeyId:          testKey.Id,
+//				AssociatedData: decryptedDataAssociatedData,
 //			}, nil)
 //			if err != nil {
 //				return err

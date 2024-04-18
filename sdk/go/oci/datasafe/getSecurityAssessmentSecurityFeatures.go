@@ -31,21 +31,21 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityAssessmentSecurityFeatures(ctx, &datasafe.GetSecurityAssessmentSecurityFeaturesArgs{
-//				CompartmentId:                     _var.Compartment_id,
-//				AccessLevel:                       pulumi.StringRef(_var.Security_assessment_security_feature_access_level),
-//				CompartmentIdInSubtree:            pulumi.BoolRef(_var.Security_assessment_security_feature_compartment_id_in_subtree),
-//				TargetId:                          pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TargetsWithColumnEncryption:       pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_column_encryption),
-//				TargetsWithDatabaseVault:          pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_database_vault),
-//				TargetsWithExternalAuthentication: pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_external_authentication),
-//				TargetsWithFineGrainedAudit:       pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_fine_grained_audit),
-//				TargetsWithGlobalAuthentication:   pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_global_authentication),
-//				TargetsWithNetworkEncryption:      pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_network_encryption),
-//				TargetsWithPasswordAuthentication: pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_password_authentication),
-//				TargetsWithPrivilegeAnalysis:      pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_privilege_analysis),
-//				TargetsWithTablespaceEncryption:   pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_tablespace_encryption),
-//				TargetsWithTraditionalAudit:       pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_traditional_audit),
-//				TargetsWithUnifiedAudit:           pulumi.StringRef(_var.Security_assessment_security_feature_targets_with_unified_audit),
+//				CompartmentId:                     compartmentId,
+//				AccessLevel:                       pulumi.StringRef(securityAssessmentSecurityFeatureAccessLevel),
+//				CompartmentIdInSubtree:            pulumi.BoolRef(securityAssessmentSecurityFeatureCompartmentIdInSubtree),
+//				TargetId:                          pulumi.StringRef(testTarget.Id),
+//				TargetsWithColumnEncryption:       pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithColumnEncryption),
+//				TargetsWithDatabaseVault:          pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithDatabaseVault),
+//				TargetsWithExternalAuthentication: pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithExternalAuthentication),
+//				TargetsWithFineGrainedAudit:       pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithFineGrainedAudit),
+//				TargetsWithGlobalAuthentication:   pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithGlobalAuthentication),
+//				TargetsWithNetworkEncryption:      pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithNetworkEncryption),
+//				TargetsWithPasswordAuthentication: pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithPasswordAuthentication),
+//				TargetsWithPrivilegeAnalysis:      pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithPrivilegeAnalysis),
+//				TargetsWithTablespaceEncryption:   pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithTablespaceEncryption),
+//				TargetsWithTraditionalAudit:       pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithTraditionalAudit),
+//				TargetsWithUnifiedAudit:           pulumi.StringRef(securityAssessmentSecurityFeatureTargetsWithUnifiedAudit),
 //			}, nil)
 //			if err != nil {
 //				return err

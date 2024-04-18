@@ -25,34 +25,35 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAccessPolicy = new Oci.ServiceMesh.AccessPolicy("testAccessPolicy", new()
+    ///     var testAccessPolicy = new Oci.ServiceMesh.AccessPolicy("test_access_policy", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
+    ///         CompartmentId = compartmentId,
+    ///         MeshId = testMesh.Id,
+    ///         Name = accessPolicyName,
     ///         Rules = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.AccessPolicyRuleArgs
     ///             {
-    ///                 Action = @var.Access_policy_rules_action,
+    ///                 Action = accessPolicyRulesAction,
     ///                 Destination = new Oci.ServiceMesh.Inputs.AccessPolicyRuleDestinationArgs
     ///                 {
-    ///                     Type = @var.Access_policy_rules_destination_type,
-    ///                     Hostnames = @var.Access_policy_rules_destination_hostnames,
-    ///                     IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-    ///                     IpAddresses = @var.Access_policy_rules_destination_ip_addresses,
-    ///                     Ports = @var.Access_policy_rules_destination_ports,
-    ///                     Protocol = @var.Access_policy_rules_destination_protocol,
-    ///                     VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///                     Type = accessPolicyRulesDestinationType,
+    ///                     Hostnames = accessPolicyRulesDestinationHostnames,
+    ///                     IngressGatewayId = testIngressGateway.Id,
+    ///                     IpAddresses = accessPolicyRulesDestinationIpAddresses,
+    ///                     Ports = accessPolicyRulesDestinationPorts,
+    ///                     Protocol = accessPolicyRulesDestinationProtocol,
+    ///                     VirtualServiceId = testVirtualService.Id,
     ///                 },
     ///                 Source = new Oci.ServiceMesh.Inputs.AccessPolicyRuleSourceArgs
     ///                 {
-    ///                     Type = @var.Access_policy_rules_source_type,
-    ///                     Hostnames = @var.Access_policy_rules_source_hostnames,
-    ///                     IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
-    ///                     IpAddresses = @var.Access_policy_rules_source_ip_addresses,
-    ///                     Ports = @var.Access_policy_rules_source_ports,
-    ///                     Protocol = @var.Access_policy_rules_source_protocol,
-    ///                     VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///                     Type = accessPolicyRulesSourceType,
+    ///                     Hostnames = accessPolicyRulesSourceHostnames,
+    ///                     IngressGatewayId = testIngressGateway.Id,
+    ///                     IpAddresses = accessPolicyRulesSourceIpAddresses,
+    ///                     Ports = accessPolicyRulesSourcePorts,
+    ///                     Protocol = accessPolicyRulesSourceProtocol,
+    ///                     VirtualServiceId = testVirtualService.Id,
     ///                 },
     ///             },
     ///         },
@@ -60,7 +61,7 @@ namespace Pulumi.Oci.ServiceMesh
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Access_policy_description,
+    ///         Description = accessPolicyDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

@@ -45,10 +45,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDiscoverySchedule = new DiscoverySchedule(&#34;testDiscoverySchedule&#34;, DiscoveryScheduleArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .executionRecurrences(var_.discovery_schedule_execution_recurrences())
+ *             .compartmentId(compartmentId)
+ *             .executionRecurrences(discoveryScheduleExecutionRecurrences)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.discovery_schedule_display_name())
+ *             .displayName(discoveryScheduleDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

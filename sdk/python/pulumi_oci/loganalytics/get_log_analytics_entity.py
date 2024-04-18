@@ -330,8 +330,8 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        namespace=var["log_analytics_entity_namespace"])
+    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
+        namespace=log_analytics_entity_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -388,8 +388,8 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        namespace=var["log_analytics_entity_namespace"])
+    test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=test_log_analytics_entity_oci_log_analytics_log_analytics_entity["id"],
+        namespace=log_analytics_entity_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

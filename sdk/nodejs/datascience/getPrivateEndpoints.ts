@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSciencePrivateEndpoints = oci.DataScience.getPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.data_science_private_endpoint_created_by,
- *     dataScienceResourceType: _var.data_science_private_endpoint_data_science_resource_type,
- *     displayName: _var.data_science_private_endpoint_display_name,
- *     state: _var.data_science_private_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: dataSciencePrivateEndpointCreatedBy,
+ *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,
+ *     displayName: dataSciencePrivateEndpointDisplayName,
+ *     state: dataSciencePrivateEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataSciencePrivateEndpoints = oci.DataScience.getPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.data_science_private_endpoint_created_by,
- *     dataScienceResourceType: _var.data_science_private_endpoint_data_science_resource_type,
- *     displayName: _var.data_science_private_endpoint_display_name,
- *     state: _var.data_science_private_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: dataSciencePrivateEndpointCreatedBy,
+ *     dataScienceResourceType: dataSciencePrivateEndpointDataScienceResourceType,
+ *     displayName: dataSciencePrivateEndpointDisplayName,
+ *     state: dataSciencePrivateEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

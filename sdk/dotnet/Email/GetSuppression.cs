@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSuppression = Oci.Email.GetSuppression.Invoke(new()
         ///     {
-        ///         SuppressionId = oci_email_suppression.Test_suppression.Id,
+        ///         SuppressionId = testSuppressionOciEmailSuppression.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSuppression = Oci.Email.GetSuppression.Invoke(new()
         ///     {
-        ///         SuppressionId = oci_email_suppression.Test_suppression.Id,
+        ///         SuppressionId = testSuppressionOciEmailSuppression.Id,
         ///     });
         /// 
         /// });

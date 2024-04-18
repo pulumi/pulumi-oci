@@ -50,7 +50,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
      *             .build());
      * 
      *     }
@@ -92,7 +92,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
      *             .build());
      * 
      *     }
@@ -134,7 +134,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
      *             .build());
      * 
      *     }
@@ -176,7 +176,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
      *             .build());
      * 
      *     }
@@ -218,8 +218,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
-     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
      *     }
@@ -261,8 +261,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
-     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
      *     }
@@ -304,8 +304,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
-     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
      *     }
@@ -347,8 +347,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
-     *             .privateAccessChannelKey(var_.analytics_instance_private_access_channel_private_access_channel_key())
+     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
      *     }
@@ -390,11 +390,11 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capacityType(var_.analytics_instance_capacity_type())
-     *             .featureSet(var_.analytics_instance_feature_set())
-     *             .name(var_.analytics_instance_name())
-     *             .state(var_.analytics_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .capacityType(analyticsInstanceCapacityType)
+     *             .featureSet(analyticsInstanceFeatureSet)
+     *             .name(analyticsInstanceName)
+     *             .state(analyticsInstanceState)
      *             .build());
      * 
      *     }
@@ -436,11 +436,11 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capacityType(var_.analytics_instance_capacity_type())
-     *             .featureSet(var_.analytics_instance_feature_set())
-     *             .name(var_.analytics_instance_name())
-     *             .state(var_.analytics_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .capacityType(analyticsInstanceCapacityType)
+     *             .featureSet(analyticsInstanceFeatureSet)
+     *             .name(analyticsInstanceName)
+     *             .state(analyticsInstanceState)
      *             .build());
      * 
      *     }
@@ -482,11 +482,11 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capacityType(var_.analytics_instance_capacity_type())
-     *             .featureSet(var_.analytics_instance_feature_set())
-     *             .name(var_.analytics_instance_name())
-     *             .state(var_.analytics_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .capacityType(analyticsInstanceCapacityType)
+     *             .featureSet(analyticsInstanceFeatureSet)
+     *             .name(analyticsInstanceName)
+     *             .state(analyticsInstanceState)
      *             .build());
      * 
      *     }
@@ -528,11 +528,11 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstances = AnalyticsFunctions.getAnalyticsInstances(GetAnalyticsInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .capacityType(var_.analytics_instance_capacity_type())
-     *             .featureSet(var_.analytics_instance_feature_set())
-     *             .name(var_.analytics_instance_name())
-     *             .state(var_.analytics_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .capacityType(analyticsInstanceCapacityType)
+     *             .featureSet(analyticsInstanceFeatureSet)
+     *             .name(analyticsInstanceName)
+     *             .state(analyticsInstanceState)
      *             .build());
      * 
      *     }

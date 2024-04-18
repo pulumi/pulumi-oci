@@ -46,14 +46,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEkmsPrivateEndpoint = new EkmsPrivateEndpoint(&#34;testEkmsPrivateEndpoint&#34;, EkmsPrivateEndpointArgs.builder()        
- *             .caBundle(var_.ekms_private_endpoint_ca_bundle())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.ekms_private_endpoint_display_name())
- *             .externalKeyManagerIp(var_.ekms_private_endpoint_external_key_manager_ip())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .caBundle(ekmsPrivateEndpointCaBundle)
+ *             .compartmentId(compartmentId)
+ *             .displayName(ekmsPrivateEndpointDisplayName)
+ *             .externalKeyManagerIp(ekmsPrivateEndpointExternalKeyManagerIp)
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .port(var_.ekms_private_endpoint_port())
+ *             .port(ekmsPrivateEndpointPort)
  *             .build());
  * 
  *     }

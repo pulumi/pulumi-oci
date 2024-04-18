@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnalyticsInstanceVanityUrl = new AnalyticsInstanceVanityUrl(&#34;testAnalyticsInstanceVanityUrl&#34;, AnalyticsInstanceVanityUrlArgs.builder()        
- *             .analyticsInstanceId(oci_analytics_analytics_instance.test_analytics_instance().id())
- *             .caCertificate(var_.analytics_instance_vanity_url_ca_certificate())
- *             .hosts(var_.analytics_instance_vanity_url_hosts())
- *             .privateKey(var_.analytics_instance_vanity_url_private_key())
- *             .publicCertificate(var_.analytics_instance_vanity_url_public_certificate())
- *             .description(var_.analytics_instance_vanity_url_description())
- *             .passphrase(var_.analytics_instance_vanity_url_passphrase())
+ *             .analyticsInstanceId(testAnalyticsInstance.id())
+ *             .caCertificate(analyticsInstanceVanityUrlCaCertificate)
+ *             .hosts(analyticsInstanceVanityUrlHosts)
+ *             .privateKey(analyticsInstanceVanityUrlPrivateKey)
+ *             .publicCertificate(analyticsInstanceVanityUrlPublicCertificate)
+ *             .description(analyticsInstanceVanityUrlDescription)
+ *             .passphrase(analyticsInstanceVanityUrlPassphrase)
  *             .build());
  * 
  *     }

@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCustomerSecretKeys = Oci.Identity.GetDomainsCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         CustomerSecretKeyCount = @var.Customer_secret_key_customer_secret_key_count,
-        ///         CustomerSecretKeyFilter = @var.Customer_secret_key_customer_secret_key_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CustomerSecretKeyCount = customerSecretKeyCustomerSecretKeyCount,
+        ///         CustomerSecretKeyFilter = customerSecretKeyCustomerSecretKeyFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Customer_secret_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Customer_secret_key_resource_type_schema_version,
-        ///         StartIndex = @var.Customer_secret_key_start_index,
+        ///         Authorization = customerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = customerSecretKeyResourceTypeSchemaVersion,
+        ///         StartIndex = customerSecretKeyStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCustomerSecretKeys = Oci.Identity.GetDomainsCustomerSecretKeys.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         CustomerSecretKeyCount = @var.Customer_secret_key_customer_secret_key_count,
-        ///         CustomerSecretKeyFilter = @var.Customer_secret_key_customer_secret_key_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         CustomerSecretKeyCount = customerSecretKeyCustomerSecretKeyCount,
+        ///         CustomerSecretKeyFilter = customerSecretKeyCustomerSecretKeyFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Customer_secret_key_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Customer_secret_key_resource_type_schema_version,
-        ///         StartIndex = @var.Customer_secret_key_start_index,
+        ///         Authorization = customerSecretKeyAuthorization,
+        ///         ResourceTypeSchemaVersion = customerSecretKeyResourceTypeSchemaVersion,
+        ///         StartIndex = customerSecretKeyStartIndex,
         ///     });
         /// 
         /// });

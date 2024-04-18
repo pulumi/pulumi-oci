@@ -17,16 +17,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testObject = oci.ObjectStorage.getObject({
- *     bucket: _var.object_bucket,
- *     namespace: _var.object_namespace,
- *     object: _var.object_object,
- *     httpResponseCacheControl: _var.object_http_response_cache_control,
- *     httpResponseContentDisposition: _var.object_http_response_content_disposition,
- *     httpResponseContentEncoding: _var.object_http_response_content_encoding,
- *     httpResponseContentLanguage: _var.object_http_response_content_language,
- *     httpResponseContentType: _var.object_http_response_content_type,
- *     httpResponseExpires: _var.object_http_response_expires,
- *     versionId: oci_objectstorage_version.test_version.id,
+ *     bucket: objectBucket,
+ *     namespace: objectNamespace,
+ *     object: objectObject,
+ *     httpResponseCacheControl: objectHttpResponseCacheControl,
+ *     httpResponseContentDisposition: objectHttpResponseContentDisposition,
+ *     httpResponseContentEncoding: objectHttpResponseContentEncoding,
+ *     httpResponseContentLanguage: objectHttpResponseContentLanguage,
+ *     httpResponseContentType: objectHttpResponseContentType,
+ *     httpResponseExpires: objectHttpResponseExpires,
+ *     versionId: testVersion.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -178,16 +178,16 @@ export interface GetObjectResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testObject = oci.ObjectStorage.getObject({
- *     bucket: _var.object_bucket,
- *     namespace: _var.object_namespace,
- *     object: _var.object_object,
- *     httpResponseCacheControl: _var.object_http_response_cache_control,
- *     httpResponseContentDisposition: _var.object_http_response_content_disposition,
- *     httpResponseContentEncoding: _var.object_http_response_content_encoding,
- *     httpResponseContentLanguage: _var.object_http_response_content_language,
- *     httpResponseContentType: _var.object_http_response_content_type,
- *     httpResponseExpires: _var.object_http_response_expires,
- *     versionId: oci_objectstorage_version.test_version.id,
+ *     bucket: objectBucket,
+ *     namespace: objectNamespace,
+ *     object: objectObject,
+ *     httpResponseCacheControl: objectHttpResponseCacheControl,
+ *     httpResponseContentDisposition: objectHttpResponseContentDisposition,
+ *     httpResponseContentEncoding: objectHttpResponseContentEncoding,
+ *     httpResponseContentLanguage: objectHttpResponseContentLanguage,
+ *     httpResponseContentType: objectHttpResponseContentType,
+ *     httpResponseExpires: objectHttpResponseExpires,
+ *     versionId: testVersion.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

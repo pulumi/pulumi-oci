@@ -163,10 +163,10 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_exadata_infrastructure_exadata_management = oci.database_management.ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement",
-            external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-            enable_exadata=var["enable_exadata"],
-            license_model=var["external_exadata_infrastructure_exadata_management_license_model"])
+        test_external_exadata_infrastructure_exadata_management = oci.database_management.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management",
+            external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
+            enable_exadata=enable_exadata,
+            license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -203,10 +203,10 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_exadata_infrastructure_exadata_management = oci.database_management.ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement",
-            external_exadata_infrastructure_id=oci_database_management_external_exadata_infrastructure["test_external_exadata_infrastructure"]["id"],
-            enable_exadata=var["enable_exadata"],
-            license_model=var["external_exadata_infrastructure_exadata_management_license_model"])
+        test_external_exadata_infrastructure_exadata_management = oci.database_management.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management",
+            external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
+            enable_exadata=enable_exadata,
+            license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
         <!--End PulumiCodeChooser -->
 

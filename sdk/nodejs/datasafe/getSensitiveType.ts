@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveType = oci.DataSafe.getSensitiveType({
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     sensitiveTypeId: testSensitiveTypeOciDataSafeSensitiveType.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -139,7 +139,7 @@ export interface GetSensitiveTypeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSensitiveType = oci.DataSafe.getSensitiveType({
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     sensitiveTypeId: testSensitiveTypeOciDataSafeSensitiveType.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

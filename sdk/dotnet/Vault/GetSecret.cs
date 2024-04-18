@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Vault
         /// {
         ///     var testSecret = Oci.Vault.GetSecret.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///         SecretId = testSecretOciVaultSecret.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Vault
         /// {
         ///     var testSecret = Oci.Vault.GetSecret.Invoke(new()
         ///     {
-        ///         SecretId = oci_vault_secret.Test_secret.Id,
+        ///         SecretId = testSecretOciVaultSecret.Id,
         ///     });
         /// 
         /// });

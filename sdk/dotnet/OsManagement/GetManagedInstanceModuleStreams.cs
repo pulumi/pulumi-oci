@@ -50,11 +50,11 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceModuleStreams = Oci.OsManagement.GetManagedInstanceModuleStreams.Invoke(new()
         ///     {
-        ///         ManagedInstanceId = @var.Managed_instance_id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ModuleName = @var.Managed_instance_module_name,
-        ///         StreamName = @var.Managed_instance_module_stream_name,
-        ///         StreamStatus = @var.Managed_instance_module_stream_status,
+        ///         ManagedInstanceId = managedInstanceId,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = managedInstanceModuleName,
+        ///         StreamName = managedInstanceModuleStreamName,
+        ///         StreamStatus = managedInstanceModuleStreamStatus,
         ///     });
         /// 
         /// });
@@ -103,11 +103,11 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceModuleStreams = Oci.OsManagement.GetManagedInstanceModuleStreams.Invoke(new()
         ///     {
-        ///         ManagedInstanceId = @var.Managed_instance_id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ModuleName = @var.Managed_instance_module_name,
-        ///         StreamName = @var.Managed_instance_module_stream_name,
-        ///         StreamStatus = @var.Managed_instance_module_stream_status,
+        ///         ManagedInstanceId = managedInstanceId,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = managedInstanceModuleName,
+        ///         StreamName = managedInstanceModuleStreamName,
+        ///         StreamStatus = managedInstanceModuleStreamStatus,
         ///     });
         /// 
         /// });

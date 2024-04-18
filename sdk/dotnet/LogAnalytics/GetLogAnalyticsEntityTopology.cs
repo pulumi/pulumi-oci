@@ -29,10 +29,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsEntityTopology = Oci.LogAnalytics.GetLogAnalyticsEntityTopology.Invoke(new()
         ///     {
-        ///         LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-        ///         Namespace = @var.Log_analytics_entity_topology_namespace,
-        ///         MetadataEquals = @var.Log_analytics_entity_topology_metadata_equals,
-        ///         State = @var.Log_analytics_entity_topology_state,
+        ///         LogAnalyticsEntityId = testLogAnalyticsEntity.Id,
+        ///         Namespace = logAnalyticsEntityTopologyNamespace,
+        ///         MetadataEquals = logAnalyticsEntityTopologyMetadataEquals,
+        ///         State = logAnalyticsEntityTopologyState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testLogAnalyticsEntityTopology = Oci.LogAnalytics.GetLogAnalyticsEntityTopology.Invoke(new()
         ///     {
-        ///         LogAnalyticsEntityId = oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id,
-        ///         Namespace = @var.Log_analytics_entity_topology_namespace,
-        ///         MetadataEquals = @var.Log_analytics_entity_topology_metadata_equals,
-        ///         State = @var.Log_analytics_entity_topology_state,
+        ///         LogAnalyticsEntityId = testLogAnalyticsEntity.Id,
+        ///         Namespace = logAnalyticsEntityTopologyNamespace,
+        ///         MetadataEquals = logAnalyticsEntityTopologyMetadataEquals,
+        ///         State = logAnalyticsEntityTopologyState,
         ///     });
         /// 
         /// });

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerInstanceShape = oci.ContainerInstances.getContainerInstanceShape({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.container_instance_shape_availability_domain,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: containerInstanceShapeAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -76,8 +76,8 @@ export interface GetContainerInstanceShapeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerInstanceShape = oci.ContainerInstances.getContainerInstanceShape({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.container_instance_shape_availability_domain,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: containerInstanceShapeAvailabilityDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

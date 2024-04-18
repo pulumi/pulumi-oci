@@ -19,19 +19,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRrset = new oci.dns.Rrset("testRrset", {
- *     domain: _var.rrset_domain,
- *     rtype: _var.rrset_rtype,
- *     zoneNameOrId: oci_dns_zone.test_zone.id,
- *     compartmentId: _var.compartment_id,
+ * const testRrset = new oci.dns.Rrset("test_rrset", {
+ *     domain: rrsetDomain,
+ *     rtype: rrsetRtype,
+ *     zoneNameOrId: testZone.id,
+ *     compartmentId: compartmentId,
  *     items: [{
- *         domain: _var.rrset_items_domain,
- *         rdata: _var.rrset_items_rdata,
- *         rtype: _var.rrset_items_rtype,
- *         ttl: _var.rrset_items_ttl,
+ *         domain: rrsetItemsDomain,
+ *         rdata: rrsetItemsRdata,
+ *         rtype: rrsetItemsRtype,
+ *         ttl: rrsetItemsTtl,
  *     }],
- *     scope: _var.rrset_scope,
- *     viewId: oci_dns_view.test_view.id,
+ *     scope: rrsetScope,
+ *     viewId: testView.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

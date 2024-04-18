@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectHarnesses = oci.Streaming.getConnectHarnesses({
- *     compartmentId: _var.compartment_id,
- *     id: _var.connect_harness_id,
- *     name: _var.connect_harness_name,
- *     state: _var.connect_harness_state,
+ *     compartmentId: compartmentId,
+ *     id: connectHarnessId,
+ *     name: connectHarnessName,
+ *     state: connectHarnessState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetConnectHarnessesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnectHarnesses = oci.Streaming.getConnectHarnesses({
- *     compartmentId: _var.compartment_id,
- *     id: _var.connect_harness_id,
- *     name: _var.connect_harness_name,
- *     state: _var.connect_harness_state,
+ *     compartmentId: compartmentId,
+ *     id: connectHarnessId,
+ *     name: connectHarnessName,
+ *     state: connectHarnessState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

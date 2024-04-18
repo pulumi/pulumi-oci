@@ -92,7 +92,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = CloudBridgeFunctions.getAgent(GetAgentArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .agentId(testAgentOciCloudBridgeAgent.id())
      *             .build());
      * 
      *     }
@@ -134,7 +134,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = CloudBridgeFunctions.getAgent(GetAgentArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .agentId(testAgentOciCloudBridgeAgent.id())
      *             .build());
      * 
      *     }
@@ -176,7 +176,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = CloudBridgeFunctions.getAgent(GetAgentArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .agentId(testAgentOciCloudBridgeAgent.id())
      *             .build());
      * 
      *     }
@@ -218,7 +218,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgent = CloudBridgeFunctions.getAgent(GetAgentArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
+     *             .agentId(testAgentOciCloudBridgeAgent.id())
      *             .build());
      * 
      *     }
@@ -260,11 +260,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependencies = CloudBridgeFunctions.getAgentDependencies(GetAgentDependenciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_dependency_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_dependency_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDependencyDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentDependencyState)
      *             .build());
      * 
      *     }
@@ -306,11 +306,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependencies = CloudBridgeFunctions.getAgentDependencies(GetAgentDependenciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_dependency_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_dependency_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDependencyDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentDependencyState)
      *             .build());
      * 
      *     }
@@ -352,11 +352,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependencies = CloudBridgeFunctions.getAgentDependencies(GetAgentDependenciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_dependency_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_dependency_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDependencyDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentDependencyState)
      *             .build());
      * 
      *     }
@@ -398,11 +398,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependencies = CloudBridgeFunctions.getAgentDependencies(GetAgentDependenciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_dependency_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_dependency_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDependencyDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentDependencyState)
      *             .build());
      * 
      *     }
@@ -444,7 +444,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependency = CloudBridgeFunctions.getAgentDependency(GetAgentDependencyArgs.builder()
-     *             .agentDependencyId(oci_cloud_bridge_agent_dependency.test_agent_dependency().id())
+     *             .agentDependencyId(testAgentDependencyOciCloudBridgeAgentDependency.id())
      *             .build());
      * 
      *     }
@@ -486,7 +486,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependency = CloudBridgeFunctions.getAgentDependency(GetAgentDependencyArgs.builder()
-     *             .agentDependencyId(oci_cloud_bridge_agent_dependency.test_agent_dependency().id())
+     *             .agentDependencyId(testAgentDependencyOciCloudBridgeAgentDependency.id())
      *             .build());
      * 
      *     }
@@ -528,7 +528,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependency = CloudBridgeFunctions.getAgentDependency(GetAgentDependencyArgs.builder()
-     *             .agentDependencyId(oci_cloud_bridge_agent_dependency.test_agent_dependency().id())
+     *             .agentDependencyId(testAgentDependencyOciCloudBridgeAgentDependency.id())
      *             .build());
      * 
      *     }
@@ -570,7 +570,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentDependency = CloudBridgeFunctions.getAgentDependency(GetAgentDependencyArgs.builder()
-     *             .agentDependencyId(oci_cloud_bridge_agent_dependency.test_agent_dependency().id())
+     *             .agentDependencyId(testAgentDependencyOciCloudBridgeAgentDependency.id())
      *             .build());
      * 
      *     }
@@ -612,8 +612,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentPlugin = CloudBridgeFunctions.getAgentPlugin(GetAgentPluginArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .pluginName(var_.agent_plugin_plugin_name())
+     *             .agentId(testAgent.id())
+     *             .pluginName(agentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -655,8 +655,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentPlugin = CloudBridgeFunctions.getAgentPlugin(GetAgentPluginArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .pluginName(var_.agent_plugin_plugin_name())
+     *             .agentId(testAgent.id())
+     *             .pluginName(agentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -698,8 +698,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentPlugin = CloudBridgeFunctions.getAgentPlugin(GetAgentPluginArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .pluginName(var_.agent_plugin_plugin_name())
+     *             .agentId(testAgent.id())
+     *             .pluginName(agentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -741,8 +741,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgentPlugin = CloudBridgeFunctions.getAgentPlugin(GetAgentPluginArgs.builder()
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .pluginName(var_.agent_plugin_plugin_name())
+     *             .agentId(testAgent.id())
+     *             .pluginName(agentPluginPluginName)
      *             .build());
      * 
      *     }
@@ -784,11 +784,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgents = CloudBridgeFunctions.getAgents(GetAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentState)
      *             .build());
      * 
      *     }
@@ -830,11 +830,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgents = CloudBridgeFunctions.getAgents(GetAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentState)
      *             .build());
      * 
      *     }
@@ -876,11 +876,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgents = CloudBridgeFunctions.getAgents(GetAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentState)
      *             .build());
      * 
      *     }
@@ -922,11 +922,11 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAgents = CloudBridgeFunctions.getAgents(GetAgentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .agentId(oci_cloud_bridge_agent.test_agent().id())
-     *             .displayName(var_.agent_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.agent_state())
+     *             .compartmentId(compartmentId)
+     *             .agentId(testAgent.id())
+     *             .displayName(agentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(agentState)
      *             .build());
      * 
      *     }
@@ -968,8 +968,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImage = CloudBridgeFunctions.getApplianceImage(GetApplianceImageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1011,8 +1011,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImage = CloudBridgeFunctions.getApplianceImage(GetApplianceImageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1054,8 +1054,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImage = CloudBridgeFunctions.getApplianceImage(GetApplianceImageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1097,8 +1097,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImage = CloudBridgeFunctions.getApplianceImage(GetApplianceImageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1140,8 +1140,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImages = CloudBridgeFunctions.getApplianceImages(GetApplianceImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1183,8 +1183,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImages = CloudBridgeFunctions.getApplianceImages(GetApplianceImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1226,8 +1226,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImages = CloudBridgeFunctions.getApplianceImages(GetApplianceImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1269,8 +1269,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApplianceImages = CloudBridgeFunctions.getApplianceImages(GetApplianceImagesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.appliance_image_display_name())
+     *             .compartmentId(compartmentId)
+     *             .displayName(applianceImageDisplayName)
      *             .build());
      * 
      *     }
@@ -1312,7 +1312,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAsset = CloudBridgeFunctions.getAsset(GetAssetArgs.builder()
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
+     *             .assetId(testAssetOciCloudBridgeAsset.id())
      *             .build());
      * 
      *     }
@@ -1354,7 +1354,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAsset = CloudBridgeFunctions.getAsset(GetAssetArgs.builder()
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
+     *             .assetId(testAssetOciCloudBridgeAsset.id())
      *             .build());
      * 
      *     }
@@ -1396,7 +1396,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAsset = CloudBridgeFunctions.getAsset(GetAssetArgs.builder()
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
+     *             .assetId(testAssetOciCloudBridgeAsset.id())
      *             .build());
      * 
      *     }
@@ -1438,7 +1438,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAsset = CloudBridgeFunctions.getAsset(GetAssetArgs.builder()
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
+     *             .assetId(testAssetOciCloudBridgeAsset.id())
      *             .build());
      * 
      *     }
@@ -1480,7 +1480,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSource = CloudBridgeFunctions.getAssetSource(GetAssetSourceArgs.builder()
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
+     *             .assetSourceId(testAssetSourceOciCloudBridgeAssetSource.id())
      *             .build());
      * 
      *     }
@@ -1522,7 +1522,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSource = CloudBridgeFunctions.getAssetSource(GetAssetSourceArgs.builder()
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
+     *             .assetSourceId(testAssetSourceOciCloudBridgeAssetSource.id())
      *             .build());
      * 
      *     }
@@ -1564,7 +1564,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSource = CloudBridgeFunctions.getAssetSource(GetAssetSourceArgs.builder()
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
+     *             .assetSourceId(testAssetSourceOciCloudBridgeAssetSource.id())
      *             .build());
      * 
      *     }
@@ -1606,7 +1606,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSource = CloudBridgeFunctions.getAssetSource(GetAssetSourceArgs.builder()
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
+     *             .assetSourceId(testAssetSourceOciCloudBridgeAssetSource.id())
      *             .build());
      * 
      *     }
@@ -1648,10 +1648,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSources = CloudBridgeFunctions.getAssetSources(GetAssetSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
-     *             .displayName(var_.asset_source_display_name())
-     *             .state(var_.asset_source_state())
+     *             .compartmentId(compartmentId)
+     *             .assetSourceId(testAssetSource.id())
+     *             .displayName(assetSourceDisplayName)
+     *             .state(assetSourceState)
      *             .build());
      * 
      *     }
@@ -1693,10 +1693,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSources = CloudBridgeFunctions.getAssetSources(GetAssetSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
-     *             .displayName(var_.asset_source_display_name())
-     *             .state(var_.asset_source_state())
+     *             .compartmentId(compartmentId)
+     *             .assetSourceId(testAssetSource.id())
+     *             .displayName(assetSourceDisplayName)
+     *             .state(assetSourceState)
      *             .build());
      * 
      *     }
@@ -1738,10 +1738,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSources = CloudBridgeFunctions.getAssetSources(GetAssetSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
-     *             .displayName(var_.asset_source_display_name())
-     *             .state(var_.asset_source_state())
+     *             .compartmentId(compartmentId)
+     *             .assetSourceId(testAssetSource.id())
+     *             .displayName(assetSourceDisplayName)
+     *             .state(assetSourceState)
      *             .build());
      * 
      *     }
@@ -1783,10 +1783,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssetSources = CloudBridgeFunctions.getAssetSources(GetAssetSourcesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetSourceId(oci_cloud_bridge_asset_source.test_asset_source().id())
-     *             .displayName(var_.asset_source_display_name())
-     *             .state(var_.asset_source_state())
+     *             .compartmentId(compartmentId)
+     *             .assetSourceId(testAssetSource.id())
+     *             .displayName(assetSourceDisplayName)
+     *             .state(assetSourceState)
      *             .build());
      * 
      *     }
@@ -1828,14 +1828,14 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
-     *             .assetType(var_.asset_asset_type())
-     *             .displayName(var_.asset_display_name())
-     *             .externalAssetKey(var_.asset_external_asset_key())
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
-     *             .sourceKey(var_.asset_source_key())
-     *             .state(var_.asset_state())
+     *             .compartmentId(compartmentId)
+     *             .assetId(testAsset.id())
+     *             .assetType(assetAssetType)
+     *             .displayName(assetDisplayName)
+     *             .externalAssetKey(assetExternalAssetKey)
+     *             .inventoryId(testInventory.id())
+     *             .sourceKey(assetSourceKey)
+     *             .state(assetState)
      *             .build());
      * 
      *     }
@@ -1877,14 +1877,14 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
-     *             .assetType(var_.asset_asset_type())
-     *             .displayName(var_.asset_display_name())
-     *             .externalAssetKey(var_.asset_external_asset_key())
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
-     *             .sourceKey(var_.asset_source_key())
-     *             .state(var_.asset_state())
+     *             .compartmentId(compartmentId)
+     *             .assetId(testAsset.id())
+     *             .assetType(assetAssetType)
+     *             .displayName(assetDisplayName)
+     *             .externalAssetKey(assetExternalAssetKey)
+     *             .inventoryId(testInventory.id())
+     *             .sourceKey(assetSourceKey)
+     *             .state(assetState)
      *             .build());
      * 
      *     }
@@ -1926,14 +1926,14 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
-     *             .assetType(var_.asset_asset_type())
-     *             .displayName(var_.asset_display_name())
-     *             .externalAssetKey(var_.asset_external_asset_key())
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
-     *             .sourceKey(var_.asset_source_key())
-     *             .state(var_.asset_state())
+     *             .compartmentId(compartmentId)
+     *             .assetId(testAsset.id())
+     *             .assetType(assetAssetType)
+     *             .displayName(assetDisplayName)
+     *             .externalAssetKey(assetExternalAssetKey)
+     *             .inventoryId(testInventory.id())
+     *             .sourceKey(assetSourceKey)
+     *             .state(assetState)
      *             .build());
      * 
      *     }
@@ -1975,14 +1975,14 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssets = CloudBridgeFunctions.getAssets(GetAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .assetId(oci_cloud_bridge_asset.test_asset().id())
-     *             .assetType(var_.asset_asset_type())
-     *             .displayName(var_.asset_display_name())
-     *             .externalAssetKey(var_.asset_external_asset_key())
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
-     *             .sourceKey(var_.asset_source_key())
-     *             .state(var_.asset_state())
+     *             .compartmentId(compartmentId)
+     *             .assetId(testAsset.id())
+     *             .assetType(assetAssetType)
+     *             .displayName(assetDisplayName)
+     *             .externalAssetKey(assetExternalAssetKey)
+     *             .inventoryId(testInventory.id())
+     *             .sourceKey(assetSourceKey)
+     *             .state(assetState)
      *             .build());
      * 
      *     }
@@ -2024,7 +2024,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedule = CloudBridgeFunctions.getDiscoverySchedule(GetDiscoveryScheduleArgs.builder()
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
+     *             .discoveryScheduleId(testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id())
      *             .build());
      * 
      *     }
@@ -2066,7 +2066,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedule = CloudBridgeFunctions.getDiscoverySchedule(GetDiscoveryScheduleArgs.builder()
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
+     *             .discoveryScheduleId(testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id())
      *             .build());
      * 
      *     }
@@ -2108,7 +2108,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedule = CloudBridgeFunctions.getDiscoverySchedule(GetDiscoveryScheduleArgs.builder()
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
+     *             .discoveryScheduleId(testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id())
      *             .build());
      * 
      *     }
@@ -2150,7 +2150,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedule = CloudBridgeFunctions.getDiscoverySchedule(GetDiscoveryScheduleArgs.builder()
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
+     *             .discoveryScheduleId(testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.id())
      *             .build());
      * 
      *     }
@@ -2192,10 +2192,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedules = CloudBridgeFunctions.getDiscoverySchedules(GetDiscoverySchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
-     *             .displayName(var_.discovery_schedule_display_name())
-     *             .state(var_.discovery_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .discoveryScheduleId(testDiscoverySchedule.id())
+     *             .displayName(discoveryScheduleDisplayName)
+     *             .state(discoveryScheduleState)
      *             .build());
      * 
      *     }
@@ -2237,10 +2237,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedules = CloudBridgeFunctions.getDiscoverySchedules(GetDiscoverySchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
-     *             .displayName(var_.discovery_schedule_display_name())
-     *             .state(var_.discovery_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .discoveryScheduleId(testDiscoverySchedule.id())
+     *             .displayName(discoveryScheduleDisplayName)
+     *             .state(discoveryScheduleState)
      *             .build());
      * 
      *     }
@@ -2282,10 +2282,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedules = CloudBridgeFunctions.getDiscoverySchedules(GetDiscoverySchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
-     *             .displayName(var_.discovery_schedule_display_name())
-     *             .state(var_.discovery_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .discoveryScheduleId(testDiscoverySchedule.id())
+     *             .displayName(discoveryScheduleDisplayName)
+     *             .state(discoveryScheduleState)
      *             .build());
      * 
      *     }
@@ -2327,10 +2327,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiscoverySchedules = CloudBridgeFunctions.getDiscoverySchedules(GetDiscoverySchedulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .discoveryScheduleId(oci_cloud_bridge_discovery_schedule.test_discovery_schedule().id())
-     *             .displayName(var_.discovery_schedule_display_name())
-     *             .state(var_.discovery_schedule_state())
+     *             .compartmentId(compartmentId)
+     *             .discoveryScheduleId(testDiscoverySchedule.id())
+     *             .displayName(discoveryScheduleDisplayName)
+     *             .state(discoveryScheduleState)
      *             .build());
      * 
      *     }
@@ -2372,7 +2372,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironment = CloudBridgeFunctions.getEnvironment(GetEnvironmentArgs.builder()
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
+     *             .environmentId(testEnvironmentOciCloudBridgeEnvironment.id())
      *             .build());
      * 
      *     }
@@ -2414,7 +2414,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironment = CloudBridgeFunctions.getEnvironment(GetEnvironmentArgs.builder()
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
+     *             .environmentId(testEnvironmentOciCloudBridgeEnvironment.id())
      *             .build());
      * 
      *     }
@@ -2456,7 +2456,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironment = CloudBridgeFunctions.getEnvironment(GetEnvironmentArgs.builder()
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
+     *             .environmentId(testEnvironmentOciCloudBridgeEnvironment.id())
      *             .build());
      * 
      *     }
@@ -2498,7 +2498,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironment = CloudBridgeFunctions.getEnvironment(GetEnvironmentArgs.builder()
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
+     *             .environmentId(testEnvironmentOciCloudBridgeEnvironment.id())
      *             .build());
      * 
      *     }
@@ -2540,10 +2540,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironments = CloudBridgeFunctions.getEnvironments(GetEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.environment_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(environmentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(environmentState)
      *             .build());
      * 
      *     }
@@ -2585,10 +2585,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironments = CloudBridgeFunctions.getEnvironments(GetEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.environment_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(environmentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(environmentState)
      *             .build());
      * 
      *     }
@@ -2630,10 +2630,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironments = CloudBridgeFunctions.getEnvironments(GetEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.environment_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(environmentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(environmentState)
      *             .build());
      * 
      *     }
@@ -2675,10 +2675,10 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnvironments = CloudBridgeFunctions.getEnvironments(GetEnvironmentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.environment_display_name())
-     *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
-     *             .state(var_.environment_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(environmentDisplayName)
+     *             .environmentId(testEnvironment.id())
+     *             .state(environmentState)
      *             .build());
      * 
      *     }
@@ -2720,8 +2720,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventories = CloudBridgeFunctions.getInventories(GetInventoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.inventory_state())
+     *             .compartmentId(compartmentId)
+     *             .state(inventoryState)
      *             .build());
      * 
      *     }
@@ -2763,8 +2763,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventories = CloudBridgeFunctions.getInventories(GetInventoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.inventory_state())
+     *             .compartmentId(compartmentId)
+     *             .state(inventoryState)
      *             .build());
      * 
      *     }
@@ -2806,8 +2806,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventories = CloudBridgeFunctions.getInventories(GetInventoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.inventory_state())
+     *             .compartmentId(compartmentId)
+     *             .state(inventoryState)
      *             .build());
      * 
      *     }
@@ -2849,8 +2849,8 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventories = CloudBridgeFunctions.getInventories(GetInventoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .state(var_.inventory_state())
+     *             .compartmentId(compartmentId)
+     *             .state(inventoryState)
      *             .build());
      * 
      *     }
@@ -2892,7 +2892,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventory = CloudBridgeFunctions.getInventory(GetInventoryArgs.builder()
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
+     *             .inventoryId(testInventoryOciCloudBridgeInventory.id())
      *             .build());
      * 
      *     }
@@ -2934,7 +2934,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventory = CloudBridgeFunctions.getInventory(GetInventoryArgs.builder()
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
+     *             .inventoryId(testInventoryOciCloudBridgeInventory.id())
      *             .build());
      * 
      *     }
@@ -2976,7 +2976,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventory = CloudBridgeFunctions.getInventory(GetInventoryArgs.builder()
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
+     *             .inventoryId(testInventoryOciCloudBridgeInventory.id())
      *             .build());
      * 
      *     }
@@ -3018,7 +3018,7 @@ public final class CloudBridgeFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInventory = CloudBridgeFunctions.getInventory(GetInventoryArgs.builder()
-     *             .inventoryId(oci_cloud_bridge_inventory.test_inventory().id())
+     *             .inventoryId(testInventoryOciCloudBridgeInventory.id())
      *             .build());
      * 
      *     }

@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Limits.GetLimitDefinitions(ctx, &limits.GetLimitDefinitionsArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				Name:          pulumi.StringRef(_var.Limit_definition_name),
-//				ServiceName:   pulumi.StringRef(oci_limits_service.Test_service.Name),
+//				CompartmentId: tenancyOcid,
+//				Name:          pulumi.StringRef(limitDefinitionName),
+//				ServiceName:   pulumi.StringRef(testService.Name),
 //			}, nil)
 //			if err != nil {
 //				return err

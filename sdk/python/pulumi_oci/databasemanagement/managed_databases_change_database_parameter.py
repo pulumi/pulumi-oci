@@ -245,27 +245,27 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
-            managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("test_managed_databases_change_database_parameter",
+            managed_database_id=test_managed_database["id"],
             parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
-                name=var["managed_databases_change_database_parameter_parameters_name"],
-                value=var["managed_databases_change_database_parameter_parameters_value"],
-                update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
+                name=managed_databases_change_database_parameter_parameters_name,
+                value=managed_databases_change_database_parameter_parameters_value,
+                update_comment=managed_databases_change_database_parameter_parameters_update_comment,
             )],
-            scope=var["managed_databases_change_database_parameter_scope"],
+            scope=managed_databases_change_database_parameter_scope,
             credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_change_database_parameter_credentials_password"],
-                role=var["managed_databases_change_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password=managed_databases_change_database_parameter_credentials_password,
+                role=managed_databases_change_database_parameter_credentials_role,
+                secret_id=test_secret["id"],
+                user_name=test_user["name"],
             ),
             database_credential=oci.database_management.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs(
-                credential_type=var["managed_databases_change_database_parameter_database_credential_credential_type"],
-                named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"],
-                password=var["managed_databases_change_database_parameter_database_credential_password"],
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                role=var["managed_databases_change_database_parameter_database_credential_role"],
-                username=var["managed_databases_change_database_parameter_database_credential_username"],
+                credential_type=managed_databases_change_database_parameter_database_credential_credential_type,
+                named_credential_id=test_named_credential["id"],
+                password=managed_databases_change_database_parameter_database_credential_password,
+                password_secret_id=test_secret["id"],
+                role=managed_databases_change_database_parameter_database_credential_role,
+                username=managed_databases_change_database_parameter_database_credential_username,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -318,27 +318,27 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("testManagedDatabasesChangeDatabaseParameter",
-            managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
+        test_managed_databases_change_database_parameter = oci.database_management.ManagedDatabasesChangeDatabaseParameter("test_managed_databases_change_database_parameter",
+            managed_database_id=test_managed_database["id"],
             parameters=[oci.database_management.ManagedDatabasesChangeDatabaseParameterParameterArgs(
-                name=var["managed_databases_change_database_parameter_parameters_name"],
-                value=var["managed_databases_change_database_parameter_parameters_value"],
-                update_comment=var["managed_databases_change_database_parameter_parameters_update_comment"],
+                name=managed_databases_change_database_parameter_parameters_name,
+                value=managed_databases_change_database_parameter_parameters_value,
+                update_comment=managed_databases_change_database_parameter_parameters_update_comment,
             )],
-            scope=var["managed_databases_change_database_parameter_scope"],
+            scope=managed_databases_change_database_parameter_scope,
             credentials=oci.database_management.ManagedDatabasesChangeDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_change_database_parameter_credentials_password"],
-                role=var["managed_databases_change_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password=managed_databases_change_database_parameter_credentials_password,
+                role=managed_databases_change_database_parameter_credentials_role,
+                secret_id=test_secret["id"],
+                user_name=test_user["name"],
             ),
             database_credential=oci.database_management.ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs(
-                credential_type=var["managed_databases_change_database_parameter_database_credential_credential_type"],
-                named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"],
-                password=var["managed_databases_change_database_parameter_database_credential_password"],
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                role=var["managed_databases_change_database_parameter_database_credential_role"],
-                username=var["managed_databases_change_database_parameter_database_credential_username"],
+                credential_type=managed_databases_change_database_parameter_database_credential_credential_type,
+                named_credential_id=test_named_credential["id"],
+                password=managed_databases_change_database_parameter_database_credential_password,
+                password_secret_id=test_secret["id"],
+                role=managed_databases_change_database_parameter_database_credential_role,
+                username=managed_databases_change_database_parameter_database_credential_username,
             ))
         ```
         <!--End PulumiCodeChooser -->

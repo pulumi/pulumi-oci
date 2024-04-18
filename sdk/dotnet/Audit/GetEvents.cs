@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Audit
         /// {
         ///     var testAuditEvents = Oci.Audit.GetEvents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EndTime = @var.Audit_event_end_time,
-        ///         StartTime = @var.Audit_event_start_time,
+        ///         CompartmentId = compartmentId,
+        ///         EndTime = auditEventEndTime,
+        ///         StartTime = auditEventStartTime,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Audit
         /// {
         ///     var testAuditEvents = Oci.Audit.GetEvents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EndTime = @var.Audit_event_end_time,
-        ///         StartTime = @var.Audit_event_start_time,
+        ///         CompartmentId = compartmentId,
+        ///         EndTime = auditEventEndTime,
+        ///         StartTime = auditEventStartTime,
         ///     });
         /// 
         /// });

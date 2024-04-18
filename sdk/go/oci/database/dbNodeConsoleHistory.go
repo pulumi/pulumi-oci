@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewDbNodeConsoleHistory(ctx, "testDbNodeConsoleHistory", &Database.DbNodeConsoleHistoryArgs{
-//				DbNodeId:    pulumi.Any(oci_database_db_node.Test_db_node.Id),
-//				DisplayName: pulumi.Any(_var.Db_node_console_history_display_name),
-//				DefinedTags: pulumi.Any(_var.Db_node_console_history_defined_tags),
+//			_, err := Database.NewDbNodeConsoleHistory(ctx, "test_db_node_console_history", &Database.DbNodeConsoleHistoryArgs{
+//				DbNodeId:    pulumi.Any(testDbNode.Id),
+//				DisplayName: pulumi.Any(dbNodeConsoleHistoryDisplayName),
+//				DefinedTags: pulumi.Any(dbNodeConsoleHistoryDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

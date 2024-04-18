@@ -25,18 +25,18 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVirtualNodePool = new Oci.ContainerEngine.VirtualNodePool("testVirtualNodePool", new()
+    ///     var testVirtualNodePool = new Oci.ContainerEngine.VirtualNodePool("test_virtual_node_pool", new()
     ///     {
-    ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Virtual_node_pool_display_name,
+    ///         ClusterId = testCluster.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = virtualNodePoolDisplayName,
     ///         PlacementConfigurations = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.VirtualNodePoolPlacementConfigurationArgs
     ///             {
-    ///                 AvailabilityDomain = @var.Virtual_node_pool_placement_configurations_availability_domain,
-    ///                 FaultDomains = @var.Virtual_node_pool_placement_configurations_fault_domain,
-    ///                 SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///                 AvailabilityDomain = virtualNodePoolPlacementConfigurationsAvailabilityDomain,
+    ///                 FaultDomains = virtualNodePoolPlacementConfigurationsFaultDomain,
+    ///                 SubnetId = testSubnet.Id,
     ///             },
     ///         },
     ///         DefinedTags = 
@@ -51,25 +51,25 @@ namespace Pulumi.Oci.ContainerEngine
     ///         {
     ///             new Oci.ContainerEngine.Inputs.VirtualNodePoolInitialVirtualNodeLabelArgs
     ///             {
-    ///                 Key = @var.Virtual_node_pool_initial_virtual_node_labels_key,
-    ///                 Value = @var.Virtual_node_pool_initial_virtual_node_labels_value,
+    ///                 Key = virtualNodePoolInitialVirtualNodeLabelsKey,
+    ///                 Value = virtualNodePoolInitialVirtualNodeLabelsValue,
     ///             },
     ///         },
-    ///         NsgIds = @var.Virtual_node_pool_nsg_ids,
+    ///         NsgIds = virtualNodePoolNsgIds,
     ///         PodConfiguration = new Oci.ContainerEngine.Inputs.VirtualNodePoolPodConfigurationArgs
     ///         {
-    ///             Shape = @var.Virtual_node_pool_pod_configuration_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NsgIds = @var.Virtual_node_pool_pod_configuration_nsg_ids,
+    ///             Shape = virtualNodePoolPodConfigurationShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NsgIds = virtualNodePoolPodConfigurationNsgIds,
     ///         },
-    ///         Size = @var.Virtual_node_pool_size,
+    ///         Size = virtualNodePoolSize,
     ///         Taints = new[]
     ///         {
     ///             new Oci.ContainerEngine.Inputs.VirtualNodePoolTaintArgs
     ///             {
-    ///                 Effect = @var.Virtual_node_pool_taints_effect,
-    ///                 Key = @var.Virtual_node_pool_taints_key,
-    ///                 Value = @var.Virtual_node_pool_taints_value,
+    ///                 Effect = virtualNodePoolTaintsEffect,
+    ///                 Key = virtualNodePoolTaintsKey,
+    ///                 Value = virtualNodePoolTaintsValue,
     ///             },
     ///         },
     ///         VirtualNodeTags = new Oci.ContainerEngine.Inputs.VirtualNodePoolVirtualNodeTagsArgs

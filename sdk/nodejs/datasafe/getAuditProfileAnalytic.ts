@@ -31,10 +31,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfileAnalytic = oci.DataSafe.getAuditProfileAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_profile_analytic_access_level,
- *     compartmentIdInSubtree: _var.audit_profile_analytic_compartment_id_in_subtree,
- *     groupBies: _var.audit_profile_analytic_group_by,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditProfileAnalyticAccessLevel,
+ *     compartmentIdInSubtree: auditProfileAnalyticCompartmentIdInSubtree,
+ *     groupBies: auditProfileAnalyticGroupBy,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,10 +114,10 @@ export interface GetAuditProfileAnalyticResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfileAnalytic = oci.DataSafe.getAuditProfileAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_profile_analytic_access_level,
- *     compartmentIdInSubtree: _var.audit_profile_analytic_compartment_id_in_subtree,
- *     groupBies: _var.audit_profile_analytic_group_by,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditProfileAnalyticAccessLevel,
+ *     compartmentIdInSubtree: auditProfileAnalyticCompartmentIdInSubtree,
+ *     groupBies: auditProfileAnalyticGroupBy,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

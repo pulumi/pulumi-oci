@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceStorageEncryptionKeyInfo(ctx, &loganalytics.GetNamespaceStorageEncryptionKeyInfoArgs{
-//				Namespace: _var.Namespace_storage_encryption_key_info_namespace,
+//				Namespace: namespaceStorageEncryptionKeyInfoNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

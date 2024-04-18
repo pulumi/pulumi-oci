@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waa.GetAppAccelerationPolicy(ctx, &waa.GetAppAccelerationPolicyArgs{
-//				WebAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.Test_web_app_acceleration_policy.Id,
+//				WebAppAccelerationPolicyId: testWebAppAccelerationPolicyOciWaaWebAppAccelerationPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

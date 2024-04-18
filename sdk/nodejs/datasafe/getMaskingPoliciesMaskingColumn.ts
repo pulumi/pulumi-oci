@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPoliciesMaskingColumn = oci.DataSafe.getMaskingPoliciesMaskingColumn({
- *     maskingColumnKey: _var.masking_policies_masking_column_masking_column_key,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     maskingColumnKey: maskingPoliciesMaskingColumnMaskingColumnKey,
+ *     maskingPolicyId: testMaskingPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,8 +132,8 @@ export interface GetMaskingPoliciesMaskingColumnResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMaskingPoliciesMaskingColumn = oci.DataSafe.getMaskingPoliciesMaskingColumn({
- *     maskingColumnKey: _var.masking_policies_masking_column_masking_column_key,
- *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     maskingColumnKey: maskingPoliciesMaskingColumnMaskingColumnKey,
+ *     maskingPolicyId: testMaskingPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -49,12 +49,12 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testPrivateIp = new PrivateIp(&#34;testPrivateIp&#34;, PrivateIpArgs.builder()        
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.private_ip_display_name())
+ *             .displayName(privateIpDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .hostnameLabel(var_.private_ip_hostname_label())
- *             .ipAddress(var_.private_ip_ip_address())
- *             .vlanId(oci_core_vlan.test_vlan().id())
- *             .vnicId(oci_core_vnic_attachment.test_vnic_attachment().vnic_id())
+ *             .hostnameLabel(privateIpHostnameLabel)
+ *             .ipAddress(privateIpIpAddress)
+ *             .vlanId(testVlan.id())
+ *             .vnicId(testVnicAttachment.vnicId())
  *             .build());
  * 
  *     }

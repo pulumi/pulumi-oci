@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTagDefault = oci.Identity.getTagDefault({
- *     tagDefaultId: oci_identity_tag_default.test_tag_default.id,
+ *     tagDefaultId: testTagDefaultOciIdentityTagDefault.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,7 +97,7 @@ export interface GetTagDefaultResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTagDefault = oci.Identity.getTagDefault({
- *     tagDefaultId: oci_identity_tag_default.test_tag_default.id,
+ *     tagDefaultId: testTagDefaultOciIdentityTagDefault.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

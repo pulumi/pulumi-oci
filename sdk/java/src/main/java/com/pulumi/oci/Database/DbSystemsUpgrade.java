@@ -51,11 +51,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbSystemsUpgrade = new DbSystemsUpgrade(&#34;testDbSystemsUpgrade&#34;, DbSystemsUpgradeArgs.builder()        
- *             .action(var_.db_systems_upgrade_action())
- *             .dbSystemId(oci_database_db_system.test_db_system().id())
- *             .isSnapshotRetentionDaysForceUpdated(var_.db_systems_upgrade_is_snapshot_retention_days_force_updated())
- *             .newGiVersion(var_.db_systems_upgrade_new_gi_version())
- *             .snapshotRetentionPeriodInDays(var_.db_systems_upgrade_snapshot_retention_period_in_days())
+ *             .action(dbSystemsUpgradeAction)
+ *             .dbSystemId(testDbSystem.id())
+ *             .isSnapshotRetentionDaysForceUpdated(dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated)
+ *             .newGiVersion(dbSystemsUpgradeNewGiVersion)
+ *             .snapshotRetentionPeriodInDays(dbSystemsUpgradeSnapshotRetentionPeriodInDays)
  *             .build());
  * 
  *     }

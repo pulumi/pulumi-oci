@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccUpgradeSchedule = Oci.ComputeCloud.GetAtCustomerCccUpgradeSchedule.Invoke(new()
         ///     {
-        ///         CccUpgradeScheduleId = oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id,
+        ///         CccUpgradeScheduleId = testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.ComputeCloud
         /// {
         ///     var testCccUpgradeSchedule = Oci.ComputeCloud.GetAtCustomerCccUpgradeSchedule.Invoke(new()
         ///     {
-        ///         CccUpgradeScheduleId = oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id,
+        ///         CccUpgradeScheduleId = testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.Id,
         ///     });
         /// 
         /// });

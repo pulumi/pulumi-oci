@@ -25,38 +25,39 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitoredResourceType = new Oci.StackMonitoring.MonitoredResourceType("testMonitoredResourceType", new()
+    ///     var testMonitoredResourceType = new Oci.StackMonitoring.MonitoredResourceType("test_monitored_resource_type", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = monitoredResourceTypeName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Monitored_resource_type_description,
-    ///         DisplayName = @var.Monitored_resource_type_display_name,
+    ///         Description = monitoredResourceTypeDescription,
+    ///         DisplayName = monitoredResourceTypeDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         Metadata = new Oci.StackMonitoring.Inputs.MonitoredResourceTypeMetadataArgs
     ///         {
-    ///             Format = @var.Monitored_resource_type_metadata_format,
-    ///             AgentProperties = @var.Monitored_resource_type_metadata_agent_properties,
-    ///             RequiredProperties = @var.Monitored_resource_type_metadata_required_properties,
+    ///             Format = monitoredResourceTypeMetadataFormat,
+    ///             AgentProperties = monitoredResourceTypeMetadataAgentProperties,
+    ///             RequiredProperties = monitoredResourceTypeMetadataRequiredProperties,
     ///             UniquePropertySets = new[]
     ///             {
     ///                 new Oci.StackMonitoring.Inputs.MonitoredResourceTypeMetadataUniquePropertySetArgs
     ///                 {
-    ///                     Properties = @var.Monitored_resource_type_metadata_unique_property_sets_properties,
+    ///                     Properties = monitoredResourceTypeMetadataUniquePropertySetsProperties,
     ///                 },
     ///             },
-    ///             ValidPropertiesForCreates = @var.Monitored_resource_type_metadata_valid_properties_for_create,
-    ///             ValidPropertiesForUpdates = @var.Monitored_resource_type_metadata_valid_properties_for_update,
-    ///             ValidPropertyValues = @var.Monitored_resource_type_metadata_valid_property_values,
+    ///             ValidPropertiesForCreates = monitoredResourceTypeMetadataValidPropertiesForCreate,
+    ///             ValidPropertiesForUpdates = monitoredResourceTypeMetadataValidPropertiesForUpdate,
+    ///             ValidPropertyValues = monitoredResourceTypeMetadataValidPropertyValues,
     ///         },
-    ///         MetricNamespace = @var.Monitored_resource_type_metric_namespace,
-    ///         ResourceCategory = @var.Monitored_resource_type_resource_category,
-    ///         SourceType = @var.Monitored_resource_type_source_type,
+    ///         MetricNamespace = monitoredResourceTypeMetricNamespace,
+    ///         ResourceCategory = monitoredResourceTypeResourceCategory,
+    ///         SourceType = monitoredResourceTypeSourceType,
     ///     });
     /// 
     /// });

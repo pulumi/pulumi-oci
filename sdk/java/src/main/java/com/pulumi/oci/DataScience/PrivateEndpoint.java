@@ -46,15 +46,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDataSciencePrivateEndpoint = new PrivateEndpoint(&#34;testDataSciencePrivateEndpoint&#34;, PrivateEndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
- *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .compartmentId(compartmentId)
+ *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
+ *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.data_science_private_endpoint_description())
- *             .displayName(var_.data_science_private_endpoint_display_name())
+ *             .description(dataSciencePrivateEndpointDescription)
+ *             .displayName(dataSciencePrivateEndpointDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .nsgIds(var_.data_science_private_endpoint_nsg_ids())
- *             .subDomain(var_.data_science_private_endpoint_sub_domain())
+ *             .nsgIds(dataSciencePrivateEndpointNsgIds)
+ *             .subDomain(dataSciencePrivateEndpointSubDomain)
  *             .build());
  * 
  *     }

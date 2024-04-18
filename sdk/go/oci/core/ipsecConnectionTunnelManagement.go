@@ -45,23 +45,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewIpsecConnectionTunnelManagement(ctx, "testIpSecConnectionTunnel", &Core.IpsecConnectionTunnelManagementArgs{
-//				IpsecId:  pulumi.Any(oci_core_ipsec.Test_ipsec.Id),
-//				TunnelId: pulumi.Any(data.Oci_core_ipsec_connection_tunnels.Test_ip_sec_connection_tunnels.Ip_sec_connection_tunnels[0].Id),
-//				Routing:  pulumi.Any(_var.Ip_sec_connection_tunnel_management_routing),
+//			_, err := Core.NewIpsecConnectionTunnelManagement(ctx, "test_ip_sec_connection_tunnel", &Core.IpsecConnectionTunnelManagementArgs{
+//				IpsecId:  pulumi.Any(testIpsec.Id),
+//				TunnelId: pulumi.Any(testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id),
+//				Routing:  pulumi.Any(ipSecConnectionTunnelManagementRouting),
 //				BgpSessionInfos: core.IpsecConnectionTunnelManagementBgpSessionInfoArray{
 //					&core.IpsecConnectionTunnelManagementBgpSessionInfoArgs{
-//						CustomerBgpAsn:      pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_bgp_asn),
-//						CustomerInterfaceIp: pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_customer_interface_ip),
-//						OracleInterfaceIp:   pulumi.Any(_var.Ip_sec_connection_tunnel_management_bgp_session_info_oracle_interface_ip),
+//						CustomerBgpAsn:      pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn),
+//						CustomerInterfaceIp: pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp),
+//						OracleInterfaceIp:   pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp),
 //					},
 //				},
-//				DisplayName: pulumi.Any(_var.Ip_sec_connection_tunnel_management_display_name),
+//				DisplayName: pulumi.Any(ipSecConnectionTunnelManagementDisplayName),
 //				EncryptionDomainConfig: &core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs{
-//					CpeTrafficSelectors:    pulumi.Any(_var.Ip_sec_connection_tunnel_management_encryption_domain_config_cpe_traffic_selector),
-//					OracleTrafficSelectors: pulumi.Any(_var.Ip_sec_connection_tunnel_management_encryption_domain_config_oracle_traffic_selector),
+//					CpeTrafficSelectors:    pulumi.Any(ipSecConnectionTunnelManagementEncryptionDomainConfigCpeTrafficSelector),
+//					OracleTrafficSelectors: pulumi.Any(ipSecConnectionTunnelManagementEncryptionDomainConfigOracleTrafficSelector),
 //				},
-//				SharedSecret: pulumi.Any(_var.Ip_sec_connection_tunnel_management_shared_secret),
+//				SharedSecret: pulumi.Any(ipSecConnectionTunnelManagementSharedSecret),
 //				IkeVersion:   pulumi.String("V1"),
 //			})
 //			if err != nil {

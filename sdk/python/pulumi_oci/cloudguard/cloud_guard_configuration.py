@@ -190,11 +190,11 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("testCloudGuardConfiguration",
-            compartment_id=var["compartment_id"],
-            reporting_region=var["cloud_guard_configuration_reporting_region"],
-            status=var["cloud_guard_configuration_status"],
-            self_manage_resources=var["cloud_guard_configuration_self_manage_resources"])
+        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("test_cloud_guard_configuration",
+            compartment_id=compartment_id,
+            reporting_region=cloud_guard_configuration_reporting_region,
+            status=cloud_guard_configuration_status,
+            self_manage_resources=cloud_guard_configuration_self_manage_resources)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -231,11 +231,11 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("testCloudGuardConfiguration",
-            compartment_id=var["compartment_id"],
-            reporting_region=var["cloud_guard_configuration_reporting_region"],
-            status=var["cloud_guard_configuration_status"],
-            self_manage_resources=var["cloud_guard_configuration_self_manage_resources"])
+        test_cloud_guard_configuration = oci.cloud_guard.CloudGuardConfiguration("test_cloud_guard_configuration",
+            compartment_id=compartment_id,
+            reporting_region=cloud_guard_configuration_reporting_region,
+            status=cloud_guard_configuration_status,
+            self_manage_resources=cloud_guard_configuration_self_manage_resources)
         ```
         <!--End PulumiCodeChooser -->
 

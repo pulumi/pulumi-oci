@@ -133,10 +133,10 @@ def get_ping_probe_results(filters: Optional[Sequence[pulumi.InputType['GetPingP
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=oci_health_checks_probe_configuration["test_probe_configuration"]["id"],
-        start_time_greater_than_or_equal_to=var["ping_probe_result_start_time_greater_than_or_equal_to"],
-        start_time_less_than_or_equal_to=var["ping_probe_result_start_time_less_than_or_equal_to"],
-        target=var["ping_probe_result_target"])
+    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=test_probe_configuration["id"],
+        start_time_greater_than_or_equal_to=ping_probe_result_start_time_greater_than_or_equal_to,
+        start_time_less_than_or_equal_to=ping_probe_result_start_time_less_than_or_equal_to,
+        target=ping_probe_result_target)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -190,10 +190,10 @@ def get_ping_probe_results_output(filters: Optional[pulumi.Input[Optional[Sequen
     import pulumi
     import pulumi_oci as oci
 
-    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=oci_health_checks_probe_configuration["test_probe_configuration"]["id"],
-        start_time_greater_than_or_equal_to=var["ping_probe_result_start_time_greater_than_or_equal_to"],
-        start_time_less_than_or_equal_to=var["ping_probe_result_start_time_less_than_or_equal_to"],
-        target=var["ping_probe_result_target"])
+    test_ping_probe_results = oci.HealthChecks.get_ping_probe_results(probe_configuration_id=test_probe_configuration["id"],
+        start_time_greater_than_or_equal_to=ping_probe_result_start_time_greater_than_or_equal_to,
+        start_time_less_than_or_equal_to=ping_probe_result_start_time_less_than_or_equal_to,
+        target=ping_probe_result_target)
     ```
     <!--End PulumiCodeChooser -->
 

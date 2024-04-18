@@ -34,11 +34,11 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystems = Oci.Database.GetDbSystems.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Db_system_availability_domain,
-        ///         BackupId = oci_database_backup.Test_backup.Id,
-        ///         DisplayName = @var.Db_system_display_name,
-        ///         State = @var.Db_system_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dbSystemAvailabilityDomain,
+        ///         BackupId = testBackup.Id,
+        ///         DisplayName = dbSystemDisplayName,
+        ///         State = dbSystemState,
         ///     });
         /// 
         /// });
@@ -71,11 +71,11 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbSystems = Oci.Database.GetDbSystems.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Db_system_availability_domain,
-        ///         BackupId = oci_database_backup.Test_backup.Id,
-        ///         DisplayName = @var.Db_system_display_name,
-        ///         State = @var.Db_system_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = dbSystemAvailabilityDomain,
+        ///         BackupId = testBackup.Id,
+        ///         DisplayName = dbSystemDisplayName,
+        ///         State = dbSystemState,
         ///     });
         /// 
         /// });

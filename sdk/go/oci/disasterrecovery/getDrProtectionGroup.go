@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DisasterRecovery.GetDrProtectionGroup(ctx, &disasterrecovery.GetDrProtectionGroupArgs{
-//				DrProtectionGroupId: oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id,
+//				DrProtectionGroupId: testDrProtectionGroupOciDisasterRecoveryDrProtectionGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

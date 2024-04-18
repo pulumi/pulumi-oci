@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpSecConnections = Oci.Core.GetIpsecConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CpeId = oci_core_cpe.Test_cpe.Id,
-        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CpeId = testCpe.Id,
+        ///         DrgId = testDrg.Id,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpSecConnections = Oci.Core.GetIpsecConnections.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CpeId = oci_core_cpe.Test_cpe.Id,
-        ///         DrgId = oci_core_drg.Test_drg.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CpeId = testCpe.Id,
+        ///         DrgId = testDrg.Id,
         ///     });
         /// 
         /// });

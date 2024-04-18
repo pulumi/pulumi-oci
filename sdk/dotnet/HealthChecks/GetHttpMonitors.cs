@@ -30,9 +30,9 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testHttpMonitors = Oci.HealthChecks.GetHttpMonitors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Http_monitor_display_name,
-        ///         HomeRegion = @var.Http_monitor_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = httpMonitorDisplayName,
+        ///         HomeRegion = httpMonitorHomeRegion,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.HealthChecks
         /// {
         ///     var testHttpMonitors = Oci.HealthChecks.GetHttpMonitors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Http_monitor_display_name,
-        ///         HomeRegion = @var.Http_monitor_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = httpMonitorDisplayName,
+        ///         HomeRegion = httpMonitorHomeRegion,
         ///     });
         /// 
         /// });

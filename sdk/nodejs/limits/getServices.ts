@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServices = oci.Limits.getServices({
- *     compartmentId: _var.tenancy_ocid,
+ *     compartmentId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -74,7 +74,7 @@ export interface GetServicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServices = oci.Limits.getServices({
- *     compartmentId: _var.tenancy_ocid,
+ *     compartmentId: tenancyOcid,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

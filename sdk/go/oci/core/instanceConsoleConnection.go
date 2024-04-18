@@ -35,9 +35,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewInstanceConsoleConnection(ctx, "testInstanceConsoleConnection", &Core.InstanceConsoleConnectionArgs{
-//				InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
-//				PublicKey:  pulumi.Any(_var.Instance_console_connection_public_key),
+//			_, err := Core.NewInstanceConsoleConnection(ctx, "test_instance_console_connection", &Core.InstanceConsoleConnectionArgs{
+//				InstanceId: pulumi.Any(testInstance.Id),
+//				PublicKey:  pulumi.Any(instanceConsoleConnectionPublicKey),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

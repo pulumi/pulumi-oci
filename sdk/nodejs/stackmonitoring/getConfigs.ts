@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConfigs = oci.StackMonitoring.getConfigs({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.config_display_name,
- *     state: _var.config_state,
- *     type: _var.config_type,
+ *     compartmentId: compartmentId,
+ *     displayName: configDisplayName,
+ *     state: configState,
+ *     type: configType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetConfigsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConfigs = oci.StackMonitoring.getConfigs({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.config_display_name,
- *     state: _var.config_state,
- *     type: _var.config_type,
+ *     compartmentId: compartmentId,
+ *     displayName: configDisplayName,
+ *     state: configState,
+ *     type: configType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

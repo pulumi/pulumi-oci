@@ -25,76 +25,76 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDeployment = new Oci.ApiGateway.Deployment("testDeployment", new()
+    ///     var testDeployment = new Oci.ApiGateway.Deployment("test_deployment", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         GatewayId = oci_apigateway_gateway.Test_gateway.Id,
-    ///         PathPrefix = @var.Deployment_path_prefix,
+    ///         CompartmentId = compartmentId,
+    ///         GatewayId = testGateway.Id,
+    ///         PathPrefix = deploymentPathPrefix,
     ///         Specification = new Oci.ApiGateway.Inputs.DeploymentSpecificationArgs
     ///         {
     ///             LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesArgs
     ///             {
     ///                 AccessLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesAccessLogArgs
     ///                 {
-    ///                     IsEnabled = @var.Deployment_specification_logging_policies_access_log_is_enabled,
+    ///                     IsEnabled = deploymentSpecificationLoggingPoliciesAccessLogIsEnabled,
     ///                 },
     ///                 ExecutionLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationLoggingPoliciesExecutionLogArgs
     ///                 {
-    ///                     IsEnabled = @var.Deployment_specification_logging_policies_execution_log_is_enabled,
-    ///                     LogLevel = @var.Deployment_specification_logging_policies_execution_log_log_level,
+    ///                     IsEnabled = deploymentSpecificationLoggingPoliciesExecutionLogIsEnabled,
+    ///                     LogLevel = deploymentSpecificationLoggingPoliciesExecutionLogLogLevel,
     ///                 },
     ///             },
     ///             RequestPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesArgs
     ///             {
     ///                 Authentication = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationArgs
     ///                 {
-    ///                     Type = @var.Deployment_specification_request_policies_authentication_type,
-    ///                     Audiences = @var.Deployment_specification_request_policies_authentication_audiences,
-    ///                     CacheKeys = @var.Deployment_specification_request_policies_authentication_cache_key,
-    ///                     FunctionId = oci_functions_function.Test_function.Id,
-    ///                     IsAnonymousAccessAllowed = @var.Deployment_specification_request_policies_authentication_is_anonymous_access_allowed,
-    ///                     Issuers = @var.Deployment_specification_request_policies_authentication_issuers,
-    ///                     MaxClockSkewInSeconds = @var.Deployment_specification_request_policies_authentication_max_clock_skew_in_seconds,
-    ///                     Parameters = @var.Deployment_specification_request_policies_authentication_parameters,
+    ///                     Type = deploymentSpecificationRequestPoliciesAuthenticationType,
+    ///                     Audiences = deploymentSpecificationRequestPoliciesAuthenticationAudiences,
+    ///                     CacheKeys = deploymentSpecificationRequestPoliciesAuthenticationCacheKey,
+    ///                     FunctionId = testFunction.Id,
+    ///                     IsAnonymousAccessAllowed = deploymentSpecificationRequestPoliciesAuthenticationIsAnonymousAccessAllowed,
+    ///                     Issuers = deploymentSpecificationRequestPoliciesAuthenticationIssuers,
+    ///                     MaxClockSkewInSeconds = deploymentSpecificationRequestPoliciesAuthenticationMaxClockSkewInSeconds,
+    ///                     Parameters = deploymentSpecificationRequestPoliciesAuthenticationParameters,
     ///                     PublicKeys = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs
     ///                     {
-    ///                         Type = @var.Deployment_specification_request_policies_authentication_public_keys_type,
-    ///                         IsSslVerifyDisabled = @var.Deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled,
+    ///                         Type = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysType,
+    ///                         IsSslVerifyDisabled = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysIsSslVerifyDisabled,
     ///                         Keys = new[]
     ///                         {
     ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeyArgs
     ///                             {
-    ///                                 Format = @var.Deployment_specification_request_policies_authentication_public_keys_keys_format,
-    ///                                 Alg = @var.Deployment_specification_request_policies_authentication_public_keys_keys_alg,
-    ///                                 E = @var.Deployment_specification_request_policies_authentication_public_keys_keys_e,
-    ///                                 Key = @var.Deployment_specification_request_policies_authentication_public_keys_keys_key,
-    ///                                 KeyOps = @var.Deployment_specification_request_policies_authentication_public_keys_keys_key_ops,
-    ///                                 Kid = @var.Deployment_specification_request_policies_authentication_public_keys_keys_kid,
-    ///                                 Kty = @var.Deployment_specification_request_policies_authentication_public_keys_keys_kty,
-    ///                                 N = @var.Deployment_specification_request_policies_authentication_public_keys_keys_n,
-    ///                                 Use = @var.Deployment_specification_request_policies_authentication_public_keys_keys_use,
+    ///                                 Format = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysFormat,
+    ///                                 Alg = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysAlg,
+    ///                                 E = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysE,
+    ///                                 Key = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysKey,
+    ///                                 KeyOps = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysKeyOps,
+    ///                                 Kid = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysKid,
+    ///                                 Kty = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysKty,
+    ///                                 N = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysN,
+    ///                                 Use = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysUse,
     ///                             },
     ///                         },
-    ///                         MaxCacheDurationInHours = @var.Deployment_specification_request_policies_authentication_public_keys_max_cache_duration_in_hours,
-    ///                         Uri = @var.Deployment_specification_request_policies_authentication_public_keys_uri,
+    ///                         MaxCacheDurationInHours = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysMaxCacheDurationInHours,
+    ///                         Uri = deploymentSpecificationRequestPoliciesAuthenticationPublicKeysUri,
     ///                     },
-    ///                     TokenAuthScheme = @var.Deployment_specification_request_policies_authentication_token_auth_scheme,
-    ///                     TokenHeader = @var.Deployment_specification_request_policies_authentication_token_header,
-    ///                     TokenQueryParam = @var.Deployment_specification_request_policies_authentication_token_query_param,
+    ///                     TokenAuthScheme = deploymentSpecificationRequestPoliciesAuthenticationTokenAuthScheme,
+    ///                     TokenHeader = deploymentSpecificationRequestPoliciesAuthenticationTokenHeader,
+    ///                     TokenQueryParam = deploymentSpecificationRequestPoliciesAuthenticationTokenQueryParam,
     ///                     ValidationFailurePolicy = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs
     ///                     {
-    ///                         Type = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_type,
+    ///                         Type = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyType,
     ///                         ClientDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs
     ///                         {
-    ///                             Type = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_client_details_type,
-    ///                             ClientId = oci_apigateway_client.Test_client.Id,
-    ///                             ClientSecretId = oci_vault_secret.Test_secret.Id,
-    ///                             ClientSecretVersionNumber = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_client_details_client_secret_version_number,
+    ///                             Type = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsType,
+    ///                             ClientId = testClient.Id,
+    ///                             ClientSecretId = testSecret.Id,
+    ///                             ClientSecretVersionNumber = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsClientSecretVersionNumber,
     ///                         },
-    ///                         FallbackRedirectPath = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path,
-    ///                         LogoutPath = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_logout_path,
-    ///                         MaxExpiryDurationInHours = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours,
-    ///                         ResponseCode = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_code,
+    ///                         FallbackRedirectPath = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyFallbackRedirectPath,
+    ///                         LogoutPath = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyLogoutPath,
+    ///                         MaxExpiryDurationInHours = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyMaxExpiryDurationInHours,
+    ///                         ResponseCode = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseCode,
     ///                         ResponseHeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs
     ///                         {
     ///                             FilterHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs
@@ -103,10 +103,10 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_items_name,
+    ///                                         Name = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsName,
     ///                                     },
     ///                                 },
-    ///                                 Type = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_type,
+    ///                                 Type = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersType,
     ///                             },
     ///                             RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs
     ///                             {
@@ -114,8 +114,8 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs
     ///                                     {
-    ///                                         From = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_from,
-    ///                                         To = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_to,
+    ///                                         From = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsFrom,
+    ///                                         To = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsTo,
     ///                                     },
     ///                                 },
     ///                             },
@@ -125,91 +125,91 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs
     ///                                     {
-    ///                                         IfExists = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_if_exists,
-    ///                                         Name = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_name,
-    ///                                         Values = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_values,
+    ///                                         IfExists = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsIfExists,
+    ///                                         Name = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsName,
+    ///                                         Values = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsValues,
     ///                                     },
     ///                                 },
     ///                             },
     ///                         },
-    ///                         ResponseMessage = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_message,
-    ///                         ResponseType = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_type,
-    ///                         Scopes = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_scopes,
+    ///                         ResponseMessage = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseMessage,
+    ///                         ResponseType = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseType,
+    ///                         Scopes = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyScopes,
     ///                         SourceUriDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs
     ///                         {
-    ///                             Type = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type,
-    ///                             Uri = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri,
+    ///                             Type = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsType,
+    ///                             Uri = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsUri,
     ///                         },
-    ///                         UseCookiesForIntermediateSteps = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps,
-    ///                         UseCookiesForSession = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session,
-    ///                         UsePkce = @var.Deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce,
+    ///                         UseCookiesForIntermediateSteps = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUseCookiesForIntermediateSteps,
+    ///                         UseCookiesForSession = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUseCookiesForSession,
+    ///                         UsePkce = deploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyUsePkce,
     ///                     },
     ///                     ValidationPolicy = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs
     ///                     {
-    ///                         Type = @var.Deployment_specification_request_policies_authentication_validation_policy_type,
+    ///                         Type = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyType,
     ///                         AdditionalValidationPolicy = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs
     ///                         {
-    ///                             Audiences = @var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences,
-    ///                             Issuers = @var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers,
+    ///                             Audiences = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyAudiences,
+    ///                             Issuers = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyIssuers,
     ///                             VerifyClaims = new[]
     ///                             {
     ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs
     ///                                 {
-    ///                                     IsRequired = @var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required,
-    ///                                     Key = @var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key,
-    ///                                     Values = @var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values,
+    ///                                     IsRequired = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsIsRequired,
+    ///                                     Key = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsKey,
+    ///                                     Values = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsValues,
     ///                                 },
     ///                             },
     ///                         },
     ///                         ClientDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs
     ///                         {
-    ///                             Type = @var.Deployment_specification_request_policies_authentication_validation_policy_client_details_type,
-    ///                             ClientId = oci_apigateway_client.Test_client.Id,
-    ///                             ClientSecretId = oci_vault_secret.Test_secret.Id,
-    ///                             ClientSecretVersionNumber = @var.Deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number,
+    ///                             Type = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsType,
+    ///                             ClientId = testClient.Id,
+    ///                             ClientSecretId = testSecret.Id,
+    ///                             ClientSecretVersionNumber = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsClientSecretVersionNumber,
     ///                         },
-    ///                         IsSslVerifyDisabled = @var.Deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled,
+    ///                         IsSslVerifyDisabled = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyIsSslVerifyDisabled,
     ///                         Keys = new[]
     ///                         {
     ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs
     ///                             {
-    ///                                 Format = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_format,
-    ///                                 Alg = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_alg,
-    ///                                 E = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_e,
-    ///                                 Key = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_key,
-    ///                                 KeyOps = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_key_ops,
-    ///                                 Kid = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_kid,
-    ///                                 Kty = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_kty,
-    ///                                 N = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_n,
-    ///                                 Use = @var.Deployment_specification_request_policies_authentication_validation_policy_keys_use,
+    ///                                 Format = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysFormat,
+    ///                                 Alg = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysAlg,
+    ///                                 E = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysE,
+    ///                                 Key = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysKey,
+    ///                                 KeyOps = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysKeyOps,
+    ///                                 Kid = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysKid,
+    ///                                 Kty = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysKty,
+    ///                                 N = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysN,
+    ///                                 Use = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysUse,
     ///                             },
     ///                         },
-    ///                         MaxCacheDurationInHours = @var.Deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours,
+    ///                         MaxCacheDurationInHours = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyMaxCacheDurationInHours,
     ///                         SourceUriDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs
     ///                         {
-    ///                             Type = @var.Deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type,
-    ///                             Uri = @var.Deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri,
+    ///                             Type = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsType,
+    ///                             Uri = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsUri,
     ///                         },
-    ///                         Uri = @var.Deployment_specification_request_policies_authentication_validation_policy_uri,
+    ///                         Uri = deploymentSpecificationRequestPoliciesAuthenticationValidationPolicyUri,
     ///                     },
     ///                     VerifyClaims = new[]
     ///                     {
     ///                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs
     ///                         {
-    ///                             IsRequired = @var.Deployment_specification_request_policies_authentication_verify_claims_is_required,
-    ///                             Key = @var.Deployment_specification_request_policies_authentication_verify_claims_key,
-    ///                             Values = @var.Deployment_specification_request_policies_authentication_verify_claims_values,
+    ///                             IsRequired = deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsIsRequired,
+    ///                             Key = deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsKey,
+    ///                             Values = deploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsValues,
     ///                         },
     ///                     },
     ///                 },
     ///                 Cors = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesCorsArgs
     ///                 {
-    ///                     AllowedOrigins = @var.Deployment_specification_request_policies_cors_allowed_origins,
-    ///                     AllowedHeaders = @var.Deployment_specification_request_policies_cors_allowed_headers,
-    ///                     AllowedMethods = @var.Deployment_specification_request_policies_cors_allowed_methods,
-    ///                     ExposedHeaders = @var.Deployment_specification_request_policies_cors_exposed_headers,
-    ///                     IsAllowCredentialsEnabled = @var.Deployment_specification_request_policies_cors_is_allow_credentials_enabled,
-    ///                     MaxAgeInSeconds = @var.Deployment_specification_request_policies_cors_max_age_in_seconds,
+    ///                     AllowedOrigins = deploymentSpecificationRequestPoliciesCorsAllowedOrigins,
+    ///                     AllowedHeaders = deploymentSpecificationRequestPoliciesCorsAllowedHeaders,
+    ///                     AllowedMethods = deploymentSpecificationRequestPoliciesCorsAllowedMethods,
+    ///                     ExposedHeaders = deploymentSpecificationRequestPoliciesCorsExposedHeaders,
+    ///                     IsAllowCredentialsEnabled = deploymentSpecificationRequestPoliciesCorsIsAllowCredentialsEnabled,
+    ///                     MaxAgeInSeconds = deploymentSpecificationRequestPoliciesCorsMaxAgeInSeconds,
     ///                 },
     ///                 DynamicAuthentication = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs
     ///                 {
@@ -219,51 +219,51 @@ namespace Pulumi.Oci.ApiGateway
     ///                         {
     ///                             AuthenticationServerDetail = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs
     ///                             {
-    ///                                 Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type,
-    ///                                 Audiences = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences,
-    ///                                 FunctionId = oci_functions_function.Test_function.Id,
-    ///                                 IsAnonymousAccessAllowed = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed,
-    ///                                 Issuers = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers,
-    ///                                 MaxClockSkewInSeconds = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds,
+    ///                                 Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailType,
+    ///                                 Audiences = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailAudiences,
+    ///                                 FunctionId = testFunction.Id,
+    ///                                 IsAnonymousAccessAllowed = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailIsAnonymousAccessAllowed,
+    ///                                 Issuers = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailIssuers,
+    ///                                 MaxClockSkewInSeconds = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailMaxClockSkewInSeconds,
     ///                                 PublicKeys = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs
     ///                                 {
-    ///                                     Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type,
-    ///                                     IsSslVerifyDisabled = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled,
+    ///                                     Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysType,
+    ///                                     IsSslVerifyDisabled = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysIsSslVerifyDisabled,
     ///                                     Keys = new[]
     ///                                     {
     ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs
     ///                                         {
-    ///                                             Format = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format,
-    ///                                             Alg = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg,
-    ///                                             E = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_e,
-    ///                                             Key = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key,
-    ///                                             KeyOps = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key_ops,
-    ///                                             Kid = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kid,
-    ///                                             Kty = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kty,
-    ///                                             N = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n,
-    ///                                             Use = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use,
+    ///                                             Format = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysFormat,
+    ///                                             Alg = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysAlg,
+    ///                                             E = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysE,
+    ///                                             Key = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysKey,
+    ///                                             KeyOps = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysKeyOps,
+    ///                                             Kid = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysKid,
+    ///                                             Kty = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysKty,
+    ///                                             N = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysN,
+    ///                                             Use = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysUse,
     ///                                         },
     ///                                     },
-    ///                                     MaxCacheDurationInHours = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours,
-    ///                                     Uri = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri,
+    ///                                     MaxCacheDurationInHours = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysMaxCacheDurationInHours,
+    ///                                     Uri = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysUri,
     ///                                 },
-    ///                                 TokenAuthScheme = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme,
-    ///                                 TokenHeader = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_header,
-    ///                                 TokenQueryParam = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_query_param,
+    ///                                 TokenAuthScheme = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailTokenAuthScheme,
+    ///                                 TokenHeader = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailTokenHeader,
+    ///                                 TokenQueryParam = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailTokenQueryParam,
     ///                                 ValidationFailurePolicy = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs
     ///                                 {
-    ///                                     Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_type,
+    ///                                     Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyType,
     ///                                     ClientDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs
     ///                                     {
-    ///                                         Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_type,
-    ///                                         ClientId = oci_apigateway_client.Test_client.Id,
-    ///                                         ClientSecretId = oci_vault_secret.Test_secret.Id,
-    ///                                         ClientSecretVersionNumber = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_client_secret_version_number,
+    ///                                         Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsType,
+    ///                                         ClientId = testClient.Id,
+    ///                                         ClientSecretId = testSecret.Id,
+    ///                                         ClientSecretVersionNumber = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsClientSecretVersionNumber,
     ///                                     },
-    ///                                     FallbackRedirectPath = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path,
-    ///                                     LogoutPath = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path,
-    ///                                     MaxExpiryDurationInHours = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours,
-    ///                                     ResponseCode = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code,
+    ///                                     FallbackRedirectPath = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyFallbackRedirectPath,
+    ///                                     LogoutPath = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyLogoutPath,
+    ///                                     MaxExpiryDurationInHours = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyMaxExpiryDurationInHours,
+    ///                                     ResponseCode = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseCode,
     ///                                     ResponseHeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs
     ///                                     {
     ///                                         FilterHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs
@@ -272,10 +272,10 @@ namespace Pulumi.Oci.ApiGateway
     ///                                             {
     ///                                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs
     ///                                                 {
-    ///                                                     Name = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_items_name,
+    ///                                                     Name = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsName,
     ///                                                 },
     ///                                             },
-    ///                                             Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_type,
+    ///                                             Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersType,
     ///                                         },
     ///                                         RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs
     ///                                         {
@@ -283,8 +283,8 @@ namespace Pulumi.Oci.ApiGateway
     ///                                             {
     ///                                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs
     ///                                                 {
-    ///                                                     From = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_from,
-    ///                                                     To = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_to,
+    ///                                                     From = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsFrom,
+    ///                                                     To = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsTo,
     ///                                                 },
     ///                                             },
     ///                                         },
@@ -294,112 +294,112 @@ namespace Pulumi.Oci.ApiGateway
     ///                                             {
     ///                                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs
     ///                                                 {
-    ///                                                     IfExists = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_if_exists,
-    ///                                                     Name = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_name,
-    ///                                                     Values = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_values,
+    ///                                                     IfExists = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsIfExists,
+    ///                                                     Name = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsName,
+    ///                                                     Values = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsValues,
     ///                                                 },
     ///                                             },
     ///                                         },
     ///                                     },
-    ///                                     ResponseMessage = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_message,
-    ///                                     ResponseType = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_type,
-    ///                                     Scopes = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_scopes,
+    ///                                     ResponseMessage = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseMessage,
+    ///                                     ResponseType = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseType,
+    ///                                     Scopes = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyScopes,
     ///                                     SourceUriDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs
     ///                                     {
-    ///                                         Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type,
-    ///                                         Uri = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri,
+    ///                                         Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsType,
+    ///                                         Uri = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsUri,
     ///                                     },
-    ///                                     UseCookiesForIntermediateSteps = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps,
-    ///                                     UseCookiesForSession = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session,
-    ///                                     UsePkce = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce,
+    ///                                     UseCookiesForIntermediateSteps = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUseCookiesForIntermediateSteps,
+    ///                                     UseCookiesForSession = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUseCookiesForSession,
+    ///                                     UsePkce = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyUsePkce,
     ///                                 },
     ///                                 ValidationPolicy = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs
     ///                                 {
-    ///                                     Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type,
+    ///                                     Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyType,
     ///                                     AdditionalValidationPolicy = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs
     ///                                     {
-    ///                                         Audiences = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences,
-    ///                                         Issuers = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers,
+    ///                                         Audiences = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyAudiences,
+    ///                                         Issuers = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyIssuers,
     ///                                         VerifyClaims = new[]
     ///                                         {
     ///                                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs
     ///                                             {
-    ///                                                 IsRequired = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required,
-    ///                                                 Key = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key,
-    ///                                                 Values = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values,
+    ///                                                 IsRequired = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsIsRequired,
+    ///                                                 Key = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsKey,
+    ///                                                 Values = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsValues,
     ///                                             },
     ///                                         },
     ///                                     },
     ///                                     ClientDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs
     ///                                     {
-    ///                                         Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_type,
-    ///                                         ClientId = oci_apigateway_client.Test_client.Id,
-    ///                                         ClientSecretId = oci_vault_secret.Test_secret.Id,
-    ///                                         ClientSecretVersionNumber = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number,
+    ///                                         Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsType,
+    ///                                         ClientId = testClient.Id,
+    ///                                         ClientSecretId = testSecret.Id,
+    ///                                         ClientSecretVersionNumber = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsClientSecretVersionNumber,
     ///                                     },
-    ///                                     IsSslVerifyDisabled = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled,
+    ///                                     IsSslVerifyDisabled = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyIsSslVerifyDisabled,
     ///                                     Keys = new[]
     ///                                     {
     ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs
     ///                                         {
-    ///                                             Format = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format,
-    ///                                             Alg = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg,
-    ///                                             E = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_e,
-    ///                                             Key = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key,
-    ///                                             KeyOps = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key_ops,
-    ///                                             Kid = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kid,
-    ///                                             Kty = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kty,
-    ///                                             N = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n,
-    ///                                             Use = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use,
+    ///                                             Format = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysFormat,
+    ///                                             Alg = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysAlg,
+    ///                                             E = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysE,
+    ///                                             Key = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysKey,
+    ///                                             KeyOps = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysKeyOps,
+    ///                                             Kid = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysKid,
+    ///                                             Kty = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysKty,
+    ///                                             N = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysN,
+    ///                                             Use = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysUse,
     ///                                         },
     ///                                     },
-    ///                                     MaxCacheDurationInHours = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours,
+    ///                                     MaxCacheDurationInHours = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyMaxCacheDurationInHours,
     ///                                     SourceUriDetails = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs
     ///                                     {
-    ///                                         Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type,
-    ///                                         Uri = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri,
+    ///                                         Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsType,
+    ///                                         Uri = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsUri,
     ///                                     },
-    ///                                     Uri = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri,
+    ///                                     Uri = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyUri,
     ///                                 },
     ///                                 VerifyClaims = new[]
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs
     ///                                     {
-    ///                                         IsRequired = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required,
-    ///                                         Key = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key,
-    ///                                         Values = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values,
+    ///                                         IsRequired = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsIsRequired,
+    ///                                         Key = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsKey,
+    ///                                         Values = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsValues,
     ///                                     },
     ///                                 },
     ///                             },
     ///                             Key = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs
     ///                             {
-    ///                                 Name = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name,
-    ///                                 Expression = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
-    ///                                 IsDefault = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
-    ///                                 Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
-    ///                                 Values = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
+    ///                                 Name = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyName,
+    ///                                 Expression = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyExpression,
+    ///                                 IsDefault = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyIsDefault,
+    ///                                 Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyType,
+    ///                                 Values = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyValues,
     ///                             },
     ///                         },
     ///                     },
     ///                     SelectionSource = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs
     ///                     {
-    ///                         Selector = @var.Deployment_specification_request_policies_dynamic_authentication_selection_source_selector,
-    ///                         Type = @var.Deployment_specification_request_policies_dynamic_authentication_selection_source_type,
+    ///                         Selector = deploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceSelector,
+    ///                         Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceType,
     ///                     },
     ///                 },
     ///                 MutualTls = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesMutualTlsArgs
     ///                 {
-    ///                     AllowedSans = @var.Deployment_specification_request_policies_mutual_tls_allowed_sans,
-    ///                     IsVerifiedCertificateRequired = @var.Deployment_specification_request_policies_mutual_tls_is_verified_certificate_required,
+    ///                     AllowedSans = deploymentSpecificationRequestPoliciesMutualTlsAllowedSans,
+    ///                     IsVerifiedCertificateRequired = deploymentSpecificationRequestPoliciesMutualTlsIsVerifiedCertificateRequired,
     ///                 },
     ///                 RateLimiting = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs
     ///                 {
-    ///                     RateInRequestsPerSecond = @var.Deployment_specification_request_policies_rate_limiting_rate_in_requests_per_second,
-    ///                     RateKey = @var.Deployment_specification_request_policies_rate_limiting_rate_key,
+    ///                     RateInRequestsPerSecond = deploymentSpecificationRequestPoliciesRateLimitingRateInRequestsPerSecond,
+    ///                     RateKey = deploymentSpecificationRequestPoliciesRateLimitingRateKey,
     ///                 },
     ///                 UsagePlans = new Oci.ApiGateway.Inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs
     ///                 {
-    ///                     TokenLocations = @var.Deployment_specification_request_policies_usage_plans_token_locations,
+    ///                     TokenLocations = deploymentSpecificationRequestPoliciesUsagePlansTokenLocations,
     ///                 },
     ///             },
     ///             Routes = new[]
@@ -408,85 +408,85 @@ namespace Pulumi.Oci.ApiGateway
     ///                 {
     ///                     Backend = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendArgs
     ///                     {
-    ///                         Type = @var.Deployment_specification_routes_backend_type,
-    ///                         AllowedPostLogoutUris = @var.Deployment_specification_routes_backend_allowed_post_logout_uris,
-    ///                         Body = @var.Deployment_specification_routes_backend_body,
-    ///                         ConnectTimeoutInSeconds = @var.Deployment_specification_routes_backend_connect_timeout_in_seconds,
-    ///                         FunctionId = oci_functions_function.Test_function.Id,
+    ///                         Type = deploymentSpecificationRoutesBackendType,
+    ///                         AllowedPostLogoutUris = deploymentSpecificationRoutesBackendAllowedPostLogoutUris,
+    ///                         Body = deploymentSpecificationRoutesBackendBody,
+    ///                         ConnectTimeoutInSeconds = deploymentSpecificationRoutesBackendConnectTimeoutInSeconds,
+    ///                         FunctionId = testFunction.Id,
     ///                         Headers = new[]
     ///                         {
     ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendHeaderArgs
     ///                             {
-    ///                                 Name = @var.Deployment_specification_routes_backend_headers_name,
-    ///                                 Value = @var.Deployment_specification_routes_backend_headers_value,
+    ///                                 Name = deploymentSpecificationRoutesBackendHeadersName,
+    ///                                 Value = deploymentSpecificationRoutesBackendHeadersValue,
     ///                             },
     ///                         },
-    ///                         IsSslVerifyDisabled = @var.Deployment_specification_routes_backend_is_ssl_verify_disabled,
-    ///                         PostLogoutState = @var.Deployment_specification_routes_backend_post_logout_state,
-    ///                         ReadTimeoutInSeconds = @var.Deployment_specification_routes_backend_read_timeout_in_seconds,
+    ///                         IsSslVerifyDisabled = deploymentSpecificationRoutesBackendIsSslVerifyDisabled,
+    ///                         PostLogoutState = deploymentSpecificationRoutesBackendPostLogoutState,
+    ///                         ReadTimeoutInSeconds = deploymentSpecificationRoutesBackendReadTimeoutInSeconds,
     ///                         RoutingBackends = new[]
     ///                         {
     ///                             new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendRoutingBackendArgs
     ///                             {
     ///                                 Backend = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendRoutingBackendBackendArgs
     ///                                 {
-    ///                                     Type = @var.Deployment_specification_routes_backend_routing_backends_backend_type,
-    ///                                     Body = @var.Deployment_specification_routes_backend_routing_backends_backend_body,
-    ///                                     ConnectTimeoutInSeconds = @var.Deployment_specification_routes_backend_routing_backends_backend_connect_timeout_in_seconds,
-    ///                                     FunctionId = oci_functions_function.Test_function.Id,
+    ///                                     Type = deploymentSpecificationRoutesBackendRoutingBackendsBackendType,
+    ///                                     Body = deploymentSpecificationRoutesBackendRoutingBackendsBackendBody,
+    ///                                     ConnectTimeoutInSeconds = deploymentSpecificationRoutesBackendRoutingBackendsBackendConnectTimeoutInSeconds,
+    ///                                     FunctionId = testFunction.Id,
     ///                                     Headers = new[]
     ///                                     {
     ///                                         new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs
     ///                                         {
-    ///                                             Name = @var.Deployment_specification_routes_backend_routing_backends_backend_headers_name,
-    ///                                             Value = @var.Deployment_specification_routes_backend_routing_backends_backend_headers_value,
+    ///                                             Name = deploymentSpecificationRoutesBackendRoutingBackendsBackendHeadersName,
+    ///                                             Value = deploymentSpecificationRoutesBackendRoutingBackendsBackendHeadersValue,
     ///                                         },
     ///                                     },
-    ///                                     IsSslVerifyDisabled = @var.Deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled,
-    ///                                     ReadTimeoutInSeconds = @var.Deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds,
-    ///                                     SendTimeoutInSeconds = @var.Deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds,
-    ///                                     Status = @var.Deployment_specification_routes_backend_routing_backends_backend_status,
-    ///                                     Url = @var.Deployment_specification_routes_backend_routing_backends_backend_url,
+    ///                                     IsSslVerifyDisabled = deploymentSpecificationRoutesBackendRoutingBackendsBackendIsSslVerifyDisabled,
+    ///                                     ReadTimeoutInSeconds = deploymentSpecificationRoutesBackendRoutingBackendsBackendReadTimeoutInSeconds,
+    ///                                     SendTimeoutInSeconds = deploymentSpecificationRoutesBackendRoutingBackendsBackendSendTimeoutInSeconds,
+    ///                                     Status = deploymentSpecificationRoutesBackendRoutingBackendsBackendStatus,
+    ///                                     Url = deploymentSpecificationRoutesBackendRoutingBackendsBackendUrl,
     ///                                 },
     ///                                 Key = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendRoutingBackendKeyArgs
     ///                                 {
-    ///                                     Name = @var.Deployment_specification_routes_backend_routing_backends_key_name,
-    ///                                     Type = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
-    ///                                     Expression = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
-    ///                                     IsDefault = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
-    ///                                     Values = @var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
+    ///                                     Name = deploymentSpecificationRoutesBackendRoutingBackendsKeyName,
+    ///                                     Type = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyType,
+    ///                                     Expression = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyExpression,
+    ///                                     IsDefault = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyIsDefault,
+    ///                                     Values = deploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyValues,
     ///                                 },
     ///                             },
     ///                         },
     ///                         SelectionSource = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteBackendSelectionSourceArgs
     ///                         {
-    ///                             Selector = @var.Deployment_specification_routes_backend_selection_source_selector,
-    ///                             Type = @var.Deployment_specification_routes_backend_selection_source_type,
+    ///                             Selector = deploymentSpecificationRoutesBackendSelectionSourceSelector,
+    ///                             Type = deploymentSpecificationRoutesBackendSelectionSourceType,
     ///                         },
-    ///                         SendTimeoutInSeconds = @var.Deployment_specification_routes_backend_send_timeout_in_seconds,
-    ///                         Status = @var.Deployment_specification_routes_backend_status,
-    ///                         Url = @var.Deployment_specification_routes_backend_url,
+    ///                         SendTimeoutInSeconds = deploymentSpecificationRoutesBackendSendTimeoutInSeconds,
+    ///                         Status = deploymentSpecificationRoutesBackendStatus,
+    ///                         Url = deploymentSpecificationRoutesBackendUrl,
     ///                     },
-    ///                     Path = @var.Deployment_specification_routes_path,
+    ///                     Path = deploymentSpecificationRoutesPath,
     ///                     LoggingPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesArgs
     ///                     {
     ///                         AccessLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesAccessLogArgs
     ///                         {
-    ///                             IsEnabled = @var.Deployment_specification_routes_logging_policies_access_log_is_enabled,
+    ///                             IsEnabled = deploymentSpecificationRoutesLoggingPoliciesAccessLogIsEnabled,
     ///                         },
     ///                         ExecutionLog = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteLoggingPoliciesExecutionLogArgs
     ///                         {
-    ///                             IsEnabled = @var.Deployment_specification_routes_logging_policies_execution_log_is_enabled,
-    ///                             LogLevel = @var.Deployment_specification_routes_logging_policies_execution_log_log_level,
+    ///                             IsEnabled = deploymentSpecificationRoutesLoggingPoliciesExecutionLogIsEnabled,
+    ///                             LogLevel = deploymentSpecificationRoutesLoggingPoliciesExecutionLogLogLevel,
     ///                         },
     ///                     },
-    ///                     Methods = @var.Deployment_specification_routes_methods,
+    ///                     Methods = deploymentSpecificationRoutesMethods,
     ///                     RequestPolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesArgs
     ///                     {
     ///                         Authorization = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesAuthorizationArgs
     ///                         {
-    ///                             AllowedScopes = @var.Deployment_specification_routes_request_policies_authorization_allowed_scope,
-    ///                             Type = @var.Deployment_specification_routes_request_policies_authorization_type,
+    ///                             AllowedScopes = deploymentSpecificationRoutesRequestPoliciesAuthorizationAllowedScope,
+    ///                             Type = deploymentSpecificationRoutesRequestPoliciesAuthorizationType,
     ///                         },
     ///                         BodyValidation = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationArgs
     ///                         {
@@ -494,21 +494,21 @@ namespace Pulumi.Oci.ApiGateway
     ///                             {
     ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesBodyValidationContentArgs
     ///                                 {
-    ///                                     MediaType = @var.Deployment_specification_routes_request_policies_body_validation_content_media_type,
-    ///                                     ValidationType = @var.Deployment_specification_routes_request_policies_body_validation_content_validation_type,
+    ///                                     MediaType = deploymentSpecificationRoutesRequestPoliciesBodyValidationContentMediaType,
+    ///                                     ValidationType = deploymentSpecificationRoutesRequestPoliciesBodyValidationContentValidationType,
     ///                                 },
     ///                             },
-    ///                             Required = @var.Deployment_specification_routes_request_policies_body_validation_required,
-    ///                             ValidationMode = @var.Deployment_specification_routes_request_policies_body_validation_validation_mode,
+    ///                             Required = deploymentSpecificationRoutesRequestPoliciesBodyValidationRequired,
+    ///                             ValidationMode = deploymentSpecificationRoutesRequestPoliciesBodyValidationValidationMode,
     ///                         },
     ///                         Cors = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesCorsArgs
     ///                         {
-    ///                             AllowedOrigins = @var.Deployment_specification_routes_request_policies_cors_allowed_origins,
-    ///                             AllowedHeaders = @var.Deployment_specification_routes_request_policies_cors_allowed_headers,
-    ///                             AllowedMethods = @var.Deployment_specification_routes_request_policies_cors_allowed_methods,
-    ///                             ExposedHeaders = @var.Deployment_specification_routes_request_policies_cors_exposed_headers,
-    ///                             IsAllowCredentialsEnabled = @var.Deployment_specification_routes_request_policies_cors_is_allow_credentials_enabled,
-    ///                             MaxAgeInSeconds = @var.Deployment_specification_routes_request_policies_cors_max_age_in_seconds,
+    ///                             AllowedOrigins = deploymentSpecificationRoutesRequestPoliciesCorsAllowedOrigins,
+    ///                             AllowedHeaders = deploymentSpecificationRoutesRequestPoliciesCorsAllowedHeaders,
+    ///                             AllowedMethods = deploymentSpecificationRoutesRequestPoliciesCorsAllowedMethods,
+    ///                             ExposedHeaders = deploymentSpecificationRoutesRequestPoliciesCorsExposedHeaders,
+    ///                             IsAllowCredentialsEnabled = deploymentSpecificationRoutesRequestPoliciesCorsIsAllowCredentialsEnabled,
+    ///                             MaxAgeInSeconds = deploymentSpecificationRoutesRequestPoliciesCorsMaxAgeInSeconds,
     ///                         },
     ///                         HeaderTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsArgs
     ///                         {
@@ -518,10 +518,10 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsFilterHeadersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_items_name,
+    ///                                         Name = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItemsName,
     ///                                     },
     ///                                 },
-    ///                                 Type = @var.Deployment_specification_routes_request_policies_header_transformations_filter_headers_type,
+    ///                                 Type = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersType,
     ///                             },
     ///                             RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersArgs
     ///                             {
@@ -529,8 +529,8 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsRenameHeadersItemArgs
     ///                                     {
-    ///                                         From = @var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_from,
-    ///                                         To = @var.Deployment_specification_routes_request_policies_header_transformations_rename_headers_items_to,
+    ///                                         From = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsFrom,
+    ///                                         To = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsTo,
     ///                                     },
     ///                                 },
     ///                             },
@@ -540,9 +540,9 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderTransformationsSetHeadersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_name,
-    ///                                         Values = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_values,
-    ///                                         IfExists = @var.Deployment_specification_routes_request_policies_header_transformations_set_headers_items_if_exists,
+    ///                                         Name = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsName,
+    ///                                         Values = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsValues,
+    ///                                         IfExists = deploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsIfExists,
     ///                                     },
     ///                                 },
     ///                             },
@@ -553,11 +553,11 @@ namespace Pulumi.Oci.ApiGateway
     ///                             {
     ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs
     ///                                 {
-    ///                                     Name = @var.Deployment_specification_routes_request_policies_header_validations_headers_name,
-    ///                                     Required = @var.Deployment_specification_routes_request_policies_header_validations_headers_required,
+    ///                                     Name = deploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersName,
+    ///                                     Required = deploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersRequired,
     ///                                 },
     ///                             },
-    ///                             ValidationMode = @var.Deployment_specification_routes_request_policies_header_validations_validation_mode,
+    ///                             ValidationMode = deploymentSpecificationRoutesRequestPoliciesHeaderValidationsValidationMode,
     ///                         },
     ///                         QueryParameterTransformations = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsArgs
     ///                         {
@@ -567,10 +567,10 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_items_name,
+    ///                                         Name = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemsName,
     ///                                     },
     ///                                 },
-    ///                                 Type = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_filter_query_parameters_type,
+    ///                                 Type = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersType,
     ///                             },
     ///                             RenameQueryParameters = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs
     ///                             {
@@ -578,8 +578,8 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs
     ///                                     {
-    ///                                         From = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_from,
-    ///                                         To = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_rename_query_parameters_items_to,
+    ///                                         From = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsFrom,
+    ///                                         To = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsTo,
     ///                                     },
     ///                                 },
     ///                             },
@@ -589,9 +589,9 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_name,
-    ///                                         Values = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_values,
-    ///                                         IfExists = @var.Deployment_specification_routes_request_policies_query_parameter_transformations_set_query_parameters_items_if_exists,
+    ///                                         Name = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsName,
+    ///                                         Values = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsValues,
+    ///                                         IfExists = deploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsIfExists,
     ///                                     },
     ///                                 },
     ///                             },
@@ -602,18 +602,18 @@ namespace Pulumi.Oci.ApiGateway
     ///                             {
     ///                                 new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs
     ///                                 {
-    ///                                     Name = @var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_name,
-    ///                                     Required = @var.Deployment_specification_routes_request_policies_query_parameter_validations_parameters_required,
+    ///                                     Name = deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersName,
+    ///                                     Required = deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersRequired,
     ///                                 },
     ///                             },
-    ///                             ValidationMode = @var.Deployment_specification_routes_request_policies_query_parameter_validations_validation_mode,
+    ///                             ValidationMode = deploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsValidationMode,
     ///                         },
     ///                         ResponseCacheLookup = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteRequestPoliciesResponseCacheLookupArgs
     ///                         {
-    ///                             Type = @var.Deployment_specification_routes_request_policies_response_cache_lookup_type,
-    ///                             CacheKeyAdditions = @var.Deployment_specification_routes_request_policies_response_cache_lookup_cache_key_additions,
-    ///                             IsEnabled = @var.Deployment_specification_routes_request_policies_response_cache_lookup_is_enabled,
-    ///                             IsPrivateCachingEnabled = @var.Deployment_specification_routes_request_policies_response_cache_lookup_is_private_caching_enabled,
+    ///                             Type = deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupType,
+    ///                             CacheKeyAdditions = deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupCacheKeyAdditions,
+    ///                             IsEnabled = deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupIsEnabled,
+    ///                             IsPrivateCachingEnabled = deploymentSpecificationRoutesRequestPoliciesResponseCacheLookupIsPrivateCachingEnabled,
     ///                         },
     ///                     },
     ///                     ResponsePolicies = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesArgs
@@ -626,10 +626,10 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_items_name,
+    ///                                         Name = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItemsName,
     ///                                     },
     ///                                 },
-    ///                                 Type = @var.Deployment_specification_routes_response_policies_header_transformations_filter_headers_type,
+    ///                                 Type = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersType,
     ///                             },
     ///                             RenameHeaders = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersArgs
     ///                             {
@@ -637,8 +637,8 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsRenameHeadersItemArgs
     ///                                     {
-    ///                                         From = @var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_from,
-    ///                                         To = @var.Deployment_specification_routes_response_policies_header_transformations_rename_headers_items_to,
+    ///                                         From = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsFrom,
+    ///                                         To = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsTo,
     ///                                     },
     ///                                 },
     ///                             },
@@ -648,17 +648,17 @@ namespace Pulumi.Oci.ApiGateway
     ///                                 {
     ///                                     new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsSetHeadersItemArgs
     ///                                     {
-    ///                                         Name = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_name,
-    ///                                         Values = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_values,
-    ///                                         IfExists = @var.Deployment_specification_routes_response_policies_header_transformations_set_headers_items_if_exists,
+    ///                                         Name = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsName,
+    ///                                         Values = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsValues,
+    ///                                         IfExists = deploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsIfExists,
     ///                                     },
     ///                                 },
     ///                             },
     ///                         },
     ///                         ResponseCacheStore = new Oci.ApiGateway.Inputs.DeploymentSpecificationRouteResponsePoliciesResponseCacheStoreArgs
     ///                         {
-    ///                             TimeToLiveInSeconds = @var.Deployment_specification_routes_response_policies_response_cache_store_time_to_live_in_seconds,
-    ///                             Type = @var.Deployment_specification_routes_response_policies_response_cache_store_type,
+    ///                             TimeToLiveInSeconds = deploymentSpecificationRoutesResponsePoliciesResponseCacheStoreTimeToLiveInSeconds,
+    ///                             Type = deploymentSpecificationRoutesResponsePoliciesResponseCacheStoreType,
     ///                         },
     ///                     },
     ///                 },
@@ -668,7 +668,7 @@ namespace Pulumi.Oci.ApiGateway
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Deployment_display_name,
+    ///         DisplayName = deploymentDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

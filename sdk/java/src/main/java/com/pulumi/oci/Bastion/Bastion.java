@@ -47,16 +47,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBastion = new Bastion(&#34;testBastion&#34;, BastionArgs.builder()        
- *             .bastionType(var_.bastion_bastion_type())
- *             .compartmentId(var_.compartment_id())
- *             .targetSubnetId(oci_core_subnet.test_subnet().id())
- *             .clientCidrBlockAllowLists(var_.bastion_client_cidr_block_allow_list())
+ *             .bastionType(bastionBastionType)
+ *             .compartmentId(compartmentId)
+ *             .targetSubnetId(testSubnet.id())
+ *             .clientCidrBlockAllowLists(bastionClientCidrBlockAllowList)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .dnsProxyStatus(var_.bastion_dns_proxy_status())
+ *             .dnsProxyStatus(bastionDnsProxyStatus)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .maxSessionTtlInSeconds(var_.bastion_max_session_ttl_in_seconds())
- *             .phoneBookEntry(var_.bastion_phone_book_entry())
- *             .staticJumpHostIpAddresses(var_.bastion_static_jump_host_ip_addresses())
+ *             .maxSessionTtlInSeconds(bastionMaxSessionTtlInSeconds)
+ *             .name(bastionName)
+ *             .phoneBookEntry(bastionPhoneBookEntry)
+ *             .staticJumpHostIpAddresses(bastionStaticJumpHostIpAddresses)
  *             .build());
  * 
  *     }

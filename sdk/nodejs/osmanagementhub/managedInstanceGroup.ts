@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceGroup = new oci.osmanagementhub.ManagedInstanceGroup("testManagedInstanceGroup", {
- *     archType: _var.managed_instance_group_arch_type,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.managed_instance_group_display_name,
- *     osFamily: _var.managed_instance_group_os_family,
+ * const testManagedInstanceGroup = new oci.osmanagementhub.ManagedInstanceGroup("test_managed_instance_group", {
  *     softwareSourceIds: [{}],
- *     vendorName: _var.managed_instance_group_vendor_name,
+ *     archType: managedInstanceGroupArchType,
+ *     compartmentId: compartmentId,
+ *     displayName: managedInstanceGroupDisplayName,
+ *     osFamily: managedInstanceGroupOsFamily,
+ *     vendorName: managedInstanceGroupVendorName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.managed_instance_group_description,
+ *     description: managedInstanceGroupDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     managedInstanceIds: _var.managed_instance_group_managed_instance_ids,
+ *     managedInstanceIds: managedInstanceGroupManagedInstanceIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

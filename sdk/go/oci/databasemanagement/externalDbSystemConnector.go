@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewExternalDbSystemConnector(ctx, "testExternalDbSystemConnector", &DatabaseManagement.ExternalDbSystemConnectorArgs{
-//				ConnectorType:      pulumi.Any(_var.External_db_system_connector_connector_type),
-//				ExternalDbSystemId: pulumi.Any(oci_database_management_external_db_system.Test_external_db_system.Id),
-//				DisplayName:        pulumi.Any(_var.External_db_system_connector_display_name),
+//			_, err := DatabaseManagement.NewExternalDbSystemConnector(ctx, "test_external_db_system_connector", &DatabaseManagement.ExternalDbSystemConnectorArgs{
+//				ConnectorType:      pulumi.Any(externalDbSystemConnectorConnectorType),
+//				ExternalDbSystemId: pulumi.Any(testExternalDbSystem.Id),
+//				DisplayName:        pulumi.Any(externalDbSystemConnectorDisplayName),
 //			})
 //			if err != nil {
 //				return err

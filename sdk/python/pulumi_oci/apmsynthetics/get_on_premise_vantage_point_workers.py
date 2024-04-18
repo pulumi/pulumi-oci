@@ -150,12 +150,12 @@ def get_on_premise_vantage_point_workers(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"],
-        capability=var["on_premise_vantage_point_worker_capability"],
-        display_name=var["on_premise_vantage_point_worker_display_name"],
-        name=var["on_premise_vantage_point_worker_name"],
-        status=var["on_premise_vantage_point_worker_status"])
+    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
+        on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
+        capability=on_premise_vantage_point_worker_capability,
+        display_name=on_premise_vantage_point_worker_display_name,
+        name=on_premise_vantage_point_worker_name,
+        status=on_premise_vantage_point_worker_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -211,12 +211,12 @@ def get_on_premise_vantage_point_workers_output(apm_domain_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        on_premise_vantage_point_id=oci_apm_synthetics_on_premise_vantage_point["test_on_premise_vantage_point"]["id"],
-        capability=var["on_premise_vantage_point_worker_capability"],
-        display_name=var["on_premise_vantage_point_worker_display_name"],
-        name=var["on_premise_vantage_point_worker_name"],
-        status=var["on_premise_vantage_point_worker_status"])
+    test_on_premise_vantage_point_workers = oci.ApmSynthetics.get_on_premise_vantage_point_workers(apm_domain_id=test_apm_domain["id"],
+        on_premise_vantage_point_id=test_on_premise_vantage_point["id"],
+        capability=on_premise_vantage_point_worker_capability,
+        display_name=on_premise_vantage_point_worker_display_name,
+        name=on_premise_vantage_point_worker_name,
+        status=on_premise_vantage_point_worker_status)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -50,19 +50,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProtectedDatabase = new ProtectedDatabase(&#34;testProtectedDatabase&#34;, ProtectedDatabaseArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dbUniqueName(var_.protected_database_db_unique_name())
- *             .displayName(var_.protected_database_display_name())
- *             .password(var_.protected_database_password())
- *             .protectionPolicyId(oci_recovery_protection_policy.test_protection_policy().id())
+ *             .compartmentId(compartmentId)
+ *             .dbUniqueName(protectedDatabaseDbUniqueName)
+ *             .displayName(protectedDatabaseDisplayName)
+ *             .password(protectedDatabasePassword)
+ *             .protectionPolicyId(testProtectionPolicy.id())
  *             .recoveryServiceSubnets(ProtectedDatabaseRecoveryServiceSubnetArgs.builder()
- *                 .recoveryServiceSubnetId(oci_recovery_recovery_service_subnet.test_recovery_service_subnet().id())
+ *                 .recoveryServiceSubnetId(testRecoveryServiceSubnet.id())
  *                 .build())
- *             .databaseId(oci_database_database.test_database().id())
- *             .databaseSize(var_.protected_database_database_size())
+ *             .databaseId(testDatabase.id())
+ *             .databaseSize(protectedDatabaseDatabaseSize)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isRedoLogsShipped(var_.protected_database_is_redo_logs_shipped())
+ *             .isRedoLogsShipped(protectedDatabaseIsRedoLogsShipped)
  *             .build());
  * 
  *     }

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := UsageProxy.GetUsagelimits(ctx, &usageproxy.GetUsagelimitsArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				SubscriptionId: oci_onesubscription_subscription.Test_subscription.Id,
-//				LimitType:      pulumi.StringRef(_var.Usagelimit_limit_type),
-//				ResourceType:   pulumi.StringRef(_var.Usagelimit_resource_type),
-//				ServiceType:    pulumi.StringRef(_var.Usagelimit_service_type),
+//				CompartmentId:  compartmentId,
+//				SubscriptionId: testSubscription.Id,
+//				LimitType:      pulumi.StringRef(usagelimitLimitType),
+//				ResourceType:   pulumi.StringRef(usagelimitResourceType),
+//				ServiceType:    pulumi.StringRef(usagelimitServiceType),
 //			}, nil)
 //			if err != nil {
 //				return err

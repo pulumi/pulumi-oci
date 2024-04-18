@@ -31,12 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicyMappedSecret(ctx, "testNetworkFirewallPolicyMappedSecret", &NetworkFirewall.NetworkFirewallPolicyMappedSecretArgs{
-//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-//				Source:                  pulumi.Any(_var.Network_firewall_policy_mapped_secret_source),
-//				Type:                    pulumi.Any(_var.Network_firewall_policy_mapped_secret_type),
-//				VaultSecretId:           pulumi.Any(oci_vault_secret.Test_secret.Id),
-//				VersionNumber:           pulumi.Any(_var.Network_firewall_policy_mapped_secret_version_number),
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicyMappedSecret(ctx, "test_network_firewall_policy_mapped_secret", &NetworkFirewall.NetworkFirewallPolicyMappedSecretArgs{
+//				Name:                    pulumi.Any(networkFirewallPolicyMappedSecretName),
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Source:                  pulumi.Any(networkFirewallPolicyMappedSecretSource),
+//				Type:                    pulumi.Any(networkFirewallPolicyMappedSecretType),
+//				VaultSecretId:           pulumi.Any(testSecret.Id),
+//				VersionNumber:           pulumi.Any(networkFirewallPolicyMappedSecretVersionNumber),
 //			})
 //			if err != nil {
 //				return err

@@ -133,10 +133,10 @@ def get_clusters(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_clusters = oci.Ocvp.get_clusters(compartment_id=var["compartment_id"],
-        display_name=var["cluster_display_name"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["cluster_state"])
+    test_clusters = oci.Ocvp.get_clusters(compartment_id=compartment_id,
+        display_name=cluster_display_name,
+        sddc_id=test_sddc["id"],
+        state=cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_clusters_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_clusters = oci.Ocvp.get_clusters(compartment_id=var["compartment_id"],
-        display_name=var["cluster_display_name"],
-        sddc_id=oci_ocvp_sddc["test_sddc"]["id"],
-        state=var["cluster_state"])
+    test_clusters = oci.Ocvp.get_clusters(compartment_id=compartment_id,
+        display_name=cluster_display_name,
+        sddc_id=test_sddc["id"],
+        state=cluster_state)
     ```
     <!--End PulumiCodeChooser -->
 

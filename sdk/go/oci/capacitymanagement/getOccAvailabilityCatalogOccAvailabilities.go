@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CapacityManagement.GetOccAvailabilityCatalogOccAvailabilities(ctx, &capacitymanagement.GetOccAvailabilityCatalogOccAvailabilitiesArgs{
-//				OccAvailabilityCatalogId:     oci_capacity_management_occ_availability_catalog.Test_occ_availability_catalog.Id,
-//				DateExpectedCapacityHandover: pulumi.StringRef(_var.Occ_availability_catalog_occ_availability_date_expected_capacity_handover),
-//				ResourceName:                 pulumi.StringRef(oci_usage_proxy_resource.Test_resource.Name),
-//				ResourceType:                 pulumi.StringRef(_var.Occ_availability_catalog_occ_availability_resource_type),
-//				WorkloadType:                 pulumi.StringRef(_var.Occ_availability_catalog_occ_availability_workload_type),
+//				OccAvailabilityCatalogId:     testOccAvailabilityCatalog.Id,
+//				DateExpectedCapacityHandover: pulumi.StringRef(occAvailabilityCatalogOccAvailabilityDateExpectedCapacityHandover),
+//				ResourceName:                 pulumi.StringRef(testResource.Name),
+//				ResourceType:                 pulumi.StringRef(occAvailabilityCatalogOccAvailabilityResourceType),
+//				WorkloadType:                 pulumi.StringRef(occAvailabilityCatalogOccAvailabilityWorkloadType),
 //			}, nil)
 //			if err != nil {
 //				return err

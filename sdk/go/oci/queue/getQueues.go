@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Queue.GetQueues(ctx, &queue.GetQueuesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Queue_display_name),
-//				Id:            pulumi.StringRef(_var.Queue_id),
-//				State:         pulumi.StringRef(_var.Queue_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(queueDisplayName),
+//				Id:            pulumi.StringRef(queueId),
+//				State:         pulumi.StringRef(queueState),
 //			}, nil)
 //			if err != nil {
 //				return err

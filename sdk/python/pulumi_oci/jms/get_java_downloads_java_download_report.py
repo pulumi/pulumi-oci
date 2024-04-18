@@ -230,7 +230,7 @@ def get_java_downloads_java_download_report(java_download_report_id: Optional[st
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"])
+    test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=test_java_download_report_oci_jms_java_downloads_java_download_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -276,7 +276,7 @@ def get_java_downloads_java_download_report_output(java_download_report_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"])
+    test_java_download_report = oci.Jms.get_java_downloads_java_download_report(java_download_report_id=test_java_download_report_oci_jms_java_downloads_java_download_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 

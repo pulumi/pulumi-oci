@@ -50,18 +50,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewInternetGateway(ctx, "testInternetGateway", &Core.InternetGatewayArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
-//				Enabled:       pulumi.Any(_var.Internet_gateway_enabled),
+//			_, err := Core.NewInternetGateway(ctx, "test_internet_gateway", &Core.InternetGatewayArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				VcnId:         pulumi.Any(testVcn.Id),
+//				Enabled:       pulumi.Any(internetGatewayEnabled),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Internet_gateway_display_name),
+//				DisplayName: pulumi.Any(internetGatewayDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//				RouteTableId: pulumi.Any(testRouteTable.Id),
 //			})
 //			if err != nil {
 //				return err

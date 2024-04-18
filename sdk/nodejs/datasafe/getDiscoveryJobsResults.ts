@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
- *     discoveryJobId: oci_data_safe_discovery_job.test_discovery_job.id,
- *     columnNames: _var.discovery_jobs_result_column_name,
- *     discoveryType: _var.discovery_jobs_result_discovery_type,
- *     isResultApplied: _var.discovery_jobs_result_is_result_applied,
- *     objects: _var.discovery_jobs_result_object,
- *     plannedAction: _var.discovery_jobs_result_planned_action,
- *     schemaNames: _var.discovery_jobs_result_schema_name,
+ *     discoveryJobId: testDiscoveryJob.id,
+ *     columnNames: discoveryJobsResultColumnName,
+ *     discoveryType: discoveryJobsResultDiscoveryType,
+ *     isResultApplied: discoveryJobsResultIsResultApplied,
+ *     objects: discoveryJobsResultObject,
+ *     plannedAction: discoveryJobsResultPlannedAction,
+ *     schemaNames: discoveryJobsResultSchemaName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,13 +135,13 @@ export interface GetDiscoveryJobsResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
- *     discoveryJobId: oci_data_safe_discovery_job.test_discovery_job.id,
- *     columnNames: _var.discovery_jobs_result_column_name,
- *     discoveryType: _var.discovery_jobs_result_discovery_type,
- *     isResultApplied: _var.discovery_jobs_result_is_result_applied,
- *     objects: _var.discovery_jobs_result_object,
- *     plannedAction: _var.discovery_jobs_result_planned_action,
- *     schemaNames: _var.discovery_jobs_result_schema_name,
+ *     discoveryJobId: testDiscoveryJob.id,
+ *     columnNames: discoveryJobsResultColumnName,
+ *     discoveryType: discoveryJobsResultDiscoveryType,
+ *     isResultApplied: discoveryJobsResultIsResultApplied,
+ *     objects: discoveryJobsResultObject,
+ *     plannedAction: discoveryJobsResultPlannedAction,
+ *     schemaNames: discoveryJobsResultSchemaName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

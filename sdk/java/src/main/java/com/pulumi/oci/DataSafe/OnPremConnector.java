@@ -45,10 +45,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOnPremConnector = new OnPremConnector(&#34;testOnPremConnector&#34;, OnPremConnectorArgs.builder()        
- *             .compartmentId(var_.compartment_id())
+ *             .compartmentId(compartmentId)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.on_prem_connector_description())
- *             .displayName(var_.on_prem_connector_display_name())
+ *             .description(onPremConnectorDescription)
+ *             .displayName(onPremConnectorDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

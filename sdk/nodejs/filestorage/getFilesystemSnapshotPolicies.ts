@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFilesystemSnapshotPolicies = oci.FileStorage.getFilesystemSnapshotPolicies({
- *     availabilityDomain: _var.filesystem_snapshot_policy_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.filesystem_snapshot_policy_display_name,
- *     id: _var.filesystem_snapshot_policy_id,
- *     state: _var.filesystem_snapshot_policy_state,
+ *     availabilityDomain: filesystemSnapshotPolicyAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: filesystemSnapshotPolicyDisplayName,
+ *     id: filesystemSnapshotPolicyId,
+ *     state: filesystemSnapshotPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetFilesystemSnapshotPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFilesystemSnapshotPolicies = oci.FileStorage.getFilesystemSnapshotPolicies({
- *     availabilityDomain: _var.filesystem_snapshot_policy_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.filesystem_snapshot_policy_display_name,
- *     id: _var.filesystem_snapshot_policy_id,
- *     state: _var.filesystem_snapshot_policy_state,
+ *     availabilityDomain: filesystemSnapshotPolicyAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: filesystemSnapshotPolicyDisplayName,
+ *     id: filesystemSnapshotPolicyId,
+ *     state: filesystemSnapshotPolicyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

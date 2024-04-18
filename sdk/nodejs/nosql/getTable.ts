@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTable = oci.Nosql.getTable({
- *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
- *     compartmentId: _var.compartment_id,
+ *     tableNameOrId: testTableNameOr.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -143,8 +143,8 @@ export interface GetTableResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTable = oci.Nosql.getTable({
- *     tableNameOrId: oci_nosql_table_name_or.test_table_name_or.id,
- *     compartmentId: _var.compartment_id,
+ *     tableNameOrId: testTableNameOr.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

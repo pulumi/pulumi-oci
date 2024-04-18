@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousPatch = oci.Database.getAutonomousPatch({
- *     autonomousPatchId: oci_database_autonomous_patch.test_autonomous_patch.id,
+ *     autonomousPatchId: testAutonomousPatchOciDatabaseAutonomousPatch.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetAutonomousPatchResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousPatch = oci.Database.getAutonomousPatch({
- *     autonomousPatchId: oci_database_autonomous_patch.test_autonomous_patch.id,
+ *     autonomousPatchId: testAutonomousPatchOciDatabaseAutonomousPatch.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

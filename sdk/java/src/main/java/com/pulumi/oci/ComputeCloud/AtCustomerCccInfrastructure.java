@@ -50,14 +50,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCccInfrastructure = new AtCustomerCccInfrastructure(&#34;testCccInfrastructure&#34;, AtCustomerCccInfrastructureArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.ccc_infrastructure_display_name())
- *             .subnetId(oci_core_subnet.test_subnet().id())
- *             .cccUpgradeScheduleId(oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule().id())
- *             .connectionDetails(var_.ccc_infrastructure_connection_details())
- *             .connectionState(var_.ccc_infrastructure_connection_state())
+ *             .compartmentId(compartmentId)
+ *             .displayName(cccInfrastructureDisplayName)
+ *             .subnetId(testSubnet.id())
+ *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+ *             .connectionDetails(cccInfrastructureConnectionDetails)
+ *             .connectionState(cccInfrastructureConnectionState)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.ccc_infrastructure_description())
+ *             .description(cccInfrastructureDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

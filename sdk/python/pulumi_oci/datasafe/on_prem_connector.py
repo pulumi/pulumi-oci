@@ -321,13 +321,13 @@ class OnPremConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_on_prem_connector = oci.data_safe.OnPremConnector("testOnPremConnector",
-            compartment_id=var["compartment_id"],
+        test_on_prem_connector = oci.data_safe.OnPremConnector("test_on_prem_connector",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["on_prem_connector_description"],
-            display_name=var["on_prem_connector_display_name"],
+            description=on_prem_connector_description,
+            display_name=on_prem_connector_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -372,13 +372,13 @@ class OnPremConnector(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_on_prem_connector = oci.data_safe.OnPremConnector("testOnPremConnector",
-            compartment_id=var["compartment_id"],
+        test_on_prem_connector = oci.data_safe.OnPremConnector("test_on_prem_connector",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["on_prem_connector_description"],
-            display_name=var["on_prem_connector_display_name"],
+            description=on_prem_connector_description,
+            display_name=on_prem_connector_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

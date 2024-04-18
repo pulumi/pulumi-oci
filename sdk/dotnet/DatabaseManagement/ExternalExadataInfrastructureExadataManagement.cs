@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalExadataInfrastructureExadataManagement = new Oci.DatabaseManagement.ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement", new()
+    ///     var testExternalExadataInfrastructureExadataManagement = new Oci.DatabaseManagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management", new()
     ///     {
-    ///         ExternalExadataInfrastructureId = oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id,
-    ///         EnableExadata = @var.Enable_exadata,
-    ///         LicenseModel = @var.External_exadata_infrastructure_exadata_management_license_model,
+    ///         ExternalExadataInfrastructureId = testExternalExadataInfrastructure.Id,
+    ///         EnableExadata = enableExadata,
+    ///         LicenseModel = externalExadataInfrastructureExadataManagementLicenseModel,
     ///     });
     /// 
     /// });

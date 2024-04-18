@@ -25,9 +25,10 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVirtualServiceRouteTable = new Oci.ServiceMesh.VirtualServiceRouteTable("testVirtualServiceRouteTable", new()
+    ///     var testVirtualServiceRouteTable = new Oci.ServiceMesh.VirtualServiceRouteTable("test_virtual_service_route_table", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = virtualServiceRouteTableName,
     ///         RouteRules = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleArgs
@@ -36,29 +37,29 @@ namespace Pulumi.Oci.ServiceMesh
     ///                 {
     ///                     new Oci.ServiceMesh.Inputs.VirtualServiceRouteTableRouteRuleDestinationArgs
     ///                     {
-    ///                         VirtualDeploymentId = oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id,
-    ///                         Weight = @var.Virtual_service_route_table_route_rules_destinations_weight,
-    ///                         Port = @var.Virtual_service_route_table_route_rules_destinations_port,
+    ///                         VirtualDeploymentId = testVirtualDeployment.Id,
+    ///                         Weight = virtualServiceRouteTableRouteRulesDestinationsWeight,
+    ///                         Port = virtualServiceRouteTableRouteRulesDestinationsPort,
     ///                     },
     ///                 },
-    ///                 Type = @var.Virtual_service_route_table_route_rules_type,
-    ///                 IsGrpc = @var.Virtual_service_route_table_route_rules_is_grpc,
-    ///                 Path = @var.Virtual_service_route_table_route_rules_path,
-    ///                 PathType = @var.Virtual_service_route_table_route_rules_path_type,
-    ///                 RequestTimeoutInMs = @var.Virtual_service_route_table_route_rules_request_timeout_in_ms,
+    ///                 Type = virtualServiceRouteTableRouteRulesType,
+    ///                 IsGrpc = virtualServiceRouteTableRouteRulesIsGrpc,
+    ///                 Path = virtualServiceRouteTableRouteRulesPath,
+    ///                 PathType = virtualServiceRouteTableRouteRulesPathType,
+    ///                 RequestTimeoutInMs = virtualServiceRouteTableRouteRulesRequestTimeoutInMs,
     ///             },
     ///         },
-    ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
+    ///         VirtualServiceId = testVirtualService.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Virtual_service_route_table_description,
+    ///         Description = virtualServiceRouteTableDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Priority = @var.Virtual_service_route_table_priority,
+    ///         Priority = virtualServiceRouteTablePriority,
     ///     });
     /// 
     /// });

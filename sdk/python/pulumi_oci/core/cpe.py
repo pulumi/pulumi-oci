@@ -344,18 +344,18 @@ class Cpe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cpe = oci.core.Cpe("testCpe",
-            compartment_id=var["compartment_id"],
-            ip_address=var["cpe_ip_address"],
-            cpe_device_shape_id=data["oci_core_cpe_device_shapes"]["test_cpe_device_shapes"]["cpe_device_shapes"][0]["cpe_device_shape_id"],
+        test_cpe = oci.core.Cpe("test_cpe",
+            compartment_id=compartment_id,
+            ip_address=cpe_ip_address,
+            cpe_device_shape_id=test_cpe_device_shapes["cpeDeviceShapes"][0]["cpeDeviceShapeId"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cpe_display_name"],
+            display_name=cpe_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private=var["cpe_is_private"])
+            is_private=cpe_is_private)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -419,18 +419,18 @@ class Cpe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_cpe = oci.core.Cpe("testCpe",
-            compartment_id=var["compartment_id"],
-            ip_address=var["cpe_ip_address"],
-            cpe_device_shape_id=data["oci_core_cpe_device_shapes"]["test_cpe_device_shapes"]["cpe_device_shapes"][0]["cpe_device_shape_id"],
+        test_cpe = oci.core.Cpe("test_cpe",
+            compartment_id=compartment_id,
+            ip_address=cpe_ip_address,
+            cpe_device_shape_id=test_cpe_device_shapes["cpeDeviceShapes"][0]["cpeDeviceShapeId"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["cpe_display_name"],
+            display_name=cpe_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private=var["cpe_is_private"])
+            is_private=cpe_is_private)
         ```
         <!--End PulumiCodeChooser -->
 

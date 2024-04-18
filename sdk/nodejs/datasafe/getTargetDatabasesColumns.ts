@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     columnNames: _var.target_databases_column_column_name,
- *     columnNameContains: _var.target_databases_column_column_name_contains,
- *     datatypes: _var.target_databases_column_datatype,
- *     schemaNames: _var.target_databases_column_schema_name,
- *     schemaNameContains: _var.target_databases_column_schema_name_contains,
- *     tableNames: oci_nosql_table.test_table.name,
- *     tableNameContains: _var.target_databases_column_table_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     columnNames: targetDatabasesColumnColumnName,
+ *     columnNameContains: targetDatabasesColumnColumnNameContains,
+ *     datatypes: targetDatabasesColumnDatatype,
+ *     schemaNames: targetDatabasesColumnSchemaName,
+ *     schemaNameContains: targetDatabasesColumnSchemaNameContains,
+ *     tableNames: testTable.name,
+ *     tableNameContains: targetDatabasesColumnTableNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,14 +130,14 @@ export interface GetTargetDatabasesColumnsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetDatabasesColumns = oci.DataSafe.getTargetDatabasesColumns({
- *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
- *     columnNames: _var.target_databases_column_column_name,
- *     columnNameContains: _var.target_databases_column_column_name_contains,
- *     datatypes: _var.target_databases_column_datatype,
- *     schemaNames: _var.target_databases_column_schema_name,
- *     schemaNameContains: _var.target_databases_column_schema_name_contains,
- *     tableNames: oci_nosql_table.test_table.name,
- *     tableNameContains: _var.target_databases_column_table_name_contains,
+ *     targetDatabaseId: testTargetDatabase.id,
+ *     columnNames: targetDatabasesColumnColumnName,
+ *     columnNameContains: targetDatabasesColumnColumnNameContains,
+ *     datatypes: targetDatabasesColumnDatatype,
+ *     schemaNames: targetDatabasesColumnSchemaName,
+ *     schemaNameContains: targetDatabasesColumnSchemaNameContains,
+ *     tableNames: testTable.name,
+ *     tableNameContains: targetDatabasesColumnTableNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

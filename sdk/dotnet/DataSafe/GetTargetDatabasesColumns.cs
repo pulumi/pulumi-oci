@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasesColumns = Oci.DataSafe.GetTargetDatabasesColumns.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         ColumnNames = @var.Target_databases_column_column_name,
-        ///         ColumnNameContains = @var.Target_databases_column_column_name_contains,
-        ///         Datatypes = @var.Target_databases_column_datatype,
-        ///         SchemaNames = @var.Target_databases_column_schema_name,
-        ///         SchemaNameContains = @var.Target_databases_column_schema_name_contains,
-        ///         TableNames = oci_nosql_table.Test_table.Name,
-        ///         TableNameContains = @var.Target_databases_column_table_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         ColumnNames = targetDatabasesColumnColumnName,
+        ///         ColumnNameContains = targetDatabasesColumnColumnNameContains,
+        ///         Datatypes = targetDatabasesColumnDatatype,
+        ///         SchemaNames = targetDatabasesColumnSchemaName,
+        ///         SchemaNameContains = targetDatabasesColumnSchemaNameContains,
+        ///         TableNames = testTable.Name,
+        ///         TableNameContains = targetDatabasesColumnTableNameContains,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasesColumns = Oci.DataSafe.GetTargetDatabasesColumns.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         ColumnNames = @var.Target_databases_column_column_name,
-        ///         ColumnNameContains = @var.Target_databases_column_column_name_contains,
-        ///         Datatypes = @var.Target_databases_column_datatype,
-        ///         SchemaNames = @var.Target_databases_column_schema_name,
-        ///         SchemaNameContains = @var.Target_databases_column_schema_name_contains,
-        ///         TableNames = oci_nosql_table.Test_table.Name,
-        ///         TableNameContains = @var.Target_databases_column_table_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         ColumnNames = targetDatabasesColumnColumnName,
+        ///         ColumnNameContains = targetDatabasesColumnColumnNameContains,
+        ///         Datatypes = targetDatabasesColumnDatatype,
+        ///         SchemaNames = targetDatabasesColumnSchemaName,
+        ///         SchemaNameContains = targetDatabasesColumnSchemaNameContains,
+        ///         TableNames = testTable.Name,
+        ///         TableNameContains = targetDatabasesColumnTableNameContains,
         ///     });
         /// 
         /// });

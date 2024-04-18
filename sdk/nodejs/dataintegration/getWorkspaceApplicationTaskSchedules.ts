@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceApplicationTaskSchedules = oci.DataIntegration.getWorkspaceApplicationTaskSchedules({
- *     applicationKey: _var.workspace_application_task_schedule_application_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     identifiers: _var.workspace_application_task_schedule_identifier,
- *     isEnabled: _var.workspace_application_task_schedule_is_enabled,
- *     keys: _var.workspace_application_task_schedule_key,
- *     name: _var.workspace_application_task_schedule_name,
- *     types: _var.workspace_application_task_schedule_type,
+ *     applicationKey: workspaceApplicationTaskScheduleApplicationKey,
+ *     workspaceId: testWorkspace.id,
+ *     identifiers: workspaceApplicationTaskScheduleIdentifier,
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     keys: workspaceApplicationTaskScheduleKey,
+ *     name: workspaceApplicationTaskScheduleName,
+ *     types: workspaceApplicationTaskScheduleType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,13 +129,13 @@ export interface GetWorkspaceApplicationTaskSchedulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceApplicationTaskSchedules = oci.DataIntegration.getWorkspaceApplicationTaskSchedules({
- *     applicationKey: _var.workspace_application_task_schedule_application_key,
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     identifiers: _var.workspace_application_task_schedule_identifier,
- *     isEnabled: _var.workspace_application_task_schedule_is_enabled,
- *     keys: _var.workspace_application_task_schedule_key,
- *     name: _var.workspace_application_task_schedule_name,
- *     types: _var.workspace_application_task_schedule_type,
+ *     applicationKey: workspaceApplicationTaskScheduleApplicationKey,
+ *     workspaceId: testWorkspace.id,
+ *     identifiers: workspaceApplicationTaskScheduleIdentifier,
+ *     isEnabled: workspaceApplicationTaskScheduleIsEnabled,
+ *     keys: workspaceApplicationTaskScheduleKey,
+ *     name: workspaceApplicationTaskScheduleName,
+ *     types: workspaceApplicationTaskScheduleType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

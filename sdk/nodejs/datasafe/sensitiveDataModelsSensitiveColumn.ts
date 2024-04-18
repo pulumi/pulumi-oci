@@ -16,20 +16,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSensitiveDataModelsSensitiveColumn = new oci.datasafe.SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", {
- *     columnName: _var.sensitive_data_models_sensitive_column_column_name,
- *     object: _var.sensitive_data_models_sensitive_column_object,
- *     schemaName: _var.sensitive_data_models_sensitive_column_schema_name,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     appDefinedChildColumnKeys: _var.sensitive_data_models_sensitive_column_app_defined_child_column_keys,
- *     appName: _var.sensitive_data_models_sensitive_column_app_name,
- *     dataType: _var.sensitive_data_models_sensitive_column_data_type,
- *     dbDefinedChildColumnKeys: _var.sensitive_data_models_sensitive_column_db_defined_child_column_keys,
- *     objectType: _var.sensitive_data_models_sensitive_column_object_type,
- *     parentColumnKeys: _var.sensitive_data_models_sensitive_column_parent_column_keys,
- *     relationType: _var.sensitive_data_models_sensitive_column_relation_type,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     status: _var.sensitive_data_models_sensitive_column_status,
+ * const testSensitiveDataModelsSensitiveColumn = new oci.datasafe.SensitiveDataModelsSensitiveColumn("test_sensitive_data_models_sensitive_column", {
+ *     columnName: sensitiveDataModelsSensitiveColumnColumnName,
+ *     object: sensitiveDataModelsSensitiveColumnObject,
+ *     schemaName: sensitiveDataModelsSensitiveColumnSchemaName,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     appDefinedChildColumnKeys: sensitiveDataModelsSensitiveColumnAppDefinedChildColumnKeys,
+ *     appName: sensitiveDataModelsSensitiveColumnAppName,
+ *     dataType: sensitiveDataModelsSensitiveColumnDataType,
+ *     dbDefinedChildColumnKeys: sensitiveDataModelsSensitiveColumnDbDefinedChildColumnKeys,
+ *     objectType: sensitiveDataModelsSensitiveColumnObjectType,
+ *     parentColumnKeys: sensitiveDataModelsSensitiveColumnParentColumnKeys,
+ *     relationType: sensitiveDataModelsSensitiveColumnRelationType,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     status: sensitiveDataModelsSensitiveColumnStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,49 +31,50 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewIngressGateway(ctx, "testIngressGateway", &ServiceMesh.IngressGatewayArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := ServiceMesh.NewIngressGateway(ctx, "test_ingress_gateway", &ServiceMesh.IngressGatewayArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Hosts: servicemesh.IngressGatewayHostArray{
 //					&servicemesh.IngressGatewayHostArgs{
 //						Listeners: servicemesh.IngressGatewayHostListenerArray{
 //							&servicemesh.IngressGatewayHostListenerArgs{
-//								Port:     pulumi.Any(_var.Ingress_gateway_hosts_listeners_port),
-//								Protocol: pulumi.Any(_var.Ingress_gateway_hosts_listeners_protocol),
+//								Port:     pulumi.Any(ingressGatewayHostsListenersPort),
+//								Protocol: pulumi.Any(ingressGatewayHostsListenersProtocol),
 //								Tls: &servicemesh.IngressGatewayHostListenerTlsArgs{
-//									Mode: pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_mode),
+//									Mode: pulumi.Any(ingressGatewayHostsListenersTlsMode),
 //									ClientValidation: &servicemesh.IngressGatewayHostListenerTlsClientValidationArgs{
-//										SubjectAlternateNames: pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_client_validation_subject_alternate_names),
+//										SubjectAlternateNames: pulumi.Any(ingressGatewayHostsListenersTlsClientValidationSubjectAlternateNames),
 //										TrustedCaBundle: &servicemesh.IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs{
-//											Type:       pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_client_validation_trusted_ca_bundle_type),
-//											CaBundleId: pulumi.Any(oci_certificates_management_ca_bundle.Test_ca_bundle.Id),
-//											SecretName: pulumi.Any(oci_vault_secret.Test_secret.Name),
+//											Type:       pulumi.Any(ingressGatewayHostsListenersTlsClientValidationTrustedCaBundleType),
+//											CaBundleId: pulumi.Any(testCaBundle.Id),
+//											SecretName: pulumi.Any(testSecret.Name),
 //										},
 //									},
 //									ServerCertificate: &servicemesh.IngressGatewayHostListenerTlsServerCertificateArgs{
-//										Type:          pulumi.Any(_var.Ingress_gateway_hosts_listeners_tls_server_certificate_type),
-//										CertificateId: pulumi.Any(oci_certificates_management_certificate.Test_certificate.Id),
-//										SecretName:    pulumi.Any(oci_vault_secret.Test_secret.Name),
+//										Type:          pulumi.Any(ingressGatewayHostsListenersTlsServerCertificateType),
+//										CertificateId: pulumi.Any(testCertificate.Id),
+//										SecretName:    pulumi.Any(testSecret.Name),
 //									},
 //								},
 //							},
 //						},
-//						Name:      pulumi.Any(_var.Ingress_gateway_hosts_name),
-//						Hostnames: pulumi.Any(_var.Ingress_gateway_hosts_hostnames),
+//						Name:      pulumi.Any(ingressGatewayHostsName),
+//						Hostnames: pulumi.Any(ingressGatewayHostsHostnames),
 //					},
 //				},
-//				MeshId: pulumi.Any(oci_service_mesh_mesh.Test_mesh.Id),
+//				MeshId: pulumi.Any(testMesh.Id),
+//				Name:   pulumi.Any(ingressGatewayName),
 //				AccessLogging: &servicemesh.IngressGatewayAccessLoggingArgs{
-//					IsEnabled: pulumi.Any(_var.Ingress_gateway_access_logging_is_enabled),
+//					IsEnabled: pulumi.Any(ingressGatewayAccessLoggingIsEnabled),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Ingress_gateway_description),
+//				Description: pulumi.Any(ingressGatewayDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
 //				Mtls: &servicemesh.IngressGatewayMtlsArgs{
-//					MaximumValidity: pulumi.Any(_var.Ingress_gateway_mtls_maximum_validity),
+//					MaximumValidity: pulumi.Any(ingressGatewayMtlsMaximumValidity),
 //				},
 //			})
 //			if err != nil {

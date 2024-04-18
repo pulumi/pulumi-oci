@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Vault.GetSecretVersion(ctx, &vault.GetSecretVersionArgs{
-//				SecretId:            oci_vault_secret.Test_secret.Id,
-//				SecretVersionNumber: _var.Secret_version_secret_version_number,
+//				SecretId:            testSecret.Id,
+//				SecretVersionNumber: secretVersionSecretVersionNumber,
 //			}, nil)
 //			if err != nil {
 //				return err

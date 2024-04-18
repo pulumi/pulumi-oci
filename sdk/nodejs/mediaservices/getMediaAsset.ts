@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaAsset = oci.MediaServices.getMediaAsset({
- *     mediaAssetId: oci_media_services_media_asset.test_media_asset.id,
+ *     mediaAssetId: testMediaAssetOciMediaServicesMediaAsset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -158,7 +158,7 @@ export interface GetMediaAssetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaAsset = oci.MediaServices.getMediaAsset({
- *     mediaAssetId: oci_media_services_media_asset.test_media_asset.id,
+ *     mediaAssetId: testMediaAssetOciMediaServicesMediaAsset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdpGroupMappings = oci.Identity.getIdpGroupMappings({
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
+ *     identityProviderId: testIdentityProvider.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,7 +79,7 @@ export interface GetIdpGroupMappingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdpGroupMappings = oci.Identity.getIdpGroupMappings({
- *     identityProviderId: oci_identity_identity_provider.test_identity_provider.id,
+ *     identityProviderId: testIdentityProvider.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

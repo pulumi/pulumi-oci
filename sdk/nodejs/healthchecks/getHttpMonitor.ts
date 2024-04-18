@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpMonitor = oci.HealthChecks.getHttpMonitor({
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     monitorId: testMonitor.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -131,7 +131,7 @@ export interface GetHttpMonitorResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testHttpMonitor = oci.HealthChecks.getHttpMonitor({
- *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ *     monitorId: testMonitor.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

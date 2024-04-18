@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyOauth2clientCredentials = Oci.Identity.GetDomainsMyOauth2clientCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyOauth2clientCredentialCount = @var.My_oauth2client_credential_my_oauth2client_credential_count,
-        ///         MyOauth2clientCredentialFilter = @var.My_oauth2client_credential_my_oauth2client_credential_filter,
-        ///         Authorization = @var.My_oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_oauth2client_credential_resource_type_schema_version,
-        ///         StartIndex = @var.My_oauth2client_credential_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyOauth2clientCredentialCount = myOauth2clientCredentialMyOauth2clientCredentialCount,
+        ///         MyOauth2clientCredentialFilter = myOauth2clientCredentialMyOauth2clientCredentialFilter,
+        ///         Authorization = myOauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myOauth2clientCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = myOauth2clientCredentialStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyOauth2clientCredentials = Oci.Identity.GetDomainsMyOauth2clientCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyOauth2clientCredentialCount = @var.My_oauth2client_credential_my_oauth2client_credential_count,
-        ///         MyOauth2clientCredentialFilter = @var.My_oauth2client_credential_my_oauth2client_credential_filter,
-        ///         Authorization = @var.My_oauth2client_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_oauth2client_credential_resource_type_schema_version,
-        ///         StartIndex = @var.My_oauth2client_credential_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyOauth2clientCredentialCount = myOauth2clientCredentialMyOauth2clientCredentialCount,
+        ///         MyOauth2clientCredentialFilter = myOauth2clientCredentialMyOauth2clientCredentialFilter,
+        ///         Authorization = myOauth2clientCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myOauth2clientCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = myOauth2clientCredentialStartIndex,
         ///     });
         /// 
         /// });

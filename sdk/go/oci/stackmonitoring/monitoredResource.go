@@ -33,87 +33,88 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewMonitoredResource(ctx, "testMonitoredResource", &StackMonitoring.MonitoredResourceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Type:          pulumi.Any(_var.Monitored_resource_type),
+//			_, err := StackMonitoring.NewMonitoredResource(ctx, "test_monitored_resource", &StackMonitoring.MonitoredResourceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(monitoredResourceName),
+//				Type:          pulumi.Any(monitoredResourceType),
 //				AdditionalAliases: stackmonitoring.MonitoredResourceAdditionalAliasArray{
 //					&stackmonitoring.MonitoredResourceAdditionalAliasArgs{
 //						Credential: &stackmonitoring.MonitoredResourceAdditionalAliasCredentialArgs{
-//							Name:    pulumi.Any(_var.Monitored_resource_additional_aliases_credential_name),
-//							Service: pulumi.Any(_var.Monitored_resource_additional_aliases_credential_service),
-//							Source:  pulumi.Any(_var.Monitored_resource_additional_aliases_credential_source),
+//							Name:    pulumi.Any(monitoredResourceAdditionalAliasesCredentialName),
+//							Service: pulumi.Any(monitoredResourceAdditionalAliasesCredentialService),
+//							Source:  pulumi.Any(monitoredResourceAdditionalAliasesCredentialSource),
 //						},
-//						Name:   pulumi.Any(_var.Monitored_resource_additional_aliases_name),
-//						Source: pulumi.Any(_var.Monitored_resource_additional_aliases_source),
+//						Name:   pulumi.Any(monitoredResourceAdditionalAliasesName),
+//						Source: pulumi.Any(monitoredResourceAdditionalAliasesSource),
 //					},
 //				},
 //				AdditionalCredentials: stackmonitoring.MonitoredResourceAdditionalCredentialArray{
 //					&stackmonitoring.MonitoredResourceAdditionalCredentialArgs{
-//						CredentialType: pulumi.Any(_var.Monitored_resource_additional_credentials_credential_type),
-//						Description:    pulumi.Any(_var.Monitored_resource_additional_credentials_description),
-//						KeyId:          pulumi.Any(oci_kms_key.Test_key.Id),
-//						Name:           pulumi.Any(_var.Monitored_resource_additional_credentials_name),
+//						CredentialType: pulumi.Any(monitoredResourceAdditionalCredentialsCredentialType),
+//						Description:    pulumi.Any(monitoredResourceAdditionalCredentialsDescription),
+//						KeyId:          pulumi.Any(testKey.Id),
+//						Name:           pulumi.Any(monitoredResourceAdditionalCredentialsName),
 //						Properties: stackmonitoring.MonitoredResourceAdditionalCredentialPropertyArray{
 //							&stackmonitoring.MonitoredResourceAdditionalCredentialPropertyArgs{
-//								Name:  pulumi.Any(_var.Monitored_resource_additional_credentials_properties_name),
-//								Value: pulumi.Any(_var.Monitored_resource_additional_credentials_properties_value),
+//								Name:  pulumi.Any(monitoredResourceAdditionalCredentialsPropertiesName),
+//								Value: pulumi.Any(monitoredResourceAdditionalCredentialsPropertiesValue),
 //							},
 //						},
-//						Source: pulumi.Any(_var.Monitored_resource_additional_credentials_source),
-//						Type:   pulumi.Any(_var.Monitored_resource_additional_credentials_type),
+//						Source: pulumi.Any(monitoredResourceAdditionalCredentialsSource),
+//						Type:   pulumi.Any(monitoredResourceAdditionalCredentialsType),
 //					},
 //				},
 //				Aliases: &stackmonitoring.MonitoredResourceAliasesArgs{
 //					Credential: &stackmonitoring.MonitoredResourceAliasesCredentialArgs{
-//						Name:    pulumi.Any(_var.Monitored_resource_aliases_credential_name),
-//						Service: pulumi.Any(_var.Monitored_resource_aliases_credential_service),
-//						Source:  pulumi.Any(_var.Monitored_resource_aliases_credential_source),
+//						Name:    pulumi.Any(monitoredResourceAliasesCredentialName),
+//						Service: pulumi.Any(monitoredResourceAliasesCredentialService),
+//						Source:  pulumi.Any(monitoredResourceAliasesCredentialSource),
 //					},
-//					Name:   pulumi.Any(_var.Monitored_resource_aliases_name),
-//					Source: pulumi.Any(_var.Monitored_resource_aliases_source),
+//					Name:   pulumi.Any(monitoredResourceAliasesName),
+//					Source: pulumi.Any(monitoredResourceAliasesSource),
 //				},
 //				Credentials: &stackmonitoring.MonitoredResourceCredentialsArgs{
-//					CredentialType: pulumi.Any(_var.Monitored_resource_credentials_credential_type),
-//					Description:    pulumi.Any(_var.Monitored_resource_credentials_description),
-//					KeyId:          pulumi.Any(_var.Monitored_resource_credentials_key_id),
-//					Name:           pulumi.Any(_var.Monitored_resource_credentials_name),
+//					CredentialType: pulumi.Any(monitoredResourceCredentialsCredentialType),
+//					Description:    pulumi.Any(monitoredResourceCredentialsDescription),
+//					KeyId:          pulumi.Any(monitoredResourceCredentialsKeyId),
+//					Name:           pulumi.Any(monitoredResourceCredentialsName),
 //					Properties: stackmonitoring.MonitoredResourceCredentialsPropertyArray{
 //						&stackmonitoring.MonitoredResourceCredentialsPropertyArgs{
-//							Name:  pulumi.Any(_var.Monitored_resource_credentials_properties_name),
-//							Value: pulumi.Any(_var.Monitored_resource_credentials_properties_value),
+//							Name:  pulumi.Any(monitoredResourceCredentialsPropertiesName),
+//							Value: pulumi.Any(monitoredResourceCredentialsPropertiesValue),
 //						},
 //					},
-//					Source: pulumi.Any(_var.Monitored_resource_credentials_source),
-//					Type:   pulumi.Any(_var.Monitored_resource_credentials_type),
+//					Source: pulumi.Any(monitoredResourceCredentialsSource),
+//					Type:   pulumi.Any(monitoredResourceCredentialsType),
 //				},
 //				DatabaseConnectionDetails: &stackmonitoring.MonitoredResourceDatabaseConnectionDetailsArgs{
-//					Port:         pulumi.Any(_var.Monitored_resource_database_connection_details_port),
-//					Protocol:     pulumi.Any(_var.Monitored_resource_database_connection_details_protocol),
-//					ServiceName:  pulumi.Any(_var.Monitored_resource_database_service_name),
-//					ConnectorId:  pulumi.Any(_var.Monitored_resource_database_connector_id),
-//					DbId:         pulumi.Any(_var.Monitored_resource_database_id),
-//					DbUniqueName: pulumi.Any(_var.Monitored_resource_database_connection_details_db_unique_name),
-//					SslSecretId:  pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Port:         pulumi.Any(monitoredResourceDatabaseConnectionDetailsPort),
+//					Protocol:     pulumi.Any(monitoredResourceDatabaseConnectionDetailsProtocol),
+//					ServiceName:  pulumi.Any(monitoredResourceDatabaseServiceName),
+//					ConnectorId:  pulumi.Any(monitoredResourceDatabaseConnectorId),
+//					DbId:         pulumi.Any(monitoredResourceDatabaseId),
+//					DbUniqueName: pulumi.Any(monitoredResourceDatabaseConnectionDetailsDbUniqueName),
+//					SslSecretId:  pulumi.Any(testSecret.Id),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName:        pulumi.Any(_var.Monitored_resource_display_name),
-//				ExternalResourceId: pulumi.Any(_var.Monitored_resource_external_resource_id),
-//				ExternalId:         pulumi.Any(oci_stack_monitoring_external.Test_external.Id),
+//				DisplayName:        pulumi.Any(monitoredResourceDisplayName),
+//				ExternalResourceId: pulumi.Any(monitoredResourceExternalResourceId),
+//				ExternalId:         pulumi.Any(testExternal.Id),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				HostName:          pulumi.Any(_var.Monitored_resource_host_name),
-//				License:           pulumi.Any(_var.Monitored_resource_license),
-//				ManagementAgentId: pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
+//				HostName:          pulumi.Any(monitoredResourceHostName),
+//				License:           pulumi.Any(monitoredResourceLicense),
+//				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
 //				Properties: stackmonitoring.MonitoredResourcePropertyArray{
 //					&stackmonitoring.MonitoredResourcePropertyArgs{
-//						Name:  pulumi.Any(_var.Monitored_resource_properties_name),
-//						Value: pulumi.Any(_var.Monitored_resource_properties_value),
+//						Name:  pulumi.Any(monitoredResourcePropertiesName),
+//						Value: pulumi.Any(monitoredResourcePropertiesValue),
 //					},
 //				},
-//				ResourceTimeZone: pulumi.Any(_var.Monitored_resource_resource_time_zone),
+//				ResourceTimeZone: pulumi.Any(monitoredResourceResourceTimeZone),
 //			})
 //			if err != nil {
 //				return err

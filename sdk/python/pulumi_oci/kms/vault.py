@@ -514,21 +514,21 @@ class Vault(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vault = oci.kms.Vault("testVault",
-            compartment_id=var["compartment_id"],
-            display_name=var["vault_display_name"],
-            vault_type=var["vault_vault_type"],
+        test_vault = oci.kms.Vault("test_vault",
+            compartment_id=compartment_id,
+            display_name=vault_display_name,
+            vault_type=vault_vault_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             external_key_manager_metadata=oci.kms.VaultExternalKeyManagerMetadataArgs(
-                external_vault_endpoint_url=var["vault_external_key_manager_metadata_external_vault_endpoint_url"],
+                external_vault_endpoint_url=vault_external_key_manager_metadata_external_vault_endpoint_url,
                 oauth_metadata=oci.kms.VaultExternalKeyManagerMetadataOauthMetadataArgs(
-                    client_app_id=oci_kms_client_app["test_client_app"]["id"],
-                    client_app_secret=var["vault_external_key_manager_metadata_oauth_metadata_client_app_secret"],
-                    idcs_account_name_url=var["vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url"],
+                    client_app_id=test_client_app["id"],
+                    client_app_secret=vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
+                    idcs_account_name_url=vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
                 ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                private_endpoint_id=test_private_endpoint["id"],
             ),
             freeform_tags={
                 "Department": "Finance",
@@ -585,21 +585,21 @@ class Vault(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vault = oci.kms.Vault("testVault",
-            compartment_id=var["compartment_id"],
-            display_name=var["vault_display_name"],
-            vault_type=var["vault_vault_type"],
+        test_vault = oci.kms.Vault("test_vault",
+            compartment_id=compartment_id,
+            display_name=vault_display_name,
+            vault_type=vault_vault_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
             external_key_manager_metadata=oci.kms.VaultExternalKeyManagerMetadataArgs(
-                external_vault_endpoint_url=var["vault_external_key_manager_metadata_external_vault_endpoint_url"],
+                external_vault_endpoint_url=vault_external_key_manager_metadata_external_vault_endpoint_url,
                 oauth_metadata=oci.kms.VaultExternalKeyManagerMetadataOauthMetadataArgs(
-                    client_app_id=oci_kms_client_app["test_client_app"]["id"],
-                    client_app_secret=var["vault_external_key_manager_metadata_oauth_metadata_client_app_secret"],
-                    idcs_account_name_url=var["vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url"],
+                    client_app_id=test_client_app["id"],
+                    client_app_secret=vault_external_key_manager_metadata_oauth_metadata_client_app_secret,
+                    idcs_account_name_url=vault_external_key_manager_metadata_oauth_metadata_idcs_account_name_url,
                 ),
-                private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"],
+                private_endpoint_id=test_private_endpoint["id"],
             ),
             freeform_tags={
                 "Department": "Finance",

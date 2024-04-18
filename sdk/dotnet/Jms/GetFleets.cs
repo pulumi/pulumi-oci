@@ -31,11 +31,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleets = Oci.Jms.GetFleets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Fleet_display_name,
-        ///         DisplayNameContains = @var.Fleet_display_name_contains,
-        ///         Id = @var.Fleet_id,
-        ///         State = @var.Fleet_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fleetDisplayName,
+        ///         DisplayNameContains = fleetDisplayNameContains,
+        ///         Id = fleetId,
+        ///         State = fleetState,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleets = Oci.Jms.GetFleets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Fleet_display_name,
-        ///         DisplayNameContains = @var.Fleet_display_name_contains,
-        ///         Id = @var.Fleet_id,
-        ///         State = @var.Fleet_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = fleetDisplayName,
+        ///         DisplayNameContains = fleetDisplayNameContains,
+        ///         Id = fleetId,
+        ///         State = fleetState,
         ///     });
         /// 
         /// });

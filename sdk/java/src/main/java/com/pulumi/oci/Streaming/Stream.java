@@ -50,12 +50,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testStream = new Stream(&#34;testStream&#34;, StreamArgs.builder()        
- *             .partitions(var_.stream_partitions())
- *             .compartmentId(var_.compartment_id())
- *             .definedTags(var_.stream_defined_tags())
+ *             .name(streamName)
+ *             .partitions(streamPartitions)
+ *             .compartmentId(compartmentId)
+ *             .definedTags(streamDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .retentionInHours(var_.stream_retention_in_hours())
- *             .streamPoolId(oci_streaming_stream_pool.test_stream_pool().id())
+ *             .retentionInHours(streamRetentionInHours)
+ *             .streamPoolId(testStreamPool.id())
  *             .build());
  * 
  *     }

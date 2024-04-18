@@ -18,8 +18,8 @@ import * as utilities from "../utilities";
  *
  * const switchover = new oci.database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover", {
  *     operation: "switchover",
- *     autonomousContainerDatabaseId: data.oci_database_autonomous_container_database_dataguard_associations.dataguard_associations.autonomous_container_database_dataguard_associations[0].autonomous_container_database_id,
- *     autonomousContainerDatabaseDataguardAssociationId: data.oci_database_autonomous_container_database_dataguard_associations.dataguard_associations.autonomous_container_database_dataguard_associations[0].id,
+ *     autonomousContainerDatabaseId: dataguardAssociations.autonomousContainerDatabaseDataguardAssociations[0].autonomous_container_database_id,
+ *     autonomousContainerDatabaseDataguardAssociationId: dataguardAssociations.autonomousContainerDatabaseDataguardAssociations[0].id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

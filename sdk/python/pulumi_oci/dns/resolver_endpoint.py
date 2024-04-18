@@ -467,16 +467,17 @@ class ResolverEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_resolver_endpoint = oci.dns.ResolverEndpoint("testResolverEndpoint",
-            is_forwarding=var["resolver_endpoint_is_forwarding"],
-            is_listening=var["resolver_endpoint_is_listening"],
-            resolver_id=oci_dns_resolver["test_resolver"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_resolver_endpoint = oci.dns.ResolverEndpoint("test_resolver_endpoint",
+            is_forwarding=resolver_endpoint_is_forwarding,
+            is_listening=resolver_endpoint_is_listening,
+            name=resolver_endpoint_name,
+            resolver_id=test_resolver["id"],
+            subnet_id=test_subnet["id"],
             scope="PRIVATE",
-            endpoint_type=var["resolver_endpoint_endpoint_type"],
-            forwarding_address=var["resolver_endpoint_forwarding_address"],
-            listening_address=var["resolver_endpoint_listening_address"],
-            nsg_ids=var["resolver_endpoint_nsg_ids"])
+            endpoint_type=resolver_endpoint_endpoint_type,
+            forwarding_address=resolver_endpoint_forwarding_address,
+            listening_address=resolver_endpoint_listening_address,
+            nsg_ids=resolver_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -528,16 +529,17 @@ class ResolverEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_resolver_endpoint = oci.dns.ResolverEndpoint("testResolverEndpoint",
-            is_forwarding=var["resolver_endpoint_is_forwarding"],
-            is_listening=var["resolver_endpoint_is_listening"],
-            resolver_id=oci_dns_resolver["test_resolver"]["id"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_resolver_endpoint = oci.dns.ResolverEndpoint("test_resolver_endpoint",
+            is_forwarding=resolver_endpoint_is_forwarding,
+            is_listening=resolver_endpoint_is_listening,
+            name=resolver_endpoint_name,
+            resolver_id=test_resolver["id"],
+            subnet_id=test_subnet["id"],
             scope="PRIVATE",
-            endpoint_type=var["resolver_endpoint_endpoint_type"],
-            forwarding_address=var["resolver_endpoint_forwarding_address"],
-            listening_address=var["resolver_endpoint_listening_address"],
-            nsg_ids=var["resolver_endpoint_nsg_ids"])
+            endpoint_type=resolver_endpoint_endpoint_type,
+            forwarding_address=resolver_endpoint_forwarding_address,
+            listening_address=resolver_endpoint_listening_address,
+            nsg_ids=resolver_endpoint_nsg_ids)
         ```
         <!--End PulumiCodeChooser -->
 

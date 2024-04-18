@@ -25,10 +25,10 @@ namespace Pulumi.Oci.ServiceCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testServiceCatalog = new Oci.ServiceCatalog.Catalog("testServiceCatalog", new()
+    ///     var testServiceCatalog = new Oci.ServiceCatalog.Catalog("test_service_catalog", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Service_catalog_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = serviceCatalogDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },

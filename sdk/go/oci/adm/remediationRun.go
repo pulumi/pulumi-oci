@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Adm.NewRemediationRun(ctx, "testRemediationRun", &Adm.RemediationRunArgs{
-//				RemediationRecipeId: pulumi.Any(oci_adm_remediation_recipe.Test_remediation_recipe.Id),
+//			_, err := Adm.NewRemediationRun(ctx, "test_remediation_run", &Adm.RemediationRunArgs{
+//				RemediationRecipeId: pulumi.Any(testRemediationRecipe.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Remediation_run_display_name),
+//				DisplayName: pulumi.Any(remediationRunDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

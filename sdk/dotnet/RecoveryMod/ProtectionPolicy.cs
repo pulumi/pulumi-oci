@@ -25,11 +25,11 @@ namespace Pulumi.Oci.RecoveryMod
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProtectionPolicy = new Oci.RecoveryMod.ProtectionPolicy("testProtectionPolicy", new()
+    ///     var testProtectionPolicy = new Oci.RecoveryMod.ProtectionPolicy("test_protection_policy", new()
     ///     {
-    ///         BackupRetentionPeriodInDays = @var.Protection_policy_backup_retention_period_in_days,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Protection_policy_display_name,
+    ///         BackupRetentionPeriodInDays = protectionPolicyBackupRetentionPeriodInDays,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = protectionPolicyDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },

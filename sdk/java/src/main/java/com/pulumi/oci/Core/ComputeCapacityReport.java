@@ -52,15 +52,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testComputeCapacityReport = new ComputeCapacityReport(&#34;testComputeCapacityReport&#34;, ComputeCapacityReportArgs.builder()        
- *             .availabilityDomain(var_.compute_capacity_report_availability_domain())
- *             .compartmentId(var_.compartment_id())
+ *             .availabilityDomain(computeCapacityReportAvailabilityDomain)
+ *             .compartmentId(compartmentId)
  *             .shapeAvailabilities(ComputeCapacityReportShapeAvailabilityArgs.builder()
- *                 .instanceShape(var_.compute_capacity_report_shape_availabilities_instance_shape())
- *                 .faultDomain(var_.compute_capacity_report_shape_availabilities_fault_domain())
+ *                 .instanceShape(computeCapacityReportShapeAvailabilitiesInstanceShape)
+ *                 .faultDomain(computeCapacityReportShapeAvailabilitiesFaultDomain)
  *                 .instanceShapeConfig(ComputeCapacityReportShapeAvailabilityInstanceShapeConfigArgs.builder()
- *                     .memoryInGbs(var_.compute_capacity_report_shape_availabilities_instance_shape_config_memory_in_gbs())
- *                     .nvmes(var_.compute_capacity_report_shape_availabilities_instance_shape_config_nvmes())
- *                     .ocpus(var_.compute_capacity_report_shape_availabilities_instance_shape_config_ocpus())
+ *                     .memoryInGbs(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs)
+ *                     .nvmes(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes)
+ *                     .ocpus(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus)
  *                     .build())
  *                 .build())
  *             .build());

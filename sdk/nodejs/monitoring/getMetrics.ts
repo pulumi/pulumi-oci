@@ -27,13 +27,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMetrics = oci.Monitoring.getMetrics({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.metric_compartment_id_in_subtree,
- *     dimensionFilters: _var.metric_dimension_filters,
- *     groupBies: _var.metric_group_by,
- *     name: _var.metric_name,
- *     namespace: _var.metric_namespace,
- *     resourceGroup: _var.metric_resource_group,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
+ *     dimensionFilters: metricDimensionFilters,
+ *     groupBies: metricGroupBy,
+ *     name: metricName,
+ *     namespace: metricNamespace,
+ *     resourceGroup: metricResourceGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -144,13 +144,13 @@ export interface GetMetricsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMetrics = oci.Monitoring.getMetrics({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.metric_compartment_id_in_subtree,
- *     dimensionFilters: _var.metric_dimension_filters,
- *     groupBies: _var.metric_group_by,
- *     name: _var.metric_name,
- *     namespace: _var.metric_namespace,
- *     resourceGroup: _var.metric_resource_group,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: metricCompartmentIdInSubtree,
+ *     dimensionFilters: metricDimensionFilters,
+ *     groupBies: metricGroupBy,
+ *     name: metricName,
+ *     namespace: metricNamespace,
+ *     resourceGroup: metricResourceGroup,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

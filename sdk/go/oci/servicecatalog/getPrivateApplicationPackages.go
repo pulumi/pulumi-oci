@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceCatalog.GetPrivateApplicationPackages(ctx, &servicecatalog.GetPrivateApplicationPackagesArgs{
-//				PrivateApplicationId:        oci_service_catalog_private_application.Test_private_application.Id,
-//				DisplayName:                 pulumi.StringRef(_var.Private_application_package_display_name),
-//				PackageTypes:                _var.Private_application_package_package_type,
-//				PrivateApplicationPackageId: pulumi.StringRef(oci_service_catalog_private_application_package.Test_private_application_package.Id),
+//				PrivateApplicationId:        testPrivateApplication.Id,
+//				DisplayName:                 pulumi.StringRef(privateApplicationPackageDisplayName),
+//				PackageTypes:                privateApplicationPackagePackageType,
+//				PrivateApplicationPackageId: pulumi.StringRef(testPrivateApplicationPackage.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

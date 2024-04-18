@@ -435,19 +435,20 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser",
-            compartment_id=var["compartment_id"],
-            connection_password=var["operations_insights_warehouse_user_connection_password"],
-            is_awr_data_access=var["operations_insights_warehouse_user_is_awr_data_access"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user",
+            compartment_id=compartment_id,
+            connection_password=operations_insights_warehouse_user_connection_password,
+            is_awr_data_access=operations_insights_warehouse_user_is_awr_data_access,
+            name=operations_insights_warehouse_user_name,
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
-            is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
+            is_em_data_access=operations_insights_warehouse_user_is_em_data_access,
+            is_opsi_data_access=operations_insights_warehouse_user_is_opsi_data_access)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -494,19 +495,20 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser",
-            compartment_id=var["compartment_id"],
-            connection_password=var["operations_insights_warehouse_user_connection_password"],
-            is_awr_data_access=var["operations_insights_warehouse_user_is_awr_data_access"],
-            operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
+        test_operations_insights_warehouse_user = oci.opsi.OperationsInsightsWarehouseUser("test_operations_insights_warehouse_user",
+            compartment_id=compartment_id,
+            connection_password=operations_insights_warehouse_user_connection_password,
+            is_awr_data_access=operations_insights_warehouse_user_is_awr_data_access,
+            name=operations_insights_warehouse_user_name,
+            operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
-            is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
+            is_em_data_access=operations_insights_warehouse_user_is_em_data_access,
+            is_opsi_data_access=operations_insights_warehouse_user_is_opsi_data_access)
         ```
         <!--End PulumiCodeChooser -->
 

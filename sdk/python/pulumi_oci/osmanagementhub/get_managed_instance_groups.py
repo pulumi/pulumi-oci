@@ -177,14 +177,14 @@ def get_managed_instance_groups(arch_type: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=var["managed_instance_group_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_display_name"],
-        display_name_contains=var["managed_instance_group_display_name_contains"],
-        managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        os_family=var["managed_instance_group_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        state=var["managed_instance_group_state"])
+    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
+        compartment_id=compartment_id,
+        display_names=managed_instance_group_display_name,
+        display_name_contains=managed_instance_group_display_name_contains,
+        managed_instance_group_id=test_managed_instance_group["id"],
+        os_family=managed_instance_group_os_family,
+        software_source_id=test_software_source["id"],
+        state=managed_instance_group_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -249,14 +249,14 @@ def get_managed_instance_groups_output(arch_type: Optional[pulumi.Input[Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=var["managed_instance_group_arch_type"],
-        compartment_id=var["compartment_id"],
-        display_names=var["managed_instance_group_display_name"],
-        display_name_contains=var["managed_instance_group_display_name_contains"],
-        managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-        os_family=var["managed_instance_group_os_family"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        state=var["managed_instance_group_state"])
+    test_managed_instance_groups = oci.OsManagementHub.get_managed_instance_groups(arch_type=managed_instance_group_arch_type,
+        compartment_id=compartment_id,
+        display_names=managed_instance_group_display_name,
+        display_name_contains=managed_instance_group_display_name_contains,
+        managed_instance_group_id=test_managed_instance_group["id"],
+        os_family=managed_instance_group_os_family,
+        software_source_id=test_software_source["id"],
+        state=managed_instance_group_state)
     ```
     <!--End PulumiCodeChooser -->
 

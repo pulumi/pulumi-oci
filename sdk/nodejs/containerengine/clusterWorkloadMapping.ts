@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterWorkloadMapping = new oci.containerengine.ClusterWorkloadMapping("testClusterWorkloadMapping", {
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     mappedCompartmentId: oci_identity_compartment.test_compartment.id,
- *     namespace: _var.cluster_workload_mapping_namespace,
+ * const testClusterWorkloadMapping = new oci.containerengine.ClusterWorkloadMapping("test_cluster_workload_mapping", {
+ *     clusterId: testCluster.id,
+ *     mappedCompartmentId: testCompartment.id,
+ *     namespace: clusterWorkloadMappingNamespace,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },

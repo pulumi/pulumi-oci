@@ -51,18 +51,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWorkspaceImportRequest = new WorkspaceImportRequest(&#34;testWorkspaceImportRequest&#34;, WorkspaceImportRequestArgs.builder()        
- *             .bucket(var_.workspace_import_request_bucket())
- *             .fileName(var_.workspace_import_request_file_name())
- *             .workspaceId(oci_dataintegration_workspace.test_workspace().id())
- *             .areDataAssetReferencesIncluded(var_.workspace_import_request_are_data_asset_references_included())
+ *             .bucket(workspaceImportRequestBucket)
+ *             .fileName(workspaceImportRequestFileName)
+ *             .workspaceId(testWorkspace.id())
+ *             .areDataAssetReferencesIncluded(workspaceImportRequestAreDataAssetReferencesIncluded)
  *             .importConflictResolution(WorkspaceImportRequestImportConflictResolutionArgs.builder()
- *                 .importConflictResolutionType(var_.workspace_import_request_import_conflict_resolution_import_conflict_resolution_type())
- *                 .duplicatePrefix(var_.workspace_import_request_import_conflict_resolution_duplicate_prefix())
- *                 .duplicateSuffix(var_.workspace_import_request_import_conflict_resolution_duplicate_suffix())
+ *                 .importConflictResolutionType(workspaceImportRequestImportConflictResolutionImportConflictResolutionType)
+ *                 .duplicatePrefix(workspaceImportRequestImportConflictResolutionDuplicatePrefix)
+ *                 .duplicateSuffix(workspaceImportRequestImportConflictResolutionDuplicateSuffix)
  *                 .build())
- *             .objectKeyForImport(var_.workspace_import_request_object_key_for_import())
- *             .objectStorageRegion(var_.workspace_import_request_object_storage_region())
- *             .objectStorageTenancyId(oci_identity_tenancy.test_tenancy().id())
+ *             .objectKeyForImport(workspaceImportRequestObjectKeyForImport)
+ *             .objectStorageRegion(workspaceImportRequestObjectStorageRegion)
+ *             .objectStorageTenancyId(testTenancy.id())
  *             .build());
  * 
  *     }

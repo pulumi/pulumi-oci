@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPurgeCache = new PurgeCache(&#34;testPurgeCache&#34;, PurgeCacheArgs.builder()        
- *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
- *             .resources(var_.purge_cache_resources())
+ *             .waasPolicyId(testWaasPolicy.id())
+ *             .resources(purgeCacheResources)
  *             .build());
  * 
  *     }

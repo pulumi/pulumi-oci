@@ -259,7 +259,7 @@ def get_audit_archive_retrieval(audit_archive_retrieval_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"])
+    test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=test_audit_archive_retrieval_oci_data_safe_audit_archive_retrieval["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -307,7 +307,7 @@ def get_audit_archive_retrieval_output(audit_archive_retrieval_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=oci_data_safe_audit_archive_retrieval["test_audit_archive_retrieval"]["id"])
+    test_audit_archive_retrieval = oci.DataSafe.get_audit_archive_retrieval(audit_archive_retrieval_id=test_audit_archive_retrieval_oci_data_safe_audit_archive_retrieval["id"])
     ```
     <!--End PulumiCodeChooser -->
 

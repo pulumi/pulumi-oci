@@ -13,7 +13,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStackTfState = oci.ResourceManager.getStackTfState({
- *     stackId: oci_resourcemanager_stack.test_stack.id,
+ *     stackId: testStack.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -58,7 +58,7 @@ export interface GetStackTfStateResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStackTfState = oci.ResourceManager.getStackTfState({
- *     stackId: oci_resourcemanager_stack.test_stack.id,
+ *     stackId: testStack.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

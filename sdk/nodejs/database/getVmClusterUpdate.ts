@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterUpdate = oci.Database.getVmClusterUpdate({
- *     updateId: oci_database_update.test_update.id,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     updateId: testUpdate.id,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,8 +102,8 @@ export interface GetVmClusterUpdateResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterUpdate = oci.Database.getVmClusterUpdate({
- *     updateId: oci_database_update.test_update.id,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     updateId: testUpdate.id,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

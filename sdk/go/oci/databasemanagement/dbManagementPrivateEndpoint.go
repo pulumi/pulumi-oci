@@ -31,18 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewDbManagementPrivateEndpoint(ctx, "testDbManagementPrivateEndpoint", &DatabaseManagement.DbManagementPrivateEndpointArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := DatabaseManagement.NewDbManagementPrivateEndpoint(ctx, "test_db_management_private_endpoint", &DatabaseManagement.DbManagementPrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(dbManagementPrivateEndpointName),
+//				SubnetId:      pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Db_management_private_endpoint_description),
+//				Description: pulumi.Any(dbManagementPrivateEndpointDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsCluster: pulumi.Any(_var.Db_management_private_endpoint_is_cluster),
-//				NsgIds:    pulumi.Any(_var.Db_management_private_endpoint_nsg_ids),
+//				IsCluster: pulumi.Any(dbManagementPrivateEndpointIsCluster),
+//				NsgIds:    pulumi.Any(dbManagementPrivateEndpointNsgIds),
 //			})
 //			if err != nil {
 //				return err

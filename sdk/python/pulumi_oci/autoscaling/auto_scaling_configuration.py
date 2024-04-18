@@ -364,54 +364,54 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_auto_scaling_configuration = oci.autoscaling.AutoScalingConfiguration("testAutoScalingConfiguration",
+        test_auto_scaling_configuration = oci.autoscaling.AutoScalingConfiguration("test_auto_scaling_configuration",
             auto_scaling_resources=oci.autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs(
-                id=var["auto_scaling_configuration_auto_scaling_resources_id"],
-                type=var["auto_scaling_configuration_auto_scaling_resources_type"],
+                id=auto_scaling_configuration_auto_scaling_resources_id,
+                type=auto_scaling_configuration_auto_scaling_resources_type,
             ),
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             policies=[oci.autoscaling.AutoScalingConfigurationPolicyArgs(
-                policy_type=var["auto_scaling_configuration_policies_policy_type"],
+                policy_type=auto_scaling_configuration_policies_policy_type,
                 capacity=oci.autoscaling.AutoScalingConfigurationPolicyCapacityArgs(
-                    initial=var["auto_scaling_configuration_policies_capacity_initial"],
-                    max=var["auto_scaling_configuration_policies_capacity_max"],
-                    min=var["auto_scaling_configuration_policies_capacity_min"],
+                    initial=auto_scaling_configuration_policies_capacity_initial,
+                    max=auto_scaling_configuration_policies_capacity_max,
+                    min=auto_scaling_configuration_policies_capacity_min,
                 ),
-                display_name=var["auto_scaling_configuration_policies_display_name"],
+                display_name=auto_scaling_configuration_policies_display_name,
                 execution_schedule=oci.autoscaling.AutoScalingConfigurationPolicyExecutionScheduleArgs(
-                    expression=var["auto_scaling_configuration_policies_execution_schedule_expression"],
-                    timezone=var["auto_scaling_configuration_policies_execution_schedule_timezone"],
-                    type=var["auto_scaling_configuration_policies_execution_schedule_type"],
+                    expression=auto_scaling_configuration_policies_execution_schedule_expression,
+                    timezone=auto_scaling_configuration_policies_execution_schedule_timezone,
+                    type=auto_scaling_configuration_policies_execution_schedule_type,
                 ),
-                is_enabled=var["auto_scaling_configuration_policies_is_enabled"],
+                is_enabled=auto_scaling_configuration_policies_is_enabled,
                 resource_action=oci.autoscaling.AutoScalingConfigurationPolicyResourceActionArgs(
-                    action=var["auto_scaling_configuration_policies_resource_action_action"],
-                    action_type=var["auto_scaling_configuration_policies_resource_action_action_type"],
+                    action=auto_scaling_configuration_policies_resource_action_action,
+                    action_type=auto_scaling_configuration_policies_resource_action_action_type,
                 ),
                 rules=[oci.autoscaling.AutoScalingConfigurationPolicyRuleArgs(
                     action=oci.autoscaling.AutoScalingConfigurationPolicyRuleActionArgs(
-                        type=var["auto_scaling_configuration_policies_rules_action_type"],
-                        value=var["auto_scaling_configuration_policies_rules_action_value"],
+                        type=auto_scaling_configuration_policies_rules_action_type,
+                        value=auto_scaling_configuration_policies_rules_action_value,
                     ),
-                    display_name=var["auto_scaling_configuration_policies_rules_display_name"],
+                    display_name=auto_scaling_configuration_policies_rules_display_name,
                     metric=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policies_rules_metric_metric_type"],
+                        metric_type=auto_scaling_configuration_policies_rules_metric_metric_type,
                         threshold=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs(
-                            operator=var["auto_scaling_configuration_policies_rules_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policies_rules_metric_threshold_value"],
+                            operator=auto_scaling_configuration_policies_rules_metric_threshold_operator,
+                            value=auto_scaling_configuration_policies_rules_metric_threshold_value,
                         ),
                     ),
                 )],
             )],
-            cool_down_in_seconds=var["auto_scaling_configuration_cool_down_in_seconds"],
+            cool_down_in_seconds=auto_scaling_configuration_cool_down_in_seconds,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["auto_scaling_configuration_display_name"],
+            display_name=auto_scaling_configuration_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=var["auto_scaling_configuration_is_enabled"])
+            is_enabled=auto_scaling_configuration_is_enabled)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -455,54 +455,54 @@ class AutoScalingConfiguration(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_auto_scaling_configuration = oci.autoscaling.AutoScalingConfiguration("testAutoScalingConfiguration",
+        test_auto_scaling_configuration = oci.autoscaling.AutoScalingConfiguration("test_auto_scaling_configuration",
             auto_scaling_resources=oci.autoscaling.AutoScalingConfigurationAutoScalingResourcesArgs(
-                id=var["auto_scaling_configuration_auto_scaling_resources_id"],
-                type=var["auto_scaling_configuration_auto_scaling_resources_type"],
+                id=auto_scaling_configuration_auto_scaling_resources_id,
+                type=auto_scaling_configuration_auto_scaling_resources_type,
             ),
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             policies=[oci.autoscaling.AutoScalingConfigurationPolicyArgs(
-                policy_type=var["auto_scaling_configuration_policies_policy_type"],
+                policy_type=auto_scaling_configuration_policies_policy_type,
                 capacity=oci.autoscaling.AutoScalingConfigurationPolicyCapacityArgs(
-                    initial=var["auto_scaling_configuration_policies_capacity_initial"],
-                    max=var["auto_scaling_configuration_policies_capacity_max"],
-                    min=var["auto_scaling_configuration_policies_capacity_min"],
+                    initial=auto_scaling_configuration_policies_capacity_initial,
+                    max=auto_scaling_configuration_policies_capacity_max,
+                    min=auto_scaling_configuration_policies_capacity_min,
                 ),
-                display_name=var["auto_scaling_configuration_policies_display_name"],
+                display_name=auto_scaling_configuration_policies_display_name,
                 execution_schedule=oci.autoscaling.AutoScalingConfigurationPolicyExecutionScheduleArgs(
-                    expression=var["auto_scaling_configuration_policies_execution_schedule_expression"],
-                    timezone=var["auto_scaling_configuration_policies_execution_schedule_timezone"],
-                    type=var["auto_scaling_configuration_policies_execution_schedule_type"],
+                    expression=auto_scaling_configuration_policies_execution_schedule_expression,
+                    timezone=auto_scaling_configuration_policies_execution_schedule_timezone,
+                    type=auto_scaling_configuration_policies_execution_schedule_type,
                 ),
-                is_enabled=var["auto_scaling_configuration_policies_is_enabled"],
+                is_enabled=auto_scaling_configuration_policies_is_enabled,
                 resource_action=oci.autoscaling.AutoScalingConfigurationPolicyResourceActionArgs(
-                    action=var["auto_scaling_configuration_policies_resource_action_action"],
-                    action_type=var["auto_scaling_configuration_policies_resource_action_action_type"],
+                    action=auto_scaling_configuration_policies_resource_action_action,
+                    action_type=auto_scaling_configuration_policies_resource_action_action_type,
                 ),
                 rules=[oci.autoscaling.AutoScalingConfigurationPolicyRuleArgs(
                     action=oci.autoscaling.AutoScalingConfigurationPolicyRuleActionArgs(
-                        type=var["auto_scaling_configuration_policies_rules_action_type"],
-                        value=var["auto_scaling_configuration_policies_rules_action_value"],
+                        type=auto_scaling_configuration_policies_rules_action_type,
+                        value=auto_scaling_configuration_policies_rules_action_value,
                     ),
-                    display_name=var["auto_scaling_configuration_policies_rules_display_name"],
+                    display_name=auto_scaling_configuration_policies_rules_display_name,
                     metric=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs(
-                        metric_type=var["auto_scaling_configuration_policies_rules_metric_metric_type"],
+                        metric_type=auto_scaling_configuration_policies_rules_metric_metric_type,
                         threshold=oci.autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs(
-                            operator=var["auto_scaling_configuration_policies_rules_metric_threshold_operator"],
-                            value=var["auto_scaling_configuration_policies_rules_metric_threshold_value"],
+                            operator=auto_scaling_configuration_policies_rules_metric_threshold_operator,
+                            value=auto_scaling_configuration_policies_rules_metric_threshold_value,
                         ),
                     ),
                 )],
             )],
-            cool_down_in_seconds=var["auto_scaling_configuration_cool_down_in_seconds"],
+            cool_down_in_seconds=auto_scaling_configuration_cool_down_in_seconds,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["auto_scaling_configuration_display_name"],
+            display_name=auto_scaling_configuration_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enabled=var["auto_scaling_configuration_is_enabled"])
+            is_enabled=auto_scaling_configuration_is_enabled)
         ```
         <!--End PulumiCodeChooser -->
 

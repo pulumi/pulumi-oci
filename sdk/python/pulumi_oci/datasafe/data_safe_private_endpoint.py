@@ -434,20 +434,20 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_safe_private_endpoint = oci.data_safe.DataSafePrivateEndpoint("testDataSafePrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["data_safe_private_endpoint_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_data_safe_private_endpoint = oci.data_safe.DataSafePrivateEndpoint("test_data_safe_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=data_safe_private_endpoint_display_name,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["data_safe_private_endpoint_description"],
+            description=data_safe_private_endpoint_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            nsg_ids=var["data_safe_private_endpoint_nsg_ids"],
-            private_endpoint_ip=var["data_safe_private_endpoint_private_endpoint_ip"])
+            nsg_ids=data_safe_private_endpoint_nsg_ids,
+            private_endpoint_ip=data_safe_private_endpoint_private_endpoint_ip)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -493,20 +493,20 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_safe_private_endpoint = oci.data_safe.DataSafePrivateEndpoint("testDataSafePrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            display_name=var["data_safe_private_endpoint_display_name"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_data_safe_private_endpoint = oci.data_safe.DataSafePrivateEndpoint("test_data_safe_private_endpoint",
+            compartment_id=compartment_id,
+            display_name=data_safe_private_endpoint_display_name,
+            subnet_id=test_subnet["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["data_safe_private_endpoint_description"],
+            description=data_safe_private_endpoint_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            nsg_ids=var["data_safe_private_endpoint_nsg_ids"],
-            private_endpoint_ip=var["data_safe_private_endpoint_private_endpoint_ip"])
+            nsg_ids=data_safe_private_endpoint_nsg_ids,
+            private_endpoint_ip=data_safe_private_endpoint_private_endpoint_ip)
         ```
         <!--End PulumiCodeChooser -->
 

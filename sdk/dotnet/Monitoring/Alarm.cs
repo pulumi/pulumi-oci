@@ -33,20 +33,20 @@ namespace Pulumi.Oci.Monitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAlarm = new Oci.Monitoring.Alarm("testAlarm", new()
+    ///     var testAlarm = new Oci.Monitoring.Alarm("test_alarm", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         Destinations = new[]
     ///         {
-    ///             oci_ons_notification_topic.Test_notification_topic.Id,
+    ///             testNotificationTopic.Id,
     ///         },
-    ///         DisplayName = @var.Alarm_display_name,
-    ///         IsEnabled = @var.Alarm_is_enabled,
-    ///         MetricCompartmentId = @var.Alarm_metric_compartment_id,
-    ///         Namespace = @var.Alarm_namespace,
-    ///         Query = @var.Alarm_query,
-    ///         Severity = @var.Alarm_severity,
-    ///         Body = @var.Alarm_body,
+    ///         DisplayName = alarmDisplayName,
+    ///         IsEnabled = alarmIsEnabled,
+    ///         MetricCompartmentId = alarmMetricCompartmentId,
+    ///         Namespace = alarmNamespace,
+    ///         Query = alarmQuery,
+    ///         Severity = alarmSeverity,
+    ///         Body = alarmBody,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -55,31 +55,31 @@ namespace Pulumi.Oci.Monitoring
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsNotificationsPerMetricDimensionEnabled = @var.Alarm_is_notifications_per_metric_dimension_enabled,
-    ///         MessageFormat = @var.Alarm_message_format,
-    ///         MetricCompartmentIdInSubtree = @var.Alarm_metric_compartment_id_in_subtree,
-    ///         NotificationVersion = @var.Alarm_notification_version,
+    ///         IsNotificationsPerMetricDimensionEnabled = alarmIsNotificationsPerMetricDimensionEnabled,
+    ///         MessageFormat = alarmMessageFormat,
+    ///         MetricCompartmentIdInSubtree = alarmMetricCompartmentIdInSubtree,
+    ///         NotificationVersion = alarmNotificationVersion,
     ///         Overrides = new[]
     ///         {
     ///             new Oci.Monitoring.Inputs.AlarmOverrideArgs
     ///             {
-    ///                 Body = @var.Alarm_overrides_body,
-    ///                 PendingDuration = @var.Alarm_overrides_pending_duration,
-    ///                 Query = @var.Alarm_overrides_query,
-    ///                 RuleName = oci_events_rule.Test_rule.Name,
-    ///                 Severity = @var.Alarm_overrides_severity,
+    ///                 Body = alarmOverridesBody,
+    ///                 PendingDuration = alarmOverridesPendingDuration,
+    ///                 Query = alarmOverridesQuery,
+    ///                 RuleName = testRule.Name,
+    ///                 Severity = alarmOverridesSeverity,
     ///             },
     ///         },
-    ///         PendingDuration = @var.Alarm_pending_duration,
-    ///         RepeatNotificationDuration = @var.Alarm_repeat_notification_duration,
-    ///         Resolution = @var.Alarm_resolution,
-    ///         ResourceGroup = @var.Alarm_resource_group,
-    ///         RuleName = oci_events_rule.Test_rule.Name,
+    ///         PendingDuration = alarmPendingDuration,
+    ///         RepeatNotificationDuration = alarmRepeatNotificationDuration,
+    ///         Resolution = alarmResolution,
+    ///         ResourceGroup = alarmResourceGroup,
+    ///         RuleName = testRule.Name,
     ///         Suppression = new Oci.Monitoring.Inputs.AlarmSuppressionArgs
     ///         {
-    ///             TimeSuppressFrom = @var.Alarm_suppression_time_suppress_from,
-    ///             TimeSuppressUntil = @var.Alarm_suppression_time_suppress_until,
-    ///             Description = @var.Alarm_suppression_description,
+    ///             TimeSuppressFrom = alarmSuppressionTimeSuppressFrom,
+    ///             TimeSuppressUntil = alarmSuppressionTimeSuppressUntil,
+    ///             Description = alarmSuppressionDescription,
     ///         },
     ///     });
     /// 

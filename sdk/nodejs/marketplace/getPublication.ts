@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPublication = oci.Marketplace.getPublication({
- *     publicationId: oci_marketplace_publication.test_publication.id,
+ *     publicationId: testPublicationOciMarketplacePublication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,7 +123,7 @@ export interface GetPublicationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPublication = oci.Marketplace.getPublication({
- *     publicationId: oci_marketplace_publication.test_publication.id,
+ *     publicationId: testPublicationOciMarketplacePublication.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

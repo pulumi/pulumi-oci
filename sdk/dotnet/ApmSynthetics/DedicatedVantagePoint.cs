@@ -25,18 +25,18 @@ namespace Pulumi.Oci.ApmSynthetics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDedicatedVantagePoint = new Oci.ApmSynthetics.DedicatedVantagePoint("testDedicatedVantagePoint", new()
+    ///     var testDedicatedVantagePoint = new Oci.ApmSynthetics.DedicatedVantagePoint("test_dedicated_vantage_point", new()
     ///     {
-    ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-    ///         DisplayName = @var.Dedicated_vantage_point_display_name,
+    ///         ApmDomainId = testApmDomain.Id,
+    ///         DisplayName = dedicatedVantagePointDisplayName,
     ///         DvpStackDetails = new Oci.ApmSynthetics.Inputs.DedicatedVantagePointDvpStackDetailsArgs
     ///         {
-    ///             DvpStackId = oci_resourcemanager_stack.Test_stack.Id,
-    ///             DvpStackType = @var.Dedicated_vantage_point_dvp_stack_details_dvp_stack_type,
-    ///             DvpStreamId = oci_streaming_stream.Test_stream.Id,
-    ///             DvpVersion = @var.Dedicated_vantage_point_dvp_stack_details_dvp_version,
+    ///             DvpStackId = testStack.Id,
+    ///             DvpStackType = dedicatedVantagePointDvpStackDetailsDvpStackType,
+    ///             DvpStreamId = testStream.Id,
+    ///             DvpVersion = dedicatedVantagePointDvpStackDetailsDvpVersion,
     ///         },
-    ///         Region = @var.Dedicated_vantage_point_region,
+    ///         Region = dedicatedVantagePointRegion,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Status = @var.Dedicated_vantage_point_status,
+    ///         Status = dedicatedVantagePointStatus,
     ///     });
     /// 
     /// });

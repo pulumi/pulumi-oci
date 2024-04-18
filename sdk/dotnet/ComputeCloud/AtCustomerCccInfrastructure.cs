@@ -26,19 +26,19 @@ namespace Pulumi.Oci.ComputeCloud
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCccInfrastructure = new Oci.ComputeCloud.AtCustomerCccInfrastructure("testCccInfrastructure", new()
+    ///     var testCccInfrastructure = new Oci.ComputeCloud.AtCustomerCccInfrastructure("test_ccc_infrastructure", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Ccc_infrastructure_display_name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         CccUpgradeScheduleId = oci_compute_cloud_at_customer_ccc_upgrade_schedule.Test_ccc_upgrade_schedule.Id,
-    ///         ConnectionDetails = @var.Ccc_infrastructure_connection_details,
-    ///         ConnectionState = @var.Ccc_infrastructure_connection_state,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = cccInfrastructureDisplayName,
+    ///         SubnetId = testSubnet.Id,
+    ///         CccUpgradeScheduleId = testCccUpgradeSchedule.Id,
+    ///         ConnectionDetails = cccInfrastructureConnectionDetails,
+    ///         ConnectionState = cccInfrastructureConnectionState,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Ccc_infrastructure_description,
+    ///         Description = cccInfrastructureDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

@@ -29,11 +29,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseSaasAdminUser(ctx, "testAutonomousDatabaseSaasAdminUser", &Database.AutonomousDatabaseSaasAdminUserArgs{
-//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-//				Password:             pulumi.Any(_var.Autonomous_database_saas_admin_user_password),
-//				AccessType:           pulumi.Any(_var.Autonomous_database_saas_admin_user_access_type),
-//				Duration:             pulumi.Any(_var.Autonomous_database_saas_admin_user_duration),
+//			_, err := Database.NewAutonomousDatabaseSaasAdminUser(ctx, "test_autonomous_database_saas_admin_user", &Database.AutonomousDatabaseSaasAdminUserArgs{
+//				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
+//				Password:             pulumi.Any(autonomousDatabaseSaasAdminUserPassword),
+//				AccessType:           pulumi.Any(autonomousDatabaseSaasAdminUserAccessType),
+//				Duration:             pulumi.Any(autonomousDatabaseSaasAdminUserDuration),
 //			})
 //			if err != nil {
 //				return err

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLifecycleEnvironment = oci.OsManagementHub.getLifecycleEnvironment({
- *     lifecycleEnvironmentId: oci_os_management_hub_lifecycle_environment.test_lifecycle_environment.id,
+ *     lifecycleEnvironmentId: testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,7 +124,7 @@ export interface GetLifecycleEnvironmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLifecycleEnvironment = oci.OsManagementHub.getLifecycleEnvironment({
- *     lifecycleEnvironmentId: oci_os_management_hub_lifecycle_environment.test_lifecycle_environment.id,
+ *     lifecycleEnvironmentId: testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

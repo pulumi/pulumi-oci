@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFusionEnvironmentDataMaskingActivity = new FusionEnvironmentDataMaskingActivity(&#34;testFusionEnvironmentDataMaskingActivity&#34;, FusionEnvironmentDataMaskingActivityArgs.builder()        
- *             .fusionEnvironmentId(oci_fusion_apps_fusion_environment.test_fusion_environment().id())
- *             .isResumeDataMasking(var_.fusion_environment_data_masking_activity_is_resume_data_masking())
+ *             .fusionEnvironmentId(testFusionEnvironment.id())
+ *             .isResumeDataMasking(fusionEnvironmentDataMaskingActivityIsResumeDataMasking)
  *             .build());
  * 
  *     }

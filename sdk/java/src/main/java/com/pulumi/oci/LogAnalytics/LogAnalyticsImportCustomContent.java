@@ -46,10 +46,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLogAnalyticsImportCustomContent = new LogAnalyticsImportCustomContent(&#34;testLogAnalyticsImportCustomContent&#34;, LogAnalyticsImportCustomContentArgs.builder()        
- *             .importCustomContentFile(var_.log_analytics_import_custom_content_import_custom_content_file())
- *             .namespace(var_.log_analytics_import_custom_content_namespace())
- *             .expect(var_.log_analytics_import_custom_content_expect())
- *             .isOverwrite(var_.log_analytics_import_custom_content_is_overwrite())
+ *             .importCustomContentFile(logAnalyticsImportCustomContentImportCustomContentFile)
+ *             .namespace(logAnalyticsImportCustomContentNamespace)
+ *             .expect(logAnalyticsImportCustomContentExpect)
+ *             .isOverwrite(logAnalyticsImportCustomContentIsOverwrite)
  *             .build());
  * 
  *     }

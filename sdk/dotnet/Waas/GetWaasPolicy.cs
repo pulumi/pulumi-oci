@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testWaasPolicy = Oci.Waas.GetWaasPolicy.Invoke(new()
         ///     {
-        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+        ///         WaasPolicyId = testWaasPolicyOciWaasWaasPolicy.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testWaasPolicy = Oci.Waas.GetWaasPolicy.Invoke(new()
         ///     {
-        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
+        ///         WaasPolicyId = testWaasPolicyOciWaasWaasPolicy.Id,
         ///     });
         /// 
         /// });

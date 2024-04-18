@@ -25,10 +25,10 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConnectionAssignment = new Oci.GoldenGate.ConnectionAssignment("testConnectionAssignment", new()
+    ///     var testConnectionAssignment = new Oci.GoldenGate.ConnectionAssignment("test_connection_assignment", new()
     ///     {
-    ///         ConnectionId = oci_golden_gate_connection.Test_connection.Id,
-    ///         DeploymentId = oci_golden_gate_deployment.Test_deployment.Id,
+    ///         ConnectionId = testConnection.Id,
+    ///         DeploymentId = testDeployment.Id,
     ///     });
     /// 
     /// });

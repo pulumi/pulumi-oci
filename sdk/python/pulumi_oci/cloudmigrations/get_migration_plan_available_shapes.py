@@ -134,11 +134,11 @@ def get_migration_plan_available_shapes(availability_domain: Optional[str] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shapes = oci.CloudMigrations.get_migration_plan_available_shapes(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        availability_domain=var["migration_plan_available_shape_availability_domain"],
-        compartment_id=var["compartment_id"],
-        dvh_host_id=oci_cloud_migrations_dvh_host["test_dvh_host"]["id"],
-        reserved_capacity_id=oci_cloud_migrations_reserved_capacity["test_reserved_capacity"]["id"])
+    test_migration_plan_available_shapes = oci.CloudMigrations.get_migration_plan_available_shapes(migration_plan_id=test_migration_plan["id"],
+        availability_domain=migration_plan_available_shape_availability_domain,
+        compartment_id=compartment_id,
+        dvh_host_id=test_dvh_host["id"],
+        reserved_capacity_id=test_reserved_capacity["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -190,11 +190,11 @@ def get_migration_plan_available_shapes_output(availability_domain: Optional[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_plan_available_shapes = oci.CloudMigrations.get_migration_plan_available_shapes(migration_plan_id=oci_cloud_migrations_migration_plan["test_migration_plan"]["id"],
-        availability_domain=var["migration_plan_available_shape_availability_domain"],
-        compartment_id=var["compartment_id"],
-        dvh_host_id=oci_cloud_migrations_dvh_host["test_dvh_host"]["id"],
-        reserved_capacity_id=oci_cloud_migrations_reserved_capacity["test_reserved_capacity"]["id"])
+    test_migration_plan_available_shapes = oci.CloudMigrations.get_migration_plan_available_shapes(migration_plan_id=test_migration_plan["id"],
+        availability_domain=migration_plan_available_shape_availability_domain,
+        compartment_id=compartment_id,
+        dvh_host_id=test_dvh_host["id"],
+        reserved_capacity_id=test_reserved_capacity["id"])
     ```
     <!--End PulumiCodeChooser -->
 

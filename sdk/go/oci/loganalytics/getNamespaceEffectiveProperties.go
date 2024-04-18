@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetNamespaceEffectiveProperties(ctx, &loganalytics.GetNamespaceEffectivePropertiesArgs{
-//				Namespace:         _var.Namespace_effective_property_namespace,
-//				AgentId:           pulumi.StringRef(oci_cloud_bridge_agent.Test_agent.Id),
-//				EntityId:          pulumi.StringRef(oci_log_analytics_log_analytics_entity.Test_log_analytics_entity.Id),
-//				IsIncludePatterns: pulumi.BoolRef(_var.Namespace_effective_property_is_include_patterns),
-//				Name:              pulumi.StringRef(_var.Namespace_effective_property_name),
-//				PatternId:         pulumi.IntRef(oci_log_analytics_pattern.Test_pattern.Id),
-//				SourceName:        pulumi.StringRef(_var.Namespace_effective_property_source_name),
+//				Namespace:         namespaceEffectivePropertyNamespace,
+//				AgentId:           pulumi.StringRef(testAgent.Id),
+//				EntityId:          pulumi.StringRef(testLogAnalyticsEntity.Id),
+//				IsIncludePatterns: pulumi.BoolRef(namespaceEffectivePropertyIsIncludePatterns),
+//				Name:              pulumi.StringRef(namespaceEffectivePropertyName),
+//				PatternId:         pulumi.IntRef(testPattern.Id),
+//				SourceName:        pulumi.StringRef(namespaceEffectivePropertySourceName),
 //			}, nil)
 //			if err != nil {
 //				return err

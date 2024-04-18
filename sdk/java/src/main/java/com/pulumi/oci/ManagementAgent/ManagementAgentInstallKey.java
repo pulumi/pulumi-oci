@@ -45,11 +45,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagementAgentInstallKey = new ManagementAgentInstallKey(&#34;testManagementAgentInstallKey&#34;, ManagementAgentInstallKeyArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.management_agent_install_key_display_name())
- *             .allowedKeyInstallCount(var_.management_agent_install_key_allowed_key_install_count())
- *             .isUnlimited(var_.management_agent_install_key_is_unlimited())
- *             .timeExpires(var_.management_agent_install_key_time_expires())
+ *             .compartmentId(compartmentId)
+ *             .displayName(managementAgentInstallKeyDisplayName)
+ *             .allowedKeyInstallCount(managementAgentInstallKeyAllowedKeyInstallCount)
+ *             .isUnlimited(managementAgentInstallKeyIsUnlimited)
+ *             .timeExpires(managementAgentInstallKeyTimeExpires)
  *             .build());
  * 
  *     }

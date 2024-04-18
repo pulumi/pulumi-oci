@@ -43,9 +43,10 @@ namespace Pulumi.Oci.Core
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Filter on Subnet OCID
         ///     var testPrivateIpsBySubnet = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         SubnetId = @var.Private_ip_subnet_id,
+        ///         SubnetId = privateIpSubnetId,
         ///     });
         /// 
         /// });
@@ -60,9 +61,10 @@ namespace Pulumi.Oci.Core
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Filter on VNIC OCID
         ///     var testPrivateIpsByVnic = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///         VnicId = testVnic.Id,
         ///     });
         /// 
         /// });
@@ -77,12 +79,13 @@ namespace Pulumi.Oci.Core
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Filter on private IP address and Subnet OCID
         ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         IpAddress = @var.Private_ip_ip_address,
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         VlanId = oci_core_vlan.Test_vlan.Id,
-        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///         IpAddress = privateIpIpAddress,
+        ///         SubnetId = testSubnet.Id,
+        ///         VlanId = testVlan.Id,
+        ///         VnicId = testVnicAttachment.Id,
         ///     });
         /// 
         /// });
@@ -124,9 +127,10 @@ namespace Pulumi.Oci.Core
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Filter on Subnet OCID
         ///     var testPrivateIpsBySubnet = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         SubnetId = @var.Private_ip_subnet_id,
+        ///         SubnetId = privateIpSubnetId,
         ///     });
         /// 
         /// });
@@ -141,9 +145,10 @@ namespace Pulumi.Oci.Core
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Filter on VNIC OCID
         ///     var testPrivateIpsByVnic = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///         VnicId = testVnic.Id,
         ///     });
         /// 
         /// });
@@ -158,12 +163,13 @@ namespace Pulumi.Oci.Core
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
+        ///     // Filter on private IP address and Subnet OCID
         ///     var testPrivateIpsByIpAddress = Oci.Core.GetPrivateIps.Invoke(new()
         ///     {
-        ///         IpAddress = @var.Private_ip_ip_address,
-        ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-        ///         VlanId = oci_core_vlan.Test_vlan.Id,
-        ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+        ///         IpAddress = privateIpIpAddress,
+        ///         SubnetId = testSubnet.Id,
+        ///         VlanId = testVlan.Id,
+        ///         VnicId = testVnicAttachment.Id,
         ///     });
         /// 
         /// });

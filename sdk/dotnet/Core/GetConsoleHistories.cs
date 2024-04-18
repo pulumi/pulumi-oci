@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testConsoleHistories = Oci.Core.GetConsoleHistories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Console_history_availability_domain,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
-        ///         State = @var.Console_history_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = consoleHistoryAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         State = consoleHistoryState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testConsoleHistories = Oci.Core.GetConsoleHistories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AvailabilityDomain = @var.Console_history_availability_domain,
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
-        ///         State = @var.Console_history_state,
+        ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = consoleHistoryAvailabilityDomain,
+        ///         InstanceId = testInstance.Id,
+        ///         State = consoleHistoryState,
         ///     });
         /// 
         /// });

@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AiAnomalyDetection.NewModel(ctx, "testModel", &AiAnomalyDetection.ModelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := AiAnomalyDetection.NewModel(ctx, "test_model", &AiAnomalyDetection.ModelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				ModelTrainingDetails: &aianomalydetection.ModelModelTrainingDetailsArgs{
-//					DataAssetIds:     pulumi.Any(_var.Model_model_training_details_data_asset_ids),
-//					AlgorithmHint:    pulumi.Any(_var.Model_model_training_details_algorithm_hint),
-//					TargetFap:        pulumi.Any(_var.Model_model_training_details_target_fap),
-//					TrainingFraction: pulumi.Any(_var.Model_model_training_details_training_fraction),
-//					WindowSize:       pulumi.Any(_var.Model_model_training_details_window_size),
+//					DataAssetIds:     pulumi.Any(modelModelTrainingDetailsDataAssetIds),
+//					AlgorithmHint:    pulumi.Any(modelModelTrainingDetailsAlgorithmHint),
+//					TargetFap:        pulumi.Any(modelModelTrainingDetailsTargetFap),
+//					TrainingFraction: pulumi.Any(modelModelTrainingDetailsTrainingFraction),
+//					WindowSize:       pulumi.Any(modelModelTrainingDetailsWindowSize),
 //				},
-//				ProjectId: pulumi.Any(oci_ai_anomaly_detection_project.Test_project.Id),
+//				ProjectId: pulumi.Any(testProject.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Model_description),
-//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				Description: pulumi.Any(modelDescription),
+//				DisplayName: pulumi.Any(modelDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

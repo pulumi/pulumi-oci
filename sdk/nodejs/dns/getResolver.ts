@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResolver = oci.Dns.getResolver({
- *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     resolverId: testResolverOciDnsResolver.id,
  *     scope: "PRIVATE",
  * });
  * ```
@@ -132,7 +132,7 @@ export interface GetResolverResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResolver = oci.Dns.getResolver({
- *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     resolverId: testResolverOciDnsResolver.id,
  *     scope: "PRIVATE",
  * });
  * ```

@@ -25,15 +25,15 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsPreferencesManagement = new Oci.LogAnalytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", new()
+    ///     var testLogAnalyticsPreferencesManagement = new Oci.LogAnalytics.LogAnalyticsPreferencesManagement("test_log_analytics_preferences_management", new()
     ///     {
-    ///         Namespace = @var.Log_analytics_preferences_management_namespace,
+    ///         Namespace = logAnalyticsPreferencesManagementNamespace,
     ///         Items = new[]
     ///         {
     ///             new Oci.LogAnalytics.Inputs.LogAnalyticsPreferencesManagementItemArgs
     ///             {
-    ///                 Name = @var.Log_analytics_preferences_management_items_name,
-    ///                 Value = @var.Log_analytics_preferences_management_items_value,
+    ///                 Name = logAnalyticsPreferencesManagementItemsName,
+    ///                 Value = logAnalyticsPreferencesManagementItemsValue,
     ///             },
     ///         },
     ///     });

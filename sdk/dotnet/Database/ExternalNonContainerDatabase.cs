@@ -25,11 +25,11 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalNonContainerDatabase = new Oci.Database.ExternalNonContainerDatabase("testExternalNonContainerDatabase", new()
+    ///     var testExternalNonContainerDatabase = new Oci.Database.ExternalNonContainerDatabase("test_external_non_container_database", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.External_non_container_database_display_name,
-    ///         DefinedTags = @var.External_non_container_database_defined_tags,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = externalNonContainerDatabaseDisplayName,
+    ///         DefinedTags = externalNonContainerDatabaseDefinedTags,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

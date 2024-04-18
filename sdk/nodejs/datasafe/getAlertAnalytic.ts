@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertAnalytic = oci.DataSafe.getAlertAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.alert_analytic_access_level,
- *     compartmentIdInSubtree: _var.alert_analytic_compartment_id_in_subtree,
- *     groupBies: _var.alert_analytic_group_by,
- *     queryTimeZone: _var.alert_analytic_query_time_zone,
- *     scimQuery: _var.alert_analytic_scim_query,
- *     summaryFields: _var.alert_analytic_summary_field,
- *     timeEnded: _var.alert_analytic_time_ended,
- *     timeStarted: _var.alert_analytic_time_started,
+ *     compartmentId: compartmentId,
+ *     accessLevel: alertAnalyticAccessLevel,
+ *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree,
+ *     groupBies: alertAnalyticGroupBy,
+ *     queryTimeZone: alertAnalyticQueryTimeZone,
+ *     scimQuery: alertAnalyticScimQuery,
+ *     summaryFields: alertAnalyticSummaryField,
+ *     timeEnded: alertAnalyticTimeEnded,
+ *     timeStarted: alertAnalyticTimeStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,15 +136,15 @@ export interface GetAlertAnalyticResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAlertAnalytic = oci.DataSafe.getAlertAnalytic({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.alert_analytic_access_level,
- *     compartmentIdInSubtree: _var.alert_analytic_compartment_id_in_subtree,
- *     groupBies: _var.alert_analytic_group_by,
- *     queryTimeZone: _var.alert_analytic_query_time_zone,
- *     scimQuery: _var.alert_analytic_scim_query,
- *     summaryFields: _var.alert_analytic_summary_field,
- *     timeEnded: _var.alert_analytic_time_ended,
- *     timeStarted: _var.alert_analytic_time_started,
+ *     compartmentId: compartmentId,
+ *     accessLevel: alertAnalyticAccessLevel,
+ *     compartmentIdInSubtree: alertAnalyticCompartmentIdInSubtree,
+ *     groupBies: alertAnalyticGroupBy,
+ *     queryTimeZone: alertAnalyticQueryTimeZone,
+ *     scimQuery: alertAnalyticScimQuery,
+ *     summaryFields: alertAnalyticSummaryField,
+ *     timeEnded: alertAnalyticTimeEnded,
+ *     timeStarted: alertAnalyticTimeStarted,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

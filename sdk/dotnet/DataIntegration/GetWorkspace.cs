@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspace = Oci.DataIntegration.GetWorkspace.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         WorkspaceId = testWorkspaceOciDataintegrationWorkspace.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspace = Oci.DataIntegration.GetWorkspace.Invoke(new()
         ///     {
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
+        ///         WorkspaceId = testWorkspaceOciDataintegrationWorkspace.Id,
         ///     });
         /// 
         /// });

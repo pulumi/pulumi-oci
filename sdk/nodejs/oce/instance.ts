@@ -16,27 +16,28 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOceInstance = new oci.oce.Instance("testOceInstance", {
- *     adminEmail: _var.oce_instance_admin_email,
- *     compartmentId: _var.compartment_id,
- *     idcsAccessToken: _var.oce_instance_idcs_access_token,
- *     objectStorageNamespace: _var.oce_instance_object_storage_namespace,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
- *     tenancyName: oci_identity_tenancy.test_tenancy.name,
- *     addOnFeatures: _var.oce_instance_add_on_features,
+ * const testOceInstance = new oci.oce.Instance("test_oce_instance", {
+ *     adminEmail: oceInstanceAdminEmail,
+ *     compartmentId: compartmentId,
+ *     idcsAccessToken: oceInstanceIdcsAccessToken,
+ *     name: oceInstanceName,
+ *     objectStorageNamespace: oceInstanceObjectStorageNamespace,
+ *     tenancyId: testTenancy.id,
+ *     tenancyName: testTenancy.name,
+ *     addOnFeatures: oceInstanceAddOnFeatures,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.oce_instance_description,
- *     drRegion: _var.oce_instance_dr_region,
+ *     description: oceInstanceDescription,
+ *     drRegion: oceInstanceDrRegion,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     instanceAccessType: _var.oce_instance_instance_access_type,
- *     instanceLicenseType: _var.oce_instance_instance_license_type,
- *     instanceUsageType: _var.oce_instance_instance_usage_type,
- *     upgradeSchedule: _var.oce_instance_upgrade_schedule,
- *     wafPrimaryDomain: _var.oce_instance_waf_primary_domain,
+ *     instanceAccessType: oceInstanceInstanceAccessType,
+ *     instanceLicenseType: oceInstanceInstanceLicenseType,
+ *     instanceUsageType: oceInstanceInstanceUsageType,
+ *     upgradeSchedule: oceInstanceUpgradeSchedule,
+ *     wafPrimaryDomain: oceInstanceWafPrimaryDomain,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

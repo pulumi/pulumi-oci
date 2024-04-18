@@ -31,32 +31,32 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsageCarbonEmissionsQuery(ctx, "testUsageCarbonEmissionsQuery", &MeteringComputation.UsageCarbonEmissionsQueryArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := MeteringComputation.NewUsageCarbonEmissionsQuery(ctx, "test_usage_carbon_emissions_query", &MeteringComputation.UsageCarbonEmissionsQueryArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				QueryDefinition: &meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionArgs{
 //					CostAnalysisUi: &meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiArgs{
-//						Graph:             pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_cost_analysis_ui_graph),
-//						IsCumulativeGraph: pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_cost_analysis_ui_is_cumulative_graph),
+//						Graph:             pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiGraph),
+//						IsCumulativeGraph: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph),
 //					},
-//					DisplayName: pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_display_name),
+//					DisplayName: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionDisplayName),
 //					ReportQuery: &meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryArgs{
-//						TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
-//						CompartmentDepth: pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_compartment_depth),
-//						DateRangeName:    pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_date_range_name),
-//						GroupBies:        pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_group_by),
+//						TenantId:         pulumi.Any(testTenant.Id),
+//						CompartmentDepth: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth),
+//						DateRangeName:    pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName),
+//						GroupBies:        pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupBy),
 //						GroupByTags: meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{
 //							&meteringcomputation.UsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{
-//								Key:       pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_group_by_tag_key),
-//								Namespace: pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_group_by_tag_namespace),
-//								Value:     pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_group_by_tag_value),
+//								Key:       pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagKey),
+//								Namespace: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagNamespace),
+//								Value:     pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagValue),
 //							},
 //						},
-//						IsAggregateByTime:               pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_is_aggregate_by_time),
-//						TimeUsageEnded:                  pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_time_usage_ended),
-//						TimeUsageStarted:                pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_time_usage_started),
-//						UsageCarbonEmissionsQueryFilter: pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_report_query_usage_carbon_emissions_query_filter),
+//						IsAggregateByTime:               pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime),
+//						TimeUsageEnded:                  pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageEnded),
+//						TimeUsageStarted:                pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageStarted),
+//						UsageCarbonEmissionsQueryFilter: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionReportQueryUsageCarbonEmissionsQueryFilter),
 //					},
-//					Version: pulumi.Any(_var.Usage_carbon_emissions_query_query_definition_version),
+//					Version: pulumi.Any(usageCarbonEmissionsQueryQueryDefinitionVersion),
 //				},
 //			})
 //			if err != nil {

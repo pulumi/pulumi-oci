@@ -35,7 +35,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetIamWorkRequestLogs(ctx, &identity.GetIamWorkRequestLogsArgs{
-//				IamWorkRequestId: oci_identity_iam_work_request.Test_iam_work_request.Id,
+//				IamWorkRequestId: testIamWorkRequest.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

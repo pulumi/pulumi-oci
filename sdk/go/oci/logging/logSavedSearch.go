@@ -31,13 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Logging.NewLogSavedSearch(ctx, "testLogSavedSearch", &Logging.LogSavedSearchArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Query:         pulumi.Any(_var.Log_saved_search_query),
+//			_, err := Logging.NewLogSavedSearch(ctx, "test_log_saved_search", &Logging.LogSavedSearchArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(logSavedSearchName),
+//				Query:         pulumi.Any(logSavedSearchQuery),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Log_saved_search_description),
+//				Description: pulumi.Any(logSavedSearchDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

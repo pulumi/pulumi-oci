@@ -25,11 +25,11 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMediaWorkflowConfiguration = new Oci.MediaServices.MediaWorkflowConfiguration("testMediaWorkflowConfiguration", new()
+    ///     var testMediaWorkflowConfiguration = new Oci.MediaServices.MediaWorkflowConfiguration("test_media_workflow_configuration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Media_workflow_configuration_display_name,
-    ///         Parameters = @var.Media_workflow_configuration_parameters,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = mediaWorkflowConfigurationDisplayName,
+    ///         Parameters = mediaWorkflowConfigurationParameters,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -42,11 +42,11 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             new Oci.MediaServices.Inputs.MediaWorkflowConfigurationLockArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 Type = @var.Media_workflow_configuration_locks_type,
-    ///                 Message = @var.Media_workflow_configuration_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Media_workflow_configuration_locks_time_created,
+    ///                 CompartmentId = compartmentId,
+    ///                 Type = mediaWorkflowConfigurationLocksType,
+    ///                 Message = mediaWorkflowConfigurationLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = mediaWorkflowConfigurationLocksTimeCreated,
     ///             },
     ///         },
     ///     });

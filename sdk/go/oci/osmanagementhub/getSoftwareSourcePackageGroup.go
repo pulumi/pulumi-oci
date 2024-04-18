@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetSoftwareSourcePackageGroup(ctx, &osmanagementhub.GetSoftwareSourcePackageGroupArgs{
-//				PackageGroupId:   oci_identity_group.Test_group.Id,
-//				SoftwareSourceId: oci_os_management_hub_software_source.Test_software_source.Id,
+//				PackageGroupId:   testGroup.Id,
+//				SoftwareSourceId: testSoftwareSource.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

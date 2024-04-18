@@ -26,24 +26,24 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRrset = new Oci.Dns.Rrset("testRrset", new()
+    ///     var testRrset = new Oci.Dns.Rrset("test_rrset", new()
     ///     {
-    ///         Domain = @var.Rrset_domain,
-    ///         Rtype = @var.Rrset_rtype,
-    ///         ZoneNameOrId = oci_dns_zone.Test_zone.Id,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         Domain = rrsetDomain,
+    ///         Rtype = rrsetRtype,
+    ///         ZoneNameOrId = testZone.Id,
+    ///         CompartmentId = compartmentId,
     ///         Items = new[]
     ///         {
     ///             new Oci.Dns.Inputs.RrsetItemArgs
     ///             {
-    ///                 Domain = @var.Rrset_items_domain,
-    ///                 Rdata = @var.Rrset_items_rdata,
-    ///                 Rtype = @var.Rrset_items_rtype,
-    ///                 Ttl = @var.Rrset_items_ttl,
+    ///                 Domain = rrsetItemsDomain,
+    ///                 Rdata = rrsetItemsRdata,
+    ///                 Rtype = rrsetItemsRtype,
+    ///                 Ttl = rrsetItemsTtl,
     ///             },
     ///         },
-    ///         Scope = @var.Rrset_scope,
-    ///         ViewId = oci_dns_view.Test_view.Id,
+    ///         Scope = rrsetScope,
+    ///         ViewId = testView.Id,
     ///     });
     /// 
     /// });

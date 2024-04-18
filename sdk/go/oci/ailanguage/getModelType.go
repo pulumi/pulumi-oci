@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiLanguage.GetModelType(ctx, &ailanguage.GetModelTypeArgs{
-//				ModelType: _var.Model_type_model_type,
+//				ModelType: modelTypeModelType,
 //			}, nil)
 //			if err != nil {
 //				return err

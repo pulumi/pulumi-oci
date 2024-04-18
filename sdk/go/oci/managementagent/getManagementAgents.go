@@ -33,22 +33,22 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ManagementAgent.GetManagementAgents(ctx, &managementagent.GetManagementAgentsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Management_agent_access_level),
-//				AvailabilityStatus:     pulumi.StringRef(_var.Management_agent_availability_status),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Management_agent_compartment_id_in_subtree),
-//				DataSourceNames:        oci_management_agent_management_agent_data_source.Test_management_agent_data_source.Name,
-//				DataSourceType:         pulumi.StringRef(_var.Management_agent_data_source_type),
-//				DisplayName:            pulumi.StringRef(_var.Management_agent_display_name),
-//				GatewayIds:             oci_apigateway_gateway.Test_gateway.Id,
-//				HostId:                 pulumi.StringRef(oci_management_agent_host.Test_host.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(managementAgentAccessLevel),
+//				AvailabilityStatus:     pulumi.StringRef(managementAgentAvailabilityStatus),
+//				CompartmentIdInSubtree: pulumi.BoolRef(managementAgentCompartmentIdInSubtree),
+//				DataSourceNames:        testManagementAgentDataSource.Name,
+//				DataSourceType:         pulumi.StringRef(managementAgentDataSourceType),
+//				DisplayName:            pulumi.StringRef(managementAgentDisplayName),
+//				GatewayIds:             testGateway.Id,
+//				HostId:                 pulumi.StringRef(testHost.Id),
 //				WaitForHostId:          pulumi.IntRef(10),
-//				InstallType:            pulumi.StringRef(_var.Management_agent_install_type),
-//				IsCustomerDeployed:     pulumi.BoolRef(_var.Management_agent_is_customer_deployed),
-//				PlatformTypes:          _var.Management_agent_platform_type,
-//				PluginNames:            _var.Management_agent_plugin_name,
-//				State:                  pulumi.StringRef(_var.Management_agent_state),
-//				Versions:               _var.Management_agent_version,
+//				InstallType:            pulumi.StringRef(managementAgentInstallType),
+//				IsCustomerDeployed:     pulumi.BoolRef(managementAgentIsCustomerDeployed),
+//				PlatformTypes:          managementAgentPlatformType,
+//				PluginNames:            managementAgentPluginName,
+//				State:                  pulumi.StringRef(managementAgentState),
+//				Versions:               managementAgentVersion,
 //			}, nil)
 //			if err != nil {
 //				return err

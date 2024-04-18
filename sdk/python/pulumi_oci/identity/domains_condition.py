@@ -1255,23 +1255,24 @@ class DomainsCondition(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_condition = oci.identity.DomainsCondition("testCondition",
-            attribute_name=var["condition_attribute_name"],
-            attribute_value=var["condition_attribute_value"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-            operator=var["condition_operator"],
+        test_condition = oci.identity.DomainsCondition("test_condition",
+            attribute_name=condition_attribute_name,
+            attribute_value=condition_attribute_value,
+            idcs_endpoint=test_domain["url"],
+            name=condition_name,
+            operator=condition_operator,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Condition"],
             attribute_sets=["all"],
             attributes="",
-            authorization=var["condition_authorization"],
-            description=var["condition_description"],
-            evaluate_condition_if=var["condition_evaluate_condition_if"],
+            authorization=condition_authorization,
+            description=condition_description,
+            evaluate_condition_if=condition_evaluate_condition_if,
             external_id="externalId",
-            ocid=var["condition_ocid"],
-            resource_type_schema_version=var["condition_resource_type_schema_version"],
+            ocid=condition_ocid,
+            resource_type_schema_version=condition_resource_type_schema_version,
             tags=[oci.identity.DomainsConditionTagArgs(
-                key=var["condition_tags_key"],
-                value=var["condition_tags_value"],
+                key=condition_tags_key,
+                value=condition_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -1419,23 +1420,24 @@ class DomainsCondition(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_condition = oci.identity.DomainsCondition("testCondition",
-            attribute_name=var["condition_attribute_name"],
-            attribute_value=var["condition_attribute_value"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-            operator=var["condition_operator"],
+        test_condition = oci.identity.DomainsCondition("test_condition",
+            attribute_name=condition_attribute_name,
+            attribute_value=condition_attribute_value,
+            idcs_endpoint=test_domain["url"],
+            name=condition_name,
+            operator=condition_operator,
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:Condition"],
             attribute_sets=["all"],
             attributes="",
-            authorization=var["condition_authorization"],
-            description=var["condition_description"],
-            evaluate_condition_if=var["condition_evaluate_condition_if"],
+            authorization=condition_authorization,
+            description=condition_description,
+            evaluate_condition_if=condition_evaluate_condition_if,
             external_id="externalId",
-            ocid=var["condition_ocid"],
-            resource_type_schema_version=var["condition_resource_type_schema_version"],
+            ocid=condition_ocid,
+            resource_type_schema_version=condition_resource_type_schema_version,
             tags=[oci.identity.DomainsConditionTagArgs(
-                key=var["condition_tags_key"],
-                value=var["condition_tags_value"],
+                key=condition_tags_key,
+                value=condition_tags_value,
             )])
         ```
         <!--End PulumiCodeChooser -->

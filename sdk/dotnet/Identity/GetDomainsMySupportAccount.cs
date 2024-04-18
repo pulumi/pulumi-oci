@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySupportAccount = Oci.Identity.GetDomainsMySupportAccount.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySupportAccountId = oci_identity_domains_my_support_account.Test_my_support_account.Id,
-        ///         Authorization = @var.My_support_account_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_support_account_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySupportAccountId = testMySupportAccountOciIdentityDomainsMySupportAccount.Id,
+        ///         Authorization = mySupportAccountAuthorization,
+        ///         ResourceTypeSchemaVersion = mySupportAccountResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySupportAccount = Oci.Identity.GetDomainsMySupportAccount.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySupportAccountId = oci_identity_domains_my_support_account.Test_my_support_account.Id,
-        ///         Authorization = @var.My_support_account_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_support_account_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySupportAccountId = testMySupportAccountOciIdentityDomainsMySupportAccount.Id,
+        ///         Authorization = mySupportAccountAuthorization,
+        ///         ResourceTypeSchemaVersion = mySupportAccountResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

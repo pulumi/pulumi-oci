@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetModelVersionSet(ctx, &datascience.GetModelVersionSetArgs{
-//				ModelVersionSetId: oci_datascience_model_version_set.Test_model_version_set.Id,
+//				ModelVersionSetId: testModelVersionSetOciDatascienceModelVersionSet.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -126,8 +126,8 @@ def get_node_pool_option(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=oci_containerengine_node_pool_option["test_node_pool_option"]["id"],
-        compartment_id=var["compartment_id"])
+    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -167,8 +167,8 @@ def get_node_pool_option_output(compartment_id: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=oci_containerengine_node_pool_option["test_node_pool_option"]["id"],
-        compartment_id=var["compartment_id"])
+    test_node_pool_option = oci.ContainerEngine.get_node_pool_option(node_pool_option_id=test_node_pool_option_oci_containerengine_node_pool_option["id"],
+        compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

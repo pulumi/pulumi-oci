@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyCompletedApprovals = oci.Identity.getDomainsMyCompletedApprovals({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myCompletedApprovalCount: _var.my_completed_approval_my_completed_approval_count,
- *     myCompletedApprovalFilter: _var.my_completed_approval_my_completed_approval_filter,
- *     authorization: _var.my_completed_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_completed_approval_resource_type_schema_version,
- *     startIndex: _var.my_completed_approval_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myCompletedApprovalCount: myCompletedApprovalMyCompletedApprovalCount,
+ *     myCompletedApprovalFilter: myCompletedApprovalMyCompletedApprovalFilter,
+ *     authorization: myCompletedApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
+ *     startIndex: myCompletedApprovalStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsMyCompletedApprovalsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyCompletedApprovals = oci.Identity.getDomainsMyCompletedApprovals({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myCompletedApprovalCount: _var.my_completed_approval_my_completed_approval_count,
- *     myCompletedApprovalFilter: _var.my_completed_approval_my_completed_approval_filter,
- *     authorization: _var.my_completed_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_completed_approval_resource_type_schema_version,
- *     startIndex: _var.my_completed_approval_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myCompletedApprovalCount: myCompletedApprovalMyCompletedApprovalCount,
+ *     myCompletedApprovalFilter: myCompletedApprovalMyCompletedApprovalFilter,
+ *     authorization: myCompletedApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
+ *     startIndex: myCompletedApprovalStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

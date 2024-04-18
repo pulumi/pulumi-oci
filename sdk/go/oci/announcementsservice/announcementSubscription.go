@@ -33,27 +33,27 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AnnouncementsService.NewAnnouncementSubscription(ctx, "testAnnouncementSubscription", &AnnouncementsService.AnnouncementSubscriptionArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Announcement_subscription_display_name),
-//				OnsTopicId:    pulumi.Any(oci_ons_notification_topic.Test_notification_topic.Id),
+//			_, err := AnnouncementsService.NewAnnouncementSubscription(ctx, "test_announcement_subscription", &AnnouncementsService.AnnouncementSubscriptionArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(announcementSubscriptionDisplayName),
+//				OnsTopicId:    pulumi.Any(testNotificationTopic.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Announcement_subscription_description),
+//				Description: pulumi.Any(announcementSubscriptionDescription),
 //				FilterGroups: &announcementsservice.AnnouncementSubscriptionFilterGroupsArgs{
 //					Filters: announcementsservice.AnnouncementSubscriptionFilterGroupsFilterArray{
 //						&announcementsservice.AnnouncementSubscriptionFilterGroupsFilterArgs{
-//							Type:  pulumi.Any(_var.Announcement_subscription_filter_groups_filters_type),
-//							Value: pulumi.Any(_var.Announcement_subscription_filter_groups_filters_value),
+//							Type:  pulumi.Any(announcementSubscriptionFilterGroupsFiltersType),
+//							Value: pulumi.Any(announcementSubscriptionFilterGroupsFiltersValue),
 //						},
 //					},
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				PreferredLanguage: pulumi.Any(_var.Announcement_subscription_preferred_language),
-//				PreferredTimeZone: pulumi.Any(_var.Announcement_subscription_preferred_time_zone),
+//				PreferredLanguage: pulumi.Any(announcementSubscriptionPreferredLanguage),
+//				PreferredTimeZone: pulumi.Any(announcementSubscriptionPreferredTimeZone),
 //			})
 //			if err != nil {
 //				return err

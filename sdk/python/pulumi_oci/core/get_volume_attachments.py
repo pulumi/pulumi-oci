@@ -137,10 +137,10 @@ def get_volume_attachments(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=var["compartment_id"],
-        availability_domain=var["volume_attachment_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        volume_id=oci_core_volume["test_volume"]["id"])
+    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=compartment_id,
+        availability_domain=volume_attachment_availability_domain,
+        instance_id=test_instance["id"],
+        volume_id=test_volume["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -192,10 +192,10 @@ def get_volume_attachments_output(availability_domain: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=var["compartment_id"],
-        availability_domain=var["volume_attachment_availability_domain"],
-        instance_id=oci_core_instance["test_instance"]["id"],
-        volume_id=oci_core_volume["test_volume"]["id"])
+    test_volume_attachments = oci.Core.get_volume_attachments(compartment_id=compartment_id,
+        availability_domain=volume_attachment_availability_domain,
+        instance_id=test_instance["id"],
+        volume_id=test_volume["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -107,8 +107,8 @@ def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
-        display_name=var["auto_scaling_configuration_display_name"])
+    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=compartment_id,
+        display_name=auto_scaling_configuration_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_auto_scaling_configurations_output(compartment_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
-        display_name=var["auto_scaling_configuration_display_name"])
+    test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=compartment_id,
+        display_name=auto_scaling_configuration_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -30,10 +30,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasesSchemas = Oci.DataSafe.GetTargetDatabasesSchemas.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         IsOracleMaintained = @var.Target_databases_schema_is_oracle_maintained,
-        ///         SchemaNames = @var.Target_databases_schema_schema_name,
-        ///         SchemaNameContains = @var.Target_databases_schema_schema_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         IsOracleMaintained = targetDatabasesSchemaIsOracleMaintained,
+        ///         SchemaNames = targetDatabasesSchemaSchemaName,
+        ///         SchemaNameContains = targetDatabasesSchemaSchemaNameContains,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testTargetDatabasesSchemas = Oci.DataSafe.GetTargetDatabasesSchemas.Invoke(new()
         ///     {
-        ///         TargetDatabaseId = oci_data_safe_target_database.Test_target_database.Id,
-        ///         IsOracleMaintained = @var.Target_databases_schema_is_oracle_maintained,
-        ///         SchemaNames = @var.Target_databases_schema_schema_name,
-        ///         SchemaNameContains = @var.Target_databases_schema_schema_name_contains,
+        ///         TargetDatabaseId = testTargetDatabase.Id,
+        ///         IsOracleMaintained = targetDatabasesSchemaIsOracleMaintained,
+        ///         SchemaNames = targetDatabasesSchemaSchemaName,
+        ///         SchemaNameContains = targetDatabasesSchemaSchemaNameContains,
         ///     });
         /// 
         /// });

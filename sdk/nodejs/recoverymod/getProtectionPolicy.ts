@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionPolicy = oci.RecoveryMod.getProtectionPolicy({
- *     protectionPolicyId: oci_recovery_protection_policy.test_protection_policy.id,
+ *     protectionPolicyId: testProtectionPolicyOciRecoveryProtectionPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetProtectionPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionPolicy = oci.RecoveryMod.getProtectionPolicy({
- *     protectionPolicyId: oci_recovery_protection_policy.test_protection_policy.id,
+ *     protectionPolicyId: testProtectionPolicyOciRecoveryProtectionPolicy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

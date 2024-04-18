@@ -25,9 +25,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPolicy = new Oci.Identity.DomainsPolicy("testPolicy", new()
+    ///     var testPolicy = new Oci.Identity.DomainsPolicy("test_policy", new()
     ///     {
-    ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = policyName,
     ///         PolicyType = new Oci.Identity.Inputs.DomainsPolicyPolicyTypeArgs
     ///         {
     ///             Value = "IdentityProvider",
@@ -36,23 +37,23 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             "urn:ietf:params:scim:schemas:oracle:idcs:Policy",
     ///         },
-    ///         Active = @var.Policy_active,
+    ///         Active = policyActive,
     ///         AttributeSets = new[]
     ///         {
     ///             "all",
     ///         },
     ///         Attributes = "",
-    ///         Authorization = @var.Policy_authorization,
-    ///         Description = @var.Policy_description,
+    ///         Authorization = policyAuthorization,
+    ///         Description = policyDescription,
     ///         ExternalId = "externalId",
-    ///         Ocid = @var.Policy_ocid,
-    ///         PolicyGroovy = @var.Policy_policy_groovy,
-    ///         ResourceTypeSchemaVersion = @var.Policy_resource_type_schema_version,
+    ///         Ocid = policyOcid,
+    ///         PolicyGroovy = policyPolicyGroovy,
+    ///         ResourceTypeSchemaVersion = policyResourceTypeSchemaVersion,
     ///         Rules = new[]
     ///         {
     ///             new Oci.Identity.Inputs.DomainsPolicyRuleArgs
     ///             {
-    ///                 Sequence = @var.Policy_rules_sequence,
+    ///                 Sequence = policyRulesSequence,
     ///                 Value = "TODO",
     ///             },
     ///         },
@@ -60,8 +61,8 @@ namespace Pulumi.Oci.Identity
     ///         {
     ///             new Oci.Identity.Inputs.DomainsPolicyTagArgs
     ///             {
-    ///                 Key = @var.Policy_tags_key,
-    ///                 Value = @var.Policy_tags_value,
+    ///                 Key = policyTagsKey,
+    ///                 Value = policyTagsValue,
     ///             },
     ///         },
     ///     });

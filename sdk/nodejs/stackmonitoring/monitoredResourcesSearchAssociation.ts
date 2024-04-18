@@ -18,15 +18,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMonitoredResourcesSearchAssociation = new oci.stackmonitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation", {
- *     compartmentId: _var.compartment_id,
- *     associationType: _var.monitored_resources_search_association_association_type,
- *     destinationResourceId: oci_stack_monitoring_destination_resource.test_destination_resource.id,
- *     destinationResourceName: _var.monitored_resources_search_association_destination_resource_name,
- *     destinationResourceType: _var.monitored_resources_search_association_destination_resource_type,
- *     sourceResourceId: oci_stack_monitoring_source_resource.test_source_resource.id,
- *     sourceResourceName: _var.monitored_resources_search_association_source_resource_name,
- *     sourceResourceType: _var.monitored_resources_search_association_source_resource_type,
+ * const testMonitoredResourcesSearchAssociation = new oci.stackmonitoring.MonitoredResourcesSearchAssociation("test_monitored_resources_search_association", {
+ *     compartmentId: compartmentId,
+ *     associationType: monitoredResourcesSearchAssociationAssociationType,
+ *     destinationResourceId: testDestinationResource.id,
+ *     destinationResourceName: monitoredResourcesSearchAssociationDestinationResourceName,
+ *     destinationResourceType: monitoredResourcesSearchAssociationDestinationResourceType,
+ *     sourceResourceId: testSourceResource.id,
+ *     sourceResourceName: monitoredResourcesSearchAssociationSourceResourceName,
+ *     sourceResourceType: monitoredResourcesSearchAssociationSourceResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

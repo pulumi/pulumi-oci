@@ -27,9 +27,9 @@ namespace Pulumi.Oci.AppMgmtControl
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMonitorPluginManagement = new Oci.AppMgmtControl.MonitorPluginManagement("testMonitorPluginManagement", new()
+    ///     var testMonitorPluginManagement = new Oci.AppMgmtControl.MonitorPluginManagement("test_monitor_plugin_management", new()
     ///     {
-    ///         MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+    ///         MonitoredInstanceId = testMonitoredInstance.Id,
     ///     });
     /// 
     /// });

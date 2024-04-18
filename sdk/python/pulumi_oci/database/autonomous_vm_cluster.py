@@ -1162,40 +1162,40 @@ class AutonomousVmCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_vm_cluster = oci.database.AutonomousVmCluster("testAutonomousVmCluster",
-            compartment_id=var["compartment_id"],
-            display_name=var["autonomous_vm_cluster_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-            vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
-            autonomous_data_storage_size_in_tbs=var["autonomous_vm_cluster_autonomous_data_storage_size_in_tbs"],
-            compute_model=var["autonomous_vm_cluster_compute_model"],
-            cpu_core_count_per_node=var["autonomous_vm_cluster_cpu_core_count_per_node"],
-            db_servers=var["autonomous_vm_cluster_db_servers"],
-            defined_tags=var["autonomous_vm_cluster_defined_tags"],
+        test_autonomous_vm_cluster = oci.database.AutonomousVmCluster("test_autonomous_vm_cluster",
+            compartment_id=compartment_id,
+            display_name=autonomous_vm_cluster_display_name,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
+            vm_cluster_network_id=test_vm_cluster_network["id"],
+            autonomous_data_storage_size_in_tbs=autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
+            compute_model=autonomous_vm_cluster_compute_model,
+            cpu_core_count_per_node=autonomous_vm_cluster_cpu_core_count_per_node,
+            db_servers=autonomous_vm_cluster_db_servers,
+            defined_tags=autonomous_vm_cluster_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_local_backup_enabled=var["autonomous_vm_cluster_is_local_backup_enabled"],
-            is_mtls_enabled=var["autonomous_vm_cluster_is_mtls_enabled"],
-            license_model=var["autonomous_vm_cluster_license_model"],
+            is_local_backup_enabled=autonomous_vm_cluster_is_local_backup_enabled,
+            is_mtls_enabled=autonomous_vm_cluster_is_mtls_enabled,
+            license_model=autonomous_vm_cluster_license_model,
             maintenance_window_details=[oci.database.AutonomousVmClusterMaintenanceWindowDetailArgs(
                 days_of_weeks=[oci.database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs(
-                    name=var["autonomous_vm_cluster_maintenance_window_details_days_of_week_name"],
+                    name=autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
                 )],
-                hours_of_days=var["autonomous_vm_cluster_maintenance_window_details_hours_of_day"],
-                lead_time_in_weeks=var["autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks"],
+                hours_of_days=autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+                lead_time_in_weeks=autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
                 months=[oci.database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs(
-                    name=var["autonomous_vm_cluster_maintenance_window_details_months_name"],
+                    name=autonomous_vm_cluster_maintenance_window_details_months_name,
                 )],
-                patching_mode=var["autonomous_vm_cluster_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_vm_cluster_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_vm_cluster_maintenance_window_details_weeks_of_month"],
+                patching_mode=autonomous_vm_cluster_maintenance_window_details_patching_mode,
+                preference=autonomous_vm_cluster_maintenance_window_details_preference,
+                weeks_of_months=autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
             )],
-            memory_per_oracle_compute_unit_in_gbs=var["autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs"],
-            scan_listener_port_non_tls=var["autonomous_vm_cluster_scan_listener_port_non_tls"],
-            scan_listener_port_tls=var["autonomous_vm_cluster_scan_listener_port_tls"],
-            time_zone=var["autonomous_vm_cluster_time_zone"],
-            total_container_databases=var["autonomous_vm_cluster_total_container_databases"])
+            memory_per_oracle_compute_unit_in_gbs=autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
+            scan_listener_port_non_tls=autonomous_vm_cluster_scan_listener_port_non_tls,
+            scan_listener_port_tls=autonomous_vm_cluster_scan_listener_port_tls,
+            time_zone=autonomous_vm_cluster_time_zone,
+            total_container_databases=autonomous_vm_cluster_total_container_databases)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -1251,40 +1251,40 @@ class AutonomousVmCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_vm_cluster = oci.database.AutonomousVmCluster("testAutonomousVmCluster",
-            compartment_id=var["compartment_id"],
-            display_name=var["autonomous_vm_cluster_display_name"],
-            exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-            vm_cluster_network_id=oci_database_vm_cluster_network["test_vm_cluster_network"]["id"],
-            autonomous_data_storage_size_in_tbs=var["autonomous_vm_cluster_autonomous_data_storage_size_in_tbs"],
-            compute_model=var["autonomous_vm_cluster_compute_model"],
-            cpu_core_count_per_node=var["autonomous_vm_cluster_cpu_core_count_per_node"],
-            db_servers=var["autonomous_vm_cluster_db_servers"],
-            defined_tags=var["autonomous_vm_cluster_defined_tags"],
+        test_autonomous_vm_cluster = oci.database.AutonomousVmCluster("test_autonomous_vm_cluster",
+            compartment_id=compartment_id,
+            display_name=autonomous_vm_cluster_display_name,
+            exadata_infrastructure_id=test_exadata_infrastructure["id"],
+            vm_cluster_network_id=test_vm_cluster_network["id"],
+            autonomous_data_storage_size_in_tbs=autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
+            compute_model=autonomous_vm_cluster_compute_model,
+            cpu_core_count_per_node=autonomous_vm_cluster_cpu_core_count_per_node,
+            db_servers=autonomous_vm_cluster_db_servers,
+            defined_tags=autonomous_vm_cluster_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_local_backup_enabled=var["autonomous_vm_cluster_is_local_backup_enabled"],
-            is_mtls_enabled=var["autonomous_vm_cluster_is_mtls_enabled"],
-            license_model=var["autonomous_vm_cluster_license_model"],
+            is_local_backup_enabled=autonomous_vm_cluster_is_local_backup_enabled,
+            is_mtls_enabled=autonomous_vm_cluster_is_mtls_enabled,
+            license_model=autonomous_vm_cluster_license_model,
             maintenance_window_details=[oci.database.AutonomousVmClusterMaintenanceWindowDetailArgs(
                 days_of_weeks=[oci.database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs(
-                    name=var["autonomous_vm_cluster_maintenance_window_details_days_of_week_name"],
+                    name=autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
                 )],
-                hours_of_days=var["autonomous_vm_cluster_maintenance_window_details_hours_of_day"],
-                lead_time_in_weeks=var["autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks"],
+                hours_of_days=autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+                lead_time_in_weeks=autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
                 months=[oci.database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs(
-                    name=var["autonomous_vm_cluster_maintenance_window_details_months_name"],
+                    name=autonomous_vm_cluster_maintenance_window_details_months_name,
                 )],
-                patching_mode=var["autonomous_vm_cluster_maintenance_window_details_patching_mode"],
-                preference=var["autonomous_vm_cluster_maintenance_window_details_preference"],
-                weeks_of_months=var["autonomous_vm_cluster_maintenance_window_details_weeks_of_month"],
+                patching_mode=autonomous_vm_cluster_maintenance_window_details_patching_mode,
+                preference=autonomous_vm_cluster_maintenance_window_details_preference,
+                weeks_of_months=autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
             )],
-            memory_per_oracle_compute_unit_in_gbs=var["autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs"],
-            scan_listener_port_non_tls=var["autonomous_vm_cluster_scan_listener_port_non_tls"],
-            scan_listener_port_tls=var["autonomous_vm_cluster_scan_listener_port_tls"],
-            time_zone=var["autonomous_vm_cluster_time_zone"],
-            total_container_databases=var["autonomous_vm_cluster_total_container_databases"])
+            memory_per_oracle_compute_unit_in_gbs=autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
+            scan_listener_port_non_tls=autonomous_vm_cluster_scan_listener_port_non_tls,
+            scan_listener_port_tls=autonomous_vm_cluster_scan_listener_port_tls,
+            time_zone=autonomous_vm_cluster_time_zone,
+            total_container_databases=autonomous_vm_cluster_total_container_databases)
         ```
         <!--End PulumiCodeChooser -->
 

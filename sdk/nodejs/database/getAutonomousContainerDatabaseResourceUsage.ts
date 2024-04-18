@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousContainerDatabaseResourceUsage = oci.Database.getAutonomousContainerDatabaseResourceUsage({
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,7 +109,7 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousContainerDatabaseResourceUsage = oci.Database.getAutonomousContainerDatabaseResourceUsage({
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

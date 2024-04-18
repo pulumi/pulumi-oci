@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSddc = Oci.Ocvp.GetSddc.Invoke(new()
         ///     {
-        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
+        ///         SddcId = testSddcOciOcvpSddc.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testSddc = Oci.Ocvp.GetSddc.Invoke(new()
         ///     {
-        ///         SddcId = oci_ocvp_sddc.Test_sddc.Id,
+        ///         SddcId = testSddcOciOcvpSddc.Id,
         ///     });
         /// 
         /// });

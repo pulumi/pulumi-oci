@@ -25,24 +25,24 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVlan = new Oci.Core.Vlan("testVlan", new()
+    ///     var testVlan = new Oci.Core.Vlan("test_vlan", new()
     ///     {
-    ///         CidrBlock = @var.Vlan_cidr_block,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         AvailabilityDomain = @var.Vlan_availability_domain,
+    ///         CidrBlock = vlanCidrBlock,
+    ///         CompartmentId = compartmentId,
+    ///         VcnId = testVcn.Id,
+    ///         AvailabilityDomain = vlanAvailabilityDomain,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Vlan_display_name,
+    ///         DisplayName = vlanDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         NsgIds = @var.Vlan_nsg_ids,
-    ///         RouteTableId = oci_core_route_table.Test_route_table.Id,
-    ///         VlanTag = @var.Vlan_vlan_tag,
+    ///         NsgIds = vlanNsgIds,
+    ///         RouteTableId = testRouteTable.Id,
+    ///         VlanTag = vlanVlanTag,
     ///     });
     /// 
     /// });

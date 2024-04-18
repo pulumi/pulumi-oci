@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleet(ctx, &jms.GetFleetArgs{
-//				FleetId: oci_jms_fleet.Test_fleet.Id,
+//				FleetId: testFleetOciJmsFleet.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

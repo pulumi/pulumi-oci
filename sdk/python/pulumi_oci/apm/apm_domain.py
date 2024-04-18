@@ -321,17 +321,17 @@ class ApmDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_apm_domain = oci.apm.ApmDomain("testApmDomain",
-            compartment_id=var["compartment_id"],
-            display_name=var["apm_domain_display_name"],
+        test_apm_domain = oci.apm.ApmDomain("test_apm_domain",
+            compartment_id=compartment_id,
+            display_name=apm_domain_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["apm_domain_description"],
+            description=apm_domain_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=var["apm_domain_is_free_tier"])
+            is_free_tier=apm_domain_is_free_tier)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -374,17 +374,17 @@ class ApmDomain(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_apm_domain = oci.apm.ApmDomain("testApmDomain",
-            compartment_id=var["compartment_id"],
-            display_name=var["apm_domain_display_name"],
+        test_apm_domain = oci.apm.ApmDomain("test_apm_domain",
+            compartment_id=compartment_id,
+            display_name=apm_domain_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["apm_domain_description"],
+            description=apm_domain_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            is_free_tier=var["apm_domain_is_free_tier"])
+            is_free_tier=apm_domain_is_free_tier)
         ```
         <!--End PulumiCodeChooser -->
 

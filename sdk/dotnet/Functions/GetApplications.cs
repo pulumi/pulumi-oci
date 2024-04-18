@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testApplications = Oci.Functions.GetApplications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Application_display_name,
-        ///         Id = @var.Application_id,
-        ///         State = @var.Application_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applicationDisplayName,
+        ///         Id = applicationId,
+        ///         State = applicationState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testApplications = Oci.Functions.GetApplications.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Application_display_name,
-        ///         Id = @var.Application_id,
-        ///         State = @var.Application_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applicationDisplayName,
+        ///         Id = applicationId,
+        ///         State = applicationState,
         ///     });
         /// 
         /// });

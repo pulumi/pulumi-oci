@@ -120,9 +120,9 @@ def get_catalog_private_endpoints(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_private_endpoints = oci.DataCatalog.get_catalog_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["catalog_private_endpoint_display_name"],
-        state=var["catalog_private_endpoint_state"])
+    test_catalog_private_endpoints = oci.DataCatalog.get_catalog_private_endpoints(compartment_id=compartment_id,
+        display_name=catalog_private_endpoint_display_name,
+        state=catalog_private_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_catalog_private_endpoints_output(compartment_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_catalog_private_endpoints = oci.DataCatalog.get_catalog_private_endpoints(compartment_id=var["compartment_id"],
-        display_name=var["catalog_private_endpoint_display_name"],
-        state=var["catalog_private_endpoint_state"])
+    test_catalog_private_endpoints = oci.DataCatalog.get_catalog_private_endpoints(compartment_id=compartment_id,
+        display_name=catalog_private_endpoint_display_name,
+        state=catalog_private_endpoint_state)
     ```
     <!--End PulumiCodeChooser -->
 

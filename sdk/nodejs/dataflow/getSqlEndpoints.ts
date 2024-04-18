@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSqlEndpoints = oci.DataFlow.getSqlEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.sql_endpoint_display_name,
- *     sqlEndpointId: oci_dataflow_sql_endpoint.test_sql_endpoint.id,
- *     state: _var.sql_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: sqlEndpointDisplayName,
+ *     sqlEndpointId: testSqlEndpoint.id,
+ *     state: sqlEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetSqlEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSqlEndpoints = oci.DataFlow.getSqlEndpoints({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.sql_endpoint_display_name,
- *     sqlEndpointId: oci_dataflow_sql_endpoint.test_sql_endpoint.id,
- *     state: _var.sql_endpoint_state,
+ *     compartmentId: compartmentId,
+ *     displayName: sqlEndpointDisplayName,
+ *     sqlEndpointId: testSqlEndpoint.id,
+ *     state: sqlEndpointState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

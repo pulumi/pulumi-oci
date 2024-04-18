@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQueues = oci.Queue.getQueues({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.queue_display_name,
- *     id: _var.queue_id,
- *     state: _var.queue_state,
+ *     compartmentId: compartmentId,
+ *     displayName: queueDisplayName,
+ *     id: queueId,
+ *     state: queueState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetQueuesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQueues = oci.Queue.getQueues({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.queue_display_name,
- *     id: _var.queue_id,
- *     state: _var.queue_state,
+ *     compartmentId: compartmentId,
+ *     displayName: queueDisplayName,
+ *     id: queueId,
+ *     state: queueState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

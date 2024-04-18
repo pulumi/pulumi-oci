@@ -65,7 +65,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .privateApplicationId(testPrivateApplicationOciServiceCatalogPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -107,7 +107,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .privateApplicationId(testPrivateApplicationOciServiceCatalogPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -149,7 +149,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .privateApplicationId(testPrivateApplicationOciServiceCatalogPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -191,7 +191,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplication = ServiceCatalogFunctions.getPrivateApplication(GetPrivateApplicationArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .privateApplicationId(testPrivateApplicationOciServiceCatalogPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -233,7 +233,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationPackageId(testPrivateApplicationPackageOciServiceCatalogPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -275,7 +275,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationPackageId(testPrivateApplicationPackageOciServiceCatalogPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -317,7 +317,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationPackageId(testPrivateApplicationPackageOciServiceCatalogPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -359,7 +359,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackage = ServiceCatalogFunctions.getPrivateApplicationPackage(GetPrivateApplicationPackageArgs.builder()
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationPackageId(testPrivateApplicationPackageOciServiceCatalogPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -401,10 +401,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
-     *             .displayName(var_.private_application_package_display_name())
-     *             .packageTypes(var_.private_application_package_package_type())
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationId(testPrivateApplication.id())
+     *             .displayName(privateApplicationPackageDisplayName)
+     *             .packageTypes(privateApplicationPackagePackageType)
+     *             .privateApplicationPackageId(testPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -446,10 +446,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
-     *             .displayName(var_.private_application_package_display_name())
-     *             .packageTypes(var_.private_application_package_package_type())
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationId(testPrivateApplication.id())
+     *             .displayName(privateApplicationPackageDisplayName)
+     *             .packageTypes(privateApplicationPackagePackageType)
+     *             .privateApplicationPackageId(testPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -491,10 +491,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
-     *             .displayName(var_.private_application_package_display_name())
-     *             .packageTypes(var_.private_application_package_package_type())
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationId(testPrivateApplication.id())
+     *             .displayName(privateApplicationPackageDisplayName)
+     *             .packageTypes(privateApplicationPackagePackageType)
+     *             .privateApplicationPackageId(testPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -536,10 +536,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplicationPackages = ServiceCatalogFunctions.getPrivateApplicationPackages(GetPrivateApplicationPackagesArgs.builder()
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
-     *             .displayName(var_.private_application_package_display_name())
-     *             .packageTypes(var_.private_application_package_package_type())
-     *             .privateApplicationPackageId(oci_service_catalog_private_application_package.test_private_application_package().id())
+     *             .privateApplicationId(testPrivateApplication.id())
+     *             .displayName(privateApplicationPackageDisplayName)
+     *             .packageTypes(privateApplicationPackagePackageType)
+     *             .privateApplicationPackageId(testPrivateApplicationPackage.id())
      *             .build());
      * 
      *     }
@@ -581,9 +581,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_application_display_name())
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateApplicationDisplayName)
+     *             .privateApplicationId(testPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -625,9 +625,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_application_display_name())
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateApplicationDisplayName)
+     *             .privateApplicationId(testPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -669,9 +669,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_application_display_name())
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateApplicationDisplayName)
+     *             .privateApplicationId(testPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -713,9 +713,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivateApplications = ServiceCatalogFunctions.getPrivateApplications(GetPrivateApplicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.private_application_display_name())
-     *             .privateApplicationId(oci_service_catalog_private_application.test_private_application().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(privateApplicationDisplayName)
+     *             .privateApplicationId(testPrivateApplication.id())
      *             .build());
      * 
      *     }
@@ -757,7 +757,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .serviceCatalogId(testServiceCatalogOciServiceCatalogServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -799,7 +799,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .serviceCatalogId(testServiceCatalogOciServiceCatalogServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -841,7 +841,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .serviceCatalogId(testServiceCatalogOciServiceCatalogServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -883,7 +883,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalog = ServiceCatalogFunctions.getServiceCatalog(GetServiceCatalogArgs.builder()
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .serviceCatalogId(testServiceCatalogOciServiceCatalogServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -925,7 +925,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id())
      *             .build());
      * 
      *     }
@@ -967,7 +967,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id())
      *             .build());
      * 
      *     }
@@ -1009,7 +1009,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id())
      *             .build());
      * 
      *     }
@@ -1051,7 +1051,7 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociation = ServiceCatalogFunctions.getServiceCatalogAssociation(GetServiceCatalogAssociationArgs.builder()
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociationOciServiceCatalogServiceCatalogAssociation.id())
      *             .build());
      * 
      *     }
@@ -1093,10 +1093,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
-     *             .entityId(oci_service_catalog_entity.test_entity().id())
-     *             .entityType(var_.service_catalog_association_entity_type())
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1138,10 +1138,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
-     *             .entityId(oci_service_catalog_entity.test_entity().id())
-     *             .entityType(var_.service_catalog_association_entity_type())
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1183,10 +1183,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
-     *             .entityId(oci_service_catalog_entity.test_entity().id())
-     *             .entityType(var_.service_catalog_association_entity_type())
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1228,10 +1228,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
-     *             .entityId(oci_service_catalog_entity.test_entity().id())
-     *             .entityType(var_.service_catalog_association_entity_type())
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1273,10 +1273,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
-     *             .entityId(oci_service_catalog_entity.test_entity().id())
-     *             .entityType(var_.service_catalog_association_entity_type())
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1318,10 +1318,10 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogAssociations = ServiceCatalogFunctions.getServiceCatalogAssociations(GetServiceCatalogAssociationsArgs.builder()
-     *             .entityId(oci_service_catalog_entity.test_entity().id())
-     *             .entityType(var_.service_catalog_association_entity_type())
-     *             .serviceCatalogAssociationId(oci_service_catalog_service_catalog_association.test_service_catalog_association().id())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .entityId(testEntity.id())
+     *             .entityType(serviceCatalogAssociationEntityType)
+     *             .serviceCatalogAssociationId(testServiceCatalogAssociation.id())
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1363,9 +1363,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_catalog_display_name())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceCatalogDisplayName)
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1407,9 +1407,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_catalog_display_name())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceCatalogDisplayName)
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1451,9 +1451,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_catalog_display_name())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceCatalogDisplayName)
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }
@@ -1495,9 +1495,9 @@ public final class ServiceCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testServiceCatalogs = ServiceCatalogFunctions.getServiceCatalogs(GetServiceCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.service_catalog_display_name())
-     *             .serviceCatalogId(oci_service_catalog_service_catalog.test_service_catalog().id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(serviceCatalogDisplayName)
+     *             .serviceCatalogId(testServiceCatalog.id())
      *             .build());
      * 
      *     }

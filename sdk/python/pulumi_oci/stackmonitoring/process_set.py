@@ -289,15 +289,15 @@ class ProcessSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_process_set = oci.stack_monitoring.ProcessSet("testProcessSet",
-            compartment_id=var["compartment_id"],
-            display_name=var["process_set_display_name"],
+        test_process_set = oci.stack_monitoring.ProcessSet("test_process_set",
+            compartment_id=compartment_id,
+            display_name=process_set_display_name,
             specification=oci.stack_monitoring.ProcessSetSpecificationArgs(
                 items=[oci.stack_monitoring.ProcessSetSpecificationItemArgs(
-                    label=var["process_set_specification_items_label"],
-                    process_command=var["process_set_specification_items_process_command"],
-                    process_line_regex_pattern=var["process_set_specification_items_process_line_regex_pattern"],
-                    process_user=var["process_set_specification_items_process_user"],
+                    label=process_set_specification_items_label,
+                    process_command=process_set_specification_items_process_command,
+                    process_line_regex_pattern=process_set_specification_items_process_line_regex_pattern,
+                    process_user=process_set_specification_items_process_user,
                 )],
             ),
             defined_tags={
@@ -343,15 +343,15 @@ class ProcessSet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_process_set = oci.stack_monitoring.ProcessSet("testProcessSet",
-            compartment_id=var["compartment_id"],
-            display_name=var["process_set_display_name"],
+        test_process_set = oci.stack_monitoring.ProcessSet("test_process_set",
+            compartment_id=compartment_id,
+            display_name=process_set_display_name,
             specification=oci.stack_monitoring.ProcessSetSpecificationArgs(
                 items=[oci.stack_monitoring.ProcessSetSpecificationItemArgs(
-                    label=var["process_set_specification_items_label"],
-                    process_command=var["process_set_specification_items_process_command"],
-                    process_line_regex_pattern=var["process_set_specification_items_process_line_regex_pattern"],
-                    process_user=var["process_set_specification_items_process_user"],
+                    label=process_set_specification_items_label,
+                    process_command=process_set_specification_items_process_command,
+                    process_line_regex_pattern=process_set_specification_items_process_line_regex_pattern,
+                    process_user=process_set_specification_items_process_user,
                 )],
             ),
             defined_tags={

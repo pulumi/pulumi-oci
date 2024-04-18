@@ -30,8 +30,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalAsmConfiguration = Oci.DatabaseManagement.GetExternalAsmConfiguration.Invoke(new()
         ///     {
-        ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
-        ///         OpcNamedCredentialId = @var.External_asm_configuration_opc_named_credential_id,
+        ///         ExternalAsmId = testExternalAsm.Id,
+        ///         OpcNamedCredentialId = externalAsmConfigurationOpcNamedCredentialId,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalAsmConfiguration = Oci.DatabaseManagement.GetExternalAsmConfiguration.Invoke(new()
         ///     {
-        ///         ExternalAsmId = oci_database_management_external_asm.Test_external_asm.Id,
-        ///         OpcNamedCredentialId = @var.External_asm_configuration_opc_named_credential_id,
+        ///         ExternalAsmId = testExternalAsm.Id,
+        ///         OpcNamedCredentialId = externalAsmConfigurationOpcNamedCredentialId,
         ///     });
         /// 
         /// });

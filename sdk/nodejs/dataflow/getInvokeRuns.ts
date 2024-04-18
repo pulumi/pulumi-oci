@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInvokeRuns = oci.DataFlow.getInvokeRuns({
- *     compartmentId: _var.compartment_id,
- *     applicationId: oci_dataflow_application.test_application.id,
- *     displayName: _var.invoke_run_display_name,
- *     displayNameStartsWith: _var.invoke_run_display_name_starts_with,
- *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
- *     poolId: oci_dataflow_pool.test_pool.id,
- *     state: _var.invoke_run_state,
- *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
+ *     compartmentId: compartmentId,
+ *     applicationId: testApplication.id,
+ *     displayName: invokeRunDisplayName,
+ *     displayNameStartsWith: invokeRunDisplayNameStartsWith,
+ *     ownerPrincipalId: testOwnerPrincipal.id,
+ *     poolId: testPool.id,
+ *     state: invokeRunState,
+ *     timeCreatedGreaterThan: invokeRunTimeCreatedGreaterThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -139,14 +139,14 @@ export interface GetInvokeRunsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInvokeRuns = oci.DataFlow.getInvokeRuns({
- *     compartmentId: _var.compartment_id,
- *     applicationId: oci_dataflow_application.test_application.id,
- *     displayName: _var.invoke_run_display_name,
- *     displayNameStartsWith: _var.invoke_run_display_name_starts_with,
- *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
- *     poolId: oci_dataflow_pool.test_pool.id,
- *     state: _var.invoke_run_state,
- *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
+ *     compartmentId: compartmentId,
+ *     applicationId: testApplication.id,
+ *     displayName: invokeRunDisplayName,
+ *     displayNameStartsWith: invokeRunDisplayNameStartsWith,
+ *     ownerPrincipalId: testOwnerPrincipal.id,
+ *     poolId: testPool.id,
+ *     state: invokeRunState,
+ *     timeCreatedGreaterThan: invokeRunTimeCreatedGreaterThan,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

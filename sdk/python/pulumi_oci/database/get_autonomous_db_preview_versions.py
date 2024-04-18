@@ -92,7 +92,7 @@ def get_autonomous_db_preview_versions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=var["compartment_id"])
+    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -129,7 +129,7 @@ def get_autonomous_db_preview_versions_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=var["compartment_id"])
+    test_autonomous_db_preview_versions = oci.Database.get_autonomous_db_preview_versions(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

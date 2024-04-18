@@ -25,15 +25,15 @@ namespace Pulumi.Oci.AiVision
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProject = new Oci.AiVision.Project("testProject", new()
+    ///     var testProject = new Oci.AiVision.Project("test_project", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Project_description,
-    ///         DisplayName = @var.Project_display_name,
+    ///         Description = projectDescription,
+    ///         DisplayName = projectDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

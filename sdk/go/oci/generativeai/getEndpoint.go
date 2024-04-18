@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenerativeAi.GetEndpoint(ctx, &generativeai.GetEndpointArgs{
-//				EndpointId: oci_generative_ai_endpoint.Test_endpoint.Id,
+//				EndpointId: testEndpointOciGenerativeAiEndpoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

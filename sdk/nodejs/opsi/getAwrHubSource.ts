@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubSource = oci.Opsi.getAwrHubSource({
- *     awrHubSourceId: oci_opsi_awr_hub_source.test_awr_hub_source.id,
+ *     awrHubSourceId: testAwrHubSourceOciOpsiAwrHubSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -151,7 +151,7 @@ export interface GetAwrHubSourceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubSource = oci.Opsi.getAwrHubSource({
- *     awrHubSourceId: oci_opsi_awr_hub_source.test_awr_hub_source.id,
+ *     awrHubSourceId: testAwrHubSourceOciOpsiAwrHubSource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

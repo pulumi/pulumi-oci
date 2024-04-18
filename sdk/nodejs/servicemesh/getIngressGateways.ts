@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIngressGateways = oci.ServiceMesh.getIngressGateways({
- *     compartmentId: _var.compartment_id,
- *     id: _var.ingress_gateway_id,
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     name: _var.ingress_gateway_name,
- *     state: _var.ingress_gateway_state,
+ *     compartmentId: compartmentId,
+ *     id: ingressGatewayId,
+ *     meshId: testMesh.id,
+ *     name: ingressGatewayName,
+ *     state: ingressGatewayState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetIngressGatewaysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIngressGateways = oci.ServiceMesh.getIngressGateways({
- *     compartmentId: _var.compartment_id,
- *     id: _var.ingress_gateway_id,
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     name: _var.ingress_gateway_name,
- *     state: _var.ingress_gateway_state,
+ *     compartmentId: compartmentId,
+ *     id: ingressGatewayId,
+ *     meshId: testMesh.id,
+ *     name: ingressGatewayName,
+ *     state: ingressGatewayState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

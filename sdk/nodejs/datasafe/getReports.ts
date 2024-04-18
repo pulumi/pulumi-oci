@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReports = oci.DataSafe.getReports({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.report_access_level,
- *     compartmentIdInSubtree: _var.report_compartment_id_in_subtree,
- *     displayName: _var.report_display_name,
- *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
- *     state: _var.report_state,
- *     type: _var.report_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: reportAccessLevel,
+ *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
+ *     displayName: reportDisplayName,
+ *     reportDefinitionId: testReportDefinition.id,
+ *     state: reportState,
+ *     type: reportType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,13 +129,13 @@ export interface GetReportsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReports = oci.DataSafe.getReports({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.report_access_level,
- *     compartmentIdInSubtree: _var.report_compartment_id_in_subtree,
- *     displayName: _var.report_display_name,
- *     reportDefinitionId: oci_data_safe_report_definition.test_report_definition.id,
- *     state: _var.report_state,
- *     type: _var.report_type,
+ *     compartmentId: compartmentId,
+ *     accessLevel: reportAccessLevel,
+ *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
+ *     displayName: reportDisplayName,
+ *     reportDefinitionId: testReportDefinition.id,
+ *     state: reportState,
+ *     type: reportType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

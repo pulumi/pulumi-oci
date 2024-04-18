@@ -29,8 +29,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testClusterOption = Oci.ContainerEngine.GetClusterOption.Invoke(new()
         ///     {
-        ///         ClusterOptionId = oci_containerengine_cluster_option.Test_cluster_option.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         ClusterOptionId = testClusterOptionOciContainerengineClusterOption.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testClusterOption = Oci.ContainerEngine.GetClusterOption.Invoke(new()
         ///     {
-        ///         ClusterOptionId = oci_containerengine_cluster_option.Test_cluster_option.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         ClusterOptionId = testClusterOptionOciContainerengineClusterOption.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

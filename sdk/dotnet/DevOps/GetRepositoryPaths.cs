@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryPaths = Oci.DevOps.GetRepositoryPaths.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         DisplayName = @var.Repository_path_display_name,
-        ///         FolderPath = @var.Repository_path_folder_path,
-        ///         PathsInSubtree = @var.Repository_path_paths_in_subtree,
-        ///         Ref = @var.Repository_path_ref,
+        ///         RepositoryId = testRepository.Id,
+        ///         DisplayName = repositoryPathDisplayName,
+        ///         FolderPath = repositoryPathFolderPath,
+        ///         PathsInSubtree = repositoryPathPathsInSubtree,
+        ///         Ref = repositoryPathRef,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryPaths = Oci.DevOps.GetRepositoryPaths.Invoke(new()
         ///     {
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
-        ///         DisplayName = @var.Repository_path_display_name,
-        ///         FolderPath = @var.Repository_path_folder_path,
-        ///         PathsInSubtree = @var.Repository_path_paths_in_subtree,
-        ///         Ref = @var.Repository_path_ref,
+        ///         RepositoryId = testRepository.Id,
+        ///         DisplayName = repositoryPathDisplayName,
+        ///         FolderPath = repositoryPathFolderPath,
+        ///         PathsInSubtree = repositoryPathPathsInSubtree,
+        ///         Ref = repositoryPathRef,
         ///     });
         /// 
         /// });

@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ObjectStorage.GetObject(ctx, &objectstorage.GetObjectArgs{
-//				Bucket:                         _var.Object_bucket,
-//				Namespace:                      _var.Object_namespace,
-//				Object:                         _var.Object_object,
-//				HttpResponseCacheControl:       pulumi.StringRef(_var.Object_http_response_cache_control),
-//				HttpResponseContentDisposition: pulumi.StringRef(_var.Object_http_response_content_disposition),
-//				HttpResponseContentEncoding:    pulumi.StringRef(_var.Object_http_response_content_encoding),
-//				HttpResponseContentLanguage:    pulumi.StringRef(_var.Object_http_response_content_language),
-//				HttpResponseContentType:        pulumi.StringRef(_var.Object_http_response_content_type),
-//				HttpResponseExpires:            pulumi.StringRef(_var.Object_http_response_expires),
-//				VersionId:                      pulumi.StringRef(oci_objectstorage_version.Test_version.Id),
+//				Bucket:                         objectBucket,
+//				Namespace:                      objectNamespace,
+//				Object:                         objectObject,
+//				HttpResponseCacheControl:       pulumi.StringRef(objectHttpResponseCacheControl),
+//				HttpResponseContentDisposition: pulumi.StringRef(objectHttpResponseContentDisposition),
+//				HttpResponseContentEncoding:    pulumi.StringRef(objectHttpResponseContentEncoding),
+//				HttpResponseContentLanguage:    pulumi.StringRef(objectHttpResponseContentLanguage),
+//				HttpResponseContentType:        pulumi.StringRef(objectHttpResponseContentType),
+//				HttpResponseExpires:            pulumi.StringRef(objectHttpResponseExpires),
+//				VersionId:                      pulumi.StringRef(testVersion.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

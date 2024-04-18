@@ -30,10 +30,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagementStationMirrors = Oci.OsManagementHub.GetManagementStationMirrors.Invoke(new()
         ///     {
-        ///         ManagementStationId = oci_os_management_hub_management_station.Test_management_station.Id,
-        ///         DisplayName = @var.Management_station_mirror_display_name,
-        ///         DisplayNameContains = @var.Management_station_mirror_display_name_contains,
-        ///         MirrorStates = @var.Management_station_mirror_mirror_states,
+        ///         ManagementStationId = testManagementStation.Id,
+        ///         DisplayName = managementStationMirrorDisplayName,
+        ///         DisplayNameContains = managementStationMirrorDisplayNameContains,
+        ///         MirrorStates = managementStationMirrorMirrorStates,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagementStationMirrors = Oci.OsManagementHub.GetManagementStationMirrors.Invoke(new()
         ///     {
-        ///         ManagementStationId = oci_os_management_hub_management_station.Test_management_station.Id,
-        ///         DisplayName = @var.Management_station_mirror_display_name,
-        ///         DisplayNameContains = @var.Management_station_mirror_display_name_contains,
-        ///         MirrorStates = @var.Management_station_mirror_mirror_states,
+        ///         ManagementStationId = testManagementStation.Id,
+        ///         DisplayName = managementStationMirrorDisplayName,
+        ///         DisplayNameContains = managementStationMirrorDisplayNameContains,
+        ///         MirrorStates = managementStationMirrorMirrorStates,
         ///     });
         /// 
         /// });

@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testVaults = Oci.Kms.GetVaults.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Kms
         /// {
         ///     var testVaults = Oci.Kms.GetVaults.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

@@ -177,10 +177,10 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resources_list_member = oci.stack_monitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember",
-            monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            limit_level=var["monitored_resources_list_member_limit_level"])
+        test_monitored_resources_list_member = oci.stack_monitoring.MonitoredResourcesListMember("test_monitored_resources_list_member",
+            monitored_resource_id=test_monitored_resource["id"],
+            destination_resource_id=test_destination_resource["id"],
+            limit_level=monitored_resources_list_member_limit_level)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -220,10 +220,10 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resources_list_member = oci.stack_monitoring.MonitoredResourcesListMember("testMonitoredResourcesListMember",
-            monitored_resource_id=oci_stack_monitoring_monitored_resource["test_monitored_resource"]["id"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            limit_level=var["monitored_resources_list_member_limit_level"])
+        test_monitored_resources_list_member = oci.stack_monitoring.MonitoredResourcesListMember("test_monitored_resources_list_member",
+            monitored_resource_id=test_monitored_resource["id"],
+            destination_resource_id=test_destination_resource["id"],
+            limit_level=monitored_resources_list_member_limit_level)
         ```
         <!--End PulumiCodeChooser -->
 

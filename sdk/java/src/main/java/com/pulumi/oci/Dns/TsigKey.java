@@ -47,11 +47,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTsigKey = new TsigKey(&#34;testTsigKey&#34;, TsigKeyArgs.builder()        
- *             .algorithm(var_.tsig_key_algorithm())
- *             .compartmentId(var_.compartment_id())
- *             .secret(var_.tsig_key_secret())
- *             .definedTags(var_.tsig_key_defined_tags())
- *             .freeformTags(var_.tsig_key_freeform_tags())
+ *             .algorithm(tsigKeyAlgorithm)
+ *             .compartmentId(compartmentId)
+ *             .name(tsigKeyName)
+ *             .secret(tsigKeySecret)
+ *             .definedTags(tsigKeyDefinedTags)
+ *             .freeformTags(tsigKeyFreeformTags)
  *             .build());
  * 
  *     }

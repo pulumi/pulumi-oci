@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBootVolumeReplica = Oci.Core.GetBootVolumeReplica.Invoke(new()
         ///     {
-        ///         BootVolumeReplicaId = oci_core_boot_volume_replica.Test_boot_volume_replica.Id,
+        ///         BootVolumeReplicaId = testBootVolumeReplicaOciCoreBootVolumeReplica.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testBootVolumeReplica = Oci.Core.GetBootVolumeReplica.Invoke(new()
         ///     {
-        ///         BootVolumeReplicaId = oci_core_boot_volume_replica.Test_boot_volume_replica.Id,
+        ///         BootVolumeReplicaId = testBootVolumeReplicaOciCoreBootVolumeReplica.Id,
         ///     });
         /// 
         /// });

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnalyticsInstance = oci.Analytics.getAnalyticsInstance({
- *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
+ *     analyticsInstanceId: testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -126,7 +126,7 @@ export interface GetAnalyticsInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnalyticsInstance = oci.Analytics.getAnalyticsInstance({
- *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
+ *     analyticsInstanceId: testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

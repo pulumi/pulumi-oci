@@ -30,18 +30,18 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaAssets = Oci.MediaServices.GetMediaAssets.Invoke(new()
         ///     {
-        ///         Bucket = @var.Media_asset_bucket,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Media_asset_display_name,
-        ///         DistributionChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         MasterMediaAssetId = oci_media_services_media_asset.Test_media_asset.Id,
-        ///         MediaWorkflowJobId = oci_media_services_media_workflow_job.Test_media_workflow_job.Id,
-        ///         Object = @var.Media_asset_object,
-        ///         ParentMediaAssetId = oci_media_services_media_asset.Test_media_asset.Id,
-        ///         SourceMediaWorkflowId = oci_media_services_media_workflow.Test_media_workflow.Id,
-        ///         SourceMediaWorkflowVersion = @var.Media_asset_source_media_workflow_version,
-        ///         State = @var.Media_asset_state,
-        ///         Type = @var.Media_asset_type,
+        ///         Bucket = mediaAssetBucket,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mediaAssetDisplayName,
+        ///         DistributionChannelId = testChannel.Id,
+        ///         MasterMediaAssetId = testMediaAsset.Id,
+        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
+        ///         Object = mediaAssetObject,
+        ///         ParentMediaAssetId = testMediaAsset.Id,
+        ///         SourceMediaWorkflowId = testMediaWorkflow.Id,
+        ///         SourceMediaWorkflowVersion = mediaAssetSourceMediaWorkflowVersion,
+        ///         State = mediaAssetState,
+        ///         Type = mediaAssetType,
         ///     });
         /// 
         /// });
@@ -70,18 +70,18 @@ namespace Pulumi.Oci.MediaServices
         /// {
         ///     var testMediaAssets = Oci.MediaServices.GetMediaAssets.Invoke(new()
         ///     {
-        ///         Bucket = @var.Media_asset_bucket,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Media_asset_display_name,
-        ///         DistributionChannelId = oci_mysql_channel.Test_channel.Id,
-        ///         MasterMediaAssetId = oci_media_services_media_asset.Test_media_asset.Id,
-        ///         MediaWorkflowJobId = oci_media_services_media_workflow_job.Test_media_workflow_job.Id,
-        ///         Object = @var.Media_asset_object,
-        ///         ParentMediaAssetId = oci_media_services_media_asset.Test_media_asset.Id,
-        ///         SourceMediaWorkflowId = oci_media_services_media_workflow.Test_media_workflow.Id,
-        ///         SourceMediaWorkflowVersion = @var.Media_asset_source_media_workflow_version,
-        ///         State = @var.Media_asset_state,
-        ///         Type = @var.Media_asset_type,
+        ///         Bucket = mediaAssetBucket,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = mediaAssetDisplayName,
+        ///         DistributionChannelId = testChannel.Id,
+        ///         MasterMediaAssetId = testMediaAsset.Id,
+        ///         MediaWorkflowJobId = testMediaWorkflowJob.Id,
+        ///         Object = mediaAssetObject,
+        ///         ParentMediaAssetId = testMediaAsset.Id,
+        ///         SourceMediaWorkflowId = testMediaWorkflow.Id,
+        ///         SourceMediaWorkflowVersion = mediaAssetSourceMediaWorkflowVersion,
+        ///         State = mediaAssetState,
+        ///         Type = mediaAssetType,
         ///     });
         /// 
         /// });

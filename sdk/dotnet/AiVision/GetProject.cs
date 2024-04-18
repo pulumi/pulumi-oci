@@ -29,7 +29,7 @@ namespace Pulumi.Oci.AiVision
         /// {
         ///     var testProject = Oci.AiVision.GetProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_ai_vision_project.Test_project.Id,
+        ///         ProjectId = testProjectOciAiVisionProject.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.AiVision
         /// {
         ///     var testProject = Oci.AiVision.GetProject.Invoke(new()
         ///     {
-        ///         ProjectId = oci_ai_vision_project.Test_project.Id,
+        ///         ProjectId = testProjectOciAiVisionProject.Id,
         ///     });
         /// 
         /// });

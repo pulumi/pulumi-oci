@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUserGroupMembership = new oci.identity.UserGroupMembership("testUserGroupMembership", {
- *     groupId: oci_identity_group.test_group.id,
- *     userId: oci_identity_user.test_user.id,
+ * const testUserGroupMembership = new oci.identity.UserGroupMembership("test_user_group_membership", {
+ *     groupId: testGroup.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetSteeringPolicyAttachment(ctx, &dns.GetSteeringPolicyAttachmentArgs{
-//				SteeringPolicyAttachmentId: oci_dns_steering_policy_attachment.Test_steering_policy_attachment.Id,
+//				SteeringPolicyAttachmentId: testSteeringPolicyAttachmentOciDnsSteeringPolicyAttachment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

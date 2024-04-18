@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgAttachmentsList = new DrgAttachmentsList(&#34;testDrgAttachmentsList&#34;, DrgAttachmentsListArgs.builder()        
- *             .drgId(oci_core_drg.test_drg().id())
- *             .attachmentType(var_.drg_attachments_list_attachment_type())
- *             .isCrossTenancy(var_.drg_attachments_list_is_cross_tenancy())
+ *             .drgId(testDrg.id())
+ *             .attachmentType(drgAttachmentsListAttachmentType)
+ *             .isCrossTenancy(drgAttachmentsListIsCrossTenancy)
  *             .build());
  * 
  *     }

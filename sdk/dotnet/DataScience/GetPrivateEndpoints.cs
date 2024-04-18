@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testDataSciencePrivateEndpoints = Oci.DataScience.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Data_science_private_endpoint_created_by,
-        ///         DataScienceResourceType = @var.Data_science_private_endpoint_data_science_resource_type,
-        ///         DisplayName = @var.Data_science_private_endpoint_display_name,
-        ///         State = @var.Data_science_private_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = dataSciencePrivateEndpointCreatedBy,
+        ///         DataScienceResourceType = dataSciencePrivateEndpointDataScienceResourceType,
+        ///         DisplayName = dataSciencePrivateEndpointDisplayName,
+        ///         State = dataSciencePrivateEndpointState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testDataSciencePrivateEndpoints = Oci.DataScience.GetPrivateEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CreatedBy = @var.Data_science_private_endpoint_created_by,
-        ///         DataScienceResourceType = @var.Data_science_private_endpoint_data_science_resource_type,
-        ///         DisplayName = @var.Data_science_private_endpoint_display_name,
-        ///         State = @var.Data_science_private_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         CreatedBy = dataSciencePrivateEndpointCreatedBy,
+        ///         DataScienceResourceType = dataSciencePrivateEndpointDataScienceResourceType,
+        ///         DisplayName = dataSciencePrivateEndpointDisplayName,
+        ///         State = dataSciencePrivateEndpointState,
         ///     });
         /// 
         /// });

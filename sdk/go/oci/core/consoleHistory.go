@@ -47,12 +47,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewConsoleHistory(ctx, "testConsoleHistory", &Core.ConsoleHistoryArgs{
-//				InstanceId: pulumi.Any(oci_core_instance.Test_instance.Id),
+//			_, err := Core.NewConsoleHistory(ctx, "test_console_history", &Core.ConsoleHistoryArgs{
+//				InstanceId: pulumi.Any(testInstance.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Console_history_display_name),
+//				DisplayName: pulumi.Any(consoleHistoryDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

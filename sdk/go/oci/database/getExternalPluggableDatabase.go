@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetExternalPluggableDatabase(ctx, &database.GetExternalPluggableDatabaseArgs{
-//				ExternalPluggableDatabaseId: oci_database_external_pluggable_database.Test_external_pluggable_database.Id,
+//				ExternalPluggableDatabaseId: testExternalPluggableDatabaseOciDatabaseExternalPluggableDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

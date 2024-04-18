@@ -210,14 +210,14 @@ def get_domains_app_roles(app_role_count: Optional[int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_app_roles = oci.Identity.get_domains_app_roles(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        app_role_count=var["app_role_app_role_count"],
-        app_role_filter=var["app_role_app_role_filter"],
+    test_app_roles = oci.Identity.get_domains_app_roles(idcs_endpoint=test_domain["url"],
+        app_role_count=app_role_app_role_count,
+        app_role_filter=app_role_app_role_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["app_role_authorization"],
-        resource_type_schema_version=var["app_role_resource_type_schema_version"],
-        start_index=var["app_role_start_index"])
+        authorization=app_role_authorization,
+        resource_type_schema_version=app_role_resource_type_schema_version,
+        start_index=app_role_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_app_roles_output(app_role_count: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_app_roles = oci.Identity.get_domains_app_roles(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        app_role_count=var["app_role_app_role_count"],
-        app_role_filter=var["app_role_app_role_filter"],
+    test_app_roles = oci.Identity.get_domains_app_roles(idcs_endpoint=test_domain["url"],
+        app_role_count=app_role_app_role_count,
+        app_role_filter=app_role_app_role_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["app_role_authorization"],
-        resource_type_schema_version=var["app_role_resource_type_schema_version"],
-        start_index=var["app_role_start_index"])
+        authorization=app_role_authorization,
+        resource_type_schema_version=app_role_resource_type_schema_version,
+        start_index=app_role_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

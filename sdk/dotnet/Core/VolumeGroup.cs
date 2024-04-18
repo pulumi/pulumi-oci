@@ -21,24 +21,24 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVolumeGroup = new Oci.Core.VolumeGroup("testVolumeGroup", new()
+    ///     var testVolumeGroup = new Oci.Core.VolumeGroup("test_volume_group", new()
     ///     {
-    ///         AvailabilityDomain = @var.Volume_group_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = volumeGroupAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         SourceDetails = new Oci.Core.Inputs.VolumeGroupSourceDetailsArgs
     ///         {
     ///             Type = "volumeIds",
     ///             VolumeIds = new[]
     ///             {
-    ///                 @var.Volume_group_source_id,
+    ///                 volumeGroupSourceId,
     ///             },
     ///         },
-    ///         BackupPolicyId = data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id,
+    ///         BackupPolicyId = testVolumeBackupPolicies.VolumeBackupPolicies[0].Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Volume_group_display_name,
+    ///         DisplayName = volumeGroupDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -47,13 +47,13 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             new Oci.Core.Inputs.VolumeGroupVolumeGroupReplicaArgs
     ///             {
-    ///                 AvailabilityDomain = @var.Volume_group_volume_group_replicas_availability_domain,
-    ///                 DisplayName = @var.Volume_group_volume_group_replicas_display_name,
+    ///                 AvailabilityDomain = volumeGroupVolumeGroupReplicasAvailabilityDomain,
+    ///                 DisplayName = volumeGroupVolumeGroupReplicasDisplayName,
     ///             },
     ///         },
     ///         VolumeIds = new[]
     ///         {
-    ///             @var.Volume_group_source_id,
+    ///             volumeGroupSourceId,
     ///         },
     ///     });
     /// 

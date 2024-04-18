@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectedDatabases = oci.RecoveryMod.getProtectedDatabases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.protected_database_display_name,
- *     id: _var.protected_database_id,
- *     protectionPolicyId: oci_recovery_protection_policy.test_protection_policy.id,
- *     recoveryServiceSubnetId: oci_recovery_recovery_service_subnet.test_recovery_service_subnet.id,
- *     state: _var.protected_database_state,
+ *     compartmentId: compartmentId,
+ *     displayName: protectedDatabaseDisplayName,
+ *     id: protectedDatabaseId,
+ *     protectionPolicyId: testProtectionPolicy.id,
+ *     recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
+ *     state: protectedDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetProtectedDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectedDatabases = oci.RecoveryMod.getProtectedDatabases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.protected_database_display_name,
- *     id: _var.protected_database_id,
- *     protectionPolicyId: oci_recovery_protection_policy.test_protection_policy.id,
- *     recoveryServiceSubnetId: oci_recovery_recovery_service_subnet.test_recovery_service_subnet.id,
- *     state: _var.protected_database_state,
+ *     compartmentId: compartmentId,
+ *     displayName: protectedDatabaseDisplayName,
+ *     id: protectedDatabaseId,
+ *     protectionPolicyId: testProtectionPolicy.id,
+ *     recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
+ *     state: protectedDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

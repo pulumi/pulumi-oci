@@ -44,9 +44,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetListingPackage(ctx, &marketplace.GetListingPackageArgs{
-//				ListingId:      oci_marketplace_listing.Test_listing.Id,
-//				PackageVersion: _var.Listing_package_package_version,
-//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
+//				ListingId:      testListing.Id,
+//				PackageVersion: listingPackagePackageVersion,
+//				CompartmentId:  pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

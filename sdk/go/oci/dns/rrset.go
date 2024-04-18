@@ -32,21 +32,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewRrset(ctx, "testRrset", &Dns.RrsetArgs{
-//				Domain:        pulumi.Any(_var.Rrset_domain),
-//				Rtype:         pulumi.Any(_var.Rrset_rtype),
-//				ZoneNameOrId:  pulumi.Any(oci_dns_zone.Test_zone.Id),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Dns.NewRrset(ctx, "test_rrset", &Dns.RrsetArgs{
+//				Domain:        pulumi.Any(rrsetDomain),
+//				Rtype:         pulumi.Any(rrsetRtype),
+//				ZoneNameOrId:  pulumi.Any(testZone.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Items: dns.RrsetItemArray{
 //					&dns.RrsetItemArgs{
-//						Domain: pulumi.Any(_var.Rrset_items_domain),
-//						Rdata:  pulumi.Any(_var.Rrset_items_rdata),
-//						Rtype:  pulumi.Any(_var.Rrset_items_rtype),
-//						Ttl:    pulumi.Any(_var.Rrset_items_ttl),
+//						Domain: pulumi.Any(rrsetItemsDomain),
+//						Rdata:  pulumi.Any(rrsetItemsRdata),
+//						Rtype:  pulumi.Any(rrsetItemsRtype),
+//						Ttl:    pulumi.Any(rrsetItemsTtl),
 //					},
 //				},
-//				Scope:  pulumi.Any(_var.Rrset_scope),
-//				ViewId: pulumi.Any(oci_dns_view.Test_view.Id),
+//				Scope:  pulumi.Any(rrsetScope),
+//				ViewId: pulumi.Any(testView.Id),
 //			})
 //			if err != nil {
 //				return err

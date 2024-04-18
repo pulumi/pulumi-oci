@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityPropagationTrust = oci.Identity.getDomainsIdentityPropagationTrust({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityPropagationTrustId: oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust.id,
+ *     idcsEndpoint: testDomain.url,
+ *     identityPropagationTrustId: testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_propagation_trust_authorization,
- *     resourceTypeSchemaVersion: _var.identity_propagation_trust_resource_type_schema_version,
+ *     authorization: identityPropagationTrustAuthorization,
+ *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -220,12 +220,12 @@ export interface GetDomainsIdentityPropagationTrustResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityPropagationTrust = oci.Identity.getDomainsIdentityPropagationTrust({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityPropagationTrustId: oci_identity_domains_identity_propagation_trust.test_identity_propagation_trust.id,
+ *     idcsEndpoint: testDomain.url,
+ *     identityPropagationTrustId: testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.id,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_propagation_trust_authorization,
- *     resourceTypeSchemaVersion: _var.identity_propagation_trust_resource_type_schema_version,
+ *     authorization: identityPropagationTrustAuthorization,
+ *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

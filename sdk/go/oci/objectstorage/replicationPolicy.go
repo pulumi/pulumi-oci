@@ -31,11 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.NewReplicationPolicy(ctx, "testReplicationPolicy", &ObjectStorage.ReplicationPolicyArgs{
-//				Bucket:                pulumi.Any(_var.Replication_policy_bucket),
-//				DestinationBucketName: pulumi.Any(oci_objectstorage_bucket.Test_bucket.Name),
-//				DestinationRegionName: pulumi.Any(oci_identity_region.Test_region.Name),
-//				Namespace:             pulumi.Any(_var.Replication_policy_namespace),
+//			_, err := ObjectStorage.NewReplicationPolicy(ctx, "test_replication_policy", &ObjectStorage.ReplicationPolicyArgs{
+//				Bucket:                pulumi.Any(replicationPolicyBucket),
+//				DestinationBucketName: pulumi.Any(testBucket.Name),
+//				DestinationRegionName: pulumi.Any(testRegion.Name),
+//				Name:                  pulumi.Any(replicationPolicyName),
+//				Namespace:             pulumi.Any(replicationPolicyNamespace),
 //			})
 //			if err != nil {
 //				return err

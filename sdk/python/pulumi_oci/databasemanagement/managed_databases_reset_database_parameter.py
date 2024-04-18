@@ -233,23 +233,23 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_databases_reset_database_parameter = oci.database_management.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter",
-            managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-            parameters=var["managed_databases_reset_database_parameter_parameters"],
-            scope=var["managed_databases_reset_database_parameter_scope"],
+        test_managed_databases_reset_database_parameter = oci.database_management.ManagedDatabasesResetDatabaseParameter("test_managed_databases_reset_database_parameter",
+            managed_database_id=test_managed_database["id"],
+            parameters=managed_databases_reset_database_parameter_parameters,
+            scope=managed_databases_reset_database_parameter_scope,
             credentials=oci.database_management.ManagedDatabasesResetDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_reset_database_parameter_credentials_password"],
-                role=var["managed_databases_reset_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password=managed_databases_reset_database_parameter_credentials_password,
+                role=managed_databases_reset_database_parameter_credentials_role,
+                secret_id=test_secret["id"],
+                user_name=test_user["name"],
             ),
             database_credential=oci.database_management.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs(
-                credential_type=var["managed_databases_reset_database_parameter_database_credential_credential_type"],
-                named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"],
-                password=var["managed_databases_reset_database_parameter_database_credential_password"],
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                role=var["managed_databases_reset_database_parameter_database_credential_role"],
-                username=var["managed_databases_reset_database_parameter_database_credential_username"],
+                credential_type=managed_databases_reset_database_parameter_database_credential_credential_type,
+                named_credential_id=test_named_credential["id"],
+                password=managed_databases_reset_database_parameter_database_credential_password,
+                password_secret_id=test_secret["id"],
+                role=managed_databases_reset_database_parameter_database_credential_role,
+                username=managed_databases_reset_database_parameter_database_credential_username,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -290,23 +290,23 @@ class ManagedDatabasesResetDatabaseParameter(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_databases_reset_database_parameter = oci.database_management.ManagedDatabasesResetDatabaseParameter("testManagedDatabasesResetDatabaseParameter",
-            managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-            parameters=var["managed_databases_reset_database_parameter_parameters"],
-            scope=var["managed_databases_reset_database_parameter_scope"],
+        test_managed_databases_reset_database_parameter = oci.database_management.ManagedDatabasesResetDatabaseParameter("test_managed_databases_reset_database_parameter",
+            managed_database_id=test_managed_database["id"],
+            parameters=managed_databases_reset_database_parameter_parameters,
+            scope=managed_databases_reset_database_parameter_scope,
             credentials=oci.database_management.ManagedDatabasesResetDatabaseParameterCredentialsArgs(
-                password=var["managed_databases_reset_database_parameter_credentials_password"],
-                role=var["managed_databases_reset_database_parameter_credentials_role"],
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                user_name=oci_identity_user["test_user"]["name"],
+                password=managed_databases_reset_database_parameter_credentials_password,
+                role=managed_databases_reset_database_parameter_credentials_role,
+                secret_id=test_secret["id"],
+                user_name=test_user["name"],
             ),
             database_credential=oci.database_management.ManagedDatabasesResetDatabaseParameterDatabaseCredentialArgs(
-                credential_type=var["managed_databases_reset_database_parameter_database_credential_credential_type"],
-                named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"],
-                password=var["managed_databases_reset_database_parameter_database_credential_password"],
-                password_secret_id=oci_vault_secret["test_secret"]["id"],
-                role=var["managed_databases_reset_database_parameter_database_credential_role"],
-                username=var["managed_databases_reset_database_parameter_database_credential_username"],
+                credential_type=managed_databases_reset_database_parameter_database_credential_credential_type,
+                named_credential_id=test_named_credential["id"],
+                password=managed_databases_reset_database_parameter_database_credential_password,
+                password_secret_id=test_secret["id"],
+                role=managed_databases_reset_database_parameter_database_credential_role,
+                username=managed_databases_reset_database_parameter_database_credential_username,
             ))
         ```
         <!--End PulumiCodeChooser -->

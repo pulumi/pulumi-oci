@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbSystemShapes(ctx, &database.GetDbSystemShapesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Db_system_shape_availability_domain),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(dbSystemShapeAvailabilityDomain),
 //			}, nil)
 //			if err != nil {
 //				return err

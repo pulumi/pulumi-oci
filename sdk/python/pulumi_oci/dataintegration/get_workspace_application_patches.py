@@ -137,11 +137,11 @@ def get_workspace_application_patches(application_key: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patches = oci.DataIntegration.get_workspace_application_patches(application_key=var["workspace_application_patch_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_application_patch_fields"],
-        identifiers=var["workspace_application_patch_identifier"],
-        name=var["workspace_application_patch_name"])
+    test_workspace_application_patches = oci.DataIntegration.get_workspace_application_patches(application_key=workspace_application_patch_application_key,
+        workspace_id=test_workspace["id"],
+        fields=workspace_application_patch_fields,
+        identifiers=workspace_application_patch_identifier,
+        name=workspace_application_patch_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -193,11 +193,11 @@ def get_workspace_application_patches_output(application_key: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_workspace_application_patches = oci.DataIntegration.get_workspace_application_patches(application_key=var["workspace_application_patch_application_key"],
-        workspace_id=oci_dataintegration_workspace["test_workspace"]["id"],
-        fields=var["workspace_application_patch_fields"],
-        identifiers=var["workspace_application_patch_identifier"],
-        name=var["workspace_application_patch_name"])
+    test_workspace_application_patches = oci.DataIntegration.get_workspace_application_patches(application_key=workspace_application_patch_application_key,
+        workspace_id=test_workspace["id"],
+        fields=workspace_application_patch_fields,
+        identifiers=workspace_application_patch_identifier,
+        name=workspace_application_patch_name)
     ```
     <!--End PulumiCodeChooser -->
 

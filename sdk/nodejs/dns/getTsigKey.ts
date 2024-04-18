@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTsigKey = oci.Dns.getTsigKey({
- *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ *     tsigKeyId: testTsigKeyOciDnsTsigKey.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,7 +103,7 @@ export interface GetTsigKeyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTsigKey = oci.Dns.getTsigKey({
- *     tsigKeyId: oci_dns_tsig_key.test_tsig_key.id,
+ *     tsigKeyId: testTsigKeyOciDnsTsigKey.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

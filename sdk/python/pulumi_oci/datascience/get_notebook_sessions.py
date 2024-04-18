@@ -147,12 +147,12 @@ def get_notebook_sessions(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_sessions = oci.DataScience.get_notebook_sessions(compartment_id=var["compartment_id"],
-        created_by=var["notebook_session_created_by"],
-        display_name=var["notebook_session_display_name"],
-        id=var["notebook_session_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["notebook_session_state"])
+    test_notebook_sessions = oci.DataScience.get_notebook_sessions(compartment_id=compartment_id,
+        created_by=notebook_session_created_by,
+        display_name=notebook_session_display_name,
+        id=notebook_session_id,
+        project_id=test_project["id"],
+        state=notebook_session_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_notebook_sessions_output(compartment_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_notebook_sessions = oci.DataScience.get_notebook_sessions(compartment_id=var["compartment_id"],
-        created_by=var["notebook_session_created_by"],
-        display_name=var["notebook_session_display_name"],
-        id=var["notebook_session_id"],
-        project_id=oci_datascience_project["test_project"]["id"],
-        state=var["notebook_session_state"])
+    test_notebook_sessions = oci.DataScience.get_notebook_sessions(compartment_id=compartment_id,
+        created_by=notebook_session_created_by,
+        display_name=notebook_session_display_name,
+        id=notebook_session_id,
+        project_id=test_project["id"],
+        state=notebook_session_state)
     ```
     <!--End PulumiCodeChooser -->
 

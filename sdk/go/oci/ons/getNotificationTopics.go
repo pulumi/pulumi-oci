@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ons.GetNotificationTopics(ctx, &ons.GetNotificationTopicsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Notification_topic_id),
-//				Name:          pulumi.StringRef(_var.Notification_topic_name),
-//				State:         pulumi.StringRef(_var.Notification_topic_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(notificationTopicId),
+//				Name:          pulumi.StringRef(notificationTopicName),
+//				State:         pulumi.StringRef(notificationTopicState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -148,12 +148,12 @@ def get_pbf_listings(filters: Optional[Sequence[pulumi.InputType['GetPbfListings
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listings = oci.Functions.get_pbf_listings(name=var["pbf_listing_name"],
-        name_contains=var["pbf_listing_name_contains"],
-        name_starts_with=var["pbf_listing_name_starts_with"],
-        pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-        state=var["pbf_listing_state"],
-        triggers=var["pbf_listing_trigger"])
+    test_pbf_listings = oci.Functions.get_pbf_listings(name=pbf_listing_name,
+        name_contains=pbf_listing_name_contains,
+        name_starts_with=pbf_listing_name_starts_with,
+        pbf_listing_id=test_pbf_listing["id"],
+        state=pbf_listing_state,
+        triggers=pbf_listing_trigger)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -210,12 +210,12 @@ def get_pbf_listings_output(filters: Optional[pulumi.Input[Optional[Sequence[pul
     import pulumi
     import pulumi_oci as oci
 
-    test_pbf_listings = oci.Functions.get_pbf_listings(name=var["pbf_listing_name"],
-        name_contains=var["pbf_listing_name_contains"],
-        name_starts_with=var["pbf_listing_name_starts_with"],
-        pbf_listing_id=oci_functions_pbf_listing["test_pbf_listing"]["id"],
-        state=var["pbf_listing_state"],
-        triggers=var["pbf_listing_trigger"])
+    test_pbf_listings = oci.Functions.get_pbf_listings(name=pbf_listing_name,
+        name_contains=pbf_listing_name_contains,
+        name_starts_with=pbf_listing_name_starts_with,
+        pbf_listing_id=test_pbf_listing["id"],
+        state=pbf_listing_state,
+        triggers=pbf_listing_trigger)
     ```
     <!--End PulumiCodeChooser -->
 

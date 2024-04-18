@@ -179,14 +179,14 @@ def get_invoke_runs(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=var["compartment_id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        display_name=var["invoke_run_display_name"],
-        display_name_starts_with=var["invoke_run_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        pool_id=oci_dataflow_pool["test_pool"]["id"],
-        state=var["invoke_run_state"],
-        time_created_greater_than=var["invoke_run_time_created_greater_than"])
+    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=compartment_id,
+        application_id=test_application["id"],
+        display_name=invoke_run_display_name,
+        display_name_starts_with=invoke_run_display_name_starts_with,
+        owner_principal_id=test_owner_principal["id"],
+        pool_id=test_pool["id"],
+        state=invoke_run_state,
+        time_created_greater_than=invoke_run_time_created_greater_than)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -250,14 +250,14 @@ def get_invoke_runs_output(application_id: Optional[pulumi.Input[Optional[str]]]
     import pulumi
     import pulumi_oci as oci
 
-    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=var["compartment_id"],
-        application_id=oci_dataflow_application["test_application"]["id"],
-        display_name=var["invoke_run_display_name"],
-        display_name_starts_with=var["invoke_run_display_name_starts_with"],
-        owner_principal_id=oci_dataflow_owner_principal["test_owner_principal"]["id"],
-        pool_id=oci_dataflow_pool["test_pool"]["id"],
-        state=var["invoke_run_state"],
-        time_created_greater_than=var["invoke_run_time_created_greater_than"])
+    test_invoke_runs = oci.DataFlow.get_invoke_runs(compartment_id=compartment_id,
+        application_id=test_application["id"],
+        display_name=invoke_run_display_name,
+        display_name_starts_with=invoke_run_display_name_starts_with,
+        owner_principal_id=test_owner_principal["id"],
+        pool_id=test_pool["id"],
+        state=invoke_run_state,
+        time_created_greater_than=invoke_run_time_created_greater_than)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolumeGroups(ctx, &core.GetVolumeGroupsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Volume_group_availability_domain),
-//				DisplayName:        pulumi.StringRef(_var.Volume_group_display_name),
-//				State:              pulumi.StringRef(_var.Volume_group_state),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(volumeGroupAvailabilityDomain),
+//				DisplayName:        pulumi.StringRef(volumeGroupDisplayName),
+//				State:              pulumi.StringRef(volumeGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

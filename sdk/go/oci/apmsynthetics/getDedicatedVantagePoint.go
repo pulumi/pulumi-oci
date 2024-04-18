@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetDedicatedVantagePoint(ctx, &apmsynthetics.GetDedicatedVantagePointArgs{
-//				ApmDomainId:             oci_apm_apm_domain.Test_apm_domain.Id,
-//				DedicatedVantagePointId: oci_apm_synthetics_dedicated_vantage_point.Test_dedicated_vantage_point.Id,
+//				ApmDomainId:             testApmDomain.Id,
+//				DedicatedVantagePointId: testDedicatedVantagePointOciApmSyntheticsDedicatedVantagePoint.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

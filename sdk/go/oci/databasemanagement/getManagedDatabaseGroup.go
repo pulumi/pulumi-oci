@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseGroup(ctx, &databasemanagement.GetManagedDatabaseGroupArgs{
-//				ManagedDatabaseGroupId: oci_database_management_managed_database_group.Test_managed_database_group.Id,
+//				ManagedDatabaseGroupId: testManagedDatabaseGroupOciDatabaseManagementManagedDatabaseGroup.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

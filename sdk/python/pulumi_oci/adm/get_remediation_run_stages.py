@@ -120,9 +120,9 @@ def get_remediation_run_stages(filters: Optional[Sequence[pulumi.InputType['GetR
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_run_stages = oci.Adm.get_remediation_run_stages(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        status=var["remediation_run_stage_status"],
-        type=var["remediation_run_stage_type"])
+    test_remediation_run_stages = oci.Adm.get_remediation_run_stages(remediation_run_id=test_remediation_run["id"],
+        status=remediation_run_stage_status,
+        type=remediation_run_stage_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_remediation_run_stages_output(filters: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_run_stages = oci.Adm.get_remediation_run_stages(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        status=var["remediation_run_stage_status"],
-        type=var["remediation_run_stage_type"])
+    test_remediation_run_stages = oci.Adm.get_remediation_run_stages(remediation_run_id=test_remediation_run["id"],
+        status=remediation_run_stage_status,
+        type=remediation_run_stage_type)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentRefreshActivities(ctx, &functions.GetFusionEnvironmentRefreshActivitiesArgs{
-//				FusionEnvironmentId:                    oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-//				DisplayName:                            pulumi.StringRef(_var.Fusion_environment_refresh_activity_display_name),
-//				State:                                  pulumi.StringRef(_var.Fusion_environment_refresh_activity_state),
-//				TimeExpectedFinishLessThanOrEqualTo:    pulumi.StringRef(_var.Fusion_environment_refresh_activity_time_expected_finish_less_than_or_equal_to),
-//				TimeScheduledStartGreaterThanOrEqualTo: pulumi.StringRef(_var.Fusion_environment_refresh_activity_time_scheduled_start_greater_than_or_equal_to),
+//				FusionEnvironmentId:                    testFusionEnvironment.Id,
+//				DisplayName:                            pulumi.StringRef(fusionEnvironmentRefreshActivityDisplayName),
+//				State:                                  pulumi.StringRef(fusionEnvironmentRefreshActivityState),
+//				TimeExpectedFinishLessThanOrEqualTo:    pulumi.StringRef(fusionEnvironmentRefreshActivityTimeExpectedFinishLessThanOrEqualTo),
+//				TimeScheduledStartGreaterThanOrEqualTo: pulumi.StringRef(fusionEnvironmentRefreshActivityTimeScheduledStartGreaterThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err

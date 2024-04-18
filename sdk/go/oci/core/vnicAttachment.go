@@ -33,25 +33,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVnicAttachment(ctx, "testVnicAttachment", &Core.VnicAttachmentArgs{
+//			_, err := Core.NewVnicAttachment(ctx, "test_vnic_attachment", &Core.VnicAttachmentArgs{
 //				CreateVnicDetails: &core.VnicAttachmentCreateVnicDetailsArgs{
-//					AssignIpv6ip:                         pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_ipv6ip),
-//					AssignPrivateDnsRecord:               pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_private_dns_record),
-//					AssignPublicIp:                       pulumi.Any(_var.Vnic_attachment_create_vnic_details_assign_public_ip),
-//					DefinedTags:                          pulumi.Any(_var.Vnic_attachment_create_vnic_details_defined_tags),
-//					DisplayName:                          pulumi.Any(_var.Vnic_attachment_create_vnic_details_display_name),
-//					FreeformTags:                         pulumi.Any(_var.Vnic_attachment_create_vnic_details_freeform_tags),
-//					HostnameLabel:                        pulumi.Any(_var.Vnic_attachment_create_vnic_details_hostname_label),
-//					Ipv6addressIpv6subnetCidrPairDetails: pulumi.Any(_var.Vnic_attachment_create_vnic_details_ipv6address_ipv6subnet_cidr_pair_details),
-//					NsgIds:                               pulumi.Any(_var.Vnic_attachment_create_vnic_details_nsg_ids),
-//					PrivateIp:                            pulumi.Any(_var.Vnic_attachment_create_vnic_details_private_ip),
-//					SkipSourceDestCheck:                  pulumi.Any(_var.Vnic_attachment_create_vnic_details_skip_source_dest_check),
-//					SubnetId:                             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					VlanId:                               pulumi.Any(oci_core_vlan.Test_vlan.Id),
+//					AssignIpv6ip:                         pulumi.Any(vnicAttachmentCreateVnicDetailsAssignIpv6ip),
+//					AssignPrivateDnsRecord:               pulumi.Any(vnicAttachmentCreateVnicDetailsAssignPrivateDnsRecord),
+//					AssignPublicIp:                       pulumi.Any(vnicAttachmentCreateVnicDetailsAssignPublicIp),
+//					DefinedTags:                          pulumi.Any(vnicAttachmentCreateVnicDetailsDefinedTags),
+//					DisplayName:                          pulumi.Any(vnicAttachmentCreateVnicDetailsDisplayName),
+//					FreeformTags:                         pulumi.Any(vnicAttachmentCreateVnicDetailsFreeformTags),
+//					HostnameLabel:                        pulumi.Any(vnicAttachmentCreateVnicDetailsHostnameLabel),
+//					Ipv6addressIpv6subnetCidrPairDetails: pulumi.Any(vnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetails),
+//					NsgIds:                               pulumi.Any(vnicAttachmentCreateVnicDetailsNsgIds),
+//					PrivateIp:                            pulumi.Any(vnicAttachmentCreateVnicDetailsPrivateIp),
+//					SkipSourceDestCheck:                  pulumi.Any(vnicAttachmentCreateVnicDetailsSkipSourceDestCheck),
+//					SubnetId:                             pulumi.Any(testSubnet.Id),
+//					VlanId:                               pulumi.Any(testVlan.Id),
 //				},
-//				InstanceId:  pulumi.Any(oci_core_instance.Test_instance.Id),
-//				DisplayName: pulumi.Any(_var.Vnic_attachment_display_name),
-//				NicIndex:    pulumi.Any(_var.Vnic_attachment_nic_index),
+//				InstanceId:  pulumi.Any(testInstance.Id),
+//				DisplayName: pulumi.Any(vnicAttachmentDisplayName),
+//				NicIndex:    pulumi.Any(vnicAttachmentNicIndex),
 //			})
 //			if err != nil {
 //				return err

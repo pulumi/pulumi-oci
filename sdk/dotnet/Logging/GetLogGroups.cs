@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogGroups = Oci.Logging.GetLogGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Log_group_display_name,
-        ///         IsCompartmentIdInSubtree = @var.Log_group_is_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = logGroupDisplayName,
+        ///         IsCompartmentIdInSubtree = logGroupIsCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Logging
         /// {
         ///     var testLogGroups = Oci.Logging.GetLogGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Log_group_display_name,
-        ///         IsCompartmentIdInSubtree = @var.Log_group_is_compartment_id_in_subtree,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = logGroupDisplayName,
+        ///         IsCompartmentIdInSubtree = logGroupIsCompartmentIdInSubtree,
         ///     });
         /// 
         /// });

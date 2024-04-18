@@ -54,14 +54,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalExadataInfrastructure = new ExternalExadataInfrastructure(&#34;testExternalExadataInfrastructure&#34;, ExternalExadataInfrastructureArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dbSystemIds(var_.external_exadata_infrastructure_db_system_ids())
- *             .displayName(var_.external_exadata_infrastructure_display_name())
+ *             .compartmentId(compartmentId)
+ *             .dbSystemIds(externalExadataInfrastructureDbSystemIds)
+ *             .displayName(externalExadataInfrastructureDisplayName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .discoveryKey(var_.external_exadata_infrastructure_discovery_key())
+ *             .discoveryKey(externalExadataInfrastructureDiscoveryKey)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .licenseModel(var_.external_exadata_infrastructure_license_model())
- *             .storageServerNames(var_.external_exadata_infrastructure_storage_server_names())
+ *             .licenseModel(externalExadataInfrastructureLicenseModel)
+ *             .storageServerNames(externalExadataInfrastructureStorageServerNames)
  *             .build());
  * 
  *     }

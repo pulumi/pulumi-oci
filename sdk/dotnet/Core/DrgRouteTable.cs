@@ -26,20 +26,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrgRouteTable = new Oci.Core.DrgRouteTable("testDrgRouteTable", new()
+    ///     var testDrgRouteTable = new Oci.Core.DrgRouteTable("test_drg_route_table", new()
     ///     {
-    ///         DrgId = oci_core_drg.Test_drg.Id,
+    ///         DrgId = testDrg.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Drg_route_table_display_name,
+    ///         DisplayName = drgRouteTableDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         ImportDrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-    ///         IsEcmpEnabled = @var.Drg_route_table_is_ecmp_enabled,
+    ///         ImportDrgRouteDistributionId = testDrgRouteDistribution.Id,
+    ///         IsEcmpEnabled = drgRouteTableIsEcmpEnabled,
     ///     });
     /// 
     /// });

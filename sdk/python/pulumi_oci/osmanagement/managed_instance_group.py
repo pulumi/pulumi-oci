@@ -338,18 +338,18 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_instance_group = oci.os_management.ManagedInstanceGroup("testManagedInstanceGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["managed_instance_group_display_name"],
+        test_managed_instance_group = oci.os_management.ManagedInstanceGroup("test_managed_instance_group",
+            compartment_id=compartment_id,
+            display_name=managed_instance_group_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["managed_instance_group_description"],
+            description=managed_instance_group_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            os_family=var["managed_instance_group_os_family"],
-            managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
+            os_family=managed_instance_group_os_family,
+            managed_instance_ids=managed_instance_group_managed_instance_ids)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -395,18 +395,18 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_managed_instance_group = oci.os_management.ManagedInstanceGroup("testManagedInstanceGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["managed_instance_group_display_name"],
+        test_managed_instance_group = oci.os_management.ManagedInstanceGroup("test_managed_instance_group",
+            compartment_id=compartment_id,
+            display_name=managed_instance_group_display_name,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["managed_instance_group_description"],
+            description=managed_instance_group_description,
             freeform_tags={
                 "bar-key": "value",
             },
-            os_family=var["managed_instance_group_os_family"],
-            managed_instance_ids=var["managed_instance_group_managed_instance_ids"])
+            os_family=managed_instance_group_os_family,
+            managed_instance_ids=managed_instance_group_managed_instance_ids)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionRedeemableUsers = oci.UsageProxy.getSubscriptionRedeemableUsers({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetSubscriptionRedeemableUsersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscriptionRedeemableUsers = oci.UsageProxy.getSubscriptionRedeemableUsers({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

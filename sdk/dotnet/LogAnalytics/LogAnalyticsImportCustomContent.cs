@@ -25,12 +25,12 @@ namespace Pulumi.Oci.LogAnalytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLogAnalyticsImportCustomContent = new Oci.LogAnalytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent", new()
+    ///     var testLogAnalyticsImportCustomContent = new Oci.LogAnalytics.LogAnalyticsImportCustomContent("test_log_analytics_import_custom_content", new()
     ///     {
-    ///         ImportCustomContentFile = @var.Log_analytics_import_custom_content_import_custom_content_file,
-    ///         Namespace = @var.Log_analytics_import_custom_content_namespace,
-    ///         Expect = @var.Log_analytics_import_custom_content_expect,
-    ///         IsOverwrite = @var.Log_analytics_import_custom_content_is_overwrite,
+    ///         ImportCustomContentFile = logAnalyticsImportCustomContentImportCustomContentFile,
+    ///         Namespace = logAnalyticsImportCustomContentNamespace,
+    ///         Expect = logAnalyticsImportCustomContentExpect,
+    ///         IsOverwrite = logAnalyticsImportCustomContentIsOverwrite,
     ///     });
     /// 
     /// });

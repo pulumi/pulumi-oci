@@ -29,8 +29,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ManagementAgent.NewManagementAgent(ctx, "testManagementAgent", &ManagementAgent.ManagementAgentArgs{
-//				ManagedAgentId: pulumi.Any(oci_management_agent_managed_agent.Test_managed_agent.Id),
+//			_, err := ManagementAgent.NewManagementAgent(ctx, "test_management_agent", &ManagementAgent.ManagementAgentArgs{
+//				ManagedAgentId: pulumi.Any(testManagedAgent.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -236,7 +236,7 @@ def get_virtual_service(virtual_service_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=test_virtual_service_oci_service_mesh_virtual_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_virtual_service_output(virtual_service_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
+    test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=test_virtual_service_oci_service_mesh_virtual_service["id"])
     ```
     <!--End PulumiCodeChooser -->
 

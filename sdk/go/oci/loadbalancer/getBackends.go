@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LoadBalancer.GetBackends(ctx, &loadbalancer.GetBackendsArgs{
-//				BackendsetName: oci_load_balancer_backend_set.Test_backend_set.Name,
-//				LoadBalancerId: oci_load_balancer_load_balancer.Test_load_balancer.Id,
+//				BackendsetName: testBackendSet.Name,
+//				LoadBalancerId: testLoadBalancer.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

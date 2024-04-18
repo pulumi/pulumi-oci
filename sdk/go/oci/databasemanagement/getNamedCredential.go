@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetNamedCredential(ctx, &databasemanagement.GetNamedCredentialArgs{
-//				NamedCredentialId: oci_database_management_named_credential.Test_named_credential.Id,
+//				NamedCredentialId: testNamedCredentialOciDatabaseManagementNamedCredential.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

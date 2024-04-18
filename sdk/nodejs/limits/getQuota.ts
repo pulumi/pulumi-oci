@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQuota = oci.Limits.getQuota({
- *     quotaId: oci_limits_quota.test_quota.id,
+ *     quotaId: testQuotaOciLimitsQuota.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,7 +102,7 @@ export interface GetQuotaResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQuota = oci.Limits.getQuota({
- *     quotaId: oci_limits_quota.test_quota.id,
+ *     quotaId: testQuotaOciLimitsQuota.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationTargets = oci.FileStorage.getReplicationTargets({
- *     availabilityDomain: _var.replication_target_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_target_display_name,
- *     id: _var.replication_target_id,
- *     state: _var.replication_target_state,
+ *     availabilityDomain: replicationTargetAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: replicationTargetDisplayName,
+ *     id: replicationTargetId,
+ *     state: replicationTargetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetReplicationTargetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationTargets = oci.FileStorage.getReplicationTargets({
- *     availabilityDomain: _var.replication_target_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.replication_target_display_name,
- *     id: _var.replication_target_id,
- *     state: _var.replication_target_state,
+ *     availabilityDomain: replicationTargetAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: replicationTargetDisplayName,
+ *     id: replicationTargetId,
+ *     state: replicationTargetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -582,18 +582,18 @@ class VbInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vb_instance = oci.visual_builder.VbInstance("testVbInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vb_instance_display_name"],
-            node_count=var["vb_instance_node_count"],
+        test_vb_instance = oci.visual_builder.VbInstance("test_vb_instance",
+            compartment_id=compartment_id,
+            display_name=vb_instance_display_name,
+            node_count=vb_instance_node_count,
             alternate_custom_endpoints=[oci.visual_builder.VbInstanceAlternateCustomEndpointArgs(
-                hostname=var["vb_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=vb_instance_alternate_custom_endpoints_hostname,
+                certificate_secret_id=test_secret["id"],
             )],
-            consumption_model=var["vb_instance_consumption_model"],
+            consumption_model=vb_instance_consumption_model,
             custom_endpoint=oci.visual_builder.VbInstanceCustomEndpointArgs(
-                hostname=var["vb_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=vb_instance_custom_endpoint_hostname,
+                certificate_secret_id=test_secret["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -601,8 +601,8 @@ class VbInstance(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
-            is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
+            idcs_open_id=test_idcs_open["id"],
+            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -649,18 +649,18 @@ class VbInstance(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vb_instance = oci.visual_builder.VbInstance("testVbInstance",
-            compartment_id=var["compartment_id"],
-            display_name=var["vb_instance_display_name"],
-            node_count=var["vb_instance_node_count"],
+        test_vb_instance = oci.visual_builder.VbInstance("test_vb_instance",
+            compartment_id=compartment_id,
+            display_name=vb_instance_display_name,
+            node_count=vb_instance_node_count,
             alternate_custom_endpoints=[oci.visual_builder.VbInstanceAlternateCustomEndpointArgs(
-                hostname=var["vb_instance_alternate_custom_endpoints_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=vb_instance_alternate_custom_endpoints_hostname,
+                certificate_secret_id=test_secret["id"],
             )],
-            consumption_model=var["vb_instance_consumption_model"],
+            consumption_model=vb_instance_consumption_model,
             custom_endpoint=oci.visual_builder.VbInstanceCustomEndpointArgs(
-                hostname=var["vb_instance_custom_endpoint_hostname"],
-                certificate_secret_id=oci_vault_secret["test_secret"]["id"],
+                hostname=vb_instance_custom_endpoint_hostname,
+                certificate_secret_id=test_secret["id"],
             ),
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -668,8 +668,8 @@ class VbInstance(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
-            is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
+            idcs_open_id=test_idcs_open["id"],
+            is_visual_builder_enabled=vb_instance_is_visual_builder_enabled)
         ```
         <!--End PulumiCodeChooser -->
 

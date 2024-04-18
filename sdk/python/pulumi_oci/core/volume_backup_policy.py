@@ -263,27 +263,27 @@ class VolumeBackupPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_backup_policy = oci.core.VolumeBackupPolicy("testVolumeBackupPolicy",
-            compartment_id=var["compartment_id"],
+        test_volume_backup_policy = oci.core.VolumeBackupPolicy("test_volume_backup_policy",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            destination_region=var["volume_backup_policy_destination_region"],
-            display_name=var["volume_backup_policy_display_name"],
+            destination_region=volume_backup_policy_destination_region,
+            display_name=volume_backup_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             schedules=[oci.core.VolumeBackupPolicyScheduleArgs(
-                backup_type=var["volume_backup_policy_schedules_backup_type"],
-                period=var["volume_backup_policy_schedules_period"],
-                retention_seconds=var["volume_backup_policy_schedules_retention_seconds"],
-                day_of_month=var["volume_backup_policy_schedules_day_of_month"],
-                day_of_week=var["volume_backup_policy_schedules_day_of_week"],
-                hour_of_day=var["volume_backup_policy_schedules_hour_of_day"],
-                month=var["volume_backup_policy_schedules_month"],
-                offset_seconds=var["volume_backup_policy_schedules_offset_seconds"],
-                offset_type=var["volume_backup_policy_schedules_offset_type"],
-                time_zone=var["volume_backup_policy_schedules_time_zone"],
+                backup_type=volume_backup_policy_schedules_backup_type,
+                period=volume_backup_policy_schedules_period,
+                retention_seconds=volume_backup_policy_schedules_retention_seconds,
+                day_of_month=volume_backup_policy_schedules_day_of_month,
+                day_of_week=volume_backup_policy_schedules_day_of_week,
+                hour_of_day=volume_backup_policy_schedules_hour_of_day,
+                month=volume_backup_policy_schedules_month,
+                offset_seconds=volume_backup_policy_schedules_offset_seconds,
+                offset_type=volume_backup_policy_schedules_offset_type,
+                time_zone=volume_backup_policy_schedules_time_zone,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -326,27 +326,27 @@ class VolumeBackupPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_volume_backup_policy = oci.core.VolumeBackupPolicy("testVolumeBackupPolicy",
-            compartment_id=var["compartment_id"],
+        test_volume_backup_policy = oci.core.VolumeBackupPolicy("test_volume_backup_policy",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            destination_region=var["volume_backup_policy_destination_region"],
-            display_name=var["volume_backup_policy_display_name"],
+            destination_region=volume_backup_policy_destination_region,
+            display_name=volume_backup_policy_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             schedules=[oci.core.VolumeBackupPolicyScheduleArgs(
-                backup_type=var["volume_backup_policy_schedules_backup_type"],
-                period=var["volume_backup_policy_schedules_period"],
-                retention_seconds=var["volume_backup_policy_schedules_retention_seconds"],
-                day_of_month=var["volume_backup_policy_schedules_day_of_month"],
-                day_of_week=var["volume_backup_policy_schedules_day_of_week"],
-                hour_of_day=var["volume_backup_policy_schedules_hour_of_day"],
-                month=var["volume_backup_policy_schedules_month"],
-                offset_seconds=var["volume_backup_policy_schedules_offset_seconds"],
-                offset_type=var["volume_backup_policy_schedules_offset_type"],
-                time_zone=var["volume_backup_policy_schedules_time_zone"],
+                backup_type=volume_backup_policy_schedules_backup_type,
+                period=volume_backup_policy_schedules_period,
+                retention_seconds=volume_backup_policy_schedules_retention_seconds,
+                day_of_month=volume_backup_policy_schedules_day_of_month,
+                day_of_week=volume_backup_policy_schedules_day_of_week,
+                hour_of_day=volume_backup_policy_schedules_hour_of_day,
+                month=volume_backup_policy_schedules_month,
+                offset_seconds=volume_backup_policy_schedules_offset_seconds,
+                offset_type=volume_backup_policy_schedules_offset_type,
+                time_zone=volume_backup_policy_schedules_time_zone,
             )])
         ```
         <!--End PulumiCodeChooser -->

@@ -18,16 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProfile = new oci.optimizer.Profile("testProfile", {
- *     compartmentId: _var.compartment_id,
- *     description: _var.profile_description,
+ * const testProfile = new oci.optimizer.Profile("test_profile", {
+ *     compartmentId: compartmentId,
+ *     description: profileDescription,
  *     levelsConfiguration: {
  *         items: [{
- *             level: _var.profile_levels_configuration_items_level,
- *             recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *             level: profileLevelsConfigurationItemsLevel,
+ *             recommendationId: testRecommendation.id,
  *         }],
  *     },
- *     aggregationIntervalInDays: _var.profile_aggregation_interval_in_days,
+ *     name: profileName,
+ *     aggregationIntervalInDays: profileAggregationIntervalInDays,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -35,14 +36,14 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     targetCompartments: {
- *         items: _var.profile_target_compartments_items,
+ *         items: profileTargetCompartmentsItems,
  *     },
  *     targetTags: {
  *         items: [{
- *             tagDefinitionName: _var.profile_target_tags_items_tag_definition_name,
- *             tagNamespaceName: oci_identity_tag_namespace.test_tag_namespace.name,
- *             tagValueType: _var.profile_target_tags_items_tag_value_type,
- *             tagValues: _var.profile_target_tags_items_tag_values,
+ *             tagDefinitionName: profileTargetTagsItemsTagDefinitionName,
+ *             tagNamespaceName: testTagNamespace.name,
+ *             tagValueType: profileTargetTagsItemsTagValueType,
+ *             tagValues: profileTargetTagsItemsTagValues,
  *         }],
  *     },
  * });

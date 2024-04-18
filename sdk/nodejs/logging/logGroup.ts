@@ -17,13 +17,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogGroup = new oci.logging.LogGroup("testLogGroup", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.log_group_display_name,
+ * const testLogGroup = new oci.logging.LogGroup("test_log_group", {
+ *     compartmentId: compartmentId,
+ *     displayName: logGroupDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.log_group_description,
+ *     description: logGroupDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

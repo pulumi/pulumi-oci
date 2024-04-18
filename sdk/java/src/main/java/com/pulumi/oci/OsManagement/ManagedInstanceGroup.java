@@ -50,13 +50,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroup = new ManagedInstanceGroup(&#34;testManagedInstanceGroup&#34;, ManagedInstanceGroupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.managed_instance_group_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(managedInstanceGroupDisplayName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.managed_instance_group_description())
+ *             .description(managedInstanceGroupDescription)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .osFamily(var_.managed_instance_group_os_family())
- *             .managedInstanceIds(var_.managed_instance_group_managed_instance_ids())
+ *             .osFamily(managedInstanceGroupOsFamily)
+ *             .managedInstanceIds(managedInstanceGroupManagedInstanceIds)
  *             .build());
  * 
  *     }

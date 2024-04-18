@@ -47,7 +47,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(oci_redis_redis_cluster.test_redis_cluster().id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(oci_redis_redis_cluster.test_redis_cluster().id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(oci_redis_redis_cluster.test_redis_cluster().id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisCluster = RedisFunctions.getRedisCluster(GetRedisClusterArgs.builder()
-     *             .redisClusterId(oci_redis_redis_cluster.test_redis_cluster().id())
+     *             .redisClusterId(testRedisClusterOciRedisRedisCluster.id())
      *             .build());
      * 
      *     }
@@ -215,10 +215,10 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.redis_cluster_display_name())
-     *             .id(var_.redis_cluster_id())
-     *             .state(var_.redis_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
      *             .build());
      * 
      *     }
@@ -260,10 +260,10 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.redis_cluster_display_name())
-     *             .id(var_.redis_cluster_id())
-     *             .state(var_.redis_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
      *             .build());
      * 
      *     }
@@ -305,10 +305,10 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.redis_cluster_display_name())
-     *             .id(var_.redis_cluster_id())
-     *             .state(var_.redis_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
      *             .build());
      * 
      *     }
@@ -350,10 +350,10 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.redis_cluster_display_name())
-     *             .id(var_.redis_cluster_id())
-     *             .state(var_.redis_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
      *             .build());
      * 
      *     }
@@ -395,10 +395,10 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.redis_cluster_display_name())
-     *             .id(var_.redis_cluster_id())
-     *             .state(var_.redis_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
      *             .build());
      * 
      *     }
@@ -440,10 +440,10 @@ public final class RedisFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRedisClusters = RedisFunctions.getRedisClusters(GetRedisClustersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.redis_cluster_display_name())
-     *             .id(var_.redis_cluster_id())
-     *             .state(var_.redis_cluster_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(redisClusterDisplayName)
+     *             .id(redisClusterId)
+     *             .state(redisClusterState)
      *             .build());
      * 
      *     }

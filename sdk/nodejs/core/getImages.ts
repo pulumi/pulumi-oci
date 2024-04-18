@@ -29,14 +29,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testImages = oci.Core.getImages({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.image_display_name,
- *     operatingSystem: _var.image_operating_system,
- *     operatingSystemVersion: _var.image_operating_system_version,
- *     shape: _var.image_shape,
- *     state: _var.image_state,
- *     sortBy: _var.image_sort_by,
- *     sortOrder: _var.image_sort_order,
+ *     compartmentId: compartmentId,
+ *     displayName: imageDisplayName,
+ *     operatingSystem: imageOperatingSystem,
+ *     operatingSystemVersion: imageOperatingSystemVersion,
+ *     shape: imageShape,
+ *     state: imageState,
+ *     sortBy: imageSortBy,
+ *     sortOrder: imageSortOrder,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -156,14 +156,14 @@ export interface GetImagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testImages = oci.Core.getImages({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.image_display_name,
- *     operatingSystem: _var.image_operating_system,
- *     operatingSystemVersion: _var.image_operating_system_version,
- *     shape: _var.image_shape,
- *     state: _var.image_state,
- *     sortBy: _var.image_sort_by,
- *     sortOrder: _var.image_sort_order,
+ *     compartmentId: compartmentId,
+ *     displayName: imageDisplayName,
+ *     operatingSystem: imageOperatingSystem,
+ *     operatingSystemVersion: imageOperatingSystemVersion,
+ *     shape: imageShape,
+ *     state: imageState,
+ *     sortBy: imageSortBy,
+ *     sortOrder: imageSortOrder,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

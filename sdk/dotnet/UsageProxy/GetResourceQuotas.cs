@@ -31,9 +31,9 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testResourceQuotas = Oci.UsageProxy.GetResourceQuotas.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ServiceName = oci_core_service.Test_service.Name,
-        ///         ServiceEntitlement = @var.Resource_quota_service_entitlement,
+        ///         CompartmentId = compartmentId,
+        ///         ServiceName = testService.Name,
+        ///         ServiceEntitlement = resourceQuotaServiceEntitlement,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.UsageProxy
         /// {
         ///     var testResourceQuotas = Oci.UsageProxy.GetResourceQuotas.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ServiceName = oci_core_service.Test_service.Name,
-        ///         ServiceEntitlement = @var.Resource_quota_service_entitlement,
+        ///         CompartmentId = compartmentId,
+        ///         ServiceName = testService.Name,
+        ///         ServiceEntitlement = resourceQuotaServiceEntitlement,
         ///     });
         /// 
         /// });

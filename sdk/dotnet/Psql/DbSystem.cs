@@ -25,85 +25,85 @@ namespace Pulumi.Oci.Psql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDbSystem = new Oci.Psql.DbSystem("testDbSystem", new()
+    ///     var testDbSystem = new Oci.Psql.DbSystem("test_db_system", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbVersion = @var.Db_system_db_version,
-    ///         DisplayName = @var.Db_system_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DbVersion = dbSystemDbVersion,
+    ///         DisplayName = dbSystemDisplayName,
     ///         NetworkDetails = new Oci.Psql.Inputs.DbSystemNetworkDetailsArgs
     ///         {
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             NsgIds = @var.Db_system_network_details_nsg_ids,
-    ///             PrimaryDbEndpointPrivateIp = @var.Db_system_network_details_primary_db_endpoint_private_ip,
+    ///             SubnetId = testSubnet.Id,
+    ///             NsgIds = dbSystemNetworkDetailsNsgIds,
+    ///             PrimaryDbEndpointPrivateIp = dbSystemNetworkDetailsPrimaryDbEndpointPrivateIp,
     ///         },
-    ///         Shape = @var.Db_system_shape,
+    ///         Shape = dbSystemShape,
     ///         StorageDetails = new Oci.Psql.Inputs.DbSystemStorageDetailsArgs
     ///         {
-    ///             IsRegionallyDurable = @var.Db_system_storage_details_is_regionally_durable,
-    ///             SystemType = @var.Db_system_storage_details_system_type,
-    ///             AvailabilityDomain = @var.Db_system_storage_details_availability_domain,
-    ///             Iops = @var.Db_system_storage_details_iops,
+    ///             IsRegionallyDurable = dbSystemStorageDetailsIsRegionallyDurable,
+    ///             SystemType = dbSystemStorageDetailsSystemType,
+    ///             AvailabilityDomain = dbSystemStorageDetailsAvailabilityDomain,
+    ///             Iops = dbSystemStorageDetailsIops,
     ///         },
-    ///         ConfigId = oci_apm_config_config.Test_config.Id,
-    ///         ApplyConfig = @var.Db_system_apply_config_type,
+    ///         ConfigId = testConfig.Id,
+    ///         ApplyConfig = dbSystemApplyConfigType,
     ///         Credentials = new Oci.Psql.Inputs.DbSystemCredentialsArgs
     ///         {
     ///             PasswordDetails = new Oci.Psql.Inputs.DbSystemCredentialsPasswordDetailsArgs
     ///             {
-    ///                 PasswordType = @var.Db_system_credentials_password_details_password_type,
-    ///                 Password = @var.Db_system_credentials_password_details_password,
-    ///                 SecretId = oci_vault_secret.Test_secret.Id,
-    ///                 SecretVersion = @var.Db_system_credentials_password_details_secret_version,
+    ///                 PasswordType = dbSystemCredentialsPasswordDetailsPasswordType,
+    ///                 Password = dbSystemCredentialsPasswordDetailsPassword,
+    ///                 SecretId = testSecret.Id,
+    ///                 SecretVersion = dbSystemCredentialsPasswordDetailsSecretVersion,
     ///             },
-    ///             Username = @var.Db_system_credentials_username,
+    ///             Username = dbSystemCredentialsUsername,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Db_system_description,
+    ///         Description = dbSystemDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         InstanceCount = @var.Db_system_instance_count,
-    ///         InstanceMemorySizeInGbs = @var.Db_system_instance_memory_size_in_gbs,
-    ///         InstanceOcpuCount = @var.Db_system_instance_ocpu_count,
+    ///         InstanceCount = dbSystemInstanceCount,
+    ///         InstanceMemorySizeInGbs = dbSystemInstanceMemorySizeInGbs,
+    ///         InstanceOcpuCount = dbSystemInstanceOcpuCount,
     ///         InstancesDetails = new[]
     ///         {
     ///             new Oci.Psql.Inputs.DbSystemInstancesDetailArgs
     ///             {
-    ///                 Description = @var.Db_system_instances_details_description,
-    ///                 DisplayName = @var.Db_system_instances_details_display_name,
-    ///                 PrivateIp = @var.Db_system_instances_details_private_ip,
+    ///                 Description = dbSystemInstancesDetailsDescription,
+    ///                 DisplayName = dbSystemInstancesDetailsDisplayName,
+    ///                 PrivateIp = dbSystemInstancesDetailsPrivateIp,
     ///             },
     ///         },
     ///         ManagementPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyArgs
     ///         {
     ///             BackupPolicy = new Oci.Psql.Inputs.DbSystemManagementPolicyBackupPolicyArgs
     ///             {
-    ///                 BackupStart = @var.Db_system_management_policy_backup_policy_backup_start,
-    ///                 DaysOfTheMonths = @var.Db_system_management_policy_backup_policy_days_of_the_month,
-    ///                 DaysOfTheWeeks = @var.Db_system_management_policy_backup_policy_days_of_the_week,
-    ///                 Kind = @var.Db_system_management_policy_backup_policy_kind,
-    ///                 RetentionDays = @var.Db_system_management_policy_backup_policy_retention_days,
+    ///                 BackupStart = dbSystemManagementPolicyBackupPolicyBackupStart,
+    ///                 DaysOfTheMonths = dbSystemManagementPolicyBackupPolicyDaysOfTheMonth,
+    ///                 DaysOfTheWeeks = dbSystemManagementPolicyBackupPolicyDaysOfTheWeek,
+    ///                 Kind = dbSystemManagementPolicyBackupPolicyKind,
+    ///                 RetentionDays = dbSystemManagementPolicyBackupPolicyRetentionDays,
     ///             },
-    ///             MaintenanceWindowStart = @var.Db_system_management_policy_maintenance_window_start,
+    ///             MaintenanceWindowStart = dbSystemManagementPolicyMaintenanceWindowStart,
     ///         },
     ///         Source = new Oci.Psql.Inputs.DbSystemSourceArgs
     ///         {
-    ///             SourceType = @var.Db_system_source_source_type,
-    ///             BackupId = oci_psql_backup.Test_backup.Id,
-    ///             IsHavingRestoreConfigOverrides = @var.Db_system_source_is_having_restore_config_overrides,
+    ///             SourceType = dbSystemSourceSourceType,
+    ///             BackupId = testBackup.Id,
+    ///             IsHavingRestoreConfigOverrides = dbSystemSourceIsHavingRestoreConfigOverrides,
     ///         },
-    ///         SystemType = @var.Db_system_system_type,
+    ///         SystemType = dbSystemSystemType,
     ///         PatchOperations = new[]
     ///         {
     ///             new Oci.Psql.Inputs.DbSystemPatchOperationArgs
     ///             {
-    ///                 Operation = @var.Db_system_patch_operations_operation,
-    ///                 Selection = @var.Db_system_patch_operations_selection,
-    ///                 Value = @var.Db_system_patch_operations_value,
+    ///                 Operation = dbSystemPatchOperationsOperation,
+    ///                 Selection = dbSystemPatchOperationsSelection,
+    ///                 Value = dbSystemPatchOperationsValue,
     ///             },
     ///         },
     ///     });

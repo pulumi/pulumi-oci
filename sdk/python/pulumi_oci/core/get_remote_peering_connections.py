@@ -108,8 +108,8 @@ def get_remote_peering_connections(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=var["compartment_id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
+    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=compartment_id,
+        drg_id=test_drg["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -150,8 +150,8 @@ def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=var["compartment_id"],
-        drg_id=oci_core_drg["test_drg"]["id"])
+    test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=compartment_id,
+        drg_id=test_drg["id"])
     ```
     <!--End PulumiCodeChooser -->
 

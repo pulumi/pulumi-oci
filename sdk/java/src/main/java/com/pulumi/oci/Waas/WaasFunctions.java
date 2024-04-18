@@ -80,7 +80,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .addressListId(testAddressListOciWaasAddressList.id())
      *             .build());
      * 
      *     }
@@ -122,7 +122,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .addressListId(testAddressListOciWaasAddressList.id())
      *             .build());
      * 
      *     }
@@ -164,7 +164,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .addressListId(testAddressListOciWaasAddressList.id())
      *             .build());
      * 
      *     }
@@ -206,7 +206,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressList = WaasFunctions.getAddressList(GetAddressListArgs.builder()
-     *             .addressListId(oci_waas_address_list.test_address_list().id())
+     *             .addressListId(testAddressListOciWaasAddressList.id())
      *             .build());
      * 
      *     }
@@ -248,12 +248,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .ids(var_.address_list_ids())
-     *             .names(var_.address_list_names())
-     *             .states(var_.address_list_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .ids(addressListIds)
+     *             .names(addressListNames)
+     *             .states(addressListStates)
+     *             .timeCreatedGreaterThanOrEqualTo(addressListTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(addressListTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -295,12 +295,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .ids(var_.address_list_ids())
-     *             .names(var_.address_list_names())
-     *             .states(var_.address_list_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .ids(addressListIds)
+     *             .names(addressListNames)
+     *             .states(addressListStates)
+     *             .timeCreatedGreaterThanOrEqualTo(addressListTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(addressListTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -342,12 +342,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .ids(var_.address_list_ids())
-     *             .names(var_.address_list_names())
-     *             .states(var_.address_list_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .ids(addressListIds)
+     *             .names(addressListNames)
+     *             .states(addressListStates)
+     *             .timeCreatedGreaterThanOrEqualTo(addressListTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(addressListTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -389,12 +389,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddressLists = WaasFunctions.getAddressLists(GetAddressListsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .ids(var_.address_list_ids())
-     *             .names(var_.address_list_names())
-     *             .states(var_.address_list_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.address_list_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.address_list_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .ids(addressListIds)
+     *             .names(addressListNames)
+     *             .states(addressListStates)
+     *             .timeCreatedGreaterThanOrEqualTo(addressListTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(addressListTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -436,7 +436,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciWaasCertificate.id())
      *             .build());
      * 
      *     }
@@ -478,7 +478,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciWaasCertificate.id())
      *             .build());
      * 
      *     }
@@ -520,7 +520,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciWaasCertificate.id())
      *             .build());
      * 
      *     }
@@ -562,7 +562,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificate = WaasFunctions.getCertificate(GetCertificateArgs.builder()
-     *             .certificateId(oci_waas_certificate.test_certificate().id())
+     *             .certificateId(testCertificateOciWaasCertificate.id())
      *             .build());
      * 
      *     }
@@ -604,12 +604,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.certificate_display_names())
-     *             .ids(var_.certificate_ids())
-     *             .states(var_.certificate_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(certificateDisplayNames)
+     *             .ids(certificateIds)
+     *             .states(certificateStates)
+     *             .timeCreatedGreaterThanOrEqualTo(certificateTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(certificateTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -651,12 +651,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.certificate_display_names())
-     *             .ids(var_.certificate_ids())
-     *             .states(var_.certificate_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(certificateDisplayNames)
+     *             .ids(certificateIds)
+     *             .states(certificateStates)
+     *             .timeCreatedGreaterThanOrEqualTo(certificateTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(certificateTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -698,12 +698,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.certificate_display_names())
-     *             .ids(var_.certificate_ids())
-     *             .states(var_.certificate_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(certificateDisplayNames)
+     *             .ids(certificateIds)
+     *             .states(certificateStates)
+     *             .timeCreatedGreaterThanOrEqualTo(certificateTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(certificateTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -745,12 +745,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = WaasFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.certificate_display_names())
-     *             .ids(var_.certificate_ids())
-     *             .states(var_.certificate_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.certificate_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.certificate_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(certificateDisplayNames)
+     *             .ids(certificateIds)
+     *             .states(certificateStates)
+     *             .timeCreatedGreaterThanOrEqualTo(certificateTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(certificateTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -792,7 +792,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
      *             .build());
      * 
      *     }
@@ -834,7 +834,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
      *             .build());
      * 
      *     }
@@ -876,7 +876,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
      *             .build());
      * 
      *     }
@@ -918,7 +918,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRule = WaasFunctions.getCustomProtectionRule(GetCustomProtectionRuleArgs.builder()
-     *             .customProtectionRuleId(oci_waas_custom_protection_rule.test_custom_protection_rule().id())
+     *             .customProtectionRuleId(testCustomProtectionRuleOciWaasCustomProtectionRule.id())
      *             .build());
      * 
      *     }
@@ -960,12 +960,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.custom_protection_rule_display_names())
-     *             .ids(var_.custom_protection_rule_ids())
-     *             .states(var_.custom_protection_rule_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(customProtectionRuleDisplayNames)
+     *             .ids(customProtectionRuleIds)
+     *             .states(customProtectionRuleStates)
+     *             .timeCreatedGreaterThanOrEqualTo(customProtectionRuleTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(customProtectionRuleTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1007,12 +1007,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.custom_protection_rule_display_names())
-     *             .ids(var_.custom_protection_rule_ids())
-     *             .states(var_.custom_protection_rule_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(customProtectionRuleDisplayNames)
+     *             .ids(customProtectionRuleIds)
+     *             .states(customProtectionRuleStates)
+     *             .timeCreatedGreaterThanOrEqualTo(customProtectionRuleTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(customProtectionRuleTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1054,12 +1054,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.custom_protection_rule_display_names())
-     *             .ids(var_.custom_protection_rule_ids())
-     *             .states(var_.custom_protection_rule_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(customProtectionRuleDisplayNames)
+     *             .ids(customProtectionRuleIds)
+     *             .states(customProtectionRuleStates)
+     *             .timeCreatedGreaterThanOrEqualTo(customProtectionRuleTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(customProtectionRuleTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1101,12 +1101,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomProtectionRules = WaasFunctions.getCustomProtectionRules(GetCustomProtectionRulesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.custom_protection_rule_display_names())
-     *             .ids(var_.custom_protection_rule_ids())
-     *             .states(var_.custom_protection_rule_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.custom_protection_rule_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.custom_protection_rule_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(customProtectionRuleDisplayNames)
+     *             .ids(customProtectionRuleIds)
+     *             .states(customProtectionRuleStates)
+     *             .timeCreatedGreaterThanOrEqualTo(customProtectionRuleTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(customProtectionRuleTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1388,7 +1388,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
      *             .build());
      * 
      *     }
@@ -1430,7 +1430,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
      *             .build());
      * 
      *     }
@@ -1472,7 +1472,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
      *             .build());
      * 
      *     }
@@ -1514,7 +1514,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirect = WaasFunctions.getHttpRedirect(GetHttpRedirectArgs.builder()
-     *             .httpRedirectId(oci_waas_http_redirect.test_http_redirect().id())
+     *             .httpRedirectId(testHttpRedirectOciWaasHttpRedirect.id())
      *             .build());
      * 
      *     }
@@ -1556,12 +1556,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.http_redirect_display_names())
-     *             .ids(var_.http_redirect_ids())
-     *             .states(var_.http_redirect_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(httpRedirectDisplayNames)
+     *             .ids(httpRedirectIds)
+     *             .states(httpRedirectStates)
+     *             .timeCreatedGreaterThanOrEqualTo(httpRedirectTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(httpRedirectTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1603,12 +1603,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.http_redirect_display_names())
-     *             .ids(var_.http_redirect_ids())
-     *             .states(var_.http_redirect_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(httpRedirectDisplayNames)
+     *             .ids(httpRedirectIds)
+     *             .states(httpRedirectStates)
+     *             .timeCreatedGreaterThanOrEqualTo(httpRedirectTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(httpRedirectTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1650,12 +1650,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.http_redirect_display_names())
-     *             .ids(var_.http_redirect_ids())
-     *             .states(var_.http_redirect_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(httpRedirectDisplayNames)
+     *             .ids(httpRedirectIds)
+     *             .states(httpRedirectStates)
+     *             .timeCreatedGreaterThanOrEqualTo(httpRedirectTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(httpRedirectTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1697,12 +1697,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpRedirects = WaasFunctions.getHttpRedirects(GetHttpRedirectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.http_redirect_display_names())
-     *             .ids(var_.http_redirect_ids())
-     *             .states(var_.http_redirect_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.http_redirect_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.http_redirect_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(httpRedirectDisplayNames)
+     *             .ids(httpRedirectIds)
+     *             .states(httpRedirectStates)
+     *             .timeCreatedGreaterThanOrEqualTo(httpRedirectTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(httpRedirectTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -1744,8 +1744,8 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
-     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .protectionRuleKey(protectionRuleProtectionRuleKey)
+     *             .waasPolicyId(testWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -1787,8 +1787,8 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
-     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .protectionRuleKey(protectionRuleProtectionRuleKey)
+     *             .waasPolicyId(testWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -1830,8 +1830,8 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
-     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .protectionRuleKey(protectionRuleProtectionRuleKey)
+     *             .waasPolicyId(testWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -1873,8 +1873,8 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRule = WaasFunctions.getProtectionRule(GetProtectionRuleArgs.builder()
-     *             .protectionRuleKey(var_.protection_rule_protection_rule_key())
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .protectionRuleKey(protectionRuleProtectionRuleKey)
+     *             .waasPolicyId(testWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -1917,9 +1917,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
-     *             .actions(var_.protection_rule_action())
-     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .waasPolicyId(testWaasPolicy.id())
+     *             .actions(protectionRuleAction)
+     *             .modSecurityRuleIds(testRule.id())
      *             .build());
      * 
      *     }
@@ -1962,9 +1962,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
-     *             .actions(var_.protection_rule_action())
-     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .waasPolicyId(testWaasPolicy.id())
+     *             .actions(protectionRuleAction)
+     *             .modSecurityRuleIds(testRule.id())
      *             .build());
      * 
      *     }
@@ -2007,9 +2007,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
-     *             .actions(var_.protection_rule_action())
-     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .waasPolicyId(testWaasPolicy.id())
+     *             .actions(protectionRuleAction)
+     *             .modSecurityRuleIds(testRule.id())
      *             .build());
      * 
      *     }
@@ -2052,9 +2052,9 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProtectionRules = WaasFunctions.getProtectionRules(GetProtectionRulesArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
-     *             .actions(var_.protection_rule_action())
-     *             .modSecurityRuleIds(oci_events_rule.test_rule().id())
+     *             .waasPolicyId(testWaasPolicy.id())
+     *             .actions(protectionRuleAction)
+     *             .modSecurityRuleIds(testRule.id())
      *             .build());
      * 
      *     }
@@ -2096,12 +2096,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.waas_policy_display_names())
-     *             .ids(var_.waas_policy_ids())
-     *             .states(var_.waas_policy_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(waasPolicyDisplayNames)
+     *             .ids(waasPolicyIds)
+     *             .states(waasPolicyStates)
+     *             .timeCreatedGreaterThanOrEqualTo(waasPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(waasPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -2143,12 +2143,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.waas_policy_display_names())
-     *             .ids(var_.waas_policy_ids())
-     *             .states(var_.waas_policy_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(waasPolicyDisplayNames)
+     *             .ids(waasPolicyIds)
+     *             .states(waasPolicyStates)
+     *             .timeCreatedGreaterThanOrEqualTo(waasPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(waasPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -2190,12 +2190,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.waas_policy_display_names())
-     *             .ids(var_.waas_policy_ids())
-     *             .states(var_.waas_policy_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(waasPolicyDisplayNames)
+     *             .ids(waasPolicyIds)
+     *             .states(waasPolicyStates)
+     *             .timeCreatedGreaterThanOrEqualTo(waasPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(waasPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -2237,12 +2237,12 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicies = WaasFunctions.getWaasPolicies(GetWaasPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayNames(var_.waas_policy_display_names())
-     *             .ids(var_.waas_policy_ids())
-     *             .states(var_.waas_policy_states())
-     *             .timeCreatedGreaterThanOrEqualTo(var_.waas_policy_time_created_greater_than_or_equal_to())
-     *             .timeCreatedLessThan(var_.waas_policy_time_created_less_than())
+     *             .compartmentId(compartmentId)
+     *             .displayNames(waasPolicyDisplayNames)
+     *             .ids(waasPolicyIds)
+     *             .states(waasPolicyStates)
+     *             .timeCreatedGreaterThanOrEqualTo(waasPolicyTimeCreatedGreaterThanOrEqualTo)
+     *             .timeCreatedLessThan(waasPolicyTimeCreatedLessThan)
      *             .build());
      * 
      *     }
@@ -2284,7 +2284,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -2326,7 +2326,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -2368,7 +2368,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
      *             .build());
      * 
      *     }
@@ -2410,7 +2410,7 @@ public final class WaasFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWaasPolicy = WaasFunctions.getWaasPolicy(GetWaasPolicyArgs.builder()
-     *             .waasPolicyId(oci_waas_waas_policy.test_waas_policy().id())
+     *             .waasPolicyId(testWaasPolicyOciWaasWaasPolicy.id())
      *             .build());
      * 
      *     }

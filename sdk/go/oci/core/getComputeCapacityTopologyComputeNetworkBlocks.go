@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetComputeCapacityTopologyComputeNetworkBlocks(ctx, &core.GetComputeCapacityTopologyComputeNetworkBlocksArgs{
-//				ComputeCapacityTopologyId: oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
-//				AvailabilityDomain:        pulumi.StringRef(_var.Compute_capacity_topology_compute_network_block_availability_domain),
-//				CompartmentId:             pulumi.StringRef(_var.Compartment_id),
-//				ComputeHpcIslandId:        pulumi.StringRef(oci_core_compute_hpc_island.Test_compute_hpc_island.Id),
+//				ComputeCapacityTopologyId: testComputeCapacityTopology.Id,
+//				AvailabilityDomain:        pulumi.StringRef(computeCapacityTopologyComputeNetworkBlockAvailabilityDomain),
+//				CompartmentId:             pulumi.StringRef(compartmentId),
+//				ComputeHpcIslandId:        pulumi.StringRef(testComputeHpcIsland.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -94,7 +94,7 @@ def get_db_node_console_connections(db_node_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=oci_database_db_node["test_db_node"]["id"])
+    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=test_db_node["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_db_node_console_connections_output(db_node_id: Optional[pulumi.Input[str
     import pulumi
     import pulumi_oci as oci
 
-    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=oci_database_db_node["test_db_node"]["id"])
+    test_db_node_console_connections = oci.Database.get_db_node_console_connections(db_node_id=test_db_node["id"])
     ```
     <!--End PulumiCodeChooser -->
 

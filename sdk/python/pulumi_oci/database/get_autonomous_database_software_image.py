@@ -208,7 +208,7 @@ def get_autonomous_database_software_image(autonomous_database_software_image_id
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_software_image = oci.Database.get_autonomous_database_software_image(autonomous_database_software_image_id=oci_database_autonomous_database_software_image["test_autonomous_database_software_image"]["id"])
+    test_autonomous_database_software_image = oci.Database.get_autonomous_database_software_image(autonomous_database_software_image_id=test_autonomous_database_software_image_oci_database_autonomous_database_software_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -252,7 +252,7 @@ def get_autonomous_database_software_image_output(autonomous_database_software_i
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_database_software_image = oci.Database.get_autonomous_database_software_image(autonomous_database_software_image_id=oci_database_autonomous_database_software_image["test_autonomous_database_software_image"]["id"])
+    test_autonomous_database_software_image = oci.Database.get_autonomous_database_software_image(autonomous_database_software_image_id=test_autonomous_database_software_image_oci_database_autonomous_database_software_image["id"])
     ```
     <!--End PulumiCodeChooser -->
 

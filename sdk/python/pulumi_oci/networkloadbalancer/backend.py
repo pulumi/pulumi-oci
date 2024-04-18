@@ -388,16 +388,17 @@ class Backend(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backend = oci.network_load_balancer.Backend("testBackend",
-            backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            port=var["backend_port"],
-            ip_address=var["backend_ip_address"],
-            is_backup=var["backend_is_backup"],
-            is_drain=var["backend_is_drain"],
-            is_offline=var["backend_is_offline"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            weight=var["backend_weight"])
+        test_backend = oci.network_load_balancer.Backend("test_backend",
+            backend_set_name=test_backend_set["name"],
+            network_load_balancer_id=test_network_load_balancer["id"],
+            port=backend_port,
+            ip_address=backend_ip_address,
+            is_backup=backend_is_backup,
+            is_drain=backend_is_drain,
+            is_offline=backend_is_offline,
+            name=backend_name,
+            target_id=test_target["id"],
+            weight=backend_weight)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -444,16 +445,17 @@ class Backend(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_backend = oci.network_load_balancer.Backend("testBackend",
-            backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
-            network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"],
-            port=var["backend_port"],
-            ip_address=var["backend_ip_address"],
-            is_backup=var["backend_is_backup"],
-            is_drain=var["backend_is_drain"],
-            is_offline=var["backend_is_offline"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            weight=var["backend_weight"])
+        test_backend = oci.network_load_balancer.Backend("test_backend",
+            backend_set_name=test_backend_set["name"],
+            network_load_balancer_id=test_network_load_balancer["id"],
+            port=backend_port,
+            ip_address=backend_ip_address,
+            is_backup=backend_is_backup,
+            is_drain=backend_is_drain,
+            is_offline=backend_is_offline,
+            name=backend_name,
+            target_id=test_target["id"],
+            weight=backend_weight)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -140,11 +140,11 @@ def get_limit_values(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=var["tenancy_ocid"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["limit_value_availability_domain"],
-        name=var["limit_value_name"],
-        scope_type=var["limit_value_scope_type"])
+    test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
+        service_name=test_service["name"],
+        availability_domain=limit_value_availability_domain,
+        name=limit_value_name,
+        scope_type=limit_value_scope_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_limit_values_output(availability_domain: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_limit_values = oci.Limits.get_limit_values(compartment_id=var["tenancy_ocid"],
-        service_name=oci_limits_service["test_service"]["name"],
-        availability_domain=var["limit_value_availability_domain"],
-        name=var["limit_value_name"],
-        scope_type=var["limit_value_scope_type"])
+    test_limit_values = oci.Limits.get_limit_values(compartment_id=tenancy_ocid,
+        service_name=test_service["name"],
+        availability_domain=limit_value_availability_domain,
+        name=limit_value_name,
+        scope_type=limit_value_scope_type)
     ```
     <!--End PulumiCodeChooser -->
 

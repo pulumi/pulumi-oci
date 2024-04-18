@@ -35,11 +35,11 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testResolvers = Oci.Dns.GetResolvers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///         Scope = "PRIVATE",
-        ///         DisplayName = @var.Resolver_display_name,
-        ///         Id = @var.Resolver_id,
-        ///         State = @var.Resolver_state,
+        ///         DisplayName = resolverDisplayName,
+        ///         Id = resolverId,
+        ///         State = resolverState,
         ///     });
         /// 
         /// });
@@ -73,11 +73,11 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testResolvers = Oci.Dns.GetResolvers.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///         Scope = "PRIVATE",
-        ///         DisplayName = @var.Resolver_display_name,
-        ///         Id = @var.Resolver_id,
-        ///         State = @var.Resolver_state,
+        ///         DisplayName = resolverDisplayName,
+        ///         Id = resolverId,
+        ///         State = resolverState,
         ///     });
         /// 
         /// });

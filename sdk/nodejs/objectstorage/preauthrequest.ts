@@ -16,13 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPreauthenticatedRequest = new oci.objectstorage.Preauthrequest("testPreauthenticatedRequest", {
- *     accessType: _var.preauthenticated_request_access_type,
- *     bucket: _var.preauthenticated_request_bucket,
- *     namespace: _var.preauthenticated_request_namespace,
- *     timeExpires: _var.preauthenticated_request_time_expires,
- *     bucketListingAction: _var.preauthenticated_request_bucket_listing_action,
- *     object: _var.preauthenticated_request_object,
+ * const testPreauthenticatedRequest = new oci.objectstorage.Preauthrequest("test_preauthenticated_request", {
+ *     accessType: preauthenticatedRequestAccessType,
+ *     bucket: preauthenticatedRequestBucket,
+ *     name: preauthenticatedRequestName,
+ *     namespace: preauthenticatedRequestNamespace,
+ *     timeExpires: preauthenticatedRequestTimeExpires,
+ *     bucketListingAction: preauthenticatedRequestBucketListingAction,
+ *     object: preauthenticatedRequestObject,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

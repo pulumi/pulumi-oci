@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTrigger = oci.DevOps.getTrigger({
- *     triggerId: oci_devops_trigger.test_trigger.id,
+ *     triggerId: testTriggerOciDevopsTrigger.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -126,7 +126,7 @@ export interface GetTriggerResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTrigger = oci.DevOps.getTrigger({
- *     triggerId: oci_devops_trigger.test_trigger.id,
+ *     triggerId: testTriggerOciDevopsTrigger.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

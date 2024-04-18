@@ -33,17 +33,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Opsi.NewOperationsInsightsWarehouse(ctx, "testOperationsInsightsWarehouse", &Opsi.OperationsInsightsWarehouseArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				CpuAllocated:  pulumi.Any(_var.Operations_insights_warehouse_cpu_allocated),
-//				DisplayName:   pulumi.Any(_var.Operations_insights_warehouse_display_name),
+//			_, err := Opsi.NewOperationsInsightsWarehouse(ctx, "test_operations_insights_warehouse", &Opsi.OperationsInsightsWarehouseArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				CpuAllocated:  pulumi.Any(operationsInsightsWarehouseCpuAllocated),
+//				DisplayName:   pulumi.Any(operationsInsightsWarehouseDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				StorageAllocatedInGbs: pulumi.Any(_var.Operations_insights_warehouse_storage_allocated_in_gbs),
+//				StorageAllocatedInGbs: pulumi.Any(operationsInsightsWarehouseStorageAllocatedInGbs),
 //			})
 //			if err != nil {
 //				return err

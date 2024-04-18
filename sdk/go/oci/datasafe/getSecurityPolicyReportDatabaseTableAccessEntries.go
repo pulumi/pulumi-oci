@@ -33,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntries(ctx, &datasafe.GetSecurityPolicyReportDatabaseTableAccessEntriesArgs{
-//				SecurityPolicyReportId: oci_data_safe_security_policy_report.Test_security_policy_report.Id,
-//				ScimQuery:              pulumi.StringRef(_var.Security_policy_report_database_table_access_entry_scim_query),
+//				SecurityPolicyReportId: testSecurityPolicyReport.Id,
+//				ScimQuery:              pulumi.StringRef(securityPolicyReportDatabaseTableAccessEntryScimQuery),
 //			}, nil)
 //			if err != nil {
 //				return err

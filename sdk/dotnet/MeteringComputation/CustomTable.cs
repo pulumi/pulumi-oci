@@ -25,27 +25,27 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCustomTable = new Oci.MeteringComputation.CustomTable("testCustomTable", new()
+    ///     var testCustomTable = new Oci.MeteringComputation.CustomTable("test_custom_table", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         SavedCustomTable = new Oci.MeteringComputation.Inputs.CustomTableSavedCustomTableArgs
     ///         {
-    ///             DisplayName = @var.Custom_table_saved_custom_table_display_name,
-    ///             ColumnGroupBies = @var.Custom_table_saved_custom_table_column_group_by,
-    ///             CompartmentDepth = @var.Custom_table_saved_custom_table_compartment_depth,
+    ///             DisplayName = customTableSavedCustomTableDisplayName,
+    ///             ColumnGroupBies = customTableSavedCustomTableColumnGroupBy,
+    ///             CompartmentDepth = customTableSavedCustomTableCompartmentDepth,
     ///             GroupByTags = new[]
     ///             {
     ///                 new Oci.MeteringComputation.Inputs.CustomTableSavedCustomTableGroupByTagArgs
     ///                 {
-    ///                     Key = @var.Custom_table_saved_custom_table_group_by_tag_key,
-    ///                     Namespace = @var.Custom_table_saved_custom_table_group_by_tag_namespace,
-    ///                     Value = @var.Custom_table_saved_custom_table_group_by_tag_value,
+    ///                     Key = customTableSavedCustomTableGroupByTagKey,
+    ///                     Namespace = customTableSavedCustomTableGroupByTagNamespace,
+    ///                     Value = customTableSavedCustomTableGroupByTagValue,
     ///                 },
     ///             },
-    ///             RowGroupBies = @var.Custom_table_saved_custom_table_row_group_by,
-    ///             Version = @var.Custom_table_saved_custom_table_version,
+    ///             RowGroupBies = customTableSavedCustomTableRowGroupBy,
+    ///             Version = customTableSavedCustomTableVersion,
     ///         },
-    ///         SavedReportId = oci_metering_computation_saved_report.Test_saved_report.Id,
+    ///         SavedReportId = testSavedReport.Id,
     ///     });
     /// 
     /// });

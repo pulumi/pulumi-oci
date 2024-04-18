@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySmtpCredential = Oci.Identity.GetDomainsMySmtpCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySmtpCredentialId = oci_identity_smtp_credential.Test_smtp_credential.Id,
-        ///         Authorization = @var.My_smtp_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_smtp_credential_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySmtpCredentialId = testSmtpCredential.Id,
+        ///         Authorization = mySmtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = mySmtpCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMySmtpCredential = Oci.Identity.GetDomainsMySmtpCredential.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MySmtpCredentialId = oci_identity_smtp_credential.Test_smtp_credential.Id,
-        ///         Authorization = @var.My_smtp_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_smtp_credential_resource_type_schema_version,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MySmtpCredentialId = testSmtpCredential.Id,
+        ///         Authorization = mySmtpCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = mySmtpCredentialResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

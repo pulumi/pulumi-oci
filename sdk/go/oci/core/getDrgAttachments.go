@@ -36,14 +36,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetDrgAttachments(ctx, &core.GetDrgAttachmentsArgs{
-//				CompartmentId:   _var.Compartment_id,
-//				AttachmentType:  pulumi.StringRef(_var.Drg_attachment_attachment_type),
-//				DisplayName:     pulumi.StringRef(_var.Drg_attachment_display_name),
-//				DrgId:           pulumi.StringRef(oci_core_drg.Test_drg.Id),
-//				DrgRouteTableId: pulumi.StringRef(oci_core_drg_route_table.Test_drg_route_table.Id),
-//				NetworkId:       pulumi.StringRef(oci_core_network.Test_network.Id),
-//				State:           pulumi.StringRef(_var.Drg_attachment_state),
-//				VcnId:           pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId:   compartmentId,
+//				AttachmentType:  pulumi.StringRef(drgAttachmentAttachmentType),
+//				DisplayName:     pulumi.StringRef(drgAttachmentDisplayName),
+//				DrgId:           pulumi.StringRef(testDrg.Id),
+//				DrgRouteTableId: pulumi.StringRef(testDrgRouteTable.Id),
+//				NetworkId:       pulumi.StringRef(testNetwork.Id),
+//				State:           pulumi.StringRef(drgAttachmentState),
+//				VcnId:           pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

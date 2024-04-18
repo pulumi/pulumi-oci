@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNewsReports = oci.Opsi.getNewsReports({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.news_report_compartment_id_in_subtree,
- *     newsReportId: oci_opsi_news_report.test_news_report.id,
- *     states: _var.news_report_state,
- *     statuses: _var.news_report_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
+ *     newsReportId: testNewsReport.id,
+ *     states: newsReportState,
+ *     statuses: newsReportStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -110,11 +110,11 @@ export interface GetNewsReportsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNewsReports = oci.Opsi.getNewsReports({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.news_report_compartment_id_in_subtree,
- *     newsReportId: oci_opsi_news_report.test_news_report.id,
- *     states: _var.news_report_state,
- *     statuses: _var.news_report_status,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
+ *     newsReportId: testNewsReport.id,
+ *     states: newsReportState,
+ *     statuses: newsReportStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

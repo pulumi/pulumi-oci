@@ -25,17 +25,17 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceExportRequest = new Oci.DataIntegration.WorkspaceExportRequest("testWorkspaceExportRequest", new()
+    ///     var testWorkspaceExportRequest = new Oci.DataIntegration.WorkspaceExportRequest("test_workspace_export_request", new()
     ///     {
-    ///         Bucket = @var.Workspace_export_request_bucket,
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         AreReferencesIncluded = @var.Workspace_export_request_are_references_included,
-    ///         FileName = @var.Workspace_export_request_file_name,
-    ///         Filters = @var.Workspace_export_request_filters,
-    ///         IsObjectOverwriteEnabled = @var.Workspace_export_request_is_object_overwrite_enabled,
-    ///         ObjectKeys = @var.Workspace_export_request_object_keys,
-    ///         ObjectStorageRegion = @var.Workspace_export_request_object_storage_region,
-    ///         ObjectStorageTenancyId = oci_identity_tenancy.Test_tenancy.Id,
+    ///         Bucket = workspaceExportRequestBucket,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         AreReferencesIncluded = workspaceExportRequestAreReferencesIncluded,
+    ///         FileName = workspaceExportRequestFileName,
+    ///         Filters = workspaceExportRequestFilters,
+    ///         IsObjectOverwriteEnabled = workspaceExportRequestIsObjectOverwriteEnabled,
+    ///         ObjectKeys = workspaceExportRequestObjectKeys,
+    ///         ObjectStorageRegion = workspaceExportRequestObjectStorageRegion,
+    ///         ObjectStorageTenancyId = testTenancy.Id,
     ///     });
     /// 
     /// });

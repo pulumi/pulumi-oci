@@ -31,11 +31,11 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCertificateAuthorities = Oci.CertificatesManagement.GetCertificateAuthorities.Invoke(new()
         ///     {
-        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         Name = @var.Certificate_authority_name,
-        ///         State = @var.Certificate_authority_state,
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IssuerCertificateAuthorityId = testCertificateAuthority.Id,
+        ///         Name = certificateAuthorityName,
+        ///         State = certificateAuthorityState,
         ///     });
         /// 
         /// });
@@ -65,11 +65,11 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {
         ///     var testCertificateAuthorities = Oci.CertificatesManagement.GetCertificateAuthorities.Invoke(new()
         ///     {
-        ///         CertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         IssuerCertificateAuthorityId = oci_certificates_management_certificate_authority.Test_certificate_authority.Id,
-        ///         Name = @var.Certificate_authority_name,
-        ///         State = @var.Certificate_authority_state,
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         CompartmentId = compartmentId,
+        ///         IssuerCertificateAuthorityId = testCertificateAuthority.Id,
+        ///         Name = certificateAuthorityName,
+        ///         State = certificateAuthorityState,
         ///     });
         /// 
         /// });

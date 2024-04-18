@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testDiscoverySchedule = Oci.CloudBridge.GetDiscoverySchedule.Invoke(new()
         ///     {
-        ///         DiscoveryScheduleId = oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id,
+        ///         DiscoveryScheduleId = testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testDiscoverySchedule = Oci.CloudBridge.GetDiscoverySchedule.Invoke(new()
         ///     {
-        ///         DiscoveryScheduleId = oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id,
+        ///         DiscoveryScheduleId = testDiscoveryScheduleOciCloudBridgeDiscoverySchedule.Id,
         ///     });
         /// 
         /// });

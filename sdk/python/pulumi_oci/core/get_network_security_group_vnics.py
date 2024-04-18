@@ -91,7 +91,7 @@ def get_network_security_group_vnics(filters: Optional[Sequence[pulumi.InputType
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"])
+    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=test_network_security_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_network_security_group_vnics_output(filters: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=oci_core_network_security_group["test_network_security_group"]["id"])
+    test_network_security_group_vnics = oci.Core.get_network_security_group_vnics(network_security_group_id=test_network_security_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

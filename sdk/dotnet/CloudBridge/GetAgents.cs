@@ -30,11 +30,11 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAgents = Oci.CloudBridge.GetAgents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-        ///         DisplayName = @var.Agent_display_name,
-        ///         EnvironmentId = oci_cloud_bridge_environment.Test_environment.Id,
-        ///         State = @var.Agent_state,
+        ///         CompartmentId = compartmentId,
+        ///         AgentId = testAgent.Id,
+        ///         DisplayName = agentDisplayName,
+        ///         EnvironmentId = testEnvironment.Id,
+        ///         State = agentState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testAgents = Oci.CloudBridge.GetAgents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AgentId = oci_cloud_bridge_agent.Test_agent.Id,
-        ///         DisplayName = @var.Agent_display_name,
-        ///         EnvironmentId = oci_cloud_bridge_environment.Test_environment.Id,
-        ///         State = @var.Agent_state,
+        ///         CompartmentId = compartmentId,
+        ///         AgentId = testAgent.Id,
+        ///         DisplayName = agentDisplayName,
+        ///         EnvironmentId = testEnvironment.Id,
+        ///         State = agentState,
         ///     });
         /// 
         /// });

@@ -240,12 +240,12 @@ class PublicIpPool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_public_ip_pool = oci.core.PublicIpPool("testPublicIpPool",
-            compartment_id=var["compartment_id"],
+        test_public_ip_pool = oci.core.PublicIpPool("test_public_ip_pool",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["public_ip_pool_display_name"],
+            display_name=public_ip_pool_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -289,12 +289,12 @@ class PublicIpPool(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_public_ip_pool = oci.core.PublicIpPool("testPublicIpPool",
-            compartment_id=var["compartment_id"],
+        test_public_ip_pool = oci.core.PublicIpPool("test_public_ip_pool",
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["public_ip_pool_display_name"],
+            display_name=public_ip_pool_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

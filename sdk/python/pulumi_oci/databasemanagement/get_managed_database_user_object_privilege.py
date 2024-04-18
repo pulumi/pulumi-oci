@@ -103,9 +103,9 @@ def get_managed_database_user_object_privilege(managed_database_id: Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_object_privilege = oci.DatabaseManagement.get_managed_database_user_object_privilege(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_object_privilege_name"])
+    test_managed_database_user_object_privilege = oci.DatabaseManagement.get_managed_database_user_object_privilege(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_database_user_object_privilege_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -146,9 +146,9 @@ def get_managed_database_user_object_privilege_output(managed_database_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_user_object_privilege = oci.DatabaseManagement.get_managed_database_user_object_privilege(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        user_name=oci_identity_user["test_user"]["name"],
-        name=var["managed_database_user_object_privilege_name"])
+    test_managed_database_user_object_privilege = oci.DatabaseManagement.get_managed_database_user_object_privilege(managed_database_id=test_managed_database["id"],
+        user_name=test_user["name"],
+        name=managed_database_user_object_privilege_name)
     ```
     <!--End PulumiCodeChooser -->
 

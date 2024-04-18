@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCrossConnects = Oci.Core.GetCrossConnects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
-        ///         DisplayName = @var.Cross_connect_display_name,
-        ///         State = @var.Cross_connect_state,
+        ///         CompartmentId = compartmentId,
+        ///         CrossConnectGroupId = testCrossConnectGroup.Id,
+        ///         DisplayName = crossConnectDisplayName,
+        ///         State = crossConnectState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testCrossConnects = Oci.Core.GetCrossConnects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CrossConnectGroupId = oci_core_cross_connect_group.Test_cross_connect_group.Id,
-        ///         DisplayName = @var.Cross_connect_display_name,
-        ///         State = @var.Cross_connect_state,
+        ///         CompartmentId = compartmentId,
+        ///         CrossConnectGroupId = testCrossConnectGroup.Id,
+        ///         DisplayName = crossConnectDisplayName,
+        ///         State = crossConnectState,
         ///     });
         /// 
         /// });

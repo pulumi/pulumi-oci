@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testOciCorePublicIpById = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         Id = @var.Test_public_ip_id,
+        ///         Id = testPublicIpId,
         ///     });
         /// 
         /// });
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testOciCorePublicIpByPrivateIpId = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         PrivateIpId = @var.Test_public_ip_private_ip_id,
+        ///         PrivateIpId = testPublicIpPrivateIpId,
         ///     });
         /// 
         /// });
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testOciCorePublicIpByIp = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         IpAddress = @var.Test_public_ip_ip_address,
+        ///         IpAddress = testPublicIpIpAddress,
         ///     });
         /// 
         /// });
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testOciCorePublicIpById = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         Id = @var.Test_public_ip_id,
+        ///         Id = testPublicIpId,
         ///     });
         /// 
         /// });
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testOciCorePublicIpByPrivateIpId = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         PrivateIpId = @var.Test_public_ip_private_ip_id,
+        ///         PrivateIpId = testPublicIpPrivateIpId,
         ///     });
         /// 
         /// });
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testOciCorePublicIpByIp = Oci.Core.GetPublicIp.Invoke(new()
         ///     {
-        ///         IpAddress = @var.Test_public_ip_ip_address,
+        ///         IpAddress = testPublicIpIpAddress,
         ///     });
         /// 
         /// });

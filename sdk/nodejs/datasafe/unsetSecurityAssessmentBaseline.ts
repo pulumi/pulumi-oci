@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnsetSecurityAssessmentBaseline = new oci.datasafe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", {securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id});
+ * const testUnsetSecurityAssessmentBaseline = new oci.datasafe.UnsetSecurityAssessmentBaseline("test_unset_security_assessment_baseline", {securityAssessmentId: testSecurityAssessment.id});
  * ```
  * <!--End PulumiCodeChooser -->
  *

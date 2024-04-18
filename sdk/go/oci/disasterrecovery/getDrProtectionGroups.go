@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DisasterRecovery.GetDrProtectionGroups(ctx, &disasterrecovery.GetDrProtectionGroupsArgs{
-//				CompartmentId:       _var.Compartment_id,
-//				DisplayName:         pulumi.StringRef(_var.Dr_protection_group_display_name),
-//				DrProtectionGroupId: pulumi.StringRef(oci_disaster_recovery_dr_protection_group.Test_dr_protection_group.Id),
-//				LifecycleSubState:   pulumi.StringRef(_var.Dr_protection_group_lifecycle_sub_state),
-//				Role:                pulumi.StringRef(_var.Dr_protection_group_role),
-//				State:               pulumi.StringRef(_var.Dr_protection_group_state),
+//				CompartmentId:       compartmentId,
+//				DisplayName:         pulumi.StringRef(drProtectionGroupDisplayName),
+//				DrProtectionGroupId: pulumi.StringRef(testDrProtectionGroup.Id),
+//				LifecycleSubState:   pulumi.StringRef(drProtectionGroupLifecycleSubState),
+//				Role:                pulumi.StringRef(drProtectionGroupRole),
+//				State:               pulumi.StringRef(drProtectionGroupState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -212,7 +212,7 @@ def get_outbound_connector(outbound_connector_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=oci_file_storage_outbound_connector["test_outbound_connector"]["id"])
+    test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=test_outbound_connector_oci_file_storage_outbound_connector["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -256,7 +256,7 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=oci_file_storage_outbound_connector["test_outbound_connector"]["id"])
+    test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=test_outbound_connector_oci_file_storage_outbound_connector["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -29,12 +29,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMetricExtensions = Oci.StackMonitoring.GetMetricExtensions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EnabledOnResourceId = oci_usage_proxy_resource.Test_resource.Id,
-        ///         Name = @var.Metric_extension_name,
-        ///         ResourceType = @var.Metric_extension_resource_type,
-        ///         State = @var.Metric_extension_state,
-        ///         Status = @var.Metric_extension_status,
+        ///         CompartmentId = compartmentId,
+        ///         EnabledOnResourceId = testResource.Id,
+        ///         Name = metricExtensionName,
+        ///         ResourceType = metricExtensionResourceType,
+        ///         State = metricExtensionState,
+        ///         Status = metricExtensionStatus,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testMetricExtensions = Oci.StackMonitoring.GetMetricExtensions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         EnabledOnResourceId = oci_usage_proxy_resource.Test_resource.Id,
-        ///         Name = @var.Metric_extension_name,
-        ///         ResourceType = @var.Metric_extension_resource_type,
-        ///         State = @var.Metric_extension_state,
-        ///         Status = @var.Metric_extension_status,
+        ///         CompartmentId = compartmentId,
+        ///         EnabledOnResourceId = testResource.Id,
+        ///         Name = metricExtensionName,
+        ///         ResourceType = metricExtensionResourceType,
+        ///         State = metricExtensionState,
+        ///         Status = metricExtensionStatus,
         ///     });
         /// 
         /// });

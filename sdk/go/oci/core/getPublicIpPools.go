@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetPublicIpPools(ctx, &core.GetPublicIpPoolsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				ByoipRangeId:  pulumi.StringRef(oci_core_byoip_range.Test_byoip_range.Id),
-//				DisplayName:   pulumi.StringRef(_var.Public_ip_pool_display_name),
+//				CompartmentId: compartmentId,
+//				ByoipRangeId:  pulumi.StringRef(testByoipRange.Id),
+//				DisplayName:   pulumi.StringRef(publicIpPoolDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

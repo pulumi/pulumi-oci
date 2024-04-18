@@ -31,8 +31,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testCloudAutonomousVmClusterAcdResourceUsages = Oci.Database.GetCloudAutonomousVmClusterAcdResourceUsages.Invoke(new()
         ///     {
-        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testCloudAutonomousVmClusterAcdResourceUsages = Oci.Database.GetCloudAutonomousVmClusterAcdResourceUsages.Invoke(new()
         ///     {
-        ///         CloudAutonomousVmClusterId = oci_database_cloud_autonomous_vm_cluster.Test_cloud_autonomous_vm_cluster.Id,
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

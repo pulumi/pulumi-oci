@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testEndpoint = new Endpoint(&#34;testEndpoint&#34;, EndpointArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .modelId(oci_ai_language_model.test_model().id())
+ *             .compartmentId(compartmentId)
+ *             .modelId(testModel.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.endpoint_description())
- *             .displayName(var_.endpoint_display_name())
+ *             .description(endpointDescription)
+ *             .displayName(endpointDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .inferenceUnits(var_.endpoint_inference_units())
+ *             .inferenceUnits(endpointInferenceUnits)
  *             .build());
  * 
  *     }

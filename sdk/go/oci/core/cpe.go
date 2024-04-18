@@ -45,18 +45,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewCpe(ctx, "testCpe", &Core.CpeArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				IpAddress:        pulumi.Any(_var.Cpe_ip_address),
-//				CpeDeviceShapeId: pulumi.Any(data.Oci_core_cpe_device_shapes.Test_cpe_device_shapes.Cpe_device_shapes[0].Cpe_device_shape_id),
+//			_, err := Core.NewCpe(ctx, "test_cpe", &Core.CpeArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				IpAddress:        pulumi.Any(cpeIpAddress),
+//				CpeDeviceShapeId: pulumi.Any(testCpeDeviceShapes.CpeDeviceShapes[0].CpeDeviceShapeId),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Cpe_display_name),
+//				DisplayName: pulumi.Any(cpeDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsPrivate: pulumi.Any(_var.Cpe_is_private),
+//				IsPrivate: pulumi.Any(cpeIsPrivate),
 //			})
 //			if err != nil {
 //				return err

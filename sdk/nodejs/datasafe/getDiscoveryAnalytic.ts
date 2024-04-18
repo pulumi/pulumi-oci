@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
- *     groupBy: _var.discovery_analytic_group_by,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     groupBy: discoveryAnalyticGroupBy,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,11 +107,11 @@ export interface GetDiscoveryAnalyticResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryAnalytic = oci.DataSafe.getDiscoveryAnalytic({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
- *     groupBy: _var.discovery_analytic_group_by,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     groupBy: discoveryAnalyticGroupBy,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

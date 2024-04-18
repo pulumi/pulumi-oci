@@ -29,10 +29,10 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testDiscoverySchedules = Oci.CloudBridge.GetDiscoverySchedules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DiscoveryScheduleId = oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id,
-        ///         DisplayName = @var.Discovery_schedule_display_name,
-        ///         State = @var.Discovery_schedule_state,
+        ///         CompartmentId = compartmentId,
+        ///         DiscoveryScheduleId = testDiscoverySchedule.Id,
+        ///         DisplayName = discoveryScheduleDisplayName,
+        ///         State = discoveryScheduleState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testDiscoverySchedules = Oci.CloudBridge.GetDiscoverySchedules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DiscoveryScheduleId = oci_cloud_bridge_discovery_schedule.Test_discovery_schedule.Id,
-        ///         DisplayName = @var.Discovery_schedule_display_name,
-        ///         State = @var.Discovery_schedule_state,
+        ///         CompartmentId = compartmentId,
+        ///         DiscoveryScheduleId = testDiscoverySchedule.Id,
+        ///         DisplayName = discoveryScheduleDisplayName,
+        ///         State = discoveryScheduleState,
         ///     });
         /// 
         /// });

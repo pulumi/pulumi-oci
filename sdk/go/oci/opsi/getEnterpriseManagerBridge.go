@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetEnterpriseManagerBridge(ctx, &opsi.GetEnterpriseManagerBridgeArgs{
-//				EnterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
+//				EnterpriseManagerBridgeId: testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

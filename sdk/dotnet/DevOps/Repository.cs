@@ -25,28 +25,29 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRepository = new Oci.DevOps.Repository("testRepository", new()
+    ///     var testRepository = new Oci.DevOps.Repository("test_repository", new()
     ///     {
-    ///         ProjectId = oci_devops_project.Test_project.Id,
-    ///         RepositoryType = @var.Repository_repository_type,
-    ///         DefaultBranch = @var.Repository_default_branch,
+    ///         Name = repositoryName,
+    ///         ProjectId = testProject.Id,
+    ///         RepositoryType = repositoryRepositoryType,
+    ///         DefaultBranch = repositoryDefaultBranch,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Repository_description,
+    ///         Description = repositoryDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         MirrorRepositoryConfig = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigArgs
     ///         {
-    ///             ConnectorId = oci_devops_connector.Test_connector.Id,
-    ///             RepositoryUrl = @var.Repository_mirror_repository_config_repository_url,
+    ///             ConnectorId = testConnector.Id,
+    ///             RepositoryUrl = repositoryMirrorRepositoryConfigRepositoryUrl,
     ///             TriggerSchedule = new Oci.DevOps.Inputs.RepositoryMirrorRepositoryConfigTriggerScheduleArgs
     ///             {
-    ///                 ScheduleType = @var.Repository_mirror_repository_config_trigger_schedule_schedule_type,
-    ///                 CustomSchedule = @var.Repository_mirror_repository_config_trigger_schedule_custom_schedule,
+    ///                 ScheduleType = repositoryMirrorRepositoryConfigTriggerScheduleScheduleType,
+    ///                 CustomSchedule = repositoryMirrorRepositoryConfigTriggerScheduleCustomSchedule,
     ///             },
     ///         },
     ///     });

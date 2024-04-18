@@ -134,11 +134,11 @@ def get_export_sets(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=var["export_set_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["export_set_display_name"],
-        id=var["export_set_id"],
-        state=var["export_set_state"])
+    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=export_set_availability_domain,
+        compartment_id=compartment_id,
+        display_name=export_set_display_name,
+        id=export_set_id,
+        state=export_set_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_export_sets_output(availability_domain: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=var["export_set_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["export_set_display_name"],
-        id=var["export_set_id"],
-        state=var["export_set_state"])
+    test_export_sets = oci.FileStorage.get_export_sets(availability_domain=export_set_availability_domain,
+        compartment_id=compartment_id,
+        display_name=export_set_display_name,
+        id=export_set_id,
+        state=export_set_state)
     ```
     <!--End PulumiCodeChooser -->
 

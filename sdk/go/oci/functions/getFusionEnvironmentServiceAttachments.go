@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentServiceAttachments(ctx, &functions.GetFusionEnvironmentServiceAttachmentsArgs{
-//				FusionEnvironmentId: oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-//				DisplayName:         pulumi.StringRef(_var.Fusion_environment_service_attachment_display_name),
-//				ServiceInstanceType: pulumi.StringRef(_var.Fusion_environment_service_attachment_service_instance_type),
-//				State:               pulumi.StringRef(_var.Fusion_environment_service_attachment_state),
+//				FusionEnvironmentId: testFusionEnvironment.Id,
+//				DisplayName:         pulumi.StringRef(fusionEnvironmentServiceAttachmentDisplayName),
+//				ServiceInstanceType: pulumi.StringRef(fusionEnvironmentServiceAttachmentServiceInstanceType),
+//				State:               pulumi.StringRef(fusionEnvironmentServiceAttachmentState),
 //			}, nil)
 //			if err != nil {
 //				return err

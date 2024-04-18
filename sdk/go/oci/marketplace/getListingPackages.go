@@ -44,10 +44,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Marketplace.GetListingPackages(ctx, &marketplace.GetListingPackagesArgs{
-//				ListingId:      oci_marketplace_listing.Test_listing.Id,
-//				CompartmentId:  pulumi.StringRef(_var.Compartment_id),
-//				PackageType:    pulumi.StringRef(_var.Listing_package_package_type),
-//				PackageVersion: pulumi.StringRef(_var.Listing_package_package_version),
+//				ListingId:      testListing.Id,
+//				CompartmentId:  pulumi.StringRef(compartmentId),
+//				PackageType:    pulumi.StringRef(listingPackagePackageType),
+//				PackageVersion: pulumi.StringRef(listingPackagePackageVersion),
 //			}, nil)
 //			if err != nil {
 //				return err

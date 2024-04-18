@@ -236,7 +236,7 @@ def get_dedicated_ai_cluster(dedicated_ai_cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=oci_generative_ai_dedicated_ai_cluster["test_dedicated_ai_cluster"]["id"])
+    test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=test_dedicated_ai_cluster_oci_generative_ai_dedicated_ai_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -282,7 +282,7 @@ def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=oci_generative_ai_dedicated_ai_cluster["test_dedicated_ai_cluster"]["id"])
+    test_dedicated_ai_cluster = oci.GenerativeAi.get_dedicated_ai_cluster(dedicated_ai_cluster_id=test_dedicated_ai_cluster_oci_generative_ai_dedicated_ai_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

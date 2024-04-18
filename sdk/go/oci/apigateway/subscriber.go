@@ -31,19 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewSubscriber(ctx, "testSubscriber", &ApiGateway.SubscriberArgs{
+//			_, err := ApiGateway.NewSubscriber(ctx, "test_subscriber", &ApiGateway.SubscriberArgs{
 //				Clients: apigateway.SubscriberClientArray{
 //					&apigateway.SubscriberClientArgs{
-//						Name:  pulumi.Any(_var.Subscriber_clients_name),
-//						Token: pulumi.Any(_var.Subscriber_clients_token),
+//						Name:  pulumi.Any(subscriberClientsName),
+//						Token: pulumi.Any(subscriberClientsToken),
 //					},
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				UsagePlans:    pulumi.Any(_var.Subscriber_usage_plans),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				UsagePlans:    pulumi.Any(subscriberUsagePlans),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Subscriber_display_name),
+//				DisplayName: pulumi.Any(subscriberDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := RecoveryMod.GetProtectedDatabase(ctx, &recoverymod.GetProtectedDatabaseArgs{
-//				ProtectedDatabaseId: oci_recovery_protected_database.Test_protected_database.Id,
+//				ProtectedDatabaseId: testProtectedDatabaseOciRecoveryProtectedDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

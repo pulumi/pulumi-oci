@@ -34,16 +34,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.NewHttpProbe(ctx, "testHttpProbe", &HealthChecks.HttpProbeArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				Protocol:          pulumi.Any(_var.Http_probe_protocol),
-//				Targets:           pulumi.Any(_var.Http_probe_targets),
-//				Headers:           pulumi.Any(_var.Http_probe_headers),
-//				Method:            pulumi.Any(_var.Http_probe_method),
-//				Path:              pulumi.Any(_var.Http_probe_path),
-//				Port:              pulumi.Any(_var.Http_probe_port),
-//				TimeoutInSeconds:  pulumi.Any(_var.Http_probe_timeout_in_seconds),
-//				VantagePointNames: pulumi.Any(_var.Http_probe_vantage_point_names),
+//			_, err := HealthChecks.NewHttpProbe(ctx, "test_http_probe", &HealthChecks.HttpProbeArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				Protocol:          pulumi.Any(httpProbeProtocol),
+//				Targets:           pulumi.Any(httpProbeTargets),
+//				Headers:           pulumi.Any(httpProbeHeaders),
+//				Method:            pulumi.Any(httpProbeMethod),
+//				Path:              pulumi.Any(httpProbePath),
+//				Port:              pulumi.Any(httpProbePort),
+//				TimeoutInSeconds:  pulumi.Any(httpProbeTimeoutInSeconds),
+//				VantagePointNames: pulumi.Any(httpProbeVantagePointNames),
 //			})
 //			if err != nil {
 //				return err

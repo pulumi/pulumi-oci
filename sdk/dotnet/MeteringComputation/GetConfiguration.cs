@@ -30,7 +30,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testConfiguration = Oci.MeteringComputation.GetConfiguration.Invoke(new()
         ///     {
-        ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
+        ///         TenantId = testTenant.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testConfiguration = Oci.MeteringComputation.GetConfiguration.Invoke(new()
         ///     {
-        ///         TenantId = oci_metering_computation_tenant.Test_tenant.Id,
+        ///         TenantId = testTenant.Id,
         ///     });
         /// 
         /// });

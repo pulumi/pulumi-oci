@@ -26,14 +26,15 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testManagedDatabaseGroup = new Oci.DatabaseManagement.ManagedDatabaseGroup("testManagedDatabaseGroup", new()
+    ///     var testManagedDatabaseGroup = new Oci.DatabaseManagement.ManagedDatabaseGroup("test_managed_database_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = managedDatabaseGroupName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Managed_database_group_description,
+    ///         Description = managedDatabaseGroupDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -42,7 +43,7 @@ namespace Pulumi.Oci.DatabaseManagement
     ///         {
     ///             new Oci.DatabaseManagement.Inputs.ManagedDatabaseGroupManagedDatabaseArgs
     ///             {
-    ///                 Id = @var.Managed_database_id,
+    ///                 Id = managedDatabaseId,
     ///             },
     ///         },
     ///     });

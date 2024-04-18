@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceImportRequests = oci.DataIntegration.getWorkspaceImportRequests({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     importStatus: _var.workspace_import_request_import_status,
- *     name: _var.workspace_import_request_name,
- *     projection: _var.workspace_import_request_projection,
- *     timeEndedInMillis: _var.workspace_import_request_time_ended_in_millis,
- *     timeStartedInMillis: _var.workspace_import_request_time_started_in_millis,
+ *     workspaceId: testWorkspace.id,
+ *     importStatus: workspaceImportRequestImportStatus,
+ *     name: workspaceImportRequestName,
+ *     projection: workspaceImportRequestProjection,
+ *     timeEndedInMillis: workspaceImportRequestTimeEndedInMillis,
+ *     timeStartedInMillis: workspaceImportRequestTimeStartedInMillis,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,12 +116,12 @@ export interface GetWorkspaceImportRequestsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceImportRequests = oci.DataIntegration.getWorkspaceImportRequests({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     importStatus: _var.workspace_import_request_import_status,
- *     name: _var.workspace_import_request_name,
- *     projection: _var.workspace_import_request_projection,
- *     timeEndedInMillis: _var.workspace_import_request_time_ended_in_millis,
- *     timeStartedInMillis: _var.workspace_import_request_time_started_in_millis,
+ *     workspaceId: testWorkspace.id,
+ *     importStatus: workspaceImportRequestImportStatus,
+ *     name: workspaceImportRequestName,
+ *     projection: workspaceImportRequestProjection,
+ *     timeEndedInMillis: workspaceImportRequestTimeEndedInMillis,
+ *     timeStartedInMillis: workspaceImportRequestTimeStartedInMillis,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

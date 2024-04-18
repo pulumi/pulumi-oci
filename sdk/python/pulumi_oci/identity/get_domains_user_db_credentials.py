@@ -210,14 +210,14 @@ def get_domains_user_db_credentials(attribute_sets: Optional[Sequence[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_db_credential_count=var["user_db_credential_user_db_credential_count"],
-        user_db_credential_filter=var["user_db_credential_user_db_credential_filter"],
+    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=test_domain["url"],
+        user_db_credential_count=user_db_credential_user_db_credential_count,
+        user_db_credential_filter=user_db_credential_user_db_credential_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["user_db_credential_authorization"],
-        resource_type_schema_version=var["user_db_credential_resource_type_schema_version"],
-        start_index=var["user_db_credential_start_index"])
+        authorization=user_db_credential_authorization,
+        resource_type_schema_version=user_db_credential_resource_type_schema_version,
+        start_index=user_db_credential_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_user_db_credentials_output(attribute_sets: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        user_db_credential_count=var["user_db_credential_user_db_credential_count"],
-        user_db_credential_filter=var["user_db_credential_user_db_credential_filter"],
+    test_user_db_credentials = oci.Identity.get_domains_user_db_credentials(idcs_endpoint=test_domain["url"],
+        user_db_credential_count=user_db_credential_user_db_credential_count,
+        user_db_credential_filter=user_db_credential_user_db_credential_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["user_db_credential_authorization"],
-        resource_type_schema_version=var["user_db_credential_resource_type_schema_version"],
-        start_index=var["user_db_credential_start_index"])
+        authorization=user_db_credential_authorization,
+        resource_type_schema_version=user_db_credential_resource_type_schema_version,
+        start_index=user_db_credential_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -48,21 +48,21 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVolumeGroup = new VolumeGroup(&#34;testVolumeGroup&#34;, VolumeGroupArgs.builder()        
- *             .availabilityDomain(var_.volume_group_availability_domain())
- *             .compartmentId(var_.compartment_id())
+ *             .availabilityDomain(volumeGroupAvailabilityDomain)
+ *             .compartmentId(compartmentId)
  *             .sourceDetails(VolumeGroupSourceDetailsArgs.builder()
  *                 .type(&#34;volumeIds&#34;)
- *                 .volumeIds(var_.volume_group_source_id())
+ *                 .volumeIds(volumeGroupSourceId)
  *                 .build())
- *             .backupPolicyId(data.oci_core_volume_backup_policies().test_volume_backup_policies().volume_backup_policies()[0].id())
+ *             .backupPolicyId(testVolumeBackupPolicies.volumeBackupPolicies()[0].id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.volume_group_display_name())
+ *             .displayName(volumeGroupDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .volumeGroupReplicas(VolumeGroupVolumeGroupReplicaArgs.builder()
- *                 .availabilityDomain(var_.volume_group_volume_group_replicas_availability_domain())
- *                 .displayName(var_.volume_group_volume_group_replicas_display_name())
+ *                 .availabilityDomain(volumeGroupVolumeGroupReplicasAvailabilityDomain)
+ *                 .displayName(volumeGroupVolumeGroupReplicasDisplayName)
  *                 .build())
- *             .volumeIds(var_.volume_group_source_id())
+ *             .volumeIds(volumeGroupSourceId)
  *             .build());
  * 
  *     }

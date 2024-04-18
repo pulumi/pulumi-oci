@@ -23,9 +23,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVcns = oci.Core.getVcns({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vcn_display_name,
- *     state: _var.vcn_state,
+ *     compartmentId: compartmentId,
+ *     displayName: vcnDisplayName,
+ *     state: vcnState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,9 +103,9 @@ export interface GetVcnsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVcns = oci.Core.getVcns({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vcn_display_name,
- *     state: _var.vcn_state,
+ *     compartmentId: compartmentId,
+ *     displayName: vcnDisplayName,
+ *     state: vcnState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

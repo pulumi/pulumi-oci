@@ -433,16 +433,16 @@ class OneoffPatch(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oneoff_patch = oci.database.OneoffPatch("testOneoffPatch",
-            compartment_id=var["compartment_id"],
-            db_version=var["oneoff_patch_db_version"],
-            display_name=var["oneoff_patch_display_name"],
-            release_update=var["oneoff_patch_release_update"],
-            defined_tags=var["oneoff_patch_defined_tags"],
+        test_oneoff_patch = oci.database.OneoffPatch("test_oneoff_patch",
+            compartment_id=compartment_id,
+            db_version=oneoff_patch_db_version,
+            display_name=oneoff_patch_display_name,
+            release_update=oneoff_patch_release_update,
+            defined_tags=oneoff_patch_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            one_off_patches=var["oneoff_patch_one_off_patches"])
+            one_off_patches=oneoff_patch_one_off_patches)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -487,16 +487,16 @@ class OneoffPatch(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oneoff_patch = oci.database.OneoffPatch("testOneoffPatch",
-            compartment_id=var["compartment_id"],
-            db_version=var["oneoff_patch_db_version"],
-            display_name=var["oneoff_patch_display_name"],
-            release_update=var["oneoff_patch_release_update"],
-            defined_tags=var["oneoff_patch_defined_tags"],
+        test_oneoff_patch = oci.database.OneoffPatch("test_oneoff_patch",
+            compartment_id=compartment_id,
+            db_version=oneoff_patch_db_version,
+            display_name=oneoff_patch_display_name,
+            release_update=oneoff_patch_release_update,
+            defined_tags=oneoff_patch_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             },
-            one_off_patches=var["oneoff_patch_one_off_patches"])
+            one_off_patches=oneoff_patch_one_off_patches)
         ```
         <!--End PulumiCodeChooser -->
 

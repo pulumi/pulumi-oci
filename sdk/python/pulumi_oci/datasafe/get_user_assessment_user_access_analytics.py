@@ -91,7 +91,7 @@ def get_user_assessment_user_access_analytics(filters: Optional[Sequence[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+    test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=test_user_assessment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_user_assessment_user_access_analytics_output(filters: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
+    test_user_assessment_user_access_analytics = oci.DataSafe.get_user_assessment_user_access_analytics(user_assessment_id=test_user_assessment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -134,11 +134,11 @@ def get_deploy_artifacts(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_artifacts = oci.DevOps.get_deploy_artifacts(compartment_id=var["compartment_id"],
-        display_name=var["deploy_artifact_display_name"],
-        id=var["deploy_artifact_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deploy_artifact_state"])
+    test_deploy_artifacts = oci.DevOps.get_deploy_artifacts(compartment_id=compartment_id,
+        display_name=deploy_artifact_display_name,
+        id=deploy_artifact_id,
+        project_id=test_project["id"],
+        state=deploy_artifact_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_deploy_artifacts_output(compartment_id: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_deploy_artifacts = oci.DevOps.get_deploy_artifacts(compartment_id=var["compartment_id"],
-        display_name=var["deploy_artifact_display_name"],
-        id=var["deploy_artifact_id"],
-        project_id=oci_devops_project["test_project"]["id"],
-        state=var["deploy_artifact_state"])
+    test_deploy_artifacts = oci.DevOps.get_deploy_artifacts(compartment_id=compartment_id,
+        display_name=deploy_artifact_display_name,
+        id=deploy_artifact_id,
+        project_id=test_project["id"],
+        state=deploy_artifact_state)
     ```
     <!--End PulumiCodeChooser -->
 

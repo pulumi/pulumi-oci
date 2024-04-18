@@ -47,13 +47,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAuditTrailManagement = new AuditTrailManagement(&#34;testAuditTrailManagement&#34;, AuditTrailManagementArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .targetId(oci_data_safe_target_database.test_target_database().id())
+ *             .compartmentId(compartmentId)
+ *             .targetId(testTargetDatabase.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.audit_trail_management_description())
- *             .displayName(var_.audit_trail_management_display_name())
+ *             .description(auditTrailManagementDescription)
+ *             .displayName(auditTrailManagementDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isAutoPurgeEnabled(var_.audit_trail_management_is_auto_purge_enabled())
+ *             .isAutoPurgeEnabled(auditTrailManagementIsAutoPurgeEnabled)
  *             .build());
  * 
  *     }

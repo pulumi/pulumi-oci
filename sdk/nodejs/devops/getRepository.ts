@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRepository = oci.DevOps.getRepository({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     fields: _var.repository_fields,
+ *     repositoryId: testRepositoryOciDevopsRepository.id,
+ *     fields: repositoryFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -160,8 +160,8 @@ export interface GetRepositoryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRepository = oci.DevOps.getRepository({
- *     repositoryId: oci_devops_repository.test_repository.id,
- *     fields: _var.repository_fields,
+ *     repositoryId: testRepositoryOciDevopsRepository.id,
+ *     fields: repositoryFields,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

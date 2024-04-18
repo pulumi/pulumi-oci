@@ -43,8 +43,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testClusterStartCredentialRotationManagement = new ClusterStartCredentialRotationManagement(&#34;testClusterStartCredentialRotationManagement&#34;, ClusterStartCredentialRotationManagementArgs.builder()        
- *             .autoCompletionDelayDuration(var_.cluster_start_credential_rotation_management_auto_completion_delay_duration())
- *             .clusterId(oci_containerengine_cluster.test_cluster().id())
+ *             .autoCompletionDelayDuration(clusterStartCredentialRotationManagementAutoCompletionDelayDuration)
+ *             .clusterId(testCluster.id())
  *             .build());
  * 
  *     }

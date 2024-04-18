@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousVmClusters = Oci.Database.GetAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Autonomous_vm_cluster_display_name,
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///         State = @var.Autonomous_vm_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = autonomousVmClusterDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         State = autonomousVmClusterState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testAutonomousVmClusters = Oci.Database.GetAutonomousVmClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Autonomous_vm_cluster_display_name,
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///         State = @var.Autonomous_vm_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = autonomousVmClusterDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         State = autonomousVmClusterState,
         ///     });
         /// 
         /// });

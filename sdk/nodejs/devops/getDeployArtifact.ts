@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployArtifact = oci.DevOps.getDeployArtifact({
- *     deployArtifactId: oci_devops_deploy_artifact.test_deploy_artifact.id,
+ *     deployArtifactId: testDeployArtifactOciDevopsDeployArtifact.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,7 +121,7 @@ export interface GetDeployArtifactResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployArtifact = oci.DevOps.getDeployArtifact({
- *     deployArtifactId: oci_devops_deploy_artifact.test_deploy_artifact.id,
+ *     deployArtifactId: testDeployArtifactOciDevopsDeployArtifact.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

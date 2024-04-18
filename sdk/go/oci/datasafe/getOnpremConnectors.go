@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetOnpremConnectors(ctx, &datasafe.GetOnpremConnectorsArgs{
-//				CompartmentId:                 _var.Compartment_id,
-//				AccessLevel:                   pulumi.StringRef(_var.On_prem_connector_access_level),
-//				CompartmentIdInSubtree:        pulumi.BoolRef(_var.On_prem_connector_compartment_id_in_subtree),
-//				DisplayName:                   pulumi.StringRef(_var.On_prem_connector_display_name),
-//				OnPremConnectorId:             pulumi.StringRef(oci_data_safe_on_prem_connector.Test_on_prem_connector.Id),
-//				OnPremConnectorLifecycleState: pulumi.StringRef(_var.On_prem_connector_on_prem_connector_lifecycle_state),
+//				CompartmentId:                 compartmentId,
+//				AccessLevel:                   pulumi.StringRef(onPremConnectorAccessLevel),
+//				CompartmentIdInSubtree:        pulumi.BoolRef(onPremConnectorCompartmentIdInSubtree),
+//				DisplayName:                   pulumi.StringRef(onPremConnectorDisplayName),
+//				OnPremConnectorId:             pulumi.StringRef(testOnPremConnector.Id),
+//				OnPremConnectorLifecycleState: pulumi.StringRef(onPremConnectorOnPremConnectorLifecycleState),
 //			}, nil)
 //			if err != nil {
 //				return err

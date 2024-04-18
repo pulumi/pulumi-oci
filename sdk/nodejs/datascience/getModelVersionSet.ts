@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelVersionSet = oci.DataScience.getModelVersionSet({
- *     modelVersionSetId: oci_datascience_model_version_set.test_model_version_set.id,
+ *     modelVersionSetId: testModelVersionSetOciDatascienceModelVersionSet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetModelVersionSetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelVersionSet = oci.DataScience.getModelVersionSet({
- *     modelVersionSetId: oci_datascience_model_version_set.test_model_version_set.id,
+ *     modelVersionSetId: testModelVersionSetOciDatascienceModelVersionSet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

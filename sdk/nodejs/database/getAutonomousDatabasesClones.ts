@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabasesClones = oci.Database.getAutonomousDatabasesClones({
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     compartmentId: _var.compartment_id,
- *     cloneType: _var.autonomous_databases_clone_clone_type,
- *     displayName: _var.autonomous_databases_clone_display_name,
- *     state: _var.autonomous_databases_clone_state,
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     compartmentId: compartmentId,
+ *     cloneType: autonomousDatabasesCloneCloneType,
+ *     displayName: autonomousDatabasesCloneDisplayName,
+ *     state: autonomousDatabasesCloneState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetAutonomousDatabasesClonesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabasesClones = oci.Database.getAutonomousDatabasesClones({
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     compartmentId: _var.compartment_id,
- *     cloneType: _var.autonomous_databases_clone_clone_type,
- *     displayName: _var.autonomous_databases_clone_display_name,
- *     state: _var.autonomous_databases_clone_state,
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     compartmentId: compartmentId,
+ *     cloneType: autonomousDatabasesCloneCloneType,
+ *     displayName: autonomousDatabasesCloneDisplayName,
+ *     state: autonomousDatabasesCloneState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

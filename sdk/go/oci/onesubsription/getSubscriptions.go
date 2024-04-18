@@ -34,11 +34,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OneSubsription.GetSubscriptions(ctx, &onesubsription.GetSubscriptionsArgs{
-//				CompartmentId:        _var.Compartment_id,
-//				BuyerEmail:           pulumi.StringRef(_var.Subscription_buyer_email),
-//				IsCommitInfoRequired: pulumi.BoolRef(_var.Subscription_is_commit_info_required),
-//				PlanNumber:           pulumi.StringRef(_var.Subscription_plan_number),
-//				SubscriptionId:       pulumi.StringRef(oci_onesubscription_subscription.Test_subscription.Id),
+//				CompartmentId:        compartmentId,
+//				BuyerEmail:           pulumi.StringRef(subscriptionBuyerEmail),
+//				IsCommitInfoRequired: pulumi.BoolRef(subscriptionIsCommitInfoRequired),
+//				PlanNumber:           pulumi.StringRef(subscriptionPlanNumber),
+//				SubscriptionId:       pulumi.StringRef(testSubscription.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

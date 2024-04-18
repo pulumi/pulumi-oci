@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceAction = oci.Optimizer.getResourceAction({
- *     resourceActionId: oci_optimizer_resource_action.test_resource_action.id,
- *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
+ *     resourceActionId: testResourceActionOciOptimizerResourceAction.id,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -140,8 +140,8 @@ export interface GetResourceActionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testResourceAction = oci.Optimizer.getResourceAction({
- *     resourceActionId: oci_optimizer_resource_action.test_resource_action.id,
- *     includeResourceMetadata: _var.resource_action_include_resource_metadata,
+ *     resourceActionId: testResourceActionOciOptimizerResourceAction.id,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

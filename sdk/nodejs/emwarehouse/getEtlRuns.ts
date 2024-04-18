@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouseEtlRuns = oci.EmWarehouse.getEtlRuns({
- *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.em_warehouse_etl_run_display_name,
+ *     emWarehouseId: testEmWarehouse.id,
+ *     compartmentId: compartmentId,
+ *     displayName: emWarehouseEtlRunDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetEtlRunsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouseEtlRuns = oci.EmWarehouse.getEtlRuns({
- *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.em_warehouse_etl_run_display_name,
+ *     emWarehouseId: testEmWarehouse.id,
+ *     compartmentId: compartmentId,
+ *     displayName: emWarehouseEtlRunDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

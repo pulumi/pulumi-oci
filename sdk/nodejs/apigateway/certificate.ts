@@ -16,18 +16,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificate = new oci.apigateway.Certificate("testCertificate", {
- *     certificate: _var.certificate_certificate,
- *     compartmentId: _var.compartment_id,
+ * const testCertificate = new oci.apigateway.Certificate("test_certificate", {
+ *     certificate: certificateCertificate,
+ *     compartmentId: compartmentId,
+ *     privateKey: certificatePrivateKey,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.certificate_display_name,
+ *     displayName: certificateDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     intermediateCertificates: _var.certificate_intermediate_certificates,
- *     privateKey: _var.certificate_private_key,
+ *     intermediateCertificates: certificateIntermediateCertificates,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

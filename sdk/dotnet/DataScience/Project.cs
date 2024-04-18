@@ -25,15 +25,15 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProject = new Oci.DataScience.Project("testProject", new()
+    ///     var testProject = new Oci.DataScience.Project("test_project", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Project_description,
-    ///         DisplayName = @var.Project_display_name,
+    ///         Description = projectDescription,
+    ///         DisplayName = projectDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

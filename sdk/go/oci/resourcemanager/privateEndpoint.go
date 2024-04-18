@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ResourceManager.NewPrivateEndpoint(ctx, "testPrivateEndpoint", &ResourceManager.PrivateEndpointArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Private_endpoint_display_name),
-//				SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := ResourceManager.NewPrivateEndpoint(ctx, "test_private_endpoint", &ResourceManager.PrivateEndpointArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(privateEndpointDisplayName),
+//				SubnetId:      pulumi.Any(testSubnet.Id),
+//				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Private_endpoint_description),
-//				DnsZones:    pulumi.Any(_var.Private_endpoint_dns_zones),
+//				Description: pulumi.Any(privateEndpointDescription),
+//				DnsZones:    pulumi.Any(privateEndpointDnsZones),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsUsedWithConfigurationSourceProvider: pulumi.Any(_var.Private_endpoint_is_used_with_configuration_source_provider),
-//				NsgIdLists:                            pulumi.Any(_var.Private_endpoint_nsg_id_list),
+//				IsUsedWithConfigurationSourceProvider: pulumi.Any(privateEndpointIsUsedWithConfigurationSourceProvider),
+//				NsgIdLists:                            pulumi.Any(privateEndpointNsgIdList),
 //			})
 //			if err != nil {
 //				return err

@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Optimizer.GetResourceAction(ctx, &optimizer.GetResourceActionArgs{
-//				ResourceActionId:        oci_optimizer_resource_action.Test_resource_action.Id,
-//				IncludeResourceMetadata: pulumi.BoolRef(_var.Resource_action_include_resource_metadata),
+//				ResourceActionId:        testResourceActionOciOptimizerResourceAction.Id,
+//				IncludeResourceMetadata: pulumi.BoolRef(resourceActionIncludeResourceMetadata),
 //			}, nil)
 //			if err != nil {
 //				return err

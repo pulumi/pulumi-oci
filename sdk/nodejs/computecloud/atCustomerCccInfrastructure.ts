@@ -19,17 +19,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccInfrastructure = new oci.computecloud.AtCustomerCccInfrastructure("testCccInfrastructure", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ccc_infrastructure_display_name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     cccUpgradeScheduleId: oci_compute_cloud_at_customer_ccc_upgrade_schedule.test_ccc_upgrade_schedule.id,
- *     connectionDetails: _var.ccc_infrastructure_connection_details,
- *     connectionState: _var.ccc_infrastructure_connection_state,
+ * const testCccInfrastructure = new oci.computecloud.AtCustomerCccInfrastructure("test_ccc_infrastructure", {
+ *     compartmentId: compartmentId,
+ *     displayName: cccInfrastructureDisplayName,
+ *     subnetId: testSubnet.id,
+ *     cccUpgradeScheduleId: testCccUpgradeSchedule.id,
+ *     connectionDetails: cccInfrastructureConnectionDetails,
+ *     connectionState: cccInfrastructureConnectionState,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.ccc_infrastructure_description,
+ *     description: cccInfrastructureDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

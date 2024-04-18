@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditArchiveRetrieval(ctx, &datasafe.GetAuditArchiveRetrievalArgs{
-//				AuditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
+//				AuditArchiveRetrievalId: testAuditArchiveRetrievalOciDataSafeAuditArchiveRetrieval.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

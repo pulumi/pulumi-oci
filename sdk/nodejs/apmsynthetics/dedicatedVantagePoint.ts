@@ -18,23 +18,23 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDedicatedVantagePoint = new oci.apmsynthetics.DedicatedVantagePoint("testDedicatedVantagePoint", {
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     displayName: _var.dedicated_vantage_point_display_name,
+ * const testDedicatedVantagePoint = new oci.apmsynthetics.DedicatedVantagePoint("test_dedicated_vantage_point", {
+ *     apmDomainId: testApmDomain.id,
+ *     displayName: dedicatedVantagePointDisplayName,
  *     dvpStackDetails: {
- *         dvpStackId: oci_resourcemanager_stack.test_stack.id,
- *         dvpStackType: _var.dedicated_vantage_point_dvp_stack_details_dvp_stack_type,
- *         dvpStreamId: oci_streaming_stream.test_stream.id,
- *         dvpVersion: _var.dedicated_vantage_point_dvp_stack_details_dvp_version,
+ *         dvpStackId: testStack.id,
+ *         dvpStackType: dedicatedVantagePointDvpStackDetailsDvpStackType,
+ *         dvpStreamId: testStream.id,
+ *         dvpVersion: dedicatedVantagePointDvpStackDetailsDvpVersion,
  *     },
- *     region: _var.dedicated_vantage_point_region,
+ *     region: dedicatedVantagePointRegion,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     status: _var.dedicated_vantage_point_status,
+ *     status: dedicatedVantagePointStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

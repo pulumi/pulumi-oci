@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMetricExtensionMetricExtensionOnGivenResourcesManagement = new oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("testMetricExtensionMetricExtensionOnGivenResourcesManagement", {
- *     metricExtensionId: oci_stack_monitoring_metric_extension.test_metric_extension.id,
- *     resourceIds: _var.metric_extension_metric_extension_on_given_resources_management_resource_ids,
- *     enableMetricExtensionOnGivenResources: _var.enable_metric_extension_on_given_resources,
+ * const testMetricExtensionMetricExtensionOnGivenResourcesManagement = new oci.stackmonitoring.MetricExtensionMetricExtensionOnGivenResourcesManagement("test_metric_extension_metric_extension_on_given_resources_management", {
+ *     metricExtensionId: testMetricExtension.id,
+ *     resourceIds: metricExtensionMetricExtensionOnGivenResourcesManagementResourceIds[0],
+ *     enableMetricExtensionOnGivenResources: enableMetricExtensionOnGivenResources,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

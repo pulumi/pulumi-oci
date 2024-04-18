@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testCloudGuardConfiguration = Oci.CloudGuard.GetCloudGuardConfiguration.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testCloudGuardConfiguration = Oci.CloudGuard.GetCloudGuardConfiguration.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

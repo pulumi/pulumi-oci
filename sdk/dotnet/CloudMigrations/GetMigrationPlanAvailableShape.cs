@@ -29,11 +29,11 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testMigrationPlanAvailableShape = Oci.CloudMigrations.GetMigrationPlanAvailableShape.Invoke(new()
         ///     {
-        ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-        ///         AvailabilityDomain = @var.Migration_plan_available_shape_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DvhHostId = oci_cloud_migrations_dvh_host.Test_dvh_host.Id,
-        ///         ReservedCapacityId = oci_cloud_migrations_reserved_capacity.Test_reserved_capacity.Id,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         AvailabilityDomain = migrationPlanAvailableShapeAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DvhHostId = testDvhHost.Id,
+        ///         ReservedCapacityId = testReservedCapacity.Id,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testMigrationPlanAvailableShape = Oci.CloudMigrations.GetMigrationPlanAvailableShape.Invoke(new()
         ///     {
-        ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-        ///         AvailabilityDomain = @var.Migration_plan_available_shape_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DvhHostId = oci_cloud_migrations_dvh_host.Test_dvh_host.Id,
-        ///         ReservedCapacityId = oci_cloud_migrations_reserved_capacity.Test_reserved_capacity.Id,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         AvailabilityDomain = migrationPlanAvailableShapeAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DvhHostId = testDvhHost.Id,
+        ///         ReservedCapacityId = testReservedCapacity.Id,
         ///     });
         /// 
         /// });

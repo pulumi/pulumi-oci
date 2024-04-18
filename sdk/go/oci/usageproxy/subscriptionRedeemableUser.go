@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := UsageProxy.NewSubscriptionRedeemableUser(ctx, "testSubscriptionRedeemableUser", &UsageProxy.SubscriptionRedeemableUserArgs{
-//				SubscriptionId: pulumi.Any(oci_ons_subscription.Test_subscription.Id),
-//				TenancyId:      pulumi.Any(oci_identity_tenancy.Test_tenancy.Id),
+//			_, err := UsageProxy.NewSubscriptionRedeemableUser(ctx, "test_subscription_redeemable_user", &UsageProxy.SubscriptionRedeemableUserArgs{
+//				SubscriptionId: pulumi.Any(testSubscription.Id),
+//				TenancyId:      pulumi.Any(testTenancy.Id),
 //				Items: usageproxy.SubscriptionRedeemableUserItemArray{
 //					&usageproxy.SubscriptionRedeemableUserItemArgs{
-//						EmailId:   pulumi.Any(oci_usage_proxy_email.Test_email.Id),
-//						FirstName: pulumi.Any(_var.Subscription_redeemable_user_items_first_name),
-//						LastName:  pulumi.Any(_var.Subscription_redeemable_user_items_last_name),
+//						EmailId:   pulumi.Any(testEmail.Id),
+//						FirstName: pulumi.Any(subscriptionRedeemableUserItemsFirstName),
+//						LastName:  pulumi.Any(subscriptionRedeemableUserItemsLastName),
 //					},
 //				},
-//				UserId: pulumi.Any(oci_identity_user.Test_user.Id),
+//				UserId: pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

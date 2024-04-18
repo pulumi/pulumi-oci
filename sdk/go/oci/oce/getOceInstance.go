@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Oce.GetOceInstance(ctx, &oce.GetOceInstanceArgs{
-//				OceInstanceId: oci_oce_oce_instance.Test_oce_instance.Id,
+//				OceInstanceId: testOceInstanceOciOceOceInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

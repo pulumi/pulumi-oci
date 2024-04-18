@@ -46,13 +46,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSign = new Sign(&#34;testSign&#34;, SignArgs.builder()        
- *             .cryptoEndpoint(var_.sign_message_crypto_endpoint())
- *             .keyId(oci_kms_key.test_key().id())
- *             .message(var_.sign_message())
- *             .signingAlgorithm(var_.sign_signing_algorithm())
- *             .keyVersionId(oci_kms_key_version.test_key_version().id())
- *             .loggingContext(var_.sign_logging_context())
- *             .messageType(var_.sign_message_type())
+ *             .cryptoEndpoint(signMessageCryptoEndpoint)
+ *             .keyId(testKey.id())
+ *             .message(signMessage)
+ *             .signingAlgorithm(signSigningAlgorithm)
+ *             .keyVersionId(testKeyVersion.id())
+ *             .loggingContext(signLoggingContext)
+ *             .messageType(signMessageType)
  *             .build());
  * 
  *     }

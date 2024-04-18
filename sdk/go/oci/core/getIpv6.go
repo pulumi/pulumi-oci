@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetIpv6(ctx, &core.GetIpv6Args{
-//				Ipv6id: oci_core_ipv6.Test_ipv6.Id,
+//				Ipv6id: testIpv6OciCoreIpv6.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

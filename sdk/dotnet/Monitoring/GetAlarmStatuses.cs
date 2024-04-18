@@ -41,13 +41,13 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarmStatuses = Oci.Monitoring.GetAlarmStatuses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
-        ///         DisplayName = @var.Alarm_status_display_name,
-        ///         EntityId = oci_monitoring_entity.Test_entity.Id,
-        ///         ResourceId = oci_monitoring_resource.Test_resource.Id,
-        ///         ServiceName = oci_core_service.Test_service.Name,
-        ///         Status = @var.Alarm_status_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmStatusCompartmentIdInSubtree,
+        ///         DisplayName = alarmStatusDisplayName,
+        ///         EntityId = testEntity.Id,
+        ///         ResourceId = testResource.Id,
+        ///         ServiceName = testService.Name,
+        ///         Status = alarmStatusStatus,
         ///     });
         /// 
         /// });
@@ -87,13 +87,13 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarmStatuses = Oci.Monitoring.GetAlarmStatuses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Alarm_status_compartment_id_in_subtree,
-        ///         DisplayName = @var.Alarm_status_display_name,
-        ///         EntityId = oci_monitoring_entity.Test_entity.Id,
-        ///         ResourceId = oci_monitoring_resource.Test_resource.Id,
-        ///         ServiceName = oci_core_service.Test_service.Name,
-        ///         Status = @var.Alarm_status_status,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = alarmStatusCompartmentIdInSubtree,
+        ///         DisplayName = alarmStatusDisplayName,
+        ///         EntityId = testEntity.Id,
+        ///         ResourceId = testResource.Id,
+        ///         ServiceName = testService.Name,
+        ///         Status = alarmStatusStatus,
         ///     });
         /// 
         /// });

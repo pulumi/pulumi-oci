@@ -107,8 +107,8 @@ def get_process_sets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_process_sets = oci.StackMonitoring.get_process_sets(compartment_id=var["compartment_id"],
-        display_name=var["process_set_display_name"])
+    test_process_sets = oci.StackMonitoring.get_process_sets(compartment_id=compartment_id,
+        display_name=process_set_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_process_sets_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_process_sets = oci.StackMonitoring.get_process_sets(compartment_id=var["compartment_id"],
-        display_name=var["process_set_display_name"])
+    test_process_sets = oci.StackMonitoring.get_process_sets(compartment_id=compartment_id,
+        display_name=process_set_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

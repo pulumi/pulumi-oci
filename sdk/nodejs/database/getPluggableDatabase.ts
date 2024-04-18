@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPluggableDatabase = oci.Database.getPluggableDatabase({
- *     pluggableDatabaseId: oci_database_pluggable_database.test_pluggable_database.id,
+ *     pluggableDatabaseId: testPluggableDatabaseOciDatabasePluggableDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -130,7 +130,7 @@ export interface GetPluggableDatabaseResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPluggableDatabase = oci.Database.getPluggableDatabase({
- *     pluggableDatabaseId: oci_database_pluggable_database.test_pluggable_database.id,
+ *     pluggableDatabaseId: testPluggableDatabaseOciDatabasePluggableDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetIpsecStatus(ctx, &core.GetIpsecStatusArgs{
-//				IpsecId: oci_core_ipsec.Test_ipsec.Id,
+//				IpsecId: testIpsec.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

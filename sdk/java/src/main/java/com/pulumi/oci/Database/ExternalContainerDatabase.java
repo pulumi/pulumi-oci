@@ -48,9 +48,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalContainerDatabase = new ExternalContainerDatabase(&#34;testExternalContainerDatabase&#34;, ExternalContainerDatabaseArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.external_container_database_display_name())
- *             .definedTags(var_.external_container_database_defined_tags())
+ *             .compartmentId(compartmentId)
+ *             .displayName(externalContainerDatabaseDisplayName)
+ *             .definedTags(externalContainerDatabaseDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.DevOps.getConnection({
- *     connectionId: oci_devops_connection.test_connection.id,
+ *     connectionId: testConnectionOciDevopsConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,7 +133,7 @@ export interface GetConnectionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.DevOps.getConnection({
- *     connectionId: oci_devops_connection.test_connection.id,
+ *     connectionId: testConnectionOciDevopsConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

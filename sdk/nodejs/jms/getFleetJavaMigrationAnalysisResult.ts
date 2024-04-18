@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetJavaMigrationAnalysisResult = oci.Jms.getFleetJavaMigrationAnalysisResult({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     javaMigrationAnalysisResultId: oci_apm_synthetics_result.test_result.id,
+ *     fleetId: testFleet.id,
+ *     javaMigrationAnalysisResultId: testResult.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,8 +133,8 @@ export interface GetFleetJavaMigrationAnalysisResultResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFleetJavaMigrationAnalysisResult = oci.Jms.getFleetJavaMigrationAnalysisResult({
- *     fleetId: oci_jms_fleet.test_fleet.id,
- *     javaMigrationAnalysisResultId: oci_apm_synthetics_result.test_result.id,
+ *     fleetId: testFleet.id,
+ *     javaMigrationAnalysisResultId: testResult.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

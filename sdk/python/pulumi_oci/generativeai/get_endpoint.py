@@ -224,7 +224,7 @@ def get_endpoint(endpoint_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_endpoint = oci.GenerativeAi.get_endpoint(endpoint_id=oci_generative_ai_endpoint["test_endpoint"]["id"])
+    test_endpoint = oci.GenerativeAi.get_endpoint(endpoint_id=test_endpoint_oci_generative_ai_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -269,7 +269,7 @@ def get_endpoint_output(endpoint_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_endpoint = oci.GenerativeAi.get_endpoint(endpoint_id=oci_generative_ai_endpoint["test_endpoint"]["id"])
+    test_endpoint = oci.GenerativeAi.get_endpoint(endpoint_id=test_endpoint_oci_generative_ai_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

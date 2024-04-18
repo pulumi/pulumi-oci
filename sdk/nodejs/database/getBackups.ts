@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackups = oci.Database.getBackups({
- *     compartmentId: _var.compartment_id,
- *     databaseId: oci_database_database.test_database.id,
+ *     compartmentId: compartmentId,
+ *     databaseId: testDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,8 +86,8 @@ export interface GetBackupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackups = oci.Database.getBackups({
- *     compartmentId: _var.compartment_id,
- *     databaseId: oci_database_database.test_database.id,
+ *     compartmentId: compartmentId,
+ *     databaseId: testDatabase.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

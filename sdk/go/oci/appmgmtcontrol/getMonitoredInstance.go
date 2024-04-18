@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AppMgmtControl.GetMonitoredInstance(ctx, &appmgmtcontrol.GetMonitoredInstanceArgs{
-//				MonitoredInstanceId: oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+//				MonitoredInstanceId: testMonitoredInstanceOciAppmgmtControlMonitoredInstance.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

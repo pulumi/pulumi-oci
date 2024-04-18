@@ -31,17 +31,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testIdentityProvider = new oci.identity.IdentityProvider("testIdentityProvider", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.identity_provider_description,
- *     metadata: _var.identity_provider_metadata,
- *     metadataUrl: _var.identity_provider_metadata_url,
- *     productType: _var.identity_provider_product_type,
- *     protocol: _var.identity_provider_protocol,
+ * const testIdentityProvider = new oci.identity.IdentityProvider("test_identity_provider", {
+ *     compartmentId: tenancyOcid,
+ *     description: identityProviderDescription,
+ *     metadata: identityProviderMetadata,
+ *     metadataUrl: identityProviderMetadataUrl,
+ *     name: identityProviderName,
+ *     productType: identityProviderProductType,
+ *     protocol: identityProviderProtocol,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     freeformAttributes: _var.identity_provider_freeform_attributes,
+ *     freeformAttributes: identityProviderFreeformAttributes,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

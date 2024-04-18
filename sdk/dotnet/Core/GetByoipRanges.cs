@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testByoipRanges = Oci.Core.GetByoipRanges.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Byoip_range_display_name,
-        ///         State = @var.Byoip_range_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = byoipRangeDisplayName,
+        ///         State = byoipRangeState,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testByoipRanges = Oci.Core.GetByoipRanges.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Byoip_range_display_name,
-        ///         State = @var.Byoip_range_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = byoipRangeDisplayName,
+        ///         State = byoipRangeState,
         ///     });
         /// 
         /// });

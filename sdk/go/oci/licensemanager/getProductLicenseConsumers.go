@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LicenseManager.GetProductLicenseConsumers(ctx, &licensemanager.GetProductLicenseConsumersArgs{
-//				CompartmentId:            _var.Compartment_id,
-//				ProductLicenseId:         oci_license_manager_product_license.Test_product_license.Id,
-//				IsCompartmentIdInSubtree: pulumi.BoolRef(_var.Product_license_consumer_is_compartment_id_in_subtree),
+//				CompartmentId:            compartmentId,
+//				ProductLicenseId:         testProductLicense.Id,
+//				IsCompartmentIdInSubtree: pulumi.BoolRef(productLicenseConsumerIsCompartmentIdInSubtree),
 //			}, nil)
 //			if err != nil {
 //				return err

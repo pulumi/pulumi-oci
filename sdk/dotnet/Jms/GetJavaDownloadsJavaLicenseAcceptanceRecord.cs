@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaLicenseAcceptanceRecord = Oci.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecord.Invoke(new()
         ///     {
-        ///         JavaLicenseAcceptanceRecordId = oci_jms_java_downloads_java_license_acceptance_record.Test_java_license_acceptance_record.Id,
+        ///         JavaLicenseAcceptanceRecordId = testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaLicenseAcceptanceRecord = Oci.Jms.GetJavaDownloadsJavaLicenseAcceptanceRecord.Invoke(new()
         ///     {
-        ///         JavaLicenseAcceptanceRecordId = oci_jms_java_downloads_java_license_acceptance_record.Test_java_license_acceptance_record.Id,
+        ///         JavaLicenseAcceptanceRecordId = testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.Id,
         ///     });
         /// 
         /// });

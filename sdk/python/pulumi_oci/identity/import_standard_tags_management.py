@@ -138,9 +138,9 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_import_standard_tags_management = oci.identity.ImportStandardTagsManagement("testImportStandardTagsManagement",
-            compartment_id=var["compartment_id"],
-            standard_tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"])
+        test_import_standard_tags_management = oci.identity.ImportStandardTagsManagement("test_import_standard_tags_management",
+            compartment_id=compartment_id,
+            standard_tag_namespace_name=test_tag_namespace["name"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -180,9 +180,9 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_import_standard_tags_management = oci.identity.ImportStandardTagsManagement("testImportStandardTagsManagement",
-            compartment_id=var["compartment_id"],
-            standard_tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"])
+        test_import_standard_tags_management = oci.identity.ImportStandardTagsManagement("test_import_standard_tags_management",
+            compartment_id=compartment_id,
+            standard_tag_namespace_name=test_tag_namespace["name"])
         ```
         <!--End PulumiCodeChooser -->
 

@@ -47,15 +47,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSqlCollection = new SqlCollection(&#34;testSqlCollection&#34;, SqlCollectionArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dbUserName(oci_identity_user.test_user().name())
- *             .targetId(oci_cloud_guard_target.test_target().id())
+ *             .compartmentId(compartmentId)
+ *             .dbUserName(testUser.name())
+ *             .targetId(testTarget.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.sql_collection_description())
- *             .displayName(var_.sql_collection_display_name())
+ *             .description(sqlCollectionDescription)
+ *             .displayName(sqlCollectionDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .sqlLevel(var_.sql_collection_sql_level())
- *             .status(var_.sql_collection_status())
+ *             .sqlLevel(sqlCollectionSqlLevel)
+ *             .status(sqlCollectionStatus)
  *             .build());
  * 
  *     }

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetExternalNonContainerDatabase(ctx, &database.GetExternalNonContainerDatabaseArgs{
-//				ExternalNonContainerDatabaseId: oci_database_external_non_container_database.Test_external_non_container_database.Id,
+//				ExternalNonContainerDatabaseId: testExternalNonContainerDatabaseOciDatabaseExternalNonContainerDatabase.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

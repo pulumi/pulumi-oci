@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := UsageProxy.GetSubscriptionRedemption(ctx, &usageproxy.GetSubscriptionRedemptionArgs{
-//				SubscriptionId:                   oci_onesubscription_subscription.Test_subscription.Id,
-//				TenancyId:                        oci_identity_tenancy.Test_tenancy.Id,
-//				TimeRedeemedGreaterThanOrEqualTo: pulumi.StringRef(_var.Subscription_redemption_time_redeemed_greater_than_or_equal_to),
-//				TimeRedeemedLessThan:             pulumi.StringRef(_var.Subscription_redemption_time_redeemed_less_than),
+//				SubscriptionId:                   testSubscription.Id,
+//				TenancyId:                        testTenancy.Id,
+//				TimeRedeemedGreaterThanOrEqualTo: pulumi.StringRef(subscriptionRedemptionTimeRedeemedGreaterThanOrEqualTo),
+//				TimeRedeemedLessThan:             pulumi.StringRef(subscriptionRedemptionTimeRedeemedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

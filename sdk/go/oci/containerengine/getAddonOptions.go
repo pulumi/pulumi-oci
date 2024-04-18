@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerEngine.GetAddonOptions(ctx, &containerengine.GetAddonOptionsArgs{
-//				KubernetesVersion: _var.Addon_option_kubernetes_version,
-//				AddonName:         pulumi.StringRef(oci_containerengine_addon.Test_addon.Name),
+//				KubernetesVersion: addonOptionKubernetesVersion,
+//				AddonName:         pulumi.StringRef(testAddon.Name),
 //			}, nil)
 //			if err != nil {
 //				return err

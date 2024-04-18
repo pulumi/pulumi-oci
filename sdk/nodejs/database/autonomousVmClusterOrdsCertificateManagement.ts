@@ -16,12 +16,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousVmClusterOrdsCertificateManagement = new oci.database.AutonomousVmClusterOrdsCertificateManagement("testAutonomousVmClusterOrdsCertificateManagement", {
- *     autonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
- *     certificateGenerationType: _var.autonomous_vm_cluster_ords_certificate_management_certificate_generation_type,
- *     caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
- *     certificateAuthorityId: oci_certificates_management_certificate_authority.test_certificate_authority.id,
- *     certificateId: oci_apigateway_certificate.test_certificate.id,
+ * const testAutonomousVmClusterOrdsCertificateManagement = new oci.database.AutonomousVmClusterOrdsCertificateManagement("test_autonomous_vm_cluster_ords_certificate_management", {
+ *     autonomousVmClusterId: testAutonomousVmCluster.id,
+ *     certificateGenerationType: autonomousVmClusterOrdsCertificateManagementCertificateGenerationType,
+ *     caBundleId: testCaBundle.id,
+ *     certificateAuthorityId: testCertificateAuthority.id,
+ *     certificateId: testCertificate.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

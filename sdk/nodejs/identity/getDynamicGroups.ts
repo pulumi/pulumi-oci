@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDynamicGroups = oci.Identity.getDynamicGroups({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.dynamic_group_name,
- *     state: _var.dynamic_group_state,
+ *     compartmentId: tenancyOcid,
+ *     name: dynamicGroupName,
+ *     state: dynamicGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,9 +99,9 @@ export interface GetDynamicGroupsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDynamicGroups = oci.Identity.getDynamicGroups({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.dynamic_group_name,
- *     state: _var.dynamic_group_state,
+ *     compartmentId: tenancyOcid,
+ *     name: dynamicGroupName,
+ *     state: dynamicGroupState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

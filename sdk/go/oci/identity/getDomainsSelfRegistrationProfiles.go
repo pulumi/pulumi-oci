@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsSelfRegistrationProfiles(ctx, &identity.GetDomainsSelfRegistrationProfilesArgs{
-//				IdcsEndpoint:                  data.Oci_identity_domain.Test_domain.Url,
-//				SelfRegistrationProfileCount:  pulumi.IntRef(_var.Self_registration_profile_self_registration_profile_count),
-//				SelfRegistrationProfileFilter: pulumi.StringRef(_var.Self_registration_profile_self_registration_profile_filter),
+//				IdcsEndpoint:                  testDomain.Url,
+//				SelfRegistrationProfileCount:  pulumi.IntRef(selfRegistrationProfileSelfRegistrationProfileCount),
+//				SelfRegistrationProfileFilter: pulumi.StringRef(selfRegistrationProfileSelfRegistrationProfileFilter),
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Self_registration_profile_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Self_registration_profile_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.Self_registration_profile_start_index),
+//				Authorization:             pulumi.StringRef(selfRegistrationProfileAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(selfRegistrationProfileResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(selfRegistrationProfileStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

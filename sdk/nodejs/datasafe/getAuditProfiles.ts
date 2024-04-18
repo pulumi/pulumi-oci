@@ -33,16 +33,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfiles = oci.DataSafe.getAuditProfiles({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_profile_access_level,
- *     auditCollectedVolumeGreaterThanOrEqualTo: _var.audit_profile_audit_collected_volume_greater_than_or_equal_to,
- *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
- *     compartmentIdInSubtree: _var.audit_profile_compartment_id_in_subtree,
- *     displayName: _var.audit_profile_display_name,
- *     isOverrideGlobalRetentionSetting: _var.audit_profile_is_override_global_retention_setting,
- *     isPaidUsageEnabled: _var.audit_profile_is_paid_usage_enabled,
- *     state: _var.audit_profile_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditProfileAccessLevel,
+ *     auditCollectedVolumeGreaterThanOrEqualTo: auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
+ *     auditProfileId: testAuditProfile.id,
+ *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree,
+ *     displayName: auditProfileDisplayName,
+ *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
+ *     state: auditProfileState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -184,16 +184,16 @@ export interface GetAuditProfilesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfiles = oci.DataSafe.getAuditProfiles({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_profile_access_level,
- *     auditCollectedVolumeGreaterThanOrEqualTo: _var.audit_profile_audit_collected_volume_greater_than_or_equal_to,
- *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
- *     compartmentIdInSubtree: _var.audit_profile_compartment_id_in_subtree,
- *     displayName: _var.audit_profile_display_name,
- *     isOverrideGlobalRetentionSetting: _var.audit_profile_is_override_global_retention_setting,
- *     isPaidUsageEnabled: _var.audit_profile_is_paid_usage_enabled,
- *     state: _var.audit_profile_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditProfileAccessLevel,
+ *     auditCollectedVolumeGreaterThanOrEqualTo: auditProfileAuditCollectedVolumeGreaterThanOrEqualTo,
+ *     auditProfileId: testAuditProfile.id,
+ *     compartmentIdInSubtree: auditProfileCompartmentIdInSubtree,
+ *     displayName: auditProfileDisplayName,
+ *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
+ *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
+ *     state: auditProfileState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

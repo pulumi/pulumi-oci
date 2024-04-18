@@ -46,26 +46,26 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubnet = new oci.core.Subnet("testSubnet", {
- *     cidrBlock: _var.subnet_cidr_block,
- *     compartmentId: _var.compartment_id,
- *     vcnId: oci_core_vcn.test_vcn.id,
- *     availabilityDomain: _var.subnet_availability_domain,
+ * const testSubnet = new oci.core.Subnet("test_subnet", {
+ *     cidrBlock: subnetCidrBlock,
+ *     compartmentId: compartmentId,
+ *     vcnId: testVcn.id,
+ *     availabilityDomain: subnetAvailabilityDomain,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     dhcpOptionsId: oci_core_dhcp_options.test_dhcp_options.id,
- *     displayName: _var.subnet_display_name,
- *     dnsLabel: _var.subnet_dns_label,
+ *     dhcpOptionsId: testDhcpOptions.id,
+ *     displayName: subnetDisplayName,
+ *     dnsLabel: subnetDnsLabel,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ipv6cidrBlock: _var.subnet_ipv6cidr_block,
- *     ipv6cidrBlocks: _var.subnet_ipv6cidr_blocks,
- *     prohibitInternetIngress: _var.subnet_prohibit_internet_ingress,
- *     prohibitPublicIpOnVnic: _var.subnet_prohibit_public_ip_on_vnic,
- *     routeTableId: oci_core_route_table.test_route_table.id,
- *     securityListIds: _var.subnet_security_list_ids,
+ *     ipv6cidrBlock: subnetIpv6cidrBlock,
+ *     ipv6cidrBlocks: subnetIpv6cidrBlocks,
+ *     prohibitInternetIngress: subnetProhibitInternetIngress,
+ *     prohibitPublicIpOnVnic: subnetProhibitPublicIpOnVnic,
+ *     routeTableId: testRouteTable.id,
+ *     securityListIds: subnetSecurityListIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testSubscription = Oci.Ons.GetSubscription.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         SubscriptionId = testSubscriptionOciOnsSubscription.Id,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Ons
         /// {
         ///     var testSubscription = Oci.Ons.GetSubscription.Invoke(new()
         ///     {
-        ///         SubscriptionId = oci_ons_subscription.Test_subscription.Id,
+        ///         SubscriptionId = testSubscriptionOciOnsSubscription.Id,
         ///     });
         /// 
         /// });

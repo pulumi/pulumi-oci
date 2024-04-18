@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGenericArtifacts = oci.Artifacts.getGenericArtifacts({
- *     compartmentId: _var.compartment_id,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     artifactPath: _var.generic_artifact_artifact_path,
- *     displayName: _var.generic_artifact_display_name,
- *     id: _var.generic_artifact_id,
- *     sha256: _var.generic_artifact_sha256,
- *     state: _var.generic_artifact_state,
- *     version: _var.generic_artifact_version,
+ *     compartmentId: compartmentId,
+ *     repositoryId: testRepository.id,
+ *     artifactPath: genericArtifactArtifactPath,
+ *     displayName: genericArtifactDisplayName,
+ *     id: genericArtifactId,
+ *     sha256: genericArtifactSha256,
+ *     state: genericArtifactState,
+ *     version: genericArtifactVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,14 +141,14 @@ export interface GetGenericArtifactsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGenericArtifacts = oci.Artifacts.getGenericArtifacts({
- *     compartmentId: _var.compartment_id,
- *     repositoryId: oci_artifacts_repository.test_repository.id,
- *     artifactPath: _var.generic_artifact_artifact_path,
- *     displayName: _var.generic_artifact_display_name,
- *     id: _var.generic_artifact_id,
- *     sha256: _var.generic_artifact_sha256,
- *     state: _var.generic_artifact_state,
- *     version: _var.generic_artifact_version,
+ *     compartmentId: compartmentId,
+ *     repositoryId: testRepository.id,
+ *     artifactPath: genericArtifactArtifactPath,
+ *     displayName: genericArtifactDisplayName,
+ *     id: genericArtifactId,
+ *     sha256: genericArtifactSha256,
+ *     state: genericArtifactState,
+ *     version: genericArtifactVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

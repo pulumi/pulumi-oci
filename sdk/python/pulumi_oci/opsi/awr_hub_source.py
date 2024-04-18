@@ -546,12 +546,13 @@ class AwrHubSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_awr_hub_source = oci.opsi.AwrHubSource("testAwrHubSource",
-            awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-            compartment_id=var["compartment_id"],
-            type=var["awr_hub_source_type"],
-            associated_opsi_id=oci_opsi_associated_opsi["test_associated_opsi"]["id"],
-            associated_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+        test_awr_hub_source = oci.opsi.AwrHubSource("test_awr_hub_source",
+            awr_hub_id=test_awr_hub["id"],
+            compartment_id=compartment_id,
+            name=awr_hub_source_name,
+            type=awr_hub_source_type,
+            associated_opsi_id=test_associated_opsi["id"],
+            associated_resource_id=test_resource["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -602,12 +603,13 @@ class AwrHubSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_awr_hub_source = oci.opsi.AwrHubSource("testAwrHubSource",
-            awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-            compartment_id=var["compartment_id"],
-            type=var["awr_hub_source_type"],
-            associated_opsi_id=oci_opsi_associated_opsi["test_associated_opsi"]["id"],
-            associated_resource_id=oci_usage_proxy_resource["test_resource"]["id"],
+        test_awr_hub_source = oci.opsi.AwrHubSource("test_awr_hub_source",
+            awr_hub_id=test_awr_hub["id"],
+            compartment_id=compartment_id,
+            name=awr_hub_source_name,
+            type=awr_hub_source_type,
+            associated_opsi_id=test_associated_opsi["id"],
+            associated_resource_id=test_resource["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },

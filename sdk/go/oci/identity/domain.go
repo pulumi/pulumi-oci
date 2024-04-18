@@ -46,25 +46,25 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomain(ctx, "testDomain", &Identity.DomainArgs{
-//				CompartmentId:  pulumi.Any(_var.Compartment_id),
-//				Description:    pulumi.Any(_var.Domain_description),
-//				DisplayName:    pulumi.Any(_var.Domain_display_name),
-//				HomeRegion:     pulumi.Any(_var.Domain_home_region),
-//				LicenseType:    pulumi.Any(_var.Domain_license_type),
-//				AdminEmail:     pulumi.Any(_var.Domain_admin_email),
-//				AdminFirstName: pulumi.Any(_var.Domain_admin_first_name),
-//				AdminLastName:  pulumi.Any(_var.Domain_admin_last_name),
-//				AdminUserName:  pulumi.Any(oci_identity_user.Test_user.Name),
+//			_, err := Identity.NewDomain(ctx, "test_domain", &Identity.DomainArgs{
+//				CompartmentId:  pulumi.Any(compartmentId),
+//				Description:    pulumi.Any(domainDescription),
+//				DisplayName:    pulumi.Any(domainDisplayName),
+//				HomeRegion:     pulumi.Any(domainHomeRegion),
+//				LicenseType:    pulumi.Any(domainLicenseType),
+//				AdminEmail:     pulumi.Any(domainAdminEmail),
+//				AdminFirstName: pulumi.Any(domainAdminFirstName),
+//				AdminLastName:  pulumi.Any(domainAdminLastName),
+//				AdminUserName:  pulumi.Any(testUser.Name),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsHiddenOnLogin:        pulumi.Any(_var.Domain_is_hidden_on_login),
-//				IsNotificationBypassed: pulumi.Any(_var.Domain_is_notification_bypassed),
-//				IsPrimaryEmailRequired: pulumi.Any(_var.Domain_is_primary_email_required),
+//				IsHiddenOnLogin:        pulumi.Any(domainIsHiddenOnLogin),
+//				IsNotificationBypassed: pulumi.Any(domainIsNotificationBypassed),
+//				IsPrimaryEmailRequired: pulumi.Any(domainIsPrimaryEmailRequired),
 //			})
 //			if err != nil {
 //				return err

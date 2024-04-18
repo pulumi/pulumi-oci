@@ -111,10 +111,10 @@ def get_awr_hub_awr_snapshot(awr_hub_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_snapshot = oci.Opsi.get_awr_hub_awr_snapshot(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        awr_source_database_identifier=var["awr_hub_awr_snapshot_awr_source_database_identifier"],
-        time_greater_than_or_equal_to=var["awr_hub_awr_snapshot_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["awr_hub_awr_snapshot_time_less_than_or_equal_to"])
+    test_awr_hub_awr_snapshot = oci.Opsi.get_awr_hub_awr_snapshot(awr_hub_id=test_awr_hub["id"],
+        awr_source_database_identifier=awr_hub_awr_snapshot_awr_source_database_identifier,
+        time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
+        time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,10 +160,10 @@ def get_awr_hub_awr_snapshot_output(awr_hub_id: Optional[pulumi.Input[str]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_awr_hub_awr_snapshot = oci.Opsi.get_awr_hub_awr_snapshot(awr_hub_id=oci_opsi_awr_hub["test_awr_hub"]["id"],
-        awr_source_database_identifier=var["awr_hub_awr_snapshot_awr_source_database_identifier"],
-        time_greater_than_or_equal_to=var["awr_hub_awr_snapshot_time_greater_than_or_equal_to"],
-        time_less_than_or_equal_to=var["awr_hub_awr_snapshot_time_less_than_or_equal_to"])
+    test_awr_hub_awr_snapshot = oci.Opsi.get_awr_hub_awr_snapshot(awr_hub_id=test_awr_hub["id"],
+        awr_source_database_identifier=awr_hub_awr_snapshot_awr_source_database_identifier,
+        time_greater_than_or_equal_to=awr_hub_awr_snapshot_time_greater_than_or_equal_to,
+        time_less_than_or_equal_to=awr_hub_awr_snapshot_time_less_than_or_equal_to)
     ```
     <!--End PulumiCodeChooser -->
 

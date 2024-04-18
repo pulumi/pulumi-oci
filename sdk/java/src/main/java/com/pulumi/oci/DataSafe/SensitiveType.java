@@ -48,19 +48,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSensitiveType = new SensitiveType(&#34;testSensitiveType&#34;, SensitiveTypeArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .entityType(var_.sensitive_type_entity_type())
- *             .commentPattern(var_.sensitive_type_comment_pattern())
- *             .dataPattern(var_.sensitive_type_data_pattern())
- *             .defaultMaskingFormatId(oci_data_safe_default_masking_format.test_default_masking_format().id())
+ *             .compartmentId(compartmentId)
+ *             .entityType(sensitiveTypeEntityType)
+ *             .commentPattern(sensitiveTypeCommentPattern)
+ *             .dataPattern(sensitiveTypeDataPattern)
+ *             .defaultMaskingFormatId(testDefaultMaskingFormat.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.sensitive_type_description())
- *             .displayName(var_.sensitive_type_display_name())
+ *             .description(sensitiveTypeDescription)
+ *             .displayName(sensitiveTypeDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .namePattern(var_.sensitive_type_name_pattern())
- *             .parentCategoryId(oci_marketplace_category.test_category().id())
- *             .searchType(var_.sensitive_type_search_type())
- *             .shortName(var_.sensitive_type_short_name())
+ *             .namePattern(sensitiveTypeNamePattern)
+ *             .parentCategoryId(testCategory.id())
+ *             .searchType(sensitiveTypeSearchType)
+ *             .shortName(sensitiveTypeShortName)
  *             .build());
  * 
  *     }

@@ -30,12 +30,12 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
-        ///         CreationType = @var.Mysql_backup_creation_type,
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///         DisplayName = @var.Mysql_backup_display_name,
-        ///         State = @var.Mysql_backup_state,
+        ///         CompartmentId = compartmentId,
+        ///         BackupId = testBackup.Id,
+        ///         CreationType = mysqlBackupCreationType,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = mysqlBackupDisplayName,
+        ///         State = mysqlBackupState,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         BackupId = oci_mysql_mysql_backup.Test_backup.Id,
-        ///         CreationType = @var.Mysql_backup_creation_type,
-        ///         DbSystemId = oci_mysql_mysql_db_system.Test_db_system.Id,
-        ///         DisplayName = @var.Mysql_backup_display_name,
-        ///         State = @var.Mysql_backup_state,
+        ///         CompartmentId = compartmentId,
+        ///         BackupId = testBackup.Id,
+        ///         CreationType = mysqlBackupCreationType,
+        ///         DbSystemId = testDbSystem.Id,
+        ///         DisplayName = mysqlBackupDisplayName,
+        ///         State = mysqlBackupState,
         ///     });
         /// 
         /// });

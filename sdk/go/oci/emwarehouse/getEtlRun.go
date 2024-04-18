@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := EmWarehouse.GetEtlRun(ctx, &emwarehouse.GetEtlRunArgs{
-//				EmWarehouseId: oci_em_warehouse_em_warehouse.Test_em_warehouse.Id,
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Em_warehouse_etl_run_display_name),
+//				EmWarehouseId: testEmWarehouse.Id,
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(emWarehouseEtlRunDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

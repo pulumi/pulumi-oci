@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouses = oci.EmWarehouse.getEmWarehouses({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.em_warehouse_display_name,
- *     id: _var.em_warehouse_id,
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     state: _var.em_warehouse_state,
+ *     compartmentId: compartmentId,
+ *     displayName: emWarehouseDisplayName,
+ *     id: emWarehouseId,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     state: emWarehouseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetEmWarehousesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEmWarehouses = oci.EmWarehouse.getEmWarehouses({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.em_warehouse_display_name,
- *     id: _var.em_warehouse_id,
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     state: _var.em_warehouse_state,
+ *     compartmentId: compartmentId,
+ *     displayName: emWarehouseDisplayName,
+ *     id: emWarehouseId,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     state: emWarehouseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

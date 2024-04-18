@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVnicAttachments(ctx, &core.GetVnicAttachmentsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Vnic_attachment_availability_domain),
-//				InstanceId:         pulumi.StringRef(oci_core_instance.Test_instance.Id),
-//				VnicId:             pulumi.StringRef(oci_core_vnic.Test_vnic.Id),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(vnicAttachmentAvailabilityDomain),
+//				InstanceId:         pulumi.StringRef(testInstance.Id),
+//				VnicId:             pulumi.StringRef(testVnic.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

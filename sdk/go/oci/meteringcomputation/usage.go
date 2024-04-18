@@ -31,28 +31,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewUsage(ctx, "testUsage", &MeteringComputation.UsageArgs{
-//				Granularity:      pulumi.Any(_var.Usage_granularity),
-//				TenantId:         pulumi.Any(oci_metering_computation_tenant.Test_tenant.Id),
-//				TimeUsageEnded:   pulumi.Any(_var.Usage_time_usage_ended),
-//				TimeUsageStarted: pulumi.Any(_var.Usage_time_usage_started),
-//				CompartmentDepth: pulumi.Any(_var.Usage_compartment_depth),
-//				Filter:           pulumi.Any(_var.Usage_filter),
+//			_, err := MeteringComputation.NewUsage(ctx, "test_usage", &MeteringComputation.UsageArgs{
+//				Granularity:      pulumi.Any(usageGranularity),
+//				TenantId:         pulumi.Any(testTenant.Id),
+//				TimeUsageEnded:   pulumi.Any(usageTimeUsageEnded),
+//				TimeUsageStarted: pulumi.Any(usageTimeUsageStarted),
+//				CompartmentDepth: pulumi.Any(usageCompartmentDepth),
+//				Filter:           pulumi.Any(usageFilter),
 //				Forecast: &meteringcomputation.UsageForecastArgs{
-//					TimeForecastEnded:   pulumi.Any(_var.Usage_forecast_time_forecast_ended),
-//					ForecastType:        pulumi.Any(_var.Usage_forecast_forecast_type),
-//					TimeForecastStarted: pulumi.Any(_var.Usage_forecast_time_forecast_started),
+//					TimeForecastEnded:   pulumi.Any(usageForecastTimeForecastEnded),
+//					ForecastType:        pulumi.Any(usageForecastForecastType),
+//					TimeForecastStarted: pulumi.Any(usageForecastTimeForecastStarted),
 //				},
-//				GroupBies: pulumi.Any(_var.Usage_group_by),
+//				GroupBies: pulumi.Any(usageGroupBy),
 //				GroupByTags: meteringcomputation.UsageGroupByTagArray{
 //					&meteringcomputation.UsageGroupByTagArgs{
-//						Key:       pulumi.Any(_var.Usage_group_by_tag_key),
-//						Namespace: pulumi.Any(_var.Usage_group_by_tag_namespace),
-//						Value:     pulumi.Any(_var.Usage_group_by_tag_value),
+//						Key:       pulumi.Any(usageGroupByTagKey),
+//						Namespace: pulumi.Any(usageGroupByTagNamespace),
+//						Value:     pulumi.Any(usageGroupByTagValue),
 //					},
 //				},
-//				IsAggregateByTime: pulumi.Any(_var.Usage_is_aggregate_by_time),
-//				QueryType:         pulumi.Any(_var.Usage_query_type),
+//				IsAggregateByTime: pulumi.Any(usageIsAggregateByTime),
+//				QueryType:         pulumi.Any(usageQueryType),
 //			})
 //			if err != nil {
 //				return err

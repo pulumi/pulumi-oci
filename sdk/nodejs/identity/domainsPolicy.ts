@@ -18,28 +18,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPolicy = new oci.identity.DomainsPolicy("testPolicy", {
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ * const testPolicy = new oci.identity.DomainsPolicy("test_policy", {
+ *     idcsEndpoint: testDomain.url,
+ *     name: policyName,
  *     policyType: {
  *         value: "IdentityProvider",
  *     },
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
- *     active: _var.policy_active,
+ *     active: policyActive,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.policy_authorization,
- *     description: _var.policy_description,
+ *     authorization: policyAuthorization,
+ *     description: policyDescription,
  *     externalId: "externalId",
- *     ocid: _var.policy_ocid,
- *     policyGroovy: _var.policy_policy_groovy,
- *     resourceTypeSchemaVersion: _var.policy_resource_type_schema_version,
+ *     ocid: policyOcid,
+ *     policyGroovy: policyPolicyGroovy,
+ *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
  *     rules: [{
- *         sequence: _var.policy_rules_sequence,
+ *         sequence: policyRulesSequence,
  *         value: "TODO",
  *     }],
  *     tags: [{
- *         key: _var.policy_tags_key,
- *         value: _var.policy_tags_value,
+ *         key: policyTagsKey,
+ *         value: policyTagsValue,
  *     }],
  * });
  * ```

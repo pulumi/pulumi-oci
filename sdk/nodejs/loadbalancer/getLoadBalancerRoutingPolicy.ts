@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLoadBalancerRoutingPolicy = oci.LoadBalancer.getLoadBalancerRoutingPolicy({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     routingPolicyName: oci_load_balancer_routing_policy.test_routing_policy.name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     routingPolicyName: testRoutingPolicy.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetLoadBalancerRoutingPolicyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLoadBalancerRoutingPolicy = oci.LoadBalancer.getLoadBalancerRoutingPolicy({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     routingPolicyName: oci_load_balancer_routing_policy.test_routing_policy.name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     routingPolicyName: testRoutingPolicy.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,8 +30,8 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testApplianceImage = Oci.CloudBridge.GetApplianceImage.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Appliance_image_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applianceImageDisplayName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.CloudBridge
         /// {
         ///     var testApplianceImage = Oci.CloudBridge.GetApplianceImage.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Appliance_image_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = applianceImageDisplayName,
         ///     });
         /// 
         /// });

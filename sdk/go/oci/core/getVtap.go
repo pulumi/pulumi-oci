@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVtap(ctx, &core.GetVtapArgs{
-//				VtapId: oci_core_vtap.Test_vtap.Id,
+//				VtapId: testVtapOciCoreVtap.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

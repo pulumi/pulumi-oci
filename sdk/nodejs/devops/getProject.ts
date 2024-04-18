@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProject = oci.DevOps.getProject({
- *     projectId: oci_devops_project.test_project.id,
+ *     projectId: testProjectOciDevopsProject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetProjectResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProject = oci.DevOps.getProject({
- *     projectId: oci_devops_project.test_project.id,
+ *     projectId: testProjectOciDevopsProject.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

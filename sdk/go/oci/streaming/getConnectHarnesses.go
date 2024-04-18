@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.GetConnectHarnesses(ctx, &streaming.GetConnectHarnessesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Connect_harness_id),
-//				Name:          pulumi.StringRef(_var.Connect_harness_name),
-//				State:         pulumi.StringRef(_var.Connect_harness_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(connectHarnessId),
+//				Name:          pulumi.StringRef(connectHarnessName),
+//				State:         pulumi.StringRef(connectHarnessState),
 //			}, nil)
 //			if err != nil {
 //				return err

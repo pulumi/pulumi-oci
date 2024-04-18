@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentComparison = oci.DataSafe.getUserAssessmentComparison({
- *     comparisonUserAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     comparisonUserAssessmentId: testUserAssessment.id,
+ *     userAssessmentId: testUserAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -84,8 +84,8 @@ export interface GetUserAssessmentComparisonResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentComparison = oci.DataSafe.getUserAssessmentComparison({
- *     comparisonUserAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     comparisonUserAssessmentId: testUserAssessment.id,
+ *     userAssessmentId: testUserAssessment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -26,11 +26,11 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalDbSystemDatabaseManagementsManagement = new Oci.DatabaseManagement.ExternalDbSystemDatabaseManagementsManagement("testExternalDbSystemDatabaseManagementsManagement", new()
+    ///     var testExternalDbSystemDatabaseManagementsManagement = new Oci.DatabaseManagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management", new()
     ///     {
-    ///         ExternalDbSystemId = oci_database_management_external_db_system.Test_external_db_system.Id,
-    ///         EnableDatabaseManagement = @var.Enable_database_management,
-    ///         LicenseModel = @var.External_db_system_database_managements_management_license_model,
+    ///         ExternalDbSystemId = testExternalDbSystem.Id,
+    ///         EnableDatabaseManagement = enableDatabaseManagement,
+    ///         LicenseModel = externalDbSystemDatabaseManagementsManagementLicenseModel,
     ///     });
     /// 
     /// });

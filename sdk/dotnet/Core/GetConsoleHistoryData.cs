@@ -32,9 +32,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testConsoleHistoryData = Oci.Core.GetConsoleHistoryData.Invoke(new()
         ///     {
-        ///         ConsoleHistoryId = oci_core_console_history.Test_console_history.Id,
-        ///         Length = @var.Console_history_content_length,
-        ///         Offset = @var.Console_history_content_offset,
+        ///         ConsoleHistoryId = testConsoleHistory.Id,
+        ///         Length = consoleHistoryContentLength,
+        ///         Offset = consoleHistoryContentOffset,
         ///     });
         /// 
         /// });
@@ -65,9 +65,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testConsoleHistoryData = Oci.Core.GetConsoleHistoryData.Invoke(new()
         ///     {
-        ///         ConsoleHistoryId = oci_core_console_history.Test_console_history.Id,
-        ///         Length = @var.Console_history_content_length,
-        ///         Offset = @var.Console_history_content_offset,
+        ///         ConsoleHistoryId = testConsoleHistory.Id,
+        ///         Length = consoleHistoryContentLength,
+        ///         Offset = consoleHistoryContentOffset,
         ///     });
         /// 
         /// });

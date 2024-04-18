@@ -45,12 +45,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetUserAssessmentProfileAnalytics(ctx, &datasafe.GetUserAssessmentProfileAnalyticsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				UserAssessmentId:       oci_data_safe_user_assessment.Test_user_assessment.Id,
-//				AccessLevel:            pulumi.StringRef(_var.User_assessment_profile_analytic_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.User_assessment_profile_analytic_compartment_id_in_subtree),
-//				ProfileName:            pulumi.StringRef(oci_optimizer_profile.Test_profile.Name),
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				UserAssessmentId:       testUserAssessment.Id,
+//				AccessLevel:            pulumi.StringRef(userAssessmentProfileAnalyticAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(userAssessmentProfileAnalyticCompartmentIdInSubtree),
+//				ProfileName:            pulumi.StringRef(testProfile.Name),
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

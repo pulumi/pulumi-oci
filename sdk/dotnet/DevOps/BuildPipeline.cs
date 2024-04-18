@@ -25,18 +25,18 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBuildPipeline = new Oci.DevOps.BuildPipeline("testBuildPipeline", new()
+    ///     var testBuildPipeline = new Oci.DevOps.BuildPipeline("test_build_pipeline", new()
     ///     {
-    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         ProjectId = testProject.Id,
     ///         BuildPipelineParameters = new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.DevOps.Inputs.BuildPipelineBuildPipelineParametersItemArgs
     ///                 {
-    ///                     DefaultValue = @var.Build_pipeline_build_pipeline_parameters_items_default_value,
-    ///                     Name = @var.Build_pipeline_build_pipeline_parameters_items_name,
-    ///                     Description = @var.Build_pipeline_build_pipeline_parameters_items_description,
+    ///                     DefaultValue = buildPipelineBuildPipelineParametersItemsDefaultValue,
+    ///                     Name = buildPipelineBuildPipelineParametersItemsName,
+    ///                     Description = buildPipelineBuildPipelineParametersItemsDescription,
     ///                 },
     ///             },
     ///         },
@@ -44,8 +44,8 @@ namespace Pulumi.Oci.DevOps
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Build_pipeline_description,
-    ///         DisplayName = @var.Build_pipeline_display_name,
+    ///         Description = buildPipelineDescription,
+    ///         DisplayName = buildPipelineDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

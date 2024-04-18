@@ -116,7 +116,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -158,7 +158,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -200,7 +200,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -242,7 +242,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFastLaunchJobConfigs = DataScienceFunctions.getFastLaunchJobConfigs(GetFastLaunchJobConfigsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -284,7 +284,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(oci_datascience_job.test_job().id())
+     *             .jobId(testJobOciDatascienceJob.id())
      *             .build());
      * 
      *     }
@@ -326,7 +326,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(oci_datascience_job.test_job().id())
+     *             .jobId(testJobOciDatascienceJob.id())
      *             .build());
      * 
      *     }
@@ -368,7 +368,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(oci_datascience_job.test_job().id())
+     *             .jobId(testJobOciDatascienceJob.id())
      *             .build());
      * 
      *     }
@@ -410,7 +410,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJob = DataScienceFunctions.getJob(GetJobArgs.builder()
-     *             .jobId(oci_datascience_job.test_job().id())
+     *             .jobId(testJobOciDatascienceJob.id())
      *             .build());
      * 
      *     }
@@ -452,7 +452,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
      *             .build());
      * 
      *     }
@@ -494,7 +494,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
      *             .build());
      * 
      *     }
@@ -536,7 +536,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
      *             .build());
      * 
      *     }
@@ -578,7 +578,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRun = DataScienceFunctions.getJobRun(GetJobRunArgs.builder()
-     *             .jobRunId(oci_datascience_job_run.test_job_run().id())
+     *             .jobRunId(testJobRunOciDatascienceJobRun.id())
      *             .build());
      * 
      *     }
@@ -620,12 +620,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_run_created_by())
-     *             .displayName(var_.job_run_display_name())
-     *             .id(var_.job_run_id())
-     *             .jobId(oci_datascience_job.test_job().id())
-     *             .state(var_.job_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobRunCreatedBy)
+     *             .displayName(jobRunDisplayName)
+     *             .id(jobRunId)
+     *             .jobId(testJob.id())
+     *             .state(jobRunState)
      *             .build());
      * 
      *     }
@@ -667,12 +667,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_run_created_by())
-     *             .displayName(var_.job_run_display_name())
-     *             .id(var_.job_run_id())
-     *             .jobId(oci_datascience_job.test_job().id())
-     *             .state(var_.job_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobRunCreatedBy)
+     *             .displayName(jobRunDisplayName)
+     *             .id(jobRunId)
+     *             .jobId(testJob.id())
+     *             .state(jobRunState)
      *             .build());
      * 
      *     }
@@ -714,12 +714,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_run_created_by())
-     *             .displayName(var_.job_run_display_name())
-     *             .id(var_.job_run_id())
-     *             .jobId(oci_datascience_job.test_job().id())
-     *             .state(var_.job_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobRunCreatedBy)
+     *             .displayName(jobRunDisplayName)
+     *             .id(jobRunId)
+     *             .jobId(testJob.id())
+     *             .state(jobRunState)
      *             .build());
      * 
      *     }
@@ -761,12 +761,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobRuns = DataScienceFunctions.getJobRuns(GetJobRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_run_created_by())
-     *             .displayName(var_.job_run_display_name())
-     *             .id(var_.job_run_id())
-     *             .jobId(oci_datascience_job.test_job().id())
-     *             .state(var_.job_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobRunCreatedBy)
+     *             .displayName(jobRunDisplayName)
+     *             .id(jobRunId)
+     *             .jobId(testJob.id())
+     *             .state(jobRunState)
      *             .build());
      * 
      *     }
@@ -808,7 +808,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -850,7 +850,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -892,7 +892,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -934,7 +934,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobShapes = DataScienceFunctions.getJobShapes(GetJobShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -976,12 +976,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_created_by())
-     *             .displayName(var_.job_display_name())
-     *             .id(var_.job_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.job_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobCreatedBy)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .projectId(testProject.id())
+     *             .state(jobState)
      *             .build());
      * 
      *     }
@@ -1023,12 +1023,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_created_by())
-     *             .displayName(var_.job_display_name())
-     *             .id(var_.job_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.job_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobCreatedBy)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .projectId(testProject.id())
+     *             .state(jobState)
      *             .build());
      * 
      *     }
@@ -1070,12 +1070,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_created_by())
-     *             .displayName(var_.job_display_name())
-     *             .id(var_.job_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.job_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobCreatedBy)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .projectId(testProject.id())
+     *             .state(jobState)
      *             .build());
      * 
      *     }
@@ -1117,12 +1117,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobs = DataScienceFunctions.getJobs(GetJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.job_created_by())
-     *             .displayName(var_.job_display_name())
-     *             .id(var_.job_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.job_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(jobCreatedBy)
+     *             .displayName(jobDisplayName)
+     *             .id(jobId)
+     *             .projectId(testProject.id())
+     *             .state(jobState)
      *             .build());
      * 
      *     }
@@ -1164,7 +1164,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModelOciDatascienceModel.id())
      *             .build());
      * 
      *     }
@@ -1206,7 +1206,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModelOciDatascienceModel.id())
      *             .build());
      * 
      *     }
@@ -1248,7 +1248,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModelOciDatascienceModel.id())
      *             .build());
      * 
      *     }
@@ -1290,7 +1290,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = DataScienceFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModelOciDatascienceModel.id())
      *             .build());
      * 
      *     }
@@ -1332,7 +1332,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
      *             .build());
      * 
      *     }
@@ -1374,7 +1374,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
      *             .build());
      * 
      *     }
@@ -1416,7 +1416,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
      *             .build());
      * 
      *     }
@@ -1458,7 +1458,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployment = DataScienceFunctions.getModelDeployment(GetModelDeploymentArgs.builder()
-     *             .modelDeploymentId(oci_datascience_model_deployment.test_model_deployment().id())
+     *             .modelDeploymentId(testModelDeploymentOciDatascienceModelDeployment.id())
      *             .build());
      * 
      *     }
@@ -1500,7 +1500,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1542,7 +1542,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1584,7 +1584,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1626,7 +1626,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeploymentShapes = DataScienceFunctions.getModelDeploymentShapes(GetModelDeploymentShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1668,12 +1668,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_deployment_created_by())
-     *             .displayName(var_.model_deployment_display_name())
-     *             .id(var_.model_deployment_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelDeploymentCreatedBy)
+     *             .displayName(modelDeploymentDisplayName)
+     *             .id(modelDeploymentId)
+     *             .projectId(testProject.id())
+     *             .state(modelDeploymentState)
      *             .build());
      * 
      *     }
@@ -1715,12 +1715,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_deployment_created_by())
-     *             .displayName(var_.model_deployment_display_name())
-     *             .id(var_.model_deployment_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelDeploymentCreatedBy)
+     *             .displayName(modelDeploymentDisplayName)
+     *             .id(modelDeploymentId)
+     *             .projectId(testProject.id())
+     *             .state(modelDeploymentState)
      *             .build());
      * 
      *     }
@@ -1762,12 +1762,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_deployment_created_by())
-     *             .displayName(var_.model_deployment_display_name())
-     *             .id(var_.model_deployment_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelDeploymentCreatedBy)
+     *             .displayName(modelDeploymentDisplayName)
+     *             .id(modelDeploymentId)
+     *             .projectId(testProject.id())
+     *             .state(modelDeploymentState)
      *             .build());
      * 
      *     }
@@ -1809,12 +1809,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelDeployments = DataScienceFunctions.getModelDeployments(GetModelDeploymentsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_deployment_created_by())
-     *             .displayName(var_.model_deployment_display_name())
-     *             .id(var_.model_deployment_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_deployment_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelDeploymentCreatedBy)
+     *             .displayName(modelDeploymentDisplayName)
+     *             .id(modelDeploymentId)
+     *             .projectId(testProject.id())
+     *             .state(modelDeploymentState)
      *             .build());
      * 
      *     }
@@ -1856,7 +1856,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -1898,7 +1898,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -1940,7 +1940,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -1982,7 +1982,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelProvenance = DataScienceFunctions.getModelProvenance(GetModelProvenanceArgs.builder()
-     *             .modelId(oci_datascience_model.test_model().id())
+     *             .modelId(testModel.id())
      *             .build());
      * 
      *     }
@@ -2024,7 +2024,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
      *             .build());
      * 
      *     }
@@ -2066,7 +2066,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
      *             .build());
      * 
      *     }
@@ -2108,7 +2108,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
      *             .build());
      * 
      *     }
@@ -2150,7 +2150,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSet = DataScienceFunctions.getModelVersionSet(GetModelVersionSetArgs.builder()
-     *             .modelVersionSetId(oci_datascience_model_version_set.test_model_version_set().id())
+     *             .modelVersionSetId(testModelVersionSetOciDatascienceModelVersionSet.id())
      *             .build());
      * 
      *     }
@@ -2192,12 +2192,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_version_set_created_by())
-     *             .id(var_.model_version_set_id())
-     *             .name(var_.model_version_set_name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_version_set_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelVersionSetCreatedBy)
+     *             .id(modelVersionSetId)
+     *             .name(modelVersionSetName)
+     *             .projectId(testProject.id())
+     *             .state(modelVersionSetState)
      *             .build());
      * 
      *     }
@@ -2239,12 +2239,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_version_set_created_by())
-     *             .id(var_.model_version_set_id())
-     *             .name(var_.model_version_set_name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_version_set_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelVersionSetCreatedBy)
+     *             .id(modelVersionSetId)
+     *             .name(modelVersionSetName)
+     *             .projectId(testProject.id())
+     *             .state(modelVersionSetState)
      *             .build());
      * 
      *     }
@@ -2286,12 +2286,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_version_set_created_by())
-     *             .id(var_.model_version_set_id())
-     *             .name(var_.model_version_set_name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_version_set_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelVersionSetCreatedBy)
+     *             .id(modelVersionSetId)
+     *             .name(modelVersionSetName)
+     *             .projectId(testProject.id())
+     *             .state(modelVersionSetState)
      *             .build());
      * 
      *     }
@@ -2333,12 +2333,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModelVersionSets = DataScienceFunctions.getModelVersionSets(GetModelVersionSetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_version_set_created_by())
-     *             .id(var_.model_version_set_id())
-     *             .name(var_.model_version_set_name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_version_set_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelVersionSetCreatedBy)
+     *             .id(modelVersionSetId)
+     *             .name(modelVersionSetName)
+     *             .projectId(testProject.id())
+     *             .state(modelVersionSetState)
      *             .build());
      * 
      *     }
@@ -2380,13 +2380,13 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_created_by())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelCreatedBy)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .modelVersionSetName(testModelVersionSet.name())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -2428,13 +2428,13 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_created_by())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelCreatedBy)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .modelVersionSetName(testModelVersionSet.name())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -2476,13 +2476,13 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_created_by())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelCreatedBy)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .modelVersionSetName(testModelVersionSet.name())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -2524,13 +2524,13 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = DataScienceFunctions.getModels(GetModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.model_created_by())
-     *             .displayName(var_.model_display_name())
-     *             .id(var_.model_id())
-     *             .modelVersionSetName(oci_datascience_model_version_set.test_model_version_set().name())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelCreatedBy)
+     *             .displayName(modelDisplayName)
+     *             .id(modelId)
+     *             .modelVersionSetName(testModelVersionSet.name())
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -2572,7 +2572,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
      *             .build());
      * 
      *     }
@@ -2614,7 +2614,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
      *             .build());
      * 
      *     }
@@ -2656,7 +2656,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
      *             .build());
      * 
      *     }
@@ -2698,7 +2698,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSession = DataScienceFunctions.getNotebookSession(GetNotebookSessionArgs.builder()
-     *             .notebookSessionId(oci_datascience_notebook_session.test_notebook_session().id())
+     *             .notebookSessionId(testNotebookSessionOciDatascienceNotebookSession.id())
      *             .build());
      * 
      *     }
@@ -2740,7 +2740,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2782,7 +2782,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2824,7 +2824,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2866,7 +2866,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessionShapes = DataScienceFunctions.getNotebookSessionShapes(GetNotebookSessionShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2908,12 +2908,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.notebook_session_created_by())
-     *             .displayName(var_.notebook_session_display_name())
-     *             .id(var_.notebook_session_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.notebook_session_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(notebookSessionCreatedBy)
+     *             .displayName(notebookSessionDisplayName)
+     *             .id(notebookSessionId)
+     *             .projectId(testProject.id())
+     *             .state(notebookSessionState)
      *             .build());
      * 
      *     }
@@ -2955,12 +2955,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.notebook_session_created_by())
-     *             .displayName(var_.notebook_session_display_name())
-     *             .id(var_.notebook_session_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.notebook_session_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(notebookSessionCreatedBy)
+     *             .displayName(notebookSessionDisplayName)
+     *             .id(notebookSessionId)
+     *             .projectId(testProject.id())
+     *             .state(notebookSessionState)
      *             .build());
      * 
      *     }
@@ -3002,12 +3002,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.notebook_session_created_by())
-     *             .displayName(var_.notebook_session_display_name())
-     *             .id(var_.notebook_session_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.notebook_session_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(notebookSessionCreatedBy)
+     *             .displayName(notebookSessionDisplayName)
+     *             .id(notebookSessionId)
+     *             .projectId(testProject.id())
+     *             .state(notebookSessionState)
      *             .build());
      * 
      *     }
@@ -3049,12 +3049,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNotebookSessions = DataScienceFunctions.getNotebookSessions(GetNotebookSessionsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.notebook_session_created_by())
-     *             .displayName(var_.notebook_session_display_name())
-     *             .id(var_.notebook_session_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.notebook_session_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(notebookSessionCreatedBy)
+     *             .displayName(notebookSessionDisplayName)
+     *             .id(notebookSessionId)
+     *             .projectId(testProject.id())
+     *             .state(notebookSessionState)
      *             .build());
      * 
      *     }
@@ -3096,7 +3096,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
      *             .build());
      * 
      *     }
@@ -3138,7 +3138,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
      *             .build());
      * 
      *     }
@@ -3180,7 +3180,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
      *             .build());
      * 
      *     }
@@ -3222,7 +3222,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipeline = DataScienceFunctions.getPipeline(GetPipelineArgs.builder()
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
+     *             .pipelineId(testPipelineOciDatasciencePipeline.id())
      *             .build());
      * 
      *     }
@@ -3264,7 +3264,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
      *             .build());
      * 
      *     }
@@ -3306,7 +3306,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
      *             .build());
      * 
      *     }
@@ -3348,7 +3348,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
      *             .build());
      * 
      *     }
@@ -3390,7 +3390,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRun = DataScienceFunctions.getPipelineRun(GetPipelineRunArgs.builder()
-     *             .pipelineRunId(oci_datascience_pipeline_run.test_pipeline_run().id())
+     *             .pipelineRunId(testPipelineRunOciDatasciencePipelineRun.id())
      *             .build());
      * 
      *     }
@@ -3432,12 +3432,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_run_created_by())
-     *             .displayName(var_.pipeline_run_display_name())
-     *             .id(var_.pipeline_run_id())
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
-     *             .state(var_.pipeline_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineRunCreatedBy)
+     *             .displayName(pipelineRunDisplayName)
+     *             .id(pipelineRunId)
+     *             .pipelineId(testPipeline.id())
+     *             .state(pipelineRunState)
      *             .build());
      * 
      *     }
@@ -3479,12 +3479,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_run_created_by())
-     *             .displayName(var_.pipeline_run_display_name())
-     *             .id(var_.pipeline_run_id())
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
-     *             .state(var_.pipeline_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineRunCreatedBy)
+     *             .displayName(pipelineRunDisplayName)
+     *             .id(pipelineRunId)
+     *             .pipelineId(testPipeline.id())
+     *             .state(pipelineRunState)
      *             .build());
      * 
      *     }
@@ -3526,12 +3526,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_run_created_by())
-     *             .displayName(var_.pipeline_run_display_name())
-     *             .id(var_.pipeline_run_id())
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
-     *             .state(var_.pipeline_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineRunCreatedBy)
+     *             .displayName(pipelineRunDisplayName)
+     *             .id(pipelineRunId)
+     *             .pipelineId(testPipeline.id())
+     *             .state(pipelineRunState)
      *             .build());
      * 
      *     }
@@ -3573,12 +3573,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelineRuns = DataScienceFunctions.getPipelineRuns(GetPipelineRunsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_run_created_by())
-     *             .displayName(var_.pipeline_run_display_name())
-     *             .id(var_.pipeline_run_id())
-     *             .pipelineId(oci_datascience_pipeline.test_pipeline().id())
-     *             .state(var_.pipeline_run_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineRunCreatedBy)
+     *             .displayName(pipelineRunDisplayName)
+     *             .id(pipelineRunId)
+     *             .pipelineId(testPipeline.id())
+     *             .state(pipelineRunState)
      *             .build());
      * 
      *     }
@@ -3620,12 +3620,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_created_by())
-     *             .displayName(var_.pipeline_display_name())
-     *             .id(var_.pipeline_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.pipeline_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineCreatedBy)
+     *             .displayName(pipelineDisplayName)
+     *             .id(pipelineId)
+     *             .projectId(testProject.id())
+     *             .state(pipelineState)
      *             .build());
      * 
      *     }
@@ -3667,12 +3667,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_created_by())
-     *             .displayName(var_.pipeline_display_name())
-     *             .id(var_.pipeline_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.pipeline_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineCreatedBy)
+     *             .displayName(pipelineDisplayName)
+     *             .id(pipelineId)
+     *             .projectId(testProject.id())
+     *             .state(pipelineState)
      *             .build());
      * 
      *     }
@@ -3714,12 +3714,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_created_by())
-     *             .displayName(var_.pipeline_display_name())
-     *             .id(var_.pipeline_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.pipeline_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineCreatedBy)
+     *             .displayName(pipelineDisplayName)
+     *             .id(pipelineId)
+     *             .projectId(testProject.id())
+     *             .state(pipelineState)
      *             .build());
      * 
      *     }
@@ -3761,12 +3761,12 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPipelines = DataScienceFunctions.getPipelines(GetPipelinesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.pipeline_created_by())
-     *             .displayName(var_.pipeline_display_name())
-     *             .id(var_.pipeline_id())
-     *             .projectId(oci_datascience_project.test_project().id())
-     *             .state(var_.pipeline_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(pipelineCreatedBy)
+     *             .displayName(pipelineDisplayName)
+     *             .id(pipelineId)
+     *             .projectId(testProject.id())
+     *             .state(pipelineState)
      *             .build());
      * 
      *     }
@@ -3808,7 +3808,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -3850,7 +3850,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -3892,7 +3892,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -3934,7 +3934,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoint = DataScienceFunctions.getPrivateEndpoint(GetPrivateEndpointArgs.builder()
-     *             .dataSciencePrivateEndpointId(oci_datascience_private_endpoint.test_data_science_private_endpoint().id())
+     *             .dataSciencePrivateEndpointId(testDataSciencePrivateEndpointOciDatasciencePrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -3976,11 +3976,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.data_science_private_endpoint_created_by())
-     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
-     *             .displayName(var_.data_science_private_endpoint_display_name())
-     *             .state(var_.data_science_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(dataSciencePrivateEndpointCreatedBy)
+     *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
+     *             .displayName(dataSciencePrivateEndpointDisplayName)
+     *             .state(dataSciencePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -4022,11 +4022,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.data_science_private_endpoint_created_by())
-     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
-     *             .displayName(var_.data_science_private_endpoint_display_name())
-     *             .state(var_.data_science_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(dataSciencePrivateEndpointCreatedBy)
+     *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
+     *             .displayName(dataSciencePrivateEndpointDisplayName)
+     *             .state(dataSciencePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -4068,11 +4068,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.data_science_private_endpoint_created_by())
-     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
-     *             .displayName(var_.data_science_private_endpoint_display_name())
-     *             .state(var_.data_science_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(dataSciencePrivateEndpointCreatedBy)
+     *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
+     *             .displayName(dataSciencePrivateEndpointDisplayName)
+     *             .state(dataSciencePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -4114,11 +4114,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSciencePrivateEndpoints = DataScienceFunctions.getPrivateEndpoints(GetPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.data_science_private_endpoint_created_by())
-     *             .dataScienceResourceType(var_.data_science_private_endpoint_data_science_resource_type())
-     *             .displayName(var_.data_science_private_endpoint_display_name())
-     *             .state(var_.data_science_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(dataSciencePrivateEndpointCreatedBy)
+     *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
+     *             .displayName(dataSciencePrivateEndpointDisplayName)
+     *             .state(dataSciencePrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -4160,7 +4160,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_datascience_project.test_project().id())
+     *             .projectId(testProjectOciDatascienceProject.id())
      *             .build());
      * 
      *     }
@@ -4202,7 +4202,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_datascience_project.test_project().id())
+     *             .projectId(testProjectOciDatascienceProject.id())
      *             .build());
      * 
      *     }
@@ -4244,7 +4244,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_datascience_project.test_project().id())
+     *             .projectId(testProjectOciDatascienceProject.id())
      *             .build());
      * 
      *     }
@@ -4286,7 +4286,7 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DataScienceFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(oci_datascience_project.test_project().id())
+     *             .projectId(testProjectOciDatascienceProject.id())
      *             .build());
      * 
      *     }
@@ -4328,11 +4328,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.project_created_by())
-     *             .displayName(var_.project_display_name())
-     *             .id(var_.project_id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(projectCreatedBy)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -4374,11 +4374,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.project_created_by())
-     *             .displayName(var_.project_display_name())
-     *             .id(var_.project_id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(projectCreatedBy)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -4420,11 +4420,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.project_created_by())
-     *             .displayName(var_.project_display_name())
-     *             .id(var_.project_id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(projectCreatedBy)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -4466,11 +4466,11 @@ public final class DataScienceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = DataScienceFunctions.getProjects(GetProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .createdBy(var_.project_created_by())
-     *             .displayName(var_.project_display_name())
-     *             .id(var_.project_id())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .createdBy(projectCreatedBy)
+     *             .displayName(projectDisplayName)
+     *             .id(projectId)
+     *             .state(projectState)
      *             .build());
      * 
      *     }

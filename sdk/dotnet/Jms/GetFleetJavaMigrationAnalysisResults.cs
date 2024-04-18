@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetJavaMigrationAnalysisResults = Oci.Jms.GetFleetJavaMigrationAnalysisResults.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         TimeEnd = @var.Fleet_java_migration_analysis_result_time_end,
-        ///         TimeStart = @var.Fleet_java_migration_analysis_result_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         TimeEnd = fleetJavaMigrationAnalysisResultTimeEnd,
+        ///         TimeStart = fleetJavaMigrationAnalysisResultTimeStart,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetJavaMigrationAnalysisResults = Oci.Jms.GetFleetJavaMigrationAnalysisResults.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         TimeEnd = @var.Fleet_java_migration_analysis_result_time_end,
-        ///         TimeStart = @var.Fleet_java_migration_analysis_result_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         TimeEnd = fleetJavaMigrationAnalysisResultTimeEnd,
+        ///         TimeStart = fleetJavaMigrationAnalysisResultTimeStart,
         ///     });
         /// 
         /// });

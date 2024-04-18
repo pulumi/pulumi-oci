@@ -25,14 +25,14 @@ namespace Pulumi.Oci.Redis
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testRedisCluster = new Oci.Redis.RedisCluster("testRedisCluster", new()
+    ///     var testRedisCluster = new Oci.Redis.RedisCluster("test_redis_cluster", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Redis_cluster_display_name,
-    ///         NodeCount = @var.Redis_cluster_node_count,
-    ///         NodeMemoryInGbs = @var.Redis_cluster_node_memory_in_gbs,
-    ///         SoftwareVersion = @var.Redis_cluster_software_version,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = redisClusterDisplayName,
+    ///         NodeCount = redisClusterNodeCount,
+    ///         NodeMemoryInGbs = redisClusterNodeMemoryInGbs,
+    ///         SoftwareVersion = redisClusterSoftwareVersion,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Redis
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         NsgIds = @var.Redis_cluster_nsg_ids,
+    ///         NsgIds = redisClusterNsgIds,
     ///     });
     /// 
     /// });

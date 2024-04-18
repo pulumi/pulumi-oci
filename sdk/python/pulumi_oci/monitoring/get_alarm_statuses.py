@@ -168,13 +168,13 @@ def get_alarm_statuses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_status_compartment_id_in_subtree"],
-        display_name=var["alarm_status_display_name"],
-        entity_id=oci_monitoring_entity["test_entity"]["id"],
-        resource_id=oci_monitoring_resource["test_resource"]["id"],
-        service_name=oci_core_service["test_service"]["name"],
-        status=var["alarm_status_status"])
+    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=compartment_id,
+        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree,
+        display_name=alarm_status_display_name,
+        entity_id=test_entity["id"],
+        resource_id=test_resource["id"],
+        service_name=test_service["name"],
+        status=alarm_status_status)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -245,13 +245,13 @@ def get_alarm_statuses_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_status_compartment_id_in_subtree"],
-        display_name=var["alarm_status_display_name"],
-        entity_id=oci_monitoring_entity["test_entity"]["id"],
-        resource_id=oci_monitoring_resource["test_resource"]["id"],
-        service_name=oci_core_service["test_service"]["name"],
-        status=var["alarm_status_status"])
+    test_alarm_statuses = oci.Monitoring.get_alarm_statuses(compartment_id=compartment_id,
+        compartment_id_in_subtree=alarm_status_compartment_id_in_subtree,
+        display_name=alarm_status_display_name,
+        entity_id=test_entity["id"],
+        resource_id=test_resource["id"],
+        service_name=test_service["name"],
+        status=alarm_status_status)
     ```
     <!--End PulumiCodeChooser -->
 

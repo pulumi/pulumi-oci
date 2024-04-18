@@ -46,13 +46,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVbsInstance = new InstVbsInstance(&#34;testVbsInstance&#34;, InstVbsInstanceArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.vbs_instance_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(vbsInstanceDisplayName)
+ *             .name(vbsInstanceName)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .idcsAccessToken(var_.vbs_instance_idcs_access_token())
- *             .isResourceUsageAgreementGranted(var_.vbs_instance_is_resource_usage_agreement_granted())
- *             .resourceCompartmentId(var_.resource_compartment_id())
+ *             .idcsAccessToken(vbsInstanceIdcsAccessToken)
+ *             .isResourceUsageAgreementGranted(vbsInstanceIsResourceUsageAgreementGranted)
+ *             .resourceCompartmentId(resourceCompartmentId)
  *             .build());
  * 
  *     }

@@ -45,12 +45,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetDetectorRecipes(ctx, &cloudguard.GetDetectorRecipesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Detector_recipe_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Detector_recipe_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Detector_recipe_display_name),
-//				ResourceMetadataOnly:   pulumi.BoolRef(_var.Detector_recipe_resource_metadata_only),
-//				State:                  pulumi.StringRef(_var.Detector_recipe_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(detectorRecipeAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(detectorRecipeCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(detectorRecipeDisplayName),
+//				ResourceMetadataOnly:   pulumi.BoolRef(detectorRecipeResourceMetadataOnly),
+//				State:                  pulumi.StringRef(detectorRecipeState),
 //			}, nil)
 //			if err != nil {
 //				return err

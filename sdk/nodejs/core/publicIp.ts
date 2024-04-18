@@ -36,18 +36,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIp = new oci.core.PublicIp("testPublicIp", {
- *     compartmentId: _var.compartment_id,
- *     lifetime: _var.public_ip_lifetime,
+ * const testPublicIp = new oci.core.PublicIp("test_public_ip", {
+ *     compartmentId: compartmentId,
+ *     lifetime: publicIpLifetime,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.public_ip_display_name,
+ *     displayName: publicIpDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     privateIpId: oci_core_private_ip.test_private_ip.id,
- *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
+ *     privateIpId: testPrivateIp.id,
+ *     publicIpPoolId: testPublicIpPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

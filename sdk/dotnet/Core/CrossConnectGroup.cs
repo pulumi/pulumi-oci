@@ -39,28 +39,28 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCrossConnectGroup = new Oci.Core.CrossConnectGroup("testCrossConnectGroup", new()
+    ///     var testCrossConnectGroup = new Oci.Core.CrossConnectGroup("test_cross_connect_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         CustomerReferenceName = @var.Cross_connect_group_customer_reference_name,
+    ///         CompartmentId = compartmentId,
+    ///         CustomerReferenceName = crossConnectGroupCustomerReferenceName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Cross_connect_group_display_name,
+    ///         DisplayName = crossConnectGroupDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         MacsecProperties = new Oci.Core.Inputs.CrossConnectGroupMacsecPropertiesArgs
     ///         {
-    ///             State = @var.Cross_connect_group_macsec_properties_state,
-    ///             EncryptionCipher = @var.Cross_connect_group_macsec_properties_encryption_cipher,
-    ///             IsUnprotectedTrafficAllowed = @var.Cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
+    ///             State = crossConnectGroupMacsecPropertiesState,
+    ///             EncryptionCipher = crossConnectGroupMacsecPropertiesEncryptionCipher,
+    ///             IsUnprotectedTrafficAllowed = crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed,
     ///             PrimaryKey = new Oci.Core.Inputs.CrossConnectGroupMacsecPropertiesPrimaryKeyArgs
     ///             {
-    ///                 ConnectivityAssociationKeySecretId = oci_vault_secret.Test_secret.Id,
-    ///                 ConnectivityAssociationNameSecretId = oci_vault_secret.Test_secret.Id,
+    ///                 ConnectivityAssociationKeySecretId = testSecret.Id,
+    ///                 ConnectivityAssociationNameSecretId = testSecret.Id,
     ///             },
     ///         },
     ///     });

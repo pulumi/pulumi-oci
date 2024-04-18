@@ -14,9 +14,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAppCatalogListingResourceVersionAgreement = new oci.core.AppCatalogListingResourceVersionAgreement("testAppCatalogListingResourceVersionAgreement", {
- *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
- *     listingResourceVersion: _var.app_catalog_listing_resource_version_agreement_listing_resource_version,
+ * const testAppCatalogListingResourceVersionAgreement = new oci.core.AppCatalogListingResourceVersionAgreement("test_app_catalog_listing_resource_version_agreement", {
+ *     listingId: testListing.id,
+ *     listingResourceVersion: appCatalogListingResourceVersionAgreementListingResourceVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

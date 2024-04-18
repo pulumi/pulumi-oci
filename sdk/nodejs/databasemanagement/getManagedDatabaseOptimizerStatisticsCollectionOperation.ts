@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseOptimizerStatisticsCollectionOperation = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperation({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     optimizerStatisticsCollectionOperationId: oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     optimizerStatisticsCollectionOperationId: testOptimizerStatisticsCollectionOperation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -128,8 +128,8 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionOperationResult 
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseOptimizerStatisticsCollectionOperation = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionOperation({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     optimizerStatisticsCollectionOperationId: oci_database_management_optimizer_statistics_collection_operation.test_optimizer_statistics_collection_operation.id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     optimizerStatisticsCollectionOperationId: testOptimizerStatisticsCollectionOperation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

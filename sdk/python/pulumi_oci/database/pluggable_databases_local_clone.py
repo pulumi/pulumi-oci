@@ -451,12 +451,12 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pluggable_databases_local_clone = oci.database.PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone",
-            cloned_pdb_name=var["pluggable_databases_local_clone_cloned_pdb_name"],
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            pdb_admin_password=var["pluggable_databases_local_clone_pdb_admin_password"],
-            should_pdb_admin_account_be_locked=var["pluggable_databases_local_clone_should_pdb_admin_account_be_locked"],
-            target_tde_wallet_password=var["pluggable_databases_local_clone_target_tde_wallet_password"])
+        test_pluggable_databases_local_clone = oci.database.PluggableDatabasesLocalClone("test_pluggable_databases_local_clone",
+            cloned_pdb_name=pluggable_databases_local_clone_cloned_pdb_name,
+            pluggable_database_id=test_pluggable_database["id"],
+            pdb_admin_password=pluggable_databases_local_clone_pdb_admin_password,
+            should_pdb_admin_account_be_locked=pluggable_databases_local_clone_should_pdb_admin_account_be_locked,
+            target_tde_wallet_password=pluggable_databases_local_clone_target_tde_wallet_password)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -495,12 +495,12 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_pluggable_databases_local_clone = oci.database.PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone",
-            cloned_pdb_name=var["pluggable_databases_local_clone_cloned_pdb_name"],
-            pluggable_database_id=oci_database_pluggable_database["test_pluggable_database"]["id"],
-            pdb_admin_password=var["pluggable_databases_local_clone_pdb_admin_password"],
-            should_pdb_admin_account_be_locked=var["pluggable_databases_local_clone_should_pdb_admin_account_be_locked"],
-            target_tde_wallet_password=var["pluggable_databases_local_clone_target_tde_wallet_password"])
+        test_pluggable_databases_local_clone = oci.database.PluggableDatabasesLocalClone("test_pluggable_databases_local_clone",
+            cloned_pdb_name=pluggable_databases_local_clone_cloned_pdb_name,
+            pluggable_database_id=test_pluggable_database["id"],
+            pdb_admin_password=pluggable_databases_local_clone_pdb_admin_password,
+            should_pdb_admin_account_be_locked=pluggable_databases_local_clone_should_pdb_admin_account_be_locked,
+            target_tde_wallet_password=pluggable_databases_local_clone_target_tde_wallet_password)
         ```
         <!--End PulumiCodeChooser -->
 

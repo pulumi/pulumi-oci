@@ -62,14 +62,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseUpgrade = new DatabaseUpgrade(&#34;testDatabaseUpgrade&#34;, DatabaseUpgradeArgs.builder()        
- *             .action(var_.database_upgrade_action())
- *             .databaseId(oci_database_database.test_database().id())
+ *             .action(databaseUpgradeAction)
+ *             .databaseId(testDatabase.id())
  *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()
- *                 .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
- *                 .dbHomeId(oci_database_db_home.test_db_home().id())
- *                 .dbVersion(var_.database_upgrade_database_upgrade_source_details_db_version())
- *                 .options(var_.database_upgrade_database_upgrade_source_details_options())
- *                 .source(var_.database_upgrade_database_upgrade_source_details_source())
+ *                 .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
+ *                 .dbHomeId(testDbHome.id())
+ *                 .dbVersion(databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion)
+ *                 .options(databaseUpgradeDatabaseUpgradeSourceDetailsOptions)
+ *                 .source(databaseUpgradeDatabaseUpgradeSourceDetailsSource)
  *                 .build())
  *             .build());
  * 

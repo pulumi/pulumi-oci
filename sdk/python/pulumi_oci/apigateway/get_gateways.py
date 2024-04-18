@@ -133,10 +133,10 @@ def get_gateways(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=var["compartment_id"],
-        certificate_id=var["oci_apigateway_certificate"]["test_certificate"]["id"],
-        display_name=var["gateway_display_name"],
-        state=var["gateway_state"])
+    test_gateways = oci.ApiGateway.get_gateways(compartment_id=compartment_id,
+        certificate_id=oci_apigateway_certificate["testCertificate"]["id"],
+        display_name=gateway_display_name,
+        state=gateway_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_gateways_output(certificate_id: Optional[pulumi.Input[Optional[str]]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_gateways = oci.ApiGateway.get_gateways(compartment_id=var["compartment_id"],
-        certificate_id=var["oci_apigateway_certificate"]["test_certificate"]["id"],
-        display_name=var["gateway_display_name"],
-        state=var["gateway_state"])
+    test_gateways = oci.ApiGateway.get_gateways(compartment_id=compartment_id,
+        certificate_id=oci_apigateway_certificate["testCertificate"]["id"],
+        display_name=gateway_display_name,
+        state=gateway_state)
     ```
     <!--End PulumiCodeChooser -->
 

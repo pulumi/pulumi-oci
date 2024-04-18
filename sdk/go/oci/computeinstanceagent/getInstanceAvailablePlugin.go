@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ComputeInstanceAgent.GetInstanceAvailablePlugin(ctx, &computeinstanceagent.GetInstanceAvailablePluginArgs{
-//				OsName:    _var.Instance_available_plugin_os_name,
-//				OsVersion: _var.Instance_available_plugin_os_version,
-//				Name:      pulumi.StringRef(_var.Instance_available_plugin_name),
+//				OsName:    instanceAvailablePluginOsName,
+//				OsVersion: instanceAvailablePluginOsVersion,
+//				Name:      pulumi.StringRef(instanceAvailablePluginName),
 //			}, nil)
 //			if err != nil {
 //				return err

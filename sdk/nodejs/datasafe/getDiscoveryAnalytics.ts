@@ -21,13 +21,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryAnalytics = oci.DataSafe.getDiscoveryAnalytics({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
- *     groupBy: _var.discovery_analytic_group_by,
- *     isCommon: _var.discovery_analytic_is_common,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     groupBy: discoveryAnalyticGroupBy,
+ *     isCommon: discoveryAnalyticIsCommon,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -127,13 +127,13 @@ export interface GetDiscoveryAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDiscoveryAnalytics = oci.DataSafe.getDiscoveryAnalytics({
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.discovery_analytic_compartment_id_in_subtree,
- *     groupBy: _var.discovery_analytic_group_by,
- *     isCommon: _var.discovery_analytic_is_common,
- *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
- *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: discoveryAnalyticCompartmentIdInSubtree,
+ *     groupBy: discoveryAnalyticGroupBy,
+ *     isCommon: discoveryAnalyticIsCommon,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     sensitiveTypeId: testSensitiveType.id,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

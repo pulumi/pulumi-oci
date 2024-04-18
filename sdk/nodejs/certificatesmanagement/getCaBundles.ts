@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCaBundles = oci.CertificatesManagement.getCaBundles({
- *     caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.ca_bundle_name,
- *     state: _var.ca_bundle_state,
+ *     caBundleId: testCaBundle.id,
+ *     compartmentId: compartmentId,
+ *     name: caBundleName,
+ *     state: caBundleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetCaBundlesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCaBundles = oci.CertificatesManagement.getCaBundles({
- *     caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.ca_bundle_name,
- *     state: _var.ca_bundle_state,
+ *     caBundleId: testCaBundle.id,
+ *     compartmentId: compartmentId,
+ *     name: caBundleName,
+ *     state: caBundleState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -275,11 +275,11 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_steering_policy_attachment = oci.dns.SteeringPolicyAttachment("testSteeringPolicyAttachment",
-            domain_name=var["steering_policy_attachment_domain_name"],
-            steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
-            zone_id=oci_dns_zone["test_zone"]["id"],
-            display_name=var["steering_policy_attachment_display_name"])
+        test_steering_policy_attachment = oci.dns.SteeringPolicyAttachment("test_steering_policy_attachment",
+            domain_name=steering_policy_attachment_domain_name,
+            steering_policy_id=test_steering_policy["id"],
+            zone_id=test_zone["id"],
+            display_name=steering_policy_attachment_display_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -325,11 +325,11 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_steering_policy_attachment = oci.dns.SteeringPolicyAttachment("testSteeringPolicyAttachment",
-            domain_name=var["steering_policy_attachment_domain_name"],
-            steering_policy_id=oci_dns_steering_policy["test_steering_policy"]["id"],
-            zone_id=oci_dns_zone["test_zone"]["id"],
-            display_name=var["steering_policy_attachment_display_name"])
+        test_steering_policy_attachment = oci.dns.SteeringPolicyAttachment("test_steering_policy_attachment",
+            domain_name=steering_policy_attachment_domain_name,
+            steering_policy_id=test_steering_policy["id"],
+            zone_id=test_zone["id"],
+            display_name=steering_policy_attachment_display_name)
         ```
         <!--End PulumiCodeChooser -->
 

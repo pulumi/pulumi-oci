@@ -26,20 +26,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testServiceGateway = new oci.core.ServiceGateway("testServiceGateway", {
- *     compartmentId: _var.compartment_id,
+ * const testServiceGateway = new oci.core.ServiceGateway("test_service_gateway", {
+ *     compartmentId: compartmentId,
  *     services: [{
- *         serviceId: data.oci_core_services.test_services.services[0].id,
+ *         serviceId: testServices.services[0].id,
  *     }],
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.service_gateway_display_name,
+ *     displayName: serviceGatewayDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     routeTableId: oci_core_route_table.test_route_table.id,
+ *     routeTableId: testRouteTable.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

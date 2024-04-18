@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImage = Oci.Artifacts.GetContainerImage.Invoke(new()
         ///     {
-        ///         ImageId = @var.Container_image_id,
+        ///         ImageId = containerImageId,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testContainerImage = Oci.Artifacts.GetContainerImage.Invoke(new()
         ///     {
-        ///         ImageId = @var.Container_image_id,
+        ///         ImageId = containerImageId,
         ///     });
         /// 
         /// });

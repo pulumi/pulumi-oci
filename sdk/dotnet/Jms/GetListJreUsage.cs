@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testListJreUsage = Oci.Jms.GetListJreUsage.Invoke(new()
         ///     {
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         ApplicationName = oci_dataflow_application.Test_application.Name,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         HostId = oci_jms_host.Test_host.Id,
-        ///         TimeEnd = @var.List_jre_usage_time_end,
-        ///         TimeStart = @var.List_jre_usage_time_start,
+        ///         ApplicationId = testApplication.Id,
+        ///         ApplicationName = testApplication.Name,
+        ///         CompartmentId = compartmentId,
+        ///         HostId = testHost.Id,
+        ///         TimeEnd = listJreUsageTimeEnd,
+        ///         TimeStart = listJreUsageTimeStart,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testListJreUsage = Oci.Jms.GetListJreUsage.Invoke(new()
         ///     {
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         ApplicationName = oci_dataflow_application.Test_application.Name,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         HostId = oci_jms_host.Test_host.Id,
-        ///         TimeEnd = @var.List_jre_usage_time_end,
-        ///         TimeStart = @var.List_jre_usage_time_start,
+        ///         ApplicationId = testApplication.Id,
+        ///         ApplicationName = testApplication.Name,
+        ///         CompartmentId = compartmentId,
+        ///         HostId = testHost.Id,
+        ///         TimeEnd = listJreUsageTimeEnd,
+        ///         TimeStart = listJreUsageTimeStart,
         ///     });
         /// 
         /// });

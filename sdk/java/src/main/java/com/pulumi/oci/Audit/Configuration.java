@@ -42,8 +42,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConfiguration = new Configuration(&#34;testConfiguration&#34;, ConfigurationArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .retentionPeriodDays(var_.configuration_retention_period_days())
+ *             .compartmentId(tenancyOcid)
+ *             .retentionPeriodDays(configurationRetentionPeriodDays)
  *             .build());
  * 
  *     }

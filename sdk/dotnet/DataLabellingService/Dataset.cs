@@ -25,29 +25,29 @@ namespace Pulumi.Oci.DataLabellingService
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDataset = new Oci.DataLabellingService.Dataset("testDataset", new()
+    ///     var testDataset = new Oci.DataLabellingService.Dataset("test_dataset", new()
     ///     {
-    ///         AnnotationFormat = @var.Dataset_annotation_format,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AnnotationFormat = datasetAnnotationFormat,
+    ///         CompartmentId = compartmentId,
     ///         DatasetFormatDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsArgs
     ///         {
-    ///             FormatType = @var.Dataset_dataset_format_details_format_type,
+    ///             FormatType = datasetDatasetFormatDetailsFormatType,
     ///             TextFileTypeMetadata = new Oci.DataLabellingService.Inputs.DatasetDatasetFormatDetailsTextFileTypeMetadataArgs
     ///             {
-    ///                 ColumnIndex = @var.Dataset_dataset_format_details_text_file_type_metadata_column_index,
-    ///                 FormatType = @var.Dataset_dataset_format_details_text_file_type_metadata_format_type,
-    ///                 ColumnDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_column_delimiter,
-    ///                 ColumnName = @var.Dataset_dataset_format_details_text_file_type_metadata_column_name,
-    ///                 EscapeCharacter = @var.Dataset_dataset_format_details_text_file_type_metadata_escape_character,
-    ///                 LineDelimiter = @var.Dataset_dataset_format_details_text_file_type_metadata_line_delimiter,
+    ///                 ColumnIndex = datasetDatasetFormatDetailsTextFileTypeMetadataColumnIndex,
+    ///                 FormatType = datasetDatasetFormatDetailsTextFileTypeMetadataFormatType,
+    ///                 ColumnDelimiter = datasetDatasetFormatDetailsTextFileTypeMetadataColumnDelimiter,
+    ///                 ColumnName = datasetDatasetFormatDetailsTextFileTypeMetadataColumnName,
+    ///                 EscapeCharacter = datasetDatasetFormatDetailsTextFileTypeMetadataEscapeCharacter,
+    ///                 LineDelimiter = datasetDatasetFormatDetailsTextFileTypeMetadataLineDelimiter,
     ///             },
     ///         },
     ///         DatasetSourceDetails = new Oci.DataLabellingService.Inputs.DatasetDatasetSourceDetailsArgs
     ///         {
-    ///             Bucket = @var.Dataset_dataset_source_details_bucket,
-    ///             Namespace = @var.Dataset_dataset_source_details_namespace,
-    ///             SourceType = @var.Dataset_dataset_source_details_source_type,
-    ///             Prefix = @var.Dataset_dataset_source_details_prefix,
+    ///             Bucket = datasetDatasetSourceDetailsBucket,
+    ///             Namespace = datasetDatasetSourceDetailsNamespace,
+    ///             SourceType = datasetDatasetSourceDetailsSourceType,
+    ///             Prefix = datasetDatasetSourceDetailsPrefix,
     ///         },
     ///         LabelSet = new Oci.DataLabellingService.Inputs.DatasetLabelSetArgs
     ///         {
@@ -55,31 +55,31 @@ namespace Pulumi.Oci.DataLabellingService
     ///             {
     ///                 new Oci.DataLabellingService.Inputs.DatasetLabelSetItemArgs
     ///                 {
-    ///                     Name = @var.Dataset_label_set_items_name,
+    ///                     Name = datasetLabelSetItemsName,
     ///                 },
     ///             },
     ///         },
-    ///         DefinedTags = @var.Dataset_defined_tags,
-    ///         Description = @var.Dataset_description,
-    ///         DisplayName = @var.Dataset_display_name,
-    ///         FreeformTags = @var.Dataset_freeform_tags,
+    ///         DefinedTags = datasetDefinedTags,
+    ///         Description = datasetDescription,
+    ///         DisplayName = datasetDisplayName,
+    ///         FreeformTags = datasetFreeformTags,
     ///         InitialImportDatasetConfiguration = new Oci.DataLabellingService.Inputs.DatasetInitialImportDatasetConfigurationArgs
     ///         {
     ///             ImportFormat = new Oci.DataLabellingService.Inputs.DatasetInitialImportDatasetConfigurationImportFormatArgs
     ///             {
-    ///                 Name = @var.Dataset_initial_import_dataset_configuration_import_format_name,
-    ///                 Version = @var.Dataset_initial_import_dataset_configuration_import_format_version,
+    ///                 Name = datasetInitialImportDatasetConfigurationImportFormatName,
+    ///                 Version = datasetInitialImportDatasetConfigurationImportFormatVersion,
     ///             },
     ///             ImportMetadataPath = new Oci.DataLabellingService.Inputs.DatasetInitialImportDatasetConfigurationImportMetadataPathArgs
     ///             {
-    ///                 Bucket = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_bucket,
-    ///                 Namespace = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_namespace,
-    ///                 Path = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_path,
-    ///                 SourceType = @var.Dataset_initial_import_dataset_configuration_import_metadata_path_source_type,
+    ///                 Bucket = datasetInitialImportDatasetConfigurationImportMetadataPathBucket,
+    ///                 Namespace = datasetInitialImportDatasetConfigurationImportMetadataPathNamespace,
+    ///                 Path = datasetInitialImportDatasetConfigurationImportMetadataPathPath,
+    ///                 SourceType = datasetInitialImportDatasetConfigurationImportMetadataPathSourceType,
     ///             },
     ///         },
     ///         InitialRecordGenerationConfiguration = null,
-    ///         LabelingInstructions = @var.Dataset_labeling_instructions,
+    ///         LabelingInstructions = datasetLabelingInstructions,
     ///     });
     /// 
     /// });

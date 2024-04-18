@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCaptureFilters = oci.Core.getCaptureFilters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.capture_filter_display_name,
- *     filterType: _var.capture_filter_filter_type,
- *     state: _var.capture_filter_state,
+ *     compartmentId: compartmentId,
+ *     displayName: captureFilterDisplayName,
+ *     filterType: captureFilterFilterType,
+ *     state: captureFilterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetCaptureFiltersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCaptureFilters = oci.Core.getCaptureFilters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.capture_filter_display_name,
- *     filterType: _var.capture_filter_filter_type,
- *     state: _var.capture_filter_state,
+ *     compartmentId: compartmentId,
+ *     displayName: captureFilterDisplayName,
+ *     filterType: captureFilterFilterType,
+ *     state: captureFilterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

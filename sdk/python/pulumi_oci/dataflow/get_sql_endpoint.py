@@ -356,7 +356,7 @@ def get_sql_endpoint(sql_endpoint_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"])
+    test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=test_sql_endpoint_oci_dataflow_sql_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -412,7 +412,7 @@ def get_sql_endpoint_output(sql_endpoint_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=oci_dataflow_sql_endpoint["test_sql_endpoint"]["id"])
+    test_sql_endpoint = oci.DataFlow.get_sql_endpoint(sql_endpoint_id=test_sql_endpoint_oci_dataflow_sql_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

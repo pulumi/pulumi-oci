@@ -25,53 +25,53 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNotebookSession = new Oci.DataScience.NotebookSession("testNotebookSession", new()
+    ///     var testNotebookSession = new Oci.DataScience.NotebookSession("test_notebook_session", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Notebook_session_display_name,
+    ///         DisplayName = notebookSessionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         NotebookSessionConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsArgs
     ///         {
-    ///             Shape = @var.Notebook_session_notebook_session_config_details_shape,
-    ///             BlockStorageSizeInGbs = @var.Notebook_session_notebook_session_config_details_block_storage_size_in_gbs,
+    ///             Shape = notebookSessionNotebookSessionConfigDetailsShape,
+    ///             BlockStorageSizeInGbs = notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs,
     ///             NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs
     ///             {
-    ///                 MemoryInGbs = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_memory_in_gbs,
-    ///                 Ocpus = @var.Notebook_session_notebook_session_config_details_notebook_session_shape_config_details_ocpus,
+    ///                 MemoryInGbs = notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOcpus,
     ///             },
-    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             PrivateEndpointId = testPrivateEndpoint.Id,
+    ///             SubnetId = testSubnet.Id,
     ///         },
     ///         NotebookSessionConfigurationDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsArgs
     ///         {
-    ///             Shape = @var.Notebook_session_notebook_session_configuration_details_shape,
-    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             BlockStorageSizeInGbs = @var.Notebook_session_notebook_session_configuration_details_block_storage_size_in_gbs,
+    ///             Shape = notebookSessionNotebookSessionConfigurationDetailsShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             BlockStorageSizeInGbs = notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs,
     ///             NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs
     ///             {
-    ///                 MemoryInGbs = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_memory_in_gbs,
-    ///                 Ocpus = @var.Notebook_session_notebook_session_configuration_details_notebook_session_shape_config_details_ocpus,
+    ///                 MemoryInGbs = notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOcpus,
     ///             },
-    ///             PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
+    ///             PrivateEndpointId = testPrivateEndpoint.Id,
     ///         },
     ///         NotebookSessionRuntimeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsArgs
     ///         {
-    ///             CustomEnvironmentVariables = @var.Notebook_session_notebook_session_runtime_config_details_custom_environment_variables,
+    ///             CustomEnvironmentVariables = notebookSessionNotebookSessionRuntimeConfigDetailsCustomEnvironmentVariables,
     ///             NotebookSessionGitConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs
     ///             {
     ///                 NotebookSessionGitRepoConfigCollections = new[]
     ///                 {
     ///                     new Oci.DataScience.Inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionArgs
     ///                     {
-    ///                         Url = @var.Notebook_session_notebook_session_runtime_config_details_notebook_session_git_config_details_notebook_session_git_repo_config_collection_url,
+    ///                         Url = notebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionUrl,
     ///                     },
     ///                 },
     ///             },
@@ -80,14 +80,14 @@ namespace Pulumi.Oci.DataScience
     ///         {
     ///             new Oci.DataScience.Inputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs
     ///             {
-    ///                 DestinationDirectoryName = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_directory_name,
-    ///                 StorageType = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_storage_type,
-    ///                 Bucket = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_bucket,
-    ///                 DestinationPath = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_destination_path,
-    ///                 ExportId = oci_file_storage_export.Test_export.Id,
-    ///                 MountTargetId = oci_file_storage_mount_target.Test_mount_target.Id,
-    ///                 Namespace = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_namespace,
-    ///                 Prefix = @var.Notebook_session_notebook_session_storage_mount_configuration_details_list_prefix,
+    ///                 DestinationDirectoryName = notebookSessionNotebookSessionStorageMountConfigurationDetailsListDestinationDirectoryName,
+    ///                 StorageType = notebookSessionNotebookSessionStorageMountConfigurationDetailsListStorageType,
+    ///                 Bucket = notebookSessionNotebookSessionStorageMountConfigurationDetailsListBucket,
+    ///                 DestinationPath = notebookSessionNotebookSessionStorageMountConfigurationDetailsListDestinationPath,
+    ///                 ExportId = testExport.Id,
+    ///                 MountTargetId = testMountTarget.Id,
+    ///                 Namespace = notebookSessionNotebookSessionStorageMountConfigurationDetailsListNamespace,
+    ///                 Prefix = notebookSessionNotebookSessionStorageMountConfigurationDetailsListPrefix,
     ///             },
     ///         },
     ///     });

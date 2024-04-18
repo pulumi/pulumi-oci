@@ -219,14 +219,14 @@ def get_domains_resource_type_schema_attributes(attribute_sets: Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        resource_type_schema_attribute_count=var["resource_type_schema_attribute_resource_type_schema_attribute_count"],
-        resource_type_schema_attribute_filter=var["resource_type_schema_attribute_resource_type_schema_attribute_filter"],
+    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
+        resource_type_schema_attribute_count=resource_type_schema_attribute_resource_type_schema_attribute_count,
+        resource_type_schema_attribute_filter=resource_type_schema_attribute_resource_type_schema_attribute_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["resource_type_schema_attribute_authorization"],
-        resource_type_schema_version=var["resource_type_schema_attribute_resource_type_schema_version"],
-        start_index=var["resource_type_schema_attribute_start_index"])
+        authorization=resource_type_schema_attribute_authorization,
+        resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
+        start_index=resource_type_schema_attribute_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -299,14 +299,14 @@ def get_domains_resource_type_schema_attributes_output(attribute_sets: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        resource_type_schema_attribute_count=var["resource_type_schema_attribute_resource_type_schema_attribute_count"],
-        resource_type_schema_attribute_filter=var["resource_type_schema_attribute_resource_type_schema_attribute_filter"],
+    test_resource_type_schema_attributes = oci.Identity.get_domains_resource_type_schema_attributes(idcs_endpoint=test_domain["url"],
+        resource_type_schema_attribute_count=resource_type_schema_attribute_resource_type_schema_attribute_count,
+        resource_type_schema_attribute_filter=resource_type_schema_attribute_resource_type_schema_attribute_filter,
         attribute_sets=["all"],
         attributes="",
-        authorization=var["resource_type_schema_attribute_authorization"],
-        resource_type_schema_version=var["resource_type_schema_attribute_resource_type_schema_version"],
-        start_index=var["resource_type_schema_attribute_start_index"])
+        authorization=resource_type_schema_attribute_authorization,
+        resource_type_schema_version=resource_type_schema_attribute_resource_type_schema_version,
+        start_index=resource_type_schema_attribute_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

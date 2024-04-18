@@ -30,9 +30,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningSet = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSet.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
-        ///         Owner = @var.Managed_database_sql_tuning_set_owner,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         NameContains = managedDatabaseSqlTuningSetNameContains,
+        ///         Owner = managedDatabaseSqlTuningSetOwner,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningSet = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningSet.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         NameContains = @var.Managed_database_sql_tuning_set_name_contains,
-        ///         Owner = @var.Managed_database_sql_tuning_set_owner,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         NameContains = managedDatabaseSqlTuningSetNameContains,
+        ///         Owner = managedDatabaseSqlTuningSetOwner,
         ///     });
         /// 
         /// });

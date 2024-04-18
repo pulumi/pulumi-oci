@@ -177,9 +177,9 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream = oci.OsManagementHub.get_software_source_module_stream(module_name=var["software_source_module_stream_module_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        stream_name=oci_streaming_stream["test_stream"]["name"])
+    test_software_source_module_stream = oci.OsManagementHub.get_software_source_module_stream(module_name=software_source_module_stream_module_name,
+        software_source_id=test_software_source["id"],
+        stream_name=test_stream["name"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -226,9 +226,9 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_software_source_module_stream = oci.OsManagementHub.get_software_source_module_stream(module_name=var["software_source_module_stream_module_name"],
-        software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
-        stream_name=oci_streaming_stream["test_stream"]["name"])
+    test_software_source_module_stream = oci.OsManagementHub.get_software_source_module_stream(module_name=software_source_module_stream_module_name,
+        software_source_id=test_software_source["id"],
+        stream_name=test_stream["name"])
     ```
     <!--End PulumiCodeChooser -->
 

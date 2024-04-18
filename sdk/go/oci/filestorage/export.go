@@ -32,23 +32,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FileStorage.NewExport(ctx, "testExport", &FileStorage.ExportArgs{
-//				ExportSetId:  pulumi.Any(oci_file_storage_export_set.Test_export_set.Id),
-//				FileSystemId: pulumi.Any(oci_file_storage_file_system.Test_file_system.Id),
-//				Path:         pulumi.Any(_var.Export_path),
+//			_, err := FileStorage.NewExport(ctx, "test_export", &FileStorage.ExportArgs{
+//				ExportSetId:  pulumi.Any(testExportSet.Id),
+//				FileSystemId: pulumi.Any(testFileSystem.Id),
+//				Path:         pulumi.Any(exportPath),
 //				ExportOptions: filestorage.ExportExportOptionArray{
 //					&filestorage.ExportExportOptionArgs{
-//						Source:                      pulumi.Any(_var.Export_export_options_source),
-//						Access:                      pulumi.Any(_var.Export_export_options_access),
-//						AllowedAuths:                pulumi.Any(_var.Export_export_options_allowed_auth),
-//						AnonymousGid:                pulumi.Any(_var.Export_export_options_anonymous_gid),
-//						AnonymousUid:                pulumi.Any(_var.Export_export_options_anonymous_uid),
-//						IdentitySquash:              pulumi.Any(_var.Export_export_options_identity_squash),
-//						IsAnonymousAccessAllowed:    pulumi.Any(_var.Export_export_options_is_anonymous_access_allowed),
-//						RequirePrivilegedSourcePort: pulumi.Any(_var.Export_export_options_require_privileged_source_port),
+//						Source:                      pulumi.Any(exportExportOptionsSource),
+//						Access:                      pulumi.Any(exportExportOptionsAccess),
+//						AllowedAuths:                pulumi.Any(exportExportOptionsAllowedAuth),
+//						AnonymousGid:                pulumi.Any(exportExportOptionsAnonymousGid),
+//						AnonymousUid:                pulumi.Any(exportExportOptionsAnonymousUid),
+//						IdentitySquash:              pulumi.Any(exportExportOptionsIdentitySquash),
+//						IsAnonymousAccessAllowed:    pulumi.Any(exportExportOptionsIsAnonymousAccessAllowed),
+//						RequirePrivilegedSourcePort: pulumi.Any(exportExportOptionsRequirePrivilegedSourcePort),
 //					},
 //				},
-//				IsIdmapGroupsForSysAuth: pulumi.Any(_var.Export_is_idmap_groups_for_sys_auth),
+//				IsIdmapGroupsForSysAuth: pulumi.Any(exportIsIdmapGroupsForSysAuth),
 //			})
 //			if err != nil {
 //				return err

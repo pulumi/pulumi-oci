@@ -31,52 +31,53 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewDomainsIdentityPropagationTrust(ctx, "testIdentityPropagationTrust", &Identity.DomainsIdentityPropagationTrustArgs{
-//				IdcsEndpoint: pulumi.Any(data.Oci_identity_domain.Test_domain.Url),
-//				Issuer:       pulumi.Any(_var.Identity_propagation_trust_issuer),
+//			_, err := Identity.NewDomainsIdentityPropagationTrust(ctx, "test_identity_propagation_trust", &Identity.DomainsIdentityPropagationTrustArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Issuer:       pulumi.Any(identityPropagationTrustIssuer),
+//				Name:         pulumi.Any(identityPropagationTrustName),
 //				Schemas: pulumi.StringArray{
 //					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:IdentityPropagationTrust"),
 //				},
-//				Type:               pulumi.Any(_var.Identity_propagation_trust_type),
+//				Type:               pulumi.Any(identityPropagationTrustType),
 //				AccountId:          pulumi.String("accountId"),
-//				Active:             pulumi.Any(_var.Identity_propagation_trust_active),
-//				AllowImpersonation: pulumi.Any(_var.Identity_propagation_trust_allow_impersonation),
+//				Active:             pulumi.Any(identityPropagationTrustActive),
+//				AllowImpersonation: pulumi.Any(identityPropagationTrustAllowImpersonation),
 //				AttributeSets: pulumi.StringArray{
 //					pulumi.String("all"),
 //				},
 //				Attributes:      pulumi.String(""),
-//				Authorization:   pulumi.Any(_var.Identity_propagation_trust_authorization),
-//				ClientClaimName: pulumi.Any(_var.Identity_propagation_trust_client_claim_name),
+//				Authorization:   pulumi.Any(identityPropagationTrustAuthorization),
+//				ClientClaimName: pulumi.Any(identityPropagationTrustClientClaimName),
 //				ClientClaimValues: pulumi.StringArray{
 //					pulumi.String("clientClaimValues"),
 //				},
-//				ClockSkewSeconds: pulumi.Any(_var.Identity_propagation_trust_clock_skew_seconds),
-//				Description:      pulumi.Any(_var.Identity_propagation_trust_description),
+//				ClockSkewSeconds: pulumi.Any(identityPropagationTrustClockSkewSeconds),
+//				Description:      pulumi.Any(identityPropagationTrustDescription),
 //				ImpersonationServiceUsers: identity.DomainsIdentityPropagationTrustImpersonationServiceUserArray{
 //					&identity.DomainsIdentityPropagationTrustImpersonationServiceUserArgs{
-//						Rule:  pulumi.Any(_var.Identity_propagation_trust_impersonation_service_users_rule),
-//						Value: pulumi.Any(oci_identity_domains_user.Test_identity_propagation_trust_user.Id),
-//						Ocid:  pulumi.Any(_var.Identity_propagation_trust_impersonation_service_users_ocid),
+//						Rule:  pulumi.Any(identityPropagationTrustImpersonationServiceUsersRule),
+//						Value: pulumi.Any(testIdentityPropagationTrustUser.Id),
+//						Ocid:  pulumi.Any(identityPropagationTrustImpersonationServiceUsersOcid),
 //					},
 //				},
 //				Keytab: &identity.DomainsIdentityPropagationTrustKeytabArgs{
-//					SecretOcid:    pulumi.Any(_var.Identity_propagation_trust_keytab_secret_ocid),
-//					SecretVersion: pulumi.Any(_var.Identity_propagation_trust_keytab_secret_version),
+//					SecretOcid:    pulumi.Any(identityPropagationTrustKeytabSecretOcid),
+//					SecretVersion: pulumi.Any(identityPropagationTrustKeytabSecretVersion),
 //				},
 //				OauthClients: pulumi.StringArray{
 //					pulumi.String("oauthClients"),
 //				},
-//				Ocid:                      pulumi.Any(_var.Identity_propagation_trust_ocid),
-//				PublicCertificate:         pulumi.Any(_var.Identity_propagation_trust_public_certificate),
-//				PublicKeyEndpoint:         pulumi.Any(_var.Identity_propagation_trust_public_key_endpoint),
-//				ResourceTypeSchemaVersion: pulumi.Any(_var.Identity_propagation_trust_resource_type_schema_version),
-//				SubjectClaimName:          pulumi.Any(_var.Identity_propagation_trust_subject_claim_name),
-//				SubjectMappingAttribute:   pulumi.Any(_var.Identity_propagation_trust_subject_mapping_attribute),
-//				SubjectType:               pulumi.Any(_var.Identity_propagation_trust_subject_type),
+//				Ocid:                      pulumi.Any(identityPropagationTrustOcid),
+//				PublicCertificate:         pulumi.Any(identityPropagationTrustPublicCertificate),
+//				PublicKeyEndpoint:         pulumi.Any(identityPropagationTrustPublicKeyEndpoint),
+//				ResourceTypeSchemaVersion: pulumi.Any(identityPropagationTrustResourceTypeSchemaVersion),
+//				SubjectClaimName:          pulumi.Any(identityPropagationTrustSubjectClaimName),
+//				SubjectMappingAttribute:   pulumi.Any(identityPropagationTrustSubjectMappingAttribute),
+//				SubjectType:               pulumi.Any(identityPropagationTrustSubjectType),
 //				Tags: identity.DomainsIdentityPropagationTrustTagArray{
 //					&identity.DomainsIdentityPropagationTrustTagArgs{
-//						Key:   pulumi.Any(_var.Identity_propagation_trust_tags_key),
-//						Value: pulumi.Any(_var.Identity_propagation_trust_tags_value),
+//						Key:   pulumi.Any(identityPropagationTrustTagsKey),
+//						Value: pulumi.Any(identityPropagationTrustTagsValue),
 //					},
 //				},
 //			})

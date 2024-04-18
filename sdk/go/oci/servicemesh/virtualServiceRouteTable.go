@@ -31,33 +31,34 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewVirtualServiceRouteTable(ctx, "testVirtualServiceRouteTable", &ServiceMesh.VirtualServiceRouteTableArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := ServiceMesh.NewVirtualServiceRouteTable(ctx, "test_virtual_service_route_table", &ServiceMesh.VirtualServiceRouteTableArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(virtualServiceRouteTableName),
 //				RouteRules: servicemesh.VirtualServiceRouteTableRouteRuleArray{
 //					&servicemesh.VirtualServiceRouteTableRouteRuleArgs{
 //						Destinations: servicemesh.VirtualServiceRouteTableRouteRuleDestinationArray{
 //							&servicemesh.VirtualServiceRouteTableRouteRuleDestinationArgs{
-//								VirtualDeploymentId: pulumi.Any(oci_service_mesh_virtual_deployment.Test_virtual_deployment.Id),
-//								Weight:              pulumi.Any(_var.Virtual_service_route_table_route_rules_destinations_weight),
-//								Port:                pulumi.Any(_var.Virtual_service_route_table_route_rules_destinations_port),
+//								VirtualDeploymentId: pulumi.Any(testVirtualDeployment.Id),
+//								Weight:              pulumi.Any(virtualServiceRouteTableRouteRulesDestinationsWeight),
+//								Port:                pulumi.Any(virtualServiceRouteTableRouteRulesDestinationsPort),
 //							},
 //						},
-//						Type:               pulumi.Any(_var.Virtual_service_route_table_route_rules_type),
-//						IsGrpc:             pulumi.Any(_var.Virtual_service_route_table_route_rules_is_grpc),
-//						Path:               pulumi.Any(_var.Virtual_service_route_table_route_rules_path),
-//						PathType:           pulumi.Any(_var.Virtual_service_route_table_route_rules_path_type),
-//						RequestTimeoutInMs: pulumi.Any(_var.Virtual_service_route_table_route_rules_request_timeout_in_ms),
+//						Type:               pulumi.Any(virtualServiceRouteTableRouteRulesType),
+//						IsGrpc:             pulumi.Any(virtualServiceRouteTableRouteRulesIsGrpc),
+//						Path:               pulumi.Any(virtualServiceRouteTableRouteRulesPath),
+//						PathType:           pulumi.Any(virtualServiceRouteTableRouteRulesPathType),
+//						RequestTimeoutInMs: pulumi.Any(virtualServiceRouteTableRouteRulesRequestTimeoutInMs),
 //					},
 //				},
-//				VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
+//				VirtualServiceId: pulumi.Any(testVirtualService.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Virtual_service_route_table_description),
+//				Description: pulumi.Any(virtualServiceRouteTableDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Priority: pulumi.Any(_var.Virtual_service_route_table_priority),
+//				Priority: pulumi.Any(virtualServiceRouteTablePriority),
 //			})
 //			if err != nil {
 //				return err

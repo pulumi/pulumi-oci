@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPoliciesMaskingColumn = Oci.DataSafe.GetMaskingPoliciesMaskingColumn.Invoke(new()
         ///     {
-        ///         MaskingColumnKey = @var.Masking_policies_masking_column_masking_column_key,
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///         MaskingColumnKey = maskingPoliciesMaskingColumnMaskingColumnKey,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testMaskingPoliciesMaskingColumn = Oci.DataSafe.GetMaskingPoliciesMaskingColumn.Invoke(new()
         ///     {
-        ///         MaskingColumnKey = @var.Masking_policies_masking_column_masking_column_key,
-        ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+        ///         MaskingColumnKey = maskingPoliciesMaskingColumnMaskingColumnKey,
+        ///         MaskingPolicyId = testMaskingPolicy.Id,
         ///     });
         /// 
         /// });

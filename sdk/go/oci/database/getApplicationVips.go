@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetApplicationVips(ctx, &database.GetApplicationVipsArgs{
-//				CloudVmClusterId: oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
-//				CompartmentId:    _var.Compartment_id,
-//				State:            pulumi.StringRef(_var.Application_vip_state),
+//				CloudVmClusterId: testCloudVmCluster.Id,
+//				CompartmentId:    compartmentId,
+//				State:            pulumi.StringRef(applicationVipState),
 //			}, nil)
 //			if err != nil {
 //				return err

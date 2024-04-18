@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousContainerPatches(ctx, &database.GetAutonomousContainerPatchesArgs{
-//				AutonomousContainerDatabaseId: oci_database_autonomous_container_database.Test_autonomous_container_database.Id,
-//				CompartmentId:                 _var.Compartment_id,
-//				AutonomousPatchType:           pulumi.StringRef(_var.Autonomous_container_patch_autonomous_patch_type),
+//				AutonomousContainerDatabaseId: testAutonomousContainerDatabase.Id,
+//				CompartmentId:                 compartmentId,
+//				AutonomousPatchType:           pulumi.StringRef(autonomousContainerPatchAutonomousPatchType),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -273,11 +273,11 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_import_custom_content = oci.log_analytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent",
-            import_custom_content_file=var["log_analytics_import_custom_content_import_custom_content_file"],
-            namespace=var["log_analytics_import_custom_content_namespace"],
-            expect=var["log_analytics_import_custom_content_expect"],
-            is_overwrite=var["log_analytics_import_custom_content_is_overwrite"])
+        test_log_analytics_import_custom_content = oci.log_analytics.LogAnalyticsImportCustomContent("test_log_analytics_import_custom_content",
+            import_custom_content_file=log_analytics_import_custom_content_import_custom_content_file,
+            namespace=log_analytics_import_custom_content_namespace,
+            expect=log_analytics_import_custom_content_expect,
+            is_overwrite=log_analytics_import_custom_content_is_overwrite)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -314,11 +314,11 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_import_custom_content = oci.log_analytics.LogAnalyticsImportCustomContent("testLogAnalyticsImportCustomContent",
-            import_custom_content_file=var["log_analytics_import_custom_content_import_custom_content_file"],
-            namespace=var["log_analytics_import_custom_content_namespace"],
-            expect=var["log_analytics_import_custom_content_expect"],
-            is_overwrite=var["log_analytics_import_custom_content_is_overwrite"])
+        test_log_analytics_import_custom_content = oci.log_analytics.LogAnalyticsImportCustomContent("test_log_analytics_import_custom_content",
+            import_custom_content_file=log_analytics_import_custom_content_import_custom_content_file,
+            namespace=log_analytics_import_custom_content_namespace,
+            expect=log_analytics_import_custom_content_expect,
+            is_overwrite=log_analytics_import_custom_content_is_overwrite)
         ```
         <!--End PulumiCodeChooser -->
 

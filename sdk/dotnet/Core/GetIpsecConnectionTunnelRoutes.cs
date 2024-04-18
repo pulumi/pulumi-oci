@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpsecConnectionTunnelRoutes = Oci.Core.GetIpsecConnectionTunnelRoutes.Invoke(new()
         ///     {
-        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///         Advertiser = @var.Ipsec_connection_tunnel_route_advertiser,
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
+        ///         Advertiser = ipsecConnectionTunnelRouteAdvertiser,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpsecConnectionTunnelRoutes = Oci.Core.GetIpsecConnectionTunnelRoutes.Invoke(new()
         ///     {
-        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
-        ///         TunnelId = oci_core_tunnel.Test_tunnel.Id,
-        ///         Advertiser = @var.Ipsec_connection_tunnel_route_advertiser,
+        ///         IpsecId = testIpsec.Id,
+        ///         TunnelId = testTunnel.Id,
+        ///         Advertiser = ipsecConnectionTunnelRouteAdvertiser,
         ///     });
         /// 
         /// });

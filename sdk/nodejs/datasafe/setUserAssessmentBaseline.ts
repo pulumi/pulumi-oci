@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSetUserAssessmentBaseline = new oci.datasafe.SetUserAssessmentBaseline("testSetUserAssessmentBaseline", {
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     assessmentIds: _var.set_user_assessment_baseline_assessment_ids,
+ * const testSetUserAssessmentBaseline = new oci.datasafe.SetUserAssessmentBaseline("test_set_user_assessment_baseline", {
+ *     userAssessmentId: testUserAssessment.id,
+ *     assessmentIds: setUserAssessmentBaselineAssessmentIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -34,13 +34,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := HealthChecks.NewPingProbe(ctx, "testPingProbe", &HealthChecks.PingProbeArgs{
-//				CompartmentId:     pulumi.Any(_var.Compartment_id),
-//				Protocol:          pulumi.Any(_var.Ping_probe_protocol),
-//				Targets:           pulumi.Any(_var.Ping_probe_targets),
-//				Port:              pulumi.Any(_var.Ping_probe_port),
-//				TimeoutInSeconds:  pulumi.Any(_var.Ping_probe_timeout_in_seconds),
-//				VantagePointNames: pulumi.Any(_var.Ping_probe_vantage_point_names),
+//			_, err := HealthChecks.NewPingProbe(ctx, "test_ping_probe", &HealthChecks.PingProbeArgs{
+//				CompartmentId:     pulumi.Any(compartmentId),
+//				Protocol:          pulumi.Any(pingProbeProtocol),
+//				Targets:           pulumi.Any(pingProbeTargets),
+//				Port:              pulumi.Any(pingProbePort),
+//				TimeoutInSeconds:  pulumi.Any(pingProbeTimeoutInSeconds),
+//				VantagePointNames: pulumi.Any(pingProbeVantagePointNames),
 //			})
 //			if err != nil {
 //				return err

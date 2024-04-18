@@ -30,8 +30,8 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// {
         ///     var testServiceEnvironment = Oci.ServiceManagerProxy.GetServiceEnvironment.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ServiceEnvironmentId = oci_service_manager_proxy_service_environment.Test_service_environment.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ServiceEnvironmentId = testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.ServiceManagerProxy
         /// {
         ///     var testServiceEnvironment = Oci.ServiceManagerProxy.GetServiceEnvironment.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ServiceEnvironmentId = oci_service_manager_proxy_service_environment.Test_service_environment.Id,
+        ///         CompartmentId = compartmentId,
+        ///         ServiceEnvironmentId = testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.Id,
         ///     });
         /// 
         /// });

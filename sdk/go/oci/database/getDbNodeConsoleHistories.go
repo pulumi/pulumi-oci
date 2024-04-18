@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbNodeConsoleHistories(ctx, &database.GetDbNodeConsoleHistoriesArgs{
-//				DbNodeId:    oci_database_db_node.Test_db_node.Id,
-//				DisplayName: pulumi.StringRef(_var.Db_node_console_history_display_name),
-//				State:       pulumi.StringRef(_var.Db_node_console_history_state),
+//				DbNodeId:    testDbNode.Id,
+//				DisplayName: pulumi.StringRef(dbNodeConsoleHistoryDisplayName),
+//				State:       pulumi.StringRef(dbNodeConsoleHistoryState),
 //			}, nil)
 //			if err != nil {
 //				return err

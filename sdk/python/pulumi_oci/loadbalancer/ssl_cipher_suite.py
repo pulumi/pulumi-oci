@@ -222,9 +222,10 @@ class SslCipherSuite(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ssl_cipher_suite = oci.load_balancer.SslCipherSuite("testSslCipherSuite",
-            ciphers=var["ssl_cipher_suite_ciphers"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+        test_ssl_cipher_suite = oci.load_balancer.SslCipherSuite("test_ssl_cipher_suite",
+            ciphers=ssl_cipher_suite_ciphers,
+            load_balancer_id=test_load_balancer["id"],
+            name=ssl_cipher_suite_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -278,9 +279,10 @@ class SslCipherSuite(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ssl_cipher_suite = oci.load_balancer.SslCipherSuite("testSslCipherSuite",
-            ciphers=var["ssl_cipher_suite_ciphers"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+        test_ssl_cipher_suite = oci.load_balancer.SslCipherSuite("test_ssl_cipher_suite",
+            ciphers=ssl_cipher_suite_ciphers,
+            load_balancer_id=test_load_balancer["id"],
+            name=ssl_cipher_suite_name)
         ```
         <!--End PulumiCodeChooser -->
 

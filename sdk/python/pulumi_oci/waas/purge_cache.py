@@ -127,9 +127,9 @@ class PurgeCache(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_purge_cache = oci.waas.PurgeCache("testPurgeCache",
-            waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
-            resources=var["purge_cache_resources"])
+        test_purge_cache = oci.waas.PurgeCache("test_purge_cache",
+            waas_policy_id=test_waas_policy["id"],
+            resources=purge_cache_resources)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -165,9 +165,9 @@ class PurgeCache(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_purge_cache = oci.waas.PurgeCache("testPurgeCache",
-            waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"],
-            resources=var["purge_cache_resources"])
+        test_purge_cache = oci.waas.PurgeCache("test_purge_cache",
+            waas_policy_id=test_waas_policy["id"],
+            resources=purge_cache_resources)
         ```
         <!--End PulumiCodeChooser -->
 

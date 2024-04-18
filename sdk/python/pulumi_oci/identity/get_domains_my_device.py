@@ -574,12 +574,12 @@ def get_domains_my_device(attribute_sets: Optional[Sequence[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_device_id=oci_identity_domains_my_device["test_my_device"]["id"],
+    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
+        my_device_id=test_my_device_oci_identity_domains_my_device["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["my_device_authorization"],
-        resource_type_schema_version=var["my_device_resource_type_schema_version"])
+        authorization=my_device_authorization,
+        resource_type_schema_version=my_device_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -669,12 +669,12 @@ def get_domains_my_device_output(attribute_sets: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_device_id=oci_identity_domains_my_device["test_my_device"]["id"],
+    test_my_device = oci.Identity.get_domains_my_device(idcs_endpoint=test_domain["url"],
+        my_device_id=test_my_device_oci_identity_domains_my_device["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["my_device_authorization"],
-        resource_type_schema_version=var["my_device_resource_type_schema_version"])
+        authorization=my_device_authorization,
+        resource_type_schema_version=my_device_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetSecurityLists(ctx, &core.GetSecurityListsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Security_list_display_name),
-//				State:         pulumi.StringRef(_var.Security_list_state),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(securityListDisplayName),
+//				State:         pulumi.StringRef(securityListState),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

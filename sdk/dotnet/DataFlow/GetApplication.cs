@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testApplication = Oci.DataFlow.GetApplication.Invoke(new()
         ///     {
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         ApplicationId = testApplicationOciDataflowApplication.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testApplication = Oci.DataFlow.GetApplication.Invoke(new()
         ///     {
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
+        ///         ApplicationId = testApplicationOciDataflowApplication.Id,
         ///     });
         /// 
         /// });

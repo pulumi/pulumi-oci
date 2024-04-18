@@ -143,8 +143,8 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
 
         switchover = oci.database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover",
             operation="switchover",
-            autonomous_container_database_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["autonomous_container_database_id"],
-            autonomous_container_database_dataguard_association_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["id"])
+            autonomous_container_database_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["autonomous_container_database_id"],
+            autonomous_container_database_dataguard_association_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -178,8 +178,8 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
 
         switchover = oci.database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover",
             operation="switchover",
-            autonomous_container_database_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["autonomous_container_database_id"],
-            autonomous_container_database_dataguard_association_id=data["oci_database_autonomous_container_database_dataguard_associations"]["dataguard_associations"]["autonomous_container_database_dataguard_associations"][0]["id"])
+            autonomous_container_database_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["autonomous_container_database_id"],
+            autonomous_container_database_dataguard_association_id=dataguard_associations["autonomousContainerDatabaseDataguardAssociations"][0]["id"])
         ```
         <!--End PulumiCodeChooser -->
 

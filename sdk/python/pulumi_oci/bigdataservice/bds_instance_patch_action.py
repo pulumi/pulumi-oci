@@ -157,10 +157,10 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_patch_action = oci.big_data_service.BdsInstancePatchAction("testBdsInstancePatchAction",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_patch_action_cluster_admin_password"],
-            version=var["bds_instance_patch_action_version"])
+        test_bds_instance_patch_action = oci.big_data_service.BdsInstancePatchAction("test_bds_instance_patch_action",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
+            version=bds_instance_patch_action_version)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -196,10 +196,10 @@ class BdsInstancePatchAction(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_patch_action = oci.big_data_service.BdsInstancePatchAction("testBdsInstancePatchAction",
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_patch_action_cluster_admin_password"],
-            version=var["bds_instance_patch_action_version"])
+        test_bds_instance_patch_action = oci.big_data_service.BdsInstancePatchAction("test_bds_instance_patch_action",
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
+            version=bds_instance_patch_action_version)
         ```
         <!--End PulumiCodeChooser -->
 

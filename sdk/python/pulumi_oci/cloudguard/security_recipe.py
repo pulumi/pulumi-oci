@@ -344,14 +344,14 @@ class SecurityRecipe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_security_recipe = oci.cloud_guard.SecurityRecipe("testSecurityRecipe",
-            compartment_id=var["compartment_id"],
-            display_name=var["security_recipe_display_name"],
-            security_policies=var["security_recipe_security_policies"],
+        test_security_recipe = oci.cloud_guard.SecurityRecipe("test_security_recipe",
+            compartment_id=compartment_id,
+            display_name=security_recipe_display_name,
+            security_policies=security_recipe_security_policies,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["security_recipe_description"],
+            description=security_recipe_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -399,14 +399,14 @@ class SecurityRecipe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_security_recipe = oci.cloud_guard.SecurityRecipe("testSecurityRecipe",
-            compartment_id=var["compartment_id"],
-            display_name=var["security_recipe_display_name"],
-            security_policies=var["security_recipe_security_policies"],
+        test_security_recipe = oci.cloud_guard.SecurityRecipe("test_security_recipe",
+            compartment_id=compartment_id,
+            display_name=security_recipe_display_name,
+            security_policies=security_recipe_security_policies,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["security_recipe_description"],
+            description=security_recipe_description,
             freeform_tags={
                 "bar-key": "value",
             })

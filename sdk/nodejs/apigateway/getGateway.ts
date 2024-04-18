@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testGateway = oci.ApiGateway.getGateway({
- *     gatewayId: oci_apigateway_gateway.test_gateway.id,
+ *     gatewayId: testGatewayOciApigatewayGateway.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,7 +129,7 @@ export interface GetGatewayResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testGateway = oci.ApiGateway.getGateway({
- *     gatewayId: oci_apigateway_gateway.test_gateway.id,
+ *     gatewayId: testGatewayOciApigatewayGateway.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

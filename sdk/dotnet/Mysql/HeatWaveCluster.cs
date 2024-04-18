@@ -25,12 +25,12 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testHeatWaveCluster = new Oci.Mysql.HeatWaveCluster("testHeatWaveCluster", new()
+    ///     var testHeatWaveCluster = new Oci.Mysql.HeatWaveCluster("test_heat_wave_cluster", new()
     ///     {
-    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///         ClusterSize = @var.Heat_wave_cluster_cluster_size,
-    ///         IsLakehouseEnabled = @var.Heat_wave_cluster_is_lakehouse_enabled,
-    ///         ShapeName = oci_mysql_shape.Test_shape.Name,
+    ///         DbSystemId = testDbSystem.Id,
+    ///         ClusterSize = heatWaveClusterClusterSize,
+    ///         IsLakehouseEnabled = heatWaveClusterIsLakehouseEnabled,
+    ///         ShapeName = testShape.Name,
     ///     });
     /// 
     /// });

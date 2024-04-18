@@ -19,15 +19,15 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousContainerDatabases = oci.Database.getAutonomousContainerDatabases({
- *     compartmentId: _var.compartment_id,
- *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
- *     autonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
- *     availabilityDomain: _var.autonomous_container_database_availability_domain,
- *     cloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
- *     displayName: _var.autonomous_container_database_display_name,
- *     infrastructureType: _var.autonomous_container_database_infrastructure_type,
- *     serviceLevelAgreementType: _var.autonomous_container_database_service_level_agreement_type,
- *     state: _var.autonomous_container_database_state,
+ *     compartmentId: compartmentId,
+ *     autonomousExadataInfrastructureId: testAutonomousExadataInfrastructure.id,
+ *     autonomousVmClusterId: testAutonomousVmCluster.id,
+ *     availabilityDomain: autonomousContainerDatabaseAvailabilityDomain,
+ *     cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     displayName: autonomousContainerDatabaseDisplayName,
+ *     infrastructureType: autonomousContainerDatabaseInfrastructureType,
+ *     serviceLevelAgreementType: autonomousContainerDatabaseServiceLevelAgreementType,
+ *     state: autonomousContainerDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -155,15 +155,15 @@ export interface GetAutonomousContainerDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousContainerDatabases = oci.Database.getAutonomousContainerDatabases({
- *     compartmentId: _var.compartment_id,
- *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
- *     autonomousVmClusterId: oci_database_autonomous_vm_cluster.test_autonomous_vm_cluster.id,
- *     availabilityDomain: _var.autonomous_container_database_availability_domain,
- *     cloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
- *     displayName: _var.autonomous_container_database_display_name,
- *     infrastructureType: _var.autonomous_container_database_infrastructure_type,
- *     serviceLevelAgreementType: _var.autonomous_container_database_service_level_agreement_type,
- *     state: _var.autonomous_container_database_state,
+ *     compartmentId: compartmentId,
+ *     autonomousExadataInfrastructureId: testAutonomousExadataInfrastructure.id,
+ *     autonomousVmClusterId: testAutonomousVmCluster.id,
+ *     availabilityDomain: autonomousContainerDatabaseAvailabilityDomain,
+ *     cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     displayName: autonomousContainerDatabaseDisplayName,
+ *     infrastructureType: autonomousContainerDatabaseInfrastructureType,
+ *     serviceLevelAgreementType: autonomousContainerDatabaseServiceLevelAgreementType,
+ *     state: autonomousContainerDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -53,20 +53,20 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBuildRun = new BuildRun(&#34;testBuildRun&#34;, BuildRunArgs.builder()        
- *             .buildPipelineId(oci_devops_build_pipeline.test_build_pipeline().id())
+ *             .buildPipelineId(testBuildPipeline.id())
  *             .buildRunArguments(BuildRunBuildRunArgumentsArgs.builder()
  *                 .items(BuildRunBuildRunArgumentsItemArgs.builder()
- *                     .name(var_.build_run_build_run_arguments_items_name())
- *                     .value(var_.build_run_build_run_arguments_items_value())
+ *                     .name(buildRunBuildRunArgumentsItemsName)
+ *                     .value(buildRunBuildRunArgumentsItemsValue)
  *                     .build())
  *                 .build())
  *             .commitInfo(BuildRunCommitInfoArgs.builder()
- *                 .commitHash(var_.build_run_commit_info_commit_hash())
- *                 .repositoryBranch(var_.build_run_commit_info_repository_branch())
- *                 .repositoryUrl(var_.build_run_commit_info_repository_url())
+ *                 .commitHash(buildRunCommitInfoCommitHash)
+ *                 .repositoryBranch(buildRunCommitInfoRepositoryBranch)
+ *                 .repositoryUrl(buildRunCommitInfoRepositoryUrl)
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.build_run_display_name())
+ *             .displayName(buildRunDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

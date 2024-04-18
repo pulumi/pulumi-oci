@@ -117,9 +117,9 @@ def get_remediation_run_application_dependency_recommendations(filters: Optional
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        gav=var["remediation_run_application_dependency_recommendation_gav"],
-        purl=var["remediation_run_application_dependency_recommendation_purl"])
+    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=test_remediation_run["id"],
+        gav=remediation_run_application_dependency_recommendation_gav,
+        purl=remediation_run_application_dependency_recommendation_purl)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_remediation_run_application_dependency_recommendations_output(filters: O
     import pulumi
     import pulumi_oci as oci
 
-    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"],
-        gav=var["remediation_run_application_dependency_recommendation_gav"],
-        purl=var["remediation_run_application_dependency_recommendation_purl"])
+    test_remediation_run_application_dependency_recommendations = oci.Adm.get_remediation_run_application_dependency_recommendations(remediation_run_id=test_remediation_run["id"],
+        gav=remediation_run_application_dependency_recommendation_gav,
+        purl=remediation_run_application_dependency_recommendation_purl)
     ```
     <!--End PulumiCodeChooser -->
 

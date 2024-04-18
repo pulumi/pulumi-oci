@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
-        ///         EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
-        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
-        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         BeginExecIdGreaterThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo,
+        ///         EndExecIdLessThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId,
+        ///         SearchPeriod = managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = Oci.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         SqlTuningAdvisorTaskId = oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-        ///         BeginExecIdGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
-        ///         EndExecIdLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
-        ///         OpcNamedCredentialId = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id,
-        ///         SearchPeriod = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
-        ///         TimeGreaterThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
-        ///         TimeLessThanOrEqualTo = @var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         SqlTuningAdvisorTaskId = testSqlTuningAdvisorTask.Id,
+        ///         BeginExecIdGreaterThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo,
+        ///         EndExecIdLessThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo,
+        ///         OpcNamedCredentialId = managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId,
+        ///         SearchPeriod = managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod,
+        ///         TimeGreaterThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo,
+        ///         TimeLessThanOrEqualTo = managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo,
         ///     });
         /// 
         /// });

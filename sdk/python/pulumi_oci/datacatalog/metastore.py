@@ -354,14 +354,14 @@ class Metastore(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_metastore = oci.data_catalog.Metastore("testMetastore",
-            compartment_id=var["compartment_id"],
-            default_external_table_location=var["metastore_default_external_table_location"],
-            default_managed_table_location=var["metastore_default_managed_table_location"],
+        test_metastore = oci.data_catalog.Metastore("test_metastore",
+            compartment_id=compartment_id,
+            default_external_table_location=metastore_default_external_table_location,
+            default_managed_table_location=metastore_default_managed_table_location,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["metastore_display_name"],
+            display_name=metastore_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -407,14 +407,14 @@ class Metastore(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_metastore = oci.data_catalog.Metastore("testMetastore",
-            compartment_id=var["compartment_id"],
-            default_external_table_location=var["metastore_default_external_table_location"],
-            default_managed_table_location=var["metastore_default_managed_table_location"],
+        test_metastore = oci.data_catalog.Metastore("test_metastore",
+            compartment_id=compartment_id,
+            default_external_table_location=metastore_default_external_table_location,
+            default_managed_table_location=metastore_default_managed_table_location,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["metastore_display_name"],
+            display_name=metastore_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

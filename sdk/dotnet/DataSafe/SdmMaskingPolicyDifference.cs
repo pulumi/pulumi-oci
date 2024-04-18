@@ -29,16 +29,16 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSdmMaskingPolicyDifference = new Oci.DataSafe.SdmMaskingPolicyDifference("testSdmMaskingPolicyDifference", new()
+    ///     var testSdmMaskingPolicyDifference = new Oci.DataSafe.SdmMaskingPolicyDifference("test_sdm_masking_policy_difference", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         MaskingPolicyId = oci_data_safe_masking_policy.Test_masking_policy.Id,
+    ///         CompartmentId = compartmentId,
+    ///         MaskingPolicyId = testMaskingPolicy.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DifferenceType = @var.Sdm_masking_policy_difference_difference_type,
-    ///         DisplayName = @var.Sdm_masking_policy_difference_display_name,
+    ///         DifferenceType = sdmMaskingPolicyDifferenceDifferenceType,
+    ///         DisplayName = sdmMaskingPolicyDifferenceDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

@@ -48,11 +48,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnnouncementSubscriptionsFilterGroup = new AnnouncementSubscriptionsFilterGroup(&#34;testAnnouncementSubscriptionsFilterGroup&#34;, AnnouncementSubscriptionsFilterGroupArgs.builder()        
- *             .announcementSubscriptionId(oci_announcements_service_announcement_subscription.test_announcement_subscription().id())
+ *             .announcementSubscriptionId(testAnnouncementSubscription.id())
  *             .filters(AnnouncementSubscriptionsFilterGroupFilterArgs.builder()
- *                 .type(var_.announcement_subscriptions_filter_group_filters_type())
- *                 .value(var_.announcement_subscriptions_filter_group_filters_value())
+ *                 .type(announcementSubscriptionsFilterGroupFiltersType)
+ *                 .value(announcementSubscriptionsFilterGroupFiltersValue)
  *                 .build())
+ *             .name(announcementSubscriptionsFilterGroupName)
  *             .build());
  * 
  *     }

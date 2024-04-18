@@ -30,11 +30,11 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testMigrationPlans = Oci.CloudMigrations.GetMigrationPlans.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Migration_plan_display_name,
-        ///         MigrationId = oci_cloud_migrations_migration.Test_migration.Id,
-        ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-        ///         State = @var.Migration_plan_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationPlanDisplayName,
+        ///         MigrationId = testMigration.Id,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         State = migrationPlanState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testMigrationPlans = Oci.CloudMigrations.GetMigrationPlans.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Migration_plan_display_name,
-        ///         MigrationId = oci_cloud_migrations_migration.Test_migration.Id,
-        ///         MigrationPlanId = oci_cloud_migrations_migration_plan.Test_migration_plan.Id,
-        ///         State = @var.Migration_plan_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationPlanDisplayName,
+        ///         MigrationId = testMigration.Id,
+        ///         MigrationPlanId = testMigrationPlan.Id,
+        ///         State = migrationPlanState,
         ///     });
         /// 
         /// });

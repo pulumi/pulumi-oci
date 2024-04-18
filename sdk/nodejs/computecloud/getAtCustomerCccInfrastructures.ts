@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCccInfrastructures = oci.ComputeCloud.getAtCustomerCccInfrastructures({
- *     accessLevel: _var.ccc_infrastructure_access_level,
- *     cccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.test_ccc_infrastructure.id,
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.ccc_infrastructure_compartment_id_in_subtree,
- *     displayName: _var.ccc_infrastructure_display_name,
- *     displayNameContains: _var.ccc_infrastructure_display_name_contains,
- *     state: _var.ccc_infrastructure_state,
+ *     accessLevel: cccInfrastructureAccessLevel,
+ *     cccInfrastructureId: testCccInfrastructure.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: cccInfrastructureCompartmentIdInSubtree,
+ *     displayName: cccInfrastructureDisplayName,
+ *     displayNameContains: cccInfrastructureDisplayNameContains,
+ *     state: cccInfrastructureState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -124,13 +124,13 @@ export interface GetAtCustomerCccInfrastructuresResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCccInfrastructures = oci.ComputeCloud.getAtCustomerCccInfrastructures({
- *     accessLevel: _var.ccc_infrastructure_access_level,
- *     cccInfrastructureId: oci_compute_cloud_at_customer_ccc_infrastructure.test_ccc_infrastructure.id,
- *     compartmentId: _var.compartment_id,
- *     compartmentIdInSubtree: _var.ccc_infrastructure_compartment_id_in_subtree,
- *     displayName: _var.ccc_infrastructure_display_name,
- *     displayNameContains: _var.ccc_infrastructure_display_name_contains,
- *     state: _var.ccc_infrastructure_state,
+ *     accessLevel: cccInfrastructureAccessLevel,
+ *     cccInfrastructureId: testCccInfrastructure.id,
+ *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: cccInfrastructureCompartmentIdInSubtree,
+ *     displayName: cccInfrastructureDisplayName,
+ *     displayNameContains: cccInfrastructureDisplayNameContains,
+ *     state: cccInfrastructureState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

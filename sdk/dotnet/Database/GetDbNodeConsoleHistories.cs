@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbNodeConsoleHistories = Oci.Database.GetDbNodeConsoleHistories.Invoke(new()
         ///     {
-        ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
-        ///         DisplayName = @var.Db_node_console_history_display_name,
-        ///         State = @var.Db_node_console_history_state,
+        ///         DbNodeId = testDbNode.Id,
+        ///         DisplayName = dbNodeConsoleHistoryDisplayName,
+        ///         State = dbNodeConsoleHistoryState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testDbNodeConsoleHistories = Oci.Database.GetDbNodeConsoleHistories.Invoke(new()
         ///     {
-        ///         DbNodeId = oci_database_db_node.Test_db_node.Id,
-        ///         DisplayName = @var.Db_node_console_history_display_name,
-        ///         State = @var.Db_node_console_history_state,
+        ///         DbNodeId = testDbNode.Id,
+        ///         DisplayName = dbNodeConsoleHistoryDisplayName,
+        ///         State = dbNodeConsoleHistoryState,
         ///     });
         /// 
         /// });

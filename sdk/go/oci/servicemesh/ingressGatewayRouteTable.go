@@ -31,39 +31,40 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceMesh.NewIngressGatewayRouteTable(ctx, "testIngressGatewayRouteTable", &ServiceMesh.IngressGatewayRouteTableArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				IngressGatewayId: pulumi.Any(oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id),
+//			_, err := ServiceMesh.NewIngressGatewayRouteTable(ctx, "test_ingress_gateway_route_table", &ServiceMesh.IngressGatewayRouteTableArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				IngressGatewayId: pulumi.Any(testIngressGateway.Id),
+//				Name:             pulumi.Any(ingressGatewayRouteTableName),
 //				RouteRules: servicemesh.IngressGatewayRouteTableRouteRuleArray{
 //					&servicemesh.IngressGatewayRouteTableRouteRuleArgs{
 //						Destinations: servicemesh.IngressGatewayRouteTableRouteRuleDestinationArray{
 //							&servicemesh.IngressGatewayRouteTableRouteRuleDestinationArgs{
-//								VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
-//								Port:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_destinations_port),
-//								Weight:           pulumi.Any(_var.Ingress_gateway_route_table_route_rules_destinations_weight),
+//								VirtualServiceId: pulumi.Any(testVirtualService.Id),
+//								Port:             pulumi.Any(ingressGatewayRouteTableRouteRulesDestinationsPort),
+//								Weight:           pulumi.Any(ingressGatewayRouteTableRouteRulesDestinationsWeight),
 //							},
 //						},
-//						Type: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_type),
+//						Type: pulumi.Any(ingressGatewayRouteTableRouteRulesType),
 //						IngressGatewayHost: &servicemesh.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs{
-//							Name: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_name),
-//							Port: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_port),
+//							Name: pulumi.Any(ingressGatewayRouteTableRouteRulesIngressGatewayHostName),
+//							Port: pulumi.Any(ingressGatewayRouteTableRouteRulesIngressGatewayHostPort),
 //						},
-//						IsGrpc:               pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_grpc),
-//						IsHostRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_host_rewrite_enabled),
-//						IsPathRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled),
-//						Path:                 pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path),
-//						PathType:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path_type),
-//						RequestTimeoutInMs:   pulumi.Any(_var.Ingress_gateway_route_table_route_rules_request_timeout_in_ms),
+//						IsGrpc:               pulumi.Any(ingressGatewayRouteTableRouteRulesIsGrpc),
+//						IsHostRewriteEnabled: pulumi.Any(ingressGatewayRouteTableRouteRulesIsHostRewriteEnabled),
+//						IsPathRewriteEnabled: pulumi.Any(ingressGatewayRouteTableRouteRulesIsPathRewriteEnabled),
+//						Path:                 pulumi.Any(ingressGatewayRouteTableRouteRulesPath),
+//						PathType:             pulumi.Any(ingressGatewayRouteTableRouteRulesPathType),
+//						RequestTimeoutInMs:   pulumi.Any(ingressGatewayRouteTableRouteRulesRequestTimeoutInMs),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Ingress_gateway_route_table_description),
+//				Description: pulumi.Any(ingressGatewayRouteTableDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Priority: pulumi.Any(_var.Ingress_gateway_route_table_priority),
+//				Priority: pulumi.Any(ingressGatewayRouteTablePriority),
 //			})
 //			if err != nil {
 //				return err

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemPatches = oci.Database.getDbSystemPatches({
- *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -72,7 +72,7 @@ export interface GetDbSystemPatchesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemPatches = oci.Database.getDbSystemPatches({
- *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     dbSystemId: testDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

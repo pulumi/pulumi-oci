@@ -30,11 +30,11 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testTraceSnapshotData = Oci.ApmTraces.GetTraceSnapshotData.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         TraceKey = @var.Trace_snapshot_data_trace_key,
-        ///         IsSummarized = @var.Trace_snapshot_data_is_summarized,
-        ///         SnapshotTime = @var.Trace_snapshot_data_snapshot_time,
-        ///         ThreadId = oci_apm_traces_thread.Test_thread.Id,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceSnapshotDataTraceKey,
+        ///         IsSummarized = traceSnapshotDataIsSummarized,
+        ///         SnapshotTime = traceSnapshotDataSnapshotTime,
+        ///         ThreadId = testThread.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.ApmTraces
         /// {
         ///     var testTraceSnapshotData = Oci.ApmTraces.GetTraceSnapshotData.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
-        ///         TraceKey = @var.Trace_snapshot_data_trace_key,
-        ///         IsSummarized = @var.Trace_snapshot_data_is_summarized,
-        ///         SnapshotTime = @var.Trace_snapshot_data_snapshot_time,
-        ///         ThreadId = oci_apm_traces_thread.Test_thread.Id,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         TraceKey = traceSnapshotDataTraceKey,
+        ///         IsSummarized = traceSnapshotDataIsSummarized,
+        ///         SnapshotTime = traceSnapshotDataSnapshotTime,
+        ///         ThreadId = testThread.Id,
         ///     });
         /// 
         /// });

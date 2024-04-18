@@ -20,18 +20,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEndpoint = new oci.generativeai.Endpoint("testEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     dedicatedAiClusterId: oci_generative_ai_dedicated_ai_cluster.test_dedicated_ai_cluster.id,
- *     modelId: oci_generative_ai_model.test_model.id,
+ * const testEndpoint = new oci.generativeai.Endpoint("test_endpoint", {
+ *     compartmentId: compartmentId,
+ *     dedicatedAiClusterId: testDedicatedAiCluster.id,
+ *     modelId: testModel.id,
  *     contentModerationConfig: {
- *         isEnabled: _var.endpoint_content_moderation_config_is_enabled,
+ *         isEnabled: endpointContentModerationConfigIsEnabled,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.endpoint_description,
- *     displayName: _var.endpoint_display_name,
+ *     description: endpointDescription,
+ *     displayName: endpointDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsagePlans = oci.ApiGateway.getUsagePlans({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.usage_plan_display_name,
- *     state: _var.usage_plan_state,
+ *     compartmentId: compartmentId,
+ *     displayName: usagePlanDisplayName,
+ *     state: usagePlanState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetUsagePlansResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsagePlans = oci.ApiGateway.getUsagePlans({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.usage_plan_display_name,
- *     state: _var.usage_plan_state,
+ *     compartmentId: compartmentId,
+ *     displayName: usagePlanDisplayName,
+ *     state: usagePlanState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

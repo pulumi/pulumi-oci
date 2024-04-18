@@ -323,11 +323,12 @@ class ReplicationPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication_policy = oci.object_storage.ReplicationPolicy("testReplicationPolicy",
-            bucket=var["replication_policy_bucket"],
-            destination_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            destination_region_name=oci_identity_region["test_region"]["name"],
-            namespace=var["replication_policy_namespace"])
+        test_replication_policy = oci.object_storage.ReplicationPolicy("test_replication_policy",
+            bucket=replication_policy_bucket,
+            destination_bucket_name=test_bucket["name"],
+            destination_region_name=test_region["name"],
+            name=replication_policy_name,
+            namespace=replication_policy_namespace)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -369,11 +370,12 @@ class ReplicationPolicy(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_replication_policy = oci.object_storage.ReplicationPolicy("testReplicationPolicy",
-            bucket=var["replication_policy_bucket"],
-            destination_bucket_name=oci_objectstorage_bucket["test_bucket"]["name"],
-            destination_region_name=oci_identity_region["test_region"]["name"],
-            namespace=var["replication_policy_namespace"])
+        test_replication_policy = oci.object_storage.ReplicationPolicy("test_replication_policy",
+            bucket=replication_policy_bucket,
+            destination_bucket_name=test_bucket["name"],
+            destination_region_name=test_region["name"],
+            name=replication_policy_name,
+            namespace=replication_policy_namespace)
         ```
         <!--End PulumiCodeChooser -->
 

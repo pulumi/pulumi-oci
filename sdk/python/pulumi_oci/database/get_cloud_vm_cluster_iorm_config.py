@@ -116,7 +116,7 @@ def get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"])
+    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=test_cloud_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -155,7 +155,7 @@ def get_cloud_vm_cluster_iorm_config_output(cloud_vm_cluster_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=oci_database_cloud_vm_cluster["test_cloud_vm_cluster"]["id"])
+    test_cloud_vm_cluster_iorm_config = oci.Database.get_cloud_vm_cluster_iorm_config(cloud_vm_cluster_id=test_cloud_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

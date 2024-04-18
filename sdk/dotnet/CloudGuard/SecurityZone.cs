@@ -25,16 +25,16 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSecurityZone = new Oci.CloudGuard.SecurityZone("testSecurityZone", new()
+    ///     var testSecurityZone = new Oci.CloudGuard.SecurityZone("test_security_zone", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Security_zone_display_name,
-    ///         SecurityZoneRecipeId = oci_cloud_guard_security_zone_recipe.Test_security_zone_recipe.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = securityZoneDisplayName,
+    ///         SecurityZoneRecipeId = testSecurityZoneRecipe.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Security_zone_description,
+    ///         Description = securityZoneDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

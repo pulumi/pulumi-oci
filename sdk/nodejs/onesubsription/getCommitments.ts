@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCommitments = oci.OneSubsription.getCommitments({
- *     compartmentId: _var.compartment_id,
- *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
+ *     compartmentId: compartmentId,
+ *     subscribedServiceId: testSubscribedService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetCommitmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCommitments = oci.OneSubsription.getCommitments({
- *     compartmentId: _var.compartment_id,
- *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
+ *     compartmentId: compartmentId,
+ *     subscribedServiceId: testSubscribedService.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

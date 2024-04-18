@@ -77,7 +77,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
      *             .build());
      * 
      *     }
@@ -119,7 +119,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
      *             .build());
      * 
      *     }
@@ -161,7 +161,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
      *             .build());
      * 
      *     }
@@ -203,7 +203,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
      *             .build());
      * 
      *     }
@@ -245,7 +245,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint().id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -287,7 +287,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint().id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -329,7 +329,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint().id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -371,7 +371,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint().id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -413,9 +413,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoints = DataCatalogFunctions.getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_private_endpoint_display_name())
-     *             .state(var_.catalog_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogPrivateEndpointDisplayName)
+     *             .state(catalogPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -457,9 +457,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoints = DataCatalogFunctions.getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_private_endpoint_display_name())
-     *             .state(var_.catalog_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogPrivateEndpointDisplayName)
+     *             .state(catalogPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -501,9 +501,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoints = DataCatalogFunctions.getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_private_endpoint_display_name())
-     *             .state(var_.catalog_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogPrivateEndpointDisplayName)
+     *             .state(catalogPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -545,9 +545,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoints = DataCatalogFunctions.getCatalogPrivateEndpoints(GetCatalogPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_private_endpoint_display_name())
-     *             .state(var_.catalog_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogPrivateEndpointDisplayName)
+     *             .state(catalogPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -589,9 +589,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .typeKey(var_.catalog_type_type_key())
-     *             .fields(var_.catalog_type_fields())
+     *             .catalogId(testCatalog.id())
+     *             .typeKey(catalogTypeTypeKey)
+     *             .fields(catalogTypeFields)
      *             .build());
      * 
      *     }
@@ -633,9 +633,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .typeKey(var_.catalog_type_type_key())
-     *             .fields(var_.catalog_type_fields())
+     *             .catalogId(testCatalog.id())
+     *             .typeKey(catalogTypeTypeKey)
+     *             .fields(catalogTypeFields)
      *             .build());
      * 
      *     }
@@ -677,9 +677,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .typeKey(var_.catalog_type_type_key())
-     *             .fields(var_.catalog_type_fields())
+     *             .catalogId(testCatalog.id())
+     *             .typeKey(catalogTypeTypeKey)
+     *             .fields(catalogTypeFields)
      *             .build());
      * 
      *     }
@@ -721,9 +721,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .typeKey(var_.catalog_type_type_key())
-     *             .fields(var_.catalog_type_fields())
+     *             .catalogId(testCatalog.id())
+     *             .typeKey(catalogTypeTypeKey)
+     *             .fields(catalogTypeFields)
      *             .build());
      * 
      *     }
@@ -765,15 +765,15 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .externalTypeName(var_.catalog_type_external_type_name())
-     *             .fields(var_.catalog_type_fields())
-     *             .isApproved(var_.catalog_type_is_approved())
-     *             .isInternal(var_.catalog_type_is_internal())
-     *             .isTag(var_.catalog_type_is_tag())
-     *             .name(var_.catalog_type_name())
-     *             .state(var_.catalog_type_state())
-     *             .typeCategory(var_.catalog_type_type_category())
+     *             .catalogId(testCatalog.id())
+     *             .externalTypeName(catalogTypeExternalTypeName)
+     *             .fields(catalogTypeFields)
+     *             .isApproved(catalogTypeIsApproved)
+     *             .isInternal(catalogTypeIsInternal)
+     *             .isTag(catalogTypeIsTag)
+     *             .name(catalogTypeName)
+     *             .state(catalogTypeState)
+     *             .typeCategory(catalogTypeTypeCategory)
      *             .build());
      * 
      *     }
@@ -815,15 +815,15 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .externalTypeName(var_.catalog_type_external_type_name())
-     *             .fields(var_.catalog_type_fields())
-     *             .isApproved(var_.catalog_type_is_approved())
-     *             .isInternal(var_.catalog_type_is_internal())
-     *             .isTag(var_.catalog_type_is_tag())
-     *             .name(var_.catalog_type_name())
-     *             .state(var_.catalog_type_state())
-     *             .typeCategory(var_.catalog_type_type_category())
+     *             .catalogId(testCatalog.id())
+     *             .externalTypeName(catalogTypeExternalTypeName)
+     *             .fields(catalogTypeFields)
+     *             .isApproved(catalogTypeIsApproved)
+     *             .isInternal(catalogTypeIsInternal)
+     *             .isTag(catalogTypeIsTag)
+     *             .name(catalogTypeName)
+     *             .state(catalogTypeState)
+     *             .typeCategory(catalogTypeTypeCategory)
      *             .build());
      * 
      *     }
@@ -865,15 +865,15 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .externalTypeName(var_.catalog_type_external_type_name())
-     *             .fields(var_.catalog_type_fields())
-     *             .isApproved(var_.catalog_type_is_approved())
-     *             .isInternal(var_.catalog_type_is_internal())
-     *             .isTag(var_.catalog_type_is_tag())
-     *             .name(var_.catalog_type_name())
-     *             .state(var_.catalog_type_state())
-     *             .typeCategory(var_.catalog_type_type_category())
+     *             .catalogId(testCatalog.id())
+     *             .externalTypeName(catalogTypeExternalTypeName)
+     *             .fields(catalogTypeFields)
+     *             .isApproved(catalogTypeIsApproved)
+     *             .isInternal(catalogTypeIsInternal)
+     *             .isTag(catalogTypeIsTag)
+     *             .name(catalogTypeName)
+     *             .state(catalogTypeState)
+     *             .typeCategory(catalogTypeTypeCategory)
      *             .build());
      * 
      *     }
@@ -915,15 +915,15 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .externalTypeName(var_.catalog_type_external_type_name())
-     *             .fields(var_.catalog_type_fields())
-     *             .isApproved(var_.catalog_type_is_approved())
-     *             .isInternal(var_.catalog_type_is_internal())
-     *             .isTag(var_.catalog_type_is_tag())
-     *             .name(var_.catalog_type_name())
-     *             .state(var_.catalog_type_state())
-     *             .typeCategory(var_.catalog_type_type_category())
+     *             .catalogId(testCatalog.id())
+     *             .externalTypeName(catalogTypeExternalTypeName)
+     *             .fields(catalogTypeFields)
+     *             .isApproved(catalogTypeIsApproved)
+     *             .isInternal(catalogTypeIsInternal)
+     *             .isTag(catalogTypeIsTag)
+     *             .name(catalogTypeName)
+     *             .state(catalogTypeState)
+     *             .typeCategory(catalogTypeTypeCategory)
      *             .build());
      * 
      *     }
@@ -965,9 +965,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogs = DataCatalogFunctions.getCatalogs(GetCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_display_name())
-     *             .state(var_.catalog_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogDisplayName)
+     *             .state(catalogState)
      *             .build());
      * 
      *     }
@@ -1009,9 +1009,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogs = DataCatalogFunctions.getCatalogs(GetCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_display_name())
-     *             .state(var_.catalog_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogDisplayName)
+     *             .state(catalogState)
      *             .build());
      * 
      *     }
@@ -1053,9 +1053,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogs = DataCatalogFunctions.getCatalogs(GetCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_display_name())
-     *             .state(var_.catalog_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogDisplayName)
+     *             .state(catalogState)
      *             .build());
      * 
      *     }
@@ -1097,9 +1097,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogs = DataCatalogFunctions.getCatalogs(GetCatalogsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.catalog_display_name())
-     *             .state(var_.catalog_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(catalogDisplayName)
+     *             .state(catalogState)
      *             .build());
      * 
      *     }
@@ -1141,10 +1141,10 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .connectionKey(var_.connection_connection_key())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .fields(var_.connection_fields())
+     *             .catalogId(testCatalog.id())
+     *             .connectionKey(connectionConnectionKey)
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .fields(connectionFields)
      *             .build());
      * 
      *     }
@@ -1186,10 +1186,10 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .connectionKey(var_.connection_connection_key())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .fields(var_.connection_fields())
+     *             .catalogId(testCatalog.id())
+     *             .connectionKey(connectionConnectionKey)
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .fields(connectionFields)
      *             .build());
      * 
      *     }
@@ -1231,10 +1231,10 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .connectionKey(var_.connection_connection_key())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .fields(var_.connection_fields())
+     *             .catalogId(testCatalog.id())
+     *             .connectionKey(connectionConnectionKey)
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .fields(connectionFields)
      *             .build());
      * 
      *     }
@@ -1276,10 +1276,10 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .connectionKey(var_.connection_connection_key())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .fields(var_.connection_fields())
+     *             .catalogId(testCatalog.id())
+     *             .connectionKey(connectionConnectionKey)
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .fields(connectionFields)
      *             .build());
      * 
      *     }
@@ -1321,19 +1321,19 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.connection_display_name())
-     *             .displayNameContains(var_.connection_display_name_contains())
-     *             .externalKey(var_.connection_external_key())
-     *             .fields(var_.connection_fields())
-     *             .isDefault(var_.connection_is_default())
-     *             .state(var_.connection_state())
-     *             .timeCreated(var_.connection_time_created())
-     *             .timeStatusUpdated(var_.connection_time_status_updated())
-     *             .timeUpdated(var_.connection_time_updated())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(connectionDisplayName)
+     *             .displayNameContains(connectionDisplayNameContains)
+     *             .externalKey(connectionExternalKey)
+     *             .fields(connectionFields)
+     *             .isDefault(connectionIsDefault)
+     *             .state(connectionState)
+     *             .timeCreated(connectionTimeCreated)
+     *             .timeStatusUpdated(connectionTimeStatusUpdated)
+     *             .timeUpdated(connectionTimeUpdated)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1375,19 +1375,19 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.connection_display_name())
-     *             .displayNameContains(var_.connection_display_name_contains())
-     *             .externalKey(var_.connection_external_key())
-     *             .fields(var_.connection_fields())
-     *             .isDefault(var_.connection_is_default())
-     *             .state(var_.connection_state())
-     *             .timeCreated(var_.connection_time_created())
-     *             .timeStatusUpdated(var_.connection_time_status_updated())
-     *             .timeUpdated(var_.connection_time_updated())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(connectionDisplayName)
+     *             .displayNameContains(connectionDisplayNameContains)
+     *             .externalKey(connectionExternalKey)
+     *             .fields(connectionFields)
+     *             .isDefault(connectionIsDefault)
+     *             .state(connectionState)
+     *             .timeCreated(connectionTimeCreated)
+     *             .timeStatusUpdated(connectionTimeStatusUpdated)
+     *             .timeUpdated(connectionTimeUpdated)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1429,19 +1429,19 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.connection_display_name())
-     *             .displayNameContains(var_.connection_display_name_contains())
-     *             .externalKey(var_.connection_external_key())
-     *             .fields(var_.connection_fields())
-     *             .isDefault(var_.connection_is_default())
-     *             .state(var_.connection_state())
-     *             .timeCreated(var_.connection_time_created())
-     *             .timeStatusUpdated(var_.connection_time_status_updated())
-     *             .timeUpdated(var_.connection_time_updated())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(connectionDisplayName)
+     *             .displayNameContains(connectionDisplayNameContains)
+     *             .externalKey(connectionExternalKey)
+     *             .fields(connectionFields)
+     *             .isDefault(connectionIsDefault)
+     *             .state(connectionState)
+     *             .timeCreated(connectionTimeCreated)
+     *             .timeStatusUpdated(connectionTimeStatusUpdated)
+     *             .timeUpdated(connectionTimeUpdated)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1483,19 +1483,19 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.connection_data_asset_key())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.connection_display_name())
-     *             .displayNameContains(var_.connection_display_name_contains())
-     *             .externalKey(var_.connection_external_key())
-     *             .fields(var_.connection_fields())
-     *             .isDefault(var_.connection_is_default())
-     *             .state(var_.connection_state())
-     *             .timeCreated(var_.connection_time_created())
-     *             .timeStatusUpdated(var_.connection_time_status_updated())
-     *             .timeUpdated(var_.connection_time_updated())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(connectionDataAssetKey)
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(connectionDisplayName)
+     *             .displayNameContains(connectionDisplayNameContains)
+     *             .externalKey(connectionExternalKey)
+     *             .fields(connectionFields)
+     *             .isDefault(connectionIsDefault)
+     *             .state(connectionState)
+     *             .timeCreated(connectionTimeCreated)
+     *             .timeStatusUpdated(connectionTimeStatusUpdated)
+     *             .timeUpdated(connectionTimeUpdated)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1537,9 +1537,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.data_asset_data_asset_key())
-     *             .fields(var_.data_asset_fields())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(dataAssetDataAssetKey)
+     *             .fields(dataAssetFields)
      *             .build());
      * 
      *     }
@@ -1581,9 +1581,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.data_asset_data_asset_key())
-     *             .fields(var_.data_asset_fields())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(dataAssetDataAssetKey)
+     *             .fields(dataAssetFields)
      *             .build());
      * 
      *     }
@@ -1625,9 +1625,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.data_asset_data_asset_key())
-     *             .fields(var_.data_asset_fields())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(dataAssetDataAssetKey)
+     *             .fields(dataAssetFields)
      *             .build());
      * 
      *     }
@@ -1669,9 +1669,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .dataAssetKey(var_.data_asset_data_asset_key())
-     *             .fields(var_.data_asset_fields())
+     *             .catalogId(testCatalog.id())
+     *             .dataAssetKey(dataAssetDataAssetKey)
+     *             .fields(dataAssetFields)
      *             .build());
      * 
      *     }
@@ -1713,17 +1713,17 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .displayNameContains(var_.data_asset_display_name_contains())
-     *             .externalKey(var_.data_asset_external_key())
-     *             .fields(var_.data_asset_fields())
-     *             .state(var_.data_asset_state())
-     *             .timeCreated(var_.data_asset_time_created())
-     *             .timeUpdated(var_.data_asset_time_updated())
-     *             .typeKey(var_.data_asset_type_key())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1765,17 +1765,17 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .displayNameContains(var_.data_asset_display_name_contains())
-     *             .externalKey(var_.data_asset_external_key())
-     *             .fields(var_.data_asset_fields())
-     *             .state(var_.data_asset_state())
-     *             .timeCreated(var_.data_asset_time_created())
-     *             .timeUpdated(var_.data_asset_time_updated())
-     *             .typeKey(var_.data_asset_type_key())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1817,17 +1817,17 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .displayNameContains(var_.data_asset_display_name_contains())
-     *             .externalKey(var_.data_asset_external_key())
-     *             .fields(var_.data_asset_fields())
-     *             .state(var_.data_asset_state())
-     *             .timeCreated(var_.data_asset_time_created())
-     *             .timeUpdated(var_.data_asset_time_updated())
-     *             .typeKey(var_.data_asset_type_key())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1869,17 +1869,17 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
-     *             .catalogId(oci_datacatalog_catalog.test_catalog().id())
-     *             .createdById(oci_datacatalog_created_by.test_created_by().id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .displayNameContains(var_.data_asset_display_name_contains())
-     *             .externalKey(var_.data_asset_external_key())
-     *             .fields(var_.data_asset_fields())
-     *             .state(var_.data_asset_state())
-     *             .timeCreated(var_.data_asset_time_created())
-     *             .timeUpdated(var_.data_asset_time_updated())
-     *             .typeKey(var_.data_asset_type_key())
-     *             .updatedById(oci_datacatalog_updated_by.test_updated_by().id())
+     *             .catalogId(testCatalog.id())
+     *             .createdById(testCreatedBy.id())
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.id())
      *             .build());
      * 
      *     }
@@ -1921,7 +1921,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
      *             .build());
      * 
      *     }
@@ -1963,7 +1963,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
      *             .build());
      * 
      *     }
@@ -2005,7 +2005,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
      *             .build());
      * 
      *     }
@@ -2047,7 +2047,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(oci_datacatalog_metastore.test_metastore().id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
      *             .build());
      * 
      *     }
@@ -2089,9 +2089,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastores = DataCatalogFunctions.getMetastores(GetMetastoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.metastore_display_name())
-     *             .state(var_.metastore_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(metastoreDisplayName)
+     *             .state(metastoreState)
      *             .build());
      * 
      *     }
@@ -2133,9 +2133,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastores = DataCatalogFunctions.getMetastores(GetMetastoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.metastore_display_name())
-     *             .state(var_.metastore_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(metastoreDisplayName)
+     *             .state(metastoreState)
      *             .build());
      * 
      *     }
@@ -2177,9 +2177,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastores = DataCatalogFunctions.getMetastores(GetMetastoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.metastore_display_name())
-     *             .state(var_.metastore_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(metastoreDisplayName)
+     *             .state(metastoreState)
      *             .build());
      * 
      *     }
@@ -2221,9 +2221,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastores = DataCatalogFunctions.getMetastores(GetMetastoresArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.metastore_display_name())
-     *             .state(var_.metastore_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(metastoreDisplayName)
+     *             .state(metastoreState)
      *             .build());
      * 
      *     }

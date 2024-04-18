@@ -18,21 +18,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOpaInstance = new oci.opa.OpaInstance("testOpaInstance", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.opa_instance_display_name,
- *     shapeName: oci_core_shape.test_shape.name,
- *     consumptionModel: _var.opa_instance_consumption_model,
+ * const testOpaInstance = new oci.opa.OpaInstance("test_opa_instance", {
+ *     compartmentId: compartmentId,
+ *     displayName: opaInstanceDisplayName,
+ *     shapeName: testShape.name,
+ *     consumptionModel: opaInstanceConsumptionModel,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.opa_instance_description,
+ *     description: opaInstanceDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     idcsAt: _var.opa_instance_idcs_at,
- *     isBreakglassEnabled: _var.opa_instance_is_breakglass_enabled,
- *     meteringType: _var.opa_instance_metering_type,
+ *     idcsAt: opaInstanceIdcsAt,
+ *     isBreakglassEnabled: opaInstanceIsBreakglassEnabled,
+ *     meteringType: opaInstanceMeteringType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

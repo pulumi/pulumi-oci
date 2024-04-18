@@ -36,7 +36,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testNamespace = Oci.ObjectStorage.GetNamespace.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testNamespace = Oci.ObjectStorage.GetNamespace.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

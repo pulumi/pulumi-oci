@@ -44,13 +44,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAppCatalogSubscription = new AppCatalogSubscription(&#34;testAppCatalogSubscription&#34;, AppCatalogSubscriptionArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .listingId(data.oci_core_app_catalog_listing().test_listing().id())
- *             .listingResourceVersion(var_.app_catalog_subscription_listing_resource_version())
- *             .oracleTermsOfUseLink(var_.app_catalog_subscription_oracle_terms_of_use_link())
- *             .signature(var_.app_catalog_subscription_signature())
- *             .timeRetrieved(var_.app_catalog_subscription_time_retrieved())
- *             .eulaLink(var_.app_catalog_subscription_eula_link())
+ *             .compartmentId(compartmentId)
+ *             .listingId(testListing.id())
+ *             .listingResourceVersion(appCatalogSubscriptionListingResourceVersion)
+ *             .oracleTermsOfUseLink(appCatalogSubscriptionOracleTermsOfUseLink)
+ *             .signature(appCatalogSubscriptionSignature)
+ *             .timeRetrieved(appCatalogSubscriptionTimeRetrieved)
+ *             .eulaLink(appCatalogSubscriptionEulaLink)
  *             .build());
  * 
  *     }

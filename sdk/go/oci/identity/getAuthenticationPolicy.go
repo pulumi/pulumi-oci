@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetAuthenticationPolicy(ctx, &identity.GetAuthenticationPolicyArgs{
-//				CompartmentId: _var.Tenancy_ocid,
+//				CompartmentId: tenancyOcid,
 //			}, nil)
 //			if err != nil {
 //				return err

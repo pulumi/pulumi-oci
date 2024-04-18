@@ -31,18 +31,18 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetMediaAssets(ctx, &mediaservices.GetMediaAssetsArgs{
-//				Bucket:                     pulumi.StringRef(_var.Media_asset_bucket),
-//				CompartmentId:              pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:                pulumi.StringRef(_var.Media_asset_display_name),
-//				DistributionChannelId:      pulumi.StringRef(oci_mysql_channel.Test_channel.Id),
-//				MasterMediaAssetId:         pulumi.StringRef(oci_media_services_media_asset.Test_media_asset.Id),
-//				MediaWorkflowJobId:         pulumi.StringRef(oci_media_services_media_workflow_job.Test_media_workflow_job.Id),
-//				Object:                     pulumi.StringRef(_var.Media_asset_object),
-//				ParentMediaAssetId:         pulumi.StringRef(oci_media_services_media_asset.Test_media_asset.Id),
-//				SourceMediaWorkflowId:      pulumi.StringRef(oci_media_services_media_workflow.Test_media_workflow.Id),
-//				SourceMediaWorkflowVersion: pulumi.StringRef(_var.Media_asset_source_media_workflow_version),
-//				State:                      pulumi.StringRef(_var.Media_asset_state),
-//				Type:                       pulumi.StringRef(_var.Media_asset_type),
+//				Bucket:                     pulumi.StringRef(mediaAssetBucket),
+//				CompartmentId:              pulumi.StringRef(compartmentId),
+//				DisplayName:                pulumi.StringRef(mediaAssetDisplayName),
+//				DistributionChannelId:      pulumi.StringRef(testChannel.Id),
+//				MasterMediaAssetId:         pulumi.StringRef(testMediaAsset.Id),
+//				MediaWorkflowJobId:         pulumi.StringRef(testMediaWorkflowJob.Id),
+//				Object:                     pulumi.StringRef(mediaAssetObject),
+//				ParentMediaAssetId:         pulumi.StringRef(testMediaAsset.Id),
+//				SourceMediaWorkflowId:      pulumi.StringRef(testMediaWorkflow.Id),
+//				SourceMediaWorkflowVersion: pulumi.StringRef(mediaAssetSourceMediaWorkflowVersion),
+//				State:                      pulumi.StringRef(mediaAssetState),
+//				Type:                       pulumi.StringRef(mediaAssetType),
 //			}, nil)
 //			if err != nil {
 //				return err

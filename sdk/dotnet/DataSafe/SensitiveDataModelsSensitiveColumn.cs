@@ -25,21 +25,21 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSensitiveDataModelsSensitiveColumn = new Oci.DataSafe.SensitiveDataModelsSensitiveColumn("testSensitiveDataModelsSensitiveColumn", new()
+    ///     var testSensitiveDataModelsSensitiveColumn = new Oci.DataSafe.SensitiveDataModelsSensitiveColumn("test_sensitive_data_models_sensitive_column", new()
     ///     {
-    ///         ColumnName = @var.Sensitive_data_models_sensitive_column_column_name,
-    ///         Object = @var.Sensitive_data_models_sensitive_column_object,
-    ///         SchemaName = @var.Sensitive_data_models_sensitive_column_schema_name,
-    ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-    ///         AppDefinedChildColumnKeys = @var.Sensitive_data_models_sensitive_column_app_defined_child_column_keys,
-    ///         AppName = @var.Sensitive_data_models_sensitive_column_app_name,
-    ///         DataType = @var.Sensitive_data_models_sensitive_column_data_type,
-    ///         DbDefinedChildColumnKeys = @var.Sensitive_data_models_sensitive_column_db_defined_child_column_keys,
-    ///         ObjectType = @var.Sensitive_data_models_sensitive_column_object_type,
-    ///         ParentColumnKeys = @var.Sensitive_data_models_sensitive_column_parent_column_keys,
-    ///         RelationType = @var.Sensitive_data_models_sensitive_column_relation_type,
-    ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-    ///         Status = @var.Sensitive_data_models_sensitive_column_status,
+    ///         ColumnName = sensitiveDataModelsSensitiveColumnColumnName,
+    ///         Object = sensitiveDataModelsSensitiveColumnObject,
+    ///         SchemaName = sensitiveDataModelsSensitiveColumnSchemaName,
+    ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+    ///         AppDefinedChildColumnKeys = sensitiveDataModelsSensitiveColumnAppDefinedChildColumnKeys,
+    ///         AppName = sensitiveDataModelsSensitiveColumnAppName,
+    ///         DataType = sensitiveDataModelsSensitiveColumnDataType,
+    ///         DbDefinedChildColumnKeys = sensitiveDataModelsSensitiveColumnDbDefinedChildColumnKeys,
+    ///         ObjectType = sensitiveDataModelsSensitiveColumnObjectType,
+    ///         ParentColumnKeys = sensitiveDataModelsSensitiveColumnParentColumnKeys,
+    ///         RelationType = sensitiveDataModelsSensitiveColumnRelationType,
+    ///         SensitiveTypeId = testSensitiveType.Id,
+    ///         Status = sensitiveDataModelsSensitiveColumnStatus,
     ///     });
     /// 
     /// });

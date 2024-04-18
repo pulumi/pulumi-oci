@@ -26,6 +26,115 @@ import javax.annotation.Nullable;
  * 
  * Create a DR protection group.
  * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * ```java
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DisasterRecovery.DrProtectionGroup;
+ * import com.pulumi.oci.DisasterRecovery.DrProtectionGroupArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupLogLocationArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupAssociationArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         final var config = ctx.config();
+ *         final var disassociateTrigger = config.get(&#34;disassociateTrigger&#34;).orElse(0);
+ *         var testDrProtectionGroup = new DrProtectionGroup(&#34;testDrProtectionGroup&#34;, DrProtectionGroupArgs.builder()        
+ *             .compartmentId(compartmentId)
+ *             .displayName(drProtectionGroupDisplayName)
+ *             .logLocation(DrProtectionGroupLogLocationArgs.builder()
+ *                 .bucket(drProtectionGroupLogLocationBucket)
+ *                 .namespace(drProtectionGroupLogLocationNamespace)
+ *                 .build())
+ *             .association(DrProtectionGroupAssociationArgs.builder()
+ *                 .role(drProtectionGroupAssociationRole)
+ *                 .peerId(drProtectionGroupAssociationPeerId)
+ *                 .peerRegion(drProtectionGroupAssociationPeerRegion)
+ *                 .build())
+ *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
+ *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
+ *             .disassociateTrigger(disassociateTrigger)
+ *             .members(DrProtectionGroupMemberArgs.builder()
+ *                 .memberId(drProtectionGroupMembersMemberId)
+ *                 .memberType(drProtectionGroupMembersMemberType)
+ *                 .backendSetMappings(DrProtectionGroupMemberBackendSetMappingArgs.builder()
+ *                     .destinationBackendSetName(testBackendSet.name())
+ *                     .isBackendSetForNonMovable(drProtectionGroupMembersBackendSetMappingsIsBackendSetForNonMovable)
+ *                     .sourceBackendSetName(testBackendSet.name())
+ *                     .build())
+ *                 .blockVolumeOperations(DrProtectionGroupMemberBlockVolumeOperationArgs.builder()
+ *                     .attachmentDetails(DrProtectionGroupMemberBlockVolumeOperationAttachmentDetailsArgs.builder()
+ *                         .volumeAttachmentReferenceInstanceId(testInstance.id())
+ *                         .build())
+ *                     .blockVolumeId(testVolume.id())
+ *                     .mountDetails(DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs.builder()
+ *                         .mountPoint(drProtectionGroupMembersBlockVolumeOperationsMountDetailsMountPoint)
+ *                         .build())
+ *                     .build())
+ *                 .destinationAvailabilityDomain(drProtectionGroupMembersDestinationAvailabilityDomain)
+ *                 .destinationCapacityReservationId(destinationCapacityReservationId)
+ *                 .destinationCompartmentId(testCompartment.id())
+ *                 .destinationDedicatedVmHostId(testDedicatedVmHost.id())
+ *                 .destinationLoadBalancerId(testLoadBalancer.id())
+ *                 .destinationNetworkLoadBalancerId(testNetworkLoadBalancer.id())
+ *                 .exportMappings(DrProtectionGroupMemberExportMappingArgs.builder()
+ *                     .destinationMountTargetId(testMountTarget.id())
+ *                     .exportId(testExport.id())
+ *                     .build())
+ *                 .fileSystemOperations(DrProtectionGroupMemberFileSystemOperationArgs.builder()
+ *                     .exportPath(drProtectionGroupMembersFileSystemOperationsExportPath)
+ *                     .mountDetails(DrProtectionGroupMemberFileSystemOperationMountDetailsArgs.builder()
+ *                         .mountTargetId(testMountTarget.id())
+ *                         .build())
+ *                     .mountPoint(drProtectionGroupMembersFileSystemOperationsMountPoint)
+ *                     .mountTargetId(testMountTarget.id())
+ *                     .unmountDetails(DrProtectionGroupMemberFileSystemOperationUnmountDetailsArgs.builder()
+ *                         .mountTargetId(testMountTarget.id())
+ *                         .build())
+ *                     .build())
+ *                 .isMovable(drProtectionGroupMembersIsMovable)
+ *                 .isRetainFaultDomain(drProtectionGroupMembersIsRetainFaultDomain)
+ *                 .isStartStopEnabled(drProtectionGroupMembersIsStartStopEnabled)
+ *                 .passwordVaultSecretId(passwordVaultSecretId)
+ *                 .vnicMappings(                
+ *                     DrProtectionGroupMemberVnicMappingArgs.builder()
+ *                         .destinationNsgIdLists(drProtectionGroupMembersVnicMappingDestinationNsgIdList)
+ *                         .destinationPrimaryPrivateIpAddress(drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpAddress)
+ *                         .destinationPrimaryPrivateIpHostnameLabel(drProtectionGroupMembersVnicMappingDestinationPrimaryPrivateIpHostnameLabel)
+ *                         .destinationSubnetId(testSubnet.id())
+ *                         .sourceVnicId(testVnic.id())
+ *                         .build(),
+ *                     DrProtectionGroupMemberVnicMappingArgs.builder()
+ *                         .destinationNsgIdLists(drProtectionGroupMembersVnicMappingsDestinationNsgIdList)
+ *                         .destinationPrimaryPrivateIpAddress(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress)
+ *                         .destinationPrimaryPrivateIpHostnameLabel(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel)
+ *                         .destinationSubnetId(testSubnet.id())
+ *                         .sourceVnicId(testVnic.id())
+ *                         .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * ```
+ * &lt;!--End PulumiCodeChooser --&gt;
+ * 
  * ## Create
  * 
  * Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.

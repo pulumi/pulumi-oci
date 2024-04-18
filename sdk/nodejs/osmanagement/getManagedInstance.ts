@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstance = oci.OsManagement.getManagedInstance({
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ *     managedInstanceId: testManagedInstanceOciOsmanagementManagedInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -165,7 +165,7 @@ export interface GetManagedInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedInstance = oci.OsManagement.getManagedInstance({
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ *     managedInstanceId: testManagedInstanceOciOsmanagementManagedInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

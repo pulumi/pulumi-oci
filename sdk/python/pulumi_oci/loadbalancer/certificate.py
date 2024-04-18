@@ -384,21 +384,6 @@ class Certificate(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_certificate = oci.load_balancer.Certificate("testCertificate",
-            certificate_name=var["certificate_certificate_name"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            ca_certificate=var["certificate_ca_certificate"],
-            passphrase=var["certificate_passphrase"],
-            private_key=var["certificate_private_key"],
-            public_certificate=var["certificate_public_certificate"])
-        ```
-        <!--End PulumiCodeChooser -->
-
         ## Import
 
         Certificates can be imported using the `id`, e.g.
@@ -459,21 +444,6 @@ class Certificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_certificate = oci.load_balancer.Certificate("testCertificate",
-            certificate_name=var["certificate_certificate_name"],
-            load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"],
-            ca_certificate=var["certificate_ca_certificate"],
-            passphrase=var["certificate_passphrase"],
-            private_key=var["certificate_private_key"],
-            public_certificate=var["certificate_public_certificate"])
-        ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

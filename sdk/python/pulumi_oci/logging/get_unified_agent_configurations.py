@@ -150,12 +150,12 @@ def get_unified_agent_configurations(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=var["compartment_id"],
-        display_name=var["unified_agent_configuration_display_name"],
-        group_id=oci_identity_group["test_group"]["id"],
-        is_compartment_id_in_subtree=var["unified_agent_configuration_is_compartment_id_in_subtree"],
-        log_id=oci_logging_log["test_log"]["id"],
-        state=var["unified_agent_configuration_state"])
+    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=compartment_id,
+        display_name=unified_agent_configuration_display_name,
+        group_id=test_group["id"],
+        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree,
+        log_id=test_log["id"],
+        state=unified_agent_configuration_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -211,12 +211,12 @@ def get_unified_agent_configurations_output(compartment_id: Optional[pulumi.Inpu
     import pulumi
     import pulumi_oci as oci
 
-    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=var["compartment_id"],
-        display_name=var["unified_agent_configuration_display_name"],
-        group_id=oci_identity_group["test_group"]["id"],
-        is_compartment_id_in_subtree=var["unified_agent_configuration_is_compartment_id_in_subtree"],
-        log_id=oci_logging_log["test_log"]["id"],
-        state=var["unified_agent_configuration_state"])
+    test_unified_agent_configurations = oci.Logging.get_unified_agent_configurations(compartment_id=compartment_id,
+        display_name=unified_agent_configuration_display_name,
+        group_id=test_group["id"],
+        is_compartment_id_in_subtree=unified_agent_configuration_is_compartment_id_in_subtree,
+        log_id=test_log["id"],
+        state=unified_agent_configuration_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -70,14 +70,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testTag = new Tag(&#34;testTag&#34;, TagArgs.builder()        
- *             .description(var_.tag_description())
- *             .tagNamespaceId(oci_identity_tag_namespace.test_tag_namespace().id())
+ *             .description(tagDescription)
+ *             .name(tagName)
+ *             .tagNamespaceId(testTagNamespace.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isCostTracking(var_.tag_is_cost_tracking())
+ *             .isCostTracking(tagIsCostTracking)
  *             .validator(TagValidatorArgs.builder()
- *                 .validatorType(var_.tag_validator_validator_type())
- *                 .values(var_.tag_validator_values())
+ *                 .validatorType(tagValidatorValidatorType)
+ *                 .values(tagValidatorValues)
  *                 .build())
  *             .isRetired(false)
  *             .build());

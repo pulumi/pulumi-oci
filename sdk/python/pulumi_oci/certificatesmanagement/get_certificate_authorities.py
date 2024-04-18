@@ -147,11 +147,11 @@ def get_certificate_authorities(certificate_authority_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authorities = oci.CertificatesManagement.get_certificate_authorities(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        compartment_id=var["compartment_id"],
-        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        name=var["certificate_authority_name"],
-        state=var["certificate_authority_state"])
+    test_certificate_authorities = oci.CertificatesManagement.get_certificate_authorities(certificate_authority_id=test_certificate_authority["id"],
+        compartment_id=compartment_id,
+        issuer_certificate_authority_id=test_certificate_authority["id"],
+        name=certificate_authority_name,
+        state=certificate_authority_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -204,11 +204,11 @@ def get_certificate_authorities_output(certificate_authority_id: Optional[pulumi
     import pulumi
     import pulumi_oci as oci
 
-    test_certificate_authorities = oci.CertificatesManagement.get_certificate_authorities(certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        compartment_id=var["compartment_id"],
-        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        name=var["certificate_authority_name"],
-        state=var["certificate_authority_state"])
+    test_certificate_authorities = oci.CertificatesManagement.get_certificate_authorities(certificate_authority_id=test_certificate_authority["id"],
+        compartment_id=compartment_id,
+        issuer_certificate_authority_id=test_certificate_authority["id"],
+        name=certificate_authority_name,
+        state=certificate_authority_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testByoipRange = Oci.Core.GetByoipRange.Invoke(new()
         ///     {
-        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
+        ///         ByoipRangeId = testByoipRangeOciCoreByoipRange.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testByoipRange = Oci.Core.GetByoipRange.Invoke(new()
         ///     {
-        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
+        ///         ByoipRangeId = testByoipRangeOciCoreByoipRange.Id,
         ///     });
         /// 
         /// });

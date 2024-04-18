@@ -35,10 +35,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityProviders = Oci.Identity.GetIdentityProviders.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Protocol = @var.Identity_provider_protocol,
-        ///         Name = @var.Identity_provider_name,
-        ///         State = @var.Identity_provider_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Protocol = identityProviderProtocol,
+        ///         Name = identityProviderName,
+        ///         State = identityProviderState,
         ///     });
         /// 
         /// });
@@ -72,10 +72,10 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityProviders = Oci.Identity.GetIdentityProviders.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Protocol = @var.Identity_provider_protocol,
-        ///         Name = @var.Identity_provider_name,
-        ///         State = @var.Identity_provider_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Protocol = identityProviderProtocol,
+        ///         Name = identityProviderName,
+        ///         State = identityProviderState,
         ///     });
         /// 
         /// });

@@ -33,10 +33,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseGroups = Oci.DatabaseManagement.GetManagedDatabaseGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Managed_database_group_id,
-        ///         Name = @var.Managed_database_group_name,
-        ///         State = @var.Managed_database_group_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = managedDatabaseGroupId,
+        ///         Name = managedDatabaseGroupName,
+        ///         State = managedDatabaseGroupState,
         ///     });
         /// 
         /// });
@@ -68,10 +68,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabaseGroups = Oci.DatabaseManagement.GetManagedDatabaseGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Managed_database_group_id,
-        ///         Name = @var.Managed_database_group_name,
-        ///         State = @var.Managed_database_group_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = managedDatabaseGroupId,
+        ///         Name = managedDatabaseGroupName,
+        ///         State = managedDatabaseGroupState,
         ///     });
         /// 
         /// });

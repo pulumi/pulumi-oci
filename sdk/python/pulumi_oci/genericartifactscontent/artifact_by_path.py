@@ -366,11 +366,11 @@ class ArtifactByPath(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_artifact_by_path = oci.generic_artifacts_content.ArtifactByPath("testArtifactByPath",
-            artifact_path=var["artifact_path"],
-            repository_id=oci_artifacts_repository["test_repository"]["id"],
-            version=var["version"],
-            source=var["source"])
+        test_artifact_by_path = oci.generic_artifacts_content.ArtifactByPath("test_artifact_by_path",
+            artifact_path=artifact_path,
+            repository_id=test_repository["id"],
+            version=version,
+            source=source)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -407,11 +407,11 @@ class ArtifactByPath(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_artifact_by_path = oci.generic_artifacts_content.ArtifactByPath("testArtifactByPath",
-            artifact_path=var["artifact_path"],
-            repository_id=oci_artifacts_repository["test_repository"]["id"],
-            version=var["version"],
-            source=var["source"])
+        test_artifact_by_path = oci.generic_artifacts_content.ArtifactByPath("test_artifact_by_path",
+            artifact_path=artifact_path,
+            repository_id=test_repository["id"],
+            version=version,
+            source=source)
         ```
         <!--End PulumiCodeChooser -->
 

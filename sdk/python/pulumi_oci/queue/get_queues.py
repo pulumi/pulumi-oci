@@ -121,10 +121,10 @@ def get_queues(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_queues = oci.Queue.get_queues(compartment_id=var["compartment_id"],
-        display_name=var["queue_display_name"],
-        id=var["queue_id"],
-        state=var["queue_state"])
+    test_queues = oci.Queue.get_queues(compartment_id=compartment_id,
+        display_name=queue_display_name,
+        id=queue_id,
+        state=queue_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_queues_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_queues = oci.Queue.get_queues(compartment_id=var["compartment_id"],
-        display_name=var["queue_display_name"],
-        id=var["queue_id"],
-        state=var["queue_state"])
+    test_queues = oci.Queue.get_queues(compartment_id=compartment_id,
+        display_name=queue_display_name,
+        id=queue_id,
+        state=queue_state)
     ```
     <!--End PulumiCodeChooser -->
 

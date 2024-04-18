@@ -25,21 +25,21 @@ namespace Pulumi.Oci.ApiGateway
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCertificate = new Oci.ApiGateway.Certificate("testCertificate", new()
+    ///     var testCertificate = new Oci.ApiGateway.Certificate("test_certificate", new()
     ///     {
-    ///         CertificateDetails = @var.Certificate_certificate,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CertificateDetails = certificateCertificate,
+    ///         CompartmentId = compartmentId,
+    ///         PrivateKey = certificatePrivateKey,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Certificate_display_name,
+    ///         DisplayName = certificateDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IntermediateCertificates = @var.Certificate_intermediate_certificates,
-    ///         PrivateKey = @var.Certificate_private_key,
+    ///         IntermediateCertificates = certificateIntermediateCertificates,
     ///     });
     /// 
     /// });

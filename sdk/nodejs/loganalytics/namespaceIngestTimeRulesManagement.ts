@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNamespaceIngestTimeRulesManagement = new oci.loganalytics.NamespaceIngestTimeRulesManagement("testNamespaceIngestTimeRulesManagement", {
- *     ingestTimeRuleId: oci_events_rule.test_rule.id,
- *     namespace: _var.namespace_ingest_time_rules_management_namespace,
- *     enableIngestTimeRule: _var.enable_ingest_time_rule,
+ * const testNamespaceIngestTimeRulesManagement = new oci.loganalytics.NamespaceIngestTimeRulesManagement("test_namespace_ingest_time_rules_management", {
+ *     ingestTimeRuleId: testRule.id,
+ *     namespace: namespaceIngestTimeRulesManagementNamespace,
+ *     enableIngestTimeRule: enableIngestTimeRule,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

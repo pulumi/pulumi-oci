@@ -307,24 +307,24 @@ class HttpRedirect(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_http_redirect = oci.waas.HttpRedirect("testHttpRedirect",
-            compartment_id=var["compartment_id"],
-            domain=var["http_redirect_domain"],
+        test_http_redirect = oci.waas.HttpRedirect("test_http_redirect",
+            compartment_id=compartment_id,
+            domain=http_redirect_domain,
             target=oci.waas.HttpRedirectTargetArgs(
-                host=var["http_redirect_target_host"],
-                path=var["http_redirect_target_path"],
-                protocol=var["http_redirect_target_protocol"],
-                query=var["http_redirect_target_query"],
-                port=var["http_redirect_target_port"],
+                host=http_redirect_target_host,
+                path=http_redirect_target_path,
+                protocol=http_redirect_target_protocol,
+                query=http_redirect_target_query,
+                port=http_redirect_target_port,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["http_redirect_display_name"],
+            display_name=http_redirect_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            response_code=var["http_redirect_response_code"])
+            response_code=http_redirect_response_code)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -364,24 +364,24 @@ class HttpRedirect(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_http_redirect = oci.waas.HttpRedirect("testHttpRedirect",
-            compartment_id=var["compartment_id"],
-            domain=var["http_redirect_domain"],
+        test_http_redirect = oci.waas.HttpRedirect("test_http_redirect",
+            compartment_id=compartment_id,
+            domain=http_redirect_domain,
             target=oci.waas.HttpRedirectTargetArgs(
-                host=var["http_redirect_target_host"],
-                path=var["http_redirect_target_path"],
-                protocol=var["http_redirect_target_protocol"],
-                query=var["http_redirect_target_query"],
-                port=var["http_redirect_target_port"],
+                host=http_redirect_target_host,
+                path=http_redirect_target_path,
+                protocol=http_redirect_target_protocol,
+                query=http_redirect_target_query,
+                port=http_redirect_target_port,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["http_redirect_display_name"],
+            display_name=http_redirect_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            response_code=var["http_redirect_response_code"])
+            response_code=http_redirect_response_code)
         ```
         <!--End PulumiCodeChooser -->
 

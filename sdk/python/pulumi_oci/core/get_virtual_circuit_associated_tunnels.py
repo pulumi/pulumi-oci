@@ -91,7 +91,7 @@ def get_virtual_circuit_associated_tunnels(filters: Optional[Sequence[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"])
+    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_virtual_circuit_associated_tunnels_output(filters: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=oci_core_virtual_circuit["test_virtual_circuit"]["id"])
+    test_virtual_circuit_associated_tunnels = oci.Core.get_virtual_circuit_associated_tunnels(virtual_circuit_id=test_virtual_circuit["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDatabases = oci.DatabaseManagement.getExternalDatabases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_database_display_name,
- *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
+ *     compartmentId: compartmentId,
+ *     displayName: externalDatabaseDisplayName,
+ *     externalDbSystemId: testExternalDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,9 +93,9 @@ export interface GetExternalDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalDatabases = oci.DatabaseManagement.getExternalDatabases({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.external_database_display_name,
- *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
+ *     compartmentId: compartmentId,
+ *     displayName: externalDatabaseDisplayName,
+ *     externalDbSystemId: testExternalDbSystem.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -33,10 +33,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetEncryptedData(ctx, &kms.GetEncryptedDataArgs{
-//				CryptoEndpoint: _var.Encrypted_data_crypto_endpoint,
-//				KeyId:          oci_kms_key.Test_key.Id,
-//				Plaintext:      _var.Encrypted_data_plaintext,
-//				AssociatedData: _var.Encrypted_data_associated_data,
+//				CryptoEndpoint: encryptedDataCryptoEndpoint,
+//				KeyId:          testKey.Id,
+//				Plaintext:      encryptedDataPlaintext,
+//				AssociatedData: encryptedDataAssociatedData,
 //			}, nil)
 //			if err != nil {
 //				return err

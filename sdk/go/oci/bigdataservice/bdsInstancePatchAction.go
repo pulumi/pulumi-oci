@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewBdsInstancePatchAction(ctx, "testBdsInstancePatchAction", &BigDataService.BdsInstancePatchActionArgs{
-//				BdsInstanceId:        pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-//				ClusterAdminPassword: pulumi.Any(_var.Bds_instance_patch_action_cluster_admin_password),
-//				Version:              pulumi.Any(_var.Bds_instance_patch_action_version),
+//			_, err := BigDataService.NewBdsInstancePatchAction(ctx, "test_bds_instance_patch_action", &BigDataService.BdsInstancePatchActionArgs{
+//				BdsInstanceId:        pulumi.Any(testBdsInstance.Id),
+//				ClusterAdminPassword: pulumi.Any(bdsInstancePatchActionClusterAdminPassword),
+//				Version:              pulumi.Any(bdsInstancePatchActionVersion),
 //			})
 //			if err != nil {
 //				return err

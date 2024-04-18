@@ -342,15 +342,15 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resources_search_association = oci.stack_monitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation",
-            compartment_id=var["compartment_id"],
-            association_type=var["monitored_resources_search_association_association_type"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            destination_resource_name=var["monitored_resources_search_association_destination_resource_name"],
-            destination_resource_type=var["monitored_resources_search_association_destination_resource_type"],
-            source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"],
-            source_resource_name=var["monitored_resources_search_association_source_resource_name"],
-            source_resource_type=var["monitored_resources_search_association_source_resource_type"])
+        test_monitored_resources_search_association = oci.stack_monitoring.MonitoredResourcesSearchAssociation("test_monitored_resources_search_association",
+            compartment_id=compartment_id,
+            association_type=monitored_resources_search_association_association_type,
+            destination_resource_id=test_destination_resource["id"],
+            destination_resource_name=monitored_resources_search_association_destination_resource_name,
+            destination_resource_type=monitored_resources_search_association_destination_resource_type,
+            source_resource_id=test_source_resource["id"],
+            source_resource_name=monitored_resources_search_association_source_resource_name,
+            source_resource_type=monitored_resources_search_association_source_resource_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -395,15 +395,15 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_monitored_resources_search_association = oci.stack_monitoring.MonitoredResourcesSearchAssociation("testMonitoredResourcesSearchAssociation",
-            compartment_id=var["compartment_id"],
-            association_type=var["monitored_resources_search_association_association_type"],
-            destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
-            destination_resource_name=var["monitored_resources_search_association_destination_resource_name"],
-            destination_resource_type=var["monitored_resources_search_association_destination_resource_type"],
-            source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"],
-            source_resource_name=var["monitored_resources_search_association_source_resource_name"],
-            source_resource_type=var["monitored_resources_search_association_source_resource_type"])
+        test_monitored_resources_search_association = oci.stack_monitoring.MonitoredResourcesSearchAssociation("test_monitored_resources_search_association",
+            compartment_id=compartment_id,
+            association_type=monitored_resources_search_association_association_type,
+            destination_resource_id=test_destination_resource["id"],
+            destination_resource_name=monitored_resources_search_association_destination_resource_name,
+            destination_resource_type=monitored_resources_search_association_destination_resource_type,
+            source_resource_id=test_source_resource["id"],
+            source_resource_name=monitored_resources_search_association_source_resource_name,
+            source_resource_type=monitored_resources_search_association_source_resource_type)
         ```
         <!--End PulumiCodeChooser -->
 

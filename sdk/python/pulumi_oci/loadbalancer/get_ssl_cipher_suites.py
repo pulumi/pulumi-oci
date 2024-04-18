@@ -91,7 +91,7 @@ def get_ssl_cipher_suites(filters: Optional[Sequence[pulumi.InputType['GetSslCip
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_ssl_cipher_suites_output(filters: Optional[pulumi.Input[Optional[Sequenc
     import pulumi
     import pulumi_oci as oci
 
-    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
+    test_ssl_cipher_suites = oci.LoadBalancer.get_ssl_cipher_suites(load_balancer_id=test_load_balancer["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -53,22 +53,22 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFileSystem = new Oci.FileStorage.FileSystem("testFileSystem", new()
+    ///     var testFileSystem = new Oci.FileStorage.FileSystem("test_file_system", new()
     ///     {
-    ///         AvailabilityDomain = @var.File_system_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = fileSystemAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.File_system_display_name,
-    ///         FilesystemSnapshotPolicyId = oci_file_storage_filesystem_snapshot_policy.Test_filesystem_snapshot_policy.Id,
+    ///         DisplayName = fileSystemDisplayName,
+    ///         FilesystemSnapshotPolicyId = testFilesystemSnapshotPolicy.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         KmsKeyId = oci_kms_key.Test_key.Id,
-    ///         SourceSnapshotId = oci_file_storage_snapshot.Test_snapshot.Id,
+    ///         KmsKeyId = testKey.Id,
+    ///         SourceSnapshotId = testSnapshot.Id,
     ///     });
     /// 
     /// });

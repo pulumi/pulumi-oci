@@ -117,9 +117,9 @@ def get_trail_files(deployment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_files = oci.GoldenGate.get_trail_files(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_file_display_name"])
+    test_trail_files = oci.GoldenGate.get_trail_files(deployment_id=test_deployment["id"],
+        trail_file_id=test_trail_file["id"],
+        display_name=trail_file_display_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -163,9 +163,9 @@ def get_trail_files_output(deployment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trail_files = oci.GoldenGate.get_trail_files(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        trail_file_id=oci_golden_gate_trail_file["test_trail_file"]["id"],
-        display_name=var["trail_file_display_name"])
+    test_trail_files = oci.GoldenGate.get_trail_files(deployment_id=test_deployment["id"],
+        trail_file_id=test_trail_file["id"],
+        display_name=trail_file_display_name)
     ```
     <!--End PulumiCodeChooser -->
 

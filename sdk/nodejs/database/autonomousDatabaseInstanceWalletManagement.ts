@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAutonomousDatabaseInstanceWalletManagement = new oci.database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", {
- *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
- *     gracePeriod: _var.autonomous_database_instance_wallet_management_grace_period,
- *     shouldRotate: _var.autonomous_database_instance_wallet_management_should_rotate,
+ * const testAutonomousDatabaseInstanceWalletManagement = new oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     gracePeriod: autonomousDatabaseInstanceWalletManagementGracePeriod,
+ *     shouldRotate: autonomousDatabaseInstanceWalletManagementShouldRotate,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

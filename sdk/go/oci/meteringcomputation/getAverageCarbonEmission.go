@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MeteringComputation.GetAverageCarbonEmission(ctx, &meteringcomputation.GetAverageCarbonEmissionArgs{
-//				SkuPartNumber: _var.Average_carbon_emission_sku_part_number,
+//				SkuPartNumber: averageCarbonEmissionSkuPartNumber,
 //			}, nil)
 //			if err != nil {
 //				return err

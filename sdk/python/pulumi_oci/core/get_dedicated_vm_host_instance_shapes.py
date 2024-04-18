@@ -115,9 +115,9 @@ def get_dedicated_vm_host_instance_shapes(availability_domain: Optional[str] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["dedicated_vm_host_instance_shape_availability_domain"],
-        dedicated_vm_host_shape=var["dedicated_vm_host_instance_shape_dedicated_vm_host_shape"])
+    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=compartment_id,
+        availability_domain=dedicated_vm_host_instance_shape_availability_domain,
+        dedicated_vm_host_shape=dedicated_vm_host_instance_shape_dedicated_vm_host_shape)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -162,9 +162,9 @@ def get_dedicated_vm_host_instance_shapes_output(availability_domain: Optional[p
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=var["compartment_id"],
-        availability_domain=var["dedicated_vm_host_instance_shape_availability_domain"],
-        dedicated_vm_host_shape=var["dedicated_vm_host_instance_shape_dedicated_vm_host_shape"])
+    test_dedicated_vm_host_instance_shapes = oci.Core.get_dedicated_vm_host_instance_shapes(compartment_id=compartment_id,
+        availability_domain=dedicated_vm_host_instance_shape_availability_domain,
+        dedicated_vm_host_shape=dedicated_vm_host_instance_shape_dedicated_vm_host_shape)
     ```
     <!--End PulumiCodeChooser -->
 

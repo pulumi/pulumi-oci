@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackupCancelManagement = new BackupCancelManagement(&#34;testBackupCancelManagement&#34;, BackupCancelManagementArgs.builder()        
- *             .backupId(oci_database_backup.test_backup().id())
+ *             .backupId(testBackup.id())
  *             .cancelBackupTrigger(1)
  *             .build());
  * 

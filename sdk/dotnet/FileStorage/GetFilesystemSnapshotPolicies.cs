@@ -30,11 +30,11 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testFilesystemSnapshotPolicies = Oci.FileStorage.GetFilesystemSnapshotPolicies.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Filesystem_snapshot_policy_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Filesystem_snapshot_policy_display_name,
-        ///         Id = @var.Filesystem_snapshot_policy_id,
-        ///         State = @var.Filesystem_snapshot_policy_state,
+        ///         AvailabilityDomain = filesystemSnapshotPolicyAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = filesystemSnapshotPolicyDisplayName,
+        ///         Id = filesystemSnapshotPolicyId,
+        ///         State = filesystemSnapshotPolicyState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.FileStorage
         /// {
         ///     var testFilesystemSnapshotPolicies = Oci.FileStorage.GetFilesystemSnapshotPolicies.Invoke(new()
         ///     {
-        ///         AvailabilityDomain = @var.Filesystem_snapshot_policy_availability_domain,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Filesystem_snapshot_policy_display_name,
-        ///         Id = @var.Filesystem_snapshot_policy_id,
-        ///         State = @var.Filesystem_snapshot_policy_state,
+        ///         AvailabilityDomain = filesystemSnapshotPolicyAvailabilityDomain,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = filesystemSnapshotPolicyDisplayName,
+        ///         Id = filesystemSnapshotPolicyId,
+        ///         State = filesystemSnapshotPolicyState,
         ///     });
         /// 
         /// });

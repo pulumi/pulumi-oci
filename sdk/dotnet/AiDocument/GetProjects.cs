@@ -30,10 +30,10 @@ namespace Pulumi.Oci.AiDocument
         /// {
         ///     var testProjects = Oci.AiDocument.GetProjects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Project_display_name,
-        ///         Id = @var.Project_id,
-        ///         State = @var.Project_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = projectDisplayName,
+        ///         Id = projectId,
+        ///         State = projectState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.AiDocument
         /// {
         ///     var testProjects = Oci.AiDocument.GetProjects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Project_display_name,
-        ///         Id = @var.Project_id,
-        ///         State = @var.Project_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = projectDisplayName,
+        ///         Id = projectId,
+        ///         State = projectState,
         ///     });
         /// 
         /// });

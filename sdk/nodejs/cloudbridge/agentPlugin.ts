@@ -16,10 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAgentPlugin = new oci.cloudbridge.AgentPlugin("testAgentPlugin", {
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
- *     pluginName: _var.agent_plugin_plugin_name,
- *     desiredState: _var.agent_plugin_desired_state,
+ * const testAgentPlugin = new oci.cloudbridge.AgentPlugin("test_agent_plugin", {
+ *     agentId: testAgent.id,
+ *     pluginName: agentPluginPluginName,
+ *     desiredState: agentPluginDesiredState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

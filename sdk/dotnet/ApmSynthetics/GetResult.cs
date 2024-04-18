@@ -30,12 +30,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testResult = Oci.ApmSynthetics.GetResult.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///         ExecutionTime = @var.Result_execution_time,
-        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         ResultContentType = @var.Result_result_content_type,
-        ///         ResultType = @var.Result_result_type,
-        ///         VantagePoint = @var.Result_vantage_point,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ExecutionTime = resultExecutionTime,
+        ///         MonitorId = testMonitor.Id,
+        ///         ResultContentType = resultResultContentType,
+        ///         ResultType = resultResultType,
+        ///         VantagePoint = resultVantagePoint,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {
         ///     var testResult = Oci.ApmSynthetics.GetResult.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-        ///         ExecutionTime = @var.Result_execution_time,
-        ///         MonitorId = oci_apm_synthetics_monitor.Test_monitor.Id,
-        ///         ResultContentType = @var.Result_result_content_type,
-        ///         ResultType = @var.Result_result_type,
-        ///         VantagePoint = @var.Result_vantage_point,
+        ///         ApmDomainId = testApmDomain.Id,
+        ///         ExecutionTime = resultExecutionTime,
+        ///         MonitorId = testMonitor.Id,
+        ///         ResultContentType = resultResultContentType,
+        ///         ResultType = resultResultType,
+        ///         VantagePoint = resultVantagePoint,
         ///     });
         /// 
         /// });

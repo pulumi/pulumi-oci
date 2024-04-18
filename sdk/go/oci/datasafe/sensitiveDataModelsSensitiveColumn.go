@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewSensitiveDataModelsSensitiveColumn(ctx, "testSensitiveDataModelsSensitiveColumn", &DataSafe.SensitiveDataModelsSensitiveColumnArgs{
-//				ColumnName:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_column_name),
-//				Object:                    pulumi.Any(_var.Sensitive_data_models_sensitive_column_object),
-//				SchemaName:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_schema_name),
-//				SensitiveDataModelId:      pulumi.Any(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-//				AppDefinedChildColumnKeys: pulumi.Any(_var.Sensitive_data_models_sensitive_column_app_defined_child_column_keys),
-//				AppName:                   pulumi.Any(_var.Sensitive_data_models_sensitive_column_app_name),
-//				DataType:                  pulumi.Any(_var.Sensitive_data_models_sensitive_column_data_type),
-//				DbDefinedChildColumnKeys:  pulumi.Any(_var.Sensitive_data_models_sensitive_column_db_defined_child_column_keys),
-//				ObjectType:                pulumi.Any(_var.Sensitive_data_models_sensitive_column_object_type),
-//				ParentColumnKeys:          pulumi.Any(_var.Sensitive_data_models_sensitive_column_parent_column_keys),
-//				RelationType:              pulumi.Any(_var.Sensitive_data_models_sensitive_column_relation_type),
-//				SensitiveTypeId:           pulumi.Any(oci_data_safe_sensitive_type.Test_sensitive_type.Id),
-//				Status:                    pulumi.Any(_var.Sensitive_data_models_sensitive_column_status),
+//			_, err := DataSafe.NewSensitiveDataModelsSensitiveColumn(ctx, "test_sensitive_data_models_sensitive_column", &DataSafe.SensitiveDataModelsSensitiveColumnArgs{
+//				ColumnName:                pulumi.Any(sensitiveDataModelsSensitiveColumnColumnName),
+//				Object:                    pulumi.Any(sensitiveDataModelsSensitiveColumnObject),
+//				SchemaName:                pulumi.Any(sensitiveDataModelsSensitiveColumnSchemaName),
+//				SensitiveDataModelId:      pulumi.Any(testSensitiveDataModel.Id),
+//				AppDefinedChildColumnKeys: pulumi.Any(sensitiveDataModelsSensitiveColumnAppDefinedChildColumnKeys),
+//				AppName:                   pulumi.Any(sensitiveDataModelsSensitiveColumnAppName),
+//				DataType:                  pulumi.Any(sensitiveDataModelsSensitiveColumnDataType),
+//				DbDefinedChildColumnKeys:  pulumi.Any(sensitiveDataModelsSensitiveColumnDbDefinedChildColumnKeys),
+//				ObjectType:                pulumi.Any(sensitiveDataModelsSensitiveColumnObjectType),
+//				ParentColumnKeys:          pulumi.Any(sensitiveDataModelsSensitiveColumnParentColumnKeys),
+//				RelationType:              pulumi.Any(sensitiveDataModelsSensitiveColumnRelationType),
+//				SensitiveTypeId:           pulumi.Any(testSensitiveType.Id),
+//				Status:                    pulumi.Any(sensitiveDataModelsSensitiveColumnStatus),
 //			})
 //			if err != nil {
 //				return err

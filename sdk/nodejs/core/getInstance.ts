@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstance = oci.Core.getInstance({
- *     instanceId: oci_core_instance.test_instance.id,
+ *     instanceId: testInstanceOciCoreInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -222,7 +222,7 @@ export interface GetInstanceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstance = oci.Core.getInstance({
- *     instanceId: oci_core_instance.test_instance.id,
+ *     instanceId: testInstanceOciCoreInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

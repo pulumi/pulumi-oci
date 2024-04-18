@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryCommit = Oci.DevOps.GetRepositoryCommit.Invoke(new()
         ///     {
-        ///         CommitId = oci_devops_commit.Test_commit.Id,
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         CommitId = testCommit.Id,
+        ///         RepositoryId = testRepository.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testRepositoryCommit = Oci.DevOps.GetRepositoryCommit.Invoke(new()
         ///     {
-        ///         CommitId = oci_devops_commit.Test_commit.Id,
-        ///         RepositoryId = oci_devops_repository.Test_repository.Id,
+        ///         CommitId = testCommit.Id,
+        ///         RepositoryId = testRepository.Id,
         ///     });
         /// 
         /// });

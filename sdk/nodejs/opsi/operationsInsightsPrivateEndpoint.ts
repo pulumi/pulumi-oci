@@ -17,20 +17,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsPrivateEndpoint = new oci.opsi.OperationsInsightsPrivateEndpoint("testOperationsInsightsPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.operations_insights_private_endpoint_display_name,
- *     isUsedForRacDbs: _var.operations_insights_private_endpoint_is_used_for_rac_dbs,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ * const testOperationsInsightsPrivateEndpoint = new oci.opsi.OperationsInsightsPrivateEndpoint("test_operations_insights_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     displayName: operationsInsightsPrivateEndpointDisplayName,
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
+ *     subnetId: testSubnet.id,
+ *     vcnId: testVcn.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.operations_insights_private_endpoint_description,
+ *     description: operationsInsightsPrivateEndpointDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     nsgIds: _var.operations_insights_private_endpoint_nsg_ids,
+ *     nsgIds: operationsInsightsPrivateEndpointNsgIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

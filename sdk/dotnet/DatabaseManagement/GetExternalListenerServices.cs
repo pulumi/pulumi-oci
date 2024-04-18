@@ -31,9 +31,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalListenerServices = Oci.DatabaseManagement.GetExternalListenerServices.Invoke(new()
         ///     {
-        ///         ExternalListenerId = oci_database_management_external_listener.Test_external_listener.Id,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OpcNamedCredentialId = @var.External_listener_service_opc_named_credential_id,
+        ///         ExternalListenerId = testExternalListener.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = externalListenerServiceOpcNamedCredentialId,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testExternalListenerServices = Oci.DatabaseManagement.GetExternalListenerServices.Invoke(new()
         ///     {
-        ///         ExternalListenerId = oci_database_management_external_listener.Test_external_listener.Id,
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         OpcNamedCredentialId = @var.External_listener_service_opc_named_credential_id,
+        ///         ExternalListenerId = testExternalListener.Id,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         OpcNamedCredentialId = externalListenerServiceOpcNamedCredentialId,
         ///     });
         /// 
         /// });

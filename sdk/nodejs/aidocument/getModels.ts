@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.AiDocument.getModels({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.model_display_name,
- *     id: _var.model_id,
- *     projectId: oci_ai_document_project.test_project.id,
- *     state: _var.model_state,
+ *     compartmentId: compartmentId,
+ *     displayName: modelDisplayName,
+ *     id: modelId,
+ *     projectId: testProject.id,
+ *     state: modelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,11 +112,11 @@ export interface GetModelsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModels = oci.AiDocument.getModels({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.model_display_name,
- *     id: _var.model_id,
- *     projectId: oci_ai_document_project.test_project.id,
- *     state: _var.model_state,
+ *     compartmentId: compartmentId,
+ *     displayName: modelDisplayName,
+ *     id: modelId,
+ *     projectId: testProject.id,
+ *     state: modelState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

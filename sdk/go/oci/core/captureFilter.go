@@ -39,45 +39,45 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewCaptureFilter(ctx, "testCaptureFilter", &Core.CaptureFilterArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				FilterType:    pulumi.Any(_var.Capture_filter_filter_type),
+//			_, err := Core.NewCaptureFilter(ctx, "test_capture_filter", &Core.CaptureFilterArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				FilterType:    pulumi.Any(captureFilterFilterType),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Capture_filter_display_name),
+//				DisplayName: pulumi.Any(captureFilterDisplayName),
 //				FlowLogCaptureFilterRules: core.CaptureFilterFlowLogCaptureFilterRuleArray{
 //					&core.CaptureFilterFlowLogCaptureFilterRuleArgs{
-//						DestinationCidr: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_destination_cidr),
-//						FlowLogType:     pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_flow_log_type),
+//						DestinationCidr: pulumi.Any(captureFilterFlowLogCaptureFilterRulesDestinationCidr),
+//						FlowLogType:     pulumi.Any(captureFilterFlowLogCaptureFilterRulesFlowLogType),
 //						IcmpOptions: &core.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs{
-//							Type: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_icmp_options_type),
-//							Code: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_icmp_options_code),
+//							Type: pulumi.Any(captureFilterFlowLogCaptureFilterRulesIcmpOptionsType),
+//							Code: pulumi.Any(captureFilterFlowLogCaptureFilterRulesIcmpOptionsCode),
 //						},
-//						IsEnabled:    pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_is_enabled),
-//						Priority:     pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_priority),
-//						Protocol:     pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_protocol),
-//						RuleAction:   pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_rule_action),
-//						SamplingRate: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_sampling_rate),
-//						SourceCidr:   pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_source_cidr),
+//						IsEnabled:    pulumi.Any(captureFilterFlowLogCaptureFilterRulesIsEnabled),
+//						Priority:     pulumi.Any(captureFilterFlowLogCaptureFilterRulesPriority),
+//						Protocol:     pulumi.Any(captureFilterFlowLogCaptureFilterRulesProtocol),
+//						RuleAction:   pulumi.Any(captureFilterFlowLogCaptureFilterRulesRuleAction),
+//						SamplingRate: pulumi.Any(captureFilterFlowLogCaptureFilterRulesSamplingRate),
+//						SourceCidr:   pulumi.Any(captureFilterFlowLogCaptureFilterRulesSourceCidr),
 //						TcpOptions: &core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs{
 //							DestinationPortRange: &core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min),
+//								Max: pulumi.Any(captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMax),
+//								Min: pulumi.Any(captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMin),
 //							},
 //							SourcePortRange: &core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min),
+//								Max: pulumi.Any(captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMin),
 //							},
 //						},
 //						UdpOptions: &core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs{
 //							DestinationPortRange: &core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min),
+//								Max: pulumi.Any(captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMax),
+//								Min: pulumi.Any(captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMin),
 //							},
 //							SourcePortRange: &core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min),
+//								Max: pulumi.Any(captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMin),
 //							},
 //						},
 //					},
@@ -87,33 +87,33 @@ import (
 //				},
 //				VtapCaptureFilterRules: core.CaptureFilterVtapCaptureFilterRuleArray{
 //					&core.CaptureFilterVtapCaptureFilterRuleArgs{
-//						TrafficDirection: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_traffic_direction),
-//						DestinationCidr:  pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_destination_cidr),
+//						TrafficDirection: pulumi.Any(captureFilterVtapCaptureFilterRulesTrafficDirection),
+//						DestinationCidr:  pulumi.Any(captureFilterVtapCaptureFilterRulesDestinationCidr),
 //						IcmpOptions: &core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs{
-//							Type: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_icmp_options_type),
-//							Code: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_icmp_options_code),
+//							Type: pulumi.Any(captureFilterVtapCaptureFilterRulesIcmpOptionsType),
+//							Code: pulumi.Any(captureFilterVtapCaptureFilterRulesIcmpOptionsCode),
 //						},
-//						Protocol:   pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_protocol),
-//						RuleAction: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_rule_action),
-//						SourceCidr: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_source_cidr),
+//						Protocol:   pulumi.Any(captureFilterVtapCaptureFilterRulesProtocol),
+//						RuleAction: pulumi.Any(captureFilterVtapCaptureFilterRulesRuleAction),
+//						SourceCidr: pulumi.Any(captureFilterVtapCaptureFilterRulesSourceCidr),
 //						TcpOptions: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs{
 //							DestinationPortRange: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min),
+//								Max: pulumi.Any(captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMax),
+//								Min: pulumi.Any(captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMin),
 //							},
 //							SourcePortRange: &core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min),
+//								Max: pulumi.Any(captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMin),
 //							},
 //						},
 //						UdpOptions: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs{
 //							DestinationPortRange: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min),
+//								Max: pulumi.Any(captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMax),
+//								Min: pulumi.Any(captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMin),
 //							},
 //							SourcePortRange: &core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs{
-//								Max: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max),
-//								Min: pulumi.Any(_var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min),
+//								Max: pulumi.Any(captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMax),
+//								Min: pulumi.Any(captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMin),
 //							},
 //						},
 //					},

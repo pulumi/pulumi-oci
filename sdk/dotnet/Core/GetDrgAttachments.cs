@@ -35,14 +35,14 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDrgAttachments = Oci.Core.GetDrgAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AttachmentType = @var.Drg_attachment_attachment_type,
-        ///         DisplayName = @var.Drg_attachment_display_name,
-        ///         DrgId = oci_core_drg.Test_drg.Id,
-        ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-        ///         NetworkId = oci_core_network.Test_network.Id,
-        ///         State = @var.Drg_attachment_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AttachmentType = drgAttachmentAttachmentType,
+        ///         DisplayName = drgAttachmentDisplayName,
+        ///         DrgId = testDrg.Id,
+        ///         DrgRouteTableId = testDrgRouteTable.Id,
+        ///         NetworkId = testNetwork.Id,
+        ///         State = drgAttachmentState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -76,14 +76,14 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testDrgAttachments = Oci.Core.GetDrgAttachments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AttachmentType = @var.Drg_attachment_attachment_type,
-        ///         DisplayName = @var.Drg_attachment_display_name,
-        ///         DrgId = oci_core_drg.Test_drg.Id,
-        ///         DrgRouteTableId = oci_core_drg_route_table.Test_drg_route_table.Id,
-        ///         NetworkId = oci_core_network.Test_network.Id,
-        ///         State = @var.Drg_attachment_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         AttachmentType = drgAttachmentAttachmentType,
+        ///         DisplayName = drgAttachmentDisplayName,
+        ///         DrgId = testDrg.Id,
+        ///         DrgRouteTableId = testDrgRouteTable.Id,
+        ///         NetworkId = testNetwork.Id,
+        ///         State = drgAttachmentState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

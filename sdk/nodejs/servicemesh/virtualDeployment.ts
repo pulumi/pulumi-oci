@@ -18,28 +18,29 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVirtualDeployment = new oci.servicemesh.VirtualDeployment("testVirtualDeployment", {
- *     compartmentId: _var.compartment_id,
- *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ * const testVirtualDeployment = new oci.servicemesh.VirtualDeployment("test_virtual_deployment", {
+ *     compartmentId: compartmentId,
+ *     name: virtualDeploymentName,
+ *     virtualServiceId: testVirtualService.id,
  *     accessLogging: {
- *         isEnabled: _var.virtual_deployment_access_logging_is_enabled,
+ *         isEnabled: virtualDeploymentAccessLoggingIsEnabled,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.virtual_deployment_description,
+ *     description: virtualDeploymentDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
  *     listeners: [{
- *         port: _var.virtual_deployment_listeners_port,
- *         protocol: _var.virtual_deployment_listeners_protocol,
- *         idleTimeoutInMs: _var.virtual_deployment_listeners_idle_timeout_in_ms,
- *         requestTimeoutInMs: _var.virtual_deployment_listeners_request_timeout_in_ms,
+ *         port: virtualDeploymentListenersPort,
+ *         protocol: virtualDeploymentListenersProtocol,
+ *         idleTimeoutInMs: virtualDeploymentListenersIdleTimeoutInMs,
+ *         requestTimeoutInMs: virtualDeploymentListenersRequestTimeoutInMs,
  *     }],
  *     serviceDiscovery: {
- *         type: _var.virtual_deployment_service_discovery_type,
- *         hostname: _var.virtual_deployment_service_discovery_hostname,
+ *         type: virtualDeploymentServiceDiscoveryType,
+ *         hostname: virtualDeploymentServiceDiscoveryHostname,
  *     },
  * });
  * ```

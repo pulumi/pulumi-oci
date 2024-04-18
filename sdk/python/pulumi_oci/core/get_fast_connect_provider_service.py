@@ -200,7 +200,7 @@ def get_fast_connect_provider_service(provider_service_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
+    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -244,7 +244,7 @@ def get_fast_connect_provider_service_output(provider_service_id: Optional[pulum
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=data["oci_core_fast_connect_provider_services"]["test_fast_connect_provider_services"]["fast_connect_provider_services"][0]["id"])
+    test_fast_connect_provider_service = oci.Core.get_fast_connect_provider_service(provider_service_id=test_fast_connect_provider_services["fastConnectProviderServices"][0]["id"])
     ```
     <!--End PulumiCodeChooser -->
 

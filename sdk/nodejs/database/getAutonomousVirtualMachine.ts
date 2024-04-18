@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousVirtualMachine = oci.Database.getAutonomousVirtualMachine({
- *     autonomousVirtualMachineId: oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine.id,
+ *     autonomousVirtualMachineId: testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,7 +111,7 @@ export interface GetAutonomousVirtualMachineResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousVirtualMachine = oci.Database.getAutonomousVirtualMachine({
- *     autonomousVirtualMachineId: oci_database_autonomous_virtual_machine.test_autonomous_virtual_machine.id,
+ *     autonomousVirtualMachineId: testAutonomousVirtualMachineOciDatabaseAutonomousVirtualMachine.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

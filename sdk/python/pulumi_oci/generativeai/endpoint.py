@@ -406,18 +406,18 @@ class Endpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_endpoint = oci.generative_ai.Endpoint("testEndpoint",
-            compartment_id=var["compartment_id"],
-            dedicated_ai_cluster_id=oci_generative_ai_dedicated_ai_cluster["test_dedicated_ai_cluster"]["id"],
-            model_id=oci_generative_ai_model["test_model"]["id"],
+        test_endpoint = oci.generative_ai.Endpoint("test_endpoint",
+            compartment_id=compartment_id,
+            dedicated_ai_cluster_id=test_dedicated_ai_cluster["id"],
+            model_id=test_model["id"],
             content_moderation_config=oci.generative_ai.EndpointContentModerationConfigArgs(
-                is_enabled=var["endpoint_content_moderation_config_is_enabled"],
+                is_enabled=endpoint_content_moderation_config_is_enabled,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["endpoint_description"],
-            display_name=var["endpoint_display_name"],
+            description=endpoint_description,
+            display_name=endpoint_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -467,18 +467,18 @@ class Endpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_endpoint = oci.generative_ai.Endpoint("testEndpoint",
-            compartment_id=var["compartment_id"],
-            dedicated_ai_cluster_id=oci_generative_ai_dedicated_ai_cluster["test_dedicated_ai_cluster"]["id"],
-            model_id=oci_generative_ai_model["test_model"]["id"],
+        test_endpoint = oci.generative_ai.Endpoint("test_endpoint",
+            compartment_id=compartment_id,
+            dedicated_ai_cluster_id=test_dedicated_ai_cluster["id"],
+            model_id=test_model["id"],
             content_moderation_config=oci.generative_ai.EndpointContentModerationConfigArgs(
-                is_enabled=var["endpoint_content_moderation_config_is_enabled"],
+                is_enabled=endpoint_content_moderation_config_is_enabled,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["endpoint_description"],
-            display_name=var["endpoint_display_name"],
+            description=endpoint_description,
+            display_name=endpoint_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

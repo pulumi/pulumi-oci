@@ -91,7 +91,7 @@ def get_fusion_environment_admin_users(filters: Optional[Sequence[pulumi.InputTy
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
+    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=test_fusion_environment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_fusion_environment_admin_users_output(filters: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"])
+    test_fusion_environment_admin_users = oci.Functions.get_fusion_environment_admin_users(fusion_environment_id=test_fusion_environment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumes = oci.Core.getBootVolumes({
- *     availabilityDomain: _var.boot_volume_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ *     availabilityDomain: bootVolumeAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     volumeGroupId: testVolumeGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,9 +96,9 @@ export interface GetBootVolumesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumes = oci.Core.getBootVolumes({
- *     availabilityDomain: _var.boot_volume_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ *     availabilityDomain: bootVolumeAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     volumeGroupId: testVolumeGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

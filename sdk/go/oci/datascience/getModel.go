@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetModel(ctx, &datascience.GetModelArgs{
-//				ModelId: oci_datascience_model.Test_model.Id,
+//				ModelId: testModelOciDatascienceModel.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

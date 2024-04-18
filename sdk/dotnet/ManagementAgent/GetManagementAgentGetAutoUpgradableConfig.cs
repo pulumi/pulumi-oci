@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentGetAutoUpgradableConfig = Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentGetAutoUpgradableConfig = Oci.ManagementAgent.GetManagementAgentGetAutoUpgradableConfig.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

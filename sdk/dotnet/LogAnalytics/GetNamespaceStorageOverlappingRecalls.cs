@@ -30,9 +30,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageOverlappingRecalls = Oci.LogAnalytics.GetNamespaceStorageOverlappingRecalls.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_overlapping_recall_namespace,
-        ///         TimeDataEnded = @var.Namespace_storage_overlapping_recall_time_data_ended,
-        ///         TimeDataStarted = @var.Namespace_storage_overlapping_recall_time_data_started,
+        ///         Namespace = namespaceStorageOverlappingRecallNamespace,
+        ///         TimeDataEnded = namespaceStorageOverlappingRecallTimeDataEnded,
+        ///         TimeDataStarted = namespaceStorageOverlappingRecallTimeDataStarted,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceStorageOverlappingRecalls = Oci.LogAnalytics.GetNamespaceStorageOverlappingRecalls.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_storage_overlapping_recall_namespace,
-        ///         TimeDataEnded = @var.Namespace_storage_overlapping_recall_time_data_ended,
-        ///         TimeDataStarted = @var.Namespace_storage_overlapping_recall_time_data_started,
+        ///         Namespace = namespaceStorageOverlappingRecallNamespace,
+        ///         TimeDataEnded = namespaceStorageOverlappingRecallTimeDataEnded,
+        ///         TimeDataStarted = namespaceStorageOverlappingRecallTimeDataStarted,
         ///     });
         /// 
         /// });

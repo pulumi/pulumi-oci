@@ -71,7 +71,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
-     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .aiPrivateEndpointId(testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -113,7 +113,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
-     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .aiPrivateEndpointId(testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -155,7 +155,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
-     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .aiPrivateEndpointId(testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -197,7 +197,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoint = AiAnomalyDetectionFunctions.getAiPrivateEndpoint(GetAiPrivateEndpointArgs.builder()
-     *             .aiPrivateEndpointId(oci_ai_anomaly_detection_ai_private_endpoint.test_ai_private_endpoint().id())
+     *             .aiPrivateEndpointId(testAiPrivateEndpointOciAiAnomalyDetectionAiPrivateEndpoint.id())
      *             .build());
      * 
      *     }
@@ -239,10 +239,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ai_private_endpoint_display_name())
-     *             .id(var_.ai_private_endpoint_id())
-     *             .state(var_.ai_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiPrivateEndpointDisplayName)
+     *             .id(aiPrivateEndpointId)
+     *             .state(aiPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -284,10 +284,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ai_private_endpoint_display_name())
-     *             .id(var_.ai_private_endpoint_id())
-     *             .state(var_.ai_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiPrivateEndpointDisplayName)
+     *             .id(aiPrivateEndpointId)
+     *             .state(aiPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -329,10 +329,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ai_private_endpoint_display_name())
-     *             .id(var_.ai_private_endpoint_id())
-     *             .state(var_.ai_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiPrivateEndpointDisplayName)
+     *             .id(aiPrivateEndpointId)
+     *             .state(aiPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -374,10 +374,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiPrivateEndpoints = AiAnomalyDetectionFunctions.getAiPrivateEndpoints(GetAiPrivateEndpointsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.ai_private_endpoint_display_name())
-     *             .id(var_.ai_private_endpoint_id())
-     *             .state(var_.ai_private_endpoint_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(aiPrivateEndpointDisplayName)
+     *             .id(aiPrivateEndpointId)
+     *             .state(aiPrivateEndpointState)
      *             .build());
      * 
      *     }
@@ -419,7 +419,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .detectAnomalyJobId(testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id())
      *             .build());
      * 
      *     }
@@ -461,7 +461,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .detectAnomalyJobId(testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id())
      *             .build());
      * 
      *     }
@@ -503,7 +503,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .detectAnomalyJobId(testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id())
      *             .build());
      * 
      *     }
@@ -545,7 +545,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJob = AiAnomalyDetectionFunctions.getDetectAnomalyJob(GetDetectAnomalyJobArgs.builder()
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
+     *             .detectAnomalyJobId(testDetectAnomalyJobOciAiAnomalyDetectionDetectAnomalyJob.id())
      *             .build());
      * 
      *     }
@@ -587,12 +587,12 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
-     *             .displayName(var_.detect_anomaly_job_display_name())
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.detect_anomaly_job_state())
+     *             .compartmentId(compartmentId)
+     *             .detectAnomalyJobId(testDetectAnomalyJob.id())
+     *             .displayName(detectAnomalyJobDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(detectAnomalyJobState)
      *             .build());
      * 
      *     }
@@ -634,12 +634,12 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
-     *             .displayName(var_.detect_anomaly_job_display_name())
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.detect_anomaly_job_state())
+     *             .compartmentId(compartmentId)
+     *             .detectAnomalyJobId(testDetectAnomalyJob.id())
+     *             .displayName(detectAnomalyJobDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(detectAnomalyJobState)
      *             .build());
      * 
      *     }
@@ -681,12 +681,12 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
-     *             .displayName(var_.detect_anomaly_job_display_name())
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.detect_anomaly_job_state())
+     *             .compartmentId(compartmentId)
+     *             .detectAnomalyJobId(testDetectAnomalyJob.id())
+     *             .displayName(detectAnomalyJobDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(detectAnomalyJobState)
      *             .build());
      * 
      *     }
@@ -728,12 +728,12 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectAnomalyJobs = AiAnomalyDetectionFunctions.getDetectAnomalyJobs(GetDetectAnomalyJobsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detectAnomalyJobId(oci_ai_anomaly_detection_detect_anomaly_job.test_detect_anomaly_job().id())
-     *             .displayName(var_.detect_anomaly_job_display_name())
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.detect_anomaly_job_state())
+     *             .compartmentId(compartmentId)
+     *             .detectAnomalyJobId(testDetectAnomalyJob.id())
+     *             .displayName(detectAnomalyJobDisplayName)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .state(detectAnomalyJobState)
      *             .build());
      * 
      *     }
@@ -775,7 +775,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
-     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .dataAssetId(testDataAssetOciAiAnomalyDetectionDataAsset.id())
      *             .build());
      * 
      *     }
@@ -817,7 +817,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
-     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .dataAssetId(testDataAssetOciAiAnomalyDetectionDataAsset.id())
      *             .build());
      * 
      *     }
@@ -859,7 +859,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
-     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .dataAssetId(testDataAssetOciAiAnomalyDetectionDataAsset.id())
      *             .build());
      * 
      *     }
@@ -901,7 +901,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = AiAnomalyDetectionFunctions.getDetectionDataAsset(GetDetectionDataAssetArgs.builder()
-     *             .dataAssetId(oci_ai_anomaly_detection_data_asset.test_data_asset().id())
+     *             .dataAssetId(testDataAssetOciAiAnomalyDetectionDataAsset.id())
      *             .build());
      * 
      *     }
@@ -943,10 +943,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.data_asset_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataAssetDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(dataAssetState)
      *             .build());
      * 
      *     }
@@ -988,10 +988,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.data_asset_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataAssetDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(dataAssetState)
      *             .build());
      * 
      *     }
@@ -1033,10 +1033,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.data_asset_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataAssetDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(dataAssetState)
      *             .build());
      * 
      *     }
@@ -1078,10 +1078,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAssets = AiAnomalyDetectionFunctions.getDetectionDataAssets(GetDetectionDataAssetsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.data_asset_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.data_asset_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(dataAssetDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(dataAssetState)
      *             .build());
      * 
      *     }
@@ -1123,7 +1123,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .modelId(testModelOciAiAnomalyDetectionModel.id())
      *             .build());
      * 
      *     }
@@ -1165,7 +1165,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .modelId(testModelOciAiAnomalyDetectionModel.id())
      *             .build());
      * 
      *     }
@@ -1207,7 +1207,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .modelId(testModelOciAiAnomalyDetectionModel.id())
      *             .build());
      * 
      *     }
@@ -1249,7 +1249,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiAnomalyDetectionFunctions.getDetectionModel(GetDetectionModelArgs.builder()
-     *             .modelId(oci_ai_anomaly_detection_model.test_model().id())
+     *             .modelId(testModelOciAiAnomalyDetectionModel.id())
      *             .build());
      * 
      *     }
@@ -1291,10 +1291,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1336,10 +1336,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1381,10 +1381,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1426,10 +1426,10 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModels = AiAnomalyDetectionFunctions.getDetectionModels(GetDetectionModelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.model_display_name())
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
-     *             .state(var_.model_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(modelDisplayName)
+     *             .projectId(testProject.id())
+     *             .state(modelState)
      *             .build());
      * 
      *     }
@@ -1471,7 +1471,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .projectId(testProjectOciAiAnomalyDetectionProject.id())
      *             .build());
      * 
      *     }
@@ -1513,7 +1513,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .projectId(testProjectOciAiAnomalyDetectionProject.id())
      *             .build());
      * 
      *     }
@@ -1555,7 +1555,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .projectId(testProjectOciAiAnomalyDetectionProject.id())
      *             .build());
      * 
      *     }
@@ -1597,7 +1597,7 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiAnomalyDetectionFunctions.getDetectionProject(GetDetectionProjectArgs.builder()
-     *             .projectId(oci_ai_anomaly_detection_project.test_project().id())
+     *             .projectId(testProjectOciAiAnomalyDetectionProject.id())
      *             .build());
      * 
      *     }
@@ -1639,9 +1639,9 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -1683,9 +1683,9 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -1727,9 +1727,9 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .state(projectState)
      *             .build());
      * 
      *     }
@@ -1771,9 +1771,9 @@ public final class AiAnomalyDetectionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjects = AiAnomalyDetectionFunctions.getDetectionProjects(GetDetectionProjectsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.project_display_name())
-     *             .state(var_.project_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(projectDisplayName)
+     *             .state(projectState)
      *             .build());
      * 
      *     }

@@ -25,61 +25,61 @@ namespace Pulumi.Oci.DataFlow
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testApplication = new Oci.DataFlow.Application("testApplication", new()
+    ///     var testApplication = new Oci.DataFlow.Application("test_application", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Application_display_name,
-    ///         DriverShape = @var.Application_driver_shape,
-    ///         ExecutorShape = @var.Application_executor_shape,
-    ///         Language = @var.Application_language,
-    ///         NumExecutors = @var.Application_num_executors,
-    ///         SparkVersion = @var.Application_spark_version,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = applicationDisplayName,
+    ///         DriverShape = applicationDriverShape,
+    ///         ExecutorShape = applicationExecutorShape,
+    ///         Language = applicationLanguage,
+    ///         NumExecutors = applicationNumExecutors,
+    ///         SparkVersion = applicationSparkVersion,
     ///         ApplicationLogConfig = new Oci.DataFlow.Inputs.ApplicationApplicationLogConfigArgs
     ///         {
-    ///             LogGroupId = oci_logging_log_group.Test_log_group.Id,
-    ///             LogId = oci_logging_log.Test_log.Id,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
     ///         },
-    ///         ArchiveUri = @var.Application_archive_uri,
-    ///         Arguments = @var.Application_arguments,
-    ///         ClassName = @var.Application_class_name,
-    ///         Configuration = @var.Application_configuration,
+    ///         ArchiveUri = applicationArchiveUri,
+    ///         Arguments = applicationArguments,
+    ///         ClassName = applicationClassName,
+    ///         Configuration = applicationConfiguration,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Application_description,
+    ///         Description = applicationDescription,
     ///         DriverShapeConfig = new Oci.DataFlow.Inputs.ApplicationDriverShapeConfigArgs
     ///         {
-    ///             MemoryInGbs = @var.Application_driver_shape_config_memory_in_gbs,
-    ///             Ocpus = @var.Application_driver_shape_config_ocpus,
+    ///             MemoryInGbs = applicationDriverShapeConfigMemoryInGbs,
+    ///             Ocpus = applicationDriverShapeConfigOcpus,
     ///         },
-    ///         Execute = @var.Application_execute,
+    ///         Execute = applicationExecute,
     ///         ExecutorShapeConfig = new Oci.DataFlow.Inputs.ApplicationExecutorShapeConfigArgs
     ///         {
-    ///             MemoryInGbs = @var.Application_executor_shape_config_memory_in_gbs,
-    ///             Ocpus = @var.Application_executor_shape_config_ocpus,
+    ///             MemoryInGbs = applicationExecutorShapeConfigMemoryInGbs,
+    ///             Ocpus = applicationExecutorShapeConfigOcpus,
     ///         },
-    ///         FileUri = @var.Application_file_uri,
+    ///         FileUri = applicationFileUri,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IdleTimeoutInMinutes = @var.Application_idle_timeout_in_minutes,
-    ///         LogsBucketUri = @var.Application_logs_bucket_uri,
-    ///         MaxDurationInMinutes = @var.Application_max_duration_in_minutes,
-    ///         MetastoreId = @var.Metastore_id,
+    ///         IdleTimeoutInMinutes = applicationIdleTimeoutInMinutes,
+    ///         LogsBucketUri = applicationLogsBucketUri,
+    ///         MaxDurationInMinutes = applicationMaxDurationInMinutes,
+    ///         MetastoreId = metastoreId,
     ///         Parameters = new[]
     ///         {
     ///             new Oci.DataFlow.Inputs.ApplicationParameterArgs
     ///             {
-    ///                 Name = @var.Application_parameters_name,
-    ///                 Value = @var.Application_parameters_value,
+    ///                 Name = applicationParametersName,
+    ///                 Value = applicationParametersValue,
     ///             },
     ///         },
-    ///         PoolId = oci_dataflow_pool.Test_pool.Id,
-    ///         PrivateEndpointId = oci_dataflow_private_endpoint.Test_private_endpoint.Id,
-    ///         Type = @var.Application_type,
-    ///         WarehouseBucketUri = @var.Application_warehouse_bucket_uri,
+    ///         PoolId = testPool.Id,
+    ///         PrivateEndpointId = testPrivateEndpoint.Id,
+    ///         Type = applicationType,
+    ///         WarehouseBucketUri = applicationWarehouseBucketUri,
     ///     });
     /// 
     /// });

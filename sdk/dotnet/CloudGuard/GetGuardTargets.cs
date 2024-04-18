@@ -43,12 +43,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testTargets = Oci.CloudGuard.GetGuardTargets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Target_access_level,
-        ///         CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
-        ///         DisplayName = @var.Target_display_name,
-        ///         IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
-        ///         State = @var.Target_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAccessLevel,
+        ///         CompartmentIdInSubtree = targetCompartmentIdInSubtree,
+        ///         DisplayName = targetDisplayName,
+        ///         IsNonSecurityZoneTargetsOnlyQuery = targetIsNonSecurityZoneTargetsOnlyQuery,
+        ///         State = targetState,
         ///     });
         /// 
         /// });
@@ -90,12 +90,12 @@ namespace Pulumi.Oci.CloudGuard
         /// {
         ///     var testTargets = Oci.CloudGuard.GetGuardTargets.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Target_access_level,
-        ///         CompartmentIdInSubtree = @var.Target_compartment_id_in_subtree,
-        ///         DisplayName = @var.Target_display_name,
-        ///         IsNonSecurityZoneTargetsOnlyQuery = @var.Target_is_non_security_zone_targets_only_query,
-        ///         State = @var.Target_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = targetAccessLevel,
+        ///         CompartmentIdInSubtree = targetCompartmentIdInSubtree,
+        ///         DisplayName = targetDisplayName,
+        ///         IsNonSecurityZoneTargetsOnlyQuery = targetIsNonSecurityZoneTargetsOnlyQuery,
+        ///         State = targetState,
         ///     });
         /// 
         /// });

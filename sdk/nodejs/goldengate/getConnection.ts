@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.GoldenGate.getConnection({
- *     connectionId: oci_golden_gate_connection.test_connection.id,
+ *     connectionId: testConnectionOciGoldenGateConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -312,7 +312,7 @@ export interface GetConnectionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnection = oci.GoldenGate.getConnection({
- *     connectionId: oci_golden_gate_connection.test_connection.id,
+ *     connectionId: testConnectionOciGoldenGateConnection.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

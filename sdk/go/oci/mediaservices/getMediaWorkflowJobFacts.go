@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := MediaServices.GetMediaWorkflowJobFacts(ctx, &mediaservices.GetMediaWorkflowJobFactsArgs{
-//				MediaWorkflowJobId: oci_media_services_media_workflow_job.Test_media_workflow_job.Id,
-//				Key:                pulumi.StringRef(_var.Media_workflow_job_fact_key),
-//				Type:               pulumi.StringRef(_var.Media_workflow_job_fact_type),
+//				MediaWorkflowJobId: testMediaWorkflowJob.Id,
+//				Key:                pulumi.StringRef(mediaWorkflowJobFactKey),
+//				Type:               pulumi.StringRef(mediaWorkflowJobFactType),
 //			}, nil)
 //			if err != nil {
 //				return err

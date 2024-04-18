@@ -26,14 +26,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
- *     bucket: _var.object_version_bucket,
- *     namespace: _var.object_version_namespace,
- *     delimiter: _var.object_version_delimiter,
- *     end: _var.object_version_end,
- *     fields: _var.object_version_fields,
- *     prefix: _var.object_version_prefix,
- *     start: _var.object_version_start,
- *     startAfter: _var.object_version_start_after,
+ *     bucket: objectVersionBucket,
+ *     namespace: objectVersionNamespace,
+ *     delimiter: objectVersionDelimiter,
+ *     end: objectVersionEnd,
+ *     fields: objectVersionFields,
+ *     prefix: objectVersionPrefix,
+ *     start: objectVersionStart,
+ *     startAfter: objectVersionStartAfter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -139,14 +139,14 @@ export interface GetObjectVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
- *     bucket: _var.object_version_bucket,
- *     namespace: _var.object_version_namespace,
- *     delimiter: _var.object_version_delimiter,
- *     end: _var.object_version_end,
- *     fields: _var.object_version_fields,
- *     prefix: _var.object_version_prefix,
- *     start: _var.object_version_start,
- *     startAfter: _var.object_version_start_after,
+ *     bucket: objectVersionBucket,
+ *     namespace: objectVersionNamespace,
+ *     delimiter: objectVersionDelimiter,
+ *     end: objectVersionEnd,
+ *     fields: objectVersionFields,
+ *     prefix: objectVersionPrefix,
+ *     start: objectVersionStart,
+ *     startAfter: objectVersionStartAfter,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

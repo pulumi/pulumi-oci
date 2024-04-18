@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsEntitiesSummary(ctx, &loganalytics.GetLogAnalyticsEntitiesSummaryArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Namespace:     _var.Log_analytics_entities_summary_namespace,
+//				CompartmentId: compartmentId,
+//				Namespace:     logAnalyticsEntitiesSummaryNamespace,
 //			}, nil)
 //			if err != nil {
 //				return err

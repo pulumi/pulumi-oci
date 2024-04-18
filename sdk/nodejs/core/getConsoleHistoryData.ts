@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConsoleHistoryData = oci.Core.getConsoleHistoryData({
- *     consoleHistoryId: oci_core_console_history.test_console_history.id,
- *     length: _var.console_history_content_length,
- *     offset: _var.console_history_content_offset,
+ *     consoleHistoryId: testConsoleHistory.id,
+ *     length: consoleHistoryContentLength,
+ *     offset: consoleHistoryContentOffset,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,9 +85,9 @@ export interface GetConsoleHistoryDataResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConsoleHistoryData = oci.Core.getConsoleHistoryData({
- *     consoleHistoryId: oci_core_console_history.test_console_history.id,
- *     length: _var.console_history_content_length,
- *     offset: _var.console_history_content_offset,
+ *     consoleHistoryId: testConsoleHistory.id,
+ *     length: consoleHistoryContentLength,
+ *     offset: consoleHistoryContentOffset,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

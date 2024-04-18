@@ -32,51 +32,51 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseMigration.NewConnection(ctx, "testConnection", &DatabaseMigration.ConnectionArgs{
+//			_, err := DatabaseMigration.NewConnection(ctx, "test_connection", &DatabaseMigration.ConnectionArgs{
 //				AdminCredentials: &databasemigration.ConnectionAdminCredentialsArgs{
-//					Password: pulumi.Any(_var.Connection_admin_credentials_password),
-//					Username: pulumi.Any(_var.Connection_admin_credentials_username),
+//					Password: pulumi.Any(connectionAdminCredentialsPassword),
+//					Username: pulumi.Any(connectionAdminCredentialsUsername),
 //				},
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DatabaseType:  pulumi.Any(_var.Connection_database_type),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DatabaseType:  pulumi.Any(connectionDatabaseType),
 //				VaultDetails: &databasemigration.ConnectionVaultDetailsArgs{
-//					CompartmentId: pulumi.Any(_var.Compartment_id),
-//					KeyId:         pulumi.Any(oci_kms_key.Test_key.Id),
-//					VaultId:       pulumi.Any(oci_kms_vault.Test_vault.Id),
+//					CompartmentId: pulumi.Any(compartmentId),
+//					KeyId:         pulumi.Any(testKey.Id),
+//					VaultId:       pulumi.Any(testVault.Id),
 //				},
-//				CertificateTdn: pulumi.Any(_var.Connection_certificate_tdn),
+//				CertificateTdn: pulumi.Any(connectionCertificateTdn),
 //				ConnectDescriptor: &databasemigration.ConnectionConnectDescriptorArgs{
-//					ConnectString:       pulumi.Any(_var.Connection_connect_descriptor_connect_string),
-//					DatabaseServiceName: pulumi.Any(oci_core_service.Test_service.Name),
-//					Host:                pulumi.Any(_var.Connection_connect_descriptor_host),
-//					Port:                pulumi.Any(_var.Connection_connect_descriptor_port),
+//					ConnectString:       pulumi.Any(connectionConnectDescriptorConnectString),
+//					DatabaseServiceName: pulumi.Any(testService.Name),
+//					Host:                pulumi.Any(connectionConnectDescriptorHost),
+//					Port:                pulumi.Any(connectionConnectDescriptorPort),
 //				},
-//				DatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
+//				DatabaseId: pulumi.Any(testDatabase.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DisplayName: pulumi.Any(_var.Connection_display_name),
+//				DisplayName: pulumi.Any(connectionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				NsgIds: pulumi.Any(_var.Connection_nsg_ids),
+//				NsgIds: pulumi.Any(connectionNsgIds),
 //				PrivateEndpoint: &databasemigration.ConnectionPrivateEndpointArgs{
-//					CompartmentId: pulumi.Any(_var.Compartment_id),
-//					SubnetId:      pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//					CompartmentId: pulumi.Any(compartmentId),
+//					SubnetId:      pulumi.Any(testSubnet.Id),
+//					VcnId:         pulumi.Any(testVcn.Id),
 //				},
 //				ReplicationCredentials: &databasemigration.ConnectionReplicationCredentialsArgs{
-//					Password: pulumi.Any(_var.Connection_replication_credentials_password),
-//					Username: pulumi.Any(_var.Connection_replication_credentials_username),
+//					Password: pulumi.Any(connectionReplicationCredentialsPassword),
+//					Username: pulumi.Any(connectionReplicationCredentialsUsername),
 //				},
 //				SshDetails: &databasemigration.ConnectionSshDetailsArgs{
-//					Host:         pulumi.Any(_var.Connection_ssh_details_host),
-//					Sshkey:       pulumi.Any(_var.Connection_ssh_details_sshkey),
-//					User:         pulumi.Any(_var.Connection_ssh_details_user),
-//					SudoLocation: pulumi.Any(_var.Connection_ssh_details_sudo_location),
+//					Host:         pulumi.Any(connectionSshDetailsHost),
+//					Sshkey:       pulumi.Any(connectionSshDetailsSshkey),
+//					User:         pulumi.Any(connectionSshDetailsUser),
+//					SudoLocation: pulumi.Any(connectionSshDetailsSudoLocation),
 //				},
-//				TlsKeystore: pulumi.Any(_var.Connection_tls_keystore),
-//				TlsWallet:   pulumi.Any(_var.Connection_tls_wallet),
+//				TlsKeystore: pulumi.Any(connectionTlsKeystore),
+//				TlsWallet:   pulumi.Any(connectionTlsWallet),
 //			})
 //			if err != nil {
 //				return err

@@ -182,14 +182,14 @@ def get_assets(asset_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assets = oci.CloudBridge.get_assets(compartment_id=var["compartment_id"],
-        asset_id=oci_cloud_bridge_asset["test_asset"]["id"],
-        asset_type=var["asset_asset_type"],
-        display_name=var["asset_display_name"],
-        external_asset_key=var["asset_external_asset_key"],
-        inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-        source_key=var["asset_source_key"],
-        state=var["asset_state"])
+    test_assets = oci.CloudBridge.get_assets(compartment_id=compartment_id,
+        asset_id=test_asset["id"],
+        asset_type=asset_asset_type,
+        display_name=asset_display_name,
+        external_asset_key=asset_external_asset_key,
+        inventory_id=test_inventory["id"],
+        source_key=asset_source_key,
+        state=asset_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -253,14 +253,14 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_assets = oci.CloudBridge.get_assets(compartment_id=var["compartment_id"],
-        asset_id=oci_cloud_bridge_asset["test_asset"]["id"],
-        asset_type=var["asset_asset_type"],
-        display_name=var["asset_display_name"],
-        external_asset_key=var["asset_external_asset_key"],
-        inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-        source_key=var["asset_source_key"],
-        state=var["asset_state"])
+    test_assets = oci.CloudBridge.get_assets(compartment_id=compartment_id,
+        asset_id=test_asset["id"],
+        asset_type=asset_asset_type,
+        display_name=asset_display_name,
+        external_asset_key=asset_external_asset_key,
+        inventory_id=test_inventory["id"],
+        source_key=asset_source_key,
+        state=asset_state)
     ```
     <!--End PulumiCodeChooser -->
 

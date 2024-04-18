@@ -43,11 +43,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditTrailAnalytic(ctx, &datasafe.GetAuditTrailAnalyticArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Audit_trail_analytic_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_trail_analytic_compartment_id_in_subtree),
-//				GroupBies:              _var.Audit_trail_analytic_group_by,
-//				TargetId:               pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(auditTrailAnalyticAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(auditTrailAnalyticCompartmentIdInSubtree),
+//				GroupBies:              auditTrailAnalyticGroupBy,
+//				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

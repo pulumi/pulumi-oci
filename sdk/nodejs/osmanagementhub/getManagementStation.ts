@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementStation = oci.OsManagementHub.getManagementStation({
- *     managementStationId: oci_os_management_hub_management_station.test_management_station.id,
+ *     managementStationId: testManagementStationOciOsManagementHubManagementStation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetManagementStationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementStation = oci.OsManagementHub.getManagementStation({
- *     managementStationId: oci_os_management_hub_management_station.test_management_station.id,
+ *     managementStationId: testManagementStationOciOsManagementHubManagementStation.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -36,12 +36,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Kms.GetKeys(ctx, &kms.GetKeysArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				ManagementEndpoint: _var.Key_management_endpoint,
-//				Algorithm:          pulumi.StringRef(_var.Key_algorithm),
-//				Length:             pulumi.IntRef(_var.Key_length),
-//				CurveId:            pulumi.StringRef(oci_kms_curve.Test_curve.Id),
-//				ProtectionMode:     pulumi.StringRef(_var.Key_protection_mode),
+//				CompartmentId:      compartmentId,
+//				ManagementEndpoint: keyManagementEndpoint,
+//				Algorithm:          pulumi.StringRef(keyAlgorithm),
+//				Length:             pulumi.IntRef(keyLength),
+//				CurveId:            pulumi.StringRef(testCurve.Id),
+//				ProtectionMode:     pulumi.StringRef(keyProtectionMode),
 //			}, nil)
 //			if err != nil {
 //				return err

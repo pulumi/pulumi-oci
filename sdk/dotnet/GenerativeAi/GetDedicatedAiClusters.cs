@@ -29,10 +29,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// {
         ///     var testDedicatedAiClusters = Oci.GenerativeAi.GetDedicatedAiClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Dedicated_ai_cluster_display_name,
-        ///         Id = @var.Dedicated_ai_cluster_id,
-        ///         State = @var.Dedicated_ai_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dedicatedAiClusterDisplayName,
+        ///         Id = dedicatedAiClusterId,
+        ///         State = dedicatedAiClusterState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// {
         ///     var testDedicatedAiClusters = Oci.GenerativeAi.GetDedicatedAiClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Dedicated_ai_cluster_display_name,
-        ///         Id = @var.Dedicated_ai_cluster_id,
-        ///         State = @var.Dedicated_ai_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = dedicatedAiClusterDisplayName,
+        ///         Id = dedicatedAiClusterId,
+        ///         State = dedicatedAiClusterState,
         ///     });
         /// 
         /// });

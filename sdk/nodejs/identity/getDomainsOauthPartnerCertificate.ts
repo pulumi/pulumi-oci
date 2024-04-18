@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOauthPartnerCertificate = oci.Identity.getDomainsOauthPartnerCertificate({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     oAuthPartnerCertificateId: oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate.id,
- *     authorization: _var.oauth_partner_certificate_authorization,
- *     resourceTypeSchemaVersion: _var.oauth_partner_certificate_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     oAuthPartnerCertificateId: testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id,
+ *     authorization: oauthPartnerCertificateAuthorization,
+ *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -178,10 +178,10 @@ export interface GetDomainsOauthPartnerCertificateResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOauthPartnerCertificate = oci.Identity.getDomainsOauthPartnerCertificate({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     oAuthPartnerCertificateId: oci_identity_domains_oauth_partner_certificate.test_oauth_partner_certificate.id,
- *     authorization: _var.oauth_partner_certificate_authorization,
- *     resourceTypeSchemaVersion: _var.oauth_partner_certificate_resource_type_schema_version,
+ *     idcsEndpoint: testDomain.url,
+ *     oAuthPartnerCertificateId: testOauthPartnerCertificateOciIdentityDomainsOauthPartnerCertificate.id,
+ *     authorization: oauthPartnerCertificateAuthorization,
+ *     resourceTypeSchemaVersion: oauthPartnerCertificateResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

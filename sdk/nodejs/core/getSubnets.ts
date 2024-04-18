@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubnets = oci.Core.getSubnets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.subnet_display_name,
- *     state: _var.subnet_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: subnetDisplayName,
+ *     state: subnetState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,10 +107,10 @@ export interface GetSubnetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubnets = oci.Core.getSubnets({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.subnet_display_name,
- *     state: _var.subnet_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: subnetDisplayName,
+ *     state: subnetState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,25 +31,25 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.GetBaselineableMetricsEvaluate(ctx, &stackmonitoring.GetBaselineableMetricsEvaluateArgs{
-//				BaselineableMetricId: oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
+//				BaselineableMetricId: testBaselineableMetric.Id,
 //				Items: []stackmonitoring.GetBaselineableMetricsEvaluateItem{
 //					{
 //						EvaluationDataPoints: []stackmonitoring.GetBaselineableMetricsEvaluateItemEvaluationDataPoint{
 //							{
-//								Timestamp: _var.Baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
-//								Value:     _var.Baselineable_metrics_evaluate_items_evaluation_data_points_value,
+//								Timestamp: baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp,
+//								Value:     baselineableMetricsEvaluateItemsEvaluationDataPointsValue,
 //							},
 //						},
 //						TrainingDataPoints: []stackmonitoring.GetBaselineableMetricsEvaluateItemTrainingDataPoint{
 //							{
-//								Timestamp: _var.Baselineable_metrics_evaluate_items_training_data_points_timestamp,
-//								Value:     _var.Baselineable_metrics_evaluate_items_training_data_points_value,
+//								Timestamp: baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp,
+//								Value:     baselineableMetricsEvaluateItemsTrainingDataPointsValue,
 //							},
 //						},
-//						Dimensions: _var.Baselineable_metrics_evaluate_items_dimensions,
+//						Dimensions: baselineableMetricsEvaluateItemsDimensions,
 //					},
 //				},
-//				ResourceId: oci_usage_proxy_resource.Test_resource.Id,
+//				ResourceId: testResource.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

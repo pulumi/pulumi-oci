@@ -25,30 +25,30 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspace = new Oci.DataIntegration.Workspace("testWorkspace", new()
+    ///     var testWorkspace = new Oci.DataIntegration.Workspace("test_workspace", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Workspace_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = workspaceDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Workspace_description,
-    ///         DnsServerIp = @var.Workspace_dns_server_ip,
-    ///         DnsServerZone = @var.Workspace_dns_server_zone,
-    ///         EndpointCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         EndpointId = oci_dataintegration_endpoint.Test_endpoint.Id,
-    ///         EndpointName = @var.Workspace_endpoint_name,
+    ///         Description = workspaceDescription,
+    ///         DnsServerIp = workspaceDnsServerIp,
+    ///         DnsServerZone = workspaceDnsServerZone,
+    ///         EndpointCompartmentId = testCompartment.Id,
+    ///         EndpointId = testEndpoint.Id,
+    ///         EndpointName = workspaceEndpointName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsPrivateNetworkEnabled = @var.Workspace_is_private_network_enabled,
-    ///         RegistryCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
-    ///         RegistryName = oci_data_connectivity_registry.Test_registry.Name,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         IsPrivateNetworkEnabled = workspaceIsPrivateNetworkEnabled,
+    ///         RegistryCompartmentId = testCompartment.Id,
+    ///         RegistryId = testRegistry.Id,
+    ///         RegistryName = testRegistry.Name,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnId = testVcn.Id,
     ///     });
     /// 
     /// });

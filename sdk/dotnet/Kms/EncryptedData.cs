@@ -26,15 +26,15 @@ namespace Pulumi.Oci.Kms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testEncryptedData = new Oci.Kms.EncryptedData("testEncryptedData", new()
+    ///     var testEncryptedData = new Oci.Kms.EncryptedData("test_encrypted_data", new()
     ///     {
-    ///         CryptoEndpoint = @var.Encrypted_data_crypto_endpoint,
-    ///         KeyId = oci_kms_key.Test_key.Id,
-    ///         Plaintext = @var.Encrypted_data_plaintext,
-    ///         AssociatedData = @var.Encrypted_data_associated_data,
-    ///         EncryptionAlgorithm = @var.Encrypted_data_encryption_algorithm,
-    ///         KeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///         LoggingContext = @var.Encrypted_data_logging_context,
+    ///         CryptoEndpoint = encryptedDataCryptoEndpoint,
+    ///         KeyId = testKey.Id,
+    ///         Plaintext = encryptedDataPlaintext,
+    ///         AssociatedData = encryptedDataAssociatedData,
+    ///         EncryptionAlgorithm = encryptedDataEncryptionAlgorithm,
+    ///         KeyVersionId = testKeyVersion.Id,
+    ///         LoggingContext = encryptedDataLoggingContext,
     ///     });
     /// 
     /// });

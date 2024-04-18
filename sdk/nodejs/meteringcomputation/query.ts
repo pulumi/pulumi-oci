@@ -18,37 +18,37 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testQuery = new oci.meteringcomputation.Query("testQuery", {
- *     compartmentId: _var.compartment_id,
+ * const testQuery = new oci.meteringcomputation.Query("test_query", {
+ *     compartmentId: compartmentId,
  *     queryDefinition: {
  *         costAnalysisUi: {
- *             graph: _var.query_query_definition_cost_analysis_ui_graph,
- *             isCumulativeGraph: _var.query_query_definition_cost_analysis_ui_is_cumulative_graph,
+ *             graph: queryQueryDefinitionCostAnalysisUiGraph,
+ *             isCumulativeGraph: queryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
  *         },
- *         displayName: _var.query_query_definition_display_name,
+ *         displayName: queryQueryDefinitionDisplayName,
  *         reportQuery: {
- *             granularity: _var.query_query_definition_report_query_granularity,
- *             tenantId: oci_metering_computation_tenant.test_tenant.id,
- *             compartmentDepth: _var.query_query_definition_report_query_compartment_depth,
- *             dateRangeName: _var.query_query_definition_report_query_date_range_name,
- *             filter: _var.query_query_definition_report_query_filter,
+ *             granularity: queryQueryDefinitionReportQueryGranularity,
+ *             tenantId: testTenant.id,
+ *             compartmentDepth: queryQueryDefinitionReportQueryCompartmentDepth,
+ *             dateRangeName: queryQueryDefinitionReportQueryDateRangeName,
+ *             filter: queryQueryDefinitionReportQueryFilter,
  *             forecast: {
- *                 timeForecastEnded: _var.query_query_definition_report_query_forecast_time_forecast_ended,
- *                 forecastType: _var.query_query_definition_report_query_forecast_forecast_type,
- *                 timeForecastStarted: _var.query_query_definition_report_query_forecast_time_forecast_started,
+ *                 timeForecastEnded: queryQueryDefinitionReportQueryForecastTimeForecastEnded,
+ *                 forecastType: queryQueryDefinitionReportQueryForecastForecastType,
+ *                 timeForecastStarted: queryQueryDefinitionReportQueryForecastTimeForecastStarted,
  *             },
- *             groupBies: _var.query_query_definition_report_query_group_by,
+ *             groupBies: queryQueryDefinitionReportQueryGroupBy,
  *             groupByTags: [{
- *                 key: _var.query_query_definition_report_query_group_by_tag_key,
- *                 namespace: _var.query_query_definition_report_query_group_by_tag_namespace,
- *                 value: _var.query_query_definition_report_query_group_by_tag_value,
+ *                 key: queryQueryDefinitionReportQueryGroupByTagKey,
+ *                 namespace: queryQueryDefinitionReportQueryGroupByTagNamespace,
+ *                 value: queryQueryDefinitionReportQueryGroupByTagValue,
  *             }],
- *             isAggregateByTime: _var.query_query_definition_report_query_is_aggregate_by_time,
- *             queryType: _var.query_query_definition_report_query_query_type,
- *             timeUsageEnded: _var.query_query_definition_report_query_time_usage_ended,
- *             timeUsageStarted: _var.query_query_definition_report_query_time_usage_started,
+ *             isAggregateByTime: queryQueryDefinitionReportQueryIsAggregateByTime,
+ *             queryType: queryQueryDefinitionReportQueryQueryType,
+ *             timeUsageEnded: queryQueryDefinitionReportQueryTimeUsageEnded,
+ *             timeUsageStarted: queryQueryDefinitionReportQueryTimeUsageStarted,
  *         },
- *         version: _var.query_query_definition_version,
+ *         version: queryQueryDefinitionVersion,
  *     },
  * });
  * ```

@@ -358,12 +358,12 @@ def get_domains_cloud_gate_server(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_server = oci.Identity.get_domains_cloud_gate_server(cloud_gate_server_id=oci_identity_domains_cloud_gate_server["test_cloud_gate_server"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_cloud_gate_server = oci.Identity.get_domains_cloud_gate_server(cloud_gate_server_id=test_cloud_gate_server_oci_identity_domains_cloud_gate_server["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["cloud_gate_server_authorization"],
-        resource_type_schema_version=var["cloud_gate_server_resource_type_schema_version"])
+        authorization=cloud_gate_server_authorization,
+        resource_type_schema_version=cloud_gate_server_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -435,12 +435,12 @@ def get_domains_cloud_gate_server_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_cloud_gate_server = oci.Identity.get_domains_cloud_gate_server(cloud_gate_server_id=oci_identity_domains_cloud_gate_server["test_cloud_gate_server"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_cloud_gate_server = oci.Identity.get_domains_cloud_gate_server(cloud_gate_server_id=test_cloud_gate_server_oci_identity_domains_cloud_gate_server["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["cloud_gate_server_authorization"],
-        resource_type_schema_version=var["cloud_gate_server_resource_type_schema_version"])
+        authorization=cloud_gate_server_authorization,
+        resource_type_schema_version=cloud_gate_server_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

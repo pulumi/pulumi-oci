@@ -33,13 +33,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditPolicies = oci.DataSafe.getAuditPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_policy_access_level,
- *     auditPolicyId: oci_data_safe_audit_policy.test_audit_policy.id,
- *     compartmentIdInSubtree: _var.audit_policy_compartment_id_in_subtree,
- *     displayName: _var.audit_policy_display_name,
- *     state: _var.audit_policy_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditPolicyAccessLevel,
+ *     auditPolicyId: testAuditPolicy.id,
+ *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree,
+ *     displayName: auditPolicyDisplayName,
+ *     state: auditPolicyState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -154,13 +154,13 @@ export interface GetAuditPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditPolicies = oci.DataSafe.getAuditPolicies({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_policy_access_level,
- *     auditPolicyId: oci_data_safe_audit_policy.test_audit_policy.id,
- *     compartmentIdInSubtree: _var.audit_policy_compartment_id_in_subtree,
- *     displayName: _var.audit_policy_display_name,
- *     state: _var.audit_policy_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditPolicyAccessLevel,
+ *     auditPolicyId: testAuditPolicy.id,
+ *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree,
+ *     displayName: auditPolicyDisplayName,
+ *     state: auditPolicyState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

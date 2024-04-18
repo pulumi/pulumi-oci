@@ -18,19 +18,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCccUpgradeSchedule = new oci.computecloud.AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.ccc_upgrade_schedule_display_name,
+ * const testCccUpgradeSchedule = new oci.computecloud.AtCustomerCccUpgradeSchedule("test_ccc_upgrade_schedule", {
+ *     compartmentId: compartmentId,
+ *     displayName: cccUpgradeScheduleDisplayName,
  *     events: [{
- *         description: _var.ccc_upgrade_schedule_events_description,
- *         scheduleEventDuration: _var.ccc_upgrade_schedule_events_schedule_event_duration,
- *         timeStart: _var.ccc_upgrade_schedule_events_time_start,
- *         scheduleEventRecurrences: _var.ccc_upgrade_schedule_events_schedule_event_recurrences,
+ *         description: cccUpgradeScheduleEventsDescription,
+ *         scheduleEventDuration: cccUpgradeScheduleEventsScheduleEventDuration,
+ *         timeStart: cccUpgradeScheduleEventsTimeStart,
+ *         scheduleEventRecurrences: cccUpgradeScheduleEventsScheduleEventRecurrences,
  *     }],
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.ccc_upgrade_schedule_description,
+ *     description: cccUpgradeScheduleDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

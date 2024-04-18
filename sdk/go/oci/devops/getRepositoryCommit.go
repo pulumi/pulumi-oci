@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryCommit(ctx, &devops.GetRepositoryCommitArgs{
-//				CommitId:     oci_devops_commit.Test_commit.Id,
-//				RepositoryId: oci_devops_repository.Test_repository.Id,
+//				CommitId:     testCommit.Id,
+//				RepositoryId: testRepository.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

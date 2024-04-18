@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Functions.GetFusionEnvironmentFamily(ctx, &functions.GetFusionEnvironmentFamilyArgs{
-//				FusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
+//				FusionEnvironmentFamilyId: testFusionEnvironmentFamilyOciFusionAppsFusionEnvironmentFamily.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

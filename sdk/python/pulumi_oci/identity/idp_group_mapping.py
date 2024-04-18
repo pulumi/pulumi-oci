@@ -224,10 +224,10 @@ class IdpGroupMapping(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_idp_group_mapping = oci.identity.IdpGroupMapping("testIdpGroupMapping",
-            group_id=oci_identity_group["test_group"]["id"],
-            identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-            idp_group_name=var["idp_group_mapping_idp_group_name"])
+        test_idp_group_mapping = oci.identity.IdpGroupMapping("test_idp_group_mapping",
+            group_id=test_group["id"],
+            identity_provider_id=test_identity_provider["id"],
+            idp_group_name=idp_group_mapping_idp_group_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -270,10 +270,10 @@ class IdpGroupMapping(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_idp_group_mapping = oci.identity.IdpGroupMapping("testIdpGroupMapping",
-            group_id=oci_identity_group["test_group"]["id"],
-            identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-            idp_group_name=var["idp_group_mapping_idp_group_name"])
+        test_idp_group_mapping = oci.identity.IdpGroupMapping("test_idp_group_mapping",
+            group_id=test_group["id"],
+            identity_provider_id=test_identity_provider["id"],
+            idp_group_name=idp_group_mapping_idp_group_name)
         ```
         <!--End PulumiCodeChooser -->
 

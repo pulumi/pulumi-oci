@@ -398,33 +398,33 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("testNamespaceIngestTimeRule",
+        test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("test_namespace_ingest_time_rule",
             actions=[oci.log_analytics.NamespaceIngestTimeRuleActionArgs(
-                compartment_id=var["compartment_id"],
-                metric_name=oci_monitoring_metric["test_metric"]["name"],
-                namespace=var["namespace_ingest_time_rule_actions_namespace"],
-                type=var["namespace_ingest_time_rule_actions_type"],
-                dimensions=var["namespace_ingest_time_rule_actions_dimensions"],
-                resource_group=var["namespace_ingest_time_rule_actions_resource_group"],
+                compartment_id=compartment_id,
+                metric_name=test_metric["name"],
+                namespace=namespace_ingest_time_rule_actions_namespace,
+                type=namespace_ingest_time_rule_actions_type,
+                dimensions=namespace_ingest_time_rule_actions_dimensions,
+                resource_group=namespace_ingest_time_rule_actions_resource_group,
             )],
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             conditions=oci.log_analytics.NamespaceIngestTimeRuleConditionsArgs(
-                field_name=var["namespace_ingest_time_rule_conditions_field_name"],
-                field_operator=var["namespace_ingest_time_rule_conditions_field_operator"],
-                field_value=var["namespace_ingest_time_rule_conditions_field_value"],
-                kind=var["namespace_ingest_time_rule_conditions_kind"],
+                field_name=namespace_ingest_time_rule_conditions_field_name,
+                field_operator=namespace_ingest_time_rule_conditions_field_operator,
+                field_value=namespace_ingest_time_rule_conditions_field_value,
+                kind=namespace_ingest_time_rule_conditions_kind,
                 additional_conditions=[oci.log_analytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs(
-                    condition_field=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_field"],
-                    condition_operator=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_operator"],
-                    condition_value=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_value"],
+                    condition_field=namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
+                    condition_operator=namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
+                    condition_value=namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
                 )],
             ),
-            display_name=var["namespace_ingest_time_rule_display_name"],
-            namespace=var["namespace_ingest_time_rule_namespace"],
+            display_name=namespace_ingest_time_rule_display_name,
+            namespace=namespace_ingest_time_rule_namespace,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["namespace_ingest_time_rule_description"],
+            description=namespace_ingest_time_rule_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -472,33 +472,33 @@ class NamespaceIngestTimeRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("testNamespaceIngestTimeRule",
+        test_namespace_ingest_time_rule = oci.log_analytics.NamespaceIngestTimeRule("test_namespace_ingest_time_rule",
             actions=[oci.log_analytics.NamespaceIngestTimeRuleActionArgs(
-                compartment_id=var["compartment_id"],
-                metric_name=oci_monitoring_metric["test_metric"]["name"],
-                namespace=var["namespace_ingest_time_rule_actions_namespace"],
-                type=var["namespace_ingest_time_rule_actions_type"],
-                dimensions=var["namespace_ingest_time_rule_actions_dimensions"],
-                resource_group=var["namespace_ingest_time_rule_actions_resource_group"],
+                compartment_id=compartment_id,
+                metric_name=test_metric["name"],
+                namespace=namespace_ingest_time_rule_actions_namespace,
+                type=namespace_ingest_time_rule_actions_type,
+                dimensions=namespace_ingest_time_rule_actions_dimensions,
+                resource_group=namespace_ingest_time_rule_actions_resource_group,
             )],
-            compartment_id=var["compartment_id"],
+            compartment_id=compartment_id,
             conditions=oci.log_analytics.NamespaceIngestTimeRuleConditionsArgs(
-                field_name=var["namespace_ingest_time_rule_conditions_field_name"],
-                field_operator=var["namespace_ingest_time_rule_conditions_field_operator"],
-                field_value=var["namespace_ingest_time_rule_conditions_field_value"],
-                kind=var["namespace_ingest_time_rule_conditions_kind"],
+                field_name=namespace_ingest_time_rule_conditions_field_name,
+                field_operator=namespace_ingest_time_rule_conditions_field_operator,
+                field_value=namespace_ingest_time_rule_conditions_field_value,
+                kind=namespace_ingest_time_rule_conditions_kind,
                 additional_conditions=[oci.log_analytics.NamespaceIngestTimeRuleConditionsAdditionalConditionArgs(
-                    condition_field=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_field"],
-                    condition_operator=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_operator"],
-                    condition_value=var["namespace_ingest_time_rule_conditions_additional_conditions_condition_value"],
+                    condition_field=namespace_ingest_time_rule_conditions_additional_conditions_condition_field,
+                    condition_operator=namespace_ingest_time_rule_conditions_additional_conditions_condition_operator,
+                    condition_value=namespace_ingest_time_rule_conditions_additional_conditions_condition_value,
                 )],
             ),
-            display_name=var["namespace_ingest_time_rule_display_name"],
-            namespace=var["namespace_ingest_time_rule_namespace"],
+            display_name=namespace_ingest_time_rule_display_name,
+            namespace=namespace_ingest_time_rule_namespace,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["namespace_ingest_time_rule_description"],
+            description=namespace_ingest_time_rule_description,
             freeform_tags={
                 "bar-key": "value",
             })

@@ -25,20 +25,21 @@ namespace Pulumi.Oci.Nosql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIndex = new Oci.Nosql.Index("testIndex", new()
+    ///     var testIndex = new Oci.Nosql.Index("test_index", new()
     ///     {
     ///         Keys = new[]
     ///         {
     ///             new Oci.Nosql.Inputs.IndexKeyArgs
     ///             {
-    ///                 ColumnName = @var.Index_keys_column_name,
-    ///                 JsonFieldType = @var.Index_keys_json_field_type,
-    ///                 JsonPath = @var.Index_keys_json_path,
+    ///                 ColumnName = indexKeysColumnName,
+    ///                 JsonFieldType = indexKeysJsonFieldType,
+    ///                 JsonPath = indexKeysJsonPath,
     ///             },
     ///         },
-    ///         TableNameOrId = oci_nosql_table_name_or.Test_table_name_or.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IsIfNotExists = @var.Index_is_if_not_exists,
+    ///         Name = indexName,
+    ///         TableNameOrId = testTableNameOr.Id,
+    ///         CompartmentId = compartmentId,
+    ///         IsIfNotExists = indexIsIfNotExists,
     ///     });
     /// 
     /// });

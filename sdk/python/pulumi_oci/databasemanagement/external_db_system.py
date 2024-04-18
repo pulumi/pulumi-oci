@@ -388,22 +388,22 @@ class ExternalDbSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system = oci.database_management.ExternalDbSystem("testExternalDbSystem",
-            compartment_id=var["compartment_id"],
-            db_system_discovery_id=oci_database_management_db_system_discovery["test_db_system_discovery"]["id"],
+        test_external_db_system = oci.database_management.ExternalDbSystem("test_external_db_system",
+            compartment_id=compartment_id,
+            db_system_discovery_id=test_db_system_discovery["id"],
             database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
-                license_model=var["external_db_system_database_management_config_license_model"],
+                license_model=external_db_system_database_management_config_license_model,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["external_db_system_display_name"],
+            display_name=external_db_system_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             stack_monitoring_config=oci.database_management.ExternalDbSystemStackMonitoringConfigArgs(
-                is_enabled=var["external_db_system_stack_monitoring_config_is_enabled"],
-                metadata=var["external_db_system_stack_monitoring_config_metadata"],
+                is_enabled=external_db_system_stack_monitoring_config_is_enabled,
+                metadata=external_db_system_stack_monitoring_config_metadata,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -444,22 +444,22 @@ class ExternalDbSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_external_db_system = oci.database_management.ExternalDbSystem("testExternalDbSystem",
-            compartment_id=var["compartment_id"],
-            db_system_discovery_id=oci_database_management_db_system_discovery["test_db_system_discovery"]["id"],
+        test_external_db_system = oci.database_management.ExternalDbSystem("test_external_db_system",
+            compartment_id=compartment_id,
+            db_system_discovery_id=test_db_system_discovery["id"],
             database_management_config=oci.database_management.ExternalDbSystemDatabaseManagementConfigArgs(
-                license_model=var["external_db_system_database_management_config_license_model"],
+                license_model=external_db_system_database_management_config_license_model,
             ),
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["external_db_system_display_name"],
+            display_name=external_db_system_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             stack_monitoring_config=oci.database_management.ExternalDbSystemStackMonitoringConfigArgs(
-                is_enabled=var["external_db_system_stack_monitoring_config_is_enabled"],
-                metadata=var["external_db_system_stack_monitoring_config_metadata"],
+                is_enabled=external_db_system_stack_monitoring_config_is_enabled,
+                metadata=external_db_system_stack_monitoring_config_metadata,
             ))
         ```
         <!--End PulumiCodeChooser -->

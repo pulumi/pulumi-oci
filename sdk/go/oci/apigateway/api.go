@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ApiGateway.NewApi(ctx, "testApi", &ApiGateway.ApiArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Content:       pulumi.Any(_var.Api_content),
+//			_, err := ApiGateway.NewApi(ctx, "test_api", &ApiGateway.ApiArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Content:       pulumi.Any(apiContent),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Api_display_name),
+//				DisplayName: pulumi.Any(apiDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

@@ -15,9 +15,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCompartment = oci.Identity.getAvailabilityDomain({
- *     compartmentId: _var.tenancy_ocid,
- *     id: _var.id,
- *     adNumber: _var.ad_number,
+ *     compartmentId: tenancyOcid,
+ *     id: id,
+ *     adNumber: adNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,9 +82,9 @@ export interface GetAvailabilityDomainResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCompartment = oci.Identity.getAvailabilityDomain({
- *     compartmentId: _var.tenancy_ocid,
- *     id: _var.id,
- *     adNumber: _var.ad_number,
+ *     compartmentId: tenancyOcid,
+ *     id: id,
+ *     adNumber: adNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

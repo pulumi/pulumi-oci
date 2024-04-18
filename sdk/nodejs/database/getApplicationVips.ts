@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApplicationVips = oci.Database.getApplicationVips({
- *     cloudVmClusterId: oci_database_cloud_vm_cluster.test_cloud_vm_cluster.id,
- *     compartmentId: _var.compartment_id,
- *     state: _var.application_vip_state,
+ *     cloudVmClusterId: testCloudVmCluster.id,
+ *     compartmentId: compartmentId,
+ *     state: applicationVipState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetApplicationVipsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApplicationVips = oci.Database.getApplicationVips({
- *     cloudVmClusterId: oci_database_cloud_vm_cluster.test_cloud_vm_cluster.id,
- *     compartmentId: _var.compartment_id,
- *     state: _var.application_vip_state,
+ *     cloudVmClusterId: testCloudVmCluster.id,
+ *     compartmentId: compartmentId,
+ *     state: applicationVipState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,10 +25,11 @@ namespace Pulumi.Oci.ServiceMesh
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIngressGatewayRouteTable = new Oci.ServiceMesh.IngressGatewayRouteTable("testIngressGatewayRouteTable", new()
+    ///     var testIngressGatewayRouteTable = new Oci.ServiceMesh.IngressGatewayRouteTable("test_ingress_gateway_route_table", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         IngressGatewayId = oci_service_mesh_ingress_gateway.Test_ingress_gateway.Id,
+    ///         CompartmentId = compartmentId,
+    ///         IngressGatewayId = testIngressGateway.Id,
+    ///         Name = ingressGatewayRouteTableName,
     ///         RouteRules = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleArgs
@@ -37,35 +38,35 @@ namespace Pulumi.Oci.ServiceMesh
     ///                 {
     ///                     new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleDestinationArgs
     ///                     {
-    ///                         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
-    ///                         Port = @var.Ingress_gateway_route_table_route_rules_destinations_port,
-    ///                         Weight = @var.Ingress_gateway_route_table_route_rules_destinations_weight,
+    ///                         VirtualServiceId = testVirtualService.Id,
+    ///                         Port = ingressGatewayRouteTableRouteRulesDestinationsPort,
+    ///                         Weight = ingressGatewayRouteTableRouteRulesDestinationsWeight,
     ///                     },
     ///                 },
-    ///                 Type = @var.Ingress_gateway_route_table_route_rules_type,
+    ///                 Type = ingressGatewayRouteTableRouteRulesType,
     ///                 IngressGatewayHost = new Oci.ServiceMesh.Inputs.IngressGatewayRouteTableRouteRuleIngressGatewayHostArgs
     ///                 {
-    ///                     Name = @var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_name,
-    ///                     Port = @var.Ingress_gateway_route_table_route_rules_ingress_gateway_host_port,
+    ///                     Name = ingressGatewayRouteTableRouteRulesIngressGatewayHostName,
+    ///                     Port = ingressGatewayRouteTableRouteRulesIngressGatewayHostPort,
     ///                 },
-    ///                 IsGrpc = @var.Ingress_gateway_route_table_route_rules_is_grpc,
-    ///                 IsHostRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_host_rewrite_enabled,
-    ///                 IsPathRewriteEnabled = @var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
-    ///                 Path = @var.Ingress_gateway_route_table_route_rules_path,
-    ///                 PathType = @var.Ingress_gateway_route_table_route_rules_path_type,
-    ///                 RequestTimeoutInMs = @var.Ingress_gateway_route_table_route_rules_request_timeout_in_ms,
+    ///                 IsGrpc = ingressGatewayRouteTableRouteRulesIsGrpc,
+    ///                 IsHostRewriteEnabled = ingressGatewayRouteTableRouteRulesIsHostRewriteEnabled,
+    ///                 IsPathRewriteEnabled = ingressGatewayRouteTableRouteRulesIsPathRewriteEnabled,
+    ///                 Path = ingressGatewayRouteTableRouteRulesPath,
+    ///                 PathType = ingressGatewayRouteTableRouteRulesPathType,
+    ///                 RequestTimeoutInMs = ingressGatewayRouteTableRouteRulesRequestTimeoutInMs,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Ingress_gateway_route_table_description,
+    ///         Description = ingressGatewayRouteTableDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         Priority = @var.Ingress_gateway_route_table_priority,
+    ///         Priority = ingressGatewayRouteTablePriority,
     ///     });
     /// 
     /// });

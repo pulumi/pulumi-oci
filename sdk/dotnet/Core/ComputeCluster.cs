@@ -37,15 +37,15 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testComputeCluster = new Oci.Core.ComputeCluster("testComputeCluster", new()
+    ///     var testComputeCluster = new Oci.Core.ComputeCluster("test_compute_cluster", new()
     ///     {
-    ///         AvailabilityDomain = @var.Compute_cluster_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
+    ///         AvailabilityDomain = computeClusterAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Compute_cluster_display_name,
+    ///         DisplayName = computeClusterDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

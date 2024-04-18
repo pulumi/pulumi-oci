@@ -93,7 +93,7 @@ def get_mysql_version(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_versions = oci.Mysql.get_mysql_version(compartment_id=var["compartment_id"])
+    test_mysql_versions = oci.Mysql.get_mysql_version(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -131,7 +131,7 @@ def get_mysql_version_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mysql_versions = oci.Mysql.get_mysql_version(compartment_id=var["compartment_id"])
+    test_mysql_versions = oci.Mysql.get_mysql_version(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityAssessmentFindingsChangeAuditLogs(ctx, &datasafe.GetSecurityAssessmentFindingsChangeAuditLogsArgs{
-//				SecurityAssessmentId:               oci_data_safe_security_assessment.Test_security_assessment.Id,
-//				FindingKey:                         pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_finding_key),
-//				FindingTitle:                       pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_finding_title),
-//				IsRiskDeferred:                     pulumi.BoolRef(_var.Security_assessment_findings_change_audit_log_is_risk_deferred),
-//				ModifiedBy:                         pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_modified_by),
-//				Severity:                           pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_severity),
-//				TimeUpdatedGreaterThanOrEqualTo:    pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_time_updated_greater_than_or_equal_to),
-//				TimeUpdatedLessThan:                pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_time_updated_less_than),
-//				TimeValidUntilGreaterThanOrEqualTo: pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_time_valid_until_greater_than_or_equal_to),
-//				TimeValidUntilLessThan:             pulumi.StringRef(_var.Security_assessment_findings_change_audit_log_time_valid_until_less_than),
+//				SecurityAssessmentId:               testSecurityAssessment.Id,
+//				FindingKey:                         pulumi.StringRef(securityAssessmentFindingsChangeAuditLogFindingKey),
+//				FindingTitle:                       pulumi.StringRef(securityAssessmentFindingsChangeAuditLogFindingTitle),
+//				IsRiskDeferred:                     pulumi.BoolRef(securityAssessmentFindingsChangeAuditLogIsRiskDeferred),
+//				ModifiedBy:                         pulumi.StringRef(securityAssessmentFindingsChangeAuditLogModifiedBy),
+//				Severity:                           pulumi.StringRef(securityAssessmentFindingsChangeAuditLogSeverity),
+//				TimeUpdatedGreaterThanOrEqualTo:    pulumi.StringRef(securityAssessmentFindingsChangeAuditLogTimeUpdatedGreaterThanOrEqualTo),
+//				TimeUpdatedLessThan:                pulumi.StringRef(securityAssessmentFindingsChangeAuditLogTimeUpdatedLessThan),
+//				TimeValidUntilGreaterThanOrEqualTo: pulumi.StringRef(securityAssessmentFindingsChangeAuditLogTimeValidUntilGreaterThanOrEqualTo),
+//				TimeValidUntilLessThan:             pulumi.StringRef(securityAssessmentFindingsChangeAuditLogTimeValidUntilLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

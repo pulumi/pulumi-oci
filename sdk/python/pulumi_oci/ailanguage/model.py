@@ -452,57 +452,57 @@ class Model(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model = oci.ai_language.Model("testModel",
-            compartment_id=var["compartment_id"],
+        test_model = oci.ai_language.Model("test_model",
+            compartment_id=compartment_id,
             model_details=oci.ai_language.ModelModelDetailsArgs(
-                model_type=var["model_model_details_model_type"],
+                model_type=model_model_details_model_type,
                 classification_mode=oci.ai_language.ModelModelDetailsClassificationModeArgs(
-                    classification_mode=var["model_model_details_classification_mode_classification_mode"],
-                    version=var["model_model_details_classification_mode_version"],
+                    classification_mode=model_model_details_classification_mode_classification_mode,
+                    version=model_model_details_classification_mode_version,
                 ),
-                language_code=var["model_model_details_language_code"],
-                version=var["model_model_details_version"],
+                language_code=model_model_details_language_code,
+                version=model_model_details_version,
             ),
-            project_id=oci_ai_language_project["test_project"]["id"],
+            project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
+            description=model_description,
+            display_name=model_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             test_strategy=oci.ai_language.ModelTestStrategyArgs(
-                strategy_type=var["model_test_strategy_strategy_type"],
+                strategy_type=model_test_strategy_strategy_type,
                 testing_dataset=oci.ai_language.ModelTestStrategyTestingDatasetArgs(
-                    dataset_type=var["model_test_strategy_testing_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
+                    dataset_type=model_test_strategy_testing_dataset_dataset_type,
+                    dataset_id=test_dataset["id"],
                     location_details=oci.ai_language.ModelTestStrategyTestingDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_testing_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_testing_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_testing_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_testing_dataset_location_details_object_names"],
+                        bucket=model_test_strategy_testing_dataset_location_details_bucket,
+                        location_type=model_test_strategy_testing_dataset_location_details_location_type,
+                        namespace=model_test_strategy_testing_dataset_location_details_namespace,
+                        object_names=model_test_strategy_testing_dataset_location_details_object_names,
                     ),
                 ),
                 validation_dataset=oci.ai_language.ModelTestStrategyValidationDatasetArgs(
-                    dataset_type=var["model_test_strategy_validation_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
+                    dataset_type=model_test_strategy_validation_dataset_dataset_type,
+                    dataset_id=test_dataset["id"],
                     location_details=oci.ai_language.ModelTestStrategyValidationDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_validation_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_validation_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_validation_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_validation_dataset_location_details_object_names"],
+                        bucket=model_test_strategy_validation_dataset_location_details_bucket,
+                        location_type=model_test_strategy_validation_dataset_location_details_location_type,
+                        namespace=model_test_strategy_validation_dataset_location_details_namespace,
+                        object_names=model_test_strategy_validation_dataset_location_details_object_names,
                     ),
                 ),
             ),
             training_dataset=oci.ai_language.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
+                dataset_type=model_training_dataset_dataset_type,
+                dataset_id=test_dataset["id"],
                 location_details=oci.ai_language.ModelTrainingDatasetLocationDetailsArgs(
-                    bucket=var["model_training_dataset_location_details_bucket"],
-                    location_type=var["model_training_dataset_location_details_location_type"],
-                    namespace=var["model_training_dataset_location_details_namespace"],
-                    object_names=var["model_training_dataset_location_details_object_names"],
+                    bucket=model_training_dataset_location_details_bucket,
+                    location_type=model_training_dataset_location_details_location_type,
+                    namespace=model_training_dataset_location_details_namespace,
+                    object_names=model_training_dataset_location_details_object_names,
                 ),
             ))
         ```
@@ -546,57 +546,57 @@ class Model(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_model = oci.ai_language.Model("testModel",
-            compartment_id=var["compartment_id"],
+        test_model = oci.ai_language.Model("test_model",
+            compartment_id=compartment_id,
             model_details=oci.ai_language.ModelModelDetailsArgs(
-                model_type=var["model_model_details_model_type"],
+                model_type=model_model_details_model_type,
                 classification_mode=oci.ai_language.ModelModelDetailsClassificationModeArgs(
-                    classification_mode=var["model_model_details_classification_mode_classification_mode"],
-                    version=var["model_model_details_classification_mode_version"],
+                    classification_mode=model_model_details_classification_mode_classification_mode,
+                    version=model_model_details_classification_mode_version,
                 ),
-                language_code=var["model_model_details_language_code"],
-                version=var["model_model_details_version"],
+                language_code=model_model_details_language_code,
+                version=model_model_details_version,
             ),
-            project_id=oci_ai_language_project["test_project"]["id"],
+            project_id=test_project["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["model_description"],
-            display_name=var["model_display_name"],
+            description=model_description,
+            display_name=model_display_name,
             freeform_tags={
                 "bar-key": "value",
             },
             test_strategy=oci.ai_language.ModelTestStrategyArgs(
-                strategy_type=var["model_test_strategy_strategy_type"],
+                strategy_type=model_test_strategy_strategy_type,
                 testing_dataset=oci.ai_language.ModelTestStrategyTestingDatasetArgs(
-                    dataset_type=var["model_test_strategy_testing_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
+                    dataset_type=model_test_strategy_testing_dataset_dataset_type,
+                    dataset_id=test_dataset["id"],
                     location_details=oci.ai_language.ModelTestStrategyTestingDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_testing_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_testing_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_testing_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_testing_dataset_location_details_object_names"],
+                        bucket=model_test_strategy_testing_dataset_location_details_bucket,
+                        location_type=model_test_strategy_testing_dataset_location_details_location_type,
+                        namespace=model_test_strategy_testing_dataset_location_details_namespace,
+                        object_names=model_test_strategy_testing_dataset_location_details_object_names,
                     ),
                 ),
                 validation_dataset=oci.ai_language.ModelTestStrategyValidationDatasetArgs(
-                    dataset_type=var["model_test_strategy_validation_dataset_dataset_type"],
-                    dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
+                    dataset_type=model_test_strategy_validation_dataset_dataset_type,
+                    dataset_id=test_dataset["id"],
                     location_details=oci.ai_language.ModelTestStrategyValidationDatasetLocationDetailsArgs(
-                        bucket=var["model_test_strategy_validation_dataset_location_details_bucket"],
-                        location_type=var["model_test_strategy_validation_dataset_location_details_location_type"],
-                        namespace=var["model_test_strategy_validation_dataset_location_details_namespace"],
-                        object_names=var["model_test_strategy_validation_dataset_location_details_object_names"],
+                        bucket=model_test_strategy_validation_dataset_location_details_bucket,
+                        location_type=model_test_strategy_validation_dataset_location_details_location_type,
+                        namespace=model_test_strategy_validation_dataset_location_details_namespace,
+                        object_names=model_test_strategy_validation_dataset_location_details_object_names,
                     ),
                 ),
             ),
             training_dataset=oci.ai_language.ModelTrainingDatasetArgs(
-                dataset_type=var["model_training_dataset_dataset_type"],
-                dataset_id=oci_data_labeling_service_dataset["test_dataset"]["id"],
+                dataset_type=model_training_dataset_dataset_type,
+                dataset_id=test_dataset["id"],
                 location_details=oci.ai_language.ModelTrainingDatasetLocationDetailsArgs(
-                    bucket=var["model_training_dataset_location_details_bucket"],
-                    location_type=var["model_training_dataset_location_details_location_type"],
-                    namespace=var["model_training_dataset_location_details_namespace"],
-                    object_names=var["model_training_dataset_location_details_object_names"],
+                    bucket=model_training_dataset_location_details_bucket,
+                    location_type=model_training_dataset_location_details_location_type,
+                    namespace=model_training_dataset_location_details_namespace,
+                    object_names=model_training_dataset_location_details_object_names,
                 ),
             ))
         ```

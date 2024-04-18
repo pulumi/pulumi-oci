@@ -26,12 +26,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlConfigurations = oci.Mysql.getMysqlConfigurations({
- *     compartmentId: _var.compartment_id,
- *     configurationId: _var.mysql_configuration_id,
- *     displayName: _var.mysql_configuration_display_name,
- *     shapeName: _var.mysql_shape_name,
- *     state: _var.mysql_configuration_state,
- *     types: _var.mysql_configuration_type,
+ *     compartmentId: compartmentId,
+ *     configurationId: mysqlConfigurationId,
+ *     displayName: mysqlConfigurationDisplayName,
+ *     shapeName: mysqlShapeName,
+ *     state: mysqlConfigurationState,
+ *     types: mysqlConfigurationType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -136,12 +136,12 @@ export interface GetMysqlConfigurationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMysqlConfigurations = oci.Mysql.getMysqlConfigurations({
- *     compartmentId: _var.compartment_id,
- *     configurationId: _var.mysql_configuration_id,
- *     displayName: _var.mysql_configuration_display_name,
- *     shapeName: _var.mysql_shape_name,
- *     state: _var.mysql_configuration_state,
- *     types: _var.mysql_configuration_type,
+ *     compartmentId: compartmentId,
+ *     configurationId: mysqlConfigurationId,
+ *     displayName: mysqlConfigurationDisplayName,
+ *     shapeName: mysqlShapeName,
+ *     state: mysqlConfigurationState,
+ *     types: mysqlConfigurationType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

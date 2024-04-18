@@ -93,8 +93,8 @@ def get_db_management_private_endpoint_associated_database(compartment_id: Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=var["compartment_id"],
-        db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
+    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
+        db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -131,8 +131,8 @@ def get_db_management_private_endpoint_associated_database_output(compartment_id
     import pulumi
     import pulumi_oci as oci
 
-    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=var["compartment_id"],
-        db_management_private_endpoint_id=oci_database_management_db_management_private_endpoint["test_db_management_private_endpoint"]["id"])
+    test_db_management_private_endpoint_associated_database = oci.DatabaseManagement.get_db_management_private_endpoint_associated_database(compartment_id=compartment_id,
+        db_management_private_endpoint_id=test_db_management_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

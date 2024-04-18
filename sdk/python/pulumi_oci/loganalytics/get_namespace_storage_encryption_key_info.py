@@ -80,7 +80,7 @@ def get_namespace_storage_encryption_key_info(namespace: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=var["namespace_storage_encryption_key_info_namespace"])
+    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=namespace_storage_encryption_key_info_namespace)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -113,7 +113,7 @@ def get_namespace_storage_encryption_key_info_output(namespace: Optional[pulumi.
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=var["namespace_storage_encryption_key_info_namespace"])
+    test_namespace_storage_encryption_key_info = oci.LogAnalytics.get_namespace_storage_encryption_key_info(namespace=namespace_storage_encryption_key_info_namespace)
     ```
     <!--End PulumiCodeChooser -->
 

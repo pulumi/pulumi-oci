@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPeer = oci.Blockchain.getPeer({
- *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
- *     peerId: oci_blockchain_peer.test_peer.id,
+ *     blockchainPlatformId: testBlockchainPlatform.id,
+ *     peerId: testPeerOciBlockchainPeer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,8 +97,8 @@ export interface GetPeerResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPeer = oci.Blockchain.getPeer({
- *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
- *     peerId: oci_blockchain_peer.test_peer.id,
+ *     blockchainPlatformId: testBlockchainPlatform.id,
+ *     peerId: testPeerOciBlockchainPeer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

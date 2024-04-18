@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlVersions = Oci.Mysql.GetMysqlVersion.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Mysql
         /// {
         ///     var testMysqlVersions = Oci.Mysql.GetMysqlVersion.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
+        ///         CompartmentId = compartmentId,
         ///     });
         /// 
         /// });

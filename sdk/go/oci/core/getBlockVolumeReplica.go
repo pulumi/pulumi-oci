@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetBlockVolumeReplica(ctx, &core.GetBlockVolumeReplicaArgs{
-//				BlockVolumeReplicaId: oci_core_block_volume_replica.Test_block_volume_replica.Id,
+//				BlockVolumeReplicaId: testBlockVolumeReplicaOciCoreBlockVolumeReplica.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

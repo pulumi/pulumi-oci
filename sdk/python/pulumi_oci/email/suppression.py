@@ -224,9 +224,9 @@ class Suppression(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_suppression = oci.email.Suppression("testSuppression",
-            compartment_id=var["tenancy_ocid"],
-            email_address=var["suppression_email_address"])
+        test_suppression = oci.email.Suppression("test_suppression",
+            compartment_id=tenancy_ocid,
+            email_address=suppression_email_address)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -268,9 +268,9 @@ class Suppression(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_suppression = oci.email.Suppression("testSuppression",
-            compartment_id=var["tenancy_ocid"],
-            email_address=var["suppression_email_address"])
+        test_suppression = oci.email.Suppression("test_suppression",
+            compartment_id=tenancy_ocid,
+            email_address=suppression_email_address)
         ```
         <!--End PulumiCodeChooser -->
 

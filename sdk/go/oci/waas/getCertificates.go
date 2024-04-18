@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waas.GetCertificates(ctx, &waas.GetCertificatesArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				DisplayNames:                    _var.Certificate_display_names,
-//				Ids:                             _var.Certificate_ids,
-//				States:                          _var.Certificate_states,
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Certificate_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Certificate_time_created_less_than),
+//				CompartmentId:                   compartmentId,
+//				DisplayNames:                    certificateDisplayNames,
+//				Ids:                             certificateIds,
+//				States:                          certificateStates,
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(certificateTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(certificateTimeCreatedLessThan),
 //			}, nil)
 //			if err != nil {
 //				return err

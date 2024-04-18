@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetDeployArtifact(ctx, &devops.GetDeployArtifactArgs{
-//				DeployArtifactId: oci_devops_deploy_artifact.Test_deploy_artifact.Id,
+//				DeployArtifactId: testDeployArtifactOciDevopsDeployArtifact.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

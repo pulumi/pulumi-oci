@@ -31,41 +31,41 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironment(ctx, "testFusionEnvironment", &FusionApps.FusionEnvironmentArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := FusionApps.NewFusionEnvironment(ctx, "test_fusion_environment", &FusionApps.FusionEnvironmentArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				CreateFusionEnvironmentAdminUserDetails: &fusionapps.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs{
-//					EmailAddress: pulumi.Any(_var.Fusion_environment_create_fusion_environment_admin_user_details_email_address),
-//					FirstName:    pulumi.Any(_var.Fusion_environment_create_fusion_environment_admin_user_details_first_name),
-//					LastName:     pulumi.Any(_var.Fusion_environment_create_fusion_environment_admin_user_details_last_name),
-//					Password:     pulumi.Any(_var.Fusion_environment_create_fusion_environment_admin_user_details_password),
-//					Username:     pulumi.Any(_var.Fusion_environment_create_fusion_environment_admin_user_details_username),
+//					EmailAddress: pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsEmailAddress),
+//					FirstName:    pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsFirstName),
+//					LastName:     pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsLastName),
+//					Password:     pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPassword),
+//					Username:     pulumi.Any(fusionEnvironmentCreateFusionEnvironmentAdminUserDetailsUsername),
 //				},
-//				DisplayName:               pulumi.Any(_var.Fusion_environment_display_name),
-//				FusionEnvironmentFamilyId: pulumi.Any(oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id),
-//				FusionEnvironmentType:     pulumi.Any(_var.Fusion_environment_fusion_environment_type),
-//				AdditionalLanguagePacks:   pulumi.Any(_var.Fusion_environment_additional_language_packs),
+//				DisplayName:               pulumi.Any(fusionEnvironmentDisplayName),
+//				FusionEnvironmentFamilyId: pulumi.Any(testFusionEnvironmentFamily.Id),
+//				FusionEnvironmentType:     pulumi.Any(fusionEnvironmentFusionEnvironmentType),
+//				AdditionalLanguagePacks:   pulumi.Any(fusionEnvironmentAdditionalLanguagePacks),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DnsPrefix: pulumi.Any(_var.Fusion_environment_dns_prefix),
+//				DnsPrefix: pulumi.Any(fusionEnvironmentDnsPrefix),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//				KmsKeyId: pulumi.Any(testKey.Id),
 //				MaintenancePolicy: &fusionapps.FusionEnvironmentMaintenancePolicyArgs{
-//					EnvironmentMaintenanceOverride: pulumi.Any(_var.Fusion_environment_maintenance_policy_environment_maintenance_override),
-//					MonthlyPatchingOverride:        pulumi.Any(_var.Fusion_environment_maintenance_policy_monthly_patching_override),
+//					EnvironmentMaintenanceOverride: pulumi.Any(fusionEnvironmentMaintenancePolicyEnvironmentMaintenanceOverride),
+//					MonthlyPatchingOverride:        pulumi.Any(fusionEnvironmentMaintenancePolicyMonthlyPatchingOverride),
 //				},
 //				Rules: fusionapps.FusionEnvironmentRuleArray{
 //					&fusionapps.FusionEnvironmentRuleArgs{
-//						Action: pulumi.Any(_var.Fusion_environment_rules_action),
+//						Action: pulumi.Any(fusionEnvironmentRulesAction),
 //						Conditions: fusionapps.FusionEnvironmentRuleConditionArray{
 //							&fusionapps.FusionEnvironmentRuleConditionArgs{
-//								AttributeName:  pulumi.Any(_var.Fusion_environment_rules_conditions_attribute_name),
-//								AttributeValue: pulumi.Any(_var.Fusion_environment_rules_conditions_attribute_value),
+//								AttributeName:  pulumi.Any(fusionEnvironmentRulesConditionsAttributeName),
+//								AttributeValue: pulumi.Any(fusionEnvironmentRulesConditionsAttributeValue),
 //							},
 //						},
-//						Description: pulumi.Any(_var.Fusion_environment_rules_description),
+//						Description: pulumi.Any(fusionEnvironmentRulesDescription),
 //					},
 //				},
 //			})

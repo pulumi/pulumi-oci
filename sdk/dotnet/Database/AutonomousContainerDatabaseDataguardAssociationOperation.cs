@@ -28,8 +28,8 @@ namespace Pulumi.Oci.Database
     ///     var switchover = new Oci.Database.AutonomousContainerDatabaseDataguardAssociationOperation("switchover", new()
     ///     {
     ///         Operation = "switchover",
-    ///         AutonomousContainerDatabaseId = data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Autonomous_container_database_id,
-    ///         AutonomousContainerDatabaseDataguardAssociationId = data.Oci_database_autonomous_container_database_dataguard_associations.Dataguard_associations.Autonomous_container_database_dataguard_associations[0].Id,
+    ///         AutonomousContainerDatabaseId = dataguardAssociations.AutonomousContainerDatabaseDataguardAssociations[0].Autonomous_container_database_id,
+    ///         AutonomousContainerDatabaseDataguardAssociationId = dataguardAssociations.AutonomousContainerDatabaseDataguardAssociations[0].Id,
     ///     });
     /// 
     /// });

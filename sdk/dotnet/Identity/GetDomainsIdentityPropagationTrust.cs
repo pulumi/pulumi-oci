@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityPropagationTrust = Oci.Identity.GetDomainsIdentityPropagationTrust.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityPropagationTrustId = oci_identity_domains_identity_propagation_trust.Test_identity_propagation_trust.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityPropagationTrustId = testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_propagation_trust_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_propagation_trust_resource_type_schema_version,
+        ///         Authorization = identityPropagationTrustAuthorization,
+        ///         ResourceTypeSchemaVersion = identityPropagationTrustResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityPropagationTrust = Oci.Identity.GetDomainsIdentityPropagationTrust.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityPropagationTrustId = oci_identity_domains_identity_propagation_trust.Test_identity_propagation_trust.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityPropagationTrustId = testIdentityPropagationTrustOciIdentityDomainsIdentityPropagationTrust.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_propagation_trust_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_propagation_trust_resource_type_schema_version,
+        ///         Authorization = identityPropagationTrustAuthorization,
+        ///         ResourceTypeSchemaVersion = identityPropagationTrustResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

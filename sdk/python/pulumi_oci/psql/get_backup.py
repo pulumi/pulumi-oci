@@ -272,7 +272,7 @@ def get_backup(backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup = oci.Psql.get_backup(backup_id=oci_psql_backup["test_backup"]["id"])
+    test_backup = oci.Psql.get_backup(backup_id=test_backup_oci_psql_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -321,7 +321,7 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup = oci.Psql.get_backup(backup_id=oci_psql_backup["test_backup"]["id"])
+    test_backup = oci.Psql.get_backup(backup_id=test_backup_oci_psql_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 

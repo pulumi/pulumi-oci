@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpSecConnectionDeviceConfig = Oci.Core.GetIpsecConfig.Invoke(new()
         ///     {
-        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         IpsecId = testIpsec.Id,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testIpSecConnectionDeviceConfig = Oci.Core.GetIpsecConfig.Invoke(new()
         ///     {
-        ///         IpsecId = oci_core_ipsec.Test_ipsec.Id,
+        ///         IpsecId = testIpsec.Id,
         ///     });
         /// 
         /// });

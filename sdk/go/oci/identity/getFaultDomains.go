@@ -33,8 +33,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetFaultDomains(ctx, &identity.GetFaultDomainsArgs{
-//				AvailabilityDomain: _var.Fault_domain_availability_domain,
-//				CompartmentId:      _var.Compartment_id,
+//				AvailabilityDomain: faultDomainAvailabilityDomain,
+//				CompartmentId:      compartmentId,
 //			}, nil)
 //			if err != nil {
 //				return err

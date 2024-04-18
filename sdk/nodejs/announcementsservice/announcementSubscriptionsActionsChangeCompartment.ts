@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAnnouncementSubscriptionsActionsChangeCompartment = new oci.announcementsservice.AnnouncementSubscriptionsActionsChangeCompartment("testAnnouncementSubscriptionsActionsChangeCompartment", {
- *     announcementSubscriptionId: oci_announcements_service_announcement_subscription.test_announcement_subscription.id,
- *     compartmentId: _var.compartment_id,
+ * const testAnnouncementSubscriptionsActionsChangeCompartment = new oci.announcementsservice.AnnouncementSubscriptionsActionsChangeCompartment("test_announcement_subscriptions_actions_change_compartment", {
+ *     announcementSubscriptionId: testAnnouncementSubscription.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

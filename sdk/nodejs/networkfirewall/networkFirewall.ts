@@ -16,21 +16,21 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewall = new oci.networkfirewall.NetworkFirewall("testNetworkFirewall", {
- *     compartmentId: _var.compartment_id,
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     availabilityDomain: _var.network_firewall_availability_domain,
+ * const testNetworkFirewall = new oci.networkfirewall.NetworkFirewall("test_network_firewall", {
+ *     compartmentId: compartmentId,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     subnetId: testSubnet.id,
+ *     availabilityDomain: networkFirewallAvailabilityDomain,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.network_firewall_display_name,
+ *     displayName: networkFirewallDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ipv4address: _var.network_firewall_ipv4address,
- *     ipv6address: _var.network_firewall_ipv6address,
- *     networkSecurityGroupIds: _var.network_firewall_network_security_group_ids,
+ *     ipv4address: networkFirewallIpv4address,
+ *     ipv6address: networkFirewallIpv6address,
+ *     networkSecurityGroupIds: networkFirewallNetworkSecurityGroupIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

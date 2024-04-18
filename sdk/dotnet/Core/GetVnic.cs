@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVnic = Oci.Core.GetVnic.Invoke(new()
         ///     {
-        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///         VnicId = testVnicOciCoreVnic.Id,
         ///     });
         /// 
         /// });
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVnic = Oci.Core.GetVnic.Invoke(new()
         ///     {
-        ///         VnicId = oci_core_vnic.Test_vnic.Id,
+        ///         VnicId = testVnicOciCoreVnic.Id,
         ///     });
         /// 
         /// });

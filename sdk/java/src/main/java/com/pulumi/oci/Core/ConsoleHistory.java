@@ -61,9 +61,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConsoleHistory = new ConsoleHistory(&#34;testConsoleHistory&#34;, ConsoleHistoryArgs.builder()        
- *             .instanceId(oci_core_instance.test_instance().id())
+ *             .instanceId(testInstance.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.console_history_display_name())
+ *             .displayName(consoleHistoryDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

@@ -33,8 +33,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
+ * // Filter on Subnet OCID
  * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
- *     subnetId: _var.private_ip_subnet_id,
+ *     subnetId: privateIpSubnetId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -43,8 +44,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
+ * // Filter on VNIC OCID
  * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
- *     vnicId: oci_core_vnic.test_vnic.id,
+ *     vnicId: testVnic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -53,11 +55,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
+ * // Filter on private IP address and Subnet OCID
  * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
- *     ipAddress: _var.private_ip_ip_address,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vlanId: oci_core_vlan.test_vlan.id,
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ *     ipAddress: privateIpIpAddress,
+ *     subnetId: testSubnet.id,
+ *     vlanId: testVlan.id,
+ *     vnicId: testVnicAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -155,8 +158,9 @@ export interface GetPrivateIpsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
+ * // Filter on Subnet OCID
  * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
- *     subnetId: _var.private_ip_subnet_id,
+ *     subnetId: privateIpSubnetId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -165,8 +169,9 @@ export interface GetPrivateIpsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
+ * // Filter on VNIC OCID
  * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
- *     vnicId: oci_core_vnic.test_vnic.id,
+ *     vnicId: testVnic.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -175,11 +180,12 @@ export interface GetPrivateIpsResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
+ * // Filter on private IP address and Subnet OCID
  * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
- *     ipAddress: _var.private_ip_ip_address,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     vlanId: oci_core_vlan.test_vlan.id,
- *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ *     ipAddress: privateIpIpAddress,
+ *     subnetId: testSubnet.id,
+ *     vlanId: testVlan.id,
+ *     vnicId: testVnicAttachment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

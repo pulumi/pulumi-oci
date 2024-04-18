@@ -31,19 +31,19 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Kms.NewEkmsPrivateEndpoint(ctx, "testEkmsPrivateEndpoint", &Kms.EkmsPrivateEndpointArgs{
-//				CaBundle:             pulumi.Any(_var.Ekms_private_endpoint_ca_bundle),
-//				CompartmentId:        pulumi.Any(_var.Compartment_id),
-//				DisplayName:          pulumi.Any(_var.Ekms_private_endpoint_display_name),
-//				ExternalKeyManagerIp: pulumi.Any(_var.Ekms_private_endpoint_external_key_manager_ip),
-//				SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//			_, err := Kms.NewEkmsPrivateEndpoint(ctx, "test_ekms_private_endpoint", &Kms.EkmsPrivateEndpointArgs{
+//				CaBundle:             pulumi.Any(ekmsPrivateEndpointCaBundle),
+//				CompartmentId:        pulumi.Any(compartmentId),
+//				DisplayName:          pulumi.Any(ekmsPrivateEndpointDisplayName),
+//				ExternalKeyManagerIp: pulumi.Any(ekmsPrivateEndpointExternalKeyManagerIp),
+//				SubnetId:             pulumi.Any(testSubnet.Id),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Port: pulumi.Any(_var.Ekms_private_endpoint_port),
+//				Port: pulumi.Any(ekmsPrivateEndpointPort),
 //			})
 //			if err != nil {
 //				return err

@@ -307,20 +307,21 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_security_rule = oci.network_firewall.NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule",
-            action=var["network_firewall_policy_security_rule_action"],
+        test_network_firewall_policy_security_rule = oci.network_firewall.NetworkFirewallPolicySecurityRule("test_network_firewall_policy_security_rule",
+            action=network_firewall_policy_security_rule_action,
+            name=network_firewall_policy_security_rule_name,
             condition=oci.network_firewall.NetworkFirewallPolicySecurityRuleConditionArgs(
-                applications=var["network_firewall_policy_security_rule_condition_application"],
-                destination_addresses=var["network_firewall_policy_security_rule_condition_destination_address"],
-                services=var["network_firewall_policy_security_rule_condition_service"],
-                source_addresses=var["network_firewall_policy_security_rule_condition_source_address"],
-                urls=var["network_firewall_policy_security_rule_condition_url"],
+                applications=network_firewall_policy_security_rule_condition_application,
+                destination_addresses=network_firewall_policy_security_rule_condition_destination_address,
+                services=network_firewall_policy_security_rule_condition_service,
+                source_addresses=network_firewall_policy_security_rule_condition_source_address,
+                urls=network_firewall_policy_security_rule_condition_url,
             ),
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            inspection=var["network_firewall_policy_security_rule_inspection"],
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            inspection=network_firewall_policy_security_rule_inspection,
             positions=[oci.network_firewall.NetworkFirewallPolicySecurityRulePositionArgs(
-                after_rule=var["network_firewall_policy_security_rule_position_after_rule"],
-                before_rule=var["network_firewall_policy_security_rule_position_before_rule"],
+                after_rule=network_firewall_policy_security_rule_position_after_rule,
+                before_rule=network_firewall_policy_security_rule_position_before_rule,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -366,20 +367,21 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_security_rule = oci.network_firewall.NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule",
-            action=var["network_firewall_policy_security_rule_action"],
+        test_network_firewall_policy_security_rule = oci.network_firewall.NetworkFirewallPolicySecurityRule("test_network_firewall_policy_security_rule",
+            action=network_firewall_policy_security_rule_action,
+            name=network_firewall_policy_security_rule_name,
             condition=oci.network_firewall.NetworkFirewallPolicySecurityRuleConditionArgs(
-                applications=var["network_firewall_policy_security_rule_condition_application"],
-                destination_addresses=var["network_firewall_policy_security_rule_condition_destination_address"],
-                services=var["network_firewall_policy_security_rule_condition_service"],
-                source_addresses=var["network_firewall_policy_security_rule_condition_source_address"],
-                urls=var["network_firewall_policy_security_rule_condition_url"],
+                applications=network_firewall_policy_security_rule_condition_application,
+                destination_addresses=network_firewall_policy_security_rule_condition_destination_address,
+                services=network_firewall_policy_security_rule_condition_service,
+                source_addresses=network_firewall_policy_security_rule_condition_source_address,
+                urls=network_firewall_policy_security_rule_condition_url,
             ),
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            inspection=var["network_firewall_policy_security_rule_inspection"],
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            inspection=network_firewall_policy_security_rule_inspection,
             positions=[oci.network_firewall.NetworkFirewallPolicySecurityRulePositionArgs(
-                after_rule=var["network_firewall_policy_security_rule_position_after_rule"],
-                before_rule=var["network_firewall_policy_security_rule_position_before_rule"],
+                after_rule=network_firewall_policy_security_rule_position_after_rule,
+                before_rule=network_firewall_policy_security_rule_position_before_rule,
             )])
         ```
         <!--End PulumiCodeChooser -->

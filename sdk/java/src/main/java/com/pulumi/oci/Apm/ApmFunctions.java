@@ -50,7 +50,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
      *             .build());
      * 
      *     }
@@ -92,7 +92,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
      *             .build());
      * 
      *     }
@@ -134,7 +134,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
      *             .build());
      * 
      *     }
@@ -176,7 +176,7 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomain = ApmFunctions.getApmDomain(GetApmDomainArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
+     *             .apmDomainId(testApmDomainOciApmApmDomain.id())
      *             .build());
      * 
      *     }
@@ -218,9 +218,9 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.apm_domain_display_name())
-     *             .state(var_.apm_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apmDomainDisplayName)
+     *             .state(apmDomainState)
      *             .build());
      * 
      *     }
@@ -262,9 +262,9 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.apm_domain_display_name())
-     *             .state(var_.apm_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apmDomainDisplayName)
+     *             .state(apmDomainState)
      *             .build());
      * 
      *     }
@@ -306,9 +306,9 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.apm_domain_display_name())
-     *             .state(var_.apm_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apmDomainDisplayName)
+     *             .state(apmDomainState)
      *             .build());
      * 
      *     }
@@ -350,9 +350,9 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApmDomains = ApmFunctions.getApmDomains(GetApmDomainsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.apm_domain_display_name())
-     *             .state(var_.apm_domain_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(apmDomainDisplayName)
+     *             .state(apmDomainState)
      *             .build());
      * 
      *     }
@@ -395,8 +395,8 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
      *     }
@@ -439,8 +439,8 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
      *     }
@@ -483,8 +483,8 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
      *     }
@@ -527,8 +527,8 @@ public final class ApmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataKeys = ApmFunctions.getDataKeys(GetDataKeysArgs.builder()
-     *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
-     *             .dataKeyType(var_.data_key_data_key_type())
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(dataKeyDataKeyType)
      *             .build());
      * 
      *     }

@@ -32,17 +32,17 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExadataIormConfig = new Oci.Database.ExadataIormConfig("testExadataIormConfig", new()
+    ///     var testExadataIormConfig = new Oci.Database.ExadataIormConfig("test_exadata_iorm_config", new()
     ///     {
     ///         DbPlans = new[]
     ///         {
     ///             new Oci.Database.Inputs.ExadataIormConfigDbPlanArgs
     ///             {
-    ///                 DbName = @var.Exadata_iorm_config_db_plans_db_name,
-    ///                 Share = @var.Exadata_iorm_config_db_plans_share,
+    ///                 DbName = exadataIormConfigDbPlansDbName,
+    ///                 Share = exadataIormConfigDbPlansShare,
     ///             },
     ///         },
-    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
+    ///         DbSystemId = testDbSystem.Id,
     ///         Objective = "AUTO",
     ///     });
     /// 

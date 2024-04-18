@@ -30,14 +30,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditArchiveRetrievals = Oci.DataSafe.GetAuditArchiveRetrievals.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_archive_retrieval_access_level,
-        ///         AuditArchiveRetrievalId = oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
-        ///         CompartmentIdInSubtree = @var.Audit_archive_retrieval_compartment_id_in_subtree,
-        ///         DisplayName = @var.Audit_archive_retrieval_display_name,
-        ///         State = @var.Audit_archive_retrieval_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeOfExpiry = @var.Audit_archive_retrieval_time_of_expiry,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditArchiveRetrievalAccessLevel,
+        ///         AuditArchiveRetrievalId = testAuditArchiveRetrieval.Id,
+        ///         CompartmentIdInSubtree = auditArchiveRetrievalCompartmentIdInSubtree,
+        ///         DisplayName = auditArchiveRetrievalDisplayName,
+        ///         State = auditArchiveRetrievalState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeOfExpiry = auditArchiveRetrievalTimeOfExpiry,
         ///     });
         /// 
         /// });
@@ -66,14 +66,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditArchiveRetrievals = Oci.DataSafe.GetAuditArchiveRetrievals.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_archive_retrieval_access_level,
-        ///         AuditArchiveRetrievalId = oci_data_safe_audit_archive_retrieval.Test_audit_archive_retrieval.Id,
-        ///         CompartmentIdInSubtree = @var.Audit_archive_retrieval_compartment_id_in_subtree,
-        ///         DisplayName = @var.Audit_archive_retrieval_display_name,
-        ///         State = @var.Audit_archive_retrieval_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeOfExpiry = @var.Audit_archive_retrieval_time_of_expiry,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditArchiveRetrievalAccessLevel,
+        ///         AuditArchiveRetrievalId = testAuditArchiveRetrieval.Id,
+        ///         CompartmentIdInSubtree = auditArchiveRetrievalCompartmentIdInSubtree,
+        ///         DisplayName = auditArchiveRetrievalDisplayName,
+        ///         State = auditArchiveRetrievalState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeOfExpiry = auditArchiveRetrievalTimeOfExpiry,
         ///     });
         /// 
         /// });

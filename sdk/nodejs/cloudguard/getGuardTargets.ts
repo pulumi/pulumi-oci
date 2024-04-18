@@ -32,12 +32,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargets = oci.CloudGuard.getGuardTargets({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.target_access_level,
- *     compartmentIdInSubtree: _var.target_compartment_id_in_subtree,
- *     displayName: _var.target_display_name,
- *     isNonSecurityZoneTargetsOnlyQuery: _var.target_is_non_security_zone_targets_only_query,
- *     state: _var.target_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetAccessLevel,
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
+ *     displayName: targetDisplayName,
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
+ *     state: targetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,12 +142,12 @@ export interface GetGuardTargetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargets = oci.CloudGuard.getGuardTargets({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.target_access_level,
- *     compartmentIdInSubtree: _var.target_compartment_id_in_subtree,
- *     displayName: _var.target_display_name,
- *     isNonSecurityZoneTargetsOnlyQuery: _var.target_is_non_security_zone_targets_only_query,
- *     state: _var.target_state,
+ *     compartmentId: compartmentId,
+ *     accessLevel: targetAccessLevel,
+ *     compartmentIdInSubtree: targetCompartmentIdInSubtree,
+ *     displayName: targetDisplayName,
+ *     isNonSecurityZoneTargetsOnlyQuery: targetIsNonSecurityZoneTargetsOnlyQuery,
+ *     state: targetState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

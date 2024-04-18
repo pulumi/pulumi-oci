@@ -25,24 +25,24 @@ namespace Pulumi.Oci.Budget
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAlertRule = new Oci.Budget.Rule("testAlertRule", new()
+    ///     var testAlertRule = new Oci.Budget.Rule("test_alert_rule", new()
     ///     {
-    ///         BudgetId = oci_budget_budget.Test_budget.Id,
-    ///         Threshold = @var.Alert_rule_threshold,
-    ///         ThresholdType = @var.Alert_rule_threshold_type,
-    ///         Type = @var.Alert_rule_type,
+    ///         BudgetId = testBudget.Id,
+    ///         Threshold = alertRuleThreshold,
+    ///         ThresholdType = alertRuleThresholdType,
+    ///         Type = alertRuleType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Alert_rule_description,
-    ///         DisplayName = @var.Alert_rule_display_name,
+    ///         Description = alertRuleDescription,
+    ///         DisplayName = alertRuleDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         Message = @var.Alert_rule_message,
-    ///         Recipients = @var.Alert_rule_recipients,
+    ///         Message = alertRuleMessage,
+    ///         Recipients = alertRuleRecipients,
     ///     });
     /// 
     /// });

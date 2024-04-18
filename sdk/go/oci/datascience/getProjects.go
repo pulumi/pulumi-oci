@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetProjects(ctx, &datascience.GetProjectsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Project_created_by),
-//				DisplayName:   pulumi.StringRef(_var.Project_display_name),
-//				Id:            pulumi.StringRef(_var.Project_id),
-//				State:         pulumi.StringRef(_var.Project_state),
+//				CompartmentId: compartmentId,
+//				CreatedBy:     pulumi.StringRef(projectCreatedBy),
+//				DisplayName:   pulumi.StringRef(projectDisplayName),
+//				Id:            pulumi.StringRef(projectId),
+//				State:         pulumi.StringRef(projectState),
 //			}, nil)
 //			if err != nil {
 //				return err

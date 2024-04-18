@@ -134,11 +134,11 @@ def get_em_warehouses(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_display_name"],
-        id=var["em_warehouse_id"],
-        operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        state=var["em_warehouse_state"])
+    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=compartment_id,
+        display_name=em_warehouse_display_name,
+        id=em_warehouse_id,
+        operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+        state=em_warehouse_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_em_warehouses_output(compartment_id: Optional[pulumi.Input[Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=var["compartment_id"],
-        display_name=var["em_warehouse_display_name"],
-        id=var["em_warehouse_id"],
-        operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"],
-        state=var["em_warehouse_state"])
+    test_em_warehouses = oci.EmWarehouse.get_em_warehouses(compartment_id=compartment_id,
+        display_name=em_warehouse_display_name,
+        id=em_warehouse_id,
+        operations_insights_warehouse_id=test_operations_insights_warehouse["id"],
+        state=em_warehouse_state)
     ```
     <!--End PulumiCodeChooser -->
 

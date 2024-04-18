@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAgent = oci.CloudBridge.getAgent({
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
+ *     agentId: testAgentOciCloudBridgeAgent.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -140,7 +140,7 @@ export interface GetAgentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAgent = oci.CloudBridge.getAgent({
- *     agentId: oci_cloud_bridge_agent.test_agent.id,
+ *     agentId: testAgentOciCloudBridgeAgent.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

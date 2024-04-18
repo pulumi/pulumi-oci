@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUnifiedAgentConfiguration = oci.Logging.getUnifiedAgentConfiguration({
- *     unifiedAgentConfigurationId: oci_logging_unified_agent_configuration.test_unified_agent_configuration.id,
+ *     unifiedAgentConfigurationId: testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetUnifiedAgentConfigurationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUnifiedAgentConfiguration = oci.Logging.getUnifiedAgentConfiguration({
- *     unifiedAgentConfigurationId: oci_logging_unified_agent_configuration.test_unified_agent_configuration.id,
+ *     unifiedAgentConfigurationId: testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

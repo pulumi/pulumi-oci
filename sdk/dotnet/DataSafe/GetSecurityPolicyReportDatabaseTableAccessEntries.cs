@@ -32,8 +32,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyReportDatabaseTableAccessEntries = Oci.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntries.Invoke(new()
         ///     {
-        ///         SecurityPolicyReportId = oci_data_safe_security_policy_report.Test_security_policy_report.Id,
-        ///         ScimQuery = @var.Security_policy_report_database_table_access_entry_scim_query,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///         ScimQuery = securityPolicyReportDatabaseTableAccessEntryScimQuery,
         ///     });
         /// 
         /// });
@@ -64,8 +64,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSecurityPolicyReportDatabaseTableAccessEntries = Oci.DataSafe.GetSecurityPolicyReportDatabaseTableAccessEntries.Invoke(new()
         ///     {
-        ///         SecurityPolicyReportId = oci_data_safe_security_policy_report.Test_security_policy_report.Id,
-        ///         ScimQuery = @var.Security_policy_report_database_table_access_entry_scim_query,
+        ///         SecurityPolicyReportId = testSecurityPolicyReport.Id,
+        ///         ScimQuery = securityPolicyReportDatabaseTableAccessEntryScimQuery,
         ///     });
         /// 
         /// });

@@ -166,13 +166,13 @@ def get_dedicated_vm_hosts(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts = oci.Core.get_dedicated_vm_hosts(compartment_id=var["compartment_id"],
-        availability_domain=var["dedicated_vm_host_availability_domain"],
-        display_name=var["dedicated_vm_host_display_name"],
-        instance_shape_name=var["dedicated_vm_host_instance_shape_name"],
-        remaining_memory_in_gbs_greater_than_or_equal_to=var["dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to"],
-        remaining_ocpus_greater_than_or_equal_to=var["dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to"],
-        state=var["dedicated_vm_host_state"])
+    test_dedicated_vm_hosts = oci.Core.get_dedicated_vm_hosts(compartment_id=compartment_id,
+        availability_domain=dedicated_vm_host_availability_domain,
+        display_name=dedicated_vm_host_display_name,
+        instance_shape_name=dedicated_vm_host_instance_shape_name,
+        remaining_memory_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
+        remaining_ocpus_greater_than_or_equal_to=dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
+        state=dedicated_vm_host_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -235,13 +235,13 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_dedicated_vm_hosts = oci.Core.get_dedicated_vm_hosts(compartment_id=var["compartment_id"],
-        availability_domain=var["dedicated_vm_host_availability_domain"],
-        display_name=var["dedicated_vm_host_display_name"],
-        instance_shape_name=var["dedicated_vm_host_instance_shape_name"],
-        remaining_memory_in_gbs_greater_than_or_equal_to=var["dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to"],
-        remaining_ocpus_greater_than_or_equal_to=var["dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to"],
-        state=var["dedicated_vm_host_state"])
+    test_dedicated_vm_hosts = oci.Core.get_dedicated_vm_hosts(compartment_id=compartment_id,
+        availability_domain=dedicated_vm_host_availability_domain,
+        display_name=dedicated_vm_host_display_name,
+        instance_shape_name=dedicated_vm_host_instance_shape_name,
+        remaining_memory_in_gbs_greater_than_or_equal_to=dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
+        remaining_ocpus_greater_than_or_equal_to=dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
+        state=dedicated_vm_host_state)
     ```
     <!--End PulumiCodeChooser -->
 

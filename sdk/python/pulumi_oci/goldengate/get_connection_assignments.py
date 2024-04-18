@@ -143,11 +143,11 @@ def get_connection_assignments(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=var["compartment_id"],
-        connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        name=var["connection_assignment_name"],
-        state=var["connection_assignment_state"])
+    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=compartment_id,
+        connection_id=test_connection["id"],
+        deployment_id=test_deployment["id"],
+        name=connection_assignment_name,
+        state=connection_assignment_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -199,11 +199,11 @@ def get_connection_assignments_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=var["compartment_id"],
-        connection_id=oci_golden_gate_connection["test_connection"]["id"],
-        deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
-        name=var["connection_assignment_name"],
-        state=var["connection_assignment_state"])
+    test_connection_assignments = oci.GoldenGate.get_connection_assignments(compartment_id=compartment_id,
+        connection_id=test_connection["id"],
+        deployment_id=test_deployment["id"],
+        name=connection_assignment_name,
+        state=connection_assignment_state)
     ```
     <!--End PulumiCodeChooser -->
 

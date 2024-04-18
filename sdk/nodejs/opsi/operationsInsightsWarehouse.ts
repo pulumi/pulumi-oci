@@ -18,17 +18,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouse = new oci.opsi.OperationsInsightsWarehouse("testOperationsInsightsWarehouse", {
- *     compartmentId: _var.compartment_id,
- *     cpuAllocated: _var.operations_insights_warehouse_cpu_allocated,
- *     displayName: _var.operations_insights_warehouse_display_name,
+ * const testOperationsInsightsWarehouse = new oci.opsi.OperationsInsightsWarehouse("test_operations_insights_warehouse", {
+ *     compartmentId: compartmentId,
+ *     cpuAllocated: operationsInsightsWarehouseCpuAllocated,
+ *     displayName: operationsInsightsWarehouseDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     storageAllocatedInGbs: _var.operations_insights_warehouse_storage_allocated_in_gbs,
+ *     storageAllocatedInGbs: operationsInsightsWarehouseStorageAllocatedInGbs,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -560,7 +560,7 @@ def get_instance(instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance = oci.Core.get_instance(instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance = oci.Core.get_instance(instance_id=test_instance_oci_core_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -637,7 +637,7 @@ def get_instance_output(instance_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance = oci.Core.get_instance(instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance = oci.Core.get_instance(instance_id=test_instance_oci_core_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 

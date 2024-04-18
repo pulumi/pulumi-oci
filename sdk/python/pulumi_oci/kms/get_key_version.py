@@ -252,9 +252,9 @@ def get_key_version(key_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_version = oci.Kms.get_key_version(key_id=oci_kms_key["test_key"]["id"],
-        key_version_id=oci_kms_key_version["test_key_version"]["id"],
-        management_endpoint=var["key_version_management_endpoint"])
+    test_key_version = oci.Kms.get_key_version(key_id=test_key["id"],
+        key_version_id=test_key_version_oci_kms_key_version["id"],
+        management_endpoint=key_version_management_endpoint)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -312,9 +312,9 @@ def get_key_version_output(key_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_key_version = oci.Kms.get_key_version(key_id=oci_kms_key["test_key"]["id"],
-        key_version_id=oci_kms_key_version["test_key_version"]["id"],
-        management_endpoint=var["key_version_management_endpoint"])
+    test_key_version = oci.Kms.get_key_version(key_id=test_key["id"],
+        key_version_id=test_key_version_oci_kms_key_version["id"],
+        management_endpoint=key_version_management_endpoint)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {
         ///     var testMonitoredInstance = Oci.AppMgmtControl.GetMonitoredInstance.Invoke(new()
         ///     {
-        ///         MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+        ///         MonitoredInstanceId = testMonitoredInstanceOciAppmgmtControlMonitoredInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {
         ///     var testMonitoredInstance = Oci.AppMgmtControl.GetMonitoredInstance.Invoke(new()
         ///     {
-        ///         MonitoredInstanceId = oci_appmgmt_control_monitored_instance.Test_monitored_instance.Id,
+        ///         MonitoredInstanceId = testMonitoredInstanceOciAppmgmtControlMonitoredInstance.Id,
         ///     });
         /// 
         /// });

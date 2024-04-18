@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEndpoint = oci.GenerativeAi.getEndpoint({
- *     endpointId: oci_generative_ai_endpoint.test_endpoint.id,
+ *     endpointId: testEndpointOciGenerativeAiEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEndpoint = oci.GenerativeAi.getEndpoint({
- *     endpointId: oci_generative_ai_endpoint.test_endpoint.id,
+ *     endpointId: testEndpointOciGenerativeAiEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

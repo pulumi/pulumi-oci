@@ -25,37 +25,38 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testListener = new Oci.LoadBalancer.Listener("testListener", new()
+    ///     var testListener = new Oci.LoadBalancer.Listener("test_listener", new()
     ///     {
-    ///         DefaultBackendSetName = oci_load_balancer_backend_set.Test_backend_set.Name,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
-    ///         Port = @var.Listener_port,
-    ///         Protocol = @var.Listener_protocol,
+    ///         DefaultBackendSetName = testBackendSet.Name,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Name = listenerName,
+    ///         Port = listenerPort,
+    ///         Protocol = listenerProtocol,
     ///         ConnectionConfiguration = new Oci.LoadBalancer.Inputs.ListenerConnectionConfigurationArgs
     ///         {
-    ///             IdleTimeoutInSeconds = @var.Listener_connection_configuration_idle_timeout_in_seconds,
-    ///             BackendTcpProxyProtocolVersion = @var.Listener_connection_configuration_backend_tcp_proxy_protocol_version,
+    ///             IdleTimeoutInSeconds = listenerConnectionConfigurationIdleTimeoutInSeconds,
+    ///             BackendTcpProxyProtocolVersion = listenerConnectionConfigurationBackendTcpProxyProtocolVersion,
     ///         },
     ///         HostnameNames = new[]
     ///         {
-    ///             oci_load_balancer_hostname.Test_hostname.Name,
+    ///             testHostname.Name,
     ///         },
-    ///         PathRouteSetName = oci_load_balancer_path_route_set.Test_path_route_set.Name,
-    ///         RoutingPolicyName = oci_load_balancer_load_balancer_routing_policy.Test_load_balancer_routing_policy.Name,
+    ///         PathRouteSetName = testPathRouteSet.Name,
+    ///         RoutingPolicyName = testLoadBalancerRoutingPolicy.Name,
     ///         RuleSetNames = new[]
     ///         {
-    ///             oci_load_balancer_rule_set.Test_rule_set.Name,
+    ///             testRuleSet.Name,
     ///         },
     ///         SslConfiguration = new Oci.LoadBalancer.Inputs.ListenerSslConfigurationArgs
     ///         {
-    ///             CertificateName = oci_load_balancer_certificate.Test_certificate.Name,
-    ///             CertificateIds = @var.Listener_ssl_configuration_certificate_ids,
-    ///             CipherSuiteName = @var.Listener_ssl_configuration_cipher_suite_name,
-    ///             Protocols = @var.Listener_ssl_configuration_protocols,
-    ///             ServerOrderPreference = @var.Listener_ssl_configuration_server_order_preference,
-    ///             TrustedCertificateAuthorityIds = @var.Listener_ssl_configuration_trusted_certificate_authority_ids,
-    ///             VerifyDepth = @var.Listener_ssl_configuration_verify_depth,
-    ///             VerifyPeerCertificate = @var.Listener_ssl_configuration_verify_peer_certificate,
+    ///             CertificateName = testCertificate.Name,
+    ///             CertificateIds = listenerSslConfigurationCertificateIds,
+    ///             CipherSuiteName = listenerSslConfigurationCipherSuiteName,
+    ///             Protocols = listenerSslConfigurationProtocols,
+    ///             ServerOrderPreference = listenerSslConfigurationServerOrderPreference,
+    ///             TrustedCertificateAuthorityIds = listenerSslConfigurationTrustedCertificateAuthorityIds,
+    ///             VerifyDepth = listenerSslConfigurationVerifyDepth,
+    ///             VerifyPeerCertificate = listenerSslConfigurationVerifyPeerCertificate,
     ///         },
     ///     });
     /// 

@@ -39,14 +39,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetExsiHosts(ctx, &ocvp.GetExsiHostsArgs{
-//				ClusterId:           pulumi.StringRef(oci_ocvp_cluster.Test_cluster.Id),
-//				CompartmentId:       pulumi.StringRef(_var.Compartment_id),
-//				ComputeInstanceId:   pulumi.StringRef(oci_core_instance.Test_instance.Id),
-//				DisplayName:         pulumi.StringRef(_var.Esxi_host_display_name),
-//				IsBillingDonorsOnly: pulumi.BoolRef(_var.Esxi_host_is_billing_donors_only),
-//				IsSwapBillingOnly:   pulumi.BoolRef(_var.Esxi_host_is_swap_billing_only),
-//				SddcId:              pulumi.StringRef(oci_ocvp_sddc.Test_sddc.Id),
-//				State:               pulumi.StringRef(_var.Esxi_host_state),
+//				ClusterId:           pulumi.StringRef(testCluster.Id),
+//				CompartmentId:       pulumi.StringRef(compartmentId),
+//				ComputeInstanceId:   pulumi.StringRef(testInstance.Id),
+//				DisplayName:         pulumi.StringRef(esxiHostDisplayName),
+//				IsBillingDonorsOnly: pulumi.BoolRef(esxiHostIsBillingDonorsOnly),
+//				IsSwapBillingOnly:   pulumi.BoolRef(esxiHostIsSwapBillingOnly),
+//				SddcId:              pulumi.StringRef(testSddc.Id),
+//				State:               pulumi.StringRef(esxiHostState),
 //			}, nil)
 //			if err != nil {
 //				return err

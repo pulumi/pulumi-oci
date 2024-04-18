@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testPipeline = Oci.DataScience.GetPipeline.Invoke(new()
         ///     {
-        ///         PipelineId = oci_datascience_pipeline.Test_pipeline.Id,
+        ///         PipelineId = testPipelineOciDatasciencePipeline.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataScience
         /// {
         ///     var testPipeline = Oci.DataScience.GetPipeline.Invoke(new()
         ///     {
-        ///         PipelineId = oci_datascience_pipeline.Test_pipeline.Id,
+        ///         PipelineId = testPipelineOciDatasciencePipeline.Id,
         ///     });
         /// 
         /// });

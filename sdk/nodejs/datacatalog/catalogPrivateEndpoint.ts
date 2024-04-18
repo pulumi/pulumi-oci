@@ -18,14 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCatalogPrivateEndpoint = new oci.datacatalog.CatalogPrivateEndpoint("testCatalogPrivateEndpoint", {
- *     compartmentId: _var.compartment_id,
- *     dnsZones: _var.catalog_private_endpoint_dns_zones,
- *     subnetId: oci_core_subnet.test_subnet.id,
+ * const testCatalogPrivateEndpoint = new oci.datacatalog.CatalogPrivateEndpoint("test_catalog_private_endpoint", {
+ *     compartmentId: compartmentId,
+ *     dnsZones: catalogPrivateEndpointDnsZones,
+ *     subnetId: testSubnet.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.catalog_private_endpoint_display_name,
+ *     displayName: catalogPrivateEndpointDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

@@ -26,28 +26,28 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAnalyticsInstancePrivateAccessChannel = new Oci.Analytics.AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", new()
+    ///     var testAnalyticsInstancePrivateAccessChannel = new Oci.Analytics.AnalyticsInstancePrivateAccessChannel("test_analytics_instance_private_access_channel", new()
     ///     {
-    ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-    ///         DisplayName = @var.Analytics_instance_private_access_channel_display_name,
+    ///         AnalyticsInstanceId = testAnalyticsInstance.Id,
+    ///         DisplayName = analyticsInstancePrivateAccessChannelDisplayName,
     ///         PrivateSourceDnsZones = new[]
     ///         {
     ///             new Oci.Analytics.Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs
     ///             {
-    ///                 DnsZone = @var.Analytics_instance_private_access_channel_private_source_dns_zones_dns_zone,
-    ///                 Description = @var.Analytics_instance_private_access_channel_private_source_dns_zones_description,
+    ///                 DnsZone = analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDnsZone,
+    ///                 Description = analyticsInstancePrivateAccessChannelPrivateSourceDnsZonesDescription,
     ///             },
     ///         },
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         NetworkSecurityGroupIds = @var.Analytics_instance_private_access_channel_network_security_group_ids,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnId = testVcn.Id,
+    ///         NetworkSecurityGroupIds = analyticsInstancePrivateAccessChannelNetworkSecurityGroupIds,
     ///         PrivateSourceScanHosts = new[]
     ///         {
     ///             new Oci.Analytics.Inputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs
     ///             {
-    ///                 ScanHostname = @var.Analytics_instance_private_access_channel_private_source_scan_hosts_scan_hostname,
-    ///                 ScanPort = @var.Analytics_instance_private_access_channel_private_source_scan_hosts_scan_port,
-    ///                 Description = @var.Analytics_instance_private_access_channel_private_source_scan_hosts_description,
+    ///                 ScanHostname = analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanHostname,
+    ///                 ScanPort = analyticsInstancePrivateAccessChannelPrivateSourceScanHostsScanPort,
+    ///                 Description = analyticsInstancePrivateAccessChannelPrivateSourceScanHostsDescription,
     ///             },
     ///         },
     ///     });

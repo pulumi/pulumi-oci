@@ -30,8 +30,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testBucket = Oci.ObjectStorage.GetBucket.Invoke(new()
         ///     {
-        ///         Name = @var.Bucket_name,
-        ///         Namespace = @var.Bucket_namespace,
+        ///         Name = bucketName,
+        ///         Namespace = bucketNamespace,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.ObjectStorage
         /// {
         ///     var testBucket = Oci.ObjectStorage.GetBucket.Invoke(new()
         ///     {
-        ///         Name = @var.Bucket_name,
-        ///         Namespace = @var.Bucket_namespace,
+        ///         Name = bucketName,
+        ///         Namespace = bucketNamespace,
         ///     });
         /// 
         /// });

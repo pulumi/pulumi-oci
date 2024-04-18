@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRatecards = oci.OsubSubscription.getRatecards({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_osub_subscription_subscription.test_subscription.id,
- *     partNumber: _var.ratecard_part_number,
- *     timeFrom: _var.ratecard_time_from,
- *     timeTo: _var.ratecard_time_to,
- *     xOneOriginRegion: _var.ratecard_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     partNumber: ratecardPartNumber,
+ *     timeFrom: ratecardTimeFrom,
+ *     timeTo: ratecardTimeTo,
+ *     xOneOriginRegion: ratecardXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -112,12 +112,12 @@ export interface GetRatecardsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRatecards = oci.OsubSubscription.getRatecards({
- *     compartmentId: _var.compartment_id,
- *     subscriptionId: oci_osub_subscription_subscription.test_subscription.id,
- *     partNumber: _var.ratecard_part_number,
- *     timeFrom: _var.ratecard_time_from,
- *     timeTo: _var.ratecard_time_to,
- *     xOneOriginRegion: _var.ratecard_x_one_origin_region,
+ *     compartmentId: compartmentId,
+ *     subscriptionId: testSubscription.id,
+ *     partNumber: ratecardPartNumber,
+ *     timeFrom: ratecardTimeFrom,
+ *     timeTo: ratecardTimeTo,
+ *     xOneOriginRegion: ratecardXOneOriginRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

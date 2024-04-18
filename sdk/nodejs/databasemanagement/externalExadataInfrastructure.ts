@@ -23,19 +23,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testExternalExadataInfrastructure = new oci.databasemanagement.ExternalExadataInfrastructure("testExternalExadataInfrastructure", {
- *     compartmentId: _var.compartment_id,
- *     dbSystemIds: _var.external_exadata_infrastructure_db_system_ids,
- *     displayName: _var.external_exadata_infrastructure_display_name,
+ * const testExternalExadataInfrastructure = new oci.databasemanagement.ExternalExadataInfrastructure("test_external_exadata_infrastructure", {
+ *     compartmentId: compartmentId,
+ *     dbSystemIds: externalExadataInfrastructureDbSystemIds,
+ *     displayName: externalExadataInfrastructureDisplayName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     discoveryKey: _var.external_exadata_infrastructure_discovery_key,
+ *     discoveryKey: externalExadataInfrastructureDiscoveryKey,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     licenseModel: _var.external_exadata_infrastructure_license_model,
- *     storageServerNames: _var.external_exadata_infrastructure_storage_server_names,
+ *     licenseModel: externalExadataInfrastructureLicenseModel,
+ *     storageServerNames: externalExadataInfrastructureStorageServerNames,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

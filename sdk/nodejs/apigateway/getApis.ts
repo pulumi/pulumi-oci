@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApis = oci.ApiGateway.getApis({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.api_display_name,
- *     state: _var.api_state,
+ *     compartmentId: compartmentId,
+ *     displayName: apiDisplayName,
+ *     state: apiState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -95,9 +95,9 @@ export interface GetApisResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApis = oci.ApiGateway.getApis({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.api_display_name,
- *     state: _var.api_state,
+ *     compartmentId: compartmentId,
+ *     displayName: apiDisplayName,
+ *     state: apiState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

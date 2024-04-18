@@ -476,17 +476,17 @@ class BootVolumeBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_boot_volume_backup = oci.core.BootVolumeBackup("testBootVolumeBackup",
-            boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
+        test_boot_volume_backup = oci.core.BootVolumeBackup("test_boot_volume_backup",
+            boot_volume_id=test_boot_volume["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["boot_volume_backup_display_name"],
+            display_name=boot_volume_backup_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            type=var["boot_volume_backup_type"])
+            kms_key_id=test_key["id"],
+            type=boot_volume_backup_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -532,17 +532,17 @@ class BootVolumeBackup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_boot_volume_backup = oci.core.BootVolumeBackup("testBootVolumeBackup",
-            boot_volume_id=oci_core_boot_volume["test_boot_volume"]["id"],
+        test_boot_volume_backup = oci.core.BootVolumeBackup("test_boot_volume_backup",
+            boot_volume_id=test_boot_volume["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["boot_volume_backup_display_name"],
+            display_name=boot_volume_backup_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            type=var["boot_volume_backup_type"])
+            kms_key_id=test_key["id"],
+            type=boot_volume_backup_type)
         ```
         <!--End PulumiCodeChooser -->
 

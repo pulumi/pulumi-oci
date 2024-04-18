@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthToken = oci.Identity.getDomainsAuthToken({
- *     authTokenId: oci_identity_auth_token.test_auth_token.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     authTokenId: testAuthTokenOciIdentityAuthToken.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.auth_token_authorization,
- *     resourceTypeSchemaVersion: _var.auth_token_resource_type_schema_version,
+ *     authorization: authTokenAuthorization,
+ *     resourceTypeSchemaVersion: authTokenResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -168,12 +168,12 @@ export interface GetDomainsAuthTokenResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthToken = oci.Identity.getDomainsAuthToken({
- *     authTokenId: oci_identity_auth_token.test_auth_token.id,
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     authTokenId: testAuthTokenOciIdentityAuthToken.id,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.auth_token_authorization,
- *     resourceTypeSchemaVersion: _var.auth_token_resource_type_schema_version,
+ *     authorization: authTokenAuthorization,
+ *     resourceTypeSchemaVersion: authTokenResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousExadataInfrastructureOcpu = oci.Database.getAutonomousExadataInfrastructureOcpu({
- *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
+ *     autonomousExadataInfrastructureId: testAutonomousExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,7 +77,7 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousExadataInfrastructureOcpu = oci.Database.getAutonomousExadataInfrastructureOcpu({
- *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
+ *     autonomousExadataInfrastructureId: testAutonomousExadataInfrastructure.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

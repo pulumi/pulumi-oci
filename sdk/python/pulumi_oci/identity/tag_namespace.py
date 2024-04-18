@@ -302,9 +302,10 @@ class TagNamespace(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tag_namespace = oci.identity.TagNamespace("testTagNamespace",
-            compartment_id=var["compartment_id"],
-            description=var["tag_namespace_description"],
+        test_tag_namespace = oci.identity.TagNamespace("test_tag_namespace",
+            compartment_id=compartment_id,
+            description=tag_namespace_description,
+            name=tag_namespace_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -367,9 +368,10 @@ class TagNamespace(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_tag_namespace = oci.identity.TagNamespace("testTagNamespace",
-            compartment_id=var["compartment_id"],
-            description=var["tag_namespace_description"],
+        test_tag_namespace = oci.identity.TagNamespace("test_tag_namespace",
+            compartment_id=compartment_id,
+            description=tag_namespace_description,
+            name=tag_namespace_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

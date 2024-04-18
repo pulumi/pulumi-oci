@@ -613,23 +613,24 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_agent_data_source = oci.management_agent.ManagementAgentDataSource("testManagementAgentDataSource",
-            compartment_id=var["compartment_id"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            type=var["management_agent_data_source_type"],
-            url=var["management_agent_data_source_url"],
-            allow_metrics=var["management_agent_data_source_allow_metrics"],
-            connection_timeout=var["management_agent_data_source_connection_timeout"],
+        test_management_agent_data_source = oci.management_agent.ManagementAgentDataSource("test_management_agent_data_source",
+            compartment_id=compartment_id,
+            management_agent_id=test_management_agent["id"],
+            name=management_agent_data_source_name,
+            type=management_agent_data_source_type,
+            url=management_agent_data_source_url,
+            allow_metrics=management_agent_data_source_allow_metrics,
+            connection_timeout=management_agent_data_source_connection_timeout,
             metric_dimensions=[oci.management_agent.ManagementAgentDataSourceMetricDimensionArgs(
-                name=var["management_agent_data_source_metric_dimensions_name"],
-                value=var["management_agent_data_source_metric_dimensions_value"],
+                name=management_agent_data_source_metric_dimensions_name,
+                value=management_agent_data_source_metric_dimensions_value,
             )],
-            namespace=var["management_agent_data_source_namespace"],
-            proxy_url=var["management_agent_data_source_proxy_url"],
-            read_data_limit_in_kilobytes=var["management_agent_data_source_read_data_limit_in_kilobytes"],
-            read_timeout=var["management_agent_data_source_read_timeout"],
-            resource_group=var["management_agent_data_source_resource_group"],
-            schedule_mins=var["management_agent_data_source_schedule_mins"])
+            namespace=management_agent_data_source_namespace,
+            proxy_url=management_agent_data_source_proxy_url,
+            read_data_limit_in_kilobytes=management_agent_data_source_read_data_limit_in_kilobytes,
+            read_timeout=management_agent_data_source_read_timeout,
+            resource_group=management_agent_data_source_resource_group,
+            schedule_mins=management_agent_data_source_schedule_mins)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -680,23 +681,24 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_agent_data_source = oci.management_agent.ManagementAgentDataSource("testManagementAgentDataSource",
-            compartment_id=var["compartment_id"],
-            management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
-            type=var["management_agent_data_source_type"],
-            url=var["management_agent_data_source_url"],
-            allow_metrics=var["management_agent_data_source_allow_metrics"],
-            connection_timeout=var["management_agent_data_source_connection_timeout"],
+        test_management_agent_data_source = oci.management_agent.ManagementAgentDataSource("test_management_agent_data_source",
+            compartment_id=compartment_id,
+            management_agent_id=test_management_agent["id"],
+            name=management_agent_data_source_name,
+            type=management_agent_data_source_type,
+            url=management_agent_data_source_url,
+            allow_metrics=management_agent_data_source_allow_metrics,
+            connection_timeout=management_agent_data_source_connection_timeout,
             metric_dimensions=[oci.management_agent.ManagementAgentDataSourceMetricDimensionArgs(
-                name=var["management_agent_data_source_metric_dimensions_name"],
-                value=var["management_agent_data_source_metric_dimensions_value"],
+                name=management_agent_data_source_metric_dimensions_name,
+                value=management_agent_data_source_metric_dimensions_value,
             )],
-            namespace=var["management_agent_data_source_namespace"],
-            proxy_url=var["management_agent_data_source_proxy_url"],
-            read_data_limit_in_kilobytes=var["management_agent_data_source_read_data_limit_in_kilobytes"],
-            read_timeout=var["management_agent_data_source_read_timeout"],
-            resource_group=var["management_agent_data_source_resource_group"],
-            schedule_mins=var["management_agent_data_source_schedule_mins"])
+            namespace=management_agent_data_source_namespace,
+            proxy_url=management_agent_data_source_proxy_url,
+            read_data_limit_in_kilobytes=management_agent_data_source_read_data_limit_in_kilobytes,
+            read_timeout=management_agent_data_source_read_timeout,
+            resource_group=management_agent_data_source_resource_group,
+            schedule_mins=management_agent_data_source_schedule_mins)
         ```
         <!--End PulumiCodeChooser -->
 

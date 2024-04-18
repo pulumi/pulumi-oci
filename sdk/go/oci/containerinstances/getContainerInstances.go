@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ContainerInstances.GetContainerInstances(ctx, &containerinstances.GetContainerInstancesArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Container_instance_availability_domain),
-//				DisplayName:        pulumi.StringRef(_var.Container_instance_display_name),
-//				State:              pulumi.StringRef(_var.Container_instance_state),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(containerInstanceAvailabilityDomain),
+//				DisplayName:        pulumi.StringRef(containerInstanceDisplayName),
+//				State:              pulumi.StringRef(containerInstanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

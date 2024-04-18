@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testConnections = oci.DevOps.getConnections({
- *     compartmentId: _var.compartment_id,
- *     connectionType: _var.connection_connection_type,
- *     displayName: _var.connection_display_name,
- *     id: _var.connection_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.connection_state,
+ *     compartmentId: compartmentId,
+ *     connectionType: connectionConnectionType,
+ *     displayName: connectionDisplayName,
+ *     id: connectionId,
+ *     projectId: testProject.id,
+ *     state: connectionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -122,12 +122,12 @@ export interface GetConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testConnections = oci.DevOps.getConnections({
- *     compartmentId: _var.compartment_id,
- *     connectionType: _var.connection_connection_type,
- *     displayName: _var.connection_display_name,
- *     id: _var.connection_id,
- *     projectId: oci_devops_project.test_project.id,
- *     state: _var.connection_state,
+ *     compartmentId: compartmentId,
+ *     connectionType: connectionConnectionType,
+ *     displayName: connectionDisplayName,
+ *     id: connectionId,
+ *     projectId: testProject.id,
+ *     state: connectionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

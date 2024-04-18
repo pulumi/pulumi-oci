@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testStreamPools = Oci.Streaming.GetStreamPools.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Stream_pool_id,
-        ///         Name = @var.Stream_pool_name,
-        ///         State = @var.Stream_pool_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = streamPoolId,
+        ///         Name = streamPoolName,
+        ///         State = streamPoolState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Streaming
         /// {
         ///     var testStreamPools = Oci.Streaming.GetStreamPools.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Stream_pool_id,
-        ///         Name = @var.Stream_pool_name,
-        ///         State = @var.Stream_pool_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = streamPoolId,
+        ///         Name = streamPoolName,
+        ///         State = streamPoolState,
         ///     });
         /// 
         /// });

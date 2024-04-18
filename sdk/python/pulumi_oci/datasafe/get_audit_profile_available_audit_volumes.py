@@ -137,11 +137,11 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"],
-        month_in_consideration_greater_than=var["audit_profile_available_audit_volume_month_in_consideration_greater_than"],
-        month_in_consideration_less_than=var["audit_profile_available_audit_volume_month_in_consideration_less_than"],
-        trail_location=var["audit_profile_available_audit_volume_trail_location"])
+    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=test_audit_profile["id"],
+        work_request_id=test_work_request["id"],
+        month_in_consideration_greater_than=audit_profile_available_audit_volume_month_in_consideration_greater_than,
+        month_in_consideration_less_than=audit_profile_available_audit_volume_month_in_consideration_less_than,
+        trail_location=audit_profile_available_audit_volume_trail_location)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -197,11 +197,11 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=oci_data_safe_audit_profile["test_audit_profile"]["id"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"],
-        month_in_consideration_greater_than=var["audit_profile_available_audit_volume_month_in_consideration_greater_than"],
-        month_in_consideration_less_than=var["audit_profile_available_audit_volume_month_in_consideration_less_than"],
-        trail_location=var["audit_profile_available_audit_volume_trail_location"])
+    test_audit_profile_available_audit_volumes = oci.DataSafe.get_audit_profile_available_audit_volumes(audit_profile_id=test_audit_profile["id"],
+        work_request_id=test_work_request["id"],
+        month_in_consideration_greater_than=audit_profile_available_audit_volume_month_in_consideration_greater_than,
+        month_in_consideration_less_than=audit_profile_available_audit_volume_month_in_consideration_less_than,
+        trail_location=audit_profile_available_audit_volume_trail_location)
     ```
     <!--End PulumiCodeChooser -->
 

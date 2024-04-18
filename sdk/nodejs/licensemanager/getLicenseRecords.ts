@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLicenseRecords = oci.LicenseManager.getLicenseRecords({
- *     productLicenseId: oci_license_manager_product_license.test_product_license.id,
+ *     productLicenseId: testProductLicense.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetLicenseRecordsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLicenseRecords = oci.LicenseManager.getLicenseRecords({
- *     productLicenseId: oci_license_manager_product_license.test_product_license.id,
+ *     productLicenseId: testProductLicense.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

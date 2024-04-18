@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testRepositories = Oci.Artifacts.GetRepositories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Repository_display_name,
-        ///         Id = @var.Repository_id,
-        ///         IsImmutable = @var.Repository_is_immutable,
-        ///         State = @var.Repository_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = repositoryDisplayName,
+        ///         Id = repositoryId,
+        ///         IsImmutable = repositoryIsImmutable,
+        ///         State = repositoryState,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.Artifacts
         /// {
         ///     var testRepositories = Oci.Artifacts.GetRepositories.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Repository_display_name,
-        ///         Id = @var.Repository_id,
-        ///         IsImmutable = @var.Repository_is_immutable,
-        ///         State = @var.Repository_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = repositoryDisplayName,
+        ///         Id = repositoryId,
+        ///         IsImmutable = repositoryIsImmutable,
+        ///         State = repositoryState,
         ///     });
         /// 
         /// });

@@ -18,48 +18,48 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvokeRun = new oci.dataflow.InvokeRun("testInvokeRun", {
- *     compartmentId: _var.compartment_id,
- *     applicationId: oci_dataflow_application.test_application.id,
+ * const testInvokeRun = new oci.dataflow.InvokeRun("test_invoke_run", {
+ *     compartmentId: compartmentId,
+ *     applicationId: testApplication.id,
  *     applicationLogConfig: {
- *         logGroupId: oci_logging_log_group.test_log_group.id,
- *         logId: oci_logging_log.test_log.id,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
  *     },
- *     archiveUri: _var.invoke_run_archive_uri,
- *     arguments: _var.invoke_run_arguments,
- *     configuration: _var.invoke_run_configuration,
+ *     archiveUri: invokeRunArchiveUri,
+ *     arguments: invokeRunArguments,
+ *     configuration: invokeRunConfiguration,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.invoke_run_display_name,
- *     driverShape: _var.invoke_run_driver_shape,
+ *     displayName: invokeRunDisplayName,
+ *     driverShape: invokeRunDriverShape,
  *     driverShapeConfig: {
- *         memoryInGbs: _var.invoke_run_driver_shape_config_memory_in_gbs,
- *         ocpus: _var.invoke_run_driver_shape_config_ocpus,
+ *         memoryInGbs: invokeRunDriverShapeConfigMemoryInGbs,
+ *         ocpus: invokeRunDriverShapeConfigOcpus,
  *     },
- *     execute: _var.invoke_run_execute,
- *     executorShape: _var.invoke_run_executor_shape,
+ *     execute: invokeRunExecute,
+ *     executorShape: invokeRunExecutorShape,
  *     executorShapeConfig: {
- *         memoryInGbs: _var.invoke_run_executor_shape_config_memory_in_gbs,
- *         ocpus: _var.invoke_run_executor_shape_config_ocpus,
+ *         memoryInGbs: invokeRunExecutorShapeConfigMemoryInGbs,
+ *         ocpus: invokeRunExecutorShapeConfigOcpus,
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     idleTimeoutInMinutes: _var.invoke_run_idle_timeout_in_minutes,
- *     logsBucketUri: _var.invoke_run_logs_bucket_uri,
- *     maxDurationInMinutes: _var.invoke_run_max_duration_in_minutes,
- *     metastoreId: _var.metastore_id,
- *     numExecutors: _var.invoke_run_num_executors,
- *     opcParentRptUrl: _var.invoke_run_opc_parent_rpt_url,
+ *     idleTimeoutInMinutes: invokeRunIdleTimeoutInMinutes,
+ *     logsBucketUri: invokeRunLogsBucketUri,
+ *     maxDurationInMinutes: invokeRunMaxDurationInMinutes,
+ *     metastoreId: metastoreId,
+ *     numExecutors: invokeRunNumExecutors,
+ *     opcParentRptUrl: invokeRunOpcParentRptUrl,
  *     parameters: [{
- *         name: _var.invoke_run_parameters_name,
- *         value: _var.invoke_run_parameters_value,
+ *         name: invokeRunParametersName,
+ *         value: invokeRunParametersValue,
  *     }],
- *     poolId: oci_dataflow_pool.test_pool.id,
- *     sparkVersion: _var.invoke_run_spark_version,
- *     type: _var.invoke_run_type,
- *     warehouseBucketUri: _var.invoke_run_warehouse_bucket_uri,
+ *     poolId: testPool.id,
+ *     sparkVersion: invokeRunSparkVersion,
+ *     type: invokeRunType,
+ *     warehouseBucketUri: invokeRunWarehouseBucketUri,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

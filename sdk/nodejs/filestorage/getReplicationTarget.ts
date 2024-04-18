@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationTarget = oci.FileStorage.getReplicationTarget({
- *     replicationTargetId: oci_file_storage_replication_target.test_replication_target.id,
+ *     replicationTargetId: testReplicationTargetOciFileStorageReplicationTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -123,7 +123,7 @@ export interface GetReplicationTargetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testReplicationTarget = oci.FileStorage.getReplicationTarget({
- *     replicationTargetId: oci_file_storage_replication_target.test_replication_target.id,
+ *     replicationTargetId: testReplicationTargetOciFileStorageReplicationTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

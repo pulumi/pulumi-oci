@@ -83,7 +83,7 @@ def get_problem_entity(problem_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_problem_entity = oci.CloudGuard.get_problem_entity(problem_id=oci_cloud_guard_problem["test_problem"]["id"])
+    test_problem_entity = oci.CloudGuard.get_problem_entity(problem_id=test_problem["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -116,7 +116,7 @@ def get_problem_entity_output(problem_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_problem_entity = oci.CloudGuard.get_problem_entity(problem_id=oci_cloud_guard_problem["test_problem"]["id"])
+    test_problem_entity = oci.CloudGuard.get_problem_entity(problem_id=test_problem["id"])
     ```
     <!--End PulumiCodeChooser -->
 

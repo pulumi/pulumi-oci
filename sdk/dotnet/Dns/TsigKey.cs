@@ -26,13 +26,14 @@ namespace Pulumi.Oci.Dns
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTsigKey = new Oci.Dns.TsigKey("testTsigKey", new()
+    ///     var testTsigKey = new Oci.Dns.TsigKey("test_tsig_key", new()
     ///     {
-    ///         Algorithm = @var.Tsig_key_algorithm,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Secret = @var.Tsig_key_secret,
-    ///         DefinedTags = @var.Tsig_key_defined_tags,
-    ///         FreeformTags = @var.Tsig_key_freeform_tags,
+    ///         Algorithm = tsigKeyAlgorithm,
+    ///         CompartmentId = compartmentId,
+    ///         Name = tsigKeyName,
+    ///         Secret = tsigKeySecret,
+    ///         DefinedTags = tsigKeyDefinedTags,
+    ///         FreeformTags = tsigKeyFreeformTags,
     ///     });
     /// 
     /// });

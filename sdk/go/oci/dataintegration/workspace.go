@@ -31,27 +31,27 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataIntegration.NewWorkspace(ctx, "testWorkspace", &DataIntegration.WorkspaceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Workspace_display_name),
+//			_, err := DataIntegration.NewWorkspace(ctx, "test_workspace", &DataIntegration.WorkspaceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(workspaceDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description:           pulumi.Any(_var.Workspace_description),
-//				DnsServerIp:           pulumi.Any(_var.Workspace_dns_server_ip),
-//				DnsServerZone:         pulumi.Any(_var.Workspace_dns_server_zone),
-//				EndpointCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				EndpointId:            pulumi.Any(oci_dataintegration_endpoint.Test_endpoint.Id),
-//				EndpointName:          pulumi.Any(_var.Workspace_endpoint_name),
+//				Description:           pulumi.Any(workspaceDescription),
+//				DnsServerIp:           pulumi.Any(workspaceDnsServerIp),
+//				DnsServerZone:         pulumi.Any(workspaceDnsServerZone),
+//				EndpointCompartmentId: pulumi.Any(testCompartment.Id),
+//				EndpointId:            pulumi.Any(testEndpoint.Id),
+//				EndpointName:          pulumi.Any(workspaceEndpointName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsPrivateNetworkEnabled: pulumi.Any(_var.Workspace_is_private_network_enabled),
-//				RegistryCompartmentId:   pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				RegistryId:              pulumi.Any(oci_data_connectivity_registry.Test_registry.Id),
-//				RegistryName:            pulumi.Any(oci_data_connectivity_registry.Test_registry.Name),
-//				SubnetId:                pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				VcnId:                   pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				IsPrivateNetworkEnabled: pulumi.Any(workspaceIsPrivateNetworkEnabled),
+//				RegistryCompartmentId:   pulumi.Any(testCompartment.Id),
+//				RegistryId:              pulumi.Any(testRegistry.Id),
+//				RegistryName:            pulumi.Any(testRegistry.Name),
+//				SubnetId:                pulumi.Any(testSubnet.Id),
+//				VcnId:                   pulumi.Any(testVcn.Id),
 //			})
 //			if err != nil {
 //				return err

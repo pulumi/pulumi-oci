@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationPlan = oci.CloudMigrations.getMigrationPlan({
- *     migrationPlanId: oci_cloud_migrations_migration_plan.test_migration_plan.id,
+ *     migrationPlanId: testMigrationPlanOciCloudMigrationsMigrationPlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,7 +129,7 @@ export interface GetMigrationPlanResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMigrationPlan = oci.CloudMigrations.getMigrationPlan({
- *     migrationPlanId: oci_cloud_migrations_migration_plan.test_migration_plan.id,
+ *     migrationPlanId: testMigrationPlanOciCloudMigrationsMigrationPlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

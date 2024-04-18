@@ -25,16 +25,16 @@ namespace Pulumi.Oci.DataCatalog
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testConnection = new Oci.DataCatalog.Connection("testConnection", new()
+    ///     var testConnection = new Oci.DataCatalog.Connection("test_connection", new()
     ///     {
-    ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-    ///         DataAssetKey = @var.Connection_data_asset_key,
-    ///         DisplayName = @var.Connection_display_name,
-    ///         Properties = @var.Connection_properties,
-    ///         TypeKey = @var.Connection_type_key,
-    ///         Description = @var.Connection_description,
-    ///         EncProperties = @var.Connection_enc_properties,
-    ///         IsDefault = @var.Connection_is_default,
+    ///         CatalogId = testCatalog.Id,
+    ///         DataAssetKey = connectionDataAssetKey,
+    ///         DisplayName = connectionDisplayName,
+    ///         Properties = connectionProperties,
+    ///         TypeKey = connectionTypeKey,
+    ///         Description = connectionDescription,
+    ///         EncProperties = connectionEncProperties,
+    ///         IsDefault = connectionIsDefault,
     ///     });
     /// 
     /// });

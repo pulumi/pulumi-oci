@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabasePdbConversionHistoryEntries = oci.Database.getDatabasePdbConversionHistoryEntries({
- *     databaseId: oci_database_database.test_database.id,
- *     pdbConversionAction: _var.database_pdb_conversion_history_entry_pdb_conversion_action,
- *     state: _var.database_pdb_conversion_history_entry_state,
+ *     databaseId: testDatabase.id,
+ *     pdbConversionAction: databasePdbConversionHistoryEntryPdbConversionAction,
+ *     state: databasePdbConversionHistoryEntryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetDatabasePdbConversionHistoryEntriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDatabasePdbConversionHistoryEntries = oci.Database.getDatabasePdbConversionHistoryEntries({
- *     databaseId: oci_database_database.test_database.id,
- *     pdbConversionAction: _var.database_pdb_conversion_history_entry_pdb_conversion_action,
- *     state: _var.database_pdb_conversion_history_entry_state,
+ *     databaseId: testDatabase.id,
+ *     pdbConversionAction: databasePdbConversionHistoryEntryPdbConversionAction,
+ *     state: databasePdbConversionHistoryEntryState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

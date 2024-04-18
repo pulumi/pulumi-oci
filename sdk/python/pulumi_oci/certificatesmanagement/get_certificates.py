@@ -147,11 +147,11 @@ def get_certificates(certificate_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        compartment_id=var["compartment_id"],
-        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        name=var["certificate_name"],
-        state=var["certificate_state"])
+    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=test_certificate["id"],
+        compartment_id=compartment_id,
+        issuer_certificate_authority_id=test_certificate_authority["id"],
+        name=certificate_name,
+        state=certificate_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -204,11 +204,11 @@ def get_certificates_output(certificate_id: Optional[pulumi.Input[Optional[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
-        compartment_id=var["compartment_id"],
-        issuer_certificate_authority_id=oci_certificates_management_certificate_authority["test_certificate_authority"]["id"],
-        name=var["certificate_name"],
-        state=var["certificate_state"])
+    test_certificates = oci.CertificatesManagement.get_certificates(certificate_id=test_certificate["id"],
+        compartment_id=compartment_id,
+        issuer_certificate_authority_id=test_certificate_authority["id"],
+        name=certificate_name,
+        state=certificate_state)
     ```
     <!--End PulumiCodeChooser -->
 

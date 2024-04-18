@@ -29,11 +29,11 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testWorkRequests = Oci.ContainerEngine.GetWorkRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-        ///         ResourceId = oci_containerengine_resource.Test_resource.Id,
-        ///         ResourceType = @var.Work_request_resource_type,
-        ///         Statuses = @var.Work_request_status,
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         ResourceId = testResource.Id,
+        ///         ResourceType = workRequestResourceType,
+        ///         Statuses = workRequestStatus,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.ContainerEngine
         /// {
         ///     var testWorkRequests = Oci.ContainerEngine.GetWorkRequests.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ClusterId = oci_containerengine_cluster.Test_cluster.Id,
-        ///         ResourceId = oci_containerengine_resource.Test_resource.Id,
-        ///         ResourceType = @var.Work_request_resource_type,
-        ///         Statuses = @var.Work_request_status,
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         ResourceId = testResource.Id,
+        ///         ResourceType = workRequestResourceType,
+        ///         Statuses = workRequestStatus,
         ///     });
         /// 
         /// });

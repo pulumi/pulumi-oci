@@ -31,26 +31,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := OsManagementHub.NewManagementStation(ctx, "testManagementStation", &OsManagementHub.ManagementStationArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Management_station_display_name),
-//				Hostname:      pulumi.Any(_var.Management_station_hostname),
+//			_, err := OsManagementHub.NewManagementStation(ctx, "test_management_station", &OsManagementHub.ManagementStationArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(managementStationDisplayName),
+//				Hostname:      pulumi.Any(managementStationHostname),
 //				Mirror: &osmanagementhub.ManagementStationMirrorArgs{
-//					Directory: pulumi.Any(_var.Management_station_mirror_directory),
-//					Port:      pulumi.Any(_var.Management_station_mirror_port),
-//					Sslport:   pulumi.Any(_var.Management_station_mirror_sslport),
-//					Sslcert:   pulumi.Any(_var.Management_station_mirror_sslcert),
+//					Directory: pulumi.Any(managementStationMirrorDirectory),
+//					Port:      pulumi.Any(managementStationMirrorPort),
+//					Sslport:   pulumi.Any(managementStationMirrorSslport),
+//					Sslcert:   pulumi.Any(managementStationMirrorSslcert),
 //				},
 //				Proxy: &osmanagementhub.ManagementStationProxyArgs{
-//					IsEnabled: pulumi.Any(_var.Management_station_proxy_is_enabled),
-//					Forward:   pulumi.Any(_var.Management_station_proxy_forward),
-//					Hosts:     pulumi.Any(_var.Management_station_proxy_hosts),
-//					Port:      pulumi.Any(_var.Management_station_proxy_port),
+//					IsEnabled: pulumi.Any(managementStationProxyIsEnabled),
+//					Forward:   pulumi.Any(managementStationProxyForward),
+//					Hosts:     pulumi.Any(managementStationProxyHosts),
+//					Port:      pulumi.Any(managementStationProxyPort),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Management_station_description),
+//				Description: pulumi.Any(managementStationDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

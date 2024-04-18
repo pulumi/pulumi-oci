@@ -32,14 +32,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testReportDefinitions = Oci.DataSafe.GetReportDefinitions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Report_definition_access_level,
-        ///         Category = @var.Report_definition_category,
-        ///         CompartmentIdInSubtree = @var.Report_definition_compartment_id_in_subtree,
-        ///         DataSource = @var.Report_definition_data_source,
-        ///         DisplayName = @var.Report_definition_display_name,
-        ///         IsSeeded = @var.Report_definition_is_seeded,
-        ///         State = @var.Report_definition_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = reportDefinitionAccessLevel,
+        ///         Category = reportDefinitionCategory,
+        ///         CompartmentIdInSubtree = reportDefinitionCompartmentIdInSubtree,
+        ///         DataSource = reportDefinitionDataSource,
+        ///         DisplayName = reportDefinitionDisplayName,
+        ///         IsSeeded = reportDefinitionIsSeeded,
+        ///         State = reportDefinitionState,
         ///     });
         /// 
         /// });
@@ -70,14 +70,14 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testReportDefinitions = Oci.DataSafe.GetReportDefinitions.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Report_definition_access_level,
-        ///         Category = @var.Report_definition_category,
-        ///         CompartmentIdInSubtree = @var.Report_definition_compartment_id_in_subtree,
-        ///         DataSource = @var.Report_definition_data_source,
-        ///         DisplayName = @var.Report_definition_display_name,
-        ///         IsSeeded = @var.Report_definition_is_seeded,
-        ///         State = @var.Report_definition_state,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = reportDefinitionAccessLevel,
+        ///         Category = reportDefinitionCategory,
+        ///         CompartmentIdInSubtree = reportDefinitionCompartmentIdInSubtree,
+        ///         DataSource = reportDefinitionDataSource,
+        ///         DisplayName = reportDefinitionDisplayName,
+        ///         IsSeeded = reportDefinitionIsSeeded,
+        ///         State = reportDefinitionState,
         ///     });
         /// 
         /// });

@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsMyTrustedUserAgents(ctx, &identity.GetDomainsMyTrustedUserAgentsArgs{
-//				IdcsEndpoint:              data.Oci_identity_domain.Test_domain.Url,
-//				MyTrustedUserAgentCount:   pulumi.IntRef(_var.My_trusted_user_agent_my_trusted_user_agent_count),
-//				MyTrustedUserAgentFilter:  pulumi.StringRef(_var.My_trusted_user_agent_my_trusted_user_agent_filter),
+//				IdcsEndpoint:              testDomain.Url,
+//				MyTrustedUserAgentCount:   pulumi.IntRef(myTrustedUserAgentMyTrustedUserAgentCount),
+//				MyTrustedUserAgentFilter:  pulumi.StringRef(myTrustedUserAgentMyTrustedUserAgentFilter),
 //				AttributeSets:             []interface{}{},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.My_trusted_user_agent_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.My_trusted_user_agent_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.My_trusted_user_agent_start_index),
+//				Authorization:             pulumi.StringRef(myTrustedUserAgentAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(myTrustedUserAgentResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(myTrustedUserAgentStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

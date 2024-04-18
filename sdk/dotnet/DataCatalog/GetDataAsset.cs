@@ -29,9 +29,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testDataAsset = Oci.DataCatalog.GetDataAsset.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         DataAssetKey = @var.Data_asset_data_asset_key,
-        ///         Fields = @var.Data_asset_fields,
+        ///         CatalogId = testCatalog.Id,
+        ///         DataAssetKey = dataAssetDataAssetKey,
+        ///         Fields = dataAssetFields,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.DataCatalog
         /// {
         ///     var testDataAsset = Oci.DataCatalog.GetDataAsset.Invoke(new()
         ///     {
-        ///         CatalogId = oci_datacatalog_catalog.Test_catalog.Id,
-        ///         DataAssetKey = @var.Data_asset_data_asset_key,
-        ///         Fields = @var.Data_asset_fields,
+        ///         CatalogId = testCatalog.Id,
+        ///         DataAssetKey = dataAssetDataAssetKey,
+        ///         Fields = dataAssetFields,
         ///     });
         /// 
         /// });

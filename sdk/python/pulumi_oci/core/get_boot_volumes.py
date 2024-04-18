@@ -120,9 +120,9 @@ def get_boot_volumes(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=var["boot_volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
+    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=boot_volume_availability_domain,
+        compartment_id=compartment_id,
+        volume_group_id=test_volume_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_boot_volumes_output(availability_domain: Optional[pulumi.Input[Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=var["boot_volume_availability_domain"],
-        compartment_id=var["compartment_id"],
-        volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
+    test_boot_volumes = oci.Core.get_boot_volumes(availability_domain=boot_volume_availability_domain,
+        compartment_id=compartment_id,
+        volume_group_id=test_volume_group["id"])
     ```
     <!--End PulumiCodeChooser -->
 

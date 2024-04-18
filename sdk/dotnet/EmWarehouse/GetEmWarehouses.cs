@@ -30,11 +30,11 @@ namespace Pulumi.Oci.EmWarehouse
         /// {
         ///     var testEmWarehouses = Oci.EmWarehouse.GetEmWarehouses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Em_warehouse_display_name,
-        ///         Id = @var.Em_warehouse_id,
-        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///         State = @var.Em_warehouse_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = emWarehouseDisplayName,
+        ///         Id = emWarehouseId,
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///         State = emWarehouseState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.EmWarehouse
         /// {
         ///     var testEmWarehouses = Oci.EmWarehouse.GetEmWarehouses.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Em_warehouse_display_name,
-        ///         Id = @var.Em_warehouse_id,
-        ///         OperationsInsightsWarehouseId = oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
-        ///         State = @var.Em_warehouse_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = emWarehouseDisplayName,
+        ///         Id = emWarehouseId,
+        ///         OperationsInsightsWarehouseId = testOperationsInsightsWarehouse.Id,
+        ///         State = emWarehouseState,
         ///     });
         /// 
         /// });

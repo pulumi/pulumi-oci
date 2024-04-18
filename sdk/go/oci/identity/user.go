@@ -61,13 +61,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUser(ctx, "testUser", &Identity.UserArgs{
-//				CompartmentId: pulumi.Any(_var.Tenancy_ocid),
-//				Description:   pulumi.Any(_var.User_description),
+//			_, err := Identity.NewUser(ctx, "test_user", &Identity.UserArgs{
+//				CompartmentId: pulumi.Any(tenancyOcid),
+//				Description:   pulumi.Any(userDescription),
+//				Name:          pulumi.Any(userName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Email: pulumi.Any(_var.User_email),
+//				Email: pulumi.Any(userEmail),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

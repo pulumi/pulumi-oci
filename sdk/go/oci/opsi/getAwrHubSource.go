@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetAwrHubSource(ctx, &opsi.GetAwrHubSourceArgs{
-//				AwrHubSourceId: oci_opsi_awr_hub_source.Test_awr_hub_source.Id,
+//				AwrHubSourceId: testAwrHubSourceOciOpsiAwrHubSource.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

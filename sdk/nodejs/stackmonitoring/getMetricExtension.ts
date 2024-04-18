@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMetricExtension = oci.StackMonitoring.getMetricExtension({
- *     metricExtensionId: oci_stack_monitoring_metric_extension.test_metric_extension.id,
+ *     metricExtensionId: testMetricExtensionOciStackMonitoringMetricExtension.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -142,7 +142,7 @@ export interface GetMetricExtensionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMetricExtension = oci.StackMonitoring.getMetricExtension({
- *     metricExtensionId: oci_stack_monitoring_metric_extension.test_metric_extension.id,
+ *     metricExtensionId: testMetricExtensionOciStackMonitoringMetricExtension.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

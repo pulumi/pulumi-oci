@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSender = Oci.Email.GetSender.Invoke(new()
         ///     {
-        ///         SenderId = oci_email_sender.Test_sender.Id,
+        ///         SenderId = testSenderOciEmailSender.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testSender = Oci.Email.GetSender.Invoke(new()
         ///     {
-        ///         SenderId = oci_email_sender.Test_sender.Id,
+        ///         SenderId = testSenderOciEmailSender.Id,
         ///     });
         /// 
         /// });

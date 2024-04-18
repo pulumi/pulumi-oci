@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Bastion.GetBastions(ctx, &bastion.GetBastionsArgs{
-//				CompartmentId:         _var.Compartment_id,
-//				BastionId:             pulumi.StringRef(oci_bastion_bastion.Test_bastion.Id),
-//				BastionLifecycleState: pulumi.StringRef(_var.Bastion_bastion_lifecycle_state),
-//				Name:                  pulumi.StringRef(_var.Bastion_name),
+//				CompartmentId:         compartmentId,
+//				BastionId:             pulumi.StringRef(testBastion.Id),
+//				BastionLifecycleState: pulumi.StringRef(bastionBastionLifecycleState),
+//				Name:                  pulumi.StringRef(bastionName),
 //			}, nil)
 //			if err != nil {
 //				return err

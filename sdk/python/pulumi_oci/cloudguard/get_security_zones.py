@@ -141,12 +141,12 @@ def get_security_zones(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=var["compartment_id"],
-        display_name=var["security_zone_display_name"],
-        id=var["security_zone_id"],
-        is_required_security_zones_in_subtree=var["security_zone_is_required_security_zones_in_subtree"],
-        security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"],
-        state=var["security_zone_state"])
+    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=compartment_id,
+        display_name=security_zone_display_name,
+        id=security_zone_id,
+        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree,
+        security_recipe_id=test_security_recipe["id"],
+        state=security_zone_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -201,12 +201,12 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=var["compartment_id"],
-        display_name=var["security_zone_display_name"],
-        id=var["security_zone_id"],
-        is_required_security_zones_in_subtree=var["security_zone_is_required_security_zones_in_subtree"],
-        security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"],
-        state=var["security_zone_state"])
+    test_security_zones = oci.CloudGuard.get_security_zones(compartment_id=compartment_id,
+        display_name=security_zone_display_name,
+        id=security_zone_id,
+        is_required_security_zones_in_subtree=security_zone_is_required_security_zones_in_subtree,
+        security_recipe_id=test_security_recipe["id"],
+        state=security_zone_state)
     ```
     <!--End PulumiCodeChooser -->
 

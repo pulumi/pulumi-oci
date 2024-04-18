@@ -34,7 +34,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolumeBackupPolicies(ctx, &core.GetVolumeBackupPoliciesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
 //			}, nil)
 //			if err != nil {
 //				return err

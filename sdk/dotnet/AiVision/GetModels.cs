@@ -30,11 +30,11 @@ namespace Pulumi.Oci.AiVision
         /// {
         ///     var testModels = Oci.AiVision.GetModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Model_display_name,
-        ///         Id = @var.Model_id,
-        ///         ProjectId = oci_ai_vision_project.Test_project.Id,
-        ///         State = @var.Model_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.AiVision
         /// {
         ///     var testModels = Oci.AiVision.GetModels.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Model_display_name,
-        ///         Id = @var.Model_id,
-        ///         ProjectId = oci_ai_vision_project.Test_project.Id,
-        ///         State = @var.Model_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = modelDisplayName,
+        ///         Id = modelId,
+        ///         ProjectId = testProject.Id,
+        ///         State = modelState,
         ///     });
         /// 
         /// });

@@ -28,15 +28,15 @@ namespace Pulumi.Oci.Kms
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVerify = new Oci.Kms.Verify("testVerify", new()
+    ///     var testVerify = new Oci.Kms.Verify("test_verify", new()
     ///     {
-    ///         CryptoEndpoint = @var.Verify_message_crypto_endpoint,
-    ///         KeyId = oci_kms_key.Test_key.Id,
-    ///         KeyVersionId = oci_kms_key_version.Test_key_version.Id,
-    ///         Message = @var.Verify_message,
-    ///         Signature = @var.Verify_signature,
-    ///         SigningAlgorithm = @var.Verify_signing_algorithm,
-    ///         MessageType = @var.Verify_message_type,
+    ///         CryptoEndpoint = verifyMessageCryptoEndpoint,
+    ///         KeyId = testKey.Id,
+    ///         KeyVersionId = testKeyVersion.Id,
+    ///         Message = verifyMessage,
+    ///         Signature = verifySignature,
+    ///         SigningAlgorithm = verifySigningAlgorithm,
+    ///         MessageType = verifyMessageType,
     ///     });
     /// 
     /// });

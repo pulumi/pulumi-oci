@@ -961,12 +961,12 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_systems_upgrade = oci.database.DbSystemsUpgrade("testDbSystemsUpgrade",
-            action=var["db_systems_upgrade_action"],
-            db_system_id=oci_database_db_system["test_db_system"]["id"],
-            is_snapshot_retention_days_force_updated=var["db_systems_upgrade_is_snapshot_retention_days_force_updated"],
-            new_gi_version=var["db_systems_upgrade_new_gi_version"],
-            snapshot_retention_period_in_days=var["db_systems_upgrade_snapshot_retention_period_in_days"])
+        test_db_systems_upgrade = oci.database.DbSystemsUpgrade("test_db_systems_upgrade",
+            action=db_systems_upgrade_action,
+            db_system_id=test_db_system["id"],
+            is_snapshot_retention_days_force_updated=db_systems_upgrade_is_snapshot_retention_days_force_updated,
+            new_gi_version=db_systems_upgrade_new_gi_version,
+            snapshot_retention_period_in_days=db_systems_upgrade_snapshot_retention_period_in_days)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -1004,12 +1004,12 @@ class DbSystemsUpgrade(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_systems_upgrade = oci.database.DbSystemsUpgrade("testDbSystemsUpgrade",
-            action=var["db_systems_upgrade_action"],
-            db_system_id=oci_database_db_system["test_db_system"]["id"],
-            is_snapshot_retention_days_force_updated=var["db_systems_upgrade_is_snapshot_retention_days_force_updated"],
-            new_gi_version=var["db_systems_upgrade_new_gi_version"],
-            snapshot_retention_period_in_days=var["db_systems_upgrade_snapshot_retention_period_in_days"])
+        test_db_systems_upgrade = oci.database.DbSystemsUpgrade("test_db_systems_upgrade",
+            action=db_systems_upgrade_action,
+            db_system_id=test_db_system["id"],
+            is_snapshot_retention_days_force_updated=db_systems_upgrade_is_snapshot_retention_days_force_updated,
+            new_gi_version=db_systems_upgrade_new_gi_version,
+            snapshot_retention_period_in_days=db_systems_upgrade_snapshot_retention_period_in_days)
         ```
         <!--End PulumiCodeChooser -->
 

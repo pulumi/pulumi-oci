@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVlan(ctx, &core.GetVlanArgs{
-//				VlanId: oci_core_vlan.Test_vlan.Id,
+//				VlanId: testVlanOciCoreVlan.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

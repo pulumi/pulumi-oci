@@ -284,7 +284,7 @@ def get_java_downloads_java_download_token(java_download_token_id: Optional[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_token = oci.Jms.get_java_downloads_java_download_token(java_download_token_id=oci_jms_java_downloads_java_download_token["test_java_download_token"]["id"])
+    test_java_download_token = oci.Jms.get_java_downloads_java_download_token(java_download_token_id=test_java_download_token_oci_jms_java_downloads_java_download_token["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -334,7 +334,7 @@ def get_java_downloads_java_download_token_output(java_download_token_id: Option
     import pulumi
     import pulumi_oci as oci
 
-    test_java_download_token = oci.Jms.get_java_downloads_java_download_token(java_download_token_id=oci_jms_java_downloads_java_download_token["test_java_download_token"]["id"])
+    test_java_download_token = oci.Jms.get_java_downloads_java_download_token(java_download_token_id=test_java_download_token_oci_jms_java_downloads_java_download_token["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOccAvailabilityCatalog = oci.CapacityManagement.getOccAvailabilityCatalog({
- *     occAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog.id,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -126,7 +126,7 @@ export interface GetOccAvailabilityCatalogResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOccAvailabilityCatalog = oci.CapacityManagement.getOccAvailabilityCatalog({
- *     occAvailabilityCatalogId: oci_capacity_management_occ_availability_catalog.test_occ_availability_catalog.id,
+ *     occAvailabilityCatalogId: testOccAvailabilityCatalogOciCapacityManagementOccAvailabilityCatalog.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

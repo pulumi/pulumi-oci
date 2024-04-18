@@ -25,17 +25,17 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSoftwareSource = new Oci.OsManagementHub.SoftwareSource("testSoftwareSource", new()
+    ///     var testSoftwareSource = new Oci.OsManagementHub.SoftwareSource("test_software_source", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Software_source_display_name,
-    ///         SoftwareSourceType = @var.Software_source_software_source_type,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = softwareSourceDisplayName,
+    ///         SoftwareSourceType = softwareSourceSoftwareSourceType,
     ///         VendorSoftwareSources = new[]
     ///         {
     ///             new Oci.OsManagementHub.Inputs.SoftwareSourceVendorSoftwareSourceArgs
     ///             {
-    ///                 DisplayName = @var.Software_source_vendor_software_sources_display_name,
-    ///                 Id = @var.Software_source_vendor_software_sources_id,
+    ///                 DisplayName = softwareSourceVendorSoftwareSourcesDisplayName,
+    ///                 Id = softwareSourceVendorSoftwareSourcesId,
     ///             },
     ///         },
     ///         CustomSoftwareSourceFilter = new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterArgs
@@ -44,28 +44,28 @@ namespace Pulumi.Oci.OsManagementHub
     ///             {
     ///                 new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterModuleStreamProfileFilterArgs
     ///                 {
-    ///                     FilterType = @var.Software_source_custom_software_source_filter_module_stream_profile_filters_filter_type,
-    ///                     ModuleName = @var.Software_source_custom_software_source_filter_module_stream_profile_filters_module_name,
-    ///                     ProfileName = oci_os_management_hub_profile.Test_profile.Name,
-    ///                     StreamName = oci_streaming_stream.Test_stream.Name,
+    ///                     FilterType = softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersFilterType,
+    ///                     ModuleName = softwareSourceCustomSoftwareSourceFilterModuleStreamProfileFiltersModuleName,
+    ///                     ProfileName = testProfile.Name,
+    ///                     StreamName = testStream.Name,
     ///                 },
     ///             },
     ///             PackageFilters = new[]
     ///             {
     ///                 new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterPackageFilterArgs
     ///                 {
-    ///                     FilterType = @var.Software_source_custom_software_source_filter_package_filters_filter_type,
-    ///                     PackageName = @var.Software_source_custom_software_source_filter_package_filters_package_name,
-    ///                     PackageNamePattern = @var.Software_source_custom_software_source_filter_package_filters_package_name_pattern,
-    ///                     PackageVersion = @var.Software_source_custom_software_source_filter_package_filters_package_version,
+    ///                     FilterType = softwareSourceCustomSoftwareSourceFilterPackageFiltersFilterType,
+    ///                     PackageName = softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageName,
+    ///                     PackageNamePattern = softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageNamePattern,
+    ///                     PackageVersion = softwareSourceCustomSoftwareSourceFilterPackageFiltersPackageVersion,
     ///                 },
     ///             },
     ///             PackageGroupFilters = new[]
     ///             {
     ///                 new Oci.OsManagementHub.Inputs.SoftwareSourceCustomSoftwareSourceFilterPackageGroupFilterArgs
     ///                 {
-    ///                     FilterType = @var.Software_source_custom_software_source_filter_package_group_filters_filter_type,
-    ///                     PackageGroups = @var.Software_source_custom_software_source_filter_package_group_filters_package_groups,
+    ///                     FilterType = softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersFilterType,
+    ///                     PackageGroups = softwareSourceCustomSoftwareSourceFilterPackageGroupFiltersPackageGroups,
     ///                 },
     ///             },
     ///         },
@@ -73,13 +73,13 @@ namespace Pulumi.Oci.OsManagementHub
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Software_source_description,
+    ///         Description = softwareSourceDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsAutomaticallyUpdated = @var.Software_source_is_automatically_updated,
-    ///         SoftwareSourceVersion = @var.Software_source_software_source_version,
+    ///         IsAutomaticallyUpdated = softwareSourceIsAutomaticallyUpdated,
+    ///         SoftwareSourceVersion = softwareSourceSoftwareSourceVersion,
     ///     });
     /// 
     /// });

@@ -16,14 +16,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testEmWarehouse = new oci.emwarehouse.EmWarehouse("testEmWarehouse", {
- *     compartmentId: _var.compartment_id,
- *     emBridgeId: oci_em_warehouse_em_bridge.test_em_bridge.id,
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
+ * const testEmWarehouse = new oci.emwarehouse.EmWarehouse("test_em_warehouse", {
+ *     compartmentId: compartmentId,
+ *     emBridgeId: testEmBridge.id,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     displayName: _var.em_warehouse_display_name,
+ *     displayName: emWarehouseDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testEnvironments = oci.CloudBridge.getEnvironments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.environment_display_name,
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
- *     state: _var.environment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: environmentDisplayName,
+ *     environmentId: testEnvironment.id,
+ *     state: environmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -102,10 +102,10 @@ export interface GetEnvironmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testEnvironments = oci.CloudBridge.getEnvironments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.environment_display_name,
- *     environmentId: oci_cloud_bridge_environment.test_environment.id,
- *     state: _var.environment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: environmentDisplayName,
+ *     environmentId: testEnvironment.id,
+ *     state: environmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

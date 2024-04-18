@@ -18,30 +18,30 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testFunction = new oci.functions.Function("testFunction", {
- *     applicationId: oci_functions_application.test_application.id,
- *     displayName: _var.function_display_name,
- *     memoryInMbs: _var.function_memory_in_mbs,
- *     config: _var.function_config,
+ * const testFunction = new oci.functions.Function("test_function", {
+ *     applicationId: testApplication.id,
+ *     displayName: functionDisplayName,
+ *     memoryInMbs: functionMemoryInMbs,
+ *     config: functionConfig,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     image: _var.function_image,
- *     imageDigest: _var.function_image_digest,
+ *     image: functionImage,
+ *     imageDigest: functionImageDigest,
  *     provisionedConcurrencyConfig: {
- *         strategy: _var.function_provisioned_concurrency_config_strategy,
- *         count: _var.function_provisioned_concurrency_config_count,
+ *         strategy: functionProvisionedConcurrencyConfigStrategy,
+ *         count: functionProvisionedConcurrencyConfigCount,
  *     },
  *     sourceDetails: {
- *         pbfListingId: oci_functions_pbf_listing.test_pbf_listing.id,
- *         sourceType: _var.function_source_details_source_type,
+ *         pbfListingId: testPbfListing.id,
+ *         sourceType: functionSourceDetailsSourceType,
  *     },
- *     timeoutInSeconds: _var.function_timeout_in_seconds,
+ *     timeoutInSeconds: functionTimeoutInSeconds,
  *     traceConfig: {
- *         isEnabled: _var.function_trace_config_is_enabled,
+ *         isEnabled: functionTraceConfigIsEnabled,
  *     },
  * });
  * ```

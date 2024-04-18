@@ -25,34 +25,35 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackendSet = new Oci.NetworkLoadBalancer.BackendSet("testBackendSet", new()
+    ///     var testBackendSet = new Oci.NetworkLoadBalancer.BackendSet("test_backend_set", new()
     ///     {
     ///         HealthChecker = new Oci.NetworkLoadBalancer.Inputs.BackendSetHealthCheckerArgs
     ///         {
-    ///             Protocol = @var.Backend_set_health_checker_protocol,
+    ///             Protocol = backendSetHealthCheckerProtocol,
     ///             Dns = new Oci.NetworkLoadBalancer.Inputs.BackendSetHealthCheckerDnsArgs
     ///             {
-    ///                 DomainName = oci_identity_domain.Test_domain.Name,
-    ///                 QueryClass = @var.Backend_set_health_checker_dns_query_class,
-    ///                 QueryType = @var.Backend_set_health_checker_dns_query_type,
-    ///                 Rcodes = @var.Backend_set_health_checker_dns_rcodes,
-    ///                 TransportProtocol = @var.Backend_set_health_checker_dns_transport_protocol,
+    ///                 DomainName = testDomain.Name,
+    ///                 QueryClass = backendSetHealthCheckerDnsQueryClass,
+    ///                 QueryType = backendSetHealthCheckerDnsQueryType,
+    ///                 Rcodes = backendSetHealthCheckerDnsRcodes,
+    ///                 TransportProtocol = backendSetHealthCheckerDnsTransportProtocol,
     ///             },
-    ///             IntervalInMillis = @var.Backend_set_health_checker_interval_in_millis,
-    ///             Port = @var.Backend_set_health_checker_port,
-    ///             RequestData = @var.Backend_set_health_checker_request_data,
-    ///             ResponseBodyRegex = @var.Backend_set_health_checker_response_body_regex,
-    ///             ResponseData = @var.Backend_set_health_checker_response_data,
-    ///             Retries = @var.Backend_set_health_checker_retries,
-    ///             ReturnCode = @var.Backend_set_health_checker_return_code,
-    ///             TimeoutInMillis = @var.Backend_set_health_checker_timeout_in_millis,
-    ///             UrlPath = @var.Backend_set_health_checker_url_path,
+    ///             IntervalInMillis = backendSetHealthCheckerIntervalInMillis,
+    ///             Port = backendSetHealthCheckerPort,
+    ///             RequestData = backendSetHealthCheckerRequestData,
+    ///             ResponseBodyRegex = backendSetHealthCheckerResponseBodyRegex,
+    ///             ResponseData = backendSetHealthCheckerResponseData,
+    ///             Retries = backendSetHealthCheckerRetries,
+    ///             ReturnCode = backendSetHealthCheckerReturnCode,
+    ///             TimeoutInMillis = backendSetHealthCheckerTimeoutInMillis,
+    ///             UrlPath = backendSetHealthCheckerUrlPath,
     ///         },
-    ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///         Policy = @var.Backend_set_policy,
-    ///         IpVersion = @var.Backend_set_ip_version,
-    ///         IsFailOpen = @var.Backend_set_is_fail_open,
-    ///         IsPreserveSource = @var.Backend_set_is_preserve_source,
+    ///         Name = backendSetName,
+    ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+    ///         Policy = backendSetPolicy,
+    ///         IpVersion = backendSetIpVersion,
+    ///         IsFailOpen = backendSetIsFailOpen,
+    ///         IsPreserveSource = backendSetIsPreserveSource,
     ///     });
     /// 
     /// });

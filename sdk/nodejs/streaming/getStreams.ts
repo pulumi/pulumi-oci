@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testStreams = oci.Streaming.getStreams({
- *     compartmentId: _var.compartment_id,
- *     id: _var.stream_id,
- *     name: _var.stream_name,
- *     state: _var.stream_state,
- *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ *     compartmentId: compartmentId,
+ *     id: streamId,
+ *     name: streamName,
+ *     state: streamState,
+ *     streamPoolId: testStreamPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -118,11 +118,11 @@ export interface GetStreamsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testStreams = oci.Streaming.getStreams({
- *     compartmentId: _var.compartment_id,
- *     id: _var.stream_id,
- *     name: _var.stream_name,
- *     state: _var.stream_state,
- *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ *     compartmentId: compartmentId,
+ *     id: streamId,
+ *     name: streamName,
+ *     state: streamState,
+ *     streamPoolId: testStreamPool.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

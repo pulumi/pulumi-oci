@@ -32,14 +32,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditTrails = oci.DataSafe.getAuditTrails({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_trail_access_level,
- *     auditTrailId: oci_data_safe_audit_trail.test_audit_trail.id,
- *     compartmentIdInSubtree: _var.audit_trail_compartment_id_in_subtree,
- *     displayName: _var.audit_trail_display_name,
- *     state: _var.audit_trail_state,
- *     status: _var.audit_trail_status,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditTrailAccessLevel,
+ *     auditTrailId: testAuditTrail.id,
+ *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree,
+ *     displayName: auditTrailDisplayName,
+ *     state: auditTrailState,
+ *     status: auditTrailStatus,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -162,14 +162,14 @@ export interface GetAuditTrailsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditTrails = oci.DataSafe.getAuditTrails({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.audit_trail_access_level,
- *     auditTrailId: oci_data_safe_audit_trail.test_audit_trail.id,
- *     compartmentIdInSubtree: _var.audit_trail_compartment_id_in_subtree,
- *     displayName: _var.audit_trail_display_name,
- *     state: _var.audit_trail_state,
- *     status: _var.audit_trail_status,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: auditTrailAccessLevel,
+ *     auditTrailId: testAuditTrail.id,
+ *     compartmentIdInSubtree: auditTrailCompartmentIdInSubtree,
+ *     displayName: auditTrailDisplayName,
+ *     state: auditTrailState,
+ *     status: auditTrailStatus,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

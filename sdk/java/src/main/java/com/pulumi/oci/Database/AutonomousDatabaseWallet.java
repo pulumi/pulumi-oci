@@ -51,11 +51,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseWallet = new AutonomousDatabaseWallet(&#34;testAutonomousDatabaseWallet&#34;, AutonomousDatabaseWalletArgs.builder()        
- *             .autonomousDatabaseId(oci_database_autonomous_database.test_autonomous_database().id())
- *             .password(var_.autonomous_database_wallet_password())
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .password(autonomousDatabaseWalletPassword)
  *             .base64EncodeContent(&#34;false&#34;)
- *             .generateType(var_.autonomous_database_wallet_generate_type())
- *             .isRegional(var_.autonomous_database_wallet_is_regional())
+ *             .generateType(autonomousDatabaseWalletGenerateType)
+ *             .isRegional(autonomousDatabaseWalletIsRegional)
  *             .build());
  * 
  *     }

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetDefaultConfiguration(ctx, &psql.GetDefaultConfigurationArgs{
-//				DefaultConfigurationId: oci_psql_default_configuration.Test_default_configuration.Id,
+//				DefaultConfigurationId: testDefaultConfigurationOciPsqlDefaultConfiguration.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

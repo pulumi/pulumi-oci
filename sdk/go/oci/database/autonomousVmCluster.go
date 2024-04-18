@@ -31,46 +31,46 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousVmCluster(ctx, "testAutonomousVmCluster", &Database.AutonomousVmClusterArgs{
-//				CompartmentId:                  pulumi.Any(_var.Compartment_id),
-//				DisplayName:                    pulumi.Any(_var.Autonomous_vm_cluster_display_name),
-//				ExadataInfrastructureId:        pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
-//				VmClusterNetworkId:             pulumi.Any(oci_database_vm_cluster_network.Test_vm_cluster_network.Id),
-//				AutonomousDataStorageSizeInTbs: pulumi.Any(_var.Autonomous_vm_cluster_autonomous_data_storage_size_in_tbs),
-//				ComputeModel:                   pulumi.Any(_var.Autonomous_vm_cluster_compute_model),
-//				CpuCoreCountPerNode:            pulumi.Any(_var.Autonomous_vm_cluster_cpu_core_count_per_node),
-//				DbServers:                      pulumi.Any(_var.Autonomous_vm_cluster_db_servers),
-//				DefinedTags:                    pulumi.Any(_var.Autonomous_vm_cluster_defined_tags),
+//			_, err := Database.NewAutonomousVmCluster(ctx, "test_autonomous_vm_cluster", &Database.AutonomousVmClusterArgs{
+//				CompartmentId:                  pulumi.Any(compartmentId),
+//				DisplayName:                    pulumi.Any(autonomousVmClusterDisplayName),
+//				ExadataInfrastructureId:        pulumi.Any(testExadataInfrastructure.Id),
+//				VmClusterNetworkId:             pulumi.Any(testVmClusterNetwork.Id),
+//				AutonomousDataStorageSizeInTbs: pulumi.Any(autonomousVmClusterAutonomousDataStorageSizeInTbs),
+//				ComputeModel:                   pulumi.Any(autonomousVmClusterComputeModel),
+//				CpuCoreCountPerNode:            pulumi.Any(autonomousVmClusterCpuCoreCountPerNode),
+//				DbServers:                      pulumi.Any(autonomousVmClusterDbServers),
+//				DefinedTags:                    pulumi.Any(autonomousVmClusterDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsLocalBackupEnabled: pulumi.Any(_var.Autonomous_vm_cluster_is_local_backup_enabled),
-//				IsMtlsEnabled:        pulumi.Any(_var.Autonomous_vm_cluster_is_mtls_enabled),
-//				LicenseModel:         pulumi.Any(_var.Autonomous_vm_cluster_license_model),
+//				IsLocalBackupEnabled: pulumi.Any(autonomousVmClusterIsLocalBackupEnabled),
+//				IsMtlsEnabled:        pulumi.Any(autonomousVmClusterIsMtlsEnabled),
+//				LicenseModel:         pulumi.Any(autonomousVmClusterLicenseModel),
 //				MaintenanceWindowDetails: database.AutonomousVmClusterMaintenanceWindowDetailArray{
 //					&database.AutonomousVmClusterMaintenanceWindowDetailArgs{
 //						DaysOfWeeks: database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArray{
 //							&database.AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs{
-//								Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_days_of_week_name),
+//								Name: pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName),
 //							},
 //						},
-//						HoursOfDays:     pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_hours_of_day),
-//						LeadTimeInWeeks: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks),
+//						HoursOfDays:     pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsHoursOfDay),
+//						LeadTimeInWeeks: pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks),
 //						Months: database.AutonomousVmClusterMaintenanceWindowDetailMonthArray{
 //							&database.AutonomousVmClusterMaintenanceWindowDetailMonthArgs{
-//								Name: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_months_name),
+//								Name: pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsMonthsName),
 //							},
 //						},
-//						PatchingMode:  pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_patching_mode),
-//						Preference:    pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_preference),
-//						WeeksOfMonths: pulumi.Any(_var.Autonomous_vm_cluster_maintenance_window_details_weeks_of_month),
+//						PatchingMode:  pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsPatchingMode),
+//						Preference:    pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsPreference),
+//						WeeksOfMonths: pulumi.Any(autonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth),
 //					},
 //				},
-//				MemoryPerOracleComputeUnitInGbs: pulumi.Any(_var.Autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs),
-//				ScanListenerPortNonTls:          pulumi.Any(_var.Autonomous_vm_cluster_scan_listener_port_non_tls),
-//				ScanListenerPortTls:             pulumi.Any(_var.Autonomous_vm_cluster_scan_listener_port_tls),
-//				TimeZone:                        pulumi.Any(_var.Autonomous_vm_cluster_time_zone),
-//				TotalContainerDatabases:         pulumi.Any(_var.Autonomous_vm_cluster_total_container_databases),
+//				MemoryPerOracleComputeUnitInGbs: pulumi.Any(autonomousVmClusterMemoryPerOracleComputeUnitInGbs),
+//				ScanListenerPortNonTls:          pulumi.Any(autonomousVmClusterScanListenerPortNonTls),
+//				ScanListenerPortTls:             pulumi.Any(autonomousVmClusterScanListenerPortTls),
+//				TimeZone:                        pulumi.Any(autonomousVmClusterTimeZone),
+//				TotalContainerDatabases:         pulumi.Any(autonomousVmClusterTotalContainerDatabases),
 //			})
 //			if err != nil {
 //				return err

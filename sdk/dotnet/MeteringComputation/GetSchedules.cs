@@ -30,8 +30,8 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testSchedules = Oci.MeteringComputation.GetSchedules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Schedule_name,
+        ///         CompartmentId = compartmentId,
+        ///         Name = scheduleName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.MeteringComputation
         /// {
         ///     var testSchedules = Oci.MeteringComputation.GetSchedules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Schedule_name,
+        ///         CompartmentId = compartmentId,
+        ///         Name = scheduleName,
         ///     });
         /// 
         /// });

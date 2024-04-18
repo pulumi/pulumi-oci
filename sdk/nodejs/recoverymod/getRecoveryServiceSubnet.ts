@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testRecoveryServiceSubnet = oci.RecoveryMod.getRecoveryServiceSubnet({
- *     recoveryServiceSubnetId: oci_recovery_recovery_service_subnet.test_recovery_service_subnet.id,
+ *     recoveryServiceSubnetId: testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,7 +113,7 @@ export interface GetRecoveryServiceSubnetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testRecoveryServiceSubnet = oci.RecoveryMod.getRecoveryServiceSubnet({
- *     recoveryServiceSubnetId: oci_recovery_recovery_service_subnet.test_recovery_service_subnet.id,
+ *     recoveryServiceSubnetId: testRecoveryServiceSubnetOciRecoveryRecoveryServiceSubnet.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

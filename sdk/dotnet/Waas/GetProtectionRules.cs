@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testProtectionRules = Oci.Waas.GetProtectionRules.Invoke(new()
         ///     {
-        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-        ///         Actions = @var.Protection_rule_action,
-        ///         ModSecurityRuleIds = oci_events_rule.Test_rule.Id,
+        ///         WaasPolicyId = testWaasPolicy.Id,
+        ///         Actions = protectionRuleAction,
+        ///         ModSecurityRuleIds = testRule.Id,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Waas
         /// {
         ///     var testProtectionRules = Oci.Waas.GetProtectionRules.Invoke(new()
         ///     {
-        ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-        ///         Actions = @var.Protection_rule_action,
-        ///         ModSecurityRuleIds = oci_events_rule.Test_rule.Id,
+        ///         WaasPolicyId = testWaasPolicy.Id,
+        ///         Actions = protectionRuleAction,
+        ///         ModSecurityRuleIds = testRule.Id,
         ///     });
         /// 
         /// });

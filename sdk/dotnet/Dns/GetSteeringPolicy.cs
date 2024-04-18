@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testSteeringPolicy = Oci.Dns.GetSteeringPolicy.Invoke(new()
         ///     {
-        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+        ///         SteeringPolicyId = testSteeringPolicyOciDnsSteeringPolicy.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testSteeringPolicy = Oci.Dns.GetSteeringPolicy.Invoke(new()
         ///     {
-        ///         SteeringPolicyId = oci_dns_steering_policy.Test_steering_policy.Id,
+        ///         SteeringPolicyId = testSteeringPolicyOciDnsSteeringPolicy.Id,
         ///     });
         /// 
         /// });

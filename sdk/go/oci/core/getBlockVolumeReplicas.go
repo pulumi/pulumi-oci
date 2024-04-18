@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetBlockVolumeReplicas(ctx, &core.GetBlockVolumeReplicasArgs{
-//				AvailabilityDomain:   pulumi.StringRef(_var.Block_volume_replica_availability_domain),
-//				CompartmentId:        pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:          pulumi.StringRef(_var.Block_volume_replica_display_name),
-//				State:                pulumi.StringRef(_var.Block_volume_replica_state),
-//				VolumeGroupReplicaId: pulumi.StringRef(oci_core_volume_group_replica.Test_volume_group_replica.Id),
+//				AvailabilityDomain:   pulumi.StringRef(blockVolumeReplicaAvailabilityDomain),
+//				CompartmentId:        pulumi.StringRef(compartmentId),
+//				DisplayName:          pulumi.StringRef(blockVolumeReplicaDisplayName),
+//				State:                pulumi.StringRef(blockVolumeReplicaState),
+//				VolumeGroupReplicaId: pulumi.StringRef(testVolumeGroupReplica.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

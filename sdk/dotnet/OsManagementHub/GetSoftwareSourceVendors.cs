@@ -31,8 +31,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceVendors = Oci.OsManagementHub.GetSoftwareSourceVendors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Software_source_vendor_name,
+        ///         CompartmentId = compartmentId,
+        ///         Name = softwareSourceVendorName,
         ///     });
         /// 
         /// });
@@ -62,8 +62,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testSoftwareSourceVendors = Oci.OsManagementHub.GetSoftwareSourceVendors.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Name = @var.Software_source_vendor_name,
+        ///         CompartmentId = compartmentId,
+        ///         Name = softwareSourceVendorName,
         ///     });
         /// 
         /// });

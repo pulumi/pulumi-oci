@@ -25,21 +25,21 @@ namespace Pulumi.Oci.Psql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackup = new Oci.Psql.Backup("testBackup", new()
+    ///     var testBackup = new Oci.Psql.Backup("test_backup", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbSystemId = oci_psql_db_system.Test_db_system.Id,
-    ///         DisplayName = @var.Backup_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DbSystemId = testDbSystem.Id,
+    ///         DisplayName = backupDisplayName,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Backup_description,
+    ///         Description = backupDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         RetentionPeriod = @var.Backup_retention_period,
+    ///         RetentionPeriod = backupRetentionPeriod,
     ///     });
     /// 
     /// });

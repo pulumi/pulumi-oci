@@ -49,18 +49,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDedicatedVantagePoint = new DedicatedVantagePoint(&#34;testDedicatedVantagePoint&#34;, DedicatedVantagePointArgs.builder()        
- *             .apmDomainId(oci_apm_apm_domain.test_apm_domain().id())
- *             .displayName(var_.dedicated_vantage_point_display_name())
+ *             .apmDomainId(testApmDomain.id())
+ *             .displayName(dedicatedVantagePointDisplayName)
  *             .dvpStackDetails(DedicatedVantagePointDvpStackDetailsArgs.builder()
- *                 .dvpStackId(oci_resourcemanager_stack.test_stack().id())
- *                 .dvpStackType(var_.dedicated_vantage_point_dvp_stack_details_dvp_stack_type())
- *                 .dvpStreamId(oci_streaming_stream.test_stream().id())
- *                 .dvpVersion(var_.dedicated_vantage_point_dvp_stack_details_dvp_version())
+ *                 .dvpStackId(testStack.id())
+ *                 .dvpStackType(dedicatedVantagePointDvpStackDetailsDvpStackType)
+ *                 .dvpStreamId(testStream.id())
+ *                 .dvpVersion(dedicatedVantagePointDvpStackDetailsDvpVersion)
  *                 .build())
- *             .region(var_.dedicated_vantage_point_region())
+ *             .region(dedicatedVantagePointRegion)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .status(var_.dedicated_vantage_point_status())
+ *             .status(dedicatedVantagePointStatus)
  *             .build());
  * 
  *     }

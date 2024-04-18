@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBrandingSettings = oci.Identity.getDomainsBrandingSettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.branding_setting_authorization,
- *     resourceTypeSchemaVersion: _var.branding_setting_resource_type_schema_version,
+ *     authorization: brandingSettingAuthorization,
+ *     resourceTypeSchemaVersion: brandingSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,11 +107,11 @@ export interface GetDomainsBrandingSettingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBrandingSettings = oci.Identity.getDomainsBrandingSettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.branding_setting_authorization,
- *     resourceTypeSchemaVersion: _var.branding_setting_resource_type_schema_version,
+ *     authorization: brandingSettingAuthorization,
+ *     resourceTypeSchemaVersion: brandingSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

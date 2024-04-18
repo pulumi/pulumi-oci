@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := UsageProxy.GetSubscriptionProduct(ctx, &usageproxy.GetSubscriptionProductArgs{
-//				SubscriptionId: oci_ons_subscription.Test_subscription.Id,
-//				TenancyId:      oci_identity_tenancy.Test_tenancy.Id,
-//				UsagePeriodKey: _var.Subscription_product_usage_period_key,
-//				Producttype:    pulumi.StringRef(_var.Subscription_product_producttype),
+//				SubscriptionId: testSubscription.Id,
+//				TenancyId:      testTenancy.Id,
+//				UsagePeriodKey: subscriptionProductUsagePeriodKey,
+//				Producttype:    pulumi.StringRef(subscriptionProductProducttype),
 //			}, nil)
 //			if err != nil {
 //				return err

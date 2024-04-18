@@ -18,10 +18,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNodePool = new oci.containerengine.NodePool("testNodePool", {
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     compartmentId: _var.compartment_id,
- *     nodeShape: _var.node_pool_node_shape,
+ * const testNodePool = new oci.containerengine.NodePool("test_node_pool", {
+ *     clusterId: testCluster.id,
+ *     compartmentId: compartmentId,
+ *     name: nodePoolName,
+ *     nodeShape: nodePoolNodeShape,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -29,31 +30,31 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     initialNodeLabels: [{
- *         key: _var.node_pool_initial_node_labels_key,
- *         value: _var.node_pool_initial_node_labels_value,
+ *         key: nodePoolInitialNodeLabelsKey,
+ *         value: nodePoolInitialNodeLabelsValue,
  *     }],
- *     kubernetesVersion: _var.node_pool_kubernetes_version,
+ *     kubernetesVersion: nodePoolKubernetesVersion,
  *     nodeConfigDetails: {
  *         placementConfigs: [{
- *             availabilityDomain: _var.node_pool_node_config_details_placement_configs_availability_domain,
- *             subnetId: oci_core_subnet.test_subnet.id,
- *             capacityReservationId: oci_containerengine_capacity_reservation.test_capacity_reservation.id,
- *             faultDomains: _var.node_pool_node_config_details_placement_configs_fault_domains,
+ *             availabilityDomain: nodePoolNodeConfigDetailsPlacementConfigsAvailabilityDomain,
+ *             subnetId: testSubnet.id,
+ *             capacityReservationId: testCapacityReservation.id,
+ *             faultDomains: nodePoolNodeConfigDetailsPlacementConfigsFaultDomains,
  *             preemptibleNodeConfig: {
  *                 preemptionAction: {
- *                     type: _var.node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_type,
- *                     isPreserveBootVolume: _var.node_pool_node_config_details_placement_configs_preemptible_node_config_preemption_action_is_preserve_boot_volume,
+ *                     type: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType,
+ *                     isPreserveBootVolume: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume,
  *                 },
  *             },
  *         }],
- *         size: _var.node_pool_node_config_details_size,
- *         isPvEncryptionInTransitEnabled: _var.node_pool_node_config_details_is_pv_encryption_in_transit_enabled,
- *         kmsKeyId: oci_kms_key.test_key.id,
+ *         size: nodePoolNodeConfigDetailsSize,
+ *         isPvEncryptionInTransitEnabled: nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled,
+ *         kmsKeyId: testKey.id,
  *         nodePoolPodNetworkOptionDetails: {
- *             cniType: _var.node_pool_node_config_details_node_pool_pod_network_option_details_cni_type,
- *             maxPodsPerNode: _var.node_pool_node_config_details_node_pool_pod_network_option_details_max_pods_per_node,
- *             podNsgIds: _var.node_pool_node_config_details_node_pool_pod_network_option_details_pod_nsg_ids,
- *             podSubnetIds: _var.node_pool_node_config_details_node_pool_pod_network_option_details_pod_subnet_ids,
+ *             cniType: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsCniType,
+ *             maxPodsPerNode: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode,
+ *             podNsgIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds,
+ *             podSubnetIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds,
  *         },
  *         definedTags: {
  *             "Operations.CostCenter": "42",
@@ -61,31 +62,31 @@ import * as utilities from "../utilities";
  *         freeformTags: {
  *             Department: "Finance",
  *         },
- *         nsgIds: _var.node_pool_node_config_details_nsg_ids,
+ *         nsgIds: nodePoolNodeConfigDetailsNsgIds,
  *     },
  *     nodeEvictionNodePoolSettings: {
- *         evictionGraceDuration: _var.node_pool_node_eviction_node_pool_settings_eviction_grace_duration,
- *         isForceDeleteAfterGraceDuration: _var.node_pool_node_eviction_node_pool_settings_is_force_delete_after_grace_duration,
+ *         evictionGraceDuration: nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration,
+ *         isForceDeleteAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration,
  *     },
- *     nodeImageName: oci_core_image.test_image.name,
- *     nodeMetadata: _var.node_pool_node_metadata,
+ *     nodeImageName: testImage.name,
+ *     nodeMetadata: nodePoolNodeMetadata,
  *     nodePoolCyclingDetails: {
- *         isNodeCyclingEnabled: _var.node_pool_node_pool_cycling_details_is_node_cycling_enabled,
- *         maximumSurge: _var.node_pool_node_pool_cycling_details_maximum_surge,
- *         maximumUnavailable: _var.node_pool_node_pool_cycling_details_maximum_unavailable,
+ *         isNodeCyclingEnabled: nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled,
+ *         maximumSurge: nodePoolNodePoolCyclingDetailsMaximumSurge,
+ *         maximumUnavailable: nodePoolNodePoolCyclingDetailsMaximumUnavailable,
  *     },
  *     nodeShapeConfig: {
- *         memoryInGbs: _var.node_pool_node_shape_config_memory_in_gbs,
- *         ocpus: _var.node_pool_node_shape_config_ocpus,
+ *         memoryInGbs: nodePoolNodeShapeConfigMemoryInGbs,
+ *         ocpus: nodePoolNodeShapeConfigOcpus,
  *     },
  *     nodeSourceDetails: {
- *         imageId: oci_core_image.test_image.id,
- *         sourceType: _var.node_pool_node_source_details_source_type,
- *         bootVolumeSizeInGbs: _var.node_pool_node_source_details_boot_volume_size_in_gbs,
+ *         imageId: testImage.id,
+ *         sourceType: nodePoolNodeSourceDetailsSourceType,
+ *         bootVolumeSizeInGbs: nodePoolNodeSourceDetailsBootVolumeSizeInGbs,
  *     },
- *     quantityPerSubnet: _var.node_pool_quantity_per_subnet,
- *     sshPublicKey: _var.node_pool_ssh_public_key,
- *     subnetIds: _var.node_pool_subnet_ids,
+ *     quantityPerSubnet: nodePoolQuantityPerSubnet,
+ *     sshPublicKey: nodePoolSshPublicKey,
+ *     subnetIds: nodePoolSubnetIds,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

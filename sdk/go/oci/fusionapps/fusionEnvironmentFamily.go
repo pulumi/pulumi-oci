@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironmentFamily(ctx, "testFusionEnvironmentFamily", &FusionApps.FusionEnvironmentFamilyArgs{
-//				CompartmentId:   pulumi.Any(_var.Compartment_id),
-//				DisplayName:     pulumi.Any(_var.Fusion_environment_family_display_name),
-//				SubscriptionIds: pulumi.Any(_var.Fusion_environment_family_subscription_ids),
+//			_, err := FusionApps.NewFusionEnvironmentFamily(ctx, "test_fusion_environment_family", &FusionApps.FusionEnvironmentFamilyArgs{
+//				CompartmentId:   pulumi.Any(compartmentId),
+//				DisplayName:     pulumi.Any(fusionEnvironmentFamilyDisplayName),
+//				SubscriptionIds: pulumi.Any(fusionEnvironmentFamilySubscriptionIds),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FamilyMaintenancePolicy: &fusionapps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs{
-//					ConcurrentMaintenance:      pulumi.Any(_var.Fusion_environment_family_family_maintenance_policy_concurrent_maintenance),
-//					IsMonthlyPatchingEnabled:   pulumi.Any(_var.Fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled),
-//					QuarterlyUpgradeBeginTimes: pulumi.Any(_var.Fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times),
+//					ConcurrentMaintenance:      pulumi.Any(fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance),
+//					IsMonthlyPatchingEnabled:   pulumi.Any(fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled),
+//					QuarterlyUpgradeBeginTimes: pulumi.Any(fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),

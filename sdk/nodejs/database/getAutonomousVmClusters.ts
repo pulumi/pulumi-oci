@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousVmClusters = oci.Database.getAutonomousVmClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.autonomous_vm_cluster_display_name,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     state: _var.autonomous_vm_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: autonomousVmClusterDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     state: autonomousVmClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetAutonomousVmClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousVmClusters = oci.Database.getAutonomousVmClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.autonomous_vm_cluster_display_name,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- *     state: _var.autonomous_vm_cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: autonomousVmClusterDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
+ *     state: autonomousVmClusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

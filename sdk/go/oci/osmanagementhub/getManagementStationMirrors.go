@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsManagementHub.GetManagementStationMirrors(ctx, &osmanagementhub.GetManagementStationMirrorsArgs{
-//				ManagementStationId: oci_os_management_hub_management_station.Test_management_station.Id,
-//				DisplayName:         pulumi.StringRef(_var.Management_station_mirror_display_name),
-//				DisplayNameContains: pulumi.StringRef(_var.Management_station_mirror_display_name_contains),
-//				MirrorStates:        _var.Management_station_mirror_mirror_states,
+//				ManagementStationId: testManagementStation.Id,
+//				DisplayName:         pulumi.StringRef(managementStationMirrorDisplayName),
+//				DisplayNameContains: pulumi.StringRef(managementStationMirrorDisplayNameContains),
+//				MirrorStates:        managementStationMirrorMirrorStates,
 //			}, nil)
 //			if err != nil {
 //				return err

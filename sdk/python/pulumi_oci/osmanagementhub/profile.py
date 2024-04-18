@@ -603,24 +603,24 @@ class Profile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_profile = oci.os_management_hub.Profile("testProfile",
-            compartment_id=var["compartment_id"],
-            display_name=var["profile_display_name"],
-            profile_type=var["profile_profile_type"],
-            arch_type=var["profile_arch_type"],
+        test_profile = oci.os_management_hub.Profile("test_profile",
+            compartment_id=compartment_id,
+            display_name=profile_display_name,
+            profile_type=profile_profile_type,
+            arch_type=profile_arch_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["profile_description"],
+            description=profile_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            lifecycle_stage_id=oci_os_management_hub_lifecycle_stage["test_lifecycle_stage"]["id"],
-            managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-            management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"],
-            os_family=var["profile_os_family"],
-            software_source_ids=var["profile_software_source_ids"],
-            vendor_name=var["profile_vendor_name"])
+            lifecycle_stage_id=test_lifecycle_stage["id"],
+            managed_instance_group_id=test_managed_instance_group["id"],
+            management_station_id=test_management_station["id"],
+            os_family=profile_os_family,
+            software_source_ids=profile_software_source_ids,
+            vendor_name=profile_vendor_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -672,24 +672,24 @@ class Profile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_profile = oci.os_management_hub.Profile("testProfile",
-            compartment_id=var["compartment_id"],
-            display_name=var["profile_display_name"],
-            profile_type=var["profile_profile_type"],
-            arch_type=var["profile_arch_type"],
+        test_profile = oci.os_management_hub.Profile("test_profile",
+            compartment_id=compartment_id,
+            display_name=profile_display_name,
+            profile_type=profile_profile_type,
+            arch_type=profile_arch_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["profile_description"],
+            description=profile_description,
             freeform_tags={
                 "Department": "Finance",
             },
-            lifecycle_stage_id=oci_os_management_hub_lifecycle_stage["test_lifecycle_stage"]["id"],
-            managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"],
-            management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"],
-            os_family=var["profile_os_family"],
-            software_source_ids=var["profile_software_source_ids"],
-            vendor_name=var["profile_vendor_name"])
+            lifecycle_stage_id=test_lifecycle_stage["id"],
+            managed_instance_group_id=test_managed_instance_group["id"],
+            management_station_id=test_management_station["id"],
+            os_family=profile_os_family,
+            software_source_ids=profile_software_source_ids,
+            vendor_name=profile_vendor_name)
         ```
         <!--End PulumiCodeChooser -->
 

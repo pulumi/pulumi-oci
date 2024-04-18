@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterUpdateHistoryEntries = oci.Database.getVmClusterUpdateHistoryEntries({
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
- *     state: _var.vm_cluster_update_history_entry_state,
- *     updateType: _var.vm_cluster_update_history_entry_update_type,
+ *     vmClusterId: testVmCluster.id,
+ *     state: vmClusterUpdateHistoryEntryState,
+ *     updateType: vmClusterUpdateHistoryEntryUpdateType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetVmClusterUpdateHistoryEntriesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterUpdateHistoryEntries = oci.Database.getVmClusterUpdateHistoryEntries({
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
- *     state: _var.vm_cluster_update_history_entry_state,
- *     updateType: _var.vm_cluster_update_history_entry_update_type,
+ *     vmClusterId: testVmCluster.id,
+ *     state: vmClusterUpdateHistoryEntryState,
+ *     updateType: vmClusterUpdateHistoryEntryUpdateType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

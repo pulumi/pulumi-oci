@@ -52,16 +52,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalDbSystemDiscovery = new ExternalDbSystemDiscovery(&#34;testExternalDbSystemDiscovery&#34;, ExternalDbSystemDiscoveryArgs.builder()        
- *             .agentId(oci_cloud_bridge_agent.test_agent().id())
- *             .compartmentId(var_.compartment_id())
- *             .externalDbSystemDiscoveryId(var_.external_db_system_discovery_external_db_system_discovery_id())
+ *             .agentId(testAgent.id())
+ *             .compartmentId(compartmentId)
+ *             .externalDbSystemDiscoveryId(externalDbSystemDiscoveryExternalDbSystemDiscoveryId)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.external_db_system_discovery_display_name())
+ *             .displayName(externalDbSystemDiscoveryDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .patchOperations(ExternalDbSystemDiscoveryPatchOperationArgs.builder()
- *                 .operation(var_.external_db_system_discovery_patch_operations_operation())
- *                 .selection(var_.external_db_system_discovery_patch_operations_selection())
- *                 .value(var_.external_db_system_discovery_patch_operations_value())
+ *                 .operation(externalDbSystemDiscoveryPatchOperationsOperation)
+ *                 .selection(externalDbSystemDiscoveryPatchOperationsSelection)
+ *                 .value(externalDbSystemDiscoveryPatchOperationsValue[0])
  *                 .build())
  *             .build());
  * 

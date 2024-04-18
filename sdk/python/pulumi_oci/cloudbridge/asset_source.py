@@ -615,32 +615,32 @@ class AssetSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_asset_source = oci.cloud_bridge.AssetSource("testAssetSource",
-            assets_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            compartment_id=var["compartment_id"],
+        test_asset_source = oci.cloud_bridge.AssetSource("test_asset_source",
+            assets_compartment_id=test_compartment["id"],
+            compartment_id=compartment_id,
             discovery_credentials=oci.cloud_bridge.AssetSourceDiscoveryCredentialsArgs(
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["asset_source_discovery_credentials_type"],
+                secret_id=test_secret["id"],
+                type=asset_source_discovery_credentials_type,
             ),
-            environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-            inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-            type=var["asset_source_type"],
-            vcenter_endpoint=var["asset_source_vcenter_endpoint"],
-            are_historical_metrics_collected=var["asset_source_are_historical_metrics_collected"],
-            are_realtime_metrics_collected=var["asset_source_are_realtime_metrics_collected"],
+            environment_id=test_environment["id"],
+            inventory_id=test_inventory["id"],
+            type=asset_source_type,
+            vcenter_endpoint=asset_source_vcenter_endpoint,
+            are_historical_metrics_collected=asset_source_are_historical_metrics_collected,
+            are_realtime_metrics_collected=asset_source_are_realtime_metrics_collected,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-            display_name=var["asset_source_display_name"],
+            discovery_schedule_id=test_discovery_schedule["id"],
+            display_name=asset_source_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             replication_credentials=oci.cloud_bridge.AssetSourceReplicationCredentialsArgs(
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["asset_source_replication_credentials_type"],
+                secret_id=test_secret["id"],
+                type=asset_source_replication_credentials_type,
             ),
-            system_tags=var["asset_source_system_tags"])
+            system_tags=asset_source_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -692,32 +692,32 @@ class AssetSource(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_asset_source = oci.cloud_bridge.AssetSource("testAssetSource",
-            assets_compartment_id=oci_identity_compartment["test_compartment"]["id"],
-            compartment_id=var["compartment_id"],
+        test_asset_source = oci.cloud_bridge.AssetSource("test_asset_source",
+            assets_compartment_id=test_compartment["id"],
+            compartment_id=compartment_id,
             discovery_credentials=oci.cloud_bridge.AssetSourceDiscoveryCredentialsArgs(
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["asset_source_discovery_credentials_type"],
+                secret_id=test_secret["id"],
+                type=asset_source_discovery_credentials_type,
             ),
-            environment_id=oci_cloud_bridge_environment["test_environment"]["id"],
-            inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"],
-            type=var["asset_source_type"],
-            vcenter_endpoint=var["asset_source_vcenter_endpoint"],
-            are_historical_metrics_collected=var["asset_source_are_historical_metrics_collected"],
-            are_realtime_metrics_collected=var["asset_source_are_realtime_metrics_collected"],
+            environment_id=test_environment["id"],
+            inventory_id=test_inventory["id"],
+            type=asset_source_type,
+            vcenter_endpoint=asset_source_vcenter_endpoint,
+            are_historical_metrics_collected=asset_source_are_historical_metrics_collected,
+            are_realtime_metrics_collected=asset_source_are_realtime_metrics_collected,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            discovery_schedule_id=oci_cloud_bridge_discovery_schedule["test_discovery_schedule"]["id"],
-            display_name=var["asset_source_display_name"],
+            discovery_schedule_id=test_discovery_schedule["id"],
+            display_name=asset_source_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
             replication_credentials=oci.cloud_bridge.AssetSourceReplicationCredentialsArgs(
-                secret_id=oci_vault_secret["test_secret"]["id"],
-                type=var["asset_source_replication_credentials_type"],
+                secret_id=test_secret["id"],
+                type=asset_source_replication_credentials_type,
             ),
-            system_tags=var["asset_source_system_tags"])
+            system_tags=asset_source_system_tags)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testClusterStartCredentialRotationManagement = new oci.containerengine.ClusterStartCredentialRotationManagement("testClusterStartCredentialRotationManagement", {
- *     autoCompletionDelayDuration: _var.cluster_start_credential_rotation_management_auto_completion_delay_duration,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ * const testClusterStartCredentialRotationManagement = new oci.containerengine.ClusterStartCredentialRotationManagement("test_cluster_start_credential_rotation_management", {
+ *     autoCompletionDelayDuration: clusterStartCredentialRotationManagementAutoCompletionDelayDuration,
+ *     clusterId: testCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

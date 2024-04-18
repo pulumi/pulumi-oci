@@ -376,12 +376,13 @@ class Snapshot(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_snapshot = oci.file_storage.Snapshot("testSnapshot",
-            file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
+        test_snapshot = oci.file_storage.Snapshot("test_snapshot",
+            file_system_id=test_file_system["id"],
+            name=snapshot_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            expiration_time=var["snapshot_expiration_time"],
+            expiration_time=snapshot_expiration_time,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -431,12 +432,13 @@ class Snapshot(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_snapshot = oci.file_storage.Snapshot("testSnapshot",
-            file_system_id=oci_file_storage_file_system["test_file_system"]["id"],
+        test_snapshot = oci.file_storage.Snapshot("test_snapshot",
+            file_system_id=test_file_system["id"],
+            name=snapshot_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            expiration_time=var["snapshot_expiration_time"],
+            expiration_time=snapshot_expiration_time,
             freeform_tags={
                 "Department": "Finance",
             })

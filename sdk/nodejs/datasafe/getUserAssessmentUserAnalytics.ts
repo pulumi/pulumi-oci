@@ -33,21 +33,21 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     accessLevel: _var.user_assessment_user_analytic_access_level,
- *     accountStatus: _var.user_assessment_user_analytic_account_status,
- *     authenticationType: _var.user_assessment_user_analytic_authentication_type,
- *     compartmentIdInSubtree: _var.user_assessment_user_analytic_compartment_id_in_subtree,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeLastLoginGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
- *     timeLastLoginLessThan: _var.user_assessment_user_analytic_time_last_login_less_than,
- *     timePasswordLastChangedGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
- *     timePasswordLastChangedLessThan: _var.user_assessment_user_analytic_time_password_last_changed_less_than,
- *     timeUserCreatedGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
- *     timeUserCreatedLessThan: _var.user_assessment_user_analytic_time_user_created_less_than,
- *     userCategory: _var.user_assessment_user_analytic_user_category,
- *     userKey: _var.user_assessment_user_analytic_user_key,
- *     userName: oci_identity_user.test_user.name,
+ *     userAssessmentId: testUserAssessment.id,
+ *     accessLevel: userAssessmentUserAnalyticAccessLevel,
+ *     accountStatus: userAssessmentUserAnalyticAccountStatus,
+ *     authenticationType: userAssessmentUserAnalyticAuthenticationType,
+ *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree,
+ *     targetId: testTarget.id,
+ *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
+ *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
+ *     timePasswordLastChangedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
+ *     timePasswordLastChangedLessThan: userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
+ *     timeUserCreatedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
+ *     timeUserCreatedLessThan: userAssessmentUserAnalyticTimeUserCreatedLessThan,
+ *     userCategory: userAssessmentUserAnalyticUserCategory,
+ *     userKey: userAssessmentUserAnalyticUserKey,
+ *     userName: testUser.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -204,21 +204,21 @@ export interface GetUserAssessmentUserAnalyticsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
- *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
- *     accessLevel: _var.user_assessment_user_analytic_access_level,
- *     accountStatus: _var.user_assessment_user_analytic_account_status,
- *     authenticationType: _var.user_assessment_user_analytic_authentication_type,
- *     compartmentIdInSubtree: _var.user_assessment_user_analytic_compartment_id_in_subtree,
- *     targetId: oci_cloud_guard_target.test_target.id,
- *     timeLastLoginGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
- *     timeLastLoginLessThan: _var.user_assessment_user_analytic_time_last_login_less_than,
- *     timePasswordLastChangedGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
- *     timePasswordLastChangedLessThan: _var.user_assessment_user_analytic_time_password_last_changed_less_than,
- *     timeUserCreatedGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
- *     timeUserCreatedLessThan: _var.user_assessment_user_analytic_time_user_created_less_than,
- *     userCategory: _var.user_assessment_user_analytic_user_category,
- *     userKey: _var.user_assessment_user_analytic_user_key,
- *     userName: oci_identity_user.test_user.name,
+ *     userAssessmentId: testUserAssessment.id,
+ *     accessLevel: userAssessmentUserAnalyticAccessLevel,
+ *     accountStatus: userAssessmentUserAnalyticAccountStatus,
+ *     authenticationType: userAssessmentUserAnalyticAuthenticationType,
+ *     compartmentIdInSubtree: userAssessmentUserAnalyticCompartmentIdInSubtree,
+ *     targetId: testTarget.id,
+ *     timeLastLoginGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeLastLoginGreaterThanOrEqualTo,
+ *     timeLastLoginLessThan: userAssessmentUserAnalyticTimeLastLoginLessThan,
+ *     timePasswordLastChangedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimePasswordLastChangedGreaterThanOrEqualTo,
+ *     timePasswordLastChangedLessThan: userAssessmentUserAnalyticTimePasswordLastChangedLessThan,
+ *     timeUserCreatedGreaterThanOrEqualTo: userAssessmentUserAnalyticTimeUserCreatedGreaterThanOrEqualTo,
+ *     timeUserCreatedLessThan: userAssessmentUserAnalyticTimeUserCreatedLessThan,
+ *     userCategory: userAssessmentUserAnalyticUserCategory,
+ *     userKey: userAssessmentUserAnalyticUserKey,
+ *     userName: testUser.name,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

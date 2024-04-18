@@ -29,8 +29,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveDataModelsSensitiveColumn = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumn.Invoke(new()
         ///     {
-        ///         SensitiveColumnKey = @var.Sensitive_data_models_sensitive_column_sensitive_column_key,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         SensitiveColumnKey = sensitiveDataModelsSensitiveColumnSensitiveColumnKey,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testSensitiveDataModelsSensitiveColumn = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumn.Invoke(new()
         ///     {
-        ///         SensitiveColumnKey = @var.Sensitive_data_models_sensitive_column_sensitive_column_key,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
+        ///         SensitiveColumnKey = sensitiveDataModelsSensitiveColumnSensitiveColumnKey,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
         ///     });
         /// 
         /// });

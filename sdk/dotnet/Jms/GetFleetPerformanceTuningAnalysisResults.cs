@@ -29,11 +29,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetPerformanceTuningAnalysisResults = Oci.Jms.GetFleetPerformanceTuningAnalysisResults.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         TimeEnd = @var.Fleet_performance_tuning_analysis_result_time_end,
-        ///         TimeStart = @var.Fleet_performance_tuning_analysis_result_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationId = testApplication.Id,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
+        ///         TimeStart = fleetPerformanceTuningAnalysisResultTimeStart,
         ///     });
         /// 
         /// });
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testFleetPerformanceTuningAnalysisResults = Oci.Jms.GetFleetPerformanceTuningAnalysisResults.Invoke(new()
         ///     {
-        ///         FleetId = oci_jms_fleet.Test_fleet.Id,
-        ///         ApplicationId = oci_dataflow_application.Test_application.Id,
-        ///         ManagedInstanceId = oci_osmanagement_managed_instance.Test_managed_instance.Id,
-        ///         TimeEnd = @var.Fleet_performance_tuning_analysis_result_time_end,
-        ///         TimeStart = @var.Fleet_performance_tuning_analysis_result_time_start,
+        ///         FleetId = testFleet.Id,
+        ///         ApplicationId = testApplication.Id,
+        ///         ManagedInstanceId = testManagedInstance.Id,
+        ///         TimeEnd = fleetPerformanceTuningAnalysisResultTimeEnd,
+        ///         TimeStart = fleetPerformanceTuningAnalysisResultTimeStart,
         ///     });
         /// 
         /// });

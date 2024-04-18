@@ -25,18 +25,18 @@ namespace Pulumi.Oci.OsManagementHub
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testLifecycleEnvironment = new Oci.OsManagementHub.LifecycleEnvironment("testLifecycleEnvironment", new()
+    ///     var testLifecycleEnvironment = new Oci.OsManagementHub.LifecycleEnvironment("test_lifecycle_environment", new()
     ///     {
-    ///         ArchType = @var.Lifecycle_environment_arch_type,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Lifecycle_environment_display_name,
-    ///         OsFamily = @var.Lifecycle_environment_os_family,
+    ///         ArchType = lifecycleEnvironmentArchType,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = lifecycleEnvironmentDisplayName,
+    ///         OsFamily = lifecycleEnvironmentOsFamily,
     ///         Stages = new[]
     ///         {
     ///             new Oci.OsManagementHub.Inputs.LifecycleEnvironmentStageArgs
     ///             {
-    ///                 DisplayName = @var.Lifecycle_environment_stages_display_name,
-    ///                 Rank = @var.Lifecycle_environment_stages_rank,
+    ///                 DisplayName = lifecycleEnvironmentStagesDisplayName,
+    ///                 Rank = lifecycleEnvironmentStagesRank,
     ///                 DefinedTags = 
     ///                 {
     ///                     { "Operations.CostCenter", "42" },
@@ -47,12 +47,12 @@ namespace Pulumi.Oci.OsManagementHub
     ///                 },
     ///             },
     ///         },
-    ///         VendorName = @var.Lifecycle_environment_vendor_name,
+    ///         VendorName = lifecycleEnvironmentVendorName,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Lifecycle_environment_description,
+    ///         Description = lifecycleEnvironmentDescription,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },

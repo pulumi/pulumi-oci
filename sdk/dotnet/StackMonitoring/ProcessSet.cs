@@ -25,20 +25,20 @@ namespace Pulumi.Oci.StackMonitoring
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testProcessSet = new Oci.StackMonitoring.ProcessSet("testProcessSet", new()
+    ///     var testProcessSet = new Oci.StackMonitoring.ProcessSet("test_process_set", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DisplayName = @var.Process_set_display_name,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = processSetDisplayName,
     ///         Specification = new Oci.StackMonitoring.Inputs.ProcessSetSpecificationArgs
     ///         {
     ///             Items = new[]
     ///             {
     ///                 new Oci.StackMonitoring.Inputs.ProcessSetSpecificationItemArgs
     ///                 {
-    ///                     Label = @var.Process_set_specification_items_label,
-    ///                     ProcessCommand = @var.Process_set_specification_items_process_command,
-    ///                     ProcessLineRegexPattern = @var.Process_set_specification_items_process_line_regex_pattern,
-    ///                     ProcessUser = @var.Process_set_specification_items_process_user,
+    ///                     Label = processSetSpecificationItemsLabel,
+    ///                     ProcessCommand = processSetSpecificationItemsProcessCommand,
+    ///                     ProcessLineRegexPattern = processSetSpecificationItemsProcessLineRegexPattern,
+    ///                     ProcessUser = processSetSpecificationItemsProcessUser,
     ///                 },
     ///             },
     ///         },

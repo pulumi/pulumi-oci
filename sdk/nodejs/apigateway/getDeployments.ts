@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployments = oci.ApiGateway.getDeployments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deployment_display_name,
- *     gatewayId: oci_apigateway_gateway.test_gateway.id,
- *     state: _var.deployment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deploymentDisplayName,
+ *     gatewayId: testGateway.id,
+ *     state: deploymentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetDeploymentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDeployments = oci.ApiGateway.getDeployments({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.deployment_display_name,
- *     gatewayId: oci_apigateway_gateway.test_gateway.id,
- *     state: _var.deployment_state,
+ *     compartmentId: compartmentId,
+ *     displayName: deploymentDisplayName,
+ *     gatewayId: testGateway.id,
+ *     state: deploymentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

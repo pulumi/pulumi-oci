@@ -25,23 +25,23 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSqlCollection = new Oci.DataSafe.SqlCollection("testSqlCollection", new()
+    ///     var testSqlCollection = new Oci.DataSafe.SqlCollection("test_sql_collection", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbUserName = oci_identity_user.Test_user.Name,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DbUserName = testUser.Name,
+    ///         TargetId = testTarget.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Sql_collection_description,
-    ///         DisplayName = @var.Sql_collection_display_name,
+    ///         Description = sqlCollectionDescription,
+    ///         DisplayName = sqlCollectionDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         SqlLevel = @var.Sql_collection_sql_level,
-    ///         Status = @var.Sql_collection_status,
+    ///         SqlLevel = sqlCollectionSqlLevel,
+    ///         Status = sqlCollectionStatus,
     ///     });
     /// 
     /// });

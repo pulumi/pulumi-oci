@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDataKeys = oci.Apm.getDataKeys({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     dataKeyType: _var.data_key_data_key_type,
+ *     apmDomainId: testApmDomain.id,
+ *     dataKeyType: dataKeyDataKeyType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -81,8 +81,8 @@ export interface GetDataKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDataKeys = oci.Apm.getDataKeys({
- *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
- *     dataKeyType: _var.data_key_data_key_type,
+ *     apmDomainId: testApmDomain.id,
+ *     dataKeyType: dataKeyDataKeyType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

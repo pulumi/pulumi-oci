@@ -16,11 +16,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsResourceCategoriesManagement = new oci.loganalytics.LogAnalyticsResourceCategoriesManagement("testLogAnalyticsResourceCategoriesManagement", {
- *     namespace: _var.log_analytics_resource_categories_management_namespace,
- *     resourceId: oci_log_analytics_resource_categories_management_resource_id,
- *     resourceType: _var.log_analytics_resource_categories_management_resource_type,
- *     resourceCategories: _var.log_analytics_resource_categories_management_resource_categories,
+ * const testLogAnalyticsResourceCategoriesManagement = new oci.loganalytics.LogAnalyticsResourceCategoriesManagement("test_log_analytics_resource_categories_management", {
+ *     namespace: logAnalyticsResourceCategoriesManagementNamespace,
+ *     resourceId: ociLogAnalyticsResourceCategoriesManagementResourceId,
+ *     resourceType: logAnalyticsResourceCategoriesManagementResourceType,
+ *     resourceCategories: logAnalyticsResourceCategoriesManagementResourceCategories,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

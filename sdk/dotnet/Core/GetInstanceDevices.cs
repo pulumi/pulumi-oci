@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceDevices = Oci.Core.GetInstanceDevices.Invoke(new()
         ///     {
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
-        ///         IsAvailable = @var.Instance_device_is_available,
-        ///         Name = @var.Instance_device_name,
+        ///         InstanceId = testInstance.Id,
+        ///         IsAvailable = instanceDeviceIsAvailable,
+        ///         Name = instanceDeviceName,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testInstanceDevices = Oci.Core.GetInstanceDevices.Invoke(new()
         ///     {
-        ///         InstanceId = oci_core_instance.Test_instance.Id,
-        ///         IsAvailable = @var.Instance_device_is_available,
-        ///         Name = @var.Instance_device_name,
+        ///         InstanceId = testInstance.Id,
+        ///         IsAvailable = instanceDeviceIsAvailable,
+        ///         Name = instanceDeviceName,
         ///     });
         /// 
         /// });

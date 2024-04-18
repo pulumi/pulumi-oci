@@ -42,10 +42,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditEvents = Oci.DataSafe.GetAuditEvents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_event_access_level,
-        ///         CompartmentIdInSubtree = @var.Audit_event_compartment_id_in_subtree,
-        ///         ScimQuery = @var.Audit_event_scim_query,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditEventAccessLevel,
+        ///         CompartmentIdInSubtree = auditEventCompartmentIdInSubtree,
+        ///         ScimQuery = auditEventScimQuery,
         ///     });
         /// 
         /// });
@@ -86,10 +86,10 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditEvents = Oci.DataSafe.GetAuditEvents.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_event_access_level,
-        ///         CompartmentIdInSubtree = @var.Audit_event_compartment_id_in_subtree,
-        ///         ScimQuery = @var.Audit_event_scim_query,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditEventAccessLevel,
+        ///         CompartmentIdInSubtree = auditEventCompartmentIdInSubtree,
+        ///         ScimQuery = auditEventScimQuery,
         ///     });
         /// 
         /// });

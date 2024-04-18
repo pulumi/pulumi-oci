@@ -53,12 +53,12 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceStreamProfiles = Oci.OsManagement.GetManagedInstanceStreamProfile.Invoke(new()
         ///     {
-        ///         ManagedInstanceId = @var.Managed_instance_id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ModuleName = @var.Managed_instance_module_name,
-        ///         ProfileName = @var.Managed_instance_module_stream_profile_name,
-        ///         ProfileStatus = @var.Managed_instance_profile_status,
-        ///         StreamName = @var.Managed_instance_module_stream_name,
+        ///         ManagedInstanceId = managedInstanceId,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = managedInstanceModuleName,
+        ///         ProfileName = managedInstanceModuleStreamProfileName,
+        ///         ProfileStatus = managedInstanceProfileStatus,
+        ///         StreamName = managedInstanceModuleStreamName,
         ///     });
         /// 
         /// });
@@ -110,12 +110,12 @@ namespace Pulumi.Oci.OsManagement
         /// {
         ///     var testManagedInstanceStreamProfiles = Oci.OsManagement.GetManagedInstanceStreamProfile.Invoke(new()
         ///     {
-        ///         ManagedInstanceId = @var.Managed_instance_id,
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ModuleName = @var.Managed_instance_module_name,
-        ///         ProfileName = @var.Managed_instance_module_stream_profile_name,
-        ///         ProfileStatus = @var.Managed_instance_profile_status,
-        ///         StreamName = @var.Managed_instance_module_stream_name,
+        ///         ManagedInstanceId = managedInstanceId,
+        ///         CompartmentId = compartmentId,
+        ///         ModuleName = managedInstanceModuleName,
+        ///         ProfileName = managedInstanceModuleStreamProfileName,
+        ///         ProfileStatus = managedInstanceProfileStatus,
+        ///         StreamName = managedInstanceModuleStreamName,
         ///     });
         /// 
         /// });

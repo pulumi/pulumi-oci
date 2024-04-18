@@ -199,7 +199,7 @@ def get_report(report_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report = oci.DataSafe.get_report(report_id=oci_data_safe_report["test_report"]["id"])
+    test_report = oci.DataSafe.get_report(report_id=test_report_oci_data_safe_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -242,7 +242,7 @@ def get_report_output(report_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_report = oci.DataSafe.get_report(report_id=oci_data_safe_report["test_report"]["id"])
+    test_report = oci.DataSafe.get_report(report_id=test_report_oci_data_safe_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 

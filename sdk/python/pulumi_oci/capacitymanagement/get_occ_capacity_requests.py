@@ -134,11 +134,11 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_requests = oci.CapacityManagement.get_occ_capacity_requests(compartment_id=var["compartment_id"],
-        display_name=var["occ_capacity_request_display_name"],
-        id=var["occ_capacity_request_id"],
-        namespace=var["occ_capacity_request_namespace"],
-        occ_availability_catalog_id=oci_capacity_management_occ_availability_catalog["test_occ_availability_catalog"]["id"])
+    test_occ_capacity_requests = oci.CapacityManagement.get_occ_capacity_requests(compartment_id=compartment_id,
+        display_name=occ_capacity_request_display_name,
+        id=occ_capacity_request_id,
+        namespace=occ_capacity_request_namespace,
+        occ_availability_catalog_id=test_occ_availability_catalog["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -189,11 +189,11 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
     import pulumi
     import pulumi_oci as oci
 
-    test_occ_capacity_requests = oci.CapacityManagement.get_occ_capacity_requests(compartment_id=var["compartment_id"],
-        display_name=var["occ_capacity_request_display_name"],
-        id=var["occ_capacity_request_id"],
-        namespace=var["occ_capacity_request_namespace"],
-        occ_availability_catalog_id=oci_capacity_management_occ_availability_catalog["test_occ_availability_catalog"]["id"])
+    test_occ_capacity_requests = oci.CapacityManagement.get_occ_capacity_requests(compartment_id=compartment_id,
+        display_name=occ_capacity_request_display_name,
+        id=occ_capacity_request_id,
+        namespace=occ_capacity_request_namespace,
+        occ_availability_catalog_id=test_occ_availability_catalog["id"])
     ```
     <!--End PulumiCodeChooser -->
 

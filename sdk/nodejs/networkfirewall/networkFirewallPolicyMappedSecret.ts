@@ -16,12 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyMappedSecret = new oci.networkfirewall.NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret", {
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     source: _var.network_firewall_policy_mapped_secret_source,
- *     type: _var.network_firewall_policy_mapped_secret_type,
- *     vaultSecretId: oci_vault_secret.test_secret.id,
- *     versionNumber: _var.network_firewall_policy_mapped_secret_version_number,
+ * const testNetworkFirewallPolicyMappedSecret = new oci.networkfirewall.NetworkFirewallPolicyMappedSecret("test_network_firewall_policy_mapped_secret", {
+ *     name: networkFirewallPolicyMappedSecretName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     source: networkFirewallPolicyMappedSecretSource,
+ *     type: networkFirewallPolicyMappedSecretType,
+ *     vaultSecretId: testSecret.id,
+ *     versionNumber: networkFirewallPolicyMappedSecretVersionNumber,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

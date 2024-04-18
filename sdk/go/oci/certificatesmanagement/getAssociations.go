@@ -32,12 +32,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CertificatesManagement.GetAssociations(ctx, &certificatesmanagement.GetAssociationsArgs{
-//				AssociatedResourceId:   pulumi.StringRef(oci_certificates_management_associated_resource.Test_associated_resource.Id),
-//				AssociationId:          pulumi.StringRef(oci_certificates_management_association.Test_association.Id),
-//				AssociationType:        pulumi.StringRef(_var.Association_association_type),
-//				CertificatesResourceId: pulumi.StringRef(oci_certificates_management_certificates_resource.Test_certificates_resource.Id),
-//				CompartmentId:          pulumi.StringRef(_var.Compartment_id),
-//				Name:                   pulumi.StringRef(_var.Association_name),
+//				AssociatedResourceId:   pulumi.StringRef(testAssociatedResource.Id),
+//				AssociationId:          pulumi.StringRef(testAssociation.Id),
+//				AssociationType:        pulumi.StringRef(associationAssociationType),
+//				CertificatesResourceId: pulumi.StringRef(testCertificatesResource.Id),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				Name:                   pulumi.StringRef(associationName),
 //			}, nil)
 //			if err != nil {
 //				return err

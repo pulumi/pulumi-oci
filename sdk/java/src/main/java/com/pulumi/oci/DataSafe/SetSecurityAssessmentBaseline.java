@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSetSecurityAssessmentBaseline = new SetSecurityAssessmentBaseline(&#34;testSetSecurityAssessmentBaseline&#34;, SetSecurityAssessmentBaselineArgs.builder()        
- *             .securityAssessmentId(oci_data_safe_security_assessment.test_security_assessment().id())
- *             .assessmentIds(var_.set_security_assessment_baseline_assessment_ids())
+ *             .securityAssessmentId(testSecurityAssessment.id())
+ *             .assessmentIds(setSecurityAssessmentBaselineAssessmentIds)
  *             .build());
  * 
  *     }

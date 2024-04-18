@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.managed_database_sql_plan_baseline_job_name,
- *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_job_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: managedDatabaseSqlPlanBaselineJobName,
+ *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetManagedDatabaseSqlPlanBaselineJobsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseSqlPlanBaselineJobs = oci.DatabaseManagement.getManagedDatabaseSqlPlanBaselineJobs({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.managed_database_sql_plan_baseline_job_name,
- *     opcNamedCredentialId: _var.managed_database_sql_plan_baseline_job_opc_named_credential_id,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: managedDatabaseSqlPlanBaselineJobName,
+ *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineJobOpcNamedCredentialId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

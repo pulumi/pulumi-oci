@@ -45,9 +45,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testReplicationSchedule = new ReplicationSchedule(&#34;testReplicationSchedule&#34;, ReplicationScheduleArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.replication_schedule_display_name())
- *             .executionRecurrences(var_.replication_schedule_execution_recurrences())
+ *             .compartmentId(compartmentId)
+ *             .displayName(replicationScheduleDisplayName)
+ *             .executionRecurrences(replicationScheduleExecutionRecurrences)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());

@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.GetRemediationRecipes(ctx, &adm.GetRemediationRecipesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Remediation_recipe_display_name),
-//				Id:            pulumi.StringRef(_var.Remediation_recipe_id),
-//				State:         pulumi.StringRef(_var.Remediation_recipe_state),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(remediationRecipeDisplayName),
+//				Id:            pulumi.StringRef(remediationRecipeId),
+//				State:         pulumi.StringRef(remediationRecipeState),
 //			}, nil)
 //			if err != nil {
 //				return err

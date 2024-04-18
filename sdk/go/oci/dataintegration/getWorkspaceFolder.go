@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceFolder(ctx, &dataintegration.GetWorkspaceFolderArgs{
-//				FolderKey:   _var.Workspace_folder_folder_key,
-//				WorkspaceId: oci_dataintegration_workspace.Test_workspace.Id,
+//				FolderKey:   workspaceFolderFolderKey,
+//				WorkspaceId: testWorkspace.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

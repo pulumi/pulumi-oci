@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogPrivateEndpoint = oci.DataCatalog.getCatalogPrivateEndpoint({
- *     catalogPrivateEndpointId: oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint.id,
+ *     catalogPrivateEndpointId: testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -117,7 +117,7 @@ export interface GetCatalogPrivateEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCatalogPrivateEndpoint = oci.DataCatalog.getCatalogPrivateEndpoint({
- *     catalogPrivateEndpointId: oci_datacatalog_catalog_private_endpoint.test_catalog_private_endpoint.id,
+ *     catalogPrivateEndpointId: testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -133,10 +133,10 @@ def get_db_servers(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_servers = oci.Database.get_db_servers(compartment_id=var["compartment_id"],
-        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        display_name=var["db_server_display_name"],
-        state=var["db_server_state"])
+    test_db_servers = oci.Database.get_db_servers(compartment_id=compartment_id,
+        exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        display_name=db_server_display_name,
+        state=db_server_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -184,10 +184,10 @@ def get_db_servers_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_servers = oci.Database.get_db_servers(compartment_id=var["compartment_id"],
-        exadata_infrastructure_id=oci_database_exadata_infrastructure["test_exadata_infrastructure"]["id"],
-        display_name=var["db_server_display_name"],
-        state=var["db_server_state"])
+    test_db_servers = oci.Database.get_db_servers(compartment_id=compartment_id,
+        exadata_infrastructure_id=test_exadata_infrastructure["id"],
+        display_name=db_server_display_name,
+        state=db_server_state)
     ```
     <!--End PulumiCodeChooser -->
 

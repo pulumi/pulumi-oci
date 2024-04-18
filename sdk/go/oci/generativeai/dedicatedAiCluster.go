@@ -31,16 +31,16 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := GenerativeAi.NewDedicatedAiCluster(ctx, "testDedicatedAiCluster", &GenerativeAi.DedicatedAiClusterArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Type:          pulumi.Any(_var.Dedicated_ai_cluster_type),
-//				UnitCount:     pulumi.Any(_var.Dedicated_ai_cluster_unit_count),
-//				UnitShape:     pulumi.Any(_var.Dedicated_ai_cluster_unit_shape),
+//			_, err := GenerativeAi.NewDedicatedAiCluster(ctx, "test_dedicated_ai_cluster", &GenerativeAi.DedicatedAiClusterArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Type:          pulumi.Any(dedicatedAiClusterType),
+//				UnitCount:     pulumi.Any(dedicatedAiClusterUnitCount),
+//				UnitShape:     pulumi.Any(dedicatedAiClusterUnitShape),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Dedicated_ai_cluster_description),
-//				DisplayName: pulumi.Any(_var.Dedicated_ai_cluster_display_name),
+//				Description: pulumi.Any(dedicatedAiClusterDescription),
+//				DisplayName: pulumi.Any(dedicatedAiClusterDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

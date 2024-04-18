@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmTraces.GetTraceAggregatedSnapshotData(ctx, &apmtraces.GetTraceAggregatedSnapshotDataArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
-//				TraceKey:    _var.Trace_aggregated_snapshot_data_trace_key,
-//				ServerName:  pulumi.StringRef(_var.Trace_aggregated_snapshot_data_server_name),
-//				ServiceName: pulumi.StringRef(oci_core_service.Test_service.Name),
-//				SpanKey:     pulumi.StringRef(_var.Trace_aggregated_snapshot_data_span_key),
-//				SpanName:    pulumi.StringRef(_var.Trace_aggregated_snapshot_data_span_name),
+//				ApmDomainId: testApmDomain.Id,
+//				TraceKey:    traceAggregatedSnapshotDataTraceKey,
+//				ServerName:  pulumi.StringRef(traceAggregatedSnapshotDataServerName),
+//				ServiceName: pulumi.StringRef(testService.Name),
+//				SpanKey:     pulumi.StringRef(traceAggregatedSnapshotDataSpanKey),
+//				SpanName:    pulumi.StringRef(traceAggregatedSnapshotDataSpanName),
 //			}, nil)
 //			if err != nil {
 //				return err

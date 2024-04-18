@@ -19,44 +19,44 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVmClusterNetwork = new oci.database.VmClusterNetwork("testVmClusterNetwork", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.vm_cluster_network_display_name,
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ * const testVmClusterNetwork = new oci.database.VmClusterNetwork("test_vm_cluster_network", {
+ *     compartmentId: compartmentId,
+ *     displayName: vmClusterNetworkDisplayName,
+ *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     scans: [{
- *         hostname: _var.vm_cluster_network_scans_hostname,
- *         ips: _var.vm_cluster_network_scans_ips,
- *         port: _var.vm_cluster_network_scans_port,
- *         scanListenerPortTcp: _var.vm_cluster_network_scans_scan_listener_port_tcp,
- *         scanListenerPortTcpSsl: _var.vm_cluster_network_scans_scan_listener_port_tcp_ssl,
+ *         hostname: vmClusterNetworkScansHostname,
+ *         ips: vmClusterNetworkScansIps,
+ *         port: vmClusterNetworkScansPort,
+ *         scanListenerPortTcp: vmClusterNetworkScansScanListenerPortTcp,
+ *         scanListenerPortTcpSsl: vmClusterNetworkScansScanListenerPortTcpSsl,
  *     }],
  *     vmNetworks: [{
- *         networkType: _var.vm_cluster_network_vm_networks_network_type,
+ *         networkType: vmClusterNetworkVmNetworksNetworkType,
  *         nodes: [{
- *             hostname: _var.vm_cluster_network_vm_networks_nodes_hostname,
- *             ip: _var.vm_cluster_network_vm_networks_nodes_ip,
- *             dbServerId: oci_database_db_server.test_db_server.id,
- *             state: _var.vm_cluster_network_vm_networks_nodes_state,
- *             vip: _var.vm_cluster_network_vm_networks_nodes_vip,
- *             vipHostname: _var.vm_cluster_network_vm_networks_nodes_vip_hostname,
+ *             hostname: vmClusterNetworkVmNetworksNodesHostname,
+ *             ip: vmClusterNetworkVmNetworksNodesIp,
+ *             dbServerId: testDbServer.id,
+ *             state: vmClusterNetworkVmNetworksNodesState,
+ *             vip: vmClusterNetworkVmNetworksNodesVip,
+ *             vipHostname: vmClusterNetworkVmNetworksNodesVipHostname,
  *         }],
- *         domainName: oci_identity_domain.test_domain.name,
- *         gateway: _var.vm_cluster_network_vm_networks_gateway,
- *         netmask: _var.vm_cluster_network_vm_networks_netmask,
- *         vlanId: _var.vm_cluster_network_vm_networks_vlan_id,
+ *         domainName: testDomain.name,
+ *         gateway: vmClusterNetworkVmNetworksGateway,
+ *         netmask: vmClusterNetworkVmNetworksNetmask,
+ *         vlanId: vmClusterNetworkVmNetworksVlanId,
  *     }],
- *     definedTags: _var.vm_cluster_network_defined_tags,
- *     dns: _var.vm_cluster_network_dns,
+ *     definedTags: vmClusterNetworkDefinedTags,
+ *     dns: vmClusterNetworkDns,
  *     drScans: [{
- *         hostname: _var.vm_cluster_network_dr_scans_hostname,
- *         ips: _var.vm_cluster_network_dr_scans_ips,
- *         scanListenerPortTcp: _var.vm_cluster_network_dr_scans_scan_listener_port_tcp,
+ *         hostname: vmClusterNetworkDrScansHostname,
+ *         ips: vmClusterNetworkDrScansIps,
+ *         scanListenerPortTcp: vmClusterNetworkDrScansScanListenerPortTcp,
  *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     ntps: _var.vm_cluster_network_ntp,
- *     validateVmClusterNetwork: _var.vm_cluster_network_validate_vm_cluster_network,
+ *     ntps: vmClusterNetworkNtp,
+ *     validateVmClusterNetwork: vmClusterNetworkValidateVmClusterNetwork,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

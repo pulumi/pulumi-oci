@@ -25,25 +25,26 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testNetworkFirewallPolicySecurityRule = new Oci.NetworkFirewall.NetworkFirewallPolicySecurityRule("testNetworkFirewallPolicySecurityRule", new()
+    ///     var testNetworkFirewallPolicySecurityRule = new Oci.NetworkFirewall.NetworkFirewallPolicySecurityRule("test_network_firewall_policy_security_rule", new()
     ///     {
-    ///         Action = @var.Network_firewall_policy_security_rule_action,
+    ///         Action = networkFirewallPolicySecurityRuleAction,
+    ///         Name = networkFirewallPolicySecurityRuleName,
     ///         Condition = new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicySecurityRuleConditionArgs
     ///         {
-    ///             Applications = @var.Network_firewall_policy_security_rule_condition_application,
-    ///             DestinationAddresses = @var.Network_firewall_policy_security_rule_condition_destination_address,
-    ///             Services = @var.Network_firewall_policy_security_rule_condition_service,
-    ///             SourceAddresses = @var.Network_firewall_policy_security_rule_condition_source_address,
-    ///             Urls = @var.Network_firewall_policy_security_rule_condition_url,
+    ///             Applications = networkFirewallPolicySecurityRuleConditionApplication,
+    ///             DestinationAddresses = networkFirewallPolicySecurityRuleConditionDestinationAddress,
+    ///             Services = networkFirewallPolicySecurityRuleConditionService,
+    ///             SourceAddresses = networkFirewallPolicySecurityRuleConditionSourceAddress,
+    ///             Urls = networkFirewallPolicySecurityRuleConditionUrl,
     ///         },
-    ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-    ///         Inspection = @var.Network_firewall_policy_security_rule_inspection,
+    ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+    ///         Inspection = networkFirewallPolicySecurityRuleInspection,
     ///         Positions = new[]
     ///         {
     ///             new Oci.NetworkFirewall.Inputs.NetworkFirewallPolicySecurityRulePositionArgs
     ///             {
-    ///                 AfterRule = @var.Network_firewall_policy_security_rule_position_after_rule,
-    ///                 BeforeRule = @var.Network_firewall_policy_security_rule_position_before_rule,
+    ///                 AfterRule = networkFirewallPolicySecurityRulePositionAfterRule,
+    ///                 BeforeRule = networkFirewallPolicySecurityRulePositionBeforeRule,
     ///             },
     ///         },
     ///     });

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalListener(ctx, &databasemanagement.GetExternalListenerArgs{
-//				ExternalListenerId: oci_database_management_external_listener.Test_external_listener.Id,
+//				ExternalListenerId: testExternalListenerOciDatabaseManagementExternalListener.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

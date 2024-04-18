@@ -29,7 +29,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testMigration = Oci.CloudMigrations.GetMigration.Invoke(new()
         ///     {
-        ///         MigrationId = oci_cloud_migrations_migration.Test_migration.Id,
+        ///         MigrationId = testMigrationOciCloudMigrationsMigration.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// {
         ///     var testMigration = Oci.CloudMigrations.GetMigration.Invoke(new()
         ///     {
-        ///         MigrationId = oci_cloud_migrations_migration.Test_migration.Id,
+        ///         MigrationId = testMigrationOciCloudMigrationsMigration.Id,
         ///     });
         /// 
         /// });

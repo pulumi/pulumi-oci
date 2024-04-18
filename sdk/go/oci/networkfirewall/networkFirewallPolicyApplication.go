@@ -31,11 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicyApplication(ctx, "testNetworkFirewallPolicyApplication", &NetworkFirewall.NetworkFirewallPolicyApplicationArgs{
-//				IcmpType:                pulumi.Any(_var.Network_firewall_policy_application_icmp_type),
-//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-//				Type:                    pulumi.Any(_var.Network_firewall_policy_application_type),
-//				IcmpCode:                pulumi.Any(_var.Network_firewall_policy_application_icmp_code),
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicyApplication(ctx, "test_network_firewall_policy_application", &NetworkFirewall.NetworkFirewallPolicyApplicationArgs{
+//				IcmpType:                pulumi.Any(networkFirewallPolicyApplicationIcmpType),
+//				Name:                    pulumi.Any(networkFirewallPolicyApplicationName),
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Type:                    pulumi.Any(networkFirewallPolicyApplicationType),
+//				IcmpCode:                pulumi.Any(networkFirewallPolicyApplicationIcmpCode),
 //			})
 //			if err != nil {
 //				return err

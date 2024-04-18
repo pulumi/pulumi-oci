@@ -30,10 +30,10 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testTsigKeys = Oci.Dns.GetTsigKeys.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Tsig_key_id,
-        ///         Name = @var.Tsig_key_name,
-        ///         State = @var.Tsig_key_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = tsigKeyId,
+        ///         Name = tsigKeyName,
+        ///         State = tsigKeyState,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.Dns
         /// {
         ///     var testTsigKeys = Oci.Dns.GetTsigKeys.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Tsig_key_id,
-        ///         Name = @var.Tsig_key_name,
-        ///         State = @var.Tsig_key_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = tsigKeyId,
+        ///         Name = tsigKeyName,
+        ///         State = tsigKeyState,
         ///     });
         /// 
         /// });

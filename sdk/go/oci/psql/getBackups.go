@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetBackups(ctx, &psql.GetBackupsArgs{
-//				BackupId:      pulumi.StringRef(oci_psql_backup.Test_backup.Id),
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:   pulumi.StringRef(_var.Backup_display_name),
-//				Id:            pulumi.StringRef(_var.Backup_id),
-//				State:         pulumi.StringRef(_var.Backup_state),
-//				TimeEnded:     pulumi.StringRef(_var.Backup_time_ended),
-//				TimeStarted:   pulumi.StringRef(_var.Backup_time_started),
+//				BackupId:      pulumi.StringRef(testBackup.Id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				DisplayName:   pulumi.StringRef(backupDisplayName),
+//				Id:            pulumi.StringRef(backupId),
+//				State:         pulumi.StringRef(backupState),
+//				TimeEnded:     pulumi.StringRef(backupTimeEnded),
+//				TimeStarted:   pulumi.StringRef(backupTimeStarted),
 //			}, nil)
 //			if err != nil {
 //				return err

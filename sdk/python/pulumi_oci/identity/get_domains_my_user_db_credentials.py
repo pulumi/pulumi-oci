@@ -190,12 +190,12 @@ def get_domains_my_user_db_credentials(authorization: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credentials = oci.Identity.get_domains_my_user_db_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_user_db_credential_count=var["my_user_db_credential_my_user_db_credential_count"],
-        my_user_db_credential_filter=var["my_user_db_credential_my_user_db_credential_filter"],
-        authorization=var["my_user_db_credential_authorization"],
-        resource_type_schema_version=var["my_user_db_credential_resource_type_schema_version"],
-        start_index=var["my_user_db_credential_start_index"])
+    test_my_user_db_credentials = oci.Identity.get_domains_my_user_db_credentials(idcs_endpoint=test_domain["url"],
+        my_user_db_credential_count=my_user_db_credential_my_user_db_credential_count,
+        my_user_db_credential_filter=my_user_db_credential_my_user_db_credential_filter,
+        authorization=my_user_db_credential_authorization,
+        resource_type_schema_version=my_user_db_credential_resource_type_schema_version,
+        start_index=my_user_db_credential_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -260,12 +260,12 @@ def get_domains_my_user_db_credentials_output(authorization: Optional[pulumi.Inp
     import pulumi
     import pulumi_oci as oci
 
-    test_my_user_db_credentials = oci.Identity.get_domains_my_user_db_credentials(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        my_user_db_credential_count=var["my_user_db_credential_my_user_db_credential_count"],
-        my_user_db_credential_filter=var["my_user_db_credential_my_user_db_credential_filter"],
-        authorization=var["my_user_db_credential_authorization"],
-        resource_type_schema_version=var["my_user_db_credential_resource_type_schema_version"],
-        start_index=var["my_user_db_credential_start_index"])
+    test_my_user_db_credentials = oci.Identity.get_domains_my_user_db_credentials(idcs_endpoint=test_domain["url"],
+        my_user_db_credential_count=my_user_db_credential_my_user_db_credential_count,
+        my_user_db_credential_filter=my_user_db_credential_my_user_db_credential_filter,
+        authorization=my_user_db_credential_authorization,
+        resource_type_schema_version=my_user_db_credential_resource_type_schema_version,
+        start_index=my_user_db_credential_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

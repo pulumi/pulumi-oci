@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProductLicenses = oci.LicenseManager.getProductLicenses({
- *     compartmentId: _var.compartment_id,
- *     isCompartmentIdInSubtree: _var.product_license_is_compartment_id_in_subtree,
+ *     compartmentId: compartmentId,
+ *     isCompartmentIdInSubtree: productLicenseIsCompartmentIdInSubtree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetProductLicensesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProductLicenses = oci.LicenseManager.getProductLicenses({
- *     compartmentId: _var.compartment_id,
- *     isCompartmentIdInSubtree: _var.product_license_is_compartment_id_in_subtree,
+ *     compartmentId: compartmentId,
+ *     isCompartmentIdInSubtree: productLicenseIsCompartmentIdInSubtree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

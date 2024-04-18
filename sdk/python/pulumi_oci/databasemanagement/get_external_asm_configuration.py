@@ -90,8 +90,8 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
-        opc_named_credential_id=var["external_asm_configuration_opc_named_credential_id"])
+    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=test_external_asm["id"],
+        opc_named_credential_id=external_asm_configuration_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -128,8 +128,8 @@ def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
-        opc_named_credential_id=var["external_asm_configuration_opc_named_credential_id"])
+    test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=test_external_asm["id"],
+        opc_named_credential_id=external_asm_configuration_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 

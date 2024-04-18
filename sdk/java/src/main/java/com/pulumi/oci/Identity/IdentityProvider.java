@@ -60,14 +60,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIdentityProvider = new IdentityProvider(&#34;testIdentityProvider&#34;, IdentityProviderArgs.builder()        
- *             .compartmentId(var_.tenancy_ocid())
- *             .description(var_.identity_provider_description())
- *             .metadata(var_.identity_provider_metadata())
- *             .metadataUrl(var_.identity_provider_metadata_url())
- *             .productType(var_.identity_provider_product_type())
- *             .protocol(var_.identity_provider_protocol())
+ *             .compartmentId(tenancyOcid)
+ *             .description(identityProviderDescription)
+ *             .metadata(identityProviderMetadata)
+ *             .metadataUrl(identityProviderMetadataUrl)
+ *             .name(identityProviderName)
+ *             .productType(identityProviderProductType)
+ *             .protocol(identityProviderProtocol)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .freeformAttributes(var_.identity_provider_freeform_attributes())
+ *             .freeformAttributes(identityProviderFreeformAttributes)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

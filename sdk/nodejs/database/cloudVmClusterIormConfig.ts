@@ -20,12 +20,12 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudVmClusterIormConfig = new oci.database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig", {
+ * const testCloudVmClusterIormConfig = new oci.database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config", {
  *     dbPlans: [{
- *         dbName: _var.cloud_vm_cluster_iorm_config_db_plans_db_name,
- *         share: _var.cloud_vm_cluster_iorm_config_db_plans_share,
+ *         dbName: cloudVmClusterIormConfigDbPlansDbName,
+ *         share: cloudVmClusterIormConfigDbPlansShare,
  *     }],
- *     cloudVmClusterId: oci_database_cloud_vm_cluster.test_cloud_vm_cluster.id,
+ *     cloudVmClusterId: testCloudVmCluster.id,
  *     objective: "AUTO",
  * });
  * ```

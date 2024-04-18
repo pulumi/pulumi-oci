@@ -25,24 +25,24 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testHostInsight = new Oci.Opsi.HostInsight("testHostInsight", new()
+    ///     var testHostInsight = new Oci.Opsi.HostInsight("test_host_insight", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         EntitySource = @var.Host_insight_entity_source,
-    ///         ComputeId = oci_opsi_compute.Test_compute.Id,
+    ///         CompartmentId = compartmentId,
+    ///         EntitySource = hostInsightEntitySource,
+    ///         ComputeId = testCompute.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         EnterpriseManagerBridgeId = oci_opsi_enterprise_manager_bridge.Test_enterprise_manager_bridge.Id,
-    ///         EnterpriseManagerEntityIdentifier = @var.Host_insight_enterprise_manager_entity_identifier,
-    ///         EnterpriseManagerIdentifier = @var.Host_insight_enterprise_manager_identifier,
-    ///         ExadataInsightId = oci_opsi_exadata_insight.Test_exadata_insight.Id,
+    ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+    ///         EnterpriseManagerEntityIdentifier = hostInsightEnterpriseManagerEntityIdentifier,
+    ///         EnterpriseManagerIdentifier = hostInsightEnterpriseManagerIdentifier,
+    ///         ExadataInsightId = testExadataInsight.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+    ///         ManagementAgentId = testManagementAgent.Id,
     ///         Status = "DISABLED",
     ///     });
     /// 

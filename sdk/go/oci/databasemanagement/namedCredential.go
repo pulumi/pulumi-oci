@@ -31,22 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseManagement.NewNamedCredential(ctx, "testNamedCredential", &DatabaseManagement.NamedCredentialArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := DatabaseManagement.NewNamedCredential(ctx, "test_named_credential", &DatabaseManagement.NamedCredentialArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Content: &databasemanagement.NamedCredentialContentArgs{
-//					CredentialType:           pulumi.Any(_var.Named_credential_content_credential_type),
-//					PasswordSecretAccessMode: pulumi.Any(_var.Named_credential_content_password_secret_access_mode),
-//					PasswordSecretId:         pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Role:                     pulumi.Any(_var.Named_credential_content_role),
-//					UserName:                 pulumi.Any(oci_identity_user.Test_user.Name),
+//					CredentialType:           pulumi.Any(namedCredentialContentCredentialType),
+//					PasswordSecretAccessMode: pulumi.Any(namedCredentialContentPasswordSecretAccessMode),
+//					PasswordSecretId:         pulumi.Any(testSecret.Id),
+//					Role:                     pulumi.Any(namedCredentialContentRole),
+//					UserName:                 pulumi.Any(testUser.Name),
 //				},
-//				Scope:              pulumi.Any(_var.Named_credential_scope),
-//				Type:               pulumi.Any(_var.Named_credential_type),
-//				AssociatedResource: pulumi.Any(_var.Named_credential_associated_resource),
+//				Name:               pulumi.Any(namedCredentialName),
+//				Scope:              pulumi.Any(namedCredentialScope),
+//				Type:               pulumi.Any(namedCredentialType),
+//				AssociatedResource: pulumi.Any(namedCredentialAssociatedResource),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Named_credential_description),
+//				Description: pulumi.Any(namedCredentialDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

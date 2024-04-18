@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnalyticsInstancePrivateAccessChannel = oci.Analytics.getAnalyticsInstancePrivateAccessChannel({
- *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
- *     privateAccessChannelKey: _var.analytics_instance_private_access_channel_private_access_channel_key,
+ *     analyticsInstanceId: testAnalyticsInstance.id,
+ *     privateAccessChannelKey: analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,8 +105,8 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnalyticsInstancePrivateAccessChannel = oci.Analytics.getAnalyticsInstancePrivateAccessChannel({
- *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
- *     privateAccessChannelKey: _var.analytics_instance_private_access_channel_private_access_channel_key,
+ *     analyticsInstanceId: testAnalyticsInstance.id,
+ *     privateAccessChannelKey: analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

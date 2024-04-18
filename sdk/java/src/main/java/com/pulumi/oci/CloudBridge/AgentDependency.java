@@ -45,17 +45,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAgentDependency = new AgentDependency(&#34;testAgentDependency&#34;, AgentDependencyArgs.builder()        
- *             .bucket(var_.agent_dependency_bucket())
- *             .compartmentId(var_.compartment_id())
- *             .dependencyName(var_.agent_dependency_dependency_name())
- *             .displayName(var_.agent_dependency_display_name())
- *             .namespace(var_.agent_dependency_namespace())
- *             .object(var_.agent_dependency_object())
+ *             .bucket(agentDependencyBucket)
+ *             .compartmentId(compartmentId)
+ *             .dependencyName(agentDependencyDependencyName)
+ *             .displayName(agentDependencyDisplayName)
+ *             .namespace(agentDependencyNamespace)
+ *             .object(agentDependencyObject)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .dependencyVersion(var_.agent_dependency_dependency_version())
- *             .description(var_.agent_dependency_description())
+ *             .dependencyVersion(agentDependencyDependencyVersion)
+ *             .description(agentDependencyDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .systemTags(var_.agent_dependency_system_tags())
+ *             .systemTags(agentDependencySystemTags)
  *             .build());
  * 
  *     }

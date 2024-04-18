@@ -49,10 +49,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testCloudVmClusterIormConfig = new CloudVmClusterIormConfig(&#34;testCloudVmClusterIormConfig&#34;, CloudVmClusterIormConfigArgs.builder()        
  *             .dbPlans(CloudVmClusterIormConfigDbPlanArgs.builder()
- *                 .dbName(var_.cloud_vm_cluster_iorm_config_db_plans_db_name())
- *                 .share(var_.cloud_vm_cluster_iorm_config_db_plans_share())
+ *                 .dbName(cloudVmClusterIormConfigDbPlansDbName)
+ *                 .share(cloudVmClusterIormConfigDbPlansShare)
  *                 .build())
- *             .cloudVmClusterId(oci_database_cloud_vm_cluster.test_cloud_vm_cluster().id())
+ *             .cloudVmClusterId(testCloudVmCluster.id())
  *             .objective(&#34;AUTO&#34;)
  *             .build());
  * 

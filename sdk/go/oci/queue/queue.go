@@ -31,21 +31,21 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Queue.NewQueue(ctx, "testQueue", &Queue.QueueArgs{
-//				CompartmentId:                pulumi.Any(_var.Compartment_id),
-//				DisplayName:                  pulumi.Any(_var.Queue_display_name),
-//				ChannelConsumptionLimit:      pulumi.Any(_var.Queue_channel_consumption_limit),
-//				CustomEncryptionKeyId:        pulumi.Any(oci_kms_key.Test_key.Id),
-//				DeadLetterQueueDeliveryCount: pulumi.Any(_var.Queue_dead_letter_queue_delivery_count),
+//			_, err := Queue.NewQueue(ctx, "test_queue", &Queue.QueueArgs{
+//				CompartmentId:                pulumi.Any(compartmentId),
+//				DisplayName:                  pulumi.Any(queueDisplayName),
+//				ChannelConsumptionLimit:      pulumi.Any(queueChannelConsumptionLimit),
+//				CustomEncryptionKeyId:        pulumi.Any(testKey.Id),
+//				DeadLetterQueueDeliveryCount: pulumi.Any(queueDeadLetterQueueDeliveryCount),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				RetentionInSeconds:  pulumi.Any(_var.Queue_retention_in_seconds),
-//				TimeoutInSeconds:    pulumi.Any(_var.Queue_timeout_in_seconds),
-//				VisibilityInSeconds: pulumi.Any(_var.Queue_visibility_in_seconds),
+//				RetentionInSeconds:  pulumi.Any(queueRetentionInSeconds),
+//				TimeoutInSeconds:    pulumi.Any(queueTimeoutInSeconds),
+//				VisibilityInSeconds: pulumi.Any(queueVisibilityInSeconds),
 //			})
 //			if err != nil {
 //				return err

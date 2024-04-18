@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testShapes = oci.Core.getShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.shape_availability_domain,
- *     imageId: oci_core_image.test_image.id,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: shapeAvailabilityDomain,
+ *     imageId: testImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -88,9 +88,9 @@ export interface GetShapesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testShapes = oci.Core.getShapes({
- *     compartmentId: _var.compartment_id,
- *     availabilityDomain: _var.shape_availability_domain,
- *     imageId: oci_core_image.test_image.id,
+ *     compartmentId: compartmentId,
+ *     availabilityDomain: shapeAvailabilityDomain,
+ *     imageId: testImage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

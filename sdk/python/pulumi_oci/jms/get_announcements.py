@@ -111,9 +111,9 @@ def get_announcements(filters: Optional[Sequence[pulumi.InputType['GetAnnounceme
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.Jms.get_announcements(summary_contains=var["announcement_summary_contains"],
-        time_end=var["announcement_time_end"],
-        time_start=var["announcement_time_start"])
+    test_announcements = oci.Jms.get_announcements(summary_contains=announcement_summary_contains,
+        time_end=announcement_time_end,
+        time_start=announcement_time_start)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -157,9 +157,9 @@ def get_announcements_output(filters: Optional[pulumi.Input[Optional[Sequence[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.Jms.get_announcements(summary_contains=var["announcement_summary_contains"],
-        time_end=var["announcement_time_end"],
-        time_start=var["announcement_time_start"])
+    test_announcements = oci.Jms.get_announcements(summary_contains=announcement_summary_contains,
+        time_end=announcement_time_end,
+        time_start=announcement_time_start)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetSecurityZone(ctx, &cloudguard.GetSecurityZoneArgs{
-//				SecurityZoneId: oci_cloud_guard_security_zone.Test_security_zone.Id,
+//				SecurityZoneId: testSecurityZoneOciCloudGuardSecurityZone.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

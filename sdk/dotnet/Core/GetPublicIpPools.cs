@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPublicIpPools = Oci.Core.GetPublicIpPools.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
-        ///         DisplayName = @var.Public_ip_pool_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         ByoipRangeId = testByoipRange.Id,
+        ///         DisplayName = publicIpPoolDisplayName,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testPublicIpPools = Oci.Core.GetPublicIpPools.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         ByoipRangeId = oci_core_byoip_range.Test_byoip_range.Id,
-        ///         DisplayName = @var.Public_ip_pool_display_name,
+        ///         CompartmentId = compartmentId,
+        ///         ByoipRangeId = testByoipRange.Id,
+        ///         DisplayName = publicIpPoolDisplayName,
         ///     });
         /// 
         /// });

@@ -319,7 +319,7 @@ def get_subnet(subnet_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnet = oci.Core.get_subnet(subnet_id=oci_core_subnet["test_subnet"]["id"])
+    test_subnet = oci.Core.get_subnet(subnet_id=test_subnet_oci_core_subnet["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -372,7 +372,7 @@ def get_subnet_output(subnet_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_subnet = oci.Core.get_subnet(subnet_id=oci_core_subnet["test_subnet"]["id"])
+    test_subnet = oci.Core.get_subnet(subnet_id=test_subnet_oci_core_subnet["id"])
     ```
     <!--End PulumiCodeChooser -->
 

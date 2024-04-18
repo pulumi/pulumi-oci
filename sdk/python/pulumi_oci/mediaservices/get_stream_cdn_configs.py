@@ -121,10 +121,10 @@ def get_stream_cdn_configs(display_name: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_cdn_config_display_name"],
-        id=var["stream_cdn_config_id"],
-        state=var["stream_cdn_config_state"])
+    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
+        display_name=stream_cdn_config_display_name,
+        id=stream_cdn_config_id,
+        state=stream_cdn_config_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_stream_cdn_configs_output(display_name: Optional[pulumi.Input[Optional[s
     import pulumi
     import pulumi_oci as oci
 
-    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=oci_mysql_channel["test_channel"]["id"],
-        display_name=var["stream_cdn_config_display_name"],
-        id=var["stream_cdn_config_id"],
-        state=var["stream_cdn_config_state"])
+    test_stream_cdn_configs = oci.MediaServices.get_stream_cdn_configs(distribution_channel_id=test_channel["id"],
+        display_name=stream_cdn_config_display_name,
+        id=stream_cdn_config_id,
+        state=stream_cdn_config_state)
     ```
     <!--End PulumiCodeChooser -->
 

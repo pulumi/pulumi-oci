@@ -94,7 +94,7 @@ def get_managed_my_sql_databases(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=var["compartment_id"])
+    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -130,7 +130,7 @@ def get_managed_my_sql_databases_output(compartment_id: Optional[pulumi.Input[st
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=var["compartment_id"])
+    test_managed_my_sql_databases = oci.DatabaseManagement.get_managed_my_sql_databases(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

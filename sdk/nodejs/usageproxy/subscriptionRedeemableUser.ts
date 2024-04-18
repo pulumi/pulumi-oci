@@ -18,15 +18,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSubscriptionRedeemableUser = new oci.usageproxy.SubscriptionRedeemableUser("testSubscriptionRedeemableUser", {
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
- *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ * const testSubscriptionRedeemableUser = new oci.usageproxy.SubscriptionRedeemableUser("test_subscription_redeemable_user", {
+ *     subscriptionId: testSubscription.id,
+ *     tenancyId: testTenancy.id,
  *     items: [{
- *         emailId: oci_usage_proxy_email.test_email.id,
- *         firstName: _var.subscription_redeemable_user_items_first_name,
- *         lastName: _var.subscription_redeemable_user_items_last_name,
+ *         emailId: testEmail.id,
+ *         firstName: subscriptionRedeemableUserItemsFirstName,
+ *         lastName: subscriptionRedeemableUserItemsLastName,
  *     }],
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

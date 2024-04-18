@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.unified_agent_configuration_display_name,
- *     groupId: oci_identity_group.test_group.id,
- *     isCompartmentIdInSubtree: _var.unified_agent_configuration_is_compartment_id_in_subtree,
- *     logId: oci_logging_log.test_log.id,
- *     state: _var.unified_agent_configuration_state,
+ *     compartmentId: compartmentId,
+ *     displayName: unifiedAgentConfigurationDisplayName,
+ *     groupId: testGroup.id,
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
+ *     logId: testLog.id,
+ *     state: unifiedAgentConfigurationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,12 +116,12 @@ export interface GetUnifiedAgentConfigurationsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.unified_agent_configuration_display_name,
- *     groupId: oci_identity_group.test_group.id,
- *     isCompartmentIdInSubtree: _var.unified_agent_configuration_is_compartment_id_in_subtree,
- *     logId: oci_logging_log.test_log.id,
- *     state: _var.unified_agent_configuration_state,
+ *     compartmentId: compartmentId,
+ *     displayName: unifiedAgentConfigurationDisplayName,
+ *     groupId: testGroup.id,
+ *     isCompartmentIdInSubtree: unifiedAgentConfigurationIsCompartmentIdInSubtree,
+ *     logId: testLog.id,
+ *     state: unifiedAgentConfigurationState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

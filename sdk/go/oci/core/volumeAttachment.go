@@ -31,18 +31,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewVolumeAttachment(ctx, "testVolumeAttachment", &Core.VolumeAttachmentArgs{
-//				AttachmentType:                 pulumi.Any(_var.Volume_attachment_attachment_type),
-//				InstanceId:                     pulumi.Any(oci_core_instance.Test_instance.Id),
-//				VolumeId:                       pulumi.Any(oci_core_volume.Test_volume.Id),
-//				Device:                         pulumi.Any(_var.Volume_attachment_device),
-//				DisplayName:                    pulumi.Any(_var.Volume_attachment_display_name),
-//				EncryptionInTransitType:        pulumi.Any(_var.Volume_attachment_encryption_in_transit_type),
-//				IsAgentAutoIscsiLoginEnabled:   pulumi.Any(_var.Volume_attachment_is_agent_auto_iscsi_login_enabled),
-//				IsPvEncryptionInTransitEnabled: pulumi.Any(_var.Volume_attachment_is_pv_encryption_in_transit_enabled),
-//				IsReadOnly:                     pulumi.Any(_var.Volume_attachment_is_read_only),
-//				IsShareable:                    pulumi.Any(_var.Volume_attachment_is_shareable),
-//				UseChap:                        pulumi.Any(_var.Volume_attachment_use_chap),
+//			_, err := Core.NewVolumeAttachment(ctx, "test_volume_attachment", &Core.VolumeAttachmentArgs{
+//				AttachmentType:                 pulumi.Any(volumeAttachmentAttachmentType),
+//				InstanceId:                     pulumi.Any(testInstance.Id),
+//				VolumeId:                       pulumi.Any(testVolume.Id),
+//				Device:                         pulumi.Any(volumeAttachmentDevice),
+//				DisplayName:                    pulumi.Any(volumeAttachmentDisplayName),
+//				EncryptionInTransitType:        pulumi.Any(volumeAttachmentEncryptionInTransitType),
+//				IsAgentAutoIscsiLoginEnabled:   pulumi.Any(volumeAttachmentIsAgentAutoIscsiLoginEnabled),
+//				IsPvEncryptionInTransitEnabled: pulumi.Any(volumeAttachmentIsPvEncryptionInTransitEnabled),
+//				IsReadOnly:                     pulumi.Any(volumeAttachmentIsReadOnly),
+//				IsShareable:                    pulumi.Any(volumeAttachmentIsShareable),
+//				UseChap:                        pulumi.Any(volumeAttachmentUseChap),
 //			})
 //			if err != nil {
 //				return err

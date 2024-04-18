@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOperationsInsightsWarehouseUser(ctx, &opsi.GetOperationsInsightsWarehouseUserArgs{
-//				OperationsInsightsWarehouseUserId: oci_opsi_operations_insights_warehouse_user.Test_operations_insights_warehouse_user.Id,
+//				OperationsInsightsWarehouseUserId: testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

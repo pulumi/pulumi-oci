@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscription = oci.Ons.getSubscription({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ *     subscriptionId: testSubscriptionOciOnsSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,7 +107,7 @@ export interface GetSubscriptionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSubscription = oci.Ons.getSubscription({
- *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ *     subscriptionId: testSubscriptionOciOnsSubscription.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseAddmTask = oci.DatabaseManagement.getManagedDatabaseAddmTask({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     timeEnd: _var.managed_database_addm_task_time_end,
- *     timeStart: _var.managed_database_addm_task_time_start,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     timeEnd: managedDatabaseAddmTaskTimeEnd,
+ *     timeStart: managedDatabaseAddmTaskTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -88,9 +88,9 @@ export interface GetManagedDatabaseAddmTaskResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseAddmTask = oci.DatabaseManagement.getManagedDatabaseAddmTask({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     timeEnd: _var.managed_database_addm_task_time_end,
- *     timeStart: _var.managed_database_addm_task_time_start,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     timeEnd: managedDatabaseAddmTaskTimeEnd,
+ *     timeStart: managedDatabaseAddmTaskTimeStart,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

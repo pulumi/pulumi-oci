@@ -210,14 +210,14 @@ def get_domains_api_keys(api_key_count: Optional[int] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_keys = oci.Identity.get_domains_api_keys(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        api_key_count=var["api_key_api_key_count"],
-        api_key_filter=var["api_key_api_key_filter"],
+    test_api_keys = oci.Identity.get_domains_api_keys(idcs_endpoint=test_domain["url"],
+        api_key_count=api_key_api_key_count,
+        api_key_filter=api_key_api_key_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["api_key_authorization"],
-        resource_type_schema_version=var["api_key_resource_type_schema_version"],
-        start_index=var["api_key_start_index"])
+        authorization=api_key_authorization,
+        resource_type_schema_version=api_key_resource_type_schema_version,
+        start_index=api_key_start_index)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -290,14 +290,14 @@ def get_domains_api_keys_output(api_key_count: Optional[pulumi.Input[Optional[in
     import pulumi
     import pulumi_oci as oci
 
-    test_api_keys = oci.Identity.get_domains_api_keys(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        api_key_count=var["api_key_api_key_count"],
-        api_key_filter=var["api_key_api_key_filter"],
+    test_api_keys = oci.Identity.get_domains_api_keys(idcs_endpoint=test_domain["url"],
+        api_key_count=api_key_api_key_count,
+        api_key_filter=api_key_api_key_filter,
         attribute_sets=[],
         attributes="",
-        authorization=var["api_key_authorization"],
-        resource_type_schema_version=var["api_key_resource_type_schema_version"],
-        start_index=var["api_key_start_index"])
+        authorization=api_key_authorization,
+        resource_type_schema_version=api_key_resource_type_schema_version,
+        start_index=api_key_start_index)
     ```
     <!--End PulumiCodeChooser -->
 

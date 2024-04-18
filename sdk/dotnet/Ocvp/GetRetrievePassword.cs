@@ -28,8 +28,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testPassword = Oci.Ocvp.GetRetrievePassword.Invoke(new()
         ///     {
-        ///         SddcId = @var.Compartment_id,
-        ///         Type = @var.Password_type,
+        ///         SddcId = compartmentId,
+        ///         Type = passwordType,
         ///     });
         /// 
         /// });
@@ -56,8 +56,8 @@ namespace Pulumi.Oci.Ocvp
         /// {
         ///     var testPassword = Oci.Ocvp.GetRetrievePassword.Invoke(new()
         ///     {
-        ///         SddcId = @var.Compartment_id,
-        ///         Type = @var.Password_type,
+        ///         SddcId = compartmentId,
+        ///         Type = passwordType,
         ///     });
         /// 
         /// });

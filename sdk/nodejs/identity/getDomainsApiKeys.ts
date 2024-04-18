@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApiKeys = oci.Identity.getDomainsApiKeys({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     apiKeyCount: _var.api_key_api_key_count,
- *     apiKeyFilter: _var.api_key_api_key_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     apiKeyCount: apiKeyApiKeyCount,
+ *     apiKeyFilter: apiKeyApiKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.api_key_authorization,
- *     resourceTypeSchemaVersion: _var.api_key_resource_type_schema_version,
- *     startIndex: _var.api_key_start_index,
+ *     authorization: apiKeyAuthorization,
+ *     resourceTypeSchemaVersion: apiKeyResourceTypeSchemaVersion,
+ *     startIndex: apiKeyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsApiKeysResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApiKeys = oci.Identity.getDomainsApiKeys({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     apiKeyCount: _var.api_key_api_key_count,
- *     apiKeyFilter: _var.api_key_api_key_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     apiKeyCount: apiKeyApiKeyCount,
+ *     apiKeyFilter: apiKeyApiKeyFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.api_key_authorization,
- *     resourceTypeSchemaVersion: _var.api_key_resource_type_schema_version,
- *     startIndex: _var.api_key_start_index,
+ *     authorization: apiKeyAuthorization,
+ *     resourceTypeSchemaVersion: apiKeyResourceTypeSchemaVersion,
+ *     startIndex: apiKeyStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,26 +31,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewExternalDatabaseConnector(ctx, "testExternalDatabaseConnector", &Database.ExternalDatabaseConnectorArgs{
+//			_, err := Database.NewExternalDatabaseConnector(ctx, "test_external_database_connector", &Database.ExternalDatabaseConnectorArgs{
 //				ConnectionCredentials: &database.ExternalDatabaseConnectorConnectionCredentialsArgs{
-//					CredentialName: pulumi.Any(_var.External_database_connector_connection_credentials_credential_name),
-//					CredentialType: pulumi.Any(_var.External_database_connector_connection_credentials_credential_type),
-//					Password:       pulumi.Any(_var.External_database_connector_connection_credentials_password),
-//					Role:           pulumi.Any(_var.External_database_connector_connection_credentials_role),
-//					SslSecretId:    pulumi.Any(oci_vault_secret.Test_secret.Id),
-//					Username:       pulumi.Any(_var.External_database_connector_connection_credentials_username),
+//					CredentialName: pulumi.Any(externalDatabaseConnectorConnectionCredentialsCredentialName),
+//					CredentialType: pulumi.Any(externalDatabaseConnectorConnectionCredentialsCredentialType),
+//					Password:       pulumi.Any(externalDatabaseConnectorConnectionCredentialsPassword),
+//					Role:           pulumi.Any(externalDatabaseConnectorConnectionCredentialsRole),
+//					SslSecretId:    pulumi.Any(testSecret.Id),
+//					Username:       pulumi.Any(externalDatabaseConnectorConnectionCredentialsUsername),
 //				},
 //				ConnectionString: &database.ExternalDatabaseConnectorConnectionStringArgs{
-//					Hostname: pulumi.Any(_var.External_database_connector_connection_string_hostname),
-//					Port:     pulumi.Any(_var.External_database_connector_connection_string_port),
-//					Protocol: pulumi.Any(_var.External_database_connector_connection_string_protocol),
-//					Service:  pulumi.Any(_var.External_database_connector_connection_string_service),
+//					Hostname: pulumi.Any(externalDatabaseConnectorConnectionStringHostname),
+//					Port:     pulumi.Any(externalDatabaseConnectorConnectionStringPort),
+//					Protocol: pulumi.Any(externalDatabaseConnectorConnectionStringProtocol),
+//					Service:  pulumi.Any(externalDatabaseConnectorConnectionStringService),
 //				},
-//				ConnectorAgentId:   pulumi.Any(oci_database_connector_agent.Test_connector_agent.Id),
-//				DisplayName:        pulumi.Any(_var.External_database_connector_display_name),
-//				ExternalDatabaseId: pulumi.Any(oci_database_database.Test_database.Id),
-//				ConnectorType:      pulumi.Any(_var.External_database_connector_connector_type),
-//				DefinedTags:        pulumi.Any(_var.External_database_connector_defined_tags),
+//				ConnectorAgentId:   pulumi.Any(testConnectorAgent.Id),
+//				DisplayName:        pulumi.Any(externalDatabaseConnectorDisplayName),
+//				ExternalDatabaseId: pulumi.Any(testDatabase.Id),
+//				ConnectorType:      pulumi.Any(externalDatabaseConnectorConnectorType),
+//				DefinedTags:        pulumi.Any(externalDatabaseConnectorDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

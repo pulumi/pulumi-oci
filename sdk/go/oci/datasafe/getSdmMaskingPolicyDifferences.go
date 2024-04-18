@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSdmMaskingPolicyDifferences(ctx, &datasafe.GetSdmMaskingPolicyDifferencesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Sdm_masking_policy_difference_compartment_id_in_subtree),
-//				DifferenceAccessLevel:  pulumi.StringRef(_var.Sdm_masking_policy_difference_difference_access_level),
-//				DisplayName:            pulumi.StringRef(_var.Sdm_masking_policy_difference_display_name),
-//				MaskingPolicyId:        pulumi.StringRef(oci_data_safe_masking_policy.Test_masking_policy.Id),
-//				SensitiveDataModelId:   pulumi.StringRef(oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id),
-//				State:                  pulumi.StringRef(_var.Sdm_masking_policy_difference_state),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(sdmMaskingPolicyDifferenceCompartmentIdInSubtree),
+//				DifferenceAccessLevel:  pulumi.StringRef(sdmMaskingPolicyDifferenceDifferenceAccessLevel),
+//				DisplayName:            pulumi.StringRef(sdmMaskingPolicyDifferenceDisplayName),
+//				MaskingPolicyId:        pulumi.StringRef(testMaskingPolicy.Id),
+//				SensitiveDataModelId:   pulumi.StringRef(testSensitiveDataModel.Id),
+//				State:                  pulumi.StringRef(sdmMaskingPolicyDifferenceState),
 //			}, nil)
 //			if err != nil {
 //				return err

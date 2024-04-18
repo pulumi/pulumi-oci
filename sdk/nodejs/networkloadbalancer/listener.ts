@@ -16,12 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testListener = new oci.networkloadbalancer.Listener("testListener", {
- *     defaultBackendSetName: oci_network_load_balancer_backend_set.test_backend_set.name,
- *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
- *     port: _var.listener_port,
- *     protocol: _var.listener_protocol,
- *     ipVersion: _var.listener_ip_version,
+ * const testListener = new oci.networkloadbalancer.Listener("test_listener", {
+ *     defaultBackendSetName: testBackendSet.name,
+ *     name: listenerName,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
+ *     port: listenerPort,
+ *     protocol: listenerProtocol,
+ *     ipVersion: listenerIpVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -211,7 +211,7 @@ def get_ai_private_endpoint(ai_private_endpoint_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_ai_private_endpoint = oci.AiAnomalyDetection.get_ai_private_endpoint(ai_private_endpoint_id=oci_ai_anomaly_detection_ai_private_endpoint["test_ai_private_endpoint"]["id"])
+    test_ai_private_endpoint = oci.AiAnomalyDetection.get_ai_private_endpoint(ai_private_endpoint_id=test_ai_private_endpoint_oci_ai_anomaly_detection_ai_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,7 +255,7 @@ def get_ai_private_endpoint_output(ai_private_endpoint_id: Optional[pulumi.Input
     import pulumi
     import pulumi_oci as oci
 
-    test_ai_private_endpoint = oci.AiAnomalyDetection.get_ai_private_endpoint(ai_private_endpoint_id=oci_ai_anomaly_detection_ai_private_endpoint["test_ai_private_endpoint"]["id"])
+    test_ai_private_endpoint = oci.AiAnomalyDetection.get_ai_private_endpoint(ai_private_endpoint_id=test_ai_private_endpoint_oci_ai_anomaly_detection_ai_private_endpoint["id"])
     ```
     <!--End PulumiCodeChooser -->
 

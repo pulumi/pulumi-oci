@@ -31,9 +31,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testServiceGateways = Oci.Core.GetServiceGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Service_gateway_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         State = serviceGatewayState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });
@@ -63,9 +63,9 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testServiceGateways = Oci.Core.GetServiceGateways.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         State = @var.Service_gateway_state,
-        ///         VcnId = oci_core_vcn.Test_vcn.Id,
+        ///         CompartmentId = compartmentId,
+        ///         State = serviceGatewayState,
+        ///         VcnId = testVcn.Id,
         ///     });
         /// 
         /// });

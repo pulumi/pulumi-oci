@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testModelDeployments = oci.DataScience.getModelDeployments({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.model_deployment_created_by,
- *     displayName: _var.model_deployment_display_name,
- *     id: _var.model_deployment_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.model_deployment_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: modelDeploymentCreatedBy,
+ *     displayName: modelDeploymentDisplayName,
+ *     id: modelDeploymentId,
+ *     projectId: testProject.id,
+ *     state: modelDeploymentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -121,12 +121,12 @@ export interface GetModelDeploymentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testModelDeployments = oci.DataScience.getModelDeployments({
- *     compartmentId: _var.compartment_id,
- *     createdBy: _var.model_deployment_created_by,
- *     displayName: _var.model_deployment_display_name,
- *     id: _var.model_deployment_id,
- *     projectId: oci_datascience_project.test_project.id,
- *     state: _var.model_deployment_state,
+ *     compartmentId: compartmentId,
+ *     createdBy: modelDeploymentCreatedBy,
+ *     displayName: modelDeploymentDisplayName,
+ *     id: modelDeploymentId,
+ *     projectId: testProject.id,
+ *     state: modelDeploymentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

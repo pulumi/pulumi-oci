@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     isCluster: _var.db_management_private_endpoint_is_cluster,
- *     name: _var.db_management_private_endpoint_name,
- *     state: _var.db_management_private_endpoint_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     name: dbManagementPrivateEndpointName,
+ *     state: dbManagementPrivateEndpointState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,11 +115,11 @@ export interface GetDbManagementPrivateEndpointsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbManagementPrivateEndpoints = oci.DatabaseManagement.getDbManagementPrivateEndpoints({
- *     compartmentId: _var.compartment_id,
- *     isCluster: _var.db_management_private_endpoint_is_cluster,
- *     name: _var.db_management_private_endpoint_name,
- *     state: _var.db_management_private_endpoint_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     isCluster: dbManagementPrivateEndpointIsCluster,
+ *     name: dbManagementPrivateEndpointName,
+ *     state: dbManagementPrivateEndpointState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

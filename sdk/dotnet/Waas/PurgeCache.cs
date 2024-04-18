@@ -26,10 +26,10 @@ namespace Pulumi.Oci.Waas
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testPurgeCache = new Oci.Waas.PurgeCache("testPurgeCache", new()
+    ///     var testPurgeCache = new Oci.Waas.PurgeCache("test_purge_cache", new()
     ///     {
-    ///         WaasPolicyId = oci_waas_waas_policy.Test_waas_policy.Id,
-    ///         Resources = @var.Purge_cache_resources,
+    ///         WaasPolicyId = testWaasPolicy.Id,
+    ///         Resources = purgeCacheResources,
     ///     });
     /// 
     /// });

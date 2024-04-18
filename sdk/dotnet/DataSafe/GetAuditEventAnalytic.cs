@@ -35,15 +35,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditEventAnalytic = Oci.DataSafe.GetAuditEventAnalytic.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_event_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.Audit_event_analytic_compartment_id_in_subtree,
-        ///         GroupBies = @var.Audit_event_analytic_group_by,
-        ///         QueryTimeZone = @var.Audit_event_analytic_query_time_zone,
-        ///         ScimQuery = @var.Audit_event_analytic_scim_query,
-        ///         SummaryFields = @var.Audit_event_analytic_summary_field,
-        ///         TimeEnded = @var.Audit_event_analytic_time_ended,
-        ///         TimeStarted = @var.Audit_event_analytic_time_started,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditEventAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = auditEventAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = auditEventAnalyticGroupBy,
+        ///         QueryTimeZone = auditEventAnalyticQueryTimeZone,
+        ///         ScimQuery = auditEventAnalyticScimQuery,
+        ///         SummaryFields = auditEventAnalyticSummaryField,
+        ///         TimeEnded = auditEventAnalyticTimeEnded,
+        ///         TimeStarted = auditEventAnalyticTimeStarted,
         ///     });
         /// 
         /// });
@@ -77,15 +77,15 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testAuditEventAnalytic = Oci.DataSafe.GetAuditEventAnalytic.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.Audit_event_analytic_access_level,
-        ///         CompartmentIdInSubtree = @var.Audit_event_analytic_compartment_id_in_subtree,
-        ///         GroupBies = @var.Audit_event_analytic_group_by,
-        ///         QueryTimeZone = @var.Audit_event_analytic_query_time_zone,
-        ///         ScimQuery = @var.Audit_event_analytic_scim_query,
-        ///         SummaryFields = @var.Audit_event_analytic_summary_field,
-        ///         TimeEnded = @var.Audit_event_analytic_time_ended,
-        ///         TimeStarted = @var.Audit_event_analytic_time_started,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = auditEventAnalyticAccessLevel,
+        ///         CompartmentIdInSubtree = auditEventAnalyticCompartmentIdInSubtree,
+        ///         GroupBies = auditEventAnalyticGroupBy,
+        ///         QueryTimeZone = auditEventAnalyticQueryTimeZone,
+        ///         ScimQuery = auditEventAnalyticScimQuery,
+        ///         SummaryFields = auditEventAnalyticSummaryField,
+        ///         TimeEnded = auditEventAnalyticTimeEnded,
+        ///         TimeStarted = auditEventAnalyticTimeStarted,
         ///     });
         /// 
         /// });

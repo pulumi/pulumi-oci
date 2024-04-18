@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testQuery = oci.MeteringComputation.getQuery({
- *     queryId: oci_metering_computation_query.test_query.id,
+ *     queryId: testQueryOciMeteringComputationQuery.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -73,7 +73,7 @@ export interface GetQueryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testQuery = oci.MeteringComputation.getQuery({
- *     queryId: oci_metering_computation_query.test_query.id,
+ *     queryId: testQueryOciMeteringComputationQuery.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

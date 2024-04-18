@@ -20,10 +20,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
- *     availabilityDomain: _var.boot_volume_attachment_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
- *     instanceId: oci_core_instance.test_instance.id,
+ *     availabilityDomain: bootVolumeAttachmentAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     bootVolumeId: testBootVolume.id,
+ *     instanceId: testInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -108,10 +108,10 @@ export interface GetBootVolumeAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBootVolumeAttachments = oci.Core.getBootVolumeAttachments({
- *     availabilityDomain: _var.boot_volume_attachment_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
- *     instanceId: oci_core_instance.test_instance.id,
+ *     availabilityDomain: bootVolumeAttachmentAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     bootVolumeId: testBootVolume.id,
+ *     instanceId: testInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

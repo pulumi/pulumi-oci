@@ -29,7 +29,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testProfile = Oci.OsManagementHub.GetProfile.Invoke(new()
         ///     {
-        ///         ProfileId = oci_os_management_hub_profile.Test_profile.Id,
+        ///         ProfileId = testProfileOciOsManagementHubProfile.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testProfile = Oci.OsManagementHub.GetProfile.Invoke(new()
         ///     {
-        ///         ProfileId = oci_os_management_hub_profile.Test_profile.Id,
+        ///         ProfileId = testProfileOciOsManagementHubProfile.Id,
         ///     });
         /// 
         /// });

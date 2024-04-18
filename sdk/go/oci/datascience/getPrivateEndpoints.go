@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetPrivateEndpoints(ctx, &datascience.GetPrivateEndpointsArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				CreatedBy:               pulumi.StringRef(_var.Data_science_private_endpoint_created_by),
-//				DataScienceResourceType: pulumi.StringRef(_var.Data_science_private_endpoint_data_science_resource_type),
-//				DisplayName:             pulumi.StringRef(_var.Data_science_private_endpoint_display_name),
-//				State:                   pulumi.StringRef(_var.Data_science_private_endpoint_state),
+//				CompartmentId:           compartmentId,
+//				CreatedBy:               pulumi.StringRef(dataSciencePrivateEndpointCreatedBy),
+//				DataScienceResourceType: pulumi.StringRef(dataSciencePrivateEndpointDataScienceResourceType),
+//				DisplayName:             pulumi.StringRef(dataSciencePrivateEndpointDisplayName),
+//				State:                   pulumi.StringRef(dataSciencePrivateEndpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

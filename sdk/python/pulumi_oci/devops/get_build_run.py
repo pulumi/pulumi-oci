@@ -260,7 +260,7 @@ def get_build_run(build_run_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_run = oci.DevOps.get_build_run(build_run_id=oci_devops_build_run["test_build_run"]["id"])
+    test_build_run = oci.DevOps.get_build_run(build_run_id=test_build_run_oci_devops_build_run["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -308,7 +308,7 @@ def get_build_run_output(build_run_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_build_run = oci.DevOps.get_build_run(build_run_id=oci_devops_build_run["test_build_run"]["id"])
+    test_build_run = oci.DevOps.get_build_run(build_run_id=test_build_run_oci_devops_build_run["id"])
     ```
     <!--End PulumiCodeChooser -->
 

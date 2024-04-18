@@ -40,10 +40,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opensearch.GetOpensearchClusters(ctx, &opensearch.GetOpensearchClustersArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Opensearch_cluster_display_name),
-//				Id:            pulumi.StringRef(_var.Opensearch_cluster_id),
-//				State:         pulumi.StringRef(_var.Opensearch_cluster_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(opensearchClusterDisplayName),
+//				Id:            pulumi.StringRef(opensearchClusterId),
+//				State:         pulumi.StringRef(opensearchClusterState),
 //			}, nil)
 //			if err != nil {
 //				return err

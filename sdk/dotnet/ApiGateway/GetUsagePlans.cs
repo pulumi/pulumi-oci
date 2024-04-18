@@ -29,9 +29,9 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testUsagePlans = Oci.ApiGateway.GetUsagePlans.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Usage_plan_display_name,
-        ///         State = @var.Usage_plan_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = usagePlanDisplayName,
+        ///         State = usagePlanState,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.ApiGateway
         /// {
         ///     var testUsagePlans = Oci.ApiGateway.GetUsagePlans.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Usage_plan_display_name,
-        ///         State = @var.Usage_plan_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = usagePlanDisplayName,
+        ///         State = usagePlanState,
         ///     });
         /// 
         /// });

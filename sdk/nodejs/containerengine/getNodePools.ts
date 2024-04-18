@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNodePools = oci.ContainerEngine.getNodePools({
- *     compartmentId: _var.compartment_id,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     name: _var.node_pool_name,
- *     states: _var.node_pool_state,
+ *     compartmentId: compartmentId,
+ *     clusterId: testCluster.id,
+ *     name: nodePoolName,
+ *     states: nodePoolState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetNodePoolsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNodePools = oci.ContainerEngine.getNodePools({
- *     compartmentId: _var.compartment_id,
- *     clusterId: oci_containerengine_cluster.test_cluster.id,
- *     name: _var.node_pool_name,
- *     states: _var.node_pool_state,
+ *     compartmentId: compartmentId,
+ *     clusterId: testCluster.id,
+ *     name: nodePoolName,
+ *     states: nodePoolState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

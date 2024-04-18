@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := FusionApps.NewFusionEnvironmentRefreshActivity(ctx, "testFusionEnvironmentRefreshActivity", &FusionApps.FusionEnvironmentRefreshActivityArgs{
-//				FusionEnvironmentId:       pulumi.Any(oci_fusion_apps_fusion_environment.Test_fusion_environment.Id),
-//				SourceFusionEnvironmentId: pulumi.Any(oci_fusion_apps_fusion_environment.Test_fusion_environment.Id),
+//			_, err := FusionApps.NewFusionEnvironmentRefreshActivity(ctx, "test_fusion_environment_refresh_activity", &FusionApps.FusionEnvironmentRefreshActivityArgs{
+//				FusionEnvironmentId:       pulumi.Any(testFusionEnvironment.Id),
+//				SourceFusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
 //			})
 //			if err != nil {
 //				return err

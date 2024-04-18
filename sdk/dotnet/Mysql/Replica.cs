@@ -25,25 +25,25 @@ namespace Pulumi.Oci.Mysql
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testReplica = new Oci.Mysql.Replica("testReplica", new()
+    ///     var testReplica = new Oci.Mysql.Replica("test_replica", new()
     ///     {
-    ///         DbSystemId = oci_mysql_mysql_db_system.Test_mysql_db_system.Id,
+    ///         DbSystemId = testMysqlDbSystem.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Replica_description,
-    ///         DisplayName = @var.Replica_display_name,
+    ///         Description = replicaDescription,
+    ///         DisplayName = replicaDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         IsDeleteProtected = @var.Replica_is_delete_protected,
+    ///         IsDeleteProtected = replicaIsDeleteProtected,
     ///         ReplicaOverrides = new Oci.Mysql.Inputs.ReplicaReplicaOverridesArgs
     ///         {
-    ///             ConfigurationId = oci_mysql_mysql_configuration.Test_mysql_configuration.Id,
-    ///             MysqlVersion = @var.Replica_replica_overrides_mysql_version,
-    ///             ShapeName = oci_mysql_shape.Test_shape.Name,
+    ///             ConfigurationId = testMysqlConfiguration.Id,
+    ///             MysqlVersion = replicaReplicaOverridesMysqlVersion,
+    ///             ShapeName = testShape.Name,
     ///         },
     ///     });
     /// 

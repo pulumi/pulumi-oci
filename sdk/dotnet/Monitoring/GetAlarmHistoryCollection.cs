@@ -38,10 +38,10 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarmHistoryCollection = Oci.Monitoring.GetAlarmHistoryCollection.Invoke(new()
         ///     {
-        ///         AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-        ///         AlarmHistorytype = @var.Alarm_history_collection_alarm_historytype,
-        ///         TimestampGreaterThanOrEqualTo = @var.Alarm_history_collection_timestamp_greater_than_or_equal_to,
-        ///         TimestampLessThan = @var.Alarm_history_collection_timestamp_less_than,
+        ///         AlarmId = testAlarm.Id,
+        ///         AlarmHistorytype = alarmHistoryCollectionAlarmHistorytype,
+        ///         TimestampGreaterThanOrEqualTo = alarmHistoryCollectionTimestampGreaterThanOrEqualTo,
+        ///         TimestampLessThan = alarmHistoryCollectionTimestampLessThan,
         ///     });
         /// 
         /// });
@@ -78,10 +78,10 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarmHistoryCollection = Oci.Monitoring.GetAlarmHistoryCollection.Invoke(new()
         ///     {
-        ///         AlarmId = oci_monitoring_alarm.Test_alarm.Id,
-        ///         AlarmHistorytype = @var.Alarm_history_collection_alarm_historytype,
-        ///         TimestampGreaterThanOrEqualTo = @var.Alarm_history_collection_timestamp_greater_than_or_equal_to,
-        ///         TimestampLessThan = @var.Alarm_history_collection_timestamp_less_than,
+        ///         AlarmId = testAlarm.Id,
+        ///         AlarmHistorytype = alarmHistoryCollectionAlarmHistorytype,
+        ///         TimestampGreaterThanOrEqualTo = alarmHistoryCollectionTimestampGreaterThanOrEqualTo,
+        ///         TimestampLessThan = alarmHistoryCollectionTimestampLessThan,
         ///     });
         /// 
         /// });

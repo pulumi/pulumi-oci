@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetCertificates(ctx, &apigateway.GetCertificatesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Certificate_display_name),
-//				State:         pulumi.StringRef(_var.Certificate_state),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(certificateDisplayName),
+//				State:         pulumi.StringRef(certificateState),
 //			}, nil)
 //			if err != nil {
 //				return err

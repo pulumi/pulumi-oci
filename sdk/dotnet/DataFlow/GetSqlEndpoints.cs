@@ -32,10 +32,10 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testSqlEndpoints = Oci.DataFlow.GetSqlEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Sql_endpoint_display_name,
-        ///         SqlEndpointId = oci_dataflow_sql_endpoint.Test_sql_endpoint.Id,
-        ///         State = @var.Sql_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = sqlEndpointDisplayName,
+        ///         SqlEndpointId = testSqlEndpoint.Id,
+        ///         State = sqlEndpointState,
         ///     });
         /// 
         /// });
@@ -66,10 +66,10 @@ namespace Pulumi.Oci.DataFlow
         /// {
         ///     var testSqlEndpoints = Oci.DataFlow.GetSqlEndpoints.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Sql_endpoint_display_name,
-        ///         SqlEndpointId = oci_dataflow_sql_endpoint.Test_sql_endpoint.Id,
-        ///         State = @var.Sql_endpoint_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = sqlEndpointDisplayName,
+        ///         SqlEndpointId = testSqlEndpoint.Id,
+        ///         State = sqlEndpointState,
         ///     });
         /// 
         /// });

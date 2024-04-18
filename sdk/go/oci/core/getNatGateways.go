@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetNatGateways(ctx, &core.GetNatGatewaysArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Nat_gateway_display_name),
-//				State:         pulumi.StringRef(_var.Nat_gateway_state),
-//				VcnId:         pulumi.StringRef(oci_core_vcn.Test_vcn.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(natGatewayDisplayName),
+//				State:         pulumi.StringRef(natGatewayState),
+//				VcnId:         pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -393,16 +393,16 @@ class Config(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_config = oci.stack_monitoring.Config("testConfig",
-            compartment_id=var["compartment_id"],
-            config_type=var["config_config_type"],
-            is_enabled=var["config_is_enabled"],
-            resource_type=var["config_resource_type"],
-            license=var["config_license"],
+        test_config = oci.stack_monitoring.Config("test_config",
+            compartment_id=compartment_id,
+            config_type=config_config_type,
+            is_enabled=config_is_enabled,
+            resource_type=config_resource_type,
+            license=config_license,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["config_display_name"],
+            display_name=config_display_name,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -456,16 +456,16 @@ class Config(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_config = oci.stack_monitoring.Config("testConfig",
-            compartment_id=var["compartment_id"],
-            config_type=var["config_config_type"],
-            is_enabled=var["config_is_enabled"],
-            resource_type=var["config_resource_type"],
-            license=var["config_license"],
+        test_config = oci.stack_monitoring.Config("test_config",
+            compartment_id=compartment_id,
+            config_type=config_config_type,
+            is_enabled=config_is_enabled,
+            resource_type=config_resource_type,
+            license=config_license,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            display_name=var["config_display_name"],
+            display_name=config_display_name,
             freeform_tags={
                 "bar-key": "value",
             })

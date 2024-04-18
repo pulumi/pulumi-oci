@@ -30,18 +30,18 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewAuditProfileManagement(ctx, "testAuditProfileManagement", &DataSafe.AuditProfileManagementArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				TargetId:      pulumi.Any(oci_data_safe_target_database.Test_target_database.Id),
+//			_, err := DataSafe.NewAuditProfileManagement(ctx, "test_audit_profile_management", &DataSafe.AuditProfileManagementArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				TargetId:      pulumi.Any(testTargetDatabase.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Audit_profile_management_description),
-//				DisplayName: pulumi.Any(_var.Audit_profile_management_display_name),
+//				Description: pulumi.Any(auditProfileManagementDescription),
+//				DisplayName: pulumi.Any(auditProfileManagementDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsPaidUsageEnabled:     pulumi.Any(_var.Audit_profile_management_is_paid_usage_enabled),
+//				IsPaidUsageEnabled:     pulumi.Any(auditProfileManagementIsPaidUsageEnabled),
 //				ChangeRetentionTrigger: pulumi.Bool(true),
 //				OfflineMonths:          pulumi.Int(10),
 //				OnlineMonths:           pulumi.Int(7),

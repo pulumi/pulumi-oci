@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyUserDbCredentials = Oci.Identity.GetDomainsMyUserDbCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyUserDbCredentialCount = @var.My_user_db_credential_my_user_db_credential_count,
-        ///         MyUserDbCredentialFilter = @var.My_user_db_credential_my_user_db_credential_filter,
-        ///         Authorization = @var.My_user_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_user_db_credential_resource_type_schema_version,
-        ///         StartIndex = @var.My_user_db_credential_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyUserDbCredentialCount = myUserDbCredentialMyUserDbCredentialCount,
+        ///         MyUserDbCredentialFilter = myUserDbCredentialMyUserDbCredentialFilter,
+        ///         Authorization = myUserDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myUserDbCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = myUserDbCredentialStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyUserDbCredentials = Oci.Identity.GetDomainsMyUserDbCredentials.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyUserDbCredentialCount = @var.My_user_db_credential_my_user_db_credential_count,
-        ///         MyUserDbCredentialFilter = @var.My_user_db_credential_my_user_db_credential_filter,
-        ///         Authorization = @var.My_user_db_credential_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_user_db_credential_resource_type_schema_version,
-        ///         StartIndex = @var.My_user_db_credential_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyUserDbCredentialCount = myUserDbCredentialMyUserDbCredentialCount,
+        ///         MyUserDbCredentialFilter = myUserDbCredentialMyUserDbCredentialFilter,
+        ///         Authorization = myUserDbCredentialAuthorization,
+        ///         ResourceTypeSchemaVersion = myUserDbCredentialResourceTypeSchemaVersion,
+        ///         StartIndex = myUserDbCredentialStartIndex,
         ///     });
         /// 
         /// });

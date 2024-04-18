@@ -49,8 +49,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagementDashboardsImport = new ManagementDashboardsImport(&#34;testManagementDashboardsImport&#34;, ManagementDashboardsImportArgs.builder()        
- *             .importDetails(var_.sample_import_details())
- *             .importDetailsFile(var_.sample_import_details_file_path())
+ *             .importDetails(sampleImportDetails)
+ *             .importDetailsFile(sampleImportDetailsFilePath)
  *             .build());
  * 
  *     }

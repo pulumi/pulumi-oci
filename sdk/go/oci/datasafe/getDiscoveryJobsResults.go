@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetDiscoveryJobsResults(ctx, &datasafe.GetDiscoveryJobsResultsArgs{
-//				DiscoveryJobId:  oci_data_safe_discovery_job.Test_discovery_job.Id,
-//				ColumnNames:     _var.Discovery_jobs_result_column_name,
-//				DiscoveryType:   pulumi.StringRef(_var.Discovery_jobs_result_discovery_type),
-//				IsResultApplied: pulumi.BoolRef(_var.Discovery_jobs_result_is_result_applied),
-//				Objects:         _var.Discovery_jobs_result_object,
-//				PlannedAction:   pulumi.StringRef(_var.Discovery_jobs_result_planned_action),
-//				SchemaNames:     _var.Discovery_jobs_result_schema_name,
+//				DiscoveryJobId:  testDiscoveryJob.Id,
+//				ColumnNames:     discoveryJobsResultColumnName,
+//				DiscoveryType:   pulumi.StringRef(discoveryJobsResultDiscoveryType),
+//				IsResultApplied: pulumi.BoolRef(discoveryJobsResultIsResultApplied),
+//				Objects:         discoveryJobsResultObject,
+//				PlannedAction:   pulumi.StringRef(discoveryJobsResultPlannedAction),
+//				SchemaNames:     discoveryJobsResultSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

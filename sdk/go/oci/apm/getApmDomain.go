@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Apm.GetApmDomain(ctx, &apm.GetApmDomainArgs{
-//				ApmDomainId: oci_apm_apm_domain.Test_apm_domain.Id,
+//				ApmDomainId: testApmDomainOciApmApmDomain.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

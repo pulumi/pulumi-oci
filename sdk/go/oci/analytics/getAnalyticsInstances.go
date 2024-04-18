@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Analytics.GetAnalyticsInstances(ctx, &analytics.GetAnalyticsInstancesArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CapacityType:  pulumi.StringRef(_var.Analytics_instance_capacity_type),
-//				FeatureSet:    pulumi.StringRef(_var.Analytics_instance_feature_set),
-//				Name:          pulumi.StringRef(_var.Analytics_instance_name),
-//				State:         pulumi.StringRef(_var.Analytics_instance_state),
+//				CompartmentId: compartmentId,
+//				CapacityType:  pulumi.StringRef(analyticsInstanceCapacityType),
+//				FeatureSet:    pulumi.StringRef(analyticsInstanceFeatureSet),
+//				Name:          pulumi.StringRef(analyticsInstanceName),
+//				State:         pulumi.StringRef(analyticsInstanceState),
 //			}, nil)
 //			if err != nil {
 //				return err

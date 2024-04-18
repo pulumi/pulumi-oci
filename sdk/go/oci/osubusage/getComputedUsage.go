@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsubUsage.GetComputedUsage(ctx, &osubusage.GetComputedUsageArgs{
-//				CompartmentId:    _var.Compartment_id,
-//				ComputedUsageId:  oci_osub_usage_computed_usage.Test_computed_usage.Id,
-//				Fields:           _var.Computed_usage_fields,
-//				XOneOriginRegion: pulumi.StringRef(_var.Computed_usage_x_one_origin_region),
+//				CompartmentId:    compartmentId,
+//				ComputedUsageId:  testComputedUsageOciOsubUsageComputedUsage.Id,
+//				Fields:           computedUsageFields,
+//				XOneOriginRegion: pulumi.StringRef(computedUsageXOneOriginRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

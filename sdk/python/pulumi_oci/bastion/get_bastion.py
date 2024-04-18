@@ -295,7 +295,7 @@ def get_bastion(bastion_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastion = oci.Bastion.get_bastion(bastion_id=oci_bastion_bastion["test_bastion"]["id"])
+    test_bastion = oci.Bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -346,7 +346,7 @@ def get_bastion_output(bastion_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_bastion = oci.Bastion.get_bastion(bastion_id=oci_bastion_bastion["test_bastion"]["id"])
+    test_bastion = oci.Bastion.get_bastion(bastion_id=test_bastion_oci_bastion_bastion["id"])
     ```
     <!--End PulumiCodeChooser -->
 

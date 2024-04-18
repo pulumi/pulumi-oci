@@ -25,13 +25,13 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDbSystemsUpgrade = new Oci.Database.DbSystemsUpgrade("testDbSystemsUpgrade", new()
+    ///     var testDbSystemsUpgrade = new Oci.Database.DbSystemsUpgrade("test_db_systems_upgrade", new()
     ///     {
-    ///         Action = @var.Db_systems_upgrade_action,
-    ///         DbSystemId = oci_database_db_system.Test_db_system.Id,
-    ///         IsSnapshotRetentionDaysForceUpdated = @var.Db_systems_upgrade_is_snapshot_retention_days_force_updated,
-    ///         NewGiVersion = @var.Db_systems_upgrade_new_gi_version,
-    ///         SnapshotRetentionPeriodInDays = @var.Db_systems_upgrade_snapshot_retention_period_in_days,
+    ///         Action = dbSystemsUpgradeAction,
+    ///         DbSystemId = testDbSystem.Id,
+    ///         IsSnapshotRetentionDaysForceUpdated = dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated,
+    ///         NewGiVersion = dbSystemsUpgradeNewGiVersion,
+    ///         SnapshotRetentionPeriodInDays = dbSystemsUpgradeSnapshotRetentionPeriodInDays,
     ///     });
     /// 
     /// });

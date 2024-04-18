@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testView = oci.Dns.getView({
- *     viewId: oci_dns_view.test_view.id,
+ *     viewId: testViewOciDnsView.id,
  *     scope: "PRIVATE",
  * });
  * ```
@@ -111,7 +111,7 @@ export interface GetViewResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testView = oci.Dns.getView({
- *     viewId: oci_dns_view.test_view.id,
+ *     viewId: testViewOciDnsView.id,
  *     scope: "PRIVATE",
  * });
  * ```

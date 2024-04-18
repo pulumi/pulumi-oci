@@ -147,12 +147,12 @@ def get_mount_targets(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=var["mount_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["mount_target_display_name"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        id=var["mount_target_id"],
-        state=var["mount_target_state"])
+    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=mount_target_availability_domain,
+        compartment_id=compartment_id,
+        display_name=mount_target_display_name,
+        export_set_id=test_export_set["id"],
+        id=mount_target_id,
+        state=mount_target_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -207,12 +207,12 @@ def get_mount_targets_output(availability_domain: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=var["mount_target_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["mount_target_display_name"],
-        export_set_id=oci_file_storage_export_set["test_export_set"]["id"],
-        id=var["mount_target_id"],
-        state=var["mount_target_state"])
+    test_mount_targets = oci.FileStorage.get_mount_targets(availability_domain=mount_target_availability_domain,
+        compartment_id=compartment_id,
+        display_name=mount_target_display_name,
+        export_set_id=test_export_set["id"],
+        id=mount_target_id,
+        state=mount_target_state)
     ```
     <!--End PulumiCodeChooser -->
 

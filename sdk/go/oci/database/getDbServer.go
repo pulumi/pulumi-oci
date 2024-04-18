@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbServer(ctx, &database.GetDbServerArgs{
-//				DbServerId:              oci_database_db_server.Test_db_server.Id,
-//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
+//				DbServerId:              testDbServerOciDatabaseDbServer.Id,
+//				ExadataInfrastructureId: testExadataInfrastructure.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

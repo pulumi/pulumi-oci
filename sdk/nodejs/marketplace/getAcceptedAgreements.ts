@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
- *     compartmentId: _var.compartment_id,
- *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
- *     displayName: _var.accepted_agreement_display_name,
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     packageVersion: _var.accepted_agreement_package_version,
+ *     compartmentId: compartmentId,
+ *     acceptedAgreementId: testAcceptedAgreement.id,
+ *     displayName: acceptedAgreementDisplayName,
+ *     listingId: testListing.id,
+ *     packageVersion: acceptedAgreementPackageVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -114,11 +114,11 @@ export interface GetAcceptedAgreementsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
- *     compartmentId: _var.compartment_id,
- *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
- *     displayName: _var.accepted_agreement_display_name,
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     packageVersion: _var.accepted_agreement_package_version,
+ *     compartmentId: compartmentId,
+ *     acceptedAgreementId: testAcceptedAgreement.id,
+ *     displayName: acceptedAgreementDisplayName,
+ *     listingId: testListing.id,
+ *     packageVersion: acceptedAgreementPackageVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

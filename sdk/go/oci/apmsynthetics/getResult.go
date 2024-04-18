@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetResult(ctx, &apmsynthetics.GetResultArgs{
-//				ApmDomainId:       oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-//				ExecutionTime:     _var.Result_execution_time,
-//				MonitorId:         oci_apm_synthetics_monitor.Test_monitor.Id,
-//				ResultContentType: _var.Result_result_content_type,
-//				ResultType:        _var.Result_result_type,
-//				VantagePoint:      _var.Result_vantage_point,
+//				ApmDomainId:       testApmDomain.Id,
+//				ExecutionTime:     resultExecutionTime,
+//				MonitorId:         testMonitor.Id,
+//				ResultContentType: resultResultContentType,
+//				ResultType:        resultResultType,
+//				VantagePoint:      resultVantagePoint,
 //			}, nil)
 //			if err != nil {
 //				return err

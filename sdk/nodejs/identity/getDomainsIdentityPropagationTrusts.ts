@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityPropagationTrusts = oci.Identity.getDomainsIdentityPropagationTrusts({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityPropagationTrustCount: _var.identity_propagation_trust_identity_propagation_trust_count,
- *     identityPropagationTrustFilter: _var.identity_propagation_trust_identity_propagation_trust_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     identityPropagationTrustCount: identityPropagationTrustIdentityPropagationTrustCount,
+ *     identityPropagationTrustFilter: identityPropagationTrustIdentityPropagationTrustFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_propagation_trust_authorization,
- *     resourceTypeSchemaVersion: _var.identity_propagation_trust_resource_type_schema_version,
- *     startIndex: _var.identity_propagation_trust_start_index,
+ *     authorization: identityPropagationTrustAuthorization,
+ *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
+ *     startIndex: identityPropagationTrustStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsIdentityPropagationTrustsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityPropagationTrusts = oci.Identity.getDomainsIdentityPropagationTrusts({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     identityPropagationTrustCount: _var.identity_propagation_trust_identity_propagation_trust_count,
- *     identityPropagationTrustFilter: _var.identity_propagation_trust_identity_propagation_trust_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     identityPropagationTrustCount: identityPropagationTrustIdentityPropagationTrustCount,
+ *     identityPropagationTrustFilter: identityPropagationTrustIdentityPropagationTrustFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_propagation_trust_authorization,
- *     resourceTypeSchemaVersion: _var.identity_propagation_trust_resource_type_schema_version,
- *     startIndex: _var.identity_propagation_trust_start_index,
+ *     authorization: identityPropagationTrustAuthorization,
+ *     resourceTypeSchemaVersion: identityPropagationTrustResourceTypeSchemaVersion,
+ *     startIndex: identityPropagationTrustStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

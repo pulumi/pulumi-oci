@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetTrailFiles(ctx, &goldengate.GetTrailFilesArgs{
-//				DeploymentId: oci_golden_gate_deployment.Test_deployment.Id,
-//				TrailFileId:  oci_golden_gate_trail_file.Test_trail_file.Id,
-//				DisplayName:  pulumi.StringRef(_var.Trail_file_display_name),
+//				DeploymentId: testDeployment.Id,
+//				TrailFileId:  testTrailFile.Id,
+//				DisplayName:  pulumi.StringRef(trailFileDisplayName),
 //			}, nil)
 //			if err != nil {
 //				return err

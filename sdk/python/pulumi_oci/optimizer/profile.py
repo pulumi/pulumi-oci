@@ -401,16 +401,17 @@ class Profile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_profile = oci.optimizer.Profile("testProfile",
-            compartment_id=var["compartment_id"],
-            description=var["profile_description"],
+        test_profile = oci.optimizer.Profile("test_profile",
+            compartment_id=compartment_id,
+            description=profile_description,
             levels_configuration=oci.optimizer.ProfileLevelsConfigurationArgs(
                 items=[oci.optimizer.ProfileLevelsConfigurationItemArgs(
-                    level=var["profile_levels_configuration_items_level"],
-                    recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+                    level=profile_levels_configuration_items_level,
+                    recommendation_id=test_recommendation["id"],
                 )],
             ),
-            aggregation_interval_in_days=var["profile_aggregation_interval_in_days"],
+            name=profile_name,
+            aggregation_interval_in_days=profile_aggregation_interval_in_days,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -418,14 +419,14 @@ class Profile(pulumi.CustomResource):
                 "bar-key": "value",
             },
             target_compartments=oci.optimizer.ProfileTargetCompartmentsArgs(
-                items=var["profile_target_compartments_items"],
+                items=profile_target_compartments_items,
             ),
             target_tags=oci.optimizer.ProfileTargetTagsArgs(
                 items=[oci.optimizer.ProfileTargetTagsItemArgs(
-                    tag_definition_name=var["profile_target_tags_items_tag_definition_name"],
-                    tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"],
-                    tag_value_type=var["profile_target_tags_items_tag_value_type"],
-                    tag_values=var["profile_target_tags_items_tag_values"],
+                    tag_definition_name=profile_target_tags_items_tag_definition_name,
+                    tag_namespace_name=test_tag_namespace["name"],
+                    tag_value_type=profile_target_tags_items_tag_value_type,
+                    tag_values=profile_target_tags_items_tag_values,
                 )],
             ))
         ```
@@ -469,16 +470,17 @@ class Profile(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_profile = oci.optimizer.Profile("testProfile",
-            compartment_id=var["compartment_id"],
-            description=var["profile_description"],
+        test_profile = oci.optimizer.Profile("test_profile",
+            compartment_id=compartment_id,
+            description=profile_description,
             levels_configuration=oci.optimizer.ProfileLevelsConfigurationArgs(
                 items=[oci.optimizer.ProfileLevelsConfigurationItemArgs(
-                    level=var["profile_levels_configuration_items_level"],
-                    recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"],
+                    level=profile_levels_configuration_items_level,
+                    recommendation_id=test_recommendation["id"],
                 )],
             ),
-            aggregation_interval_in_days=var["profile_aggregation_interval_in_days"],
+            name=profile_name,
+            aggregation_interval_in_days=profile_aggregation_interval_in_days,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -486,14 +488,14 @@ class Profile(pulumi.CustomResource):
                 "bar-key": "value",
             },
             target_compartments=oci.optimizer.ProfileTargetCompartmentsArgs(
-                items=var["profile_target_compartments_items"],
+                items=profile_target_compartments_items,
             ),
             target_tags=oci.optimizer.ProfileTargetTagsArgs(
                 items=[oci.optimizer.ProfileTargetTagsItemArgs(
-                    tag_definition_name=var["profile_target_tags_items_tag_definition_name"],
-                    tag_namespace_name=oci_identity_tag_namespace["test_tag_namespace"]["name"],
-                    tag_value_type=var["profile_target_tags_items_tag_value_type"],
-                    tag_values=var["profile_target_tags_items_tag_values"],
+                    tag_definition_name=profile_target_tags_items_tag_definition_name,
+                    tag_namespace_name=test_tag_namespace["name"],
+                    tag_value_type=profile_target_tags_items_tag_value_type,
+                    tag_values=profile_target_tags_items_tag_values,
                 )],
             ))
         ```

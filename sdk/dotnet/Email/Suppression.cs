@@ -28,10 +28,10 @@ namespace Pulumi.Oci.Email
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSuppression = new Oci.Email.Suppression("testSuppression", new()
+    ///     var testSuppression = new Oci.Email.Suppression("test_suppression", new()
     ///     {
-    ///         CompartmentId = @var.Tenancy_ocid,
-    ///         EmailAddress = @var.Suppression_email_address,
+    ///         CompartmentId = tenancyOcid,
+    ///         EmailAddress = suppressionEmailAddress,
     ///     });
     /// 
     /// });

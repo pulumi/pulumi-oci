@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Adm.GetRemediationRecipe(ctx, &adm.GetRemediationRecipeArgs{
-//				RemediationRecipeId: oci_adm_remediation_recipe.Test_remediation_recipe.Id,
+//				RemediationRecipeId: testRemediationRecipeOciAdmRemediationRecipe.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

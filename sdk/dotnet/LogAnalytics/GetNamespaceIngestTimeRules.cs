@@ -30,13 +30,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceIngestTimeRules = Oci.LogAnalytics.GetNamespaceIngestTimeRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_ingest_time_rule_namespace,
-        ///         ConditionKind = @var.Namespace_ingest_time_rule_condition_kind,
-        ///         DisplayName = @var.Namespace_ingest_time_rule_display_name,
-        ///         FieldName = @var.Namespace_ingest_time_rule_field_name,
-        ///         FieldValue = @var.Namespace_ingest_time_rule_field_value,
-        ///         State = @var.Namespace_ingest_time_rule_state,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceIngestTimeRuleNamespace,
+        ///         ConditionKind = namespaceIngestTimeRuleConditionKind,
+        ///         DisplayName = namespaceIngestTimeRuleDisplayName,
+        ///         FieldName = namespaceIngestTimeRuleFieldName,
+        ///         FieldValue = namespaceIngestTimeRuleFieldValue,
+        ///         State = namespaceIngestTimeRuleState,
         ///     });
         /// 
         /// });
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespaceIngestTimeRules = Oci.LogAnalytics.GetNamespaceIngestTimeRules.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Namespace = @var.Namespace_ingest_time_rule_namespace,
-        ///         ConditionKind = @var.Namespace_ingest_time_rule_condition_kind,
-        ///         DisplayName = @var.Namespace_ingest_time_rule_display_name,
-        ///         FieldName = @var.Namespace_ingest_time_rule_field_name,
-        ///         FieldValue = @var.Namespace_ingest_time_rule_field_value,
-        ///         State = @var.Namespace_ingest_time_rule_state,
+        ///         CompartmentId = compartmentId,
+        ///         Namespace = namespaceIngestTimeRuleNamespace,
+        ///         ConditionKind = namespaceIngestTimeRuleConditionKind,
+        ///         DisplayName = namespaceIngestTimeRuleDisplayName,
+        ///         FieldName = namespaceIngestTimeRuleFieldName,
+        ///         FieldValue = namespaceIngestTimeRuleFieldValue,
+        ///         State = namespaceIngestTimeRuleState,
         ///     });
         /// 
         /// });

@@ -245,12 +245,12 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_wallet = oci.database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            password=var["autonomous_database_wallet_password"],
+        test_autonomous_database_wallet = oci.database.AutonomousDatabaseWallet("test_autonomous_database_wallet",
+            autonomous_database_id=test_autonomous_database["id"],
+            password=autonomous_database_wallet_password,
             base64_encode_content=False,
-            generate_type=var["autonomous_database_wallet_generate_type"],
-            is_regional=var["autonomous_database_wallet_is_regional"])
+            generate_type=autonomous_database_wallet_generate_type,
+            is_regional=autonomous_database_wallet_is_regional)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -294,12 +294,12 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_wallet = oci.database.AutonomousDatabaseWallet("testAutonomousDatabaseWallet",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            password=var["autonomous_database_wallet_password"],
+        test_autonomous_database_wallet = oci.database.AutonomousDatabaseWallet("test_autonomous_database_wallet",
+            autonomous_database_id=test_autonomous_database["id"],
+            password=autonomous_database_wallet_password,
             base64_encode_content=False,
-            generate_type=var["autonomous_database_wallet_generate_type"],
-            is_regional=var["autonomous_database_wallet_is_regional"])
+            generate_type=autonomous_database_wallet_generate_type,
+            is_regional=autonomous_database_wallet_is_regional)
         ```
         <!--End PulumiCodeChooser -->
 

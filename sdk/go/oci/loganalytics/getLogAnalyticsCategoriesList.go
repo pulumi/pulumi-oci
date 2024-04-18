@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := LogAnalytics.GetLogAnalyticsCategoriesList(ctx, &loganalytics.GetLogAnalyticsCategoriesListArgs{
-//				Namespace:           _var.Log_analytics_categories_list_namespace,
-//				CategoryDisplayText: pulumi.StringRef(_var.Log_analytics_categories_list_category_display_text),
-//				CategoryType:        pulumi.StringRef(_var.Log_analytics_categories_list_category_type),
-//				Name:                pulumi.StringRef(_var.Log_analytics_categories_list_name),
+//				Namespace:           logAnalyticsCategoriesListNamespace,
+//				CategoryDisplayText: pulumi.StringRef(logAnalyticsCategoriesListCategoryDisplayText),
+//				CategoryType:        pulumi.StringRef(logAnalyticsCategoriesListCategoryType),
+//				Name:                pulumi.StringRef(logAnalyticsCategoriesListName),
 //			}, nil)
 //			if err != nil {
 //				return err

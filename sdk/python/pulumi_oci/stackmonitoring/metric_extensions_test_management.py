@@ -189,9 +189,9 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_metric_extensions_test_management = oci.stack_monitoring.MetricExtensionsTestManagement("testMetricExtensionsTestManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extensions_test_management_resource_ids"])
+        test_metric_extensions_test_management = oci.stack_monitoring.MetricExtensionsTestManagement("test_metric_extensions_test_management",
+            metric_extension_id=test_metric_extension["id"],
+            resource_ids=metric_extensions_test_management_resource_ids[0])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -226,9 +226,9 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_metric_extensions_test_management = oci.stack_monitoring.MetricExtensionsTestManagement("testMetricExtensionsTestManagement",
-            metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
-            resource_ids=var["metric_extensions_test_management_resource_ids"])
+        test_metric_extensions_test_management = oci.stack_monitoring.MetricExtensionsTestManagement("test_metric_extensions_test_management",
+            metric_extension_id=test_metric_extension["id"],
+            resource_ids=metric_extensions_test_management_resource_ids[0])
         ```
         <!--End PulumiCodeChooser -->
 

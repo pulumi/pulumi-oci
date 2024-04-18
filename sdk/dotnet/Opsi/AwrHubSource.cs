@@ -25,13 +25,14 @@ namespace Pulumi.Oci.Opsi
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAwrHubSource = new Oci.Opsi.AwrHubSource("testAwrHubSource", new()
+    ///     var testAwrHubSource = new Oci.Opsi.AwrHubSource("test_awr_hub_source", new()
     ///     {
-    ///         AwrHubId = oci_opsi_awr_hub.Test_awr_hub.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Type = @var.Awr_hub_source_type,
-    ///         AssociatedOpsiId = oci_opsi_associated_opsi.Test_associated_opsi.Id,
-    ///         AssociatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
+    ///         AwrHubId = testAwrHub.Id,
+    ///         CompartmentId = compartmentId,
+    ///         Name = awrHubSourceName,
+    ///         Type = awrHubSourceType,
+    ///         AssociatedOpsiId = testAssociatedOpsi.Id,
+    ///         AssociatedResourceId = testResource.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },

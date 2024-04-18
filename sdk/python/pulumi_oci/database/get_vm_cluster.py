@@ -407,7 +407,7 @@ def get_vm_cluster(vm_cluster_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=test_vm_cluster_oci_database_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -468,7 +468,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
+    test_vm_cluster = oci.Database.get_vm_cluster(vm_cluster_id=test_vm_cluster_oci_database_vm_cluster["id"])
     ```
     <!--End PulumiCodeChooser -->
 

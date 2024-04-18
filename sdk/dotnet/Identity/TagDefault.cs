@@ -32,12 +32,12 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testTagDefault = new Oci.Identity.TagDefault("testTagDefault", new()
+    ///     var testTagDefault = new Oci.Identity.TagDefault("test_tag_default", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         TagDefinitionId = oci_identity_tag_definition.Test_tag_definition.Id,
-    ///         Value = @var.Tag_default_value,
-    ///         IsRequired = @var.Tag_default_is_required,
+    ///         CompartmentId = compartmentId,
+    ///         TagDefinitionId = testTagDefinition.Id,
+    ///         Value = tagDefaultValue,
+    ///         IsRequired = tagDefaultIsRequired,
     ///     });
     /// 
     /// });

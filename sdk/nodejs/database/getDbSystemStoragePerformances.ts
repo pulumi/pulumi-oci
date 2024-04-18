@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
- *     storageManagement: _var.db_system_storage_performance_storage_management,
- *     shapeType: _var.db_system_storage_performance_shape_type,
+ *     storageManagement: dbSystemStoragePerformanceStorageManagement,
+ *     shapeType: dbSystemStoragePerformanceShapeType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -84,8 +84,8 @@ export interface GetDbSystemStoragePerformancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
- *     storageManagement: _var.db_system_storage_performance_storage_management,
- *     shapeType: _var.db_system_storage_performance_shape_type,
+ *     storageManagement: dbSystemStoragePerformanceStorageManagement,
+ *     shapeType: dbSystemStoragePerformanceShapeType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,30 +25,30 @@ namespace Pulumi.Oci.Waa
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWebAppAccelerationPolicy = new Oci.Waa.AppAccelerationPolicy("testWebAppAccelerationPolicy", new()
+    ///     var testWebAppAccelerationPolicy = new Oci.Waa.AppAccelerationPolicy("test_web_app_acceleration_policy", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Web_app_acceleration_policy_display_name,
+    ///         DisplayName = webAppAccelerationPolicyDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
     ///         },
     ///         ResponseCachingPolicy = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCachingPolicyArgs
     ///         {
-    ///             IsResponseHeaderBasedCachingEnabled = @var.Web_app_acceleration_policy_response_caching_policy_is_response_header_based_caching_enabled,
+    ///             IsResponseHeaderBasedCachingEnabled = webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled,
     ///         },
     ///         ResponseCompressionPolicy = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCompressionPolicyArgs
     ///         {
     ///             GzipCompression = new Oci.Waa.Inputs.AppAccelerationPolicyResponseCompressionPolicyGzipCompressionArgs
     ///             {
-    ///                 IsEnabled = @var.Web_app_acceleration_policy_response_compression_policy_gzip_compression_is_enabled,
+    ///                 IsEnabled = webAppAccelerationPolicyResponseCompressionPolicyGzipCompressionIsEnabled,
     ///             },
     ///         },
-    ///         SystemTags = @var.Web_app_acceleration_policy_system_tags,
+    ///         SystemTags = webAppAccelerationPolicySystemTags,
     ///     });
     /// 
     /// });

@@ -32,9 +32,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkSources = Oci.Identity.GetNetworkSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Network_source_name,
-        ///         State = @var.Network_source_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = networkSourceName,
+        ///         State = networkSourceState,
         ///     });
         /// 
         /// });
@@ -65,9 +65,9 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkSources = Oci.Identity.GetNetworkSources.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Tenancy_ocid,
-        ///         Name = @var.Network_source_name,
-        ///         State = @var.Network_source_state,
+        ///         CompartmentId = tenancyOcid,
+        ///         Name = networkSourceName,
+        ///         State = networkSourceState,
         ///     });
         /// 
         /// });

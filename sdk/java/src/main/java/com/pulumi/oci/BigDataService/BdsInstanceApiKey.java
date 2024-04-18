@@ -44,11 +44,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceApiKey = new BdsInstanceApiKey(&#34;testBdsInstanceApiKey&#34;, BdsInstanceApiKeyArgs.builder()        
- *             .bdsInstanceId(oci_bds_bds_instance.test_bds_instance().id())
- *             .keyAlias(var_.bds_instance_api_key_key_alias())
- *             .passphrase(var_.bds_instance_api_key_passphrase())
- *             .userId(oci_identity_user.test_user().id())
- *             .defaultRegion(var_.bds_instance_api_key_default_region())
+ *             .bdsInstanceId(testBdsInstance.id())
+ *             .keyAlias(bdsInstanceApiKeyKeyAlias)
+ *             .passphrase(bdsInstanceApiKeyPassphrase)
+ *             .userId(testUser.id())
+ *             .defaultRegion(bdsInstanceApiKeyDefaultRegion)
  *             .build());
  * 
  *     }

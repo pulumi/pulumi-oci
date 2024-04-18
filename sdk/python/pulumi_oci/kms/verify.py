@@ -305,14 +305,14 @@ class Verify(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_verify = oci.kms.Verify("testVerify",
-            crypto_endpoint=var["verify_message_crypto_endpoint"],
-            key_id=oci_kms_key["test_key"]["id"],
-            key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message=var["verify_message"],
-            signature=var["verify_signature"],
-            signing_algorithm=var["verify_signing_algorithm"],
-            message_type=var["verify_message_type"])
+        test_verify = oci.kms.Verify("test_verify",
+            crypto_endpoint=verify_message_crypto_endpoint,
+            key_id=test_key["id"],
+            key_version_id=test_key_version["id"],
+            message=verify_message,
+            signature=verify_signature,
+            signing_algorithm=verify_signing_algorithm,
+            message_type=verify_message_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -359,14 +359,14 @@ class Verify(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_verify = oci.kms.Verify("testVerify",
-            crypto_endpoint=var["verify_message_crypto_endpoint"],
-            key_id=oci_kms_key["test_key"]["id"],
-            key_version_id=oci_kms_key_version["test_key_version"]["id"],
-            message=var["verify_message"],
-            signature=var["verify_signature"],
-            signing_algorithm=var["verify_signing_algorithm"],
-            message_type=var["verify_message_type"])
+        test_verify = oci.kms.Verify("test_verify",
+            crypto_endpoint=verify_message_crypto_endpoint,
+            key_id=test_key["id"],
+            key_version_id=test_key_version["id"],
+            message=verify_message,
+            signature=verify_signature,
+            signing_algorithm=verify_signing_algorithm,
+            message_type=verify_message_type)
         ```
         <!--End PulumiCodeChooser -->
 

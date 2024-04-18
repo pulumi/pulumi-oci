@@ -31,28 +31,28 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewTargetDatabasePeerTargetDatabase(ctx, "testTargetDatabasePeerTargetDatabase", &DataSafe.TargetDatabasePeerTargetDatabaseArgs{
+//			_, err := DataSafe.NewTargetDatabasePeerTargetDatabase(ctx, "test_target_database_peer_target_database", &DataSafe.TargetDatabasePeerTargetDatabaseArgs{
 //				DatabaseDetails: &datasafe.TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs{
-//					DatabaseType:         pulumi.Any(_var.Target_database_peer_target_database_database_details_database_type),
-//					InfrastructureType:   pulumi.Any(_var.Target_database_peer_target_database_database_details_infrastructure_type),
-//					AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-//					DbSystemId:           pulumi.Any(oci_database_db_system.Test_db_system.Id),
-//					InstanceId:           pulumi.Any(oci_core_instance.Test_instance.Id),
-//					IpAddresses:          pulumi.Any(_var.Target_database_peer_target_database_database_details_ip_addresses),
-//					ListenerPort:         pulumi.Any(_var.Target_database_peer_target_database_database_details_listener_port),
-//					ServiceName:          pulumi.Any(oci_core_service.Test_service.Name),
-//					VmClusterId:          pulumi.Any(oci_database_vm_cluster.Test_vm_cluster.Id),
+//					DatabaseType:         pulumi.Any(targetDatabasePeerTargetDatabaseDatabaseDetailsDatabaseType),
+//					InfrastructureType:   pulumi.Any(targetDatabasePeerTargetDatabaseDatabaseDetailsInfrastructureType),
+//					AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
+//					DbSystemId:           pulumi.Any(testDbSystem.Id),
+//					InstanceId:           pulumi.Any(testInstance.Id),
+//					IpAddresses:          pulumi.Any(targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses),
+//					ListenerPort:         pulumi.Any(targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort),
+//					ServiceName:          pulumi.Any(testService.Name),
+//					VmClusterId:          pulumi.Any(testVmCluster.Id),
 //				},
-//				TargetDatabaseId:       pulumi.Any(oci_data_safe_target_database.Test_target_database.Id),
-//				DataguardAssociationId: pulumi.Any(oci_certificates_management_association.Test_association.Id),
-//				Description:            pulumi.Any(_var.Target_database_peer_target_database_description),
-//				DisplayName:            pulumi.Any(_var.Target_database_peer_target_database_display_name),
+//				TargetDatabaseId:       pulumi.Any(testTargetDatabase.Id),
+//				DataguardAssociationId: pulumi.Any(testAssociation.Id),
+//				Description:            pulumi.Any(targetDatabasePeerTargetDatabaseDescription),
+//				DisplayName:            pulumi.Any(targetDatabasePeerTargetDatabaseDisplayName),
 //				TlsConfig: &datasafe.TargetDatabasePeerTargetDatabaseTlsConfigArgs{
-//					Status:               pulumi.Any(_var.Target_database_peer_target_database_tls_config_status),
-//					CertificateStoreType: pulumi.Any(_var.Target_database_peer_target_database_tls_config_certificate_store_type),
-//					KeyStoreContent:      pulumi.Any(_var.Target_database_peer_target_database_tls_config_key_store_content),
-//					StorePassword:        pulumi.Any(_var.Target_database_peer_target_database_tls_config_store_password),
-//					TrustStoreContent:    pulumi.Any(_var.Target_database_peer_target_database_tls_config_trust_store_content),
+//					Status:               pulumi.Any(targetDatabasePeerTargetDatabaseTlsConfigStatus),
+//					CertificateStoreType: pulumi.Any(targetDatabasePeerTargetDatabaseTlsConfigCertificateStoreType),
+//					KeyStoreContent:      pulumi.Any(targetDatabasePeerTargetDatabaseTlsConfigKeyStoreContent),
+//					StorePassword:        pulumi.Any(targetDatabasePeerTargetDatabaseTlsConfigStorePassword),
+//					TrustStoreContent:    pulumi.Any(targetDatabasePeerTargetDatabaseTlsConfigTrustStoreContent),
 //				},
 //			})
 //			if err != nil {

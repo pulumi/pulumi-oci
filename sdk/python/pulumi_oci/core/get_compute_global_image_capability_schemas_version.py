@@ -128,8 +128,8 @@ def get_compute_global_image_capability_schemas_version(compute_global_image_cap
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_version = oci.Core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
-        compute_global_image_capability_schema_version_name=var["compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name"])
+    test_compute_global_image_capability_schemas_version = oci.Core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
+        compute_global_image_capability_schema_version_name=compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -169,8 +169,8 @@ def get_compute_global_image_capability_schemas_version_output(compute_global_im
     import pulumi
     import pulumi_oci as oci
 
-    test_compute_global_image_capability_schemas_version = oci.Core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
-        compute_global_image_capability_schema_version_name=var["compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name"])
+    test_compute_global_image_capability_schemas_version = oci.Core.get_compute_global_image_capability_schemas_version(compute_global_image_capability_schema_id=test_compute_global_image_capability_schema["id"],
+        compute_global_image_capability_schema_version_name=compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name)
     ```
     <!--End PulumiCodeChooser -->
 

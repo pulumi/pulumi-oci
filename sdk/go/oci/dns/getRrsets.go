@@ -34,12 +34,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Dns.GetRrsets(ctx, &dns.GetRrsetsArgs{
-//				ZoneNameOrId:   oci_dns_zone.Test_zone.Id,
-//				Domain:         pulumi.StringRef(_var.Rrset_domain),
-//				DomainContains: pulumi.StringRef(_var.Rrset_domain),
-//				Rtype:          pulumi.StringRef(_var.Rrset_rtype),
-//				Scope:          pulumi.StringRef(_var.Rrset_scope),
-//				ViewId:         pulumi.StringRef(oci_dns_view.Test_view.Id),
+//				ZoneNameOrId:   testZone.Id,
+//				Domain:         pulumi.StringRef(rrsetDomain),
+//				DomainContains: pulumi.StringRef(rrsetDomain),
+//				Rtype:          pulumi.StringRef(rrsetRtype),
+//				Scope:          pulumi.StringRef(rrsetScope),
+//				ViewId:         pulumi.StringRef(testView.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

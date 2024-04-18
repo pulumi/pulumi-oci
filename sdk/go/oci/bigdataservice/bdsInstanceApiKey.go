@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := BigDataService.NewBdsInstanceApiKey(ctx, "testBdsInstanceApiKey", &BigDataService.BdsInstanceApiKeyArgs{
-//				BdsInstanceId: pulumi.Any(oci_bds_bds_instance.Test_bds_instance.Id),
-//				KeyAlias:      pulumi.Any(_var.Bds_instance_api_key_key_alias),
-//				Passphrase:    pulumi.Any(_var.Bds_instance_api_key_passphrase),
-//				UserId:        pulumi.Any(oci_identity_user.Test_user.Id),
-//				DefaultRegion: pulumi.Any(_var.Bds_instance_api_key_default_region),
+//			_, err := BigDataService.NewBdsInstanceApiKey(ctx, "test_bds_instance_api_key", &BigDataService.BdsInstanceApiKeyArgs{
+//				BdsInstanceId: pulumi.Any(testBdsInstance.Id),
+//				KeyAlias:      pulumi.Any(bdsInstanceApiKeyKeyAlias),
+//				Passphrase:    pulumi.Any(bdsInstanceApiKeyPassphrase),
+//				UserId:        pulumi.Any(testUser.Id),
+//				DefaultRegion: pulumi.Any(bdsInstanceApiKeyDefaultRegion),
 //			})
 //			if err != nil {
 //				return err

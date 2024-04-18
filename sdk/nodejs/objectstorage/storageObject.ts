@@ -25,20 +25,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testObject = new oci.objectstorage.StorageObject("testObject", {
- *     bucket: _var.object_bucket,
- *     content: _var.object_content,
- *     namespace: _var.object_namespace,
- *     object: _var.object_object,
- *     cacheControl: _var.object_cache_control,
- *     contentDisposition: _var.object_content_disposition,
- *     contentEncoding: _var.object_content_encoding,
- *     contentLanguage: _var.object_content_language,
- *     contentType: _var.object_content_type,
- *     deleteAllObjectVersions: _var.object_delete_all_object_versions,
- *     metadata: _var.object_metadata,
- *     storageTier: _var.object_storage_tier,
- *     opcSseKmsKeyId: _var.object_opc_sse_kms_key_id,
+ * const testObject = new oci.objectstorage.StorageObject("test_object", {
+ *     bucket: objectBucket,
+ *     content: objectContent,
+ *     namespace: objectNamespace,
+ *     object: objectObject,
+ *     cacheControl: objectCacheControl,
+ *     contentDisposition: objectContentDisposition,
+ *     contentEncoding: objectContentEncoding,
+ *     contentLanguage: objectContentLanguage,
+ *     contentType: objectContentType,
+ *     deleteAllObjectVersions: objectDeleteAllObjectVersions,
+ *     metadata: objectMetadata,
+ *     storageTier: objectStorageTier,
+ *     opcSseKmsKeyId: objectOpcSseKmsKeyId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -48,16 +48,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testQueue = new Queue(&#34;testQueue&#34;, QueueArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.queue_display_name())
- *             .channelConsumptionLimit(var_.queue_channel_consumption_limit())
- *             .customEncryptionKeyId(oci_kms_key.test_key().id())
- *             .deadLetterQueueDeliveryCount(var_.queue_dead_letter_queue_delivery_count())
+ *             .compartmentId(compartmentId)
+ *             .displayName(queueDisplayName)
+ *             .channelConsumptionLimit(queueChannelConsumptionLimit)
+ *             .customEncryptionKeyId(testKey.id())
+ *             .deadLetterQueueDeliveryCount(queueDeadLetterQueueDeliveryCount)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .retentionInSeconds(var_.queue_retention_in_seconds())
- *             .timeoutInSeconds(var_.queue_timeout_in_seconds())
- *             .visibilityInSeconds(var_.queue_visibility_in_seconds())
+ *             .retentionInSeconds(queueRetentionInSeconds)
+ *             .timeoutInSeconds(queueTimeoutInSeconds)
+ *             .visibilityInSeconds(queueVisibilityInSeconds)
  *             .build());
  * 
  *     }

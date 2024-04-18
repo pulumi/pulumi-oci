@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataFlow.GetPrivateEndpoints(ctx, &dataflow.GetPrivateEndpointsArgs{
-//				CompartmentId:         _var.Compartment_id,
-//				DisplayName:           pulumi.StringRef(_var.Private_endpoint_display_name),
-//				DisplayNameStartsWith: pulumi.StringRef(_var.Private_endpoint_display_name_starts_with),
-//				OwnerPrincipalId:      pulumi.StringRef(_var.Owner_principal_id),
-//				State:                 pulumi.StringRef(_var.Private_endpoint_state),
+//				CompartmentId:         compartmentId,
+//				DisplayName:           pulumi.StringRef(privateEndpointDisplayName),
+//				DisplayNameStartsWith: pulumi.StringRef(privateEndpointDisplayNameStartsWith),
+//				OwnerPrincipalId:      pulumi.StringRef(ownerPrincipalId),
+//				State:                 pulumi.StringRef(privateEndpointState),
 //			}, nil)
 //			if err != nil {
 //				return err

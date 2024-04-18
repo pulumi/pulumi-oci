@@ -76,7 +76,7 @@ def get_api_content(api_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_content = oci.ApiGateway.get_api_content(api_id=oci_apigateway_api["test_api"]["id"])
+    test_api_content = oci.ApiGateway.get_api_content(api_id=test_api["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -109,7 +109,7 @@ def get_api_content_output(api_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_api_content = oci.ApiGateway.get_api_content(api_id=oci_apigateway_api["test_api"]["id"])
+    test_api_content = oci.ApiGateway.get_api_content(api_id=test_api["id"])
     ```
     <!--End PulumiCodeChooser -->
 

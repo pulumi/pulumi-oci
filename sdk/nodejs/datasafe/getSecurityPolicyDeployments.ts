@@ -32,14 +32,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyDeployments = oci.DataSafe.getSecurityPolicyDeployments({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_policy_deployment_access_level,
- *     compartmentIdInSubtree: _var.security_policy_deployment_compartment_id_in_subtree,
- *     displayName: _var.security_policy_deployment_display_name,
- *     securityPolicyDeploymentId: oci_data_safe_security_policy_deployment.test_security_policy_deployment.id,
- *     securityPolicyId: oci_data_safe_security_policy.test_security_policy.id,
- *     state: _var.security_policy_deployment_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityPolicyDeploymentAccessLevel,
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
+ *     displayName: securityPolicyDeploymentDisplayName,
+ *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
+ *     securityPolicyId: testSecurityPolicy.id,
+ *     state: securityPolicyDeploymentState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -162,14 +162,14 @@ export interface GetSecurityPolicyDeploymentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSecurityPolicyDeployments = oci.DataSafe.getSecurityPolicyDeployments({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.security_policy_deployment_access_level,
- *     compartmentIdInSubtree: _var.security_policy_deployment_compartment_id_in_subtree,
- *     displayName: _var.security_policy_deployment_display_name,
- *     securityPolicyDeploymentId: oci_data_safe_security_policy_deployment.test_security_policy_deployment.id,
- *     securityPolicyId: oci_data_safe_security_policy.test_security_policy.id,
- *     state: _var.security_policy_deployment_state,
- *     targetId: oci_cloud_guard_target.test_target.id,
+ *     compartmentId: compartmentId,
+ *     accessLevel: securityPolicyDeploymentAccessLevel,
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
+ *     displayName: securityPolicyDeploymentDisplayName,
+ *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
+ *     securityPolicyId: testSecurityPolicy.id,
+ *     state: securityPolicyDeploymentState,
+ *     targetId: testTarget.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

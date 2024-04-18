@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DisasterRecovery.NewDrPlanExecution(ctx, "testDrPlanExecution", &DisasterRecovery.DrPlanExecutionArgs{
+//			_, err := DisasterRecovery.NewDrPlanExecution(ctx, "test_dr_plan_execution", &DisasterRecovery.DrPlanExecutionArgs{
 //				ExecutionOptions: &disasterrecovery.DrPlanExecutionExecutionOptionsArgs{
-//					PlanExecutionType:   pulumi.Any(_var.Dr_plan_execution_execution_options_plan_execution_type),
-//					ArePrechecksEnabled: pulumi.Any(_var.Dr_plan_execution_execution_options_are_prechecks_enabled),
-//					AreWarningsIgnored:  pulumi.Any(_var.Dr_plan_execution_execution_options_are_warnings_ignored),
+//					PlanExecutionType:   pulumi.Any(drPlanExecutionExecutionOptionsPlanExecutionType),
+//					ArePrechecksEnabled: pulumi.Any(drPlanExecutionExecutionOptionsArePrechecksEnabled),
+//					AreWarningsIgnored:  pulumi.Any(drPlanExecutionExecutionOptionsAreWarningsIgnored),
 //				},
-//				PlanId: pulumi.Any(oci_disaster_recovery_plan.Test_plan.Id),
+//				PlanId: pulumi.Any(testPlan.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Dr_plan_execution_display_name),
+//				DisplayName: pulumi.Any(drPlanExecutionDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProject = new oci.datascience.Project("testProject", {
- *     compartmentId: _var.compartment_id,
+ * const testProject = new oci.datascience.Project("test_project", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.project_description,
- *     displayName: _var.project_display_name,
+ *     description: projectDescription,
+ *     displayName: projectDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

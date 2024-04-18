@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := VisualBuilder.NewVbInstance(ctx, "testVbInstance", &VisualBuilder.VbInstanceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Vb_instance_display_name),
-//				NodeCount:     pulumi.Any(_var.Vb_instance_node_count),
+//			_, err := VisualBuilder.NewVbInstance(ctx, "test_vb_instance", &VisualBuilder.VbInstanceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(vbInstanceDisplayName),
+//				NodeCount:     pulumi.Any(vbInstanceNodeCount),
 //				AlternateCustomEndpoints: visualbuilder.VbInstanceAlternateCustomEndpointArray{
 //					&visualbuilder.VbInstanceAlternateCustomEndpointArgs{
-//						Hostname:            pulumi.Any(_var.Vb_instance_alternate_custom_endpoints_hostname),
-//						CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//						Hostname:            pulumi.Any(vbInstanceAlternateCustomEndpointsHostname),
+//						CertificateSecretId: pulumi.Any(testSecret.Id),
 //					},
 //				},
-//				ConsumptionModel: pulumi.Any(_var.Vb_instance_consumption_model),
+//				ConsumptionModel: pulumi.Any(vbInstanceConsumptionModel),
 //				CustomEndpoint: &visualbuilder.VbInstanceCustomEndpointArgs{
-//					Hostname:            pulumi.Any(_var.Vb_instance_custom_endpoint_hostname),
-//					CertificateSecretId: pulumi.Any(oci_vault_secret.Test_secret.Id),
+//					Hostname:            pulumi.Any(vbInstanceCustomEndpointHostname),
+//					CertificateSecretId: pulumi.Any(testSecret.Id),
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
@@ -52,8 +52,8 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IdcsOpenId:             pulumi.Any(oci_visual_builder_idcs_open.Test_idcs_open.Id),
-//				IsVisualBuilderEnabled: pulumi.Any(_var.Vb_instance_is_visual_builder_enabled),
+//				IdcsOpenId:             pulumi.Any(testIdcsOpen.Id),
+//				IsVisualBuilderEnabled: pulumi.Any(vbInstanceIsVisualBuilderEnabled),
 //			})
 //			if err != nil {
 //				return err

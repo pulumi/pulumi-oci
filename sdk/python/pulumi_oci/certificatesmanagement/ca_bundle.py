@@ -305,13 +305,14 @@ class CaBundle(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ca_bundle = oci.certificates_management.CaBundle("testCaBundle",
-            ca_bundle_pem=var["ca_bundle_ca_bundle_pem"],
-            compartment_id=var["compartment_id"],
+        test_ca_bundle = oci.certificates_management.CaBundle("test_ca_bundle",
+            ca_bundle_pem=ca_bundle_ca_bundle_pem,
+            compartment_id=compartment_id,
+            name=ca_bundle_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["ca_bundle_description"],
+            description=ca_bundle_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -357,13 +358,14 @@ class CaBundle(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ca_bundle = oci.certificates_management.CaBundle("testCaBundle",
-            ca_bundle_pem=var["ca_bundle_ca_bundle_pem"],
-            compartment_id=var["compartment_id"],
+        test_ca_bundle = oci.certificates_management.CaBundle("test_ca_bundle",
+            ca_bundle_pem=ca_bundle_ca_bundle_pem,
+            compartment_id=compartment_id,
+            name=ca_bundle_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["ca_bundle_description"],
+            description=ca_bundle_description,
             freeform_tags={
                 "Department": "Finance",
             })

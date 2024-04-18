@@ -16,16 +16,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOneoffPatch = new oci.database.OneoffPatch("testOneoffPatch", {
- *     compartmentId: _var.compartment_id,
- *     dbVersion: _var.oneoff_patch_db_version,
- *     displayName: _var.oneoff_patch_display_name,
- *     releaseUpdate: _var.oneoff_patch_release_update,
- *     definedTags: _var.oneoff_patch_defined_tags,
+ * const testOneoffPatch = new oci.database.OneoffPatch("test_oneoff_patch", {
+ *     compartmentId: compartmentId,
+ *     dbVersion: oneoffPatchDbVersion,
+ *     displayName: oneoffPatchDisplayName,
+ *     releaseUpdate: oneoffPatchReleaseUpdate,
+ *     definedTags: oneoffPatchDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     oneOffPatches: _var.oneoff_patch_one_off_patches,
+ *     oneOffPatches: oneoffPatchOneOffPatches,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

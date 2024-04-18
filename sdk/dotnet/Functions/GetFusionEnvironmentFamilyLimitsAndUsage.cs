@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentFamilyLimitsAndUsage = Oci.Functions.GetFusionEnvironmentFamilyLimitsAndUsage.Invoke(new()
         ///     {
-        ///         FusionEnvironmentFamilyId = oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testFusionEnvironmentFamilyLimitsAndUsage = Oci.Functions.GetFusionEnvironmentFamilyLimitsAndUsage.Invoke(new()
         ///     {
-        ///         FusionEnvironmentFamilyId = oci_fusion_apps_fusion_environment_family.Test_fusion_environment_family.Id,
+        ///         FusionEnvironmentFamilyId = testFusionEnvironmentFamily.Id,
         ///     });
         /// 
         /// });

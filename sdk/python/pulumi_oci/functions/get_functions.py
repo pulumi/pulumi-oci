@@ -121,10 +121,10 @@ def get_functions(application_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_functions = oci.Functions.get_functions(application_id=oci_functions_application["test_application"]["id"],
-        display_name=var["function_display_name"],
-        id=var["function_id"],
-        state=var["function_state"])
+    test_functions = oci.Functions.get_functions(application_id=test_application["id"],
+        display_name=function_display_name,
+        id=function_id,
+        state=function_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -171,10 +171,10 @@ def get_functions_output(application_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_functions = oci.Functions.get_functions(application_id=oci_functions_application["test_application"]["id"],
-        display_name=var["function_display_name"],
-        id=var["function_id"],
-        state=var["function_state"])
+    test_functions = oci.Functions.get_functions(application_id=test_application["id"],
+        display_name=function_display_name,
+        id=function_id,
+        state=function_state)
     ```
     <!--End PulumiCodeChooser -->
 

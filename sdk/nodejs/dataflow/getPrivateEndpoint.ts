@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoint = oci.DataFlow.getPrivateEndpoint({
- *     privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *     privateEndpointId: testPrivateEndpointOciDataflowPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,7 +129,7 @@ export interface GetPrivateEndpointResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPrivateEndpoint = oci.DataFlow.getPrivateEndpoint({
- *     privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *     privateEndpointId: testPrivateEndpointOciDataflowPrivateEndpoint.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

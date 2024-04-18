@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceFolders = oci.DataIntegration.getWorkspaceFolders({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     aggregatorKey: _var.workspace_folder_aggregator_key,
- *     fields: _var.workspace_folder_fields,
- *     identifiers: _var.workspace_folder_identifier,
- *     name: _var.workspace_folder_name,
- *     nameContains: _var.workspace_folder_name_contains,
+ *     workspaceId: testWorkspace.id,
+ *     aggregatorKey: workspaceFolderAggregatorKey,
+ *     fields: workspaceFolderFields,
+ *     identifiers: workspaceFolderIdentifier,
+ *     name: workspaceFolderName,
+ *     nameContains: workspaceFolderNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,12 +116,12 @@ export interface GetWorkspaceFoldersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWorkspaceFolders = oci.DataIntegration.getWorkspaceFolders({
- *     workspaceId: oci_dataintegration_workspace.test_workspace.id,
- *     aggregatorKey: _var.workspace_folder_aggregator_key,
- *     fields: _var.workspace_folder_fields,
- *     identifiers: _var.workspace_folder_identifier,
- *     name: _var.workspace_folder_name,
- *     nameContains: _var.workspace_folder_name_contains,
+ *     workspaceId: testWorkspace.id,
+ *     aggregatorKey: workspaceFolderAggregatorKey,
+ *     fields: workspaceFolderFields,
+ *     identifiers: workspaceFolderIdentifier,
+ *     name: workspaceFolderName,
+ *     nameContains: workspaceFolderNameContains,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

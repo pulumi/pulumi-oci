@@ -31,13 +31,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetMaintenanceRuns(ctx, &database.GetMaintenanceRunsArgs{
-//				CompartmentId:      _var.Compartment_id,
-//				AvailabilityDomain: pulumi.StringRef(_var.Maintenance_run_availability_domain),
-//				MaintenanceSubtype: pulumi.StringRef(_var.Maintenance_run_maintenance_subtype),
-//				MaintenanceType:    pulumi.StringRef(_var.Maintenance_run_maintenance_type),
-//				State:              pulumi.StringRef(_var.Maintenance_run_state),
-//				TargetResourceId:   pulumi.StringRef(oci_database_target_resource.Test_target_resource.Id),
-//				TargetResourceType: pulumi.StringRef(_var.Maintenance_run_target_resource_type),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(maintenanceRunAvailabilityDomain),
+//				MaintenanceSubtype: pulumi.StringRef(maintenanceRunMaintenanceSubtype),
+//				MaintenanceType:    pulumi.StringRef(maintenanceRunMaintenanceType),
+//				State:              pulumi.StringRef(maintenanceRunState),
+//				TargetResourceId:   pulumi.StringRef(testTargetResource.Id),
+//				TargetResourceType: pulumi.StringRef(maintenanceRunTargetResourceType),
 //			}, nil)
 //			if err != nil {
 //				return err

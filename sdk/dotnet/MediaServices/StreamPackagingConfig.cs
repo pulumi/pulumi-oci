@@ -25,20 +25,20 @@ namespace Pulumi.Oci.MediaServices
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testStreamPackagingConfig = new Oci.MediaServices.StreamPackagingConfig("testStreamPackagingConfig", new()
+    ///     var testStreamPackagingConfig = new Oci.MediaServices.StreamPackagingConfig("test_stream_packaging_config", new()
     ///     {
-    ///         DisplayName = @var.Stream_packaging_config_display_name,
-    ///         DistributionChannelId = oci_mysql_channel.Test_channel.Id,
-    ///         SegmentTimeInSeconds = @var.Stream_packaging_config_segment_time_in_seconds,
-    ///         StreamPackagingFormat = @var.Stream_packaging_config_stream_packaging_format,
+    ///         DisplayName = streamPackagingConfigDisplayName,
+    ///         DistributionChannelId = testChannel.Id,
+    ///         SegmentTimeInSeconds = streamPackagingConfigSegmentTimeInSeconds,
+    ///         StreamPackagingFormat = streamPackagingConfigStreamPackagingFormat,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
     ///         Encryption = new Oci.MediaServices.Inputs.StreamPackagingConfigEncryptionArgs
     ///         {
-    ///             Algorithm = @var.Stream_packaging_config_encryption_algorithm,
-    ///             KmsKeyId = oci_kms_key.Test_key.Id,
+    ///             Algorithm = streamPackagingConfigEncryptionAlgorithm,
+    ///             KmsKeyId = testKey.Id,
     ///         },
     ///         FreeformTags = 
     ///         {
@@ -48,11 +48,11 @@ namespace Pulumi.Oci.MediaServices
     ///         {
     ///             new Oci.MediaServices.Inputs.StreamPackagingConfigLockArgs
     ///             {
-    ///                 CompartmentId = @var.Compartment_id,
-    ///                 Type = @var.Stream_packaging_config_locks_type,
-    ///                 Message = @var.Stream_packaging_config_locks_message,
-    ///                 RelatedResourceId = oci_usage_proxy_resource.Test_resource.Id,
-    ///                 TimeCreated = @var.Stream_packaging_config_locks_time_created,
+    ///                 CompartmentId = compartmentId,
+    ///                 Type = streamPackagingConfigLocksType,
+    ///                 Message = streamPackagingConfigLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = streamPackagingConfigLocksTimeCreated,
     ///             },
     ///         },
     ///     });

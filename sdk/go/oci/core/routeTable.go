@@ -47,23 +47,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewRouteTable(ctx, "testRouteTable", &Core.RouteTableArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				VcnId:         pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//			_, err := Core.NewRouteTable(ctx, "test_route_table", &Core.RouteTableArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				VcnId:         pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Route_table_display_name),
+//				DisplayName: pulumi.Any(routeTableDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				RouteRules: core.RouteTableRouteRuleArray{
 //					&core.RouteTableRouteRuleArgs{
-//						NetworkEntityId: pulumi.Any(oci_core_internet_gateway.Test_internet_gateway.Id),
-//						CidrBlock:       pulumi.Any(_var.Route_table_route_rules_cidr_block),
-//						Description:     pulumi.Any(_var.Route_table_route_rules_description),
-//						Destination:     pulumi.Any(_var.Route_table_route_rules_destination),
-//						DestinationType: pulumi.Any(_var.Route_table_route_rules_destination_type),
+//						NetworkEntityId: pulumi.Any(testInternetGateway.Id),
+//						CidrBlock:       pulumi.Any(routeTableRouteRulesCidrBlock),
+//						Description:     pulumi.Any(routeTableRouteRulesDescription),
+//						Destination:     pulumi.Any(routeTableRouteRulesDestination),
+//						DestinationType: pulumi.Any(routeTableRouteRulesDestinationType),
 //					},
 //				},
 //			})

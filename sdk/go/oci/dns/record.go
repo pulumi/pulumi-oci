@@ -37,13 +37,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewRecord(ctx, "testRecord", &Dns.RecordArgs{
-//				ZoneNameOrId:  pulumi.Any(oci_dns_zone_name_or.Test_zone_name_or.Id),
-//				Domain:        pulumi.Any(_var.Record_items_domain),
-//				Rtype:         pulumi.Any(_var.Record_items_rtype),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Rdata:         pulumi.Any(_var.Record_items_rdata),
-//				Ttl:           pulumi.Any(_var.Record_items_ttl),
+//			_, err := Dns.NewRecord(ctx, "test_record", &Dns.RecordArgs{
+//				ZoneNameOrId:  pulumi.Any(testZoneNameOr.Id),
+//				Domain:        pulumi.Any(recordItemsDomain),
+//				Rtype:         pulumi.Any(recordItemsRtype),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Rdata:         pulumi.Any(recordItemsRdata),
+//				Ttl:           pulumi.Any(recordItemsTtl),
 //			})
 //			if err != nil {
 //				return err

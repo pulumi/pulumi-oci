@@ -25,20 +25,20 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUsageStatementEmailRecipientsGroup = new Oci.MeteringComputation.UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", new()
+    ///     var testUsageStatementEmailRecipientsGroup = new Oci.MeteringComputation.UsageStatementEmailRecipientsGroup("test_usage_statement_email_recipients_group", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         RecipientsLists = new[]
     ///         {
     ///             new Oci.MeteringComputation.Inputs.UsageStatementEmailRecipientsGroupRecipientsListArgs
     ///             {
-    ///                 EmailId = oci_metering_computation_email.Test_email.Id,
-    ///                 State = @var.Usage_statement_email_recipients_group_recipients_list_state,
-    ///                 FirstName = @var.Usage_statement_email_recipients_group_recipients_list_first_name,
-    ///                 LastName = @var.Usage_statement_email_recipients_group_recipients_list_last_name,
+    ///                 EmailId = testEmail.Id,
+    ///                 State = usageStatementEmailRecipientsGroupRecipientsListState,
+    ///                 FirstName = usageStatementEmailRecipientsGroupRecipientsListFirstName,
+    ///                 LastName = usageStatementEmailRecipientsGroupRecipientsListLastName,
     ///             },
     ///         },
-    ///         SubscriptionId = oci_onesubscription_subscription.Test_subscription.Id,
+    ///         SubscriptionId = testSubscription.Id,
     ///     });
     /// 
     /// });

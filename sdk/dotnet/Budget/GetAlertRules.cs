@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testAlertRules = Oci.Budget.GetAlertRules.Invoke(new()
         ///     {
-        ///         BudgetId = oci_budget_budget.Test_budget.Id,
-        ///         DisplayName = @var.Alert_rule_display_name,
-        ///         State = @var.Alert_rule_state,
+        ///         BudgetId = testBudget.Id,
+        ///         DisplayName = alertRuleDisplayName,
+        ///         State = alertRuleState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testAlertRules = Oci.Budget.GetAlertRules.Invoke(new()
         ///     {
-        ///         BudgetId = oci_budget_budget.Test_budget.Id,
-        ///         DisplayName = @var.Alert_rule_display_name,
-        ///         State = @var.Alert_rule_state,
+        ///         BudgetId = testBudget.Id,
+        ///         DisplayName = alertRuleDisplayName,
+        ///         State = alertRuleState,
         ///     });
         /// 
         /// });

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubSources = oci.Opsi.getAwrHubSources({
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     awrHubSourceId: oci_opsi_awr_hub_source.test_awr_hub_source.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.awr_hub_source_name,
- *     sourceTypes: _var.awr_hub_source_source_type,
- *     states: _var.awr_hub_source_state,
- *     statuses: _var.awr_hub_source_status,
+ *     awrHubId: testAwrHub.id,
+ *     awrHubSourceId: testAwrHubSource.id,
+ *     compartmentId: compartmentId,
+ *     name: awrHubSourceName,
+ *     sourceTypes: awrHubSourceSourceType,
+ *     states: awrHubSourceState,
+ *     statuses: awrHubSourceStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -129,13 +129,13 @@ export interface GetAwrHubSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAwrHubSources = oci.Opsi.getAwrHubSources({
- *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
- *     awrHubSourceId: oci_opsi_awr_hub_source.test_awr_hub_source.id,
- *     compartmentId: _var.compartment_id,
- *     name: _var.awr_hub_source_name,
- *     sourceTypes: _var.awr_hub_source_source_type,
- *     states: _var.awr_hub_source_state,
- *     statuses: _var.awr_hub_source_status,
+ *     awrHubId: testAwrHub.id,
+ *     awrHubSourceId: testAwrHubSource.id,
+ *     compartmentId: compartmentId,
+ *     name: awrHubSourceName,
+ *     sourceTypes: awrHubSourceSourceType,
+ *     states: awrHubSourceState,
+ *     statuses: awrHubSourceStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

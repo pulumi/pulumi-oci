@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificate = oci.Waas.getCertificate({
- *     certificateId: oci_waas_certificate.test_certificate.id,
+ *     certificateId: testCertificateOciWaasCertificate.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,7 +135,7 @@ export interface GetCertificateResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCertificate = oci.Waas.getCertificate({
- *     certificateId: oci_waas_certificate.test_certificate.id,
+ *     certificateId: testCertificateOciWaasCertificate.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

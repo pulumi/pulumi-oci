@@ -98,9 +98,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -142,9 +142,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -186,9 +186,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -230,9 +230,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(oci_load_balancer_backend.test_backend().name())
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendName(testBackend.name())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -274,8 +274,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -317,8 +317,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -360,8 +360,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -403,8 +403,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendSetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -450,7 +450,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -496,7 +496,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -542,7 +542,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -588,7 +588,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -630,8 +630,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendsetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -673,8 +673,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendsetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -716,8 +716,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendsetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -759,8 +759,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(oci_load_balancer_backend_set.test_backend_set().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .backendsetName(testBackendSet.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -802,7 +802,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -844,7 +844,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -886,7 +886,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -928,7 +928,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -970,7 +970,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1012,7 +1012,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1054,7 +1054,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1096,7 +1096,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1138,7 +1138,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1180,7 +1180,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1222,7 +1222,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1264,7 +1264,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1312,8 +1312,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(oci_load_balancer_listener.test_listener().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .listenerName(testListener.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1361,8 +1361,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(oci_load_balancer_listener.test_listener().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .listenerName(testListener.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1410,8 +1410,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(oci_load_balancer_listener.test_listener().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .listenerName(testListener.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1459,8 +1459,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(oci_load_balancer_listener.test_listener().name())
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .listenerName(testListener.name())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1502,7 +1502,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1544,7 +1544,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1586,7 +1586,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1628,7 +1628,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -1670,8 +1670,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .routingPolicyName(testRoutingPolicy.name())
      *             .build());
      * 
      *     }
@@ -1713,8 +1713,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .routingPolicyName(testRoutingPolicy.name())
      *             .build());
      * 
      *     }
@@ -1756,8 +1756,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .routingPolicyName(testRoutingPolicy.name())
      *             .build());
      * 
      *     }
@@ -1799,8 +1799,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .routingPolicyName(oci_load_balancer_routing_policy.test_routing_policy().name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .routingPolicyName(testRoutingPolicy.name())
      *             .build());
      * 
      *     }
@@ -1846,10 +1846,10 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detail(var_.load_balancer_detail())
-     *             .displayName(var_.load_balancer_display_name())
-     *             .state(var_.load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .detail(loadBalancerDetail)
+     *             .displayName(loadBalancerDisplayName)
+     *             .state(loadBalancerState)
      *             .build());
      * 
      *     }
@@ -1895,10 +1895,10 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detail(var_.load_balancer_detail())
-     *             .displayName(var_.load_balancer_display_name())
-     *             .state(var_.load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .detail(loadBalancerDetail)
+     *             .displayName(loadBalancerDisplayName)
+     *             .state(loadBalancerState)
      *             .build());
      * 
      *     }
@@ -1944,10 +1944,10 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detail(var_.load_balancer_detail())
-     *             .displayName(var_.load_balancer_display_name())
-     *             .state(var_.load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .detail(loadBalancerDetail)
+     *             .displayName(loadBalancerDisplayName)
+     *             .state(loadBalancerState)
      *             .build());
      * 
      *     }
@@ -1993,10 +1993,10 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancers = LoadBalancerFunctions.getLoadBalancers(GetLoadBalancersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .detail(var_.load_balancer_detail())
-     *             .displayName(var_.load_balancer_display_name())
-     *             .state(var_.load_balancer_state())
+     *             .compartmentId(compartmentId)
+     *             .detail(loadBalancerDetail)
+     *             .displayName(loadBalancerDisplayName)
+     *             .state(loadBalancerState)
      *             .build());
      * 
      *     }
@@ -2038,7 +2038,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2080,7 +2080,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2122,7 +2122,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2164,7 +2164,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2206,7 +2206,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2248,7 +2248,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2290,7 +2290,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2332,7 +2332,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerPolicies = LoadBalancerFunctions.getPolicies(GetPoliciesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2374,7 +2374,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2416,7 +2416,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2458,7 +2458,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2500,7 +2500,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerProtocols = LoadBalancerFunctions.getProtocols(GetProtocolsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2542,8 +2542,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.rule_set_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(ruleSetName)
      *             .build());
      * 
      *     }
@@ -2585,8 +2585,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.rule_set_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(ruleSetName)
      *             .build());
      * 
      *     }
@@ -2628,8 +2628,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.rule_set_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(ruleSetName)
      *             .build());
      * 
      *     }
@@ -2671,8 +2671,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.rule_set_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(ruleSetName)
      *             .build());
      * 
      *     }
@@ -2714,7 +2714,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2756,7 +2756,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2798,7 +2798,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2840,7 +2840,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -2882,7 +2882,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2924,7 +2924,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -2966,7 +2966,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -3008,7 +3008,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerShapes = LoadBalancerFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -3050,8 +3050,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(sslCipherSuiteName)
      *             .build());
      * 
      *     }
@@ -3093,8 +3093,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(sslCipherSuiteName)
      *             .build());
      * 
      *     }
@@ -3136,8 +3136,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(sslCipherSuiteName)
      *             .build());
      * 
      *     }
@@ -3179,8 +3179,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
-     *             .name(var_.ssl_cipher_suite_name())
+     *             .loadBalancerId(testLoadBalancer.id())
+     *             .name(sslCipherSuiteName)
      *             .build());
      * 
      *     }
@@ -3222,7 +3222,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -3264,7 +3264,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -3306,7 +3306,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }
@@ -3348,7 +3348,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(oci_load_balancer_load_balancer.test_load_balancer().id())
+     *             .loadBalancerId(testLoadBalancer.id())
      *             .build());
      * 
      *     }

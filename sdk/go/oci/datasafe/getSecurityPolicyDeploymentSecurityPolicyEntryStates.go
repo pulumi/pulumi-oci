@@ -33,9 +33,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStates(ctx, &datasafe.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs{
-//				SecurityPolicyDeploymentId: oci_data_safe_security_policy_deployment.Test_security_policy_deployment.Id,
-//				DeploymentStatus:           pulumi.StringRef(_var.Security_policy_deployment_security_policy_entry_state_deployment_status),
-//				SecurityPolicyEntryId:      pulumi.StringRef(oci_data_safe_security_policy_entry.Test_security_policy_entry.Id),
+//				SecurityPolicyDeploymentId: testSecurityPolicyDeployment.Id,
+//				DeploymentStatus:           pulumi.StringRef(securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus),
+//				SecurityPolicyEntryId:      pulumi.StringRef(testSecurityPolicyEntry.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

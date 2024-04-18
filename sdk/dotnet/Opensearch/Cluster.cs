@@ -34,28 +34,28 @@ namespace Pulumi.Oci.Opensearch
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testOpensearchCluster = new Oci.Opensearch.Cluster("testOpensearchCluster", new()
+    ///     var testOpensearchCluster = new Oci.Opensearch.Cluster("test_opensearch_cluster", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DataNodeCount = @var.Opensearch_cluster_data_node_count,
-    ///         DataNodeHostMemoryGb = @var.Opensearch_cluster_data_node_host_memory_gb,
-    ///         DataNodeHostOcpuCount = @var.Opensearch_cluster_data_node_host_ocpu_count,
-    ///         DataNodeHostType = @var.Opensearch_cluster_data_node_host_type,
-    ///         DataNodeStorageGb = @var.Opensearch_cluster_data_node_storage_gb,
-    ///         DisplayName = @var.Opensearch_cluster_display_name,
-    ///         MasterNodeCount = @var.Opensearch_cluster_master_node_count,
-    ///         MasterNodeHostMemoryGb = @var.Opensearch_cluster_master_node_host_memory_gb,
-    ///         MasterNodeHostOcpuCount = @var.Opensearch_cluster_master_node_host_ocpu_count,
-    ///         MasterNodeHostType = @var.Opensearch_cluster_master_node_host_type,
-    ///         OpendashboardNodeCount = @var.Opensearch_cluster_opendashboard_node_count,
-    ///         OpendashboardNodeHostMemoryGb = @var.Opensearch_cluster_opendashboard_node_host_memory_gb,
-    ///         OpendashboardNodeHostOcpuCount = @var.Opensearch_cluster_opendashboard_node_host_ocpu_count,
-    ///         SoftwareVersion = @var.Opensearch_cluster_software_version,
-    ///         SubnetCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         VcnCompartmentId = oci_identity_compartment.Test_compartment.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
-    ///         DataNodeHostBareMetalShape = @var.Opensearch_cluster_data_node_host_bare_metal_shape,
+    ///         CompartmentId = compartmentId,
+    ///         DataNodeCount = opensearchClusterDataNodeCount,
+    ///         DataNodeHostMemoryGb = opensearchClusterDataNodeHostMemoryGb,
+    ///         DataNodeHostOcpuCount = opensearchClusterDataNodeHostOcpuCount,
+    ///         DataNodeHostType = opensearchClusterDataNodeHostType,
+    ///         DataNodeStorageGb = opensearchClusterDataNodeStorageGb,
+    ///         DisplayName = opensearchClusterDisplayName,
+    ///         MasterNodeCount = opensearchClusterMasterNodeCount,
+    ///         MasterNodeHostMemoryGb = opensearchClusterMasterNodeHostMemoryGb,
+    ///         MasterNodeHostOcpuCount = opensearchClusterMasterNodeHostOcpuCount,
+    ///         MasterNodeHostType = opensearchClusterMasterNodeHostType,
+    ///         OpendashboardNodeCount = opensearchClusterOpendashboardNodeCount,
+    ///         OpendashboardNodeHostMemoryGb = opensearchClusterOpendashboardNodeHostMemoryGb,
+    ///         OpendashboardNodeHostOcpuCount = opensearchClusterOpendashboardNodeHostOcpuCount,
+    ///         SoftwareVersion = opensearchClusterSoftwareVersion,
+    ///         SubnetCompartmentId = testCompartment.Id,
+    ///         SubnetId = testSubnet.Id,
+    ///         VcnCompartmentId = testCompartment.Id,
+    ///         VcnId = testVcn.Id,
+    ///         DataNodeHostBareMetalShape = opensearchClusterDataNodeHostBareMetalShape,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -64,11 +64,11 @@ namespace Pulumi.Oci.Opensearch
     ///         {
     ///             { "bar-key", "value" },
     ///         },
-    ///         MasterNodeHostBareMetalShape = @var.Opensearch_cluster_master_node_host_bare_metal_shape,
-    ///         SecurityMasterUserName = oci_identity_user.Test_user.Name,
-    ///         SecurityMasterUserPasswordHash = @var.Opensearch_cluster_security_master_user_password_hash,
-    ///         SecurityMode = @var.Opensearch_cluster_security_mode,
-    ///         SystemTags = @var.Opensearch_cluster_system_tags,
+    ///         MasterNodeHostBareMetalShape = opensearchClusterMasterNodeHostBareMetalShape,
+    ///         SecurityMasterUserName = testUser.Name,
+    ///         SecurityMasterUserPasswordHash = opensearchClusterSecurityMasterUserPasswordHash,
+    ///         SecurityMode = opensearchClusterSecurityMode,
+    ///         SystemTags = opensearchClusterSystemTags,
     ///     });
     /// 
     /// });

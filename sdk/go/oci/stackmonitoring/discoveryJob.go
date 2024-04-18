@@ -31,40 +31,40 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := StackMonitoring.NewDiscoveryJob(ctx, "testDiscoveryJob", &StackMonitoring.DiscoveryJobArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := StackMonitoring.NewDiscoveryJob(ctx, "test_discovery_job", &StackMonitoring.DiscoveryJobArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				DiscoveryDetails: &stackmonitoring.DiscoveryJobDiscoveryDetailsArgs{
-//					AgentId: pulumi.Any(_var.Management_agent_id),
+//					AgentId: pulumi.Any(managementAgentId),
 //					Properties: &stackmonitoring.DiscoveryJobDiscoveryDetailsPropertiesArgs{
-//						PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_properties_properties_map),
+//						PropertiesMap: pulumi.Any(discoveryJobDiscoveryDetailsPropertiesPropertiesMap),
 //					},
-//					ResourceName: pulumi.Any(_var.Discovery_job_discovery_details_resource_name),
-//					ResourceType: pulumi.Any(_var.Discovery_job_discovery_details_resource_type),
+//					ResourceName: pulumi.Any(discoveryJobDiscoveryDetailsResourceName),
+//					ResourceType: pulumi.Any(discoveryJobDiscoveryDetailsResourceType),
 //					Credentials: &stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsArgs{
 //						Items: stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArray{
 //							&stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemArgs{
-//								CredentialName: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_credential_name),
-//								CredentialType: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_credential_type),
+//								CredentialName: pulumi.Any(discoveryJobDiscoveryDetailsCredentialsItemsCredentialName),
+//								CredentialType: pulumi.Any(discoveryJobDiscoveryDetailsCredentialsItemsCredentialType),
 //								Properties: &stackmonitoring.DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs{
-//									PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_credentials_items_properties_properties_map),
+//									PropertiesMap: pulumi.Any(discoveryJobDiscoveryDetailsCredentialsItemsPropertiesPropertiesMap),
 //								},
 //							},
 //						},
 //					},
-//					License: pulumi.Any(_var.Discovery_job_discovery_details_license),
+//					License: pulumi.Any(discoveryJobDiscoveryDetailsLicense),
 //					Tags: &stackmonitoring.DiscoveryJobDiscoveryDetailsTagsArgs{
-//						PropertiesMap: pulumi.Any(_var.Discovery_job_discovery_details_tags_properties_map),
+//						PropertiesMap: pulumi.Any(discoveryJobDiscoveryDetailsTagsPropertiesMap),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				DiscoveryClient: pulumi.Any(_var.Discovery_job_discovery_client),
-//				DiscoveryType:   pulumi.Any(_var.Discovery_job_discovery_type),
+//				DiscoveryClient: pulumi.Any(discoveryJobDiscoveryClient),
+//				DiscoveryType:   pulumi.Any(discoveryJobDiscoveryType),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				ShouldPropagateTagsToDiscoveredResources: pulumi.Any(_var.Discovery_job_should_propagate_tags_to_discovered_resources),
+//				ShouldPropagateTagsToDiscoveredResources: pulumi.Any(discoveryJobShouldPropagateTagsToDiscoveredResources),
 //			})
 //			if err != nil {
 //				return err

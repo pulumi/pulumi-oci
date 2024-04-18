@@ -16,18 +16,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyDecryptionProfile = new oci.networkfirewall.NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile", {
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
- *     type: _var.network_firewall_policy_decryption_profile_type,
- *     areCertificateExtensionsRestricted: _var.network_firewall_policy_decryption_profile_are_certificate_extensions_restricted,
- *     isAutoIncludeAltName: _var.network_firewall_policy_decryption_profile_is_auto_include_alt_name,
- *     isExpiredCertificateBlocked: _var.network_firewall_policy_decryption_profile_is_expired_certificate_blocked,
- *     isOutOfCapacityBlocked: _var.network_firewall_policy_decryption_profile_is_out_of_capacity_blocked,
- *     isRevocationStatusTimeoutBlocked: _var.network_firewall_policy_decryption_profile_is_revocation_status_timeout_blocked,
- *     isUnknownRevocationStatusBlocked: _var.network_firewall_policy_decryption_profile_is_unknown_revocation_status_blocked,
- *     isUnsupportedCipherBlocked: _var.network_firewall_policy_decryption_profile_is_unsupported_cipher_blocked,
- *     isUnsupportedVersionBlocked: _var.network_firewall_policy_decryption_profile_is_unsupported_version_blocked,
- *     isUntrustedIssuerBlocked: _var.network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked,
+ * const testNetworkFirewallPolicyDecryptionProfile = new oci.networkfirewall.NetworkFirewallPolicyDecryptionProfile("test_network_firewall_policy_decryption_profile", {
+ *     name: networkFirewallPolicyDecryptionProfileName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     type: networkFirewallPolicyDecryptionProfileType,
+ *     areCertificateExtensionsRestricted: networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted,
+ *     isAutoIncludeAltName: networkFirewallPolicyDecryptionProfileIsAutoIncludeAltName,
+ *     isExpiredCertificateBlocked: networkFirewallPolicyDecryptionProfileIsExpiredCertificateBlocked,
+ *     isOutOfCapacityBlocked: networkFirewallPolicyDecryptionProfileIsOutOfCapacityBlocked,
+ *     isRevocationStatusTimeoutBlocked: networkFirewallPolicyDecryptionProfileIsRevocationStatusTimeoutBlocked,
+ *     isUnknownRevocationStatusBlocked: networkFirewallPolicyDecryptionProfileIsUnknownRevocationStatusBlocked,
+ *     isUnsupportedCipherBlocked: networkFirewallPolicyDecryptionProfileIsUnsupportedCipherBlocked,
+ *     isUnsupportedVersionBlocked: networkFirewallPolicyDecryptionProfileIsUnsupportedVersionBlocked,
+ *     isUntrustedIssuerBlocked: networkFirewallPolicyDecryptionProfileIsUntrustedIssuerBlocked,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

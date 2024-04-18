@@ -139,7 +139,7 @@ def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Opti
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=oci_oda_oda_private_endpoint_attachment["test_oda_private_endpoint_attachment"]["id"])
+    test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=test_oda_private_endpoint_attachment_oci_oda_oda_private_endpoint_attachment["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -177,7 +177,7 @@ def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_i
     import pulumi
     import pulumi_oci as oci
 
-    test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=oci_oda_oda_private_endpoint_attachment["test_oda_private_endpoint_attachment"]["id"])
+    test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=test_oda_private_endpoint_attachment_oci_oda_oda_private_endpoint_attachment["id"])
     ```
     <!--End PulumiCodeChooser -->
 

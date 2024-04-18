@@ -31,22 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.NewObjectLifecyclePolicy(ctx, "testObjectLifecyclePolicy", &ObjectStorage.ObjectLifecyclePolicyArgs{
-//				Bucket:    pulumi.Any(_var.Object_lifecycle_policy_bucket),
-//				Namespace: pulumi.Any(_var.Object_lifecycle_policy_namespace),
+//			_, err := ObjectStorage.NewObjectLifecyclePolicy(ctx, "test_object_lifecycle_policy", &ObjectStorage.ObjectLifecyclePolicyArgs{
+//				Bucket:    pulumi.Any(objectLifecyclePolicyBucket),
+//				Namespace: pulumi.Any(objectLifecyclePolicyNamespace),
 //				Rules: objectstorage.ObjectLifecyclePolicyRuleArray{
 //					&objectstorage.ObjectLifecyclePolicyRuleArgs{
-//						Action:     pulumi.Any(_var.Object_lifecycle_policy_rules_action),
-//						IsEnabled:  pulumi.Any(_var.Object_lifecycle_policy_rules_is_enabled),
-//						Name:       pulumi.Any(_var.Object_lifecycle_policy_rules_name),
-//						TimeAmount: pulumi.Any(_var.Object_lifecycle_policy_rules_time_amount),
-//						TimeUnit:   pulumi.Any(_var.Object_lifecycle_policy_rules_time_unit),
+//						Action:     pulumi.Any(objectLifecyclePolicyRulesAction),
+//						IsEnabled:  pulumi.Any(objectLifecyclePolicyRulesIsEnabled),
+//						Name:       pulumi.Any(objectLifecyclePolicyRulesName),
+//						TimeAmount: pulumi.Any(objectLifecyclePolicyRulesTimeAmount),
+//						TimeUnit:   pulumi.Any(objectLifecyclePolicyRulesTimeUnit),
 //						ObjectNameFilter: &objectstorage.ObjectLifecyclePolicyRuleObjectNameFilterArgs{
-//							ExclusionPatterns: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_exclusion_patterns),
-//							InclusionPatterns: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_inclusion_patterns),
-//							InclusionPrefixes: pulumi.Any(_var.Object_lifecycle_policy_rules_object_name_filter_inclusion_prefixes),
+//							ExclusionPatterns: pulumi.Any(objectLifecyclePolicyRulesObjectNameFilterExclusionPatterns),
+//							InclusionPatterns: pulumi.Any(objectLifecyclePolicyRulesObjectNameFilterInclusionPatterns),
+//							InclusionPrefixes: pulumi.Any(objectLifecyclePolicyRulesObjectNameFilterInclusionPrefixes),
 //						},
-//						Target: pulumi.Any(_var.Object_lifecycle_policy_rules_target),
+//						Target: pulumi.Any(objectLifecyclePolicyRulesTarget),
 //					},
 //				},
 //			})

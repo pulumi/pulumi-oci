@@ -31,35 +31,35 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataScience.NewModel(ctx, "testModel", &DataScience.ModelArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				ProjectId:     pulumi.Any(oci_datascience_project.Test_project.Id),
+//			_, err := DataScience.NewModel(ctx, "test_model", &DataScience.ModelArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ProjectId:     pulumi.Any(testProject.Id),
 //				CustomMetadataLists: datascience.ModelCustomMetadataListArray{
 //					&datascience.ModelCustomMetadataListArgs{
-//						Category:    pulumi.Any(_var.Model_custom_metadata_list_category),
-//						Description: pulumi.Any(_var.Model_custom_metadata_list_description),
-//						Key:         pulumi.Any(_var.Model_custom_metadata_list_key),
-//						Value:       pulumi.Any(_var.Model_custom_metadata_list_value),
+//						Category:    pulumi.Any(modelCustomMetadataListCategory),
+//						Description: pulumi.Any(modelCustomMetadataListDescription),
+//						Key:         pulumi.Any(modelCustomMetadataListKey),
+//						Value:       pulumi.Any(modelCustomMetadataListValue),
 //					},
 //				},
 //				DefinedMetadataLists: datascience.ModelDefinedMetadataListArray{
 //					&datascience.ModelDefinedMetadataListArgs{
-//						Category:    pulumi.Any(_var.Model_defined_metadata_list_category),
-//						Description: pulumi.Any(_var.Model_defined_metadata_list_description),
-//						Key:         pulumi.Any(_var.Model_defined_metadata_list_key),
-//						Value:       pulumi.Any(_var.Model_defined_metadata_list_value),
+//						Category:    pulumi.Any(modelDefinedMetadataListCategory),
+//						Description: pulumi.Any(modelDefinedMetadataListDescription),
+//						Key:         pulumi.Any(modelDefinedMetadataListKey),
+//						Value:       pulumi.Any(modelDefinedMetadataListValue),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Model_description),
-//				DisplayName: pulumi.Any(_var.Model_display_name),
+//				Description: pulumi.Any(modelDescription),
+//				DisplayName: pulumi.Any(modelDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				InputSchema:  pulumi.Any(_var.Model_input_schema),
-//				OutputSchema: pulumi.Any(_var.Model_output_schema),
+//				InputSchema:  pulumi.Any(modelInputSchema),
+//				OutputSchema: pulumi.Any(modelOutputSchema),
 //			})
 //			if err != nil {
 //				return err

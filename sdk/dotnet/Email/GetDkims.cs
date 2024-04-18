@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testDkims = Oci.Email.GetDkims.Invoke(new()
         ///     {
-        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-        ///         Id = @var.Dkim_id,
-        ///         Name = @var.Dkim_name,
-        ///         State = @var.Dkim_state,
+        ///         EmailDomainId = testEmailDomain.Id,
+        ///         Id = dkimId,
+        ///         Name = dkimName,
+        ///         State = dkimState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.Email
         /// {
         ///     var testDkims = Oci.Email.GetDkims.Invoke(new()
         ///     {
-        ///         EmailDomainId = oci_email_email_domain.Test_email_domain.Id,
-        ///         Id = @var.Dkim_id,
-        ///         Name = @var.Dkim_name,
-        ///         State = @var.Dkim_state,
+        ///         EmailDomainId = testEmailDomain.Id,
+        ///         Id = dkimId,
+        ///         Name = dkimName,
+        ///         State = dkimState,
         ///     });
         /// 
         /// });

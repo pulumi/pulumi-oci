@@ -26,44 +26,44 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCaptureFilter = new oci.core.CaptureFilter("testCaptureFilter", {
- *     compartmentId: _var.compartment_id,
- *     filterType: _var.capture_filter_filter_type,
+ * const testCaptureFilter = new oci.core.CaptureFilter("test_capture_filter", {
+ *     compartmentId: compartmentId,
+ *     filterType: captureFilterFilterType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     displayName: _var.capture_filter_display_name,
+ *     displayName: captureFilterDisplayName,
  *     flowLogCaptureFilterRules: [{
- *         destinationCidr: _var.capture_filter_flow_log_capture_filter_rules_destination_cidr,
- *         flowLogType: _var.capture_filter_flow_log_capture_filter_rules_flow_log_type,
+ *         destinationCidr: captureFilterFlowLogCaptureFilterRulesDestinationCidr,
+ *         flowLogType: captureFilterFlowLogCaptureFilterRulesFlowLogType,
  *         icmpOptions: {
- *             type: _var.capture_filter_flow_log_capture_filter_rules_icmp_options_type,
- *             code: _var.capture_filter_flow_log_capture_filter_rules_icmp_options_code,
+ *             type: captureFilterFlowLogCaptureFilterRulesIcmpOptionsType,
+ *             code: captureFilterFlowLogCaptureFilterRulesIcmpOptionsCode,
  *         },
- *         isEnabled: _var.capture_filter_flow_log_capture_filter_rules_is_enabled,
- *         priority: _var.capture_filter_flow_log_capture_filter_rules_priority,
- *         protocol: _var.capture_filter_flow_log_capture_filter_rules_protocol,
- *         ruleAction: _var.capture_filter_flow_log_capture_filter_rules_rule_action,
- *         samplingRate: _var.capture_filter_flow_log_capture_filter_rules_sampling_rate,
- *         sourceCidr: _var.capture_filter_flow_log_capture_filter_rules_source_cidr,
+ *         isEnabled: captureFilterFlowLogCaptureFilterRulesIsEnabled,
+ *         priority: captureFilterFlowLogCaptureFilterRulesPriority,
+ *         protocol: captureFilterFlowLogCaptureFilterRulesProtocol,
+ *         ruleAction: captureFilterFlowLogCaptureFilterRulesRuleAction,
+ *         samplingRate: captureFilterFlowLogCaptureFilterRulesSamplingRate,
+ *         sourceCidr: captureFilterFlowLogCaptureFilterRulesSourceCidr,
  *         tcpOptions: {
  *             destinationPortRange: {
- *                 max: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
- *                 min: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
+ *                 max: captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMax,
+ *                 min: captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMin,
  *             },
  *             sourcePortRange: {
- *                 max: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
- *                 min: _var.capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
+ *                 max: captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMax,
+ *                 min: captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMin,
  *             },
  *         },
  *         udpOptions: {
  *             destinationPortRange: {
- *                 max: _var.capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
- *                 min: _var.capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
+ *                 max: captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMax,
+ *                 min: captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMin,
  *             },
  *             sourcePortRange: {
- *                 max: _var.capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
- *                 min: _var.capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
+ *                 max: captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMax,
+ *                 min: captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMin,
  *             },
  *         },
  *     }],
@@ -71,33 +71,33 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     vtapCaptureFilterRules: [{
- *         trafficDirection: _var.capture_filter_vtap_capture_filter_rules_traffic_direction,
- *         destinationCidr: _var.capture_filter_vtap_capture_filter_rules_destination_cidr,
+ *         trafficDirection: captureFilterVtapCaptureFilterRulesTrafficDirection,
+ *         destinationCidr: captureFilterVtapCaptureFilterRulesDestinationCidr,
  *         icmpOptions: {
- *             type: _var.capture_filter_vtap_capture_filter_rules_icmp_options_type,
- *             code: _var.capture_filter_vtap_capture_filter_rules_icmp_options_code,
+ *             type: captureFilterVtapCaptureFilterRulesIcmpOptionsType,
+ *             code: captureFilterVtapCaptureFilterRulesIcmpOptionsCode,
  *         },
- *         protocol: _var.capture_filter_vtap_capture_filter_rules_protocol,
- *         ruleAction: _var.capture_filter_vtap_capture_filter_rules_rule_action,
- *         sourceCidr: _var.capture_filter_vtap_capture_filter_rules_source_cidr,
+ *         protocol: captureFilterVtapCaptureFilterRulesProtocol,
+ *         ruleAction: captureFilterVtapCaptureFilterRulesRuleAction,
+ *         sourceCidr: captureFilterVtapCaptureFilterRulesSourceCidr,
  *         tcpOptions: {
  *             destinationPortRange: {
- *                 max: _var.capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
- *                 min: _var.capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
+ *                 max: captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMax,
+ *                 min: captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMin,
  *             },
  *             sourcePortRange: {
- *                 max: _var.capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
- *                 min: _var.capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
+ *                 max: captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMax,
+ *                 min: captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMin,
  *             },
  *         },
  *         udpOptions: {
  *             destinationPortRange: {
- *                 max: _var.capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
- *                 min: _var.capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
+ *                 max: captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMax,
+ *                 min: captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMin,
  *             },
  *             sourcePortRange: {
- *                 max: _var.capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
- *                 min: _var.capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
+ *                 max: captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMax,
+ *                 min: captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMin,
  *             },
  *         },
  *     }],

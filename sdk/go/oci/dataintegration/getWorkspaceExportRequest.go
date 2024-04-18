@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceExportRequest(ctx, &dataintegration.GetWorkspaceExportRequestArgs{
-//				ExportRequestKey: _var.Workspace_export_request_export_request_key,
-//				WorkspaceId:      oci_dataintegration_workspace.Test_workspace.Id,
+//				ExportRequestKey: workspaceExportRequestExportRequestKey,
+//				WorkspaceId:      testWorkspace.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

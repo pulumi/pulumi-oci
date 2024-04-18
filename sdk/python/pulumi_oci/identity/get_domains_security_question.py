@@ -310,12 +310,12 @@ def get_domains_security_question(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question = oci.Identity.get_domains_security_question(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        security_question_id=oci_identity_domains_security_question["test_security_question"]["id"],
+    test_security_question = oci.Identity.get_domains_security_question(idcs_endpoint=test_domain["url"],
+        security_question_id=test_security_question_oci_identity_domains_security_question["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["security_question_authorization"],
-        resource_type_schema_version=var["security_question_resource_type_schema_version"])
+        authorization=security_question_authorization,
+        resource_type_schema_version=security_question_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -383,12 +383,12 @@ def get_domains_security_question_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_security_question = oci.Identity.get_domains_security_question(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        security_question_id=oci_identity_domains_security_question["test_security_question"]["id"],
+    test_security_question = oci.Identity.get_domains_security_question(idcs_endpoint=test_domain["url"],
+        security_question_id=test_security_question_oci_identity_domains_security_question["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["security_question_authorization"],
-        resource_type_schema_version=var["security_question_resource_type_schema_version"])
+        authorization=security_question_authorization,
+        resource_type_schema_version=security_question_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

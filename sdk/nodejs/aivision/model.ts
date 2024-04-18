@@ -18,41 +18,41 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testModel = new oci.aivision.Model("testModel", {
- *     compartmentId: _var.compartment_id,
- *     modelType: _var.model_model_type,
- *     projectId: oci_ai_vision_project.test_project.id,
+ * const testModel = new oci.aivision.Model("test_model", {
+ *     compartmentId: compartmentId,
+ *     modelType: modelModelType,
+ *     projectId: testProject.id,
  *     trainingDataset: {
- *         datasetType: _var.model_training_dataset_dataset_type,
- *         bucket: _var.model_training_dataset_bucket,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespaceName: _var.model_training_dataset_namespace,
- *         object: _var.model_training_dataset_object,
+ *         datasetType: modelTrainingDatasetDatasetType,
+ *         bucket: modelTrainingDatasetBucket,
+ *         datasetId: testDataset.id,
+ *         namespaceName: modelTrainingDatasetNamespace,
+ *         object: modelTrainingDatasetObject,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.model_description,
- *     displayName: _var.model_display_name,
+ *     description: modelDescription,
+ *     displayName: modelDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isQuickMode: _var.model_is_quick_mode,
- *     maxTrainingDurationInHours: _var.model_max_training_duration_in_hours,
- *     modelVersion: _var.model_model_version,
+ *     isQuickMode: modelIsQuickMode,
+ *     maxTrainingDurationInHours: modelMaxTrainingDurationInHours,
+ *     modelVersion: modelModelVersion,
  *     testingDataset: {
- *         datasetType: _var.model_testing_dataset_dataset_type,
- *         bucket: _var.model_testing_dataset_bucket,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespaceName: _var.model_testing_dataset_namespace,
- *         object: _var.model_testing_dataset_object,
+ *         datasetType: modelTestingDatasetDatasetType,
+ *         bucket: modelTestingDatasetBucket,
+ *         datasetId: testDataset.id,
+ *         namespaceName: modelTestingDatasetNamespace,
+ *         object: modelTestingDatasetObject,
  *     },
  *     validationDataset: {
- *         datasetType: _var.model_validation_dataset_dataset_type,
- *         bucket: _var.model_validation_dataset_bucket,
- *         datasetId: oci_data_labeling_service_dataset.test_dataset.id,
- *         namespaceName: _var.model_validation_dataset_namespace,
- *         object: _var.model_validation_dataset_object,
+ *         datasetType: modelValidationDatasetDatasetType,
+ *         bucket: modelValidationDatasetBucket,
+ *         datasetId: testDataset.id,
+ *         namespaceName: modelValidationDatasetNamespace,
+ *         object: modelValidationDatasetObject,
  *     },
  * });
  * ```

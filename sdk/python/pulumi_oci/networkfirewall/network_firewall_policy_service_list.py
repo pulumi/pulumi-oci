@@ -190,9 +190,10 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_service_list = oci.network_firewall.NetworkFirewallPolicyServiceList("testNetworkFirewallPolicyServiceList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            services=var["network_firewall_policy_service_list_services"])
+        test_network_firewall_policy_service_list = oci.network_firewall.NetworkFirewallPolicyServiceList("test_network_firewall_policy_service_list",
+            name=network_firewall_policy_service_list_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            services=network_firewall_policy_service_list_services)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -232,9 +233,10 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_service_list = oci.network_firewall.NetworkFirewallPolicyServiceList("testNetworkFirewallPolicyServiceList",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            services=var["network_firewall_policy_service_list_services"])
+        test_network_firewall_policy_service_list = oci.network_firewall.NetworkFirewallPolicyServiceList("test_network_firewall_policy_service_list",
+            name=network_firewall_policy_service_list_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            services=network_firewall_policy_service_list_services)
         ```
         <!--End PulumiCodeChooser -->
 

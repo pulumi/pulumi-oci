@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetExternalDbSystemConnectors(ctx, &databasemanagement.GetExternalDbSystemConnectorsArgs{
-//				CompartmentId:      pulumi.StringRef(_var.Compartment_id),
-//				DisplayName:        pulumi.StringRef(_var.External_db_system_connector_display_name),
-//				ExternalDbSystemId: pulumi.StringRef(oci_database_management_external_db_system.Test_external_db_system.Id),
+//				CompartmentId:      pulumi.StringRef(compartmentId),
+//				DisplayName:        pulumi.StringRef(externalDbSystemConnectorDisplayName),
+//				ExternalDbSystemId: pulumi.StringRef(testExternalDbSystem.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

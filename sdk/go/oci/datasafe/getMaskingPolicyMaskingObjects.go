@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetMaskingPolicyMaskingObjects(ctx, &datasafe.GetMaskingPolicyMaskingObjectsArgs{
-//				MaskingPolicyId: oci_data_safe_masking_policy.Test_masking_policy.Id,
-//				Objects:         _var.Masking_policy_masking_object_object,
-//				ObjectTypes:     _var.Masking_policy_masking_object_object_type,
-//				SchemaNames:     _var.Masking_policy_masking_object_schema_name,
+//				MaskingPolicyId: testMaskingPolicy.Id,
+//				Objects:         maskingPolicyMaskingObjectObject,
+//				ObjectTypes:     maskingPolicyMaskingObjectObjectType,
+//				SchemaNames:     maskingPolicyMaskingObjectSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

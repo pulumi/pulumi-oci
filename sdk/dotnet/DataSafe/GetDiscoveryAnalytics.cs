@@ -32,13 +32,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryAnalytics = Oci.DataSafe.GetDiscoveryAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
-        ///         GroupBy = @var.Discovery_analytic_group_by,
-        ///         IsCommon = @var.Discovery_analytic_is_common,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = discoveryAnalyticCompartmentIdInSubtree,
+        ///         GroupBy = discoveryAnalyticGroupBy,
+        ///         IsCommon = discoveryAnalyticIsCommon,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -69,13 +69,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryAnalytics = Oci.DataSafe.GetDiscoveryAnalytics.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CompartmentIdInSubtree = @var.Discovery_analytic_compartment_id_in_subtree,
-        ///         GroupBy = @var.Discovery_analytic_group_by,
-        ///         IsCommon = @var.Discovery_analytic_is_common,
-        ///         SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-        ///         SensitiveTypeId = oci_data_safe_sensitive_type.Test_sensitive_type.Id,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
+        ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = discoveryAnalyticCompartmentIdInSubtree,
+        ///         GroupBy = discoveryAnalyticGroupBy,
+        ///         IsCommon = discoveryAnalyticIsCommon,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         SensitiveTypeId = testSensitiveType.Id,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });

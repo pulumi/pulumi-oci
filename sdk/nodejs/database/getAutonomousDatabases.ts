@@ -31,18 +31,18 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
- *     compartmentId: _var.compartment_id,
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
- *     dbVersion: _var.autonomous_database_db_version,
- *     dbWorkload: _var.autonomous_database_db_workload,
- *     displayName: _var.autonomous_database_display_name,
- *     infrastructureType: _var.autonomous_database_infrastructure_type,
- *     isDataGuardEnabled: _var.autonomous_database_is_data_guard_enabled,
- *     isFreeTier: _var.autonomous_database_is_free_tier,
- *     isRefreshableClone: _var.autonomous_database_is_refreshable_clone,
- *     isResourcePoolLeader: _var.autonomous_database_is_resource_pool_leader,
- *     resourcePoolLeaderId: oci_database_resource_pool_leader.test_resource_pool_leader.id,
- *     state: _var.autonomous_database_state,
+ *     compartmentId: compartmentId,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     dbVersion: autonomousDatabaseDbVersion,
+ *     dbWorkload: autonomousDatabaseDbWorkload,
+ *     displayName: autonomousDatabaseDisplayName,
+ *     infrastructureType: autonomousDatabaseInfrastructureType,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
+ *     isFreeTier: autonomousDatabaseIsFreeTier,
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     resourcePoolLeaderId: testResourcePoolLeader.id,
+ *     state: autonomousDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -210,18 +210,18 @@ export interface GetAutonomousDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabases = oci.Database.getAutonomousDatabases({
- *     compartmentId: _var.compartment_id,
- *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
- *     dbVersion: _var.autonomous_database_db_version,
- *     dbWorkload: _var.autonomous_database_db_workload,
- *     displayName: _var.autonomous_database_display_name,
- *     infrastructureType: _var.autonomous_database_infrastructure_type,
- *     isDataGuardEnabled: _var.autonomous_database_is_data_guard_enabled,
- *     isFreeTier: _var.autonomous_database_is_free_tier,
- *     isRefreshableClone: _var.autonomous_database_is_refreshable_clone,
- *     isResourcePoolLeader: _var.autonomous_database_is_resource_pool_leader,
- *     resourcePoolLeaderId: oci_database_resource_pool_leader.test_resource_pool_leader.id,
- *     state: _var.autonomous_database_state,
+ *     compartmentId: compartmentId,
+ *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
+ *     dbVersion: autonomousDatabaseDbVersion,
+ *     dbWorkload: autonomousDatabaseDbWorkload,
+ *     displayName: autonomousDatabaseDisplayName,
+ *     infrastructureType: autonomousDatabaseInfrastructureType,
+ *     isDataGuardEnabled: autonomousDatabaseIsDataGuardEnabled,
+ *     isFreeTier: autonomousDatabaseIsFreeTier,
+ *     isRefreshableClone: autonomousDatabaseIsRefreshableClone,
+ *     isResourcePoolLeader: autonomousDatabaseIsResourcePoolLeader,
+ *     resourcePoolLeaderId: testResourcePoolLeader.id,
+ *     state: autonomousDatabaseState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

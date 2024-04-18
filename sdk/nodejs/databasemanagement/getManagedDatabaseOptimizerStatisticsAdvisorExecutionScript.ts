@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript({
- *     executionName: _var.managed_database_optimizer_statistics_advisor_execution_script_execution_name,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     taskName: _var.managed_database_optimizer_statistics_advisor_execution_script_task_name,
+ *     executionName: managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     taskName: managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -81,9 +81,9 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionScriptResu
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabaseOptimizerStatisticsAdvisorExecutionScript = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecutionScript({
- *     executionName: _var.managed_database_optimizer_statistics_advisor_execution_script_execution_name,
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     taskName: _var.managed_database_optimizer_statistics_advisor_execution_script_task_name,
+ *     executionName: managedDatabaseOptimizerStatisticsAdvisorExecutionScriptExecutionName,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     taskName: managedDatabaseOptimizerStatisticsAdvisorExecutionScriptTaskName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

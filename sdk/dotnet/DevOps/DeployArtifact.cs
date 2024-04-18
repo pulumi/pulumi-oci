@@ -25,36 +25,36 @@ namespace Pulumi.Oci.DevOps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDeployArtifact = new Oci.DevOps.DeployArtifact("testDeployArtifact", new()
+    ///     var testDeployArtifact = new Oci.DevOps.DeployArtifact("test_deploy_artifact", new()
     ///     {
-    ///         ArgumentSubstitutionMode = @var.Deploy_artifact_argument_substitution_mode,
+    ///         ArgumentSubstitutionMode = deployArtifactArgumentSubstitutionMode,
     ///         DeployArtifactSource = new Oci.DevOps.Inputs.DeployArtifactDeployArtifactSourceArgs
     ///         {
-    ///             DeployArtifactSourceType = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_source_type,
-    ///             Base64encodedContent = @var.Deploy_artifact_deploy_artifact_source_base64encoded_content,
-    ///             ChartUrl = @var.Deploy_artifact_deploy_artifact_source_chart_url,
-    ///             DeployArtifactPath = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_path,
-    ///             DeployArtifactVersion = @var.Deploy_artifact_deploy_artifact_source_deploy_artifact_version,
-    ///             HelmArtifactSourceType = @var.Deploy_artifact_deploy_artifact_source_helm_artifact_source_type,
+    ///             DeployArtifactSourceType = deployArtifactDeployArtifactSourceDeployArtifactSourceType,
+    ///             Base64encodedContent = deployArtifactDeployArtifactSourceBase64encodedContent,
+    ///             ChartUrl = deployArtifactDeployArtifactSourceChartUrl,
+    ///             DeployArtifactPath = deployArtifactDeployArtifactSourceDeployArtifactPath,
+    ///             DeployArtifactVersion = deployArtifactDeployArtifactSourceDeployArtifactVersion,
+    ///             HelmArtifactSourceType = deployArtifactDeployArtifactSourceHelmArtifactSourceType,
     ///             HelmVerificationKeySource = new Oci.DevOps.Inputs.DeployArtifactDeployArtifactSourceHelmVerificationKeySourceArgs
     ///             {
-    ///                 VerificationKeySourceType = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_verification_key_source_type,
-    ///                 CurrentPublicKey = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_current_public_key,
-    ///                 PreviousPublicKey = @var.Deploy_artifact_deploy_artifact_source_helm_verification_key_source_previous_public_key,
-    ///                 VaultSecretId = oci_vault_secret.Test_secret.Id,
+    ///                 VerificationKeySourceType = deployArtifactDeployArtifactSourceHelmVerificationKeySourceVerificationKeySourceType,
+    ///                 CurrentPublicKey = deployArtifactDeployArtifactSourceHelmVerificationKeySourceCurrentPublicKey,
+    ///                 PreviousPublicKey = deployArtifactDeployArtifactSourceHelmVerificationKeySourcePreviousPublicKey,
+    ///                 VaultSecretId = testSecret.Id,
     ///             },
-    ///             ImageDigest = @var.Deploy_artifact_deploy_artifact_source_image_digest,
-    ///             ImageUri = @var.Deploy_artifact_deploy_artifact_source_image_uri,
-    ///             RepositoryId = oci_devops_repository.Test_repository.Id,
+    ///             ImageDigest = deployArtifactDeployArtifactSourceImageDigest,
+    ///             ImageUri = deployArtifactDeployArtifactSourceImageUri,
+    ///             RepositoryId = testRepository.Id,
     ///         },
-    ///         DeployArtifactType = @var.Deploy_artifact_deploy_artifact_type,
-    ///         ProjectId = oci_devops_project.Test_project.Id,
+    ///         DeployArtifactType = deployArtifactDeployArtifactType,
+    ///         ProjectId = testProject.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         Description = @var.Deploy_artifact_description,
-    ///         DisplayName = @var.Deploy_artifact_display_name,
+    ///         Description = deployArtifactDescription,
+    ///         DisplayName = deployArtifactDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },

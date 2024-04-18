@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRecipe = Oci.Adm.GetRemediationRecipe.Invoke(new()
         ///     {
-        ///         RemediationRecipeId = oci_adm_remediation_recipe.Test_remediation_recipe.Id,
+        ///         RemediationRecipeId = testRemediationRecipeOciAdmRemediationRecipe.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRecipe = Oci.Adm.GetRemediationRecipe.Invoke(new()
         ///     {
-        ///         RemediationRecipeId = oci_adm_remediation_recipe.Test_remediation_recipe.Id,
+        ///         RemediationRecipeId = testRemediationRecipeOciAdmRemediationRecipe.Id,
         ///     });
         /// 
         /// });

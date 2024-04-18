@@ -25,10 +25,11 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testSslCipherSuite = new Oci.LoadBalancer.SslCipherSuite("testSslCipherSuite", new()
+    ///     var testSslCipherSuite = new Oci.LoadBalancer.SslCipherSuite("test_ssl_cipher_suite", new()
     ///     {
-    ///         Ciphers = @var.Ssl_cipher_suite_ciphers,
-    ///         LoadBalancerId = oci_load_balancer_load_balancer.Test_load_balancer.Id,
+    ///         Ciphers = sslCipherSuiteCiphers,
+    ///         LoadBalancerId = testLoadBalancer.Id,
+    ///         Name = sslCipherSuiteName,
     ///     });
     /// 
     /// });

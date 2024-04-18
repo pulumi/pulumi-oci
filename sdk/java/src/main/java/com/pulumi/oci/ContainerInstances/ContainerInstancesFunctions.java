@@ -53,7 +53,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(oci_container_instances_container_instance.test_container_instance().id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
      *             .build());
      * 
      *     }
@@ -95,7 +95,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(oci_container_instances_container_instance.test_container_instance().id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
      *             .build());
      * 
      *     }
@@ -137,7 +137,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(oci_container_instances_container_instance.test_container_instance().id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
      *             .build());
      * 
      *     }
@@ -179,7 +179,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(oci_container_instances_container_instance.test_container_instance().id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
      *             .build());
      * 
      *     }
@@ -221,8 +221,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShape = ContainerInstancesFunctions.getContainerInstanceShape(GetContainerInstanceShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -264,8 +264,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShape = ContainerInstancesFunctions.getContainerInstanceShape(GetContainerInstanceShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -307,8 +307,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShape = ContainerInstancesFunctions.getContainerInstanceShape(GetContainerInstanceShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -350,8 +350,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShape = ContainerInstancesFunctions.getContainerInstanceShape(GetContainerInstanceShapeArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -393,8 +393,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShapes = ContainerInstancesFunctions.getContainerInstanceShapes(GetContainerInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -436,8 +436,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShapes = ContainerInstancesFunctions.getContainerInstanceShapes(GetContainerInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -479,8 +479,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShapes = ContainerInstancesFunctions.getContainerInstanceShapes(GetContainerInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -522,8 +522,8 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstanceShapes = ContainerInstancesFunctions.getContainerInstanceShapes(GetContainerInstanceShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_shape_availability_domain())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceShapeAvailabilityDomain)
      *             .build());
      * 
      *     }
@@ -565,10 +565,10 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstances = ContainerInstancesFunctions.getContainerInstances(GetContainerInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_availability_domain())
-     *             .displayName(var_.container_instance_display_name())
-     *             .state(var_.container_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceAvailabilityDomain)
+     *             .displayName(containerInstanceDisplayName)
+     *             .state(containerInstanceState)
      *             .build());
      * 
      *     }
@@ -610,10 +610,10 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstances = ContainerInstancesFunctions.getContainerInstances(GetContainerInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_availability_domain())
-     *             .displayName(var_.container_instance_display_name())
-     *             .state(var_.container_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceAvailabilityDomain)
+     *             .displayName(containerInstanceDisplayName)
+     *             .state(containerInstanceState)
      *             .build());
      * 
      *     }
@@ -655,10 +655,10 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstances = ContainerInstancesFunctions.getContainerInstances(GetContainerInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_availability_domain())
-     *             .displayName(var_.container_instance_display_name())
-     *             .state(var_.container_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceAvailabilityDomain)
+     *             .displayName(containerInstanceDisplayName)
+     *             .state(containerInstanceState)
      *             .build());
      * 
      *     }
@@ -700,10 +700,10 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstances = ContainerInstancesFunctions.getContainerInstances(GetContainerInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.container_instance_availability_domain())
-     *             .displayName(var_.container_instance_display_name())
-     *             .state(var_.container_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(containerInstanceAvailabilityDomain)
+     *             .displayName(containerInstanceDisplayName)
+     *             .state(containerInstanceState)
      *             .build());
      * 
      *     }

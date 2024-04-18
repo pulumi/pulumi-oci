@@ -19,16 +19,16 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoices = oci.OspGateway.getInvoices({
- *     compartmentId: _var.compartment_id,
- *     ospHomeRegion: _var.invoice_osp_home_region,
- *     invoiceId: oci_osp_gateway_invoice.test_invoice.id,
- *     searchText: _var.invoice_search_text,
- *     statuses: _var.invoice_status,
- *     timeInvoiceEnd: _var.invoice_time_invoice_end,
- *     timeInvoiceStart: _var.invoice_time_invoice_start,
- *     timePaymentEnd: _var.invoice_time_payment_end,
- *     timePaymentStart: _var.invoice_time_payment_start,
- *     types: _var.invoice_type,
+ *     compartmentId: compartmentId,
+ *     ospHomeRegion: invoiceOspHomeRegion,
+ *     invoiceId: testInvoice.id,
+ *     searchText: invoiceSearchText,
+ *     statuses: invoiceStatus,
+ *     timeInvoiceEnd: invoiceTimeInvoiceEnd,
+ *     timeInvoiceStart: invoiceTimeInvoiceStart,
+ *     timePaymentEnd: invoiceTimePaymentEnd,
+ *     timePaymentStart: invoiceTimePaymentStart,
+ *     types: invoiceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -138,16 +138,16 @@ export interface GetInvoicesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInvoices = oci.OspGateway.getInvoices({
- *     compartmentId: _var.compartment_id,
- *     ospHomeRegion: _var.invoice_osp_home_region,
- *     invoiceId: oci_osp_gateway_invoice.test_invoice.id,
- *     searchText: _var.invoice_search_text,
- *     statuses: _var.invoice_status,
- *     timeInvoiceEnd: _var.invoice_time_invoice_end,
- *     timeInvoiceStart: _var.invoice_time_invoice_start,
- *     timePaymentEnd: _var.invoice_time_payment_end,
- *     timePaymentStart: _var.invoice_time_payment_start,
- *     types: _var.invoice_type,
+ *     compartmentId: compartmentId,
+ *     ospHomeRegion: invoiceOspHomeRegion,
+ *     invoiceId: testInvoice.id,
+ *     searchText: invoiceSearchText,
+ *     statuses: invoiceStatus,
+ *     timeInvoiceEnd: invoiceTimeInvoiceEnd,
+ *     timeInvoiceStart: invoiceTimeInvoiceStart,
+ *     timePaymentEnd: invoiceTimePaymentEnd,
+ *     timePaymentStart: invoiceTimePaymentStart,
+ *     types: invoiceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

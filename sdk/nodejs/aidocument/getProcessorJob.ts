@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProcessorJob = oci.AiDocument.getProcessorJob({
- *     processorJobId: oci_ai_document_processor_job.test_processor_job.id,
+ *     processorJobId: testProcessorJobOciAiDocumentProcessorJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,7 +109,7 @@ export interface GetProcessorJobResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testProcessorJob = oci.AiDocument.getProcessorJob({
- *     processorJobId: oci_ai_document_processor_job.test_processor_job.id,
+ *     processorJobId: testProcessorJobOciAiDocumentProcessorJob.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

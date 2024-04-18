@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Email.GetEmailDomain(ctx, &email.GetEmailDomainArgs{
-//				EmailDomainId: oci_email_email_domain.Test_email_domain.Id,
+//				EmailDomainId: testEmailDomainOciEmailEmailDomain.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

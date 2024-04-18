@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUsers = oci.Identity.getDomainsUsers({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     userCount: _var.user_user_count,
- *     userFilter: _var.user_user_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     userCount: userUserCount,
+ *     userFilter: userUserFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.user_authorization,
- *     resourceTypeSchemaVersion: _var.user_resource_type_schema_version,
- *     startIndex: _var.user_start_index,
+ *     authorization: userAuthorization,
+ *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
+ *     startIndex: userStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsUsersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUsers = oci.Identity.getDomainsUsers({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     userCount: _var.user_user_count,
- *     userFilter: _var.user_user_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     userCount: userUserCount,
+ *     userFilter: userUserFilter,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.user_authorization,
- *     resourceTypeSchemaVersion: _var.user_resource_type_schema_version,
- *     startIndex: _var.user_start_index,
+ *     authorization: userAuthorization,
+ *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
+ *     startIndex: userStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

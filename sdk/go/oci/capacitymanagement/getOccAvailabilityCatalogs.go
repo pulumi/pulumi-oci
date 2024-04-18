@@ -31,11 +31,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CapacityManagement.GetOccAvailabilityCatalogs(ctx, &capacitymanagement.GetOccAvailabilityCatalogsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CatalogState:  pulumi.StringRef(_var.Occ_availability_catalog_catalog_state),
-//				DisplayName:   pulumi.StringRef(_var.Occ_availability_catalog_display_name),
-//				Id:            pulumi.StringRef(_var.Occ_availability_catalog_id),
-//				Namespace:     pulumi.StringRef(_var.Occ_availability_catalog_namespace),
+//				CompartmentId: compartmentId,
+//				CatalogState:  pulumi.StringRef(occAvailabilityCatalogCatalogState),
+//				DisplayName:   pulumi.StringRef(occAvailabilityCatalogDisplayName),
+//				Id:            pulumi.StringRef(occAvailabilityCatalogId),
+//				Namespace:     pulumi.StringRef(occAvailabilityCatalogNamespace),
 //			}, nil)
 //			if err != nil {
 //				return err

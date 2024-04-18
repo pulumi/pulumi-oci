@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgAttachmentsList(ctx, "testDrgAttachmentsList", &Core.DrgAttachmentsListArgs{
-//				DrgId:          pulumi.Any(oci_core_drg.Test_drg.Id),
-//				AttachmentType: pulumi.Any(_var.Drg_attachments_list_attachment_type),
-//				IsCrossTenancy: pulumi.Any(_var.Drg_attachments_list_is_cross_tenancy),
+//			_, err := Core.NewDrgAttachmentsList(ctx, "test_drg_attachments_list", &Core.DrgAttachmentsListArgs{
+//				DrgId:          pulumi.Any(testDrg.Id),
+//				AttachmentType: pulumi.Any(drgAttachmentsListAttachmentType),
+//				IsCrossTenancy: pulumi.Any(drgAttachmentsListIsCrossTenancy),
 //			})
 //			if err != nil {
 //				return err

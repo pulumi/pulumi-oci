@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
- *     compartmentId: _var.compartment_id,
- *     instanceId: oci_core_instance.test_instance.id,
+ *     compartmentId: compartmentId,
+ *     instanceId: testInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,8 +89,8 @@ export interface GetInstanceConsoleConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInstanceConsoleConnections = oci.Core.getInstanceConsoleConnections({
- *     compartmentId: _var.compartment_id,
- *     instanceId: oci_core_instance.test_instance.id,
+ *     compartmentId: compartmentId,
+ *     instanceId: testInstance.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

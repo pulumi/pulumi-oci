@@ -16,11 +16,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testInvokeFunction = new oci.functions.InvokeFunction("testInvokeFunction", {
- *     functionId: oci_functions_function.test_function.id,
- *     invokeFunctionBody: _var.invoke_function_invoke_function_body,
- *     fnIntent: _var.invoke_function_fn_intent,
- *     fnInvokeType: _var.invoke_function_fn_invoke_type,
+ * const testInvokeFunction = new oci.functions.InvokeFunction("test_invoke_function", {
+ *     functionId: testFunction.id,
+ *     invokeFunctionBody: invokeFunctionInvokeFunctionBody,
+ *     fnIntent: invokeFunctionFnIntent,
+ *     fnInvokeType: invokeFunctionFnInvokeType,
  *     base64EncodeContent: false,
  * });
  * ```

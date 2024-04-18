@@ -18,24 +18,24 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProtectedDatabase = new oci.recoverymod.ProtectedDatabase("testProtectedDatabase", {
- *     compartmentId: _var.compartment_id,
- *     dbUniqueName: _var.protected_database_db_unique_name,
- *     displayName: _var.protected_database_display_name,
- *     password: _var.protected_database_password,
- *     protectionPolicyId: oci_recovery_protection_policy.test_protection_policy.id,
+ * const testProtectedDatabase = new oci.recoverymod.ProtectedDatabase("test_protected_database", {
+ *     compartmentId: compartmentId,
+ *     dbUniqueName: protectedDatabaseDbUniqueName,
+ *     displayName: protectedDatabaseDisplayName,
+ *     password: protectedDatabasePassword,
+ *     protectionPolicyId: testProtectionPolicy.id,
  *     recoveryServiceSubnets: [{
- *         recoveryServiceSubnetId: oci_recovery_recovery_service_subnet.test_recovery_service_subnet.id,
+ *         recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
  *     }],
- *     databaseId: oci_database_database.test_database.id,
- *     databaseSize: _var.protected_database_database_size,
+ *     databaseId: testDatabase.id,
+ *     databaseSize: protectedDatabaseDatabaseSize,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isRedoLogsShipped: _var.protected_database_is_redo_logs_shipped,
+ *     isRedoLogsShipped: protectedDatabaseIsRedoLogsShipped,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

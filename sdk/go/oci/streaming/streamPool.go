@@ -33,25 +33,26 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Streaming.NewStreamPool(ctx, "testStreamPool", &Streaming.StreamPoolArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Streaming.NewStreamPool(ctx, "test_stream_pool", &Streaming.StreamPoolArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(streamPoolName),
 //				CustomEncryptionKey: &streaming.StreamPoolCustomEncryptionKeyArgs{
-//					KmsKeyId: pulumi.Any(oci_kms_key.Test_key.Id),
+//					KmsKeyId: pulumi.Any(testKey.Id),
 //				},
-//				DefinedTags: pulumi.Any(_var.Stream_pool_defined_tags),
+//				DefinedTags: pulumi.Any(streamPoolDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				KafkaSettings: &streaming.StreamPoolKafkaSettingsArgs{
-//					AutoCreateTopicsEnable: pulumi.Any(_var.Stream_pool_kafka_settings_auto_create_topics_enable),
-//					BootstrapServers:       pulumi.Any(_var.Stream_pool_kafka_settings_bootstrap_servers),
-//					LogRetentionHours:      pulumi.Any(_var.Stream_pool_kafka_settings_log_retention_hours),
-//					NumPartitions:          pulumi.Any(_var.Stream_pool_kafka_settings_num_partitions),
+//					AutoCreateTopicsEnable: pulumi.Any(streamPoolKafkaSettingsAutoCreateTopicsEnable),
+//					BootstrapServers:       pulumi.Any(streamPoolKafkaSettingsBootstrapServers),
+//					LogRetentionHours:      pulumi.Any(streamPoolKafkaSettingsLogRetentionHours),
+//					NumPartitions:          pulumi.Any(streamPoolKafkaSettingsNumPartitions),
 //				},
 //				PrivateEndpointSettings: &streaming.StreamPoolPrivateEndpointSettingsArgs{
-//					NsgIds:            pulumi.Any(_var.Stream_pool_private_endpoint_settings_nsg_ids),
-//					PrivateEndpointIp: pulumi.Any(_var.Stream_pool_private_endpoint_settings_private_endpoint_ip),
-//					SubnetId:          pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					NsgIds:            pulumi.Any(streamPoolPrivateEndpointSettingsNsgIds),
+//					PrivateEndpointIp: pulumi.Any(streamPoolPrivateEndpointSettingsPrivateEndpointIp),
+//					SubnetId:          pulumi.Any(testSubnet.Id),
 //				},
 //			})
 //			if err != nil {

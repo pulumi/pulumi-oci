@@ -86,10 +86,10 @@ public final class OsubUsageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
-     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .fields(computedUsageFields)
+     *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -131,10 +131,10 @@ public final class OsubUsageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
-     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .fields(computedUsageFields)
+     *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -176,10 +176,10 @@ public final class OsubUsageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
-     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .fields(computedUsageFields)
+     *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
      * 
      *     }
@@ -221,10 +221,10 @@ public final class OsubUsageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .computedUsageId(oci_osub_usage_computed_usage.test_computed_usage().id())
-     *             .fields(var_.computed_usage_fields())
-     *             .xOneOriginRegion(var_.computed_usage_x_one_origin_region())
+     *             .compartmentId(compartmentId)
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .fields(computedUsageFields)
+     *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
      * 
      *     }

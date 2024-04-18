@@ -30,12 +30,12 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationSchedules = Oci.DataIntegration.GetWorkspaceApplicationSchedules.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_schedule_application_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Identifiers = @var.Workspace_application_schedule_identifier,
-        ///         Keys = @var.Workspace_application_schedule_key,
-        ///         Name = @var.Workspace_application_schedule_name,
-        ///         Types = @var.Workspace_application_schedule_type,
+        ///         ApplicationKey = workspaceApplicationScheduleApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Identifiers = workspaceApplicationScheduleIdentifier,
+        ///         Keys = workspaceApplicationScheduleKey,
+        ///         Name = workspaceApplicationScheduleName,
+        ///         Types = workspaceApplicationScheduleType,
         ///     });
         /// 
         /// });
@@ -64,12 +64,12 @@ namespace Pulumi.Oci.DataIntegration
         /// {
         ///     var testWorkspaceApplicationSchedules = Oci.DataIntegration.GetWorkspaceApplicationSchedules.Invoke(new()
         ///     {
-        ///         ApplicationKey = @var.Workspace_application_schedule_application_key,
-        ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-        ///         Identifiers = @var.Workspace_application_schedule_identifier,
-        ///         Keys = @var.Workspace_application_schedule_key,
-        ///         Name = @var.Workspace_application_schedule_name,
-        ///         Types = @var.Workspace_application_schedule_type,
+        ///         ApplicationKey = workspaceApplicationScheduleApplicationKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         Identifiers = workspaceApplicationScheduleIdentifier,
+        ///         Keys = workspaceApplicationScheduleKey,
+        ///         Name = workspaceApplicationScheduleName,
+        ///         Types = workspaceApplicationScheduleType,
         ///     });
         /// 
         /// });

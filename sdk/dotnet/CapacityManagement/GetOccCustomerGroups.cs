@@ -30,10 +30,10 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccCustomerGroups = Oci.CapacityManagement.GetOccCustomerGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Occ_customer_group_display_name,
-        ///         Id = @var.Occ_customer_group_id,
-        ///         Status = @var.Occ_customer_group_status,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = occCustomerGroupDisplayName,
+        ///         Id = occCustomerGroupId,
+        ///         Status = occCustomerGroupStatus,
         ///     });
         /// 
         /// });
@@ -62,10 +62,10 @@ namespace Pulumi.Oci.CapacityManagement
         /// {
         ///     var testOccCustomerGroups = Oci.CapacityManagement.GetOccCustomerGroups.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Occ_customer_group_display_name,
-        ///         Id = @var.Occ_customer_group_id,
-        ///         Status = @var.Occ_customer_group_status,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = occCustomerGroupDisplayName,
+        ///         Id = occCustomerGroupId,
+        ///         Status = occCustomerGroupStatus,
         ///     });
         /// 
         /// });

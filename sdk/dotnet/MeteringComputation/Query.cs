@@ -25,46 +25,46 @@ namespace Pulumi.Oci.MeteringComputation
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testQuery = new Oci.MeteringComputation.Query("testQuery", new()
+    ///     var testQuery = new Oci.MeteringComputation.Query("test_query", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         QueryDefinition = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionArgs
     ///         {
     ///             CostAnalysisUi = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionCostAnalysisUiArgs
     ///             {
-    ///                 Graph = @var.Query_query_definition_cost_analysis_ui_graph,
-    ///                 IsCumulativeGraph = @var.Query_query_definition_cost_analysis_ui_is_cumulative_graph,
+    ///                 Graph = queryQueryDefinitionCostAnalysisUiGraph,
+    ///                 IsCumulativeGraph = queryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
     ///             },
-    ///             DisplayName = @var.Query_query_definition_display_name,
+    ///             DisplayName = queryQueryDefinitionDisplayName,
     ///             ReportQuery = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryArgs
     ///             {
-    ///                 Granularity = @var.Query_query_definition_report_query_granularity,
-    ///                 TenantId = oci_metering_computation_tenant.Test_tenant.Id,
-    ///                 CompartmentDepth = @var.Query_query_definition_report_query_compartment_depth,
-    ///                 DateRangeName = @var.Query_query_definition_report_query_date_range_name,
-    ///                 Filter = @var.Query_query_definition_report_query_filter,
+    ///                 Granularity = queryQueryDefinitionReportQueryGranularity,
+    ///                 TenantId = testTenant.Id,
+    ///                 CompartmentDepth = queryQueryDefinitionReportQueryCompartmentDepth,
+    ///                 DateRangeName = queryQueryDefinitionReportQueryDateRangeName,
+    ///                 Filter = queryQueryDefinitionReportQueryFilter,
     ///                 Forecast = new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryForecastArgs
     ///                 {
-    ///                     TimeForecastEnded = @var.Query_query_definition_report_query_forecast_time_forecast_ended,
-    ///                     ForecastType = @var.Query_query_definition_report_query_forecast_forecast_type,
-    ///                     TimeForecastStarted = @var.Query_query_definition_report_query_forecast_time_forecast_started,
+    ///                     TimeForecastEnded = queryQueryDefinitionReportQueryForecastTimeForecastEnded,
+    ///                     ForecastType = queryQueryDefinitionReportQueryForecastForecastType,
+    ///                     TimeForecastStarted = queryQueryDefinitionReportQueryForecastTimeForecastStarted,
     ///                 },
-    ///                 GroupBies = @var.Query_query_definition_report_query_group_by,
+    ///                 GroupBies = queryQueryDefinitionReportQueryGroupBy,
     ///                 GroupByTags = new[]
     ///                 {
     ///                     new Oci.MeteringComputation.Inputs.QueryQueryDefinitionReportQueryGroupByTagArgs
     ///                     {
-    ///                         Key = @var.Query_query_definition_report_query_group_by_tag_key,
-    ///                         Namespace = @var.Query_query_definition_report_query_group_by_tag_namespace,
-    ///                         Value = @var.Query_query_definition_report_query_group_by_tag_value,
+    ///                         Key = queryQueryDefinitionReportQueryGroupByTagKey,
+    ///                         Namespace = queryQueryDefinitionReportQueryGroupByTagNamespace,
+    ///                         Value = queryQueryDefinitionReportQueryGroupByTagValue,
     ///                     },
     ///                 },
-    ///                 IsAggregateByTime = @var.Query_query_definition_report_query_is_aggregate_by_time,
-    ///                 QueryType = @var.Query_query_definition_report_query_query_type,
-    ///                 TimeUsageEnded = @var.Query_query_definition_report_query_time_usage_ended,
-    ///                 TimeUsageStarted = @var.Query_query_definition_report_query_time_usage_started,
+    ///                 IsAggregateByTime = queryQueryDefinitionReportQueryIsAggregateByTime,
+    ///                 QueryType = queryQueryDefinitionReportQueryQueryType,
+    ///                 TimeUsageEnded = queryQueryDefinitionReportQueryTimeUsageEnded,
+    ///                 TimeUsageStarted = queryQueryDefinitionReportQueryTimeUsageStarted,
     ///             },
-    ///             Version = @var.Query_query_definition_version,
+    ///             Version = queryQueryDefinitionVersion,
     ///         },
     ///     });
     /// 

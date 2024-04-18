@@ -148,11 +148,11 @@ def get_users(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_users(compartment_id=var["tenancy_ocid"],
-        external_identifier=var["user_external_identifier"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["user_name"],
-        state=var["user_state"])
+    test_users = oci.Identity.get_users(compartment_id=tenancy_ocid,
+        external_identifier=user_external_identifier,
+        identity_provider_id=test_identity_provider["id"],
+        name=user_name,
+        state=user_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -206,11 +206,11 @@ def get_users_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_users = oci.Identity.get_users(compartment_id=var["tenancy_ocid"],
-        external_identifier=var["user_external_identifier"],
-        identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
-        name=var["user_name"],
-        state=var["user_state"])
+    test_users = oci.Identity.get_users(compartment_id=tenancy_ocid,
+        external_identifier=user_external_identifier,
+        identity_provider_id=test_identity_provider["id"],
+        name=user_name,
+        state=user_state)
     ```
     <!--End PulumiCodeChooser -->
 

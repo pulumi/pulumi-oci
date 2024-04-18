@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ContainerEngine.NewClusterWorkloadMapping(ctx, "testClusterWorkloadMapping", &ContainerEngine.ClusterWorkloadMappingArgs{
-//				ClusterId:           pulumi.Any(oci_containerengine_cluster.Test_cluster.Id),
-//				MappedCompartmentId: pulumi.Any(oci_identity_compartment.Test_compartment.Id),
-//				Namespace:           pulumi.Any(_var.Cluster_workload_mapping_namespace),
+//			_, err := ContainerEngine.NewClusterWorkloadMapping(ctx, "test_cluster_workload_mapping", &ContainerEngine.ClusterWorkloadMappingArgs{
+//				ClusterId:           pulumi.Any(testCluster.Id),
+//				MappedCompartmentId: pulumi.Any(testCompartment.Id),
+//				Namespace:           pulumi.Any(clusterWorkloadMappingNamespace),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

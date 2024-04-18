@@ -322,17 +322,17 @@ class Ipv6(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ipv6 = oci.core.Ipv6("testIpv6",
-            vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
+        test_ipv6 = oci.core.Ipv6("test_ipv6",
+            vnic_id=test_vnic_attachment["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["ipv6_display_name"],
+            display_name=ipv6_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            ip_address=var["ipv6_ip_address"],
-            ipv6subnet_cidr=var["ipv6_ipv6subnet_cidr"])
+            ip_address=ipv6_ip_address,
+            ipv6subnet_cidr=ipv6_ipv6subnet_cidr)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -375,17 +375,17 @@ class Ipv6(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ipv6 = oci.core.Ipv6("testIpv6",
-            vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
+        test_ipv6 = oci.core.Ipv6("test_ipv6",
+            vnic_id=test_vnic_attachment["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["ipv6_display_name"],
+            display_name=ipv6_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            ip_address=var["ipv6_ip_address"],
-            ipv6subnet_cidr=var["ipv6_ipv6subnet_cidr"])
+            ip_address=ipv6_ip_address,
+            ipv6subnet_cidr=ipv6_ipv6subnet_cidr)
         ```
         <!--End PulumiCodeChooser -->
 

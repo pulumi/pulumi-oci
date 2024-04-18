@@ -505,19 +505,19 @@ class FileSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_file_system = oci.file_storage.FileSystem("testFileSystem",
-            availability_domain=var["file_system_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_file_system = oci.file_storage.FileSystem("test_file_system",
+            availability_domain=file_system_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["file_system_display_name"],
-            filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
+            display_name=file_system_display_name,
+            filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            source_snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
+            kms_key_id=test_key["id"],
+            source_snapshot_id=test_snapshot["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -592,19 +592,19 @@ class FileSystem(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_file_system = oci.file_storage.FileSystem("testFileSystem",
-            availability_domain=var["file_system_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_file_system = oci.file_storage.FileSystem("test_file_system",
+            availability_domain=file_system_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["file_system_display_name"],
-            filesystem_snapshot_policy_id=oci_file_storage_filesystem_snapshot_policy["test_filesystem_snapshot_policy"]["id"],
+            display_name=file_system_display_name,
+            filesystem_snapshot_policy_id=test_filesystem_snapshot_policy["id"],
             freeform_tags={
                 "Department": "Finance",
             },
-            kms_key_id=oci_kms_key["test_key"]["id"],
-            source_snapshot_id=oci_file_storage_snapshot["test_snapshot"]["id"])
+            kms_key_id=test_key["id"],
+            source_snapshot_id=test_snapshot["id"])
         ```
         <!--End PulumiCodeChooser -->
 

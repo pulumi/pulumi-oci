@@ -34,37 +34,37 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewBootVolume(ctx, "testBootVolume", &Core.BootVolumeArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewBootVolume(ctx, "test_boot_volume", &Core.BootVolumeArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				SourceDetails: &core.BootVolumeSourceDetailsArgs{
-//					Id:   pulumi.Any(_var.Boot_volume_source_details_id),
-//					Type: pulumi.Any(_var.Boot_volume_source_details_type),
+//					Id:   pulumi.Any(bootVolumeSourceDetailsId),
+//					Type: pulumi.Any(bootVolumeSourceDetailsType),
 //				},
 //				AutotunePolicies: core.BootVolumeAutotunePolicyArray{
 //					&core.BootVolumeAutotunePolicyArgs{
-//						AutotuneType: pulumi.Any(_var.Boot_volume_autotune_policies_autotune_type),
-//						MaxVpusPerGb: pulumi.Any(_var.Boot_volume_autotune_policies_max_vpus_per_gb),
+//						AutotuneType: pulumi.Any(bootVolumeAutotunePoliciesAutotuneType),
+//						MaxVpusPerGb: pulumi.Any(bootVolumeAutotunePoliciesMaxVpusPerGb),
 //					},
 //				},
-//				AvailabilityDomain: pulumi.Any(_var.Boot_volume_availability_domain),
-//				BackupPolicyId:     pulumi.Any(data.Oci_core_volume_backup_policies.Test_volume_backup_policies.Volume_backup_policies[0].Id),
+//				AvailabilityDomain: pulumi.Any(bootVolumeAvailabilityDomain),
+//				BackupPolicyId:     pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
 //				BootVolumeReplicas: core.BootVolumeBootVolumeReplicaArray{
 //					&core.BootVolumeBootVolumeReplicaArgs{
-//						AvailabilityDomain: pulumi.Any(_var.Boot_volume_boot_volume_replicas_availability_domain),
-//						DisplayName:        pulumi.Any(_var.Boot_volume_boot_volume_replicas_display_name),
+//						AvailabilityDomain: pulumi.Any(bootVolumeBootVolumeReplicasAvailabilityDomain),
+//						DisplayName:        pulumi.Any(bootVolumeBootVolumeReplicasDisplayName),
 //					},
 //				},
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Boot_volume_display_name),
+//				DisplayName: pulumi.Any(bootVolumeDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IsAutoTuneEnabled:          pulumi.Any(_var.Boot_volume_is_auto_tune_enabled),
-//				KmsKeyId:                   pulumi.Any(oci_kms_key.Test_key.Id),
-//				SizeInGbs:                  pulumi.Any(_var.Boot_volume_size_in_gbs),
-//				VpusPerGb:                  pulumi.Any(_var.Boot_volume_vpus_per_gb),
+//				IsAutoTuneEnabled:          pulumi.Any(bootVolumeIsAutoTuneEnabled),
+//				KmsKeyId:                   pulumi.Any(testKey.Id),
+//				SizeInGbs:                  pulumi.Any(bootVolumeSizeInGbs),
+//				VpusPerGb:                  pulumi.Any(bootVolumeVpusPerGb),
 //				BootVolumeReplicasDeletion: pulumi.Bool(true),
 //			})
 //			if err != nil {

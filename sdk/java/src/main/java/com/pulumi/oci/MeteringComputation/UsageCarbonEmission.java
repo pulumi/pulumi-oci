@@ -49,18 +49,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUsageCarbonEmission = new UsageCarbonEmission(&#34;testUsageCarbonEmission&#34;, UsageCarbonEmissionArgs.builder()        
- *             .tenantId(oci_metering_computation_tenant.test_tenant().id())
- *             .timeUsageEnded(var_.usage_carbon_emission_time_usage_ended())
- *             .timeUsageStarted(var_.usage_carbon_emission_time_usage_started())
- *             .compartmentDepth(var_.usage_carbon_emission_compartment_depth())
- *             .groupBies(var_.usage_carbon_emission_group_by())
+ *             .tenantId(testTenant.id())
+ *             .timeUsageEnded(usageCarbonEmissionTimeUsageEnded)
+ *             .timeUsageStarted(usageCarbonEmissionTimeUsageStarted)
+ *             .compartmentDepth(usageCarbonEmissionCompartmentDepth)
+ *             .groupBies(usageCarbonEmissionGroupBy)
  *             .groupByTags(UsageCarbonEmissionGroupByTagArgs.builder()
- *                 .key(var_.usage_carbon_emission_group_by_tag_key())
- *                 .namespace(var_.usage_carbon_emission_group_by_tag_namespace())
- *                 .value(var_.usage_carbon_emission_group_by_tag_value())
+ *                 .key(usageCarbonEmissionGroupByTagKey)
+ *                 .namespace(usageCarbonEmissionGroupByTagNamespace)
+ *                 .value(usageCarbonEmissionGroupByTagValue)
  *                 .build())
- *             .isAggregateByTime(var_.usage_carbon_emission_is_aggregate_by_time())
- *             .usageCarbonEmissionFilter(var_.usage_carbon_emission_usage_carbon_emission_filter())
+ *             .isAggregateByTime(usageCarbonEmissionIsAggregateByTime)
+ *             .usageCarbonEmissionFilter(usageCarbonEmissionUsageCarbonEmissionFilter)
  *             .build());
  * 
  *     }

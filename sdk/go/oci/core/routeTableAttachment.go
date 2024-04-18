@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewRouteTableAttachment(ctx, "testRouteTableAttachment", &Core.RouteTableAttachmentArgs{
-//				SubnetId:     pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//			_, err := Core.NewRouteTableAttachment(ctx, "test_route_table_attachment", &Core.RouteTableAttachmentArgs{
+//				SubnetId:     pulumi.Any(testSubnet.Id),
+//				RouteTableId: pulumi.Any(testRouteTable.Id),
 //			})
 //			if err != nil {
 //				return err

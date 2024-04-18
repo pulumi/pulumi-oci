@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentInstallKey = oci.ManagementAgent.getManagementAgentInstallKey({
- *     managementAgentInstallKeyId: oci_management_agent_management_agent_install_key.test_management_agent_install_key.id,
+ *     managementAgentInstallKeyId: testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,7 +111,7 @@ export interface GetManagementAgentInstallKeyResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentInstallKey = oci.ManagementAgent.getManagementAgentInstallKey({
- *     managementAgentInstallKeyId: oci_management_agent_management_agent_install_key.test_management_agent_install_key.id,
+ *     managementAgentInstallKeyId: testManagementAgentInstallKeyOciManagementAgentManagementAgentInstallKey.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

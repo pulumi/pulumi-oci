@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterPatchHistoryEntry = oci.Database.getVmClusterPatchHistoryEntry({
- *     patchHistoryEntryId: oci_database_patch_history_entry.test_patch_history_entry.id,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     patchHistoryEntryId: testPatchHistoryEntry.id,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -94,8 +94,8 @@ export interface GetVmClusterPatchHistoryEntryResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVmClusterPatchHistoryEntry = oci.Database.getVmClusterPatchHistoryEntry({
- *     patchHistoryEntryId: oci_database_patch_history_entry.test_patch_history_entry.id,
- *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     patchHistoryEntryId: testPatchHistoryEntry.id,
+ *     vmClusterId: testVmCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

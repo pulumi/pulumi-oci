@@ -83,7 +83,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
      *             .build());
      * 
      *     }
@@ -125,7 +125,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
      *             .build());
      * 
      *     }
@@ -167,7 +167,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
      *             .build());
      * 
      *     }
@@ -209,7 +209,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreement = MarketplaceFunctions.getAcceptedAgreement(GetAcceptedAgreementArgs.builder()
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
+     *             .acceptedAgreementId(testAcceptedAgreementOciMarketplaceAcceptedAgreement.id())
      *             .build());
      * 
      *     }
@@ -252,11 +252,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
-     *             .displayName(var_.accepted_agreement_display_name())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .compartmentId(compartmentId)
+     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .displayName(acceptedAgreementDisplayName)
+     *             .listingId(testListing.id())
+     *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
      *     }
@@ -299,11 +299,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
-     *             .displayName(var_.accepted_agreement_display_name())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .compartmentId(compartmentId)
+     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .displayName(acceptedAgreementDisplayName)
+     *             .listingId(testListing.id())
+     *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
      *     }
@@ -346,11 +346,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
-     *             .displayName(var_.accepted_agreement_display_name())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .compartmentId(compartmentId)
+     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .displayName(acceptedAgreementDisplayName)
+     *             .listingId(testListing.id())
+     *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
      *     }
@@ -393,11 +393,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAcceptedAgreements = MarketplaceFunctions.getAcceptedAgreements(GetAcceptedAgreementsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .acceptedAgreementId(oci_marketplace_accepted_agreement.test_accepted_agreement().id())
-     *             .displayName(var_.accepted_agreement_display_name())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.accepted_agreement_package_version())
+     *             .compartmentId(compartmentId)
+     *             .acceptedAgreementId(testAcceptedAgreement.id())
+     *             .displayName(acceptedAgreementDisplayName)
+     *             .listingId(testListing.id())
+     *             .packageVersion(acceptedAgreementPackageVersion)
      *             .build());
      * 
      *     }
@@ -440,7 +440,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -483,7 +483,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -526,7 +526,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -569,7 +569,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -612,7 +612,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -655,7 +655,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategories = MarketplaceFunctions.getCategories(GetCategoriesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -711,8 +711,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -768,8 +768,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -825,8 +825,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -882,8 +882,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListing = MarketplaceFunctions.getListing(GetListingArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListingOciMarketplaceListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -938,9 +938,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackagePackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -995,9 +995,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackagePackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1052,9 +1052,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackagePackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1109,9 +1109,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackage = MarketplaceFunctions.getListingPackage(GetListingPackageArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackagePackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1153,9 +1153,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_agreement_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackageAgreementPackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1197,9 +1197,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_agreement_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackageAgreementPackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1241,9 +1241,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_agreement_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackageAgreementPackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1285,9 +1285,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackageAgreements = MarketplaceFunctions.getListingPackageAgreements(GetListingPackageAgreementsArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .packageVersion(var_.listing_package_agreement_package_version())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .packageVersion(listingPackageAgreementPackageVersion)
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1342,10 +1342,10 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .packageType(var_.listing_package_package_type())
-     *             .packageVersion(var_.listing_package_package_version())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
+     *             .packageType(listingPackagePackageType)
+     *             .packageVersion(listingPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -1400,10 +1400,10 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .packageType(var_.listing_package_package_type())
-     *             .packageVersion(var_.listing_package_package_version())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
+     *             .packageType(listingPackagePackageType)
+     *             .packageVersion(listingPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -1458,10 +1458,10 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .packageType(var_.listing_package_package_type())
-     *             .packageVersion(var_.listing_package_package_version())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
+     *             .packageType(listingPackagePackageType)
+     *             .packageVersion(listingPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -1516,10 +1516,10 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingPackages = MarketplaceFunctions.getListingPackages(GetListingPackagesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .packageType(var_.listing_package_package_type())
-     *             .packageVersion(var_.listing_package_package_version())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
+     *             .packageType(listingPackagePackageType)
+     *             .packageVersion(listingPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -1561,8 +1561,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1604,8 +1604,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1647,8 +1647,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1690,8 +1690,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListingTaxes = MarketplaceFunctions.getListingTaxes(GetListingTaxesArgs.builder()
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .listingId(testListing.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1747,17 +1747,17 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
-     *             .categories(var_.listing_category())
-     *             .compartmentId(var_.compartment_id())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isFeatured(var_.listing_is_featured())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .listingTypes(var_.listing_listing_types())
-     *             .names(var_.listing_name())
-     *             .operatingSystems(var_.listing_operating_systems())
-     *             .packageType(var_.listing_package_type())
-     *             .pricings(var_.listing_pricing())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .categories(listingCategory)
+     *             .compartmentId(compartmentId)
+     *             .imageId(testImage.id())
+     *             .isFeatured(listingIsFeatured)
+     *             .listingId(testListing.id())
+     *             .listingTypes(listingListingTypes)
+     *             .names(listingName)
+     *             .operatingSystems(listingOperatingSystems)
+     *             .packageType(listingPackageType)
+     *             .pricings(listingPricing)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -1813,17 +1813,17 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
-     *             .categories(var_.listing_category())
-     *             .compartmentId(var_.compartment_id())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isFeatured(var_.listing_is_featured())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .listingTypes(var_.listing_listing_types())
-     *             .names(var_.listing_name())
-     *             .operatingSystems(var_.listing_operating_systems())
-     *             .packageType(var_.listing_package_type())
-     *             .pricings(var_.listing_pricing())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .categories(listingCategory)
+     *             .compartmentId(compartmentId)
+     *             .imageId(testImage.id())
+     *             .isFeatured(listingIsFeatured)
+     *             .listingId(testListing.id())
+     *             .listingTypes(listingListingTypes)
+     *             .names(listingName)
+     *             .operatingSystems(listingOperatingSystems)
+     *             .packageType(listingPackageType)
+     *             .pricings(listingPricing)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -1879,17 +1879,17 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
-     *             .categories(var_.listing_category())
-     *             .compartmentId(var_.compartment_id())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isFeatured(var_.listing_is_featured())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .listingTypes(var_.listing_listing_types())
-     *             .names(var_.listing_name())
-     *             .operatingSystems(var_.listing_operating_systems())
-     *             .packageType(var_.listing_package_type())
-     *             .pricings(var_.listing_pricing())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .categories(listingCategory)
+     *             .compartmentId(compartmentId)
+     *             .imageId(testImage.id())
+     *             .isFeatured(listingIsFeatured)
+     *             .listingId(testListing.id())
+     *             .listingTypes(listingListingTypes)
+     *             .names(listingName)
+     *             .operatingSystems(listingOperatingSystems)
+     *             .packageType(listingPackageType)
+     *             .pricings(listingPricing)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -1945,17 +1945,17 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
-     *             .categories(var_.listing_category())
-     *             .compartmentId(var_.compartment_id())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isFeatured(var_.listing_is_featured())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .listingTypes(var_.listing_listing_types())
-     *             .names(var_.listing_name())
-     *             .operatingSystems(var_.listing_operating_systems())
-     *             .packageType(var_.listing_package_type())
-     *             .pricings(var_.listing_pricing())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .categories(listingCategory)
+     *             .compartmentId(compartmentId)
+     *             .imageId(testImage.id())
+     *             .isFeatured(listingIsFeatured)
+     *             .listingId(testListing.id())
+     *             .listingTypes(listingListingTypes)
+     *             .names(listingName)
+     *             .operatingSystems(listingOperatingSystems)
+     *             .packageType(listingPackageType)
+     *             .pricings(listingPricing)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -2011,17 +2011,17 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
-     *             .categories(var_.listing_category())
-     *             .compartmentId(var_.compartment_id())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isFeatured(var_.listing_is_featured())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .listingTypes(var_.listing_listing_types())
-     *             .names(var_.listing_name())
-     *             .operatingSystems(var_.listing_operating_systems())
-     *             .packageType(var_.listing_package_type())
-     *             .pricings(var_.listing_pricing())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .categories(listingCategory)
+     *             .compartmentId(compartmentId)
+     *             .imageId(testImage.id())
+     *             .isFeatured(listingIsFeatured)
+     *             .listingId(testListing.id())
+     *             .listingTypes(listingListingTypes)
+     *             .names(listingName)
+     *             .operatingSystems(listingOperatingSystems)
+     *             .packageType(listingPackageType)
+     *             .pricings(listingPricing)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -2077,17 +2077,17 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListings = MarketplaceFunctions.getListings(GetListingsArgs.builder()
-     *             .categories(var_.listing_category())
-     *             .compartmentId(var_.compartment_id())
-     *             .imageId(oci_core_image.test_image().id())
-     *             .isFeatured(var_.listing_is_featured())
-     *             .listingId(oci_marketplace_listing.test_listing().id())
-     *             .listingTypes(var_.listing_listing_types())
-     *             .names(var_.listing_name())
-     *             .operatingSystems(var_.listing_operating_systems())
-     *             .packageType(var_.listing_package_type())
-     *             .pricings(var_.listing_pricing())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .categories(listingCategory)
+     *             .compartmentId(compartmentId)
+     *             .imageId(testImage.id())
+     *             .isFeatured(listingIsFeatured)
+     *             .listingId(testListing.id())
+     *             .listingTypes(listingListingTypes)
+     *             .names(listingName)
+     *             .operatingSystems(listingOperatingSystems)
+     *             .packageType(listingPackageType)
+     *             .pricings(listingPricing)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -2129,7 +2129,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .publicationId(testPublicationOciMarketplacePublication.id())
      *             .build());
      * 
      *     }
@@ -2171,7 +2171,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .publicationId(testPublicationOciMarketplacePublication.id())
      *             .build());
      * 
      *     }
@@ -2213,7 +2213,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .publicationId(testPublicationOciMarketplacePublication.id())
      *             .build());
      * 
      *     }
@@ -2255,7 +2255,7 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublication = MarketplaceFunctions.getPublication(GetPublicationArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .publicationId(testPublicationOciMarketplacePublication.id())
      *             .build());
      * 
      *     }
@@ -2297,8 +2297,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
-     *             .packageVersion(var_.publication_package_package_version())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageVersion(publicationPackagePackageVersion)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2340,8 +2340,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
-     *             .packageVersion(var_.publication_package_package_version())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageVersion(publicationPackagePackageVersion)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2383,8 +2383,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
-     *             .packageVersion(var_.publication_package_package_version())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageVersion(publicationPackagePackageVersion)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2426,8 +2426,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackage = MarketplaceFunctions.getPublicationPackage(GetPublicationPackageArgs.builder()
-     *             .packageVersion(var_.publication_package_package_version())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .packageVersion(publicationPackagePackageVersion)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2469,9 +2469,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
-     *             .packageType(var_.publication_package_package_type())
-     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(testPublication.id())
+     *             .packageType(publicationPackagePackageType)
+     *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -2513,9 +2513,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
-     *             .packageType(var_.publication_package_package_type())
-     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(testPublication.id())
+     *             .packageType(publicationPackagePackageType)
+     *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -2557,9 +2557,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
-     *             .packageType(var_.publication_package_package_type())
-     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(testPublication.id())
+     *             .packageType(publicationPackagePackageType)
+     *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -2601,9 +2601,9 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublicationPackages = MarketplaceFunctions.getPublicationPackages(GetPublicationPackagesArgs.builder()
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
-     *             .packageType(var_.publication_package_package_type())
-     *             .packageVersion(var_.publication_package_package_version())
+     *             .publicationId(testPublication.id())
+     *             .packageType(publicationPackagePackageType)
+     *             .packageVersion(publicationPackagePackageVersion)
      *             .build());
      * 
      *     }
@@ -2645,11 +2645,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingType(var_.publication_listing_type())
-     *             .names(var_.publication_name())
-     *             .operatingSystems(var_.publication_operating_systems())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .compartmentId(compartmentId)
+     *             .listingType(publicationListingType)
+     *             .names(publicationName)
+     *             .operatingSystems(publicationOperatingSystems)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2691,11 +2691,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingType(var_.publication_listing_type())
-     *             .names(var_.publication_name())
-     *             .operatingSystems(var_.publication_operating_systems())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .compartmentId(compartmentId)
+     *             .listingType(publicationListingType)
+     *             .names(publicationName)
+     *             .operatingSystems(publicationOperatingSystems)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2737,11 +2737,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingType(var_.publication_listing_type())
-     *             .names(var_.publication_name())
-     *             .operatingSystems(var_.publication_operating_systems())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .compartmentId(compartmentId)
+     *             .listingType(publicationListingType)
+     *             .names(publicationName)
+     *             .operatingSystems(publicationOperatingSystems)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2783,11 +2783,11 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublications = MarketplaceFunctions.getPublications(GetPublicationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .listingType(var_.publication_listing_type())
-     *             .names(var_.publication_name())
-     *             .operatingSystems(var_.publication_operating_systems())
-     *             .publicationId(oci_marketplace_publication.test_publication().id())
+     *             .compartmentId(compartmentId)
+     *             .listingType(publicationListingType)
+     *             .names(publicationName)
+     *             .operatingSystems(publicationOperatingSystems)
+     *             .publicationId(testPublication.id())
      *             .build());
      * 
      *     }
@@ -2829,8 +2829,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .compartmentId(compartmentId)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -2872,8 +2872,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .compartmentId(compartmentId)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -2915,8 +2915,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .compartmentId(compartmentId)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -2958,8 +2958,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .compartmentId(compartmentId)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -3001,8 +3001,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .compartmentId(compartmentId)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }
@@ -3044,8 +3044,8 @@ public final class MarketplaceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPublishers = MarketplaceFunctions.getPublishers(GetPublishersArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .publisherId(oci_marketplace_publisher.test_publisher().id())
+     *             .compartmentId(compartmentId)
+     *             .publisherId(testPublisher.id())
      *             .build());
      * 
      *     }

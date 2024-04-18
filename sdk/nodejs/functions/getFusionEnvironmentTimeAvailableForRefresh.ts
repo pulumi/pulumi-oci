@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentTimeAvailableForRefresh = oci.Functions.getFusionEnvironmentTimeAvailableForRefresh({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -69,7 +69,7 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFusionEnvironmentTimeAvailableForRefresh = oci.Functions.getFusionEnvironmentTimeAvailableForRefresh({
- *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     fusionEnvironmentId: testFusionEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

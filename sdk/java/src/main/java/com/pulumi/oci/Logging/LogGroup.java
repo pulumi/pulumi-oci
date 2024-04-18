@@ -46,10 +46,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testLogGroup = new LogGroup(&#34;testLogGroup&#34;, LogGroupArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.log_group_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(logGroupDisplayName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.log_group_description())
+ *             .description(logGroupDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

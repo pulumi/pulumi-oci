@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.GetRepositoryAuthor(ctx, &devops.GetRepositoryAuthorArgs{
-//				RepositoryId: oci_devops_repository.Test_repository.Id,
-//				RefName:      pulumi.StringRef(_var.Repository_author_ref_name),
+//				RepositoryId: testRepository.Id,
+//				RefName:      pulumi.StringRef(repositoryAuthorRefName),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -85,7 +85,7 @@ def get_namespace(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=var["compartment_id"])
+    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -124,7 +124,7 @@ def get_namespace_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=var["compartment_id"])
+    test_namespace = oci.ObjectStorage.get_namespace(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

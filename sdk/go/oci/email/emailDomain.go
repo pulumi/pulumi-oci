@@ -31,12 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Email.NewEmailDomain(ctx, "testEmailDomain", &Email.EmailDomainArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Email.NewEmailDomain(ctx, "test_email_domain", &Email.EmailDomainArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(emailDomainName),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				Description: pulumi.Any(_var.Email_domain_description),
+//				Description: pulumi.Any(emailDomainDescription),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

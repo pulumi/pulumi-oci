@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyApps = Oci.Identity.GetDomainsMyApps.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyAppCount = @var.My_app_my_app_count,
-        ///         MyAppFilter = @var.My_app_my_app_filter,
-        ///         Authorization = @var.My_app_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_app_resource_type_schema_version,
-        ///         StartIndex = @var.My_app_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyAppCount = myAppMyAppCount,
+        ///         MyAppFilter = myAppMyAppFilter,
+        ///         Authorization = myAppAuthorization,
+        ///         ResourceTypeSchemaVersion = myAppResourceTypeSchemaVersion,
+        ///         StartIndex = myAppStartIndex,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testMyApps = Oci.Identity.GetDomainsMyApps.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         MyAppCount = @var.My_app_my_app_count,
-        ///         MyAppFilter = @var.My_app_my_app_filter,
-        ///         Authorization = @var.My_app_authorization,
-        ///         ResourceTypeSchemaVersion = @var.My_app_resource_type_schema_version,
-        ///         StartIndex = @var.My_app_start_index,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         MyAppCount = myAppMyAppCount,
+        ///         MyAppFilter = myAppMyAppFilter,
+        ///         Authorization = myAppAuthorization,
+        ///         ResourceTypeSchemaVersion = myAppResourceTypeSchemaVersion,
+        ///         StartIndex = myAppStartIndex,
         ///     });
         /// 
         /// });

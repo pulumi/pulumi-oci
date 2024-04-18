@@ -23,9 +23,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaPrivateEndpointAttachments = oci.Oda.getOdaPrivateEndpointAttachments({
- *     compartmentId: _var.compartment_id,
- *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
- *     state: _var.oda_private_endpoint_attachment_state,
+ *     compartmentId: compartmentId,
+ *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
+ *     state: odaPrivateEndpointAttachmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,9 +103,9 @@ export interface GetOdaPrivateEndpointAttachmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOdaPrivateEndpointAttachments = oci.Oda.getOdaPrivateEndpointAttachments({
- *     compartmentId: _var.compartment_id,
- *     odaPrivateEndpointId: oci_oda_oda_private_endpoint.test_oda_private_endpoint.id,
- *     state: _var.oda_private_endpoint_attachment_state,
+ *     compartmentId: compartmentId,
+ *     odaPrivateEndpointId: testOdaPrivateEndpoint.id,
+ *     state: odaPrivateEndpointAttachmentState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

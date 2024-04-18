@@ -30,8 +30,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewallPolicyApplicationGroups = Oci.NetworkFirewall.GetNetworkFirewallPolicyApplicationGroups.Invoke(new()
         ///     {
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///         DisplayName = @var.Network_firewall_policy_application_group_display_name,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicyApplicationGroupDisplayName,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// {
         ///     var testNetworkFirewallPolicyApplicationGroups = Oci.NetworkFirewall.GetNetworkFirewallPolicyApplicationGroups.Invoke(new()
         ///     {
-        ///         NetworkFirewallPolicyId = oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id,
-        ///         DisplayName = @var.Network_firewall_policy_application_group_display_name,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         DisplayName = networkFirewallPolicyApplicationGroupDisplayName,
         ///     });
         /// 
         /// });

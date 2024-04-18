@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBastion = oci.Bastion.getBastion({
- *     bastionId: oci_bastion_bastion.test_bastion.id,
+ *     bastionId: testBastionOciBastionBastion.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -139,7 +139,7 @@ export interface GetBastionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBastion = oci.Bastion.getBastion({
- *     bastionId: oci_bastion_bastion.test_bastion.id,
+ *     bastionId: testBastionOciBastionBastion.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

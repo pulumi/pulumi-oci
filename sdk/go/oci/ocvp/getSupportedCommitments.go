@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Ocvp.GetSupportedCommitments(ctx, &ocvp.GetSupportedCommitmentsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				HostShapeName: pulumi.StringRef(oci_core_shape.Test_shape.Name),
+//				CompartmentId: compartmentId,
+//				HostShapeName: pulumi.StringRef(testShape.Name),
 //			}, nil)
 //			if err != nil {
 //				return err

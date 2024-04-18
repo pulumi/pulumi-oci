@@ -16,9 +16,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSslCipherSuite = new oci.loadbalancer.SslCipherSuite("testSslCipherSuite", {
- *     ciphers: _var.ssl_cipher_suite_ciphers,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * const testSslCipherSuite = new oci.loadbalancer.SslCipherSuite("test_ssl_cipher_suite", {
+ *     ciphers: sslCipherSuiteCiphers,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: sslCipherSuiteName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

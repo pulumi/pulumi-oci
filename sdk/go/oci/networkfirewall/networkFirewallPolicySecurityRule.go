@@ -31,21 +31,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := NetworkFirewall.NewNetworkFirewallPolicySecurityRule(ctx, "testNetworkFirewallPolicySecurityRule", &NetworkFirewall.NetworkFirewallPolicySecurityRuleArgs{
-//				Action: pulumi.Any(_var.Network_firewall_policy_security_rule_action),
+//			_, err := NetworkFirewall.NewNetworkFirewallPolicySecurityRule(ctx, "test_network_firewall_policy_security_rule", &NetworkFirewall.NetworkFirewallPolicySecurityRuleArgs{
+//				Action: pulumi.Any(networkFirewallPolicySecurityRuleAction),
+//				Name:   pulumi.Any(networkFirewallPolicySecurityRuleName),
 //				Condition: &networkfirewall.NetworkFirewallPolicySecurityRuleConditionArgs{
-//					Applications:         pulumi.Any(_var.Network_firewall_policy_security_rule_condition_application),
-//					DestinationAddresses: pulumi.Any(_var.Network_firewall_policy_security_rule_condition_destination_address),
-//					Services:             pulumi.Any(_var.Network_firewall_policy_security_rule_condition_service),
-//					SourceAddresses:      pulumi.Any(_var.Network_firewall_policy_security_rule_condition_source_address),
-//					Urls:                 pulumi.Any(_var.Network_firewall_policy_security_rule_condition_url),
+//					Applications:         pulumi.Any(networkFirewallPolicySecurityRuleConditionApplication),
+//					DestinationAddresses: pulumi.Any(networkFirewallPolicySecurityRuleConditionDestinationAddress),
+//					Services:             pulumi.Any(networkFirewallPolicySecurityRuleConditionService),
+//					SourceAddresses:      pulumi.Any(networkFirewallPolicySecurityRuleConditionSourceAddress),
+//					Urls:                 pulumi.Any(networkFirewallPolicySecurityRuleConditionUrl),
 //				},
-//				NetworkFirewallPolicyId: pulumi.Any(oci_network_firewall_network_firewall_policy.Test_network_firewall_policy.Id),
-//				Inspection:              pulumi.Any(_var.Network_firewall_policy_security_rule_inspection),
+//				NetworkFirewallPolicyId: pulumi.Any(testNetworkFirewallPolicy.Id),
+//				Inspection:              pulumi.Any(networkFirewallPolicySecurityRuleInspection),
 //				Positions: networkfirewall.NetworkFirewallPolicySecurityRulePositionArray{
 //					&networkfirewall.NetworkFirewallPolicySecurityRulePositionArgs{
-//						AfterRule:  pulumi.Any(_var.Network_firewall_policy_security_rule_position_after_rule),
-//						BeforeRule: pulumi.Any(_var.Network_firewall_policy_security_rule_position_before_rule),
+//						AfterRule:  pulumi.Any(networkFirewallPolicySecurityRulePositionAfterRule),
+//						BeforeRule: pulumi.Any(networkFirewallPolicySecurityRulePositionBeforeRule),
 //					},
 //				},
 //			})

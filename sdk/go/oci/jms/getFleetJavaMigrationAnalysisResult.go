@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetFleetJavaMigrationAnalysisResult(ctx, &jms.GetFleetJavaMigrationAnalysisResultArgs{
-//				FleetId:                       oci_jms_fleet.Test_fleet.Id,
-//				JavaMigrationAnalysisResultId: oci_apm_synthetics_result.Test_result.Id,
+//				FleetId:                       testFleet.Id,
+//				JavaMigrationAnalysisResultId: testResult.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

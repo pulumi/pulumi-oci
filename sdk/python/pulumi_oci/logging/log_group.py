@@ -273,13 +273,13 @@ class LogGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_group = oci.logging.LogGroup("testLogGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["log_group_display_name"],
+        test_log_group = oci.logging.LogGroup("test_log_group",
+            compartment_id=compartment_id,
+            display_name=log_group_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["log_group_description"],
+            description=log_group_description,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -325,13 +325,13 @@ class LogGroup(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_group = oci.logging.LogGroup("testLogGroup",
-            compartment_id=var["compartment_id"],
-            display_name=var["log_group_display_name"],
+        test_log_group = oci.logging.LogGroup("test_log_group",
+            compartment_id=compartment_id,
+            display_name=log_group_display_name,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["log_group_description"],
+            description=log_group_description,
             freeform_tags={
                 "Department": "Finance",
             })

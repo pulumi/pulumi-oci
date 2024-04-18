@@ -33,56 +33,56 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCaptureFilter = new Oci.Core.CaptureFilter("testCaptureFilter", new()
+    ///     var testCaptureFilter = new Oci.Core.CaptureFilter("test_capture_filter", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         FilterType = @var.Capture_filter_filter_type,
+    ///         CompartmentId = compartmentId,
+    ///         FilterType = captureFilterFilterType,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Capture_filter_display_name,
+    ///         DisplayName = captureFilterDisplayName,
     ///         FlowLogCaptureFilterRules = new[]
     ///         {
     ///             new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleArgs
     ///             {
-    ///                 DestinationCidr = @var.Capture_filter_flow_log_capture_filter_rules_destination_cidr,
-    ///                 FlowLogType = @var.Capture_filter_flow_log_capture_filter_rules_flow_log_type,
+    ///                 DestinationCidr = captureFilterFlowLogCaptureFilterRulesDestinationCidr,
+    ///                 FlowLogType = captureFilterFlowLogCaptureFilterRulesFlowLogType,
     ///                 IcmpOptions = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs
     ///                 {
-    ///                     Type = @var.Capture_filter_flow_log_capture_filter_rules_icmp_options_type,
-    ///                     Code = @var.Capture_filter_flow_log_capture_filter_rules_icmp_options_code,
+    ///                     Type = captureFilterFlowLogCaptureFilterRulesIcmpOptionsType,
+    ///                     Code = captureFilterFlowLogCaptureFilterRulesIcmpOptionsCode,
     ///                 },
-    ///                 IsEnabled = @var.Capture_filter_flow_log_capture_filter_rules_is_enabled,
-    ///                 Priority = @var.Capture_filter_flow_log_capture_filter_rules_priority,
-    ///                 Protocol = @var.Capture_filter_flow_log_capture_filter_rules_protocol,
-    ///                 RuleAction = @var.Capture_filter_flow_log_capture_filter_rules_rule_action,
-    ///                 SamplingRate = @var.Capture_filter_flow_log_capture_filter_rules_sampling_rate,
-    ///                 SourceCidr = @var.Capture_filter_flow_log_capture_filter_rules_source_cidr,
+    ///                 IsEnabled = captureFilterFlowLogCaptureFilterRulesIsEnabled,
+    ///                 Priority = captureFilterFlowLogCaptureFilterRulesPriority,
+    ///                 Protocol = captureFilterFlowLogCaptureFilterRulesProtocol,
+    ///                 RuleAction = captureFilterFlowLogCaptureFilterRulesRuleAction,
+    ///                 SamplingRate = captureFilterFlowLogCaptureFilterRulesSamplingRate,
+    ///                 SourceCidr = captureFilterFlowLogCaptureFilterRulesSourceCidr,
     ///                 TcpOptions = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs
     ///                 {
     ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
-    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
+    ///                         Max = captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMax,
+    ///                         Min = captureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeMin,
     ///                     },
     ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
-    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
+    ///                         Max = captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMax,
+    ///                         Min = captureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///                 UdpOptions = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs
     ///                 {
     ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
-    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
+    ///                         Max = captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMax,
+    ///                         Min = captureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeMin,
     ///                     },
     ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
-    ///                         Min = @var.Capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
+    ///                         Max = captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMax,
+    ///                         Min = captureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///             },
@@ -95,40 +95,40 @@ namespace Pulumi.Oci.Core
     ///         {
     ///             new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleArgs
     ///             {
-    ///                 TrafficDirection = @var.Capture_filter_vtap_capture_filter_rules_traffic_direction,
-    ///                 DestinationCidr = @var.Capture_filter_vtap_capture_filter_rules_destination_cidr,
+    ///                 TrafficDirection = captureFilterVtapCaptureFilterRulesTrafficDirection,
+    ///                 DestinationCidr = captureFilterVtapCaptureFilterRulesDestinationCidr,
     ///                 IcmpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs
     ///                 {
-    ///                     Type = @var.Capture_filter_vtap_capture_filter_rules_icmp_options_type,
-    ///                     Code = @var.Capture_filter_vtap_capture_filter_rules_icmp_options_code,
+    ///                     Type = captureFilterVtapCaptureFilterRulesIcmpOptionsType,
+    ///                     Code = captureFilterVtapCaptureFilterRulesIcmpOptionsCode,
     ///                 },
-    ///                 Protocol = @var.Capture_filter_vtap_capture_filter_rules_protocol,
-    ///                 RuleAction = @var.Capture_filter_vtap_capture_filter_rules_rule_action,
-    ///                 SourceCidr = @var.Capture_filter_vtap_capture_filter_rules_source_cidr,
+    ///                 Protocol = captureFilterVtapCaptureFilterRulesProtocol,
+    ///                 RuleAction = captureFilterVtapCaptureFilterRulesRuleAction,
+    ///                 SourceCidr = captureFilterVtapCaptureFilterRulesSourceCidr,
     ///                 TcpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs
     ///                 {
     ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
-    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
+    ///                         Max = captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMax,
+    ///                         Min = captureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeMin,
     ///                     },
     ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
-    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
+    ///                         Max = captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMax,
+    ///                         Min = captureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///                 UdpOptions = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs
     ///                 {
     ///                     DestinationPortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
-    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
+    ///                         Max = captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMax,
+    ///                         Min = captureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeMin,
     ///                     },
     ///                     SourcePortRange = new Oci.Core.Inputs.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs
     ///                     {
-    ///                         Max = @var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
-    ///                         Min = @var.Capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
+    ///                         Max = captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMax,
+    ///                         Min = captureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeMin,
     ///                     },
     ///                 },
     ///             },

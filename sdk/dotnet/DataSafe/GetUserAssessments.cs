@@ -44,19 +44,19 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessments = Oci.DataSafe.GetUserAssessments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.User_assessment_access_level,
-        ///         CompartmentIdInSubtree = @var.User_assessment_compartment_id_in_subtree,
-        ///         DisplayName = @var.User_assessment_display_name,
-        ///         IsBaseline = @var.User_assessment_is_baseline,
-        ///         IsScheduleAssessment = @var.User_assessment_is_schedule_assessment,
-        ///         ScheduleUserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         State = @var.User_assessment_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.User_assessment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.User_assessment_time_created_less_than,
-        ///         TriggeredBy = @var.User_assessment_triggered_by,
-        ///         Type = @var.User_assessment_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = userAssessmentAccessLevel,
+        ///         CompartmentIdInSubtree = userAssessmentCompartmentIdInSubtree,
+        ///         DisplayName = userAssessmentDisplayName,
+        ///         IsBaseline = userAssessmentIsBaseline,
+        ///         IsScheduleAssessment = userAssessmentIsScheduleAssessment,
+        ///         ScheduleUserAssessmentId = testUserAssessment.Id,
+        ///         State = userAssessmentState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = userAssessmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = userAssessmentTimeCreatedLessThan,
+        ///         TriggeredBy = userAssessmentTriggeredBy,
+        ///         Type = userAssessmentType,
         ///     });
         /// 
         /// });
@@ -99,19 +99,19 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testUserAssessments = Oci.DataSafe.GetUserAssessments.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         AccessLevel = @var.User_assessment_access_level,
-        ///         CompartmentIdInSubtree = @var.User_assessment_compartment_id_in_subtree,
-        ///         DisplayName = @var.User_assessment_display_name,
-        ///         IsBaseline = @var.User_assessment_is_baseline,
-        ///         IsScheduleAssessment = @var.User_assessment_is_schedule_assessment,
-        ///         ScheduleUserAssessmentId = oci_data_safe_user_assessment.Test_user_assessment.Id,
-        ///         State = @var.User_assessment_state,
-        ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-        ///         TimeCreatedGreaterThanOrEqualTo = @var.User_assessment_time_created_greater_than_or_equal_to,
-        ///         TimeCreatedLessThan = @var.User_assessment_time_created_less_than,
-        ///         TriggeredBy = @var.User_assessment_triggered_by,
-        ///         Type = @var.User_assessment_type,
+        ///         CompartmentId = compartmentId,
+        ///         AccessLevel = userAssessmentAccessLevel,
+        ///         CompartmentIdInSubtree = userAssessmentCompartmentIdInSubtree,
+        ///         DisplayName = userAssessmentDisplayName,
+        ///         IsBaseline = userAssessmentIsBaseline,
+        ///         IsScheduleAssessment = userAssessmentIsScheduleAssessment,
+        ///         ScheduleUserAssessmentId = testUserAssessment.Id,
+        ///         State = userAssessmentState,
+        ///         TargetId = testTarget.Id,
+        ///         TimeCreatedGreaterThanOrEqualTo = userAssessmentTimeCreatedGreaterThanOrEqualTo,
+        ///         TimeCreatedLessThan = userAssessmentTimeCreatedLessThan,
+        ///         TriggeredBy = userAssessmentTriggeredBy,
+        ///         Type = userAssessmentType,
         ///     });
         /// 
         /// });

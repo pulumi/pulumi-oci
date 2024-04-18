@@ -18,34 +18,35 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAccessPolicy = new oci.servicemesh.AccessPolicy("testAccessPolicy", {
- *     compartmentId: _var.compartment_id,
- *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ * const testAccessPolicy = new oci.servicemesh.AccessPolicy("test_access_policy", {
+ *     compartmentId: compartmentId,
+ *     meshId: testMesh.id,
+ *     name: accessPolicyName,
  *     rules: [{
- *         action: _var.access_policy_rules_action,
+ *         action: accessPolicyRulesAction,
  *         destination: {
- *             type: _var.access_policy_rules_destination_type,
- *             hostnames: _var.access_policy_rules_destination_hostnames,
- *             ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
- *             ipAddresses: _var.access_policy_rules_destination_ip_addresses,
- *             ports: _var.access_policy_rules_destination_ports,
- *             protocol: _var.access_policy_rules_destination_protocol,
- *             virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *             type: accessPolicyRulesDestinationType,
+ *             hostnames: accessPolicyRulesDestinationHostnames,
+ *             ingressGatewayId: testIngressGateway.id,
+ *             ipAddresses: accessPolicyRulesDestinationIpAddresses,
+ *             ports: accessPolicyRulesDestinationPorts,
+ *             protocol: accessPolicyRulesDestinationProtocol,
+ *             virtualServiceId: testVirtualService.id,
  *         },
  *         source: {
- *             type: _var.access_policy_rules_source_type,
- *             hostnames: _var.access_policy_rules_source_hostnames,
- *             ingressGatewayId: oci_service_mesh_ingress_gateway.test_ingress_gateway.id,
- *             ipAddresses: _var.access_policy_rules_source_ip_addresses,
- *             ports: _var.access_policy_rules_source_ports,
- *             protocol: _var.access_policy_rules_source_protocol,
- *             virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ *             type: accessPolicyRulesSourceType,
+ *             hostnames: accessPolicyRulesSourceHostnames,
+ *             ingressGatewayId: testIngressGateway.id,
+ *             ipAddresses: accessPolicyRulesSourceIpAddresses,
+ *             ports: accessPolicyRulesSourcePorts,
+ *             protocol: accessPolicyRulesSourceProtocol,
+ *             virtualServiceId: testVirtualService.id,
  *         },
  *     }],
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.access_policy_description,
+ *     description: accessPolicyDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

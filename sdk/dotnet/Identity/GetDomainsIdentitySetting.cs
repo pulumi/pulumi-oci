@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentitySetting = Oci.Identity.GetDomainsIdentitySetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentitySettingId = oci_identity_domains_identity_setting.Test_identity_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentitySettingId = testIdentitySettingOciIdentityDomainsIdentitySetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_setting_resource_type_schema_version,
+        ///         Authorization = identitySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = identitySettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -65,15 +65,15 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentitySetting = Oci.Identity.GetDomainsIdentitySetting.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentitySettingId = oci_identity_domains_identity_setting.Test_identity_setting.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentitySettingId = testIdentitySettingOciIdentityDomainsIdentitySetting.Id,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_setting_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_setting_resource_type_schema_version,
+        ///         Authorization = identitySettingAuthorization,
+        ///         ResourceTypeSchemaVersion = identitySettingResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

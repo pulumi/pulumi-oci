@@ -191,10 +191,10 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            grace_period=var["autonomous_database_instance_wallet_management_grace_period"],
-            should_rotate=var["autonomous_database_instance_wallet_management_should_rotate"])
+        test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management",
+            autonomous_database_id=test_autonomous_database["id"],
+            grace_period=autonomous_database_instance_wallet_management_grace_period,
+            should_rotate=autonomous_database_instance_wallet_management_should_rotate)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -230,10 +230,10 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement",
-            autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-            grace_period=var["autonomous_database_instance_wallet_management_grace_period"],
-            should_rotate=var["autonomous_database_instance_wallet_management_should_rotate"])
+        test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management",
+            autonomous_database_id=test_autonomous_database["id"],
+            grace_period=autonomous_database_instance_wallet_management_grace_period,
+            should_rotate=autonomous_database_instance_wallet_management_should_rotate)
         ```
         <!--End PulumiCodeChooser -->
 

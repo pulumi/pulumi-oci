@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTagNamespaces = oci.Identity.getTagNamespaces({
- *     compartmentId: _var.compartment_id,
- *     includeSubcompartments: _var.tag_namespace_include_subcompartments,
- *     state: _var.tag_namespace_state,
+ *     compartmentId: compartmentId,
+ *     includeSubcompartments: tagNamespaceIncludeSubcompartments,
+ *     state: tagNamespaceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -92,9 +92,9 @@ export interface GetTagNamespacesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTagNamespaces = oci.Identity.getTagNamespaces({
- *     compartmentId: _var.compartment_id,
- *     includeSubcompartments: _var.tag_namespace_include_subcompartments,
- *     state: _var.tag_namespace_state,
+ *     compartmentId: compartmentId,
+ *     includeSubcompartments: tagNamespaceIncludeSubcompartments,
+ *     state: tagNamespaceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

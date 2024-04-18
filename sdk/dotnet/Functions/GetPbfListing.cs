@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListing = Oci.Functions.GetPbfListing.Invoke(new()
         ///     {
-        ///         PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
+        ///         PbfListingId = testPbfListingOciFunctionsPbfListing.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Functions
         /// {
         ///     var testPbfListing = Oci.Functions.GetPbfListing.Invoke(new()
         ///     {
-        ///         PbfListingId = oci_functions_pbf_listing.Test_pbf_listing.Id,
+        ///         PbfListingId = testPbfListingOciFunctionsPbfListing.Id,
         ///     });
         /// 
         /// });

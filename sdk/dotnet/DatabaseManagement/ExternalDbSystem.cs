@@ -25,27 +25,27 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testExternalDbSystem = new Oci.DatabaseManagement.ExternalDbSystem("testExternalDbSystem", new()
+    ///     var testExternalDbSystem = new Oci.DatabaseManagement.ExternalDbSystem("test_external_db_system", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         DbSystemDiscoveryId = oci_database_management_db_system_discovery.Test_db_system_discovery.Id,
+    ///         CompartmentId = compartmentId,
+    ///         DbSystemDiscoveryId = testDbSystemDiscovery.Id,
     ///         DatabaseManagementConfig = new Oci.DatabaseManagement.Inputs.ExternalDbSystemDatabaseManagementConfigArgs
     ///         {
-    ///             LicenseModel = @var.External_db_system_database_management_config_license_model,
+    ///             LicenseModel = externalDbSystemDatabaseManagementConfigLicenseModel,
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.External_db_system_display_name,
+    ///         DisplayName = externalDbSystemDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         StackMonitoringConfig = new Oci.DatabaseManagement.Inputs.ExternalDbSystemStackMonitoringConfigArgs
     ///         {
-    ///             IsEnabled = @var.External_db_system_stack_monitoring_config_is_enabled,
-    ///             Metadata = @var.External_db_system_stack_monitoring_config_metadata,
+    ///             IsEnabled = externalDbSystemStackMonitoringConfigIsEnabled,
+    ///             Metadata = externalDbSystemStackMonitoringConfigMetadata,
     ///         },
     ///     });
     /// 

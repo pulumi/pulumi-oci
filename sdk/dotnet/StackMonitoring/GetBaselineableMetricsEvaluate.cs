@@ -29,7 +29,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testBaselineableMetricsEvaluate = Oci.StackMonitoring.GetBaselineableMetricsEvaluate.Invoke(new()
         ///     {
-        ///         BaselineableMetricId = oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
+        ///         BaselineableMetricId = testBaselineableMetric.Id,
         ///         Items = new[]
         ///         {
         ///             new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemInputArgs
@@ -38,22 +38,22 @@ namespace Pulumi.Oci.StackMonitoring
         ///                 {
         ///                     new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointInputArgs
         ///                     {
-        ///                         Timestamp = @var.Baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
-        ///                         Value = @var.Baselineable_metrics_evaluate_items_evaluation_data_points_value,
+        ///                         Timestamp = baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp,
+        ///                         Value = baselineableMetricsEvaluateItemsEvaluationDataPointsValue,
         ///                     },
         ///                 },
         ///                 TrainingDataPoints = new[]
         ///                 {
         ///                     new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointInputArgs
         ///                     {
-        ///                         Timestamp = @var.Baselineable_metrics_evaluate_items_training_data_points_timestamp,
-        ///                         Value = @var.Baselineable_metrics_evaluate_items_training_data_points_value,
+        ///                         Timestamp = baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp,
+        ///                         Value = baselineableMetricsEvaluateItemsTrainingDataPointsValue,
         ///                     },
         ///                 },
-        ///                 Dimensions = @var.Baselineable_metrics_evaluate_items_dimensions,
+        ///                 Dimensions = baselineableMetricsEvaluateItemsDimensions,
         ///             },
         ///         },
-        ///         ResourceId = oci_usage_proxy_resource.Test_resource.Id,
+        ///         ResourceId = testResource.Id,
         ///     });
         /// 
         /// });
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {
         ///     var testBaselineableMetricsEvaluate = Oci.StackMonitoring.GetBaselineableMetricsEvaluate.Invoke(new()
         ///     {
-        ///         BaselineableMetricId = oci_stack_monitoring_baselineable_metric.Test_baselineable_metric.Id,
+        ///         BaselineableMetricId = testBaselineableMetric.Id,
         ///         Items = new[]
         ///         {
         ///             new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemInputArgs
@@ -90,22 +90,22 @@ namespace Pulumi.Oci.StackMonitoring
         ///                 {
         ///                     new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointInputArgs
         ///                     {
-        ///                         Timestamp = @var.Baselineable_metrics_evaluate_items_evaluation_data_points_timestamp,
-        ///                         Value = @var.Baselineable_metrics_evaluate_items_evaluation_data_points_value,
+        ///                         Timestamp = baselineableMetricsEvaluateItemsEvaluationDataPointsTimestamp,
+        ///                         Value = baselineableMetricsEvaluateItemsEvaluationDataPointsValue,
         ///                     },
         ///                 },
         ///                 TrainingDataPoints = new[]
         ///                 {
         ///                     new Oci.StackMonitoring.Inputs.GetBaselineableMetricsEvaluateItemTrainingDataPointInputArgs
         ///                     {
-        ///                         Timestamp = @var.Baselineable_metrics_evaluate_items_training_data_points_timestamp,
-        ///                         Value = @var.Baselineable_metrics_evaluate_items_training_data_points_value,
+        ///                         Timestamp = baselineableMetricsEvaluateItemsTrainingDataPointsTimestamp,
+        ///                         Value = baselineableMetricsEvaluateItemsTrainingDataPointsValue,
         ///                     },
         ///                 },
-        ///                 Dimensions = @var.Baselineable_metrics_evaluate_items_dimensions,
+        ///                 Dimensions = baselineableMetricsEvaluateItemsDimensions,
         ///             },
         ///         },
-        ///         ResourceId = oci_usage_proxy_resource.Test_resource.Id,
+        ///         ResourceId = testResource.Id,
         ///     });
         /// 
         /// });

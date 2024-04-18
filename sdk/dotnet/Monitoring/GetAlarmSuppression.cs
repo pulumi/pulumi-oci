@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarmSuppression = Oci.Monitoring.GetAlarmSuppression.Invoke(new()
         ///     {
-        ///         AlarmSuppressionId = oci_monitoring_alarm_suppression.Test_alarm_suppression.Id,
+        ///         AlarmSuppressionId = testAlarmSuppressionOciMonitoringAlarmSuppression.Id,
         ///     });
         /// 
         /// });
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Monitoring
         /// {
         ///     var testAlarmSuppression = Oci.Monitoring.GetAlarmSuppression.Invoke(new()
         ///     {
-        ///         AlarmSuppressionId = oci_monitoring_alarm_suppression.Test_alarm_suppression.Id,
+        ///         AlarmSuppressionId = testAlarmSuppressionOciMonitoringAlarmSuppression.Id,
         ///     });
         /// 
         /// });

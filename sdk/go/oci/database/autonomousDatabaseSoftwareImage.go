@@ -31,12 +31,12 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseSoftwareImage(ctx, "testAutonomousDatabaseSoftwareImage", &Database.AutonomousDatabaseSoftwareImageArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				DisplayName:      pulumi.Any(_var.Autonomous_database_software_image_display_name),
-//				ImageShapeFamily: pulumi.Any(_var.Autonomous_database_software_image_image_shape_family),
-//				SourceCdbId:      pulumi.Any(oci_database_source_cdb.Test_source_cdb.Id),
-//				DefinedTags:      pulumi.Any(_var.Autonomous_database_software_image_defined_tags),
+//			_, err := Database.NewAutonomousDatabaseSoftwareImage(ctx, "test_autonomous_database_software_image", &Database.AutonomousDatabaseSoftwareImageArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DisplayName:      pulumi.Any(autonomousDatabaseSoftwareImageDisplayName),
+//				ImageShapeFamily: pulumi.Any(autonomousDatabaseSoftwareImageImageShapeFamily),
+//				SourceCdbId:      pulumi.Any(testSourceCdb.Id),
+//				DefinedTags:      pulumi.Any(autonomousDatabaseSoftwareImageDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},

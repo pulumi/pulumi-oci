@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVlan = oci.Core.getVlan({
- *     vlanId: oci_core_vlan.test_vlan.id,
+ *     vlanId: testVlanOciCoreVlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,7 +111,7 @@ export interface GetVlanResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVlan = oci.Core.getVlan({
- *     vlanId: oci_core_vlan.test_vlan.id,
+ *     vlanId: testVlanOciCoreVlan.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

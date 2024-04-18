@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumes = oci.Core.getVolumes({
- *     availabilityDomain: _var.volume_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.volume_display_name,
- *     state: _var.volume_state,
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ *     availabilityDomain: volumeAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: volumeDisplayName,
+ *     state: volumeState,
+ *     volumeGroupId: testVolumeGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -116,11 +116,11 @@ export interface GetVolumesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVolumes = oci.Core.getVolumes({
- *     availabilityDomain: _var.volume_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.volume_display_name,
- *     state: _var.volume_state,
- *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ *     availabilityDomain: volumeAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: volumeDisplayName,
+ *     state: volumeState,
+ *     volumeGroupId: testVolumeGroup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,12 +25,13 @@ namespace Pulumi.Oci.ObjectStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testReplicationPolicy = new Oci.ObjectStorage.ReplicationPolicy("testReplicationPolicy", new()
+    ///     var testReplicationPolicy = new Oci.ObjectStorage.ReplicationPolicy("test_replication_policy", new()
     ///     {
-    ///         Bucket = @var.Replication_policy_bucket,
-    ///         DestinationBucketName = oci_objectstorage_bucket.Test_bucket.Name,
-    ///         DestinationRegionName = oci_identity_region.Test_region.Name,
-    ///         Namespace = @var.Replication_policy_namespace,
+    ///         Bucket = replicationPolicyBucket,
+    ///         DestinationBucketName = testBucket.Name,
+    ///         DestinationRegionName = testRegion.Name,
+    ///         Name = replicationPolicyName,
+    ///         Namespace = replicationPolicyNamespace,
     ///     });
     /// 
     /// });

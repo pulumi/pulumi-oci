@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testLifecycleStage = oci.OsManagementHub.getLifecycleStage({
- *     lifecycleStageId: oci_os_management_hub_lifecycle_stage.test_lifecycle_stage.id,
+ *     lifecycleStageId: testLifecycleStageOciOsManagementHubLifecycleStage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -125,7 +125,7 @@ export interface GetLifecycleStageResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testLifecycleStage = oci.OsManagementHub.getLifecycleStage({
- *     lifecycleStageId: oci_os_management_hub_lifecycle_stage.test_lifecycle_stage.id,
+ *     lifecycleStageId: testLifecycleStageOciOsManagementHubLifecycleStage.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

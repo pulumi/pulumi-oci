@@ -31,17 +31,17 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewIpv6(ctx, "testIpv6", &Core.Ipv6Args{
-//				VnicId: pulumi.Any(oci_core_vnic_attachment.Test_vnic_attachment.Id),
+//			_, err := Core.NewIpv6(ctx, "test_ipv6", &Core.Ipv6Args{
+//				VnicId: pulumi.Any(testVnicAttachment.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Ipv6_display_name),
+//				DisplayName: pulumi.Any(ipv6DisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				IpAddress:      pulumi.Any(_var.Ipv6_ip_address),
-//				Ipv6subnetCidr: pulumi.Any(_var.Ipv6_ipv6subnet_cidr),
+//				IpAddress:      pulumi.Any(ipv6IpAddress),
+//				Ipv6subnetCidr: pulumi.Any(ipv6Ipv6subnetCidr),
 //			})
 //			if err != nil {
 //				return err

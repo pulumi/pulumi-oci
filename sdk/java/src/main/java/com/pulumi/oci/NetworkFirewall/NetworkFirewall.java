@@ -46,16 +46,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewall = new NetworkFirewall(&#34;testNetworkFirewall&#34;, NetworkFirewallArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .networkFirewallPolicyId(oci_network_firewall_network_firewall_policy.test_network_firewall_policy().id())
- *             .subnetId(oci_core_subnet.test_subnet().id())
- *             .availabilityDomain(var_.network_firewall_availability_domain())
+ *             .compartmentId(compartmentId)
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .subnetId(testSubnet.id())
+ *             .availabilityDomain(networkFirewallAvailabilityDomain)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.network_firewall_display_name())
+ *             .displayName(networkFirewallDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .ipv4address(var_.network_firewall_ipv4address())
- *             .ipv6address(var_.network_firewall_ipv6address())
- *             .networkSecurityGroupIds(var_.network_firewall_network_security_group_ids())
+ *             .ipv4address(networkFirewallIpv4address)
+ *             .ipv6address(networkFirewallIpv6address)
+ *             .networkSecurityGroupIds(networkFirewallNetworkSecurityGroupIds)
  *             .build());
  * 
  *     }

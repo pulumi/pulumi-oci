@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.operations_insights_warehouse_user_display_name,
- *     id: _var.operations_insights_warehouse_user_id,
- *     states: _var.operations_insights_warehouse_user_state,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     compartmentId: compartmentId,
+ *     displayName: operationsInsightsWarehouseUserDisplayName,
+ *     id: operationsInsightsWarehouseUserId,
+ *     states: operationsInsightsWarehouseUserState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -108,11 +108,11 @@ export interface GetOperationsInsightsWarehouseUsersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOperationsInsightsWarehouseUsers = oci.Opsi.getOperationsInsightsWarehouseUsers({
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.operations_insights_warehouse_user_display_name,
- *     id: _var.operations_insights_warehouse_user_id,
- *     states: _var.operations_insights_warehouse_user_state,
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     compartmentId: compartmentId,
+ *     displayName: operationsInsightsWarehouseUserDisplayName,
+ *     id: operationsInsightsWarehouseUserId,
+ *     states: operationsInsightsWarehouseUserState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

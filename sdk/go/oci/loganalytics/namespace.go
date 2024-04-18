@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := LogAnalytics.NewNamespace(ctx, "testNamespace", &LogAnalytics.NamespaceArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				IsOnboarded:   pulumi.Any(_var.Is_onboarded),
-//				Namespace:     pulumi.Any(_var.Namespace_namespace),
+//			_, err := LogAnalytics.NewNamespace(ctx, "test_namespace", &LogAnalytics.NamespaceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				IsOnboarded:   pulumi.Any(isOnboarded),
+//				Namespace:     pulumi.Any(namespaceNamespace),
 //			})
 //			if err != nil {
 //				return err

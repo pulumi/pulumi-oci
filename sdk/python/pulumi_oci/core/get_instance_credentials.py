@@ -92,7 +92,7 @@ def get_instance_credentials(instance_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_credential = oci.Core.get_instance_credentials(instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance_credential = oci.Core.get_instance_credentials(instance_id=test_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_instance_credentials_output(instance_id: Optional[pulumi.Input[str]] = N
     import pulumi
     import pulumi_oci as oci
 
-    test_instance_credential = oci.Core.get_instance_credentials(instance_id=oci_core_instance["test_instance"]["id"])
+    test_instance_credential = oci.Core.get_instance_credentials(instance_id=test_instance["id"])
     ```
     <!--End PulumiCodeChooser -->
 

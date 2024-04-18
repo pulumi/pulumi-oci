@@ -82,7 +82,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .channelId(testChannelOciMysqlChannel.id())
      *             .build());
      * 
      *     }
@@ -126,7 +126,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .channelId(testChannelOciMysqlChannel.id())
      *             .build());
      * 
      *     }
@@ -170,7 +170,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .channelId(testChannelOciMysqlChannel.id())
      *             .build());
      * 
      *     }
@@ -214,7 +214,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannel = MysqlFunctions.getChannel(GetChannelArgs.builder()
-     *             .channelId(oci_mysql_channel.test_channel().id())
+     *             .channelId(testChannelOciMysqlChannel.id())
      *             .build());
      * 
      *     }
@@ -256,12 +256,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .channelId(oci_mysql_channel.test_channel().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .displayName(var_.channel_display_name())
-     *             .isEnabled(var_.channel_is_enabled())
-     *             .state(var_.channel_state())
+     *             .compartmentId(compartmentId)
+     *             .channelId(testChannel.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(channelDisplayName)
+     *             .isEnabled(channelIsEnabled)
+     *             .state(channelState)
      *             .build());
      * 
      *     }
@@ -303,12 +303,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .channelId(oci_mysql_channel.test_channel().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .displayName(var_.channel_display_name())
-     *             .isEnabled(var_.channel_is_enabled())
-     *             .state(var_.channel_state())
+     *             .compartmentId(compartmentId)
+     *             .channelId(testChannel.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(channelDisplayName)
+     *             .isEnabled(channelIsEnabled)
+     *             .state(channelState)
      *             .build());
      * 
      *     }
@@ -350,12 +350,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .channelId(oci_mysql_channel.test_channel().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .displayName(var_.channel_display_name())
-     *             .isEnabled(var_.channel_is_enabled())
-     *             .state(var_.channel_state())
+     *             .compartmentId(compartmentId)
+     *             .channelId(testChannel.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(channelDisplayName)
+     *             .isEnabled(channelIsEnabled)
+     *             .state(channelState)
      *             .build());
      * 
      *     }
@@ -397,12 +397,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChannels = MysqlFunctions.getChannels(GetChannelsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .channelId(oci_mysql_channel.test_channel().id())
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
-     *             .displayName(var_.channel_display_name())
-     *             .isEnabled(var_.channel_is_enabled())
-     *             .state(var_.channel_state())
+     *             .compartmentId(compartmentId)
+     *             .channelId(testChannel.id())
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(channelDisplayName)
+     *             .isEnabled(channelIsEnabled)
+     *             .state(channelState)
      *             .build());
      * 
      *     }
@@ -444,7 +444,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -486,7 +486,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -528,7 +528,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -570,7 +570,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHeatWaveCluster = MysqlFunctions.getHeatWaveCluster(GetHeatWaveClusterArgs.builder()
-     *             .dbSystemId(oci_database_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -612,7 +612,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .backupId(testBackup.id())
      *             .build());
      * 
      *     }
@@ -654,7 +654,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .backupId(testBackup.id())
      *             .build());
      * 
      *     }
@@ -696,7 +696,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .backupId(testBackup.id())
      *             .build());
      * 
      *     }
@@ -738,7 +738,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackup = MysqlFunctions.getMysqlBackup(GetMysqlBackupArgs.builder()
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
+     *             .backupId(testBackup.id())
      *             .build());
      * 
      *     }
@@ -780,12 +780,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
-     *             .creationType(var_.mysql_backup_creation_type())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_backup_display_name())
-     *             .state(var_.mysql_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .backupId(testBackup.id())
+     *             .creationType(mysqlBackupCreationType)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlBackupDisplayName)
+     *             .state(mysqlBackupState)
      *             .build());
      * 
      *     }
@@ -827,12 +827,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
-     *             .creationType(var_.mysql_backup_creation_type())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_backup_display_name())
-     *             .state(var_.mysql_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .backupId(testBackup.id())
+     *             .creationType(mysqlBackupCreationType)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlBackupDisplayName)
+     *             .state(mysqlBackupState)
      *             .build());
      * 
      *     }
@@ -874,12 +874,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
-     *             .creationType(var_.mysql_backup_creation_type())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_backup_display_name())
-     *             .state(var_.mysql_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .backupId(testBackup.id())
+     *             .creationType(mysqlBackupCreationType)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlBackupDisplayName)
+     *             .state(mysqlBackupState)
      *             .build());
      * 
      *     }
@@ -921,12 +921,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .backupId(oci_mysql_mysql_backup.test_backup().id())
-     *             .creationType(var_.mysql_backup_creation_type())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_backup_display_name())
-     *             .state(var_.mysql_backup_state())
+     *             .compartmentId(compartmentId)
+     *             .backupId(testBackup.id())
+     *             .creationType(mysqlBackupCreationType)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlBackupDisplayName)
+     *             .state(mysqlBackupState)
      *             .build());
      * 
      *     }
@@ -968,7 +968,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
-     *             .configurationId(var_.mysql_configuration_id())
+     *             .configurationId(mysqlConfigurationId)
      *             .build());
      * 
      *     }
@@ -1010,7 +1010,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
-     *             .configurationId(var_.mysql_configuration_id())
+     *             .configurationId(mysqlConfigurationId)
      *             .build());
      * 
      *     }
@@ -1052,7 +1052,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
-     *             .configurationId(var_.mysql_configuration_id())
+     *             .configurationId(mysqlConfigurationId)
      *             .build());
      * 
      *     }
@@ -1094,7 +1094,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfiguration = MysqlFunctions.getMysqlConfiguration(GetMysqlConfigurationArgs.builder()
-     *             .configurationId(var_.mysql_configuration_id())
+     *             .configurationId(mysqlConfigurationId)
      *             .build());
      * 
      *     }
@@ -1143,12 +1143,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .displayName(var_.mysql_configuration_display_name())
-     *             .shapeName(var_.mysql_shape_name())
-     *             .state(var_.mysql_configuration_state())
-     *             .types(var_.mysql_configuration_type())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .displayName(mysqlConfigurationDisplayName)
+     *             .shapeName(mysqlShapeName)
+     *             .state(mysqlConfigurationState)
+     *             .types(mysqlConfigurationType)
      *             .build());
      * 
      *     }
@@ -1197,12 +1197,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .displayName(var_.mysql_configuration_display_name())
-     *             .shapeName(var_.mysql_shape_name())
-     *             .state(var_.mysql_configuration_state())
-     *             .types(var_.mysql_configuration_type())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .displayName(mysqlConfigurationDisplayName)
+     *             .shapeName(mysqlShapeName)
+     *             .state(mysqlConfigurationState)
+     *             .types(mysqlConfigurationType)
      *             .build());
      * 
      *     }
@@ -1251,12 +1251,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .displayName(var_.mysql_configuration_display_name())
-     *             .shapeName(var_.mysql_shape_name())
-     *             .state(var_.mysql_configuration_state())
-     *             .types(var_.mysql_configuration_type())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .displayName(mysqlConfigurationDisplayName)
+     *             .shapeName(mysqlShapeName)
+     *             .state(mysqlConfigurationState)
+     *             .types(mysqlConfigurationType)
      *             .build());
      * 
      *     }
@@ -1305,12 +1305,12 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlConfigurations = MysqlFunctions.getMysqlConfigurations(GetMysqlConfigurationsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .displayName(var_.mysql_configuration_display_name())
-     *             .shapeName(var_.mysql_shape_name())
-     *             .state(var_.mysql_configuration_state())
-     *             .types(var_.mysql_configuration_type())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .displayName(mysqlConfigurationDisplayName)
+     *             .shapeName(mysqlShapeName)
+     *             .state(mysqlConfigurationState)
+     *             .types(mysqlConfigurationType)
      *             .build());
      * 
      *     }
@@ -1352,7 +1352,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1394,7 +1394,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1436,7 +1436,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1478,7 +1478,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystem = MysqlFunctions.getMysqlDbSystem(GetMysqlDbSystemArgs.builder()
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
+     *             .dbSystemId(testDbSystem.id())
      *             .build());
      * 
      *     }
@@ -1521,14 +1521,14 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .databaseManagements(var_.mysql_db_system_database_management())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_db_system_display_name())
-     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
-     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
-     *             .state(var_.mysql_db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .databaseManagements(mysqlDbSystemDatabaseManagement)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlDbSystemDisplayName)
+     *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
+     *             .isUpToDate(mysqlDbSystemIsUpToDate)
+     *             .state(mysqlDbSystemState)
      *             .build());
      * 
      *     }
@@ -1571,14 +1571,14 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .databaseManagements(var_.mysql_db_system_database_management())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_db_system_display_name())
-     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
-     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
-     *             .state(var_.mysql_db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .databaseManagements(mysqlDbSystemDatabaseManagement)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlDbSystemDisplayName)
+     *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
+     *             .isUpToDate(mysqlDbSystemIsUpToDate)
+     *             .state(mysqlDbSystemState)
      *             .build());
      * 
      *     }
@@ -1621,14 +1621,14 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .databaseManagements(var_.mysql_db_system_database_management())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_db_system_display_name())
-     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
-     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
-     *             .state(var_.mysql_db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .databaseManagements(mysqlDbSystemDatabaseManagement)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlDbSystemDisplayName)
+     *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
+     *             .isUpToDate(mysqlDbSystemIsUpToDate)
+     *             .state(mysqlDbSystemState)
      *             .build());
      * 
      *     }
@@ -1671,14 +1671,14 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlDbSystems = MysqlFunctions.getMysqlDbSystems(GetMysqlDbSystemsArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(var_.mysql_configuration_id())
-     *             .databaseManagements(var_.mysql_db_system_database_management())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_db_system().id())
-     *             .displayName(var_.mysql_db_system_display_name())
-     *             .isHeatWaveClusterAttached(var_.mysql_db_system_is_heat_wave_cluster_attached())
-     *             .isUpToDate(var_.mysql_db_system_is_up_to_date())
-     *             .state(var_.mysql_db_system_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(mysqlConfigurationId)
+     *             .databaseManagements(mysqlDbSystemDatabaseManagement)
+     *             .dbSystemId(testDbSystem.id())
+     *             .displayName(mysqlDbSystemDisplayName)
+     *             .isHeatWaveClusterAttached(mysqlDbSystemIsHeatWaveClusterAttached)
+     *             .isUpToDate(mysqlDbSystemIsUpToDate)
+     *             .state(mysqlDbSystemState)
      *             .build());
      * 
      *     }
@@ -1722,7 +1722,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1766,7 +1766,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1810,7 +1810,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1854,7 +1854,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMysqlVersions = MysqlFunctions.getMysqlVersion(GetMysqlVersionArgs.builder()
-     *             .compartmentId(var_.compartment_id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -1896,7 +1896,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .replicaId(testReplicaOciMysqlReplica.id())
      *             .build());
      * 
      *     }
@@ -1938,7 +1938,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .replicaId(testReplicaOciMysqlReplica.id())
      *             .build());
      * 
      *     }
@@ -1980,7 +1980,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .replicaId(testReplicaOciMysqlReplica.id())
      *             .build());
      * 
      *     }
@@ -2022,7 +2022,7 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplica = MysqlFunctions.getReplica(GetReplicaArgs.builder()
-     *             .replicaId(oci_mysql_replica.test_replica().id())
+     *             .replicaId(testReplicaOciMysqlReplica.id())
      *             .build());
      * 
      *     }
@@ -2064,13 +2064,13 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
-     *             .displayName(var_.replica_display_name())
-     *             .isUpToDate(var_.replica_is_up_to_date())
-     *             .replicaId(oci_mysql_replica.test_replica().id())
-     *             .state(var_.replica_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testMysqlConfiguration.id())
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .displayName(replicaDisplayName)
+     *             .isUpToDate(replicaIsUpToDate)
+     *             .replicaId(testReplica.id())
+     *             .state(replicaState)
      *             .build());
      * 
      *     }
@@ -2112,13 +2112,13 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
-     *             .displayName(var_.replica_display_name())
-     *             .isUpToDate(var_.replica_is_up_to_date())
-     *             .replicaId(oci_mysql_replica.test_replica().id())
-     *             .state(var_.replica_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testMysqlConfiguration.id())
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .displayName(replicaDisplayName)
+     *             .isUpToDate(replicaIsUpToDate)
+     *             .replicaId(testReplica.id())
+     *             .state(replicaState)
      *             .build());
      * 
      *     }
@@ -2160,13 +2160,13 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
-     *             .displayName(var_.replica_display_name())
-     *             .isUpToDate(var_.replica_is_up_to_date())
-     *             .replicaId(oci_mysql_replica.test_replica().id())
-     *             .state(var_.replica_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testMysqlConfiguration.id())
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .displayName(replicaDisplayName)
+     *             .isUpToDate(replicaIsUpToDate)
+     *             .replicaId(testReplica.id())
+     *             .state(replicaState)
      *             .build());
      * 
      *     }
@@ -2208,13 +2208,13 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicas = MysqlFunctions.getReplicas(GetReplicasArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
-     *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
-     *             .displayName(var_.replica_display_name())
-     *             .isUpToDate(var_.replica_is_up_to_date())
-     *             .replicaId(oci_mysql_replica.test_replica().id())
-     *             .state(var_.replica_state())
+     *             .compartmentId(compartmentId)
+     *             .configurationId(testMysqlConfiguration.id())
+     *             .dbSystemId(testMysqlDbSystem.id())
+     *             .displayName(replicaDisplayName)
+     *             .isUpToDate(replicaIsUpToDate)
+     *             .replicaId(testReplica.id())
+     *             .state(replicaState)
      *             .build());
      * 
      *     }
@@ -2259,10 +2259,10 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .isSupportedFors(var_.shape_is_supported_for())
-     *             .name(var_.shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .isSupportedFors(shapeIsSupportedFor)
+     *             .name(shapeName)
      *             .build());
      * 
      *     }
@@ -2307,10 +2307,10 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .isSupportedFors(var_.shape_is_supported_for())
-     *             .name(var_.shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .isSupportedFors(shapeIsSupportedFor)
+     *             .name(shapeName)
      *             .build());
      * 
      *     }
@@ -2355,10 +2355,10 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .isSupportedFors(var_.shape_is_supported_for())
-     *             .name(var_.shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .isSupportedFors(shapeIsSupportedFor)
+     *             .name(shapeName)
      *             .build());
      * 
      *     }
@@ -2403,10 +2403,10 @@ public final class MysqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testShapes = MysqlFunctions.getShapes(GetShapesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .availabilityDomain(var_.shape_availability_domain())
-     *             .isSupportedFors(var_.shape_is_supported_for())
-     *             .name(var_.shape_name())
+     *             .compartmentId(compartmentId)
+     *             .availabilityDomain(shapeAvailabilityDomain)
+     *             .isSupportedFors(shapeIsSupportedFor)
+     *             .name(shapeName)
      *             .build());
      * 
      *     }

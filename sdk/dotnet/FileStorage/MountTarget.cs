@@ -56,43 +56,43 @@ namespace Pulumi.Oci.FileStorage
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMountTarget = new Oci.FileStorage.MountTarget("testMountTarget", new()
+    ///     var testMountTarget = new Oci.FileStorage.MountTarget("test_mount_target", new()
     ///     {
-    ///         AvailabilityDomain = @var.Mount_target_availability_domain,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///         AvailabilityDomain = mountTargetAvailabilityDomain,
+    ///         CompartmentId = compartmentId,
+    ///         SubnetId = testSubnet.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Mount_target_display_name,
+    ///         DisplayName = mountTargetDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         HostnameLabel = @var.Mount_target_hostname_label,
-    ///         IdmapType = @var.Mount_target_idmap_type,
-    ///         IpAddress = @var.Mount_target_ip_address,
+    ///         HostnameLabel = mountTargetHostnameLabel,
+    ///         IdmapType = mountTargetIdmapType,
+    ///         IpAddress = mountTargetIpAddress,
     ///         Kerberos = new Oci.FileStorage.Inputs.MountTargetKerberosArgs
     ///         {
-    ///             KerberosRealm = @var.Mount_target_kerberos_kerberos_realm,
-    ///             BackupKeyTabSecretVersion = @var.Mount_target_kerberos_backup_key_tab_secret_version,
-    ///             CurrentKeyTabSecretVersion = @var.Mount_target_kerberos_current_key_tab_secret_version,
-    ///             IsKerberosEnabled = @var.Mount_target_kerberos_is_kerberos_enabled,
-    ///             KeyTabSecretId = oci_vault_secret.Test_secret.Id,
+    ///             KerberosRealm = mountTargetKerberosKerberosRealm,
+    ///             BackupKeyTabSecretVersion = mountTargetKerberosBackupKeyTabSecretVersion,
+    ///             CurrentKeyTabSecretVersion = mountTargetKerberosCurrentKeyTabSecretVersion,
+    ///             IsKerberosEnabled = mountTargetKerberosIsKerberosEnabled,
+    ///             KeyTabSecretId = testSecret.Id,
     ///         },
     ///         LdapIdmap = new Oci.FileStorage.Inputs.MountTargetLdapIdmapArgs
     ///         {
-    ///             CacheLifetimeSeconds = @var.Mount_target_ldap_idmap_cache_lifetime_seconds,
-    ///             CacheRefreshIntervalSeconds = @var.Mount_target_ldap_idmap_cache_refresh_interval_seconds,
-    ///             GroupSearchBase = @var.Mount_target_ldap_idmap_group_search_base,
-    ///             NegativeCacheLifetimeSeconds = @var.Mount_target_ldap_idmap_negative_cache_lifetime_seconds,
-    ///             OutboundConnector1id = oci_file_storage_outbound_connector1.Test_outbound_connector1.Id,
-    ///             OutboundConnector2id = oci_file_storage_outbound_connector2.Test_outbound_connector2.Id,
-    ///             SchemaType = @var.Mount_target_ldap_idmap_schema_type,
-    ///             UserSearchBase = @var.Mount_target_ldap_idmap_user_search_base,
+    ///             CacheLifetimeSeconds = mountTargetLdapIdmapCacheLifetimeSeconds,
+    ///             CacheRefreshIntervalSeconds = mountTargetLdapIdmapCacheRefreshIntervalSeconds,
+    ///             GroupSearchBase = mountTargetLdapIdmapGroupSearchBase,
+    ///             NegativeCacheLifetimeSeconds = mountTargetLdapIdmapNegativeCacheLifetimeSeconds,
+    ///             OutboundConnector1id = testOutboundConnector1.Id,
+    ///             OutboundConnector2id = testOutboundConnector2.Id,
+    ///             SchemaType = mountTargetLdapIdmapSchemaType,
+    ///             UserSearchBase = mountTargetLdapIdmapUserSearchBase,
     ///         },
-    ///         NsgIds = @var.Mount_target_nsg_ids,
+    ///         NsgIds = mountTargetNsgIds,
     ///     });
     /// 
     /// });

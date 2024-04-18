@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Analytics.GetAnalyticsInstancePrivateAccessChannel(ctx, &analytics.GetAnalyticsInstancePrivateAccessChannelArgs{
-//				AnalyticsInstanceId:     oci_analytics_analytics_instance.Test_analytics_instance.Id,
-//				PrivateAccessChannelKey: _var.Analytics_instance_private_access_channel_private_access_channel_key,
+//				AnalyticsInstanceId:     testAnalyticsInstance.Id,
+//				PrivateAccessChannelKey: analyticsInstancePrivateAccessChannelPrivateAccessChannelKey,
 //			}, nil)
 //			if err != nil {
 //				return err

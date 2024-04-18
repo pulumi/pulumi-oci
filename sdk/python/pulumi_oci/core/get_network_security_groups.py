@@ -144,11 +144,11 @@ def get_network_security_groups(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=var["compartment_id"],
-        display_name=var["network_security_group_display_name"],
-        state=var["network_security_group_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"])
+    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=compartment_id,
+        display_name=network_security_group_display_name,
+        state=network_security_group_state,
+        vcn_id=test_vcn["id"],
+        vlan_id=test_vlan["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -201,11 +201,11 @@ def get_network_security_groups_output(compartment_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=var["compartment_id"],
-        display_name=var["network_security_group_display_name"],
-        state=var["network_security_group_state"],
-        vcn_id=oci_core_vcn["test_vcn"]["id"],
-        vlan_id=oci_core_vlan["test_vlan"]["id"])
+    test_network_security_groups = oci.Core.get_network_security_groups(compartment_id=compartment_id,
+        display_name=network_security_group_display_name,
+        state=network_security_group_state,
+        vcn_id=test_vcn["id"],
+        vlan_id=test_vlan["id"])
     ```
     <!--End PulumiCodeChooser -->
 

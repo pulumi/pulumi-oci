@@ -389,15 +389,16 @@ class Dkim(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dkim = oci.email.Dkim("testDkim",
-            email_domain_id=oci_email_email_domain["test_email_domain"]["id"],
+        test_dkim = oci.email.Dkim("test_dkim",
+            email_domain_id=test_email_domain["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["dkim_description"],
+            description=dkim_description,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            name=dkim_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -447,15 +448,16 @@ class Dkim(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dkim = oci.email.Dkim("testDkim",
-            email_domain_id=oci_email_email_domain["test_email_domain"]["id"],
+        test_dkim = oci.email.Dkim("test_dkim",
+            email_domain_id=test_email_domain["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["dkim_description"],
+            description=dkim_description,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            name=dkim_name)
         ```
         <!--End PulumiCodeChooser -->
 

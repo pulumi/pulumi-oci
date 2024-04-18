@@ -186,15 +186,15 @@ def get_target_databases(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=var["compartment_id"],
-        access_level=var["target_database_access_level"],
-        associated_resource_id=oci_data_safe_associated_resource["test_associated_resource"]["id"],
-        compartment_id_in_subtree=var["target_database_compartment_id_in_subtree"],
-        database_type=var["target_database_database_type"],
-        display_name=var["target_database_display_name"],
-        infrastructure_type=var["target_database_infrastructure_type"],
-        state=var["target_database_state"],
-        target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
+    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=compartment_id,
+        access_level=target_database_access_level,
+        associated_resource_id=test_associated_resource["id"],
+        compartment_id_in_subtree=target_database_compartment_id_in_subtree,
+        database_type=target_database_database_type,
+        display_name=target_database_display_name,
+        infrastructure_type=target_database_infrastructure_type,
+        state=target_database_state,
+        target_database_id=test_target_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -262,15 +262,15 @@ def get_target_databases_output(access_level: Optional[pulumi.Input[Optional[str
     import pulumi
     import pulumi_oci as oci
 
-    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=var["compartment_id"],
-        access_level=var["target_database_access_level"],
-        associated_resource_id=oci_data_safe_associated_resource["test_associated_resource"]["id"],
-        compartment_id_in_subtree=var["target_database_compartment_id_in_subtree"],
-        database_type=var["target_database_database_type"],
-        display_name=var["target_database_display_name"],
-        infrastructure_type=var["target_database_infrastructure_type"],
-        state=var["target_database_state"],
-        target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
+    test_target_databases = oci.DataSafe.get_target_databases(compartment_id=compartment_id,
+        access_level=target_database_access_level,
+        associated_resource_id=test_associated_resource["id"],
+        compartment_id_in_subtree=target_database_compartment_id_in_subtree,
+        database_type=target_database_database_type,
+        display_name=target_database_display_name,
+        infrastructure_type=target_database_infrastructure_type,
+        state=target_database_state,
+        target_database_id=test_target_database["id"])
     ```
     <!--End PulumiCodeChooser -->
 

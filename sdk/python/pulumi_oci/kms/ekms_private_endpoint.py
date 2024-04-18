@@ -400,19 +400,19 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ekms_private_endpoint = oci.kms.EkmsPrivateEndpoint("testEkmsPrivateEndpoint",
-            ca_bundle=var["ekms_private_endpoint_ca_bundle"],
-            compartment_id=var["compartment_id"],
-            display_name=var["ekms_private_endpoint_display_name"],
-            external_key_manager_ip=var["ekms_private_endpoint_external_key_manager_ip"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_ekms_private_endpoint = oci.kms.EkmsPrivateEndpoint("test_ekms_private_endpoint",
+            ca_bundle=ekms_private_endpoint_ca_bundle,
+            compartment_id=compartment_id,
+            display_name=ekms_private_endpoint_display_name,
+            external_key_manager_ip=ekms_private_endpoint_external_key_manager_ip,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            port=var["ekms_private_endpoint_port"])
+            port=ekms_private_endpoint_port)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -457,19 +457,19 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ekms_private_endpoint = oci.kms.EkmsPrivateEndpoint("testEkmsPrivateEndpoint",
-            ca_bundle=var["ekms_private_endpoint_ca_bundle"],
-            compartment_id=var["compartment_id"],
-            display_name=var["ekms_private_endpoint_display_name"],
-            external_key_manager_ip=var["ekms_private_endpoint_external_key_manager_ip"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_ekms_private_endpoint = oci.kms.EkmsPrivateEndpoint("test_ekms_private_endpoint",
+            ca_bundle=ekms_private_endpoint_ca_bundle,
+            compartment_id=compartment_id,
+            display_name=ekms_private_endpoint_display_name,
+            external_key_manager_ip=ekms_private_endpoint_external_key_manager_ip,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            port=var["ekms_private_endpoint_port"])
+            port=ekms_private_endpoint_port)
         ```
         <!--End PulumiCodeChooser -->
 

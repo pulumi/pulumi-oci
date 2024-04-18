@@ -127,10 +127,10 @@ def get_monitored_resources(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=var["compartment_id"],
-        name=var["monitored_resource_name"],
-        status=var["monitored_resource_status"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
+    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=compartment_id,
+        name=monitored_resource_name,
+        status=monitored_resource_status,
+        work_request_id=test_work_request["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -178,10 +178,10 @@ def get_monitored_resources_output(compartment_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=var["compartment_id"],
-        name=var["monitored_resource_name"],
-        status=var["monitored_resource_status"],
-        work_request_id=oci_containerengine_work_request["test_work_request"]["id"])
+    test_monitored_resources = oci.StackMonitoring.get_monitored_resources(compartment_id=compartment_id,
+        name=monitored_resource_name,
+        status=monitored_resource_status,
+        work_request_id=test_work_request["id"])
     ```
     <!--End PulumiCodeChooser -->
 

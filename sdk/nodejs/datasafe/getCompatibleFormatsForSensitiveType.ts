@@ -22,9 +22,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testCompatibleFormatsForSensitiveType = oci.DataSafe.getCompatibleFormatsForSensitiveType({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.compatible_formats_for_sensitive_type_access_level,
- *     compartmentIdInSubtree: _var.compatible_formats_for_sensitive_type_compartment_id_in_subtree,
+ *     compartmentId: compartmentId,
+ *     accessLevel: compatibleFormatsForSensitiveTypeAccessLevel,
+ *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -89,9 +89,9 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testCompatibleFormatsForSensitiveType = oci.DataSafe.getCompatibleFormatsForSensitiveType({
- *     compartmentId: _var.compartment_id,
- *     accessLevel: _var.compatible_formats_for_sensitive_type_access_level,
- *     compartmentIdInSubtree: _var.compatible_formats_for_sensitive_type_compartment_id_in_subtree,
+ *     compartmentId: compartmentId,
+ *     accessLevel: compatibleFormatsForSensitiveTypeAccessLevel,
+ *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

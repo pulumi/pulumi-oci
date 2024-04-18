@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
- *     compartmentId: _var.compartment_id,
- *     installType: _var.management_agent_image_install_type,
- *     name: _var.management_agent_image_name,
- *     state: _var.management_agent_image_state,
+ *     compartmentId: compartmentId,
+ *     installType: managementAgentImageInstallType,
+ *     name: managementAgentImageName,
+ *     state: managementAgentImageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -96,10 +96,10 @@ export interface GetManagementAgentImagesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
- *     compartmentId: _var.compartment_id,
- *     installType: _var.management_agent_image_install_type,
- *     name: _var.management_agent_image_name,
- *     state: _var.management_agent_image_state,
+ *     compartmentId: compartmentId,
+ *     installType: managementAgentImageInstallType,
+ *     name: managementAgentImageName,
+ *     state: managementAgentImageState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

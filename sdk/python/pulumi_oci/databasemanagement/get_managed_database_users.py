@@ -114,9 +114,9 @@ def get_managed_database_users(filters: Optional[Sequence[pulumi.InputType['GetM
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_user_name"],
-        opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
+    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=test_managed_database["id"],
+        name=managed_database_user_name,
+        opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -160,9 +160,9 @@ def get_managed_database_users_output(filters: Optional[pulumi.Input[Optional[Se
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
-        name=var["managed_database_user_name"],
-        opc_named_credential_id=var["managed_database_user_opc_named_credential_id"])
+    test_managed_database_users = oci.DatabaseManagement.get_managed_database_users(managed_database_id=test_managed_database["id"],
+        name=managed_database_user_name,
+        opc_named_credential_id=managed_database_user_opc_named_credential_id)
     ```
     <!--End PulumiCodeChooser -->
 

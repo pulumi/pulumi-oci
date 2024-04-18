@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListingTaxes = oci.Marketplace.getListingTaxes({
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     compartmentId: _var.compartment_id,
+ *     listingId: testListing.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetListingTaxesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListingTaxes = oci.Marketplace.getListingTaxes({
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     compartmentId: _var.compartment_id,
+ *     listingId: testListing.id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

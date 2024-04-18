@@ -24,10 +24,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProviders = oci.Identity.getIdentityProviders({
- *     compartmentId: _var.tenancy_ocid,
- *     protocol: _var.identity_provider_protocol,
- *     name: _var.identity_provider_name,
- *     state: _var.identity_provider_state,
+ *     compartmentId: tenancyOcid,
+ *     protocol: identityProviderProtocol,
+ *     name: identityProviderName,
+ *     state: identityProviderState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -115,10 +115,10 @@ export interface GetIdentityProvidersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentityProviders = oci.Identity.getIdentityProviders({
- *     compartmentId: _var.tenancy_ocid,
- *     protocol: _var.identity_provider_protocol,
- *     name: _var.identity_provider_name,
- *     state: _var.identity_provider_state,
+ *     compartmentId: tenancyOcid,
+ *     protocol: identityProviderProtocol,
+ *     name: identityProviderName,
+ *     state: identityProviderState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

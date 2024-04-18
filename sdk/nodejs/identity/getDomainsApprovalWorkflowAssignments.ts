@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowAssignments = oci.Identity.getDomainsApprovalWorkflowAssignments({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     approvalWorkflowAssignmentCount: _var.approval_workflow_assignment_approval_workflow_assignment_count,
- *     approvalWorkflowAssignmentFilter: _var.approval_workflow_assignment_approval_workflow_assignment_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     approvalWorkflowAssignmentCount: approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+ *     approvalWorkflowAssignmentFilter: approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_assignment_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_assignment_resource_type_schema_version,
- *     startIndex: _var.approval_workflow_assignment_start_index,
+ *     authorization: approvalWorkflowAssignmentAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
+ *     startIndex: approvalWorkflowAssignmentStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -133,14 +133,14 @@ export interface GetDomainsApprovalWorkflowAssignmentsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testApprovalWorkflowAssignments = oci.Identity.getDomainsApprovalWorkflowAssignments({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     approvalWorkflowAssignmentCount: _var.approval_workflow_assignment_approval_workflow_assignment_count,
- *     approvalWorkflowAssignmentFilter: _var.approval_workflow_assignment_approval_workflow_assignment_filter,
+ *     idcsEndpoint: testDomain.url,
+ *     approvalWorkflowAssignmentCount: approvalWorkflowAssignmentApprovalWorkflowAssignmentCount,
+ *     approvalWorkflowAssignmentFilter: approvalWorkflowAssignmentApprovalWorkflowAssignmentFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.approval_workflow_assignment_authorization,
- *     resourceTypeSchemaVersion: _var.approval_workflow_assignment_resource_type_schema_version,
- *     startIndex: _var.approval_workflow_assignment_start_index,
+ *     authorization: approvalWorkflowAssignmentAuthorization,
+ *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
+ *     startIndex: approvalWorkflowAssignmentStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

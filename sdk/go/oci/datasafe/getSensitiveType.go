@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSensitiveType(ctx, &datasafe.GetSensitiveTypeArgs{
-//				SensitiveTypeId: oci_data_safe_sensitive_type.Test_sensitive_type.Id,
+//				SensitiveTypeId: testSensitiveTypeOciDataSafeSensitiveType.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -91,7 +91,7 @@ def get_db_home_patch_history_entries(db_home_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home_patch_history_entries = oci.Database.get_db_home_patch_history_entries(db_home_id=oci_database_db_home["test_db_home"]["id"])
+    test_db_home_patch_history_entries = oci.Database.get_db_home_patch_history_entries(db_home_id=test_db_home["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -127,7 +127,7 @@ def get_db_home_patch_history_entries_output(db_home_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home_patch_history_entries = oci.Database.get_db_home_patch_history_entries(db_home_id=oci_database_db_home["test_db_home"]["id"])
+    test_db_home_patch_history_entries = oci.Database.get_db_home_patch_history_entries(db_home_id=test_db_home["id"])
     ```
     <!--End PulumiCodeChooser -->
 

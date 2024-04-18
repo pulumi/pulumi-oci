@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceEnvironment = oci.ServiceManagerProxy.getServiceEnvironment({
- *     compartmentId: _var.compartment_id,
- *     serviceEnvironmentId: oci_service_manager_proxy_service_environment.test_service_environment.id,
+ *     compartmentId: compartmentId,
+ *     serviceEnvironmentId: testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,8 +97,8 @@ export interface GetServiceEnvironmentResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testServiceEnvironment = oci.ServiceManagerProxy.getServiceEnvironment({
- *     compartmentId: _var.compartment_id,
- *     serviceEnvironmentId: oci_service_manager_proxy_service_environment.test_service_environment.id,
+ *     compartmentId: compartmentId,
+ *     serviceEnvironmentId: testServiceEnvironmentOciServiceManagerProxyServiceEnvironment.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

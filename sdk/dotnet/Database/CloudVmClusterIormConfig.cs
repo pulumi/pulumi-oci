@@ -27,17 +27,17 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCloudVmClusterIormConfig = new Oci.Database.CloudVmClusterIormConfig("testCloudVmClusterIormConfig", new()
+    ///     var testCloudVmClusterIormConfig = new Oci.Database.CloudVmClusterIormConfig("test_cloud_vm_cluster_iorm_config", new()
     ///     {
     ///         DbPlans = new[]
     ///         {
     ///             new Oci.Database.Inputs.CloudVmClusterIormConfigDbPlanArgs
     ///             {
-    ///                 DbName = @var.Cloud_vm_cluster_iorm_config_db_plans_db_name,
-    ///                 Share = @var.Cloud_vm_cluster_iorm_config_db_plans_share,
+    ///                 DbName = cloudVmClusterIormConfigDbPlansDbName,
+    ///                 Share = cloudVmClusterIormConfigDbPlansShare,
     ///             },
     ///         },
-    ///         CloudVmClusterId = oci_database_cloud_vm_cluster.Test_cloud_vm_cluster.Id,
+    ///         CloudVmClusterId = testCloudVmCluster.Id,
     ///         Objective = "AUTO",
     ///     });
     /// 

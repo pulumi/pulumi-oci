@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetAsset = oci.CloudMigrations.getTargetAsset({
- *     targetAssetId: oci_cloud_migrations_target_asset.test_target_asset.id,
+ *     targetAssetId: testTargetAssetOciCloudMigrationsTargetAsset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -145,7 +145,7 @@ export interface GetTargetAssetResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testTargetAsset = oci.CloudMigrations.getTargetAsset({
- *     targetAssetId: oci_cloud_migrations_target_asset.test_target_asset.id,
+ *     targetAssetId: testTargetAssetOciCloudMigrationsTargetAsset.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

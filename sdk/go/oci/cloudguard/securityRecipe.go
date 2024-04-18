@@ -31,14 +31,14 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudGuard.NewSecurityRecipe(ctx, "testSecurityRecipe", &CloudGuard.SecurityRecipeArgs{
-//				CompartmentId:    pulumi.Any(_var.Compartment_id),
-//				DisplayName:      pulumi.Any(_var.Security_recipe_display_name),
-//				SecurityPolicies: pulumi.Any(_var.Security_recipe_security_policies),
+//			_, err := CloudGuard.NewSecurityRecipe(ctx, "test_security_recipe", &CloudGuard.SecurityRecipeArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DisplayName:      pulumi.Any(securityRecipeDisplayName),
+//				SecurityPolicies: pulumi.Any(securityRecipeSecurityPolicies),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
-//				Description: pulumi.Any(_var.Security_recipe_description),
+//				Description: pulumi.Any(securityRecipeDescription),
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},

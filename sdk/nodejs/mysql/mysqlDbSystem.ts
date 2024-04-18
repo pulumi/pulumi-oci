@@ -18,13 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMysqlDbSystem = new oci.mysql.MysqlDbSystem("testMysqlDbSystem", {
- *     availabilityDomain: _var.mysql_db_system_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     shapeName: _var.mysql_shape_name,
- *     subnetId: oci_core_subnet.test_subnet.id,
- *     adminPassword: _var.mysql_db_system_admin_password,
- *     adminUsername: _var.mysql_db_system_admin_username,
+ * const testMysqlDbSystem = new oci.mysql.MysqlDbSystem("test_mysql_db_system", {
+ *     availabilityDomain: mysqlDbSystemAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     shapeName: mysqlShapeName,
+ *     subnetId: testSubnet.id,
+ *     adminPassword: mysqlDbSystemAdminPassword,
+ *     adminUsername: mysqlDbSystemAdminUsername,
  *     backupPolicy: {
  *         definedTags: {
  *             "foo-namespace.bar-key": "value",
@@ -32,46 +32,46 @@ import * as utilities from "../utilities";
  *         freeformTags: {
  *             "bar-key": "value",
  *         },
- *         isEnabled: _var.mysql_db_system_backup_policy_is_enabled,
+ *         isEnabled: mysqlDbSystemBackupPolicyIsEnabled,
  *         pitrPolicy: {
- *             isEnabled: _var.mysql_db_system_backup_policy_pitr_policy_is_enabled,
+ *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
  *         },
- *         retentionInDays: _var.mysql_db_system_backup_policy_retention_in_days,
- *         windowStartTime: _var.mysql_db_system_backup_policy_window_start_time,
+ *         retentionInDays: mysqlDbSystemBackupPolicyRetentionInDays,
+ *         windowStartTime: mysqlDbSystemBackupPolicyWindowStartTime,
  *     },
- *     configurationId: oci_audit_configuration.test_configuration.id,
- *     crashRecovery: _var.mysql_db_system_crash_recovery,
- *     dataStorageSizeInGb: _var.mysql_db_system_data_storage_size_in_gb,
- *     databaseManagement: _var.mysql_db_system_database_management,
+ *     configurationId: testConfiguration.id,
+ *     crashRecovery: mysqlDbSystemCrashRecovery,
+ *     dataStorageSizeInGb: mysqlDbSystemDataStorageSizeInGb,
+ *     databaseManagement: mysqlDbSystemDatabaseManagement,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     deletionPolicies: [{
- *         automaticBackupRetention: _var.mysql_db_system_deletion_policy_automatic_backup_retention,
- *         finalBackup: _var.mysql_db_system_deletion_policy_final_backup,
- *         isDeleteProtected: _var.mysql_db_system_deletion_policy_is_delete_protected,
+ *         automaticBackupRetention: mysqlDbSystemDeletionPolicyAutomaticBackupRetention,
+ *         finalBackup: mysqlDbSystemDeletionPolicyFinalBackup,
+ *         isDeleteProtected: mysqlDbSystemDeletionPolicyIsDeleteProtected,
  *     }],
- *     description: _var.mysql_db_system_description,
- *     displayName: _var.mysql_db_system_display_name,
- *     faultDomain: _var.mysql_db_system_fault_domain,
+ *     description: mysqlDbSystemDescription,
+ *     displayName: mysqlDbSystemDisplayName,
+ *     faultDomain: mysqlDbSystemFaultDomain,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     hostnameLabel: _var.mysql_db_system_hostname_label,
- *     ipAddress: _var.mysql_db_system_ip_address,
- *     isHighlyAvailable: _var.mysql_db_system_is_highly_available,
+ *     hostnameLabel: mysqlDbSystemHostnameLabel,
+ *     ipAddress: mysqlDbSystemIpAddress,
+ *     isHighlyAvailable: mysqlDbSystemIsHighlyAvailable,
  *     maintenance: {
- *         windowStartTime: _var.mysql_db_system_maintenance_window_start_time,
+ *         windowStartTime: mysqlDbSystemMaintenanceWindowStartTime,
  *     },
- *     port: _var.mysql_db_system_port,
- *     portX: _var.mysql_db_system_port_x,
+ *     port: mysqlDbSystemPort,
+ *     portX: mysqlDbSystemPortX,
  *     secureConnections: {
- *         certificateGenerationType: _var.mysql_db_system_secure_connections_certificate_generation_type,
- *         certificateId: oci_apigateway_certificate.test_certificate.id,
+ *         certificateGenerationType: mysqlDbSystemSecureConnectionsCertificateGenerationType,
+ *         certificateId: testCertificate.id,
  *     },
  *     source: {
- *         sourceType: _var.mysql_db_system_source_source_type,
- *         backupId: oci_mysql_mysql_backup.test_backup.id,
+ *         sourceType: mysqlDbSystemSourceSourceType,
+ *         backupId: testBackup.id,
  *     },
  * });
  * ```

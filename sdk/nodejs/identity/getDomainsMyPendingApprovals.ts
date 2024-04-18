@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMyPendingApprovals = oci.Identity.getDomainsMyPendingApprovals({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myPendingApprovalCount: _var.my_pending_approval_my_pending_approval_count,
- *     myPendingApprovalFilter: _var.my_pending_approval_my_pending_approval_filter,
- *     authorization: _var.my_pending_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_pending_approval_resource_type_schema_version,
- *     startIndex: _var.my_pending_approval_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myPendingApprovalCount: myPendingApprovalMyPendingApprovalCount,
+ *     myPendingApprovalFilter: myPendingApprovalMyPendingApprovalFilter,
+ *     authorization: myPendingApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
+ *     startIndex: myPendingApprovalStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -119,12 +119,12 @@ export interface GetDomainsMyPendingApprovalsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMyPendingApprovals = oci.Identity.getDomainsMyPendingApprovals({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
- *     myPendingApprovalCount: _var.my_pending_approval_my_pending_approval_count,
- *     myPendingApprovalFilter: _var.my_pending_approval_my_pending_approval_filter,
- *     authorization: _var.my_pending_approval_authorization,
- *     resourceTypeSchemaVersion: _var.my_pending_approval_resource_type_schema_version,
- *     startIndex: _var.my_pending_approval_start_index,
+ *     idcsEndpoint: testDomain.url,
+ *     myPendingApprovalCount: myPendingApprovalMyPendingApprovalCount,
+ *     myPendingApprovalFilter: myPendingApprovalMyPendingApprovalFilter,
+ *     authorization: myPendingApprovalAuthorization,
+ *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
+ *     startIndex: myPendingApprovalStartIndex,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

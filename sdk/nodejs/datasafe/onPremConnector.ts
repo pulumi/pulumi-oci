@@ -16,13 +16,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnPremConnector = new oci.datasafe.OnPremConnector("testOnPremConnector", {
- *     compartmentId: _var.compartment_id,
+ * const testOnPremConnector = new oci.datasafe.OnPremConnector("test_on_prem_connector", {
+ *     compartmentId: compartmentId,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.on_prem_connector_description,
- *     displayName: _var.on_prem_connector_display_name,
+ *     description: onPremConnectorDescription,
+ *     displayName: onPremConnectorDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

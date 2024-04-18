@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Sch.GetConnectorPlugin(ctx, &sch.GetConnectorPluginArgs{
-//				ConnectorPluginName: oci_sch_connector_plugin.Test_connector_plugin.Name,
+//				ConnectorPluginName: testConnectorPluginOciSchConnectorPlugin.Name,
 //			}, nil)
 //			if err != nil {
 //				return err

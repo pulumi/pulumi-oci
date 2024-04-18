@@ -47,7 +47,7 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
-     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .integrationInstanceId(testIntegrationInstanceOciIntegrationIntegrationInstance.id())
      *             .build());
      * 
      *     }
@@ -89,7 +89,7 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
-     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .integrationInstanceId(testIntegrationInstanceOciIntegrationIntegrationInstance.id())
      *             .build());
      * 
      *     }
@@ -131,7 +131,7 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
-     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .integrationInstanceId(testIntegrationInstanceOciIntegrationIntegrationInstance.id())
      *             .build());
      * 
      *     }
@@ -173,7 +173,7 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstance = IntegrationFunctions.getIntegrationInstance(GetIntegrationInstanceArgs.builder()
-     *             .integrationInstanceId(oci_integration_integration_instance.test_integration_instance().id())
+     *             .integrationInstanceId(testIntegrationInstanceOciIntegrationIntegrationInstance.id())
      *             .build());
      * 
      *     }
@@ -215,9 +215,9 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.integration_instance_display_name())
-     *             .state(var_.integration_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(integrationInstanceDisplayName)
+     *             .state(integrationInstanceState)
      *             .build());
      * 
      *     }
@@ -259,9 +259,9 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.integration_instance_display_name())
-     *             .state(var_.integration_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(integrationInstanceDisplayName)
+     *             .state(integrationInstanceState)
      *             .build());
      * 
      *     }
@@ -303,9 +303,9 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.integration_instance_display_name())
-     *             .state(var_.integration_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(integrationInstanceDisplayName)
+     *             .state(integrationInstanceState)
      *             .build());
      * 
      *     }
@@ -347,9 +347,9 @@ public final class IntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIntegrationInstances = IntegrationFunctions.getIntegrationInstances(GetIntegrationInstancesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .displayName(var_.integration_instance_display_name())
-     *             .state(var_.integration_instance_state())
+     *             .compartmentId(compartmentId)
+     *             .displayName(integrationInstanceDisplayName)
+     *             .state(integrationInstanceState)
      *             .build());
      * 
      *     }

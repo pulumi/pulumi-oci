@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSources = oci.Identity.getNetworkSources({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.network_source_name,
- *     state: _var.network_source_state,
+ *     compartmentId: tenancyOcid,
+ *     name: networkSourceName,
+ *     state: networkSourceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -99,9 +99,9 @@ export interface GetNetworkSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSources = oci.Identity.getNetworkSources({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.network_source_name,
- *     state: _var.network_source_state,
+ *     compartmentId: tenancyOcid,
+ *     name: networkSourceName,
+ *     state: networkSourceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

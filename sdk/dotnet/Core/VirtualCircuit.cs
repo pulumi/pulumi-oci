@@ -45,51 +45,51 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVirtualCircuit = new Oci.Core.VirtualCircuit("testVirtualCircuit", new()
+    ///     var testVirtualCircuit = new Oci.Core.VirtualCircuit("test_virtual_circuit", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         Type = @var.Virtual_circuit_type,
-    ///         BandwidthShapeName = @var.Virtual_circuit_bandwidth_shape_name,
-    ///         BgpAdminState = @var.Virtual_circuit_bgp_admin_state,
+    ///         CompartmentId = compartmentId,
+    ///         Type = virtualCircuitType,
+    ///         BandwidthShapeName = virtualCircuitBandwidthShapeName,
+    ///         BgpAdminState = virtualCircuitBgpAdminState,
     ///         CrossConnectMappings = new[]
     ///         {
     ///             new Oci.Core.Inputs.VirtualCircuitCrossConnectMappingArgs
     ///             {
-    ///                 BgpMd5authKey = @var.Virtual_circuit_cross_connect_mappings_bgp_md5auth_key,
-    ///                 CrossConnectOrCrossConnectGroupId = oci_core_cross_connect_or_cross_connect_group.Test_cross_connect_or_cross_connect_group.Id,
-    ///                 CustomerBgpPeeringIp = @var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ip,
-    ///                 CustomerBgpPeeringIpv6 = @var.Virtual_circuit_cross_connect_mappings_customer_bgp_peering_ipv6,
-    ///                 OracleBgpPeeringIp = @var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ip,
-    ///                 OracleBgpPeeringIpv6 = @var.Virtual_circuit_cross_connect_mappings_oracle_bgp_peering_ipv6,
-    ///                 Vlan = @var.Virtual_circuit_cross_connect_mappings_vlan,
+    ///                 BgpMd5authKey = virtualCircuitCrossConnectMappingsBgpMd5authKey,
+    ///                 CrossConnectOrCrossConnectGroupId = testCrossConnectOrCrossConnectGroup.Id,
+    ///                 CustomerBgpPeeringIp = virtualCircuitCrossConnectMappingsCustomerBgpPeeringIp,
+    ///                 CustomerBgpPeeringIpv6 = virtualCircuitCrossConnectMappingsCustomerBgpPeeringIpv6,
+    ///                 OracleBgpPeeringIp = virtualCircuitCrossConnectMappingsOracleBgpPeeringIp,
+    ///                 OracleBgpPeeringIpv6 = virtualCircuitCrossConnectMappingsOracleBgpPeeringIpv6,
+    ///                 Vlan = virtualCircuitCrossConnectMappingsVlan,
     ///             },
     ///         },
-    ///         CustomerAsn = @var.Virtual_circuit_customer_asn,
-    ///         CustomerBgpAsn = @var.Virtual_circuit_customer_bgp_asn,
+    ///         CustomerAsn = virtualCircuitCustomerAsn,
+    ///         CustomerBgpAsn = virtualCircuitCustomerBgpAsn,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Virtual_circuit_display_name,
+    ///         DisplayName = virtualCircuitDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IpMtu = @var.Virtual_circuit_ip_mtu,
-    ///         IsBfdEnabled = @var.Virtual_circuit_is_bfd_enabled,
-    ///         IsTransportMode = @var.Virtual_circuit_is_transport_mode,
-    ///         GatewayId = oci_core_gateway.Test_gateway.Id,
-    ///         ProviderServiceId = data.Oci_core_fast_connect_provider_services.Test_fast_connect_provider_services.Fast_connect_provider_services[0].Id,
-    ///         ProviderServiceKeyName = @var.Virtual_circuit_provider_service_key_name,
+    ///         IpMtu = virtualCircuitIpMtu,
+    ///         IsBfdEnabled = virtualCircuitIsBfdEnabled,
+    ///         IsTransportMode = virtualCircuitIsTransportMode,
+    ///         GatewayId = testGateway.Id,
+    ///         ProviderServiceId = testFastConnectProviderServices.FastConnectProviderServices[0].Id,
+    ///         ProviderServiceKeyName = virtualCircuitProviderServiceKeyName,
     ///         PublicPrefixes = new[]
     ///         {
     ///             new Oci.Core.Inputs.VirtualCircuitPublicPrefixArgs
     ///             {
-    ///                 CidrBlock = @var.Virtual_circuit_public_prefixes_cidr_block,
+    ///                 CidrBlock = virtualCircuitPublicPrefixesCidrBlock,
     ///             },
     ///         },
-    ///         Region = @var.Virtual_circuit_region,
-    ///         RoutingPolicies = @var.Virtual_circuit_routing_policy,
+    ///         Region = virtualCircuitRegion,
+    ///         RoutingPolicies = virtualCircuitRoutingPolicy,
     ///     });
     /// 
     /// });

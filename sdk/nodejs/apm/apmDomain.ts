@@ -16,17 +16,17 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testApmDomain = new oci.apm.ApmDomain("testApmDomain", {
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.apm_domain_display_name,
+ * const testApmDomain = new oci.apm.ApmDomain("test_apm_domain", {
+ *     compartmentId: compartmentId,
+ *     displayName: apmDomainDisplayName,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.apm_domain_description,
+ *     description: apmDomainDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isFreeTier: _var.apm_domain_is_free_tier,
+ *     isFreeTier: apmDomainIsFreeTier,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

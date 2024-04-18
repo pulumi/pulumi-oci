@@ -111,9 +111,9 @@ def get_invoices_invoice_lines(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices_invoice_lines = oci.OspGateway.get_invoices_invoice_lines(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoices_invoice_line_osp_home_region"])
+    test_invoices_invoice_lines = oci.OspGateway.get_invoices_invoice_lines(compartment_id=compartment_id,
+        internal_invoice_id=test_invoice["id"],
+        osp_home_region=invoices_invoice_line_osp_home_region)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -157,9 +157,9 @@ def get_invoices_invoice_lines_output(compartment_id: Optional[pulumi.Input[str]
     import pulumi
     import pulumi_oci as oci
 
-    test_invoices_invoice_lines = oci.OspGateway.get_invoices_invoice_lines(compartment_id=var["compartment_id"],
-        internal_invoice_id=oci_osp_gateway_invoice["test_invoice"]["id"],
-        osp_home_region=var["invoices_invoice_line_osp_home_region"])
+    test_invoices_invoice_lines = oci.OspGateway.get_invoices_invoice_lines(compartment_id=compartment_id,
+        internal_invoice_id=test_invoice["id"],
+        osp_home_region=invoices_invoice_line_osp_home_region)
     ```
     <!--End PulumiCodeChooser -->
 

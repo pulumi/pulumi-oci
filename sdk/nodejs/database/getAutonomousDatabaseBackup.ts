@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseBackup = oci.Database.getAutonomousDatabaseBackup({
- *     autonomousDatabaseBackupId: oci_database_autonomous_database_backup.test_autonomous_database_backup.id,
+ *     autonomousDatabaseBackupId: testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -150,7 +150,7 @@ export interface GetAutonomousDatabaseBackupResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAutonomousDatabaseBackup = oci.Database.getAutonomousDatabaseBackup({
- *     autonomousDatabaseBackupId: oci_database_autonomous_database_backup.test_autonomous_database_backup.id,
+ *     autonomousDatabaseBackupId: testAutonomousDatabaseBackupOciDatabaseAutonomousDatabaseBackup.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

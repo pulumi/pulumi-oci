@@ -30,7 +30,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagementStation = Oci.OsManagementHub.GetManagementStation.Invoke(new()
         ///     {
-        ///         ManagementStationId = oci_os_management_hub_management_station.Test_management_station.Id,
+        ///         ManagementStationId = testManagementStationOciOsManagementHubManagementStation.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.OsManagementHub
         /// {
         ///     var testManagementStation = Oci.OsManagementHub.GetManagementStation.Invoke(new()
         ///     {
-        ///         ManagementStationId = oci_os_management_hub_management_station.Test_management_station.Id,
+        ///         ManagementStationId = testManagementStationOciOsManagementHubManagementStation.Id,
         ///     });
         /// 
         /// });

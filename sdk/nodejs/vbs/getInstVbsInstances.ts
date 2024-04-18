@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testVbsInstances = oci.Vbs.getInstVbsInstances({
- *     compartmentId: _var.compartment_id,
- *     id: _var.vbs_instance_id,
- *     name: _var.vbs_instance_name,
- *     state: _var.vbs_instance_state,
+ *     compartmentId: compartmentId,
+ *     id: vbsInstanceId,
+ *     name: vbsInstanceName,
+ *     state: vbsInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -101,10 +101,10 @@ export interface GetInstVbsInstancesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testVbsInstances = oci.Vbs.getInstVbsInstances({
- *     compartmentId: _var.compartment_id,
- *     id: _var.vbs_instance_id,
- *     name: _var.vbs_instance_name,
- *     state: _var.vbs_instance_state,
+ *     compartmentId: compartmentId,
+ *     id: vbsInstanceId,
+ *     name: vbsInstanceName,
+ *     state: vbsInstanceState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testProfile = Oci.Optimizer.GetProfile.Invoke(new()
         ///     {
-        ///         ProfileId = oci_optimizer_profile.Test_profile.Id,
+        ///         ProfileId = testProfileOciOptimizerProfile.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Optimizer
         /// {
         ///     var testProfile = Oci.Optimizer.GetProfile.Invoke(new()
         ///     {
-        ///         ProfileId = oci_optimizer_profile.Test_profile.Id,
+        ///         ProfileId = testProfileOciOptimizerProfile.Id,
         ///     });
         /// 
         /// });

@@ -32,12 +32,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Dns.NewTsigKey(ctx, "testTsigKey", &Dns.TsigKeyArgs{
-//				Algorithm:     pulumi.Any(_var.Tsig_key_algorithm),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Secret:        pulumi.Any(_var.Tsig_key_secret),
-//				DefinedTags:   pulumi.Any(_var.Tsig_key_defined_tags),
-//				FreeformTags:  pulumi.Any(_var.Tsig_key_freeform_tags),
+//			_, err := Dns.NewTsigKey(ctx, "test_tsig_key", &Dns.TsigKeyArgs{
+//				Algorithm:     pulumi.Any(tsigKeyAlgorithm),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(tsigKeyName),
+//				Secret:        pulumi.Any(tsigKeySecret),
+//				DefinedTags:   pulumi.Any(tsigKeyDefinedTags),
+//				FreeformTags:  pulumi.Any(tsigKeyFreeformTags),
 //			})
 //			if err != nil {
 //				return err

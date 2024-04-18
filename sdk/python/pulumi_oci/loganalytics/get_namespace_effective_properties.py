@@ -154,13 +154,13 @@ def get_namespace_effective_properties(agent_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=var["namespace_effective_property_namespace"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        is_include_patterns=var["namespace_effective_property_is_include_patterns"],
-        name=var["namespace_effective_property_name"],
-        pattern_id=oci_log_analytics_pattern["test_pattern"]["id"],
-        source_name=var["namespace_effective_property_source_name"])
+    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
+        agent_id=test_agent["id"],
+        entity_id=test_log_analytics_entity["id"],
+        is_include_patterns=namespace_effective_property_is_include_patterns,
+        name=namespace_effective_property_name,
+        pattern_id=test_pattern["id"],
+        source_name=namespace_effective_property_source_name)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -220,13 +220,13 @@ def get_namespace_effective_properties_output(agent_id: Optional[pulumi.Input[Op
     import pulumi
     import pulumi_oci as oci
 
-    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=var["namespace_effective_property_namespace"],
-        agent_id=oci_cloud_bridge_agent["test_agent"]["id"],
-        entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
-        is_include_patterns=var["namespace_effective_property_is_include_patterns"],
-        name=var["namespace_effective_property_name"],
-        pattern_id=oci_log_analytics_pattern["test_pattern"]["id"],
-        source_name=var["namespace_effective_property_source_name"])
+    test_namespace_effective_properties = oci.LogAnalytics.get_namespace_effective_properties(namespace=namespace_effective_property_namespace,
+        agent_id=test_agent["id"],
+        entity_id=test_log_analytics_entity["id"],
+        is_include_patterns=namespace_effective_property_is_include_patterns,
+        name=namespace_effective_property_name,
+        pattern_id=test_pattern["id"],
+        source_name=namespace_effective_property_source_name)
     ```
     <!--End PulumiCodeChooser -->
 

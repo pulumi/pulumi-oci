@@ -354,23 +354,23 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dedicated_vantage_point = oci.apm_synthetics.DedicatedVantagePoint("testDedicatedVantagePoint",
-            apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-            display_name=var["dedicated_vantage_point_display_name"],
+        test_dedicated_vantage_point = oci.apm_synthetics.DedicatedVantagePoint("test_dedicated_vantage_point",
+            apm_domain_id=test_apm_domain["id"],
+            display_name=dedicated_vantage_point_display_name,
             dvp_stack_details=oci.apm_synthetics.DedicatedVantagePointDvpStackDetailsArgs(
-                dvp_stack_id=oci_resourcemanager_stack["test_stack"]["id"],
-                dvp_stack_type=var["dedicated_vantage_point_dvp_stack_details_dvp_stack_type"],
-                dvp_stream_id=oci_streaming_stream["test_stream"]["id"],
-                dvp_version=var["dedicated_vantage_point_dvp_stack_details_dvp_version"],
+                dvp_stack_id=test_stack["id"],
+                dvp_stack_type=dedicated_vantage_point_dvp_stack_details_dvp_stack_type,
+                dvp_stream_id=test_stream["id"],
+                dvp_version=dedicated_vantage_point_dvp_stack_details_dvp_version,
             ),
-            region=var["dedicated_vantage_point_region"],
+            region=dedicated_vantage_point_region,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            status=var["dedicated_vantage_point_status"])
+            status=dedicated_vantage_point_status)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -414,23 +414,23 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_dedicated_vantage_point = oci.apm_synthetics.DedicatedVantagePoint("testDedicatedVantagePoint",
-            apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-            display_name=var["dedicated_vantage_point_display_name"],
+        test_dedicated_vantage_point = oci.apm_synthetics.DedicatedVantagePoint("test_dedicated_vantage_point",
+            apm_domain_id=test_apm_domain["id"],
+            display_name=dedicated_vantage_point_display_name,
             dvp_stack_details=oci.apm_synthetics.DedicatedVantagePointDvpStackDetailsArgs(
-                dvp_stack_id=oci_resourcemanager_stack["test_stack"]["id"],
-                dvp_stack_type=var["dedicated_vantage_point_dvp_stack_details_dvp_stack_type"],
-                dvp_stream_id=oci_streaming_stream["test_stream"]["id"],
-                dvp_version=var["dedicated_vantage_point_dvp_stack_details_dvp_version"],
+                dvp_stack_id=test_stack["id"],
+                dvp_stack_type=dedicated_vantage_point_dvp_stack_details_dvp_stack_type,
+                dvp_stream_id=test_stream["id"],
+                dvp_version=dedicated_vantage_point_dvp_stack_details_dvp_version,
             ),
-            region=var["dedicated_vantage_point_region"],
+            region=dedicated_vantage_point_region,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
             freeform_tags={
                 "bar-key": "value",
             },
-            status=var["dedicated_vantage_point_status"])
+            status=dedicated_vantage_point_status)
         ```
         <!--End PulumiCodeChooser -->
 

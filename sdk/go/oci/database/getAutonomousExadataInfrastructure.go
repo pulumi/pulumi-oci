@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetAutonomousExadataInfrastructure(ctx, &database.GetAutonomousExadataInfrastructureArgs{
-//				AutonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.Test_autonomous_exadata_infrastructure.Id,
+//				AutonomousExadataInfrastructureId: testAutonomousExadataInfrastructureOciDatabaseAutonomousExadataInfrastructure.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

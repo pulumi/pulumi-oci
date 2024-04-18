@@ -19,18 +19,18 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaAssets = oci.MediaServices.getMediaAssets({
- *     bucket: _var.media_asset_bucket,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.media_asset_display_name,
- *     distributionChannelId: oci_mysql_channel.test_channel.id,
- *     masterMediaAssetId: oci_media_services_media_asset.test_media_asset.id,
- *     mediaWorkflowJobId: oci_media_services_media_workflow_job.test_media_workflow_job.id,
- *     object: _var.media_asset_object,
- *     parentMediaAssetId: oci_media_services_media_asset.test_media_asset.id,
- *     sourceMediaWorkflowId: oci_media_services_media_workflow.test_media_workflow.id,
- *     sourceMediaWorkflowVersion: _var.media_asset_source_media_workflow_version,
- *     state: _var.media_asset_state,
- *     type: _var.media_asset_type,
+ *     bucket: mediaAssetBucket,
+ *     compartmentId: compartmentId,
+ *     displayName: mediaAssetDisplayName,
+ *     distributionChannelId: testChannel.id,
+ *     masterMediaAssetId: testMediaAsset.id,
+ *     mediaWorkflowJobId: testMediaWorkflowJob.id,
+ *     object: mediaAssetObject,
+ *     parentMediaAssetId: testMediaAsset.id,
+ *     sourceMediaWorkflowId: testMediaWorkflow.id,
+ *     sourceMediaWorkflowVersion: mediaAssetSourceMediaWorkflowVersion,
+ *     state: mediaAssetState,
+ *     type: mediaAssetType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -183,18 +183,18 @@ export interface GetMediaAssetsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMediaAssets = oci.MediaServices.getMediaAssets({
- *     bucket: _var.media_asset_bucket,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.media_asset_display_name,
- *     distributionChannelId: oci_mysql_channel.test_channel.id,
- *     masterMediaAssetId: oci_media_services_media_asset.test_media_asset.id,
- *     mediaWorkflowJobId: oci_media_services_media_workflow_job.test_media_workflow_job.id,
- *     object: _var.media_asset_object,
- *     parentMediaAssetId: oci_media_services_media_asset.test_media_asset.id,
- *     sourceMediaWorkflowId: oci_media_services_media_workflow.test_media_workflow.id,
- *     sourceMediaWorkflowVersion: _var.media_asset_source_media_workflow_version,
- *     state: _var.media_asset_state,
- *     type: _var.media_asset_type,
+ *     bucket: mediaAssetBucket,
+ *     compartmentId: compartmentId,
+ *     displayName: mediaAssetDisplayName,
+ *     distributionChannelId: testChannel.id,
+ *     masterMediaAssetId: testMediaAsset.id,
+ *     mediaWorkflowJobId: testMediaWorkflowJob.id,
+ *     object: mediaAssetObject,
+ *     parentMediaAssetId: testMediaAsset.id,
+ *     sourceMediaWorkflowId: testMediaWorkflow.id,
+ *     sourceMediaWorkflowVersion: mediaAssetSourceMediaWorkflowVersion,
+ *     state: mediaAssetState,
+ *     type: mediaAssetType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

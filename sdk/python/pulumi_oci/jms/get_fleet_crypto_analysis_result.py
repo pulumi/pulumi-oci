@@ -260,8 +260,8 @@ def get_fleet_crypto_analysis_result(crypto_analysis_result_id: Optional[str] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"],
-        fleet_id=oci_jms_fleet["test_fleet"]["id"])
+    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=test_result["id"],
+        fleet_id=test_fleet["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -312,8 +312,8 @@ def get_fleet_crypto_analysis_result_output(crypto_analysis_result_id: Optional[
     import pulumi
     import pulumi_oci as oci
 
-    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=oci_apm_synthetics_result["test_result"]["id"],
-        fleet_id=oci_jms_fleet["test_fleet"]["id"])
+    test_fleet_crypto_analysis_result = oci.Jms.get_fleet_crypto_analysis_result(crypto_analysis_result_id=test_result["id"],
+        fleet_id=test_fleet["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -16,9 +16,9 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOperationsInsightsWarehouseDownloadWarehouseWallet = new oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet", {
- *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
- *     operationsInsightsWarehouseWalletPassword: _var.operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password,
+ * const testOperationsInsightsWarehouseDownloadWarehouseWallet = new oci.opsi.OperationsInsightsWarehouseDownloadWarehouseWallet("test_operations_insights_warehouse_download_warehouse_wallet", {
+ *     operationsInsightsWarehouseId: testOperationsInsightsWarehouse.id,
+ *     operationsInsightsWarehouseWalletPassword: operationsInsightsWarehouseDownloadWarehouseWalletOperationsInsightsWarehouseWalletPassword,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

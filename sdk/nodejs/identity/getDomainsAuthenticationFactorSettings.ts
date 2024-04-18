@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthenticationFactorSettings = oci.Identity.getDomainsAuthenticationFactorSettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.authentication_factor_setting_authorization,
- *     resourceTypeSchemaVersion: _var.authentication_factor_setting_resource_type_schema_version,
+ *     authorization: authenticationFactorSettingAuthorization,
+ *     resourceTypeSchemaVersion: authenticationFactorSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,11 +107,11 @@ export interface GetDomainsAuthenticationFactorSettingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuthenticationFactorSettings = oci.Identity.getDomainsAuthenticationFactorSettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: [],
  *     attributes: "",
- *     authorization: _var.authentication_factor_setting_authorization,
- *     resourceTypeSchemaVersion: _var.authentication_factor_setting_resource_type_schema_version,
+ *     authorization: authenticationFactorSettingAuthorization,
+ *     resourceTypeSchemaVersion: authenticationFactorSettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

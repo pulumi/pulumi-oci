@@ -29,19 +29,19 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testManagedInstanceManagement = new oci.osmanagement.ManagedInstanceManagement("testManagedInstanceManagement", {
- *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ * const testManagedInstanceManagement = new oci.osmanagement.ManagedInstanceManagement("test_managed_instance_management", {
+ *     managedInstanceId: testManagedInstance.id,
  *     parentSoftwareSource: {
- *         id: oci_osmanagement_software_source.test_parent_software_source.id,
- *         name: oci_osmanagement_software_source.test_parent_software_source.display_name,
+ *         id: testParentSoftwareSource.id,
+ *         name: testParentSoftwareSource.displayName,
  *     },
  *     managedInstanceGroups: [{
- *         id: oci_osmanagement_managed_instance_group.test_managed_instance_group.id,
- *         displayName: _var.managed_instance_group_display_name,
+ *         id: testManagedInstanceGroup.id,
+ *         displayName: managedInstanceGroupDisplayName,
  *     }],
  *     childSoftwareSources: [{
- *         id: oci_osmanagement_software_source.test_software_source_child.id,
- *         name: oci_osmanagement_software_source.test_software_source_child.display_name,
+ *         id: testSoftwareSourceChild.id,
+ *         name: testSoftwareSourceChild.displayName,
  *     }],
  * });
  * ```

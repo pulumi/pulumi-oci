@@ -53,9 +53,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(oci_nosql_index.test_index().name())
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .indexName(testIndexOciNosqlIndex.name())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -97,9 +97,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(oci_nosql_index.test_index().name())
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .indexName(testIndexOciNosqlIndex.name())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -141,9 +141,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(oci_nosql_index.test_index().name())
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .indexName(testIndexOciNosqlIndex.name())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -185,9 +185,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndex = NosqlFunctions.getIndex(GetIndexArgs.builder()
-     *             .indexName(oci_nosql_index.test_index().name())
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .indexName(testIndexOciNosqlIndex.name())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -229,10 +229,10 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.index_name())
-     *             .state(var_.index_state())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .name(indexName)
+     *             .state(indexState)
      *             .build());
      * 
      *     }
@@ -274,10 +274,10 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.index_name())
-     *             .state(var_.index_state())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .name(indexName)
+     *             .state(indexState)
      *             .build());
      * 
      *     }
@@ -319,10 +319,10 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.index_name())
-     *             .state(var_.index_state())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .name(indexName)
+     *             .state(indexState)
      *             .build());
      * 
      *     }
@@ -364,10 +364,10 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIndexes = NosqlFunctions.getIndexes(GetIndexesArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.index_name())
-     *             .state(var_.index_state())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
+     *             .name(indexName)
+     *             .state(indexState)
      *             .build());
      * 
      *     }
@@ -409,8 +409,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -452,8 +452,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -495,8 +495,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -538,8 +538,8 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTable = NosqlFunctions.getTable(GetTableArgs.builder()
-     *             .tableNameOrId(oci_nosql_table_name_or.test_table_name_or().id())
-     *             .compartmentId(var_.compartment_id())
+     *             .tableNameOrId(testTableNameOr.id())
+     *             .compartmentId(compartmentId)
      *             .build());
      * 
      *     }
@@ -581,9 +581,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.table_name())
-     *             .state(var_.table_state())
+     *             .compartmentId(compartmentId)
+     *             .name(tableName)
+     *             .state(tableState)
      *             .build());
      * 
      *     }
@@ -625,9 +625,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.table_name())
-     *             .state(var_.table_state())
+     *             .compartmentId(compartmentId)
+     *             .name(tableName)
+     *             .state(tableState)
      *             .build());
      * 
      *     }
@@ -669,9 +669,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.table_name())
-     *             .state(var_.table_state())
+     *             .compartmentId(compartmentId)
+     *             .name(tableName)
+     *             .state(tableState)
      *             .build());
      * 
      *     }
@@ -713,9 +713,9 @@ public final class NosqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTables = NosqlFunctions.getTables(GetTablesArgs.builder()
-     *             .compartmentId(var_.compartment_id())
-     *             .name(var_.table_name())
-     *             .state(var_.table_state())
+     *             .compartmentId(compartmentId)
+     *             .name(tableName)
+     *             .state(tableState)
      *             .build());
      * 
      *     }

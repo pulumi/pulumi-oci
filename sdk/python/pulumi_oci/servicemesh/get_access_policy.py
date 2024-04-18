@@ -212,7 +212,7 @@ def get_access_policy(access_policy_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=oci_service_mesh_access_policy["test_access_policy"]["id"])
+    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=test_access_policy_oci_service_mesh_access_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -256,7 +256,7 @@ def get_access_policy_output(access_policy_id: Optional[pulumi.Input[str]] = Non
     import pulumi
     import pulumi_oci as oci
 
-    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=oci_service_mesh_access_policy["test_access_policy"]["id"])
+    test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=test_access_policy_oci_service_mesh_access_policy["id"])
     ```
     <!--End PulumiCodeChooser -->
 

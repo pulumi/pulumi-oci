@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testAlertRule = Oci.Budget.GetAlertRule.Invoke(new()
         ///     {
-        ///         AlertRuleId = oci_budget_alert_rule.Test_alert_rule.Id,
-        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///         AlertRuleId = testAlertRuleOciBudgetAlertRule.Id,
+        ///         BudgetId = testBudget.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Budget
         /// {
         ///     var testAlertRule = Oci.Budget.GetAlertRule.Invoke(new()
         ///     {
-        ///         AlertRuleId = oci_budget_alert_rule.Test_alert_rule.Id,
-        ///         BudgetId = oci_budget_budget.Test_budget.Id,
+        ///         AlertRuleId = testAlertRuleOciBudgetAlertRule.Id,
+        ///         BudgetId = testBudget.Id,
         ///     });
         /// 
         /// });

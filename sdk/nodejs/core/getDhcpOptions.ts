@@ -22,10 +22,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDhcpOptions = oci.Core.getDhcpOptions({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.dhcp_options_display_name,
- *     state: _var.dhcp_options_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: dhcpOptionsDisplayName,
+ *     state: dhcpOptionsState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,10 +111,10 @@ export interface GetDhcpOptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDhcpOptions = oci.Core.getDhcpOptions({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.dhcp_options_display_name,
- *     state: _var.dhcp_options_state,
- *     vcnId: oci_core_vcn.test_vcn.id,
+ *     compartmentId: compartmentId,
+ *     displayName: dhcpOptionsDisplayName,
+ *     state: dhcpOptionsState,
+ *     vcnId: testVcn.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -212,7 +212,7 @@ def get_detection_data_asset(data_asset_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=oci_ai_anomaly_detection_data_asset["test_data_asset"]["id"])
+    test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=test_data_asset_oci_ai_anomaly_detection_data_asset["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -256,7 +256,7 @@ def get_detection_data_asset_output(data_asset_id: Optional[pulumi.Input[str]] =
     import pulumi
     import pulumi_oci as oci
 
-    test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=oci_ai_anomaly_detection_data_asset["test_data_asset"]["id"])
+    test_data_asset = oci.AiAnomalyDetection.get_detection_data_asset(data_asset_id=test_data_asset_oci_ai_anomaly_detection_data_asset["id"])
     ```
     <!--End PulumiCodeChooser -->
 

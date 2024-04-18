@@ -31,11 +31,11 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Blockchain.NewOsn(ctx, "testOsn", &Blockchain.OsnArgs{
-//				Ad:                   pulumi.Any(_var.Osn_ad),
-//				BlockchainPlatformId: pulumi.Any(oci_blockchain_blockchain_platform.Test_blockchain_platform.Id),
+//			_, err := Blockchain.NewOsn(ctx, "test_osn", &Blockchain.OsnArgs{
+//				Ad:                   pulumi.Any(osnAd),
+//				BlockchainPlatformId: pulumi.Any(testBlockchainPlatform.Id),
 //				OcpuAllocationParam: &blockchain.OsnOcpuAllocationParamArgs{
-//					OcpuAllocationNumber: pulumi.Any(_var.Osn_ocpu_allocation_param_ocpu_allocation_number),
+//					OcpuAllocationNumber: pulumi.Any(osnOcpuAllocationParamOcpuAllocationNumber),
 //				},
 //			})
 //			if err != nil {

@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentDataSources = oci.ManagementAgent.getManagementAgentDataSources({
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
- *     name: _var.management_agent_data_source_name,
+ *     managementAgentId: testManagementAgent.id,
+ *     name: managementAgentDataSourceName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetManagementAgentDataSourcesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementAgentDataSources = oci.ManagementAgent.getManagementAgentDataSources({
- *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
- *     name: _var.management_agent_data_source_name,
+ *     managementAgentId: testManagementAgent.id,
+ *     name: managementAgentDataSourceName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -41,13 +41,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewDrgAttachmentManagement(ctx, "testDrgRpcAttachment", &Core.DrgAttachmentManagementArgs{
+//			_, err := Core.NewDrgAttachmentManagement(ctx, "test_drg_rpc_attachment", &Core.DrgAttachmentManagementArgs{
 //				AttachmentType:  pulumi.String("REMOTE_PEERING_CONNECTION"),
-//				CompartmentId:   pulumi.Any(_var.Compartment_ocid),
-//				NetworkId:       pulumi.Any(oci_core_remote_peering_connection.Test_rpc.Id),
-//				DrgId:           pulumi.Any(oci_core_drg.Test_drg.Id),
+//				CompartmentId:   pulumi.Any(compartmentOcid),
+//				NetworkId:       pulumi.Any(testRpc.Id),
+//				DrgId:           pulumi.Any(testDrg.Id),
 //				DisplayName:     pulumi.String("MyTestDrgAttachmentForRpc"),
-//				DrgRouteTableId: pulumi.Any(oci_core_drg_route_table.Test_drg_route_table.Id),
+//				DrgRouteTableId: pulumi.Any(testDrgRouteTable.Id),
 //			})
 //			if err != nil {
 //				return err

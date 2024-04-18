@@ -49,15 +49,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testContainerRepository = new ContainerRepository(&#34;testContainerRepository&#34;, ContainerRepositoryArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.container_repository_display_name())
+ *             .compartmentId(compartmentId)
+ *             .displayName(containerRepositoryDisplayName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isImmutable(var_.container_repository_is_immutable())
- *             .isPublic(var_.container_repository_is_public())
+ *             .isImmutable(containerRepositoryIsImmutable)
+ *             .isPublic(containerRepositoryIsPublic)
  *             .readme(ContainerRepositoryReadmeArgs.builder()
- *                 .content(var_.container_repository_readme_content())
- *                 .format(var_.container_repository_readme_format())
+ *                 .content(containerRepositoryReadmeContent)
+ *                 .format(containerRepositoryReadmeFormat)
  *                 .build())
  *             .build());
  * 

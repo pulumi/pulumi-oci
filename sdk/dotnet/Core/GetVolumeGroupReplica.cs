@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeGroupReplica = Oci.Core.GetVolumeGroupReplica.Invoke(new()
         ///     {
-        ///         VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
+        ///         VolumeGroupReplicaId = testVolumeGroupReplicaOciCoreVolumeGroupReplica.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testVolumeGroupReplica = Oci.Core.GetVolumeGroupReplica.Invoke(new()
         ///     {
-        ///         VolumeGroupReplicaId = oci_core_volume_group_replica.Test_volume_group_replica.Id,
+        ///         VolumeGroupReplicaId = testVolumeGroupReplicaOciCoreVolumeGroupReplica.Id,
         ///     });
         /// 
         /// });

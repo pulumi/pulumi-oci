@@ -111,37 +111,37 @@ class Query(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_query = oci.metering_computation.Query("testQuery",
-            compartment_id=var["compartment_id"],
+        test_query = oci.metering_computation.Query("test_query",
+            compartment_id=compartment_id,
             query_definition=oci.metering_computation.QueryQueryDefinitionArgs(
                 cost_analysis_ui=oci.metering_computation.QueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=var["query_query_definition_cost_analysis_ui_graph"],
-                    is_cumulative_graph=var["query_query_definition_cost_analysis_ui_is_cumulative_graph"],
+                    graph=query_query_definition_cost_analysis_ui_graph,
+                    is_cumulative_graph=query_query_definition_cost_analysis_ui_is_cumulative_graph,
                 ),
-                display_name=var["query_query_definition_display_name"],
+                display_name=query_query_definition_display_name,
                 report_query=oci.metering_computation.QueryQueryDefinitionReportQueryArgs(
-                    granularity=var["query_query_definition_report_query_granularity"],
-                    tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-                    compartment_depth=var["query_query_definition_report_query_compartment_depth"],
-                    date_range_name=var["query_query_definition_report_query_date_range_name"],
-                    filter=var["query_query_definition_report_query_filter"],
+                    granularity=query_query_definition_report_query_granularity,
+                    tenant_id=test_tenant["id"],
+                    compartment_depth=query_query_definition_report_query_compartment_depth,
+                    date_range_name=query_query_definition_report_query_date_range_name,
+                    filter=query_query_definition_report_query_filter,
                     forecast=oci.metering_computation.QueryQueryDefinitionReportQueryForecastArgs(
-                        time_forecast_ended=var["query_query_definition_report_query_forecast_time_forecast_ended"],
-                        forecast_type=var["query_query_definition_report_query_forecast_forecast_type"],
-                        time_forecast_started=var["query_query_definition_report_query_forecast_time_forecast_started"],
+                        time_forecast_ended=query_query_definition_report_query_forecast_time_forecast_ended,
+                        forecast_type=query_query_definition_report_query_forecast_forecast_type,
+                        time_forecast_started=query_query_definition_report_query_forecast_time_forecast_started,
                     ),
-                    group_bies=var["query_query_definition_report_query_group_by"],
+                    group_bies=query_query_definition_report_query_group_by,
                     group_by_tags=[oci.metering_computation.QueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=var["query_query_definition_report_query_group_by_tag_key"],
-                        namespace=var["query_query_definition_report_query_group_by_tag_namespace"],
-                        value=var["query_query_definition_report_query_group_by_tag_value"],
+                        key=query_query_definition_report_query_group_by_tag_key,
+                        namespace=query_query_definition_report_query_group_by_tag_namespace,
+                        value=query_query_definition_report_query_group_by_tag_value,
                     )],
-                    is_aggregate_by_time=var["query_query_definition_report_query_is_aggregate_by_time"],
-                    query_type=var["query_query_definition_report_query_query_type"],
-                    time_usage_ended=var["query_query_definition_report_query_time_usage_ended"],
-                    time_usage_started=var["query_query_definition_report_query_time_usage_started"],
+                    is_aggregate_by_time=query_query_definition_report_query_is_aggregate_by_time,
+                    query_type=query_query_definition_report_query_query_type,
+                    time_usage_ended=query_query_definition_report_query_time_usage_ended,
+                    time_usage_started=query_query_definition_report_query_time_usage_started,
                 ),
-                version=var["query_query_definition_version"],
+                version=query_query_definition_version,
             ))
         ```
         <!--End PulumiCodeChooser -->
@@ -177,37 +177,37 @@ class Query(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_query = oci.metering_computation.Query("testQuery",
-            compartment_id=var["compartment_id"],
+        test_query = oci.metering_computation.Query("test_query",
+            compartment_id=compartment_id,
             query_definition=oci.metering_computation.QueryQueryDefinitionArgs(
                 cost_analysis_ui=oci.metering_computation.QueryQueryDefinitionCostAnalysisUiArgs(
-                    graph=var["query_query_definition_cost_analysis_ui_graph"],
-                    is_cumulative_graph=var["query_query_definition_cost_analysis_ui_is_cumulative_graph"],
+                    graph=query_query_definition_cost_analysis_ui_graph,
+                    is_cumulative_graph=query_query_definition_cost_analysis_ui_is_cumulative_graph,
                 ),
-                display_name=var["query_query_definition_display_name"],
+                display_name=query_query_definition_display_name,
                 report_query=oci.metering_computation.QueryQueryDefinitionReportQueryArgs(
-                    granularity=var["query_query_definition_report_query_granularity"],
-                    tenant_id=oci_metering_computation_tenant["test_tenant"]["id"],
-                    compartment_depth=var["query_query_definition_report_query_compartment_depth"],
-                    date_range_name=var["query_query_definition_report_query_date_range_name"],
-                    filter=var["query_query_definition_report_query_filter"],
+                    granularity=query_query_definition_report_query_granularity,
+                    tenant_id=test_tenant["id"],
+                    compartment_depth=query_query_definition_report_query_compartment_depth,
+                    date_range_name=query_query_definition_report_query_date_range_name,
+                    filter=query_query_definition_report_query_filter,
                     forecast=oci.metering_computation.QueryQueryDefinitionReportQueryForecastArgs(
-                        time_forecast_ended=var["query_query_definition_report_query_forecast_time_forecast_ended"],
-                        forecast_type=var["query_query_definition_report_query_forecast_forecast_type"],
-                        time_forecast_started=var["query_query_definition_report_query_forecast_time_forecast_started"],
+                        time_forecast_ended=query_query_definition_report_query_forecast_time_forecast_ended,
+                        forecast_type=query_query_definition_report_query_forecast_forecast_type,
+                        time_forecast_started=query_query_definition_report_query_forecast_time_forecast_started,
                     ),
-                    group_bies=var["query_query_definition_report_query_group_by"],
+                    group_bies=query_query_definition_report_query_group_by,
                     group_by_tags=[oci.metering_computation.QueryQueryDefinitionReportQueryGroupByTagArgs(
-                        key=var["query_query_definition_report_query_group_by_tag_key"],
-                        namespace=var["query_query_definition_report_query_group_by_tag_namespace"],
-                        value=var["query_query_definition_report_query_group_by_tag_value"],
+                        key=query_query_definition_report_query_group_by_tag_key,
+                        namespace=query_query_definition_report_query_group_by_tag_namespace,
+                        value=query_query_definition_report_query_group_by_tag_value,
                     )],
-                    is_aggregate_by_time=var["query_query_definition_report_query_is_aggregate_by_time"],
-                    query_type=var["query_query_definition_report_query_query_type"],
-                    time_usage_ended=var["query_query_definition_report_query_time_usage_ended"],
-                    time_usage_started=var["query_query_definition_report_query_time_usage_started"],
+                    is_aggregate_by_time=query_query_definition_report_query_is_aggregate_by_time,
+                    query_type=query_query_definition_report_query_query_type,
+                    time_usage_ended=query_query_definition_report_query_time_usage_ended,
+                    time_usage_started=query_query_definition_report_query_time_usage_started,
                 ),
-                version=var["query_query_definition_version"],
+                version=query_query_definition_version,
             ))
         ```
         <!--End PulumiCodeChooser -->

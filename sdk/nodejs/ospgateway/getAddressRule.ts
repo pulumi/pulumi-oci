@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAddressRule = oci.OspGateway.getAddressRule({
- *     compartmentId: _var.compartment_id,
- *     countryCode: _var.address_rule_country_code,
- *     ospHomeRegion: _var.address_rule_osp_home_region,
+ *     compartmentId: compartmentId,
+ *     countryCode: addressRuleCountryCode,
+ *     ospHomeRegion: addressRuleOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -94,9 +94,9 @@ export interface GetAddressRuleResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAddressRule = oci.OspGateway.getAddressRule({
- *     compartmentId: _var.compartment_id,
- *     countryCode: _var.address_rule_country_code,
- *     ospHomeRegion: _var.address_rule_osp_home_region,
+ *     compartmentId: compartmentId,
+ *     countryCode: addressRuleCountryCode,
+ *     ospHomeRegion: addressRuleOspHomeRegion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OsubSubscription.GetCommitment(ctx, &osubsubscription.GetCommitmentArgs{
-//				CommitmentId:              oci_osub_subscription_commitment.Test_commitment.Id,
-//				XOneGatewaySubscriptionId: pulumi.StringRef(_var.Commitment_x_one_gateway_subscription_id),
-//				XOneOriginRegion:          pulumi.StringRef(_var.Commitment_x_one_origin_region),
+//				CommitmentId:              testCommitmentOciOsubSubscriptionCommitment.Id,
+//				XOneGatewaySubscriptionId: pulumi.StringRef(commitmentXOneGatewaySubscriptionId),
+//				XOneOriginRegion:          pulumi.StringRef(commitmentXOneOriginRegion),
 //			}, nil)
 //			if err != nil {
 //				return err

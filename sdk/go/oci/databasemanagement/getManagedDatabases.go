@@ -36,12 +36,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabases(ctx, &databasemanagement.GetManagedDatabasesArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				DeploymentType:                  pulumi.StringRef(_var.Managed_database_deployment_type),
-//				ExternalExadataInfrastructureId: pulumi.StringRef(oci_database_management_external_exadata_infrastructure.Test_external_exadata_infrastructure.Id),
-//				Id:                              pulumi.StringRef(_var.Managed_database_id),
-//				ManagementOption:                pulumi.StringRef(_var.Managed_database_management_option),
-//				Name:                            pulumi.StringRef(_var.Managed_database_name),
+//				CompartmentId:                   compartmentId,
+//				DeploymentType:                  pulumi.StringRef(managedDatabaseDeploymentType),
+//				ExternalExadataInfrastructureId: pulumi.StringRef(testExternalExadataInfrastructure.Id),
+//				Id:                              pulumi.StringRef(managedDatabaseId),
+//				ManagementOption:                pulumi.StringRef(managedDatabaseManagementOption),
+//				Name:                            pulumi.StringRef(managedDatabaseName),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := BigDataService.GetBdsInstanceMetastoreConfigs(ctx, &bigdataservice.GetBdsInstanceMetastoreConfigsArgs{
-//				BdsInstanceId: oci_bds_bds_instance.Test_bds_instance.Id,
-//				BdsApiKeyId:   pulumi.StringRef(oci_identity_api_key.Test_api_key.Id),
-//				DisplayName:   pulumi.StringRef(_var.Bds_instance_metastore_config_display_name),
-//				MetastoreId:   pulumi.StringRef(oci_datacatalog_metastore.Test_metastore.Id),
-//				MetastoreType: pulumi.StringRef(_var.Bds_instance_metastore_config_metastore_type),
-//				State:         pulumi.StringRef(_var.Bds_instance_metastore_config_state),
+//				BdsInstanceId: testBdsInstance.Id,
+//				BdsApiKeyId:   pulumi.StringRef(testApiKey.Id),
+//				DisplayName:   pulumi.StringRef(bdsInstanceMetastoreConfigDisplayName),
+//				MetastoreId:   pulumi.StringRef(testMetastore.Id),
+//				MetastoreType: pulumi.StringRef(bdsInstanceMetastoreConfigMetastoreType),
+//				State:         pulumi.StringRef(bdsInstanceMetastoreConfigState),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GenerativeAi.GetModel(ctx, &generativeai.GetModelArgs{
-//				ModelId: oci_generative_ai_model.Test_model.Id,
+//				ModelId: testModelOciGenerativeAiModel.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

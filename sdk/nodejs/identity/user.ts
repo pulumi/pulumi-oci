@@ -48,13 +48,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUser = new oci.identity.User("testUser", {
- *     compartmentId: _var.tenancy_ocid,
- *     description: _var.user_description,
+ * const testUser = new oci.identity.User("test_user", {
+ *     compartmentId: tenancyOcid,
+ *     description: userDescription,
+ *     name: userName,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     email: _var.user_email,
+ *     email: userEmail,
  *     freeformTags: {
  *         Department: "Finance",
  *     },

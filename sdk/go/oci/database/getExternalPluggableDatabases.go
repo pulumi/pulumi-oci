@@ -32,10 +32,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetExternalPluggableDatabases(ctx, &database.GetExternalPluggableDatabasesArgs{
-//				CompartmentId:               _var.Compartment_id,
-//				DisplayName:                 pulumi.StringRef(_var.External_pluggable_database_display_name),
-//				ExternalContainerDatabaseId: pulumi.StringRef(oci_database_external_container_database.Test_external_container_database.Id),
-//				State:                       pulumi.StringRef(_var.External_pluggable_database_state),
+//				CompartmentId:               compartmentId,
+//				DisplayName:                 pulumi.StringRef(externalPluggableDatabaseDisplayName),
+//				ExternalContainerDatabaseId: pulumi.StringRef(testExternalContainerDatabase.Id),
+//				State:                       pulumi.StringRef(externalPluggableDatabaseState),
 //			}, nil)
 //			if err != nil {
 //				return err

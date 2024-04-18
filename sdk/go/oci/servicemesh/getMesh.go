@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.GetMesh(ctx, &servicemesh.GetMeshArgs{
-//				MeshId: oci_service_mesh_mesh.Test_mesh.Id,
+//				MeshId: testMeshOciServiceMeshMesh.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

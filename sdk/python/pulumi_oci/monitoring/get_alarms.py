@@ -138,10 +138,10 @@ def get_alarms(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarms = oci.Monitoring.get_alarms(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_compartment_id_in_subtree"],
-        display_name=var["alarm_display_name"],
-        state=var["alarm_state"])
+    test_alarms = oci.Monitoring.get_alarms(compartment_id=compartment_id,
+        compartment_id_in_subtree=alarm_compartment_id_in_subtree,
+        display_name=alarm_display_name,
+        state=alarm_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -197,10 +197,10 @@ def get_alarms_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarms = oci.Monitoring.get_alarms(compartment_id=var["compartment_id"],
-        compartment_id_in_subtree=var["alarm_compartment_id_in_subtree"],
-        display_name=var["alarm_display_name"],
-        state=var["alarm_state"])
+    test_alarms = oci.Monitoring.get_alarms(compartment_id=compartment_id,
+        compartment_id_in_subtree=alarm_compartment_id_in_subtree,
+        display_name=alarm_display_name,
+        state=alarm_state)
     ```
     <!--End PulumiCodeChooser -->
 

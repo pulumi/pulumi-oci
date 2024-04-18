@@ -128,11 +128,11 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement",
-            namespace=var["log_analytics_preferences_management_namespace"],
+        test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("test_log_analytics_preferences_management",
+            namespace=log_analytics_preferences_management_namespace,
             items=[oci.log_analytics.LogAnalyticsPreferencesManagementItemArgs(
-                name=var["log_analytics_preferences_management_items_name"],
-                value=var["log_analytics_preferences_management_items_value"],
+                name=log_analytics_preferences_management_items_name,
+                value=log_analytics_preferences_management_items_value,
             )])
         ```
         <!--End PulumiCodeChooser -->
@@ -168,11 +168,11 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement",
-            namespace=var["log_analytics_preferences_management_namespace"],
+        test_log_analytics_preferences_management = oci.log_analytics.LogAnalyticsPreferencesManagement("test_log_analytics_preferences_management",
+            namespace=log_analytics_preferences_management_namespace,
             items=[oci.log_analytics.LogAnalyticsPreferencesManagementItemArgs(
-                name=var["log_analytics_preferences_management_items_name"],
-                value=var["log_analytics_preferences_management_items_value"],
+                name=log_analytics_preferences_management_items_name,
+                value=log_analytics_preferences_management_items_value,
             )])
         ```
         <!--End PulumiCodeChooser -->

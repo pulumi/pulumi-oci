@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedMySqlDatabases = oci.DatabaseManagement.getManagedMySqlDatabases({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -75,7 +75,7 @@ export interface GetManagedMySqlDatabasesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedMySqlDatabases = oci.DatabaseManagement.getManagedMySqlDatabases({
- *     compartmentId: _var.compartment_id,
+ *     compartmentId: compartmentId,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

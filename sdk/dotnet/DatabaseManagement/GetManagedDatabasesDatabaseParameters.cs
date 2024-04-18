@@ -30,11 +30,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabasesDatabaseParameters = Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
-        ///         Name = @var.Managed_databases_database_parameter_name,
-        ///         OpcNamedCredentialId = @var.Managed_databases_database_parameter_opc_named_credential_id,
-        ///         Source = @var.Managed_databases_database_parameter_source,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         IsAllowedValuesIncluded = managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+        ///         Name = managedDatabasesDatabaseParameterName,
+        ///         OpcNamedCredentialId = managedDatabasesDatabaseParameterOpcNamedCredentialId,
+        ///         Source = managedDatabasesDatabaseParameterSource,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {
         ///     var testManagedDatabasesDatabaseParameters = Oci.DatabaseManagement.GetManagedDatabasesDatabaseParameters.Invoke(new()
         ///     {
-        ///         ManagedDatabaseId = oci_database_management_managed_database.Test_managed_database.Id,
-        ///         IsAllowedValuesIncluded = @var.Managed_databases_database_parameter_is_allowed_values_included,
-        ///         Name = @var.Managed_databases_database_parameter_name,
-        ///         OpcNamedCredentialId = @var.Managed_databases_database_parameter_opc_named_credential_id,
-        ///         Source = @var.Managed_databases_database_parameter_source,
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         IsAllowedValuesIncluded = managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
+        ///         Name = managedDatabasesDatabaseParameterName,
+        ///         OpcNamedCredentialId = managedDatabasesDatabaseParameterOpcNamedCredentialId,
+        ///         Source = managedDatabasesDatabaseParameterSource,
         ///     });
         /// 
         /// });

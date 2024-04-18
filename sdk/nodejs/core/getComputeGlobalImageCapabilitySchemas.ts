@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeGlobalImageCapabilitySchemas = oci.Core.getComputeGlobalImageCapabilitySchemas({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.compute_global_image_capability_schema_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: computeGlobalImageCapabilitySchemaDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -86,8 +86,8 @@ export interface GetComputeGlobalImageCapabilitySchemasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeGlobalImageCapabilitySchemas = oci.Core.getComputeGlobalImageCapabilitySchemas({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.compute_global_image_capability_schema_display_name,
+ *     compartmentId: compartmentId,
+ *     displayName: computeGlobalImageCapabilitySchemaDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testDrPlanExecution = oci.DisasterRecovery.getDrPlanExecution({
- *     drPlanExecutionId: oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution.id,
+ *     drPlanExecutionId: testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -145,7 +145,7 @@ export interface GetDrPlanExecutionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testDrPlanExecution = oci.DisasterRecovery.getDrPlanExecution({
- *     drPlanExecutionId: oci_disaster_recovery_dr_plan_execution.test_dr_plan_execution.id,
+ *     drPlanExecutionId: testDrPlanExecutionOciDisasterRecoveryDrPlanExecution.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

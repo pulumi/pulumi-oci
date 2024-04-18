@@ -547,13 +547,13 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_rpc_attachment = oci.core.DrgAttachmentManagement("testDrgRpcAttachment",
+        test_drg_rpc_attachment = oci.core.DrgAttachmentManagement("test_drg_rpc_attachment",
             attachment_type="REMOTE_PEERING_CONNECTION",
-            compartment_id=var["compartment_ocid"],
-            network_id=oci_core_remote_peering_connection["test_rpc"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
+            compartment_id=compartment_ocid,
+            network_id=test_rpc["id"],
+            drg_id=test_drg["id"],
             display_name="MyTestDrgAttachmentForRpc",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"])
+            drg_route_table_id=test_drg_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -605,13 +605,13 @@ class DrgAttachmentManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_drg_rpc_attachment = oci.core.DrgAttachmentManagement("testDrgRpcAttachment",
+        test_drg_rpc_attachment = oci.core.DrgAttachmentManagement("test_drg_rpc_attachment",
             attachment_type="REMOTE_PEERING_CONNECTION",
-            compartment_id=var["compartment_ocid"],
-            network_id=oci_core_remote_peering_connection["test_rpc"]["id"],
-            drg_id=oci_core_drg["test_drg"]["id"],
+            compartment_id=compartment_ocid,
+            network_id=test_rpc["id"],
+            drg_id=test_drg["id"],
             display_name="MyTestDrgAttachmentForRpc",
-            drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"])
+            drg_route_table_id=test_drg_route_table["id"])
         ```
         <!--End PulumiCodeChooser -->
 

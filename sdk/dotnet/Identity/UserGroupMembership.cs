@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Identity
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testUserGroupMembership = new Oci.Identity.UserGroupMembership("testUserGroupMembership", new()
+    ///     var testUserGroupMembership = new Oci.Identity.UserGroupMembership("test_user_group_membership", new()
     ///     {
-    ///         GroupId = oci_identity_group.Test_group.Id,
-    ///         UserId = oci_identity_user.Test_user.Id,
+    ///         GroupId = testGroup.Id,
+    ///         UserId = testUser.Id,
     ///     });
     /// 
     /// });

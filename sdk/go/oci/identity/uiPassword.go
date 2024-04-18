@@ -41,8 +41,8 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Identity.NewUiPassword(ctx, "testUiPassword", &Identity.UiPasswordArgs{
-//				UserId: pulumi.Any(oci_identity_user.Test_user.Id),
+//			_, err := Identity.NewUiPassword(ctx, "test_ui_password", &Identity.UiPasswordArgs{
+//				UserId: pulumi.Any(testUser.Id),
 //			})
 //			if err != nil {
 //				return err

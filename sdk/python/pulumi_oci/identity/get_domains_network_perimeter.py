@@ -310,12 +310,12 @@ def get_domains_network_perimeter(attribute_sets: Optional[Sequence[str]] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_network_perimeter = oci.Identity.get_domains_network_perimeter(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        network_perimeter_id=oci_identity_domains_network_perimeter["test_network_perimeter"]["id"],
+    test_network_perimeter = oci.Identity.get_domains_network_perimeter(idcs_endpoint=test_domain["url"],
+        network_perimeter_id=test_network_perimeter_oci_identity_domains_network_perimeter["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["network_perimeter_authorization"],
-        resource_type_schema_version=var["network_perimeter_resource_type_schema_version"])
+        authorization=network_perimeter_authorization,
+        resource_type_schema_version=network_perimeter_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -383,12 +383,12 @@ def get_domains_network_perimeter_output(attribute_sets: Optional[pulumi.Input[O
     import pulumi
     import pulumi_oci as oci
 
-    test_network_perimeter = oci.Identity.get_domains_network_perimeter(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        network_perimeter_id=oci_identity_domains_network_perimeter["test_network_perimeter"]["id"],
+    test_network_perimeter = oci.Identity.get_domains_network_perimeter(idcs_endpoint=test_domain["url"],
+        network_perimeter_id=test_network_perimeter_oci_identity_domains_network_perimeter["id"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["network_perimeter_authorization"],
-        resource_type_schema_version=var["network_perimeter_resource_type_schema_version"])
+        authorization=network_perimeter_authorization,
+        resource_type_schema_version=network_perimeter_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

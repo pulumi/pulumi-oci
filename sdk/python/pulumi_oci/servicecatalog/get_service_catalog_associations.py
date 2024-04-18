@@ -130,10 +130,10 @@ def get_service_catalog_associations(entity_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=oci_service_catalog_entity["test_entity"]["id"],
-        entity_type=var["service_catalog_association_entity_type"],
-        service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"],
-        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
+    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=test_entity["id"],
+        entity_type=service_catalog_association_entity_type,
+        service_catalog_association_id=test_service_catalog_association["id"],
+        service_catalog_id=test_service_catalog["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -181,10 +181,10 @@ def get_service_catalog_associations_output(entity_id: Optional[pulumi.Input[Opt
     import pulumi
     import pulumi_oci as oci
 
-    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=oci_service_catalog_entity["test_entity"]["id"],
-        entity_type=var["service_catalog_association_entity_type"],
-        service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"],
-        service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
+    test_service_catalog_associations = oci.ServiceCatalog.get_service_catalog_associations(entity_id=test_entity["id"],
+        entity_type=service_catalog_association_entity_type,
+        service_catalog_association_id=test_service_catalog_association["id"],
+        service_catalog_id=test_service_catalog["id"])
     ```
     <!--End PulumiCodeChooser -->
 

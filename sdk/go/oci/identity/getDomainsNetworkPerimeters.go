@@ -31,16 +31,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetDomainsNetworkPerimeters(ctx, &identity.GetDomainsNetworkPerimetersArgs{
-//				IdcsEndpoint:           data.Oci_identity_domain.Test_domain.Url,
-//				NetworkPerimeterCount:  pulumi.IntRef(_var.Network_perimeter_network_perimeter_count),
-//				NetworkPerimeterFilter: pulumi.StringRef(_var.Network_perimeter_network_perimeter_filter),
+//				IdcsEndpoint:           testDomain.Url,
+//				NetworkPerimeterCount:  pulumi.IntRef(networkPerimeterNetworkPerimeterCount),
+//				NetworkPerimeterFilter: pulumi.StringRef(networkPerimeterNetworkPerimeterFilter),
 //				AttributeSets: []string{
 //					"all",
 //				},
 //				Attributes:                pulumi.StringRef(""),
-//				Authorization:             pulumi.StringRef(_var.Network_perimeter_authorization),
-//				ResourceTypeSchemaVersion: pulumi.StringRef(_var.Network_perimeter_resource_type_schema_version),
-//				StartIndex:                pulumi.IntRef(_var.Network_perimeter_start_index),
+//				Authorization:             pulumi.StringRef(networkPerimeterAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(networkPerimeterResourceTypeSchemaVersion),
+//				StartIndex:                pulumi.IntRef(networkPerimeterStartIndex),
 //			}, nil)
 //			if err != nil {
 //				return err

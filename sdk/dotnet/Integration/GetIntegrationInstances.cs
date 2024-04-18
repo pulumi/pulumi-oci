@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Integration
         /// {
         ///     var testIntegrationInstances = Oci.Integration.GetIntegrationInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Integration_instance_display_name,
-        ///         State = @var.Integration_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = integrationInstanceDisplayName,
+        ///         State = integrationInstanceState,
         ///     });
         /// 
         /// });
@@ -61,9 +61,9 @@ namespace Pulumi.Oci.Integration
         /// {
         ///     var testIntegrationInstances = Oci.Integration.GetIntegrationInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Integration_instance_display_name,
-        ///         State = @var.Integration_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = integrationInstanceDisplayName,
+        ///         State = integrationInstanceState,
         ///     });
         /// 
         /// });

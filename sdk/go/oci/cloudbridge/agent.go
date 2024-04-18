@@ -31,13 +31,13 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := CloudBridge.NewAgent(ctx, "testAgent", &CloudBridge.AgentArgs{
-//				AgentType:     pulumi.Any(_var.Agent_agent_type),
-//				AgentVersion:  pulumi.Any(_var.Agent_agent_version),
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Agent_display_name),
-//				EnvironmentId: pulumi.Any(oci_cloud_bridge_environment.Test_environment.Id),
-//				OsVersion:     pulumi.Any(_var.Agent_os_version),
+//			_, err := CloudBridge.NewAgent(ctx, "test_agent", &CloudBridge.AgentArgs{
+//				AgentType:     pulumi.Any(agentAgentType),
+//				AgentVersion:  pulumi.Any(agentAgentVersion),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(agentDisplayName),
+//				EnvironmentId: pulumi.Any(testEnvironment.Id),
+//				OsVersion:     pulumi.Any(agentOsVersion),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},

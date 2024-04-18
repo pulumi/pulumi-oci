@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Streaming.GetStreamPools(ctx, &streaming.GetStreamPoolsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				Id:            pulumi.StringRef(_var.Stream_pool_id),
-//				Name:          pulumi.StringRef(_var.Stream_pool_name),
-//				State:         pulumi.StringRef(_var.Stream_pool_state),
+//				CompartmentId: compartmentId,
+//				Id:            pulumi.StringRef(streamPoolId),
+//				Name:          pulumi.StringRef(streamPoolName),
+//				State:         pulumi.StringRef(streamPoolState),
 //			}, nil)
 //			if err != nil {
 //				return err

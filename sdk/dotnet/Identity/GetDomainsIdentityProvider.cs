@@ -29,12 +29,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityProvider = Oci.Identity.GetDomainsIdentityProvider.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityProviderId = testIdentityProviderOciIdentityIdentityProvider.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_provider_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_provider_resource_type_schema_version,
+        ///         Authorization = identityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });
@@ -62,12 +62,12 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testIdentityProvider = Oci.Identity.GetDomainsIdentityProvider.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         IdentityProviderId = oci_identity_identity_provider.Test_identity_provider.Id,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         IdentityProviderId = testIdentityProviderOciIdentityIdentityProvider.Id,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Identity_provider_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Identity_provider_resource_type_schema_version,
+        ///         Authorization = identityProviderAuthorization,
+        ///         ResourceTypeSchemaVersion = identityProviderResourceTypeSchemaVersion,
         ///     });
         /// 
         /// });

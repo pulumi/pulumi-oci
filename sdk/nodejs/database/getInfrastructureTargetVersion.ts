@@ -18,9 +18,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testInfrastructureTargetVersion = oci.Database.getInfrastructureTargetVersion({
- *     compartmentId: _var.compartment_id,
- *     targetResourceId: oci_database_target_resource.test_target_resource.id,
- *     targetResourceType: _var.infrastructure_target_version_target_resource_type,
+ *     compartmentId: compartmentId,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: infrastructureTargetVersionTargetResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -93,9 +93,9 @@ export interface GetInfrastructureTargetVersionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testInfrastructureTargetVersion = oci.Database.getInfrastructureTargetVersion({
- *     compartmentId: _var.compartment_id,
- *     targetResourceId: oci_database_target_resource.test_target_resource.id,
- *     targetResourceType: _var.infrastructure_target_version_target_resource_type,
+ *     compartmentId: compartmentId,
+ *     targetResourceId: testTargetResource.id,
+ *     targetResourceType: infrastructureTargetVersionTargetResourceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

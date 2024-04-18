@@ -29,9 +29,9 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testAddressRule = Oci.OspGateway.GetAddressRule.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CountryCode = @var.Address_rule_country_code,
-        ///         OspHomeRegion = @var.Address_rule_osp_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         CountryCode = addressRuleCountryCode,
+        ///         OspHomeRegion = addressRuleOspHomeRegion,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.OspGateway
         /// {
         ///     var testAddressRule = Oci.OspGateway.GetAddressRule.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         CountryCode = @var.Address_rule_country_code,
-        ///         OspHomeRegion = @var.Address_rule_osp_home_region,
+        ///         CompartmentId = compartmentId,
+        ///         CountryCode = addressRuleCountryCode,
+        ///         OspHomeRegion = addressRuleOspHomeRegion,
         ///     });
         /// 
         /// });

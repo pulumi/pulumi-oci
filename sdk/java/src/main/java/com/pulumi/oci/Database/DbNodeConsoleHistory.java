@@ -45,9 +45,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDbNodeConsoleHistory = new DbNodeConsoleHistory(&#34;testDbNodeConsoleHistory&#34;, DbNodeConsoleHistoryArgs.builder()        
- *             .dbNodeId(oci_database_db_node.test_db_node().id())
- *             .displayName(var_.db_node_console_history_display_name())
- *             .definedTags(var_.db_node_console_history_defined_tags())
+ *             .dbNodeId(testDbNode.id())
+ *             .displayName(dbNodeConsoleHistoryDisplayName)
+ *             .definedTags(dbNodeConsoleHistoryDefinedTags)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

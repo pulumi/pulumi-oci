@@ -140,11 +140,11 @@ def get_publications(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=var["compartment_id"],
-        listing_type=var["publication_listing_type"],
-        names=var["publication_name"],
-        operating_systems=var["publication_operating_systems"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publications = oci.Marketplace.get_publications(compartment_id=compartment_id,
+        listing_type=publication_listing_type,
+        names=publication_name,
+        operating_systems=publication_operating_systems,
+        publication_id=test_publication["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_publications_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_publications = oci.Marketplace.get_publications(compartment_id=var["compartment_id"],
-        listing_type=var["publication_listing_type"],
-        names=var["publication_name"],
-        operating_systems=var["publication_operating_systems"],
-        publication_id=oci_marketplace_publication["test_publication"]["id"])
+    test_publications = oci.Marketplace.get_publications(compartment_id=compartment_id,
+        listing_type=publication_listing_type,
+        names=publication_name,
+        operating_systems=publication_operating_systems,
+        publication_id=test_publication["id"])
     ```
     <!--End PulumiCodeChooser -->
 

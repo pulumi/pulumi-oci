@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppAcceleration = oci.Waa.getAppAcceleration({
- *     webAppAccelerationId: oci_waa_web_app_acceleration.test_web_app_acceleration.id,
+ *     webAppAccelerationId: testWebAppAccelerationOciWaaWebAppAcceleration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,7 +111,7 @@ export interface GetAppAccelerationResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testWebAppAcceleration = oci.Waa.getAppAcceleration({
- *     webAppAccelerationId: oci_waa_web_app_acceleration.test_web_app_acceleration.id,
+ *     webAppAccelerationId: testWebAppAccelerationOciWaaWebAppAcceleration.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

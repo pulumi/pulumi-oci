@@ -25,13 +25,14 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testListener = new Oci.NetworkLoadBalancer.Listener("testListener", new()
+    ///     var testListener = new Oci.NetworkLoadBalancer.Listener("test_listener", new()
     ///     {
-    ///         DefaultBackendSetName = oci_network_load_balancer_backend_set.Test_backend_set.Name,
-    ///         NetworkLoadBalancerId = oci_network_load_balancer_network_load_balancer.Test_network_load_balancer.Id,
-    ///         Port = @var.Listener_port,
-    ///         Protocol = @var.Listener_protocol,
-    ///         IpVersion = @var.Listener_ip_version,
+    ///         DefaultBackendSetName = testBackendSet.Name,
+    ///         Name = listenerName,
+    ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+    ///         Port = listenerPort,
+    ///         Protocol = listenerProtocol,
+    ///         IpVersion = listenerIpVersion,
     ///     });
     /// 
     /// });

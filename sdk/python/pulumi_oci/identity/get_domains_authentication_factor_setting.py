@@ -562,12 +562,12 @@ def get_domains_authentication_factor_setting(attribute_sets: Optional[Sequence[
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=oci_identity_domains_authentication_factor_setting["test_authentication_factor_setting"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=test_authentication_factor_setting_oci_identity_domains_authentication_factor_setting["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
-        authorization=var["authentication_factor_setting_authorization"],
-        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
+        authorization=authentication_factor_setting_authorization,
+        resource_type_schema_version=authentication_factor_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -656,12 +656,12 @@ def get_domains_authentication_factor_setting_output(attribute_sets: Optional[pu
     import pulumi
     import pulumi_oci as oci
 
-    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=oci_identity_domains_authentication_factor_setting["test_authentication_factor_setting"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_authentication_factor_setting = oci.Identity.get_domains_authentication_factor_setting(authentication_factor_setting_id=test_authentication_factor_setting_oci_identity_domains_authentication_factor_setting["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=[],
         attributes="",
-        authorization=var["authentication_factor_setting_authorization"],
-        resource_type_schema_version=var["authentication_factor_setting_resource_type_schema_version"])
+        authorization=authentication_factor_setting_authorization,
+        resource_type_schema_version=authentication_factor_setting_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

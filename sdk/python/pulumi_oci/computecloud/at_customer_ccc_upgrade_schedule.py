@@ -354,19 +354,19 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_upgrade_schedule_display_name"],
+        test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("test_ccc_upgrade_schedule",
+            compartment_id=compartment_id,
+            display_name=ccc_upgrade_schedule_display_name,
             events=[oci.compute_cloud.AtCustomerCccUpgradeScheduleEventArgs(
-                description=var["ccc_upgrade_schedule_events_description"],
-                schedule_event_duration=var["ccc_upgrade_schedule_events_schedule_event_duration"],
-                time_start=var["ccc_upgrade_schedule_events_time_start"],
-                schedule_event_recurrences=var["ccc_upgrade_schedule_events_schedule_event_recurrences"],
+                description=ccc_upgrade_schedule_events_description,
+                schedule_event_duration=ccc_upgrade_schedule_events_schedule_event_duration,
+                time_start=ccc_upgrade_schedule_events_time_start,
+                schedule_event_recurrences=ccc_upgrade_schedule_events_schedule_event_recurrences,
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ccc_upgrade_schedule_description"],
+            description=ccc_upgrade_schedule_description,
             freeform_tags={
                 "bar-key": "value",
             })
@@ -412,19 +412,19 @@ class AtCustomerCccUpgradeSchedule(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("testCccUpgradeSchedule",
-            compartment_id=var["compartment_id"],
-            display_name=var["ccc_upgrade_schedule_display_name"],
+        test_ccc_upgrade_schedule = oci.compute_cloud.AtCustomerCccUpgradeSchedule("test_ccc_upgrade_schedule",
+            compartment_id=compartment_id,
+            display_name=ccc_upgrade_schedule_display_name,
             events=[oci.compute_cloud.AtCustomerCccUpgradeScheduleEventArgs(
-                description=var["ccc_upgrade_schedule_events_description"],
-                schedule_event_duration=var["ccc_upgrade_schedule_events_schedule_event_duration"],
-                time_start=var["ccc_upgrade_schedule_events_time_start"],
-                schedule_event_recurrences=var["ccc_upgrade_schedule_events_schedule_event_recurrences"],
+                description=ccc_upgrade_schedule_events_description,
+                schedule_event_duration=ccc_upgrade_schedule_events_schedule_event_duration,
+                time_start=ccc_upgrade_schedule_events_time_start,
+                schedule_event_recurrences=ccc_upgrade_schedule_events_schedule_event_recurrences,
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
-            description=var["ccc_upgrade_schedule_description"],
+            description=ccc_upgrade_schedule_description,
             freeform_tags={
                 "bar-key": "value",
             })

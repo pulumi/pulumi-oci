@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testKeyStore = Oci.Database.GetKeyStore.Invoke(new()
         ///     {
-        ///         KeyStoreId = oci_database_key_store.Test_key_store.Id,
+        ///         KeyStoreId = testKeyStoreOciDatabaseKeyStore.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testKeyStore = Oci.Database.GetKeyStore.Invoke(new()
         ///     {
-        ///         KeyStoreId = oci_database_key_store.Test_key_store.Id,
+        ///         KeyStoreId = testKeyStoreOciDatabaseKeyStore.Id,
         ///     });
         /// 
         /// });

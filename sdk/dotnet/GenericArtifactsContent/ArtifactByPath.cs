@@ -28,12 +28,12 @@ namespace Pulumi.Oci.GenericArtifactsContent
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testArtifactByPath = new Oci.GenericArtifactsContent.ArtifactByPath("testArtifactByPath", new()
+    ///     var testArtifactByPath = new Oci.GenericArtifactsContent.ArtifactByPath("test_artifact_by_path", new()
     ///     {
-    ///         ArtifactPath = @var.Artifact_path,
-    ///         RepositoryId = oci_artifacts_repository.Test_repository.Id,
-    ///         Version = @var.Version,
-    ///         Source = @var.Source,
+    ///         ArtifactPath = artifactPath,
+    ///         RepositoryId = testRepository.Id,
+    ///         Version = version,
+    ///         Source = source,
     ///     });
     /// 
     /// });

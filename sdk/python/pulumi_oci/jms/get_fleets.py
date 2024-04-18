@@ -132,11 +132,11 @@ def get_fleets(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.Jms.get_fleets(compartment_id=var["compartment_id"],
-        display_name=var["fleet_display_name"],
-        display_name_contains=var["fleet_display_name_contains"],
-        id=var["fleet_id"],
-        state=var["fleet_state"])
+    test_fleets = oci.Jms.get_fleets(compartment_id=compartment_id,
+        display_name=fleet_display_name,
+        display_name_contains=fleet_display_name_contains,
+        id=fleet_id,
+        state=fleet_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -188,11 +188,11 @@ def get_fleets_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     import pulumi
     import pulumi_oci as oci
 
-    test_fleets = oci.Jms.get_fleets(compartment_id=var["compartment_id"],
-        display_name=var["fleet_display_name"],
-        display_name_contains=var["fleet_display_name_contains"],
-        id=var["fleet_id"],
-        state=var["fleet_state"])
+    test_fleets = oci.Jms.get_fleets(compartment_id=compartment_id,
+        display_name=fleet_display_name,
+        display_name_contains=fleet_display_name_contains,
+        id=fleet_id,
+        state=fleet_state)
     ```
     <!--End PulumiCodeChooser -->
 

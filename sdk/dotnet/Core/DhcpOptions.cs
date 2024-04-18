@@ -29,6 +29,97 @@ namespace Pulumi.Oci.Core
     /// 
     /// ## Example Usage
     /// 
+    /// ### VCN Local with Internet
+    /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDhcpOptions = new Oci.Core.DhcpOptions("test_dhcp_options", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         Options = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.DhcpOptionsOptionArgs
+    ///             {
+    ///                 Type = "DomainNameServer",
+    ///                 ServerType = "VcnLocalPlusInternet",
+    ///             },
+    ///             new Oci.Core.Inputs.DhcpOptionsOptionArgs
+    ///             {
+    ///                 Type = "SearchDomain",
+    ///                 SearchDomainNames = new[]
+    ///                 {
+    ///                     "test.com",
+    ///                 },
+    ///             },
+    ///         },
+    ///         VcnId = testVcn.Id,
+    ///         DisplayName = dhcpOptionsDisplayName,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
+    /// ### Custom DNS Server
+    /// 
+    /// &lt;!--Start PulumiCodeChooser --&gt;
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDhcpOptions = new Oci.Core.DhcpOptions("test_dhcp_options", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         Options = new[]
+    ///         {
+    ///             new Oci.Core.Inputs.DhcpOptionsOptionArgs
+    ///             {
+    ///                 Type = "DomainNameServer",
+    ///                 ServerType = "CustomDnsServer",
+    ///                 CustomDnsServers = new[]
+    ///                 {
+    ///                     "192.168.0.2",
+    ///                     "192.168.0.11",
+    ///                     "192.168.0.19",
+    ///                 },
+    ///             },
+    ///             new Oci.Core.Inputs.DhcpOptionsOptionArgs
+    ///             {
+    ///                 Type = "SearchDomain",
+    ///                 SearchDomainNames = new[]
+    ///                 {
+    ///                     "test.com",
+    ///                 },
+    ///             },
+    ///         },
+    ///         VcnId = testVcn.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = dhcpOptionsDisplayName,
+    ///         DomainNameType = dhcpOptionsDomainNameType,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
     /// ## Import
     /// 
     /// DhcpOptions can be imported using the `id`, e.g.

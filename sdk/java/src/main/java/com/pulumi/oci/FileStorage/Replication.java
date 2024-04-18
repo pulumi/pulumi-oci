@@ -71,13 +71,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testReplication = new Replication(&#34;testReplication&#34;, ReplicationArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .sourceId(oci_file_storage_file_system.test_source().id())
- *             .targetId(oci_file_storage_file_system.test_target().id())
+ *             .compartmentId(compartmentId)
+ *             .sourceId(testSource.id())
+ *             .targetId(testTarget.id())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.replication_display_name())
+ *             .displayName(replicationDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .replicationInterval(var_.replication_replication_interval())
+ *             .replicationInterval(replicationReplicationInterval)
  *             .build());
  * 
  *     }

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOccAvailabilityCatalogs = oci.CapacityManagement.getOccAvailabilityCatalogs({
- *     compartmentId: _var.compartment_id,
- *     catalogState: _var.occ_availability_catalog_catalog_state,
- *     displayName: _var.occ_availability_catalog_display_name,
- *     id: _var.occ_availability_catalog_id,
- *     namespace: _var.occ_availability_catalog_namespace,
+ *     compartmentId: compartmentId,
+ *     catalogState: occAvailabilityCatalogCatalogState,
+ *     displayName: occAvailabilityCatalogDisplayName,
+ *     id: occAvailabilityCatalogId,
+ *     namespace: occAvailabilityCatalogNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,11 +111,11 @@ export interface GetOccAvailabilityCatalogsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOccAvailabilityCatalogs = oci.CapacityManagement.getOccAvailabilityCatalogs({
- *     compartmentId: _var.compartment_id,
- *     catalogState: _var.occ_availability_catalog_catalog_state,
- *     displayName: _var.occ_availability_catalog_display_name,
- *     id: _var.occ_availability_catalog_id,
- *     namespace: _var.occ_availability_catalog_namespace,
+ *     compartmentId: compartmentId,
+ *     catalogState: occAvailabilityCatalogCatalogState,
+ *     displayName: occAvailabilityCatalogDisplayName,
+ *     id: occAvailabilityCatalogId,
+ *     namespace: occAvailabilityCatalogNamespace,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

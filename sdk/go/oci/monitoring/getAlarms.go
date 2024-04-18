@@ -39,10 +39,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Monitoring.GetAlarms(ctx, &monitoring.GetAlarmsArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Alarm_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Alarm_display_name),
-//				State:                  pulumi.StringRef(_var.Alarm_state),
+//				CompartmentId:          compartmentId,
+//				CompartmentIdInSubtree: pulumi.BoolRef(alarmCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(alarmDisplayName),
+//				State:                  pulumi.StringRef(alarmState),
 //			}, nil)
 //			if err != nil {
 //				return err

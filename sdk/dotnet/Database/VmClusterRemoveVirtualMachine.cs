@@ -25,16 +25,16 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVmClusterRemoveVirtualMachine = new Oci.Database.VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine", new()
+    ///     var testVmClusterRemoveVirtualMachine = new Oci.Database.VmClusterRemoveVirtualMachine("test_vm_cluster_remove_virtual_machine", new()
     ///     {
     ///         DbServers = new[]
     ///         {
     ///             new Oci.Database.Inputs.VmClusterRemoveVirtualMachineDbServerArgs
     ///             {
-    ///                 DbServerId = oci_database_db_server.Test_db_server.Id,
+    ///                 DbServerId = testDbServer.Id,
     ///             },
     ///         },
-    ///         VmClusterId = oci_database_vm_cluster.Test_vm_cluster.Id,
+    ///         VmClusterId = testVmCluster.Id,
     ///     });
     /// 
     /// });

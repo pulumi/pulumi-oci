@@ -47,12 +47,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAgent = new Agent(&#34;testAgent&#34;, AgentArgs.builder()        
- *             .agentType(var_.agent_agent_type())
- *             .agentVersion(var_.agent_agent_version())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.agent_display_name())
- *             .environmentId(oci_cloud_bridge_environment.test_environment().id())
- *             .osVersion(var_.agent_os_version())
+ *             .agentType(agentAgentType)
+ *             .agentVersion(agentAgentVersion)
+ *             .compartmentId(compartmentId)
+ *             .displayName(agentDisplayName)
+ *             .environmentId(testEnvironment.id())
+ *             .osVersion(agentOsVersion)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());

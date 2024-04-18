@@ -32,52 +32,52 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewVmClusterNetwork(ctx, "testVmClusterNetwork", &Database.VmClusterNetworkArgs{
-//				CompartmentId:           pulumi.Any(_var.Compartment_id),
-//				DisplayName:             pulumi.Any(_var.Vm_cluster_network_display_name),
-//				ExadataInfrastructureId: pulumi.Any(oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id),
+//			_, err := Database.NewVmClusterNetwork(ctx, "test_vm_cluster_network", &Database.VmClusterNetworkArgs{
+//				CompartmentId:           pulumi.Any(compartmentId),
+//				DisplayName:             pulumi.Any(vmClusterNetworkDisplayName),
+//				ExadataInfrastructureId: pulumi.Any(testExadataInfrastructure.Id),
 //				Scans: database.VmClusterNetworkScanArray{
 //					&database.VmClusterNetworkScanArgs{
-//						Hostname:               pulumi.Any(_var.Vm_cluster_network_scans_hostname),
-//						Ips:                    pulumi.Any(_var.Vm_cluster_network_scans_ips),
-//						Port:                   pulumi.Any(_var.Vm_cluster_network_scans_port),
-//						ScanListenerPortTcp:    pulumi.Any(_var.Vm_cluster_network_scans_scan_listener_port_tcp),
-//						ScanListenerPortTcpSsl: pulumi.Any(_var.Vm_cluster_network_scans_scan_listener_port_tcp_ssl),
+//						Hostname:               pulumi.Any(vmClusterNetworkScansHostname),
+//						Ips:                    pulumi.Any(vmClusterNetworkScansIps),
+//						Port:                   pulumi.Any(vmClusterNetworkScansPort),
+//						ScanListenerPortTcp:    pulumi.Any(vmClusterNetworkScansScanListenerPortTcp),
+//						ScanListenerPortTcpSsl: pulumi.Any(vmClusterNetworkScansScanListenerPortTcpSsl),
 //					},
 //				},
 //				VmNetworks: database.VmClusterNetworkVmNetworkArray{
 //					&database.VmClusterNetworkVmNetworkArgs{
-//						NetworkType: pulumi.Any(_var.Vm_cluster_network_vm_networks_network_type),
+//						NetworkType: pulumi.Any(vmClusterNetworkVmNetworksNetworkType),
 //						Nodes: database.VmClusterNetworkVmNetworkNodeArray{
 //							&database.VmClusterNetworkVmNetworkNodeArgs{
-//								Hostname:    pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_hostname),
-//								Ip:          pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_ip),
-//								DbServerId:  pulumi.Any(oci_database_db_server.Test_db_server.Id),
-//								State:       pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_state),
-//								Vip:         pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_vip),
-//								VipHostname: pulumi.Any(_var.Vm_cluster_network_vm_networks_nodes_vip_hostname),
+//								Hostname:    pulumi.Any(vmClusterNetworkVmNetworksNodesHostname),
+//								Ip:          pulumi.Any(vmClusterNetworkVmNetworksNodesIp),
+//								DbServerId:  pulumi.Any(testDbServer.Id),
+//								State:       pulumi.Any(vmClusterNetworkVmNetworksNodesState),
+//								Vip:         pulumi.Any(vmClusterNetworkVmNetworksNodesVip),
+//								VipHostname: pulumi.Any(vmClusterNetworkVmNetworksNodesVipHostname),
 //							},
 //						},
-//						DomainName: pulumi.Any(oci_identity_domain.Test_domain.Name),
-//						Gateway:    pulumi.Any(_var.Vm_cluster_network_vm_networks_gateway),
-//						Netmask:    pulumi.Any(_var.Vm_cluster_network_vm_networks_netmask),
-//						VlanId:     pulumi.Any(_var.Vm_cluster_network_vm_networks_vlan_id),
+//						DomainName: pulumi.Any(testDomain.Name),
+//						Gateway:    pulumi.Any(vmClusterNetworkVmNetworksGateway),
+//						Netmask:    pulumi.Any(vmClusterNetworkVmNetworksNetmask),
+//						VlanId:     pulumi.Any(vmClusterNetworkVmNetworksVlanId),
 //					},
 //				},
-//				DefinedTags: pulumi.Any(_var.Vm_cluster_network_defined_tags),
-//				Dns:         pulumi.Any(_var.Vm_cluster_network_dns),
+//				DefinedTags: pulumi.Any(vmClusterNetworkDefinedTags),
+//				Dns:         pulumi.Any(vmClusterNetworkDns),
 //				DrScans: database.VmClusterNetworkDrScanArray{
 //					&database.VmClusterNetworkDrScanArgs{
-//						Hostname:            pulumi.Any(_var.Vm_cluster_network_dr_scans_hostname),
-//						Ips:                 pulumi.Any(_var.Vm_cluster_network_dr_scans_ips),
-//						ScanListenerPortTcp: pulumi.Any(_var.Vm_cluster_network_dr_scans_scan_listener_port_tcp),
+//						Hostname:            pulumi.Any(vmClusterNetworkDrScansHostname),
+//						Ips:                 pulumi.Any(vmClusterNetworkDrScansIps),
+//						ScanListenerPortTcp: pulumi.Any(vmClusterNetworkDrScansScanListenerPortTcp),
 //					},
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Ntps:                     pulumi.Any(_var.Vm_cluster_network_ntp),
-//				ValidateVmClusterNetwork: pulumi.Any(_var.Vm_cluster_network_validate_vm_cluster_network),
+//				Ntps:                     pulumi.Any(vmClusterNetworkNtp),
+//				ValidateVmClusterNetwork: pulumi.Any(vmClusterNetworkValidateVmClusterNetwork),
 //			})
 //			if err != nil {
 //				return err

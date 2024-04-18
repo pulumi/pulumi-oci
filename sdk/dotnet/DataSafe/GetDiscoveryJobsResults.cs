@@ -29,13 +29,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryJobsResults = Oci.DataSafe.GetDiscoveryJobsResults.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///         ColumnNames = @var.Discovery_jobs_result_column_name,
-        ///         DiscoveryType = @var.Discovery_jobs_result_discovery_type,
-        ///         IsResultApplied = @var.Discovery_jobs_result_is_result_applied,
-        ///         Objects = @var.Discovery_jobs_result_object,
-        ///         PlannedAction = @var.Discovery_jobs_result_planned_action,
-        ///         SchemaNames = @var.Discovery_jobs_result_schema_name,
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         ColumnNames = discoveryJobsResultColumnName,
+        ///         DiscoveryType = discoveryJobsResultDiscoveryType,
+        ///         IsResultApplied = discoveryJobsResultIsResultApplied,
+        ///         Objects = discoveryJobsResultObject,
+        ///         PlannedAction = discoveryJobsResultPlannedAction,
+        ///         SchemaNames = discoveryJobsResultSchemaName,
         ///     });
         /// 
         /// });
@@ -63,13 +63,13 @@ namespace Pulumi.Oci.DataSafe
         /// {
         ///     var testDiscoveryJobsResults = Oci.DataSafe.GetDiscoveryJobsResults.Invoke(new()
         ///     {
-        ///         DiscoveryJobId = oci_data_safe_discovery_job.Test_discovery_job.Id,
-        ///         ColumnNames = @var.Discovery_jobs_result_column_name,
-        ///         DiscoveryType = @var.Discovery_jobs_result_discovery_type,
-        ///         IsResultApplied = @var.Discovery_jobs_result_is_result_applied,
-        ///         Objects = @var.Discovery_jobs_result_object,
-        ///         PlannedAction = @var.Discovery_jobs_result_planned_action,
-        ///         SchemaNames = @var.Discovery_jobs_result_schema_name,
+        ///         DiscoveryJobId = testDiscoveryJob.Id,
+        ///         ColumnNames = discoveryJobsResultColumnName,
+        ///         DiscoveryType = discoveryJobsResultDiscoveryType,
+        ///         IsResultApplied = discoveryJobsResultIsResultApplied,
+        ///         Objects = discoveryJobsResultObject,
+        ///         PlannedAction = discoveryJobsResultPlannedAction,
+        ///         SchemaNames = discoveryJobsResultSchemaName,
         ///     });
         /// 
         /// });

@@ -48,16 +48,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroup = new ManagedInstanceGroup(&#34;testManagedInstanceGroup&#34;, ManagedInstanceGroupArgs.builder()        
- *             .archType(var_.managed_instance_group_arch_type())
- *             .compartmentId(var_.compartment_id())
- *             .displayName(var_.managed_instance_group_display_name())
- *             .osFamily(var_.managed_instance_group_os_family())
  *             .softwareSourceIds()
- *             .vendorName(var_.managed_instance_group_vendor_name())
+ *             .archType(managedInstanceGroupArchType)
+ *             .compartmentId(compartmentId)
+ *             .displayName(managedInstanceGroupDisplayName)
+ *             .osFamily(managedInstanceGroupOsFamily)
+ *             .vendorName(managedInstanceGroupVendorName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.managed_instance_group_description())
+ *             .description(managedInstanceGroupDescription)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .managedInstanceIds(var_.managed_instance_group_managed_instance_ids())
+ *             .managedInstanceIds(managedInstanceGroupManagedInstanceIds)
  *             .build());
  * 
  *     }

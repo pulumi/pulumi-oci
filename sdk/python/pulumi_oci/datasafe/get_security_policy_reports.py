@@ -176,13 +176,13 @@ def get_security_policy_reports(access_level: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_reports = oci.DataSafe.get_security_policy_reports(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_report_access_level"],
-        compartment_id_in_subtree=var["security_policy_report_compartment_id_in_subtree"],
-        display_name=var["security_policy_report_display_name"],
-        security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"],
-        state=var["security_policy_report_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_security_policy_reports = oci.DataSafe.get_security_policy_reports(compartment_id=compartment_id,
+        access_level=security_policy_report_access_level,
+        compartment_id_in_subtree=security_policy_report_compartment_id_in_subtree,
+        display_name=security_policy_report_display_name,
+        security_policy_report_id=test_security_policy_report["id"],
+        state=security_policy_report_state,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -255,13 +255,13 @@ def get_security_policy_reports_output(access_level: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_security_policy_reports = oci.DataSafe.get_security_policy_reports(compartment_id=var["compartment_id"],
-        access_level=var["security_policy_report_access_level"],
-        compartment_id_in_subtree=var["security_policy_report_compartment_id_in_subtree"],
-        display_name=var["security_policy_report_display_name"],
-        security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"],
-        state=var["security_policy_report_state"],
-        target_id=oci_cloud_guard_target["test_target"]["id"])
+    test_security_policy_reports = oci.DataSafe.get_security_policy_reports(compartment_id=compartment_id,
+        access_level=security_policy_report_access_level,
+        compartment_id_in_subtree=security_policy_report_compartment_id_in_subtree,
+        display_name=security_policy_report_display_name,
+        security_policy_report_id=test_security_policy_report["id"],
+        state=security_policy_report_state,
+        target_id=test_target["id"])
     ```
     <!--End PulumiCodeChooser -->
 

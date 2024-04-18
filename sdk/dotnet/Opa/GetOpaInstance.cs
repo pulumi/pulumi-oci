@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Opa
         /// {
         ///     var testOpaInstance = Oci.Opa.GetOpaInstance.Invoke(new()
         ///     {
-        ///         OpaInstanceId = oci_opa_opa_instance.Test_opa_instance.Id,
+        ///         OpaInstanceId = testOpaInstanceOciOpaOpaInstance.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Opa
         /// {
         ///     var testOpaInstance = Oci.Opa.GetOpaInstance.Invoke(new()
         ///     {
-        ///         OpaInstanceId = oci_opa_opa_instance.Test_opa_instance.Id,
+        ///         OpaInstanceId = testOpaInstanceOciOpaOpaInstance.Id,
         ///     });
         /// 
         /// });

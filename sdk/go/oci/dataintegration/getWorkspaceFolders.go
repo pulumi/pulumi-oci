@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataIntegration.GetWorkspaceFolders(ctx, &dataintegration.GetWorkspaceFoldersArgs{
-//				WorkspaceId:   oci_dataintegration_workspace.Test_workspace.Id,
-//				AggregatorKey: pulumi.StringRef(_var.Workspace_folder_aggregator_key),
-//				Fields:        _var.Workspace_folder_fields,
-//				Identifiers:   _var.Workspace_folder_identifier,
-//				Name:          pulumi.StringRef(_var.Workspace_folder_name),
-//				NameContains:  pulumi.StringRef(_var.Workspace_folder_name_contains),
+//				WorkspaceId:   testWorkspace.Id,
+//				AggregatorKey: pulumi.StringRef(workspaceFolderAggregatorKey),
+//				Fields:        workspaceFolderFields,
+//				Identifiers:   workspaceFolderIdentifier,
+//				Name:          pulumi.StringRef(workspaceFolderName),
+//				NameContains:  pulumi.StringRef(workspaceFolderNameContains),
 //			}, nil)
 //			if err != nil {
 //				return err

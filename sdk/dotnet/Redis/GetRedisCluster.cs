@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Redis
         /// {
         ///     var testRedisCluster = Oci.Redis.GetRedisCluster.Invoke(new()
         ///     {
-        ///         RedisClusterId = oci_redis_redis_cluster.Test_redis_cluster.Id,
+        ///         RedisClusterId = testRedisClusterOciRedisRedisCluster.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Redis
         /// {
         ///     var testRedisCluster = Oci.Redis.GetRedisCluster.Invoke(new()
         ///     {
-        ///         RedisClusterId = oci_redis_redis_cluster.Test_redis_cluster.Id,
+        ///         RedisClusterId = testRedisClusterOciRedisRedisCluster.Id,
         ///     });
         /// 
         /// });

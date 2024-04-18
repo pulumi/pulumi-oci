@@ -707,29 +707,29 @@ class Vtap(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vtap = oci.core.Vtap("testVtap",
-            capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"],
-            compartment_id=var["compartment_id"],
-            source_id=oci_core_source["test_source"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_vtap = oci.core.Vtap("test_vtap",
+            capture_filter_id=test_capture_filter["id"],
+            compartment_id=compartment_id,
+            source_id=test_source["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["vtap_display_name"],
-            encapsulation_protocol=var["vtap_encapsulation_protocol"],
+            display_name=vtap_display_name,
+            encapsulation_protocol=vtap_encapsulation_protocol,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_vtap_enabled=var["vtap_is_vtap_enabled"],
-            max_packet_size=var["vtap_max_packet_size"],
-            source_private_endpoint_ip=var["vtap_source_private_endpoint_ip"],
-            source_private_endpoint_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            source_type=var["vtap_source_type"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            target_ip=var["vtap_target_ip"],
-            target_type=var["vtap_target_type"],
-            traffic_mode=var["vtap_traffic_mode"],
-            vxlan_network_identifier=var["vtap_vxlan_network_identifier"])
+            is_vtap_enabled=vtap_is_vtap_enabled,
+            max_packet_size=vtap_max_packet_size,
+            source_private_endpoint_ip=vtap_source_private_endpoint_ip,
+            source_private_endpoint_subnet_id=test_subnet["id"],
+            source_type=vtap_source_type,
+            target_id=test_target["id"],
+            target_ip=vtap_target_ip,
+            target_type=vtap_target_type,
+            traffic_mode=vtap_traffic_mode,
+            vxlan_network_identifier=vtap_vxlan_network_identifier)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -792,29 +792,29 @@ class Vtap(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_vtap = oci.core.Vtap("testVtap",
-            capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"],
-            compartment_id=var["compartment_id"],
-            source_id=oci_core_source["test_source"]["id"],
-            vcn_id=oci_core_vcn["test_vcn"]["id"],
+        test_vtap = oci.core.Vtap("test_vtap",
+            capture_filter_id=test_capture_filter["id"],
+            compartment_id=compartment_id,
+            source_id=test_source["id"],
+            vcn_id=test_vcn["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["vtap_display_name"],
-            encapsulation_protocol=var["vtap_encapsulation_protocol"],
+            display_name=vtap_display_name,
+            encapsulation_protocol=vtap_encapsulation_protocol,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_vtap_enabled=var["vtap_is_vtap_enabled"],
-            max_packet_size=var["vtap_max_packet_size"],
-            source_private_endpoint_ip=var["vtap_source_private_endpoint_ip"],
-            source_private_endpoint_subnet_id=oci_core_subnet["test_subnet"]["id"],
-            source_type=var["vtap_source_type"],
-            target_id=oci_cloud_guard_target["test_target"]["id"],
-            target_ip=var["vtap_target_ip"],
-            target_type=var["vtap_target_type"],
-            traffic_mode=var["vtap_traffic_mode"],
-            vxlan_network_identifier=var["vtap_vxlan_network_identifier"])
+            is_vtap_enabled=vtap_is_vtap_enabled,
+            max_packet_size=vtap_max_packet_size,
+            source_private_endpoint_ip=vtap_source_private_endpoint_ip,
+            source_private_endpoint_subnet_id=test_subnet["id"],
+            source_type=vtap_source_type,
+            target_id=test_target["id"],
+            target_ip=vtap_target_ip,
+            target_type=vtap_target_type,
+            traffic_mode=vtap_traffic_mode,
+            vxlan_network_identifier=vtap_vxlan_network_identifier)
         ```
         <!--End PulumiCodeChooser -->
 

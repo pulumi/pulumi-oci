@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalCluster = oci.DatabaseManagement.getExternalCluster({
- *     externalClusterId: oci_database_management_external_cluster.test_external_cluster.id,
+ *     externalClusterId: testExternalClusterOciDatabaseManagementExternalCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -141,7 +141,7 @@ export interface GetExternalClusterResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testExternalCluster = oci.DatabaseManagement.getExternalCluster({
- *     externalClusterId: oci_database_management_external_cluster.test_external_cluster.id,
+ *     externalClusterId: testExternalClusterOciDatabaseManagementExternalCluster.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

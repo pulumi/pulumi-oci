@@ -45,17 +45,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testComputeImageCapabilitySchema = new ComputeImageCapabilitySchema(&#34;testComputeImageCapabilitySchema&#34;, ComputeImageCapabilitySchemaArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .computeGlobalImageCapabilitySchemaVersionName(var_.compute_image_capability_schema_compute_global_image_capability_schema_version_name())
- *             .imageId(oci_core_image.test_image().id())
+ *             .compartmentId(compartmentId)
+ *             .computeGlobalImageCapabilitySchemaVersionName(computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName)
+ *             .imageId(testImage.id())
  *             .schemaData(Map.ofEntries(
- *                 Map.entry(&#34;descriptorType&#34;, var_.compute_image_capability_schema_schema_data_descriptor_type()),
- *                 Map.entry(&#34;source&#34;, var_.compute_image_capability_schema_schema_data_source()),
- *                 Map.entry(&#34;defaultValue&#34;, var_.compute_image_capability_schema_schema_data_default_value()),
- *                 Map.entry(&#34;values&#34;, var_.compute_image_capability_schema_schema_data_values())
+ *                 Map.entry(&#34;descriptorType&#34;, computeImageCapabilitySchemaSchemaDataDescriptorType),
+ *                 Map.entry(&#34;source&#34;, computeImageCapabilitySchemaSchemaDataSource),
+ *                 Map.entry(&#34;defaultValue&#34;, computeImageCapabilitySchemaSchemaDataDefaultValue),
+ *                 Map.entry(&#34;values&#34;, computeImageCapabilitySchemaSchemaDataValues)
  *             ))
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.compute_image_capability_schema_display_name())
+ *             .displayName(computeImageCapabilitySchemaDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .build());
  * 

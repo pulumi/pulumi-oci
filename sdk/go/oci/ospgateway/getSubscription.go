@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := OspGateway.GetSubscription(ctx, &ospgateway.GetSubscriptionArgs{
-//				CompartmentId:  _var.Compartment_id,
-//				OspHomeRegion:  _var.Subscription_osp_home_region,
-//				SubscriptionId: oci_osp_gateway_subscription.Test_subscription.Id,
+//				CompartmentId:  compartmentId,
+//				OspHomeRegion:  subscriptionOspHomeRegion,
+//				SubscriptionId: testSubscriptionOciOspGatewaySubscription.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

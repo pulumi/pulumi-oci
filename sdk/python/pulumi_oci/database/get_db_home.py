@@ -281,7 +281,7 @@ def get_db_home(db_home_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home = oci.Database.get_db_home(db_home_id=var["db_home_id"])
+    test_db_home = oci.Database.get_db_home(db_home_id=db_home_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -332,7 +332,7 @@ def get_db_home_output(db_home_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_db_home = oci.Database.get_db_home(db_home_id=var["db_home_id"])
+    test_db_home = oci.Database.get_db_home(db_home_id=db_home_id)
     ```
     <!--End PulumiCodeChooser -->
 

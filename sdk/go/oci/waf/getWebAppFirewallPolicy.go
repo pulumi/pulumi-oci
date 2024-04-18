@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waf.GetWebAppFirewallPolicy(ctx, &waf.GetWebAppFirewallPolicyArgs{
-//				WebAppFirewallPolicyId: oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+//				WebAppFirewallPolicyId: testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

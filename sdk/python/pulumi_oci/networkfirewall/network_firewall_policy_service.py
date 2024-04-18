@@ -208,13 +208,14 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("testNetworkFirewallPolicyService",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
+        test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("test_network_firewall_policy_service",
+            name=network_firewall_policy_service_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
             port_ranges=[oci.network_firewall.NetworkFirewallPolicyServicePortRangeArgs(
-                minimum_port=var["network_firewall_policy_service_port_ranges_minimum_port"],
-                maximum_port=var["network_firewall_policy_service_port_ranges_maximum_port"],
+                minimum_port=network_firewall_policy_service_port_ranges_minimum_port,
+                maximum_port=network_firewall_policy_service_port_ranges_maximum_port,
             )],
-            type=var["network_firewall_policy_service_type"])
+            type=network_firewall_policy_service_type)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -255,13 +256,14 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("testNetworkFirewallPolicyService",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
+        test_network_firewall_policy_service = oci.network_firewall.NetworkFirewallPolicyService("test_network_firewall_policy_service",
+            name=network_firewall_policy_service_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
             port_ranges=[oci.network_firewall.NetworkFirewallPolicyServicePortRangeArgs(
-                minimum_port=var["network_firewall_policy_service_port_ranges_minimum_port"],
-                maximum_port=var["network_firewall_policy_service_port_ranges_maximum_port"],
+                minimum_port=network_firewall_policy_service_port_ranges_minimum_port,
+                maximum_port=network_firewall_policy_service_port_ranges_maximum_port,
             )],
-            type=var["network_firewall_policy_service_type"])
+            type=network_firewall_policy_service_type)
         ```
         <!--End PulumiCodeChooser -->
 

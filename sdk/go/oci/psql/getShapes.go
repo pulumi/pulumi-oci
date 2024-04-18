@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetShapes(ctx, &psql.GetShapesArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				Id:            pulumi.StringRef(_var.Shape_id),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				Id:            pulumi.StringRef(shapeId),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Psql.GetConfigurations(ctx, &psql.GetConfigurationsArgs{
-//				CompartmentId:   pulumi.StringRef(_var.Compartment_id),
-//				ConfigurationId: pulumi.StringRef(oci_psql_configuration.Test_configuration.Id),
-//				DbVersion:       pulumi.StringRef(_var.Configuration_db_version),
-//				DisplayName:     pulumi.StringRef(_var.Configuration_display_name),
-//				Shape:           pulumi.StringRef(_var.Configuration_shape),
-//				State:           pulumi.StringRef(_var.Configuration_state),
+//				CompartmentId:   pulumi.StringRef(compartmentId),
+//				ConfigurationId: pulumi.StringRef(testConfiguration.Id),
+//				DbVersion:       pulumi.StringRef(configurationDbVersion),
+//				DisplayName:     pulumi.StringRef(configurationDisplayName),
+//				Shape:           pulumi.StringRef(configurationShape),
+//				State:           pulumi.StringRef(configurationState),
 //			}, nil)
 //			if err != nil {
 //				return err

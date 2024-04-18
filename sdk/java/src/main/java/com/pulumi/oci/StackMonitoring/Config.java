@@ -52,13 +52,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConfig = new Config(&#34;testConfig&#34;, ConfigArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .configType(var_.config_config_type())
- *             .isEnabled(var_.config_is_enabled())
- *             .resourceType(var_.config_resource_type())
- *             .license(var_.config_license())
+ *             .compartmentId(compartmentId)
+ *             .configType(configConfigType)
+ *             .isEnabled(configIsEnabled)
+ *             .resourceType(configResourceType)
+ *             .license(configLicense)
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .displayName(var_.config_display_name())
+ *             .displayName(configDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 

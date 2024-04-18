@@ -21,10 +21,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncementSubscriptions = oci.AnnouncementsService.getAnnouncementSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.announcement_subscription_display_name,
- *     id: _var.announcement_subscription_id,
- *     state: _var.announcement_subscription_state,
+ *     compartmentId: compartmentId,
+ *     displayName: announcementSubscriptionDisplayName,
+ *     id: announcementSubscriptionId,
+ *     state: announcementSubscriptionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,10 +105,10 @@ export interface GetAnnouncementSubscriptionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAnnouncementSubscriptions = oci.AnnouncementsService.getAnnouncementSubscriptions({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.announcement_subscription_display_name,
- *     id: _var.announcement_subscription_id,
- *     state: _var.announcement_subscription_state,
+ *     compartmentId: compartmentId,
+ *     displayName: announcementSubscriptionDisplayName,
+ *     id: announcementSubscriptionId,
+ *     state: announcementSubscriptionState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

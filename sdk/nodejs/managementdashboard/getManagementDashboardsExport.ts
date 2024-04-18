@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementDashboardsExport = oci.ManagementDashboard.getManagementDashboardsExport({
- *     exportDashboardId: oci_management_dashboard_export_dashboard.test_export_dashboard.id,
+ *     exportDashboardId: testExportDashboard.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -71,7 +71,7 @@ export interface GetManagementDashboardsExportResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagementDashboardsExport = oci.ManagementDashboard.getManagementDashboardsExport({
- *     exportDashboardId: oci_management_dashboard_export_dashboard.test_export_dashboard.id,
+ *     exportDashboardId: testExportDashboard.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

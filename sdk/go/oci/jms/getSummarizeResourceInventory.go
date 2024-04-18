@@ -31,9 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Jms.GetSummarizeResourceInventory(ctx, &jms.GetSummarizeResourceInventoryArgs{
-//				CompartmentId: pulumi.StringRef(_var.Compartment_id),
-//				TimeEnd:       pulumi.StringRef(_var.Summarize_resource_inventory_time_end),
-//				TimeStart:     pulumi.StringRef(_var.Summarize_resource_inventory_time_start),
+//				CompartmentId: pulumi.StringRef(compartmentId),
+//				TimeEnd:       pulumi.StringRef(summarizeResourceInventoryTimeEnd),
+//				TimeStart:     pulumi.StringRef(summarizeResourceInventoryTimeStart),
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceScheduledTasks = oci.LogAnalytics.getNamespaceScheduledTasks({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_scheduled_task_namespace,
- *     displayName: _var.namespace_scheduled_task_display_name,
- *     targetService: _var.namespace_scheduled_task_target_service,
- *     taskType: _var.namespace_scheduled_task_task_type,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceScheduledTaskNamespace,
+ *     displayName: namespaceScheduledTaskDisplayName,
+ *     targetService: namespaceScheduledTaskTargetService,
+ *     taskType: namespaceScheduledTaskTaskType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -109,11 +109,11 @@ export interface GetNamespaceScheduledTasksResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNamespaceScheduledTasks = oci.LogAnalytics.getNamespaceScheduledTasks({
- *     compartmentId: _var.compartment_id,
- *     namespace: _var.namespace_scheduled_task_namespace,
- *     displayName: _var.namespace_scheduled_task_display_name,
- *     targetService: _var.namespace_scheduled_task_target_service,
- *     taskType: _var.namespace_scheduled_task_task_type,
+ *     compartmentId: compartmentId,
+ *     namespace: namespaceScheduledTaskNamespace,
+ *     displayName: namespaceScheduledTaskDisplayName,
+ *     targetService: namespaceScheduledTaskTargetService,
+ *     taskType: namespaceScheduledTaskTaskType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

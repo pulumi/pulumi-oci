@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testSslCipherSuite = oci.LoadBalancer.getSslCipherSuite({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     name: _var.ssl_cipher_suite_name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: sslCipherSuiteName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -77,8 +77,8 @@ export interface GetSslCipherSuiteResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testSslCipherSuite = oci.LoadBalancer.getSslCipherSuite({
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
- *     name: _var.ssl_cipher_suite_name,
+ *     loadBalancerId: testLoadBalancer.id,
+ *     name: sslCipherSuiteName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

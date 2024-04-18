@@ -270,12 +270,13 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_mapped_secret = oci.network_firewall.NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            source=var["network_firewall_policy_mapped_secret_source"],
-            type=var["network_firewall_policy_mapped_secret_type"],
-            vault_secret_id=oci_vault_secret["test_secret"]["id"],
-            version_number=var["network_firewall_policy_mapped_secret_version_number"])
+        test_network_firewall_policy_mapped_secret = oci.network_firewall.NetworkFirewallPolicyMappedSecret("test_network_firewall_policy_mapped_secret",
+            name=network_firewall_policy_mapped_secret_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            source=network_firewall_policy_mapped_secret_source,
+            type=network_firewall_policy_mapped_secret_type,
+            vault_secret_id=test_secret["id"],
+            version_number=network_firewall_policy_mapped_secret_version_number)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -318,12 +319,13 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_network_firewall_policy_mapped_secret = oci.network_firewall.NetworkFirewallPolicyMappedSecret("testNetworkFirewallPolicyMappedSecret",
-            network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
-            source=var["network_firewall_policy_mapped_secret_source"],
-            type=var["network_firewall_policy_mapped_secret_type"],
-            vault_secret_id=oci_vault_secret["test_secret"]["id"],
-            version_number=var["network_firewall_policy_mapped_secret_version_number"])
+        test_network_firewall_policy_mapped_secret = oci.network_firewall.NetworkFirewallPolicyMappedSecret("test_network_firewall_policy_mapped_secret",
+            name=network_firewall_policy_mapped_secret_name,
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            source=network_firewall_policy_mapped_secret_source,
+            type=network_firewall_policy_mapped_secret_type,
+            vault_secret_id=test_secret["id"],
+            version_number=network_firewall_policy_mapped_secret_version_number)
         ```
         <!--End PulumiCodeChooser -->
 

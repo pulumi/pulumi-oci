@@ -52,11 +52,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone(&#34;testPluggableDatabasesLocalClone&#34;, PluggableDatabasesLocalCloneArgs.builder()        
- *             .clonedPdbName(var_.pluggable_databases_local_clone_cloned_pdb_name())
- *             .pluggableDatabaseId(oci_database_pluggable_database.test_pluggable_database().id())
- *             .pdbAdminPassword(var_.pluggable_databases_local_clone_pdb_admin_password())
- *             .shouldPdbAdminAccountBeLocked(var_.pluggable_databases_local_clone_should_pdb_admin_account_be_locked())
- *             .targetTdeWalletPassword(var_.pluggable_databases_local_clone_target_tde_wallet_password())
+ *             .clonedPdbName(pluggableDatabasesLocalCloneClonedPdbName)
+ *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .pdbAdminPassword(pluggableDatabasesLocalClonePdbAdminPassword)
+ *             .shouldPdbAdminAccountBeLocked(pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked)
+ *             .targetTdeWalletPassword(pluggableDatabasesLocalCloneTargetTdeWalletPassword)
  *             .build());
  * 
  *     }

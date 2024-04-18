@@ -31,10 +31,10 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewAutonomousDatabaseInstanceWalletManagement(ctx, "testAutonomousDatabaseInstanceWalletManagement", &Database.AutonomousDatabaseInstanceWalletManagementArgs{
-//				AutonomousDatabaseId: pulumi.Any(oci_database_autonomous_database.Test_autonomous_database.Id),
-//				GracePeriod:          pulumi.Any(_var.Autonomous_database_instance_wallet_management_grace_period),
-//				ShouldRotate:         pulumi.Any(_var.Autonomous_database_instance_wallet_management_should_rotate),
+//			_, err := Database.NewAutonomousDatabaseInstanceWalletManagement(ctx, "test_autonomous_database_instance_wallet_management", &Database.AutonomousDatabaseInstanceWalletManagementArgs{
+//				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
+//				GracePeriod:          pulumi.Any(autonomousDatabaseInstanceWalletManagementGracePeriod),
+//				ShouldRotate:         pulumi.Any(autonomousDatabaseInstanceWalletManagementShouldRotate),
 //			})
 //			if err != nil {
 //				return err

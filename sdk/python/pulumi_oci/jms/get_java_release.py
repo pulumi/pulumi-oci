@@ -227,7 +227,7 @@ def get_java_release(release_version: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_release = oci.Jms.get_java_release(release_version=var["java_release_release_version"])
+    test_java_release = oci.Jms.get_java_release(release_version=java_release_release_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -272,7 +272,7 @@ def get_java_release_output(release_version: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_java_release = oci.Jms.get_java_release(release_version=var["java_release_release_version"])
+    test_java_release = oci.Jms.get_java_release(release_version=java_release_release_version)
     ```
     <!--End PulumiCodeChooser -->
 

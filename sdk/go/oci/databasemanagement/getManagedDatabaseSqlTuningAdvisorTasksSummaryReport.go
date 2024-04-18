@@ -31,14 +31,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReport(ctx, &databasemanagement.GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs{
-//				ManagedDatabaseId:               oci_database_management_managed_database.Test_managed_database.Id,
-//				SqlTuningAdvisorTaskId:          oci_database_management_sql_tuning_advisor_task.Test_sql_tuning_advisor_task.Id,
-//				BeginExecIdGreaterThanOrEqualTo: pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to),
-//				EndExecIdLessThanOrEqualTo:      pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to),
-//				OpcNamedCredentialId:            pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_summary_report_opc_named_credential_id),
-//				SearchPeriod:                    pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_summary_report_search_period),
-//				TimeGreaterThanOrEqualTo:        pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to),
-//				TimeLessThanOrEqualTo:           pulumi.StringRef(_var.Managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to),
+//				ManagedDatabaseId:               testManagedDatabase.Id,
+//				SqlTuningAdvisorTaskId:          testSqlTuningAdvisorTask.Id,
+//				BeginExecIdGreaterThanOrEqualTo: pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksSummaryReportBeginExecIdGreaterThanOrEqualTo),
+//				EndExecIdLessThanOrEqualTo:      pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksSummaryReportEndExecIdLessThanOrEqualTo),
+//				OpcNamedCredentialId:            pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksSummaryReportOpcNamedCredentialId),
+//				SearchPeriod:                    pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksSummaryReportSearchPeriod),
+//				TimeGreaterThanOrEqualTo:        pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeGreaterThanOrEqualTo),
+//				TimeLessThanOrEqualTo:           pulumi.StringRef(managedDatabaseSqlTuningAdvisorTasksSummaryReportTimeLessThanOrEqualTo),
 //			}, nil)
 //			if err != nil {
 //				return err

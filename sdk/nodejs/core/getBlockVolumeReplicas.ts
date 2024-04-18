@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBlockVolumeReplicas = oci.Core.getBlockVolumeReplicas({
- *     availabilityDomain: _var.block_volume_replica_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.block_volume_replica_display_name,
- *     state: _var.block_volume_replica_state,
- *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ *     availabilityDomain: blockVolumeReplicaAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: blockVolumeReplicaDisplayName,
+ *     state: blockVolumeReplicaState,
+ *     volumeGroupReplicaId: testVolumeGroupReplica.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -113,11 +113,11 @@ export interface GetBlockVolumeReplicasResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBlockVolumeReplicas = oci.Core.getBlockVolumeReplicas({
- *     availabilityDomain: _var.block_volume_replica_availability_domain,
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.block_volume_replica_display_name,
- *     state: _var.block_volume_replica_state,
- *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ *     availabilityDomain: blockVolumeReplicaAvailabilityDomain,
+ *     compartmentId: compartmentId,
+ *     displayName: blockVolumeReplicaDisplayName,
+ *     state: blockVolumeReplicaState,
+ *     volumeGroupReplicaId: testVolumeGroupReplica.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

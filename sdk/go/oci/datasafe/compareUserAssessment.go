@@ -32,9 +32,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DataSafe.NewCompareUserAssessment(ctx, "testCompareUserAssessment", &DataSafe.CompareUserAssessmentArgs{
-//				ComparisonUserAssessmentId: pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
-//				UserAssessmentId:           pulumi.Any(oci_data_safe_user_assessment.Test_user_assessment.Id),
+//			_, err := DataSafe.NewCompareUserAssessment(ctx, "test_compare_user_assessment", &DataSafe.CompareUserAssessmentArgs{
+//				ComparisonUserAssessmentId: pulumi.Any(testUserAssessment.Id),
+//				UserAssessmentId:           pulumi.Any(testUserAssessment.Id),
 //			})
 //			if err != nil {
 //				return err

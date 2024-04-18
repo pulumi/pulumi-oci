@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testSteeringPolicyAttachment = new oci.dns.SteeringPolicyAttachment("testSteeringPolicyAttachment", {
- *     domainName: _var.steering_policy_attachment_domain_name,
- *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
- *     zoneId: oci_dns_zone.test_zone.id,
- *     displayName: _var.steering_policy_attachment_display_name,
+ * const testSteeringPolicyAttachment = new oci.dns.SteeringPolicyAttachment("test_steering_policy_attachment", {
+ *     domainName: steeringPolicyAttachmentDomainName,
+ *     steeringPolicyId: testSteeringPolicy.id,
+ *     zoneId: testZone.id,
+ *     displayName: steeringPolicyAttachmentDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

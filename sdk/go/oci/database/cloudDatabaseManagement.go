@@ -35,19 +35,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.NewCloudDatabaseManagement(ctx, "test", &Database.CloudDatabaseManagementArgs{
-//				DatabaseId:        pulumi.Any(oci_database_database.Test_database.Id),
-//				ManagementType:    pulumi.Any(_var.Database_cloud_database_management_details_management_type),
-//				PrivateEndPointId: pulumi.Any(_var.Database_cloud_database_management_details_private_end_point_id),
-//				ServiceName:       pulumi.Any(_var.Database_cloud_database_management_details_service_name),
+//				DatabaseId:        pulumi.Any(testDatabase.Id),
+//				ManagementType:    pulumi.Any(databaseCloudDatabaseManagementDetailsManagementType),
+//				PrivateEndPointId: pulumi.Any(databaseCloudDatabaseManagementDetailsPrivateEndPointId),
+//				ServiceName:       pulumi.Any(databaseCloudDatabaseManagementDetailsServiceName),
 //				Credentialdetails: &database.CloudDatabaseManagementCredentialdetailsArgs{
-//					UserName:         pulumi.Any(_var.Database_cloud_database_management_details_user_name),
-//					PasswordSecretId: pulumi.Any(_var.Database_cloud_database_management_details_password_secret_id),
+//					UserName:         pulumi.Any(databaseCloudDatabaseManagementDetailsUserName),
+//					PasswordSecretId: pulumi.Any(databaseCloudDatabaseManagementDetailsPasswordSecretId),
 //				},
-//				EnableManagement: pulumi.Any(_var.Database_cloud_database_management_details_enable_management),
-//				Port:             pulumi.Any(_var.Cloud_database_management_port),
-//				Protocol:         pulumi.Any(_var.Cloud_database_management_protocol),
-//				Role:             pulumi.Any(_var.Cloud_database_management_role),
-//				SslSecretId:      pulumi.Any(oci_vault_secret.Test_secret.Id),
+//				EnableManagement: pulumi.Any(databaseCloudDatabaseManagementDetailsEnableManagement),
+//				Port:             pulumi.Any(cloudDatabaseManagementPort),
+//				Protocol:         pulumi.Any(cloudDatabaseManagementProtocol),
+//				Role:             pulumi.Any(cloudDatabaseManagementRole),
+//				SslSecretId:      pulumi.Any(testSecret.Id),
 //			})
 //			if err != nil {
 //				return err

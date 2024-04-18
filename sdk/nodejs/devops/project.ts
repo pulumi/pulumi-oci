@@ -18,15 +18,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testProject = new oci.devops.Project("testProject", {
- *     compartmentId: _var.compartment_id,
+ * const testProject = new oci.devops.Project("test_project", {
+ *     compartmentId: compartmentId,
+ *     name: projectName,
  *     notificationConfig: {
- *         topicId: oci_ons_notification_topic.test_notification_topic.id,
+ *         topicId: testNotificationTopic.id,
  *     },
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.project_description,
+ *     description: projectDescription,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

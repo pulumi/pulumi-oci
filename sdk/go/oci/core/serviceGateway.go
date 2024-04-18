@@ -39,22 +39,22 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewServiceGateway(ctx, "testServiceGateway", &Core.ServiceGatewayArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := Core.NewServiceGateway(ctx, "test_service_gateway", &Core.ServiceGatewayArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				Services: core.ServiceGatewayServiceArray{
 //					&core.ServiceGatewayServiceArgs{
-//						ServiceId: pulumi.Any(data.Oci_core_services.Test_services.Services[0].Id),
+//						ServiceId: pulumi.Any(testServices.Services[0].Id),
 //					},
 //				},
-//				VcnId: pulumi.Any(oci_core_vcn.Test_vcn.Id),
+//				VcnId: pulumi.Any(testVcn.Id),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
-//				DisplayName: pulumi.Any(_var.Service_gateway_display_name),
+//				DisplayName: pulumi.Any(serviceGatewayDisplayName),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				RouteTableId: pulumi.Any(oci_core_route_table.Test_route_table.Id),
+//				RouteTableId: pulumi.Any(testRouteTable.Id),
 //			})
 //			if err != nil {
 //				return err

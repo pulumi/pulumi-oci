@@ -514,12 +514,12 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=oci_identity_domains_account_mgmt_info["test_account_mgmt_info"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["account_mgmt_info_authorization"],
-        resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"])
+        authorization=account_mgmt_info_authorization,
+        resource_type_schema_version=account_mgmt_info_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -604,12 +604,12 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=oci_identity_domains_account_mgmt_info["test_account_mgmt_info"]["id"],
-        idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+    test_account_mgmt_info = oci.Identity.get_domains_account_mgmt_info(account_mgmt_info_id=test_account_mgmt_info_oci_identity_domains_account_mgmt_info["id"],
+        idcs_endpoint=test_domain["url"],
         attribute_sets=["all"],
         attributes="",
-        authorization=var["account_mgmt_info_authorization"],
-        resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"])
+        authorization=account_mgmt_info_authorization,
+        resource_type_schema_version=account_mgmt_info_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

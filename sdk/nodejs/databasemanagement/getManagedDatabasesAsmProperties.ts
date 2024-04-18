@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesAsmProperties = oci.DatabaseManagement.getManagedDatabasesAsmProperties({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.managed_databases_asm_property_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: managedDatabasesAsmPropertyName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -79,8 +79,8 @@ export interface GetManagedDatabasesAsmPropertiesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testManagedDatabasesAsmProperties = oci.DatabaseManagement.getManagedDatabasesAsmProperties({
- *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
- *     name: _var.managed_databases_asm_property_name,
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     name: managedDatabasesAsmPropertyName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

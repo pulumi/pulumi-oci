@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetUser(ctx, &identity.GetUserArgs{
-//				UserId: oci_identity_user.Test_user.Id,
+//				UserId: testUserOciIdentityUser.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,12 +31,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetModelVersionSets(ctx, &datascience.GetModelVersionSetsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Model_version_set_created_by),
-//				Id:            pulumi.StringRef(_var.Model_version_set_id),
-//				Name:          pulumi.StringRef(_var.Model_version_set_name),
-//				ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Model_version_set_state),
+//				CompartmentId: compartmentId,
+//				CreatedBy:     pulumi.StringRef(modelVersionSetCreatedBy),
+//				Id:            pulumi.StringRef(modelVersionSetId),
+//				Name:          pulumi.StringRef(modelVersionSetName),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(modelVersionSetState),
 //			}, nil)
 //			if err != nil {
 //				return err

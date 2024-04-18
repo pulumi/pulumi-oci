@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRecipes = Oci.Adm.GetRemediationRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Remediation_recipe_display_name,
-        ///         Id = @var.Remediation_recipe_id,
-        ///         State = @var.Remediation_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = remediationRecipeDisplayName,
+        ///         Id = remediationRecipeId,
+        ///         State = remediationRecipeState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRecipes = Oci.Adm.GetRemediationRecipes.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Remediation_recipe_display_name,
-        ///         Id = @var.Remediation_recipe_id,
-        ///         State = @var.Remediation_recipe_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = remediationRecipeDisplayName,
+        ///         Id = remediationRecipeId,
+        ///         State = remediationRecipeState,
         ///     });
         /// 
         /// });

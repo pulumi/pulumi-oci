@@ -25,11 +25,11 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFusionEnvironmentServiceAttachment = new Oci.FusionApps.FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment", new()
+    ///     var testFusionEnvironmentServiceAttachment = new Oci.FusionApps.FusionEnvironmentServiceAttachment("test_fusion_environment_service_attachment", new()
     ///     {
-    ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-    ///         ServiceInstanceId = oci_core_instance.Test_instance.Id,
-    ///         ServiceInstanceType = @var.Fusion_environment_service_attachment_service_instance_type,
+    ///         FusionEnvironmentId = testFusionEnvironment.Id,
+    ///         ServiceInstanceId = testInstance.Id,
+    ///         ServiceInstanceType = fusionEnvironmentServiceAttachmentServiceInstanceType,
     ///     });
     /// 
     /// });

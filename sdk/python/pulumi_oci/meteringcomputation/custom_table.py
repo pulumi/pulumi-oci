@@ -159,21 +159,21 @@ class CustomTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_custom_table = oci.metering_computation.CustomTable("testCustomTable",
-            compartment_id=var["compartment_id"],
+        test_custom_table = oci.metering_computation.CustomTable("test_custom_table",
+            compartment_id=compartment_id,
             saved_custom_table=oci.metering_computation.CustomTableSavedCustomTableArgs(
-                display_name=var["custom_table_saved_custom_table_display_name"],
-                column_group_bies=var["custom_table_saved_custom_table_column_group_by"],
-                compartment_depth=var["custom_table_saved_custom_table_compartment_depth"],
+                display_name=custom_table_saved_custom_table_display_name,
+                column_group_bies=custom_table_saved_custom_table_column_group_by,
+                compartment_depth=custom_table_saved_custom_table_compartment_depth,
                 group_by_tags=[oci.metering_computation.CustomTableSavedCustomTableGroupByTagArgs(
-                    key=var["custom_table_saved_custom_table_group_by_tag_key"],
-                    namespace=var["custom_table_saved_custom_table_group_by_tag_namespace"],
-                    value=var["custom_table_saved_custom_table_group_by_tag_value"],
+                    key=custom_table_saved_custom_table_group_by_tag_key,
+                    namespace=custom_table_saved_custom_table_group_by_tag_namespace,
+                    value=custom_table_saved_custom_table_group_by_tag_value,
                 )],
-                row_group_bies=var["custom_table_saved_custom_table_row_group_by"],
-                version=var["custom_table_saved_custom_table_version"],
+                row_group_bies=custom_table_saved_custom_table_row_group_by,
+                version=custom_table_saved_custom_table_version,
             ),
-            saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
+            saved_report_id=test_saved_report["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -213,21 +213,21 @@ class CustomTable(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_custom_table = oci.metering_computation.CustomTable("testCustomTable",
-            compartment_id=var["compartment_id"],
+        test_custom_table = oci.metering_computation.CustomTable("test_custom_table",
+            compartment_id=compartment_id,
             saved_custom_table=oci.metering_computation.CustomTableSavedCustomTableArgs(
-                display_name=var["custom_table_saved_custom_table_display_name"],
-                column_group_bies=var["custom_table_saved_custom_table_column_group_by"],
-                compartment_depth=var["custom_table_saved_custom_table_compartment_depth"],
+                display_name=custom_table_saved_custom_table_display_name,
+                column_group_bies=custom_table_saved_custom_table_column_group_by,
+                compartment_depth=custom_table_saved_custom_table_compartment_depth,
                 group_by_tags=[oci.metering_computation.CustomTableSavedCustomTableGroupByTagArgs(
-                    key=var["custom_table_saved_custom_table_group_by_tag_key"],
-                    namespace=var["custom_table_saved_custom_table_group_by_tag_namespace"],
-                    value=var["custom_table_saved_custom_table_group_by_tag_value"],
+                    key=custom_table_saved_custom_table_group_by_tag_key,
+                    namespace=custom_table_saved_custom_table_group_by_tag_namespace,
+                    value=custom_table_saved_custom_table_group_by_tag_value,
                 )],
-                row_group_bies=var["custom_table_saved_custom_table_row_group_by"],
-                version=var["custom_table_saved_custom_table_version"],
+                row_group_bies=custom_table_saved_custom_table_row_group_by,
+                version=custom_table_saved_custom_table_version,
             ),
-            saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
+            saved_report_id=test_saved_report["id"])
         ```
         <!--End PulumiCodeChooser -->
 

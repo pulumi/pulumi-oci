@@ -40,9 +40,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Identity.GetUserGroupMemberships(ctx, &identity.GetUserGroupMembershipsArgs{
-//				CompartmentId: _var.Tenancy_ocid,
-//				GroupId:       pulumi.StringRef(oci_identity_group.Test_group.Id),
-//				UserId:        pulumi.StringRef(oci_identity_user.Test_user.Id),
+//				CompartmentId: tenancyOcid,
+//				GroupId:       pulumi.StringRef(testGroup.Id),
+//				UserId:        pulumi.StringRef(testUser.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

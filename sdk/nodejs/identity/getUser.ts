@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testUser = oci.Identity.getUser({
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUserOciIdentityUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -132,7 +132,7 @@ export interface GetUserResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testUser = oci.Identity.getUser({
- *     userId: oci_identity_user.test_user.id,
+ *     userId: testUserOciIdentityUser.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

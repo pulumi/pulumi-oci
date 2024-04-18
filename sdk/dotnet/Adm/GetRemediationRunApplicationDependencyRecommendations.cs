@@ -29,9 +29,9 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRunApplicationDependencyRecommendations = Oci.Adm.GetRemediationRunApplicationDependencyRecommendations.Invoke(new()
         ///     {
-        ///         RemediationRunId = oci_adm_remediation_run.Test_remediation_run.Id,
-        ///         Gav = @var.Remediation_run_application_dependency_recommendation_gav,
-        ///         Purl = @var.Remediation_run_application_dependency_recommendation_purl,
+        ///         RemediationRunId = testRemediationRun.Id,
+        ///         Gav = remediationRunApplicationDependencyRecommendationGav,
+        ///         Purl = remediationRunApplicationDependencyRecommendationPurl,
         ///     });
         /// 
         /// });
@@ -59,9 +59,9 @@ namespace Pulumi.Oci.Adm
         /// {
         ///     var testRemediationRunApplicationDependencyRecommendations = Oci.Adm.GetRemediationRunApplicationDependencyRecommendations.Invoke(new()
         ///     {
-        ///         RemediationRunId = oci_adm_remediation_run.Test_remediation_run.Id,
-        ///         Gav = @var.Remediation_run_application_dependency_recommendation_gav,
-        ///         Purl = @var.Remediation_run_application_dependency_recommendation_purl,
+        ///         RemediationRunId = testRemediationRun.Id,
+        ///         Gav = remediationRunApplicationDependencyRecommendationGav,
+        ///         Purl = remediationRunApplicationDependencyRecommendationPurl,
         ///     });
         /// 
         /// });

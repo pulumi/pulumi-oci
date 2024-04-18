@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Apm
         /// {
         ///     var testApmDomain = Oci.Apm.GetApmDomain.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ApmDomainId = testApmDomainOciApmApmDomain.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Apm
         /// {
         ///     var testApmDomain = Oci.Apm.GetApmDomain.Invoke(new()
         ///     {
-        ///         ApmDomainId = oci_apm_apm_domain.Test_apm_domain.Id,
+        ///         ApmDomainId = testApmDomainOciApmApmDomain.Id,
         ///     });
         /// 
         /// });

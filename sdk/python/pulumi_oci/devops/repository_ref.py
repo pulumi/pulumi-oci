@@ -271,12 +271,12 @@ class RepositoryRef(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository_ref = oci.dev_ops.RepositoryRef("testRepositoryRef",
-            ref_name=var["repository_ref_ref_name"],
-            ref_type=var["repository_ref_ref_type"],
-            repository_id=oci_devops_repository["test_repository"]["id"],
-            commit_id=oci_devops_commit["test_commit"]["id"],
-            object_id=oci_objectstorage_object["test_object"]["id"])
+        test_repository_ref = oci.dev_ops.RepositoryRef("test_repository_ref",
+            ref_name=repository_ref_ref_name,
+            ref_type=repository_ref_ref_type,
+            repository_id=test_repository["id"],
+            commit_id=test_commit["id"],
+            object_id=test_object["id"])
         ```
         <!--End PulumiCodeChooser -->
 
@@ -318,12 +318,12 @@ class RepositoryRef(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_repository_ref = oci.dev_ops.RepositoryRef("testRepositoryRef",
-            ref_name=var["repository_ref_ref_name"],
-            ref_type=var["repository_ref_ref_type"],
-            repository_id=oci_devops_repository["test_repository"]["id"],
-            commit_id=oci_devops_commit["test_commit"]["id"],
-            object_id=oci_objectstorage_object["test_object"]["id"])
+        test_repository_ref = oci.dev_ops.RepositoryRef("test_repository_ref",
+            ref_name=repository_ref_ref_name,
+            ref_type=repository_ref_ref_type,
+            repository_id=test_repository["id"],
+            commit_id=test_commit["id"],
+            object_id=test_object["id"])
         ```
         <!--End PulumiCodeChooser -->
 

@@ -25,12 +25,12 @@ namespace Pulumi.Oci.CloudGuard
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testCloudGuardConfiguration = new Oci.CloudGuard.CloudGuardConfiguration("testCloudGuardConfiguration", new()
+    ///     var testCloudGuardConfiguration = new Oci.CloudGuard.CloudGuardConfiguration("test_cloud_guard_configuration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ReportingRegion = @var.Cloud_guard_configuration_reporting_region,
-    ///         Status = @var.Cloud_guard_configuration_status,
-    ///         SelfManageResources = @var.Cloud_guard_configuration_self_manage_resources,
+    ///         CompartmentId = compartmentId,
+    ///         ReportingRegion = cloudGuardConfigurationReportingRegion,
+    ///         Status = cloudGuardConfigurationStatus,
+    ///         SelfManageResources = cloudGuardConfigurationSelfManageResources,
     ///     });
     /// 
     /// });

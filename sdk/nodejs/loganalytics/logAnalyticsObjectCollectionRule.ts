@@ -18,34 +18,35 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testLogAnalyticsObjectCollectionRule = new oci.loganalytics.LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", {
- *     compartmentId: _var.compartment_id,
- *     logGroupId: oci_logging_log_group.test_log_group.id,
- *     logSourceName: _var.log_analytics_object_collection_rule_log_source_name,
- *     namespace: _var.log_analytics_object_collection_rule_namespace,
- *     osBucketName: oci_objectstorage_bucket.test_bucket.name,
- *     osNamespace: _var.log_analytics_object_collection_rule_os_namespace,
- *     charEncoding: _var.log_analytics_object_collection_rule_char_encoding,
- *     collectionType: _var.log_analytics_object_collection_rule_collection_type,
+ * const testLogAnalyticsObjectCollectionRule = new oci.loganalytics.LogAnalyticsObjectCollectionRule("test_log_analytics_object_collection_rule", {
+ *     compartmentId: compartmentId,
+ *     logGroupId: testLogGroup.id,
+ *     logSourceName: logAnalyticsObjectCollectionRuleLogSourceName,
+ *     name: logAnalyticsObjectCollectionRuleName,
+ *     namespace: logAnalyticsObjectCollectionRuleNamespace,
+ *     osBucketName: testBucket.name,
+ *     osNamespace: logAnalyticsObjectCollectionRuleOsNamespace,
+ *     charEncoding: logAnalyticsObjectCollectionRuleCharEncoding,
+ *     collectionType: logAnalyticsObjectCollectionRuleCollectionType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
- *     description: _var.log_analytics_object_collection_rule_description,
- *     entityId: oci_log_analytics_entity.test_entity.id,
+ *     description: logAnalyticsObjectCollectionRuleDescription,
+ *     entityId: testEntity.id,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: _var.log_analytics_object_collection_rule_is_enabled,
- *     isForceHistoricCollection: _var.log_analytics_object_collection_rule_is_force_historic_collection,
- *     logSet: _var.log_analytics_object_collection_rule_log_set,
- *     logSetExtRegex: _var.log_analytics_object_collection_rule_log_set_ext_regex,
- *     logSetKey: _var.log_analytics_object_collection_rule_log_set_key,
- *     logType: _var.log_analytics_object_collection_rule_log_type,
- *     objectNameFilters: _var.log_analytics_object_collection_rule_object_name_filters,
- *     overrides: _var.log_analytics_object_collection_rule_overrides,
- *     pollSince: _var.log_analytics_object_collection_rule_poll_since,
- *     pollTill: _var.log_analytics_object_collection_rule_poll_till,
- *     timezone: _var.log_analytics_object_collection_rule_timezone,
+ *     isEnabled: logAnalyticsObjectCollectionRuleIsEnabled,
+ *     isForceHistoricCollection: logAnalyticsObjectCollectionRuleIsForceHistoricCollection,
+ *     logSet: logAnalyticsObjectCollectionRuleLogSet,
+ *     logSetExtRegex: logAnalyticsObjectCollectionRuleLogSetExtRegex,
+ *     logSetKey: logAnalyticsObjectCollectionRuleLogSetKey,
+ *     logType: logAnalyticsObjectCollectionRuleLogType,
+ *     objectNameFilters: logAnalyticsObjectCollectionRuleObjectNameFilters,
+ *     overrides: logAnalyticsObjectCollectionRuleOverrides,
+ *     pollSince: logAnalyticsObjectCollectionRulePollSince,
+ *     pollTill: logAnalyticsObjectCollectionRulePollTill,
+ *     timezone: logAnalyticsObjectCollectionRuleTimezone,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

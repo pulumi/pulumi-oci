@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := AiDocument.GetProcessorJob(ctx, &aidocument.GetProcessorJobArgs{
-//				ProcessorJobId: oci_ai_document_processor_job.Test_processor_job.Id,
+//				ProcessorJobId: testProcessorJobOciAiDocumentProcessorJob.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

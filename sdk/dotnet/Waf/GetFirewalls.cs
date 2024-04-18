@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testWebAppFirewalls = Oci.Waf.GetFirewalls.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Web_app_firewall_display_name,
-        ///         Id = @var.Web_app_firewall_id,
-        ///         States = @var.Web_app_firewall_state,
-        ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppFirewallDisplayName,
+        ///         Id = webAppFirewallId,
+        ///         States = webAppFirewallState,
+        ///         WebAppFirewallPolicyId = testWebAppFirewallPolicy.Id,
         ///     });
         /// 
         /// });
@@ -63,11 +63,11 @@ namespace Pulumi.Oci.Waf
         /// {
         ///     var testWebAppFirewalls = Oci.Waf.GetFirewalls.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Web_app_firewall_display_name,
-        ///         Id = @var.Web_app_firewall_id,
-        ///         States = @var.Web_app_firewall_state,
-        ///         WebAppFirewallPolicyId = oci_waf_web_app_firewall_policy.Test_web_app_firewall_policy.Id,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = webAppFirewallDisplayName,
+        ///         Id = webAppFirewallId,
+        ///         States = webAppFirewallState,
+        ///         WebAppFirewallPolicyId = testWebAppFirewallPolicy.Id,
         ///     });
         /// 
         /// });

@@ -20,15 +20,16 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDkim = new oci.email.Dkim("testDkim", {
- *     emailDomainId: oci_email_email_domain.test_email_domain.id,
+ * const testDkim = new oci.email.Dkim("test_dkim", {
+ *     emailDomainId: testEmailDomain.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.dkim_description,
+ *     description: dkimDescription,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     name: dkimName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

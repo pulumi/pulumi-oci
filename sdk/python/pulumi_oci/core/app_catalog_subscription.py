@@ -366,14 +366,14 @@ class AppCatalogSubscription(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_app_catalog_subscription = oci.core.AppCatalogSubscription("testAppCatalogSubscription",
-            compartment_id=var["compartment_id"],
-            listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-            listing_resource_version=var["app_catalog_subscription_listing_resource_version"],
-            oracle_terms_of_use_link=var["app_catalog_subscription_oracle_terms_of_use_link"],
-            signature=var["app_catalog_subscription_signature"],
-            time_retrieved=var["app_catalog_subscription_time_retrieved"],
-            eula_link=var["app_catalog_subscription_eula_link"])
+        test_app_catalog_subscription = oci.core.AppCatalogSubscription("test_app_catalog_subscription",
+            compartment_id=compartment_id,
+            listing_id=test_listing["id"],
+            listing_resource_version=app_catalog_subscription_listing_resource_version,
+            oracle_terms_of_use_link=app_catalog_subscription_oracle_terms_of_use_link,
+            signature=app_catalog_subscription_signature,
+            time_retrieved=app_catalog_subscription_time_retrieved,
+            eula_link=app_catalog_subscription_eula_link)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -417,14 +417,14 @@ class AppCatalogSubscription(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_app_catalog_subscription = oci.core.AppCatalogSubscription("testAppCatalogSubscription",
-            compartment_id=var["compartment_id"],
-            listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"],
-            listing_resource_version=var["app_catalog_subscription_listing_resource_version"],
-            oracle_terms_of_use_link=var["app_catalog_subscription_oracle_terms_of_use_link"],
-            signature=var["app_catalog_subscription_signature"],
-            time_retrieved=var["app_catalog_subscription_time_retrieved"],
-            eula_link=var["app_catalog_subscription_eula_link"])
+        test_app_catalog_subscription = oci.core.AppCatalogSubscription("test_app_catalog_subscription",
+            compartment_id=compartment_id,
+            listing_id=test_listing["id"],
+            listing_resource_version=app_catalog_subscription_listing_resource_version,
+            oracle_terms_of_use_link=app_catalog_subscription_oracle_terms_of_use_link,
+            signature=app_catalog_subscription_signature,
+            time_retrieved=app_catalog_subscription_time_retrieved,
+            eula_link=app_catalog_subscription_eula_link)
         ```
         <!--End PulumiCodeChooser -->
 

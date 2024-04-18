@@ -134,10 +134,10 @@ def get_volume_group_replicas(availability_domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=var["volume_group_replica_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_group_replica_display_name"],
-        state=var["volume_group_replica_state"])
+    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=volume_group_replica_availability_domain,
+        compartment_id=compartment_id,
+        display_name=volume_group_replica_display_name,
+        state=volume_group_replica_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -186,10 +186,10 @@ def get_volume_group_replicas_output(availability_domain: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=var["volume_group_replica_availability_domain"],
-        compartment_id=var["compartment_id"],
-        display_name=var["volume_group_replica_display_name"],
-        state=var["volume_group_replica_state"])
+    test_volume_group_replicas = oci.Core.get_volume_group_replicas(availability_domain=volume_group_replica_availability_domain,
+        compartment_id=compartment_id,
+        display_name=volume_group_replica_display_name,
+        state=volume_group_replica_state)
     ```
     <!--End PulumiCodeChooser -->
 

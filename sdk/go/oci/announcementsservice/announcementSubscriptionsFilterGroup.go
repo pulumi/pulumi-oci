@@ -33,14 +33,15 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := AnnouncementsService.NewAnnouncementSubscriptionsFilterGroup(ctx, "testAnnouncementSubscriptionsFilterGroup", &AnnouncementsService.AnnouncementSubscriptionsFilterGroupArgs{
-//				AnnouncementSubscriptionId: pulumi.Any(oci_announcements_service_announcement_subscription.Test_announcement_subscription.Id),
+//			_, err := AnnouncementsService.NewAnnouncementSubscriptionsFilterGroup(ctx, "test_announcement_subscriptions_filter_group", &AnnouncementsService.AnnouncementSubscriptionsFilterGroupArgs{
+//				AnnouncementSubscriptionId: pulumi.Any(testAnnouncementSubscription.Id),
 //				Filters: announcementsservice.AnnouncementSubscriptionsFilterGroupFilterArray{
 //					&announcementsservice.AnnouncementSubscriptionsFilterGroupFilterArgs{
-//						Type:  pulumi.Any(_var.Announcement_subscriptions_filter_group_filters_type),
-//						Value: pulumi.Any(_var.Announcement_subscriptions_filter_group_filters_value),
+//						Type:  pulumi.Any(announcementSubscriptionsFilterGroupFiltersType),
+//						Value: pulumi.Any(announcementSubscriptionsFilterGroupFiltersValue),
 //					},
 //				},
+//				Name: pulumi.Any(announcementSubscriptionsFilterGroupName),
 //			})
 //			if err != nil {
 //				return err

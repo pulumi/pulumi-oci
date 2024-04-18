@@ -32,7 +32,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Opsi.GetOperationsInsightsWarehouseResourceUsageSummary(ctx, &opsi.GetOperationsInsightsWarehouseResourceUsageSummaryArgs{
-//				OperationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.Test_operations_insights_warehouse.Id,
+//				OperationsInsightsWarehouseId: testOperationsInsightsWarehouse.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

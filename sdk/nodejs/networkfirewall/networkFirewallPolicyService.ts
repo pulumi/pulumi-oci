@@ -18,13 +18,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testNetworkFirewallPolicyService = new oci.networkfirewall.NetworkFirewallPolicyService("testNetworkFirewallPolicyService", {
- *     networkFirewallPolicyId: oci_network_firewall_network_firewall_policy.test_network_firewall_policy.id,
+ * const testNetworkFirewallPolicyService = new oci.networkfirewall.NetworkFirewallPolicyService("test_network_firewall_policy_service", {
+ *     name: networkFirewallPolicyServiceName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     portRanges: [{
- *         minimumPort: _var.network_firewall_policy_service_port_ranges_minimum_port,
- *         maximumPort: _var.network_firewall_policy_service_port_ranges_maximum_port,
+ *         minimumPort: networkFirewallPolicyServicePortRangesMinimumPort,
+ *         maximumPort: networkFirewallPolicyServicePortRangesMaximumPort,
  *     }],
- *     type: _var.network_firewall_policy_service_type,
+ *     type: networkFirewallPolicyServiceType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

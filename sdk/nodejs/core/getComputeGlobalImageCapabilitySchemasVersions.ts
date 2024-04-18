@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeGlobalImageCapabilitySchemasVersions = oci.Core.getComputeGlobalImageCapabilitySchemasVersions({
- *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
- *     displayName: _var.compute_global_image_capability_schemas_version_display_name,
+ *     computeGlobalImageCapabilitySchemaId: testComputeGlobalImageCapabilitySchema.id,
+ *     displayName: computeGlobalImageCapabilitySchemasVersionDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -85,8 +85,8 @@ export interface GetComputeGlobalImageCapabilitySchemasVersionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testComputeGlobalImageCapabilitySchemasVersions = oci.Core.getComputeGlobalImageCapabilitySchemasVersions({
- *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
- *     displayName: _var.compute_global_image_capability_schemas_version_display_name,
+ *     computeGlobalImageCapabilitySchemaId: testComputeGlobalImageCapabilitySchema.id,
+ *     displayName: computeGlobalImageCapabilitySchemasVersionDisplayName,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

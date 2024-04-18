@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
- *     direction: _var.network_security_group_security_rule_direction,
+ *     networkSecurityGroupId: testNetworkSecurityGroup.id,
+ *     direction: networkSecurityGroupSecurityRuleDirection,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -82,8 +82,8 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
- *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
- *     direction: _var.network_security_group_security_rule_direction,
+ *     networkSecurityGroupId: testNetworkSecurityGroup.id,
+ *     direction: networkSecurityGroupSecurityRuleDirection,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

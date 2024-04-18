@@ -17,8 +17,8 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testBackendSetHealth = oci.LoadBalancer.getBackendSetHealth({
- *     backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     backendSetName: testBackendSet.name,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -94,8 +94,8 @@ export interface GetBackendSetHealthResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testBackendSetHealth = oci.LoadBalancer.getBackendSetHealth({
- *     backendSetName: oci_load_balancer_backend_set.test_backend_set.name,
- *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     backendSetName: testBackendSet.name,
+ *     loadBalancerId: testLoadBalancer.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

@@ -25,42 +25,43 @@ namespace Pulumi.Oci.DataIntegration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testWorkspaceApplicationSchedule = new Oci.DataIntegration.WorkspaceApplicationSchedule("testWorkspaceApplicationSchedule", new()
+    ///     var testWorkspaceApplicationSchedule = new Oci.DataIntegration.WorkspaceApplicationSchedule("test_workspace_application_schedule", new()
     ///     {
-    ///         ApplicationKey = @var.Workspace_application_schedule_application_key,
-    ///         Identifier = @var.Workspace_application_schedule_identifier,
-    ///         WorkspaceId = oci_dataintegration_workspace.Test_workspace.Id,
-    ///         Description = @var.Workspace_application_schedule_description,
+    ///         ApplicationKey = workspaceApplicationScheduleApplicationKey,
+    ///         Identifier = workspaceApplicationScheduleIdentifier,
+    ///         Name = workspaceApplicationScheduleName,
+    ///         WorkspaceId = testWorkspace.Id,
+    ///         Description = workspaceApplicationScheduleDescription,
     ///         FrequencyDetails = new Oci.DataIntegration.Inputs.WorkspaceApplicationScheduleFrequencyDetailsArgs
     ///         {
-    ///             ModelType = @var.Workspace_application_schedule_frequency_details_model_type,
-    ///             CustomExpression = @var.Workspace_application_schedule_frequency_details_custom_expression,
-    ///             DayOfWeek = @var.Workspace_application_schedule_frequency_details_day_of_week,
-    ///             Days = @var.Workspace_application_schedule_frequency_details_days,
-    ///             Frequency = @var.Workspace_application_schedule_frequency_details_frequency,
-    ///             Interval = @var.Workspace_application_schedule_frequency_details_interval,
+    ///             ModelType = workspaceApplicationScheduleFrequencyDetailsModelType,
+    ///             CustomExpression = workspaceApplicationScheduleFrequencyDetailsCustomExpression,
+    ///             DayOfWeek = workspaceApplicationScheduleFrequencyDetailsDayOfWeek,
+    ///             Days = workspaceApplicationScheduleFrequencyDetailsDays,
+    ///             Frequency = workspaceApplicationScheduleFrequencyDetailsFrequency,
+    ///             Interval = workspaceApplicationScheduleFrequencyDetailsInterval,
     ///             Time = new Oci.DataIntegration.Inputs.WorkspaceApplicationScheduleFrequencyDetailsTimeArgs
     ///             {
-    ///                 Hour = @var.Workspace_application_schedule_frequency_details_time_hour,
-    ///                 Minute = @var.Workspace_application_schedule_frequency_details_time_minute,
-    ///                 Second = @var.Workspace_application_schedule_frequency_details_time_second,
+    ///                 Hour = workspaceApplicationScheduleFrequencyDetailsTimeHour,
+    ///                 Minute = workspaceApplicationScheduleFrequencyDetailsTimeMinute,
+    ///                 Second = workspaceApplicationScheduleFrequencyDetailsTimeSecond,
     ///             },
-    ///             WeekOfMonth = @var.Workspace_application_schedule_frequency_details_week_of_month,
+    ///             WeekOfMonth = workspaceApplicationScheduleFrequencyDetailsWeekOfMonth,
     ///         },
-    ///         IsDaylightAdjustmentEnabled = @var.Workspace_application_schedule_is_daylight_adjustment_enabled,
-    ///         Key = @var.Workspace_application_schedule_key,
-    ///         ModelVersion = @var.Workspace_application_schedule_model_version,
-    ///         ObjectStatus = @var.Workspace_application_schedule_object_status,
-    ///         ObjectVersion = @var.Workspace_application_schedule_object_version,
+    ///         IsDaylightAdjustmentEnabled = workspaceApplicationScheduleIsDaylightAdjustmentEnabled,
+    ///         Key = workspaceApplicationScheduleKey,
+    ///         ModelVersion = workspaceApplicationScheduleModelVersion,
+    ///         ObjectStatus = workspaceApplicationScheduleObjectStatus,
+    ///         ObjectVersion = workspaceApplicationScheduleObjectVersion,
     ///         RegistryMetadata = new Oci.DataIntegration.Inputs.WorkspaceApplicationScheduleRegistryMetadataArgs
     ///         {
-    ///             AggregatorKey = @var.Workspace_application_schedule_registry_metadata_aggregator_key,
-    ///             IsFavorite = @var.Workspace_application_schedule_registry_metadata_is_favorite,
-    ///             Key = @var.Workspace_application_schedule_registry_metadata_key,
-    ///             Labels = @var.Workspace_application_schedule_registry_metadata_labels,
-    ///             RegistryVersion = @var.Workspace_application_schedule_registry_metadata_registry_version,
+    ///             AggregatorKey = workspaceApplicationScheduleRegistryMetadataAggregatorKey,
+    ///             IsFavorite = workspaceApplicationScheduleRegistryMetadataIsFavorite,
+    ///             Key = workspaceApplicationScheduleRegistryMetadataKey,
+    ///             Labels = workspaceApplicationScheduleRegistryMetadataLabels,
+    ///             RegistryVersion = workspaceApplicationScheduleRegistryMetadataRegistryVersion,
     ///         },
-    ///         Timezone = @var.Workspace_application_schedule_timezone,
+    ///         Timezone = workspaceApplicationScheduleTimezone,
     ///     });
     /// 
     /// });

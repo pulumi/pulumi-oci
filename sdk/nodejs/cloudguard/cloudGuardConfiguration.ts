@@ -16,11 +16,11 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCloudGuardConfiguration = new oci.cloudguard.CloudGuardConfiguration("testCloudGuardConfiguration", {
- *     compartmentId: _var.compartment_id,
- *     reportingRegion: _var.cloud_guard_configuration_reporting_region,
- *     status: _var.cloud_guard_configuration_status,
- *     selfManageResources: _var.cloud_guard_configuration_self_manage_resources,
+ * const testCloudGuardConfiguration = new oci.cloudguard.CloudGuardConfiguration("test_cloud_guard_configuration", {
+ *     compartmentId: compartmentId,
+ *     reportingRegion: cloudGuardConfigurationReportingRegion,
+ *     status: cloudGuardConfigurationStatus,
+ *     selfManageResources: cloudGuardConfigurationSelfManageResources,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

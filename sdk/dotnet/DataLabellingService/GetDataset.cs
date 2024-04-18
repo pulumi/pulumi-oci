@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {
         ///     var testDataset = Oci.DataLabellingService.GetDataset.Invoke(new()
         ///     {
-        ///         DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+        ///         DatasetId = testDatasetOciDataLabelingServiceDataset.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// {
         ///     var testDataset = Oci.DataLabellingService.GetDataset.Invoke(new()
         ///     {
-        ///         DatasetId = oci_data_labeling_service_dataset.Test_dataset.Id,
+        ///         DatasetId = testDatasetOciDataLabelingServiceDataset.Id,
         ///     });
         /// 
         /// });

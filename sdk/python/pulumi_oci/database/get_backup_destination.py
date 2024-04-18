@@ -260,7 +260,7 @@ def get_backup_destination(backup_destination_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=oci_database_backup_destination["test_backup_destination"]["id"])
+    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -308,7 +308,7 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=oci_database_backup_destination["test_backup_destination"]["id"])
+    test_backup_destination = oci.Database.get_backup_destination(backup_destination_id=test_backup_destination_oci_database_backup_destination["id"])
     ```
     <!--End PulumiCodeChooser -->
 

@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetDbServers(ctx, &database.GetDbServersArgs{
-//				CompartmentId:           _var.Compartment_id,
-//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-//				DisplayName:             pulumi.StringRef(_var.Db_server_display_name),
-//				State:                   pulumi.StringRef(_var.Db_server_state),
+//				CompartmentId:           compartmentId,
+//				ExadataInfrastructureId: testExadataInfrastructure.Id,
+//				DisplayName:             pulumi.StringRef(dbServerDisplayName),
+//				State:                   pulumi.StringRef(dbServerState),
 //			}, nil)
 //			if err != nil {
 //				return err

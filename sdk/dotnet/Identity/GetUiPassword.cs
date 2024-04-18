@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUiPassword = Oci.Identity.GetUiPassword.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         UserId = testUser.Id,
         ///     });
         /// 
         /// });
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testUiPassword = Oci.Identity.GetUiPassword.Invoke(new()
         ///     {
-        ///         UserId = oci_identity_user.Test_user.Id,
+        ///         UserId = testUser.Id,
         ///     });
         /// 
         /// });

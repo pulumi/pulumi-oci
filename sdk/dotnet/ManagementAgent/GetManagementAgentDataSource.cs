@@ -30,8 +30,8 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentDataSource = Oci.ManagementAgent.GetManagementAgentDataSource.Invoke(new()
         ///     {
-        ///         DataSourceKey = @var.Management_agent_data_source_data_source_key,
-        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///         DataSourceKey = managementAgentDataSourceDataSourceKey,
+        ///         ManagementAgentId = testManagementAgent.Id,
         ///     });
         /// 
         /// });
@@ -60,8 +60,8 @@ namespace Pulumi.Oci.ManagementAgent
         /// {
         ///     var testManagementAgentDataSource = Oci.ManagementAgent.GetManagementAgentDataSource.Invoke(new()
         ///     {
-        ///         DataSourceKey = @var.Management_agent_data_source_data_source_key,
-        ///         ManagementAgentId = oci_management_agent_management_agent.Test_management_agent.Id,
+        ///         DataSourceKey = managementAgentDataSourceDataSourceKey,
+        ///         ManagementAgentId = testManagementAgent.Id,
         ///     });
         /// 
         /// });

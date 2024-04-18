@@ -37,15 +37,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditEventAnalytic(ctx, &datasafe.GetAuditEventAnalyticArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Audit_event_analytic_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Audit_event_analytic_compartment_id_in_subtree),
-//				GroupBies:              _var.Audit_event_analytic_group_by,
-//				QueryTimeZone:          pulumi.StringRef(_var.Audit_event_analytic_query_time_zone),
-//				ScimQuery:              pulumi.StringRef(_var.Audit_event_analytic_scim_query),
-//				SummaryFields:          _var.Audit_event_analytic_summary_field,
-//				TimeEnded:              pulumi.StringRef(_var.Audit_event_analytic_time_ended),
-//				TimeStarted:            pulumi.StringRef(_var.Audit_event_analytic_time_started),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(auditEventAnalyticAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(auditEventAnalyticCompartmentIdInSubtree),
+//				GroupBies:              auditEventAnalyticGroupBy,
+//				QueryTimeZone:          pulumi.StringRef(auditEventAnalyticQueryTimeZone),
+//				ScimQuery:              pulumi.StringRef(auditEventAnalyticScimQuery),
+//				SummaryFields:          auditEventAnalyticSummaryField,
+//				TimeEnded:              pulumi.StringRef(auditEventAnalyticTimeEnded),
+//				TimeStarted:            pulumi.StringRef(auditEventAnalyticTimeStarted),
 //			}, nil)
 //			if err != nil {
 //				return err

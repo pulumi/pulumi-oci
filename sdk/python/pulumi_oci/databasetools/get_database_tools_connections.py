@@ -156,12 +156,12 @@ def get_database_tools_connections(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_connection_display_name"],
-        related_resource_identifier=var["database_tools_connection_related_resource_identifier"],
-        runtime_supports=var["database_tools_connection_runtime_support"],
-        state=var["database_tools_connection_state"],
-        types=var["database_tools_connection_type"])
+    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
+        display_name=database_tools_connection_display_name,
+        related_resource_identifier=database_tools_connection_related_resource_identifier,
+        runtime_supports=database_tools_connection_runtime_support,
+        state=database_tools_connection_state,
+        types=database_tools_connection_type)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -217,12 +217,12 @@ def get_database_tools_connections_output(compartment_id: Optional[pulumi.Input[
     import pulumi
     import pulumi_oci as oci
 
-    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=var["compartment_id"],
-        display_name=var["database_tools_connection_display_name"],
-        related_resource_identifier=var["database_tools_connection_related_resource_identifier"],
-        runtime_supports=var["database_tools_connection_runtime_support"],
-        state=var["database_tools_connection_state"],
-        types=var["database_tools_connection_type"])
+    test_database_tools_connections = oci.DatabaseTools.get_database_tools_connections(compartment_id=compartment_id,
+        display_name=database_tools_connection_display_name,
+        related_resource_identifier=database_tools_connection_related_resource_identifier,
+        runtime_supports=database_tools_connection_runtime_support,
+        state=database_tools_connection_state,
+        types=database_tools_connection_type)
     ```
     <!--End PulumiCodeChooser -->
 

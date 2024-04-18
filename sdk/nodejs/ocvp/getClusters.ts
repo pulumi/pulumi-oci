@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testClusters = oci.Ocvp.getClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.cluster_display_name,
- *     sddcId: oci_ocvp_sddc.test_sddc.id,
- *     state: _var.cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: clusterDisplayName,
+ *     sddcId: testSddc.id,
+ *     state: clusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -106,10 +106,10 @@ export interface GetClustersResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testClusters = oci.Ocvp.getClusters({
- *     compartmentId: _var.compartment_id,
- *     displayName: _var.cluster_display_name,
- *     sddcId: oci_ocvp_sddc.test_sddc.id,
- *     state: _var.cluster_state,
+ *     compartmentId: compartmentId,
+ *     displayName: clusterDisplayName,
+ *     sddcId: testSddc.id,
+ *     state: clusterState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

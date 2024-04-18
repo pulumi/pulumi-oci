@@ -29,17 +29,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkPerimeters = Oci.Identity.GetDomainsNetworkPerimeters.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         NetworkPerimeterCount = @var.Network_perimeter_network_perimeter_count,
-        ///         NetworkPerimeterFilter = @var.Network_perimeter_network_perimeter_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NetworkPerimeterCount = networkPerimeterNetworkPerimeterCount,
+        ///         NetworkPerimeterFilter = networkPerimeterNetworkPerimeterFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Network_perimeter_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Network_perimeter_resource_type_schema_version,
-        ///         StartIndex = @var.Network_perimeter_start_index,
+        ///         Authorization = networkPerimeterAuthorization,
+        ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
+        ///         StartIndex = networkPerimeterStartIndex,
         ///     });
         /// 
         /// });
@@ -67,17 +67,17 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testNetworkPerimeters = Oci.Identity.GetDomainsNetworkPerimeters.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         NetworkPerimeterCount = @var.Network_perimeter_network_perimeter_count,
-        ///         NetworkPerimeterFilter = @var.Network_perimeter_network_perimeter_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         NetworkPerimeterCount = networkPerimeterNetworkPerimeterCount,
+        ///         NetworkPerimeterFilter = networkPerimeterNetworkPerimeterFilter,
         ///         AttributeSets = new[]
         ///         {
         ///             "all",
         ///         },
         ///         Attributes = "",
-        ///         Authorization = @var.Network_perimeter_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Network_perimeter_resource_type_schema_version,
-        ///         StartIndex = @var.Network_perimeter_start_index,
+        ///         Authorization = networkPerimeterAuthorization,
+        ///         ResourceTypeSchemaVersion = networkPerimeterResourceTypeSchemaVersion,
+        ///         StartIndex = networkPerimeterStartIndex,
         ///     });
         /// 
         /// });

@@ -49,19 +49,19 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSensitiveDataModel = new SensitiveDataModel(&#34;testSensitiveDataModel&#34;, SensitiveDataModelArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .targetId(oci_cloud_guard_target.test_target().id())
- *             .appSuiteName(var_.sensitive_data_model_app_suite_name())
+ *             .compartmentId(compartmentId)
+ *             .targetId(testTarget.id())
+ *             .appSuiteName(sensitiveDataModelAppSuiteName)
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .description(var_.sensitive_data_model_description())
- *             .displayName(var_.sensitive_data_model_display_name())
+ *             .description(sensitiveDataModelDescription)
+ *             .displayName(sensitiveDataModelDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
- *             .isAppDefinedRelationDiscoveryEnabled(var_.sensitive_data_model_is_app_defined_relation_discovery_enabled())
- *             .isIncludeAllSchemas(var_.sensitive_data_model_is_include_all_schemas())
- *             .isIncludeAllSensitiveTypes(var_.sensitive_data_model_is_include_all_sensitive_types())
- *             .isSampleDataCollectionEnabled(var_.sensitive_data_model_is_sample_data_collection_enabled())
- *             .schemasForDiscoveries(var_.sensitive_data_model_schemas_for_discovery())
- *             .sensitiveTypeIdsForDiscoveries(var_.sensitive_data_model_sensitive_type_ids_for_discovery())
+ *             .isAppDefinedRelationDiscoveryEnabled(sensitiveDataModelIsAppDefinedRelationDiscoveryEnabled)
+ *             .isIncludeAllSchemas(sensitiveDataModelIsIncludeAllSchemas)
+ *             .isIncludeAllSensitiveTypes(sensitiveDataModelIsIncludeAllSensitiveTypes)
+ *             .isSampleDataCollectionEnabled(sensitiveDataModelIsSampleDataCollectionEnabled)
+ *             .schemasForDiscoveries(sensitiveDataModelSchemasForDiscovery)
+ *             .sensitiveTypeIdsForDiscoveries(sensitiveDataModelSensitiveTypeIdsForDiscovery)
  *             .build());
  * 
  *     }

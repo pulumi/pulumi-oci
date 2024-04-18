@@ -103,7 +103,7 @@ def get_configuration(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.LicenseManager.get_configuration(compartment_id=var["compartment_id"])
+    test_configuration = oci.LicenseManager.get_configuration(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -138,7 +138,7 @@ def get_configuration_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_configuration = oci.LicenseManager.get_configuration(compartment_id=var["compartment_id"])
+    test_configuration = oci.LicenseManager.get_configuration(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

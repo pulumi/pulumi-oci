@@ -30,7 +30,7 @@ namespace Pulumi.Oci.AiDocument
         /// {
         ///     var testProcessorJob = Oci.AiDocument.GetProcessorJob.Invoke(new()
         ///     {
-        ///         ProcessorJobId = oci_ai_document_processor_job.Test_processor_job.Id,
+        ///         ProcessorJobId = testProcessorJobOciAiDocumentProcessorJob.Id,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.AiDocument
         /// {
         ///     var testProcessorJob = Oci.AiDocument.GetProcessorJob.Invoke(new()
         ///     {
-        ///         ProcessorJobId = oci_ai_document_processor_job.Test_processor_job.Id,
+        ///         ProcessorJobId = testProcessorJobOciAiDocumentProcessorJob.Id,
         ///     });
         /// 
         /// });

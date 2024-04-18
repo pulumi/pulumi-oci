@@ -33,17 +33,17 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testListings = oci.Marketplace.getListings({
- *     categories: _var.listing_category,
- *     compartmentId: _var.compartment_id,
- *     imageId: oci_core_image.test_image.id,
- *     isFeatured: _var.listing_is_featured,
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     listingTypes: _var.listing_listing_types,
- *     names: _var.listing_name,
- *     operatingSystems: _var.listing_operating_systems,
- *     packageType: _var.listing_package_type,
- *     pricings: _var.listing_pricing,
- *     publisherId: oci_marketplace_publisher.test_publisher.id,
+ *     categories: listingCategory,
+ *     compartmentId: compartmentId,
+ *     imageId: testImage.id,
+ *     isFeatured: listingIsFeatured,
+ *     listingId: testListing.id,
+ *     listingTypes: listingListingTypes,
+ *     names: listingName,
+ *     operatingSystems: listingOperatingSystems,
+ *     packageType: listingPackageType,
+ *     pricings: listingPricing,
+ *     publisherId: testPublisher.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -180,17 +180,17 @@ export interface GetListingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testListings = oci.Marketplace.getListings({
- *     categories: _var.listing_category,
- *     compartmentId: _var.compartment_id,
- *     imageId: oci_core_image.test_image.id,
- *     isFeatured: _var.listing_is_featured,
- *     listingId: oci_marketplace_listing.test_listing.id,
- *     listingTypes: _var.listing_listing_types,
- *     names: _var.listing_name,
- *     operatingSystems: _var.listing_operating_systems,
- *     packageType: _var.listing_package_type,
- *     pricings: _var.listing_pricing,
- *     publisherId: oci_marketplace_publisher.test_publisher.id,
+ *     categories: listingCategory,
+ *     compartmentId: compartmentId,
+ *     imageId: testImage.id,
+ *     isFeatured: listingIsFeatured,
+ *     listingId: testListing.id,
+ *     listingTypes: listingListingTypes,
+ *     names: listingName,
+ *     operatingSystems: listingOperatingSystems,
+ *     packageType: listingPackageType,
+ *     pricings: listingPricing,
+ *     publisherId: testPublisher.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

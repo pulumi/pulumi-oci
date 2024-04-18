@@ -18,20 +18,20 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testDeployPipeline = new oci.devops.DeployPipeline("testDeployPipeline", {
- *     projectId: oci_devops_project.test_project.id,
+ * const testDeployPipeline = new oci.devops.DeployPipeline("test_deploy_pipeline", {
+ *     projectId: testProject.id,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     deployPipelineParameters: {
  *         items: [{
- *             name: _var.deploy_pipeline_deploy_pipeline_parameters_items_name,
- *             defaultValue: _var.deploy_pipeline_deploy_pipeline_parameters_items_default_value,
- *             description: _var.deploy_pipeline_deploy_pipeline_parameters_items_description,
+ *             name: deployPipelineDeployPipelineParametersItemsName,
+ *             defaultValue: deployPipelineDeployPipelineParametersItemsDefaultValue,
+ *             description: deployPipelineDeployPipelineParametersItemsDescription,
  *         }],
  *     },
- *     description: _var.deploy_pipeline_description,
- *     displayName: _var.deploy_pipeline_display_name,
+ *     description: deployPipelineDescription,
+ *     displayName: deployPipelineDisplayName,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },

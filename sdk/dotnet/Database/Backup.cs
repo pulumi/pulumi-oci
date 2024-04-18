@@ -25,10 +25,10 @@ namespace Pulumi.Oci.Database
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testBackup = new Oci.Database.Backup("testBackup", new()
+    ///     var testBackup = new Oci.Database.Backup("test_backup", new()
     ///     {
-    ///         DatabaseId = oci_database_database.Test_database.Id,
-    ///         DisplayName = @var.Backup_display_name,
+    ///         DatabaseId = testDatabase.Id,
+    ///         DisplayName = backupDisplayName,
     ///     });
     /// 
     /// });

@@ -351,13 +351,13 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_metastore_config = oci.big_data_service.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig",
-            bds_api_key_id=oci_identity_api_key["test_api_key"]["id"],
-            bds_api_key_passphrase=var["bds_instance_metastore_config_bds_api_key_passphrase"],
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_metastore_config_cluster_admin_password"],
-            metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
-            display_name=var["bds_instance_metastore_config_display_name"])
+        test_bds_instance_metastore_config = oci.big_data_service.BdsInstanceMetastoreConfig("test_bds_instance_metastore_config",
+            bds_api_key_id=test_api_key["id"],
+            bds_api_key_passphrase=bds_instance_metastore_config_bds_api_key_passphrase,
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_metastore_config_cluster_admin_password,
+            metastore_id=test_metastore["id"],
+            display_name=bds_instance_metastore_config_display_name)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -401,13 +401,13 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_bds_instance_metastore_config = oci.big_data_service.BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig",
-            bds_api_key_id=oci_identity_api_key["test_api_key"]["id"],
-            bds_api_key_passphrase=var["bds_instance_metastore_config_bds_api_key_passphrase"],
-            bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"],
-            cluster_admin_password=var["bds_instance_metastore_config_cluster_admin_password"],
-            metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
-            display_name=var["bds_instance_metastore_config_display_name"])
+        test_bds_instance_metastore_config = oci.big_data_service.BdsInstanceMetastoreConfig("test_bds_instance_metastore_config",
+            bds_api_key_id=test_api_key["id"],
+            bds_api_key_passphrase=bds_instance_metastore_config_bds_api_key_passphrase,
+            bds_instance_id=test_bds_instance["id"],
+            cluster_admin_password=bds_instance_metastore_config_cluster_admin_password,
+            metastore_id=test_metastore["id"],
+            display_name=bds_instance_metastore_config_display_name)
         ```
         <!--End PulumiCodeChooser -->
 

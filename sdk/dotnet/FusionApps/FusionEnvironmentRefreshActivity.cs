@@ -25,10 +25,10 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testFusionEnvironmentRefreshActivity = new Oci.FusionApps.FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity", new()
+    ///     var testFusionEnvironmentRefreshActivity = new Oci.FusionApps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", new()
     ///     {
-    ///         FusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
-    ///         SourceFusionEnvironmentId = oci_fusion_apps_fusion_environment.Test_fusion_environment.Id,
+    ///         FusionEnvironmentId = testFusionEnvironment.Id,
+    ///         SourceFusionEnvironmentId = testFusionEnvironment.Id,
     ///     });
     /// 
     /// });

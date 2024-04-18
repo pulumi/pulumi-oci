@@ -255,10 +255,10 @@ class DbNodeConsoleHistory(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_node_console_history = oci.database.DbNodeConsoleHistory("testDbNodeConsoleHistory",
-            db_node_id=oci_database_db_node["test_db_node"]["id"],
-            display_name=var["db_node_console_history_display_name"],
-            defined_tags=var["db_node_console_history_defined_tags"],
+        test_db_node_console_history = oci.database.DbNodeConsoleHistory("test_db_node_console_history",
+            db_node_id=test_db_node["id"],
+            display_name=db_node_console_history_display_name,
+            defined_tags=db_node_console_history_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -302,10 +302,10 @@ class DbNodeConsoleHistory(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_db_node_console_history = oci.database.DbNodeConsoleHistory("testDbNodeConsoleHistory",
-            db_node_id=oci_database_db_node["test_db_node"]["id"],
-            display_name=var["db_node_console_history_display_name"],
-            defined_tags=var["db_node_console_history_defined_tags"],
+        test_db_node_console_history = oci.database.DbNodeConsoleHistory("test_db_node_console_history",
+            db_node_id=test_db_node["id"],
+            display_name=db_node_console_history_display_name,
+            defined_tags=db_node_console_history_defined_tags,
             freeform_tags={
                 "Department": "Finance",
             })

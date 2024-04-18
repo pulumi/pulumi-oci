@@ -25,17 +25,17 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testDrgRouteDistributionStatement = new Oci.Core.DrgRouteDistributionStatement("testDrgRouteDistributionStatement", new()
+    ///     var testDrgRouteDistributionStatement = new Oci.Core.DrgRouteDistributionStatement("test_drg_route_distribution_statement", new()
     ///     {
-    ///         DrgRouteDistributionId = oci_core_drg_route_distribution.Test_drg_route_distribution.Id,
-    ///         Action = @var.Drg_route_distribution_statement_statements_action,
+    ///         DrgRouteDistributionId = testDrgRouteDistribution.Id,
+    ///         Action = drgRouteDistributionStatementStatementsAction,
     ///         MatchCriteria = new Oci.Core.Inputs.DrgRouteDistributionStatementMatchCriteriaArgs
     ///         {
-    ///             MatchType = @var.Drg_route_distribution_statement_statements_match_criteria_match_type,
-    ///             AttachmentType = @var.Drg_route_distribution_statement_statements_match_criteria_attachment_type,
-    ///             DrgAttachmentId = oci_core_drg_attachment.Test_drg_attachment.Id,
+    ///             MatchType = drgRouteDistributionStatementStatementsMatchCriteriaMatchType,
+    ///             AttachmentType = drgRouteDistributionStatementStatementsMatchCriteriaAttachmentType,
+    ///             DrgAttachmentId = testDrgAttachment.Id,
     ///         },
-    ///         Priority = @var.Drg_route_distribution_statement_statements_priority,
+    ///         Priority = drgRouteDistributionStatementStatementsPriority,
     ///     });
     /// 
     /// });

@@ -140,11 +140,11 @@ def get_autonomous_databases_clones(autonomous_database_id: Optional[str] = None
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        clone_type=var["autonomous_databases_clone_clone_type"],
-        display_name=var["autonomous_databases_clone_display_name"],
-        state=var["autonomous_databases_clone_state"])
+    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=test_autonomous_database["id"],
+        compartment_id=compartment_id,
+        clone_type=autonomous_databases_clone_clone_type,
+        display_name=autonomous_databases_clone_display_name,
+        state=autonomous_databases_clone_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -196,11 +196,11 @@ def get_autonomous_databases_clones_output(autonomous_database_id: Optional[pulu
     import pulumi
     import pulumi_oci as oci
 
-    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=oci_database_autonomous_database["test_autonomous_database"]["id"],
-        compartment_id=var["compartment_id"],
-        clone_type=var["autonomous_databases_clone_clone_type"],
-        display_name=var["autonomous_databases_clone_display_name"],
-        state=var["autonomous_databases_clone_state"])
+    test_autonomous_databases_clones = oci.Database.get_autonomous_databases_clones(autonomous_database_id=test_autonomous_database["id"],
+        compartment_id=compartment_id,
+        clone_type=autonomous_databases_clone_clone_type,
+        display_name=autonomous_databases_clone_display_name,
+        state=autonomous_databases_clone_state)
     ```
     <!--End PulumiCodeChooser -->
 

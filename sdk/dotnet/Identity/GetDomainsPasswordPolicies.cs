@@ -29,14 +29,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testPasswordPolicies = Oci.Identity.GetDomainsPasswordPolicies.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         PasswordPolicyCount = @var.Password_policy_password_policy_count,
-        ///         PasswordPolicyFilter = @var.Password_policy_password_policy_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PasswordPolicyCount = passwordPolicyPasswordPolicyCount,
+        ///         PasswordPolicyFilter = passwordPolicyPasswordPolicyFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Password_policy_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Password_policy_resource_type_schema_version,
-        ///         StartIndex = @var.Password_policy_start_index,
+        ///         Authorization = passwordPolicyAuthorization,
+        ///         ResourceTypeSchemaVersion = passwordPolicyResourceTypeSchemaVersion,
+        ///         StartIndex = passwordPolicyStartIndex,
         ///     });
         /// 
         /// });
@@ -64,14 +64,14 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testPasswordPolicies = Oci.Identity.GetDomainsPasswordPolicies.Invoke(new()
         ///     {
-        ///         IdcsEndpoint = data.Oci_identity_domain.Test_domain.Url,
-        ///         PasswordPolicyCount = @var.Password_policy_password_policy_count,
-        ///         PasswordPolicyFilter = @var.Password_policy_password_policy_filter,
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         PasswordPolicyCount = passwordPolicyPasswordPolicyCount,
+        ///         PasswordPolicyFilter = passwordPolicyPasswordPolicyFilter,
         ///         AttributeSets = new() { },
         ///         Attributes = "",
-        ///         Authorization = @var.Password_policy_authorization,
-        ///         ResourceTypeSchemaVersion = @var.Password_policy_resource_type_schema_version,
-        ///         StartIndex = @var.Password_policy_start_index,
+        ///         Authorization = passwordPolicyAuthorization,
+        ///         ResourceTypeSchemaVersion = passwordPolicyResourceTypeSchemaVersion,
+        ///         StartIndex = passwordPolicyStartIndex,
         ///     });
         /// 
         /// });

@@ -268,13 +268,13 @@ class ComputeCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_cluster = oci.core.ComputeCluster("testComputeCluster",
-            availability_domain=var["compute_cluster_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_compute_cluster = oci.core.ComputeCluster("test_compute_cluster",
+            availability_domain=compute_cluster_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_cluster_display_name"],
+            display_name=compute_cluster_display_name,
             freeform_tags={
                 "Department": "Finance",
             })
@@ -331,13 +331,13 @@ class ComputeCluster(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_compute_cluster = oci.core.ComputeCluster("testComputeCluster",
-            availability_domain=var["compute_cluster_availability_domain"],
-            compartment_id=var["compartment_id"],
+        test_compute_cluster = oci.core.ComputeCluster("test_compute_cluster",
+            availability_domain=compute_cluster_availability_domain,
+            compartment_id=compartment_id,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["compute_cluster_display_name"],
+            display_name=compute_cluster_display_name,
             freeform_tags={
                 "Department": "Finance",
             })

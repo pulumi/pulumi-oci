@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.GetConnection(ctx, &goldengate.GetConnectionArgs{
-//				ConnectionId: oci_golden_gate_connection.Test_connection.Id,
+//				ConnectionId: testConnectionOciGoldenGateConnection.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -108,9 +108,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_dashboards_import = oci.management_dashboard.ManagementDashboardsImport("testManagementDashboardsImport",
-            import_details=var["sample_import_details"],
-            import_details_file=var["sample_import_details_file_path"])
+        test_management_dashboards_import = oci.management_dashboard.ManagementDashboardsImport("test_management_dashboards_import",
+            import_details=sample_import_details,
+            import_details_file=sample_import_details_file_path)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -149,9 +149,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_management_dashboards_import = oci.management_dashboard.ManagementDashboardsImport("testManagementDashboardsImport",
-            import_details=var["sample_import_details"],
-            import_details_file=var["sample_import_details_file_path"])
+        test_management_dashboards_import = oci.management_dashboard.ManagementDashboardsImport("test_management_dashboards_import",
+            import_details=sample_import_details,
+            import_details_file=sample_import_details_file_path)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -45,19 +45,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetSecurityAssessments(ctx, &datasafe.GetSecurityAssessmentsArgs{
-//				CompartmentId:                   _var.Compartment_id,
-//				AccessLevel:                     pulumi.StringRef(_var.Security_assessment_access_level),
-//				CompartmentIdInSubtree:          pulumi.BoolRef(_var.Security_assessment_compartment_id_in_subtree),
-//				DisplayName:                     pulumi.StringRef(_var.Security_assessment_display_name),
-//				IsBaseline:                      pulumi.BoolRef(_var.Security_assessment_is_baseline),
-//				IsScheduleAssessment:            pulumi.BoolRef(_var.Security_assessment_is_schedule_assessment),
-//				ScheduleAssessmentId:            pulumi.StringRef(oci_data_safe_schedule_assessment.Test_schedule_assessment.Id),
-//				State:                           pulumi.StringRef(_var.Security_assessment_state),
-//				TargetId:                        pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
-//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(_var.Security_assessment_time_created_greater_than_or_equal_to),
-//				TimeCreatedLessThan:             pulumi.StringRef(_var.Security_assessment_time_created_less_than),
-//				TriggeredBy:                     pulumi.StringRef(_var.Security_assessment_triggered_by),
-//				Type:                            pulumi.StringRef(_var.Security_assessment_type),
+//				CompartmentId:                   compartmentId,
+//				AccessLevel:                     pulumi.StringRef(securityAssessmentAccessLevel),
+//				CompartmentIdInSubtree:          pulumi.BoolRef(securityAssessmentCompartmentIdInSubtree),
+//				DisplayName:                     pulumi.StringRef(securityAssessmentDisplayName),
+//				IsBaseline:                      pulumi.BoolRef(securityAssessmentIsBaseline),
+//				IsScheduleAssessment:            pulumi.BoolRef(securityAssessmentIsScheduleAssessment),
+//				ScheduleAssessmentId:            pulumi.StringRef(testScheduleAssessment.Id),
+//				State:                           pulumi.StringRef(securityAssessmentState),
+//				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(securityAssessmentTimeCreatedGreaterThanOrEqualTo),
+//				TimeCreatedLessThan:             pulumi.StringRef(securityAssessmentTimeCreatedLessThan),
+//				TriggeredBy:                     pulumi.StringRef(securityAssessmentTriggeredBy),
+//				Type:                            pulumi.StringRef(securityAssessmentType),
 //			}, nil)
 //			if err != nil {
 //				return err

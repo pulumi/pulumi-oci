@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApiGateway.GetGateways(ctx, &apigateway.GetGatewaysArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CertificateId: pulumi.StringRef(_var.Oci_apigateway_certificate.Test_certificate.Id),
-//				DisplayName:   pulumi.StringRef(_var.Gateway_display_name),
-//				State:         pulumi.StringRef(_var.Gateway_state),
+//				CompartmentId: compartmentId,
+//				CertificateId: pulumi.StringRef(ociApigatewayCertificate.TestCertificate.Id),
+//				DisplayName:   pulumi.StringRef(gatewayDisplayName),
+//				State:         pulumi.StringRef(gatewayState),
 //			}, nil)
 //			if err != nil {
 //				return err

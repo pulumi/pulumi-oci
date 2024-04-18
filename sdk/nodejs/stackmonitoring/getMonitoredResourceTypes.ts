@@ -24,13 +24,13 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResourceTypes = oci.StackMonitoring.getMonitoredResourceTypes({
- *     compartmentId: _var.compartment_id,
- *     excludeFields: _var.monitored_resource_type_exclude_fields,
- *     fields: _var.monitored_resource_type_fields,
- *     isExcludeSystemTypes: _var.monitored_resource_type_is_exclude_system_types,
- *     metricNamespace: _var.monitored_resource_type_metric_namespace,
- *     name: _var.monitored_resource_type_name,
- *     status: _var.monitored_resource_type_status,
+ *     compartmentId: compartmentId,
+ *     excludeFields: monitoredResourceTypeExcludeFields,
+ *     fields: monitoredResourceTypeFields,
+ *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
+ *     metricNamespace: monitoredResourceTypeMetricNamespace,
+ *     name: monitoredResourceTypeName,
+ *     status: monitoredResourceTypeStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -135,13 +135,13 @@ export interface GetMonitoredResourceTypesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResourceTypes = oci.StackMonitoring.getMonitoredResourceTypes({
- *     compartmentId: _var.compartment_id,
- *     excludeFields: _var.monitored_resource_type_exclude_fields,
- *     fields: _var.monitored_resource_type_fields,
- *     isExcludeSystemTypes: _var.monitored_resource_type_is_exclude_system_types,
- *     metricNamespace: _var.monitored_resource_type_metric_namespace,
- *     name: _var.monitored_resource_type_name,
- *     status: _var.monitored_resource_type_status,
+ *     compartmentId: compartmentId,
+ *     excludeFields: monitoredResourceTypeExcludeFields,
+ *     fields: monitoredResourceTypeFields,
+ *     isExcludeSystemTypes: monitoredResourceTypeIsExcludeSystemTypes,
+ *     metricNamespace: monitoredResourceTypeMetricNamespace,
+ *     name: monitoredResourceTypeName,
+ *     status: monitoredResourceTypeStatus,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

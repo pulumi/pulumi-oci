@@ -20,14 +20,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPluggableDatabasesRemoteClone = new oci.database.PluggableDatabasesRemoteClone("testPluggableDatabasesRemoteClone", {
- *     clonedPdbName: _var.pluggable_databases_remote_clone_cloned_pdb_name,
- *     pluggableDatabaseId: oci_database_pluggable_database.test_pluggable_database.id,
- *     sourceContainerDbAdminPassword: _var.pluggable_databases_remote_clone_source_container_db_admin_password,
- *     targetContainerDatabaseId: oci_database_database.test_database.id,
- *     pdbAdminPassword: _var.pluggable_databases_remote_clone_pdb_admin_password,
- *     shouldPdbAdminAccountBeLocked: _var.pluggable_databases_remote_clone_should_pdb_admin_account_be_locked,
- *     targetTdeWalletPassword: _var.pluggable_databases_remote_clone_target_tde_wallet_password,
+ * const testPluggableDatabasesRemoteClone = new oci.database.PluggableDatabasesRemoteClone("test_pluggable_databases_remote_clone", {
+ *     clonedPdbName: pluggableDatabasesRemoteCloneClonedPdbName,
+ *     pluggableDatabaseId: testPluggableDatabase.id,
+ *     sourceContainerDbAdminPassword: pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword,
+ *     targetContainerDatabaseId: testDatabase.id,
+ *     pdbAdminPassword: pluggableDatabasesRemoteClonePdbAdminPassword,
+ *     shouldPdbAdminAccountBeLocked: pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked,
+ *     targetTdeWalletPassword: pluggableDatabasesRemoteCloneTargetTdeWalletPassword,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

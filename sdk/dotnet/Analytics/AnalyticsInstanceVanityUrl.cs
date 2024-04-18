@@ -26,15 +26,15 @@ namespace Pulumi.Oci.Analytics
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testAnalyticsInstanceVanityUrl = new Oci.Analytics.AnalyticsInstanceVanityUrl("testAnalyticsInstanceVanityUrl", new()
+    ///     var testAnalyticsInstanceVanityUrl = new Oci.Analytics.AnalyticsInstanceVanityUrl("test_analytics_instance_vanity_url", new()
     ///     {
-    ///         AnalyticsInstanceId = oci_analytics_analytics_instance.Test_analytics_instance.Id,
-    ///         CaCertificate = @var.Analytics_instance_vanity_url_ca_certificate,
-    ///         Hosts = @var.Analytics_instance_vanity_url_hosts,
-    ///         PrivateKey = @var.Analytics_instance_vanity_url_private_key,
-    ///         PublicCertificate = @var.Analytics_instance_vanity_url_public_certificate,
-    ///         Description = @var.Analytics_instance_vanity_url_description,
-    ///         Passphrase = @var.Analytics_instance_vanity_url_passphrase,
+    ///         AnalyticsInstanceId = testAnalyticsInstance.Id,
+    ///         CaCertificate = analyticsInstanceVanityUrlCaCertificate,
+    ///         Hosts = analyticsInstanceVanityUrlHosts,
+    ///         PrivateKey = analyticsInstanceVanityUrlPrivateKey,
+    ///         PublicCertificate = analyticsInstanceVanityUrlPublicCertificate,
+    ///         Description = analyticsInstanceVanityUrlDescription,
+    ///         Passphrase = analyticsInstanceVanityUrlPassphrase,
     ///     });
     /// 
     /// });

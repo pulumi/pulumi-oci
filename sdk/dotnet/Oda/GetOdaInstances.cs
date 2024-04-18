@@ -35,9 +35,9 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaInstances = Oci.Oda.GetOdaInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Oda_instance_display_name,
-        ///         State = @var.Oda_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = odaInstanceDisplayName,
+        ///         State = odaInstanceState,
         ///     });
         /// 
         /// });
@@ -71,9 +71,9 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaInstances = Oci.Oda.GetOdaInstances.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Oda_instance_display_name,
-        ///         State = @var.Oda_instance_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = odaInstanceDisplayName,
+        ///         State = odaInstanceState,
         ///     });
         /// 
         /// });

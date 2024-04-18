@@ -156,11 +156,11 @@ def get_trace_snapshot_data(apm_domain_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_snapshot_data_trace_key"],
-        is_summarized=var["trace_snapshot_data_is_summarized"],
-        snapshot_time=var["trace_snapshot_data_snapshot_time"],
-        thread_id=oci_apm_traces_thread["test_thread"]["id"])
+    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
+        trace_key=trace_snapshot_data_trace_key,
+        is_summarized=trace_snapshot_data_is_summarized,
+        snapshot_time=trace_snapshot_data_snapshot_time,
+        thread_id=test_thread["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -212,11 +212,11 @@ def get_trace_snapshot_data_output(apm_domain_id: Optional[pulumi.Input[str]] = 
     import pulumi
     import pulumi_oci as oci
 
-    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"],
-        trace_key=var["trace_snapshot_data_trace_key"],
-        is_summarized=var["trace_snapshot_data_is_summarized"],
-        snapshot_time=var["trace_snapshot_data_snapshot_time"],
-        thread_id=oci_apm_traces_thread["test_thread"]["id"])
+    test_trace_snapshot_data = oci.ApmTraces.get_trace_snapshot_data(apm_domain_id=test_apm_domain["id"],
+        trace_key=trace_snapshot_data_trace_key,
+        is_summarized=trace_snapshot_data_is_summarized,
+        snapshot_time=trace_snapshot_data_snapshot_time,
+        thread_id=test_thread["id"])
     ```
     <!--End PulumiCodeChooser -->
 

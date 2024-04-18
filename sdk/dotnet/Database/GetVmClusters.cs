@@ -31,10 +31,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testVmClusters = Oci.Database.GetVmClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vm_cluster_display_name,
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///         State = @var.Vm_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vmClusterDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         State = vmClusterState,
         ///     });
         /// 
         /// });
@@ -64,10 +64,10 @@ namespace Pulumi.Oci.Database
         /// {
         ///     var testVmClusters = Oci.Database.GetVmClusters.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         DisplayName = @var.Vm_cluster_display_name,
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///         State = @var.Vm_cluster_state,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = vmClusterDisplayName,
+        ///         ExadataInfrastructureId = testExadataInfrastructure.Id,
+        ///         State = vmClusterState,
         ///     });
         /// 
         /// });

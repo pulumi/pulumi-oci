@@ -45,16 +45,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetAuditProfiles(ctx, &datasafe.GetAuditProfilesArgs{
-//				CompartmentId:                            _var.Compartment_id,
-//				AccessLevel:                              pulumi.StringRef(_var.Audit_profile_access_level),
-//				AuditCollectedVolumeGreaterThanOrEqualTo: pulumi.StringRef(_var.Audit_profile_audit_collected_volume_greater_than_or_equal_to),
-//				AuditProfileId:                           pulumi.StringRef(oci_data_safe_audit_profile.Test_audit_profile.Id),
-//				CompartmentIdInSubtree:                   pulumi.BoolRef(_var.Audit_profile_compartment_id_in_subtree),
-//				DisplayName:                              pulumi.StringRef(_var.Audit_profile_display_name),
-//				IsOverrideGlobalRetentionSetting:         pulumi.BoolRef(_var.Audit_profile_is_override_global_retention_setting),
-//				IsPaidUsageEnabled:                       pulumi.BoolRef(_var.Audit_profile_is_paid_usage_enabled),
-//				State:                                    pulumi.StringRef(_var.Audit_profile_state),
-//				TargetId:                                 pulumi.StringRef(oci_cloud_guard_target.Test_target.Id),
+//				CompartmentId:                            compartmentId,
+//				AccessLevel:                              pulumi.StringRef(auditProfileAccessLevel),
+//				AuditCollectedVolumeGreaterThanOrEqualTo: pulumi.StringRef(auditProfileAuditCollectedVolumeGreaterThanOrEqualTo),
+//				AuditProfileId:                           pulumi.StringRef(testAuditProfile.Id),
+//				CompartmentIdInSubtree:                   pulumi.BoolRef(auditProfileCompartmentIdInSubtree),
+//				DisplayName:                              pulumi.StringRef(auditProfileDisplayName),
+//				IsOverrideGlobalRetentionSetting:         pulumi.BoolRef(auditProfileIsOverrideGlobalRetentionSetting),
+//				IsPaidUsageEnabled:                       pulumi.BoolRef(auditProfileIsPaidUsageEnabled),
+//				State:                                    pulumi.StringRef(auditProfileState),
+//				TargetId:                                 pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

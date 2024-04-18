@@ -33,32 +33,32 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testVtap = new Oci.Core.Vtap("testVtap", new()
+    ///     var testVtap = new Oci.Core.Vtap("test_vtap", new()
     ///     {
-    ///         CaptureFilterId = oci_core_capture_filter.Test_capture_filter.Id,
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SourceId = oci_core_source.Test_source.Id,
-    ///         VcnId = oci_core_vcn.Test_vcn.Id,
+    ///         CaptureFilterId = testCaptureFilter.Id,
+    ///         CompartmentId = compartmentId,
+    ///         SourceId = testSource.Id,
+    ///         VcnId = testVcn.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Vtap_display_name,
-    ///         EncapsulationProtocol = @var.Vtap_encapsulation_protocol,
+    ///         DisplayName = vtapDisplayName,
+    ///         EncapsulationProtocol = vtapEncapsulationProtocol,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsVtapEnabled = @var.Vtap_is_vtap_enabled,
-    ///         MaxPacketSize = @var.Vtap_max_packet_size,
-    ///         SourcePrivateEndpointIp = @var.Vtap_source_private_endpoint_ip,
-    ///         SourcePrivateEndpointSubnetId = oci_core_subnet.Test_subnet.Id,
-    ///         SourceType = @var.Vtap_source_type,
-    ///         TargetId = oci_cloud_guard_target.Test_target.Id,
-    ///         TargetIp = @var.Vtap_target_ip,
-    ///         TargetType = @var.Vtap_target_type,
-    ///         TrafficMode = @var.Vtap_traffic_mode,
-    ///         VxlanNetworkIdentifier = @var.Vtap_vxlan_network_identifier,
+    ///         IsVtapEnabled = vtapIsVtapEnabled,
+    ///         MaxPacketSize = vtapMaxPacketSize,
+    ///         SourcePrivateEndpointIp = vtapSourcePrivateEndpointIp,
+    ///         SourcePrivateEndpointSubnetId = testSubnet.Id,
+    ///         SourceType = vtapSourceType,
+    ///         TargetId = testTarget.Id,
+    ///         TargetIp = vtapTargetIp,
+    ///         TargetType = vtapTargetType,
+    ///         TrafficMode = vtapTrafficMode,
+    ///         VxlanNetworkIdentifier = vtapVxlanNetworkIdentifier,
     ///     });
     /// 
     /// });

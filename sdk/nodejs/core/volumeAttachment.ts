@@ -18,18 +18,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testVolumeAttachment = new oci.core.VolumeAttachment("testVolumeAttachment", {
- *     attachmentType: _var.volume_attachment_attachment_type,
- *     instanceId: oci_core_instance.test_instance.id,
- *     volumeId: oci_core_volume.test_volume.id,
- *     device: _var.volume_attachment_device,
- *     displayName: _var.volume_attachment_display_name,
- *     encryptionInTransitType: _var.volume_attachment_encryption_in_transit_type,
- *     isAgentAutoIscsiLoginEnabled: _var.volume_attachment_is_agent_auto_iscsi_login_enabled,
- *     isPvEncryptionInTransitEnabled: _var.volume_attachment_is_pv_encryption_in_transit_enabled,
- *     isReadOnly: _var.volume_attachment_is_read_only,
- *     isShareable: _var.volume_attachment_is_shareable,
- *     useChap: _var.volume_attachment_use_chap,
+ * const testVolumeAttachment = new oci.core.VolumeAttachment("test_volume_attachment", {
+ *     attachmentType: volumeAttachmentAttachmentType,
+ *     instanceId: testInstance.id,
+ *     volumeId: testVolume.id,
+ *     device: volumeAttachmentDevice,
+ *     displayName: volumeAttachmentDisplayName,
+ *     encryptionInTransitType: volumeAttachmentEncryptionInTransitType,
+ *     isAgentAutoIscsiLoginEnabled: volumeAttachmentIsAgentAutoIscsiLoginEnabled,
+ *     isPvEncryptionInTransitEnabled: volumeAttachmentIsPvEncryptionInTransitEnabled,
+ *     isReadOnly: volumeAttachmentIsReadOnly,
+ *     isShareable: volumeAttachmentIsShareable,
+ *     useChap: volumeAttachmentUseChap,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

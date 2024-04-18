@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaPrivateEndpointScanProxy = Oci.Oda.GetOdaPrivateEndpointScanProxy.Invoke(new()
         ///     {
-        ///         OdaPrivateEndpointId = oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-        ///         OdaPrivateEndpointScanProxyId = oci_oda_oda_private_endpoint_scan_proxy.Test_oda_private_endpoint_scan_proxy.Id,
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         OdaPrivateEndpointScanProxyId = testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.Id,
         ///     });
         /// 
         /// });
@@ -58,8 +58,8 @@ namespace Pulumi.Oci.Oda
         /// {
         ///     var testOdaPrivateEndpointScanProxy = Oci.Oda.GetOdaPrivateEndpointScanProxy.Invoke(new()
         ///     {
-        ///         OdaPrivateEndpointId = oci_oda_oda_private_endpoint.Test_oda_private_endpoint.Id,
-        ///         OdaPrivateEndpointScanProxyId = oci_oda_oda_private_endpoint_scan_proxy.Test_oda_private_endpoint_scan_proxy.Id,
+        ///         OdaPrivateEndpointId = testOdaPrivateEndpoint.Id,
+        ///         OdaPrivateEndpointScanProxyId = testOdaPrivateEndpointScanProxyOciOdaOdaPrivateEndpointScanProxy.Id,
         ///     });
         /// 
         /// });

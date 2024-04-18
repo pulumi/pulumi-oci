@@ -358,12 +358,12 @@ def get_domains_oauth2client_credential(attribute_sets: Optional[Sequence[str]] 
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth2client_credential = oci.Identity.get_domains_oauth2client_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        o_auth2client_credential_id=oci_identity_domains_o_auth2client_credential["test_o_auth2client_credential"]["id"],
+    test_oauth2client_credential = oci.Identity.get_domains_oauth2client_credential(idcs_endpoint=test_domain["url"],
+        o_auth2client_credential_id=test_o_auth2client_credential["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["oauth2client_credential_authorization"],
-        resource_type_schema_version=var["oauth2client_credential_resource_type_schema_version"])
+        authorization=oauth2client_credential_authorization,
+        resource_type_schema_version=oauth2client_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -435,12 +435,12 @@ def get_domains_oauth2client_credential_output(attribute_sets: Optional[pulumi.I
     import pulumi
     import pulumi_oci as oci
 
-    test_oauth2client_credential = oci.Identity.get_domains_oauth2client_credential(idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
-        o_auth2client_credential_id=oci_identity_domains_o_auth2client_credential["test_o_auth2client_credential"]["id"],
+    test_oauth2client_credential = oci.Identity.get_domains_oauth2client_credential(idcs_endpoint=test_domain["url"],
+        o_auth2client_credential_id=test_o_auth2client_credential["id"],
         attribute_sets=[],
         attributes="",
-        authorization=var["oauth2client_credential_authorization"],
-        resource_type_schema_version=var["oauth2client_credential_resource_type_schema_version"])
+        authorization=oauth2client_credential_authorization,
+        resource_type_schema_version=oauth2client_credential_resource_type_schema_version)
     ```
     <!--End PulumiCodeChooser -->
 

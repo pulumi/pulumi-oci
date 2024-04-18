@@ -31,23 +31,23 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := MeteringComputation.NewCustomTable(ctx, "testCustomTable", &MeteringComputation.CustomTableArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
+//			_, err := MeteringComputation.NewCustomTable(ctx, "test_custom_table", &MeteringComputation.CustomTableArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
 //				SavedCustomTable: &meteringcomputation.CustomTableSavedCustomTableArgs{
-//					DisplayName:      pulumi.Any(_var.Custom_table_saved_custom_table_display_name),
-//					ColumnGroupBies:  pulumi.Any(_var.Custom_table_saved_custom_table_column_group_by),
-//					CompartmentDepth: pulumi.Any(_var.Custom_table_saved_custom_table_compartment_depth),
+//					DisplayName:      pulumi.Any(customTableSavedCustomTableDisplayName),
+//					ColumnGroupBies:  pulumi.Any(customTableSavedCustomTableColumnGroupBy),
+//					CompartmentDepth: pulumi.Any(customTableSavedCustomTableCompartmentDepth),
 //					GroupByTags: meteringcomputation.CustomTableSavedCustomTableGroupByTagArray{
 //						&meteringcomputation.CustomTableSavedCustomTableGroupByTagArgs{
-//							Key:       pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_key),
-//							Namespace: pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_namespace),
-//							Value:     pulumi.Any(_var.Custom_table_saved_custom_table_group_by_tag_value),
+//							Key:       pulumi.Any(customTableSavedCustomTableGroupByTagKey),
+//							Namespace: pulumi.Any(customTableSavedCustomTableGroupByTagNamespace),
+//							Value:     pulumi.Any(customTableSavedCustomTableGroupByTagValue),
 //						},
 //					},
-//					RowGroupBies: pulumi.Any(_var.Custom_table_saved_custom_table_row_group_by),
-//					Version:      pulumi.Any(_var.Custom_table_saved_custom_table_version),
+//					RowGroupBies: pulumi.Any(customTableSavedCustomTableRowGroupBy),
+//					Version:      pulumi.Any(customTableSavedCustomTableVersion),
 //				},
-//				SavedReportId: pulumi.Any(oci_metering_computation_saved_report.Test_saved_report.Id),
+//				SavedReportId: pulumi.Any(testSavedReport.Id),
 //			})
 //			if err != nil {
 //				return err

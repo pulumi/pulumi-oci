@@ -107,8 +107,8 @@ def get_custom_tables(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_tables = oci.MeteringComputation.get_custom_tables(compartment_id=var["compartment_id"],
-        saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
+    test_custom_tables = oci.MeteringComputation.get_custom_tables(compartment_id=compartment_id,
+        saved_report_id=test_saved_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -148,8 +148,8 @@ def get_custom_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_custom_tables = oci.MeteringComputation.get_custom_tables(compartment_id=var["compartment_id"],
-        saved_report_id=oci_metering_computation_saved_report["test_saved_report"]["id"])
+    test_custom_tables = oci.MeteringComputation.get_custom_tables(compartment_id=compartment_id,
+        saved_report_id=test_saved_report["id"])
     ```
     <!--End PulumiCodeChooser -->
 

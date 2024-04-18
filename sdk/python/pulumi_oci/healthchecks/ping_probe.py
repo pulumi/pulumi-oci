@@ -307,13 +307,13 @@ class PingProbe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ping_probe = oci.health_checks.PingProbe("testPingProbe",
-            compartment_id=var["compartment_id"],
-            protocol=var["ping_probe_protocol"],
-            targets=var["ping_probe_targets"],
-            port=var["ping_probe_port"],
-            timeout_in_seconds=var["ping_probe_timeout_in_seconds"],
-            vantage_point_names=var["ping_probe_vantage_point_names"])
+        test_ping_probe = oci.health_checks.PingProbe("test_ping_probe",
+            compartment_id=compartment_id,
+            protocol=ping_probe_protocol,
+            targets=ping_probe_targets,
+            port=ping_probe_port,
+            timeout_in_seconds=ping_probe_timeout_in_seconds,
+            vantage_point_names=ping_probe_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -359,13 +359,13 @@ class PingProbe(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_ping_probe = oci.health_checks.PingProbe("testPingProbe",
-            compartment_id=var["compartment_id"],
-            protocol=var["ping_probe_protocol"],
-            targets=var["ping_probe_targets"],
-            port=var["ping_probe_port"],
-            timeout_in_seconds=var["ping_probe_timeout_in_seconds"],
-            vantage_point_names=var["ping_probe_vantage_point_names"])
+        test_ping_probe = oci.health_checks.PingProbe("test_ping_probe",
+            compartment_id=compartment_id,
+            protocol=ping_probe_protocol,
+            targets=ping_probe_targets,
+            port=ping_probe_port,
+            timeout_in_seconds=ping_probe_timeout_in_seconds,
+            vantage_point_names=ping_probe_vantage_point_names)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -27,65 +27,65 @@ namespace Pulumi.Oci.DatabaseMigration
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMigration = new Oci.DatabaseMigration.Migration("testMigration", new()
+    ///     var testMigration = new Oci.DatabaseMigration.Migration("test_migration", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         SourceDatabaseConnectionId = oci_database_migration_connection.Test_connection.Id,
-    ///         TargetDatabaseConnectionId = oci_database_migration_connection.Test_connection.Id,
-    ///         Type = @var.Migration_type,
+    ///         CompartmentId = compartmentId,
+    ///         SourceDatabaseConnectionId = testConnection.Id,
+    ///         TargetDatabaseConnectionId = testConnection.Id,
+    ///         Type = migrationType,
     ///         AdvisorSettings = new Oci.DatabaseMigration.Inputs.MigrationAdvisorSettingsArgs
     ///         {
-    ///             IsIgnoreErrors = @var.Migration_advisor_settings_is_ignore_errors,
-    ///             IsSkipAdvisor = @var.Migration_advisor_settings_is_skip_advisor,
+    ///             IsIgnoreErrors = migrationAdvisorSettingsIsIgnoreErrors,
+    ///             IsSkipAdvisor = migrationAdvisorSettingsIsSkipAdvisor,
     ///         },
-    ///         AgentId = oci_database_migration_agent.Test_agent.Id,
-    ///         CsvText = @var.Migration_csv_text,
+    ///         AgentId = testAgent.Id,
+    ///         CsvText = migrationCsvText,
     ///         DataTransferMediumDetails = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsArgs
     ///         {
     ///             DatabaseLinkDetails = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsArgs
     ///             {
-    ///                 Name = @var.Migration_data_transfer_medium_details_database_link_details_name,
+    ///                 Name = migrationDataTransferMediumDetailsDatabaseLinkDetailsName,
     ///                 WalletBucket = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketArgs
     ///                 {
-    ///                     Bucket = @var.Migration_data_transfer_medium_details_database_link_details_wallet_bucket_bucket,
-    ///                     Namespace = @var.Migration_data_transfer_medium_details_database_link_details_wallet_bucket_namespace,
+    ///                     Bucket = migrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketBucket,
+    ///                     Namespace = migrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucketNamespace,
     ///                 },
     ///             },
     ///             ObjectStorageDetails = new Oci.DatabaseMigration.Inputs.MigrationDataTransferMediumDetailsObjectStorageDetailsArgs
     ///             {
-    ///                 Bucket = @var.Migration_data_transfer_medium_details_object_storage_details_bucket,
-    ///                 Namespace = @var.Migration_data_transfer_medium_details_object_storage_details_namespace,
+    ///                 Bucket = migrationDataTransferMediumDetailsObjectStorageDetailsBucket,
+    ///                 Namespace = migrationDataTransferMediumDetailsObjectStorageDetailsNamespace,
     ///             },
     ///         },
     ///         DatapumpSettings = new Oci.DatabaseMigration.Inputs.MigrationDatapumpSettingsArgs
     ///         {
     ///             DataPumpParameters = new Oci.DatabaseMigration.Inputs.MigrationDatapumpSettingsDataPumpParametersArgs
     ///             {
-    ///                 Estimate = @var.Migration_datapump_settings_data_pump_parameters_estimate,
-    ///                 ExcludeParameters = @var.Migration_datapump_settings_data_pump_parameters_exclude_parameters,
-    ///                 ExportParallelismDegree = @var.Migration_datapump_settings_data_pump_parameters_export_parallelism_degree,
-    ///                 ImportParallelismDegree = @var.Migration_datapump_settings_data_pump_parameters_import_parallelism_degree,
-    ///                 IsCluster = @var.Migration_datapump_settings_data_pump_parameters_is_cluster,
-    ///                 TableExistsAction = @var.Migration_datapump_settings_data_pump_parameters_table_exists_action,
+    ///                 Estimate = migrationDatapumpSettingsDataPumpParametersEstimate,
+    ///                 ExcludeParameters = migrationDatapumpSettingsDataPumpParametersExcludeParameters,
+    ///                 ExportParallelismDegree = migrationDatapumpSettingsDataPumpParametersExportParallelismDegree,
+    ///                 ImportParallelismDegree = migrationDatapumpSettingsDataPumpParametersImportParallelismDegree,
+    ///                 IsCluster = migrationDatapumpSettingsDataPumpParametersIsCluster,
+    ///                 TableExistsAction = migrationDatapumpSettingsDataPumpParametersTableExistsAction,
     ///             },
     ///             ExportDirectoryObject = new Oci.DatabaseMigration.Inputs.MigrationDatapumpSettingsExportDirectoryObjectArgs
     ///             {
-    ///                 Name = @var.Migration_datapump_settings_export_directory_object_name,
-    ///                 Path = @var.Migration_datapump_settings_export_directory_object_path,
+    ///                 Name = migrationDatapumpSettingsExportDirectoryObjectName,
+    ///                 Path = migrationDatapumpSettingsExportDirectoryObjectPath,
     ///             },
     ///             ImportDirectoryObject = new Oci.DatabaseMigration.Inputs.MigrationDatapumpSettingsImportDirectoryObjectArgs
     ///             {
-    ///                 Name = @var.Migration_datapump_settings_import_directory_object_name,
-    ///                 Path = @var.Migration_datapump_settings_import_directory_object_path,
+    ///                 Name = migrationDatapumpSettingsImportDirectoryObjectName,
+    ///                 Path = migrationDatapumpSettingsImportDirectoryObjectPath,
     ///             },
-    ///             JobMode = @var.Migration_datapump_settings_job_mode,
+    ///             JobMode = migrationDatapumpSettingsJobMode,
     ///             MetadataRemaps = new[]
     ///             {
     ///                 new Oci.DatabaseMigration.Inputs.MigrationDatapumpSettingsMetadataRemapArgs
     ///                 {
-    ///                     NewValue = @var.Migration_datapump_settings_metadata_remaps_new_value,
-    ///                     OldValue = @var.Migration_datapump_settings_metadata_remaps_old_value,
-    ///                     Type = @var.Migration_datapump_settings_metadata_remaps_type,
+    ///                     NewValue = migrationDatapumpSettingsMetadataRemapsNewValue,
+    ///                     OldValue = migrationDatapumpSettingsMetadataRemapsOldValue,
+    ///                     Type = migrationDatapumpSettingsMetadataRemapsType,
     ///                 },
     ///             },
     ///         },
@@ -93,30 +93,30 @@ namespace Pulumi.Oci.DatabaseMigration
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
-    ///         DisplayName = @var.Migration_display_name,
+    ///         DisplayName = migrationDisplayName,
     ///         DumpTransferDetails = new Oci.DatabaseMigration.Inputs.MigrationDumpTransferDetailsArgs
     ///         {
     ///             Source = new Oci.DatabaseMigration.Inputs.MigrationDumpTransferDetailsSourceArgs
     ///             {
-    ///                 Kind = @var.Migration_dump_transfer_details_source_kind,
-    ///                 OciHome = @var.Migration_dump_transfer_details_source_oci_home,
-    ///                 WalletLocation = @var.Migration_dump_transfer_details_source_wallet_location,
+    ///                 Kind = migrationDumpTransferDetailsSourceKind,
+    ///                 OciHome = migrationDumpTransferDetailsSourceOciHome,
+    ///                 WalletLocation = migrationDumpTransferDetailsSourceWalletLocation,
     ///             },
     ///             Target = new Oci.DatabaseMigration.Inputs.MigrationDumpTransferDetailsTargetArgs
     ///             {
-    ///                 Kind = @var.Migration_dump_transfer_details_target_kind,
-    ///                 OciHome = @var.Migration_dump_transfer_details_target_oci_home,
-    ///                 WalletLocation = @var.Migration_dump_transfer_details_target_wallet_location,
+    ///                 Kind = migrationDumpTransferDetailsTargetKind,
+    ///                 OciHome = migrationDumpTransferDetailsTargetOciHome,
+    ///                 WalletLocation = migrationDumpTransferDetailsTargetWalletLocation,
     ///             },
     ///         },
     ///         ExcludeObjects = new[]
     ///         {
     ///             new Oci.DatabaseMigration.Inputs.MigrationExcludeObjectArgs
     ///             {
-    ///                 Object = @var.Migration_exclude_objects_object,
-    ///                 Owner = @var.Migration_exclude_objects_owner,
-    ///                 IsOmitExcludedTableFromReplication = @var.Migration_exclude_objects_is_omit_excluded_table_from_replication,
-    ///                 Type = @var.Migration_exclude_objects_type,
+    ///                 Object = migrationExcludeObjectsObject,
+    ///                 Owner = migrationExcludeObjectsOwner,
+    ///                 IsOmitExcludedTableFromReplication = migrationExcludeObjectsIsOmitExcludedTableFromReplication,
+    ///                 Type = migrationExcludeObjectsType,
     ///             },
     ///         },
     ///         FreeformTags = 
@@ -129,42 +129,42 @@ namespace Pulumi.Oci.DatabaseMigration
     ///             {
     ///                 RestAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubRestAdminCredentialsArgs
     ///                 {
-    ///                     Password = @var.Migration_golden_gate_details_hub_rest_admin_credentials_password,
-    ///                     Username = @var.Migration_golden_gate_details_hub_rest_admin_credentials_username,
+    ///                     Password = migrationGoldenGateDetailsHubRestAdminCredentialsPassword,
+    ///                     Username = migrationGoldenGateDetailsHubRestAdminCredentialsUsername,
     ///                 },
-    ///                 Url = @var.Migration_golden_gate_details_hub_url,
-    ///                 ComputeId = oci_database_migration_compute.Test_compute.Id,
+    ///                 Url = migrationGoldenGateDetailsHubUrl,
+    ///                 ComputeId = testCompute.Id,
     ///                 SourceContainerDbAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsArgs
     ///                 {
-    ///                     Password = @var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_password,
-    ///                     Username = @var.Migration_golden_gate_details_hub_source_container_db_admin_credentials_username,
+    ///                     Password = migrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsPassword,
+    ///                     Username = migrationGoldenGateDetailsHubSourceContainerDbAdminCredentialsUsername,
     ///                 },
     ///                 SourceDbAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubSourceDbAdminCredentialsArgs
     ///                 {
-    ///                     Password = @var.Migration_golden_gate_details_hub_source_db_admin_credentials_password,
-    ///                     Username = @var.Migration_golden_gate_details_hub_source_db_admin_credentials_username,
+    ///                     Password = migrationGoldenGateDetailsHubSourceDbAdminCredentialsPassword,
+    ///                     Username = migrationGoldenGateDetailsHubSourceDbAdminCredentialsUsername,
     ///                 },
-    ///                 SourceMicroservicesDeploymentName = oci_apigateway_deployment.Test_deployment.Name,
+    ///                 SourceMicroservicesDeploymentName = testDeployment.Name,
     ///                 TargetDbAdminCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsHubTargetDbAdminCredentialsArgs
     ///                 {
-    ///                     Password = @var.Migration_golden_gate_details_hub_target_db_admin_credentials_password,
-    ///                     Username = @var.Migration_golden_gate_details_hub_target_db_admin_credentials_username,
+    ///                     Password = migrationGoldenGateDetailsHubTargetDbAdminCredentialsPassword,
+    ///                     Username = migrationGoldenGateDetailsHubTargetDbAdminCredentialsUsername,
     ///                 },
-    ///                 TargetMicroservicesDeploymentName = oci_apigateway_deployment.Test_deployment.Name,
+    ///                 TargetMicroservicesDeploymentName = testDeployment.Name,
     ///             },
     ///             Settings = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsSettingsArgs
     ///             {
-    ///                 AcceptableLag = @var.Migration_golden_gate_details_settings_acceptable_lag,
+    ///                 AcceptableLag = migrationGoldenGateDetailsSettingsAcceptableLag,
     ///                 Extract = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsSettingsExtractArgs
     ///                 {
-    ///                     LongTransDuration = @var.Migration_golden_gate_details_settings_extract_long_trans_duration,
-    ///                     PerformanceProfile = @var.Migration_golden_gate_details_settings_extract_performance_profile,
+    ///                     LongTransDuration = migrationGoldenGateDetailsSettingsExtractLongTransDuration,
+    ///                     PerformanceProfile = migrationGoldenGateDetailsSettingsExtractPerformanceProfile,
     ///                 },
     ///                 Replicat = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateDetailsSettingsReplicatArgs
     ///                 {
-    ///                     MapParallelism = @var.Migration_golden_gate_details_settings_replicat_map_parallelism,
-    ///                     MaxApplyParallelism = @var.Migration_golden_gate_details_settings_replicat_max_apply_parallelism,
-    ///                     MinApplyParallelism = @var.Migration_golden_gate_details_settings_replicat_min_apply_parallelism,
+    ///                     MapParallelism = migrationGoldenGateDetailsSettingsReplicatMapParallelism,
+    ///                     MaxApplyParallelism = migrationGoldenGateDetailsSettingsReplicatMaxApplyParallelism,
+    ///                     MinApplyParallelism = migrationGoldenGateDetailsSettingsReplicatMinApplyParallelism,
     ///                 },
     ///             },
     ///         },
@@ -172,51 +172,51 @@ namespace Pulumi.Oci.DatabaseMigration
     ///         {
     ///             Settings = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSettingsArgs
     ///             {
-    ///                 AcceptableLag = @var.Migration_golden_gate_service_details_settings_acceptable_lag,
+    ///                 AcceptableLag = migrationGoldenGateServiceDetailsSettingsAcceptableLag,
     ///                 Extract = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSettingsExtractArgs
     ///                 {
-    ///                     LongTransDuration = @var.Migration_golden_gate_service_details_settings_extract_long_trans_duration,
-    ///                     PerformanceProfile = @var.Migration_golden_gate_service_details_settings_extract_performance_profile,
+    ///                     LongTransDuration = migrationGoldenGateServiceDetailsSettingsExtractLongTransDuration,
+    ///                     PerformanceProfile = migrationGoldenGateServiceDetailsSettingsExtractPerformanceProfile,
     ///                 },
     ///                 Replicat = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSettingsReplicatArgs
     ///                 {
-    ///                     MapParallelism = @var.Migration_golden_gate_service_details_settings_replicat_map_parallelism,
-    ///                     MaxApplyParallelism = @var.Migration_golden_gate_service_details_settings_replicat_max_apply_parallelism,
-    ///                     MinApplyParallelism = @var.Migration_golden_gate_service_details_settings_replicat_min_apply_parallelism,
+    ///                     MapParallelism = migrationGoldenGateServiceDetailsSettingsReplicatMapParallelism,
+    ///                     MaxApplyParallelism = migrationGoldenGateServiceDetailsSettingsReplicatMaxApplyParallelism,
+    ///                     MinApplyParallelism = migrationGoldenGateServiceDetailsSettingsReplicatMinApplyParallelism,
     ///                 },
     ///             },
     ///             SourceContainerDbCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSourceContainerDbCredentialsArgs
     ///             {
-    ///                 Password = @var.Migration_golden_gate_service_details_source_container_db_credentials_password,
-    ///                 Username = @var.Migration_golden_gate_service_details_source_container_db_credentials_username,
+    ///                 Password = migrationGoldenGateServiceDetailsSourceContainerDbCredentialsPassword,
+    ///                 Username = migrationGoldenGateServiceDetailsSourceContainerDbCredentialsUsername,
     ///             },
     ///             SourceDbCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsSourceDbCredentialsArgs
     ///             {
-    ///                 Password = @var.Migration_golden_gate_service_details_source_db_credentials_password,
-    ///                 Username = @var.Migration_golden_gate_service_details_source_db_credentials_username,
+    ///                 Password = migrationGoldenGateServiceDetailsSourceDbCredentialsPassword,
+    ///                 Username = migrationGoldenGateServiceDetailsSourceDbCredentialsUsername,
     ///             },
     ///             TargetDbCredentials = new Oci.DatabaseMigration.Inputs.MigrationGoldenGateServiceDetailsTargetDbCredentialsArgs
     ///             {
-    ///                 Password = @var.Migration_golden_gate_service_details_target_db_credentials_password,
-    ///                 Username = @var.Migration_golden_gate_service_details_target_db_credentials_username,
+    ///                 Password = migrationGoldenGateServiceDetailsTargetDbCredentialsPassword,
+    ///                 Username = migrationGoldenGateServiceDetailsTargetDbCredentialsUsername,
     ///             },
     ///         },
     ///         IncludeObjects = new[]
     ///         {
     ///             new Oci.DatabaseMigration.Inputs.MigrationIncludeObjectArgs
     ///             {
-    ///                 Object = @var.Migration_include_objects_object,
-    ///                 Owner = @var.Migration_include_objects_owner,
-    ///                 IsOmitExcludedTableFromReplication = @var.Migration_include_objects_is_omit_excluded_table_from_replication,
-    ///                 Type = @var.Migration_include_objects_type,
+    ///                 Object = migrationIncludeObjectsObject,
+    ///                 Owner = migrationIncludeObjectsOwner,
+    ///                 IsOmitExcludedTableFromReplication = migrationIncludeObjectsIsOmitExcludedTableFromReplication,
+    ///                 Type = migrationIncludeObjectsType,
     ///             },
     ///         },
-    ///         SourceContainerDatabaseConnectionId = oci_database_migration_connection.Test_connection.Id,
+    ///         SourceContainerDatabaseConnectionId = testConnection.Id,
     ///         VaultDetails = new Oci.DatabaseMigration.Inputs.MigrationVaultDetailsArgs
     ///         {
-    ///             CompartmentId = @var.Compartment_id,
-    ///             KeyId = oci_kms_key.Test_key.Id,
-    ///             VaultId = oci_kms_vault.Test_vault.Id,
+    ///             CompartmentId = compartmentId,
+    ///             KeyId = testKey.Id,
+    ///             VaultId = testVault.Id,
     ///         },
     ///     });
     /// 

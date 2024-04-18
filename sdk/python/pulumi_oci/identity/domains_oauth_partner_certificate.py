@@ -1307,23 +1307,23 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oauth_partner_certificate = oci.identity.DomainsOauthPartnerCertificate("testOauthPartnerCertificate",
-            certificate_alias=var["oauth_partner_certificate_certificate_alias"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_oauth_partner_certificate = oci.identity.DomainsOauthPartnerCertificate("test_oauth_partner_certificate",
+            certificate_alias=oauth_partner_certificate_certificate_alias,
+            idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:OAuthPartnerCertificate"],
-            authorization=var["oauth_partner_certificate_authorization"],
+            authorization=oauth_partner_certificate_authorization,
             external_id="externalId",
-            key_store_id=oci_database_key_store["test_key_store"]["id"],
-            key_store_name=oci_database_key_store["test_key_store"]["name"],
-            key_store_password=var["oauth_partner_certificate_key_store_password"],
-            map=var["oauth_partner_certificate_map"],
-            ocid=var["oauth_partner_certificate_ocid"],
-            resource_type_schema_version=var["oauth_partner_certificate_resource_type_schema_version"],
+            key_store_id=test_key_store["id"],
+            key_store_name=test_key_store["name"],
+            key_store_password=oauth_partner_certificate_key_store_password,
+            map=oauth_partner_certificate_map,
+            ocid=oauth_partner_certificate_ocid,
+            resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version,
             tags=[oci.identity.DomainsOauthPartnerCertificateTagArgs(
-                key=var["oauth_partner_certificate_tags_key"],
-                value=var["oauth_partner_certificate_tags_value"],
+                key=oauth_partner_certificate_tags_key,
+                value=oauth_partner_certificate_tags_value,
             )],
-            x509base64certificate=var["oauth_partner_certificate_x509base64certificate"])
+            x509base64certificate=oauth_partner_certificate_x509base64certificate)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -1465,23 +1465,23 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_oauth_partner_certificate = oci.identity.DomainsOauthPartnerCertificate("testOauthPartnerCertificate",
-            certificate_alias=var["oauth_partner_certificate_certificate_alias"],
-            idcs_endpoint=data["oci_identity_domain"]["test_domain"]["url"],
+        test_oauth_partner_certificate = oci.identity.DomainsOauthPartnerCertificate("test_oauth_partner_certificate",
+            certificate_alias=oauth_partner_certificate_certificate_alias,
+            idcs_endpoint=test_domain["url"],
             schemas=["urn:ietf:params:scim:schemas:oracle:idcs:OAuthPartnerCertificate"],
-            authorization=var["oauth_partner_certificate_authorization"],
+            authorization=oauth_partner_certificate_authorization,
             external_id="externalId",
-            key_store_id=oci_database_key_store["test_key_store"]["id"],
-            key_store_name=oci_database_key_store["test_key_store"]["name"],
-            key_store_password=var["oauth_partner_certificate_key_store_password"],
-            map=var["oauth_partner_certificate_map"],
-            ocid=var["oauth_partner_certificate_ocid"],
-            resource_type_schema_version=var["oauth_partner_certificate_resource_type_schema_version"],
+            key_store_id=test_key_store["id"],
+            key_store_name=test_key_store["name"],
+            key_store_password=oauth_partner_certificate_key_store_password,
+            map=oauth_partner_certificate_map,
+            ocid=oauth_partner_certificate_ocid,
+            resource_type_schema_version=oauth_partner_certificate_resource_type_schema_version,
             tags=[oci.identity.DomainsOauthPartnerCertificateTagArgs(
-                key=var["oauth_partner_certificate_tags_key"],
-                value=var["oauth_partner_certificate_tags_value"],
+                key=oauth_partner_certificate_tags_key,
+                value=oauth_partner_certificate_tags_value,
             )],
-            x509base64certificate=var["oauth_partner_certificate_x509base64certificate"])
+            x509base64certificate=oauth_partner_certificate_x509base64certificate)
         ```
         <!--End PulumiCodeChooser -->
 

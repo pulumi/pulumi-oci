@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testRepositoryMirror = new oci.devops.RepositoryMirror("testRepositoryMirror", {repositoryId: oci_devops_repository.test_repository.id});
+ * const testRepositoryMirror = new oci.devops.RepositoryMirror("test_repository_mirror", {repositoryId: testRepository.id});
  * ```
  * <!--End PulumiCodeChooser -->
  *

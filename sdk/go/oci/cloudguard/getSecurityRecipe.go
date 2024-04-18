@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetSecurityRecipe(ctx, &cloudguard.GetSecurityRecipeArgs{
-//				SecurityRecipeId: oci_cloud_guard_security_recipe.Test_security_recipe.Id,
+//				SecurityRecipeId: testSecurityRecipeOciCloudGuardSecurityRecipe.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -120,9 +120,9 @@ def get_tables(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tables = oci.Nosql.get_tables(compartment_id=var["compartment_id"],
-        name=var["table_name"],
-        state=var["table_state"])
+    test_tables = oci.Nosql.get_tables(compartment_id=compartment_id,
+        name=table_name,
+        state=table_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -166,9 +166,9 @@ def get_tables_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_tables = oci.Nosql.get_tables(compartment_id=var["compartment_id"],
-        name=var["table_name"],
-        state=var["table_state"])
+    test_tables = oci.Nosql.get_tables(compartment_id=compartment_id,
+        name=table_name,
+        state=table_state)
     ```
     <!--End PulumiCodeChooser -->
 

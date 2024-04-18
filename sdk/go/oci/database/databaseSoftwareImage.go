@@ -31,20 +31,20 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.NewDatabaseSoftwareImage(ctx, "testDatabaseSoftwareImage", &Database.DatabaseSoftwareImageArgs{
-//				CompartmentId:                      pulumi.Any(_var.Compartment_id),
-//				DisplayName:                        pulumi.Any(_var.Database_software_image_display_name),
-//				DatabaseSoftwareImageOneOffPatches: pulumi.Any(_var.Database_software_image_database_software_image_one_off_patches),
-//				DatabaseVersion:                    pulumi.Any(_var.Database_software_image_database_version),
-//				DefinedTags:                        pulumi.Any(_var.Database_software_image_defined_tags),
+//			_, err := Database.NewDatabaseSoftwareImage(ctx, "test_database_software_image", &Database.DatabaseSoftwareImageArgs{
+//				CompartmentId:                      pulumi.Any(compartmentId),
+//				DisplayName:                        pulumi.Any(databaseSoftwareImageDisplayName),
+//				DatabaseSoftwareImageOneOffPatches: pulumi.Any(databaseSoftwareImageDatabaseSoftwareImageOneOffPatches),
+//				DatabaseVersion:                    pulumi.Any(databaseSoftwareImageDatabaseVersion),
+//				DefinedTags:                        pulumi.Any(databaseSoftwareImageDefinedTags),
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				ImageShapeFamily: pulumi.Any(_var.Database_software_image_image_shape_family),
-//				ImageType:        pulumi.Any(_var.Database_software_image_image_type),
-//				LsInventory:      pulumi.Any(_var.Database_software_image_ls_inventory),
-//				PatchSet:         pulumi.Any(_var.Database_software_image_patch_set),
-//				SourceDbHomeId:   pulumi.Any(oci_database_db_home.Test_db_home.Id),
+//				ImageShapeFamily: pulumi.Any(databaseSoftwareImageImageShapeFamily),
+//				ImageType:        pulumi.Any(databaseSoftwareImageImageType),
+//				LsInventory:      pulumi.Any(databaseSoftwareImageLsInventory),
+//				PatchSet:         pulumi.Any(databaseSoftwareImagePatchSet),
+//				SourceDbHomeId:   pulumi.Any(testDbHome.Id),
 //			})
 //			if err != nil {
 //				return err

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfile = oci.DataSafe.getAuditProfile({
- *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
+ *     auditProfileId: testAuditProfileOciDataSafeAuditProfile.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetAuditProfileResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testAuditProfile = oci.DataSafe.getAuditProfile({
- *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
+ *     auditProfileId: testAuditProfileOciDataSafeAuditProfile.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

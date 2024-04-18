@@ -32,32 +32,33 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ObjectStorage.NewBucket(ctx, "testBucket", &ObjectStorage.BucketArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Namespace:     pulumi.Any(_var.Bucket_namespace),
-//				AccessType:    pulumi.Any(_var.Bucket_access_type),
-//				AutoTiering:   pulumi.Any(_var.Bucket_auto_tiering),
+//			_, err := ObjectStorage.NewBucket(ctx, "test_bucket", &ObjectStorage.BucketArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Name:          pulumi.Any(bucketName),
+//				Namespace:     pulumi.Any(bucketNamespace),
+//				AccessType:    pulumi.Any(bucketAccessType),
+//				AutoTiering:   pulumi.Any(bucketAutoTiering),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				KmsKeyId:            pulumi.Any(oci_kms_key.Test_key.Id),
-//				Metadata:            pulumi.Any(_var.Bucket_metadata),
-//				ObjectEventsEnabled: pulumi.Any(_var.Bucket_object_events_enabled),
-//				StorageTier:         pulumi.Any(_var.Bucket_storage_tier),
+//				KmsKeyId:            pulumi.Any(testKey.Id),
+//				Metadata:            pulumi.Any(bucketMetadata),
+//				ObjectEventsEnabled: pulumi.Any(bucketObjectEventsEnabled),
+//				StorageTier:         pulumi.Any(bucketStorageTier),
 //				RetentionRules: objectstorage.BucketRetentionRuleArray{
 //					&objectstorage.BucketRetentionRuleArgs{
-//						DisplayName: pulumi.Any(_var.Retention_rule_display_name),
+//						DisplayName: pulumi.Any(retentionRuleDisplayName),
 //						Duration: &objectstorage.BucketRetentionRuleDurationArgs{
-//							TimeAmount: pulumi.Any(_var.Retention_rule_duration_time_amount),
-//							TimeUnit:   pulumi.Any(_var.Retention_rule_duration_time_unit),
+//							TimeAmount: pulumi.Any(retentionRuleDurationTimeAmount),
+//							TimeUnit:   pulumi.Any(retentionRuleDurationTimeUnit),
 //						},
-//						TimeRuleLocked: pulumi.Any(_var.Retention_rule_time_rule_locked),
+//						TimeRuleLocked: pulumi.Any(retentionRuleTimeRuleLocked),
 //					},
 //				},
-//				Versioning: pulumi.Any(_var.Bucket_versioning),
+//				Versioning: pulumi.Any(bucketVersioning),
 //			})
 //			if err != nil {
 //				return err

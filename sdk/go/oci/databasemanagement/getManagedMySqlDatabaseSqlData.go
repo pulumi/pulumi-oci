@@ -31,10 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DatabaseManagement.GetManagedMySqlDatabaseSqlData(ctx, &databasemanagement.GetManagedMySqlDatabaseSqlDataArgs{
-//				EndTime:                _var.Managed_my_sql_database_sql_data_end_time,
-//				ManagedMySqlDatabaseId: oci_database_management_managed_my_sql_database.Test_managed_my_sql_database.Id,
-//				StartTime:              _var.Managed_my_sql_database_sql_data_start_time,
-//				FilterColumn:           pulumi.StringRef(_var.Managed_my_sql_database_sql_data_filter_column),
+//				EndTime:                managedMySqlDatabaseSqlDataEndTime,
+//				ManagedMySqlDatabaseId: testManagedMySqlDatabase.Id,
+//				StartTime:              managedMySqlDatabaseSqlDataStartTime,
+//				FilterColumn:           pulumi.StringRef(managedMySqlDatabaseSqlDataFilterColumn),
 //			}, nil)
 //			if err != nil {
 //				return err

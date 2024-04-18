@@ -23,9 +23,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPolicies = oci.Identity.getPolicies({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.policy_name,
- *     state: _var.policy_state,
+ *     compartmentId: tenancyOcid,
+ *     name: policyName,
+ *     state: policyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -103,9 +103,9 @@ export interface GetPoliciesResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPolicies = oci.Identity.getPolicies({
- *     compartmentId: _var.tenancy_ocid,
- *     name: _var.policy_name,
- *     state: _var.policy_state,
+ *     compartmentId: tenancyOcid,
+ *     name: policyName,
+ *     state: policyState,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

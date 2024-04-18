@@ -316,44 +316,44 @@ class CaptureFilter(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_capture_filter = oci.core.CaptureFilter("testCaptureFilter",
-            compartment_id=var["compartment_id"],
-            filter_type=var["capture_filter_filter_type"],
+        test_capture_filter = oci.core.CaptureFilter("test_capture_filter",
+            compartment_id=compartment_id,
+            filter_type=capture_filter_filter_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["capture_filter_display_name"],
+            display_name=capture_filter_display_name,
             flow_log_capture_filter_rules=[oci.core.CaptureFilterFlowLogCaptureFilterRuleArgs(
-                destination_cidr=var["capture_filter_flow_log_capture_filter_rules_destination_cidr"],
-                flow_log_type=var["capture_filter_flow_log_capture_filter_rules_flow_log_type"],
+                destination_cidr=capture_filter_flow_log_capture_filter_rules_destination_cidr,
+                flow_log_type=capture_filter_flow_log_capture_filter_rules_flow_log_type,
                 icmp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs(
-                    type=var["capture_filter_flow_log_capture_filter_rules_icmp_options_type"],
-                    code=var["capture_filter_flow_log_capture_filter_rules_icmp_options_code"],
+                    type=capture_filter_flow_log_capture_filter_rules_icmp_options_type,
+                    code=capture_filter_flow_log_capture_filter_rules_icmp_options_code,
                 ),
-                is_enabled=var["capture_filter_flow_log_capture_filter_rules_is_enabled"],
-                priority=var["capture_filter_flow_log_capture_filter_rules_priority"],
-                protocol=var["capture_filter_flow_log_capture_filter_rules_protocol"],
-                rule_action=var["capture_filter_flow_log_capture_filter_rules_rule_action"],
-                sampling_rate=var["capture_filter_flow_log_capture_filter_rules_sampling_rate"],
-                source_cidr=var["capture_filter_flow_log_capture_filter_rules_source_cidr"],
+                is_enabled=capture_filter_flow_log_capture_filter_rules_is_enabled,
+                priority=capture_filter_flow_log_capture_filter_rules_priority,
+                protocol=capture_filter_flow_log_capture_filter_rules_protocol,
+                rule_action=capture_filter_flow_log_capture_filter_rules_rule_action,
+                sampling_rate=capture_filter_flow_log_capture_filter_rules_sampling_rate,
+                source_cidr=capture_filter_flow_log_capture_filter_rules_source_cidr,
                 tcp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
                     ),
                 ),
                 udp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
                     ),
                 ),
             )],
@@ -361,33 +361,33 @@ class CaptureFilter(pulumi.CustomResource):
                 "Department": "Finance",
             },
             vtap_capture_filter_rules=[oci.core.CaptureFilterVtapCaptureFilterRuleArgs(
-                traffic_direction=var["capture_filter_vtap_capture_filter_rules_traffic_direction"],
-                destination_cidr=var["capture_filter_vtap_capture_filter_rules_destination_cidr"],
+                traffic_direction=capture_filter_vtap_capture_filter_rules_traffic_direction,
+                destination_cidr=capture_filter_vtap_capture_filter_rules_destination_cidr,
                 icmp_options=oci.core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs(
-                    type=var["capture_filter_vtap_capture_filter_rules_icmp_options_type"],
-                    code=var["capture_filter_vtap_capture_filter_rules_icmp_options_code"],
+                    type=capture_filter_vtap_capture_filter_rules_icmp_options_type,
+                    code=capture_filter_vtap_capture_filter_rules_icmp_options_code,
                 ),
-                protocol=var["capture_filter_vtap_capture_filter_rules_protocol"],
-                rule_action=var["capture_filter_vtap_capture_filter_rules_rule_action"],
-                source_cidr=var["capture_filter_vtap_capture_filter_rules_source_cidr"],
+                protocol=capture_filter_vtap_capture_filter_rules_protocol,
+                rule_action=capture_filter_vtap_capture_filter_rules_rule_action,
+                source_cidr=capture_filter_vtap_capture_filter_rules_source_cidr,
                 tcp_options=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
                     ),
                 ),
                 udp_options=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
                     ),
                 ),
             )])
@@ -438,44 +438,44 @@ class CaptureFilter(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_capture_filter = oci.core.CaptureFilter("testCaptureFilter",
-            compartment_id=var["compartment_id"],
-            filter_type=var["capture_filter_filter_type"],
+        test_capture_filter = oci.core.CaptureFilter("test_capture_filter",
+            compartment_id=compartment_id,
+            filter_type=capture_filter_filter_type,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["capture_filter_display_name"],
+            display_name=capture_filter_display_name,
             flow_log_capture_filter_rules=[oci.core.CaptureFilterFlowLogCaptureFilterRuleArgs(
-                destination_cidr=var["capture_filter_flow_log_capture_filter_rules_destination_cidr"],
-                flow_log_type=var["capture_filter_flow_log_capture_filter_rules_flow_log_type"],
+                destination_cidr=capture_filter_flow_log_capture_filter_rules_destination_cidr,
+                flow_log_type=capture_filter_flow_log_capture_filter_rules_flow_log_type,
                 icmp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleIcmpOptionsArgs(
-                    type=var["capture_filter_flow_log_capture_filter_rules_icmp_options_type"],
-                    code=var["capture_filter_flow_log_capture_filter_rules_icmp_options_code"],
+                    type=capture_filter_flow_log_capture_filter_rules_icmp_options_type,
+                    code=capture_filter_flow_log_capture_filter_rules_icmp_options_code,
                 ),
-                is_enabled=var["capture_filter_flow_log_capture_filter_rules_is_enabled"],
-                priority=var["capture_filter_flow_log_capture_filter_rules_priority"],
-                protocol=var["capture_filter_flow_log_capture_filter_rules_protocol"],
-                rule_action=var["capture_filter_flow_log_capture_filter_rules_rule_action"],
-                sampling_rate=var["capture_filter_flow_log_capture_filter_rules_sampling_rate"],
-                source_cidr=var["capture_filter_flow_log_capture_filter_rules_source_cidr"],
+                is_enabled=capture_filter_flow_log_capture_filter_rules_is_enabled,
+                priority=capture_filter_flow_log_capture_filter_rules_priority,
+                protocol=capture_filter_flow_log_capture_filter_rules_protocol,
+                rule_action=capture_filter_flow_log_capture_filter_rules_rule_action,
+                sampling_rate=capture_filter_flow_log_capture_filter_rules_sampling_rate,
+                source_cidr=capture_filter_flow_log_capture_filter_rules_source_cidr,
                 tcp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_tcp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_tcp_options_source_port_range_min,
                     ),
                 ),
                 udp_options=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_udp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterFlowLogCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max"],
-                        min=var["capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min"],
+                        max=capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_max,
+                        min=capture_filter_flow_log_capture_filter_rules_udp_options_source_port_range_min,
                     ),
                 ),
             )],
@@ -483,33 +483,33 @@ class CaptureFilter(pulumi.CustomResource):
                 "Department": "Finance",
             },
             vtap_capture_filter_rules=[oci.core.CaptureFilterVtapCaptureFilterRuleArgs(
-                traffic_direction=var["capture_filter_vtap_capture_filter_rules_traffic_direction"],
-                destination_cidr=var["capture_filter_vtap_capture_filter_rules_destination_cidr"],
+                traffic_direction=capture_filter_vtap_capture_filter_rules_traffic_direction,
+                destination_cidr=capture_filter_vtap_capture_filter_rules_destination_cidr,
                 icmp_options=oci.core.CaptureFilterVtapCaptureFilterRuleIcmpOptionsArgs(
-                    type=var["capture_filter_vtap_capture_filter_rules_icmp_options_type"],
-                    code=var["capture_filter_vtap_capture_filter_rules_icmp_options_code"],
+                    type=capture_filter_vtap_capture_filter_rules_icmp_options_type,
+                    code=capture_filter_vtap_capture_filter_rules_icmp_options_code,
                 ),
-                protocol=var["capture_filter_vtap_capture_filter_rules_protocol"],
-                rule_action=var["capture_filter_vtap_capture_filter_rules_rule_action"],
-                source_cidr=var["capture_filter_vtap_capture_filter_rules_source_cidr"],
+                protocol=capture_filter_vtap_capture_filter_rules_protocol,
+                rule_action=capture_filter_vtap_capture_filter_rules_rule_action,
+                source_cidr=capture_filter_vtap_capture_filter_rules_source_cidr,
                 tcp_options=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_tcp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleTcpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_tcp_options_source_port_range_min,
                     ),
                 ),
                 udp_options=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsArgs(
                     destination_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsDestinationPortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_udp_options_destination_port_range_min,
                     ),
                     source_port_range=oci.core.CaptureFilterVtapCaptureFilterRuleUdpOptionsSourcePortRangeArgs(
-                        max=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max"],
-                        min=var["capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min"],
+                        max=capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_max,
+                        min=capture_filter_vtap_capture_filter_rules_udp_options_source_port_range_min,
                     ),
                 ),
             )])

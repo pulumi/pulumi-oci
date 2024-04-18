@@ -30,7 +30,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespace = Oci.LogAnalytics.GetNamespace.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_namespace,
+        ///         Namespace = namespaceNamespace,
         ///     });
         /// 
         /// });
@@ -59,7 +59,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {
         ///     var testNamespace = Oci.LogAnalytics.GetNamespace.Invoke(new()
         ///     {
-        ///         Namespace = @var.Namespace_namespace,
+        ///         Namespace = namespaceNamespace,
         ///     });
         /// 
         /// });

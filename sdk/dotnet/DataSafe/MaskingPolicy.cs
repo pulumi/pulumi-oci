@@ -41,35 +41,35 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testMaskingPolicy = new Oci.DataSafe.MaskingPolicy("testMaskingPolicy", new()
+    ///     var testMaskingPolicy = new Oci.DataSafe.MaskingPolicy("test_masking_policy", new()
     ///     {
     ///         ColumnSources = new[]
     ///         {
     ///             new Oci.DataSafe.Inputs.MaskingPolicyColumnSourceArgs
     ///             {
-    ///                 ColumnSource = @var.Masking_policy_column_source_column_source,
-    ///                 SensitiveDataModelId = oci_data_safe_sensitive_data_model.Test_sensitive_data_model.Id,
-    ///                 TargetId = oci_cloud_guard_target.Test_target.Id,
+    ///                 ColumnSource = maskingPolicyColumnSourceColumnSource,
+    ///                 SensitiveDataModelId = testSensitiveDataModel.Id,
+    ///                 TargetId = testTarget.Id,
     ///             },
     ///         },
-    ///         CompartmentId = @var.Compartment_id,
+    ///         CompartmentId = compartmentId,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Masking_policy_description,
-    ///         DisplayName = @var.Masking_policy_display_name,
+    ///         Description = maskingPolicyDescription,
+    ///         DisplayName = maskingPolicyDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IsDropTempTablesEnabled = @var.Masking_policy_is_drop_temp_tables_enabled,
-    ///         IsRedoLoggingEnabled = @var.Masking_policy_is_redo_logging_enabled,
-    ///         IsRefreshStatsEnabled = @var.Masking_policy_is_refresh_stats_enabled,
-    ///         ParallelDegree = @var.Masking_policy_parallel_degree,
-    ///         PostMaskingScript = @var.Masking_policy_post_masking_script,
-    ///         PreMaskingScript = @var.Masking_policy_pre_masking_script,
-    ///         Recompile = @var.Masking_policy_recompile,
+    ///         IsDropTempTablesEnabled = maskingPolicyIsDropTempTablesEnabled,
+    ///         IsRedoLoggingEnabled = maskingPolicyIsRedoLoggingEnabled,
+    ///         IsRefreshStatsEnabled = maskingPolicyIsRefreshStatsEnabled,
+    ///         ParallelDegree = maskingPolicyParallelDegree,
+    ///         PostMaskingScript = maskingPolicyPostMaskingScript,
+    ///         PreMaskingScript = maskingPolicyPreMaskingScript,
+    ///         Recompile = maskingPolicyRecompile,
     ///     });
     /// 
     /// });

@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCompartment = Oci.Identity.GetCompartment.Invoke(new()
         ///     {
-        ///         Id = @var.Compartment_id,
+        ///         Id = compartmentId,
         ///     });
         /// 
         /// });
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Identity
         /// {
         ///     var testCompartment = Oci.Identity.GetCompartment.Invoke(new()
         ///     {
-        ///         Id = @var.Compartment_id,
+        ///         Id = compartmentId,
         ///     });
         /// 
         /// });

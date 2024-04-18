@@ -128,9 +128,9 @@ def get_alarm_suppressions(alarm_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_suppressions = oci.Monitoring.get_alarm_suppressions(alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-        display_name=var["alarm_suppression_display_name"],
-        state=var["alarm_suppression_state"])
+    test_alarm_suppressions = oci.Monitoring.get_alarm_suppressions(alarm_id=test_alarm["id"],
+        display_name=alarm_suppression_display_name,
+        state=alarm_suppression_state)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -182,9 +182,9 @@ def get_alarm_suppressions_output(alarm_id: Optional[pulumi.Input[str]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_alarm_suppressions = oci.Monitoring.get_alarm_suppressions(alarm_id=oci_monitoring_alarm["test_alarm"]["id"],
-        display_name=var["alarm_suppression_display_name"],
-        state=var["alarm_suppression_state"])
+    test_alarm_suppressions = oci.Monitoring.get_alarm_suppressions(alarm_id=test_alarm["id"],
+        display_name=alarm_suppression_display_name,
+        state=alarm_suppression_state)
     ```
     <!--End PulumiCodeChooser -->
 

@@ -16,18 +16,18 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testAuditProfileManagement = new oci.datasafe.AuditProfileManagement("testAuditProfileManagement", {
- *     compartmentId: _var.compartment_id,
- *     targetId: oci_data_safe_target_database.test_target_database.id,
+ * const testAuditProfileManagement = new oci.datasafe.AuditProfileManagement("test_audit_profile_management", {
+ *     compartmentId: compartmentId,
+ *     targetId: testTargetDatabase.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
- *     description: _var.audit_profile_management_description,
- *     displayName: _var.audit_profile_management_display_name,
+ *     description: auditProfileManagementDescription,
+ *     displayName: auditProfileManagementDisplayName,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isPaidUsageEnabled: _var.audit_profile_management_is_paid_usage_enabled,
+ *     isPaidUsageEnabled: auditProfileManagementIsPaidUsageEnabled,
  *     changeRetentionTrigger: true,
  *     offlineMonths: 10,
  *     onlineMonths: 7,

@@ -20,11 +20,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testOpsiConfigurationConfigurationItem = oci.Opsi.getOpsiConfigurationConfigurationItem({
- *     compartmentId: _var.compartment_id,
- *     configItemFields: _var.opsi_configuration_configuration_item_config_item_field,
- *     configItemsApplicableContexts: _var.opsi_configuration_configuration_item_config_items_applicable_context,
- *     name: _var.opsi_configuration_configuration_item_name,
- *     opsiConfigType: _var.opsi_configuration_configuration_item_opsi_config_type,
+ *     compartmentId: compartmentId,
+ *     configItemFields: opsiConfigurationConfigurationItemConfigItemField,
+ *     configItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+ *     name: opsiConfigurationConfigurationItemName,
+ *     opsiConfigType: opsiConfigurationConfigurationItemOpsiConfigType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -105,11 +105,11 @@ export interface GetOpsiConfigurationConfigurationItemResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testOpsiConfigurationConfigurationItem = oci.Opsi.getOpsiConfigurationConfigurationItem({
- *     compartmentId: _var.compartment_id,
- *     configItemFields: _var.opsi_configuration_configuration_item_config_item_field,
- *     configItemsApplicableContexts: _var.opsi_configuration_configuration_item_config_items_applicable_context,
- *     name: _var.opsi_configuration_configuration_item_name,
- *     opsiConfigType: _var.opsi_configuration_configuration_item_opsi_config_type,
+ *     compartmentId: compartmentId,
+ *     configItemFields: opsiConfigurationConfigurationItemConfigItemField,
+ *     configItemsApplicableContexts: opsiConfigurationConfigurationItemConfigItemsApplicableContext,
+ *     name: opsiConfigurationConfigurationItemName,
+ *     opsiConfigType: opsiConfigurationConfigurationItemOpsiConfigType,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

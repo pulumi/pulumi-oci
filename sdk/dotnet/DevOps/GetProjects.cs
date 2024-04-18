@@ -29,10 +29,10 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testProjects = Oci.DevOps.GetProjects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Project_id,
-        ///         Name = @var.Project_name,
-        ///         State = @var.Project_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = projectId,
+        ///         Name = projectName,
+        ///         State = projectState,
         ///     });
         /// 
         /// });
@@ -60,10 +60,10 @@ namespace Pulumi.Oci.DevOps
         /// {
         ///     var testProjects = Oci.DevOps.GetProjects.Invoke(new()
         ///     {
-        ///         CompartmentId = @var.Compartment_id,
-        ///         Id = @var.Project_id,
-        ///         Name = @var.Project_name,
-        ///         State = @var.Project_state,
+        ///         CompartmentId = compartmentId,
+        ///         Id = projectId,
+        ///         Name = projectName,
+        ///         State = projectState,
         ///     });
         /// 
         /// });

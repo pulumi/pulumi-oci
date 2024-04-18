@@ -51,16 +51,16 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testReplica = new Replica(&#34;testReplica&#34;, ReplicaArgs.builder()        
- *             .dbSystemId(oci_mysql_mysql_db_system.test_mysql_db_system().id())
+ *             .dbSystemId(testMysqlDbSystem.id())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.replica_description())
- *             .displayName(var_.replica_display_name())
+ *             .description(replicaDescription)
+ *             .displayName(replicaDisplayName)
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
- *             .isDeleteProtected(var_.replica_is_delete_protected())
+ *             .isDeleteProtected(replicaIsDeleteProtected)
  *             .replicaOverrides(ReplicaReplicaOverridesArgs.builder()
- *                 .configurationId(oci_mysql_mysql_configuration.test_mysql_configuration().id())
- *                 .mysqlVersion(var_.replica_replica_overrides_mysql_version())
- *                 .shapeName(oci_mysql_shape.test_shape().name())
+ *                 .configurationId(testMysqlConfiguration.id())
+ *                 .mysqlVersion(replicaReplicaOverridesMysqlVersion)
+ *                 .shapeName(testShape.name())
  *                 .build())
  *             .build());
  * 

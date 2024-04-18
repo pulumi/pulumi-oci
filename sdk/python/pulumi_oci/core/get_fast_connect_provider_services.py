@@ -97,7 +97,7 @@ def get_fast_connect_provider_services(compartment_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_services = oci.Core.get_fast_connect_provider_services(compartment_id=var["compartment_id"])
+    test_fast_connect_provider_services = oci.Core.get_fast_connect_provider_services(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 
@@ -139,7 +139,7 @@ def get_fast_connect_provider_services_output(compartment_id: Optional[pulumi.In
     import pulumi
     import pulumi_oci as oci
 
-    test_fast_connect_provider_services = oci.Core.get_fast_connect_provider_services(compartment_id=var["compartment_id"])
+    test_fast_connect_provider_services = oci.Core.get_fast_connect_provider_services(compartment_id=compartment_id)
     ```
     <!--End PulumiCodeChooser -->
 

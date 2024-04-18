@@ -192,9 +192,9 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_unprocessed_data_bucket_management = oci.log_analytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement",
-            bucket=var["log_analytics_unprocessed_data_bucket_management_bucket"],
-            namespace=var["log_analytics_unprocessed_data_bucket_management_namespace"])
+        test_log_analytics_unprocessed_data_bucket_management = oci.log_analytics.LogAnalyticsUnprocessedDataBucketManagement("test_log_analytics_unprocessed_data_bucket_management",
+            bucket=log_analytics_unprocessed_data_bucket_management_bucket,
+            namespace=log_analytics_unprocessed_data_bucket_management_namespace)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -232,9 +232,9 @@ class LogAnalyticsUnprocessedDataBucketManagement(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_log_analytics_unprocessed_data_bucket_management = oci.log_analytics.LogAnalyticsUnprocessedDataBucketManagement("testLogAnalyticsUnprocessedDataBucketManagement",
-            bucket=var["log_analytics_unprocessed_data_bucket_management_bucket"],
-            namespace=var["log_analytics_unprocessed_data_bucket_management_namespace"])
+        test_log_analytics_unprocessed_data_bucket_management = oci.log_analytics.LogAnalyticsUnprocessedDataBucketManagement("test_log_analytics_unprocessed_data_bucket_management",
+            bucket=log_analytics_unprocessed_data_bucket_management_bucket,
+            namespace=log_analytics_unprocessed_data_bucket_management_namespace)
         ```
         <!--End PulumiCodeChooser -->
 

@@ -50,17 +50,17 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalDbSystem = new ExternalDbSystem(&#34;testExternalDbSystem&#34;, ExternalDbSystemArgs.builder()        
- *             .compartmentId(var_.compartment_id())
- *             .dbSystemDiscoveryId(oci_database_management_db_system_discovery.test_db_system_discovery().id())
+ *             .compartmentId(compartmentId)
+ *             .dbSystemDiscoveryId(testDbSystemDiscovery.id())
  *             .databaseManagementConfig(ExternalDbSystemDatabaseManagementConfigArgs.builder()
- *                 .licenseModel(var_.external_db_system_database_management_config_license_model())
+ *                 .licenseModel(externalDbSystemDatabaseManagementConfigLicenseModel)
  *                 .build())
  *             .definedTags(Map.of(&#34;Operations.CostCenter&#34;, &#34;42&#34;))
- *             .displayName(var_.external_db_system_display_name())
+ *             .displayName(externalDbSystemDisplayName)
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .stackMonitoringConfig(ExternalDbSystemStackMonitoringConfigArgs.builder()
- *                 .isEnabled(var_.external_db_system_stack_monitoring_config_is_enabled())
- *                 .metadata(var_.external_db_system_stack_monitoring_config_metadata())
+ *                 .isEnabled(externalDbSystemStackMonitoringConfigIsEnabled)
+ *                 .metadata(externalDbSystemStackMonitoringConfigMetadata)
  *                 .build())
  *             .build());
  * 

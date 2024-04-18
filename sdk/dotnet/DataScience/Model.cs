@@ -25,42 +25,42 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testModel = new Oci.DataScience.Model("testModel", new()
+    ///     var testModel = new Oci.DataScience.Model("test_model", new()
     ///     {
-    ///         CompartmentId = @var.Compartment_id,
-    ///         ProjectId = oci_datascience_project.Test_project.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ProjectId = testProject.Id,
     ///         CustomMetadataLists = new[]
     ///         {
     ///             new Oci.DataScience.Inputs.ModelCustomMetadataListArgs
     ///             {
-    ///                 Category = @var.Model_custom_metadata_list_category,
-    ///                 Description = @var.Model_custom_metadata_list_description,
-    ///                 Key = @var.Model_custom_metadata_list_key,
-    ///                 Value = @var.Model_custom_metadata_list_value,
+    ///                 Category = modelCustomMetadataListCategory,
+    ///                 Description = modelCustomMetadataListDescription,
+    ///                 Key = modelCustomMetadataListKey,
+    ///                 Value = modelCustomMetadataListValue,
     ///             },
     ///         },
     ///         DefinedMetadataLists = new[]
     ///         {
     ///             new Oci.DataScience.Inputs.ModelDefinedMetadataListArgs
     ///             {
-    ///                 Category = @var.Model_defined_metadata_list_category,
-    ///                 Description = @var.Model_defined_metadata_list_description,
-    ///                 Key = @var.Model_defined_metadata_list_key,
-    ///                 Value = @var.Model_defined_metadata_list_value,
+    ///                 Category = modelDefinedMetadataListCategory,
+    ///                 Description = modelDefinedMetadataListDescription,
+    ///                 Key = modelDefinedMetadataListKey,
+    ///                 Value = modelDefinedMetadataListValue,
     ///             },
     ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         Description = @var.Model_description,
-    ///         DisplayName = @var.Model_display_name,
+    ///         Description = modelDescription,
+    ///         DisplayName = modelDisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         InputSchema = @var.Model_input_schema,
-    ///         OutputSchema = @var.Model_output_schema,
+    ///         InputSchema = modelInputSchema,
+    ///         OutputSchema = modelOutputSchema,
     ///     });
     /// 
     /// });

@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaRelease = Oci.Jms.GetJavaRelease.Invoke(new()
         ///     {
-        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///         ReleaseVersion = javaReleaseReleaseVersion,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Jms
         /// {
         ///     var testJavaRelease = Oci.Jms.GetJavaRelease.Invoke(new()
         ///     {
-        ///         ReleaseVersion = @var.Java_release_release_version,
+        ///         ReleaseVersion = javaReleaseReleaseVersion,
         ///     });
         /// 
         /// });

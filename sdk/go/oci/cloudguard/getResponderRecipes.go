@@ -44,12 +44,12 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := CloudGuard.GetResponderRecipes(ctx, &cloudguard.GetResponderRecipesArgs{
-//				CompartmentId:          _var.Compartment_id,
-//				AccessLevel:            pulumi.StringRef(_var.Responder_recipe_access_level),
-//				CompartmentIdInSubtree: pulumi.BoolRef(_var.Responder_recipe_compartment_id_in_subtree),
-//				DisplayName:            pulumi.StringRef(_var.Responder_recipe_display_name),
-//				ResourceMetadataOnly:   pulumi.BoolRef(_var.Responder_recipe_resource_metadata_only),
-//				State:                  pulumi.StringRef(_var.Responder_recipe_state),
+//				CompartmentId:          compartmentId,
+//				AccessLevel:            pulumi.StringRef(responderRecipeAccessLevel),
+//				CompartmentIdInSubtree: pulumi.BoolRef(responderRecipeCompartmentIdInSubtree),
+//				DisplayName:            pulumi.StringRef(responderRecipeDisplayName),
+//				ResourceMetadataOnly:   pulumi.BoolRef(responderRecipeResourceMetadataOnly),
+//				State:                  pulumi.StringRef(responderRecipeState),
 //			}, nil)
 //			if err != nil {
 //				return err

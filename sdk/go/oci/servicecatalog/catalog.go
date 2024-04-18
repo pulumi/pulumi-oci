@@ -31,9 +31,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := ServiceCatalog.NewCatalog(ctx, "testServiceCatalog", &ServiceCatalog.CatalogArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				DisplayName:   pulumi.Any(_var.Service_catalog_display_name),
+//			_, err := ServiceCatalog.NewCatalog(ctx, "test_service_catalog", &ServiceCatalog.CatalogArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(serviceCatalogDisplayName),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},

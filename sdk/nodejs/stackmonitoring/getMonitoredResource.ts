@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResource = oci.StackMonitoring.getMonitoredResource({
- *     monitoredResourceId: oci_stack_monitoring_monitored_resource.test_monitored_resource.id,
+ *     monitoredResourceId: testMonitoredResourceOciStackMonitoringMonitoredResource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -156,7 +156,7 @@ export interface GetMonitoredResourceResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testMonitoredResource = oci.StackMonitoring.getMonitoredResource({
- *     monitoredResourceId: oci_stack_monitoring_monitored_resource.test_monitored_resource.id,
+ *     monitoredResourceId: testMonitoredResourceOciStackMonitoringMonitoredResource.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

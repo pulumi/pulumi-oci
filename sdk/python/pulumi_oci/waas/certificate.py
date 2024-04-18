@@ -497,18 +497,18 @@ class Certificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_certificate = oci.waas.Certificate("testCertificate",
-            certificate_data=var["certificate_certificate_data"],
-            compartment_id=var["compartment_id"],
-            private_key_data=var["certificate_private_key_data"],
+        test_certificate = oci.waas.Certificate("test_certificate",
+            certificate_data=certificate_certificate_data,
+            compartment_id=compartment_id,
+            private_key_data=certificate_private_key_data,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["certificate_display_name"],
+            display_name=certificate_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_trust_verification_disabled=var["certificate_is_trust_verification_disabled"])
+            is_trust_verification_disabled=certificate_is_trust_verification_disabled)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -554,18 +554,18 @@ class Certificate(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_certificate = oci.waas.Certificate("testCertificate",
-            certificate_data=var["certificate_certificate_data"],
-            compartment_id=var["compartment_id"],
-            private_key_data=var["certificate_private_key_data"],
+        test_certificate = oci.waas.Certificate("test_certificate",
+            certificate_data=certificate_certificate_data,
+            compartment_id=compartment_id,
+            private_key_data=certificate_private_key_data,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            display_name=var["certificate_display_name"],
+            display_name=certificate_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            is_trust_verification_disabled=var["certificate_is_trust_verification_disabled"])
+            is_trust_verification_disabled=certificate_is_trust_verification_disabled)
         ```
         <!--End PulumiCodeChooser -->
 

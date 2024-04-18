@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentitySettings = oci.Identity.getDomainsIdentitySettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_setting_authorization,
- *     resourceTypeSchemaVersion: _var.identity_setting_resource_type_schema_version,
+ *     authorization: identitySettingAuthorization,
+ *     resourceTypeSchemaVersion: identitySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -107,11 +107,11 @@ export interface GetDomainsIdentitySettingsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIdentitySettings = oci.Identity.getDomainsIdentitySettings({
- *     idcsEndpoint: data.oci_identity_domain.test_domain.url,
+ *     idcsEndpoint: testDomain.url,
  *     attributeSets: ["all"],
  *     attributes: "",
- *     authorization: _var.identity_setting_authorization,
- *     resourceTypeSchemaVersion: _var.identity_setting_resource_type_schema_version,
+ *     authorization: identitySettingAuthorization,
+ *     resourceTypeSchemaVersion: identitySettingResourceTypeSchemaVersion,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

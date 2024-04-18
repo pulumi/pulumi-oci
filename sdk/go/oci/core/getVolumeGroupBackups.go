@@ -32,9 +32,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetVolumeGroupBackups(ctx, &core.GetVolumeGroupBackupsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				DisplayName:   pulumi.StringRef(_var.Volume_group_backup_display_name),
-//				VolumeGroupId: pulumi.StringRef(oci_core_volume_group.Test_volume_group.Id),
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(volumeGroupBackupDisplayName),
+//				VolumeGroupId: pulumi.StringRef(testVolumeGroup.Id),
 //			}, nil)
 //			if err != nil {
 //				return err

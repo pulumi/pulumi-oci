@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testFunction = oci.Functions.getFunction({
- *     functionId: oci_functions_function.test_function.id,
+ *     functionId: testFunctionOciFunctionsFunction.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -137,7 +137,7 @@ export interface GetFunctionResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testFunction = oci.Functions.getFunction({
- *     functionId: oci_functions_function.test_function.id,
+ *     functionId: testFunctionOciFunctionsFunction.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

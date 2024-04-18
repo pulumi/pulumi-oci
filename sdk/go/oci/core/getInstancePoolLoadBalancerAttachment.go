@@ -31,8 +31,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.GetInstancePoolLoadBalancerAttachment(ctx, &core.GetInstancePoolLoadBalancerAttachmentArgs{
-//				InstancePoolId:                       oci_core_instance_pool.Test_instance_pool.Id,
-//				InstancePoolLoadBalancerAttachmentId: oci_core_instance_pool_load_balancer_attachment.Test_instance_pool_load_balancer_attachment.Id,
+//				InstancePoolId:                       testInstancePool.Id,
+//				InstancePoolLoadBalancerAttachmentId: testInstancePoolLoadBalancerAttachmentOciCoreInstancePoolLoadBalancerAttachment.Id,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -467,20 +467,20 @@ class PrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_science_private_endpoint = oci.data_science.PrivateEndpoint("testDataSciencePrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            data_science_resource_type=var["data_science_private_endpoint_data_science_resource_type"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_data_science_private_endpoint = oci.data_science.PrivateEndpoint("test_data_science_private_endpoint",
+            compartment_id=compartment_id,
+            data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["data_science_private_endpoint_description"],
-            display_name=var["data_science_private_endpoint_display_name"],
+            description=data_science_private_endpoint_description,
+            display_name=data_science_private_endpoint_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            nsg_ids=var["data_science_private_endpoint_nsg_ids"],
-            sub_domain=var["data_science_private_endpoint_sub_domain"])
+            nsg_ids=data_science_private_endpoint_nsg_ids,
+            sub_domain=data_science_private_endpoint_sub_domain)
         ```
         <!--End PulumiCodeChooser -->
 
@@ -526,20 +526,20 @@ class PrivateEndpoint(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_data_science_private_endpoint = oci.data_science.PrivateEndpoint("testDataSciencePrivateEndpoint",
-            compartment_id=var["compartment_id"],
-            data_science_resource_type=var["data_science_private_endpoint_data_science_resource_type"],
-            subnet_id=oci_core_subnet["test_subnet"]["id"],
+        test_data_science_private_endpoint = oci.data_science.PrivateEndpoint("test_data_science_private_endpoint",
+            compartment_id=compartment_id,
+            data_science_resource_type=data_science_private_endpoint_data_science_resource_type,
+            subnet_id=test_subnet["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            description=var["data_science_private_endpoint_description"],
-            display_name=var["data_science_private_endpoint_display_name"],
+            description=data_science_private_endpoint_description,
+            display_name=data_science_private_endpoint_display_name,
             freeform_tags={
                 "Department": "Finance",
             },
-            nsg_ids=var["data_science_private_endpoint_nsg_ids"],
-            sub_domain=var["data_science_private_endpoint_sub_domain"])
+            nsg_ids=data_science_private_endpoint_nsg_ids,
+            sub_domain=data_science_private_endpoint_sub_domain)
         ```
         <!--End PulumiCodeChooser -->
 

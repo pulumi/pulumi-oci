@@ -20,9 +20,9 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnections = oci.Core.getIpsecConnections({
- *     compartmentId: _var.compartment_id,
- *     cpeId: oci_core_cpe.test_cpe.id,
- *     drgId: oci_core_drg.test_drg.id,
+ *     compartmentId: compartmentId,
+ *     cpeId: testCpe.id,
+ *     drgId: testDrg.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -97,9 +97,9 @@ export interface GetIpsecConnectionsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testIpSecConnections = oci.Core.getIpsecConnections({
- *     compartmentId: _var.compartment_id,
- *     cpeId: oci_core_cpe.test_cpe.id,
- *     drgId: oci_core_drg.test_drg.id,
+ *     compartmentId: compartmentId,
+ *     cpeId: testCpe.id,
+ *     drgId: testDrg.id,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

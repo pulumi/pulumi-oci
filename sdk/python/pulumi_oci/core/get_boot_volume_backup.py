@@ -281,7 +281,7 @@ def get_boot_volume_backup(boot_volume_backup_id: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=oci_core_boot_volume_backup["test_boot_volume_backup"]["id"])
+    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=test_boot_volume_backup_oci_core_boot_volume_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -331,7 +331,7 @@ def get_boot_volume_backup_output(boot_volume_backup_id: Optional[pulumi.Input[s
     import pulumi
     import pulumi_oci as oci
 
-    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=oci_core_boot_volume_backup["test_boot_volume_backup"]["id"])
+    test_boot_volume_backup = oci.Core.get_boot_volume_backup(boot_volume_backup_id=test_boot_volume_backup_oci_core_boot_volume_backup["id"])
     ```
     <!--End PulumiCodeChooser -->
 

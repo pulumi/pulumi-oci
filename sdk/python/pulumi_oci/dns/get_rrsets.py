@@ -150,12 +150,12 @@ def get_rrsets(domain: Optional[str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=oci_dns_zone["test_zone"]["id"],
-        domain=var["rrset_domain"],
-        domain_contains=var["rrset_domain"],
-        rtype=var["rrset_rtype"],
-        scope=var["rrset_scope"],
-        view_id=oci_dns_view["test_view"]["id"])
+    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=test_zone["id"],
+        domain=rrset_domain,
+        domain_contains=rrset_domain,
+        rtype=rrset_rtype,
+        scope=rrset_scope,
+        view_id=test_view["id"])
     ```
     <!--End PulumiCodeChooser -->
 
@@ -214,12 +214,12 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=oci_dns_zone["test_zone"]["id"],
-        domain=var["rrset_domain"],
-        domain_contains=var["rrset_domain"],
-        rtype=var["rrset_rtype"],
-        scope=var["rrset_scope"],
-        view_id=oci_dns_view["test_view"]["id"])
+    test_rrsets = oci.Dns.get_rrsets(zone_name_or_id=test_zone["id"],
+        domain=rrset_domain,
+        domain_contains=rrset_domain,
+        rtype=rrset_rtype,
+        scope=rrset_scope,
+        view_id=test_view["id"])
     ```
     <!--End PulumiCodeChooser -->
 

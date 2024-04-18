@@ -25,20 +25,20 @@ namespace Pulumi.Oci.Core
     /// 
     /// return await Deployment.RunAsync(() =&gt; 
     /// {
-    ///     var testIpv6 = new Oci.Core.Ipv6("testIpv6", new()
+    ///     var testIpv6 = new Oci.Core.Ipv6("test_ipv6", new()
     ///     {
-    ///         VnicId = oci_core_vnic_attachment.Test_vnic_attachment.Id,
+    ///         VnicId = testVnicAttachment.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
-    ///         DisplayName = @var.Ipv6_display_name,
+    ///         DisplayName = ipv6DisplayName,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         IpAddress = @var.Ipv6_ip_address,
-    ///         Ipv6subnetCidr = @var.Ipv6_ipv6subnet_cidr,
+    ///         IpAddress = ipv6IpAddress,
+    ///         Ipv6subnetCidr = ipv6Ipv6subnetCidr,
     ///     });
     /// 
     /// });

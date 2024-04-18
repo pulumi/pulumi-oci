@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopology = Oci.Core.GetComputeCapacityTopology.Invoke(new()
         ///     {
-        ///         ComputeCapacityTopologyId = oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopologyOciCoreComputeCapacityTopology.Id,
         ///     });
         /// 
         /// });
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Core
         /// {
         ///     var testComputeCapacityTopology = Oci.Core.GetComputeCapacityTopology.Invoke(new()
         ///     {
-        ///         ComputeCapacityTopologyId = oci_core_compute_capacity_topology.Test_compute_capacity_topology.Id,
+        ///         ComputeCapacityTopologyId = testComputeCapacityTopologyOciCoreComputeCapacityTopology.Id,
         ///     });
         /// 
         /// });

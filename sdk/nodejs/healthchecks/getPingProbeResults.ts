@@ -25,10 +25,10 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testPingProbeResults = oci.HealthChecks.getPingProbeResults({
- *     probeConfigurationId: oci_health_checks_probe_configuration.test_probe_configuration.id,
- *     startTimeGreaterThanOrEqualTo: _var.ping_probe_result_start_time_greater_than_or_equal_to,
- *     startTimeLessThanOrEqualTo: _var.ping_probe_result_start_time_less_than_or_equal_to,
- *     target: _var.ping_probe_result_target,
+ *     probeConfigurationId: testProbeConfiguration.id,
+ *     startTimeGreaterThanOrEqualTo: pingProbeResultStartTimeGreaterThanOrEqualTo,
+ *     startTimeLessThanOrEqualTo: pingProbeResultStartTimeLessThanOrEqualTo,
+ *     target: pingProbeResultTarget,
  * });
  * ```
  * <!--End PulumiCodeChooser -->
@@ -111,10 +111,10 @@ export interface GetPingProbeResultsResult {
  * import * as oci from "@pulumi/oci";
  *
  * const testPingProbeResults = oci.HealthChecks.getPingProbeResults({
- *     probeConfigurationId: oci_health_checks_probe_configuration.test_probe_configuration.id,
- *     startTimeGreaterThanOrEqualTo: _var.ping_probe_result_start_time_greater_than_or_equal_to,
- *     startTimeLessThanOrEqualTo: _var.ping_probe_result_start_time_less_than_or_equal_to,
- *     target: _var.ping_probe_result_target,
+ *     probeConfigurationId: testProbeConfiguration.id,
+ *     startTimeGreaterThanOrEqualTo: pingProbeResultStartTimeGreaterThanOrEqualTo,
+ *     startTimeLessThanOrEqualTo: pingProbeResultStartTimeLessThanOrEqualTo,
+ *     target: pingProbeResultTarget,
  * });
  * ```
  * <!--End PulumiCodeChooser -->

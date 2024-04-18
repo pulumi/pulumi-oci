@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly bool? IsHavingRestoreConfigOverrides;
         /// <summary>
-        /// The source descriminator.
+        /// The source descriminator. Example: `{"source_type": "BACKUP"}`.
         /// </summary>
         public readonly string SourceType;
 

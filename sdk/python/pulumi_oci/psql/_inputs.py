@@ -861,7 +861,7 @@ class DbSystemSourceArgs:
                  backup_id: Optional[pulumi.Input[str]] = None,
                  is_having_restore_config_overrides: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] source_type: The source descriminator.
+        :param pulumi.Input[str] source_type: The source descriminator. Example: `{"source_type": "BACKUP"}`.
         :param pulumi.Input[str] backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system backup.
         :param pulumi.Input[bool] is_having_restore_config_overrides: Deprecated. Don't use.
         """
@@ -875,7 +875,7 @@ class DbSystemSourceArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
         """
-        The source descriminator.
+        The source descriminator. Example: `{"source_type": "BACKUP"}`.
         """
         return pulumi.get(self, "source_type")
 
@@ -923,7 +923,7 @@ class DbSystemStorageDetailsArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] availability_domain: Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
-        :param pulumi.Input[str] iops: (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+        :param pulumi.Input[str] iops: (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
         """
         pulumi.set(__self__, "is_regionally_durable", is_regionally_durable)
         pulumi.set(__self__, "system_type", system_type)
@@ -976,7 +976,7 @@ class DbSystemStorageDetailsArgs:
     @pulumi.getter
     def iops(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+        (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
         """
         return pulumi.get(self, "iops")
 

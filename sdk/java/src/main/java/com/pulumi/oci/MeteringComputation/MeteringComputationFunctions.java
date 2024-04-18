@@ -35,6 +35,10 @@ import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesA
 import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueriesPlainArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryArgs;
 import com.pulumi.oci.MeteringComputation.inputs.GetUsageCarbonEmissionsQueryPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupPlainArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
+import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsPlainArgs;
 import com.pulumi.oci.MeteringComputation.outputs.GetAverageCarbonEmissionResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetCleanEnergyUsageResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetConfigurationResult;
@@ -49,6 +53,8 @@ import com.pulumi.oci.MeteringComputation.outputs.GetSchedulesResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsConfigResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueriesResult;
 import com.pulumi.oci.MeteringComputation.outputs.GetUsageCarbonEmissionsQueryResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetUsageStatementEmailRecipientsGroupResult;
+import com.pulumi.oci.MeteringComputation.outputs.GetUsageStatementEmailRecipientsGroupsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -2416,5 +2422,353 @@ public final class MeteringComputationFunctions {
      */
     public static CompletableFuture<GetUsageCarbonEmissionsQueryResult> getUsageCarbonEmissionsQueryPlain(GetUsageCarbonEmissionsQueryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getUsageCarbonEmissionsQuery:getUsageCarbonEmissionsQuery", TypeShape.of(GetUsageCarbonEmissionsQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .emailRecipientsGroupId(oci_identity_group.test_group().id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsageStatementEmailRecipientsGroupResult> getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs args) {
+        return getUsageStatementEmailRecipientsGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .emailRecipientsGroupId(oci_identity_group.test_group().id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUsageStatementEmailRecipientsGroupResult> getUsageStatementEmailRecipientsGroupPlain(GetUsageStatementEmailRecipientsGroupPlainArgs args) {
+        return getUsageStatementEmailRecipientsGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .emailRecipientsGroupId(oci_identity_group.test_group().id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsageStatementEmailRecipientsGroupResult> getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getUsageStatementEmailRecipientsGroup:getUsageStatementEmailRecipientsGroup", TypeShape.of(GetUsageStatementEmailRecipientsGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Usage Statement Email Recipients Group resource in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .emailRecipientsGroupId(oci_identity_group.test_group().id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUsageStatementEmailRecipientsGroupResult> getUsageStatementEmailRecipientsGroupPlain(GetUsageStatementEmailRecipientsGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getUsageStatementEmailRecipientsGroup:getUsageStatementEmailRecipientsGroup", TypeShape.of(GetUsageStatementEmailRecipientsGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsageStatementEmailRecipientsGroupsResult> getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs args) {
+        return getUsageStatementEmailRecipientsGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUsageStatementEmailRecipientsGroupsResult> getUsageStatementEmailRecipientsGroupsPlain(GetUsageStatementEmailRecipientsGroupsPlainArgs args) {
+        return getUsageStatementEmailRecipientsGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetUsageStatementEmailRecipientsGroupsResult> getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", TypeShape.of(GetUsageStatementEmailRecipientsGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Usage Statement Email Recipients Groups in Oracle Cloud Infrastructure Metering Computation service.
+     * 
+     * Return the saved usage statement email recipient group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetUsageStatementEmailRecipientsGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .subscriptionId(oci_onesubscription_subscription.test_subscription().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetUsageStatementEmailRecipientsGroupsResult> getUsageStatementEmailRecipientsGroupsPlain(GetUsageStatementEmailRecipientsGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:MeteringComputation/getUsageStatementEmailRecipientsGroups:getUsageStatementEmailRecipientsGroups", TypeShape.of(GetUsageStatementEmailRecipientsGroupsResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -134,6 +134,7 @@ namespace Pulumi.Oci.Database
         /// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly string ComputeModel;
+        public readonly string DatabaseSoftwareImageId;
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
@@ -209,6 +210,10 @@ namespace Pulumi.Oci.Database
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// List of One-Off patches that has been successfully applied to Autonomous Container Database
+        /// </summary>
+        public readonly ImmutableArray<string> ListOneOffPatches;
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult> MaintenanceWindowDetails;
         /// <summary>
         /// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -243,7 +248,7 @@ namespace Pulumi.Oci.Database
         public readonly string PeerDbUniqueName;
         public readonly string ProtectionMode;
         /// <summary>
-        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
         /// </summary>
         public readonly ImmutableArray<double> ProvisionableCpuses;
         /// <summary>
@@ -251,9 +256,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double ProvisionedCpus;
         /// <summary>
-        /// For Autonomous Databases on Dedicated Exadata Infrastructure:
-        /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>
@@ -326,6 +329,8 @@ namespace Pulumi.Oci.Database
 
             string computeModel,
 
+            string databaseSoftwareImageId,
+
             string dbName,
 
             int dbSplitThreshold,
@@ -367,6 +372,8 @@ namespace Pulumi.Oci.Database
             string lastMaintenanceRunId,
 
             string lifecycleDetails,
+
+            ImmutableArray<string> listOneOffPatches,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailResult> maintenanceWindowDetails,
 
@@ -439,6 +446,7 @@ namespace Pulumi.Oci.Database
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
+            DatabaseSoftwareImageId = databaseSoftwareImageId;
             DbName = dbName;
             DbSplitThreshold = dbSplitThreshold;
             DbUniqueName = dbUniqueName;
@@ -460,6 +468,7 @@ namespace Pulumi.Oci.Database
             LargestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LifecycleDetails = lifecycleDetails;
+            ListOneOffPatches = listOneOffPatches;
             MaintenanceWindowDetails = maintenanceWindowDetails;
             MaintenanceWindows = maintenanceWindows;
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;

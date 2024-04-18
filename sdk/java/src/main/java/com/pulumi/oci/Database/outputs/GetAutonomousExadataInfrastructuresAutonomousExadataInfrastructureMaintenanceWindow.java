@@ -61,6 +61,7 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
      * 
      */
     private String preference;
+    private List<Boolean> skipRus;
     /**
      * @return Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
@@ -132,6 +133,9 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
     public String preference() {
         return this.preference;
     }
+    public List<Boolean> skipRus() {
+        return this.skipRus;
+    }
     /**
      * @return Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
@@ -158,6 +162,7 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
         private List<GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonth> months;
         private String patchingMode;
         private String preference;
+        private List<Boolean> skipRus;
         private List<Integer> weeksOfMonths;
         public Builder() {}
         public Builder(GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow defaults) {
@@ -171,6 +176,7 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
     	      this.months = defaults.months;
     	      this.patchingMode = defaults.patchingMode;
     	      this.preference = defaults.preference;
+    	      this.skipRus = defaults.skipRus;
     	      this.weeksOfMonths = defaults.weeksOfMonths;
         }
 
@@ -256,6 +262,17 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
             return this;
         }
         @CustomType.Setter
+        public Builder skipRus(List<Boolean> skipRus) {
+            if (skipRus == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow", "skipRus");
+            }
+            this.skipRus = skipRus;
+            return this;
+        }
+        public Builder skipRus(Boolean... skipRus) {
+            return skipRus(List.of(skipRus));
+        }
+        @CustomType.Setter
         public Builder weeksOfMonths(List<Integer> weeksOfMonths) {
             if (weeksOfMonths == null) {
               throw new MissingRequiredPropertyException("GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindow", "weeksOfMonths");
@@ -277,6 +294,7 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
             _resultValue.months = months;
             _resultValue.patchingMode = patchingMode;
             _resultValue.preference = preference;
+            _resultValue.skipRus = skipRus;
             _resultValue.weeksOfMonths = weeksOfMonths;
             return _resultValue;
         }

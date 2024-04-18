@@ -222,6 +222,9 @@ __all__ = [
     'GetAutonomousDatabaseResourcePoolSummaryResult',
     'GetAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabaseScheduledOperationDayOfWeekResult',
+    'GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionResult',
+    'GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItemResult',
+    'GetAutonomousDatabaseSoftwareImagesFilterResult',
     'GetAutonomousDatabaseStandbyDbResult',
     'GetAutonomousDatabasesAutonomousDatabaseResult',
     'GetAutonomousDatabasesAutonomousDatabaseApexDetailResult',
@@ -936,6 +939,8 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -960,6 +965,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.AutonomousContainerDatabaseMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -974,6 +980,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -994,6 +1001,8 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -1073,6 +1082,14 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[Sequence[int]]:
         """
@@ -1119,6 +1136,8 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -1143,6 +1162,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
                  months: Optional[Sequence['outputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -1157,6 +1177,7 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
                
                *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -1177,6 +1198,8 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -1254,6 +1277,14 @@ class AutonomousContainerDatabaseMaintenanceWindowDetails(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -2673,6 +2704,8 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -2697,6 +2730,7 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.AutonomousExadataInfrastructureMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -2731,6 +2765,8 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2810,6 +2846,11 @@ class AutonomousExadataInfrastructureMaintenanceWindow(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[Sequence[int]]:
         """
@@ -2856,6 +2897,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -2880,6 +2923,7 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
                  months: Optional[Sequence['outputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -2914,6 +2958,8 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -2991,6 +3037,11 @@ class AutonomousExadataInfrastructureMaintenanceWindowDetails(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -3075,6 +3126,8 @@ class AutonomousVmClusterMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -3099,6 +3152,7 @@ class AutonomousVmClusterMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param Sequence['AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
@@ -3130,6 +3184,8 @@ class AutonomousVmClusterMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3200,6 +3256,11 @@ class AutonomousVmClusterMaintenanceWindow(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[Sequence[int]]:
         """
@@ -3246,6 +3307,8 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -3270,6 +3333,7 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
                  months: Optional[Sequence['outputs.AutonomousVmClusterMaintenanceWindowDetailMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param Sequence['AutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
@@ -3301,6 +3365,8 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3369,6 +3435,11 @@ class AutonomousVmClusterMaintenanceWindowDetail(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -3578,6 +3649,8 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -3602,6 +3675,7 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -3636,6 +3710,8 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3715,6 +3791,11 @@ class CloudAutonomousVmClusterMaintenanceWindow(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[Sequence[int]]:
         """
@@ -3761,6 +3842,8 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -3785,6 +3868,7 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
                  months: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -3819,6 +3903,8 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -3896,6 +3982,11 @@ class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -4047,6 +4138,8 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -4071,6 +4164,7 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.CloudExadataInfrastructureMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -4105,6 +4199,8 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -4182,6 +4278,11 @@ class CloudExadataInfrastructureMaintenanceWindow(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -7484,6 +7585,8 @@ class DbSystemMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -7508,6 +7611,7 @@ class DbSystemMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.DbSystemMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -7542,6 +7646,8 @@ class DbSystemMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -7621,6 +7727,11 @@ class DbSystemMaintenanceWindow(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Optional[Sequence[int]]:
         """
@@ -7667,6 +7778,8 @@ class DbSystemMaintenanceWindowDetails(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -7691,6 +7804,7 @@ class DbSystemMaintenanceWindowDetails(dict):
                  months: Optional[Sequence['outputs.DbSystemMaintenanceWindowDetailsMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -7725,6 +7839,8 @@ class DbSystemMaintenanceWindowDetails(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -7802,6 +7918,11 @@ class DbSystemMaintenanceWindowDetails(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -8573,6 +8694,8 @@ class ExadataInfrastructureMaintenanceWindow(dict):
             suggest = "lead_time_in_weeks"
         elif key == "patchingMode":
             suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
         elif key == "weeksOfMonths":
             suggest = "weeks_of_months"
 
@@ -8597,6 +8720,7 @@ class ExadataInfrastructureMaintenanceWindow(dict):
                  months: Optional[Sequence['outputs.ExadataInfrastructureMaintenanceWindowMonth']] = None,
                  patching_mode: Optional[str] = None,
                  preference: Optional[str] = None,
+                 skip_rus: Optional[Sequence[bool]] = None,
                  weeks_of_months: Optional[Sequence[int]] = None):
         """
         :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -8631,6 +8755,8 @@ class ExadataInfrastructureMaintenanceWindow(dict):
             pulumi.set(__self__, "patching_mode", patching_mode)
         if preference is not None:
             pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
         if weeks_of_months is not None:
             pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
@@ -8708,6 +8834,11 @@ class ExadataInfrastructureMaintenanceWindow(dict):
         (Updatable) The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[bool]]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -12148,6 +12279,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -12160,6 +12292,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowResult(dict):
         :param Sequence['GetAutonomousContainerDatabaseMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -12171,6 +12304,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -12247,6 +12381,14 @@ class GetAutonomousContainerDatabaseMaintenanceWindowResult(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -12285,6 +12427,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowDetailResult(dict):
                  months: Sequence['outputs.GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -12297,6 +12440,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowDetailResult(dict):
         :param Sequence['GetAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -12308,6 +12452,7 @@ class GetAutonomousContainerDatabaseMaintenanceWindowDetailResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -12382,6 +12527,14 @@ class GetAutonomousContainerDatabaseMaintenanceWindowDetailResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -12550,7 +12703,7 @@ class GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUs
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
-        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         """
@@ -12589,7 +12742,7 @@ class GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUs
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -12739,6 +12892,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  cloud_autonomous_vm_cluster_id: str,
                  compartment_id: str,
                  compute_model: str,
+                 database_software_image_id: str,
                  db_name: str,
                  db_split_threshold: int,
                  db_unique_name: str,
@@ -12760,6 +12914,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  largest_provisionable_autonomous_database_in_cpus: float,
                  last_maintenance_run_id: str,
                  lifecycle_details: str,
+                 list_one_off_patches: Sequence[str],
                  maintenance_window_details: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailResult'],
                  maintenance_windows: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowResult'],
                  memory_per_oracle_compute_unit_in_gbs: int,
@@ -12818,17 +12973,19 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param float largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence[str] list_one_off_patches: List of One-Off patches that has been successfully applied to Autonomous Container Database
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+               <<<<<<< HEAD
         :param str net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+               =======
+               >>>>>>> 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param str patch_model: Database patch model preference.
-        :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous Container Database.
-        :param float reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
-               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        :param float reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         :param float reserved_cpus: The number of CPUs reserved in an Autonomous Container Database.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
@@ -12850,6 +13007,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_model", compute_model)
+        pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         pulumi.set(__self__, "db_name", db_name)
         pulumi.set(__self__, "db_split_threshold", db_split_threshold)
         pulumi.set(__self__, "db_unique_name", db_unique_name)
@@ -12871,6 +13029,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "list_one_off_patches", list_one_off_patches)
         pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
@@ -12966,6 +13125,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
+
+    @property
+    @pulumi.getter(name="databaseSoftwareImageId")
+    def database_software_image_id(self) -> str:
+        return pulumi.get(self, "database_software_image_id")
 
     @property
     @pulumi.getter(name="dbName")
@@ -13127,6 +13291,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="listOneOffPatches")
+    def list_one_off_patches(self) -> Sequence[str]:
+        """
+        List of One-Off patches that has been successfully applied to Autonomous Container Database
+        """
+        return pulumi.get(self, "list_one_off_patches")
+
+    @property
     @pulumi.getter(name="maintenanceWindowDetails")
     def maintenance_window_details(self) -> Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailResult']:
         return pulumi.get(self, "maintenance_window_details")
@@ -13144,6 +13316,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
         The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+        <<<<<<< HEAD
         """
         return pulumi.get(self, "memory_per_oracle_compute_unit_in_gbs")
 
@@ -13152,6 +13325,8 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     def net_services_architecture(self) -> str:
         """
         Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        =======
+        >>>>>>> 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
         """
         return pulumi.get(self, "net_services_architecture")
 
@@ -13223,7 +13398,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        An array of CPU values that can be used to successfully provision a single Autonomous Database.\\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        An array of CPU values that can be used to successfully provision a single Autonomous Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -13239,9 +13414,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        For Autonomous Databases on Dedicated Exadata Infrastructure:
-        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -13501,6 +13674,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
                  months: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -13513,6 +13687,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -13524,6 +13699,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -13600,6 +13776,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -13638,6 +13822,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
                  months: Sequence['outputs.GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -13650,6 +13835,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
@@ -13661,6 +13847,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -13735,6 +13922,14 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindo
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -15452,6 +15647,191 @@ class GetAutonomousDatabaseScheduledOperationDayOfWeekResult(dict):
         Name of the day of the week.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 autonomous_dsi_one_off_patches: Sequence[str],
+                 compartment_id: str,
+                 database_version: str,
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 image_shape_family: str,
+                 lifecycle_details: str,
+                 release_update: str,
+                 source_cdb_id: str,
+                 state: str,
+                 time_created: str):
+        """
+        :param Sequence[str] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous Database Software Image
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str database_version: The database version with which the Autonomous Database Software Image is to be built.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
+        :param str lifecycle_details: Detailed message for the lifecycle state.
+        :param str release_update: The Release Updates.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param str time_created: The date and time the Autonomous Database Software Image was created.
+        """
+        pulumi.set(__self__, "autonomous_dsi_one_off_patches", autonomous_dsi_one_off_patches)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "image_shape_family", image_shape_family)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "release_update", release_update)
+        pulumi.set(__self__, "source_cdb_id", source_cdb_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="autonomousDsiOneOffPatches")
+    def autonomous_dsi_one_off_patches(self) -> Sequence[str]:
+        """
+        One-off patches included in the Autonomous Database Software Image
+        """
+        return pulumi.get(self, "autonomous_dsi_one_off_patches")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> str:
+        """
+        The database version with which the Autonomous Database Software Image is to be built.
+        """
+        return pulumi.get(self, "database_version")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="imageShapeFamily")
+    def image_shape_family(self) -> str:
+        """
+        A filter to return only resources that match the given image shape family exactly.
+        """
+        return pulumi.get(self, "image_shape_family")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Detailed message for the lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="releaseUpdate")
+    def release_update(self) -> str:
+        """
+        The Release Updates.
+        """
+        return pulumi.get(self, "release_update")
+
+    @property
+    @pulumi.getter(name="sourceCdbId")
+    def source_cdb_id(self) -> str:
+        return pulumi.get(self, "source_cdb_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the Autonomous Database Software Image was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseSoftwareImagesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -19957,6 +20337,7 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetAutonomousExadataInfrastructureMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -19980,6 +20361,7 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -20056,6 +20438,11 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowResult(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -20094,6 +20481,7 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult(dict):
                  months: Sequence['outputs.GetAutonomousExadataInfrastructureMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -20117,6 +20505,7 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -20191,6 +20580,11 @@ class GetAutonomousExadataInfrastructureMaintenanceWindowDetailResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -20648,6 +21042,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
                  months: Sequence['outputs.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -20671,6 +21066,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -20747,6 +21143,11 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -20785,6 +21186,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
                  months: Sequence['outputs.GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -20808,6 +21210,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -20882,6 +21285,11 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureMaintena
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -21173,15 +21581,15 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
                  used_cpus: float):
         """
         :param Sequence['GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: list of autonomous container database resource usage per autonomous virtual machine.
-        :param float available_cpus: CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        :param float available_cpus: CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
-        :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs / cores for ADB creation.
+        :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous Database.
         :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
-        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         """
@@ -21210,7 +21618,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -21258,7 +21666,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        Valid list of provisionable CPUs / cores for ADB creation.
+        Valid list of provisionable CPUs for Autonomous Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -21274,7 +21682,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -21308,7 +21716,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
-        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         """
@@ -21347,7 +21755,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -21407,6 +21815,7 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetAutonomousVmClusterMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param Sequence['GetAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
@@ -21426,6 +21835,7 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -21490,6 +21900,11 @@ class GetAutonomousVmClusterMaintenanceWindowResult(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -21528,6 +21943,7 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
                  months: Sequence['outputs.GetAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param Sequence['GetAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
@@ -21547,6 +21963,7 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -21609,6 +22026,11 @@ class GetAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -21942,7 +22364,9 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int provisionable_autonomous_container_databases: **Deprecated.** Use field totalContainerDatabases.
         :param int provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param float provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
-        :param int reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param int reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param float reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param int scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
@@ -22310,7 +22734,9 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> int:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -22412,6 +22838,7 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
@@ -22431,6 +22858,7 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -22495,6 +22923,11 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowResult(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -22533,6 +22966,7 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
                  months: Sequence['outputs.GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param Sequence['GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
@@ -22552,6 +22986,7 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -22614,6 +23049,11 @@ class GetAutonomousVmClustersAutonomousVmClusterMaintenanceWindowDetailResult(di
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -23343,15 +23783,15 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
                  used_cpus: float):
         """
         :param Sequence['GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: List of autonomous container database resource usage per autonomous virtual machine.
-        :param float available_cpus: CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        :param float available_cpus: CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
-        :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs / cores for ADB creation.
+        :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous Database.
         :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
-        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         """
@@ -23380,7 +23820,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -23428,7 +23868,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     @pulumi.getter(name="provisionableCpuses")
     def provisionable_cpuses(self) -> Sequence[float]:
         """
-        Valid list of provisionable CPUs / cores for ADB creation.
+        Valid list of provisionable CPUs for Autonomous Database.
         """
         return pulumi.get(self, "provisionable_cpuses")
 
@@ -23444,7 +23884,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -23478,7 +23918,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float provisioned_cpus: CPUs / cores assigned to ADBs in the Autonomous Container Database.
-        :param float reclaimable_cpus: CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        :param float reclaimable_cpus: Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         :param float reserved_cpus: CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
         :param float used_cpus: CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and reclaimable CPUs/ cores.
         """
@@ -23517,7 +23957,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> float:
         """
-        CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -23577,6 +24017,7 @@ class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -23600,6 +24041,7 @@ class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -23676,6 +24118,11 @@ class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -23714,6 +24161,7 @@ class GetCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
                  months: Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -23737,6 +24185,7 @@ class GetCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -23811,6 +24260,11 @@ class GetCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -24691,6 +25145,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResul
                  months: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -24714,6 +25169,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResul
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -24790,6 +25246,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResul
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -24828,6 +25289,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetai
                  months: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -24851,6 +25313,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetai
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -24925,6 +25388,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetai
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -25052,6 +25520,7 @@ class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetCloudExadataInfrastructureMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -25075,6 +25544,7 @@ class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -25149,6 +25619,11 @@ class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -25635,6 +26110,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowR
                  months: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -25658,6 +26134,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowR
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -25732,6 +26209,11 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowR
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -34449,6 +34931,7 @@ class GetDbSystemsDbSystemMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetDbSystemsDbSystemMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -34472,6 +34955,7 @@ class GetDbSystemsDbSystemMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -34548,6 +35032,11 @@ class GetDbSystemsDbSystemMaintenanceWindowResult(dict):
         return pulumi.get(self, "preference")
 
     @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
+
+    @property
     @pulumi.getter(name="weeksOfMonths")
     def weeks_of_months(self) -> Sequence[int]:
         """
@@ -34586,6 +35075,7 @@ class GetDbSystemsDbSystemMaintenanceWindowDetailResult(dict):
                  months: Sequence['outputs.GetDbSystemsDbSystemMaintenanceWindowDetailMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -34609,6 +35099,7 @@ class GetDbSystemsDbSystemMaintenanceWindowDetailResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -34683,6 +35174,11 @@ class GetDbSystemsDbSystemMaintenanceWindowDetailResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -35098,6 +35594,7 @@ class GetExadataInfrastructureMaintenanceWindowResult(dict):
                  months: Sequence['outputs.GetExadataInfrastructureMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -35121,6 +35618,7 @@ class GetExadataInfrastructureMaintenanceWindowResult(dict):
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -35195,6 +35693,11 @@ class GetExadataInfrastructureMaintenanceWindowResult(dict):
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")
@@ -35911,6 +36414,7 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult(dict
                  months: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowMonthResult'],
                  patching_mode: str,
                  preference: str,
+                 skip_rus: Sequence[bool],
                  weeks_of_months: Sequence[int]):
         """
         :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
@@ -35934,6 +36438,7 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult(dict
         pulumi.set(__self__, "months", months)
         pulumi.set(__self__, "patching_mode", patching_mode)
         pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "skip_rus", skip_rus)
         pulumi.set(__self__, "weeks_of_months", weeks_of_months)
 
     @property
@@ -36008,6 +36513,11 @@ class GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult(dict
         The maintenance window scheduling preference.
         """
         return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Sequence[bool]:
+        return pulumi.get(self, "skip_rus")
 
     @property
     @pulumi.getter(name="weeksOfMonths")

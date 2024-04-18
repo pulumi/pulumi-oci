@@ -4155,6 +4155,130 @@ func (o UsageItemTagArrayOutput) Index(i pulumi.IntInput) UsageItemTagOutput {
 	}).(UsageItemTagOutput)
 }
 
+type UsageStatementEmailRecipientsGroupRecipientsList struct {
+	// (Updatable) the email of the recipient.
+	EmailId string `pulumi:"emailId"`
+	// (Updatable) the first name of the recipient.
+	FirstName *string `pulumi:"firstName"`
+	// (Updatable) the last name of the recipient.
+	LastName *string `pulumi:"lastName"`
+	// (Updatable) The email recipient lifecycle state.
+	State string `pulumi:"state"`
+}
+
+// UsageStatementEmailRecipientsGroupRecipientsListInput is an input type that accepts UsageStatementEmailRecipientsGroupRecipientsListArgs and UsageStatementEmailRecipientsGroupRecipientsListOutput values.
+// You can construct a concrete instance of `UsageStatementEmailRecipientsGroupRecipientsListInput` via:
+//
+//	UsageStatementEmailRecipientsGroupRecipientsListArgs{...}
+type UsageStatementEmailRecipientsGroupRecipientsListInput interface {
+	pulumi.Input
+
+	ToUsageStatementEmailRecipientsGroupRecipientsListOutput() UsageStatementEmailRecipientsGroupRecipientsListOutput
+	ToUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(context.Context) UsageStatementEmailRecipientsGroupRecipientsListOutput
+}
+
+type UsageStatementEmailRecipientsGroupRecipientsListArgs struct {
+	// (Updatable) the email of the recipient.
+	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// (Updatable) the first name of the recipient.
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
+	// (Updatable) the last name of the recipient.
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
+	// (Updatable) The email recipient lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (UsageStatementEmailRecipientsGroupRecipientsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (i UsageStatementEmailRecipientsGroupRecipientsListArgs) ToUsageStatementEmailRecipientsGroupRecipientsListOutput() UsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return i.ToUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(context.Background())
+}
+
+func (i UsageStatementEmailRecipientsGroupRecipientsListArgs) ToUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(ctx context.Context) UsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageStatementEmailRecipientsGroupRecipientsListOutput)
+}
+
+// UsageStatementEmailRecipientsGroupRecipientsListArrayInput is an input type that accepts UsageStatementEmailRecipientsGroupRecipientsListArray and UsageStatementEmailRecipientsGroupRecipientsListArrayOutput values.
+// You can construct a concrete instance of `UsageStatementEmailRecipientsGroupRecipientsListArrayInput` via:
+//
+//	UsageStatementEmailRecipientsGroupRecipientsListArray{ UsageStatementEmailRecipientsGroupRecipientsListArgs{...} }
+type UsageStatementEmailRecipientsGroupRecipientsListArrayInput interface {
+	pulumi.Input
+
+	ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutput() UsageStatementEmailRecipientsGroupRecipientsListArrayOutput
+	ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(context.Context) UsageStatementEmailRecipientsGroupRecipientsListArrayOutput
+}
+
+type UsageStatementEmailRecipientsGroupRecipientsListArray []UsageStatementEmailRecipientsGroupRecipientsListInput
+
+func (UsageStatementEmailRecipientsGroupRecipientsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (i UsageStatementEmailRecipientsGroupRecipientsListArray) ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutput() UsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return i.ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(context.Background())
+}
+
+func (i UsageStatementEmailRecipientsGroupRecipientsListArray) ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(ctx context.Context) UsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(UsageStatementEmailRecipientsGroupRecipientsListArrayOutput)
+}
+
+type UsageStatementEmailRecipientsGroupRecipientsListOutput struct{ *pulumi.OutputState }
+
+func (UsageStatementEmailRecipientsGroupRecipientsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*UsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) ToUsageStatementEmailRecipientsGroupRecipientsListOutput() UsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return o
+}
+
+func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) ToUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(ctx context.Context) UsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return o
+}
+
+// (Updatable) the email of the recipient.
+func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) EmailId() pulumi.StringOutput {
+	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) string { return v.EmailId }).(pulumi.StringOutput)
+}
+
+// (Updatable) the first name of the recipient.
+func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) *string { return v.FirstName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) the last name of the recipient.
+func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) *string { return v.LastName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The email recipient lifecycle state.
+func (o UsageStatementEmailRecipientsGroupRecipientsListOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v UsageStatementEmailRecipientsGroupRecipientsList) string { return v.State }).(pulumi.StringOutput)
+}
+
+type UsageStatementEmailRecipientsGroupRecipientsListArrayOutput struct{ *pulumi.OutputState }
+
+func (UsageStatementEmailRecipientsGroupRecipientsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]UsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (o UsageStatementEmailRecipientsGroupRecipientsListArrayOutput) ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutput() UsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return o
+}
+
+func (o UsageStatementEmailRecipientsGroupRecipientsListArrayOutput) ToUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(ctx context.Context) UsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return o
+}
+
+func (o UsageStatementEmailRecipientsGroupRecipientsListArrayOutput) Index(i pulumi.IntInput) UsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) UsageStatementEmailRecipientsGroupRecipientsList {
+		return vs[0].([]UsageStatementEmailRecipientsGroupRecipientsList)[vs[1].(int)]
+	}).(UsageStatementEmailRecipientsGroupRecipientsListOutput)
+}
+
 type GetConfigurationItem struct {
 	// The configuration key.
 	Key string `pulumi:"key"`
@@ -7840,7 +7964,7 @@ type GetSchedulesScheduleCollectionItem struct {
 	ResultLocations []GetSchedulesScheduleCollectionItemResultLocation `pulumi:"resultLocations"`
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId string `pulumi:"savedReportId"`
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
 	State string `pulumi:"state"`
@@ -7886,7 +8010,7 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	ResultLocations GetSchedulesScheduleCollectionItemResultLocationArrayInput `pulumi:"resultLocations"`
 	// The saved report ID which can also be used to generate a query.
 	SavedReportId pulumi.StringInput `pulumi:"savedReportId"`
-	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+	// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringInput `pulumi:"scheduleRecurrences"`
 	// The schedule lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
@@ -8005,7 +8129,7 @@ func (o GetSchedulesScheduleCollectionItemOutput) SavedReportId() pulumi.StringO
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.SavedReportId }).(pulumi.StringOutput)
 }
 
-// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+// Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 func (o GetSchedulesScheduleCollectionItemOutput) ScheduleRecurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.ScheduleRecurrences }).(pulumi.StringOutput)
 }
@@ -10078,6 +10202,613 @@ func (o GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOut
 	}).(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput)
 }
 
+type GetUsageStatementEmailRecipientsGroupRecipientsList struct {
+	// the email of the recipient.
+	EmailId string `pulumi:"emailId"`
+	// the first name of the recipient.
+	FirstName string `pulumi:"firstName"`
+	// the last name of the recipient.
+	LastName string `pulumi:"lastName"`
+	// The email recipient group lifecycle state.
+	State string `pulumi:"state"`
+}
+
+// GetUsageStatementEmailRecipientsGroupRecipientsListInput is an input type that accepts GetUsageStatementEmailRecipientsGroupRecipientsListArgs and GetUsageStatementEmailRecipientsGroupRecipientsListOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupRecipientsListInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupRecipientsListArgs{...}
+type GetUsageStatementEmailRecipientsGroupRecipientsListInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupRecipientsListOutput() GetUsageStatementEmailRecipientsGroupRecipientsListOutput
+	ToGetUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupRecipientsListOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupRecipientsListArgs struct {
+	// the email of the recipient.
+	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// the first name of the recipient.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// the last name of the recipient.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// The email recipient group lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetUsageStatementEmailRecipientsGroupRecipientsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupRecipientsListArgs) ToGetUsageStatementEmailRecipientsGroupRecipientsListOutput() GetUsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupRecipientsListArgs) ToGetUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupRecipientsListOutput)
+}
+
+// GetUsageStatementEmailRecipientsGroupRecipientsListArrayInput is an input type that accepts GetUsageStatementEmailRecipientsGroupRecipientsListArray and GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupRecipientsListArrayInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupRecipientsListArray{ GetUsageStatementEmailRecipientsGroupRecipientsListArgs{...} }
+type GetUsageStatementEmailRecipientsGroupRecipientsListArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput() GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput
+	ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupRecipientsListArray []GetUsageStatementEmailRecipientsGroupRecipientsListInput
+
+func (GetUsageStatementEmailRecipientsGroupRecipientsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupRecipientsListArray) ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput() GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupRecipientsListArray) ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupRecipientsListOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupRecipientsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) ToGetUsageStatementEmailRecipientsGroupRecipientsListOutput() GetUsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) ToGetUsageStatementEmailRecipientsGroupRecipientsListOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return o
+}
+
+// the email of the recipient.
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) EmailId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.EmailId }).(pulumi.StringOutput)
+}
+
+// the first name of the recipient.
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// the last name of the recipient.
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// The email recipient group lifecycle state.
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupRecipientsList) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupRecipientsList)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput) ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput() GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput) ToGetUsageStatementEmailRecipientsGroupRecipientsListArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput) Index(i pulumi.IntInput) GetUsageStatementEmailRecipientsGroupRecipientsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageStatementEmailRecipientsGroupRecipientsList {
+		return vs[0].([]GetUsageStatementEmailRecipientsGroupRecipientsList)[vs[1].(int)]
+	}).(GetUsageStatementEmailRecipientsGroupRecipientsListOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection struct {
+	Items []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem `pulumi:"items"`
+}
+
+// GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs and GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs{...}
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs struct {
+	Items GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput)
+}
+
+// GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray and GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray{ GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs{...} }
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionInput
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput) Items() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection) []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem {
+		return v.Items
+	}).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection {
+		return vs[0].([]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection)[vs[1].(int)]
+	}).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem struct {
+	// The compartment ID in which to list resources.
+	CompartmentId          string `pulumi:"compartmentId"`
+	EmailRecipientsGroupId string `pulumi:"emailRecipientsGroupId"`
+	// The usage statement email recipients group OCID.
+	Id string `pulumi:"id"`
+	// The list of recipient will receive the usage statement email.
+	RecipientsLists []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList `pulumi:"recipientsLists"`
+	// The email recipient group lifecycle state.
+	State string `pulumi:"state"`
+	// The UsageStatement Subscription unique OCID.
+	SubscriptionId string `pulumi:"subscriptionId"`
+}
+
+// GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs and GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs{...}
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs struct {
+	// The compartment ID in which to list resources.
+	CompartmentId          pulumi.StringInput `pulumi:"compartmentId"`
+	EmailRecipientsGroupId pulumi.StringInput `pulumi:"emailRecipientsGroupId"`
+	// The usage statement email recipients group OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The list of recipient will receive the usage statement email.
+	RecipientsLists GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayInput `pulumi:"recipientsLists"`
+	// The email recipient group lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The UsageStatement Subscription unique OCID.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
+}
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput)
+}
+
+// GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray and GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray{ GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs{...} }
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemInput
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput {
+	return o
+}
+
+// The compartment ID in which to list resources.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) EmailRecipientsGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string {
+		return v.EmailRecipientsGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The usage statement email recipients group OCID.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The list of recipient will receive the usage statement email.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) RecipientsLists() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList {
+		return v.RecipientsLists
+	}).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput)
+}
+
+// The email recipient group lifecycle state.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// The UsageStatement Subscription unique OCID.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem) string {
+		return v.SubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem {
+		return vs[0].([]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItem)[vs[1].(int)]
+	}).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList struct {
+	// the email of the recipient.
+	EmailId string `pulumi:"emailId"`
+	// the first name of the recipient.
+	FirstName string `pulumi:"firstName"`
+	// the last name of the recipient.
+	LastName string `pulumi:"lastName"`
+	// The email recipient group lifecycle state.
+	State string `pulumi:"state"`
+}
+
+// GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs and GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs{...}
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs struct {
+	// the email of the recipient.
+	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// the first name of the recipient.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// the last name of the recipient.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// The email recipient group lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput)
+}
+
+// GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray and GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray{ GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs{...} }
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput
+	ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray []GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListInput
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput {
+	return o
+}
+
+// the email of the recipient.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) EmailId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
+		return v.EmailId
+	}).(pulumi.StringOutput)
+}
+
+// the first name of the recipient.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
+		return v.FirstName
+	}).(pulumi.StringOutput)
+}
+
+// the last name of the recipient.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
+		return v.LastName
+	}).(pulumi.StringOutput)
+}
+
+// The email recipient group lifecycle state.
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput() GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput) ToGetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput) Index(i pulumi.IntInput) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList {
+		return vs[0].([]GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsList)[vs[1].(int)]
+	}).(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUsageStatementEmailRecipientsGroupsFilterInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsFilterArgs and GetUsageStatementEmailRecipientsGroupsFilterOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsFilterInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsFilterArgs{...}
+type GetUsageStatementEmailRecipientsGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsFilterOutput() GetUsageStatementEmailRecipientsGroupsFilterOutput
+	ToGetUsageStatementEmailRecipientsGroupsFilterOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsFilterOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUsageStatementEmailRecipientsGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsFilter)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsFilterArgs) ToGetUsageStatementEmailRecipientsGroupsFilterOutput() GetUsageStatementEmailRecipientsGroupsFilterOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsFilterArgs) ToGetUsageStatementEmailRecipientsGroupsFilterOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsFilterOutput)
+}
+
+// GetUsageStatementEmailRecipientsGroupsFilterArrayInput is an input type that accepts GetUsageStatementEmailRecipientsGroupsFilterArray and GetUsageStatementEmailRecipientsGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetUsageStatementEmailRecipientsGroupsFilterArrayInput` via:
+//
+//	GetUsageStatementEmailRecipientsGroupsFilterArray{ GetUsageStatementEmailRecipientsGroupsFilterArgs{...} }
+type GetUsageStatementEmailRecipientsGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutput() GetUsageStatementEmailRecipientsGroupsFilterArrayOutput
+	ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutputWithContext(context.Context) GetUsageStatementEmailRecipientsGroupsFilterArrayOutput
+}
+
+type GetUsageStatementEmailRecipientsGroupsFilterArray []GetUsageStatementEmailRecipientsGroupsFilterInput
+
+func (GetUsageStatementEmailRecipientsGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsFilter)(nil)).Elem()
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsFilterArray) ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutput() GetUsageStatementEmailRecipientsGroupsFilterArrayOutput {
+	return i.ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUsageStatementEmailRecipientsGroupsFilterArray) ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUsageStatementEmailRecipientsGroupsFilterArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsFilter)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterOutput) ToGetUsageStatementEmailRecipientsGroupsFilterOutput() GetUsageStatementEmailRecipientsGroupsFilterOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterOutput) ToGetUsageStatementEmailRecipientsGroupsFilterOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsFilterOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUsageStatementEmailRecipientsGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUsageStatementEmailRecipientsGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUsageStatementEmailRecipientsGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUsageStatementEmailRecipientsGroupsFilter)(nil)).Elem()
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterArrayOutput) ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutput() GetUsageStatementEmailRecipientsGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterArrayOutput) ToGetUsageStatementEmailRecipientsGroupsFilterArrayOutputWithContext(ctx context.Context) GetUsageStatementEmailRecipientsGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetUsageStatementEmailRecipientsGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetUsageStatementEmailRecipientsGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUsageStatementEmailRecipientsGroupsFilter {
+		return vs[0].([]GetUsageStatementEmailRecipientsGroupsFilter)[vs[1].(int)]
+	}).(GetUsageStatementEmailRecipientsGroupsFilterOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomTableSavedCustomTableInput)(nil)).Elem(), CustomTableSavedCustomTableArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CustomTableSavedCustomTablePtrInput)(nil)).Elem(), CustomTableSavedCustomTableArgs{})
@@ -10123,6 +10854,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageItemArrayInput)(nil)).Elem(), UsageItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageItemTagInput)(nil)).Elem(), UsageItemTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UsageItemTagArrayInput)(nil)).Elem(), UsageItemTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageStatementEmailRecipientsGroupRecipientsListInput)(nil)).Elem(), UsageStatementEmailRecipientsGroupRecipientsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*UsageStatementEmailRecipientsGroupRecipientsListArrayInput)(nil)).Elem(), UsageStatementEmailRecipientsGroupRecipientsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigurationItemInput)(nil)).Elem(), GetConfigurationItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigurationItemArrayInput)(nil)).Elem(), GetConfigurationItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomTableSavedCustomTableInput)(nil)).Elem(), GetCustomTableSavedCustomTableArgs{})
@@ -10217,6 +10950,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayInput)(nil)).Elem(), GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupRecipientsListInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupRecipientsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupRecipientsListArrayInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupRecipientsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsFilterInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUsageStatementEmailRecipientsGroupsFilterArrayInput)(nil)).Elem(), GetUsageStatementEmailRecipientsGroupsFilterArray{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTableOutput{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTablePtrOutput{})
 	pulumi.RegisterOutputType(CustomTableSavedCustomTableGroupByTagOutput{})
@@ -10261,6 +11004,8 @@ func init() {
 	pulumi.RegisterOutputType(UsageItemArrayOutput{})
 	pulumi.RegisterOutputType(UsageItemTagOutput{})
 	pulumi.RegisterOutputType(UsageItemTagArrayOutput{})
+	pulumi.RegisterOutputType(UsageStatementEmailRecipientsGroupRecipientsListOutput{})
+	pulumi.RegisterOutputType(UsageStatementEmailRecipientsGroupRecipientsListArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigurationItemOutput{})
 	pulumi.RegisterOutputType(GetConfigurationItemArrayOutput{})
 	pulumi.RegisterOutputType(GetCustomTableSavedCustomTableOutput{})
@@ -10355,4 +11100,14 @@ func init() {
 	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryArrayOutput{})
 	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagOutput{})
 	pulumi.RegisterOutputType(GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupRecipientsListOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupRecipientsListArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArrayOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetUsageStatementEmailRecipientsGroupsFilterArrayOutput{})
 }

@@ -44,6 +44,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				NsgIds: pulumi.Any(_var.Redis_cluster_nsg_ids),
 //			})
 //			if err != nil {
 //				return err
@@ -81,6 +82,8 @@ type RedisCluster struct {
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Output `pulumi:"nodeMemoryInGbs"`
+	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringOutput `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
@@ -170,6 +173,8 @@ type redisClusterState struct {
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs *float64 `pulumi:"nodeMemoryInGbs"`
+	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress *string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
@@ -212,6 +217,8 @@ type RedisClusterState struct {
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64PtrInput
+	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	NsgIds pulumi.StringArrayInput
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
@@ -254,6 +261,8 @@ type redisClusterArgs struct {
 	NodeCount int `pulumi:"nodeCount"`
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
+	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	NsgIds []string `pulumi:"nsgIds"`
 	// The Redis version that the cluster is running.
 	SoftwareVersion string `pulumi:"softwareVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
@@ -277,6 +286,8 @@ type RedisClusterArgs struct {
 	NodeCount pulumi.IntInput
 	// (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs pulumi.Float64Input
+	// (Updatable) OCIDs of the NSGs to control access in the customer network
+	NsgIds pulumi.StringArrayInput
 	// The Redis version that the cluster is running.
 	SoftwareVersion pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
@@ -411,6 +422,11 @@ func (o RedisClusterOutput) NodeCount() pulumi.IntOutput {
 // (Updatable) The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 func (o RedisClusterOutput) NodeMemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v *RedisCluster) pulumi.Float64Output { return v.NodeMemoryInGbs }).(pulumi.Float64Output)
+}
+
+// (Updatable) OCIDs of the NSGs to control access in the customer network
+func (o RedisClusterOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The private IP address of the API endpoint for the Redis cluster's primary node.

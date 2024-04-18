@@ -32,11 +32,13 @@ __all__ = [
     'UsageGroupByTagArgs',
     'UsageItemArgs',
     'UsageItemTagArgs',
+    'UsageStatementEmailRecipientsGroupRecipientsListArgs',
     'GetCustomTablesFilterArgs',
     'GetQueriesFilterArgs',
     'GetScheduledRunsFilterArgs',
     'GetSchedulesFilterArgs',
     'GetUsageCarbonEmissionsQueriesFilterArgs',
+    'GetUsageStatementEmailRecipientsGroupsFilterArgs',
 ]
 
 @pulumi.input_type
@@ -2321,6 +2323,75 @@ class UsageItemTagArgs:
 
 
 @pulumi.input_type
+class UsageStatementEmailRecipientsGroupRecipientsListArgs:
+    def __init__(__self__, *,
+                 email_id: pulumi.Input[str],
+                 state: pulumi.Input[str],
+                 first_name: Optional[pulumi.Input[str]] = None,
+                 last_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] email_id: (Updatable) the email of the recipient.
+        :param pulumi.Input[str] state: (Updatable) The email recipient lifecycle state.
+        :param pulumi.Input[str] first_name: (Updatable) the first name of the recipient.
+        :param pulumi.Input[str] last_name: (Updatable) the last name of the recipient.
+        """
+        pulumi.set(__self__, "email_id", email_id)
+        pulumi.set(__self__, "state", state)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+
+    @property
+    @pulumi.getter(name="emailId")
+    def email_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) the email of the recipient.
+        """
+        return pulumi.get(self, "email_id")
+
+    @email_id.setter
+    def email_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "email_id", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The email recipient lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[str]):
+        pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) the first name of the recipient.
+        """
+        return pulumi.get(self, "first_name")
+
+    @first_name.setter
+    def first_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "first_name", value)
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) the last name of the recipient.
+        """
+        return pulumi.get(self, "last_name")
+
+    @last_name.setter
+    def last_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_name", value)
+
+
+@pulumi.input_type
 class GetCustomTablesFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -2484,6 +2555,45 @@ class GetSchedulesFilterArgs:
 
 @pulumi.input_type
 class GetUsageCarbonEmissionsQueriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetUsageStatementEmailRecipientsGroupsFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

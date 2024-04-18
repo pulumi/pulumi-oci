@@ -13,6 +13,339 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPluggableDatabasePdbCreationTypeDetail struct {
+	CreationType                         string                                                            `pulumi:"creationType"`
+	DblinkUserPassword                   string                                                            `pulumi:"dblinkUserPassword"`
+	DblinkUsername                       string                                                            `pulumi:"dblinkUsername"`
+	RefreshableCloneDetails              []GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail `pulumi:"refreshableCloneDetails"`
+	SourceContainerDatabaseAdminPassword string                                                            `pulumi:"sourceContainerDatabaseAdminPassword"`
+	SourcePluggableDatabaseId            string                                                            `pulumi:"sourcePluggableDatabaseId"`
+}
+
+// GetPluggableDatabasePdbCreationTypeDetailInput is an input type that accepts GetPluggableDatabasePdbCreationTypeDetailArgs and GetPluggableDatabasePdbCreationTypeDetailOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePdbCreationTypeDetailInput` via:
+//
+//	GetPluggableDatabasePdbCreationTypeDetailArgs{...}
+type GetPluggableDatabasePdbCreationTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePdbCreationTypeDetailOutput() GetPluggableDatabasePdbCreationTypeDetailOutput
+	ToGetPluggableDatabasePdbCreationTypeDetailOutputWithContext(context.Context) GetPluggableDatabasePdbCreationTypeDetailOutput
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailArgs struct {
+	CreationType                         pulumi.StringInput                                                        `pulumi:"creationType"`
+	DblinkUserPassword                   pulumi.StringInput                                                        `pulumi:"dblinkUserPassword"`
+	DblinkUsername                       pulumi.StringInput                                                        `pulumi:"dblinkUsername"`
+	RefreshableCloneDetails              GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput `pulumi:"refreshableCloneDetails"`
+	SourceContainerDatabaseAdminPassword pulumi.StringInput                                                        `pulumi:"sourceContainerDatabaseAdminPassword"`
+	SourcePluggableDatabaseId            pulumi.StringInput                                                        `pulumi:"sourcePluggableDatabaseId"`
+}
+
+func (GetPluggableDatabasePdbCreationTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailArgs) ToGetPluggableDatabasePdbCreationTypeDetailOutput() GetPluggableDatabasePdbCreationTypeDetailOutput {
+	return i.ToGetPluggableDatabasePdbCreationTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailArgs) ToGetPluggableDatabasePdbCreationTypeDetailOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePdbCreationTypeDetailOutput)
+}
+
+// GetPluggableDatabasePdbCreationTypeDetailArrayInput is an input type that accepts GetPluggableDatabasePdbCreationTypeDetailArray and GetPluggableDatabasePdbCreationTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePdbCreationTypeDetailArrayInput` via:
+//
+//	GetPluggableDatabasePdbCreationTypeDetailArray{ GetPluggableDatabasePdbCreationTypeDetailArgs{...} }
+type GetPluggableDatabasePdbCreationTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePdbCreationTypeDetailArrayOutput() GetPluggableDatabasePdbCreationTypeDetailArrayOutput
+	ToGetPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(context.Context) GetPluggableDatabasePdbCreationTypeDetailArrayOutput
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailArray []GetPluggableDatabasePdbCreationTypeDetailInput
+
+func (GetPluggableDatabasePdbCreationTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailArray) ToGetPluggableDatabasePdbCreationTypeDetailArrayOutput() GetPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return i.ToGetPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailArray) ToGetPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePdbCreationTypeDetailArrayOutput)
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePdbCreationTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) ToGetPluggableDatabasePdbCreationTypeDetailOutput() GetPluggableDatabasePdbCreationTypeDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) ToGetPluggableDatabasePdbCreationTypeDetailOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) CreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) DblinkUserPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.DblinkUserPassword }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) DblinkUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.DblinkUsername }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) RefreshableCloneDetails() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) []GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail {
+		return v.RefreshableCloneDetails
+	}).(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) SourceContainerDatabaseAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string {
+		return v.SourceContainerDatabaseAdminPassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) SourcePluggableDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.SourcePluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePdbCreationTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePdbCreationTypeDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailArrayOutput) ToGetPluggableDatabasePdbCreationTypeDetailArrayOutput() GetPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailArrayOutput) ToGetPluggableDatabasePdbCreationTypeDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasePdbCreationTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasePdbCreationTypeDetail {
+		return vs[0].([]GetPluggableDatabasePdbCreationTypeDetail)[vs[1].(int)]
+	}).(GetPluggableDatabasePdbCreationTypeDetailOutput)
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone bool `pulumi:"isRefreshableClone"`
+}
+
+// GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput is an input type that accepts GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs and GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput` via:
+//
+//	GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{...}
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput
+	ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(context.Context) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs struct {
+	// Indicates whether the Pluggable Database is a refreshable clone.
+	IsRefreshableClone pulumi.BoolInput `pulumi:"isRefreshableClone"`
+}
+
+func (GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return i.ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput)
+}
+
+// GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput is an input type that accepts GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray and GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput` via:
+//
+//	GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray{ GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{...} }
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput
+	ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(context.Context) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray []GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput
+
+func (GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return i.ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput)
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return o
+}
+
+// Indicates whether the Pluggable Database is a refreshable clone.
+func (o GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput) IsRefreshableClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail) bool {
+		return v.IsRefreshableClone
+	}).(pulumi.BoolOutput)
+}
+
+type GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) ToGetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail {
+		return vs[0].([]GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail)[vs[1].(int)]
+	}).(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput)
+}
+
+type GetPluggableDatabasePdbNodeLevelDetail struct {
+	// The Node name of the Database Instance.
+	NodeName string `pulumi:"nodeName"`
+	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+	OpenMode string `pulumi:"openMode"`
+}
+
+// GetPluggableDatabasePdbNodeLevelDetailInput is an input type that accepts GetPluggableDatabasePdbNodeLevelDetailArgs and GetPluggableDatabasePdbNodeLevelDetailOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePdbNodeLevelDetailInput` via:
+//
+//	GetPluggableDatabasePdbNodeLevelDetailArgs{...}
+type GetPluggableDatabasePdbNodeLevelDetailInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePdbNodeLevelDetailOutput() GetPluggableDatabasePdbNodeLevelDetailOutput
+	ToGetPluggableDatabasePdbNodeLevelDetailOutputWithContext(context.Context) GetPluggableDatabasePdbNodeLevelDetailOutput
+}
+
+type GetPluggableDatabasePdbNodeLevelDetailArgs struct {
+	// The Node name of the Database Instance.
+	NodeName pulumi.StringInput `pulumi:"nodeName"`
+	// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+	OpenMode pulumi.StringInput `pulumi:"openMode"`
+}
+
+func (GetPluggableDatabasePdbNodeLevelDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePdbNodeLevelDetailArgs) ToGetPluggableDatabasePdbNodeLevelDetailOutput() GetPluggableDatabasePdbNodeLevelDetailOutput {
+	return i.ToGetPluggableDatabasePdbNodeLevelDetailOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePdbNodeLevelDetailArgs) ToGetPluggableDatabasePdbNodeLevelDetailOutputWithContext(ctx context.Context) GetPluggableDatabasePdbNodeLevelDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePdbNodeLevelDetailOutput)
+}
+
+// GetPluggableDatabasePdbNodeLevelDetailArrayInput is an input type that accepts GetPluggableDatabasePdbNodeLevelDetailArray and GetPluggableDatabasePdbNodeLevelDetailArrayOutput values.
+// You can construct a concrete instance of `GetPluggableDatabasePdbNodeLevelDetailArrayInput` via:
+//
+//	GetPluggableDatabasePdbNodeLevelDetailArray{ GetPluggableDatabasePdbNodeLevelDetailArgs{...} }
+type GetPluggableDatabasePdbNodeLevelDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPluggableDatabasePdbNodeLevelDetailArrayOutput() GetPluggableDatabasePdbNodeLevelDetailArrayOutput
+	ToGetPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(context.Context) GetPluggableDatabasePdbNodeLevelDetailArrayOutput
+}
+
+type GetPluggableDatabasePdbNodeLevelDetailArray []GetPluggableDatabasePdbNodeLevelDetailInput
+
+func (GetPluggableDatabasePdbNodeLevelDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (i GetPluggableDatabasePdbNodeLevelDetailArray) ToGetPluggableDatabasePdbNodeLevelDetailArrayOutput() GetPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return i.ToGetPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPluggableDatabasePdbNodeLevelDetailArray) ToGetPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPluggableDatabasePdbNodeLevelDetailArrayOutput)
+}
+
+type GetPluggableDatabasePdbNodeLevelDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePdbNodeLevelDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePdbNodeLevelDetailOutput) ToGetPluggableDatabasePdbNodeLevelDetailOutput() GetPluggableDatabasePdbNodeLevelDetailOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbNodeLevelDetailOutput) ToGetPluggableDatabasePdbNodeLevelDetailOutputWithContext(ctx context.Context) GetPluggableDatabasePdbNodeLevelDetailOutput {
+	return o
+}
+
+// The Node name of the Database Instance.
+func (o GetPluggableDatabasePdbNodeLevelDetailOutput) NodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbNodeLevelDetail) string { return v.NodeName }).(pulumi.StringOutput)
+}
+
+// The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
+func (o GetPluggableDatabasePdbNodeLevelDetailOutput) OpenMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbNodeLevelDetail) string { return v.OpenMode }).(pulumi.StringOutput)
+}
+
+type GetPluggableDatabasePdbNodeLevelDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPluggableDatabasePdbNodeLevelDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPluggableDatabasePdbNodeLevelDetail)(nil)).Elem()
+}
+
+func (o GetPluggableDatabasePdbNodeLevelDetailArrayOutput) ToGetPluggableDatabasePdbNodeLevelDetailArrayOutput() GetPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbNodeLevelDetailArrayOutput) ToGetPluggableDatabasePdbNodeLevelDetailArrayOutputWithContext(ctx context.Context) GetPluggableDatabasePdbNodeLevelDetailArrayOutput {
+	return o
+}
+
+func (o GetPluggableDatabasePdbNodeLevelDetailArrayOutput) Index(i pulumi.IntInput) GetPluggableDatabasePdbNodeLevelDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPluggableDatabasePdbNodeLevelDetail {
+		return vs[0].([]GetPluggableDatabasePdbNodeLevelDetail)[vs[1].(int)]
+	}).(GetPluggableDatabasePdbNodeLevelDetailOutput)
+}
+
 type GetPluggableDatabasePluggableDatabaseManagementConfig struct {
 	// The status of the Pluggable Database Management service.
 	ManagementStatus string `pulumi:"managementStatus"`
@@ -5420,6 +5753,12 @@ func (o GetVmClustersVmClusterDataCollectionOptionArrayOutput) Index(i pulumi.In
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailArrayInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput)(nil)).Elem(), GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbNodeLevelDetailInput)(nil)).Elem(), GetPluggableDatabasePdbNodeLevelDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePdbNodeLevelDetailArrayInput)(nil)).Elem(), GetPluggableDatabasePdbNodeLevelDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfigInput)(nil)).Elem(), GetPluggableDatabasePluggableDatabaseManagementConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabasePluggableDatabaseManagementConfigArrayInput)(nil)).Elem(), GetPluggableDatabasePluggableDatabaseManagementConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluggableDatabaseRefreshableCloneConfigInput)(nil)).Elem(), GetPluggableDatabaseRefreshableCloneConfigArgs{})
@@ -5500,6 +5839,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterArrayInput)(nil)).Elem(), GetVmClustersVmClusterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePdbNodeLevelDetailOutput{})
+	pulumi.RegisterOutputType(GetPluggableDatabasePdbNodeLevelDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasePluggableDatabaseManagementConfigOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetPluggableDatabaseRefreshableCloneConfigOutput{})

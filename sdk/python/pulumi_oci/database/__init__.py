@@ -15,6 +15,7 @@ from .autonomous_database_backup import *
 from .autonomous_database_instance_wallet_management import *
 from .autonomous_database_regional_wallet_management import *
 from .autonomous_database_saas_admin_user import *
+from .autonomous_database_software_image import *
 from .autonomous_database_wallet import *
 from .autonomous_exadata_infrastructure import *
 from .autonomous_vm_cluster import *
@@ -72,6 +73,8 @@ from .get_autonomous_database_dataguard_associations import *
 from .get_autonomous_database_instance_wallet_management import *
 from .get_autonomous_database_refreshable_clones import *
 from .get_autonomous_database_regional_wallet_management import *
+from .get_autonomous_database_software_image import *
+from .get_autonomous_database_software_images import *
 from .get_autonomous_database_wallet import *
 from .get_autonomous_databases import *
 from .get_autonomous_databases_clones import *

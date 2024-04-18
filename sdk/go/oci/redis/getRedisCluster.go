@@ -78,6 +78,8 @@ type LookupRedisClusterResult struct {
 	NodeCount int `pulumi:"nodeCount"`
 	// The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
+	// OCIDs of the NSGs to control access in the customer network
+	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the API endpoint for the Redis cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary node.
@@ -182,6 +184,11 @@ func (o LookupRedisClusterResultOutput) NodeCount() pulumi.IntOutput {
 // The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
 func (o LookupRedisClusterResultOutput) NodeMemoryInGbs() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupRedisClusterResult) float64 { return v.NodeMemoryInGbs }).(pulumi.Float64Output)
+}
+
+// OCIDs of the NSGs to control access in the customer network
+func (o LookupRedisClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // The private IP address of the API endpoint for the Redis cluster's primary node.

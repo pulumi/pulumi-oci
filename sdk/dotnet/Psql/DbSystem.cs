@@ -238,7 +238,7 @@ namespace Pulumi.Oci.Psql
         public Output<ImmutableArray<Outputs.DbSystemPatchOperation>> PatchOperations { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
@@ -456,7 +456,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
@@ -636,7 +636,7 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `PostgreSQL.VM.Standard.E4.Flex.2.32GB`. Find more about the supported shapes [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/supported-shapes.htm).
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

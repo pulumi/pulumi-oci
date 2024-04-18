@@ -55,6 +55,11 @@ export type AutonomousDatabaseSaasAdminUser = import("./autonomousDatabaseSaasAd
 export const AutonomousDatabaseSaasAdminUser: typeof import("./autonomousDatabaseSaasAdminUser").AutonomousDatabaseSaasAdminUser = null as any;
 utilities.lazyLoad(exports, ["AutonomousDatabaseSaasAdminUser"], () => require("./autonomousDatabaseSaasAdminUser"));
 
+export { AutonomousDatabaseSoftwareImageArgs, AutonomousDatabaseSoftwareImageState } from "./autonomousDatabaseSoftwareImage";
+export type AutonomousDatabaseSoftwareImage = import("./autonomousDatabaseSoftwareImage").AutonomousDatabaseSoftwareImage;
+export const AutonomousDatabaseSoftwareImage: typeof import("./autonomousDatabaseSoftwareImage").AutonomousDatabaseSoftwareImage = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseSoftwareImage"], () => require("./autonomousDatabaseSoftwareImage"));
+
 export { AutonomousDatabaseWalletArgs, AutonomousDatabaseWalletState } from "./autonomousDatabaseWallet";
 export type AutonomousDatabaseWallet = import("./autonomousDatabaseWallet").AutonomousDatabaseWallet;
 export const AutonomousDatabaseWallet: typeof import("./autonomousDatabaseWallet").AutonomousDatabaseWallet = null as any;
@@ -339,6 +344,16 @@ export { GetAutonomousDatabaseRegionalWalletManagementResult } from "./getAutono
 export const getAutonomousDatabaseRegionalWalletManagement: typeof import("./getAutonomousDatabaseRegionalWalletManagement").getAutonomousDatabaseRegionalWalletManagement = null as any;
 export const getAutonomousDatabaseRegionalWalletManagementOutput: typeof import("./getAutonomousDatabaseRegionalWalletManagement").getAutonomousDatabaseRegionalWalletManagementOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousDatabaseRegionalWalletManagement","getAutonomousDatabaseRegionalWalletManagementOutput"], () => require("./getAutonomousDatabaseRegionalWalletManagement"));
+
+export { GetAutonomousDatabaseSoftwareImageArgs, GetAutonomousDatabaseSoftwareImageResult, GetAutonomousDatabaseSoftwareImageOutputArgs } from "./getAutonomousDatabaseSoftwareImage";
+export const getAutonomousDatabaseSoftwareImage: typeof import("./getAutonomousDatabaseSoftwareImage").getAutonomousDatabaseSoftwareImage = null as any;
+export const getAutonomousDatabaseSoftwareImageOutput: typeof import("./getAutonomousDatabaseSoftwareImage").getAutonomousDatabaseSoftwareImageOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseSoftwareImage","getAutonomousDatabaseSoftwareImageOutput"], () => require("./getAutonomousDatabaseSoftwareImage"));
+
+export { GetAutonomousDatabaseSoftwareImagesArgs, GetAutonomousDatabaseSoftwareImagesResult, GetAutonomousDatabaseSoftwareImagesOutputArgs } from "./getAutonomousDatabaseSoftwareImages";
+export const getAutonomousDatabaseSoftwareImages: typeof import("./getAutonomousDatabaseSoftwareImages").getAutonomousDatabaseSoftwareImages = null as any;
+export const getAutonomousDatabaseSoftwareImagesOutput: typeof import("./getAutonomousDatabaseSoftwareImages").getAutonomousDatabaseSoftwareImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseSoftwareImages","getAutonomousDatabaseSoftwareImagesOutput"], () => require("./getAutonomousDatabaseSoftwareImages"));
 
 export { GetAutonomousDatabaseWalletArgs, GetAutonomousDatabaseWalletResult, GetAutonomousDatabaseWalletOutputArgs } from "./getAutonomousDatabaseWallet";
 export const getAutonomousDatabaseWallet: typeof import("./getAutonomousDatabaseWallet").getAutonomousDatabaseWallet = null as any;
@@ -940,6 +955,8 @@ const _module = {
                 return new AutonomousDatabaseRegionalWalletManagement(name, <any>undefined, { urn })
             case "oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser":
                 return new AutonomousDatabaseSaasAdminUser(name, <any>undefined, { urn })
+            case "oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage":
+                return new AutonomousDatabaseSoftwareImage(name, <any>undefined, { urn })
             case "oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet":
                 return new AutonomousDatabaseWallet(name, <any>undefined, { urn })
             case "oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure":
@@ -1055,6 +1072,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseBackup"
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseInstanceWalletManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseRegionalWalletManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseSaasAdminUser", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseSoftwareImage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousDatabaseWallet", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousExadataInfrastructure", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/autonomousVmCluster", _module)

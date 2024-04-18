@@ -54,7 +54,7 @@ func GetScheduledRun(ctx *pulumi.Context, args *GetScheduledRunArgs, opts ...pul
 
 // A collection of arguments for invoking getScheduledRun.
 type GetScheduledRunArgs struct {
-	// The scheduledRun unique OCID.
+	// The scheduledRun unique OCID
 	ScheduledRunId string `pulumi:"scheduledRunId"`
 }
 
@@ -90,7 +90,7 @@ func GetScheduledRunOutput(ctx *pulumi.Context, args GetScheduledRunOutputArgs, 
 
 // A collection of arguments for invoking getScheduledRun.
 type GetScheduledRunOutputArgs struct {
-	// The scheduledRun unique OCID.
+	// The scheduledRun unique OCID
 	ScheduledRunId pulumi.StringInput `pulumi:"scheduledRunId"`
 }
 

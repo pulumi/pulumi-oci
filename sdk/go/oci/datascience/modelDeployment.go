@@ -43,6 +43,7 @@ import (
 //								MemoryInGbs: pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs),
 //								Ocpus:       pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus),
 //							},
+//							SubnetId: pulumi.Any(oci_core_subnet.Test_subnet.Id),
 //						},
 //						ModelId:              pulumi.Any(oci_datascience_model.Test_model.Id),
 //						BandwidthMbps:        pulumi.Any(_var.Model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps),

@@ -99,6 +99,21 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
     }
 
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="databaseSoftwareImageId")
+    private @Nullable Output<String> databaseSoftwareImageId;
+
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
+    }
+
+    /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
@@ -538,6 +553,7 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
         this.backupConfig = $.backupConfig;
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
+        this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbName = $.dbName;
         this.dbSplitThreshold = $.dbSplitThreshold;
         this.dbUniqueName = $.dbUniqueName;
@@ -691,6 +707,27 @@ public final class AutonomousContainerDatabaseArgs extends com.pulumi.resources.
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(@Nullable Output<String> databaseSoftwareImageId) {
+            $.databaseSoftwareImageId = databaseSoftwareImageId;
+            return this;
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            return databaseSoftwareImageId(Output.of(databaseSoftwareImageId));
         }
 
         /**

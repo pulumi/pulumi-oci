@@ -152,16 +152,16 @@ namespace Pulumi.Oci.Opa
 
         /// <summary>
         /// Shape of the instance.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("shapeName")]
         public Output<string> ShapeName { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the OpaInstance.
+        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -298,13 +298,19 @@ namespace Pulumi.Oci.Opa
 
         /// <summary>
         /// Shape of the instance.
+        /// </summary>
+        [Input("shapeName", required: true)]
+        public Input<string> ShapeName { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("shapeName", required: true)]
-        public Input<string> ShapeName { get; set; } = null!;
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         public OpaInstanceArgs()
         {
@@ -424,16 +430,16 @@ namespace Pulumi.Oci.Opa
 
         /// <summary>
         /// Shape of the instance.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("shapeName")]
         public Input<string>? ShapeName { get; set; }
 
         /// <summary>
-        /// The current state of the OpaInstance.
+        /// (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

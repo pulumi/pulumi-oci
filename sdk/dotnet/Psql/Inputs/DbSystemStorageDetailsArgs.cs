@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+        /// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
         /// </summary>
         [Input("iops")]
         public Input<string>? Iops { get; set; }

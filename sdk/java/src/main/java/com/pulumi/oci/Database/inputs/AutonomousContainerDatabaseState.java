@@ -147,6 +147,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="databaseSoftwareImageId")
+    private @Nullable Output<String> databaseSoftwareImageId;
+
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> databaseSoftwareImageId() {
+        return Optional.ofNullable(this.databaseSoftwareImageId);
+    }
+
+    /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
      */
@@ -439,6 +454,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * 
+     */
+    @Import(name="listOneOffPatches")
+    private @Nullable Output<List<String>> listOneOffPatches;
+
+    /**
+     * @return List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * 
+     */
+    public Optional<Output<List<String>>> listOneOffPatches() {
+        return Optional.ofNullable(this.listOneOffPatches);
+    }
+
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -648,14 +678,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
     @Import(name="provisionableCpuses")
     private @Nullable Output<List<Double>> provisionableCpuses;
 
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
     public Optional<Output<List<Double>>> provisionableCpuses() {
@@ -842,14 +872,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * The number of CPUs allocated to the Autonomous VM cluster.
      * 
      */
     @Import(name="totalCpus")
     private @Nullable Output<Integer> totalCpus;
 
     /**
-     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return The number of CPUs allocated to the Autonomous VM cluster.
      * 
      */
     public Optional<Output<Integer>> totalCpus() {
@@ -912,6 +942,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.computeModel = $.computeModel;
+        this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dbName = $.dbName;
         this.dbSplitThreshold = $.dbSplitThreshold;
         this.dbUniqueName = $.dbUniqueName;
@@ -932,6 +963,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.largestProvisionableAutonomousDatabaseInCpus = $.largestProvisionableAutonomousDatabaseInCpus;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.listOneOffPatches = $.listOneOffPatches;
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.maintenanceWindows = $.maintenanceWindows;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
@@ -1149,6 +1181,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder computeModel(String computeModel) {
             return computeModel(Output.of(computeModel));
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(@Nullable Output<String> databaseSoftwareImageId) {
+            $.databaseSoftwareImageId = databaseSoftwareImageId;
+            return this;
+        }
+
+        /**
+         * @param databaseSoftwareImageId The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            return databaseSoftwareImageId(Output.of(databaseSoftwareImageId));
         }
 
         /**
@@ -1570,6 +1623,37 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
+         * @param listOneOffPatches List of One-Off patches that has been successfully applied to Autonomous Container Database
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listOneOffPatches(@Nullable Output<List<String>> listOneOffPatches) {
+            $.listOneOffPatches = listOneOffPatches;
+            return this;
+        }
+
+        /**
+         * @param listOneOffPatches List of One-Off patches that has been successfully applied to Autonomous Container Database
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listOneOffPatches(List<String> listOneOffPatches) {
+            return listOneOffPatches(Output.of(listOneOffPatches));
+        }
+
+        /**
+         * @param listOneOffPatches List of One-Off patches that has been successfully applied to Autonomous Container Database
+         * 
+         * @return builder
+         * 
+         */
+        public Builder listOneOffPatches(String... listOneOffPatches) {
+            return listOneOffPatches(List.of(listOneOffPatches));
+        }
+
+        /**
          * @param maintenanceWindowDetails (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
          * 
          * @return builder
@@ -1871,7 +1955,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param provisionableCpuses An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param provisionableCpuses An array of CPU values that can be used to successfully provision a single Autonomous Database.
          * 
          * @return builder
          * 
@@ -1882,7 +1966,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param provisionableCpuses An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param provisionableCpuses An array of CPU values that can be used to successfully provision a single Autonomous Database.
          * 
          * @return builder
          * 
@@ -1892,7 +1976,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param provisionableCpuses An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param provisionableCpuses An array of CPU values that can be used to successfully provision a single Autonomous Database.
          * 
          * @return builder
          * 
@@ -2147,7 +2231,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param totalCpus The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param totalCpus The number of CPUs allocated to the Autonomous VM cluster.
          * 
          * @return builder
          * 
@@ -2158,7 +2242,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param totalCpus The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+         * @param totalCpus The number of CPUs allocated to the Autonomous VM cluster.
          * 
          * @return builder
          * 

@@ -25,16 +25,13 @@ class OpaInstanceArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  idcs_at: Optional[pulumi.Input[str]] = None,
                  is_breakglass_enabled: Optional[pulumi.Input[bool]] = None,
-                 metering_type: Optional[pulumi.Input[str]] = None):
+                 metering_type: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a OpaInstance resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
         :param pulumi.Input[str] display_name: (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
         :param pulumi.Input[str] shape_name: Shape of the instance.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] consumption_model: Parameter specifying which entitlement to use for billing purposes
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the Oracle Process Automation instance.
@@ -42,6 +39,11 @@ class OpaInstanceArgs:
         :param pulumi.Input[str] idcs_at: IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
+        :param pulumi.Input[str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -60,6 +62,8 @@ class OpaInstanceArgs:
             pulumi.set(__self__, "is_breakglass_enabled", is_breakglass_enabled)
         if metering_type is not None:
             pulumi.set(__self__, "metering_type", metering_type)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -90,10 +94,6 @@ class OpaInstanceArgs:
     def shape_name(self) -> pulumi.Input[str]:
         """
         Shape of the instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -185,6 +185,22 @@ class OpaInstanceArgs:
     def metering_type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "metering_type", value)
 
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
 
 @pulumi.input_type
 class _OpaInstanceState:
@@ -227,11 +243,11 @@ class _OpaInstanceState:
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         :param pulumi.Input[str] shape_name: Shape of the instance.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the OpaInstance.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
@@ -462,10 +478,6 @@ class _OpaInstanceState:
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
         Shape of the instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -477,7 +489,11 @@ class _OpaInstanceState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the OpaInstance.
+        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 
@@ -537,6 +553,7 @@ class OpaInstance(pulumi.CustomResource):
                  is_breakglass_enabled: Optional[pulumi.Input[bool]] = None,
                  metering_type: Optional[pulumi.Input[str]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Opa Instance resource in Oracle Cloud Infrastructure Opa service.
@@ -588,6 +605,7 @@ class OpaInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         :param pulumi.Input[str] shape_name: Shape of the instance.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
                ** IMPORTANT **
@@ -662,6 +680,7 @@ class OpaInstance(pulumi.CustomResource):
                  is_breakglass_enabled: Optional[pulumi.Input[bool]] = None,
                  metering_type: Optional[pulumi.Input[str]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -687,13 +706,13 @@ class OpaInstance(pulumi.CustomResource):
             if shape_name is None and not opts.urn:
                 raise TypeError("Missing required property 'shape_name'")
             __props__.__dict__["shape_name"] = shape_name
+            __props__.__dict__["state"] = state
             __props__.__dict__["attachments"] = None
             __props__.__dict__["identity_app_display_name"] = None
             __props__.__dict__["identity_app_guid"] = None
             __props__.__dict__["identity_app_opc_service_instance_guid"] = None
             __props__.__dict__["identity_domain_url"] = None
             __props__.__dict__["instance_url"] = None
-            __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -750,11 +769,11 @@ class OpaInstance(pulumi.CustomResource):
         :param pulumi.Input[bool] is_breakglass_enabled: indicates if breakGlass is enabled for the opa instance.
         :param pulumi.Input[str] metering_type: MeteringType Identifier
         :param pulumi.Input[str] shape_name: Shape of the instance.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[str] state: The current state of the OpaInstance.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
@@ -910,10 +929,6 @@ class OpaInstance(pulumi.CustomResource):
     def shape_name(self) -> pulumi.Output[str]:
         """
         Shape of the instance.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "shape_name")
 
@@ -921,7 +936,11 @@ class OpaInstance(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the OpaInstance.
+        (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "state")
 

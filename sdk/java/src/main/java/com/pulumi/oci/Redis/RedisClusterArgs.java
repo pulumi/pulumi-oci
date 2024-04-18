@@ -10,6 +10,7 @@ import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -111,6 +112,21 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) OCIDs of the NSGs to control access in the customer network
+     * 
+     */
+    @Import(name="nsgIds")
+    private @Nullable Output<List<String>> nsgIds;
+
+    /**
+     * @return (Updatable) OCIDs of the NSGs to control access in the customer network
+     * 
+     */
+    public Optional<Output<List<String>>> nsgIds() {
+        return Optional.ofNullable(this.nsgIds);
+    }
+
+    /**
      * The Redis version that the cluster is running.
      * 
      */
@@ -155,6 +171,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.nodeCount = $.nodeCount;
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
+        this.nsgIds = $.nsgIds;
         this.softwareVersion = $.softwareVersion;
         this.subnetId = $.subnetId;
     }
@@ -301,6 +318,37 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodeMemoryInGbs(Double nodeMemoryInGbs) {
             return nodeMemoryInGbs(Output.of(nodeMemoryInGbs));
+        }
+
+        /**
+         * @param nsgIds (Updatable) OCIDs of the NSGs to control access in the customer network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(@Nullable Output<List<String>> nsgIds) {
+            $.nsgIds = nsgIds;
+            return this;
+        }
+
+        /**
+         * @param nsgIds (Updatable) OCIDs of the NSGs to control access in the customer network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(List<String> nsgIds) {
+            return nsgIds(Output.of(nsgIds));
+        }
+
+        /**
+         * @param nsgIds (Updatable) OCIDs of the NSGs to control access in the customer network
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
 
         /**

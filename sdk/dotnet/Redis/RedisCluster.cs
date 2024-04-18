@@ -41,6 +41,7 @@ namespace Pulumi.Oci.Redis
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         NsgIds = @var.Redis_cluster_nsg_ids,
     ///     });
     /// 
     /// });
@@ -105,6 +106,12 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Output("nodeMemoryInGbs")]
         public Output<double> NodeMemoryInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) OCIDs of the NSGs to control access in the customer network
+        /// </summary>
+        [Output("nsgIds")]
+        public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address of the API endpoint for the Redis cluster's primary node.
@@ -264,6 +271,18 @@ namespace Pulumi.Oci.Redis
         [Input("nodeMemoryInGbs", required: true)]
         public Input<double> NodeMemoryInGbs { get; set; } = null!;
 
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// (Updatable) OCIDs of the NSGs to control access in the customer network
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
+
         /// <summary>
         /// The Redis version that the cluster is running.
         /// </summary>
@@ -353,6 +372,18 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Input("nodeMemoryInGbs")]
         public Input<double>? NodeMemoryInGbs { get; set; }
+
+        [Input("nsgIds")]
+        private InputList<string>? _nsgIds;
+
+        /// <summary>
+        /// (Updatable) OCIDs of the NSGs to control access in the customer network
+        /// </summary>
+        public InputList<string> NsgIds
+        {
+            get => _nsgIds ?? (_nsgIds = new InputList<string>());
+            set => _nsgIds = value;
+        }
 
         /// <summary>
         /// The private IP address of the API endpoint for the Redis cluster's primary node.

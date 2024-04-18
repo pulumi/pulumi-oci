@@ -289,9 +289,6 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
     /**
      * Shape of the instance.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
@@ -299,22 +296,25 @@ public class OpaInstance extends com.pulumi.resources.CustomResource {
     /**
      * @return Shape of the instance.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<String> shapeName() {
         return this.shapeName;
     }
     /**
-     * The current state of the OpaInstance.
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the OpaInstance.
+     * @return (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> state() {

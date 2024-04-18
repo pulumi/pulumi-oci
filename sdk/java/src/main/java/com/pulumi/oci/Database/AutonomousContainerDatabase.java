@@ -75,6 +75,7 @@ import javax.annotation.Nullable;
  *                 .recoveryWindowInDays(var_.autonomous_container_database_backup_config_recovery_window_in_days())
  *                 .build())
  *             .compartmentId(var_.compartment_id())
+ *             .databaseSoftwareImageId(oci_database_database_software_image.test_database_software_image().id())
  *             .dbName(var_.autonomous_container_database_db_name())
  *             .dbSplitThreshold(var_.autonomous_container_database_db_split_threshold())
  *             .dbUniqueName(var_.autonomous_container_database_db_unique_name())
@@ -101,6 +102,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .patchingMode(var_.autonomous_container_database_maintenance_window_details_patching_mode())
  *                 .preference(var_.autonomous_container_database_maintenance_window_details_preference())
+ *                 .skipRus(var_.autonomous_container_database_maintenance_window_details_skip_ru())
  *                 .weeksOfMonths(var_.autonomous_container_database_maintenance_window_details_weeks_of_month())
  *                 .build())
  *             .netServicesArchitecture(var_.autonomous_container_database_net_services_architecture())
@@ -255,6 +257,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> computeModel() {
         return this.computeModel;
+    }
+    /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
+    private Output<String> databaseSoftwareImageId;
+
+    /**
+     * @return The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Output<String> databaseSoftwareImageId() {
+        return this.databaseSoftwareImageId;
     }
     /**
      * The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -529,6 +545,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.lifecycleDetails;
     }
     /**
+     * List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * 
+     */
+    @Export(name="listOneOffPatches", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> listOneOffPatches;
+
+    /**
+     * @return List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * 
+     */
+    public Output<List<String>> listOneOffPatches() {
+        return this.listOneOffPatches;
+    }
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -723,14 +753,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.protectionMode;
     }
     /**
-     * An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
     @Export(name="provisionableCpuses", refs={List.class,Double.class}, tree="[0,1]")
     private Output<List<Double>> provisionableCpuses;
 
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
     public Output<List<Double>> provisionableCpuses() {
@@ -905,14 +935,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.timeSnapshotStandbyRevert;
     }
     /**
-     * The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * The number of CPUs allocated to the Autonomous VM cluster.
      * 
      */
     @Export(name="totalCpus", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalCpus;
 
     /**
-     * @return The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return The number of CPUs allocated to the Autonomous VM cluster.
      * 
      */
     public Output<Integer> totalCpus() {

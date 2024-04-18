@@ -138,6 +138,10 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         public readonly double NodeMemoryInGbs;
         /// <summary>
+        /// OCIDs of the NSGs to control access in the customer network
+        /// </summary>
+        public readonly ImmutableArray<string> NsgIds;
+        /// <summary>
         /// The private IP address of the API endpoint for the Redis cluster's primary node.
         /// </summary>
         public readonly string PrimaryEndpointIpAddress;
@@ -199,6 +203,8 @@ namespace Pulumi.Oci.Redis
 
             double nodeMemoryInGbs,
 
+            ImmutableArray<string> nsgIds,
+
             string primaryEndpointIpAddress,
 
             string primaryFqdn,
@@ -230,6 +236,7 @@ namespace Pulumi.Oci.Redis
             NodeCollections = nodeCollections;
             NodeCount = nodeCount;
             NodeMemoryInGbs = nodeMemoryInGbs;
+            NsgIds = nsgIds;
             PrimaryEndpointIpAddress = primaryEndpointIpAddress;
             PrimaryFqdn = primaryFqdn;
             RedisClusterId = redisClusterId;

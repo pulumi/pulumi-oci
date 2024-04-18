@@ -163,7 +163,9 @@ type AutonomousVmCluster struct {
 	ProvisionedAutonomousContainerDatabases pulumi.IntOutput `pulumi:"provisionedAutonomousContainerDatabases"`
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
 	ProvisionedCpus pulumi.Float64Output `pulumi:"provisionedCpus"`
-	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// For Autonomous Databases on Dedicated Exadata Infrastructure:
+	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 	ReclaimableCpus pulumi.IntOutput `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus pulumi.Float64Output `pulumi:"reservedCpus"`
@@ -304,7 +306,9 @@ type autonomousVmClusterState struct {
 	ProvisionedAutonomousContainerDatabases *int `pulumi:"provisionedAutonomousContainerDatabases"`
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
 	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
-	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// For Autonomous Databases on Dedicated Exadata Infrastructure:
+	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 	ReclaimableCpus *int `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus *float64 `pulumi:"reservedCpus"`
@@ -404,7 +408,9 @@ type AutonomousVmClusterState struct {
 	ProvisionedAutonomousContainerDatabases pulumi.IntPtrInput
 	// The number of CPUs provisioned in an Autonomous VM Cluster.
 	ProvisionedCpus pulumi.Float64PtrInput
-	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// For Autonomous Databases on Dedicated Exadata Infrastructure:
+	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 	ReclaimableCpus pulumi.IntPtrInput
 	// The number of CPUs reserved in an Autonomous VM Cluster.
 	ReservedCpus pulumi.Float64PtrInput
@@ -801,7 +807,9 @@ func (o AutonomousVmClusterOutput) ProvisionedCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.Float64Output { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
 
-// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+// For Autonomous Databases on Dedicated Exadata Infrastructure:
+// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
 func (o AutonomousVmClusterOutput) ReclaimableCpus() pulumi.IntOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.IntOutput { return v.ReclaimableCpus }).(pulumi.IntOutput)
 }

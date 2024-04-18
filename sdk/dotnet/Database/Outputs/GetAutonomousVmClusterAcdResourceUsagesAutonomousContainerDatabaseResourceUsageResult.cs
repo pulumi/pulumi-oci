@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult> AutonomousContainerDatabaseVmUsages;
         /// <summary>
-        /// CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+        /// CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
         /// </summary>
         public readonly double AvailableCpus;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double LargestProvisionableAutonomousDatabaseInCpus;
         /// <summary>
-        /// Valid list of provisionable CPUs / cores for ADB creation.
+        /// Valid list of provisionable CPUs for Autonomous Database.
         /// </summary>
         public readonly ImmutableArray<double> ProvisionableCpuses;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double ProvisionedCpus;
         /// <summary>
-        /// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        /// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>

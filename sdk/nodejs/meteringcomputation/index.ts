@@ -80,6 +80,16 @@ export const getUsageCarbonEmissionsQuery: typeof import("./getUsageCarbonEmissi
 export const getUsageCarbonEmissionsQueryOutput: typeof import("./getUsageCarbonEmissionsQuery").getUsageCarbonEmissionsQueryOutput = null as any;
 utilities.lazyLoad(exports, ["getUsageCarbonEmissionsQuery","getUsageCarbonEmissionsQueryOutput"], () => require("./getUsageCarbonEmissionsQuery"));
 
+export { GetUsageStatementEmailRecipientsGroupArgs, GetUsageStatementEmailRecipientsGroupResult, GetUsageStatementEmailRecipientsGroupOutputArgs } from "./getUsageStatementEmailRecipientsGroup";
+export const getUsageStatementEmailRecipientsGroup: typeof import("./getUsageStatementEmailRecipientsGroup").getUsageStatementEmailRecipientsGroup = null as any;
+export const getUsageStatementEmailRecipientsGroupOutput: typeof import("./getUsageStatementEmailRecipientsGroup").getUsageStatementEmailRecipientsGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getUsageStatementEmailRecipientsGroup","getUsageStatementEmailRecipientsGroupOutput"], () => require("./getUsageStatementEmailRecipientsGroup"));
+
+export { GetUsageStatementEmailRecipientsGroupsArgs, GetUsageStatementEmailRecipientsGroupsResult, GetUsageStatementEmailRecipientsGroupsOutputArgs } from "./getUsageStatementEmailRecipientsGroups";
+export const getUsageStatementEmailRecipientsGroups: typeof import("./getUsageStatementEmailRecipientsGroups").getUsageStatementEmailRecipientsGroups = null as any;
+export const getUsageStatementEmailRecipientsGroupsOutput: typeof import("./getUsageStatementEmailRecipientsGroups").getUsageStatementEmailRecipientsGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getUsageStatementEmailRecipientsGroups","getUsageStatementEmailRecipientsGroupsOutput"], () => require("./getUsageStatementEmailRecipientsGroups"));
+
 export { QueryArgs, QueryState } from "./query";
 export type Query = import("./query").Query;
 export const Query: typeof import("./query").Query = null as any;
@@ -105,6 +115,11 @@ export type UsageCarbonEmissionsQuery = import("./usageCarbonEmissionsQuery").Us
 export const UsageCarbonEmissionsQuery: typeof import("./usageCarbonEmissionsQuery").UsageCarbonEmissionsQuery = null as any;
 utilities.lazyLoad(exports, ["UsageCarbonEmissionsQuery"], () => require("./usageCarbonEmissionsQuery"));
 
+export { UsageStatementEmailRecipientsGroupArgs, UsageStatementEmailRecipientsGroupState } from "./usageStatementEmailRecipientsGroup";
+export type UsageStatementEmailRecipientsGroup = import("./usageStatementEmailRecipientsGroup").UsageStatementEmailRecipientsGroup;
+export const UsageStatementEmailRecipientsGroup: typeof import("./usageStatementEmailRecipientsGroup").UsageStatementEmailRecipientsGroup = null as any;
+utilities.lazyLoad(exports, ["UsageStatementEmailRecipientsGroup"], () => require("./usageStatementEmailRecipientsGroup"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -122,6 +137,8 @@ const _module = {
                 return new UsageCarbonEmission(name, <any>undefined, { urn })
             case "oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery":
                 return new UsageCarbonEmissionsQuery(name, <any>undefined, { urn })
+            case "oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup":
+                return new UsageStatementEmailRecipientsGroup(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -133,3 +150,4 @@ pulumi.runtime.registerResourceModule("oci", "MeteringComputation/schedule", _mo
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usage", _module)
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usageCarbonEmission", _module)
 pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usageCarbonEmissionsQuery", _module)
+pulumi.runtime.registerResourceModule("oci", "MeteringComputation/usageStatementEmailRecipientsGroup", _module)

@@ -21,15 +21,22 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Details for the model-deployment instance shape configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult> ModelDeploymentInstanceShapeConfigDetails;
+        /// <summary>
+        /// A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        /// </summary>
+        public readonly string SubnetId;
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult(
             string instanceShapeName,
 
-            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult> modelDeploymentInstanceShapeConfigDetails)
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult> modelDeploymentInstanceShapeConfigDetails,
+
+            string subnetId)
         {
             InstanceShapeName = instanceShapeName;
             ModelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
+            SubnetId = subnetId;
         }
     }
 }

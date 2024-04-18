@@ -61,6 +61,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String computeModel;
+    private String databaseSoftwareImageId;
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
      * 
@@ -154,6 +155,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * 
+     */
+    private List<String> listOneOffPatches;
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
     /**
      * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -162,11 +168,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
     /**
      * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     private Integer memoryPerOracleComputeUnitInGbs;
     /**
      * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * ===
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
      * 
      */
     private String netServicesArchitecture;
@@ -194,7 +203,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     private String peerDbUniqueName;
     private String protectionMode;
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
     private List<Double> provisionableCpuses;
@@ -204,9 +213,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private Double provisionedCpus;
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     private Double reclaimableCpus;
@@ -328,6 +335,9 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     public String computeModel() {
         return this.computeModel;
+    }
+    public String databaseSoftwareImageId() {
+        return this.databaseSoftwareImageId;
     }
     /**
      * @return The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -464,6 +474,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * @return List of One-Off patches that has been successfully applied to Autonomous Container Database
+     * 
+     */
+    public List<String> listOneOffPatches() {
+        return this.listOneOffPatches;
+    }
     public List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails() {
         return this.maintenanceWindowDetails;
     }
@@ -476,6 +493,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     /**
      * @return The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
+     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     public Integer memoryPerOracleComputeUnitInGbs() {
@@ -483,6 +501,8 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     }
     /**
      * @return Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     * ===
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; 22609d6059 (Added - Support for Oracle Home Version Control - Phase 2 | ADB-D and ADB-C@C)
      * 
      */
     public String netServicesArchitecture() {
@@ -534,7 +554,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.protectionMode;
     }
     /**
-     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return An array of CPU values that can be used to successfully provision a single Autonomous Database.
      * 
      */
     public List<Double> provisionableCpuses() {
@@ -548,9 +568,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.provisionedCpus;
     }
     /**
-     * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
-     * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-     * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
+     * @return CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * 
      */
     public Double reclaimableCpus() {
@@ -661,6 +679,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
         private String computeModel;
+        private String databaseSoftwareImageId;
         private String dbName;
         private Integer dbSplitThreshold;
         private String dbUniqueName;
@@ -682,6 +701,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private Double largestProvisionableAutonomousDatabaseInCpus;
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
+        private List<String> listOneOffPatches;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails;
         private List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindow> maintenanceWindows;
         private Integer memoryPerOracleComputeUnitInGbs;
@@ -724,6 +744,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
+    	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dbName = defaults.dbName;
     	      this.dbSplitThreshold = defaults.dbSplitThreshold;
     	      this.dbUniqueName = defaults.dbUniqueName;
@@ -745,6 +766,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.largestProvisionableAutonomousDatabaseInCpus = defaults.largestProvisionableAutonomousDatabaseInCpus;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.listOneOffPatches = defaults.listOneOffPatches;
     	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
@@ -843,6 +865,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "computeModel");
             }
             this.computeModel = computeModel;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            if (databaseSoftwareImageId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "databaseSoftwareImageId");
+            }
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
             return this;
         }
         @CustomType.Setter
@@ -1015,6 +1045,17 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder listOneOffPatches(List<String> listOneOffPatches) {
+            if (listOneOffPatches == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "listOneOffPatches");
+            }
+            this.listOneOffPatches = listOneOffPatches;
+            return this;
+        }
+        public Builder listOneOffPatches(String... listOneOffPatches) {
+            return listOneOffPatches(List.of(listOneOffPatches));
         }
         @CustomType.Setter
         public Builder maintenanceWindowDetails(List<GetAutonomousContainerDatabasesAutonomousContainerDatabaseMaintenanceWindowDetail> maintenanceWindowDetails) {
@@ -1286,6 +1327,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeModel = computeModel;
+            _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dbName = dbName;
             _resultValue.dbSplitThreshold = dbSplitThreshold;
             _resultValue.dbUniqueName = dbUniqueName;
@@ -1307,6 +1349,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.listOneOffPatches = listOneOffPatches;
             _resultValue.maintenanceWindowDetails = maintenanceWindowDetails;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;

@@ -157,9 +157,6 @@ public final class OpaInstanceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * Shape of the instance.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="shapeName", required=true)
     private Output<String> shapeName;
@@ -167,12 +164,30 @@ public final class OpaInstanceArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Shape of the instance.
      * 
+     */
+    public Output<String> shapeName() {
+        return this.shapeName;
+    }
+
+    /**
+     * (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> shapeName() {
-        return this.shapeName;
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
     }
 
     private OpaInstanceArgs() {}
@@ -188,6 +203,7 @@ public final class OpaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.isBreakglassEnabled = $.isBreakglassEnabled;
         this.meteringType = $.meteringType;
         this.shapeName = $.shapeName;
+        this.state = $.state;
     }
 
     public static Builder builder() {
@@ -400,9 +416,6 @@ public final class OpaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shapeName Shape of the instance.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -414,14 +427,38 @@ public final class OpaInstanceArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shapeName Shape of the instance.
          * 
+         * @return builder
+         * 
+         */
+        public Builder shapeName(String shapeName) {
+            return shapeName(Output.of(shapeName));
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder shapeName(String shapeName) {
-            return shapeName(Output.of(shapeName));
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Opa Instance. Could be set to `ACTIVE` or `INACTIVE`.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         public OpaInstanceArgs build() {

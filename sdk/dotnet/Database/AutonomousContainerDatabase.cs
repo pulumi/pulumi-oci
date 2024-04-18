@@ -74,6 +74,12 @@ namespace Pulumi.Oci.Database
         public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Output("databaseSoftwareImageId")]
+        public Output<string> DatabaseSoftwareImageId { get; private set; } = null!;
+
+        /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Output("dbName")]
@@ -191,6 +197,12 @@ namespace Pulumi.Oci.Database
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// List of One-Off patches that has been successfully applied to Autonomous Container Database
+        /// </summary>
+        [Output("listOneOffPatches")]
+        public Output<ImmutableArray<string>> ListOneOffPatches { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         [Output("maintenanceWindowDetails")]
@@ -275,7 +287,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ProtectionMode { get; private set; } = null!;
 
         /// <summary>
-        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
         /// </summary>
         [Output("provisionableCpuses")]
         public Output<ImmutableArray<double>> ProvisionableCpuses { get; private set; } = null!;
@@ -355,7 +367,7 @@ namespace Pulumi.Oci.Database
         public Output<string> TimeSnapshotStandbyRevert { get; private set; } = null!;
 
         /// <summary>
-        /// The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// The number of CPUs allocated to the Autonomous VM cluster.
         /// </summary>
         [Output("totalCpus")]
         public Output<int> TotalCpus { get; private set; } = null!;
@@ -453,6 +465,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("databaseSoftwareImageId")]
+        public Input<string>? DatabaseSoftwareImageId { get; set; }
 
         /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -698,6 +716,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
+        /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("databaseSoftwareImageId")]
+        public Input<string>? DatabaseSoftwareImageId { get; set; }
+
+        /// <summary>
         /// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         /// </summary>
         [Input("dbName")]
@@ -832,6 +856,18 @@ namespace Pulumi.Oci.Database
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("listOneOffPatches")]
+        private InputList<string>? _listOneOffPatches;
+
+        /// <summary>
+        /// List of One-Off patches that has been successfully applied to Autonomous Container Database
+        /// </summary>
+        public InputList<string> ListOneOffPatches
+        {
+            get => _listOneOffPatches ?? (_listOneOffPatches = new InputList<string>());
+            set => _listOneOffPatches = value;
+        }
+
         /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
@@ -926,7 +962,7 @@ namespace Pulumi.Oci.Database
         private InputList<double>? _provisionableCpuses;
 
         /// <summary>
-        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// An array of CPU values that can be used to successfully provision a single Autonomous Database.
         /// </summary>
         public InputList<double> ProvisionableCpuses
         {
@@ -1009,7 +1045,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? TimeSnapshotStandbyRevert { get; set; }
 
         /// <summary>
-        /// The number of CPUs allocated to the Autonomous VM cluster.&lt;br&gt; For Autonomous Databases on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+        /// The number of CPUs allocated to the Autonomous VM cluster.
         /// </summary>
         [Input("totalCpus")]
         public Input<int>? TotalCpus { get; set; }

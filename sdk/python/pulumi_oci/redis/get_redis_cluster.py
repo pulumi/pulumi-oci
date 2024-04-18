@@ -22,7 +22,7 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,9 @@ class GetRedisClusterResult:
         if node_memory_in_gbs and not isinstance(node_memory_in_gbs, float):
             raise TypeError("Expected argument 'node_memory_in_gbs' to be a float")
         pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
+        if nsg_ids and not isinstance(nsg_ids, list):
+            raise TypeError("Expected argument 'nsg_ids' to be a list")
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
         if primary_endpoint_ip_address and not isinstance(primary_endpoint_ip_address, str):
             raise TypeError("Expected argument 'primary_endpoint_ip_address' to be a str")
         pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
@@ -157,6 +160,14 @@ class GetRedisClusterResult:
         return pulumi.get(self, "node_memory_in_gbs")
 
     @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        OCIDs of the NSGs to control access in the customer network
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
     @pulumi.getter(name="primaryEndpointIpAddress")
     def primary_endpoint_ip_address(self) -> str:
         """
@@ -257,6 +268,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             node_collections=self.node_collections,
             node_count=self.node_count,
             node_memory_in_gbs=self.node_memory_in_gbs,
+            nsg_ids=self.nsg_ids,
             primary_endpoint_ip_address=self.primary_endpoint_ip_address,
             primary_fqdn=self.primary_fqdn,
             redis_cluster_id=self.redis_cluster_id,
@@ -306,6 +318,7 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
         node_collections=pulumi.get(__ret__, 'node_collections'),
         node_count=pulumi.get(__ret__, 'node_count'),
         node_memory_in_gbs=pulumi.get(__ret__, 'node_memory_in_gbs'),
+        nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         primary_endpoint_ip_address=pulumi.get(__ret__, 'primary_endpoint_ip_address'),
         primary_fqdn=pulumi.get(__ret__, 'primary_fqdn'),
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),

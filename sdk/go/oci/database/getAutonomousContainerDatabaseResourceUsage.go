@@ -63,7 +63,7 @@ type GetAutonomousContainerDatabaseResourceUsageResult struct {
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// List of autonomous container database resource usage per autonomous virtual machine.
 	AutonomousContainerDatabaseVmUsages []GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsage `pulumi:"autonomousContainerDatabaseVmUsages"`
-	// CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+	// CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
 	AvailableCpus float64 `pulumi:"availableCpus"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -75,11 +75,11 @@ type GetAutonomousContainerDatabaseResourceUsageResult struct {
 	Id string `pulumi:"id"`
 	// Largest provisionable ADB in the Autonomous Container Database.
 	LargestProvisionableAutonomousDatabaseInCpus float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
-	// Valid list of provisionable CPUs / cores for ADB creation.
+	// Valid list of provisionable CPUs for Autonomous Database.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// CPUs / cores assigned to ADBs in the Autonomous Container Database.
 	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
-	// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+	// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
 	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
 	// CPUs / cores reserved for scalability, resilliency and other overheads. This includes failover, autoscaling and idle instance overhead.
 	ReservedCpus float64 `pulumi:"reservedCpus"`
@@ -138,7 +138,7 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AutonomousConta
 	}).(GetAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArrayOutput)
 }
 
-// CPUs / cores available for ADB provisioning or scaling in the Autonomous Container Database.
+// CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
 func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) AvailableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.AvailableCpus }).(pulumi.Float64Output)
 }
@@ -172,7 +172,7 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) LargestProvisio
 	}).(pulumi.Float64Output)
 }
 
-// Valid list of provisionable CPUs / cores for ADB creation.
+// Valid list of provisionable CPUs for Autonomous Database.
 func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) []float64 { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
 }
@@ -182,7 +182,7 @@ func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ProvisionedCpus
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
 
-// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
 func (o GetAutonomousContainerDatabaseResourceUsageResultOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v GetAutonomousContainerDatabaseResourceUsageResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }

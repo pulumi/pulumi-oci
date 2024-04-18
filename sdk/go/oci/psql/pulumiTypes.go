@@ -1928,7 +1928,7 @@ type DbSystemSource struct {
 	BackupId *string `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides *bool `pulumi:"isHavingRestoreConfigOverrides"`
-	// The source descriminator.
+	// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
 	SourceType string `pulumi:"sourceType"`
 }
 
@@ -1948,7 +1948,7 @@ type DbSystemSourceArgs struct {
 	BackupId pulumi.StringPtrInput `pulumi:"backupId"`
 	// Deprecated. Don't use.
 	IsHavingRestoreConfigOverrides pulumi.BoolPtrInput `pulumi:"isHavingRestoreConfigOverrides"`
-	// The source descriminator.
+	// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 }
 
@@ -2039,7 +2039,7 @@ func (o DbSystemSourceOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtrOut
 	return o.ApplyT(func(v DbSystemSource) *bool { return v.IsHavingRestoreConfigOverrides }).(pulumi.BoolPtrOutput)
 }
 
-// The source descriminator.
+// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
 func (o DbSystemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v DbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -2088,7 +2088,7 @@ func (o DbSystemSourcePtrOutput) IsHavingRestoreConfigOverrides() pulumi.BoolPtr
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The source descriminator.
+// The source descriminator. Example: `{"sourceType": "BACKUP"}`.
 func (o DbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemSource) *string {
 		if v == nil {
@@ -2101,7 +2101,7 @@ func (o DbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 type DbSystemStorageDetails struct {
 	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+	// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
 	Iops *string `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
@@ -2126,7 +2126,7 @@ type DbSystemStorageDetailsInput interface {
 type DbSystemStorageDetailsArgs struct {
 	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+	// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
 	Iops pulumi.StringPtrInput `pulumi:"iops"`
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
@@ -2219,7 +2219,7 @@ func (o DbSystemStorageDetailsOutput) AvailabilityDomain() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v DbSystemStorageDetails) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
 func (o DbSystemStorageDetailsOutput) Iops() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) *string { return v.Iops }).(pulumi.StringPtrOutput)
 }
@@ -2271,7 +2271,7 @@ func (o DbSystemStorageDetailsPtrOutput) AvailabilityDomain() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system.
+// (Updatable) Guaranteed input/output storage requests per second (IOPS) available to the database system. Find more about the supported Peformance Tiers [here](https://docs.oracle.com/en-us/iaas/Content/postgresql/performance-tiers.htm).
 func (o DbSystemStorageDetailsPtrOutput) Iops() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemStorageDetails) *string {
 		if v == nil {

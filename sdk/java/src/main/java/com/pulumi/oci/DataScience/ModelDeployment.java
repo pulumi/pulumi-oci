@@ -69,6 +69,7 @@ import javax.annotation.Nullable;
  *                             .memoryInGbs(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_memory_in_gbs())
  *                             .ocpus(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_instance_configuration_model_deployment_instance_shape_config_details_ocpus())
  *                             .build())
+ *                         .subnetId(oci_core_subnet.test_subnet().id())
  *                         .build())
  *                     .modelId(oci_datascience_model.test_model().id())
  *                     .bandwidthMbps(var_.model_deployment_model_deployment_configuration_details_model_configuration_details_bandwidth_mbps())

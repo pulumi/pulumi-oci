@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double ProvisionedCpus;
         /// <summary>
-        /// CPUs / cores reclaimable or released to cluster on Autonomous Container Database restart.
+        /// Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>

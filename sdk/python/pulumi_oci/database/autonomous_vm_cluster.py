@@ -417,7 +417,9 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[int] provisionable_autonomous_container_databases: **Deprecated.** Use field totalContainerDatabases.
         :param pulumi.Input[int] provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
-        :param pulumi.Input[int] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param pulumi.Input[int] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
@@ -979,7 +981,9 @@ class _AutonomousVmClusterState:
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> Optional[pulumi.Input[int]]:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
 
@@ -1493,7 +1497,9 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] provisionable_autonomous_container_databases: **Deprecated.** Use field totalContainerDatabases.
         :param pulumi.Input[int] provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[float] provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
-        :param pulumi.Input[int] reclaimable_cpus: CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        :param pulumi.Input[int] reclaimable_cpus: For Autonomous Databases on Dedicated Exadata Infrastructure:
+               * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+               * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         :param pulumi.Input[float] reserved_cpus: The number of CPUs reserved in an Autonomous VM Cluster.
         :param pulumi.Input[int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
@@ -1858,7 +1864,9 @@ class AutonomousVmCluster(pulumi.CustomResource):
     @pulumi.getter(name="reclaimableCpus")
     def reclaimable_cpus(self) -> pulumi.Output[int]:
         """
-        CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        For Autonomous Databases on Dedicated Exadata Infrastructure:
+        * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+        * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
         """
         return pulumi.get(self, "reclaimable_cpus")
 

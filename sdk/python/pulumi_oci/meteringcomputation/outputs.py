@@ -33,6 +33,7 @@ __all__ = [
     'UsageGroupByTag',
     'UsageItem',
     'UsageItemTag',
+    'UsageStatementEmailRecipientsGroupRecipientsList',
     'GetConfigurationItemResult',
     'GetCustomTableSavedCustomTableResult',
     'GetCustomTableSavedCustomTableGroupByTagResult',
@@ -80,6 +81,11 @@ __all__ = [
     'GetUsageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiResult',
     'GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryResult',
     'GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagResult',
+    'GetUsageStatementEmailRecipientsGroupRecipientsListResult',
+    'GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionResult',
+    'GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemResult',
+    'GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListResult',
+    'GetUsageStatementEmailRecipientsGroupsFilterResult',
 ]
 
 @pulumi.output_type
@@ -2202,6 +2208,80 @@ class UsageItemTag(dict):
 
 
 @pulumi.output_type
+class UsageStatementEmailRecipientsGroupRecipientsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "emailId":
+            suggest = "email_id"
+        elif key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsageStatementEmailRecipientsGroupRecipientsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsageStatementEmailRecipientsGroupRecipientsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsageStatementEmailRecipientsGroupRecipientsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 email_id: str,
+                 state: str,
+                 first_name: Optional[str] = None,
+                 last_name: Optional[str] = None):
+        """
+        :param str email_id: (Updatable) the email of the recipient.
+        :param str state: (Updatable) The email recipient lifecycle state.
+        :param str first_name: (Updatable) the first name of the recipient.
+        :param str last_name: (Updatable) the last name of the recipient.
+        """
+        pulumi.set(__self__, "email_id", email_id)
+        pulumi.set(__self__, "state", state)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+
+    @property
+    @pulumi.getter(name="emailId")
+    def email_id(self) -> str:
+        """
+        (Updatable) the email of the recipient.
+        """
+        return pulumi.get(self, "email_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        (Updatable) The email recipient lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> Optional[str]:
+        """
+        (Updatable) the first name of the recipient.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> Optional[str]:
+        """
+        (Updatable) the last name of the recipient.
+        """
+        return pulumi.get(self, "last_name")
+
+
+@pulumi.output_type
 class GetConfigurationItemResult(dict):
     def __init__(__self__, *,
                  key: str,
@@ -3643,7 +3723,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         :param Sequence['GetSchedulesScheduleCollectionItemQueryPropertyArgs'] query_properties: The query properties.
         :param Sequence['GetSchedulesScheduleCollectionItemResultLocationArgs'] result_locations: The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         :param str saved_report_id: The saved report ID which can also be used to generate a query.
-        :param str schedule_recurrences: Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        :param str schedule_recurrences: Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         :param str state: The schedule lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the schedule was created.
@@ -3751,7 +3831,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> str:
         """
-        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
+        Specifies the frequency according to when the schedule will be run, in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -4587,5 +4667,215 @@ class GetUsageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagResult(dic
         The tag value.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetUsageStatementEmailRecipientsGroupRecipientsListResult(dict):
+    def __init__(__self__, *,
+                 email_id: str,
+                 first_name: str,
+                 last_name: str,
+                 state: str):
+        """
+        :param str email_id: the email of the recipient.
+        :param str first_name: the first name of the recipient.
+        :param str last_name: the last name of the recipient.
+        :param str state: The email recipient group lifecycle state.
+        """
+        pulumi.set(__self__, "email_id", email_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="emailId")
+    def email_id(self) -> str:
+        """
+        the email of the recipient.
+        """
+        return pulumi.get(self, "email_id")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        the first name of the recipient.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        the last name of the recipient.
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The email recipient group lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 email_recipients_group_id: str,
+                 id: str,
+                 recipients_lists: Sequence['outputs.GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListResult'],
+                 state: str,
+                 subscription_id: str):
+        """
+        :param str compartment_id: The compartment ID in which to list resources.
+        :param str id: The usage statement email recipients group OCID.
+        :param Sequence['GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListArgs'] recipients_lists: The list of recipient will receive the usage statement email.
+        :param str state: The email recipient group lifecycle state.
+        :param str subscription_id: The UsageStatement Subscription unique OCID.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "email_recipients_group_id", email_recipients_group_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "recipients_lists", recipients_lists)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subscription_id", subscription_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment ID in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="emailRecipientsGroupId")
+    def email_recipients_group_id(self) -> str:
+        return pulumi.get(self, "email_recipients_group_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The usage statement email recipients group OCID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="recipientsLists")
+    def recipients_lists(self) -> Sequence['outputs.GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListResult']:
+        """
+        The list of recipient will receive the usage statement email.
+        """
+        return pulumi.get(self, "recipients_lists")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The email recipient group lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The UsageStatement Subscription unique OCID.
+        """
+        return pulumi.get(self, "subscription_id")
+
+
+@pulumi.output_type
+class GetUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemRecipientsListResult(dict):
+    def __init__(__self__, *,
+                 email_id: str,
+                 first_name: str,
+                 last_name: str,
+                 state: str):
+        """
+        :param str email_id: the email of the recipient.
+        :param str first_name: the first name of the recipient.
+        :param str last_name: the last name of the recipient.
+        :param str state: The email recipient group lifecycle state.
+        """
+        pulumi.set(__self__, "email_id", email_id)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="emailId")
+    def email_id(self) -> str:
+        """
+        the email of the recipient.
+        """
+        return pulumi.get(self, "email_id")
+
+    @property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> str:
+        """
+        the first name of the recipient.
+        """
+        return pulumi.get(self, "first_name")
+
+    @property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> str:
+        """
+        the last name of the recipient.
+        """
+        return pulumi.get(self, "last_name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The email recipient group lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetUsageStatementEmailRecipientsGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
 
 

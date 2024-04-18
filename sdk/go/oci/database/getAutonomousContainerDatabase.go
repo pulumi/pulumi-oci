@@ -76,7 +76,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-	ComputeModel string `pulumi:"computeModel"`
+	ComputeModel            string `pulumi:"computeModel"`
+	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 	DbName string `pulumi:"dbName"`
 	// The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
@@ -115,7 +116,9 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails         string                                                  `pulumi:"lifecycleDetails"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// List of One-Off patches that has been successfully applied to Autonomous Container Database
+	ListOneOffPatches        []string                                                `pulumi:"listOneOffPatches"`
 	MaintenanceWindowDetails []GetAutonomousContainerDatabaseMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindows []GetAutonomousContainerDatabaseMaintenanceWindow `pulumi:"maintenanceWindows"`
@@ -137,13 +140,11 @@ type LookupAutonomousContainerDatabaseResult struct {
 	PeerCloudAutonomousVmClusterId               string                                                                      `pulumi:"peerCloudAutonomousVmClusterId"`
 	PeerDbUniqueName                             string                                                                      `pulumi:"peerDbUniqueName"`
 	ProtectionMode                               string                                                                      `pulumi:"protectionMode"`
-	// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The number of CPUs provisioned in an Autonomous Container Database.
 	ProvisionedCpus float64 `pulumi:"provisionedCpus"`
-	// For Autonomous Databases on Dedicated Exadata Infrastructure:
-	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+	// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
 	// The number of CPUs reserved in an Autonomous Container Database.
 	ReservedCpus float64 `pulumi:"reservedCpus"`
@@ -256,6 +257,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.Str
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
+func (o LookupAutonomousContainerDatabaseResultOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
+}
+
 // The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
 func (o LookupAutonomousContainerDatabaseResultOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.DbName }).(pulumi.StringOutput)
@@ -362,6 +367,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) LifecycleDetails() pulumi
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// List of One-Off patches that has been successfully applied to Autonomous Container Database
+func (o LookupAutonomousContainerDatabaseResultOutput) ListOneOffPatches() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []string { return v.ListOneOffPatches }).(pulumi.StringArrayOutput)
+}
+
 func (o LookupAutonomousContainerDatabaseResultOutput) MaintenanceWindowDetails() GetAutonomousContainerDatabaseMaintenanceWindowDetailArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseMaintenanceWindowDetail {
 		return v.MaintenanceWindowDetails
@@ -438,7 +448,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ProtectionMode() pulumi.S
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ProtectionMode }).(pulumi.StringOutput)
 }
 
-// An array of CPU values that can be used to successfully provision a single Autonomous Database.\ For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []float64 { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
 }
@@ -448,9 +458,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) ProvisionedCpus() pulumi.
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
 
-// For Autonomous Databases on Dedicated Exadata Infrastructure:
-// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
-// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
+// CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 func (o LookupAutonomousContainerDatabaseResultOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }

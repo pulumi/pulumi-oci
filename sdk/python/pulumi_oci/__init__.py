@@ -2371,6 +2371,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/autonomousDatabaseSoftwareImage",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage": "AutonomousDatabaseSoftwareImage"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/autonomousDatabaseWallet",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -4559,6 +4567,14 @@ _utilities.register(
   "fqn": "pulumi_oci.meteringcomputation",
   "classes": {
    "oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery": "UsageCarbonEmissionsQuery"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "MeteringComputation/usageStatementEmailRecipientsGroup",
+  "fqn": "pulumi_oci.meteringcomputation",
+  "classes": {
+   "oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup": "UsageStatementEmailRecipientsGroup"
   }
  },
  {

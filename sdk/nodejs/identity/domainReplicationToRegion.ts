@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,7 +32,6 @@ import * as utilities from "../utilities";
  *     replicaRegion: _var.domain_replication_to_region_replica_region,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

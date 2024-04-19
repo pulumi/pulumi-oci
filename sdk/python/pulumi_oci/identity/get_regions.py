@@ -76,14 +76,12 @@ def get_regions(filters: Optional[Sequence[pulumi.InputType['GetRegionsFilterArg
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_regions = oci.Identity.get_regions()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -106,13 +104,11 @@ def get_regions_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_regions = oci.Identity.get_regions()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

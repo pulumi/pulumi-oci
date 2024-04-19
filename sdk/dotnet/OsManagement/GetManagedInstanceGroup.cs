@@ -19,7 +19,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagedInstanceGroupResult> InvokeAsync(GetManagedInstanceGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceGroupResult>("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args ?? new GetManagedInstanceGroupArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.OsManagement
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagedInstanceGroupResult> Invoke(GetManagedInstanceGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceGroupResult>("oci:OsManagement/getManagedInstanceGroup:getManagedInstanceGroup", args ?? new GetManagedInstanceGroupInvokeArgs(), options.WithDefaults());

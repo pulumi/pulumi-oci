@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDedicatedVmHostInstanceShapes(ctx *pulumi.Context, args *GetDedicatedVmHostInstanceShapesArgs, opts ...pulumi.InvokeOption) (*GetDedicatedVmHostInstanceShapesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDedicatedVmHostInstanceShapesResult

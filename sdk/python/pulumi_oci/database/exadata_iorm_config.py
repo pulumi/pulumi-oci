@@ -194,7 +194,6 @@ class ExadataIormConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -207,7 +206,6 @@ class ExadataIormConfig(pulumi.CustomResource):
             db_system_id=oci_database_db_system["test_db_system"]["id"],
             objective="AUTO")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -243,7 +241,6 @@ class ExadataIormConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -256,7 +253,6 @@ class ExadataIormConfig(pulumi.CustomResource):
             db_system_id=oci_database_db_system["test_db_system"]["id"],
             objective="AUTO")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

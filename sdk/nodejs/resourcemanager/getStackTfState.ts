@@ -7,7 +7,6 @@ import * as utilities from "../utilities";
 /**
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -16,7 +15,6 @@ import * as utilities from "../utilities";
  *     stackId: oci_resourcemanager_stack.test_stack.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStackTfState(args: GetStackTfStateArgs, opts?: pulumi.InvokeOptions): Promise<GetStackTfStateResult> {
 
@@ -52,7 +50,6 @@ export interface GetStackTfStateResult {
 /**
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -61,7 +58,6 @@ export interface GetStackTfStateResult {
  *     stackId: oci_resourcemanager_stack.test_stack.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStackTfStateOutput(args: GetStackTfStateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStackTfStateResult> {
     return pulumi.output(args).apply((a: any) => getStackTfState(a, opts))

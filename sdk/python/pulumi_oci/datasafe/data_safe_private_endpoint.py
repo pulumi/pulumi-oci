@@ -429,7 +429,6 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -449,7 +448,6 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["data_safe_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["data_safe_private_endpoint_private_endpoint_ip"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -488,7 +486,6 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -508,7 +505,6 @@ class DataSafePrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["data_safe_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["data_safe_private_endpoint_private_endpoint_ip"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

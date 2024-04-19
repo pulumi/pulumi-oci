@@ -20,7 +20,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -63,7 +62,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetUserAssessmentUsers(ctx *pulumi.Context, args *GetUserAssessmentUsersArgs, opts ...pulumi.InvokeOption) (*GetUserAssessmentUsersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserAssessmentUsersResult

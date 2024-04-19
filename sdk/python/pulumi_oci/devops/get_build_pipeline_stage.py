@@ -363,14 +363,12 @@ def get_build_pipeline_stage(build_pipeline_stage_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_build_pipeline_stage = oci.DevOps.get_build_pipeline_stage(build_pipeline_stage_id=oci_devops_build_pipeline_stage["test_build_pipeline_stage"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str build_pipeline_stage_id: Unique stage identifier.
@@ -420,14 +418,12 @@ def get_build_pipeline_stage_output(build_pipeline_stage_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_build_pipeline_stage = oci.DevOps.get_build_pipeline_stage(build_pipeline_stage_id=oci_devops_build_pipeline_stage["test_build_pipeline_stage"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str build_pipeline_stage_id: Unique stage identifier.

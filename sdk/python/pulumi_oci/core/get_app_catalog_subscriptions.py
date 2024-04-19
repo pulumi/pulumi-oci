@@ -102,7 +102,6 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_app_catalog_subscriptions(compartment_id: Optional[str] = None,
     test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
         listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -143,7 +141,6 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_app_catalog_subscriptions_output(compartment_id: Optional[pulumi.Input[s
     test_app_catalog_subscriptions = oci.Core.get_app_catalog_subscriptions(compartment_id=var["compartment_id"],
         listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -33,7 +32,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPeerRegionForRemotePeeringsResult> InvokeAsync(GetPeerRegionForRemotePeeringsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -60,7 +57,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPeerRegionForRemotePeeringsResult> Invoke(GetPeerRegionForRemotePeeringsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPeerRegionForRemotePeeringsResult>("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", args ?? new GetPeerRegionForRemotePeeringsInvokeArgs(), options.WithDefaults());

@@ -165,14 +165,12 @@ def get_stack(stack_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stack = oci.ResourceManager.get_stack(stack_id=oci_resourcemanager_stack["test_stack"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.
@@ -206,14 +204,12 @@ def get_stack_output(stack_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stack = oci.ResourceManager.get_stack(stack_id=oci_resourcemanager_stack["test_stack"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str stack_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack.

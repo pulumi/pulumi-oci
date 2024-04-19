@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetShapesResult> InvokeAsync(GetShapesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesArgs(), options.WithDefaults());
@@ -57,7 +55,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());

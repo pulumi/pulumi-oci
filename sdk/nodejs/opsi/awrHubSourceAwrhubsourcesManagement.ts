@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     enableAwrhubsource: _var.enable_awrhubsource,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class AwrHubSourceAwrhubsourcesManagement extends pulumi.CustomResource {
     /**

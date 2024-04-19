@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,7 +32,6 @@ import * as utilities from "../utilities";
  *     networkSecurityGroupIds: _var.network_firewall_network_security_group_ids,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

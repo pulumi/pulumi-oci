@@ -183,14 +183,12 @@ def get_default_configuration(default_configuration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=oci_psql_default_configuration["test_default_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str default_configuration_id: A unique identifier for the configuration.
@@ -225,14 +223,12 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_default_configuration = oci.Psql.get_default_configuration(default_configuration_id=oci_psql_default_configuration["test_default_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str default_configuration_id: A unique identifier for the configuration.

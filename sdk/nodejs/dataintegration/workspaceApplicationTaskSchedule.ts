@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +108,6 @@ import * as utilities from "../utilities";
  *     startTimeMillis: _var.workspace_application_task_schedule_start_time_millis,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

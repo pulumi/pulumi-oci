@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRecoveryServiceSubnets(args: GetRecoveryServiceSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecoveryServiceSubnetsResult> {
 
@@ -117,7 +115,6 @@ export interface GetRecoveryServiceSubnetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetRecoveryServiceSubnetsResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRecoveryServiceSubnetsOutput(args: GetRecoveryServiceSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecoveryServiceSubnetsResult> {
     return pulumi.output(args).apply((a: any) => getRecoveryServiceSubnets(a, opts))

@@ -89,14 +89,12 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_unset_security_assessment_baseline = oci.data_safe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -128,14 +126,12 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_unset_security_assessment_baseline = oci.data_safe.UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -490,7 +490,6 @@ class VmClusterNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -534,7 +533,6 @@ class VmClusterNetwork(pulumi.CustomResource):
             ntps=var["vm_cluster_network_ntp"],
             validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -572,7 +570,6 @@ class VmClusterNetwork(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -616,7 +613,6 @@ class VmClusterNetwork(pulumi.CustomResource):
             ntps=var["vm_cluster_network_ntp"],
             validate_vm_cluster_network=var["vm_cluster_network_validate_vm_cluster_network"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

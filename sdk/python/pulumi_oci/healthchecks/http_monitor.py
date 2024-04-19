@@ -571,7 +571,6 @@ class HttpMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -596,7 +595,6 @@ class HttpMonitor(pulumi.CustomResource):
             timeout_in_seconds=var["http_monitor_timeout_in_seconds"],
             vantage_point_names=var["http_monitor_vantage_point_names"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -644,7 +642,6 @@ class HttpMonitor(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -669,7 +666,6 @@ class HttpMonitor(pulumi.CustomResource):
             timeout_in_seconds=var["http_monitor_timeout_in_seconds"],
             vantage_point_names=var["http_monitor_vantage_point_names"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

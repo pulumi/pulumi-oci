@@ -331,7 +331,6 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -343,7 +342,6 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
             is_unlimited=var["management_agent_install_key_is_unlimited"],
             time_expires=var["management_agent_install_key_time_expires"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -378,7 +376,6 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -390,7 +387,6 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
             is_unlimited=var["management_agent_install_key_is_unlimited"],
             time_expires=var["management_agent_install_key_time_expires"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

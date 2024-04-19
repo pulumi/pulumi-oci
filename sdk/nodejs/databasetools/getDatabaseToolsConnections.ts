@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     types: _var.database_tools_connection_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseToolsConnections(args: GetDatabaseToolsConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsConnectionsResult> {
 
@@ -116,7 +114,6 @@ export interface GetDatabaseToolsConnectionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetDatabaseToolsConnectionsResult {
  *     types: _var.database_tools_connection_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseToolsConnectionsOutput(args: GetDatabaseToolsConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsConnectionsResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseToolsConnections(a, opts))

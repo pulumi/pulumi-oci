@@ -1301,7 +1301,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1315,7 +1314,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
             external_id="externalId",
             resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1450,7 +1448,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1464,7 +1461,6 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
             external_id="externalId",
             resource_type_schema_version=var["oauth_client_certificate_resource_type_schema_version"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

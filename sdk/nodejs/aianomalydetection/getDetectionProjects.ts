@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: _var.project_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDetectionProjects(args: GetDetectionProjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionProjectsResult> {
 
@@ -89,7 +87,6 @@ export interface GetDetectionProjectsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetDetectionProjectsResult {
  *     state: _var.project_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDetectionProjectsOutput(args: GetDetectionProjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionProjectsResult> {
     return pulumi.output(args).apply((a: any) => getDetectionProjects(a, opts))

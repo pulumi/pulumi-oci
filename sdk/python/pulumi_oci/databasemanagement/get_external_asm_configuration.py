@@ -85,7 +85,6 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -93,7 +92,6 @@ def get_external_asm_configuration(external_asm_id: Optional[str] = None,
     test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
         opc_named_credential_id=var["external_asm_configuration_opc_named_credential_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.
@@ -123,7 +121,6 @@ def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,7 +128,6 @@ def get_external_asm_configuration_output(external_asm_id: Optional[pulumi.Input
     test_external_asm_configuration = oci.DatabaseManagement.get_external_asm_configuration(external_asm_id=oci_database_management_external_asm["test_external_asm"]["id"],
         opc_named_credential_id=var["external_asm_configuration_opc_named_credential_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM.

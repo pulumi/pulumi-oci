@@ -86,14 +86,12 @@ def get_path_route_sets(filters: Optional[Sequence[pulumi.InputType['GetPathRout
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.
@@ -122,14 +120,12 @@ def get_path_route_sets_output(filters: Optional[pulumi.Input[Optional[Sequence[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_path_route_sets = oci.LoadBalancer.get_path_route_sets(load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the path route sets to retrieve.

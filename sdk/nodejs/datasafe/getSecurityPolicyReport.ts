@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReport(args: GetSecurityPolicyReportArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyReportResult> {
 
@@ -101,7 +99,6 @@ export interface GetSecurityPolicyReportResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,7 +107,6 @@ export interface GetSecurityPolicyReportResult {
  *     securityPolicyReportId: oci_data_safe_security_policy_report.test_security_policy_report.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityPolicyReportOutput(args: GetSecurityPolicyReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyReportResult> {
     return pulumi.output(args).apply((a: any) => getSecurityPolicyReport(a, opts))

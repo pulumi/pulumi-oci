@@ -156,7 +156,6 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,7 +165,6 @@ def get_managed_databases_database_parameter(is_allowed_values_included: Optiona
         name=var["managed_databases_database_parameter_name"],
         source=var["managed_databases_database_parameter_source"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
@@ -208,7 +206,6 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,7 +215,6 @@ def get_managed_databases_database_parameter_output(is_allowed_values_included: 
         name=var["managed_databases_database_parameter_name"],
         source=var["managed_databases_database_parameter_source"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).

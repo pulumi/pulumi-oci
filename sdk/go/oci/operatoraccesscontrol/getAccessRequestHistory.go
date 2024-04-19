@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAccessRequestHistory(ctx *pulumi.Context, args *GetAccessRequestHistoryArgs, opts ...pulumi.InvokeOption) (*GetAccessRequestHistoryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAccessRequestHistoryResult

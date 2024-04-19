@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     status: _var.subscribed_service_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSubscribedServices(args: GetSubscribedServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscribedServicesResult> {
 
@@ -96,7 +94,6 @@ export interface GetSubscribedServicesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetSubscribedServicesResult {
  *     status: _var.subscribed_service_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSubscribedServicesOutput(args: GetSubscribedServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribedServicesResult> {
     return pulumi.output(args).apply((a: any) => getSubscribedServices(a, opts))

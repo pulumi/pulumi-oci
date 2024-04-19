@@ -349,7 +349,6 @@ class DedicatedVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -372,7 +371,6 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             },
             status=var["dedicated_vantage_point_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -409,7 +407,6 @@ class DedicatedVantagePoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -432,7 +429,6 @@ class DedicatedVantagePoint(pulumi.CustomResource):
             },
             status=var["dedicated_vantage_point_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

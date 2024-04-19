@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     logSavedSearchId: oci_logging_log_saved_search.test_log_saved_search.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogSavedSearch(args: GetLogSavedSearchArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSavedSearchResult> {
 
@@ -93,7 +91,6 @@ export interface GetLogSavedSearchResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetLogSavedSearchResult {
  *     logSavedSearchId: oci_logging_log_saved_search.test_log_saved_search.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogSavedSearchOutput(args: GetLogSavedSearchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSavedSearchResult> {
     return pulumi.output(args).apply((a: any) => getLogSavedSearch(a, opts))

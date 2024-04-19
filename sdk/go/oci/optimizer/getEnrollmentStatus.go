@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupEnrollmentStatus(ctx *pulumi.Context, args *LookupEnrollmentStatusArgs, opts ...pulumi.InvokeOption) (*LookupEnrollmentStatusResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupEnrollmentStatusResult

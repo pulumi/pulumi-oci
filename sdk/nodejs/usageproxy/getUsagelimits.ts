@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     serviceType: _var.usagelimit_service_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsagelimits(args: GetUsagelimitsArgs, opts?: pulumi.InvokeOptions): Promise<GetUsagelimitsResult> {
 
@@ -97,7 +95,6 @@ export interface GetUsagelimitsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -110,7 +107,6 @@ export interface GetUsagelimitsResult {
  *     serviceType: _var.usagelimit_service_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsagelimitsOutput(args: GetUsagelimitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsagelimitsResult> {
     return pulumi.output(args).apply((a: any) => getUsagelimits(a, opts))

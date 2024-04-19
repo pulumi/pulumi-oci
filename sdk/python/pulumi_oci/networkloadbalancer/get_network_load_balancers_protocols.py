@@ -77,14 +77,12 @@ def get_network_load_balancers_protocols(filters: Optional[Sequence[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_load_balancers_protocols = oci.NetworkLoadBalancer.get_network_load_balancers_protocols()
     ```
-    <!--End PulumiCodeChooser -->
     """
     __args__ = dict()
     __args__['filters'] = filters
@@ -108,13 +106,11 @@ def get_network_load_balancers_protocols_output(filters: Optional[pulumi.Input[O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_load_balancers_protocols = oci.NetworkLoadBalancer.get_network_load_balancers_protocols()
     ```
-    <!--End PulumiCodeChooser -->
     """
     ...

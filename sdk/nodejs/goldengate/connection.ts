@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +101,6 @@ import * as utilities from "../utilities";
  *     wallet: _var.connection_wallet,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

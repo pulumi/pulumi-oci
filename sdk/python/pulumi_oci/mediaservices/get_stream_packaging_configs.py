@@ -125,7 +125,6 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_stream_packaging_configs(display_name: Optional[str] = None,
         state=var["stream_packaging_config_state"],
         stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only the resources that match the entire display name given.
@@ -176,7 +174,6 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_stream_packaging_configs_output(display_name: Optional[pulumi.Input[Opti
         state=var["stream_packaging_config_state"],
         stream_packaging_config_id=oci_media_services_stream_packaging_config["test_stream_packaging_config"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only the resources that match the entire display name given.

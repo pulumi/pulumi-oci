@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison(ctx *pulumi.Context, args *GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult

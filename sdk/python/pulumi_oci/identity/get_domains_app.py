@@ -1508,7 +1508,6 @@ def get_domains_app(app_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -1520,7 +1519,6 @@ def get_domains_app(app_id: Optional[str] = None,
         authorization=var["app_authorization"],
         resource_type_schema_version=var["app_resource_type_schema_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str app_id: ID of the resource
@@ -1681,7 +1679,6 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -1693,7 +1690,6 @@ def get_domains_app_output(app_id: Optional[pulumi.Input[str]] = None,
         authorization=var["app_authorization"],
         resource_type_schema_version=var["app_resource_type_schema_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str app_id: ID of the resource

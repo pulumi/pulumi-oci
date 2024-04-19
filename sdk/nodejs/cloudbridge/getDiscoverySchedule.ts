@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     discoveryScheduleId: oci_cloud_bridge_discovery_schedule.test_discovery_schedule.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoverySchedule(args: GetDiscoveryScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryScheduleResult> {
 
@@ -97,7 +95,6 @@ export interface GetDiscoveryScheduleResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -106,7 +103,6 @@ export interface GetDiscoveryScheduleResult {
  *     discoveryScheduleId: oci_cloud_bridge_discovery_schedule.test_discovery_schedule.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryScheduleOutput(args: GetDiscoveryScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryScheduleResult> {
     return pulumi.output(args).apply((a: any) => getDiscoverySchedule(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: _var.container_instance_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getContainerInstances(args: GetContainerInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerInstancesResult> {
 
@@ -99,7 +97,6 @@ export interface GetContainerInstancesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,7 +108,6 @@ export interface GetContainerInstancesResult {
  *     state: _var.container_instance_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getContainerInstancesOutput(args: GetContainerInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstancesResult> {
     return pulumi.output(args).apply((a: any) => getContainerInstances(a, opts))

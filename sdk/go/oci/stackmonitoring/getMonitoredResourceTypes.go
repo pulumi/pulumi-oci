@@ -22,7 +22,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -52,7 +51,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMonitoredResourceTypes(ctx *pulumi.Context, args *GetMonitoredResourceTypesArgs, opts ...pulumi.InvokeOption) (*GetMonitoredResourceTypesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMonitoredResourceTypesResult

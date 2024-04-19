@@ -19,7 +19,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstancePatchHistoriesResult> InvokeAsync(GetBdsInstancePatchHistoriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstancePatchHistoriesResult> Invoke(GetBdsInstancePatchHistoriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesInvokeArgs(), options.WithDefaults());

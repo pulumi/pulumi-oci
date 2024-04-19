@@ -138,7 +138,6 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,7 +148,6 @@ def get_occ_availability_catalog_occ_availabilities(date_expected_capacity_hando
         resource_type=var["occ_availability_catalog_occ_availability_resource_type"],
         workload_type=var["occ_availability_catalog_occ_availability_workload_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str date_expected_capacity_handover: The capacity handover date of the capacity constraint to filter the list of capacity constraints.
@@ -194,7 +192,6 @@ def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacit
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,7 +202,6 @@ def get_occ_availability_catalog_occ_availabilities_output(date_expected_capacit
         resource_type=var["occ_availability_catalog_occ_availability_resource_type"],
         workload_type=var["occ_availability_catalog_occ_availability_workload_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str date_expected_capacity_handover: The capacity handover date of the capacity constraint to filter the list of capacity constraints.

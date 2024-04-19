@@ -158,14 +158,12 @@ def get_address_list(address_list_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_address_list = oci.Waas.get_address_list(address_list_id=oci_waas_address_list["test_address_list"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.
@@ -198,14 +196,12 @@ def get_address_list_output(address_list_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_address_list = oci.Waas.get_address_list(address_list_id=oci_waas_address_list["test_address_list"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list. This number is generated when the address list is added to the compartment.

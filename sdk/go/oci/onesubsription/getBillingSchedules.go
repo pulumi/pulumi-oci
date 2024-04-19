@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBillingSchedules(ctx *pulumi.Context, args *GetBillingSchedulesArgs, opts ...pulumi.InvokeOption) (*GetBillingSchedulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBillingSchedulesResult

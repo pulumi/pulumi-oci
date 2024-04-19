@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPathRouteSets(args: GetPathRouteSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetPathRouteSetsResult> {
 
@@ -66,7 +64,6 @@ export interface GetPathRouteSetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetPathRouteSetsResult {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPathRouteSetsOutput(args: GetPathRouteSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathRouteSetsResult> {
     return pulumi.output(args).apply((a: any) => getPathRouteSets(a, opts))

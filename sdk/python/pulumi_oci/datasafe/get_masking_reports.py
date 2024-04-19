@@ -135,7 +135,6 @@ def get_masking_reports(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -146,7 +145,6 @@ def get_masking_reports(access_level: Optional[str] = None,
         masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -191,7 +189,6 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,7 +199,6 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[str]
         masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

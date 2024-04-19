@@ -105,7 +105,6 @@ def get_repository_file_line(file_path: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,7 +114,6 @@ def get_repository_file_line(file_path: Optional[str] = None,
         file_path=var["repository_file_line_file_path"],
         start_line_number=var["repository_file_line_start_line_number"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str file_path: A filter to return file contents of the specified paths.
@@ -153,7 +151,6 @@ def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +160,6 @@ def get_repository_file_line_output(file_path: Optional[pulumi.Input[str]] = Non
         file_path=var["repository_file_line_file_path"],
         start_line_number=var["repository_file_line_start_line_number"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str file_path: A filter to return file contents of the specified paths.

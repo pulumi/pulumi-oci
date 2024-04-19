@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     operatorControlId: oci_operator_access_control_operator_control.test_operator_control.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getControl(args: GetControlArgs, opts?: pulumi.InvokeOptions): Promise<GetControlResult> {
 
@@ -137,7 +135,6 @@ export interface GetControlResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -146,7 +143,6 @@ export interface GetControlResult {
  *     operatorControlId: oci_operator_access_control_operator_control.test_operator_control.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getControlOutput(args: GetControlOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlResult> {
     return pulumi.output(args).apply((a: any) => getControl(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCustomTables(args: GetCustomTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomTablesResult> {
 
@@ -79,7 +77,6 @@ export interface GetCustomTablesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -89,7 +86,6 @@ export interface GetCustomTablesResult {
  *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCustomTablesOutput(args: GetCustomTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomTablesResult> {
     return pulumi.output(args).apply((a: any) => getCustomTables(a, opts))

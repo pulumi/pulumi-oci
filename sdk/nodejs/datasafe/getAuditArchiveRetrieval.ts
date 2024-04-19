@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditArchiveRetrieval(args: GetAuditArchiveRetrievalArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditArchiveRetrievalResult> {
 
@@ -121,7 +119,6 @@ export interface GetAuditArchiveRetrievalResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetAuditArchiveRetrievalResult {
  *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditArchiveRetrievalOutput(args: GetAuditArchiveRetrievalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditArchiveRetrievalResult> {
     return pulumi.output(args).apply((a: any) => getAuditArchiveRetrieval(a, opts))

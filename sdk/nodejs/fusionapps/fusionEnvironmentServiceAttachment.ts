@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     serviceInstanceType: _var.fusion_environment_service_attachment_service_instance_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

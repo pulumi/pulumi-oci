@@ -32,7 +32,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -56,8 +55,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -81,8 +78,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -109,7 +104,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetPrivateIps(ctx *pulumi.Context, args *GetPrivateIpsArgs, opts ...pulumi.InvokeOption) (*GetPrivateIpsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPrivateIpsResult

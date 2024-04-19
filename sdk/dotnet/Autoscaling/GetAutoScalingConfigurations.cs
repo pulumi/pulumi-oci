@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutoScalingConfigurationsResult> InvokeAsync(GetAutoScalingConfigurationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutoScalingConfigurationsResult>("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutoScalingConfigurationsResult> Invoke(GetAutoScalingConfigurationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutoScalingConfigurationsResult>("oci:Autoscaling/getAutoScalingConfigurations:getAutoScalingConfigurations", args ?? new GetAutoScalingConfigurationsInvokeArgs(), options.WithDefaults());

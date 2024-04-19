@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     lifecycleEnvironmentId: oci_os_management_hub_lifecycle_environment.test_lifecycle_environment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLifecycleEnvironment(args: GetLifecycleEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetLifecycleEnvironmentResult> {
 
@@ -118,7 +116,6 @@ export interface GetLifecycleEnvironmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetLifecycleEnvironmentResult {
  *     lifecycleEnvironmentId: oci_os_management_hub_lifecycle_environment.test_lifecycle_environment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLifecycleEnvironmentOutput(args: GetLifecycleEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLifecycleEnvironmentResult> {
     return pulumi.output(args).apply((a: any) => getLifecycleEnvironment(a, opts))

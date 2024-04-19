@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     timeStart: _var.summarize_resource_inventory_time_start,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSummarizeResourceInventory(args?: GetSummarizeResourceInventoryArgs, opts?: pulumi.InvokeOptions): Promise<GetSummarizeResourceInventoryResult> {
     args = args || {};
@@ -92,7 +90,6 @@ export interface GetSummarizeResourceInventoryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -103,7 +100,6 @@ export interface GetSummarizeResourceInventoryResult {
  *     timeStart: _var.summarize_resource_inventory_time_start,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSummarizeResourceInventoryOutput(args?: GetSummarizeResourceInventoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSummarizeResourceInventoryResult> {
     return pulumi.output(args).apply((a: any) => getSummarizeResourceInventory(a, opts))

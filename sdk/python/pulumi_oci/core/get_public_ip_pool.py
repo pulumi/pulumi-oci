@@ -146,14 +146,12 @@ def get_public_ip_pool(public_ip_pool_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str public_ip_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
@@ -185,14 +183,12 @@ def get_public_ip_pool_output(public_ip_pool_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_public_ip_pool = oci.Core.get_public_ip_pool(public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str public_ip_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.

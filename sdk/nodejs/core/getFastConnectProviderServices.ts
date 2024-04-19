@@ -19,7 +19,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFastConnectProviderServices(args: GetFastConnectProviderServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetFastConnectProviderServicesResult> {
 
@@ -78,7 +76,6 @@ export interface GetFastConnectProviderServicesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,7 +84,6 @@ export interface GetFastConnectProviderServicesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFastConnectProviderServicesOutput(args: GetFastConnectProviderServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServicesResult> {
     return pulumi.output(args).apply((a: any) => getFastConnectProviderServices(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     usageCarbonEmissionsQueryId: oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsageCarbonEmissionsQuery(args: GetUsageCarbonEmissionsQueryArgs, opts?: pulumi.InvokeOptions): Promise<GetUsageCarbonEmissionsQueryResult> {
 
@@ -67,7 +65,6 @@ export interface GetUsageCarbonEmissionsQueryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -76,7 +73,6 @@ export interface GetUsageCarbonEmissionsQueryResult {
  *     usageCarbonEmissionsQueryId: oci_metering_computation_usage_carbon_emissions_query.test_usage_carbon_emissions_query.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUsageCarbonEmissionsQueryOutput(args: GetUsageCarbonEmissionsQueryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUsageCarbonEmissionsQueryResult> {
     return pulumi.output(args).apply((a: any) => getUsageCarbonEmissionsQuery(a, opts))

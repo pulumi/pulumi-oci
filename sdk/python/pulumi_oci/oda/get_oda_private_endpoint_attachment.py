@@ -134,14 +134,12 @@ def get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=oci_oda_oda_private_endpoint_attachment["test_oda_private_endpoint_attachment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_private_endpoint_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint Attachment.
@@ -172,14 +170,12 @@ def get_oda_private_endpoint_attachment_output(oda_private_endpoint_attachment_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oda_private_endpoint_attachment = oci.Oda.get_oda_private_endpoint_attachment(oda_private_endpoint_attachment_id=oci_oda_oda_private_endpoint_attachment["test_oda_private_endpoint_attachment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_private_endpoint_attachment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of ODA Private Endpoint Attachment.

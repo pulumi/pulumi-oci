@@ -745,7 +745,6 @@ class BuildPipelineStage(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -803,7 +802,6 @@ class BuildPipelineStage(pulumi.CustomResource):
                 wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -847,7 +845,6 @@ class BuildPipelineStage(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -905,7 +902,6 @@ class BuildPipelineStage(pulumi.CustomResource):
                 wait_type=var["build_pipeline_stage_wait_criteria_wait_type"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstanceApiKeyResult> InvokeAsync(GetBdsInstanceApiKeyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstanceApiKeyResult> Invoke(GetBdsInstanceApiKeyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());

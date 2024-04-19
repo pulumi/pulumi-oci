@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAwrHub(args: GetAwrHubArgs, opts?: pulumi.InvokeOptions): Promise<GetAwrHubResult> {
 
@@ -109,7 +107,6 @@ export interface GetAwrHubResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetAwrHubResult {
  *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAwrHubOutput(args: GetAwrHubOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubResult> {
     return pulumi.output(args).apply((a: any) => getAwrHub(a, opts))

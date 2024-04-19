@@ -124,7 +124,6 @@ def get_user_group_memberships(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -133,7 +132,6 @@ def get_user_group_memberships(compartment_id: Optional[str] = None,
         group_id=oci_identity_group["test_group"]["id"],
         user_id=oci_identity_user["test_user"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -179,7 +177,6 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -188,7 +185,6 @@ def get_user_group_memberships_output(compartment_id: Optional[pulumi.Input[str]
         group_id=oci_identity_group["test_group"]["id"],
         user_id=oci_identity_user["test_user"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

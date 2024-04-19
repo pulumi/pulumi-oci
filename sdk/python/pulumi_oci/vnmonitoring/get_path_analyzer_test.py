@@ -219,14 +219,12 @@ def get_path_analyzer_test(path_analyzer_test_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_path_analyzer_test = oci.VnMonitoring.get_path_analyzer_test(path_analyzer_test_id=oci_vn_monitoring_path_analyzer_test["test_path_analyzer_test"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.
@@ -264,14 +262,12 @@ def get_path_analyzer_test_output(path_analyzer_test_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_path_analyzer_test = oci.VnMonitoring.get_path_analyzer_test(path_analyzer_test_id=oci_vn_monitoring_path_analyzer_test["test_path_analyzer_test"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str path_analyzer_test_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource.

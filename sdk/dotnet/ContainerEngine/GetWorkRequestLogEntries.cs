@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWorkRequestLogEntriesResult> InvokeAsync(GetWorkRequestLogEntriesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestLogEntriesResult>("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args ?? new GetWorkRequestLogEntriesArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWorkRequestLogEntriesResult> Invoke(GetWorkRequestLogEntriesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestLogEntriesResult>("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args ?? new GetWorkRequestLogEntriesInvokeArgs(), options.WithDefaults());

@@ -99,14 +99,12 @@ def get_db_system_connection_detail(db_system_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_connection_detail = oci.Psql.get_db_system_connection_detail(db_system_id=oci_psql_db_system["test_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: A unique identifier for the database system.
@@ -134,14 +132,12 @@ def get_db_system_connection_detail_output(db_system_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_system_connection_detail = oci.Psql.get_db_system_connection_detail(db_system_id=oci_psql_db_system["test_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: A unique identifier for the database system.

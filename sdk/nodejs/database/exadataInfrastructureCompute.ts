@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class ExadataInfrastructureCompute extends pulumi.CustomResource {
     /**

@@ -231,14 +231,12 @@ def get_virtual_service(virtual_service_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_service_id: Unique VirtualService identifier.
@@ -277,14 +275,12 @@ def get_virtual_service_output(virtual_service_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_service = oci.ServiceMesh.get_virtual_service(virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_service_id: Unique VirtualService identifier.

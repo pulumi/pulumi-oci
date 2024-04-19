@@ -91,14 +91,12 @@ def get_vault_replicas(filters: Optional[Sequence[pulumi.InputType['GetVaultRepl
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=oci_kms_vault["test_vault"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str vault_id: The OCID of the vault.
@@ -132,14 +130,12 @@ def get_vault_replicas_output(filters: Optional[pulumi.Input[Optional[Sequence[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vault_replicas = oci.Kms.get_vault_replicas(vault_id=oci_kms_vault["test_vault"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str vault_id: The OCID of the vault.

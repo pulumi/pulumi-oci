@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,7 +40,6 @@ import * as utilities from "../utilities";
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserAssessmentProfileAnalytics(args: GetUserAssessmentProfileAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentProfileAnalyticsResult> {
 
@@ -129,7 +127,6 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserAssessmentProfileAnalyticsOutput(args: GetUserAssessmentProfileAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentProfileAnalyticsResult> {
     return pulumi.output(args).apply((a: any) => getUserAssessmentProfileAnalytics(a, opts))

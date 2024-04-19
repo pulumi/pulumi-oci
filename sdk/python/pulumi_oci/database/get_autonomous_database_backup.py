@@ -324,14 +324,12 @@ def get_autonomous_database_backup(autonomous_database_backup_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_database_backup = oci.Database.get_autonomous_database_backup(autonomous_database_backup_id=oci_database_autonomous_database_backup["test_autonomous_database_backup"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.
@@ -378,14 +376,12 @@ def get_autonomous_database_backup_output(autonomous_database_backup_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_database_backup = oci.Database.get_autonomous_database_backup(autonomous_database_backup_id=oci_database_autonomous_database_backup["test_autonomous_database_backup"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_database_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database backup.

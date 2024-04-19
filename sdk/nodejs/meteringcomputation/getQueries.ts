@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getQueries(args: GetQueriesArgs, opts?: pulumi.InvokeOptions): Promise<GetQueriesResult> {
 
@@ -75,7 +73,6 @@ export interface GetQueriesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -84,7 +81,6 @@ export interface GetQueriesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getQueriesOutput(args: GetQueriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueriesResult> {
     return pulumi.output(args).apply((a: any) => getQueries(a, opts))

@@ -267,14 +267,12 @@ def get_backup(backup_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_backup = oci.Psql.get_backup(backup_id=oci_psql_backup["test_backup"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_id: A unique identifier for the backup.
@@ -316,14 +314,12 @@ def get_backup_output(backup_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_backup = oci.Psql.get_backup(backup_id=oci_psql_backup["test_backup"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_id: A unique identifier for the backup.

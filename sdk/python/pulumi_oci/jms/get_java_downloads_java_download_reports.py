@@ -125,7 +125,6 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[str] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_java_downloads_java_download_reports(compartment_id: Optional[str] = Non
         java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"],
         state=var["java_download_report_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
@@ -176,7 +174,6 @@ def get_java_downloads_java_download_reports_output(compartment_id: Optional[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_java_downloads_java_download_reports_output(compartment_id: Optional[pul
         java_download_report_id=oci_jms_java_downloads_java_download_report["test_java_download_report"]["id"],
         state=var["java_download_report_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.

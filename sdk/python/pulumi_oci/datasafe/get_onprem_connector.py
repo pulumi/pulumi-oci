@@ -194,14 +194,12 @@ def get_onprem_connector(on_prem_connector_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_on_prem_connector = oci.DataSafe.get_onprem_connector(on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str on_prem_connector_id: The OCID of the on-premises connector.
@@ -237,14 +235,12 @@ def get_onprem_connector_output(on_prem_connector_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_on_prem_connector = oci.DataSafe.get_onprem_connector(on_prem_connector_id=oci_data_safe_on_prem_connector["test_on_prem_connector"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str on_prem_connector_id: The OCID of the on-premises connector.

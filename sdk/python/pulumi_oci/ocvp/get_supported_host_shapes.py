@@ -135,7 +135,6 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +144,6 @@ def get_supported_host_shapes(compartment_id: Optional[str] = None,
         is_single_host_sddc_supported=var["supported_host_shape_is_single_host_sddc_supported"],
         name=var["supported_host_shape_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -190,7 +188,6 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -200,7 +197,6 @@ def get_supported_host_shapes_output(compartment_id: Optional[pulumi.Input[str]]
         is_single_host_sddc_supported=var["supported_host_shape_is_single_host_sddc_supported"],
         name=var["supported_host_shape_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

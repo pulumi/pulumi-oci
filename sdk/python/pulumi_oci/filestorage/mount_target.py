@@ -602,7 +602,6 @@ class MountTarget(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -640,7 +639,6 @@ class MountTarget(pulumi.CustomResource):
             ),
             nsg_ids=var["mount_target_nsg_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -723,7 +721,6 @@ class MountTarget(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -761,7 +758,6 @@ class MountTarget(pulumi.CustomResource):
             ),
             nsg_ids=var["mount_target_nsg_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

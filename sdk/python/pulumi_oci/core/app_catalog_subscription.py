@@ -361,7 +361,6 @@ class AppCatalogSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -375,7 +374,6 @@ class AppCatalogSubscription(pulumi.CustomResource):
             time_retrieved=var["app_catalog_subscription_time_retrieved"],
             eula_link=var["app_catalog_subscription_eula_link"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -412,7 +410,6 @@ class AppCatalogSubscription(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -426,7 +423,6 @@ class AppCatalogSubscription(pulumi.CustomResource):
             time_retrieved=var["app_catalog_subscription_time_retrieved"],
             eula_link=var["app_catalog_subscription_eula_link"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

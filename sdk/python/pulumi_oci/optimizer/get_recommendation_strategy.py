@@ -108,7 +108,6 @@ def get_recommendation_strategy(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_recommendation_strategy(compartment_id: Optional[str] = None,
         name=var["recommendation_strategy_name"],
         recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -158,7 +156,6 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -168,7 +165,6 @@ def get_recommendation_strategy_output(compartment_id: Optional[pulumi.Input[str
         name=var["recommendation_strategy_name"],
         recommendation_name=oci_optimizer_recommendation["test_recommendation"]["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

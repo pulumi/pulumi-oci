@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupCrossConnectGroup(ctx *pulumi.Context, args *LookupCrossConnectGroupArgs, opts ...pulumi.InvokeOption) (*LookupCrossConnectGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCrossConnectGroupResult

@@ -99,7 +99,6 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_drg_route_table_route_rules(drg_route_table_id: Optional[str] = None,
     test_drg_route_table_route_rules = oci.Core.get_drg_route_table_route_rules(drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
         route_type=var["drg_route_table_route_rule_route_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
@@ -140,7 +138,6 @@ def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,7 +145,6 @@ def get_drg_route_table_route_rules_output(drg_route_table_id: Optional[pulumi.I
     test_drg_route_table_route_rules = oci.Core.get_drg_route_table_route_rules(drg_route_table_id=oci_core_drg_route_table["test_drg_route_table"]["id"],
         route_type=var["drg_route_table_route_rule_route_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.

@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 // For more detailed implementation refer the instance example
 func GetBootVolumeAttachments(ctx *pulumi.Context, args *GetBootVolumeAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetBootVolumeAttachmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: _var.capture_filter_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCaptureFilters(args: GetCaptureFiltersArgs, opts?: pulumi.InvokeOptions): Promise<GetCaptureFiltersResult> {
 
@@ -99,7 +97,6 @@ export interface GetCaptureFiltersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,7 +108,6 @@ export interface GetCaptureFiltersResult {
  *     state: _var.capture_filter_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCaptureFiltersOutput(args: GetCaptureFiltersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaptureFiltersResult> {
     return pulumi.output(args).apply((a: any) => getCaptureFilters(a, opts))

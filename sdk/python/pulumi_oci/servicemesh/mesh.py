@@ -350,7 +350,6 @@ class Mesh(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -372,7 +371,6 @@ class Mesh(pulumi.CustomResource):
                 minimum=var["mesh_mtls_minimum"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -405,7 +403,6 @@ class Mesh(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -427,7 +424,6 @@ class Mesh(pulumi.CustomResource):
                 minimum=var["mesh_mtls_minimum"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

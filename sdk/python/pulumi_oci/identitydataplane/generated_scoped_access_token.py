@@ -136,7 +136,6 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -145,7 +144,6 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
             public_key=var["generate_scoped_access_token_public_key"],
             scope=var["generate_scoped_access_token_scope"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -177,7 +175,6 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -186,7 +183,6 @@ class GeneratedScopedAccessToken(pulumi.CustomResource):
             public_key=var["generate_scoped_access_token_public_key"],
             scope=var["generate_scoped_access_token_scope"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -29,7 +29,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,7 +47,6 @@ import * as utilities from "../utilities";
  *     virtualSourceLists: _var.network_source_virtual_source_list,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

@@ -324,7 +324,6 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -332,7 +331,6 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[st
     test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=var["sensitive_data_models_sensitive_column_sensitive_column_key"],
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sensitive_column_key: The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.
@@ -382,7 +380,6 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -390,7 +387,6 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
     test_sensitive_data_models_sensitive_column = oci.DataSafe.get_sensitive_data_models_sensitive_column(sensitive_column_key=var["sensitive_data_models_sensitive_column_sensitive_column_key"],
         sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sensitive_column_key: The unique key that identifies the sensitive column. It's numeric and unique within a sensitive data model.

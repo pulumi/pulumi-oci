@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOperationsInsightsWarehouseResourceUsageSummary(args: GetOperationsInsightsWarehouseResourceUsageSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseResourceUsageSummaryResult> {
 
@@ -71,7 +69,6 @@ export interface GetOperationsInsightsWarehouseResourceUsageSummaryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetOperationsInsightsWarehouseResourceUsageSummaryResult {
  *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOperationsInsightsWarehouseResourceUsageSummaryOutput(args: GetOperationsInsightsWarehouseResourceUsageSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseResourceUsageSummaryResult> {
     return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouseResourceUsageSummary(a, opts))

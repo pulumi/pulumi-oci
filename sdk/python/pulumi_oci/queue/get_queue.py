@@ -272,14 +272,12 @@ def get_queue(queue_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_queue = oci.Queue.get_queue(queue_id=oci_queue_queue["test_queue"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str queue_id: The unique queue identifier.
@@ -322,14 +320,12 @@ def get_queue_output(queue_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_queue = oci.Queue.get_queue(queue_id=oci_queue_queue["test_queue"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str queue_id: The unique queue identifier.

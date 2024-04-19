@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetPrivateEndpointReachableIpResult> InvokeAsync(GetPrivateEndpointReachableIpArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ResourceManager
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetPrivateEndpointReachableIpResult> Invoke(GetPrivateEndpointReachableIpInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpInvokeArgs(), options.WithDefaults());

@@ -237,7 +237,6 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -246,7 +245,6 @@ def get_resolver_endpoint(resolver_endpoint_name: Optional[str] = None,
         resolver_id=oci_dns_resolver["test_resolver"]["id"],
         scope="PRIVATE")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str resolver_endpoint_name: The name of the target resolver endpoint.
@@ -294,7 +292,6 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -303,7 +300,6 @@ def get_resolver_endpoint_output(resolver_endpoint_name: Optional[pulumi.Input[s
         resolver_id=oci_dns_resolver["test_resolver"]["id"],
         scope="PRIVATE")
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str resolver_endpoint_name: The name of the target resolver endpoint.

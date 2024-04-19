@@ -203,14 +203,12 @@ def get_autonomous_database_software_image(autonomous_database_software_image_id
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_database_software_image = oci.Database.get_autonomous_database_software_image(autonomous_database_software_image_id=oci_database_autonomous_database_software_image["test_autonomous_database_software_image"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -247,14 +245,12 @@ def get_autonomous_database_software_image_output(autonomous_database_software_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_autonomous_database_software_image = oci.Database.get_autonomous_database_software_image(autonomous_database_software_image_id=oci_database_autonomous_database_software_image["test_autonomous_database_software_image"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

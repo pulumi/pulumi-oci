@@ -264,14 +264,12 @@ def get_masking_policy(masking_policy_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_policy_id: The OCID of the masking policy.
@@ -313,14 +311,12 @@ def get_masking_policy_output(masking_policy_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_masking_policy = oci.DataSafe.get_masking_policy(masking_policy_id=oci_data_safe_masking_policy["test_masking_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str masking_policy_id: The OCID of the masking policy.

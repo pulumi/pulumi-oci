@@ -113,7 +113,6 @@ def get_public_ip_pools(byoip_range_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -122,7 +121,6 @@ def get_public_ip_pools(byoip_range_id: Optional[str] = None,
         byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"],
         display_name=var["public_ip_pool_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str byoip_range_id: A filter to return only resources that match the given BYOIP CIDR block.
@@ -160,7 +158,6 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -169,7 +166,6 @@ def get_public_ip_pools_output(byoip_range_id: Optional[pulumi.Input[Optional[st
         byoip_range_id=oci_core_byoip_range["test_byoip_range"]["id"],
         display_name=var["public_ip_pool_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str byoip_range_id: A filter to return only resources that match the given BYOIP CIDR block.

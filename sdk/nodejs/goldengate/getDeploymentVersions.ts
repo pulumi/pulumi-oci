@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     deploymentType: _var.deployment_version_deployment_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentVersions(args: GetDeploymentVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentVersionsResult> {
 
@@ -83,7 +81,6 @@ export interface GetDeploymentVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetDeploymentVersionsResult {
  *     deploymentType: _var.deployment_version_deployment_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentVersionsOutput(args: GetDeploymentVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentVersionsResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentVersions(a, opts))

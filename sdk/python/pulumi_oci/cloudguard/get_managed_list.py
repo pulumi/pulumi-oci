@@ -242,14 +242,12 @@ def get_managed_list(managed_list_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_list = oci.CloudGuard.get_managed_list(managed_list_id=oci_cloud_guard_managed_list["test_managed_list"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_list_id: The cloudguard list OCID to be passed in the request.
@@ -289,14 +287,12 @@ def get_managed_list_output(managed_list_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_list = oci.CloudGuard.get_managed_list(managed_list_id=oci_cloud_guard_managed_list["test_managed_list"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_list_id: The cloudguard list OCID to be passed in the request.

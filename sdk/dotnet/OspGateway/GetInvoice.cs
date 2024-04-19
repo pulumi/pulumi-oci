@@ -18,7 +18,6 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInvoiceResult> InvokeAsync(GetInvoiceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.OspGateway
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInvoiceResult> Invoke(GetInvoiceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceInvokeArgs(), options.WithDefaults());

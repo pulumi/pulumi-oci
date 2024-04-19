@@ -364,7 +364,6 @@ def get_workspace_application(application_key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -372,7 +371,6 @@ def get_workspace_application(application_key: Optional[str] = None,
     test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=var["workspace_application_application_key"],
         workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.
@@ -425,7 +423,6 @@ def get_workspace_application_output(application_key: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -433,7 +430,6 @@ def get_workspace_application_output(application_key: Optional[pulumi.Input[str]
     test_workspace_application = oci.DataIntegration.get_workspace_application(application_key=var["workspace_application_application_key"],
         workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.

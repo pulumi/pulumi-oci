@@ -115,7 +115,6 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,7 +122,6 @@ def get_media_workflow_job_fact(key: Optional[str] = None,
     test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=var["media_workflow_job_fact_key"],
         media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str key: Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.
@@ -156,7 +154,6 @@ def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_media_workflow_job_fact_output(key: Optional[pulumi.Input[str]] = None,
     test_media_workflow_job_fact = oci.MediaServices.get_media_workflow_job_fact(key=var["media_workflow_job_fact_key"],
         media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str key: Identifier of the MediaWorkflowJobFact within a MediaWorkflowJob.

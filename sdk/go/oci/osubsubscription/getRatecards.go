@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetRatecards(ctx *pulumi.Context, args *GetRatecardsArgs, opts ...pulumi.InvokeOption) (*GetRatecardsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRatecardsResult

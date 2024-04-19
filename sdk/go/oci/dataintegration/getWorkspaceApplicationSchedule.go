@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupWorkspaceApplicationSchedule(ctx *pulumi.Context, args *LookupWorkspaceApplicationScheduleArgs, opts ...pulumi.InvokeOption) (*LookupWorkspaceApplicationScheduleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupWorkspaceApplicationScheduleResult

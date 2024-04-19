@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     connectHarnessId: oci_streaming_connect_harnes.test_connect_harnes.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConnectHarness(args: GetConnectHarnessArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectHarnessResult> {
 
@@ -85,7 +83,6 @@ export interface GetConnectHarnessResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetConnectHarnessResult {
  *     connectHarnessId: oci_streaming_connect_harnes.test_connect_harnes.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getConnectHarnessOutput(args: GetConnectHarnessOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectHarnessResult> {
     return pulumi.output(args).apply((a: any) => getConnectHarness(a, opts))

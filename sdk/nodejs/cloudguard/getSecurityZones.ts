@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.security_zone_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityZones(args: GetSecurityZonesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityZonesResult> {
 
@@ -109,7 +107,6 @@ export interface GetSecurityZonesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -123,7 +120,6 @@ export interface GetSecurityZonesResult {
  *     state: _var.security_zone_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityZonesOutput(args: GetSecurityZonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityZonesResult> {
     return pulumi.output(args).apply((a: any) => getSecurityZones(a, opts))

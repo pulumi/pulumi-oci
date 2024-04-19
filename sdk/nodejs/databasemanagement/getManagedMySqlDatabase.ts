@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedMySqlDatabase(args: GetManagedMySqlDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedMySqlDatabaseResult> {
 
@@ -111,7 +109,6 @@ export interface GetManagedMySqlDatabaseResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetManagedMySqlDatabaseResult {
  *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedMySqlDatabaseOutput(args: GetManagedMySqlDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabaseResult> {
     return pulumi.output(args).apply((a: any) => getManagedMySqlDatabase(a, opts))

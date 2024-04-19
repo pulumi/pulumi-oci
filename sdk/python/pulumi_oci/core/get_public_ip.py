@@ -234,34 +234,28 @@ def get_public_ip(id: Optional[str] = None,
     ## Example Usage
 
     ### Get a public ip by public ip id
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=var["test_public_ip_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
     ### Get a public ip by private ip id
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=var["test_public_ip_private_ip_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
     ### Get a public ip by public ip address
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=var["test_public_ip_ip_address"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The OCID of the public IP.
@@ -316,34 +310,28 @@ def get_public_ip_output(id: Optional[pulumi.Input[Optional[str]]] = None,
     ## Example Usage
 
     ### Get a public ip by public ip id
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oci_core_public_ip_by_id = oci.Core.get_public_ip(id=var["test_public_ip_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
     ### Get a public ip by private ip id
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oci_core_public_ip_by_private_ip_id = oci.Core.get_public_ip(private_ip_id=var["test_public_ip_private_ip_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
     ### Get a public ip by public ip address
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oci_core_public_ip_by_ip = oci.Core.get_public_ip(ip_address=var["test_public_ip_ip_address"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The OCID of the public IP.

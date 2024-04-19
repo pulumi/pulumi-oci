@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseSqlPlanBaseline(ctx *pulumi.Context, args *GetManagedDatabaseSqlPlanBaselineArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlPlanBaselineResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlPlanBaselineResult

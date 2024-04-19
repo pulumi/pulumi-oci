@@ -593,7 +593,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -614,7 +613,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             status=var["on_premise_vantage_point_worker_status"],
             worker_type=var["on_premise_vantage_point_worker_worker_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -655,7 +653,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -676,7 +673,6 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             status=var["on_premise_vantage_point_worker_status"],
             worker_type=var["on_premise_vantage_point_worker_worker_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

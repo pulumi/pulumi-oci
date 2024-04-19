@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsMyCustomerSecretKeys(ctx *pulumi.Context, args *GetDomainsMyCustomerSecretKeysArgs, opts ...pulumi.InvokeOption) (*GetDomainsMyCustomerSecretKeysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsMyCustomerSecretKeysResult

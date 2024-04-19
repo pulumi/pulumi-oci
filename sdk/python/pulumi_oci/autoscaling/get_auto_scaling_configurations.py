@@ -102,7 +102,6 @@ def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_auto_scaling_configurations(compartment_id: Optional[str] = None,
     test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
         display_name=var["auto_scaling_configuration_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.
@@ -143,7 +141,6 @@ def get_auto_scaling_configurations_output(compartment_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_auto_scaling_configurations_output(compartment_id: Optional[pulumi.Input
     test_auto_scaling_configurations = oci.Autoscaling.get_auto_scaling_configurations(compartment_id=var["compartment_id"],
         display_name=var["auto_scaling_configuration_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.

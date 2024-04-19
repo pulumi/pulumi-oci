@@ -300,14 +300,12 @@ def get_metric_extension(metric_extension_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
@@ -352,14 +350,12 @@ def get_metric_extension_output(metric_extension_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_metric_extension = oci.StackMonitoring.get_metric_extension(metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str metric_extension_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.

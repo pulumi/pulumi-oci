@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     categoryId: oci_optimizer_category.test_category.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCategory(args: GetCategoryArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryResult> {
 
@@ -103,7 +101,6 @@ export interface GetCategoryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,7 +109,6 @@ export interface GetCategoryResult {
  *     categoryId: oci_optimizer_category.test_category.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCategoryOutput(args: GetCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryResult> {
     return pulumi.output(args).apply((a: any) => getCategory(a, opts))

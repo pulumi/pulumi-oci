@@ -115,7 +115,6 @@ def get_external_container_databases(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_external_container_databases(compartment_id: Optional[str] = None,
         display_name=var["external_container_database_display_name"],
         state=var["external_container_database_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -161,7 +159,6 @@ def get_external_container_databases_output(compartment_id: Optional[pulumi.Inpu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_external_container_databases_output(compartment_id: Optional[pulumi.Inpu
         display_name=var["external_container_database_display_name"],
         state=var["external_container_database_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

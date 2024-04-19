@@ -449,7 +449,6 @@ class SteeringPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -489,7 +488,6 @@ class SteeringPolicy(pulumi.CustomResource):
             )],
             ttl=var["steering_policy_ttl"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -541,7 +539,6 @@ class SteeringPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -581,7 +578,6 @@ class SteeringPolicy(pulumi.CustomResource):
             )],
             ttl=var["steering_policy_ttl"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -116,7 +116,6 @@ def get_functions(application_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_functions(application_id: Optional[str] = None,
         id=var["function_id"],
         state=var["function_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
@@ -166,7 +164,6 @@ def get_functions_output(application_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_functions_output(application_id: Optional[pulumi.Input[str]] = None,
         id=var["function_id"],
         state=var["function_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.

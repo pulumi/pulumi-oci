@@ -171,14 +171,12 @@ def get_compute_capacity_topology(compute_capacity_topology_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_capacity_topology = oci.Core.get_compute_capacity_topology(compute_capacity_topology_id=oci_core_compute_capacity_topology["test_compute_capacity_topology"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_capacity_topology_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity topology.
@@ -212,14 +210,12 @@ def get_compute_capacity_topology_output(compute_capacity_topology_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compute_capacity_topology = oci.Core.get_compute_capacity_topology(compute_capacity_topology_id=oci_core_compute_capacity_topology["test_compute_capacity_topology"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_capacity_topology_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity topology.

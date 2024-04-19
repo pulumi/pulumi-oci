@@ -659,7 +659,6 @@ class Domain(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -684,7 +683,6 @@ class Domain(pulumi.CustomResource):
             is_notification_bypassed=var["domain_is_notification_bypassed"],
             is_primary_email_required=var["domain_is_primary_email_required"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -744,7 +742,6 @@ class Domain(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -769,7 +766,6 @@ class Domain(pulumi.CustomResource):
             is_notification_bypassed=var["domain_is_notification_bypassed"],
             is_primary_email_required=var["domain_is_primary_email_required"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -33,7 +33,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOpensearchVersionResult> InvokeAsync(GetOpensearchVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchVersionResult>("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", args ?? new GetOpensearchVersionArgs(), options.WithDefaults());
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -92,7 +89,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOpensearchVersionResult> Invoke(GetOpensearchVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchVersionResult>("oci:Opensearch/getOpensearchVersion:getOpensearchVersion", args ?? new GetOpensearchVersionInvokeArgs(), options.WithDefaults());

@@ -662,7 +662,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -690,7 +689,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -739,7 +737,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -767,7 +764,6 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
             peer_db_unique_name=var["autonomous_container_database_dataguard_association_peer_db_unique_name"],
             standby_maintenance_buffer_in_days=var["autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

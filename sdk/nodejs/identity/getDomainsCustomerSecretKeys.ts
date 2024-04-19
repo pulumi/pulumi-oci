@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     startIndex: _var.customer_secret_key_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsCustomerSecretKeys(args: GetDomainsCustomerSecretKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsCustomerSecretKeysResult> {
 
@@ -127,7 +125,6 @@ export interface GetDomainsCustomerSecretKeysResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetDomainsCustomerSecretKeysResult {
  *     startIndex: _var.customer_secret_key_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsCustomerSecretKeysOutput(args: GetDomainsCustomerSecretKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsCustomerSecretKeysResult> {
     return pulumi.output(args).apply((a: any) => getDomainsCustomerSecretKeys(a, opts))

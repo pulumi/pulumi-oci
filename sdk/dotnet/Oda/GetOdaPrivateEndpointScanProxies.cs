@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOdaPrivateEndpointScanProxiesResult> InvokeAsync(GetOdaPrivateEndpointScanProxiesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOdaPrivateEndpointScanProxiesResult>("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", args ?? new GetOdaPrivateEndpointScanProxiesArgs(), options.WithDefaults());
@@ -59,7 +57,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOdaPrivateEndpointScanProxiesResult> Invoke(GetOdaPrivateEndpointScanProxiesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointScanProxiesResult>("oci:Oda/getOdaPrivateEndpointScanProxies:getOdaPrivateEndpointScanProxies", args ?? new GetOdaPrivateEndpointScanProxiesInvokeArgs(), options.WithDefaults());

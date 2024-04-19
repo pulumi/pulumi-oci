@@ -218,14 +218,12 @@ def get_ekms_private_endpoint(ekms_private_endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=oci_kms_ekms_private_endpoint["test_ekms_private_endpoint"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ekms_private_endpoint_id: Unique EKMS private endpoint identifier.
@@ -263,14 +261,12 @@ def get_ekms_private_endpoint_output(ekms_private_endpoint_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ekms_private_endpoint = oci.Kms.get_ekms_private_endpoint(ekms_private_endpoint_id=oci_kms_ekms_private_endpoint["test_ekms_private_endpoint"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ekms_private_endpoint_id: Unique EKMS private endpoint identifier.

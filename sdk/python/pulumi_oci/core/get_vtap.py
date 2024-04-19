@@ -314,14 +314,12 @@ def get_vtap(vtap_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vtap = oci.Core.get_vtap(vtap_id=oci_core_vtap["test_vtap"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str vtap_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP.
@@ -367,14 +365,12 @@ def get_vtap_output(vtap_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_vtap = oci.Core.get_vtap(vtap_id=oci_core_vtap["test_vtap"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str vtap_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VTAP.

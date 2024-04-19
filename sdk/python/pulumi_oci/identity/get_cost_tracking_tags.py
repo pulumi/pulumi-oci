@@ -90,14 +90,12 @@ def get_cost_tracking_tags(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -127,14 +125,12 @@ def get_cost_tracking_tags_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cost_tracking_tags = oci.Identity.get_cost_tracking_tags(compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

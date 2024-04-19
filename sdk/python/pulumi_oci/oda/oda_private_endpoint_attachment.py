@@ -187,7 +187,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -196,7 +195,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
             oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
             oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -231,7 +229,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -240,7 +237,6 @@ class OdaPrivateEndpointAttachment(pulumi.CustomResource):
             oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"],
             oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

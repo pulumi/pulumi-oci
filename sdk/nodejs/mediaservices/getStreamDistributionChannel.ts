@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     streamDistributionChannelId: oci_media_services_stream_distribution_channel.test_stream_distribution_channel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStreamDistributionChannel(args: GetStreamDistributionChannelArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamDistributionChannelResult> {
 
@@ -100,7 +98,6 @@ export interface GetStreamDistributionChannelResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetStreamDistributionChannelResult {
  *     streamDistributionChannelId: oci_media_services_stream_distribution_channel.test_stream_distribution_channel.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStreamDistributionChannelOutput(args: GetStreamDistributionChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamDistributionChannelResult> {
     return pulumi.output(args).apply((a: any) => getStreamDistributionChannel(a, opts))

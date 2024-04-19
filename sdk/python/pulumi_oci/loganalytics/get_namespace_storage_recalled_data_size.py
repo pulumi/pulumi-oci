@@ -112,7 +112,6 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_namespace_storage_recalled_data_size(namespace: Optional[str] = None,
         time_data_ended=var["namespace_storage_recalled_data_size_time_data_ended"],
         time_data_started=var["namespace_storage_recalled_data_size_time_data_started"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.
@@ -156,7 +154,6 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -165,7 +162,6 @@ def get_namespace_storage_recalled_data_size_output(namespace: Optional[pulumi.I
         time_data_ended=var["namespace_storage_recalled_data_size_time_data_ended"],
         time_data_started=var["namespace_storage_recalled_data_size_time_data_started"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str namespace: The Logging Analytics namespace used for the request.

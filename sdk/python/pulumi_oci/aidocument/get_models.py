@@ -129,7 +129,6 @@ def get_models(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_models(compartment_id: Optional[str] = None,
         project_id=oci_ai_document_project["test_project"]["id"],
         state=var["model_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -184,7 +182,6 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
         project_id=oci_ai_document_project["test_project"]["id"],
         state=var["model_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

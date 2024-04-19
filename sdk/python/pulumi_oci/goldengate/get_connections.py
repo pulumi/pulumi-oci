@@ -171,7 +171,6 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -185,7 +184,6 @@ def get_connections(assignable_deployment_id: Optional[str] = None,
         state=var["connection_state"],
         technology_types=var["connection_technology_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str assignable_deployment_id: Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.
@@ -242,7 +240,6 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -256,7 +253,6 @@ def get_connections_output(assignable_deployment_id: Optional[pulumi.Input[Optio
         state=var["connection_state"],
         technology_types=var["connection_technology_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str assignable_deployment_id: Filters for compatible connections which can be, but currently not assigned to the deployment specified by its id.

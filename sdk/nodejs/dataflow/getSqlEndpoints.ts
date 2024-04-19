@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.sql_endpoint_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSqlEndpoints(args?: GetSqlEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetSqlEndpointsResult> {
     args = args || {};
@@ -101,7 +99,6 @@ export interface GetSqlEndpointsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetSqlEndpointsResult {
  *     state: _var.sql_endpoint_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSqlEndpointsOutput(args?: GetSqlEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSqlEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getSqlEndpoints(a, opts))

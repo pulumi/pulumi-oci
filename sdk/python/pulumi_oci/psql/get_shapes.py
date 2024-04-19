@@ -87,7 +87,6 @@ def get_shapes(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -95,7 +94,6 @@ def get_shapes(compartment_id: Optional[str] = None,
     test_shapes = oci.Psql.get_shapes(compartment_id=var["compartment_id"],
         id=var["shape_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -127,7 +125,6 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +132,6 @@ def get_shapes_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = No
     test_shapes = oci.Psql.get_shapes(compartment_id=var["compartment_id"],
         id=var["shape_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

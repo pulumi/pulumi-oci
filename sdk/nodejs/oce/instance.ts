@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -39,7 +38,6 @@ import * as utilities from "../utilities";
  *     wafPrimaryDomain: _var.oce_instance_waf_primary_domain,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

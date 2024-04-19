@@ -279,14 +279,12 @@ def get_function(function_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_function = oci.Functions.get_function(function_id=oci_functions_function["test_function"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.
@@ -329,14 +327,12 @@ def get_function_output(function_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_function = oci.Functions.get_function(function_id=oci_functions_function["test_function"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function.

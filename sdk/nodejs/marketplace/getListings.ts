@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -46,7 +45,6 @@ import * as utilities from "../utilities";
  *     publisherId: oci_marketplace_publisher.test_publisher.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getListings(args?: GetListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingsResult> {
     args = args || {};
@@ -174,7 +172,6 @@ export interface GetListingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -193,7 +190,6 @@ export interface GetListingsResult {
  *     publisherId: oci_marketplace_publisher.test_publisher.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getListingsOutput(args?: GetListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingsResult> {
     return pulumi.output(args).apply((a: any) => getListings(a, opts))

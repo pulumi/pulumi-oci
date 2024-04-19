@@ -267,14 +267,12 @@ def get_managed_instance_group(managed_instance_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_instance_group = oci.OsManagementHub.get_managed_instance_group(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_instance_group_id: The managed instance group OCID.
@@ -316,14 +314,12 @@ def get_managed_instance_group_output(managed_instance_group_id: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_managed_instance_group = oci.OsManagementHub.get_managed_instance_group(managed_instance_group_id=oci_os_management_hub_managed_instance_group["test_managed_instance_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_instance_group_id: The managed instance group OCID.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousContainerDatabaseDataguardAssociations(args: GetAutonomousContainerDatabaseDataguardAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseDataguardAssociationsResult> {
 
@@ -69,7 +67,6 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,7 +75,6 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationsResult {
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousContainerDatabaseDataguardAssociationsOutput(args: GetAutonomousContainerDatabaseDataguardAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseDataguardAssociationsResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabaseDataguardAssociations(a, opts))

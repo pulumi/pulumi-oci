@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     ospHomeRegion: _var.address_osp_home_region,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAddress(args: GetAddressArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressResult> {
 
@@ -175,7 +173,6 @@ export interface GetAddressResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -186,7 +183,6 @@ export interface GetAddressResult {
  *     ospHomeRegion: _var.address_osp_home_region,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAddressOutput(args: GetAddressOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressResult> {
     return pulumi.output(args).apply((a: any) => getAddress(a, opts))

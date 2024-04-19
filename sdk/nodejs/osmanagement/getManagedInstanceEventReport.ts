@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     latestTimestampLessThan: _var.managed_instance_event_report_latest_timestamp_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceEventReport(args: GetManagedInstanceEventReportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceEventReportResult> {
 
@@ -79,7 +77,6 @@ export interface GetManagedInstanceEventReportResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetManagedInstanceEventReportResult {
  *     latestTimestampLessThan: _var.managed_instance_event_report_latest_timestamp_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceEventReportOutput(args: GetManagedInstanceEventReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceEventReportResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceEventReport(a, opts))

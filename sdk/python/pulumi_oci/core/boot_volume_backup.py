@@ -471,7 +471,6 @@ class BootVolumeBackup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -488,7 +487,6 @@ class BootVolumeBackup(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             type=var["boot_volume_backup_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -527,7 +525,6 @@ class BootVolumeBackup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -544,7 +541,6 @@ class BootVolumeBackup(pulumi.CustomResource):
             kms_key_id=oci_kms_key["test_key"]["id"],
             type=var["boot_volume_backup_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -95,14 +95,12 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -130,14 +128,12 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_guard_configuration = oci.CloudGuard.get_cloud_guard_configuration(compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

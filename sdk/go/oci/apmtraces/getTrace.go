@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTrace(ctx *pulumi.Context, args *GetTraceArgs, opts ...pulumi.InvokeOption) (*GetTraceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTraceResult

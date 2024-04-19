@@ -288,7 +288,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -306,7 +305,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                 id=var["managed_database_id"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -339,7 +337,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -357,7 +354,6 @@ class ManagedDatabaseGroup(pulumi.CustomResource):
                 id=var["managed_database_id"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -72,7 +72,6 @@ def get_db_node_console_history_content(console_history_id: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -80,7 +79,6 @@ def get_db_node_console_history_content(console_history_id: Optional[str] = None
     test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=oci_core_console_history["test_console_history"]["id"],
         db_node_id=oci_database_db_node["test_db_node"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str console_history_id: The OCID of the console history.
@@ -109,7 +107,6 @@ def get_db_node_console_history_content_output(console_history_id: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -117,7 +114,6 @@ def get_db_node_console_history_content_output(console_history_id: Optional[pulu
     test_db_node_console_history_content = oci.Database.get_db_node_console_history_content(console_history_id=oci_core_console_history["test_console_history"]["id"],
         db_node_id=oci_database_db_node["test_db_node"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str console_history_id: The OCID of the console history.

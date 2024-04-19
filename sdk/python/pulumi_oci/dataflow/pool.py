@@ -448,7 +448,6 @@ class Pool(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -479,7 +478,6 @@ class Pool(pulumi.CustomResource):
                 stop_time=var["pool_schedules_stop_time"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -518,7 +516,6 @@ class Pool(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -549,7 +546,6 @@ class Pool(pulumi.CustomResource):
                 stop_time=var["pool_schedules_stop_time"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

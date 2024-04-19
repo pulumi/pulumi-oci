@@ -300,14 +300,12 @@ def get_opa_instance(opa_instance_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opa_instance = oci.Opa.get_opa_instance(opa_instance_id=oci_opa_opa_instance["test_opa_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str opa_instance_id: unique OpaInstance identifier
@@ -352,14 +350,12 @@ def get_opa_instance_output(opa_instance_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opa_instance = oci.Opa.get_opa_instance(opa_instance_id=oci_opa_opa_instance["test_opa_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str opa_instance_id: unique OpaInstance identifier

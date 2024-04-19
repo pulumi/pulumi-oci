@@ -115,7 +115,6 @@ def get_quotas(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_quotas(compartment_id: Optional[str] = None,
         name=var["quota_name"],
         state=var["quota_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
@@ -161,7 +159,6 @@ def get_quotas_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_quotas_output(compartment_id: Optional[pulumi.Input[str]] = None,
         name=var["quota_name"],
         state=var["quota_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the parent compartment (remember that the tenancy is simply the root compartment).

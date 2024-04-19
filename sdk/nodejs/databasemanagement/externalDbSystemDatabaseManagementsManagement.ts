@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     licenseModel: _var.external_db_system_database_managements_management_license_model,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class ExternalDbSystemDatabaseManagementsManagement extends pulumi.CustomResource {
     /**

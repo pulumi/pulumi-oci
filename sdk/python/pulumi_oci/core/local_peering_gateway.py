@@ -413,7 +413,6 @@ class LocalPeeringGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -431,7 +430,6 @@ class LocalPeeringGateway(pulumi.CustomResource):
             peer_id=oci_core_local_peering_gateway["test_local_peering_gateway2"]["id"],
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -472,7 +470,6 @@ class LocalPeeringGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -490,7 +487,6 @@ class LocalPeeringGateway(pulumi.CustomResource):
             peer_id=oci_core_local_peering_gateway["test_local_peering_gateway2"]["id"],
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

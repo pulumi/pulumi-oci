@@ -106,7 +106,6 @@ class Query(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -144,7 +143,6 @@ class Query(pulumi.CustomResource):
                 version=var["query_query_definition_version"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -172,7 +170,6 @@ class Query(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -210,7 +207,6 @@ class Query(pulumi.CustomResource):
                 version=var["query_query_definition_version"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

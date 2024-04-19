@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,7 +32,6 @@ import * as utilities from "../utilities";
  *     timestampLessThan: _var.alarm_history_collection_timestamp_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlarmHistoryCollection(args: GetAlarmHistoryCollectionArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmHistoryCollectionResult> {
 
@@ -107,7 +105,6 @@ export interface GetAlarmHistoryCollectionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,7 +116,6 @@ export interface GetAlarmHistoryCollectionResult {
  *     timestampLessThan: _var.alarm_history_collection_timestamp_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlarmHistoryCollectionOutput(args: GetAlarmHistoryCollectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmHistoryCollectionResult> {
     return pulumi.output(args).apply((a: any) => getAlarmHistoryCollection(a, opts))

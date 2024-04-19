@@ -171,14 +171,12 @@ def get_capture_filter(capture_filter_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str capture_filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.
@@ -212,14 +210,12 @@ def get_capture_filter_output(capture_filter_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_capture_filter = oci.Core.get_capture_filter(capture_filter_id=oci_core_capture_filter["test_capture_filter"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str capture_filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capture filter.

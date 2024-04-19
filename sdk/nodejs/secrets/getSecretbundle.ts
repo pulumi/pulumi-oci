@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     versionNumber: _var.secretbundle_version_number,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecretbundle(args: GetSecretbundleArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretbundleResult> {
 
@@ -116,7 +114,6 @@ export interface GetSecretbundleResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,7 +125,6 @@ export interface GetSecretbundleResult {
  *     versionNumber: _var.secretbundle_version_number,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecretbundleOutput(args: GetSecretbundleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleResult> {
     return pulumi.output(args).apply((a: any) => getSecretbundle(a, opts))

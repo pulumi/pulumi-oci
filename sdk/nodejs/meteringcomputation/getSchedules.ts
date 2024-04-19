@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     name: _var.schedule_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSchedules(args: GetSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetSchedulesResult> {
 
@@ -85,7 +83,6 @@ export interface GetSchedulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,7 +92,6 @@ export interface GetSchedulesResult {
  *     name: _var.schedule_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSchedulesOutput(args: GetSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulesResult> {
     return pulumi.output(args).apply((a: any) => getSchedules(a, opts))

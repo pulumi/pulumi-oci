@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     maxWriteUnits: _var.table_replica_max_write_units,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

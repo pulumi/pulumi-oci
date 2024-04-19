@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetStreamCdnConfigs(ctx *pulumi.Context, args *GetStreamCdnConfigsArgs, opts ...pulumi.InvokeOption) (*GetStreamCdnConfigsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetStreamCdnConfigsResult

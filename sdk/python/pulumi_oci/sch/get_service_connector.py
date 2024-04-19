@@ -221,14 +221,12 @@ def get_service_connector(service_connector_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_service_connector = oci.Sch.get_service_connector(service_connector_id=oci_sch_service_connector["test_service_connector"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
@@ -268,14 +266,12 @@ def get_service_connector_output(service_connector_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_service_connector = oci.Sch.get_service_connector(service_connector_id=oci_sch_service_connector["test_service_connector"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str service_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.

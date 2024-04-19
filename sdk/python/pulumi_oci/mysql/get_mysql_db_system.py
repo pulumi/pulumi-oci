@@ -501,14 +501,12 @@ def get_mysql_db_system(db_system_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -570,14 +568,12 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mysql_db_system = oci.Mysql.get_mysql_db_system(db_system_id=oci_mysql_mysql_db_system["test_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

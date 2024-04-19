@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.bds_instance_metastore_config_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstanceMetastoreConfigs(args: GetBdsInstanceMetastoreConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceMetastoreConfigsResult> {
 
@@ -116,7 +114,6 @@ export interface GetBdsInstanceMetastoreConfigsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetBdsInstanceMetastoreConfigsResult {
  *     state: _var.bds_instance_metastore_config_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBdsInstanceMetastoreConfigsOutput(args: GetBdsInstanceMetastoreConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceMetastoreConfigsResult> {
     return pulumi.output(args).apply((a: any) => getBdsInstanceMetastoreConfigs(a, opts))

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetServiceCatalogResult> InvokeAsync(GetServiceCatalogArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceCatalogResult>("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", args ?? new GetServiceCatalogArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetServiceCatalogResult> Invoke(GetServiceCatalogInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetServiceCatalogResult>("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", args ?? new GetServiceCatalogInvokeArgs(), options.WithDefaults());

@@ -88,14 +88,12 @@ class RepositoryMirror(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_repository_mirror = oci.dev_ops.RepositoryMirror("testRepositoryMirror", repository_id=oci_devops_repository["test_repository"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -126,14 +124,12 @@ class RepositoryMirror(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_repository_mirror = oci.dev_ops.RepositoryMirror("testRepositoryMirror", repository_id=oci_devops_repository["test_repository"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

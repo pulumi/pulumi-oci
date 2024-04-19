@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentDataMaskingActivity(args: GetFusionEnvironmentDataMaskingActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentDataMaskingActivityResult> {
 
@@ -80,7 +78,6 @@ export interface GetFusionEnvironmentDataMaskingActivityResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetFusionEnvironmentDataMaskingActivityResult {
  *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentDataMaskingActivityOutput(args: GetFusionEnvironmentDataMaskingActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentDataMaskingActivityResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentDataMaskingActivity(a, opts))

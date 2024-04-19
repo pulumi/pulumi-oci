@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAverageCarbonEmission(ctx *pulumi.Context, args *GetAverageCarbonEmissionArgs, opts ...pulumi.InvokeOption) (*GetAverageCarbonEmissionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAverageCarbonEmissionResult

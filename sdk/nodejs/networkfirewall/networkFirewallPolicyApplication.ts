@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     icmpCode: _var.network_firewall_policy_application_icmp_code,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

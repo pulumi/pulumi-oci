@@ -163,14 +163,12 @@ def get_iam_work_request(iam_work_request_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str iam_work_request_id: The OCID of the IAM work request.
@@ -207,14 +205,12 @@ def get_iam_work_request_output(iam_work_request_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_iam_work_request = oci.Identity.get_iam_work_request(iam_work_request_id=oci_identity_iam_work_request["test_iam_work_request"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str iam_work_request_id: The OCID of the IAM work request.

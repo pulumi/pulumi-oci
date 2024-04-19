@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetNamespaceEffectiveProperties(ctx *pulumi.Context, args *GetNamespaceEffectivePropertiesArgs, opts ...pulumi.InvokeOption) (*GetNamespaceEffectivePropertiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespaceEffectivePropertiesResult

@@ -184,7 +184,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -193,7 +192,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
             metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
             resource_ids=var["metric_extensions_test_management_resource_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -221,7 +219,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -230,7 +227,6 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
             metric_extension_id=oci_stack_monitoring_metric_extension["test_metric_extension"]["id"],
             resource_ids=var["metric_extensions_test_management_resource_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

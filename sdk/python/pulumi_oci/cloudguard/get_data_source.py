@@ -219,14 +219,12 @@ def get_data_source(data_source_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_source = oci.CloudGuard.get_data_source(data_source_id=oci_cloud_guard_data_source["test_data_source"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_source_id: DataSource OCID
@@ -264,14 +262,12 @@ def get_data_source_output(data_source_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_source = oci.CloudGuard.get_data_source(data_source_id=oci_cloud_guard_data_source["test_data_source"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_source_id: DataSource OCID

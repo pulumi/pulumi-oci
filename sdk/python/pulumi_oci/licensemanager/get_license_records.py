@@ -89,14 +89,12 @@ def get_license_records(filters: Optional[Sequence[pulumi.InputType['GetLicenseR
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_license_records = oci.LicenseManager.get_license_records(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str product_license_id: Unique product license identifier.
@@ -125,14 +123,12 @@ def get_license_records_output(filters: Optional[pulumi.Input[Optional[Sequence[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_license_records = oci.LicenseManager.get_license_records(product_license_id=oci_license_manager_product_license["test_product_license"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str product_license_id: Unique product license identifier.

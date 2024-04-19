@@ -123,7 +123,6 @@ def get_service_environments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -133,7 +132,6 @@ def get_service_environments(compartment_id: Optional[str] = None,
         service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"],
         service_environment_type=var["service_environment_service_environment_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
@@ -177,7 +175,6 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -187,7 +184,6 @@ def get_service_environments_output(compartment_id: Optional[pulumi.Input[str]] 
         service_environment_id=oci_service_manager_proxy_service_environment["test_service_environment"]["id"],
         service_environment_type=var["service_environment_service_environment_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.

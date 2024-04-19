@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCertificateAuthorities(ctx *pulumi.Context, args *GetCertificateAuthoritiesArgs, opts ...pulumi.InvokeOption) (*GetCertificateAuthoritiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCertificateAuthoritiesResult

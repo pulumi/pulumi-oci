@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCommitment(ctx *pulumi.Context, args *GetCommitmentArgs, opts ...pulumi.InvokeOption) (*GetCommitmentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCommitmentResult

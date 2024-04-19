@@ -300,7 +300,6 @@ def get_deployment_certificate(certificate_key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -308,7 +307,6 @@ def get_deployment_certificate(certificate_key: Optional[str] = None,
     test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=var["deployment_certificate_certificate_key"],
         deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_key: A unique certificate identifier.
@@ -356,7 +354,6 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -364,7 +361,6 @@ def get_deployment_certificate_output(certificate_key: Optional[pulumi.Input[str
     test_deployment_certificate = oci.GoldenGate.get_deployment_certificate(certificate_key=var["deployment_certificate_certificate_key"],
         deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_key: A unique certificate identifier.

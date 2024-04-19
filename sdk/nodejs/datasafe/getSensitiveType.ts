@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveType(args: GetSensitiveTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveTypeResult> {
 
@@ -133,7 +131,6 @@ export interface GetSensitiveTypeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -142,7 +139,6 @@ export interface GetSensitiveTypeResult {
  *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveTypeOutput(args: GetSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypeResult> {
     return pulumi.output(args).apply((a: any) => getSensitiveType(a, opts))

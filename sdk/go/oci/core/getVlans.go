@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVlans(ctx *pulumi.Context, args *GetVlansArgs, opts ...pulumi.InvokeOption) (*GetVlansResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVlansResult

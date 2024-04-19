@@ -138,7 +138,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -147,7 +146,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
             asset_id=oci_core_volume["test_volume"]["id"],
             policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -181,7 +179,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -190,7 +187,6 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
             asset_id=oci_core_volume["test_volume"]["id"],
             policy_id=oci_core_volume_backup_policy["test_volume_backup_policy"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

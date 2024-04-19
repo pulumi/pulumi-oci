@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     refreshActivityId: oci_fusion_apps_refresh_activity.test_refresh_activity.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentRefreshActivity(args: GetFusionEnvironmentRefreshActivityArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentRefreshActivityResult> {
 
@@ -110,7 +108,6 @@ export interface GetFusionEnvironmentRefreshActivityResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetFusionEnvironmentRefreshActivityResult {
  *     refreshActivityId: oci_fusion_apps_refresh_activity.test_refresh_activity.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentRefreshActivityOutput(args: GetFusionEnvironmentRefreshActivityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentRefreshActivityResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentRefreshActivity(a, opts))

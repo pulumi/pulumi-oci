@@ -462,7 +462,6 @@ class VolumeGroupBackup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -479,7 +478,6 @@ class VolumeGroupBackup(pulumi.CustomResource):
             },
             type=var["volume_group_backup_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -516,7 +514,6 @@ class VolumeGroupBackup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -533,7 +530,6 @@ class VolumeGroupBackup(pulumi.CustomResource):
             },
             type=var["volume_group_backup_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

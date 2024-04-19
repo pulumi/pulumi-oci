@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     tableNameContains: _var.target_databases_column_table_name_contains,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabasesColumns(args: GetTargetDatabasesColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesColumnsResult> {
 
@@ -124,7 +122,6 @@ export interface GetTargetDatabasesColumnsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,7 +137,6 @@ export interface GetTargetDatabasesColumnsResult {
  *     tableNameContains: _var.target_databases_column_table_name_contains,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTargetDatabasesColumnsOutput(args: GetTargetDatabasesColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesColumnsResult> {
     return pulumi.output(args).apply((a: any) => getTargetDatabasesColumns(a, opts))

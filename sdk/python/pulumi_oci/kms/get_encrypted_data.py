@@ -106,7 +106,6 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -116,7 +115,6 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
         plaintext=var["encrypted_data_plaintext"],
         associated_data=var["encrypted_data_associated_data"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
@@ -156,7 +154,6 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,7 +163,6 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
         plaintext=var["encrypted_data_plaintext"],
         associated_data=var["encrypted_data_associated_data"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.

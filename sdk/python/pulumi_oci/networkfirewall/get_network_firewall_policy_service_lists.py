@@ -96,7 +96,6 @@ def get_network_firewall_policy_service_lists(display_name: Optional[str] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_network_firewall_policy_service_lists(display_name: Optional[str] = None
     test_network_firewall_policy_service_lists = oci.NetworkFirewall.get_network_firewall_policy_service_lists(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
         display_name=var["network_firewall_policy_service_list_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -137,7 +135,6 @@ def get_network_firewall_policy_service_lists_output(display_name: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_network_firewall_policy_service_lists_output(display_name: Optional[pulu
     test_network_firewall_policy_service_lists = oci.NetworkFirewall.get_network_firewall_policy_service_lists(network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
         display_name=var["network_firewall_policy_service_list_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

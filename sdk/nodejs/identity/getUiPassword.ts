@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUiPassword(args: GetUiPasswordArgs, opts?: pulumi.InvokeOptions): Promise<GetUiPasswordResult> {
 
@@ -69,7 +67,6 @@ export interface GetUiPasswordResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,7 +75,6 @@ export interface GetUiPasswordResult {
  *     userId: oci_identity_user.test_user.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUiPasswordOutput(args: GetUiPasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUiPasswordResult> {
     return pulumi.output(args).apply((a: any) => getUiPassword(a, opts))

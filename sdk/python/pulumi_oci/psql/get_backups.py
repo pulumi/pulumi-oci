@@ -146,7 +146,6 @@ def get_backups(backup_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -159,7 +158,6 @@ def get_backups(backup_id: Optional[str] = None,
         time_ended=var["backup_time_ended"],
         time_started=var["backup_time_started"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_id: A unique identifier for the backup.
@@ -211,7 +209,6 @@ def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_backups_output(backup_id: Optional[pulumi.Input[Optional[str]]] = None,
         time_ended=var["backup_time_ended"],
         time_started=var["backup_time_started"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backup_id: A unique identifier for the backup.

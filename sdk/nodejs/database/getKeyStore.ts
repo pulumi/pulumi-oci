@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     keyStoreId: oci_database_key_store.test_key_store.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getKeyStore(args: GetKeyStoreArgs, opts?: pulumi.InvokeOptions): Promise<GetKeyStoreResult> {
 
@@ -95,7 +93,6 @@ export interface GetKeyStoreResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetKeyStoreResult {
  *     keyStoreId: oci_database_key_store.test_key_store.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getKeyStoreOutput(args: GetKeyStoreOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKeyStoreResult> {
     return pulumi.output(args).apply((a: any) => getKeyStore(a, opts))

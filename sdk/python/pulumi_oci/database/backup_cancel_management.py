@@ -121,7 +121,6 @@ class BackupCancelManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -130,7 +129,6 @@ class BackupCancelManagement(pulumi.CustomResource):
             backup_id=oci_database_backup["test_backup"]["id"],
             cancel_backup_trigger=1)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -158,7 +156,6 @@ class BackupCancelManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -167,7 +164,6 @@ class BackupCancelManagement(pulumi.CustomResource):
             backup_id=oci_database_backup["test_backup"]["id"],
             cancel_backup_trigger=1)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -20,7 +20,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDhcpOptions(ctx *pulumi.Context, args *LookupDhcpOptionsArgs, opts ...pulumi.InvokeOption) (*LookupDhcpOptionsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDhcpOptionsResult

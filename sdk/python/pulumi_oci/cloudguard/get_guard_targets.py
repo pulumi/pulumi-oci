@@ -158,7 +158,6 @@ def get_guard_targets(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +169,6 @@ def get_guard_targets(access_level: Optional[str] = None,
         is_non_security_zone_targets_only_query=var["target_is_non_security_zone_targets_only_query"],
         state=var["target_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -232,7 +230,6 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -244,7 +241,6 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
         is_non_security_zone_targets_only_query=var["target_is_non_security_zone_targets_only_query"],
         state=var["target_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.

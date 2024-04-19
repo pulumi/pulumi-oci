@@ -639,7 +639,6 @@ class VolumeAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -657,7 +656,6 @@ class VolumeAttachment(pulumi.CustomResource):
             is_shareable=var["volume_attachment_is_shareable"],
             use_chap=var["volume_attachment_use_chap"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -699,7 +697,6 @@ class VolumeAttachment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -717,7 +714,6 @@ class VolumeAttachment(pulumi.CustomResource):
             is_shareable=var["volume_attachment_is_shareable"],
             use_chap=var["volume_attachment_use_chap"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

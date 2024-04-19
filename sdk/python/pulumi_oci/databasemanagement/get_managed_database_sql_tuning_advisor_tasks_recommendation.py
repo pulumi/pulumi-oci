@@ -109,7 +109,6 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id: O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,7 +118,6 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation(execution_id: O
         sql_object_id=oci_objectstorage_object["test_object"]["id"],
         sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str execution_id: The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -158,7 +156,6 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation_output(executio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -168,7 +165,6 @@ def get_managed_database_sql_tuning_advisor_tasks_recommendation_output(executio
         sql_object_id=oci_objectstorage_object["test_object"]["id"],
         sql_tuning_advisor_task_id=oci_database_management_sql_tuning_advisor_task["test_sql_tuning_advisor_task"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str execution_id: The execution ID for an execution of a SQL tuning task. This is not the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

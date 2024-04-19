@@ -19,7 +19,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMessageResult> InvokeAsync(GetMessageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMessageResult>("oci:GoldenGate/getMessage:getMessage", args ?? new GetMessageArgs(), options.WithDefaults());
@@ -48,7 +46,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMessageResult> Invoke(GetMessageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMessageResult>("oci:GoldenGate/getMessage:getMessage", args ?? new GetMessageInvokeArgs(), options.WithDefaults());

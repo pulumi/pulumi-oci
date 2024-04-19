@@ -96,7 +96,6 @@ def get_managed_databases_asm_properties(filters: Optional[Sequence[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_managed_databases_asm_properties(filters: Optional[Sequence[pulumi.Input
     test_managed_databases_asm_properties = oci.DatabaseManagement.get_managed_databases_asm_properties(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         name=var["managed_databases_asm_property_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -137,7 +135,6 @@ def get_managed_databases_asm_properties_output(filters: Optional[pulumi.Input[O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_managed_databases_asm_properties_output(filters: Optional[pulumi.Input[O
     test_managed_databases_asm_properties = oci.DatabaseManagement.get_managed_databases_asm_properties(managed_database_id=oci_database_management_managed_database["test_managed_database"]["id"],
         name=var["managed_databases_asm_property_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

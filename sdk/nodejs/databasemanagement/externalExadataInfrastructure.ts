@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -38,7 +37,6 @@ import * as utilities from "../utilities";
  *     storageServerNames: _var.external_exadata_infrastructure_storage_server_names,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

@@ -294,14 +294,12 @@ def get_profile(profile_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_profile = oci.OsManagementHub.get_profile(profile_id=oci_os_management_hub_profile["test_profile"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str profile_id: The OCID of the registration profile.
@@ -346,14 +344,12 @@ def get_profile_output(profile_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_profile = oci.OsManagementHub.get_profile(profile_id=oci_os_management_hub_profile["test_profile"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str profile_id: The OCID of the registration profile.

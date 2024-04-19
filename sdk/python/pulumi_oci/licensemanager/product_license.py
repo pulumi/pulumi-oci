@@ -510,7 +510,6 @@ class ProductLicense(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -532,7 +531,6 @@ class ProductLicense(pulumi.CustomResource):
             )],
             vendor_name=var["product_license_vendor_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -570,7 +568,6 @@ class ProductLicense(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -592,7 +589,6 @@ class ProductLicense(pulumi.CustomResource):
             )],
             vendor_name=var["product_license_vendor_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

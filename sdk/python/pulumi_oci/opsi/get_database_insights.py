@@ -202,7 +202,6 @@ def get_database_insights(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -219,7 +218,6 @@ def get_database_insights(compartment_id: Optional[str] = None,
         states=var["database_insight_state"],
         statuses=var["database_insight_status"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -288,7 +286,6 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -305,7 +302,6 @@ def get_database_insights_output(compartment_id: Optional[pulumi.Input[Optional[
         states=var["database_insight_state"],
         statuses=var["database_insight_status"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

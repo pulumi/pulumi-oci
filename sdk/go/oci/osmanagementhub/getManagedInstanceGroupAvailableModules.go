@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedInstanceGroupAvailableModules(ctx *pulumi.Context, args *GetManagedInstanceGroupAvailableModulesArgs, opts ...pulumi.InvokeOption) (*GetManagedInstanceGroupAvailableModulesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedInstanceGroupAvailableModulesResult

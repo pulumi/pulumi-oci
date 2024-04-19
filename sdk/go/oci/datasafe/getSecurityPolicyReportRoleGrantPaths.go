@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSecurityPolicyReportRoleGrantPaths(ctx *pulumi.Context, args *GetSecurityPolicyReportRoleGrantPathsArgs, opts ...pulumi.InvokeOption) (*GetSecurityPolicyReportRoleGrantPathsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSecurityPolicyReportRoleGrantPathsResult

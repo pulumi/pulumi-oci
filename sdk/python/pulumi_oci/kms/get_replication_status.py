@@ -88,7 +88,6 @@ def get_replication_status(management_endpoint: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -96,7 +95,6 @@ def get_replication_status(management_endpoint: Optional[str] = None,
     test_replication_status = oci.Kms.get_replication_status(replication_id=oci_kms_replication["test_replication"]["id"],
         management_endpoint=var["replication_status_management_endpoint"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_endpoint: The service endpoint to perform management operations against. See Vault Management endpoint.
@@ -129,7 +127,6 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -137,7 +134,6 @@ def get_replication_status_output(management_endpoint: Optional[pulumi.Input[str
     test_replication_status = oci.Kms.get_replication_status(replication_id=oci_kms_replication["test_replication"]["id"],
         management_endpoint=var["replication_status_management_endpoint"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_endpoint: The service endpoint to perform management operations against. See Vault Management endpoint.

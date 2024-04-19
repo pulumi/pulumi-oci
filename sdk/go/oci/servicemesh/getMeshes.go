@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -44,7 +43,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMeshes(ctx *pulumi.Context, args *GetMeshesArgs, opts ...pulumi.InvokeOption) (*GetMeshesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMeshesResult

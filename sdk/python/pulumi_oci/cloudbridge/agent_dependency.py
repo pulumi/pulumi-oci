@@ -493,7 +493,6 @@ class AgentDependency(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -515,7 +514,6 @@ class AgentDependency(pulumi.CustomResource):
             },
             system_tags=var["agent_dependency_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -556,7 +554,6 @@ class AgentDependency(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -578,7 +575,6 @@ class AgentDependency(pulumi.CustomResource):
             },
             system_tags=var["agent_dependency_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

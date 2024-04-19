@@ -172,7 +172,6 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -181,7 +180,6 @@ def get_software_source_module_stream(module_name: Optional[str] = None,
         software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
         stream_name=oci_streaming_stream["test_stream"]["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str module_name: The name of the module.
@@ -221,7 +219,6 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -230,7 +227,6 @@ def get_software_source_module_stream_output(module_name: Optional[pulumi.Input[
         software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"],
         stream_name=oci_streaming_stream["test_stream"]["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str module_name: The name of the module.

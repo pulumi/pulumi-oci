@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     xOneOriginRegion: _var.billing_schedule_x_one_origin_region,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBillingSchedule(args: GetBillingScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetBillingScheduleResult> {
 
@@ -89,7 +87,6 @@ export interface GetBillingScheduleResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,7 +98,6 @@ export interface GetBillingScheduleResult {
  *     xOneOriginRegion: _var.billing_schedule_x_one_origin_region,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBillingScheduleOutput(args: GetBillingScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBillingScheduleResult> {
     return pulumi.output(args).apply((a: any) => getBillingSchedule(a, opts))

@@ -1400,7 +1400,6 @@ class DataGuardAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1443,7 +1442,6 @@ class DataGuardAssociation(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             time_zone=var["data_guard_association_time_zone"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1538,7 +1536,6 @@ class DataGuardAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1581,7 +1578,6 @@ class DataGuardAssociation(pulumi.CustomResource):
             subnet_id=oci_core_subnet["test_subnet"]["id"],
             time_zone=var["data_guard_association_time_zone"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

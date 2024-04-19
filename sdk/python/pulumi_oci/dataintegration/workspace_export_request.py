@@ -513,7 +513,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -529,7 +528,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             object_storage_region=var["workspace_export_request_object_storage_region"],
             object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -568,7 +566,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -584,7 +581,6 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             object_storage_region=var["workspace_export_request_object_storage_region"],
             object_storage_tenancy_id=oci_identity_tenancy["test_tenancy"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

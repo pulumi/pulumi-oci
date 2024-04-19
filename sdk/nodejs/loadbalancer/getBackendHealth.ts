@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBackendHealth(args: GetBackendHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendHealthResult> {
 
@@ -85,7 +83,6 @@ export interface GetBackendHealthResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -96,7 +93,6 @@ export interface GetBackendHealthResult {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBackendHealthOutput(args: GetBackendHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendHealthResult> {
     return pulumi.output(args).apply((a: any) => getBackendHealth(a, opts))

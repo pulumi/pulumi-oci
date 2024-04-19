@@ -446,7 +446,6 @@ class Rule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -467,7 +466,6 @@ class Rule(pulumi.CustomResource):
             message=var["alert_rule_message"],
             recipients=var["alert_rule_recipients"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -507,7 +505,6 @@ class Rule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -528,7 +525,6 @@ class Rule(pulumi.CustomResource):
             message=var["alert_rule_message"],
             recipients=var["alert_rule_recipients"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

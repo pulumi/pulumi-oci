@@ -20,7 +20,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetQueryQuickPicksResult> InvokeAsync(GetQueryQuickPicksArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetQueryQuickPicksResult> Invoke(GetQueryQuickPicksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetQueryQuickPicksResult>("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", args ?? new GetQueryQuickPicksInvokeArgs(), options.WithDefaults());

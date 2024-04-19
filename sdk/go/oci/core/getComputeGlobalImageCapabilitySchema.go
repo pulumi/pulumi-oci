@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetComputeGlobalImageCapabilitySchema(ctx *pulumi.Context, args *GetComputeGlobalImageCapabilitySchemaArgs, opts ...pulumi.InvokeOption) (*GetComputeGlobalImageCapabilitySchemaResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetComputeGlobalImageCapabilitySchemaResult

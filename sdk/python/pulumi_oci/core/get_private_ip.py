@@ -221,14 +221,12 @@ def get_private_ip(private_ip_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_ip = oci.Core.get_private_ip(private_ip_id=oci_core_private_ip["test_private_ip"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.
@@ -269,14 +267,12 @@ def get_private_ip_output(private_ip_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_ip = oci.Core.get_private_ip(private_ip_id=oci_core_private_ip["test_private_ip"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str private_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP or IPv6.

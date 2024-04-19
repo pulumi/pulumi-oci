@@ -391,7 +391,6 @@ class StreamCdnConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -428,7 +427,6 @@ class StreamCdnConfig(pulumi.CustomResource):
                 time_created=var["stream_cdn_config_locks_time_created"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -461,7 +459,6 @@ class StreamCdnConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -498,7 +495,6 @@ class StreamCdnConfig(pulumi.CustomResource):
                 time_created=var["stream_cdn_config_locks_time_created"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

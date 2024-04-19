@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAppAccelerations(ctx *pulumi.Context, args *GetAppAccelerationsArgs, opts ...pulumi.InvokeOption) (*GetAppAccelerationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAppAccelerationsResult

@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.drg_route_table_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteTables(args: GetDrgRouteTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteTablesResult> {
 
@@ -103,7 +101,6 @@ export interface GetDrgRouteTablesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,7 +112,6 @@ export interface GetDrgRouteTablesResult {
  *     state: _var.drg_route_table_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteTablesOutput(args: GetDrgRouteTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteTablesResult> {
     return pulumi.output(args).apply((a: any) => getDrgRouteTables(a, opts))

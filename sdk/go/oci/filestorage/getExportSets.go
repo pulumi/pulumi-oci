@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetExportSets(ctx *pulumi.Context, args *GetExportSetsArgs, opts ...pulumi.InvokeOption) (*GetExportSetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExportSetsResult

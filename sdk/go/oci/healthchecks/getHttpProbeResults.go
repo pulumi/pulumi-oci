@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetHttpProbeResults(ctx *pulumi.Context, args *GetHttpProbeResultsArgs, opts ...pulumi.InvokeOption) (*GetHttpProbeResultsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHttpProbeResultsResult

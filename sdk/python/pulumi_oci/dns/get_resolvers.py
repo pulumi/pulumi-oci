@@ -131,7 +131,6 @@ def get_resolvers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,7 +141,6 @@ def get_resolvers(compartment_id: Optional[str] = None,
         id=var["resolver_id"],
         state=var["resolver_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.
@@ -191,7 +189,6 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,7 +199,6 @@ def get_resolvers_output(compartment_id: Optional[pulumi.Input[str]] = None,
         id=var["resolver_id"],
         state=var["resolver_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment the resource belongs to.

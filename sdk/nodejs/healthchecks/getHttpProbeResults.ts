@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     target: _var.http_probe_result_target,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHttpProbeResults(args: GetHttpProbeResultsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpProbeResultsResult> {
 
@@ -97,7 +95,6 @@ export interface GetHttpProbeResultsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetHttpProbeResultsResult {
  *     target: _var.http_probe_result_target,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHttpProbeResultsOutput(args: GetHttpProbeResultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpProbeResultsResult> {
     return pulumi.output(args).apply((a: any) => getHttpProbeResults(a, opts))

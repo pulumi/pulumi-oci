@@ -286,7 +286,6 @@ class ModelProvenance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -300,7 +299,6 @@ class ModelProvenance(pulumi.CustomResource):
             training_id=oci_datascience_training["test_training"]["id"],
             training_script=var["model_provenance_training_script"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -337,7 +335,6 @@ class ModelProvenance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -351,7 +348,6 @@ class ModelProvenance(pulumi.CustomResource):
             training_id=oci_datascience_training["test_training"]["id"],
             training_script=var["model_provenance_training_script"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

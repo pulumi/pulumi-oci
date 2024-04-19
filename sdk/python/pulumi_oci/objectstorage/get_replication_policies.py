@@ -96,7 +96,6 @@ def get_replication_policies(bucket: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_replication_policies(bucket: Optional[str] = None,
     test_replication_policies = oci.ObjectStorage.get_replication_policies(bucket=var["replication_policy_bucket"],
         namespace=var["replication_policy_namespace"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -137,7 +135,6 @@ def get_replication_policies_output(bucket: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_replication_policies_output(bucket: Optional[pulumi.Input[str]] = None,
     test_replication_policies = oci.ObjectStorage.get_replication_policies(bucket=var["replication_policy_bucket"],
         namespace=var["replication_policy_namespace"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

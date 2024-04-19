@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: _var.cross_connect_group_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectGroups(args: GetCrossConnectGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectGroupsResult> {
 
@@ -89,7 +87,6 @@ export interface GetCrossConnectGroupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetCrossConnectGroupsResult {
  *     state: _var.cross_connect_group_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectGroupsOutput(args: GetCrossConnectGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectGroupsResult> {
     return pulumi.output(args).apply((a: any) => getCrossConnectGroups(a, opts))

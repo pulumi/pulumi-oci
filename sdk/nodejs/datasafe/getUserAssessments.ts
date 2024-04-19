@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,7 +47,6 @@ import * as utilities from "../utilities";
  *     type: _var.user_assessment_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserAssessments(args: GetUserAssessmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentsResult> {
 
@@ -204,7 +202,6 @@ export interface GetUserAssessmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -225,7 +222,6 @@ export interface GetUserAssessmentsResult {
  *     type: _var.user_assessment_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getUserAssessmentsOutput(args: GetUserAssessmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentsResult> {
     return pulumi.output(args).apply((a: any) => getUserAssessments(a, opts))

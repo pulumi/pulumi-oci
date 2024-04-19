@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.stack_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStacks(args: GetStacksArgs, opts?: pulumi.InvokeOptions): Promise<GetStacksResult> {
 
@@ -105,7 +103,6 @@ export interface GetStacksResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -117,7 +114,6 @@ export interface GetStacksResult {
  *     state: _var.stack_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getStacksOutput(args: GetStacksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStacksResult> {
     return pulumi.output(args).apply((a: any) => getStacks(a, opts))

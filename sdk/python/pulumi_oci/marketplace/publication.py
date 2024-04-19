@@ -462,7 +462,6 @@ class Publication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -498,7 +497,6 @@ class Publication(pulumi.CustomResource):
             },
             long_description=var["publication_long_description"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -534,7 +532,6 @@ class Publication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,7 +567,6 @@ class Publication(pulumi.CustomResource):
             },
             long_description=var["publication_long_description"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

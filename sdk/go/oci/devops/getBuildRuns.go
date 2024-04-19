@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBuildRuns(ctx *pulumi.Context, args *GetBuildRunsArgs, opts ...pulumi.InvokeOption) (*GetBuildRunsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBuildRunsResult

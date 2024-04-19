@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousContainerDatabaseResourceUsage(args: GetAutonomousContainerDatabaseResourceUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseResourceUsageResult> {
 
@@ -103,7 +101,6 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,7 +109,6 @@ export interface GetAutonomousContainerDatabaseResourceUsageResult {
  *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousContainerDatabaseResourceUsageOutput(args: GetAutonomousContainerDatabaseResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseResourceUsageResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabaseResourceUsage(a, opts))

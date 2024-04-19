@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     urgencyFilter: _var.managed_database_attention_log_count_urgency_filter,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseAttentionLogCount(args: GetManagedDatabaseAttentionLogCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAttentionLogCountResult> {
 
@@ -115,7 +113,6 @@ export interface GetManagedDatabaseAttentionLogCountResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -131,7 +128,6 @@ export interface GetManagedDatabaseAttentionLogCountResult {
  *     urgencyFilter: _var.managed_database_attention_log_count_urgency_filter,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseAttentionLogCountOutput(args: GetManagedDatabaseAttentionLogCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAttentionLogCountResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseAttentionLogCount(a, opts))

@@ -380,7 +380,6 @@ class Certificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -398,7 +397,6 @@ class Certificate(pulumi.CustomResource):
             intermediate_certificates=var["certificate_intermediate_certificates"],
             private_key=var["certificate_private_key"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -435,7 +433,6 @@ class Certificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -453,7 +450,6 @@ class Certificate(pulumi.CustomResource):
             intermediate_certificates=var["certificate_intermediate_certificates"],
             private_key=var["certificate_private_key"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

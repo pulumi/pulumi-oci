@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     startIndex: _var.my_api_key_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyApiKeys(args: GetDomainsMyApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyApiKeysResult> {
 
@@ -113,7 +111,6 @@ export interface GetDomainsMyApiKeysResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetDomainsMyApiKeysResult {
  *     startIndex: _var.my_api_key_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyApiKeysOutput(args: GetDomainsMyApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyApiKeysResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMyApiKeys(a, opts))

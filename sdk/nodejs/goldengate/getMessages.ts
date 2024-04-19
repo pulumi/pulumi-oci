@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMessages(args: GetMessagesArgs, opts?: pulumi.InvokeOptions): Promise<GetMessagesResult> {
 
@@ -66,7 +64,6 @@ export interface GetMessagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetMessagesResult {
  *     deploymentId: oci_golden_gate_deployment.test_deployment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMessagesOutput(args: GetMessagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMessagesResult> {
     return pulumi.output(args).apply((a: any) => getMessages(a, opts))

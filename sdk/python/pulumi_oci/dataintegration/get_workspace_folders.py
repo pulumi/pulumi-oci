@@ -145,7 +145,6 @@ def get_workspace_folders(aggregator_key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,7 +156,6 @@ def get_workspace_folders(aggregator_key: Optional[str] = None,
         name=var["workspace_folder_name"],
         name_contains=var["workspace_folder_name_contains"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str aggregator_key: Used to filter by the project or the folder object.
@@ -206,7 +204,6 @@ def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,7 +215,6 @@ def get_workspace_folders_output(aggregator_key: Optional[pulumi.Input[Optional[
         name=var["workspace_folder_name"],
         name_contains=var["workspace_folder_name_contains"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str aggregator_key: Used to filter by the project or the folder object.

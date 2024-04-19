@@ -209,7 +209,6 @@ def get_listings(categories: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -226,7 +225,6 @@ def get_listings(categories: Optional[Sequence[str]] = None,
         pricings=var["listing_pricing"],
         publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] categories: Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.
@@ -309,7 +307,6 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -326,7 +323,6 @@ def get_listings_output(categories: Optional[pulumi.Input[Optional[Sequence[str]
         pricings=var["listing_pricing"],
         publisher_id=oci_marketplace_publisher["test_publisher"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] categories: Name of the product category or categories. If you specify multiple categories, then Marketplace returns any listing with one or more matching categories.

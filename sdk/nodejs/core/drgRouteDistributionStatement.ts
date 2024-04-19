@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     priority: _var.drg_route_distribution_statement_statements_priority,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

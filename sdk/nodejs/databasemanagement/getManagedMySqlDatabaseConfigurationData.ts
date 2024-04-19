@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedMySqlDatabaseConfigurationData(args: GetManagedMySqlDatabaseConfigurationDataArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedMySqlDatabaseConfigurationDataResult> {
 
@@ -66,7 +64,6 @@ export interface GetManagedMySqlDatabaseConfigurationDataResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetManagedMySqlDatabaseConfigurationDataResult {
  *     managedMySqlDatabaseId: oci_database_management_managed_my_sql_database.test_managed_my_sql_database.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedMySqlDatabaseConfigurationDataOutput(args: GetManagedMySqlDatabaseConfigurationDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedMySqlDatabaseConfigurationDataResult> {
     return pulumi.output(args).apply((a: any) => getManagedMySqlDatabaseConfigurationData(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     owner: _var.managed_database_sql_tuning_set_owner,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningSets(args: GetManagedDatabaseSqlTuningSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningSetsResult> {
 
@@ -93,7 +91,6 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,7 +102,6 @@ export interface GetManagedDatabaseSqlTuningSetsResult {
  *     owner: _var.managed_database_sql_tuning_set_owner,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningSetsOutput(args: GetManagedDatabaseSqlTuningSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningSetsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningSets(a, opts))

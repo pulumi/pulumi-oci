@@ -192,14 +192,12 @@ def get_stream_distribution_channel(stream_distribution_channel_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=oci_media_services_stream_distribution_channel["test_stream_distribution_channel"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str stream_distribution_channel_id: Unique Stream Distribution Channel path identifier.
@@ -235,14 +233,12 @@ def get_stream_distribution_channel_output(stream_distribution_channel_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_stream_distribution_channel = oci.MediaServices.get_stream_distribution_channel(stream_distribution_channel_id=oci_media_services_stream_distribution_channel["test_stream_distribution_channel"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str stream_distribution_channel_id: Unique Stream Distribution Channel path identifier.

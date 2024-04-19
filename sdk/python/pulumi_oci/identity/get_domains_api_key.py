@@ -317,7 +317,6 @@ def get_domains_api_key(api_key_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -329,7 +328,6 @@ def get_domains_api_key(api_key_id: Optional[str] = None,
         authorization=var["api_key_authorization"],
         resource_type_schema_version=var["api_key_resource_type_schema_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str api_key_id: ID of the resource
@@ -391,7 +389,6 @@ def get_domains_api_key_output(api_key_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -403,7 +400,6 @@ def get_domains_api_key_output(api_key_id: Optional[pulumi.Input[str]] = None,
         authorization=var["api_key_authorization"],
         resource_type_schema_version=var["api_key_resource_type_schema_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str api_key_id: ID of the resource

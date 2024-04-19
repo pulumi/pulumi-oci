@@ -195,14 +195,12 @@ def get_network_source(network_source_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_source_id: The OCID of the network source.
@@ -238,14 +236,12 @@ def get_network_source_output(network_source_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_source = oci.Identity.get_network_source(network_source_id=oci_identity_network_source["test_network_source"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_source_id: The OCID of the network source.

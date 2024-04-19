@@ -22,7 +22,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetResolvers(ctx *pulumi.Context, args *GetResolversArgs, opts ...pulumi.InvokeOption) (*GetResolversResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResolversResult

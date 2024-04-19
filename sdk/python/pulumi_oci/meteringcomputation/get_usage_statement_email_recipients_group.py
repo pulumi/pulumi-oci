@@ -110,7 +110,6 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[str] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,7 +118,6 @@ def get_usage_statement_email_recipients_group(compartment_id: Optional[str] = N
         email_recipients_group_id=oci_identity_group["test_group"]["id"],
         subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.
@@ -154,7 +152,6 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +160,6 @@ def get_usage_statement_email_recipients_group_output(compartment_id: Optional[p
         email_recipients_group_id=oci_identity_group["test_group"]["id"],
         subscription_id=oci_onesubscription_subscription["test_subscription"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment ID in which to list resources.

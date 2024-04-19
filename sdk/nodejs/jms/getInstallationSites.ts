@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -33,7 +32,6 @@ import * as utilities from "../utilities";
  *     timeStart: _var.fleet_installation_site_time_start,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstallationSites(args: GetInstallationSitesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstallationSitesResult> {
 
@@ -146,7 +144,6 @@ export interface GetInstallationSitesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -166,7 +163,6 @@ export interface GetInstallationSitesResult {
  *     timeStart: _var.fleet_installation_site_time_start,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstallationSitesOutput(args: GetInstallationSitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstallationSitesResult> {
     return pulumi.output(args).apply((a: any) => getInstallationSites(a, opts))

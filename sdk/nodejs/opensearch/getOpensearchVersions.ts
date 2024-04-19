@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchVersions(args: GetOpensearchVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchVersionsResult> {
 
@@ -84,7 +82,6 @@ export interface GetOpensearchVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +90,6 @@ export interface GetOpensearchVersionsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchVersionsOutput(args: GetOpensearchVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchVersionsResult> {
     return pulumi.output(args).apply((a: any) => getOpensearchVersions(a, opts))

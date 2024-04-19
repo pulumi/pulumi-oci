@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCpes(args: GetCpesArgs, opts?: pulumi.InvokeOptions): Promise<GetCpesResult> {
 
@@ -69,7 +67,6 @@ export interface GetCpesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -78,7 +75,6 @@ export interface GetCpesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCpesOutput(args: GetCpesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpesResult> {
     return pulumi.output(args).apply((a: any) => getCpes(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     redisClusterId: oci_redis_redis_cluster.test_redis_cluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRedisCluster(args: GetRedisClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetRedisClusterResult> {
 
@@ -135,7 +133,6 @@ export interface GetRedisClusterResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -144,7 +141,6 @@ export interface GetRedisClusterResult {
  *     redisClusterId: oci_redis_redis_cluster.test_redis_cluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRedisClusterOutput(args: GetRedisClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRedisClusterResult> {
     return pulumi.output(args).apply((a: any) => getRedisCluster(a, opts))

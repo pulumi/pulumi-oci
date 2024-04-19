@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.managed_databases_user_system_privilege_opc_named_credential_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabasesUserSystemPrivileges(args: GetManagedDatabasesUserSystemPrivilegesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesUserSystemPrivilegesResult> {
 
@@ -90,7 +88,6 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
  *     opcNamedCredentialId: _var.managed_databases_user_system_privilege_opc_named_credential_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabasesUserSystemPrivilegesOutput(args: GetManagedDatabasesUserSystemPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesUserSystemPrivilegesResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabasesUserSystemPrivileges(a, opts))

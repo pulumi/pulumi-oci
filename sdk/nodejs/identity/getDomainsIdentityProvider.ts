@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.identity_provider_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentityProvider(args: GetDomainsIdentityProviderArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsIdentityProviderResult> {
 
@@ -326,7 +324,6 @@ export interface GetDomainsIdentityProviderResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -340,7 +337,6 @@ export interface GetDomainsIdentityProviderResult {
  *     resourceTypeSchemaVersion: _var.identity_provider_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentityProviderOutput(args: GetDomainsIdentityProviderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentityProviderResult> {
     return pulumi.output(args).apply((a: any) => getDomainsIdentityProvider(a, opts))

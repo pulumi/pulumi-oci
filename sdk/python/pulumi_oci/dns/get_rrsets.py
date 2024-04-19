@@ -145,7 +145,6 @@ def get_rrsets(domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,7 +156,6 @@ def get_rrsets(domain: Optional[str] = None,
         scope=var["rrset_scope"],
         view_id=oci_dns_view["test_view"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str domain: The target fully-qualified domain name (FQDN) within the target zone.
@@ -209,7 +207,6 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,7 +218,6 @@ def get_rrsets_output(domain: Optional[pulumi.Input[Optional[str]]] = None,
         scope=var["rrset_scope"],
         view_id=oci_dns_view["test_view"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str domain: The target fully-qualified domain name (FQDN) within the target zone.

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSupportedCommitments(ctx *pulumi.Context, args *GetSupportedCommitmentsArgs, opts ...pulumi.InvokeOption) (*GetSupportedCommitmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSupportedCommitmentsResult

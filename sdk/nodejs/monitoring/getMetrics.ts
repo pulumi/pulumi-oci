@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,7 +35,6 @@ import * as utilities from "../utilities";
  *     resourceGroup: _var.metric_resource_group,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMetrics(args: GetMetricsArgs, opts?: pulumi.InvokeOptions): Promise<GetMetricsResult> {
 
@@ -138,7 +136,6 @@ export interface GetMetricsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -153,7 +150,6 @@ export interface GetMetricsResult {
  *     resourceGroup: _var.metric_resource_group,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMetricsOutput(args: GetMetricsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetricsResult> {
     return pulumi.output(args).apply((a: any) => getMetrics(a, opts))

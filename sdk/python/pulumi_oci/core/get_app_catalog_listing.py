@@ -149,14 +149,12 @@ def get_app_catalog_listing(listing_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_app_catalog_listing = oci.Core.get_app_catalog_listing(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str listing_id: The OCID of the listing.
@@ -188,14 +186,12 @@ def get_app_catalog_listing_output(listing_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_app_catalog_listing = oci.Core.get_app_catalog_listing(listing_id=data["oci_core_app_catalog_listing"]["test_listing"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str listing_id: The OCID of the listing.

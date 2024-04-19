@@ -231,14 +231,12 @@ def get_notebook_session(notebook_session_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=oci_datascience_notebook_session["test_notebook_session"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str notebook_session_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.
@@ -277,14 +275,12 @@ def get_notebook_session_output(notebook_session_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_notebook_session = oci.DataScience.get_notebook_session(notebook_session_id=oci_datascience_notebook_session["test_notebook_session"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str notebook_session_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the notebook session.

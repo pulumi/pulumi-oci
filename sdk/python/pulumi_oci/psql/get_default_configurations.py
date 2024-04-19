@@ -138,7 +138,6 @@ def get_default_configurations(configuration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,7 +148,6 @@ def get_default_configurations(configuration_id: Optional[str] = None,
         shape=var["default_configuration_shape"],
         state=var["default_configuration_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_id: A unique identifier for the configuration.
@@ -194,7 +192,6 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,7 +202,6 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
         shape=var["default_configuration_shape"],
         state=var["default_configuration_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_id: A unique identifier for the configuration.

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetCryptoAnalysisResult(args: GetFleetCryptoAnalysisResultArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetCryptoAnalysisResultResult> {
 
@@ -127,7 +125,6 @@ export interface GetFleetCryptoAnalysisResultResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -137,7 +134,6 @@ export interface GetFleetCryptoAnalysisResultResult {
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetCryptoAnalysisResultOutput(args: GetFleetCryptoAnalysisResultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetCryptoAnalysisResultResult> {
     return pulumi.output(args).apply((a: any) => getFleetCryptoAnalysisResult(a, opts))

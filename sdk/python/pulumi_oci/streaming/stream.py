@@ -354,7 +354,6 @@ class Stream(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -369,7 +368,6 @@ class Stream(pulumi.CustomResource):
             retention_in_hours=var["stream_retention_in_hours"],
             stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -410,7 +408,6 @@ class Stream(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -425,7 +422,6 @@ class Stream(pulumi.CustomResource):
             retention_in_hours=var["stream_retention_in_hours"],
             stream_pool_id=oci_streaming_stream_pool["test_stream_pool"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

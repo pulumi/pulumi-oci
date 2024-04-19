@@ -852,7 +852,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -877,7 +876,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
             time_assignment_from=var["operator_control_assignment_time_assignment_from"],
             time_assignment_to=var["operator_control_assignment_time_assignment_to"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -926,7 +924,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -951,7 +948,6 @@ class OperatorControlAssignment(pulumi.CustomResource):
             time_assignment_from=var["operator_control_assignment_time_assignment_from"],
             time_assignment_to=var["operator_control_assignment_time_assignment_to"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

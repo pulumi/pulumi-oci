@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFastLaunchJobConfigs(args: GetFastLaunchJobConfigsArgs, opts?: pulumi.InvokeOptions): Promise<GetFastLaunchJobConfigsResult> {
 
@@ -66,7 +64,6 @@ export interface GetFastLaunchJobConfigsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetFastLaunchJobConfigsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFastLaunchJobConfigsOutput(args: GetFastLaunchJobConfigsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastLaunchJobConfigsResult> {
     return pulumi.output(args).apply((a: any) => getFastLaunchJobConfigs(a, opts))

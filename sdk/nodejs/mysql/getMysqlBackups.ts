@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.mysql_backup_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMysqlBackups(args: GetMysqlBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlBackupsResult> {
 
@@ -116,7 +114,6 @@ export interface GetMysqlBackupsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -130,7 +127,6 @@ export interface GetMysqlBackupsResult {
  *     state: _var.mysql_backup_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMysqlBackupsOutput(args: GetMysqlBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlBackupsResult> {
     return pulumi.output(args).apply((a: any) => getMysqlBackups(a, opts))

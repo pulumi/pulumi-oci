@@ -549,7 +549,6 @@ class SensitiveDataModel(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -573,7 +572,6 @@ class SensitiveDataModel(pulumi.CustomResource):
             schemas_for_discoveries=var["sensitive_data_model_schemas_for_discovery"],
             sensitive_type_ids_for_discoveries=var["sensitive_data_model_sensitive_type_ids_for_discovery"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -618,7 +616,6 @@ class SensitiveDataModel(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -642,7 +639,6 @@ class SensitiveDataModel(pulumi.CustomResource):
             schemas_for_discoveries=var["sensitive_data_model_schemas_for_discovery"],
             sensitive_type_ids_for_discoveries=var["sensitive_data_model_sensitive_type_ids_for_discovery"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

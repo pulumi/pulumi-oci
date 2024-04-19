@@ -88,7 +88,6 @@ def get_deployment_type(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -96,7 +95,6 @@ def get_deployment_type(compartment_id: Optional[str] = None,
     test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=var["compartment_id"],
         display_name=var["deployment_type_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -126,7 +124,6 @@ def get_deployment_type_output(compartment_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -134,7 +131,6 @@ def get_deployment_type_output(compartment_id: Optional[pulumi.Input[str]] = Non
     test_deployment_type = oci.GoldenGate.get_deployment_type(compartment_id=var["compartment_id"],
         display_name=var["deployment_type_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

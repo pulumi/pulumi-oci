@@ -155,7 +155,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -177,7 +176,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                 target=var["object_lifecycle_policy_rules_target"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -206,7 +204,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -228,7 +225,6 @@ class ObjectLifecyclePolicy(pulumi.CustomResource):
                 target=var["object_lifecycle_policy_rules_target"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

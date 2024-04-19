@@ -132,7 +132,6 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_audit_profile_available_audit_volumes(audit_profile_id: Optional[str] = 
         month_in_consideration_less_than=var["audit_profile_available_audit_volume_month_in_consideration_less_than"],
         trail_location=var["audit_profile_available_audit_volume_trail_location"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str audit_profile_id: The OCID of the audit.
@@ -192,7 +190,6 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -203,7 +200,6 @@ def get_audit_profile_available_audit_volumes_output(audit_profile_id: Optional[
         month_in_consideration_less_than=var["audit_profile_available_audit_volume_month_in_consideration_less_than"],
         trail_location=var["audit_profile_available_audit_volume_trail_location"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str audit_profile_id: The OCID of the audit.

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentResult> InvokeAsync(GetManagementAgentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentResult>("oci:ManagementAgent/getManagementAgent:getManagementAgent", args ?? new GetManagementAgentArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentResult> Invoke(GetManagementAgentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentResult>("oci:ManagementAgent/getManagementAgent:getManagementAgent", args ?? new GetManagementAgentInvokeArgs(), options.WithDefaults());

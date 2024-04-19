@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogSubscriptions(args: GetAppCatalogSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogSubscriptionsResult> {
 
@@ -79,7 +77,6 @@ export interface GetAppCatalogSubscriptionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -89,7 +86,6 @@ export interface GetAppCatalogSubscriptionsResult {
  *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAppCatalogSubscriptionsOutput(args: GetAppCatalogSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogSubscriptionsResult> {
     return pulumi.output(args).apply((a: any) => getAppCatalogSubscriptions(a, opts))

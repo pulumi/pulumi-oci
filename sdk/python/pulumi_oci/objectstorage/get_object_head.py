@@ -152,7 +152,6 @@ def get_object_head(bucket: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,7 +160,6 @@ def get_object_head(bucket: Optional[str] = None,
         namespace=var["object_namespace"],
         object=var["object_object"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -200,7 +198,6 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -209,7 +206,6 @@ def get_object_head_output(bucket: Optional[pulumi.Input[str]] = None,
         namespace=var["object_namespace"],
         object=var["object_object"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

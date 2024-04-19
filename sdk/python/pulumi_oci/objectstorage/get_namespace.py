@@ -80,14 +80,12 @@ def get_namespace(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_namespace = oci.ObjectStorage.get_namespace(compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.
@@ -119,14 +117,12 @@ def get_namespace_output(compartment_id: Optional[pulumi.Input[Optional[str]]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_namespace = oci.ObjectStorage.get_namespace(compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: This is an optional field representing either the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or the compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) within the tenancy whose Object Storage namespace is to be retrieved.

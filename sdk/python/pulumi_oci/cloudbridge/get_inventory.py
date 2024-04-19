@@ -170,14 +170,12 @@ def get_inventory(inventory_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_inventory = oci.CloudBridge.get_inventory(inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str inventory_id: Inventory OCID.
@@ -211,14 +209,12 @@ def get_inventory_output(inventory_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_inventory = oci.CloudBridge.get_inventory(inventory_id=oci_cloud_bridge_inventory["test_inventory"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str inventory_id: Inventory OCID.

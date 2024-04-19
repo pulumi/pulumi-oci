@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetClusterWorkloadMappings(ctx *pulumi.Context, args *GetClusterWorkloadMappingsArgs, opts ...pulumi.InvokeOption) (*GetClusterWorkloadMappingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetClusterWorkloadMappingsResult

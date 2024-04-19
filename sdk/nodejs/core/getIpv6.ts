@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     ipv6id: oci_core_ipv6.test_ipv6.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIpv6(args: GetIpv6Args, opts?: pulumi.InvokeOptions): Promise<GetIpv6Result> {
 
@@ -100,7 +98,6 @@ export interface GetIpv6Result {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetIpv6Result {
  *     ipv6id: oci_core_ipv6.test_ipv6.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getIpv6Output(args: GetIpv6OutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6Result> {
     return pulumi.output(args).apply((a: any) => getIpv6(a, opts))

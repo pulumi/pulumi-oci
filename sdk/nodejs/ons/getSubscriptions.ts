@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     topicId: oci_ons_notification_topic.test_notification_topic.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSubscriptions(args: GetSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionsResult> {
 
@@ -83,7 +81,6 @@ export interface GetSubscriptionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +90,6 @@ export interface GetSubscriptionsResult {
  *     topicId: oci_ons_notification_topic.test_notification_topic.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionsResult> {
     return pulumi.output(args).apply((a: any) => getSubscriptions(a, opts))

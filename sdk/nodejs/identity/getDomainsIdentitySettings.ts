@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.identity_setting_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentitySettings(args: GetDomainsIdentitySettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsIdentitySettingsResult> {
 
@@ -101,7 +99,6 @@ export interface GetDomainsIdentitySettingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetDomainsIdentitySettingsResult {
  *     resourceTypeSchemaVersion: _var.identity_setting_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsIdentitySettingsOutput(args: GetDomainsIdentitySettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsIdentitySettingsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsIdentitySettings(a, opts))

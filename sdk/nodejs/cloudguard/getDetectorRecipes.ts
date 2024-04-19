@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -41,7 +40,6 @@ import * as utilities from "../utilities";
  *     state: _var.detector_recipe_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDetectorRecipes(args: GetDetectorRecipesArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectorRecipesResult> {
 
@@ -138,7 +136,6 @@ export interface GetDetectorRecipesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -152,7 +149,6 @@ export interface GetDetectorRecipesResult {
  *     state: _var.detector_recipe_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDetectorRecipesOutput(args: GetDetectorRecipesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectorRecipesResult> {
     return pulumi.output(args).apply((a: any) => getDetectorRecipes(a, opts))

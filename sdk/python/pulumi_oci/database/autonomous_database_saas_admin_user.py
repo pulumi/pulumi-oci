@@ -276,7 +276,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -287,7 +286,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
             access_type=var["autonomous_database_saas_admin_user_access_type"],
             duration=var["autonomous_database_saas_admin_user_duration"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -317,7 +315,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -328,7 +325,6 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
             access_type=var["autonomous_database_saas_admin_user_access_type"],
             duration=var["autonomous_database_saas_admin_user_duration"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

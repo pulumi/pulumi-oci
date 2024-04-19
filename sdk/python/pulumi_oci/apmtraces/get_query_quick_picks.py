@@ -87,14 +87,12 @@ def get_query_quick_picks(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID for the intended request.
@@ -124,14 +122,12 @@ def get_query_quick_picks_output(apm_domain_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_query_quick_picks = oci.ApmTraces.get_query_quick_picks(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID for the intended request.

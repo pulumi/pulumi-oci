@@ -432,7 +432,6 @@ class IngressGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -478,7 +477,6 @@ class IngressGateway(pulumi.CustomResource):
                 maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -517,7 +515,6 @@ class IngressGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -563,7 +560,6 @@ class IngressGateway(pulumi.CustomResource):
                 maximum_validity=var["ingress_gateway_mtls_maximum_validity"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

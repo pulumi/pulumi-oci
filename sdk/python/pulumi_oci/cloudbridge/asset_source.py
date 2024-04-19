@@ -610,7 +610,6 @@ class AssetSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -642,7 +641,6 @@ class AssetSource(pulumi.CustomResource):
             ),
             system_tags=var["asset_source_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -687,7 +685,6 @@ class AssetSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -719,7 +716,6 @@ class AssetSource(pulumi.CustomResource):
             ),
             system_tags=var["asset_source_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

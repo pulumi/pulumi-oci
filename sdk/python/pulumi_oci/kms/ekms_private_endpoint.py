@@ -395,7 +395,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -414,7 +413,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
             },
             port=var["ekms_private_endpoint_port"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -452,7 +450,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -471,7 +468,6 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
             },
             port=var["ekms_private_endpoint_port"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

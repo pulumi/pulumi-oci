@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     namespace: _var.log_analytics_category_namespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsCategory(args: GetLogAnalyticsCategoryArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsCategoryResult> {
 
@@ -83,7 +81,6 @@ export interface GetLogAnalyticsCategoryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +90,6 @@ export interface GetLogAnalyticsCategoryResult {
  *     namespace: _var.log_analytics_category_namespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsCategoryOutput(args: GetLogAnalyticsCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoryResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsCategory(a, opts))

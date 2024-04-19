@@ -757,7 +757,6 @@ class DatabaseRegistration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -786,7 +785,6 @@ class DatabaseRegistration(pulumi.CustomResource):
             vault_id=oci_kms_vault["test_vault"]["id"],
             wallet=var["database_registration_wallet"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -835,7 +833,6 @@ class DatabaseRegistration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -864,7 +861,6 @@ class DatabaseRegistration(pulumi.CustomResource):
             vault_id=oci_kms_vault["test_vault"]["id"],
             wallet=var["database_registration_wallet"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

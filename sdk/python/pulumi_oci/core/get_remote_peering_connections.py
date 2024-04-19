@@ -103,7 +103,6 @@ def get_remote_peering_connections(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -111,7 +110,6 @@ def get_remote_peering_connections(compartment_id: Optional[str] = None,
     test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=var["compartment_id"],
         drg_id=oci_core_drg["test_drg"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -145,7 +143,6 @@ def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -153,7 +150,6 @@ def get_remote_peering_connections_output(compartment_id: Optional[pulumi.Input[
     test_remote_peering_connections = oci.Core.get_remote_peering_connections(compartment_id=var["compartment_id"],
         drg_id=oci_core_drg["test_drg"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

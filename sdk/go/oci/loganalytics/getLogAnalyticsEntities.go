@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,7 +52,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetLogAnalyticsEntities(ctx *pulumi.Context, args *GetLogAnalyticsEntitiesArgs, opts ...pulumi.InvokeOption) (*GetLogAnalyticsEntitiesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLogAnalyticsEntitiesResult

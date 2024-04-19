@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getServiceCatalogAssociation(args: GetServiceCatalogAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogAssociationResult> {
 
@@ -73,7 +71,6 @@ export interface GetServiceCatalogAssociationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -82,7 +79,6 @@ export interface GetServiceCatalogAssociationResult {
  *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getServiceCatalogAssociationOutput(args: GetServiceCatalogAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogAssociationResult> {
     return pulumi.output(args).apply((a: any) => getServiceCatalogAssociation(a, opts))

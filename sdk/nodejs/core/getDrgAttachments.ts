@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,7 +33,6 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgAttachments(args: GetDrgAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgAttachmentsResult> {
 
@@ -143,7 +141,6 @@ export interface GetDrgAttachmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -159,7 +156,6 @@ export interface GetDrgAttachmentsResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgAttachmentsOutput(args: GetDrgAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgAttachmentsResult> {
     return pulumi.output(args).apply((a: any) => getDrgAttachments(a, opts))

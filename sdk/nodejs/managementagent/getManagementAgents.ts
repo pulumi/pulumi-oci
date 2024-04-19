@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -39,7 +38,6 @@ import * as utilities from "../utilities";
  *     versions: _var.management_agent_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgents(args: GetManagementAgentsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentsResult> {
 
@@ -205,7 +203,6 @@ export interface GetManagementAgentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -229,7 +226,6 @@ export interface GetManagementAgentsResult {
  *     versions: _var.management_agent_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentsOutput(args: GetManagementAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentsResult> {
     return pulumi.output(args).apply((a: any) => getManagementAgents(a, opts))

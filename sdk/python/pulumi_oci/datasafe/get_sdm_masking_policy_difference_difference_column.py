@@ -204,7 +204,6 @@ def get_sdm_masking_policy_difference_difference_column(difference_column_key: O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -212,7 +211,6 @@ def get_sdm_masking_policy_difference_difference_column(difference_column_key: O
     test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=var["sdm_masking_policy_difference_difference_column_difference_column_key"],
         sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str difference_column_key: The unique key that identifies the difference column.
@@ -252,7 +250,6 @@ def get_sdm_masking_policy_difference_difference_column_output(difference_column
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -260,7 +257,6 @@ def get_sdm_masking_policy_difference_difference_column_output(difference_column
     test_sdm_masking_policy_difference_difference_column = oci.DataSafe.get_sdm_masking_policy_difference_difference_column(difference_column_key=var["sdm_masking_policy_difference_difference_column_difference_column_key"],
         sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str difference_column_key: The unique key that identifies the difference column.

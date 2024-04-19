@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     statementId: oci_dataflow_statement.test_statement.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRunStatement(args: GetRunStatementArgs, opts?: pulumi.InvokeOptions): Promise<GetRunStatementResult> {
 
@@ -93,7 +91,6 @@ export interface GetRunStatementResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -103,7 +100,6 @@ export interface GetRunStatementResult {
  *     statementId: oci_dataflow_statement.test_statement.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRunStatementOutput(args: GetRunStatementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunStatementResult> {
     return pulumi.output(args).apply((a: any) => getRunStatement(a, opts))

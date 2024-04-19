@@ -268,7 +268,6 @@ def get_management_agents(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -290,7 +289,6 @@ def get_management_agents(access_level: Optional[str] = None,
         state=var["management_agent_state"],
         versions=var["management_agent_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.
@@ -381,7 +379,6 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -403,7 +400,6 @@ def get_management_agents_output(access_level: Optional[pulumi.Input[Optional[st
         state=var["management_agent_state"],
         versions=var["management_agent_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: When the value is "ACCESSIBLE", insufficient permissions for a compartment will filter out resources in that compartment without rejecting the request.

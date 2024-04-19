@@ -122,7 +122,6 @@ def get_sessions(bastion_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -132,7 +131,6 @@ def get_sessions(bastion_id: Optional[str] = None,
         session_id=oci_bastion_session["test_session"]["id"],
         session_lifecycle_state=var["session_session_lifecycle_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bastion_id: The unique identifier (OCID) of the bastion in which to list sessions.
@@ -173,7 +171,6 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,7 +180,6 @@ def get_sessions_output(bastion_id: Optional[pulumi.Input[str]] = None,
         session_id=oci_bastion_session["test_session"]["id"],
         session_lifecycle_state=var["session_session_lifecycle_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bastion_id: The unique identifier (OCID) of the bastion in which to list sessions.

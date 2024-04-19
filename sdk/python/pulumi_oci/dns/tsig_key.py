@@ -332,7 +332,6 @@ class TsigKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -344,7 +343,6 @@ class TsigKey(pulumi.CustomResource):
             defined_tags=var["tsig_key_defined_tags"],
             freeform_tags=var["tsig_key_freeform_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -385,7 +383,6 @@ class TsigKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -397,7 +394,6 @@ class TsigKey(pulumi.CustomResource):
             defined_tags=var["tsig_key_defined_tags"],
             freeform_tags=var["tsig_key_freeform_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

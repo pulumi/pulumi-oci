@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAllowedDomainLicenseTypesResult> InvokeAsync(GetAllowedDomainLicenseTypesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAllowedDomainLicenseTypesResult>("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args ?? new GetAllowedDomainLicenseTypesArgs(), options.WithDefaults());
@@ -58,7 +56,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAllowedDomainLicenseTypesResult> Invoke(GetAllowedDomainLicenseTypesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAllowedDomainLicenseTypesResult>("oci:Identity/getAllowedDomainLicenseTypes:getAllowedDomainLicenseTypes", args ?? new GetAllowedDomainLicenseTypesInvokeArgs(), options.WithDefaults());

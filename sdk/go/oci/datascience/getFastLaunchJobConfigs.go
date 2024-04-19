@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFastLaunchJobConfigs(ctx *pulumi.Context, args *GetFastLaunchJobConfigsArgs, opts ...pulumi.InvokeOption) (*GetFastLaunchJobConfigsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFastLaunchJobConfigsResult

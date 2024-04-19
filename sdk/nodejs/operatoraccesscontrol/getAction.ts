@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     operatorActionId: oci_operator_access_control_operator_action.test_operator_action.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAction(args: GetActionArgs, opts?: pulumi.InvokeOptions): Promise<GetActionResult> {
 
@@ -83,7 +81,6 @@ export interface GetActionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -92,7 +89,6 @@ export interface GetActionResult {
  *     operatorActionId: oci_operator_access_control_operator_action.test_operator_action.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getActionOutput(args: GetActionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetActionResult> {
     return pulumi.output(args).apply((a: any) => getAction(a, opts))

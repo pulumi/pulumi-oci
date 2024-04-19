@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     dbNodeId: oci_database_db_node.test_db_node.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbNodeConsoleHistory(args: GetDbNodeConsoleHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeConsoleHistoryResult> {
 
@@ -95,7 +93,6 @@ export interface GetDbNodeConsoleHistoryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -105,7 +102,6 @@ export interface GetDbNodeConsoleHistoryResult {
  *     dbNodeId: oci_database_db_node.test_db_node.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbNodeConsoleHistoryOutput(args: GetDbNodeConsoleHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleHistoryResult> {
     return pulumi.output(args).apply((a: any) => getDbNodeConsoleHistory(a, opts))

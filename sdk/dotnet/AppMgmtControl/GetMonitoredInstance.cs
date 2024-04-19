@@ -18,7 +18,6 @@ namespace Pulumi.Oci.AppMgmtControl
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.AppMgmtControl
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetMonitoredInstanceResult> InvokeAsync(GetMonitoredInstanceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredInstanceResult>("oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance", args ?? new GetMonitoredInstanceArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.AppMgmtControl
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.AppMgmtControl
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetMonitoredInstanceResult> Invoke(GetMonitoredInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredInstanceResult>("oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance", args ?? new GetMonitoredInstanceInvokeArgs(), options.WithDefaults());

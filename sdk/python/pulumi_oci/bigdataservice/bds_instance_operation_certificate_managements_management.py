@@ -317,7 +317,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -336,7 +335,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             root_certificate=var["bds_instance_operation_certificate_managements_management_root_certificate"],
             server_key_password=var["bds_instance_operation_certificate_managements_management_server_key_password"])
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -366,7 +364,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -385,7 +382,6 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
             root_certificate=var["bds_instance_operation_certificate_managements_management_root_certificate"],
             server_key_password=var["bds_instance_operation_certificate_managements_management_server_key_password"])
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceOperationCertificateManagementsManagementArgs args: The arguments to use to populate this resource's properties.

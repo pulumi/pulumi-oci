@@ -110,14 +110,12 @@ def get_service_catalog_association(service_catalog_association_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str service_catalog_association_id: The unique identifier of the service catalog association.
@@ -146,14 +144,12 @@ def get_service_catalog_association_output(service_catalog_association_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_service_catalog_association = oci.ServiceCatalog.get_service_catalog_association(service_catalog_association_id=oci_service_catalog_service_catalog_association["test_service_catalog_association"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str service_catalog_association_id: The unique identifier of the service catalog association.

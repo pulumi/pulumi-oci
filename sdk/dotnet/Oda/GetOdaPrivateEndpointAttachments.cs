@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -41,7 +40,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOdaPrivateEndpointAttachmentsResult> InvokeAsync(GetOdaPrivateEndpointAttachmentsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOdaPrivateEndpointAttachmentsResult>("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", args ?? new GetOdaPrivateEndpointAttachmentsArgs(), options.WithDefaults());
@@ -58,7 +56,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -76,7 +73,6 @@ namespace Pulumi.Oci.Oda
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOdaPrivateEndpointAttachmentsResult> Invoke(GetOdaPrivateEndpointAttachmentsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOdaPrivateEndpointAttachmentsResult>("oci:Oda/getOdaPrivateEndpointAttachments:getOdaPrivateEndpointAttachments", args ?? new GetOdaPrivateEndpointAttachmentsInvokeArgs(), options.WithDefaults());

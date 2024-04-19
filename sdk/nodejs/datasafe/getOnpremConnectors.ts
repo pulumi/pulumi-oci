@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     onPremConnectorLifecycleState: _var.on_prem_connector_on_prem_connector_lifecycle_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOnpremConnectors(args: GetOnpremConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetOnpremConnectorsResult> {
 
@@ -107,7 +105,6 @@ export interface GetOnpremConnectorsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -121,7 +118,6 @@ export interface GetOnpremConnectorsResult {
  *     onPremConnectorLifecycleState: _var.on_prem_connector_on_prem_connector_lifecycle_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOnpremConnectorsOutput(args: GetOnpremConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnpremConnectorsResult> {
     return pulumi.output(args).apply((a: any) => getOnpremConnectors(a, opts))

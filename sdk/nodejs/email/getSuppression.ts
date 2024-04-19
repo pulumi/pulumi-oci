@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     suppressionId: oci_email_suppression.test_suppression.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSuppression(args: GetSuppressionArgs, opts?: pulumi.InvokeOptions): Promise<GetSuppressionResult> {
 
@@ -91,7 +89,6 @@ export interface GetSuppressionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetSuppressionResult {
  *     suppressionId: oci_email_suppression.test_suppression.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSuppressionOutput(args: GetSuppressionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSuppressionResult> {
     return pulumi.output(args).apply((a: any) => getSuppression(a, opts))

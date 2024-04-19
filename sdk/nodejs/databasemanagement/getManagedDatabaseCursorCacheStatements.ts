@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseCursorCacheStatements(args: GetManagedDatabaseCursorCacheStatementsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseCursorCacheStatementsResult> {
 
@@ -86,7 +84,6 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetManagedDatabaseCursorCacheStatementsResult {
  *     sqlText: _var.managed_database_cursor_cache_statement_sql_text,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseCursorCacheStatementsOutput(args: GetManagedDatabaseCursorCacheStatementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseCursorCacheStatementsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseCursorCacheStatements(a, opts))

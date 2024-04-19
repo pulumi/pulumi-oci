@@ -642,7 +642,6 @@ class StorageObject(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -662,7 +661,6 @@ class StorageObject(pulumi.CustomResource):
             storage_tier=var["object_storage_tier"],
             opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -715,7 +713,6 @@ class StorageObject(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -735,7 +732,6 @@ class StorageObject(pulumi.CustomResource):
             storage_tier=var["object_storage_tier"],
             opc_sse_kms_key_id=var["object_opc_sse_kms_key_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

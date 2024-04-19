@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsCloudGateServers(ctx *pulumi.Context, args *GetDomainsCloudGateServersArgs, opts ...pulumi.InvokeOption) (*GetDomainsCloudGateServersResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsCloudGateServersResult

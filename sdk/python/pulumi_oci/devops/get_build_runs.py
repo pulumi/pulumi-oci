@@ -145,7 +145,6 @@ def get_build_runs(build_pipeline_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -157,7 +156,6 @@ def get_build_runs(build_pipeline_id: Optional[str] = None,
         project_id=oci_devops_project["test_project"]["id"],
         state=var["build_run_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str build_pipeline_id: Unique build pipeline identifier.
@@ -206,7 +204,6 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -218,7 +215,6 @@ def get_build_runs_output(build_pipeline_id: Optional[pulumi.Input[Optional[str]
         project_id=oci_devops_project["test_project"]["id"],
         state=var["build_run_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str build_pipeline_id: Unique build pipeline identifier.

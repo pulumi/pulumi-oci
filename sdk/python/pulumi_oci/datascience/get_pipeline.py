@@ -273,14 +273,12 @@ def get_pipeline(pipeline_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pipeline = oci.DataScience.get_pipeline(pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
@@ -323,14 +321,12 @@ def get_pipeline_output(pipeline_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_pipeline = oci.DataScience.get_pipeline(pipeline_id=oci_datascience_pipeline["test_pipeline"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.

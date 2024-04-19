@@ -136,7 +136,6 @@ class Namespace(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -146,7 +145,6 @@ class Namespace(pulumi.CustomResource):
             is_onboarded=var["is_onboarded"],
             namespace=var["namespace_namespace"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -175,7 +173,6 @@ class Namespace(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -185,7 +182,6 @@ class Namespace(pulumi.CustomResource):
             is_onboarded=var["is_onboarded"],
             namespace=var["namespace_namespace"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

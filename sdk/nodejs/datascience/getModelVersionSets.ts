@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.model_version_set_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelVersionSets(args: GetModelVersionSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelVersionSetsResult> {
 
@@ -115,7 +113,6 @@ export interface GetModelVersionSetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -129,7 +126,6 @@ export interface GetModelVersionSetsResult {
  *     state: _var.model_version_set_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelVersionSetsOutput(args: GetModelVersionSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelVersionSetsResult> {
     return pulumi.output(args).apply((a: any) => getModelVersionSets(a, opts))

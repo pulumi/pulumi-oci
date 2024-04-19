@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsBrandingSettings(ctx *pulumi.Context, args *GetDomainsBrandingSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsBrandingSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsBrandingSettingsResult

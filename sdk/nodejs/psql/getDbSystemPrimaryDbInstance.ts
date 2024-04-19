@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     dbSystemId: oci_psql_db_system.test_db_system.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemPrimaryDbInstance(args: GetDbSystemPrimaryDbInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemPrimaryDbInstanceResult> {
 
@@ -61,7 +59,6 @@ export interface GetDbSystemPrimaryDbInstanceResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -70,7 +67,6 @@ export interface GetDbSystemPrimaryDbInstanceResult {
  *     dbSystemId: oci_psql_db_system.test_db_system.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemPrimaryDbInstanceOutput(args: GetDbSystemPrimaryDbInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemPrimaryDbInstanceResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemPrimaryDbInstance(a, opts))

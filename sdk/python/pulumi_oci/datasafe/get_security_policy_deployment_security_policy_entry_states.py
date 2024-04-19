@@ -117,7 +117,6 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_security_policy_deployment_security_policy_entry_states(deployment_statu
         deployment_status=var["security_policy_deployment_security_policy_entry_state_deployment_status"],
         security_policy_entry_id=oci_data_safe_security_policy_entry["test_security_policy_entry"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_status: The current state of the security policy deployment.
@@ -165,7 +163,6 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,7 +171,6 @@ def get_security_policy_deployment_security_policy_entry_states_output(deploymen
         deployment_status=var["security_policy_deployment_security_policy_entry_state_deployment_status"],
         security_policy_entry_id=oci_data_safe_security_policy_entry["test_security_policy_entry"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_status: The current state of the security policy deployment.

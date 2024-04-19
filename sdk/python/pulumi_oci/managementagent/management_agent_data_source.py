@@ -608,7 +608,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -631,7 +630,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             resource_group=var["management_agent_data_source_resource_group"],
             schedule_mins=var["management_agent_data_source_schedule_mins"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -675,7 +673,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -698,7 +695,6 @@ class ManagementAgentDataSource(pulumi.CustomResource):
             resource_group=var["management_agent_data_source_resource_group"],
             schedule_mins=var["management_agent_data_source_schedule_mins"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

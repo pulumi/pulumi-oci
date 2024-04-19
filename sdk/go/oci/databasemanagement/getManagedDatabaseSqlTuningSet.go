@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagedDatabaseSqlTuningSet(ctx *pulumi.Context, args *GetManagedDatabaseSqlTuningSetArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlTuningSetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlTuningSetResult

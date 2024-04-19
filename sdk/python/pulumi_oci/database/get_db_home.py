@@ -276,14 +276,12 @@ def get_db_home(db_home_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_home = oci.Database.get_db_home(db_home_id=var["db_home_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -327,14 +325,12 @@ def get_db_home_output(db_home_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_db_home = oci.Database.get_db_home(db_home_id=var["db_home_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_home_id: The Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

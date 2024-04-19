@@ -128,7 +128,6 @@ def get_opsi_configurations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_opsi_configurations(compartment_id: Optional[str] = None,
         opsi_config_types=var["opsi_configuration_opsi_config_type"],
         states=var["opsi_configuration_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -179,7 +177,6 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_opsi_configurations_output(compartment_id: Optional[pulumi.Input[str]] =
         opsi_config_types=var["opsi_configuration_opsi_config_type"],
         states=var["opsi_configuration_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -162,14 +162,12 @@ def get_instance_configuration(instance_configuration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instance_configuration_id: The OCID of the instance configuration.
@@ -203,14 +201,12 @@ def get_instance_configuration_output(instance_configuration_id: Optional[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_instance_configuration = oci.Core.get_instance_configuration(instance_configuration_id=oci_core_instance_configuration["test_instance_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instance_configuration_id: The OCID of the instance configuration.

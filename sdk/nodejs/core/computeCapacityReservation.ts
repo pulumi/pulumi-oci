@@ -17,7 +17,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -48,7 +47,6 @@ import * as utilities from "../utilities";
  *     isDefaultReservation: _var.compute_capacity_reservation_is_default_reservation,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

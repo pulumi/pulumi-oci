@@ -394,7 +394,6 @@ def get_address(address_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -403,7 +402,6 @@ def get_address(address_id: Optional[str] = None,
         compartment_id=var["compartment_id"],
         osp_home_region=var["address_osp_home_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str address_id: The identifier of the address.
@@ -462,7 +460,6 @@ def get_address_output(address_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -471,7 +468,6 @@ def get_address_output(address_id: Optional[pulumi.Input[str]] = None,
         compartment_id=var["compartment_id"],
         osp_home_region=var["address_osp_home_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str address_id: The identifier of the address.

@@ -231,14 +231,12 @@ def get_remediation_run(remediation_run_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_remediation_run = oci.Adm.get_remediation_run(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.
@@ -277,14 +275,12 @@ def get_remediation_run_output(remediation_run_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_remediation_run = oci.Adm.get_remediation_run(remediation_run_id=oci_adm_remediation_run["test_remediation_run"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str remediation_run_id: Unique Remediation Run identifier path parameter.

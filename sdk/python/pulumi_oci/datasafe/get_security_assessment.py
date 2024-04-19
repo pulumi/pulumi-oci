@@ -360,14 +360,12 @@ def get_security_assessment(security_assessment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_assessment_id: The OCID of the security assessment.
@@ -417,14 +415,12 @@ def get_security_assessment_output(security_assessment_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_assessment = oci.DataSafe.get_security_assessment(security_assessment_id=oci_data_safe_security_assessment["test_security_assessment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_assessment_id: The OCID of the security assessment.

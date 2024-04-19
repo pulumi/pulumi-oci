@@ -317,7 +317,6 @@ class Ipv6(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -334,7 +333,6 @@ class Ipv6(pulumi.CustomResource):
             ip_address=var["ipv6_ip_address"],
             ipv6subnet_cidr=var["ipv6_ipv6subnet_cidr"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -370,7 +368,6 @@ class Ipv6(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -387,7 +384,6 @@ class Ipv6(pulumi.CustomResource):
             ip_address=var["ipv6_ip_address"],
             ipv6subnet_cidr=var["ipv6_ipv6subnet_cidr"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

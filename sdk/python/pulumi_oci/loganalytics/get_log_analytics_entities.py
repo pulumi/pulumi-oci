@@ -227,7 +227,6 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -246,7 +245,6 @@ def get_log_analytics_entities(cloud_resource_id: Optional[str] = None,
         source_id=oci_log_analytics_source["test_source"]["id"],
         state=var["log_analytics_entity_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
@@ -323,7 +321,6 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -342,7 +339,6 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
         source_id=oci_log_analytics_source["test_source"]["id"],
         state=var["log_analytics_entity_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.

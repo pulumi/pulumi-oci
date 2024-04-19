@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupBdsInstanceApiKey(ctx *pulumi.Context, args *LookupBdsInstanceApiKeyArgs, opts ...pulumi.InvokeOption) (*LookupBdsInstanceApiKeyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBdsInstanceApiKeyResult

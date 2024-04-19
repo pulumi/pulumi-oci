@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     externalDbHomeId: oci_database_management_external_db_home.test_external_db_home.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalDbHome(args: GetExternalDbHomeArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalDbHomeResult> {
 
@@ -105,7 +103,6 @@ export interface GetExternalDbHomeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetExternalDbHomeResult {
  *     externalDbHomeId: oci_database_management_external_db_home.test_external_db_home.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalDbHomeOutput(args: GetExternalDbHomeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalDbHomeResult> {
     return pulumi.output(args).apply((a: any) => getExternalDbHome(a, opts))

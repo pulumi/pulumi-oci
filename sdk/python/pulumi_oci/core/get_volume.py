@@ -321,14 +321,12 @@ def get_volume(volume_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume = oci.Core.get_volume(volume_id=oci_core_volume["test_volume"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str volume_id: The OCID of the volume.
@@ -375,14 +373,12 @@ def get_volume_output(volume_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_volume = oci.Core.get_volume(volume_id=oci_core_volume["test_volume"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str volume_id: The OCID of the volume.

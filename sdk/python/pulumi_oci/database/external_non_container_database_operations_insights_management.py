@@ -149,7 +149,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -159,7 +158,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
             external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
             enable_operations_insights=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -188,7 +186,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -198,7 +195,6 @@ class ExternalNonContainerDatabaseOperationsInsightsManagement(pulumi.CustomReso
             external_non_container_database_id=oci_database_external_non_container_database["test_external_non_container_database"]["id"],
             enable_operations_insights=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

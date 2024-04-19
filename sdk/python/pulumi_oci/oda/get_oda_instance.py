@@ -327,14 +327,12 @@ def get_oda_instance(oda_instance_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_instance_id: Unique Digital Assistant instance identifier.
@@ -381,14 +379,12 @@ def get_oda_instance_output(oda_instance_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_oda_instance = oci.Oda.get_oda_instance(oda_instance_id=oci_oda_oda_instance["test_oda_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_instance_id: Unique Digital Assistant instance identifier.

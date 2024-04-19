@@ -219,14 +219,12 @@ def get_waas_policy(waas_policy_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.
@@ -264,14 +262,12 @@ def get_waas_policy_output(waas_policy_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_waas_policy = oci.Waas.get_waas_policy(waas_policy_id=oci_waas_waas_policy["test_waas_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str waas_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the WAAS policy.

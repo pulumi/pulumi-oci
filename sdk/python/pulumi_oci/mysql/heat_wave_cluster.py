@@ -280,7 +280,6 @@ class HeatWaveCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -291,7 +290,6 @@ class HeatWaveCluster(pulumi.CustomResource):
             is_lakehouse_enabled=var["heat_wave_cluster_is_lakehouse_enabled"],
             shape_name=oci_mysql_shape["test_shape"]["name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -325,7 +323,6 @@ class HeatWaveCluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -336,7 +333,6 @@ class HeatWaveCluster(pulumi.CustomResource):
             is_lakehouse_enabled=var["heat_wave_cluster_is_lakehouse_enabled"],
             shape_name=oci_mysql_shape["test_shape"]["name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

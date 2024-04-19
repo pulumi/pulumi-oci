@@ -351,14 +351,12 @@ def get_software_source(software_source_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_software_source = oci.OsManagementHub.get_software_source(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str software_source_id: The software source OCID.
@@ -407,14 +405,12 @@ def get_software_source_output(software_source_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_software_source = oci.OsManagementHub.get_software_source(software_source_id=oci_os_management_hub_software_source["test_software_source"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str software_source_id: The software source OCID.

@@ -229,7 +229,6 @@ def get_media_assets(bucket: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -247,7 +246,6 @@ def get_media_assets(bucket: Optional[str] = None,
         state=var["media_asset_state"],
         type=var["media_asset_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: Filter MediaAsset by the bucket where the object is stored.
@@ -320,7 +318,6 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -338,7 +335,6 @@ def get_media_assets_output(bucket: Optional[pulumi.Input[Optional[str]]] = None
         state=var["media_asset_state"],
         type=var["media_asset_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: Filter MediaAsset by the bucket where the object is stored.

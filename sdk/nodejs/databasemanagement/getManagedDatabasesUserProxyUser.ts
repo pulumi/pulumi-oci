@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     name: _var.managed_databases_user_proxy_user_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabasesUserProxyUser(args: GetManagedDatabasesUserProxyUserArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesUserProxyUserResult> {
 
@@ -80,7 +78,6 @@ export interface GetManagedDatabasesUserProxyUserResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetManagedDatabasesUserProxyUserResult {
  *     name: _var.managed_databases_user_proxy_user_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabasesUserProxyUserOutput(args: GetManagedDatabasesUserProxyUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesUserProxyUserResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabasesUserProxyUser(a, opts))

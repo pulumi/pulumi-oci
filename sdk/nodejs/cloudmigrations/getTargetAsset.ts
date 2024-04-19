@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     targetAssetId: oci_cloud_migrations_target_asset.test_target_asset.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTargetAsset(args: GetTargetAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAssetResult> {
 
@@ -139,7 +137,6 @@ export interface GetTargetAssetResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -148,7 +145,6 @@ export interface GetTargetAssetResult {
  *     targetAssetId: oci_cloud_migrations_target_asset.test_target_asset.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTargetAssetOutput(args: GetTargetAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAssetResult> {
     return pulumi.output(args).apply((a: any) => getTargetAsset(a, opts))

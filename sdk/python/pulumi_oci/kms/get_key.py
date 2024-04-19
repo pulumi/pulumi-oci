@@ -336,7 +336,6 @@ def get_key(key_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -344,7 +343,6 @@ def get_key(key_id: Optional[str] = None,
     test_key = oci.Kms.get_key(key_id=oci_kms_key["test_key"]["id"],
         management_endpoint=var["key_management_endpoint"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str key_id: The OCID of the key.
@@ -400,7 +398,6 @@ def get_key_output(key_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -408,7 +405,6 @@ def get_key_output(key_id: Optional[pulumi.Input[str]] = None,
     test_key = oci.Kms.get_key(key_id=oci_kms_key["test_key"]["id"],
         management_endpoint=var["key_management_endpoint"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str key_id: The OCID of the key.

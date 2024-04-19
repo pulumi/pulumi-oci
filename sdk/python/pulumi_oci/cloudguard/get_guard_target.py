@@ -267,14 +267,12 @@ def get_guard_target(target_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target = oci.CloudGuard.get_guard_target(target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str target_id: OCID of target
@@ -316,14 +314,12 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target = oci.CloudGuard.get_guard_target(target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str target_id: OCID of target

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetClusterWorkloadMappingsResult> InvokeAsync(GetClusterWorkloadMappingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterWorkloadMappingsResult>("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", args ?? new GetClusterWorkloadMappingsArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.ContainerEngine
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetClusterWorkloadMappingsResult> Invoke(GetClusterWorkloadMappingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetClusterWorkloadMappingsResult>("oci:ContainerEngine/getClusterWorkloadMappings:getClusterWorkloadMappings", args ?? new GetClusterWorkloadMappingsInvokeArgs(), options.WithDefaults());

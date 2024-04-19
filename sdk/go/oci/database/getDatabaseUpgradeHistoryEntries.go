@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDatabaseUpgradeHistoryEntries(ctx *pulumi.Context, args *GetDatabaseUpgradeHistoryEntriesArgs, opts ...pulumi.InvokeOption) (*GetDatabaseUpgradeHistoryEntriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDatabaseUpgradeHistoryEntriesResult

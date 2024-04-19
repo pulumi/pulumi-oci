@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupDiscoveryJobsResult(ctx *pulumi.Context, args *LookupDiscoveryJobsResultArgs, opts ...pulumi.InvokeOption) (*LookupDiscoveryJobsResultResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupDiscoveryJobsResultResult

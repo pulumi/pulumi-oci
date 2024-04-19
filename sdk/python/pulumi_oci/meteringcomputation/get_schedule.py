@@ -243,14 +243,12 @@ def get_schedule(schedule_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_schedule = oci.MeteringComputation.get_schedule(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str schedule_id: The schedule unique OCID.
@@ -290,14 +288,12 @@ def get_schedule_output(schedule_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_schedule = oci.MeteringComputation.get_schedule(schedule_id=oci_metering_computation_schedule["test_schedule"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str schedule_id: The schedule unique OCID.

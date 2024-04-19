@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     state: _var.resolver_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getResolvers(args: GetResolversArgs, opts?: pulumi.InvokeOptions): Promise<GetResolversResult> {
 
@@ -112,7 +110,6 @@ export interface GetResolversResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -125,7 +122,6 @@ export interface GetResolversResult {
  *     state: _var.resolver_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getResolversOutput(args: GetResolversOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolversResult> {
     return pulumi.output(args).apply((a: any) => getResolvers(a, opts))

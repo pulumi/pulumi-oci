@@ -279,14 +279,12 @@ def get_management_station(management_station_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_station = oci.OsManagementHub.get_management_station(management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_station_id: The OCID of the management station.
@@ -329,14 +327,12 @@ def get_management_station_output(management_station_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_management_station = oci.OsManagementHub.get_management_station(management_station_id=oci_os_management_hub_management_station["test_management_station"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_station_id: The OCID of the management station.

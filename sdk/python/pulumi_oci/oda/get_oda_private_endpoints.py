@@ -120,7 +120,6 @@ def get_oda_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -129,7 +128,6 @@ def get_oda_private_endpoints(compartment_id: Optional[str] = None,
         display_name=var["oda_private_endpoint_display_name"],
         state=var["oda_private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: List the ODA Private Endpoints that belong to this compartment.
@@ -171,7 +169,6 @@ def get_oda_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,7 +177,6 @@ def get_oda_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]]
         display_name=var["oda_private_endpoint_display_name"],
         state=var["oda_private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: List the ODA Private Endpoints that belong to this compartment.

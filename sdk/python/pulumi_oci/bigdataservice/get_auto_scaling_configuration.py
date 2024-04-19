@@ -175,7 +175,6 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,7 +182,6 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
     test_auto_scaling_configuration = oci.BigDataService.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"],
         bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str auto_scaling_configuration_id: Unique Oracle-assigned identifier of the autoscale configuration.
@@ -221,7 +219,6 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -229,7 +226,6 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
     test_auto_scaling_configuration = oci.BigDataService.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"],
         bds_instance_id=oci_bds_bds_instance["test_bds_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str auto_scaling_configuration_id: Unique Oracle-assigned identifier of the autoscale configuration.

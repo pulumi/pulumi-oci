@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -73,7 +72,6 @@ import * as utilities from "../utilities";
  *     storageCount: _var.exadata_infrastructure_storage_count,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

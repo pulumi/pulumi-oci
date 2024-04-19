@@ -168,7 +168,6 @@ class RuleSet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -201,7 +200,6 @@ class RuleSet(pulumi.CustomResource):
             )],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -235,7 +233,6 @@ class RuleSet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -268,7 +265,6 @@ class RuleSet(pulumi.CustomResource):
             )],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

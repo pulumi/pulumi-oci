@@ -486,7 +486,6 @@ class VolumeGroup(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -512,7 +511,6 @@ class VolumeGroup(pulumi.CustomResource):
             )],
             volume_ids=[var["volume_group_source_id"]])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -546,7 +544,6 @@ class VolumeGroup(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -572,7 +569,6 @@ class VolumeGroup(pulumi.CustomResource):
             )],
             volume_ids=[var["volume_group_source_id"]])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

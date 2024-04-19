@@ -128,7 +128,6 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_database_tools_endpoint_services(compartment_id: Optional[str] = None,
         name=var["database_tools_endpoint_service_name"],
         state=var["database_tools_endpoint_service_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -179,7 +177,6 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_database_tools_endpoint_services_output(compartment_id: Optional[pulumi.
         name=var["database_tools_endpoint_service_name"],
         state=var["database_tools_endpoint_service_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

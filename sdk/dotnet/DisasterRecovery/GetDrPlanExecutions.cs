@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrPlanExecutionsResult> InvokeAsync(GetDrPlanExecutionsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrPlanExecutionsResult>("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args ?? new GetDrPlanExecutionsArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrPlanExecutionsResult> Invoke(GetDrPlanExecutionsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrPlanExecutionsResult>("oci:DisasterRecovery/getDrPlanExecutions:getDrPlanExecutions", args ?? new GetDrPlanExecutionsInvokeArgs(), options.WithDefaults());

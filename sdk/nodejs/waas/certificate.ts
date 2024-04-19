@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,7 +33,6 @@ import * as utilities from "../utilities";
  *     isTrustVerificationDisabled: _var.certificate_is_trust_verification_disabled,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

@@ -146,14 +146,12 @@ def get_service_catalog(service_catalog_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str service_catalog_id: The unique identifier for the service catalog.
@@ -185,14 +183,12 @@ def get_service_catalog_output(service_catalog_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_service_catalog = oci.ServiceCatalog.get_service_catalog(service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str service_catalog_id: The unique identifier for the service catalog.

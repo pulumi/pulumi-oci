@@ -102,7 +102,6 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_fusion_environment_data_masking_activities(filters: Optional[Sequence[pu
     test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
         state=var["fusion_environment_data_masking_activity_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier
@@ -143,7 +141,6 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_fusion_environment_data_masking_activities_output(filters: Optional[pulu
     test_fusion_environment_data_masking_activities = oci.Functions.get_fusion_environment_data_masking_activities(fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
         state=var["fusion_environment_data_masking_activity_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str fusion_environment_id: unique FusionEnvironment identifier

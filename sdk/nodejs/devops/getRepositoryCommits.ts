@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     timestampLessThanOrEqualTo: _var.repository_commit_timestamp_less_than_or_equal_to,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryCommits(args: GetRepositoryCommitsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryCommitsResult> {
 
@@ -121,7 +119,6 @@ export interface GetRepositoryCommitsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -137,7 +134,6 @@ export interface GetRepositoryCommitsResult {
  *     timestampLessThanOrEqualTo: _var.repository_commit_timestamp_less_than_or_equal_to,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryCommitsOutput(args: GetRepositoryCommitsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitsResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryCommits(a, opts))

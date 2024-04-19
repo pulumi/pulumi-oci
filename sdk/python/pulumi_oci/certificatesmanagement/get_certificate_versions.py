@@ -103,7 +103,6 @@ def get_certificate_versions(certificate_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -111,7 +110,6 @@ def get_certificate_versions(certificate_id: Optional[str] = None,
     test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
         version_number=var["certificate_version_version_number"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The OCID of the certificate.
@@ -145,7 +143,6 @@ def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -153,7 +150,6 @@ def get_certificate_versions_output(certificate_id: Optional[pulumi.Input[str]] 
     test_certificate_versions = oci.CertificatesManagement.get_certificate_versions(certificate_id=oci_certificates_management_certificate["test_certificate"]["id"],
         version_number=var["certificate_version_version_number"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str certificate_id: The OCID of the certificate.

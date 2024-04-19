@@ -509,7 +509,6 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -521,7 +520,6 @@ def get_domains_account_mgmt_info(account_mgmt_info_id: Optional[str] = None,
         authorization=var["account_mgmt_info_authorization"],
         resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str account_mgmt_info_id: ID of the resource
@@ -599,7 +597,6 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -611,7 +608,6 @@ def get_domains_account_mgmt_info_output(account_mgmt_info_id: Optional[pulumi.I
         authorization=var["account_mgmt_info_authorization"],
         resource_type_schema_version=var["account_mgmt_info_resource_type_schema_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str account_mgmt_info_id: ID of the resource

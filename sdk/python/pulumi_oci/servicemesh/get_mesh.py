@@ -207,14 +207,12 @@ def get_mesh(mesh_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mesh = oci.ServiceMesh.get_mesh(mesh_id=oci_service_mesh_mesh["test_mesh"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str mesh_id: Unique Mesh identifier.
@@ -251,14 +249,12 @@ def get_mesh_output(mesh_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_mesh = oci.ServiceMesh.get_mesh(mesh_id=oci_service_mesh_mesh["test_mesh"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str mesh_id: Unique Mesh identifier.

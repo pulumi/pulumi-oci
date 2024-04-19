@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     scriptId: oci_apm_synthetics_script.test_script.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getScript(args: GetScriptArgs, opts?: pulumi.InvokeOptions): Promise<GetScriptResult> {
 
@@ -114,7 +112,6 @@ export interface GetScriptResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetScriptResult {
  *     scriptId: oci_apm_synthetics_script.test_script.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getScriptOutput(args: GetScriptOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScriptResult> {
     return pulumi.output(args).apply((a: any) => getScript(a, opts))

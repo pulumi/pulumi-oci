@@ -17,7 +17,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.tenancy_ocid,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAvailabilityDomains(args: GetAvailabilityDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetAvailabilityDomainsResult> {
 
@@ -77,7 +75,6 @@ export interface GetAvailabilityDomainsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetAvailabilityDomainsResult {
  *     compartmentId: _var.tenancy_ocid,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAvailabilityDomainsOutput(args: GetAvailabilityDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAvailabilityDomainsResult> {
     return pulumi.output(args).apply((a: any) => getAvailabilityDomains(a, opts))

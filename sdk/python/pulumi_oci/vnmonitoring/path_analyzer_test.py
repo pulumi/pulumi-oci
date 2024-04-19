@@ -399,7 +399,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -447,7 +446,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 is_bi_directional_analysis=var["path_analyzer_test_query_options_is_bi_directional_analysis"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -482,7 +480,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -530,7 +527,6 @@ class PathAnalyzerTest(pulumi.CustomResource):
                 is_bi_directional_analysis=var["path_analyzer_test_query_options_is_bi_directional_analysis"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

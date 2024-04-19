@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetPrivateEndpointReachableIp(ctx *pulumi.Context, args *GetPrivateEndpointReachableIpArgs, opts ...pulumi.InvokeOption) (*GetPrivateEndpointReachableIpResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPrivateEndpointReachableIpResult

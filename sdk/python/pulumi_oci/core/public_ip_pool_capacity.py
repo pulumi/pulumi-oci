@@ -144,7 +144,6 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -154,7 +153,6 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
             cidr_block=var["cidr_block"],
             public_ip_pool_id=var["public_ip_pool_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -182,7 +180,6 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -192,7 +189,6 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
             cidr_block=var["cidr_block"],
             public_ip_pool_id=var["public_ip_pool_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

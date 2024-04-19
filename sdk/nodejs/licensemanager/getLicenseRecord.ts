@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     licenseRecordId: oci_license_manager_license_record.test_license_record.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLicenseRecord(args: GetLicenseRecordArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseRecordResult> {
 
@@ -125,7 +123,6 @@ export interface GetLicenseRecordResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -134,7 +131,6 @@ export interface GetLicenseRecordResult {
  *     licenseRecordId: oci_license_manager_license_record.test_license_record.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLicenseRecordOutput(args: GetLicenseRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseRecordResult> {
     return pulumi.output(args).apply((a: any) => getLicenseRecord(a, opts))

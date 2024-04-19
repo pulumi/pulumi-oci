@@ -98,7 +98,6 @@ def get_managed_databases_user_proxy_user(managed_database_id: Optional[str] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_managed_databases_user_proxy_user(managed_database_id: Optional[str] = N
         user_name=oci_identity_user["test_user"]["name"],
         name=var["managed_databases_user_proxy_user_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -141,7 +139,6 @@ def get_managed_databases_user_proxy_user_output(managed_database_id: Optional[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -150,7 +147,6 @@ def get_managed_databases_user_proxy_user_output(managed_database_id: Optional[p
         user_name=oci_identity_user["test_user"]["name"],
         name=var["managed_databases_user_proxy_user_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.

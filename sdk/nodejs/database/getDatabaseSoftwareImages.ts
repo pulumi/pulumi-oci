@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.database_software_image_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseSoftwareImages(args: GetDatabaseSoftwareImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseSoftwareImagesResult> {
 
@@ -119,7 +117,6 @@ export interface GetDatabaseSoftwareImagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -133,7 +130,6 @@ export interface GetDatabaseSoftwareImagesResult {
  *     state: _var.database_software_image_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDatabaseSoftwareImagesOutput(args: GetDatabaseSoftwareImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseSoftwareImagesResult> {
     return pulumi.output(args).apply((a: any) => getDatabaseSoftwareImages(a, opts))

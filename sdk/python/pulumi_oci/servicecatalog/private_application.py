@@ -398,7 +398,6 @@ class PrivateApplication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -421,7 +420,6 @@ class PrivateApplication(pulumi.CustomResource):
             logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
             long_description=var["private_application_long_description"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -459,7 +457,6 @@ class PrivateApplication(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -482,7 +479,6 @@ class PrivateApplication(pulumi.CustomResource):
             logo_file_base64encoded=var["private_application_logo_file_base64encoded"],
             long_description=var["private_application_long_description"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -581,7 +581,6 @@ class SensitiveType(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -605,7 +604,6 @@ class SensitiveType(pulumi.CustomResource):
             search_type=var["sensitive_type_search_type"],
             short_name=var["sensitive_type_short_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -650,7 +648,6 @@ class SensitiveType(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -674,7 +671,6 @@ class SensitiveType(pulumi.CustomResource):
             search_type=var["sensitive_type_search_type"],
             short_name=var["sensitive_type_short_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

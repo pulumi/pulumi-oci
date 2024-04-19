@@ -18,7 +18,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetLogAnalyticsEntityTopologyResult> InvokeAsync(GetLogAnalyticsEntityTopologyArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetLogAnalyticsEntityTopologyResult> Invoke(GetLogAnalyticsEntityTopologyInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsEntityTopologyResult>("oci:LogAnalytics/getLogAnalyticsEntityTopology:getLogAnalyticsEntityTopology", args ?? new GetLogAnalyticsEntityTopologyInvokeArgs(), options.WithDefaults());

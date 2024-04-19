@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInvokeRuns(args: GetInvokeRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetInvokeRunsResult> {
 
@@ -133,7 +131,6 @@ export interface GetInvokeRunsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -149,7 +146,6 @@ export interface GetInvokeRunsResult {
  *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInvokeRunsOutput(args: GetInvokeRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunsResult> {
     return pulumi.output(args).apply((a: any) => getInvokeRuns(a, opts))

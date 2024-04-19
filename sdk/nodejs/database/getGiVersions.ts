@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     shape: _var.gi_version_shape,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getGiVersions(args: GetGiVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetGiVersionsResult> {
 
@@ -73,7 +71,6 @@ export interface GetGiVersionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetGiVersionsResult {
  *     shape: _var.gi_version_shape,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGiVersionsResult> {
     return pulumi.output(args).apply((a: any) => getGiVersions(a, opts))

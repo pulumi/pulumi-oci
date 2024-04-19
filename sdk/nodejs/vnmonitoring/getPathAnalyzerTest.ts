@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     pathAnalyzerTestId: oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPathAnalyzerTest(args: GetPathAnalyzerTestArgs, opts?: pulumi.InvokeOptions): Promise<GetPathAnalyzerTestResult> {
 
@@ -111,7 +109,6 @@ export interface GetPathAnalyzerTestResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetPathAnalyzerTestResult {
  *     pathAnalyzerTestId: oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPathAnalyzerTestOutput(args: GetPathAnalyzerTestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathAnalyzerTestResult> {
     return pulumi.output(args).apply((a: any) => getPathAnalyzerTest(a, opts))

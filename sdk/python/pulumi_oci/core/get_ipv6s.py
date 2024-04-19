@@ -122,7 +122,6 @@ def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,7 +130,6 @@ def get_ipv6s(filters: Optional[Sequence[pulumi.InputType['GetIpv6sFilterArgs']]
         subnet_id=oci_core_subnet["test_subnet"]["id"],
         vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
@@ -175,7 +173,6 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -184,7 +181,6 @@ def get_ipv6s_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.Inp
         subnet_id=oci_core_subnet["test_subnet"]["id"],
         vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`

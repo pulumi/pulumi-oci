@@ -210,7 +210,6 @@ class CustomerSecretKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -219,7 +218,6 @@ class CustomerSecretKey(pulumi.CustomResource):
             display_name=var["customer_secret_key_display_name"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -261,7 +259,6 @@ class CustomerSecretKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -270,7 +267,6 @@ class CustomerSecretKey(pulumi.CustomResource):
             display_name=var["customer_secret_key_display_name"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

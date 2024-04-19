@@ -27,7 +27,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetExsiHostsResult> InvokeAsync(GetExsiHostsArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsArgs(), options.WithDefaults());
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -94,7 +91,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetExsiHostsResult> Invoke(GetExsiHostsInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExsiHostsResult>("oci:Ocvp/getExsiHosts:getExsiHosts", args ?? new GetExsiHostsInvokeArgs(), options.WithDefaults());

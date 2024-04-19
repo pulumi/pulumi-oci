@@ -481,7 +481,6 @@ class Schedule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -525,7 +524,6 @@ class Schedule(pulumi.CustomResource):
             ),
             saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -566,7 +564,6 @@ class Schedule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -610,7 +607,6 @@ class Schedule(pulumi.CustomResource):
             ),
             saved_report_id=oci_data_safe_report["test_report"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

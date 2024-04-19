@@ -165,7 +165,6 @@ def get_configs(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,7 +178,6 @@ def get_configs(apm_domain_id: Optional[str] = None,
         freeform_tag_exists=var["config_freeform_tag_exists"],
         options_group=var["config_options_group"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID the request is intended for.
@@ -236,7 +234,6 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -250,7 +247,6 @@ def get_configs_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
         freeform_tag_exists=var["config_freeform_tag_exists"],
         options_group=var["config_options_group"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM Domain ID the request is intended for.

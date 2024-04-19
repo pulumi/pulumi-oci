@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -36,7 +35,6 @@ import * as utilities from "../utilities";
  *     isIdmapGroupsForSysAuth: _var.export_is_idmap_groups_for_sys_auth,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

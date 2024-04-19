@@ -169,7 +169,6 @@ class CatalogAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -179,7 +178,6 @@ class CatalogAssociation(pulumi.CustomResource):
             service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
             entity_type=var["service_catalog_association_entity_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -212,7 +210,6 @@ class CatalogAssociation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -222,7 +219,6 @@ class CatalogAssociation(pulumi.CustomResource):
             service_catalog_id=oci_service_catalog_service_catalog["test_service_catalog"]["id"],
             entity_type=var["service_catalog_association_entity_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

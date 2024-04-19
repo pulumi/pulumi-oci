@@ -112,7 +112,6 @@ def get_scripts(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_scripts(apm_domain_id: Optional[str] = None,
         content_type=var["script_content_type"],
         display_name=var["script_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.
@@ -158,7 +156,6 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_scripts_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
         content_type=var["script_content_type"],
         display_name=var["script_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The APM domain ID the request is intended for.

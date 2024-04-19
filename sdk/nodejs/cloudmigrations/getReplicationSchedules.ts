@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: _var.replication_schedule_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getReplicationSchedules(args?: GetReplicationSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetReplicationSchedulesResult> {
     args = args || {};
@@ -97,7 +95,6 @@ export interface GetReplicationSchedulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -109,7 +106,6 @@ export interface GetReplicationSchedulesResult {
  *     state: _var.replication_schedule_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getReplicationSchedulesOutput(args?: GetReplicationSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReplicationSchedulesResult> {
     return pulumi.output(args).apply((a: any) => getReplicationSchedules(a, opts))

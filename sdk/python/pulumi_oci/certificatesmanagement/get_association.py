@@ -146,14 +146,12 @@ def get_association(association_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_association = oci.CertificatesManagement.get_association(association_id=oci_certificates_management_association["test_association"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str association_id: The OCID of an association between a certificate-related resource and another Oracle Cloud Infrastructure resource.
@@ -185,14 +183,12 @@ def get_association_output(association_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_association = oci.CertificatesManagement.get_association(association_id=oci_certificates_management_association["test_association"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str association_id: The OCID of an association between a certificate-related resource and another Oracle Cloud Infrastructure resource.

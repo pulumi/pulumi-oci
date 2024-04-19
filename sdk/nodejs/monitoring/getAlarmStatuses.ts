@@ -24,7 +24,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -39,7 +38,6 @@ import * as utilities from "../utilities";
  *     status: _var.alarm_status_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlarmStatuses(args: GetAlarmStatusesArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmStatusesResult> {
 
@@ -136,7 +134,6 @@ export interface GetAlarmStatusesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -151,7 +148,6 @@ export interface GetAlarmStatusesResult {
  *     status: _var.alarm_status_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAlarmStatusesOutput(args: GetAlarmStatusesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmStatusesResult> {
     return pulumi.output(args).apply((a: any) => getAlarmStatuses(a, opts))

@@ -195,14 +195,12 @@ def get_auto_scaling_configuration(auto_scaling_configuration_id: Optional[str] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_auto_scaling_configuration = oci.Autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str auto_scaling_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.
@@ -238,14 +236,12 @@ def get_auto_scaling_configuration_output(auto_scaling_configuration_id: Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_auto_scaling_configuration = oci.Autoscaling.get_auto_scaling_configuration(auto_scaling_configuration_id=oci_autoscaling_auto_scaling_configuration["test_auto_scaling_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str auto_scaling_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the autoscaling configuration.

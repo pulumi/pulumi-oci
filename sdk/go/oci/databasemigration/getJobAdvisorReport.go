@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetJobAdvisorReport(ctx *pulumi.Context, args *GetJobAdvisorReportArgs, opts ...pulumi.InvokeOption) (*GetJobAdvisorReportResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetJobAdvisorReportResult

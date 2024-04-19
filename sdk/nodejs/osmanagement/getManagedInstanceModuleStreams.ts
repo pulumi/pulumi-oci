@@ -33,7 +33,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -46,7 +45,6 @@ import * as utilities from "../utilities";
  *     streamStatus: _var.managed_instance_module_stream_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceModuleStreams(args: GetManagedInstanceModuleStreamsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceModuleStreamsResult> {
 
@@ -146,7 +144,6 @@ export interface GetManagedInstanceModuleStreamsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -159,7 +156,6 @@ export interface GetManagedInstanceModuleStreamsResult {
  *     streamStatus: _var.managed_instance_module_stream_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceModuleStreamsOutput(args: GetManagedInstanceModuleStreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceModuleStreamsResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceModuleStreams(a, opts))

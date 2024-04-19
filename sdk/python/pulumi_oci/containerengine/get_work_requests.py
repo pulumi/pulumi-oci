@@ -132,7 +132,6 @@ def get_work_requests(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_work_requests(cluster_id: Optional[str] = None,
         resource_type=var["work_request_resource_type"],
         statuses=var["work_request_status"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.
@@ -188,7 +186,6 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,7 +196,6 @@ def get_work_requests_output(cluster_id: Optional[pulumi.Input[Optional[str]]] =
         resource_type=var["work_request_resource_type"],
         statuses=var["work_request_status"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.

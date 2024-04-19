@@ -580,7 +580,6 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -611,7 +610,6 @@ class Model(pulumi.CustomResource):
             input_schema=var["model_input_schema"],
             output_schema=var["model_output_schema"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -654,7 +652,6 @@ class Model(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -685,7 +682,6 @@ class Model(pulumi.CustomResource):
             input_schema=var["model_input_schema"],
             output_schema=var["model_output_schema"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

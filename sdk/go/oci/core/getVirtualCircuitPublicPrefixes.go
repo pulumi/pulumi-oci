@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVirtualCircuitPublicPrefixes(ctx *pulumi.Context, args *GetVirtualCircuitPublicPrefixesArgs, opts ...pulumi.InvokeOption) (*GetVirtualCircuitPublicPrefixesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualCircuitPublicPrefixesResult

@@ -140,14 +140,12 @@ def get_private_application_package(private_application_package_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str private_application_package_id: The unique identifier for the private application package.
@@ -179,14 +177,12 @@ def get_private_application_package_output(private_application_package_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_application_package = oci.ServiceCatalog.get_private_application_package(private_application_package_id=oci_service_catalog_private_application_package["test_private_application_package"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str private_application_package_id: The unique identifier for the private application package.

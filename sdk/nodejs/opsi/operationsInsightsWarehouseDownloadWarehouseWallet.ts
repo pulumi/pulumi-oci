@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     operationsInsightsWarehouseWalletPassword: _var.operations_insights_warehouse_download_warehouse_wallet_operations_insights_warehouse_wallet_password,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

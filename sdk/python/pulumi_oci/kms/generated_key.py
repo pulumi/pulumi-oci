@@ -300,7 +300,6 @@ class GeneratedKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -317,7 +316,6 @@ class GeneratedKey(pulumi.CustomResource):
             associated_data=var["generated_key_associated_data"],
             logging_context=var["generated_key_logging_context"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -349,7 +347,6 @@ class GeneratedKey(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -366,7 +363,6 @@ class GeneratedKey(pulumi.CustomResource):
             associated_data=var["generated_key_associated_data"],
             logging_context=var["generated_key_logging_context"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

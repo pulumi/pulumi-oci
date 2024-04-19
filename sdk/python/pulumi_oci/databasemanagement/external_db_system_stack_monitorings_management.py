@@ -187,7 +187,6 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -198,7 +197,6 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
             is_enabled=var["external_db_system_stack_monitorings_management_is_enabled"],
             metadata=var["external_db_system_stack_monitorings_management_metadata"])
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -225,7 +223,6 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -236,7 +233,6 @@ class ExternalDbSystemStackMonitoringsManagement(pulumi.CustomResource):
             is_enabled=var["external_db_system_stack_monitorings_management_is_enabled"],
             metadata=var["external_db_system_stack_monitorings_management_metadata"])
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param ExternalDbSystemStackMonitoringsManagementArgs args: The arguments to use to populate this resource's properties.

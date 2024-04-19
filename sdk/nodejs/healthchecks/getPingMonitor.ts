@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPingMonitor(args: GetPingMonitorArgs, opts?: pulumi.InvokeOptions): Promise<GetPingMonitorResult> {
 
@@ -113,7 +111,6 @@ export interface GetPingMonitorResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetPingMonitorResult {
  *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPingMonitorOutput(args: GetPingMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingMonitorResult> {
     return pulumi.output(args).apply((a: any) => getPingMonitor(a, opts))

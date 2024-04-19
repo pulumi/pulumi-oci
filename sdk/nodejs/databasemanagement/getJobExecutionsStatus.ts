@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     name: _var.job_executions_status_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobExecutionsStatus(args: GetJobExecutionsStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetJobExecutionsStatusResult> {
 
@@ -101,7 +99,6 @@ export interface GetJobExecutionsStatusResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetJobExecutionsStatusResult {
  *     name: _var.job_executions_status_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobExecutionsStatusOutput(args: GetJobExecutionsStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobExecutionsStatusResult> {
     return pulumi.output(args).apply((a: any) => getJobExecutionsStatus(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: _var.network_load_balancer_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkLoadBalancers(args: GetNetworkLoadBalancersArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancersResult> {
 
@@ -89,7 +87,6 @@ export interface GetNetworkLoadBalancersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetNetworkLoadBalancersResult {
  *     state: _var.network_load_balancer_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkLoadBalancersOutput(args: GetNetworkLoadBalancersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancersResult> {
     return pulumi.output(args).apply((a: any) => getNetworkLoadBalancers(a, opts))

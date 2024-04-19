@@ -20,7 +20,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetResourceAvailability(ctx *pulumi.Context, args *GetResourceAvailabilityArgs, opts ...pulumi.InvokeOption) (*GetResourceAvailabilityResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetResourceAvailabilityResult

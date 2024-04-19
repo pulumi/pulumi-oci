@@ -82,7 +82,6 @@ def get_repository_object_content(file_path: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -91,7 +90,6 @@ def get_repository_object_content(file_path: Optional[str] = None,
         sha=var["repository_object_content_sha"],
         file_path=var["repository_object_content_file_path"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str file_path: A filter to return only commits that affect any of the specified paths.
@@ -124,7 +122,6 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -133,7 +130,6 @@ def get_repository_object_content_output(file_path: Optional[pulumi.Input[Option
         sha=var["repository_object_content_sha"],
         file_path=var["repository_object_content_file_path"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str file_path: A filter to return only commits that affect any of the specified paths.

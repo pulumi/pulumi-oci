@@ -368,7 +368,6 @@ class NetworkAddressList(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -390,7 +389,6 @@ class NetworkAddressList(pulumi.CustomResource):
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -424,7 +422,6 @@ class NetworkAddressList(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -446,7 +443,6 @@ class NetworkAddressList(pulumi.CustomResource):
                 vcn_id=oci_core_vcn["test_vcn"]["id"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

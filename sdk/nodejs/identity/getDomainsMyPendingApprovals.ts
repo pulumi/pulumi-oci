@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     startIndex: _var.my_pending_approval_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyPendingApprovals(args: GetDomainsMyPendingApprovalsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsMyPendingApprovalsResult> {
 
@@ -113,7 +111,6 @@ export interface GetDomainsMyPendingApprovalsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetDomainsMyPendingApprovalsResult {
  *     startIndex: _var.my_pending_approval_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsMyPendingApprovalsOutput(args: GetDomainsMyPendingApprovalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsMyPendingApprovalsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsMyPendingApprovals(a, opts))

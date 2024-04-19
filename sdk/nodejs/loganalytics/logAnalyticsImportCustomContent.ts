@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     isOverwrite: _var.log_analytics_import_custom_content_is_overwrite,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

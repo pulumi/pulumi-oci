@@ -114,7 +114,6 @@ def get_identity_provider_groups(filters: Optional[Sequence[pulumi.InputType['Ge
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -123,7 +122,6 @@ def get_identity_provider_groups(filters: Optional[Sequence[pulumi.InputType['Ge
         name=var["identity_provider_group_name"],
         state=var["identity_provider_group_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str identity_provider_id: The OCID of the identity provider.
@@ -162,7 +160,6 @@ def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,7 +168,6 @@ def get_identity_provider_groups_output(filters: Optional[pulumi.Input[Optional[
         name=var["identity_provider_group_name"],
         state=var["identity_provider_group_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str identity_provider_id: The OCID of the identity provider.

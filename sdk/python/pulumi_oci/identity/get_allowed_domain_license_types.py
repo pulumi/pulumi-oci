@@ -91,14 +91,12 @@ def get_allowed_domain_license_types(current_license_type_name: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=var["allowed_domain_license_type_current_license_type_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str current_license_type_name: The domain license type
@@ -132,14 +130,12 @@ def get_allowed_domain_license_types_output(current_license_type_name: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_allowed_domain_license_types = oci.Identity.get_allowed_domain_license_types(current_license_type_name=var["allowed_domain_license_type_current_license_type_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str current_license_type_name: The domain license type

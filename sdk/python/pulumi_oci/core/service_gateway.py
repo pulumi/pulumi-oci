@@ -366,7 +366,6 @@ class ServiceGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -386,7 +385,6 @@ class ServiceGateway(pulumi.CustomResource):
             },
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -437,7 +435,6 @@ class ServiceGateway(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -457,7 +454,6 @@ class ServiceGateway(pulumi.CustomResource):
             },
             route_table_id=oci_core_route_table["test_route_table"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

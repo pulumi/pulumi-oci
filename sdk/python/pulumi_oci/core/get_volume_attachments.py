@@ -132,7 +132,6 @@ def get_volume_attachments(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -142,7 +141,6 @@ def get_volume_attachments(availability_domain: Optional[str] = None,
         instance_id=oci_core_instance["test_instance"]["id"],
         volume_id=oci_core_volume["test_volume"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -187,7 +185,6 @@ def get_volume_attachments_output(availability_domain: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -197,7 +194,6 @@ def get_volume_attachments_output(availability_domain: Optional[pulumi.Input[Opt
         instance_id=oci_core_instance["test_instance"]["id"],
         volume_id=oci_core_volume["test_volume"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

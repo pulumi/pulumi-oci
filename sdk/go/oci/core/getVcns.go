@@ -21,7 +21,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVcns(ctx *pulumi.Context, args *GetVcnsArgs, opts ...pulumi.InvokeOption) (*GetVcnsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVcnsResult

@@ -121,7 +121,6 @@ class CompareUserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -130,7 +129,6 @@ class CompareUserAssessment(pulumi.CustomResource):
             comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
             user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -163,7 +161,6 @@ class CompareUserAssessment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -172,7 +169,6 @@ class CompareUserAssessment(pulumi.CustomResource):
             comparison_user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"],
             user_assessment_id=oci_data_safe_user_assessment["test_user_assessment"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

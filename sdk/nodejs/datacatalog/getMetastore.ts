@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMetastore(args: GetMetastoreArgs, opts?: pulumi.InvokeOptions): Promise<GetMetastoreResult> {
 
@@ -107,7 +105,6 @@ export interface GetMetastoreResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetMetastoreResult {
  *     metastoreId: oci_datacatalog_metastore.test_metastore.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMetastoreOutput(args: GetMetastoreOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMetastoreResult> {
     return pulumi.output(args).apply((a: any) => getMetastore(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.managed_database_user_role_opc_named_credential_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserRoles(args: GetManagedDatabaseUserRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserRolesResult> {
 
@@ -90,7 +88,6 @@ export interface GetManagedDatabaseUserRolesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetManagedDatabaseUserRolesResult {
  *     opcNamedCredentialId: _var.managed_database_user_role_opc_named_credential_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserRolesOutput(args: GetManagedDatabaseUserRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserRolesResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseUserRoles(a, opts))

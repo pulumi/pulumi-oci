@@ -378,7 +378,6 @@ class ComputeCapacityReservation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -408,7 +407,6 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             )],
             is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -451,7 +449,6 @@ class ComputeCapacityReservation(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -481,7 +478,6 @@ class ComputeCapacityReservation(pulumi.CustomResource):
             )],
             is_default_reservation=var["compute_capacity_reservation_is_default_reservation"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -299,7 +299,6 @@ class ProcessorJob(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -335,7 +334,6 @@ class ProcessorJob(pulumi.CustomResource):
             ),
             display_name=var["processor_job_display_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -366,7 +364,6 @@ class ProcessorJob(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -402,7 +399,6 @@ class ProcessorJob(pulumi.CustomResource):
             ),
             display_name=var["processor_job_display_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

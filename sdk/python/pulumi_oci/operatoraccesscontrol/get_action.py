@@ -135,14 +135,12 @@ def get_action(operator_action_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=oci_operator_access_control_operator_action["test_operator_action"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operator_action_id: Unique Oracle supplied identifier associated with the operator action.
@@ -173,14 +171,12 @@ def get_action_output(operator_action_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operator_action = oci.OperatorAccessControl.get_action(operator_action_id=oci_operator_access_control_operator_action["test_operator_action"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operator_action_id: Unique Oracle supplied identifier associated with the operator action.

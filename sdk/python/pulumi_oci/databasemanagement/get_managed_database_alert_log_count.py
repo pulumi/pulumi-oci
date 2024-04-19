@@ -148,7 +148,6 @@ def get_managed_database_alert_log_count(group_by: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,7 +161,6 @@ def get_managed_database_alert_log_count(group_by: Optional[str] = None,
         time_less_than_or_equal_to=var["managed_database_alert_log_count_time_less_than_or_equal_to"],
         type_filter=var["managed_database_alert_log_count_type_filter"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str group_by: The optional parameter used to group different alert logs.
@@ -216,7 +214,6 @@ def get_managed_database_alert_log_count_output(group_by: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -230,7 +227,6 @@ def get_managed_database_alert_log_count_output(group_by: Optional[pulumi.Input[
         time_less_than_or_equal_to=var["managed_database_alert_log_count_time_less_than_or_equal_to"],
         type_filter=var["managed_database_alert_log_count_type_filter"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str group_by: The optional parameter used to group different alert logs.

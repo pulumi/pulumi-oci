@@ -92,14 +92,12 @@ def get_api_keys(filters: Optional[Sequence[pulumi.InputType['GetApiKeysFilterAr
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_api_keys = oci.Identity.get_api_keys(user_id=oci_identity_user["test_user"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.
@@ -131,14 +129,12 @@ def get_api_keys_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_api_keys = oci.Identity.get_api_keys(user_id=oci_identity_user["test_user"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     httpRedirectId: oci_waas_http_redirect.test_http_redirect.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHttpRedirect(args: GetHttpRedirectArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpRedirectResult> {
 
@@ -95,7 +93,6 @@ export interface GetHttpRedirectResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetHttpRedirectResult {
  *     httpRedirectId: oci_waas_http_redirect.test_http_redirect.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHttpRedirectOutput(args: GetHttpRedirectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectResult> {
     return pulumi.output(args).apply((a: any) => getHttpRedirect(a, opts))

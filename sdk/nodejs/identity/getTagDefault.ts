@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     tagDefaultId: oci_identity_tag_default.test_tag_default.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagDefault(args: GetTagDefaultArgs, opts?: pulumi.InvokeOptions): Promise<GetTagDefaultResult> {
 
@@ -91,7 +89,6 @@ export interface GetTagDefaultResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetTagDefaultResult {
  *     tagDefaultId: oci_identity_tag_default.test_tag_default.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTagDefaultOutput(args: GetTagDefaultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultResult> {
     return pulumi.output(args).apply((a: any) => getTagDefault(a, opts))

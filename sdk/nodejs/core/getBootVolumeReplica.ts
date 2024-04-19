@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     bootVolumeReplicaId: oci_core_boot_volume_replica.test_boot_volume_replica.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBootVolumeReplica(args: GetBootVolumeReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeReplicaResult> {
 
@@ -102,7 +100,6 @@ export interface GetBootVolumeReplicaResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,7 +108,6 @@ export interface GetBootVolumeReplicaResult {
  *     bootVolumeReplicaId: oci_core_boot_volume_replica.test_boot_volume_replica.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBootVolumeReplicaOutput(args: GetBootVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeReplicaResult> {
     return pulumi.output(args).apply((a: any) => getBootVolumeReplica(a, opts))

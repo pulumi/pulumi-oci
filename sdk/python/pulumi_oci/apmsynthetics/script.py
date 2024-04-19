@@ -382,7 +382,6 @@ class Script(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -405,7 +404,6 @@ class Script(pulumi.CustomResource):
                 param_value=var["script_parameters_param_value"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -439,7 +437,6 @@ class Script(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -462,7 +459,6 @@ class Script(pulumi.CustomResource):
                 param_value=var["script_parameters_param_value"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

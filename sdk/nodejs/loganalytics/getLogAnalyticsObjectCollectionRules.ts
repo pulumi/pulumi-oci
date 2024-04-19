@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: _var.log_analytics_object_collection_rule_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsObjectCollectionRules(args: GetLogAnalyticsObjectCollectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsObjectCollectionRulesResult> {
 
@@ -96,7 +94,6 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
  *     state: _var.log_analytics_object_collection_rule_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsObjectCollectionRulesOutput(args: GetLogAnalyticsObjectCollectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRulesResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsObjectCollectionRules(a, opts))

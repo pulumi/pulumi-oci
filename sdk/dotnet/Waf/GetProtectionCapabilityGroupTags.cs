@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetProtectionCapabilityGroupTagsResult> InvokeAsync(GetProtectionCapabilityGroupTagsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetProtectionCapabilityGroupTagsResult> Invoke(GetProtectionCapabilityGroupTagsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsInvokeArgs(), options.WithDefaults());

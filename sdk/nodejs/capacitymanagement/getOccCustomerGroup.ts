@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOccCustomerGroup(args: GetOccCustomerGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetOccCustomerGroupResult> {
 
@@ -110,7 +108,6 @@ export interface GetOccCustomerGroupResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,7 +116,6 @@ export interface GetOccCustomerGroupResult {
  *     occCustomerGroupId: oci_capacity_management_occ_customer_group.test_occ_customer_group.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOccCustomerGroupOutput(args: GetOccCustomerGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOccCustomerGroupResult> {
     return pulumi.output(args).apply((a: any) => getOccCustomerGroup(a, opts))

@@ -21,7 +21,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     cpeDeviceShapeId: oci_core_cpe_device_shape.test_cpe_device_shape.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCpeDeviceShape(args: GetCpeDeviceShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpeDeviceShapeResult> {
 
@@ -93,7 +91,6 @@ export interface GetCpeDeviceShapeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetCpeDeviceShapeResult {
  *     cpeDeviceShapeId: oci_core_cpe_device_shape.test_cpe_device_shape.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCpeDeviceShapeOutput(args: GetCpeDeviceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapeResult> {
     return pulumi.output(args).apply((a: any) => getCpeDeviceShape(a, opts))

@@ -16,7 +16,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     state: _var.dedicated_vm_host_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedVmHosts(args: GetDedicatedVmHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostsResult> {
 
@@ -126,7 +124,6 @@ export interface GetDedicatedVmHostsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -141,7 +138,6 @@ export interface GetDedicatedVmHostsResult {
  *     state: _var.dedicated_vm_host_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostsResult> {
     return pulumi.output(args).apply((a: any) => getDedicatedVmHosts(a, opts))

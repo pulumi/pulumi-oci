@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     availabilityDomain: _var.container_instance_shape_availability_domain,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getContainerInstanceShape(args: GetContainerInstanceShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerInstanceShapeResult> {
 
@@ -70,7 +68,6 @@ export interface GetContainerInstanceShapeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetContainerInstanceShapeResult {
  *     availabilityDomain: _var.container_instance_shape_availability_domain,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getContainerInstanceShapeOutput(args: GetContainerInstanceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerInstanceShapeResult> {
     return pulumi.output(args).apply((a: any) => getContainerInstanceShape(a, opts))

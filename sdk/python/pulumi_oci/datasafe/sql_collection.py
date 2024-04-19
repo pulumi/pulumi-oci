@@ -627,7 +627,6 @@ class SqlCollection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -647,7 +646,6 @@ class SqlCollection(pulumi.CustomResource):
             sql_level=var["sql_collection_sql_level"],
             status=var["sql_collection_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -691,7 +689,6 @@ class SqlCollection(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -711,7 +708,6 @@ class SqlCollection(pulumi.CustomResource):
             sql_level=var["sql_collection_sql_level"],
             status=var["sql_collection_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAccessRequestHistory(args: GetAccessRequestHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestHistoryResult> {
 
@@ -63,7 +61,6 @@ export interface GetAccessRequestHistoryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,7 +69,6 @@ export interface GetAccessRequestHistoryResult {
  *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAccessRequestHistoryOutput(args: GetAccessRequestHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestHistoryResult> {
     return pulumi.output(args).apply((a: any) => getAccessRequestHistory(a, opts))

@@ -90,14 +90,12 @@ def get_customer_secret_keys(filters: Optional[Sequence[pulumi.InputType['GetCus
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=oci_identity_user["test_user"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.
@@ -127,14 +125,12 @@ def get_customer_secret_keys_output(filters: Optional[pulumi.Input[Optional[Sequ
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_customer_secret_keys = oci.Identity.get_customer_secret_keys(user_id=oci_identity_user["test_user"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str user_id: The OCID of the user.

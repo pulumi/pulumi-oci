@@ -160,7 +160,6 @@ def get_public_ips(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,7 +170,6 @@ def get_public_ips(availability_domain: Optional[str] = None,
         lifetime=var["public_ip_lifetime"],
         public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -235,7 +233,6 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -246,7 +243,6 @@ def get_public_ips_output(availability_domain: Optional[pulumi.Input[Optional[st
         lifetime=var["public_ip_lifetime"],
         public_ip_pool_id=oci_core_public_ip_pool["test_public_ip_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

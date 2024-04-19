@@ -129,7 +129,6 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_occ_capacity_requests(compartment_id: Optional[str] = None,
         namespace=var["occ_capacity_request_namespace"],
         occ_availability_catalog_id=oci_capacity_management_occ_availability_catalog["test_occ_availability_catalog"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
@@ -184,7 +182,6 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_occ_capacity_requests_output(compartment_id: Optional[pulumi.Input[str]]
         namespace=var["occ_capacity_request_namespace"],
         occ_availability_catalog_id=oci_capacity_management_occ_availability_catalog["test_occ_availability_catalog"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.

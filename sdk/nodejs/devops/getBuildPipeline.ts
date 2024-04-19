@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBuildPipeline(args: GetBuildPipelineArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildPipelineResult> {
 
@@ -107,7 +105,6 @@ export interface GetBuildPipelineResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetBuildPipelineResult {
  *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBuildPipelineOutput(args: GetBuildPipelineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildPipelineResult> {
     return pulumi.output(args).apply((a: any) => getBuildPipeline(a, opts))

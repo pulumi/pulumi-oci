@@ -219,14 +219,12 @@ def get_virtual_service_route_table(virtual_service_route_table_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_service_route_table = oci.ServiceMesh.get_virtual_service_route_table(virtual_service_route_table_id=oci_service_mesh_virtual_service_route_table["test_virtual_service_route_table"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_service_route_table_id: Unique VirtualServiceRouteTable identifier.
@@ -264,14 +262,12 @@ def get_virtual_service_route_table_output(virtual_service_route_table_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_virtual_service_route_table = oci.ServiceMesh.get_virtual_service_route_table(virtual_service_route_table_id=oci_service_mesh_virtual_service_route_table["test_virtual_service_route_table"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str virtual_service_route_table_id: Unique VirtualServiceRouteTable identifier.

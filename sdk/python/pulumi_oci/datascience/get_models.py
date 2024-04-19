@@ -162,7 +162,6 @@ def get_models(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -175,7 +174,6 @@ def get_models(compartment_id: Optional[str] = None,
         project_id=oci_datascience_project["test_project"]["id"],
         state=var["model_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -229,7 +227,6 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -242,7 +239,6 @@ def get_models_output(compartment_id: Optional[pulumi.Input[str]] = None,
         project_id=oci_datascience_project["test_project"]["id"],
         state=var["model_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

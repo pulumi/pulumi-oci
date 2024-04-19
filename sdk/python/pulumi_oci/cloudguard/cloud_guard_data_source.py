@@ -390,7 +390,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -425,7 +424,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
             },
             status=var["data_source_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -464,7 +462,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -499,7 +496,6 @@ class CloudGuardDataSource(pulumi.CustomResource):
             },
             status=var["data_source_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

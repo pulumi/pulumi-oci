@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetUsageCarbonEmissionsQueries(ctx *pulumi.Context, args *GetUsageCarbonEmissionsQueriesArgs, opts ...pulumi.InvokeOption) (*GetUsageCarbonEmissionsQueriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUsageCarbonEmissionsQueriesResult

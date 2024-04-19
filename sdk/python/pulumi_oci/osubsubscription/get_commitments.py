@@ -116,7 +116,6 @@ def get_commitments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_commitments(compartment_id: Optional[str] = None,
         x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
         x_one_origin_region=var["commitment_x_one_origin_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -167,7 +165,6 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,7 +174,6 @@ def get_commitments_output(compartment_id: Optional[pulumi.Input[str]] = None,
         x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
         x_one_origin_region=var["commitment_x_one_origin_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

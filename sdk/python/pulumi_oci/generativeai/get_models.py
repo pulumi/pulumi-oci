@@ -139,7 +139,6 @@ def get_models(capabilities: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +150,6 @@ def get_models(capabilities: Optional[Sequence[str]] = None,
         state=var["model_state"],
         vendor=var["model_vendor"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] capabilities: A filter to return only resources their capability matches the given capability.
@@ -199,7 +197,6 @@ def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -211,7 +208,6 @@ def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]
         state=var["model_state"],
         vendor=var["model_vendor"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] capabilities: A filter to return only resources their capability matches the given capability.

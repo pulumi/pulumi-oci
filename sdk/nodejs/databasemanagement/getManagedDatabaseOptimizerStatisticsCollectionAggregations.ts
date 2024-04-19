@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     taskType: _var.managed_database_optimizer_statistics_collection_aggregation_task_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionAggregations(args: GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> {
 
@@ -107,7 +105,6 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResu
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResu
  *     taskType: _var.managed_database_optimizer_statistics_collection_aggregation_task_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionAggregationsOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsCollectionAggregations(a, opts))

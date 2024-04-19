@@ -240,7 +240,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -268,7 +267,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                 username=var["managed_databases_change_database_parameter_database_credential_username"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -313,7 +311,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -341,7 +338,6 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
                 username=var["managed_databases_change_database_parameter_database_credential_username"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -135,7 +135,6 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -146,7 +145,6 @@ def get_fleet_crypto_analysis_results(aggregation_mode: Optional[str] = None,
         time_end=var["fleet_crypto_analysis_result_time_end"],
         time_start=var["fleet_crypto_analysis_result_time_start"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
@@ -191,7 +189,6 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -202,7 +199,6 @@ def get_fleet_crypto_analysis_results_output(aggregation_mode: Optional[pulumi.I
         time_end=var["fleet_crypto_analysis_result_time_end"],
         time_start=var["fleet_crypto_analysis_result_time_start"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str aggregation_mode: The aggregation mode of the crypto event analysis result.

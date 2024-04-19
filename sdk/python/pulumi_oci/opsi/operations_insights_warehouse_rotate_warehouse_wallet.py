@@ -88,14 +88,12 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -126,14 +124,12 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_operations_insights_warehouse_rotate_warehouse_wallet = oci.opsi.OperationsInsightsWarehouseRotateWarehouseWallet("testOperationsInsightsWarehouseRotateWarehouseWallet", operations_insights_warehouse_id=oci_opsi_operations_insights_warehouse["test_operations_insights_warehouse"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

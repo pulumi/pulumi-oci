@@ -531,14 +531,12 @@ def get_deployment(deployment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deployment = oci.GoldenGate.get_deployment(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.
@@ -602,14 +600,12 @@ def get_deployment_output(deployment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deployment = oci.GoldenGate.get_deployment(deployment_id=oci_golden_gate_deployment["test_deployment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deployment_id: A unique Deployment identifier.

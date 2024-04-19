@@ -577,7 +577,6 @@ class VbInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -604,7 +603,6 @@ class VbInstance(pulumi.CustomResource):
             idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
             is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -644,7 +642,6 @@ class VbInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -671,7 +668,6 @@ class VbInstance(pulumi.CustomResource):
             idcs_open_id=oci_visual_builder_idcs_open["test_idcs_open"]["id"],
             is_visual_builder_enabled=var["vb_instance_is_visual_builder_enabled"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

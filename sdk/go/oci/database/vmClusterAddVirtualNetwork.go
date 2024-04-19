@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 //
 // ##### Note: You may also need to add `dbServers` and `cpuCoreCount` to the ignoreChanges for the resource `Database.VmCluster` list if you see a diff on a subsequent apply
 //

@@ -105,7 +105,6 @@ def get_subscription_product(producttype: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,7 +114,6 @@ def get_subscription_product(producttype: Optional[str] = None,
         usage_period_key=var["subscription_product_usage_period_key"],
         producttype=var["subscription_product_producttype"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str producttype: The field to specify the type of product.
@@ -153,7 +151,6 @@ def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +160,6 @@ def get_subscription_product_output(producttype: Optional[pulumi.Input[Optional[
         usage_period_key=var["subscription_product_usage_period_key"],
         producttype=var["subscription_product_producttype"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str producttype: The field to specify the type of product.

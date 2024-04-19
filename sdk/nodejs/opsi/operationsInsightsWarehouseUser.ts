@@ -12,7 +12,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -32,7 +31,6 @@ import * as utilities from "../utilities";
  *     isOpsiDataAccess: _var.operations_insights_warehouse_user_is_opsi_data_access,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

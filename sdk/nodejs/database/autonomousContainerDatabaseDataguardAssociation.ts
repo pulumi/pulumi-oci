@@ -20,7 +20,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -49,7 +48,6 @@ import * as utilities from "../utilities";
  *     standbyMaintenanceBufferInDays: _var.autonomous_container_database_dataguard_association_standby_maintenance_buffer_in_days,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

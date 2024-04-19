@@ -142,7 +142,6 @@ def get_network_firewalls(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,7 +153,6 @@ def get_network_firewalls(availability_domain: Optional[str] = None,
         network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
         state=var["network_firewall_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
@@ -202,7 +200,6 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -214,7 +211,6 @@ def get_network_firewalls_output(availability_domain: Optional[pulumi.Input[Opti
         network_firewall_policy_id=oci_network_firewall_network_firewall_policy["test_network_firewall_policy"]["id"],
         state=var["network_firewall_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: A filter to return only resources that are present within the specified availability domain. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`

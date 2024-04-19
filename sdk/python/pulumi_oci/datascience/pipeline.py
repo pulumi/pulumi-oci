@@ -515,7 +515,6 @@ class Pipeline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -573,7 +572,6 @@ class Pipeline(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -609,7 +607,6 @@ class Pipeline(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -667,7 +664,6 @@ class Pipeline(pulumi.CustomResource):
                 log_id=oci_logging_log["test_log"]["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

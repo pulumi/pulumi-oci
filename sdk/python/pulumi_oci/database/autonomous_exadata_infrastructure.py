@@ -622,7 +622,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -659,7 +658,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -706,7 +704,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -743,7 +740,6 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
             ),
             nsg_ids=var["autonomous_exadata_infrastructure_nsg_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

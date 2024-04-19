@@ -494,7 +494,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -505,7 +504,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
             retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -540,7 +538,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -551,7 +548,6 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
             is_long_term_backup=var["autonomous_database_backup_is_long_term_backup"],
             retention_period_in_days=var["autonomous_database_backup_retention_period_in_days"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -86,14 +86,12 @@ def get_addons(cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_addons = oci.ContainerEngine.get_addons(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.
@@ -122,14 +120,12 @@ def get_addons_output(cluster_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_addons = oci.ContainerEngine.get_addons(cluster_id=oci_containerengine_cluster["test_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_id: The OCID of the cluster.

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     displayName: _var.compute_capacity_topology_display_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityTopologies(args: GetComputeCapacityTopologiesArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeCapacityTopologiesResult> {
 
@@ -91,7 +89,6 @@ export interface GetComputeCapacityTopologiesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetComputeCapacityTopologiesResult {
  *     displayName: _var.compute_capacity_topology_display_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeCapacityTopologiesOutput(args: GetComputeCapacityTopologiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeCapacityTopologiesResult> {
     return pulumi.output(args).apply((a: any) => getComputeCapacityTopologies(a, opts))

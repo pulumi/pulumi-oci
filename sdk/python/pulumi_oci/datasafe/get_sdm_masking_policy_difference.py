@@ -194,14 +194,12 @@ def get_sdm_masking_policy_difference(sdm_masking_policy_difference_id: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.
@@ -237,14 +235,12 @@ def get_sdm_masking_policy_difference_output(sdm_masking_policy_difference_id: O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sdm_masking_policy_difference = oci.DataSafe.get_sdm_masking_policy_difference(sdm_masking_policy_difference_id=oci_data_safe_sdm_masking_policy_difference["test_sdm_masking_policy_difference"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sdm_masking_policy_difference_id: The OCID of the SDM masking policy difference.

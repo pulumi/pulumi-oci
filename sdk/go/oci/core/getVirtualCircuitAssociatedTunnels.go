@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVirtualCircuitAssociatedTunnels(ctx *pulumi.Context, args *GetVirtualCircuitAssociatedTunnelsArgs, opts ...pulumi.InvokeOption) (*GetVirtualCircuitAssociatedTunnelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualCircuitAssociatedTunnelsResult

@@ -108,7 +108,6 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_log_analytics_categories_list(category_display_text: Optional[str] = Non
         category_type=var["log_analytics_categories_list_category_type"],
         name=var["log_analytics_categories_list_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str category_display_text: The category display text used for filtering. Only categories matching the specified display name or description will be returned.
@@ -156,7 +154,6 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,7 +163,6 @@ def get_log_analytics_categories_list_output(category_display_text: Optional[pul
         category_type=var["log_analytics_categories_list_category_type"],
         name=var["log_analytics_categories_list_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str category_display_text: The category display text used for filtering. Only categories matching the specified display name or description will be returned.

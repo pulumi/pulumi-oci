@@ -152,7 +152,6 @@ def get_associations(associated_resource_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +163,6 @@ def get_associations(associated_resource_id: Optional[str] = None,
         compartment_id=var["compartment_id"],
         name=var["association_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str associated_resource_id: A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.
@@ -214,7 +212,6 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -226,7 +223,6 @@ def get_associations_output(associated_resource_id: Optional[pulumi.Input[Option
         compartment_id=var["compartment_id"],
         name=var["association_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str associated_resource_id: A filter that returns only resources that match the given OCID of an associated Oracle Cloud Infrastructure resource.

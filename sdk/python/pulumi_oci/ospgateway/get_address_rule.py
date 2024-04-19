@@ -122,7 +122,6 @@ def get_address_rule(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -131,7 +130,6 @@ def get_address_rule(compartment_id: Optional[str] = None,
         country_code=var["address_rule_country_code"],
         osp_home_region=var["address_rule_osp_home_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -167,7 +165,6 @@ def get_address_rule_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +173,6 @@ def get_address_rule_output(compartment_id: Optional[pulumi.Input[str]] = None,
         country_code=var["address_rule_country_code"],
         osp_home_region=var["address_rule_osp_home_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

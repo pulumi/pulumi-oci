@@ -272,7 +272,6 @@ class TagDefault(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -283,7 +282,6 @@ class TagDefault(pulumi.CustomResource):
             value=var["tag_default_value"],
             is_required=var["tag_default_is_required"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -328,7 +326,6 @@ class TagDefault(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -339,7 +336,6 @@ class TagDefault(pulumi.CustomResource):
             value=var["tag_default_value"],
             is_required=var["tag_default_is_required"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

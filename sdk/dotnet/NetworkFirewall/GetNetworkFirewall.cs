@@ -18,7 +18,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNetworkFirewallResult> InvokeAsync(GetNetworkFirewallArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallResult>("oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall", args ?? new GetNetworkFirewallArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNetworkFirewallResult> Invoke(GetNetworkFirewallInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallResult>("oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall", args ?? new GetNetworkFirewallInvokeArgs(), options.WithDefaults());

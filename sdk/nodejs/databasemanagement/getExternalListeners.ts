@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalListeners(args?: GetExternalListenersArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalListenersResult> {
     args = args || {};
@@ -90,7 +88,6 @@ export interface GetExternalListenersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,7 +98,6 @@ export interface GetExternalListenersResult {
  *     externalDbSystemId: oci_database_management_external_db_system.test_external_db_system.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalListenersOutput(args?: GetExternalListenersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalListenersResult> {
     return pulumi.output(args).apply((a: any) => getExternalListeners(a, opts))

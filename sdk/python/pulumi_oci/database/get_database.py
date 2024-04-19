@@ -468,14 +468,12 @@ def get_database(database_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database = oci.Database.get_database(database_id=var["database_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -535,14 +533,12 @@ def get_database_output(database_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database = oci.Database.get_database(database_id=var["database_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

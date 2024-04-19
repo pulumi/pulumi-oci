@@ -146,14 +146,12 @@ def get_connect_harness(connect_harness_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connect_harness = oci.Streaming.get_connect_harness(connect_harness_id=oci_streaming_connect_harnes["test_connect_harnes"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str connect_harness_id: The OCID of the connect harness.
@@ -185,14 +183,12 @@ def get_connect_harness_output(connect_harness_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connect_harness = oci.Streaming.get_connect_harness(connect_harness_id=oci_streaming_connect_harnes["test_connect_harnes"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str connect_harness_id: The OCID of the connect harness.

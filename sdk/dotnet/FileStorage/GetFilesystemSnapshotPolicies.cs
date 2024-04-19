@@ -19,7 +19,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFilesystemSnapshotPoliciesResult> InvokeAsync(GetFilesystemSnapshotPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFilesystemSnapshotPoliciesResult>("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", args ?? new GetFilesystemSnapshotPoliciesArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFilesystemSnapshotPoliciesResult> Invoke(GetFilesystemSnapshotPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFilesystemSnapshotPoliciesResult>("oci:FileStorage/getFilesystemSnapshotPolicies:getFilesystemSnapshotPolicies", args ?? new GetFilesystemSnapshotPoliciesInvokeArgs(), options.WithDefaults());

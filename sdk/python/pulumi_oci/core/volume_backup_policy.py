@@ -258,7 +258,6 @@ class VolumeBackupPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -286,7 +285,6 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 time_zone=var["volume_backup_policy_schedules_time_zone"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -321,7 +319,6 @@ class VolumeBackupPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -349,7 +346,6 @@ class VolumeBackupPolicy(pulumi.CustomResource):
                 time_zone=var["volume_backup_policy_schedules_time_zone"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

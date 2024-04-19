@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     apiId: oci_apigateway_api.test_api.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApiValidation(args: GetApiValidationArgs, opts?: pulumi.InvokeOptions): Promise<GetApiValidationResult> {
 
@@ -63,7 +61,6 @@ export interface GetApiValidationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,7 +69,6 @@ export interface GetApiValidationResult {
  *     apiId: oci_apigateway_api.test_api.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApiValidationOutput(args: GetApiValidationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiValidationResult> {
     return pulumi.output(args).apply((a: any) => getApiValidation(a, opts))

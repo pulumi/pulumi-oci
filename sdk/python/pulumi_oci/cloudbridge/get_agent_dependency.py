@@ -254,14 +254,12 @@ def get_agent_dependency(agent_dependency_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=oci_cloud_bridge_agent_dependency["test_agent_dependency"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str agent_dependency_id: A unique AgentDependency identifier.
@@ -302,14 +300,12 @@ def get_agent_dependency_output(agent_dependency_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_agent_dependency = oci.CloudBridge.get_agent_dependency(agent_dependency_id=oci_cloud_bridge_agent_dependency["test_agent_dependency"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str agent_dependency_id: A unique AgentDependency identifier.

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupCaBundle(ctx *pulumi.Context, args *LookupCaBundleArgs, opts ...pulumi.InvokeOption) (*LookupCaBundleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCaBundleResult

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeGlobalImageCapabilitySchema(args: GetComputeGlobalImageCapabilitySchemaArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeGlobalImageCapabilitySchemaResult> {
 
@@ -81,7 +79,6 @@ export interface GetComputeGlobalImageCapabilitySchemaResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -90,7 +87,6 @@ export interface GetComputeGlobalImageCapabilitySchemaResult {
  *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getComputeGlobalImageCapabilitySchemaOutput(args: GetComputeGlobalImageCapabilitySchemaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemaResult> {
     return pulumi.output(args).apply((a: any) => getComputeGlobalImageCapabilitySchema(a, opts))

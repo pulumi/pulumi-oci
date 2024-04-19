@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     virtualNodePoolId: oci_containerengine_virtual_node_pool.test_virtual_node_pool.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualNodePool(args: GetVirtualNodePoolArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualNodePoolResult> {
 
@@ -131,7 +129,6 @@ export interface GetVirtualNodePoolResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -140,7 +137,6 @@ export interface GetVirtualNodePoolResult {
  *     virtualNodePoolId: oci_containerengine_virtual_node_pool.test_virtual_node_pool.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualNodePoolOutput(args: GetVirtualNodePoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualNodePoolResult> {
     return pulumi.output(args).apply((a: any) => getVirtualNodePool(a, opts))

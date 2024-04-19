@@ -30,7 +30,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -57,7 +56,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetListingPackages(ctx *pulumi.Context, args *GetListingPackagesArgs, opts ...pulumi.InvokeOption) (*GetListingPackagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetListingPackagesResult

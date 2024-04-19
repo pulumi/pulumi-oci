@@ -458,7 +458,6 @@ class WorkspaceFolder(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -479,7 +478,6 @@ class WorkspaceFolder(pulumi.CustomResource):
             model_version=var["workspace_folder_model_version"],
             object_status=var["workspace_folder_object_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -519,7 +517,6 @@ class WorkspaceFolder(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -540,7 +537,6 @@ class WorkspaceFolder(pulumi.CustomResource):
             model_version=var["workspace_folder_model_version"],
             object_status=var["workspace_folder_object_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

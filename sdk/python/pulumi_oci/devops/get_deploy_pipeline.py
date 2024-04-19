@@ -231,14 +231,12 @@ def get_deploy_pipeline(deploy_pipeline_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deploy_pipeline_id: Unique pipeline identifier.
@@ -277,14 +275,12 @@ def get_deploy_pipeline_output(deploy_pipeline_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_deploy_pipeline = oci.DevOps.get_deploy_pipeline(deploy_pipeline_id=oci_devops_deploy_pipeline["test_deploy_pipeline"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str deploy_pipeline_id: Unique pipeline identifier.

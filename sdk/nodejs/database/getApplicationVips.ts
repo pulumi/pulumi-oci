@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: _var.application_vip_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApplicationVips(args: GetApplicationVipsArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationVipsResult> {
 
@@ -89,7 +87,6 @@ export interface GetApplicationVipsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetApplicationVipsResult {
  *     state: _var.application_vip_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getApplicationVipsOutput(args: GetApplicationVipsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationVipsResult> {
     return pulumi.output(args).apply((a: any) => getApplicationVips(a, opts))

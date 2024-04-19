@@ -361,7 +361,6 @@ class ArtifactByPath(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -372,7 +371,6 @@ class ArtifactByPath(pulumi.CustomResource):
             version=var["version"],
             source=var["source"])
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -402,7 +400,6 @@ class ArtifactByPath(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -413,7 +410,6 @@ class ArtifactByPath(pulumi.CustomResource):
             version=var["version"],
             source=var["source"])
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param ArtifactByPathArgs args: The arguments to use to populate this resource's properties.

@@ -291,14 +291,12 @@ def get_redis_cluster(redis_cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=oci_redis_redis_cluster["test_redis_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.
@@ -342,14 +340,12 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_redis_cluster = oci.Redis.get_redis_cluster(redis_cluster_id=oci_redis_redis_cluster["test_redis_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster.

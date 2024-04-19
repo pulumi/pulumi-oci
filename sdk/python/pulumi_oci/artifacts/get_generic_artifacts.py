@@ -168,7 +168,6 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -182,7 +181,6 @@ def get_generic_artifacts(artifact_path: Optional[str] = None,
         state=var["generic_artifact_state"],
         version=var["generic_artifact_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str artifact_path: Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.
@@ -238,7 +236,6 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -252,7 +249,6 @@ def get_generic_artifacts_output(artifact_path: Optional[pulumi.Input[Optional[s
         state=var["generic_artifact_state"],
         version=var["generic_artifact_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str artifact_path: Filter results by a prefix for the `artifactPath` and and return artifacts that begin with the specified prefix in their path.

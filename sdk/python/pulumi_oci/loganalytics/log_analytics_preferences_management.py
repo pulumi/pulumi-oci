@@ -123,7 +123,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -135,7 +134,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                 value=var["log_analytics_preferences_management_items_value"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -163,7 +161,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -175,7 +172,6 @@ class LogAnalyticsPreferencesManagement(pulumi.CustomResource):
                 value=var["log_analytics_preferences_management_items_value"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

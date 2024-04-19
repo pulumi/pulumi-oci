@@ -82,7 +82,6 @@ def get_retrieve_password(sddc_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -90,7 +89,6 @@ def get_retrieve_password(sddc_id: Optional[str] = None,
     test_password = oci.Ocvp.get_retrieve_password(sddc_id=var["compartment_id"],
         type=var["password_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sddc_id: The [OCID](https://www.terraform.io/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -118,7 +116,6 @@ def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +123,6 @@ def get_retrieve_password_output(sddc_id: Optional[pulumi.Input[str]] = None,
     test_password = oci.Ocvp.get_retrieve_password(sddc_id=var["compartment_id"],
         type=var["password_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sddc_id: The [OCID](https://www.terraform.io/Content/General/Concepts/identifiers.htm) of the SDDC.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobShapes(args: GetJobShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetJobShapesResult> {
 
@@ -66,7 +64,6 @@ export interface GetJobShapesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetJobShapesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobShapesOutput(args: GetJobShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobShapesResult> {
     return pulumi.output(args).apply((a: any) => getJobShapes(a, opts))

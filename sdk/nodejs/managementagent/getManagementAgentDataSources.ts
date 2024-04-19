@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     name: _var.management_agent_data_source_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentDataSources(args: GetManagementAgentDataSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentDataSourcesResult> {
 
@@ -76,7 +74,6 @@ export interface GetManagementAgentDataSourcesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetManagementAgentDataSourcesResult {
  *     name: _var.management_agent_data_source_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagementAgentDataSourcesOutput(args: GetManagementAgentDataSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentDataSourcesResult> {
     return pulumi.output(args).apply((a: any) => getManagementAgentDataSources(a, opts))

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetTrailFiles(ctx *pulumi.Context, args *GetTrailFilesArgs, opts ...pulumi.InvokeOption) (*GetTrailFilesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTrailFilesResult

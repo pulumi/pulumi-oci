@@ -484,7 +484,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -612,7 +611,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
             ),
             system_tags=var["web_app_firewall_policy_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -653,7 +651,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -781,7 +778,6 @@ class AppFirewallPolicy(pulumi.CustomResource):
             ),
             system_tags=var["web_app_firewall_policy_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -336,7 +336,6 @@ def get_security_policy_report_database_table_access_entry(database_table_access
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -344,7 +343,6 @@ def get_security_policy_report_database_table_access_entry(database_table_access
     test_security_policy_report_database_table_access_entry = oci.DataSafe.get_security_policy_report_database_table_access_entry(database_table_access_entry_key=var["security_policy_report_database_table_access_entry_database_table_access_entry_key"],
         security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_table_access_entry_key: The unique key that identifies the table access object. This is a system-generated identifier.
@@ -395,7 +393,6 @@ def get_security_policy_report_database_table_access_entry_output(database_table
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -403,7 +400,6 @@ def get_security_policy_report_database_table_access_entry_output(database_table
     test_security_policy_report_database_table_access_entry = oci.DataSafe.get_security_policy_report_database_table_access_entry(database_table_access_entry_key=var["security_policy_report_database_table_access_entry_database_table_access_entry_key"],
         security_policy_report_id=oci_data_safe_security_policy_report["test_security_policy_report"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_table_access_entry_key: The unique key that identifies the table access object. This is a system-generated identifier.

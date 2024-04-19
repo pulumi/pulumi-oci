@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbSystemConnectionDetailResult> InvokeAsync(GetDbSystemConnectionDetailArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemConnectionDetailResult>("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args ?? new GetDbSystemConnectionDetailArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbSystemConnectionDetailResult> Invoke(GetDbSystemConnectionDetailInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemConnectionDetailResult>("oci:Psql/getDbSystemConnectionDetail:getDbSystemConnectionDetail", args ?? new GetDbSystemConnectionDetailInvokeArgs(), options.WithDefaults());

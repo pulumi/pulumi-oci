@@ -19,7 +19,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -36,7 +35,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceIngestTimeRuleResult> InvokeAsync(GetNamespaceIngestTimeRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceIngestTimeRuleResult>("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", args ?? new GetNamespaceIngestTimeRuleArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -66,7 +63,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceIngestTimeRuleResult> Invoke(GetNamespaceIngestTimeRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceIngestTimeRuleResult>("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", args ?? new GetNamespaceIngestTimeRuleInvokeArgs(), options.WithDefaults());

@@ -300,7 +300,6 @@ class Project(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -312,7 +311,6 @@ class Project(pulumi.CustomResource):
             display_name=var["project_display_name"],
             freeform_tags=var["project_freeform_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -347,7 +345,6 @@ class Project(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -359,7 +356,6 @@ class Project(pulumi.CustomResource):
             display_name=var["project_display_name"],
             freeform_tags=var["project_freeform_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

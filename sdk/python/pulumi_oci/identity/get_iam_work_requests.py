@@ -102,7 +102,6 @@ def get_iam_work_requests(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_iam_work_requests(compartment_id: Optional[str] = None,
     test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=var["compartment_id"],
         resource_identifier=var["iam_work_request_resource_identifier"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -146,7 +144,6 @@ def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -154,7 +151,6 @@ def get_iam_work_requests_output(compartment_id: Optional[pulumi.Input[str]] = N
     test_iam_work_requests = oci.Identity.get_iam_work_requests(compartment_id=var["compartment_id"],
         resource_identifier=var["iam_work_request_resource_identifier"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment (remember that the tenancy is simply the root compartment).

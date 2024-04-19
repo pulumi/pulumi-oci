@@ -245,7 +245,6 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -263,7 +262,6 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[str] = N
         resource_pool_leader_id=oci_database_resource_pool_leader["test_resource_pool_leader"]["id"],
         state=var["autonomous_database_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -348,7 +346,6 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -366,7 +363,6 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
         resource_pool_leader_id=oci_database_resource_pool_leader["test_resource_pool_leader"]["id"],
         state=var["autonomous_database_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

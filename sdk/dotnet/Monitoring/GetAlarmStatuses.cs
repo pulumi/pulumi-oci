@@ -30,7 +30,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAlarmStatusesResult> InvokeAsync(GetAlarmStatusesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlarmStatusesResult>("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args ?? new GetAlarmStatusesArgs(), options.WithDefaults());
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -98,7 +95,6 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAlarmStatusesResult> Invoke(GetAlarmStatusesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAlarmStatusesResult>("oci:Monitoring/getAlarmStatuses:getAlarmStatuses", args ?? new GetAlarmStatusesInvokeArgs(), options.WithDefaults());

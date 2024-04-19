@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     displayName: _var.deployment_type_display_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentType(args: GetDeploymentTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentTypeResult> {
 
@@ -73,7 +71,6 @@ export interface GetDeploymentTypeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetDeploymentTypeResult {
  *     displayName: _var.deployment_type_display_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeploymentTypeOutput(args: GetDeploymentTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentTypeResult> {
     return pulumi.output(args).apply((a: any) => getDeploymentType(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     displayName: _var.trail_file_display_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTrailFiles(args: GetTrailFilesArgs, opts?: pulumi.InvokeOptions): Promise<GetTrailFilesResult> {
 
@@ -86,7 +84,6 @@ export interface GetTrailFilesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetTrailFilesResult {
  *     displayName: _var.trail_file_display_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTrailFilesOutput(args: GetTrailFilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTrailFilesResult> {
     return pulumi.output(args).apply((a: any) => getTrailFiles(a, opts))

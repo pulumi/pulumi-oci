@@ -207,14 +207,12 @@ def get_network_address_list(network_address_list_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=oci_waf_network_address_list["test_network_address_list"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
@@ -251,14 +249,12 @@ def get_network_address_list_output(network_address_list_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_network_address_list = oci.Waf.get_network_address_list(network_address_list_id=oci_waf_network_address_list["test_network_address_list"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str network_address_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.

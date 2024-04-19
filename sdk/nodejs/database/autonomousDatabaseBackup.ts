@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     retentionPeriodInDays: _var.autonomous_database_backup_retention_period_in_days,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

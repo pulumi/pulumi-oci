@@ -149,7 +149,6 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -159,7 +158,6 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
             external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"],
             enable_operations_insights=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -188,7 +186,6 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -198,7 +195,6 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
             external_pluggable_database_id=oci_database_external_pluggable_database["test_external_pluggable_database"]["id"],
             enable_operations_insights=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

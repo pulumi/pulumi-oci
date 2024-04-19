@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstanceConfiguration(args: GetInstanceConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceConfigurationResult> {
 
@@ -86,7 +84,6 @@ export interface GetInstanceConfigurationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -95,7 +92,6 @@ export interface GetInstanceConfigurationResult {
  *     instanceConfigurationId: oci_core_instance_configuration.test_instance_configuration.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstanceConfigurationOutput(args: GetInstanceConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getInstanceConfiguration(a, opts))

@@ -21,7 +21,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAnnouncementSubscriptionResult> InvokeAsync(GetAnnouncementSubscriptionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementSubscriptionResult>("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args ?? new GetAnnouncementSubscriptionArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAnnouncementSubscriptionResult> Invoke(GetAnnouncementSubscriptionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionResult>("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args ?? new GetAnnouncementSubscriptionInvokeArgs(), options.WithDefaults());

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     types: _var.workspace_application_schedule_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceApplicationSchedules(args: GetWorkspaceApplicationSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceApplicationSchedulesResult> {
 
@@ -113,7 +111,6 @@ export interface GetWorkspaceApplicationSchedulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetWorkspaceApplicationSchedulesResult {
  *     types: _var.workspace_application_schedule_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceApplicationSchedulesOutput(args: GetWorkspaceApplicationSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceApplicationSchedulesResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceApplicationSchedules(a, opts))

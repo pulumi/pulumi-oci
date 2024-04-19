@@ -250,7 +250,6 @@ class Listener(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -262,7 +261,6 @@ class Listener(pulumi.CustomResource):
             protocol=var["listener_protocol"],
             ip_version=var["listener_ip_version"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -298,7 +296,6 @@ class Listener(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -310,7 +307,6 @@ class Listener(pulumi.CustomResource):
             protocol=var["listener_protocol"],
             ip_version=var["listener_ip_version"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

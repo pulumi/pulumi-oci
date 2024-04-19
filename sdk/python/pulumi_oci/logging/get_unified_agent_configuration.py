@@ -207,14 +207,12 @@ def get_unified_agent_configuration(unified_agent_configuration_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_unified_agent_configuration = oci.Logging.get_unified_agent_configuration(unified_agent_configuration_id=oci_logging_unified_agent_configuration["test_unified_agent_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str unified_agent_configuration_id: The OCID of the Unified Agent configuration.
@@ -251,14 +249,12 @@ def get_unified_agent_configuration_output(unified_agent_configuration_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_unified_agent_configuration = oci.Logging.get_unified_agent_configuration(unified_agent_configuration_id=oci_logging_unified_agent_configuration["test_unified_agent_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str unified_agent_configuration_id: The OCID of the Unified Agent configuration.

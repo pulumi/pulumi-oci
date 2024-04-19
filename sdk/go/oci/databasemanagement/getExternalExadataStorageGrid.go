@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupExternalExadataStorageGrid(ctx *pulumi.Context, args *LookupExternalExadataStorageGridArgs, opts ...pulumi.InvokeOption) (*LookupExternalExadataStorageGridResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExternalExadataStorageGridResult

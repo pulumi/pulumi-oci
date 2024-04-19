@@ -184,7 +184,6 @@ def get_secretbundle(secret_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -194,7 +193,6 @@ def get_secretbundle(secret_id: Optional[str] = None,
         stage=var["secretbundle_stage"],
         version_number=var["secretbundle_version_number"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.
@@ -239,7 +237,6 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -249,7 +246,6 @@ def get_secretbundle_output(secret_id: Optional[pulumi.Input[str]] = None,
         stage=var["secretbundle_stage"],
         version_number=var["secretbundle_version_number"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str secret_id: The OCID of the secret.

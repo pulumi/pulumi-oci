@@ -21,7 +21,6 @@ namespace Pulumi.Oci.ManagementDashboard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.ManagementDashboard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementDashboardsExportResult> InvokeAsync(GetManagementDashboardsExportArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportArgs(), options.WithDefaults());
@@ -52,7 +50,6 @@ namespace Pulumi.Oci.ManagementDashboard
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.ManagementDashboard
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementDashboardsExportResult> Invoke(GetManagementDashboardsExportInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementDashboardsExportResult>("oci:ManagementDashboard/getManagementDashboardsExport:getManagementDashboardsExport", args ?? new GetManagementDashboardsExportInvokeArgs(), options.WithDefaults());

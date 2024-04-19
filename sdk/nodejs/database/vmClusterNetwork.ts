@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -59,7 +58,6 @@ import * as utilities from "../utilities";
  *     validateVmClusterNetwork: _var.vm_cluster_network_validate_vm_cluster_network,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

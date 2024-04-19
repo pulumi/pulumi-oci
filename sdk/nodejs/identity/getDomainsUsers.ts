@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     startIndex: _var.user_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsUsers(args: GetDomainsUsersArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUsersResult> {
 
@@ -127,7 +125,6 @@ export interface GetDomainsUsersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetDomainsUsersResult {
  *     startIndex: _var.user_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsUsersOutput(args: GetDomainsUsersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsUsersResult> {
     return pulumi.output(args).apply((a: any) => getDomainsUsers(a, opts))

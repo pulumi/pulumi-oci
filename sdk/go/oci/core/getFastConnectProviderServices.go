@@ -23,7 +23,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetFastConnectProviderServices(ctx *pulumi.Context, args *GetFastConnectProviderServicesArgs, opts ...pulumi.InvokeOption) (*GetFastConnectProviderServicesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFastConnectProviderServicesResult

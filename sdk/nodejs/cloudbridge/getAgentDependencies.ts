@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: _var.agent_dependency_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAgentDependencies(args: GetAgentDependenciesArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentDependenciesResult> {
 
@@ -103,7 +101,6 @@ export interface GetAgentDependenciesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetAgentDependenciesResult {
  *     state: _var.agent_dependency_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAgentDependenciesOutput(args: GetAgentDependenciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentDependenciesResult> {
     return pulumi.output(args).apply((a: any) => getAgentDependencies(a, opts))

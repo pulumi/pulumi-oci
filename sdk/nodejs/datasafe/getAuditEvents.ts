@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,7 +36,6 @@ import * as utilities from "../utilities";
  *     scimQuery: _var.audit_event_scim_query,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditEvents(args: GetAuditEventsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditEventsResult> {
 
@@ -116,7 +114,6 @@ export interface GetAuditEventsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,7 +125,6 @@ export interface GetAuditEventsResult {
  *     scimQuery: _var.audit_event_scim_query,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditEventsOutput(args: GetAuditEventsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditEventsResult> {
     return pulumi.output(args).apply((a: any) => getAuditEvents(a, opts))

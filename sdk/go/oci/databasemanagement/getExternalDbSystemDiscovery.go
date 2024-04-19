@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupExternalDbSystemDiscovery(ctx *pulumi.Context, args *LookupExternalDbSystemDiscoveryArgs, opts ...pulumi.InvokeOption) (*LookupExternalDbSystemDiscoveryResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExternalDbSystemDiscoveryResult

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetEmWarehouseResult> InvokeAsync(GetEmWarehouseArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEmWarehouseResult>("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", args ?? new GetEmWarehouseArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.EmWarehouse
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetEmWarehouseResult> Invoke(GetEmWarehouseInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEmWarehouseResult>("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", args ?? new GetEmWarehouseInvokeArgs(), options.WithDefaults());

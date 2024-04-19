@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupFilesystemSnapshotPolicy(ctx *pulumi.Context, args *LookupFilesystemSnapshotPolicyArgs, opts ...pulumi.InvokeOption) (*LookupFilesystemSnapshotPolicyResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupFilesystemSnapshotPolicyResult

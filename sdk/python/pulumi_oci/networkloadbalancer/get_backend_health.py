@@ -112,7 +112,6 @@ def get_backend_health(backend_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_backend_health(backend_name: Optional[str] = None,
         backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
         network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backend_name: The name of the backend server to retrieve health status for. If the backend was created with an explicitly specified name, that name should be used here. If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>. If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.  Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`
@@ -156,7 +154,6 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -165,7 +162,6 @@ def get_backend_health_output(backend_name: Optional[pulumi.Input[str]] = None,
         backend_set_name=oci_network_load_balancer_backend_set["test_backend_set"]["name"],
         network_load_balancer_id=oci_network_load_balancer_network_load_balancer["test_network_load_balancer"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str backend_name: The name of the backend server to retrieve health status for. If the backend was created with an explicitly specified name, that name should be used here. If the backend was created without explicitly specifying the name, but was created using ipAddress, this is specified as <ipAddress>:<port>. If the backend was created without explicitly specifying the name, but was created using targetId, this is specified as <targetId>:<port>.  Example: `10.0.0.3:8080` or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:8080`

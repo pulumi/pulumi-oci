@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupNamespaceScheduledTask(ctx *pulumi.Context, args *LookupNamespaceScheduledTaskArgs, opts ...pulumi.InvokeOption) (*LookupNamespaceScheduledTaskResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNamespaceScheduledTaskResult

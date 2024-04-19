@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMigrationPlans(ctx *pulumi.Context, args *GetMigrationPlansArgs, opts ...pulumi.InvokeOption) (*GetMigrationPlansResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrationPlansResult

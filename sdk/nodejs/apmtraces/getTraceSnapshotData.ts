@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     threadId: oci_apm_traces_thread.test_thread.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTraceSnapshotData(args: GetTraceSnapshotDataArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceSnapshotDataResult> {
 
@@ -103,7 +101,6 @@ export interface GetTraceSnapshotDataResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -116,7 +113,6 @@ export interface GetTraceSnapshotDataResult {
  *     threadId: oci_apm_traces_thread.test_thread.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getTraceSnapshotDataOutput(args: GetTraceSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceSnapshotDataResult> {
     return pulumi.output(args).apply((a: any) => getTraceSnapshotData(a, opts))

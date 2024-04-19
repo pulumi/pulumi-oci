@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAutonomousDatabaseSoftwareImageResult> InvokeAsync(GetAutonomousDatabaseSoftwareImageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseSoftwareImageResult>("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", args ?? new GetAutonomousDatabaseSoftwareImageArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAutonomousDatabaseSoftwareImageResult> Invoke(GetAutonomousDatabaseSoftwareImageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseSoftwareImageResult>("oci:Database/getAutonomousDatabaseSoftwareImage:getAutonomousDatabaseSoftwareImage", args ?? new GetAutonomousDatabaseSoftwareImageInvokeArgs(), options.WithDefaults());

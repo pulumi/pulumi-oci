@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     isShared: _var.autonomous_database_character_set_is_shared,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousCharacterSets(args?: GetAutonomousCharacterSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousCharacterSetsResult> {
     args = args || {};
@@ -81,7 +79,6 @@ export interface GetAutonomousCharacterSetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -92,7 +89,6 @@ export interface GetAutonomousCharacterSetsResult {
  *     isShared: _var.autonomous_database_character_set_is_shared,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousCharacterSetsOutput(args?: GetAutonomousCharacterSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousCharacterSetsResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousCharacterSets(a, opts))

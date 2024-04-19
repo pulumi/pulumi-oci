@@ -171,7 +171,6 @@ def get_db_node_console_connection(db_node_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -179,7 +178,6 @@ def get_db_node_console_connection(db_node_id: Optional[str] = None,
     test_db_node_console_connection = oci.Database.get_db_node_console_connection(db_node_id=oci_database_db_node["test_db_node"]["id"],
         id=var["db_node_console_connection_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -216,7 +214,6 @@ def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_db_node_console_connection_output(db_node_id: Optional[pulumi.Input[str]
     test_db_node_console_connection = oci.Database.get_db_node_console_connection(db_node_id=oci_database_db_node["test_db_node"]["id"],
         id=var["db_node_console_connection_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

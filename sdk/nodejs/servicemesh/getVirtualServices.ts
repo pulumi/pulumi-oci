@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: _var.virtual_service_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualServices(args: GetVirtualServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServicesResult> {
 
@@ -105,7 +103,6 @@ export interface GetVirtualServicesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetVirtualServicesResult {
  *     state: _var.virtual_service_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVirtualServicesOutput(args: GetVirtualServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServicesResult> {
     return pulumi.output(args).apply((a: any) => getVirtualServices(a, opts))

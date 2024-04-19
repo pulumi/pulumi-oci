@@ -162,14 +162,12 @@ def get_group(group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_group = oci.Identity.get_group(group_id=oci_identity_group["test_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str group_id: The OCID of the group.
@@ -206,14 +204,12 @@ def get_group_output(group_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_group = oci.Identity.get_group(group_id=oci_identity_group["test_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str group_id: The OCID of the group.

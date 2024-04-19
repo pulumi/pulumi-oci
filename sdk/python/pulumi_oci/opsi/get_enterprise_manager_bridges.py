@@ -127,7 +127,6 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
         id=var["enterprise_manager_bridge_id"],
         states=var["enterprise_manager_bridge_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -183,7 +181,6 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -194,7 +191,6 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
         id=var["enterprise_manager_bridge_id"],
         states=var["enterprise_manager_bridge_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

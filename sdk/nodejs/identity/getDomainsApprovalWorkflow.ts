@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.approval_workflow_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsApprovalWorkflow(args: GetDomainsApprovalWorkflowArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsApprovalWorkflowResult> {
 
@@ -158,7 +156,6 @@ export interface GetDomainsApprovalWorkflowResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -172,7 +169,6 @@ export interface GetDomainsApprovalWorkflowResult {
  *     resourceTypeSchemaVersion: _var.approval_workflow_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsApprovalWorkflowOutput(args: GetDomainsApprovalWorkflowOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsApprovalWorkflowResult> {
     return pulumi.output(args).apply((a: any) => getDomainsApprovalWorkflow(a, opts))

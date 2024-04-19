@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: _var.autonomous_virtual_machine_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousVirtualMachines(args: GetAutonomousVirtualMachinesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousVirtualMachinesResult> {
 
@@ -89,7 +87,6 @@ export interface GetAutonomousVirtualMachinesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetAutonomousVirtualMachinesResult {
  *     state: _var.autonomous_virtual_machine_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAutonomousVirtualMachinesOutput(args: GetAutonomousVirtualMachinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousVirtualMachinesResult> {
     return pulumi.output(args).apply((a: any) => getAutonomousVirtualMachines(a, opts))

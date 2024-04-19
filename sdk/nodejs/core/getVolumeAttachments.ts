@@ -17,7 +17,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     volumeId: oci_core_volume.test_volume.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVolumeAttachments(args: GetVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeAttachmentsResult> {
 
@@ -107,7 +105,6 @@ export interface GetVolumeAttachmentsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -119,7 +116,6 @@ export interface GetVolumeAttachmentsResult {
  *     volumeId: oci_core_volume.test_volume.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVolumeAttachmentsOutput(args: GetVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeAttachmentsResult> {
     return pulumi.output(args).apply((a: any) => getVolumeAttachments(a, opts))

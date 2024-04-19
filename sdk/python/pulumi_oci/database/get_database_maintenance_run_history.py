@@ -87,14 +87,12 @@ def get_database_maintenance_run_history(maintenance_run_history_id: Optional[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=oci_database_maintenance_run_history["test_maintenance_run_history"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str maintenance_run_history_id: The maintenance run history OCID.
@@ -121,14 +119,12 @@ def get_database_maintenance_run_history_output(maintenance_run_history_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_maintenance_run_history = oci.Database.get_database_maintenance_run_history(maintenance_run_history_id=oci_database_maintenance_run_history["test_maintenance_run_history"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str maintenance_run_history_id: The maintenance run history OCID.

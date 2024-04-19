@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCrossConnectPortSpeedShape(ctx *pulumi.Context, args *GetCrossConnectPortSpeedShapeArgs, opts ...pulumi.InvokeOption) (*GetCrossConnectPortSpeedShapeResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCrossConnectPortSpeedShapeResult

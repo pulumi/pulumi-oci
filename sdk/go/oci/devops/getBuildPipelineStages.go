@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBuildPipelineStages(ctx *pulumi.Context, args *GetBuildPipelineStagesArgs, opts ...pulumi.InvokeOption) (*GetBuildPipelineStagesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBuildPipelineStagesResult

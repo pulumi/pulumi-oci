@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     name: _var.managed_databases_asm_property_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabasesAsmProperty(args: GetManagedDatabasesAsmPropertyArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesAsmPropertyResult> {
 
@@ -70,7 +68,6 @@ export interface GetManagedDatabasesAsmPropertyResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -80,7 +77,6 @@ export interface GetManagedDatabasesAsmPropertyResult {
  *     name: _var.managed_databases_asm_property_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabasesAsmPropertyOutput(args: GetManagedDatabasesAsmPropertyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesAsmPropertyResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabasesAsmProperty(a, opts))

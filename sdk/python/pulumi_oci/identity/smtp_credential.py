@@ -219,7 +219,6 @@ class SmtpCredential(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -228,7 +227,6 @@ class SmtpCredential(pulumi.CustomResource):
             description=var["smtp_credential_description"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -263,7 +261,6 @@ class SmtpCredential(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -272,7 +269,6 @@ class SmtpCredential(pulumi.CustomResource):
             description=var["smtp_credential_description"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsMyTrustedUserAgents(ctx *pulumi.Context, args *GetDomainsMyTrustedUserAgentsArgs, opts ...pulumi.InvokeOption) (*GetDomainsMyTrustedUserAgentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsMyTrustedUserAgentsResult

@@ -141,7 +141,6 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +151,6 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
         display_name=var["data_science_private_endpoint_display_name"],
         state=var["data_science_private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -197,7 +195,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
         display_name=var["data_science_private_endpoint_display_name"],
         state=var["data_science_private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

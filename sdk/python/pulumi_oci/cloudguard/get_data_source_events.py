@@ -102,7 +102,6 @@ def get_data_source_events(data_source_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_data_source_events(data_source_id: Optional[str] = None,
     test_data_source_events = oci.CloudGuard.get_data_source_events(data_source_id=oci_cloud_guard_data_source["test_data_source"]["id"],
         region=var["data_source_event_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_source_id: DataSource OCID
@@ -143,7 +141,6 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_data_source_events_output(data_source_id: Optional[pulumi.Input[str]] = 
     test_data_source_events = oci.CloudGuard.get_data_source_events(data_source_id=oci_cloud_guard_data_source["test_data_source"]["id"],
         region=var["data_source_event_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_source_id: DataSource OCID

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAuditArchiveRetrievals(ctx *pulumi.Context, args *GetAuditArchiveRetrievalsArgs, opts ...pulumi.InvokeOption) (*GetAuditArchiveRetrievalsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAuditArchiveRetrievalsResult

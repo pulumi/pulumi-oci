@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     state: _var.build_run_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBuildRuns(args?: GetBuildRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildRunsResult> {
     args = args || {};
@@ -122,7 +120,6 @@ export interface GetBuildRunsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -136,7 +133,6 @@ export interface GetBuildRunsResult {
  *     state: _var.build_run_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getBuildRunsOutput(args?: GetBuildRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildRunsResult> {
     return pulumi.output(args).apply((a: any) => getBuildRuns(a, opts))

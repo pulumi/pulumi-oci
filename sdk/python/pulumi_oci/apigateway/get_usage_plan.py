@@ -171,14 +171,12 @@ def get_usage_plan(usage_plan_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_usage_plan = oci.ApiGateway.get_usage_plan(usage_plan_id=oci_apigateway_usage_plan["test_usage_plan"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str usage_plan_id: The ocid of the usage plan.
@@ -212,14 +210,12 @@ def get_usage_plan_output(usage_plan_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_usage_plan = oci.ApiGateway.get_usage_plan(usage_plan_id=oci_apigateway_usage_plan["test_usage_plan"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str usage_plan_id: The ocid of the usage plan.

@@ -158,14 +158,12 @@ def get_log_group(log_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_group = oci.Logging.get_log_group(log_group_id=oci_logging_log_group["test_log_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str log_group_id: OCID of a log group to work with.
@@ -198,14 +196,12 @@ def get_log_group_output(log_group_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_log_group = oci.Logging.get_log_group(log_group_id=oci_logging_log_group["test_log_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str log_group_id: OCID of a log group to work with.

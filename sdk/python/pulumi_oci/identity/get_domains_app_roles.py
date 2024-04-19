@@ -205,7 +205,6 @@ def get_domains_app_roles(app_role_count: Optional[int] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -219,7 +218,6 @@ def get_domains_app_roles(app_role_count: Optional[int] = None,
         resource_type_schema_version=var["app_role_resource_type_schema_version"],
         start_index=var["app_role_start_index"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int app_role_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
@@ -285,7 +283,6 @@ def get_domains_app_roles_output(app_role_count: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -299,7 +296,6 @@ def get_domains_app_roles_output(app_role_count: Optional[pulumi.Input[Optional[
         resource_type_schema_version=var["app_role_resource_type_schema_version"],
         start_index=var["app_role_start_index"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param int app_role_count: OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).

@@ -675,7 +675,6 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -697,7 +696,6 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
             ike_version="V1")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -751,7 +749,6 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -773,7 +770,6 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
             shared_secret=var["ip_sec_connection_tunnel_management_shared_secret"],
             ike_version="V1")
         ```
-        <!--End PulumiCodeChooser -->
 
         :param str resource_name: The name of the resource.
         :param IpsecConnectionTunnelManagementArgs args: The arguments to use to populate this resource's properties.

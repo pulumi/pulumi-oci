@@ -169,7 +169,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -178,7 +177,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
             fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
             is_resume_data_masking=var["fusion_environment_data_masking_activity_is_resume_data_masking"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -210,7 +208,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -219,7 +216,6 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
             fusion_environment_id=oci_fusion_apps_fusion_environment["test_fusion_environment"]["id"],
             is_resume_data_masking=var["fusion_environment_data_masking_activity_is_resume_data_masking"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

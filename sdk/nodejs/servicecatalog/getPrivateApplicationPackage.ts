@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     privateApplicationPackageId: oci_service_catalog_private_application_package.test_private_application_package.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateApplicationPackage(args: GetPrivateApplicationPackageArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateApplicationPackageResult> {
 
@@ -79,7 +77,6 @@ export interface GetPrivateApplicationPackageResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -88,7 +85,6 @@ export interface GetPrivateApplicationPackageResult {
  *     privateApplicationPackageId: oci_service_catalog_private_application_package.test_private_application_package.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateApplicationPackageOutput(args: GetPrivateApplicationPackageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationPackageResult> {
     return pulumi.output(args).apply((a: any) => getPrivateApplicationPackage(a, opts))

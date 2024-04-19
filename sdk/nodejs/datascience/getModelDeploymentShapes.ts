@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelDeploymentShapes(args: GetModelDeploymentShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentShapesResult> {
 
@@ -66,7 +64,6 @@ export interface GetModelDeploymentShapesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetModelDeploymentShapesResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getModelDeploymentShapesOutput(args: GetModelDeploymentShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentShapesResult> {
     return pulumi.output(args).apply((a: any) => getModelDeploymentShapes(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     privateApplicationId: oci_service_catalog_private_application.test_private_application.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateApplications(args: GetPrivateApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateApplicationsResult> {
 
@@ -86,7 +84,6 @@ export interface GetPrivateApplicationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetPrivateApplicationsResult {
  *     privateApplicationId: oci_service_catalog_private_application.test_private_application.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPrivateApplicationsOutput(args: GetPrivateApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationsResult> {
     return pulumi.output(args).apply((a: any) => getPrivateApplications(a, opts))

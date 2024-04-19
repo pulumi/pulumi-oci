@@ -1302,7 +1302,6 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1325,7 +1324,6 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
             )],
             x509base64certificate=var["oauth_partner_certificate_x509base64certificate"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1460,7 +1458,6 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1483,7 +1480,6 @@ class DomainsOauthPartnerCertificate(pulumi.CustomResource):
             )],
             x509base64certificate=var["oauth_partner_certificate_x509base64certificate"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

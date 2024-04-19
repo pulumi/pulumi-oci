@@ -159,7 +159,6 @@ def get_detector_recipes(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -171,7 +170,6 @@ def get_detector_recipes(access_level: Optional[str] = None,
         resource_metadata_only=var["detector_recipe_resource_metadata_only"],
         state=var["detector_recipe_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
@@ -234,7 +232,6 @@ def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -246,7 +243,6 @@ def get_detector_recipes_output(access_level: Optional[pulumi.Input[Optional[str
         resource_metadata_only=var["detector_recipe_resource_metadata_only"],
         state=var["detector_recipe_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.

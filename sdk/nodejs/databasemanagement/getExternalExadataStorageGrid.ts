@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     externalExadataStorageGridId: oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageGrid(args: GetExternalExadataStorageGridArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalExadataStorageGridResult> {
 
@@ -119,7 +117,6 @@ export interface GetExternalExadataStorageGridResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -128,7 +125,6 @@ export interface GetExternalExadataStorageGridResult {
  *     externalExadataStorageGridId: oci_database_management_external_exadata_storage_grid.test_external_exadata_storage_grid.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExternalExadataStorageGridOutput(args: GetExternalExadataStorageGridOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalExadataStorageGridResult> {
     return pulumi.output(args).apply((a: any) => getExternalExadataStorageGrid(a, opts))

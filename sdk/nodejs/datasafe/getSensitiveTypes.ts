@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,7 +33,6 @@ import * as utilities from "../utilities";
  *     timeCreatedLessThan: _var.sensitive_type_time_created_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveTypes(args: GetSensitiveTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveTypesResult> {
 
@@ -175,7 +173,6 @@ export interface GetSensitiveTypesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -196,7 +193,6 @@ export interface GetSensitiveTypesResult {
  *     timeCreatedLessThan: _var.sensitive_type_time_created_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSensitiveTypesOutput(args: GetSensitiveTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypesResult> {
     return pulumi.output(args).apply((a: any) => getSensitiveTypes(a, opts))

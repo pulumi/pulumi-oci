@@ -207,14 +207,12 @@ def get_access_policy(access_policy_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=oci_service_mesh_access_policy["test_access_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_policy_id: Unique AccessPolicy identifier.
@@ -251,14 +249,12 @@ def get_access_policy_output(access_policy_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_access_policy = oci.ServiceMesh.get_access_policy(access_policy_id=oci_service_mesh_access_policy["test_access_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_policy_id: Unique AccessPolicy identifier.

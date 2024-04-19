@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetHostnames(ctx *pulumi.Context, args *GetHostnamesArgs, opts ...pulumi.InvokeOption) (*GetHostnamesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetHostnamesResult

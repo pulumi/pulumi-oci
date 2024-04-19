@@ -354,14 +354,12 @@ def get_model(model_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model = oci.AiDocument.get_model(model_id=oci_ai_document_model["test_model"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str model_id: A unique model identifier.
@@ -410,14 +408,12 @@ def get_model_output(model_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_model = oci.AiDocument.get_model(model_id=oci_ai_document_model["test_model"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str model_id: A unique model identifier.

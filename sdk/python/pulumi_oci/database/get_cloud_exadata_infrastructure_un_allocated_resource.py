@@ -148,7 +148,6 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -156,7 +155,6 @@ def get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrast
     test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
         db_servers=var["cloud_exadata_infrastructure_un_allocated_resource_db_servers"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -191,7 +189,6 @@ def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,7 +196,6 @@ def get_cloud_exadata_infrastructure_un_allocated_resource_output(cloud_exadata_
     test_cloud_exadata_infrastructure_un_allocated_resource = oci.Database.get_cloud_exadata_infrastructure_un_allocated_resource(cloud_exadata_infrastructure_id=oci_database_cloud_exadata_infrastructure["test_cloud_exadata_infrastructure"]["id"],
         db_servers=var["cloud_exadata_infrastructure_un_allocated_resource_db_servers"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_exadata_infrastructure_id: The cloud Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

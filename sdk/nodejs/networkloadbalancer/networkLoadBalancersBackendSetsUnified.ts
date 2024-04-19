@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -55,7 +54,6 @@ import * as utilities from "../utilities";
  *     isPreserveSource: _var.network_load_balancers_backend_sets_unified_is_preserve_source,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

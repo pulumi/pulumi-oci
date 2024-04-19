@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     timeCreatedLessThan: _var.masking_policy_time_created_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMaskingPolicies(args: GetMaskingPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPoliciesResult> {
 
@@ -148,7 +146,6 @@ export interface GetMaskingPoliciesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -166,7 +163,6 @@ export interface GetMaskingPoliciesResult {
  *     timeCreatedLessThan: _var.masking_policy_time_created_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMaskingPoliciesOutput(args: GetMaskingPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesResult> {
     return pulumi.output(args).apply((a: any) => getMaskingPolicies(a, opts))

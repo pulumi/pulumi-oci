@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     timeTo: _var.ratecard_time_to,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRatecards(args: GetRatecardsArgs, opts?: pulumi.InvokeOptions): Promise<GetRatecardsResult> {
 
@@ -99,7 +97,6 @@ export interface GetRatecardsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -112,7 +109,6 @@ export interface GetRatecardsResult {
  *     timeTo: _var.ratecard_time_to,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRatecardsOutput(args: GetRatecardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRatecardsResult> {
     return pulumi.output(args).apply((a: any) => getRatecards(a, opts))

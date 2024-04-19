@@ -302,7 +302,6 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -323,7 +322,6 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                 before_rule=var["network_firewall_policy_security_rule_position_before_rule"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -361,7 +359,6 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -382,7 +379,6 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
                 before_rule=var["network_firewall_policy_security_rule_position_before_rule"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

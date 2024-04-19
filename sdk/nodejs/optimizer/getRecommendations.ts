@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     status: _var.recommendation_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRecommendations(args: GetRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationsResult> {
 
@@ -149,7 +147,6 @@ export interface GetRecommendationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -166,7 +163,6 @@ export interface GetRecommendationsResult {
  *     status: _var.recommendation_status,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRecommendationsOutput(args: GetRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationsResult> {
     return pulumi.output(args).apply((a: any) => getRecommendations(a, opts))

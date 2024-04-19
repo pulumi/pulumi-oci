@@ -194,14 +194,12 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
@@ -237,14 +235,12 @@ def get_security_recipe_output(security_recipe_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_recipe = oci.CloudGuard.get_security_recipe(security_recipe_id=oci_cloud_guard_security_recipe["test_security_recipe"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)

@@ -112,7 +112,6 @@ def get_cluster_network_instances(cluster_network_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_cluster_network_instances(cluster_network_id: Optional[str] = None,
         compartment_id=var["compartment_id"],
         display_name=var["cluster_network_instance_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.
@@ -158,7 +156,6 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_cluster_network_instances_output(cluster_network_id: Optional[pulumi.Inp
         compartment_id=var["compartment_id"],
         display_name=var["cluster_network_instance_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cluster_network_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster network.

@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupCloudAutonomousVmCluster(ctx *pulumi.Context, args *LookupCloudAutonomousVmClusterArgs, opts ...pulumi.InvokeOption) (*LookupCloudAutonomousVmClusterResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupCloudAutonomousVmClusterResult

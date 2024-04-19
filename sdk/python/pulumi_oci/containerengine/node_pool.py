@@ -770,7 +770,6 @@ class NodePool(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -844,7 +843,6 @@ class NodePool(pulumi.CustomResource):
             ssh_public_key=var["node_pool_ssh_public_key"],
             subnet_ids=var["node_pool_subnet_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -893,7 +891,6 @@ class NodePool(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -967,7 +964,6 @@ class NodePool(pulumi.CustomResource):
             ssh_public_key=var["node_pool_ssh_public_key"],
             subnet_ids=var["node_pool_subnet_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

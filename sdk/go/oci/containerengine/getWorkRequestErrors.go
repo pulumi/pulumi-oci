@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetWorkRequestErrors(ctx *pulumi.Context, args *GetWorkRequestErrorsArgs, opts ...pulumi.InvokeOption) (*GetWorkRequestErrorsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetWorkRequestErrorsResult

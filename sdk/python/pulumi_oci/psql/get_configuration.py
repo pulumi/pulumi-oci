@@ -240,14 +240,12 @@ def get_configuration(configuration_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_configuration = oci.Psql.get_configuration(configuration_id=oci_psql_configuration["test_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_id: A unique identifier for the configuration.
@@ -287,14 +285,12 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_configuration = oci.Psql.get_configuration(configuration_id=oci_psql_configuration["test_configuration"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str configuration_id: A unique identifier for the configuration.

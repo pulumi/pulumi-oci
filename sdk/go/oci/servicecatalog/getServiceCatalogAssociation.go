@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetServiceCatalogAssociation(ctx *pulumi.Context, args *GetServiceCatalogAssociationArgs, opts ...pulumi.InvokeOption) (*GetServiceCatalogAssociationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetServiceCatalogAssociationResult

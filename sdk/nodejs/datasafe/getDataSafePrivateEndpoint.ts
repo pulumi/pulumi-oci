@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     dataSafePrivateEndpointId: oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataSafePrivateEndpoint(args: GetDataSafePrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafePrivateEndpointResult> {
 
@@ -113,7 +111,6 @@ export interface GetDataSafePrivateEndpointResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetDataSafePrivateEndpointResult {
  *     dataSafePrivateEndpointId: oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDataSafePrivateEndpointOutput(args: GetDataSafePrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafePrivateEndpointResult> {
     return pulumi.output(args).apply((a: any) => getDataSafePrivateEndpoint(a, opts))

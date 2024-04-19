@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupExternalContainerDatabase(ctx *pulumi.Context, args *LookupExternalContainerDatabaseArgs, opts ...pulumi.InvokeOption) (*LookupExternalContainerDatabaseResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExternalContainerDatabaseResult

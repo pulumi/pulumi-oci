@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     storageAllocatedInGbs: _var.operations_insights_warehouse_storage_allocated_in_gbs,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

@@ -25,7 +25,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -49,7 +48,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupExadataIormConfig(ctx *pulumi.Context, args *LookupExadataIormConfigArgs, opts ...pulumi.InvokeOption) (*LookupExadataIormConfigResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExadataIormConfigResult

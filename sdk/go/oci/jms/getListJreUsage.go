@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetListJreUsage(ctx *pulumi.Context, args *GetListJreUsageArgs, opts ...pulumi.InvokeOption) (*GetListJreUsageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetListJreUsageResult

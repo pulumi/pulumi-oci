@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     drgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteDistribution(args: GetDrgRouteDistributionArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteDistributionResult> {
 
@@ -89,7 +87,6 @@ export interface GetDrgRouteDistributionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -98,7 +95,6 @@ export interface GetDrgRouteDistributionResult {
  *     drgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDrgRouteDistributionOutput(args: GetDrgRouteDistributionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionResult> {
     return pulumi.output(args).apply((a: any) => getDrgRouteDistribution(a, opts))

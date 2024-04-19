@@ -177,7 +177,6 @@ def get_assets(asset_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -191,7 +190,6 @@ def get_assets(asset_id: Optional[str] = None,
         source_key=var["asset_source_key"],
         state=var["asset_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_id: Unique asset identifier.
@@ -248,7 +246,6 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -262,7 +259,6 @@ def get_assets_output(asset_id: Optional[pulumi.Input[Optional[str]]] = None,
         source_key=var["asset_source_key"],
         state=var["asset_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str asset_id: Unique asset identifier.

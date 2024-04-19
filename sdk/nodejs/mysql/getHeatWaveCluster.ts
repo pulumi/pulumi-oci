@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     dbSystemId: oci_database_db_system.test_db_system.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHeatWaveCluster(args: GetHeatWaveClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetHeatWaveClusterResult> {
 
@@ -91,7 +89,6 @@ export interface GetHeatWaveClusterResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetHeatWaveClusterResult {
  *     dbSystemId: oci_database_db_system.test_db_system.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getHeatWaveClusterOutput(args: GetHeatWaveClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHeatWaveClusterResult> {
     return pulumi.output(args).apply((a: any) => getHeatWaveCluster(a, opts))

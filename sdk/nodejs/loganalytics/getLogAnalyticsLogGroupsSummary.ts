@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     namespace: _var.log_analytics_log_groups_summary_namespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsLogGroupsSummary(args: GetLogAnalyticsLogGroupsSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsLogGroupsSummaryResult> {
 
@@ -65,7 +63,6 @@ export interface GetLogAnalyticsLogGroupsSummaryResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetLogAnalyticsLogGroupsSummaryResult {
  *     namespace: _var.log_analytics_log_groups_summary_namespace,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLogAnalyticsLogGroupsSummaryOutput(args: GetLogAnalyticsLogGroupsSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupsSummaryResult> {
     return pulumi.output(args).apply((a: any) => getLogAnalyticsLogGroupsSummary(a, opts))

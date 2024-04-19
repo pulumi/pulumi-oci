@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     resourceTypeSchemaVersion: _var.kmsi_setting_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsKmsiSettings(args: GetDomainsKmsiSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsKmsiSettingsResult> {
 
@@ -101,7 +99,6 @@ export interface GetDomainsKmsiSettingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetDomainsKmsiSettingsResult {
  *     resourceTypeSchemaVersion: _var.kmsi_setting_resource_type_schema_version,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsKmsiSettingsOutput(args: GetDomainsKmsiSettingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsKmsiSettingsResult> {
     return pulumi.output(args).apply((a: any) => getDomainsKmsiSettings(a, opts))

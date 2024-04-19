@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -45,7 +44,6 @@ import * as utilities from "../utilities";
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfiles(args: GetAuditProfilesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfilesResult> {
 
@@ -178,7 +176,6 @@ export interface GetAuditProfilesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -196,7 +193,6 @@ export interface GetAuditProfilesResult {
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfilesOutput(args: GetAuditProfilesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfilesResult> {
     return pulumi.output(args).apply((a: any) => getAuditProfiles(a, opts))

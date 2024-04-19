@@ -339,7 +339,6 @@ class Cpe(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -357,7 +356,6 @@ class Cpe(pulumi.CustomResource):
             },
             is_private=var["cpe_is_private"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -414,7 +412,6 @@ class Cpe(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -432,7 +429,6 @@ class Cpe(pulumi.CustomResource):
             },
             is_private=var["cpe_is_private"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getGuardTarget(args: GetGuardTargetArgs, opts?: pulumi.InvokeOptions): Promise<GetGuardTargetResult> {
 
@@ -127,7 +125,6 @@ export interface GetGuardTargetResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -136,7 +133,6 @@ export interface GetGuardTargetResult {
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getGuardTargetOutput(args: GetGuardTargetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGuardTargetResult> {
     return pulumi.output(args).apply((a: any) => getGuardTarget(a, opts))

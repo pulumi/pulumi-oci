@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     drgId: oci_core_drg.test_drg.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRemotePeeringConnections(args: GetRemotePeeringConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRemotePeeringConnectionsResult> {
 
@@ -81,7 +79,6 @@ export interface GetRemotePeeringConnectionsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -91,7 +88,6 @@ export interface GetRemotePeeringConnectionsResult {
  *     drgId: oci_core_drg.test_drg.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRemotePeeringConnectionsOutput(args: GetRemotePeeringConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemotePeeringConnectionsResult> {
     return pulumi.output(args).apply((a: any) => getRemotePeeringConnections(a, opts))

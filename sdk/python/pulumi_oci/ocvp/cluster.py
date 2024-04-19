@@ -760,7 +760,6 @@ class Cluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -803,7 +802,6 @@ class Cluster(pulumi.CustomResource):
             vmware_software_version=var["cluster_vmware_software_version"],
             workload_network_cidr=var["cluster_workload_network_cidr"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -859,7 +857,6 @@ class Cluster(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -902,7 +899,6 @@ class Cluster(pulumi.CustomResource):
             vmware_software_version=var["cluster_vmware_software_version"],
             workload_network_cidr=var["cluster_workload_network_cidr"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

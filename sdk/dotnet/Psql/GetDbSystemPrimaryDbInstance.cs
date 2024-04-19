@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDbSystemPrimaryDbInstanceResult> InvokeAsync(GetDbSystemPrimaryDbInstanceArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemPrimaryDbInstanceResult>("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args ?? new GetDbSystemPrimaryDbInstanceArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDbSystemPrimaryDbInstanceResult> Invoke(GetDbSystemPrimaryDbInstanceInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemPrimaryDbInstanceResult>("oci:Psql/getDbSystemPrimaryDbInstance:getDbSystemPrimaryDbInstance", args ?? new GetDbSystemPrimaryDbInstanceInvokeArgs(), options.WithDefaults());

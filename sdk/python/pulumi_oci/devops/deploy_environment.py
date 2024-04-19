@@ -482,7 +482,6 @@ class DeployEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -514,7 +513,6 @@ class DeployEnvironment(pulumi.CustomResource):
                 nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -554,7 +552,6 @@ class DeployEnvironment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -586,7 +583,6 @@ class DeployEnvironment(pulumi.CustomResource):
                 nsg_ids=var["deploy_environment_network_channel_nsg_ids"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

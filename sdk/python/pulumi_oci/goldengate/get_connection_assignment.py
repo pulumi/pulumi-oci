@@ -146,14 +146,12 @@ def get_connection_assignment(connection_assignment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection_assignment = oci.GoldenGate.get_connection_assignment(connection_assignment_id=oci_golden_gate_connection_assignment["test_connection_assignment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str connection_assignment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Connection Assignment.
@@ -185,14 +183,12 @@ def get_connection_assignment_output(connection_assignment_id: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_connection_assignment = oci.GoldenGate.get_connection_assignment(connection_assignment_id=oci_golden_gate_connection_assignment["test_connection_assignment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str connection_assignment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Connection Assignment.

@@ -625,7 +625,6 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -645,7 +644,6 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
             sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
             status=var["sensitive_data_models_sensitive_column_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -688,7 +686,6 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -708,7 +705,6 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
             sensitive_type_id=oci_data_safe_sensitive_type["test_sensitive_type"]["id"],
             status=var["sensitive_data_models_sensitive_column_status"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

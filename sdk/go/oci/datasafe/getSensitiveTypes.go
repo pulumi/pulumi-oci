@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -53,7 +52,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSensitiveTypes(ctx *pulumi.Context, args *GetSensitiveTypesArgs, opts ...pulumi.InvokeOption) (*GetSensitiveTypesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSensitiveTypesResult

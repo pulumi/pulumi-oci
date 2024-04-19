@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     opcNamedCredentialId: _var.managed_database_user_data_access_container_opc_named_credential_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserDataAccessContainers(args: GetManagedDatabaseUserDataAccessContainersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserDataAccessContainersResult> {
 
@@ -90,7 +88,6 @@ export interface GetManagedDatabaseUserDataAccessContainersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetManagedDatabaseUserDataAccessContainersResult {
  *     opcNamedCredentialId: _var.managed_database_user_data_access_container_opc_named_credential_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseUserDataAccessContainersOutput(args: GetManagedDatabaseUserDataAccessContainersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserDataAccessContainersResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseUserDataAccessContainers(a, opts))

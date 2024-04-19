@@ -96,7 +96,6 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -104,7 +103,6 @@ def get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id: Opti
     test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
         compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -137,7 +135,6 @@ def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -145,7 +142,6 @@ def get_autonomous_vm_cluster_acd_resource_usages_output(autonomous_vm_cluster_i
     test_autonomous_vm_cluster_acd_resource_usages = oci.Database.get_autonomous_vm_cluster_acd_resource_usages(autonomous_vm_cluster_id=oci_database_autonomous_vm_cluster["test_autonomous_vm_cluster"]["id"],
         compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str autonomous_vm_cluster_id: The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

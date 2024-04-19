@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     name: _var.instance_device_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstanceDevices(args: GetInstanceDevicesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceDevicesResult> {
 
@@ -86,7 +84,6 @@ export interface GetInstanceDevicesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetInstanceDevicesResult {
  *     name: _var.instance_device_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstanceDevicesOutput(args: GetInstanceDevicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceDevicesResult> {
     return pulumi.output(args).apply((a: any) => getInstanceDevices(a, opts))

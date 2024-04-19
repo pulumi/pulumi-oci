@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ContainerEngine
     /// 
     /// ## Example Usage
     /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
@@ -32,13 +31,12 @@ namespace Pulumi.Oci.ContainerEngine
     ///     {
     ///         DependsOn =
     ///         {
-    ///             oci_containerengine_cluster_start_credential_rotation_management.Test_cluster_start_credential_rotation_management, 
+    ///             oci_containerengine_cluster_start_credential_rotation_management.Test_cluster_start_credential_rotation_management,
     ///         },
     ///     });
     /// 
     /// });
     /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
     /// ## Import
     /// 

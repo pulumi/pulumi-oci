@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     oneoffPatchId: oci_database_oneoff_patch.test_oneoff_patch.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOneoffPatch(args: GetOneoffPatchArgs, opts?: pulumi.InvokeOptions): Promise<GetOneoffPatchResult> {
 
@@ -114,7 +112,6 @@ export interface GetOneoffPatchResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -123,7 +120,6 @@ export interface GetOneoffPatchResult {
  *     oneoffPatchId: oci_database_oneoff_patch.test_oneoff_patch.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOneoffPatchOutput(args: GetOneoffPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOneoffPatchResult> {
     return pulumi.output(args).apply((a: any) => getOneoffPatch(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     ref: _var.repository_path_ref,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryPath(args: GetRepositoryPathArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryPathResult> {
 
@@ -91,7 +89,6 @@ export interface GetRepositoryPathResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetRepositoryPathResult {
  *     ref: _var.repository_path_ref,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryPathOutput(args: GetRepositoryPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryPathResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryPath(a, opts))

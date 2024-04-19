@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMetastores(ctx *pulumi.Context, args *GetMetastoresArgs, opts ...pulumi.InvokeOption) (*GetMetastoresResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMetastoresResult

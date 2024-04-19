@@ -154,7 +154,6 @@ def get_commitment(commitment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +162,6 @@ def get_commitment(commitment_id: Optional[str] = None,
         x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
         x_one_origin_region=var["commitment_x_one_origin_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str commitment_id: The Commitment Id
@@ -202,7 +200,6 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -211,7 +208,6 @@ def get_commitment_output(commitment_id: Optional[pulumi.Input[str]] = None,
         x_one_gateway_subscription_id=var["commitment_x_one_gateway_subscription_id"],
         x_one_origin_region=var["commitment_x_one_origin_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str commitment_id: The Commitment Id

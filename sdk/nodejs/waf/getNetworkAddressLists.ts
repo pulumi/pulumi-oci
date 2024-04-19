@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     states: _var.network_address_list_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkAddressLists(args: GetNetworkAddressListsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkAddressListsResult> {
 
@@ -95,7 +93,6 @@ export interface GetNetworkAddressListsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -107,7 +104,6 @@ export interface GetNetworkAddressListsResult {
  *     states: _var.network_address_list_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkAddressListsOutput(args: GetNetworkAddressListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkAddressListsResult> {
     return pulumi.output(args).apply((a: any) => getNetworkAddressLists(a, opts))

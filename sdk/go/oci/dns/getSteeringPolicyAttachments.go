@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSteeringPolicyAttachments(ctx *pulumi.Context, args *GetSteeringPolicyAttachmentsArgs, opts ...pulumi.InvokeOption) (*GetSteeringPolicyAttachmentsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSteeringPolicyAttachmentsResult

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: _var.outbound_connector_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOutboundConnectors(args: GetOutboundConnectorsArgs, opts?: pulumi.InvokeOptions): Promise<GetOutboundConnectorsResult> {
 
@@ -105,7 +103,6 @@ export interface GetOutboundConnectorsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetOutboundConnectorsResult {
  *     state: _var.outbound_connector_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOutboundConnectorsOutput(args: GetOutboundConnectorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOutboundConnectorsResult> {
     return pulumi.output(args).apply((a: any) => getOutboundConnectors(a, opts))

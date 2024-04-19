@@ -99,7 +99,6 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[pulumi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_sensitive_data_model_sensitive_schemas(filters: Optional[Sequence[pulumi
     test_sensitive_data_model_sensitive_schemas = oci.DataSafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
         schema_names=var["sensitive_data_model_sensitive_schema_schema_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.
@@ -140,7 +138,6 @@ def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,7 +145,6 @@ def get_sensitive_data_model_sensitive_schemas_output(filters: Optional[pulumi.I
     test_sensitive_data_model_sensitive_schemas = oci.DataSafe.get_sensitive_data_model_sensitive_schemas(sensitive_data_model_id=oci_data_safe_sensitive_data_model["test_sensitive_data_model"]["id"],
         schema_names=var["sensitive_data_model_sensitive_schema_schema_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] schema_names: A filter to return only items related to specific schema name.

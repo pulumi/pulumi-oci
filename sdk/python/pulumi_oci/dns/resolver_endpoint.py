@@ -462,7 +462,6 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -478,7 +477,6 @@ class ResolverEndpoint(pulumi.CustomResource):
             listening_address=var["resolver_endpoint_listening_address"],
             nsg_ids=var["resolver_endpoint_nsg_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -523,7 +521,6 @@ class ResolverEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -539,7 +536,6 @@ class ResolverEndpoint(pulumi.CustomResource):
             listening_address=var["resolver_endpoint_listening_address"],
             nsg_ids=var["resolver_endpoint_nsg_ids"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

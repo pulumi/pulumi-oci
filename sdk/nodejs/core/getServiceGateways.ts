@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getServiceGateways(args: GetServiceGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceGatewaysResult> {
 
@@ -91,7 +89,6 @@ export interface GetServiceGatewaysResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -102,7 +99,6 @@ export interface GetServiceGatewaysResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getServiceGatewaysOutput(args: GetServiceGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGatewaysResult> {
     return pulumi.output(args).apply((a: any) => getServiceGateways(a, opts))

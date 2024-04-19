@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     oneOffPatches: _var.oneoff_patch_one_off_patches,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

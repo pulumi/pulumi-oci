@@ -128,7 +128,6 @@ def get_repository_refs(commit_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_repository_refs(commit_id: Optional[str] = None,
         ref_name=var["repository_ref_ref_name"],
         ref_type=var["repository_ref_ref_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str commit_id: Commit ID in a repository.
@@ -179,7 +177,6 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[str]]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_repository_refs_output(commit_id: Optional[pulumi.Input[Optional[str]]] 
         ref_name=var["repository_ref_ref_name"],
         ref_type=var["repository_ref_ref_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str commit_id: Commit ID in a repository.

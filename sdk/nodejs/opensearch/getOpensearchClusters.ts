@@ -22,7 +22,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -34,7 +33,6 @@ import * as utilities from "../utilities";
  *     state: _var.opensearch_cluster_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchClusters(args: GetOpensearchClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetOpensearchClustersResult> {
 
@@ -113,7 +111,6 @@ export interface GetOpensearchClustersResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -125,7 +122,6 @@ export interface GetOpensearchClustersResult {
  *     state: _var.opensearch_cluster_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOpensearchClustersOutput(args: GetOpensearchClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOpensearchClustersResult> {
     return pulumi.output(args).apply((a: any) => getOpensearchClusters(a, opts))

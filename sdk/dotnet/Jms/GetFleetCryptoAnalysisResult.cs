@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetFleetCryptoAnalysisResultResult> InvokeAsync(GetFleetCryptoAnalysisResultArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetCryptoAnalysisResultResult>("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", args ?? new GetFleetCryptoAnalysisResultArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetFleetCryptoAnalysisResultResult> Invoke(GetFleetCryptoAnalysisResultInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFleetCryptoAnalysisResultResult>("oci:Jms/getFleetCryptoAnalysisResult:getFleetCryptoAnalysisResult", args ?? new GetFleetCryptoAnalysisResultInvokeArgs(), options.WithDefaults());

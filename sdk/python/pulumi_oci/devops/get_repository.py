@@ -337,7 +337,6 @@ def get_repository(fields: Optional[Sequence[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -345,7 +344,6 @@ def get_repository(fields: Optional[Sequence[str]] = None,
     test_repository = oci.DevOps.get_repository(repository_id=oci_devops_repository["test_repository"]["id"],
         fields=var["repository_fields"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Fields parameter can contain multiple flags useful in deciding the API functionality.
@@ -396,7 +394,6 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -404,7 +401,6 @@ def get_repository_output(fields: Optional[pulumi.Input[Optional[Sequence[str]]]
     test_repository = oci.DevOps.get_repository(repository_id=oci_devops_repository["test_repository"]["id"],
         fields=var["repository_fields"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param Sequence[str] fields: Fields parameter can contain multiple flags useful in deciding the API functionality.

@@ -23,7 +23,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -39,7 +38,6 @@ import * as utilities from "../utilities";
  *     sortOrder: _var.image_sort_order,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getImages(args: GetImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetImagesResult> {
 
@@ -150,7 +148,6 @@ export interface GetImagesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -166,7 +163,6 @@ export interface GetImagesResult {
  *     sortOrder: _var.image_sort_order,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getImagesOutput(args: GetImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImagesResult> {
     return pulumi.output(args).apply((a: any) => getImages(a, opts))

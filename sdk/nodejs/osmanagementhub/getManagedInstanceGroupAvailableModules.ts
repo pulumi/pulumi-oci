@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     nameContains: _var.managed_instance_group_available_module_name_contains,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupAvailableModules(args: GetManagedInstanceGroupAvailableModulesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupAvailableModulesResult> {
 
@@ -92,7 +90,6 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetManagedInstanceGroupAvailableModulesResult {
  *     nameContains: _var.managed_instance_group_available_module_name_contains,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedInstanceGroupAvailableModulesOutput(args: GetManagedInstanceGroupAvailableModulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupAvailableModulesResult> {
     return pulumi.output(args).apply((a: any) => getManagedInstanceGroupAvailableModules(a, opts))

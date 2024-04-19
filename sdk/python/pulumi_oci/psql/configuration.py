@@ -478,7 +478,6 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -505,7 +504,6 @@ class Configuration(pulumi.CustomResource):
             },
             system_tags=var["configuration_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -546,7 +544,6 @@ class Configuration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -573,7 +570,6 @@ class Configuration(pulumi.CustomResource):
             },
             system_tags=var["configuration_system_tags"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

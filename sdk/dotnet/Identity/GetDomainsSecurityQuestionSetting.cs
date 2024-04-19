@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsSecurityQuestionSettingResult> InvokeAsync(GetDomainsSecurityQuestionSettingArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsSecurityQuestionSettingResult>("oci:Identity/getDomainsSecurityQuestionSetting:getDomainsSecurityQuestionSetting", args ?? new GetDomainsSecurityQuestionSettingArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -78,7 +75,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsSecurityQuestionSettingResult> Invoke(GetDomainsSecurityQuestionSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSecurityQuestionSettingResult>("oci:Identity/getDomainsSecurityQuestionSetting:getDomainsSecurityQuestionSetting", args ?? new GetDomainsSecurityQuestionSettingInvokeArgs(), options.WithDefaults());

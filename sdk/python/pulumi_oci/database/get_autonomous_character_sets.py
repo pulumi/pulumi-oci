@@ -106,7 +106,6 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -115,7 +114,6 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
         is_dedicated=var["autonomous_database_character_set_is_dedicated"],
         is_shared=var["autonomous_database_character_set_is_shared"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
@@ -152,7 +150,6 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -161,7 +158,6 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
         is_dedicated=var["autonomous_database_character_set_is_dedicated"],
         is_shared=var["autonomous_database_character_set_is_shared"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.

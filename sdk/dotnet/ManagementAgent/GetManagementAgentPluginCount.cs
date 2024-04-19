@@ -20,7 +20,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetManagementAgentPluginCountResult> InvokeAsync(GetManagementAgentPluginCountArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetManagementAgentPluginCountResult> Invoke(GetManagementAgentPluginCountInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountInvokeArgs(), options.WithDefaults());

@@ -129,7 +129,6 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_managed_databases_database_parameters(filters: Optional[Sequence[pulumi.
         opc_named_credential_id=var["managed_databases_database_parameter_opc_named_credential_id"],
         source=var["managed_databases_database_parameter_source"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).
@@ -185,7 +183,6 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -196,7 +193,6 @@ def get_managed_databases_database_parameters_output(filters: Optional[pulumi.In
         opc_named_credential_id=var["managed_databases_database_parameter_opc_named_credential_id"],
         source=var["managed_databases_database_parameter_source"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param bool is_allowed_values_included: When true, results include a list of valid values for parameters (if applicable).

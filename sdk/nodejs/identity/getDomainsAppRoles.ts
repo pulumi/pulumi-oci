@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     startIndex: _var.app_role_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAppRoles(args: GetDomainsAppRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsAppRolesResult> {
 
@@ -127,7 +125,6 @@ export interface GetDomainsAppRolesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetDomainsAppRolesResult {
  *     startIndex: _var.app_role_start_index,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDomainsAppRolesOutput(args: GetDomainsAppRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainsAppRolesResult> {
     return pulumi.output(args).apply((a: any) => getDomainsAppRoles(a, opts))

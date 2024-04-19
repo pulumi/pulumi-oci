@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetVtaps(ctx *pulumi.Context, args *GetVtapsArgs, opts ...pulumi.InvokeOption) (*GetVtapsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVtapsResult

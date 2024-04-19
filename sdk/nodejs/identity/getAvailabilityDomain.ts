@@ -9,7 +9,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     adNumber: _var.ad_number,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAvailabilityDomain(args: GetAvailabilityDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetAvailabilityDomainResult> {
 
@@ -76,7 +74,6 @@ export interface GetAvailabilityDomainResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -87,7 +84,6 @@ export interface GetAvailabilityDomainResult {
  *     adNumber: _var.ad_number,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAvailabilityDomainOutput(args: GetAvailabilityDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAvailabilityDomainResult> {
     return pulumi.output(args).apply((a: any) => getAvailabilityDomain(a, opts))

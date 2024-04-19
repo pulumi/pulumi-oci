@@ -657,7 +657,6 @@ class HostInsight(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -679,7 +678,6 @@ class HostInsight(pulumi.CustomResource):
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             status="DISABLED")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -720,7 +718,6 @@ class HostInsight(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -742,7 +739,6 @@ class HostInsight(pulumi.CustomResource):
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             status="DISABLED")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

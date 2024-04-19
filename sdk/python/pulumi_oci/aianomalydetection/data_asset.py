@@ -383,7 +383,6 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -429,7 +428,6 @@ class DataAsset(pulumi.CustomResource):
             },
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -467,7 +465,6 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -513,7 +510,6 @@ class DataAsset(pulumi.CustomResource):
             },
             private_endpoint_id=oci_dataflow_private_endpoint["test_private_endpoint"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -1028,7 +1028,6 @@ class AddressActionVerification(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1063,7 +1062,6 @@ class AddressActionVerification(pulumi.CustomResource):
             street_name=var["address_action_verification_street_name"],
             street_number=var["address_action_verification_street_number"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -1121,7 +1119,6 @@ class AddressActionVerification(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -1156,7 +1153,6 @@ class AddressActionVerification(pulumi.CustomResource):
             street_name=var["address_action_verification_street_name"],
             street_number=var["address_action_verification_street_number"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

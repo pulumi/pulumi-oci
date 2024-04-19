@@ -129,7 +129,6 @@ def get_load_balancers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -139,7 +138,6 @@ def get_load_balancers(compartment_id: Optional[str] = None,
         display_name=var["load_balancer_display_name"],
         state=var["load_balancer_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
@@ -184,7 +182,6 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -194,7 +191,6 @@ def get_load_balancers_output(compartment_id: Optional[pulumi.Input[str]] = None
         display_name=var["load_balancer_display_name"],
         state=var["load_balancer_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.

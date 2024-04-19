@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetDiagnoses(args: GetFleetDiagnosesArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetDiagnosesResult> {
 
@@ -66,7 +64,6 @@ export interface GetFleetDiagnosesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetFleetDiagnosesResult {
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetDiagnosesOutput(args: GetFleetDiagnosesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetDiagnosesResult> {
     return pulumi.output(args).apply((a: any) => getFleetDiagnoses(a, opts))

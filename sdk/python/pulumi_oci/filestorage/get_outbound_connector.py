@@ -207,14 +207,12 @@ def get_outbound_connector(outbound_connector_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=oci_file_storage_outbound_connector["test_outbound_connector"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str outbound_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
@@ -251,14 +249,12 @@ def get_outbound_connector_output(outbound_connector_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_outbound_connector = oci.FileStorage.get_outbound_connector(outbound_connector_id=oci_file_storage_outbound_connector["test_outbound_connector"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str outbound_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.

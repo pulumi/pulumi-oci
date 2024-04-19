@@ -207,14 +207,12 @@ def get_metastore(metastore_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_metastore = oci.DataCatalog.get_metastore(metastore_id=oci_datacatalog_metastore["test_metastore"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str metastore_id: The metastore's OCID.
@@ -251,14 +249,12 @@ def get_metastore_output(metastore_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_metastore = oci.DataCatalog.get_metastore(metastore_id=oci_datacatalog_metastore["test_metastore"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str metastore_id: The metastore's OCID.

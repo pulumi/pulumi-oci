@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     autonomousContainerDatabaseDataguardAssociationId: data.oci_database_autonomous_container_database_dataguard_associations.dataguard_associations.autonomous_container_database_dataguard_associations[0].id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

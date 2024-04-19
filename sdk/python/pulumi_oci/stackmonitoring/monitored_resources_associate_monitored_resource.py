@@ -274,7 +274,6 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -285,7 +284,6 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
             destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
             source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -321,7 +319,6 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -332,7 +329,6 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
             destination_resource_id=oci_stack_monitoring_destination_resource["test_destination_resource"]["id"],
             source_resource_id=oci_stack_monitoring_source_resource["test_source_resource"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

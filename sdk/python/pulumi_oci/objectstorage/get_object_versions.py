@@ -175,7 +175,6 @@ def get_object_versions(bucket: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +188,6 @@ def get_object_versions(bucket: Optional[str] = None,
         start=var["object_version_start"],
         start_after=var["object_version_start_after"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
@@ -254,7 +252,6 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -268,7 +265,6 @@ def get_object_versions_output(bucket: Optional[pulumi.Input[str]] = None,
         start=var["object_version_start"],
         start_after=var["object_version_start_after"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

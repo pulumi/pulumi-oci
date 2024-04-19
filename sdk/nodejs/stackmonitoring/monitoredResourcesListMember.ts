@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     limitLevel: _var.monitored_resources_list_member_limit_level,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     repositoryId: oci_devops_repository.test_repository.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryMirrorRecord(args: GetRepositoryMirrorRecordArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryMirrorRecordResult> {
 
@@ -84,7 +82,6 @@ export interface GetRepositoryMirrorRecordResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetRepositoryMirrorRecordResult {
  *     repositoryId: oci_devops_repository.test_repository.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRepositoryMirrorRecordOutput(args: GetRepositoryMirrorRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryMirrorRecordResult> {
     return pulumi.output(args).apply((a: any) => getRepositoryMirrorRecord(a, opts))

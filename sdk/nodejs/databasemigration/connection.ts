@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -66,7 +65,6 @@ import * as utilities from "../utilities";
  *     tlsWallet: _var.connection_tls_wallet,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

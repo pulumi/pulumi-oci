@@ -22,7 +22,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAllowedDomainLicenseTypes(ctx *pulumi.Context, args *GetAllowedDomainLicenseTypesArgs, opts ...pulumi.InvokeOption) (*GetAllowedDomainLicenseTypesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAllowedDomainLicenseTypesResult

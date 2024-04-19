@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     isUntrustedIssuerBlocked: _var.network_firewall_policy_decryption_profile_is_untrusted_issuer_blocked,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployPipeline(args: GetDeployPipelineArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployPipelineResult> {
 
@@ -115,7 +113,6 @@ export interface GetDeployPipelineResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -124,7 +121,6 @@ export interface GetDeployPipelineResult {
  *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDeployPipelineOutput(args: GetDeployPipelineOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployPipelineResult> {
     return pulumi.output(args).apply((a: any) => getDeployPipeline(a, opts))

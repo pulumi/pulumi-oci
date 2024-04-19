@@ -183,14 +183,12 @@ def get_cross_connect_group(cross_connect_group_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cross_connect_group = oci.Core.get_cross_connect_group(cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cross_connect_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
@@ -225,14 +223,12 @@ def get_cross_connect_group_output(cross_connect_group_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cross_connect_group = oci.Core.get_cross_connect_group(cross_connect_group_id=oci_core_cross_connect_group["test_cross_connect_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cross_connect_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.

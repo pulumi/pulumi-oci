@@ -335,7 +335,6 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -376,7 +375,6 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             is_fail_open=var["network_load_balancers_backend_sets_unified_is_fail_open"],
             is_preserve_source=var["network_load_balancers_backend_sets_unified_is_preserve_source"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -418,7 +416,6 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -459,7 +456,6 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
             is_fail_open=var["network_load_balancers_backend_sets_unified_is_fail_open"],
             is_preserve_source=var["network_load_balancers_backend_sets_unified_is_preserve_source"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

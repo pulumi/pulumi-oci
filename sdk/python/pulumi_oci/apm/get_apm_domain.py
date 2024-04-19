@@ -182,14 +182,12 @@ def get_apm_domain(apm_domain_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_apm_domain = oci.Apm.get_apm_domain(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The OCID of the APM domain
@@ -224,14 +222,12 @@ def get_apm_domain_output(apm_domain_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_apm_domain = oci.Apm.get_apm_domain(apm_domain_id=oci_apm_apm_domain["test_apm_domain"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str apm_domain_id: The OCID of the APM domain

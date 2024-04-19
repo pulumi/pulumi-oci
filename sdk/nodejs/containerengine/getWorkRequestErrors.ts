@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     workRequestId: oci_containerengine_work_request.test_work_request.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkRequestErrors(args: GetWorkRequestErrorsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkRequestErrorsResult> {
 
@@ -73,7 +71,6 @@ export interface GetWorkRequestErrorsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -83,7 +80,6 @@ export interface GetWorkRequestErrorsResult {
  *     workRequestId: oci_containerengine_work_request.test_work_request.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkRequestErrorsOutput(args: GetWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestErrorsResult> {
     return pulumi.output(args).apply((a: any) => getWorkRequestErrors(a, opts))

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     vlanId: oci_core_vlan.test_vlan.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVlan(args: GetVlanArgs, opts?: pulumi.InvokeOptions): Promise<GetVlanResult> {
 
@@ -105,7 +103,6 @@ export interface GetVlanResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetVlanResult {
  *     vlanId: oci_core_vlan.test_vlan.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVlanOutput(args: GetVlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVlanResult> {
     return pulumi.output(args).apply((a: any) => getVlan(a, opts))

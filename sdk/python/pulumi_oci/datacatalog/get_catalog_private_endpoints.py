@@ -115,7 +115,6 @@ def get_catalog_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_catalog_private_endpoints(compartment_id: Optional[str] = None,
         display_name=var["catalog_private_endpoint_display_name"],
         state=var["catalog_private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment where you want to list resources.
@@ -161,7 +159,6 @@ def get_catalog_private_endpoints_output(compartment_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_catalog_private_endpoints_output(compartment_id: Optional[pulumi.Input[s
         display_name=var["catalog_private_endpoint_display_name"],
         state=var["catalog_private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment where you want to list resources.

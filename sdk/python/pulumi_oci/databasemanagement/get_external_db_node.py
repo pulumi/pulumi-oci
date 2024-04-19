@@ -254,14 +254,12 @@ def get_external_db_node(external_db_node_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=oci_database_management_external_db_node["test_external_db_node"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.
@@ -302,14 +300,12 @@ def get_external_db_node_output(external_db_node_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_db_node = oci.DatabaseManagement.get_external_db_node(external_db_node_id=oci_database_management_external_db_node["test_external_db_node"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database node.

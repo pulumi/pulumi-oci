@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,7 +36,6 @@ import * as utilities from "../utilities";
  *     longDescription: _var.private_application_long_description,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

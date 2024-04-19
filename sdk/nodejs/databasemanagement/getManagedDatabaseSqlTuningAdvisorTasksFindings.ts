@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksFindings(args: GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> {
 
@@ -125,7 +123,6 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -142,7 +139,6 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult {
  *     statsHashFilter: _var.managed_database_sql_tuning_advisor_tasks_finding_stats_hash_filter,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksFindingsOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksFindingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> {
     return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksFindings(a, opts))

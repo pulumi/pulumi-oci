@@ -831,7 +831,6 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -859,7 +858,6 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             time_updated_less_than=var["monitored_resources_search_time_updated_less_than"],
             type=var["monitored_resources_search_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -919,7 +917,6 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -947,7 +944,6 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             time_updated_less_than=var["monitored_resources_search_time_updated_less_than"],
             type=var["monitored_resources_search_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

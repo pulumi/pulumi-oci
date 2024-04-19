@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetAdvancedFeatureConfiguration(args: GetFleetAdvancedFeatureConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetAdvancedFeatureConfigurationResult> {
 
@@ -95,7 +93,6 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -104,7 +101,6 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetAdvancedFeatureConfigurationOutput(args: GetFleetAdvancedFeatureConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetAdvancedFeatureConfigurationResult> {
     return pulumi.output(args).apply((a: any) => getFleetAdvancedFeatureConfiguration(a, opts))

@@ -242,14 +242,12 @@ def get_operations_insights_private_endpoint(operations_insights_private_endpoin
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=oci_opsi_operations_insights_private_endpoint["test_operations_insights_private_endpoint"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.
@@ -289,14 +287,12 @@ def get_operations_insights_private_endpoint_output(operations_insights_private_
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operations_insights_private_endpoint = oci.Opsi.get_operations_insights_private_endpoint(operations_insights_private_endpoint_id=oci_opsi_operations_insights_private_endpoint["test_operations_insights_private_endpoint"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operations_insights_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Operation Insights private endpoint.

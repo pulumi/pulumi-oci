@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOperationsInsightsPrivateEndpoints(args?: GetOperationsInsightsPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsPrivateEndpointsResult> {
     args = args || {};
@@ -124,7 +122,6 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -139,7 +136,6 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOperationsInsightsPrivateEndpointsOutput(args?: GetOperationsInsightsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointsResult> {
     return pulumi.output(args).apply((a: any) => getOperationsInsightsPrivateEndpoints(a, opts))

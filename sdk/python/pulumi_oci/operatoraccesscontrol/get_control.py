@@ -302,14 +302,12 @@ def get_control(operator_control_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operator_control_id: unique OperatorControl identifier
@@ -354,14 +352,12 @@ def get_control_output(operator_control_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_operator_control = oci.OperatorAccessControl.get_control(operator_control_id=oci_operator_access_control_operator_control["test_operator_control"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str operator_control_id: unique OperatorControl identifier

@@ -548,14 +548,12 @@ class ManagementAgent(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
         ***
         Add plugin to Management Agent created via OCI Compute instance.
 
@@ -586,14 +584,12 @@ class ManagementAgent(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_management_agent = oci.management_agent.ManagementAgent("testManagementAgent", managed_agent_id=oci_management_agent_managed_agent["test_managed_agent"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
         ***
         Add plugin to Management Agent created via OCI Compute instance.
 

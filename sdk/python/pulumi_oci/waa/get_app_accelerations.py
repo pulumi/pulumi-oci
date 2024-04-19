@@ -129,7 +129,6 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_app_accelerations(compartment_id: Optional[str] = None,
         states=var["web_app_acceleration_state"],
         web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -184,7 +182,6 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_app_accelerations_output(compartment_id: Optional[pulumi.Input[str]] = N
         states=var["web_app_acceleration_state"],
         web_app_acceleration_policy_id=oci_waa_web_app_acceleration_policy["test_web_app_acceleration_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

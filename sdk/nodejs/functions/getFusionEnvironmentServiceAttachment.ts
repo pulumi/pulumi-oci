@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     serviceAttachmentId: oci_fusion_apps_service_attachment.test_service_attachment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentServiceAttachment(args: GetFusionEnvironmentServiceAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentServiceAttachmentResult> {
 
@@ -108,7 +106,6 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetFusionEnvironmentServiceAttachmentResult {
  *     serviceAttachmentId: oci_fusion_apps_service_attachment.test_service_attachment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFusionEnvironmentServiceAttachmentOutput(args: GetFusionEnvironmentServiceAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentServiceAttachmentResult> {
     return pulumi.output(args).apply((a: any) => getFusionEnvironmentServiceAttachment(a, opts))

@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getQueryQuickPicks(args: GetQueryQuickPicksArgs, opts?: pulumi.InvokeOptions): Promise<GetQueryQuickPicksResult> {
 
@@ -68,7 +66,6 @@ export interface GetQueryQuickPicksResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,7 +74,6 @@ export interface GetQueryQuickPicksResult {
  *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getQueryQuickPicksOutput(args: GetQueryQuickPicksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryQuickPicksResult> {
     return pulumi.output(args).apply((a: any) => getQueryQuickPicks(a, opts))

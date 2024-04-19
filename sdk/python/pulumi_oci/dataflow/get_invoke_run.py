@@ -597,14 +597,12 @@ def get_invoke_run(run_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_invoke_run = oci.DataFlow.get_invoke_run(run_id=oci_dataflow_run["test_run"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str run_id: The unique ID for the run
@@ -674,14 +672,12 @@ def get_invoke_run_output(run_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_invoke_run = oci.DataFlow.get_invoke_run(run_id=oci_dataflow_run["test_run"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str run_id: The unique ID for the run

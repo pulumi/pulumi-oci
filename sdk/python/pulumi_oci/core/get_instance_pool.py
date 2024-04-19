@@ -219,14 +219,12 @@ def get_instance_pool(instance_pool_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
@@ -264,14 +262,12 @@ def get_instance_pool_output(instance_pool_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_instance_pool = oci.Core.get_instance_pool(instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instance_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.

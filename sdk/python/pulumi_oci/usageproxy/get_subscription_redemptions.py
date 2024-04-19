@@ -116,7 +116,6 @@ def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['Ge
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_subscription_redemptions(filters: Optional[Sequence[pulumi.InputType['Ge
         time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
         time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The subscription ID for which rewards information is requested for.
@@ -167,7 +165,6 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -177,7 +174,6 @@ def get_subscription_redemptions_output(filters: Optional[pulumi.Input[Optional[
         time_redeemed_greater_than_or_equal_to=var["subscription_redemption_time_redeemed_greater_than_or_equal_to"],
         time_redeemed_less_than=var["subscription_redemption_time_redeemed_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str subscription_id: The subscription ID for which rewards information is requested for.

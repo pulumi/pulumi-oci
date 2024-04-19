@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     vantagePoint: _var.monitor_vantage_point,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMonitors(args: GetMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitorsResult> {
 
@@ -127,7 +125,6 @@ export interface GetMonitorsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -143,7 +140,6 @@ export interface GetMonitorsResult {
  *     vantagePoint: _var.monitor_vantage_point,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMonitorsOutput(args: GetMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitorsResult> {
     return pulumi.output(args).apply((a: any) => getMonitors(a, opts))

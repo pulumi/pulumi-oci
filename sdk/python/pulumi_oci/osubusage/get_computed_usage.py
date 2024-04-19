@@ -381,7 +381,6 @@ def get_computed_usage(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -391,7 +390,6 @@ def get_computed_usage(compartment_id: Optional[str] = None,
         fields=var["computed_usage_fields"],
         x_one_origin_region=var["computed_usage_x_one_origin_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.
@@ -452,7 +450,6 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -462,7 +459,6 @@ def get_computed_usage_output(compartment_id: Optional[pulumi.Input[str]] = None
         fields=var["computed_usage_fields"],
         x_one_origin_region=var["computed_usage_x_one_origin_region"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the root compartment.

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     scheduledRunId: oci_metering_computation_scheduled_run.test_scheduled_run.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getScheduledRun(args: GetScheduledRunArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduledRunResult> {
 
@@ -77,7 +75,6 @@ export interface GetScheduledRunResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetScheduledRunResult {
  *     scheduledRunId: oci_metering_computation_scheduled_run.test_scheduled_run.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getScheduledRunOutput(args: GetScheduledRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledRunResult> {
     return pulumi.output(args).apply((a: any) => getScheduledRun(a, opts))

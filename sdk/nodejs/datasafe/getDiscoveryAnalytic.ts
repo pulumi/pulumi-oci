@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryAnalytic(args: GetDiscoveryAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryAnalyticResult> {
 
@@ -101,7 +99,6 @@ export interface GetDiscoveryAnalyticResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetDiscoveryAnalyticResult {
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoveryAnalyticOutput(args: GetDiscoveryAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryAnalyticResult> {
     return pulumi.output(args).apply((a: any) => getDiscoveryAnalytic(a, opts))

@@ -99,7 +99,6 @@ def get_discovery_jobs(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -107,7 +106,6 @@ def get_discovery_jobs(compartment_id: Optional[str] = None,
     test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=var["compartment_id"],
         name=var["discovery_job_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.
@@ -140,7 +138,6 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -148,7 +145,6 @@ def get_discovery_jobs_output(compartment_id: Optional[pulumi.Input[str]] = None
     test_discovery_jobs = oci.StackMonitoring.get_discovery_jobs(compartment_id=var["compartment_id"],
         name=var["discovery_job_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which data is listed.

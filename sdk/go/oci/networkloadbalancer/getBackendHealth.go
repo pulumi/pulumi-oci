@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetBackendHealth(ctx *pulumi.Context, args *GetBackendHealthArgs, opts ...pulumi.InvokeOption) (*GetBackendHealthResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetBackendHealthResult

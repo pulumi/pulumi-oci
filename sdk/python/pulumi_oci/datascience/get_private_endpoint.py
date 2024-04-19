@@ -251,14 +251,12 @@ def get_private_endpoint(data_science_private_endpoint_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=oci_datascience_private_endpoint["test_data_science_private_endpoint"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_science_private_endpoint_id: The unique ID for a Data Science private endpoint.
@@ -299,14 +297,12 @@ def get_private_endpoint_output(data_science_private_endpoint_id: Optional[pulum
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_data_science_private_endpoint = oci.DataScience.get_private_endpoint(data_science_private_endpoint_id=oci_datascience_private_endpoint["test_data_science_private_endpoint"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str data_science_private_endpoint_id: The unique ID for a Data Science private endpoint.

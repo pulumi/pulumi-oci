@@ -86,14 +86,12 @@ def get_target_database_peer_target_databases(filters: Optional[Sequence[pulumi.
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_database_peer_target_databases = oci.DataSafe.get_target_database_peer_target_databases(target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str target_database_id: The OCID of the Data Safe target database.
@@ -122,14 +120,12 @@ def get_target_database_peer_target_databases_output(filters: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_target_database_peer_target_databases = oci.DataSafe.get_target_database_peer_target_databases(target_database_id=oci_data_safe_target_database["test_target_database"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str target_database_id: The OCID of the Data Safe target database.

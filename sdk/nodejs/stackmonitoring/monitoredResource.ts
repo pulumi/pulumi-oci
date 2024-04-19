@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +92,6 @@ import * as utilities from "../utilities";
  *     resourceTimeZone: _var.monitored_resource_resource_time_zone,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

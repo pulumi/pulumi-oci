@@ -161,7 +161,6 @@ class Hostname(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -170,7 +169,6 @@ class Hostname(pulumi.CustomResource):
             hostname=var["hostname_hostname"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -199,7 +197,6 @@ class Hostname(pulumi.CustomResource):
         """
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -208,7 +205,6 @@ class Hostname(pulumi.CustomResource):
             hostname=var["hostname_hostname"],
             load_balancer_id=oci_load_balancer_load_balancer["test_load_balancer"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

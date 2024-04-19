@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupSubscriptionRedeemableUser(ctx *pulumi.Context, args *LookupSubscriptionRedeemableUserArgs, opts ...pulumi.InvokeOption) (*LookupSubscriptionRedeemableUserResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSubscriptionRedeemableUserResult

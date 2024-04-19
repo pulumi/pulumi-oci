@@ -112,7 +112,6 @@ def get_instance_pool_instances(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_instance_pool_instances(compartment_id: Optional[str] = None,
         instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
         display_name=var["instance_pool_instance_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -158,7 +156,6 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_instance_pool_instances_output(compartment_id: Optional[pulumi.Input[str
         instance_pool_id=oci_core_instance_pool["test_instance_pool"]["id"],
         display_name=var["instance_pool_instance_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

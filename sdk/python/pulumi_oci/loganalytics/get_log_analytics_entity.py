@@ -325,7 +325,6 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -333,7 +332,6 @@ def get_log_analytics_entity(log_analytics_entity_id: Optional[str] = None,
     test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
         namespace=var["log_analytics_entity_namespace"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_entity_id: The log analytics entity OCID.
@@ -383,7 +381,6 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -391,7 +388,6 @@ def get_log_analytics_entity_output(log_analytics_entity_id: Optional[pulumi.Inp
     test_log_analytics_entity = oci.LogAnalytics.get_log_analytics_entity(log_analytics_entity_id=oci_log_analytics_log_analytics_entity["test_log_analytics_entity"]["id"],
         namespace=var["log_analytics_entity_namespace"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str log_analytics_entity_id: The log analytics entity OCID.

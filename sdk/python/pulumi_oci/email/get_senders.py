@@ -125,7 +125,6 @@ def get_senders(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_senders(compartment_id: Optional[str] = None,
         email_address=var["sender_email_address"],
         state=var["sender_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID for the compartment.
@@ -176,7 +174,6 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_senders_output(compartment_id: Optional[pulumi.Input[str]] = None,
         email_address=var["sender_email_address"],
         state=var["sender_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID for the compartment.

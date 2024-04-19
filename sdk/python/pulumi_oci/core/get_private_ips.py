@@ -143,23 +143,18 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
     ```
-    <!--End PulumiCodeChooser -->
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -169,7 +164,6 @@ def get_private_ips(filters: Optional[Sequence[pulumi.InputType['GetPrivateIpsFi
         vlan_id=oci_core_vlan["test_vlan"]["id"],
         vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
@@ -225,23 +219,18 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_ips_by_subnet = oci.Core.get_private_ips(subnet_id=var["private_ip_subnet_id"])
     ```
-    <!--End PulumiCodeChooser -->
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_private_ips_by_vnic = oci.Core.get_private_ips(vnic_id=oci_core_vnic["test_vnic"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -251,7 +240,6 @@ def get_private_ips_output(filters: Optional[pulumi.Input[Optional[Sequence[pulu
         vlan_id=oci_core_vlan["test_vlan"]["id"],
         vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`

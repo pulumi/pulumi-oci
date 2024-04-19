@@ -129,7 +129,6 @@ def get_virtual_deployments(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -140,7 +139,6 @@ def get_virtual_deployments(compartment_id: Optional[str] = None,
         state=var["virtual_deployment_state"],
         virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.
@@ -184,7 +182,6 @@ def get_virtual_deployments_output(compartment_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +192,6 @@ def get_virtual_deployments_output(compartment_id: Optional[pulumi.Input[str]] =
         state=var["virtual_deployment_state"],
         virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of the compartment in which to list resources.

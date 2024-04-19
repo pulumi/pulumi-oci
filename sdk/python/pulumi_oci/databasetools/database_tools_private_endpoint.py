@@ -544,7 +544,6 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,7 +569,6 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -610,7 +608,6 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -636,7 +633,6 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
             nsg_ids=var["database_tools_private_endpoint_nsg_ids"],
             private_endpoint_ip=var["database_tools_private_endpoint_private_endpoint_ip"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

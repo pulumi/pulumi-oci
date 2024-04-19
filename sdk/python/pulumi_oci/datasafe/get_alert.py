@@ -314,14 +314,12 @@ def get_alert(alert_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alert = oci.DataSafe.get_alert(alert_id=oci_data_safe_alert["test_alert"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str alert_id: The OCID of alert.
@@ -367,14 +365,12 @@ def get_alert_output(alert_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alert = oci.DataSafe.get_alert(alert_id=oci_data_safe_alert["test_alert"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str alert_id: The OCID of alert.

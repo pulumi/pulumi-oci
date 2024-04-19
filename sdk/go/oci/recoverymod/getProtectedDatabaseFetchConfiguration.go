@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetProtectedDatabaseFetchConfiguration(ctx *pulumi.Context, args *GetProtectedDatabaseFetchConfigurationArgs, opts ...pulumi.InvokeOption) (*GetProtectedDatabaseFetchConfigurationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectedDatabaseFetchConfigurationResult

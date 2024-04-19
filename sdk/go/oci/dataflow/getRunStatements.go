@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetRunStatements(ctx *pulumi.Context, args *GetRunStatementsArgs, opts ...pulumi.InvokeOption) (*GetRunStatementsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRunStatementsResult

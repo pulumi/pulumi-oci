@@ -117,7 +117,6 @@ def get_service_connectors(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -126,7 +125,6 @@ def get_service_connectors(compartment_id: Optional[str] = None,
         display_name=var["service_connector_display_name"],
         state=var["service_connector_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.
@@ -165,7 +163,6 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,7 +171,6 @@ def get_service_connectors_output(compartment_id: Optional[pulumi.Input[str]] = 
         display_name=var["service_connector_display_name"],
         state=var["service_connector_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this request.

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,7 +36,6 @@ import * as utilities from "../utilities";
  *     scheduleMins: _var.management_agent_data_source_schedule_mins,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

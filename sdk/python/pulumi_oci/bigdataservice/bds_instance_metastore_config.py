@@ -346,7 +346,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -359,7 +358,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
             metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
             display_name=var["bds_instance_metastore_config_display_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -396,7 +394,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -409,7 +406,6 @@ class BdsInstanceMetastoreConfig(pulumi.CustomResource):
             metastore_id=oci_datacatalog_metastore["test_metastore"]["id"],
             display_name=var["bds_instance_metastore_config_display_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

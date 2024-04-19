@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetUserAssessmentUserAccessAnalytics(ctx *pulumi.Context, args *GetUserAssessmentUserAccessAnalyticsArgs, opts ...pulumi.InvokeOption) (*GetUserAssessmentUserAccessAnalyticsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetUserAssessmentUserAccessAnalyticsResult

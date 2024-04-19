@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetNamespacePropertiesMetadata(ctx *pulumi.Context, args *GetNamespacePropertiesMetadataArgs, opts ...pulumi.InvokeOption) (*GetNamespacePropertiesMetadataResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetNamespacePropertiesMetadataResult

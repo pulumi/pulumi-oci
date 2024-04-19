@@ -268,7 +268,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -279,7 +278,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
             expect=var["log_analytics_import_custom_content_expect"],
             is_overwrite=var["log_analytics_import_custom_content_is_overwrite"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -309,7 +307,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -320,7 +317,6 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
             expect=var["log_analytics_import_custom_content_expect"],
             is_overwrite=var["log_analytics_import_custom_content_is_overwrite"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

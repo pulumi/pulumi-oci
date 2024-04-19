@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     objectNamePrefix: _var.preauthenticated_request_object_name_prefix,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPreauthrequests(args: GetPreauthrequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetPreauthrequestsResult> {
 
@@ -86,7 +84,6 @@ export interface GetPreauthrequestsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetPreauthrequestsResult {
  *     objectNamePrefix: _var.preauthenticated_request_object_name_prefix,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getPreauthrequestsOutput(args: GetPreauthrequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPreauthrequestsResult> {
     return pulumi.output(args).apply((a: any) => getPreauthrequests(a, opts))

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetAwrHubAwrSourcesSummaryResult> InvokeAsync(GetAwrHubAwrSourcesSummaryArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubAwrSourcesSummaryResult>("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", args ?? new GetAwrHubAwrSourcesSummaryArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetAwrHubAwrSourcesSummaryResult> Invoke(GetAwrHubAwrSourcesSummaryInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubAwrSourcesSummaryResult>("oci:Opsi/getAwrHubAwrSourcesSummary:getAwrHubAwrSourcesSummary", args ?? new GetAwrHubAwrSourcesSummaryInvokeArgs(), options.WithDefaults());

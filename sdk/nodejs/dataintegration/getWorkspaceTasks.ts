@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     types: _var.workspace_task_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceTasks(args: GetWorkspaceTasksArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceTasksResult> {
 
@@ -123,7 +121,6 @@ export interface GetWorkspaceTasksResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -138,7 +135,6 @@ export interface GetWorkspaceTasksResult {
  *     types: _var.workspace_task_type,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getWorkspaceTasksOutput(args: GetWorkspaceTasksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkspaceTasksResult> {
     return pulumi.output(args).apply((a: any) => getWorkspaceTasks(a, opts))

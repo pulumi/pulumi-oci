@@ -279,14 +279,12 @@ def get_external_container_database(external_container_database_id: Optional[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_container_database = oci.Database.get_external_container_database(external_container_database_id=oci_database_external_container_database["test_external_container_database"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -329,14 +327,12 @@ def get_external_container_database_output(external_container_database_id: Optio
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_container_database = oci.Database.get_external_container_database(external_container_database_id=oci_database_external_container_database["test_external_container_database"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

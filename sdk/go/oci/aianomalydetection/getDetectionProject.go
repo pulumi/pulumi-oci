@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDetectionProject(ctx *pulumi.Context, args *GetDetectionProjectArgs, opts ...pulumi.InvokeOption) (*GetDetectionProjectResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDetectionProjectResult

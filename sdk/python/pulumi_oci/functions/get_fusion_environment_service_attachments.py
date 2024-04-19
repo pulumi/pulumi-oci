@@ -125,7 +125,6 @@ def get_fusion_environment_service_attachments(display_name: Optional[str] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_fusion_environment_service_attachments(display_name: Optional[str] = Non
         service_instance_type=var["fusion_environment_service_attachment_service_instance_type"],
         state=var["fusion_environment_service_attachment_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.
@@ -176,7 +174,6 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -186,7 +183,6 @@ def get_fusion_environment_service_attachments_output(display_name: Optional[pul
         service_instance_type=var["fusion_environment_service_attachment_service_instance_type"],
         state=var["fusion_environment_service_attachment_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A filter to return only resources that match the entire display name given.

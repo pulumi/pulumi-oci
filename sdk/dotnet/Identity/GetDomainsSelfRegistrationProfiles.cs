@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsSelfRegistrationProfilesResult> InvokeAsync(GetDomainsSelfRegistrationProfilesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsSelfRegistrationProfilesResult>("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args ?? new GetDomainsSelfRegistrationProfilesArgs(), options.WithDefaults());
@@ -56,7 +54,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -82,7 +79,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsSelfRegistrationProfilesResult> Invoke(GetDomainsSelfRegistrationProfilesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsSelfRegistrationProfilesResult>("oci:Identity/getDomainsSelfRegistrationProfiles:getDomainsSelfRegistrationProfiles", args ?? new GetDomainsSelfRegistrationProfilesInvokeArgs(), options.WithDefaults());

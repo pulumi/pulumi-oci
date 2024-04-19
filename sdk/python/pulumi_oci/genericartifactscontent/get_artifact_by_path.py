@@ -178,7 +178,6 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -187,7 +186,6 @@ def get_artifact_by_path(artifact_path: Optional[str] = None,
         repository_id=oci_artifacts_repository["test_repository"]["id"],
         version=var["artifact_by_path_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str artifact_path: The generic artifact path.  Example: `foo/bar/baz`
@@ -231,7 +229,6 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -240,7 +237,6 @@ def get_artifact_by_path_output(artifact_path: Optional[pulumi.Input[str]] = Non
         repository_id=oci_artifacts_repository["test_repository"]["id"],
         version=var["artifact_by_path_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str artifact_path: The generic artifact path.  Example: `foo/bar/baz`

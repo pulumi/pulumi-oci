@@ -219,7 +219,6 @@ class IdpGroupMapping(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -229,7 +228,6 @@ class IdpGroupMapping(pulumi.CustomResource):
             identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
             idp_group_name=var["idp_group_mapping_idp_group_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -265,7 +263,6 @@ class IdpGroupMapping(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -275,7 +272,6 @@ class IdpGroupMapping(pulumi.CustomResource):
             identity_provider_id=oci_identity_identity_provider["test_identity_provider"]["id"],
             idp_group_name=var["idp_group_mapping_idp_group_name"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

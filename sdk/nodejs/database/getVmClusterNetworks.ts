@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: _var.vm_cluster_network_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterNetworks(args: GetVmClusterNetworksArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterNetworksResult> {
 
@@ -99,7 +97,6 @@ export interface GetVmClusterNetworksResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -111,7 +108,6 @@ export interface GetVmClusterNetworksResult {
  *     state: _var.vm_cluster_network_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVmClusterNetworksOutput(args: GetVmClusterNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworksResult> {
     return pulumi.output(args).apply((a: any) => getVmClusterNetworks(a, opts))

@@ -120,7 +120,6 @@ def get_access_request_audit_log_report(access_request_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -128,7 +127,6 @@ def get_access_request_audit_log_report(access_request_id: Optional[str] = None,
     test_access_request_audit_log_report = oci.OperatorAccessControl.get_access_request_audit_log_report(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"],
         enable_process_tree=var["access_request_audit_log_report_enable_process_tree"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_request_id: unique AccessRequest identifier
@@ -161,7 +159,6 @@ def get_access_request_audit_log_report_output(access_request_id: Optional[pulum
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -169,7 +166,6 @@ def get_access_request_audit_log_report_output(access_request_id: Optional[pulum
     test_access_request_audit_log_report = oci.OperatorAccessControl.get_access_request_audit_log_report(access_request_id=oci_operator_access_control_access_request["test_access_request"]["id"],
         enable_process_tree=var["access_request_audit_log_report_enable_process_tree"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_request_id: unique AccessRequest identifier

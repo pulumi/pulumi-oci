@@ -203,14 +203,12 @@ def get_boot_volume_replica(boot_volume_replica_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_boot_volume_replica = oci.Core.get_boot_volume_replica(boot_volume_replica_id=oci_core_boot_volume_replica["test_boot_volume_replica"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str boot_volume_replica_id: The OCID of the boot volume replica.
@@ -247,14 +245,12 @@ def get_boot_volume_replica_output(boot_volume_replica_id: Optional[pulumi.Input
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_boot_volume_replica = oci.Core.get_boot_volume_replica(boot_volume_replica_id=oci_core_boot_volume_replica["test_boot_volume_replica"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str boot_volume_replica_id: The OCID of the boot volume replica.

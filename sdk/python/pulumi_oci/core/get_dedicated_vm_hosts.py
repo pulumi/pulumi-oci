@@ -161,7 +161,6 @@ def get_dedicated_vm_hosts(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -174,7 +173,6 @@ def get_dedicated_vm_hosts(availability_domain: Optional[str] = None,
         remaining_ocpus_greater_than_or_equal_to=var["dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to"],
         state=var["dedicated_vm_host_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -230,7 +228,6 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -243,7 +240,6 @@ def get_dedicated_vm_hosts_output(availability_domain: Optional[pulumi.Input[Opt
         remaining_ocpus_greater_than_or_equal_to=var["dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to"],
         state=var["dedicated_vm_host_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

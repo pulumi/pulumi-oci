@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -28,7 +27,6 @@ import * as utilities from "../utilities";
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMaskingAnalytics(args: GetMaskingAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingAnalyticsResult> {
 
@@ -101,7 +99,6 @@ export interface GetMaskingAnalyticsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -114,7 +111,6 @@ export interface GetMaskingAnalyticsResult {
  *     targetId: oci_cloud_guard_target.test_target.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMaskingAnalyticsOutput(args: GetMaskingAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingAnalyticsResult> {
     return pulumi.output(args).apply((a: any) => getMaskingAnalytics(a, opts))

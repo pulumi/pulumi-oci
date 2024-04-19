@@ -9,14 +9,12 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
  * const testContainerConfiguration = new oci.artifacts.ContainerConfiguration("testContainerConfiguration", {});
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

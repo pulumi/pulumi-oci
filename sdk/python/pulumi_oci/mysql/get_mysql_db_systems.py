@@ -178,7 +178,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -192,7 +191,6 @@ def get_mysql_db_systems(compartment_id: Optional[str] = None,
         is_up_to_date=var["mysql_db_system_is_up_to_date"],
         state=var["mysql_db_system_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -250,7 +248,6 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -264,7 +261,6 @@ def get_mysql_db_systems_output(compartment_id: Optional[pulumi.Input[str]] = No
         is_up_to_date=var["mysql_db_system_is_up_to_date"],
         state=var["mysql_db_system_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

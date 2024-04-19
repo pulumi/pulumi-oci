@@ -414,7 +414,6 @@ class InstVbsInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -432,7 +431,6 @@ class InstVbsInstance(pulumi.CustomResource):
             is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
             resource_compartment_id=var["resource_compartment_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -470,7 +468,6 @@ class InstVbsInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -488,7 +485,6 @@ class InstVbsInstance(pulumi.CustomResource):
             is_resource_usage_agreement_granted=var["vbs_instance_is_resource_usage_agreement_granted"],
             resource_compartment_id=var["resource_compartment_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

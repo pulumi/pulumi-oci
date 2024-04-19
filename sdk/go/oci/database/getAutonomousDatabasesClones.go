@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -45,7 +44,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetAutonomousDatabasesClones(ctx *pulumi.Context, args *GetAutonomousDatabasesClonesArgs, opts ...pulumi.InvokeOption) (*GetAutonomousDatabasesClonesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAutonomousDatabasesClonesResult

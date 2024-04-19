@@ -26,7 +26,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -50,7 +49,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetOpensearchVersion(ctx *pulumi.Context, args *GetOpensearchVersionArgs, opts ...pulumi.InvokeOption) (*GetOpensearchVersionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetOpensearchVersionResult

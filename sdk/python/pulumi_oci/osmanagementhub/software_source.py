@@ -592,7 +592,6 @@ class SoftwareSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -633,7 +632,6 @@ class SoftwareSource(pulumi.CustomResource):
             is_automatically_updated=var["software_source_is_automatically_updated"],
             software_source_version=var["software_source_software_source_version"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -669,7 +667,6 @@ class SoftwareSource(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -710,7 +707,6 @@ class SoftwareSource(pulumi.CustomResource):
             is_automatically_updated=var["software_source_is_automatically_updated"],
             software_source_version=var["software_source_software_source_version"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

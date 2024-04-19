@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetInstanceAgentPluginResult> InvokeAsync(GetInstanceAgentPluginArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceAgentPluginResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", args ?? new GetInstanceAgentPluginArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetInstanceAgentPluginResult> Invoke(GetInstanceAgentPluginInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetInstanceAgentPluginResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugin:getInstanceAgentPlugin", args ?? new GetInstanceAgentPluginInvokeArgs(), options.WithDefaults());

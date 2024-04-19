@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -21,7 +20,6 @@ import * as utilities from "../utilities";
  *     base64EncodeContent: false,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExadataInfrastructureDownloadConfigFile(args: GetExadataInfrastructureDownloadConfigFileArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureDownloadConfigFileResult> {
 
@@ -65,7 +63,6 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetExadataInfrastructureDownloadConfigFileResult {
  *     base64EncodeContent: false,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getExadataInfrastructureDownloadConfigFileOutput(args: GetExadataInfrastructureDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureDownloadConfigFileResult> {
     return pulumi.output(args).apply((a: any) => getExadataInfrastructureDownloadConfigFile(a, opts))

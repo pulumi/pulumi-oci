@@ -116,14 +116,12 @@ def get_exadata_iorm_config(db_system_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_exadata_iorm_config = oci.Database.get_exadata_iorm_config(db_system_id=oci_database_db_system["test_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -160,14 +158,12 @@ def get_exadata_iorm_config_output(db_system_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_exadata_iorm_config = oci.Database.get_exadata_iorm_config(db_system_id=oci_database_db_system["test_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

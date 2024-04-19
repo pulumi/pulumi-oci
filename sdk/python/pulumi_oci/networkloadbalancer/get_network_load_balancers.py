@@ -115,7 +115,6 @@ def get_network_load_balancers(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_network_load_balancers(compartment_id: Optional[str] = None,
         display_name=var["network_load_balancer_display_name"],
         state=var["network_load_balancer_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
@@ -161,7 +159,6 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_network_load_balancers_output(compartment_id: Optional[pulumi.Input[str]
         display_name=var["network_load_balancer_display_name"],
         state=var["network_load_balancer_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.

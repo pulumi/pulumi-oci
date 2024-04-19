@@ -291,14 +291,12 @@ def get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_autonomous_vm_cluster_resource_usage = oci.Database.get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -342,14 +340,12 @@ def get_cloud_autonomous_vm_cluster_resource_usage_output(cloud_autonomous_vm_cl
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cloud_autonomous_vm_cluster_resource_usage = oci.Database.get_cloud_autonomous_vm_cluster_resource_usage(cloud_autonomous_vm_cluster_id=oci_database_cloud_autonomous_vm_cluster["test_cloud_autonomous_vm_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_autonomous_vm_cluster_id: The Cloud VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

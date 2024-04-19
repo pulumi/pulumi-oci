@@ -243,14 +243,12 @@ def get_recommendation(recommendation_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str recommendation_id: The unique OCID associated with the recommendation.
@@ -290,14 +288,12 @@ def get_recommendation_output(recommendation_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_recommendation = oci.Optimizer.get_recommendation(recommendation_id=oci_optimizer_recommendation["test_recommendation"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str recommendation_id: The unique OCID associated with the recommendation.

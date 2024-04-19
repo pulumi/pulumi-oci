@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     libraryMaskingFormatId: oci_data_safe_library_masking_format.test_library_masking_format.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLibraryMaskingFormat(args: GetLibraryMaskingFormatArgs, opts?: pulumi.InvokeOptions): Promise<GetLibraryMaskingFormatResult> {
 
@@ -106,7 +104,6 @@ export interface GetLibraryMaskingFormatResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -115,7 +112,6 @@ export interface GetLibraryMaskingFormatResult {
  *     libraryMaskingFormatId: oci_data_safe_library_masking_format.test_library_masking_format.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLibraryMaskingFormatOutput(args: GetLibraryMaskingFormatOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLibraryMaskingFormatResult> {
     return pulumi.output(args).apply((a: any) => getLibraryMaskingFormat(a, opts))

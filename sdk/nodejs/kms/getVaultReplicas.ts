@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     vaultId: oci_kms_vault.test_vault.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVaultReplicas(args: GetVaultReplicasArgs, opts?: pulumi.InvokeOptions): Promise<GetVaultReplicasResult> {
 
@@ -76,7 +74,6 @@ export interface GetVaultReplicasResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -85,7 +82,6 @@ export interface GetVaultReplicasResult {
  *     vaultId: oci_kms_vault.test_vault.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getVaultReplicasOutput(args: GetVaultReplicasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultReplicasResult> {
     return pulumi.output(args).apply((a: any) => getVaultReplicas(a, opts))

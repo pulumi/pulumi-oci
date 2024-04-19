@@ -447,7 +447,6 @@ class Table(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -467,7 +466,6 @@ class Table(pulumi.CustomResource):
                 capacity_mode=var["table_table_limits_capacity_mode"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -500,7 +498,6 @@ class Table(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -520,7 +517,6 @@ class Table(pulumi.CustomResource):
                 capacity_mode=var["table_table_limits_capacity_mode"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

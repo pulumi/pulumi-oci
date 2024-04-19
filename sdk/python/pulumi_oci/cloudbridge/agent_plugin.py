@@ -297,7 +297,6 @@ class AgentPlugin(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -307,7 +306,6 @@ class AgentPlugin(pulumi.CustomResource):
             plugin_name=var["agent_plugin_plugin_name"],
             desired_state=var["agent_plugin_desired_state"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -340,7 +338,6 @@ class AgentPlugin(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -350,7 +347,6 @@ class AgentPlugin(pulumi.CustomResource):
             plugin_name=var["agent_plugin_plugin_name"],
             desired_state=var["agent_plugin_desired_state"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -16,7 +16,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -30,7 +29,6 @@ import * as utilities from "../utilities";
  *     viewId: oci_dns_view.test_view.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRrsets(args: GetRrsetsArgs, opts?: pulumi.InvokeOptions): Promise<GetRrsetsResult> {
 
@@ -113,7 +111,6 @@ export interface GetRrsetsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -127,7 +124,6 @@ export interface GetRrsetsResult {
  *     viewId: oci_dns_view.test_view.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getRrsetsOutput(args: GetRrsetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRrsetsResult> {
     return pulumi.output(args).apply((a: any) => getRrsets(a, opts))

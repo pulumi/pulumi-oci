@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     state: _var.analytics_instance_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAnalyticsInstances(args: GetAnalyticsInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstancesResult> {
 
@@ -109,7 +107,6 @@ export interface GetAnalyticsInstancesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -122,7 +119,6 @@ export interface GetAnalyticsInstancesResult {
  *     state: _var.analytics_instance_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAnalyticsInstancesOutput(args: GetAnalyticsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancesResult> {
     return pulumi.output(args).apply((a: any) => getAnalyticsInstances(a, opts))

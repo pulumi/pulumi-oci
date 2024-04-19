@@ -269,7 +269,6 @@ def get_connection(catalog_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -279,7 +278,6 @@ def get_connection(catalog_id: Optional[str] = None,
         data_asset_key=var["connection_data_asset_key"],
         fields=var["connection_fields"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.
@@ -331,7 +329,6 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -341,7 +338,6 @@ def get_connection_output(catalog_id: Optional[pulumi.Input[str]] = None,
         data_asset_key=var["connection_data_asset_key"],
         fields=var["connection_fields"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str catalog_id: Unique catalog identifier.

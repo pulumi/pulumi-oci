@@ -409,7 +409,6 @@ class PrivateIp(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -427,7 +426,6 @@ class PrivateIp(pulumi.CustomResource):
             vlan_id=oci_core_vlan["test_vlan"]["id"],
             vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["vnic_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -472,7 +470,6 @@ class PrivateIp(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -490,7 +487,6 @@ class PrivateIp(pulumi.CustomResource):
             vlan_id=oci_core_vlan["test_vlan"]["id"],
             vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["vnic_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

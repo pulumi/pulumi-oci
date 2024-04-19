@@ -151,7 +151,6 @@ def get_channels(channel_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -163,7 +162,6 @@ def get_channels(channel_id: Optional[str] = None,
         is_enabled=var["channel_is_enabled"],
         state=var["channel_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str channel_id: The OCID of the Channel.
@@ -212,7 +210,6 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -224,7 +221,6 @@ def get_channels_output(channel_id: Optional[pulumi.Input[Optional[str]]] = None
         is_enabled=var["channel_is_enabled"],
         state=var["channel_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str channel_id: The OCID of the Channel.

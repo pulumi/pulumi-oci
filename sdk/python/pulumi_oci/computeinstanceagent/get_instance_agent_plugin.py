@@ -130,7 +130,6 @@ def get_instance_agent_plugin(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -138,7 +137,6 @@ def get_instance_agent_plugin(compartment_id: Optional[str] = None,
     test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=oci_computeinstanceagent_instanceagent["test_instanceagent"]["id"],
         plugin_name=var["instance_agent_plugin_plugin_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instanceagent_id: The OCID of the instance.
@@ -174,7 +172,6 @@ def get_instance_agent_plugin_output(compartment_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -182,7 +179,6 @@ def get_instance_agent_plugin_output(compartment_id: Optional[pulumi.Input[str]]
     test_instance_agent_plugin = oci.ComputeInstanceAgent.get_instance_agent_plugin(instanceagent_id=oci_computeinstanceagent_instanceagent["test_instanceagent"]["id"],
         plugin_name=var["instance_agent_plugin_plugin_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instanceagent_id: The OCID of the instance.

@@ -348,14 +348,12 @@ def get_node_pool(node_pool_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=oci_containerengine_node_pool["test_node_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str node_pool_id: The OCID of the node pool.
@@ -403,14 +401,12 @@ def get_node_pool_output(node_pool_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_node_pool = oci.ContainerEngine.get_node_pool(node_pool_id=oci_containerengine_node_pool["test_node_pool"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str node_pool_id: The OCID of the node pool.

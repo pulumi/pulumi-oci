@@ -194,7 +194,6 @@ def get_container_signatures(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -210,7 +209,6 @@ def get_container_signatures(compartment_id: Optional[str] = None,
         repository_name=oci_artifacts_repository["test_repository"]["name"],
         signing_algorithm=var["container_image_signature_signing_algorithm"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -275,7 +273,6 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -291,7 +288,6 @@ def get_container_signatures_output(compartment_id: Optional[pulumi.Input[str]] 
         repository_name=oci_artifacts_repository["test_repository"]["name"],
         signing_algorithm=var["container_image_signature_signing_algorithm"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

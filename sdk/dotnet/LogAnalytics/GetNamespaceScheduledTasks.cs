@@ -18,7 +18,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetNamespaceScheduledTasksResult> InvokeAsync(GetNamespaceScheduledTasksArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceScheduledTasksResult>("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args ?? new GetNamespaceScheduledTasksArgs(), options.WithDefaults());
@@ -50,7 +48,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetNamespaceScheduledTasksResult> Invoke(GetNamespaceScheduledTasksInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceScheduledTasksResult>("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args ?? new GetNamespaceScheduledTasksInvokeArgs(), options.WithDefaults());

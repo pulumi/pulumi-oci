@@ -769,7 +769,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -806,7 +805,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             ),
             storage_count=var["cloud_exadata_infrastructure_storage_count"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -847,7 +845,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -884,7 +881,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             ),
             storage_count=var["cloud_exadata_infrastructure_storage_count"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

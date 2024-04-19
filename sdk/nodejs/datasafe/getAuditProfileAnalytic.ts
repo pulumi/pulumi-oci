@@ -25,7 +25,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -37,7 +36,6 @@ import * as utilities from "../utilities";
  *     groupBies: _var.audit_profile_analytic_group_by,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfileAnalytic(args: GetAuditProfileAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileAnalyticResult> {
 
@@ -108,7 +106,6 @@ export interface GetAuditProfileAnalyticResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -120,7 +117,6 @@ export interface GetAuditProfileAnalyticResult {
  *     groupBies: _var.audit_profile_analytic_group_by,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditProfileAnalyticOutput(args: GetAuditProfileAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileAnalyticResult> {
     return pulumi.output(args).apply((a: any) => getAuditProfileAnalytic(a, opts))

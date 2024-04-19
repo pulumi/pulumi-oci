@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -29,7 +28,6 @@ import * as utilities from "../utilities";
  *     timeOfExpiry: _var.audit_archive_retrieval_time_of_expiry,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditArchiveRetrievals(args: GetAuditArchiveRetrievalsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditArchiveRetrievalsResult> {
 
@@ -130,7 +128,6 @@ export interface GetAuditArchiveRetrievalsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -146,7 +143,6 @@ export interface GetAuditArchiveRetrievalsResult {
  *     timeOfExpiry: _var.audit_archive_retrieval_time_of_expiry,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAuditArchiveRetrievalsOutput(args: GetAuditArchiveRetrievalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditArchiveRetrievalsResult> {
     return pulumi.output(args).apply((a: any) => getAuditArchiveRetrievals(a, opts))

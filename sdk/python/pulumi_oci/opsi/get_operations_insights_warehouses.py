@@ -117,7 +117,6 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,7 +126,6 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
         id=var["operations_insights_warehouse_id"],
         states=var["operations_insights_warehouse_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -168,7 +166,6 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -178,7 +175,6 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
         id=var["operations_insights_warehouse_id"],
         states=var["operations_insights_warehouse_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

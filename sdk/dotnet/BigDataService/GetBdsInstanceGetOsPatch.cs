@@ -18,7 +18,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -35,7 +34,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetBdsInstanceGetOsPatchResult> InvokeAsync(GetBdsInstanceGetOsPatchArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceGetOsPatchResult>("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", args ?? new GetBdsInstanceGetOsPatchArgs(), options.WithDefaults());
@@ -47,7 +45,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -64,7 +61,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetBdsInstanceGetOsPatchResult> Invoke(GetBdsInstanceGetOsPatchInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceGetOsPatchResult>("oci:BigDataService/getBdsInstanceGetOsPatch:getBdsInstanceGetOsPatch", args ?? new GetBdsInstanceGetOsPatchInvokeArgs(), options.WithDefaults());

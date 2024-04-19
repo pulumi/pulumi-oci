@@ -115,7 +115,6 @@ def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -124,7 +123,6 @@ def get_application_vips(cloud_vm_cluster_id: Optional[str] = None,
         compartment_id=var["compartment_id"],
         state=var["application_vip_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
@@ -161,7 +159,6 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -170,7 +167,6 @@ def get_application_vips_output(cloud_vm_cluster_id: Optional[pulumi.Input[str]]
         compartment_id=var["compartment_id"],
         state=var["application_vip_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.

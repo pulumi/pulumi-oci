@@ -767,7 +767,6 @@ class IntegrationInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -809,7 +808,6 @@ class IntegrationInstance(pulumi.CustomResource):
             shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -859,7 +857,6 @@ class IntegrationInstance(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -901,7 +898,6 @@ class IntegrationInstance(pulumi.CustomResource):
             shape=var["integration_instance_shape"],
             state=var["integration_instance_target_state"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

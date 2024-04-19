@@ -231,14 +231,12 @@ def get_external_db_system(external_db_system_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_db_system = oci.DatabaseManagement.get_external_db_system(external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -277,14 +275,12 @@ def get_external_db_system_output(external_db_system_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_db_system = oci.DatabaseManagement.get_external_db_system(external_db_system_id=oci_database_management_external_db_system["test_external_db_system"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.

@@ -33,7 +33,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -63,7 +62,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetUserAssessmentUserAnalyticsResult> InvokeAsync(GetUserAssessmentUserAnalyticsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserAssessmentUserAnalyticsResult>("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", args ?? new GetUserAssessmentUserAnalyticsArgs(), options.WithDefaults());
@@ -90,7 +88,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -120,7 +117,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetUserAssessmentUserAnalyticsResult> Invoke(GetUserAssessmentUserAnalyticsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUserAnalyticsResult>("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", args ?? new GetUserAssessmentUserAnalyticsInvokeArgs(), options.WithDefaults());

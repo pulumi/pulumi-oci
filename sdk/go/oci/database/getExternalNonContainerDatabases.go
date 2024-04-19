@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetExternalNonContainerDatabases(ctx *pulumi.Context, args *GetExternalNonContainerDatabasesArgs, opts ...pulumi.InvokeOption) (*GetExternalNonContainerDatabasesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExternalNonContainerDatabasesResult

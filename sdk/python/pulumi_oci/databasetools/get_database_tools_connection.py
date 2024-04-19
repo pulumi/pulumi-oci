@@ -315,14 +315,12 @@ def get_database_tools_connection(database_tools_connection_id: Optional[str] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=oci_database_tools_database_tools_connection["test_database_tools_connection"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
@@ -368,14 +366,12 @@ def get_database_tools_connection_output(database_tools_connection_id: Optional[
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_database_tools_connection = oci.DatabaseTools.get_database_tools_connection(database_tools_connection_id=oci_database_tools_database_tools_connection["test_database_tools_connection"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_tools_connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.

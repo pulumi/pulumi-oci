@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -34,7 +33,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDrProtectionGroupResult> InvokeAsync(GetDrProtectionGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrProtectionGroupResult>("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", args ?? new GetDrProtectionGroupArgs(), options.WithDefaults());
@@ -46,7 +44,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -62,7 +59,6 @@ namespace Pulumi.Oci.DisasterRecovery
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDrProtectionGroupResult> Invoke(GetDrProtectionGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDrProtectionGroupResult>("oci:DisasterRecovery/getDrProtectionGroup:getDrProtectionGroup", args ?? new GetDrProtectionGroupInvokeArgs(), options.WithDefaults());

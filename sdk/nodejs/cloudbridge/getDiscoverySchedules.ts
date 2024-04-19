@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     state: _var.discovery_schedule_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoverySchedules(args: GetDiscoverySchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoverySchedulesResult> {
 
@@ -96,7 +94,6 @@ export interface GetDiscoverySchedulesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -108,7 +105,6 @@ export interface GetDiscoverySchedulesResult {
  *     state: _var.discovery_schedule_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDiscoverySchedulesOutput(args: GetDiscoverySchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoverySchedulesResult> {
     return pulumi.output(args).apply((a: any) => getDiscoverySchedules(a, opts))

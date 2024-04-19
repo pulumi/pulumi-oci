@@ -206,14 +206,12 @@ def get_security_zone(security_zone_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=oci_cloud_guard_security_zone["test_security_zone"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_zone_id: The unique identifier of the security zone (`SecurityZone`)
@@ -250,14 +248,12 @@ def get_security_zone_output(security_zone_id: Optional[pulumi.Input[str]] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_security_zone = oci.CloudGuard.get_security_zone(security_zone_id=oci_cloud_guard_security_zone["test_security_zone"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str security_zone_id: The unique identifier of the security zone (`SecurityZone`)

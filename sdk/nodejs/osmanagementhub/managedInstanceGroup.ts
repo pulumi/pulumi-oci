@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -35,7 +34,6 @@ import * as utilities from "../utilities";
  *     managedInstanceIds: _var.managed_instance_group_managed_instance_ids,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

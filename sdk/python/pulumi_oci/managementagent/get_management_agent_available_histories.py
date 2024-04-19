@@ -109,7 +109,6 @@ def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_management_agent_available_histories(filters: Optional[Sequence[pulumi.I
         time_availability_status_ended_greater_than=var["management_agent_available_history_time_availability_status_ended_greater_than"],
         time_availability_status_started_less_than=var["management_agent_available_history_time_availability_status_started_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_agent_id: Unique Management Agent identifier
@@ -155,7 +153,6 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_management_agent_available_histories_output(filters: Optional[pulumi.Inp
         time_availability_status_ended_greater_than=var["management_agent_available_history_time_availability_status_ended_greater_than"],
         time_availability_status_started_less_than=var["management_agent_available_history_time_availability_status_started_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str management_agent_id: Unique Management Agent identifier

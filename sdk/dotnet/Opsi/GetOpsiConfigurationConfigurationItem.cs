@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOpsiConfigurationConfigurationItemResult> InvokeAsync(GetOpsiConfigurationConfigurationItemArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpsiConfigurationConfigurationItemResult>("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args ?? new GetOpsiConfigurationConfigurationItemArgs(), options.WithDefaults());
@@ -54,7 +52,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -74,7 +71,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOpsiConfigurationConfigurationItemResult> Invoke(GetOpsiConfigurationConfigurationItemInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpsiConfigurationConfigurationItemResult>("oci:Opsi/getOpsiConfigurationConfigurationItem:getOpsiConfigurationConfigurationItem", args ?? new GetOpsiConfigurationConfigurationItemInvokeArgs(), options.WithDefaults());

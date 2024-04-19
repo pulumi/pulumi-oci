@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAddons(args: GetAddonsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddonsResult> {
 
@@ -66,7 +64,6 @@ export interface GetAddonsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetAddonsResult {
  *     clusterId: oci_containerengine_cluster.test_cluster.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAddonsOutput(args: GetAddonsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddonsResult> {
     return pulumi.output(args).apply((a: any) => getAddons(a, opts))

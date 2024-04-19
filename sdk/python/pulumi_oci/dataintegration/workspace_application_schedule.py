@@ -532,7 +532,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -570,7 +569,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             ),
             timezone=var["workspace_application_schedule_timezone"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -613,7 +611,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -651,7 +648,6 @@ class WorkspaceApplicationSchedule(pulumi.CustomResource):
             ),
             timezone=var["workspace_application_schedule_timezone"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

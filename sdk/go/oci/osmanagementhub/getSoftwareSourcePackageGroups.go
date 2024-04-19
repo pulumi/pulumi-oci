@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetSoftwareSourcePackageGroups(ctx *pulumi.Context, args *GetSoftwareSourcePackageGroupsArgs, opts ...pulumi.InvokeOption) (*GetSoftwareSourcePackageGroupsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetSoftwareSourcePackageGroupsResult

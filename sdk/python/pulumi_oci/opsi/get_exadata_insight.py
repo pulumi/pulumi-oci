@@ -369,14 +369,12 @@ def get_exadata_insight(exadata_insight_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_exadata_insight = oci.Opsi.get_exadata_insight(exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_insight_id: Unique Exadata insight identifier
@@ -427,14 +425,12 @@ def get_exadata_insight_output(exadata_insight_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_exadata_insight = oci.Opsi.get_exadata_insight(exadata_insight_id=oci_opsi_exadata_insight["test_exadata_insight"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str exadata_insight_id: Unique Exadata insight identifier

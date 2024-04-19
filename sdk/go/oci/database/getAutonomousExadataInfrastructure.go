@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupAutonomousExadataInfrastructure(ctx *pulumi.Context, args *LookupAutonomousExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousExadataInfrastructureResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAutonomousExadataInfrastructureResult

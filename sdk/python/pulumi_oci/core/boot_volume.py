@@ -636,7 +636,6 @@ class BootVolume(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -670,7 +669,6 @@ class BootVolume(pulumi.CustomResource):
             vpus_per_gb=var["boot_volume_vpus_per_gb"],
             boot_volume_replicas_deletion=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -713,7 +711,6 @@ class BootVolume(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -747,7 +744,6 @@ class BootVolume(pulumi.CustomResource):
             vpus_per_gb=var["boot_volume_vpus_per_gb"],
             boot_volume_replicas_deletion=True)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

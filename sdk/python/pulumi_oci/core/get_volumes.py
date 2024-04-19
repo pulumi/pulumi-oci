@@ -141,7 +141,6 @@ def get_volumes(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -152,7 +151,6 @@ def get_volumes(availability_domain: Optional[str] = None,
         state=var["volume_state"],
         volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
@@ -197,7 +195,6 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -208,7 +205,6 @@ def get_volumes_output(availability_domain: Optional[pulumi.Input[Optional[str]]
         state=var["volume_state"],
         volume_group_id=oci_core_volume_group["test_volume_group"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`

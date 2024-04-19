@@ -461,7 +461,6 @@ class InstancePool(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -506,7 +505,6 @@ class InstancePool(pulumi.CustomResource):
                 vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -553,7 +551,6 @@ class InstancePool(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -598,7 +595,6 @@ class InstancePool(pulumi.CustomResource):
                 vnic_selection=var["instance_pool_load_balancers_vnic_selection"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

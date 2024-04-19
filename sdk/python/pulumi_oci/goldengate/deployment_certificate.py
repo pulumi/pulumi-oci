@@ -424,7 +424,6 @@ class DeploymentCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -434,7 +433,6 @@ class DeploymentCertificate(pulumi.CustomResource):
             deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
             key=var["deployment_certificate_key"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -467,7 +465,6 @@ class DeploymentCertificate(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -477,7 +474,6 @@ class DeploymentCertificate(pulumi.CustomResource):
             deployment_id=oci_golden_gate_deployment["test_deployment"]["id"],
             key=var["deployment_certificate_key"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

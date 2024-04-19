@@ -245,7 +245,6 @@ def get_workspace_application_schedule(application_key: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -254,7 +253,6 @@ def get_workspace_application_schedule(application_key: Optional[str] = None,
         schedule_key=var["workspace_application_schedule_schedule_key"],
         workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.
@@ -301,7 +299,6 @@ def get_workspace_application_schedule_output(application_key: Optional[pulumi.I
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -310,7 +307,6 @@ def get_workspace_application_schedule_output(application_key: Optional[pulumi.I
         schedule_key=var["workspace_application_schedule_schedule_key"],
         workspace_id=oci_dataintegration_workspace["test_workspace"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str application_key: The application key.

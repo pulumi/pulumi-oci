@@ -117,7 +117,6 @@ def get_remediation_recipes(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -127,7 +126,6 @@ def get_remediation_recipes(compartment_id: Optional[str] = None,
         id=var["remediation_recipe_id"],
         state=var["remediation_recipe_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
@@ -168,7 +166,6 @@ def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optiona
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -178,7 +175,6 @@ def get_remediation_recipes_output(compartment_id: Optional[pulumi.Input[Optiona
         id=var["remediation_recipe_id"],
         state=var["remediation_recipe_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.

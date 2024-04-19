@@ -19,7 +19,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetManagementDashboardsExport(ctx *pulumi.Context, args *GetManagementDashboardsExportArgs, opts ...pulumi.InvokeOption) (*GetManagementDashboardsExportResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagementDashboardsExportResult

@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEnterpriseManagerBridge(args: GetEnterpriseManagerBridgeArgs, opts?: pulumi.InvokeOptions): Promise<GetEnterpriseManagerBridgeResult> {
 
@@ -109,7 +107,6 @@ export interface GetEnterpriseManagerBridgeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -118,7 +115,6 @@ export interface GetEnterpriseManagerBridgeResult {
  *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getEnterpriseManagerBridgeOutput(args: GetEnterpriseManagerBridgeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnterpriseManagerBridgeResult> {
     return pulumi.output(args).apply((a: any) => getEnterpriseManagerBridge(a, opts))

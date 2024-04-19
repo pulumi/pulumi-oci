@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     resourceCategories: _var.log_analytics_resource_categories_management_resource_categories,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  *
  * ## Import
  *

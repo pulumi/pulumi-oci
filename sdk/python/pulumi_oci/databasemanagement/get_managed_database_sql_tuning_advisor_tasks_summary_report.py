@@ -181,7 +181,6 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -195,7 +194,6 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report(begin_exec_id_g
         time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to"],
         time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str begin_exec_id_greater_than_or_equal_to: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.
@@ -252,7 +250,6 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -266,7 +263,6 @@ def get_managed_database_sql_tuning_advisor_tasks_summary_report_output(begin_ex
         time_greater_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to"],
         time_less_than_or_equal_to=var["managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str begin_exec_id_greater_than_or_equal_to: The optional greater than or equal to filter on the execution ID related to a specific SQL Tuning Advisor task. This is applicable only for Auto SQL Tuning tasks.

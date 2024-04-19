@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -39,7 +38,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsAuthenticationFactorSettingResult> InvokeAsync(GetDomainsAuthenticationFactorSettingArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsAuthenticationFactorSettingResult>("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args ?? new GetDomainsAuthenticationFactorSettingArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -72,7 +69,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsAuthenticationFactorSettingResult> Invoke(GetDomainsAuthenticationFactorSettingInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsAuthenticationFactorSettingResult>("oci:Identity/getDomainsAuthenticationFactorSetting:getDomainsAuthenticationFactorSetting", args ?? new GetDomainsAuthenticationFactorSettingInvokeArgs(), options.WithDefaults());

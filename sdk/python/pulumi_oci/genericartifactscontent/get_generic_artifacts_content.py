@@ -62,14 +62,12 @@ def get_generic_artifacts_content(artifact_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=oci_generic_artifacts_content_artifact["test_artifact"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str artifact_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
@@ -94,14 +92,12 @@ def get_generic_artifacts_content_output(artifact_id: Optional[pulumi.Input[str]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_generic_artifacts_content = oci.GenericArtifactsContent.get_generic_artifacts_content(artifact_id=oci_generic_artifacts_content_artifact["test_artifact"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str artifact_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`

@@ -184,7 +184,6 @@ def get_security_policy_deployments(access_level: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -198,7 +197,6 @@ def get_security_policy_deployments(access_level: Optional[str] = None,
         state=var["security_policy_deployment_state"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
@@ -268,7 +266,6 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -282,7 +279,6 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
         state=var["security_policy_deployment_state"],
         target_id=oci_cloud_guard_target["test_target"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

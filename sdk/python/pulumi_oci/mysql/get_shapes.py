@@ -125,7 +125,6 @@ def get_shapes(availability_domain: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -135,7 +134,6 @@ def get_shapes(availability_domain: Optional[str] = None,
         is_supported_fors=var["shape_is_supported_for"],
         name=var["shape_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the Availability Domain.
@@ -179,7 +177,6 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -189,7 +186,6 @@ def get_shapes_output(availability_domain: Optional[pulumi.Input[Optional[str]]]
         is_supported_fors=var["shape_is_supported_for"],
         name=var["shape_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str availability_domain: The name of the Availability Domain.

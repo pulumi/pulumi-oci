@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetQueries(ctx *pulumi.Context, args *GetQueriesArgs, opts ...pulumi.InvokeOption) (*GetQueriesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetQueriesResult

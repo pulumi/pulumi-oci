@@ -891,14 +891,12 @@ def get_sddc(sddc_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sddc = oci.Ocvp.get_sddc(sddc_id=oci_ocvp_sddc["test_sddc"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.
@@ -985,14 +983,12 @@ def get_sddc_output(sddc_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_sddc = oci.Ocvp.get_sddc(sddc_id=oci_ocvp_sddc["test_sddc"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str sddc_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC.

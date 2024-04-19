@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -46,7 +45,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetEnterpriseManagerBridges(ctx *pulumi.Context, args *GetEnterpriseManagerBridgesArgs, opts ...pulumi.InvokeOption) (*GetEnterpriseManagerBridgesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEnterpriseManagerBridgesResult

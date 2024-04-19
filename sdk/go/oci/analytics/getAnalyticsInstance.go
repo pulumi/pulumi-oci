@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupAnalyticsInstance(ctx *pulumi.Context, args *LookupAnalyticsInstanceArgs, opts ...pulumi.InvokeOption) (*LookupAnalyticsInstanceResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAnalyticsInstanceResult

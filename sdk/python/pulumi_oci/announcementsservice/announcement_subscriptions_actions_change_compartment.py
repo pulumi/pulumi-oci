@@ -122,7 +122,6 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -131,7 +130,6 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
             announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
             compartment_id=var["compartment_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -165,7 +163,6 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -174,7 +171,6 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
             announcement_subscription_id=oci_announcements_service_announcement_subscription["test_announcement_subscription"]["id"],
             compartment_id=var["compartment_id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     name: _var.on_premise_vantage_point_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOnPremiseVantagePoints(args: GetOnPremiseVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetOnPremiseVantagePointsResult> {
 
@@ -86,7 +84,6 @@ export interface GetOnPremiseVantagePointsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -97,7 +94,6 @@ export interface GetOnPremiseVantagePointsResult {
  *     name: _var.on_premise_vantage_point_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getOnPremiseVantagePointsOutput(args: GetOnPremiseVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnPremiseVantagePointsResult> {
     return pulumi.output(args).apply((a: any) => getOnPremiseVantagePoints(a, opts))

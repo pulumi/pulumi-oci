@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupSender(ctx *pulumi.Context, args *LookupSenderArgs, opts ...pulumi.InvokeOption) (*LookupSenderResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSenderResult

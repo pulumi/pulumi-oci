@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -41,7 +40,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetCpes(ctx *pulumi.Context, args *GetCpesArgs, opts ...pulumi.InvokeOption) (*GetCpesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCpesResult

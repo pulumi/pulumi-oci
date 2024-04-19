@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMysqlVersion(args: GetMysqlVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlVersionResult> {
 
@@ -70,7 +68,6 @@ export interface GetMysqlVersionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -79,7 +76,6 @@ export interface GetMysqlVersionResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getMysqlVersionOutput(args: GetMysqlVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlVersionResult> {
     return pulumi.output(args).apply((a: any) => getMysqlVersion(a, opts))

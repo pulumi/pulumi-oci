@@ -99,14 +99,12 @@ def get_external_exadata_storage_server_iorm_plan(external_exadata_storage_serve
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_server_iorm_plan = oci.DatabaseManagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
@@ -134,14 +132,12 @@ def get_external_exadata_storage_server_iorm_plan_output(external_exadata_storag
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_external_exadata_storage_server_iorm_plan = oci.DatabaseManagement.get_external_exadata_storage_server_iorm_plan(external_exadata_storage_server_id=oci_database_management_external_exadata_storage_server["test_external_exadata_storage_server"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str external_exadata_storage_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.

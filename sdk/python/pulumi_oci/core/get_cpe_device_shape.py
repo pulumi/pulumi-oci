@@ -113,14 +113,12 @@ def get_cpe_device_shape(cpe_device_shape_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=oci_core_cpe_device_shape["test_cpe_device_shape"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cpe_device_shape_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.
@@ -156,14 +154,12 @@ def get_cpe_device_shape_output(cpe_device_shape_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_cpe_device_shape = oci.Core.get_cpe_device_shape(cpe_device_shape_id=oci_core_cpe_device_shape["test_cpe_device_shape"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str cpe_device_shape_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE device shape.

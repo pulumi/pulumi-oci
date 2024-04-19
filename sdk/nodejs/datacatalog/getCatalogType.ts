@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     fields: _var.catalog_type_fields,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCatalogType(args: GetCatalogTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogTypeResult> {
 
@@ -118,7 +116,6 @@ export interface GetCatalogTypeResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -129,7 +126,6 @@ export interface GetCatalogTypeResult {
  *     fields: _var.catalog_type_fields,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCatalogTypeOutput(args: GetCatalogTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogTypeResult> {
     return pulumi.output(args).apply((a: any) => getCatalogType(a, opts))

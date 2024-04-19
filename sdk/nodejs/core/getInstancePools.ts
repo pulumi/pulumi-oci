@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     state: _var.instance_pool_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstancePools(args: GetInstancePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancePoolsResult> {
 
@@ -89,7 +87,6 @@ export interface GetInstancePoolsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -100,7 +97,6 @@ export interface GetInstancePoolsResult {
  *     state: _var.instance_pool_state,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstancePoolsOutput(args: GetInstancePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolsResult> {
     return pulumi.output(args).apply((a: any) => getInstancePools(a, opts))

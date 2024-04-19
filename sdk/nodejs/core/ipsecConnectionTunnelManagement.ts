@@ -27,7 +27,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -50,7 +49,6 @@ import * as utilities from "../utilities";
  *     ikeVersion: "V1",
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export class IpsecConnectionTunnelManagement extends pulumi.CustomResource {
     /**

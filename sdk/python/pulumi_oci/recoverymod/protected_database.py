@@ -565,7 +565,6 @@ class ProtectedDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -589,7 +588,6 @@ class ProtectedDatabase(pulumi.CustomResource):
             },
             is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -626,7 +624,6 @@ class ProtectedDatabase(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -650,7 +647,6 @@ class ProtectedDatabase(pulumi.CustomResource):
             },
             is_redo_logs_shipped=var["protected_database_is_redo_logs_shipped"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -150,7 +150,6 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -162,7 +161,6 @@ def get_protection_capabilities(compartment_id: Optional[str] = None,
         key=var["protection_capability_key"],
         type=var["protection_capability_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -211,7 +209,6 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -223,7 +220,6 @@ def get_protection_capabilities_output(compartment_id: Optional[pulumi.Input[str
         key=var["protection_capability_key"],
         type=var["protection_capability_type"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

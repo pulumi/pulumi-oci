@@ -110,7 +110,6 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -119,7 +118,6 @@ def get_supported_vmware_software_versions(compartment_id: Optional[str] = None,
         host_shape_name=oci_core_shape["test_shape"]["name"],
         version=var["supported_vmware_software_version_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -157,7 +155,6 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -166,7 +163,6 @@ def get_supported_vmware_software_versions_output(compartment_id: Optional[pulum
         host_shape_name=oci_core_shape["test_shape"]["name"],
         version=var["supported_vmware_software_version_version"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -24,7 +24,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -48,7 +47,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func LookupAlarmSuppression(ctx *pulumi.Context, args *LookupAlarmSuppressionArgs, opts ...pulumi.InvokeOption) (*LookupAlarmSuppressionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAlarmSuppressionResult

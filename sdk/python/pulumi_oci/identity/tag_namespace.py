@@ -297,7 +297,6 @@ class TagNamespace(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -313,7 +312,6 @@ class TagNamespace(pulumi.CustomResource):
             },
             is_retired=False)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -362,7 +360,6 @@ class TagNamespace(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -378,7 +375,6 @@ class TagNamespace(pulumi.CustomResource):
             },
             is_retired=False)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

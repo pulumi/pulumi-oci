@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     jobId: oci_database_migration_job.test_job.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobOutput(args: GetJobOutputArgs, opts?: pulumi.InvokeOptions): Promise<GetJobOutputResult> {
 
@@ -63,7 +61,6 @@ export interface GetJobOutputResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -72,7 +69,6 @@ export interface GetJobOutputResult {
  *     jobId: oci_database_migration_job.test_job.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getJobOutputOutput(args: GetJobOutputOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobOutputResult> {
     return pulumi.output(args).apply((a: any) => getJobOutput(a, opts))

@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSslCipherSuites(args: GetSslCipherSuitesArgs, opts?: pulumi.InvokeOptions): Promise<GetSslCipherSuitesResult> {
 
@@ -66,7 +64,6 @@ export interface GetSslCipherSuitesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetSslCipherSuitesResult {
  *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSslCipherSuitesOutput(args: GetSslCipherSuitesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSslCipherSuitesResult> {
     return pulumi.output(args).apply((a: any) => getSslCipherSuites(a, opts))

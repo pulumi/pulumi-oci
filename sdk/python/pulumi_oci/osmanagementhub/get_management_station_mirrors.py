@@ -119,7 +119,6 @@ def get_management_station_mirrors(display_name: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -129,7 +128,6 @@ def get_management_station_mirrors(display_name: Optional[str] = None,
         display_name_contains=var["management_station_mirror_display_name_contains"],
         mirror_states=var["management_station_mirror_mirror_states"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
@@ -170,7 +168,6 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -180,7 +177,6 @@ def get_management_station_mirrors_output(display_name: Optional[pulumi.Input[Op
         display_name_contains=var["management_station_mirror_display_name_contains"],
         mirror_states=var["management_station_mirror_mirror_states"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`

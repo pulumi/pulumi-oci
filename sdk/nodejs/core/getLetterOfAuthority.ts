@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLetterOfAuthority(args: GetLetterOfAuthorityArgs, opts?: pulumi.InvokeOptions): Promise<GetLetterOfAuthorityResult> {
 
@@ -84,7 +82,6 @@ export interface GetLetterOfAuthorityResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +90,6 @@ export interface GetLetterOfAuthorityResult {
  *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getLetterOfAuthorityOutput(args: GetLetterOfAuthorityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLetterOfAuthorityResult> {
     return pulumi.output(args).apply((a: any) => getLetterOfAuthority(a, opts))

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -37,7 +36,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetDomainsMyOauth2clientCredentialResult> InvokeAsync(GetDomainsMyOauth2clientCredentialArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsMyOauth2clientCredentialResult>("oci:Identity/getDomainsMyOauth2clientCredential:getDomainsMyOauth2clientCredential", args ?? new GetDomainsMyOauth2clientCredentialArgs(), options.WithDefaults());
@@ -49,7 +47,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -68,7 +65,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetDomainsMyOauth2clientCredentialResult> Invoke(GetDomainsMyOauth2clientCredentialInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsMyOauth2clientCredentialResult>("oci:Identity/getDomainsMyOauth2clientCredential:getDomainsMyOauth2clientCredential", args ?? new GetDomainsMyOauth2clientCredentialInvokeArgs(), options.WithDefaults());

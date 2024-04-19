@@ -209,7 +209,6 @@ class AuthToken(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -218,7 +217,6 @@ class AuthToken(pulumi.CustomResource):
             description=var["auth_token_description"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -259,7 +257,6 @@ class AuthToken(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -268,7 +265,6 @@ class AuthToken(pulumi.CustomResource):
             description=var["auth_token_description"],
             user_id=oci_identity_user["test_user"]["id"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

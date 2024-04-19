@@ -138,7 +138,6 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -149,7 +148,6 @@ def get_private_endpoints(compartment_id: Optional[str] = None,
         owner_principal_id=var["owner_principal_id"],
         state=var["private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.
@@ -194,7 +192,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -205,7 +202,6 @@ def get_private_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = N
         owner_principal_id=var["owner_principal_id"],
         state=var["private_endpoint_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The OCID of the compartment.

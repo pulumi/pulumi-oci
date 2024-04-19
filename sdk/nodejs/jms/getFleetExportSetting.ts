@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetExportSetting(args: GetFleetExportSettingArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetExportSettingResult> {
 
@@ -104,7 +102,6 @@ export interface GetFleetExportSettingResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetFleetExportSettingResult {
  *     fleetId: oci_jms_fleet.test_fleet.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFleetExportSettingOutput(args: GetFleetExportSettingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetExportSettingResult> {
     return pulumi.output(args).apply((a: any) => getFleetExportSetting(a, opts))

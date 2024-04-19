@@ -389,7 +389,6 @@ class Tag(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -410,7 +409,6 @@ class Tag(pulumi.CustomResource):
             ),
             is_retired=False)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -473,7 +471,6 @@ class Tag(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -494,7 +491,6 @@ class Tag(pulumi.CustomResource):
             ),
             is_retired=False)
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

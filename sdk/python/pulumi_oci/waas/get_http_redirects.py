@@ -139,7 +139,6 @@ def get_http_redirects(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +150,6 @@ def get_http_redirects(compartment_id: Optional[str] = None,
         time_created_greater_than_or_equal_to=var["http_redirect_time_created_greater_than_or_equal_to"],
         time_created_less_than=var["http_redirect_time_created_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
@@ -200,7 +198,6 @@ def get_http_redirects_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -212,7 +209,6 @@ def get_http_redirects_output(compartment_id: Optional[pulumi.Input[str]] = None
         time_created_greater_than_or_equal_to=var["http_redirect_time_created_greater_than_or_equal_to"],
         time_created_less_than=var["http_redirect_time_created_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.

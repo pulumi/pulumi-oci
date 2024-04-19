@@ -18,7 +18,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -27,7 +26,6 @@ import * as utilities from "../utilities";
  *     currentLicenseTypeName: _var.allowed_domain_license_type_current_license_type_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAllowedDomainLicenseTypes(args?: GetAllowedDomainLicenseTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetAllowedDomainLicenseTypesResult> {
     args = args || {};
@@ -77,7 +75,6 @@ export interface GetAllowedDomainLicenseTypesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -86,7 +83,6 @@ export interface GetAllowedDomainLicenseTypesResult {
  *     currentLicenseTypeName: _var.allowed_domain_license_type_current_license_type_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAllowedDomainLicenseTypesOutput(args?: GetAllowedDomainLicenseTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAllowedDomainLicenseTypesResult> {
     return pulumi.output(args).apply((a: any) => getAllowedDomainLicenseTypes(a, opts))

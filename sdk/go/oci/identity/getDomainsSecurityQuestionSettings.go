@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -47,7 +46,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetDomainsSecurityQuestionSettings(ctx *pulumi.Context, args *GetDomainsSecurityQuestionSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsSecurityQuestionSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsSecurityQuestionSettingsResult

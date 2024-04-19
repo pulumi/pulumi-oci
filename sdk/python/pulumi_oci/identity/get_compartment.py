@@ -168,14 +168,12 @@ def get_compartment(id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compartment = oci.Identity.get_compartment(id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The OCID of the compartment.
@@ -215,14 +213,12 @@ def get_compartment_output(id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_compartment = oci.Identity.get_compartment(id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str id: The OCID of the compartment.

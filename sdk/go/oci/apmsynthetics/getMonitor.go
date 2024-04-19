@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetMonitor(ctx *pulumi.Context, args *GetMonitorArgs, opts ...pulumi.InvokeOption) (*GetMonitorResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMonitorResult

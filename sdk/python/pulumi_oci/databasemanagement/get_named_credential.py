@@ -219,14 +219,12 @@ def get_named_credential(named_credential_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_named_credential = oci.DatabaseManagement.get_named_credential(named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
@@ -264,14 +262,12 @@ def get_named_credential_output(named_credential_id: Optional[pulumi.Input[str]]
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_named_credential = oci.DatabaseManagement.get_named_credential(named_credential_id=oci_database_management_named_credential["test_named_credential"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.

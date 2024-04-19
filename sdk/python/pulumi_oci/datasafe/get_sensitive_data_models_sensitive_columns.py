@@ -273,7 +273,6 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -296,7 +295,6 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[str] = No
         time_updated_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to"],
         time_updated_less_than=var["sensitive_data_models_sensitive_column_time_updated_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str column_group: A filter to return only the sensitive columns that belong to the specified column group.
@@ -393,7 +391,6 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -416,7 +413,6 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
         time_updated_greater_than_or_equal_to=var["sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to"],
         time_updated_less_than=var["sensitive_data_models_sensitive_column_time_updated_less_than"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str column_group: A filter to return only the sensitive columns that belong to the specified column group.

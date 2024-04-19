@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -31,7 +30,6 @@ import * as utilities from "../utilities";
  *     timeValidUntilLessThan: _var.security_assessment_findings_change_audit_log_time_valid_until_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentFindingsChangeAuditLogs(args: GetSecurityAssessmentFindingsChangeAuditLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsChangeAuditLogsResult> {
 
@@ -148,7 +146,6 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -166,7 +163,6 @@ export interface GetSecurityAssessmentFindingsChangeAuditLogsResult {
  *     timeValidUntilLessThan: _var.security_assessment_findings_change_audit_log_time_valid_until_less_than,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityAssessmentFindingsChangeAuditLogsOutput(args: GetSecurityAssessmentFindingsChangeAuditLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsChangeAuditLogsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindingsChangeAuditLogs(a, opts))

@@ -493,7 +493,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -513,7 +512,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             },
             is_default=var["java_download_token_is_default"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -548,7 +546,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -568,7 +565,6 @@ class JavaDownloadsJavaDownloadToken(pulumi.CustomResource):
             },
             is_default=var["java_download_token_is_default"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

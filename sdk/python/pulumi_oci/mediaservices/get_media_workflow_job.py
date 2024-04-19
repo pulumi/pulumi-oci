@@ -306,14 +306,12 @@ def get_media_workflow_job(media_workflow_job_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.
@@ -359,14 +357,12 @@ def get_media_workflow_job_output(media_workflow_job_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_media_workflow_job = oci.MediaServices.get_media_workflow_job(media_workflow_job_id=oci_media_services_media_workflow_job["test_media_workflow_job"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str media_workflow_job_id: Unique MediaWorkflowJob identifier.

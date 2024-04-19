@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     name: _var.namespace_properties_metadata_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespacePropertiesMetadata(args: GetNamespacePropertiesMetadataArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespacePropertiesMetadataResult> {
 
@@ -100,7 +98,6 @@ export interface GetNamespacePropertiesMetadataResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetNamespacePropertiesMetadataResult {
  *     name: _var.namespace_properties_metadata_name,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNamespacePropertiesMetadataOutput(args: GetNamespacePropertiesMetadataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespacePropertiesMetadataResult> {
     return pulumi.output(args).apply((a: any) => getNamespacePropertiesMetadata(a, opts))

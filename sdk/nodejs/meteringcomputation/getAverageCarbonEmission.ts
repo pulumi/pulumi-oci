@@ -11,7 +11,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -20,7 +19,6 @@ import * as utilities from "../utilities";
  *     skuPartNumber: _var.average_carbon_emission_sku_part_number,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAverageCarbonEmission(args: GetAverageCarbonEmissionArgs, opts?: pulumi.InvokeOptions): Promise<GetAverageCarbonEmissionResult> {
 
@@ -64,7 +62,6 @@ export interface GetAverageCarbonEmissionResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -73,7 +70,6 @@ export interface GetAverageCarbonEmissionResult {
  *     skuPartNumber: _var.average_carbon_emission_sku_part_number,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getAverageCarbonEmissionOutput(args: GetAverageCarbonEmissionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAverageCarbonEmissionResult> {
     return pulumi.output(args).apply((a: any) => getAverageCarbonEmission(a, opts))

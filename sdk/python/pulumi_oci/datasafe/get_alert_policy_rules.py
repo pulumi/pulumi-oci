@@ -87,14 +87,12 @@ def get_alert_policy_rules(alert_policy_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alert_policy_rules = oci.DataSafe.get_alert_policy_rules(alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str alert_policy_id: The OCID of the alert policy.
@@ -124,14 +122,12 @@ def get_alert_policy_rules_output(alert_policy_id: Optional[pulumi.Input[str]] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_alert_policy_rules = oci.DataSafe.get_alert_policy_rules(alert_policy_id=oci_data_safe_alert_policy["test_alert_policy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str alert_policy_id: The OCID of the alert policy.

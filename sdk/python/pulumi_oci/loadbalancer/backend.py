@@ -360,7 +360,6 @@ class Backend(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -375,7 +374,6 @@ class Backend(pulumi.CustomResource):
             offline=var["backend_offline"],
             weight=var["backend_weight"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -417,7 +415,6 @@ class Backend(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -432,7 +429,6 @@ class Backend(pulumi.CustomResource):
             offline=var["backend_offline"],
             weight=var["backend_weight"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

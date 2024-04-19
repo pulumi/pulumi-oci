@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     serviceEnvironmentId: oci_service_manager_proxy_service_environment.test_service_environment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getServiceEnvironment(args: GetServiceEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceEnvironmentResult> {
 
@@ -91,7 +89,6 @@ export interface GetServiceEnvironmentResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -101,7 +98,6 @@ export interface GetServiceEnvironmentResult {
  *     serviceEnvironmentId: oci_service_manager_proxy_service_environment.test_service_environment.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getServiceEnvironmentOutput(args: GetServiceEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceEnvironmentResult> {
     return pulumi.output(args).apply((a: any) => getServiceEnvironment(a, opts))

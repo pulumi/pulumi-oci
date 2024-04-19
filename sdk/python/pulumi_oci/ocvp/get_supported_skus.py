@@ -97,7 +97,6 @@ def get_supported_skus(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -105,7 +104,6 @@ def get_supported_skus(compartment_id: Optional[str] = None,
     test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"],
         host_shape_name=oci_core_shape["test_shape"]["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -139,7 +137,6 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -147,7 +144,6 @@ def get_supported_skus_output(compartment_id: Optional[pulumi.Input[str]] = None
     test_supported_skus = oci.Ocvp.get_supported_skus(compartment_id=var["compartment_id"],
         host_shape_name=oci_core_shape["test_shape"]["name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

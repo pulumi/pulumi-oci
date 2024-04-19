@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -38,7 +37,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetWebAppFirewallPoliciesResult> InvokeAsync(GetWebAppFirewallPoliciesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWebAppFirewallPoliciesResult>("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args ?? new GetWebAppFirewallPoliciesArgs(), options.WithDefaults());
@@ -51,7 +49,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -70,7 +67,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetWebAppFirewallPoliciesResult> Invoke(GetWebAppFirewallPoliciesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWebAppFirewallPoliciesResult>("oci:Waf/getWebAppFirewallPolicies:getWebAppFirewallPolicies", args ?? new GetWebAppFirewallPoliciesInvokeArgs(), options.WithDefaults());

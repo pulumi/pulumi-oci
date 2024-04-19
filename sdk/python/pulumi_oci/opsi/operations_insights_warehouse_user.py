@@ -430,7 +430,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -449,7 +448,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
             is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -489,7 +487,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -508,7 +505,6 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             is_em_data_access=var["operations_insights_warehouse_user_is_em_data_access"],
             is_opsi_data_access=var["operations_insights_warehouse_user_is_opsi_data_access"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

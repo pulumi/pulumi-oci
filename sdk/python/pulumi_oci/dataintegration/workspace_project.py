@@ -425,7 +425,6 @@ class WorkspaceProject(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -445,7 +444,6 @@ class WorkspaceProject(pulumi.CustomResource):
                 registry_version=var["workspace_project_registry_metadata_registry_version"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -483,7 +481,6 @@ class WorkspaceProject(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -503,7 +500,6 @@ class WorkspaceProject(pulumi.CustomResource):
                 registry_version=var["workspace_project_registry_metadata_registry_version"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

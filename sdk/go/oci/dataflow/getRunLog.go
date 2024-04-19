@@ -17,7 +17,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -42,7 +41,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetRunLog(ctx *pulumi.Context, args *GetRunLogArgs, opts ...pulumi.InvokeOption) (*GetRunLogResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetRunLogResult

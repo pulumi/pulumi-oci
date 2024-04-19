@@ -168,7 +168,6 @@ def get_vm_cluster_update(update_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -176,7 +175,6 @@ def get_vm_cluster_update(update_id: Optional[str] = None,
     test_vm_cluster_update = oci.Database.get_vm_cluster_update(update_id=oci_database_update["test_update"]["id"],
         vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str update_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
@@ -213,7 +211,6 @@ def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -221,7 +218,6 @@ def get_vm_cluster_update_output(update_id: Optional[pulumi.Input[str]] = None,
     test_vm_cluster_update = oci.Database.get_vm_cluster_update(update_id=oci_database_update["test_update"]["id"],
         vm_cluster_id=oci_database_vm_cluster["test_vm_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str update_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.

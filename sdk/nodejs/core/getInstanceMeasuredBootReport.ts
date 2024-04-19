@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstanceMeasuredBootReport(args: GetInstanceMeasuredBootReportArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceMeasuredBootReportResult> {
 
@@ -67,7 +65,6 @@ export interface GetInstanceMeasuredBootReportResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -76,7 +73,6 @@ export interface GetInstanceMeasuredBootReportResult {
  *     instanceId: oci_core_instance.test_instance.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getInstanceMeasuredBootReportOutput(args: GetInstanceMeasuredBootReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceMeasuredBootReportResult> {
     return pulumi.output(args).apply((a: any) => getInstanceMeasuredBootReport(a, opts))

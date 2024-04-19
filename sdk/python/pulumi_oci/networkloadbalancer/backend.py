@@ -383,7 +383,6 @@ class Backend(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -399,7 +398,6 @@ class Backend(pulumi.CustomResource):
             target_id=oci_cloud_guard_target["test_target"]["id"],
             weight=var["backend_weight"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -439,7 +437,6 @@ class Backend(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -455,7 +452,6 @@ class Backend(pulumi.CustomResource):
             target_id=oci_cloud_guard_target["test_target"]["id"],
             weight=var["backend_weight"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

@@ -450,7 +450,6 @@ class NotebookSession(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -504,7 +503,6 @@ class NotebookSession(pulumi.CustomResource):
                 prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -544,7 +542,6 @@ class NotebookSession(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -598,7 +595,6 @@ class NotebookSession(pulumi.CustomResource):
                 prefix=var["notebook_session_notebook_session_storage_mount_configuration_details_list_prefix"],
             )])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

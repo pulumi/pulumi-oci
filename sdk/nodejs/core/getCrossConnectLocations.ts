@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -23,7 +22,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectLocations(args: GetCrossConnectLocationsArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectLocationsResult> {
 
@@ -68,7 +66,6 @@ export interface GetCrossConnectLocationsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -77,7 +74,6 @@ export interface GetCrossConnectLocationsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getCrossConnectLocationsOutput(args: GetCrossConnectLocationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectLocationsResult> {
     return pulumi.output(args).apply((a: any) => getCrossConnectLocations(a, opts))

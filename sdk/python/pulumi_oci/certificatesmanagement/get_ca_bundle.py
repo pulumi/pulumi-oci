@@ -167,14 +167,12 @@ def get_ca_bundle(ca_bundle_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ca_bundle = oci.CertificatesManagement.get_ca_bundle(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ca_bundle_id: The OCID of the CA bundle.
@@ -208,14 +206,12 @@ def get_ca_bundle_output(ca_bundle_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_ca_bundle = oci.CertificatesManagement.get_ca_bundle(ca_bundle_id=oci_certificates_management_ca_bundle["test_ca_bundle"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str ca_bundle_id: The OCID of the CA bundle.

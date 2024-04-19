@@ -75,14 +75,12 @@ def get_instance_maintenance_reboot(instance_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=oci_core_instance["test_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
@@ -109,14 +107,12 @@ def get_instance_maintenance_reboot_output(instance_id: Optional[pulumi.Input[st
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_instance_maintenance_reboot = oci.Core.get_instance_maintenance_reboot(instance_id=oci_core_instance["test_instance"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.

@@ -133,7 +133,6 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[str] =
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -141,7 +140,6 @@ def get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id: Optional[str] =
     test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
         oda_private_endpoint_scan_proxy_id=oci_oda_oda_private_endpoint_scan_proxy["test_oda_private_endpoint_scan_proxy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -175,7 +173,6 @@ def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -183,7 +180,6 @@ def get_oda_private_endpoint_scan_proxy_output(oda_private_endpoint_id: Optional
     test_oda_private_endpoint_scan_proxy = oci.Oda.get_oda_private_endpoint_scan_proxy(oda_private_endpoint_id=oci_oda_oda_private_endpoint["test_oda_private_endpoint"]["id"],
         oda_private_endpoint_scan_proxy_id=oci_oda_oda_private_endpoint_scan_proxy["test_oda_private_endpoint_scan_proxy"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str oda_private_endpoint_id: Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

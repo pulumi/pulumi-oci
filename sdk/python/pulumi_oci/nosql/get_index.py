@@ -164,7 +164,6 @@ def get_index(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -173,7 +172,6 @@ def get_index(compartment_id: Optional[str] = None,
         table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
         compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.
@@ -213,7 +211,6 @@ def get_index_output(compartment_id: Optional[pulumi.Input[str]] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -222,7 +219,6 @@ def get_index_output(compartment_id: Optional[pulumi.Input[str]] = None,
         table_name_or_id=oci_nosql_table_name_or["test_table_name_or"]["id"],
         compartment_id=var["compartment_id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: The ID of a table's compartment. When a table is identified by name, the compartmentId is often needed to provide context for interpreting the name.

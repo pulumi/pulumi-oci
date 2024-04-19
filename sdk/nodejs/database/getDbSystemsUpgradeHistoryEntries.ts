@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -24,7 +23,6 @@ import * as utilities from "../utilities";
  *     upgradeAction: _var.db_systems_upgrade_history_entry_upgrade_action,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemsUpgradeHistoryEntries(args: GetDbSystemsUpgradeHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemsUpgradeHistoryEntriesResult> {
 
@@ -83,7 +81,6 @@ export interface GetDbSystemsUpgradeHistoryEntriesResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -94,7 +91,6 @@ export interface GetDbSystemsUpgradeHistoryEntriesResult {
  *     upgradeAction: _var.db_systems_upgrade_history_entry_upgrade_action,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getDbSystemsUpgradeHistoryEntriesOutput(args: GetDbSystemsUpgradeHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemsUpgradeHistoryEntriesResult> {
     return pulumi.output(args).apply((a: any) => getDbSystemsUpgradeHistoryEntries(a, opts))

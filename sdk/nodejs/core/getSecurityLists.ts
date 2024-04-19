@@ -14,7 +14,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -26,7 +25,6 @@ import * as utilities from "../utilities";
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityLists(args: GetSecurityListsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityListsResult> {
 
@@ -101,7 +99,6 @@ export interface GetSecurityListsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -113,7 +110,6 @@ export interface GetSecurityListsResult {
  *     vcnId: oci_core_vcn.test_vcn.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getSecurityListsOutput(args: GetSecurityListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityListsResult> {
     return pulumi.output(args).apply((a: any) => getSecurityLists(a, opts))

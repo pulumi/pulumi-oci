@@ -112,7 +112,6 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -121,7 +120,6 @@ def get_log_saved_searches(compartment_id: Optional[str] = None,
         log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"],
         name=var["log_saved_search_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
@@ -158,7 +156,6 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -167,7 +164,6 @@ def get_log_saved_searches_output(compartment_id: Optional[pulumi.Input[str]] = 
         log_saved_search_id=oci_logging_log_saved_search["test_log_saved_search"]["id"],
         name=var["log_saved_search_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.

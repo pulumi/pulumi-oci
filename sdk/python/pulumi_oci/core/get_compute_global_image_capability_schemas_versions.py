@@ -102,7 +102,6 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -110,7 +109,6 @@ def get_compute_global_image_capability_schemas_versions(compute_global_image_ca
     test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
         display_name=var["compute_global_image_capability_schemas_version_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
@@ -143,7 +141,6 @@ def get_compute_global_image_capability_schemas_versions_output(compute_global_i
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -151,7 +148,6 @@ def get_compute_global_image_capability_schemas_versions_output(compute_global_i
     test_compute_global_image_capability_schemas_versions = oci.Core.get_compute_global_image_capability_schemas_versions(compute_global_image_capability_schema_id=oci_core_compute_global_image_capability_schema["test_compute_global_image_capability_schema"]["id"],
         display_name=var["compute_global_image_capability_schemas_version_display_name"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema

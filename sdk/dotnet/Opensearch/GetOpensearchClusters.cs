@@ -33,7 +33,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Task<GetOpensearchClustersResult> InvokeAsync(GetOpensearchClustersArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetOpensearchClustersResult>("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", args ?? new GetOpensearchClustersArgs(), options.WithDefaults());
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// ## Example Usage
         /// 
-        /// &lt;!--Start PulumiCodeChooser --&gt;
         /// ```csharp
         /// using System.Collections.Generic;
         /// using System.Linq;
@@ -98,7 +95,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// });
         /// ```
-        /// &lt;!--End PulumiCodeChooser --&gt;
         /// </summary>
         public static Output<GetOpensearchClustersResult> Invoke(GetOpensearchClustersInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetOpensearchClustersResult>("oci:Opensearch/getOpensearchClusters:getOpensearchClusters", args ?? new GetOpensearchClustersInvokeArgs(), options.WithDefaults());

@@ -18,7 +18,6 @@ import (
 //
 // ## Example Usage
 //
-// <!--Start PulumiCodeChooser -->
 // ```go
 // package main
 //
@@ -43,7 +42,6 @@ import (
 //	}
 //
 // ```
-// <!--End PulumiCodeChooser -->
 func GetLocalPeeringGateways(ctx *pulumi.Context, args *GetLocalPeeringGatewaysArgs, opts ...pulumi.InvokeOption) (*GetLocalPeeringGatewaysResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetLocalPeeringGatewaysResult

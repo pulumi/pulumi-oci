@@ -15,7 +15,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -25,7 +24,6 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFaultDomains(args: GetFaultDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetFaultDomainsResult> {
 
@@ -83,7 +81,6 @@ export interface GetFaultDomainsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -93,7 +90,6 @@ export interface GetFaultDomainsResult {
  *     compartmentId: _var.compartment_id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getFaultDomainsOutput(args: GetFaultDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFaultDomainsResult> {
     return pulumi.output(args).apply((a: any) => getFaultDomains(a, opts))

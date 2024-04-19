@@ -179,7 +179,6 @@ def get_drg_attachments(attachment_type: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -193,7 +192,6 @@ def get_drg_attachments(attachment_type: Optional[str] = None,
         state=var["drg_attachment_state"],
         vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str attachment_type: The type for the network resource attached to the DRG.
@@ -255,7 +253,6 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -269,7 +266,6 @@ def get_drg_attachments_output(attachment_type: Optional[pulumi.Input[Optional[s
         state=var["drg_attachment_state"],
         vcn_id=oci_core_vcn["test_vcn"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str attachment_type: The type for the network resource attached to the DRG.

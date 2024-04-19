@@ -539,14 +539,12 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str opensearch_cluster_id: unique OpensearchCluster identifier
@@ -619,14 +617,12 @@ def get_opensearch_cluster_output(opensearch_cluster_id: Optional[pulumi.Input[s
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
 
     test_opensearch_cluster = oci.Opensearch.get_opensearch_cluster(opensearch_cluster_id=oci_opensearch_opensearch_cluster["test_opensearch_cluster"]["id"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str opensearch_cluster_id: unique OpensearchCluster identifier

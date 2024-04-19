@@ -132,7 +132,6 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -143,7 +142,6 @@ def get_management_agent_plugins(agent_id: Optional[str] = None,
         platform_types=var["management_agent_plugin_platform_type"],
         state=var["management_agent_plugin_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: The ManagementAgentID of the agent from which the Management Agents to be filtered.
@@ -188,7 +186,6 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -199,7 +196,6 @@ def get_management_agent_plugins_output(agent_id: Optional[pulumi.Input[Optional
         platform_types=var["management_agent_plugin_platform_type"],
         state=var["management_agent_plugin_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str agent_id: The ManagementAgentID of the agent from which the Management Agents to be filtered.

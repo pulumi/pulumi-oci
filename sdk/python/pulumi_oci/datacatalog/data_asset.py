@@ -370,7 +370,6 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -382,7 +381,6 @@ class DataAsset(pulumi.CustomResource):
             description=var["data_asset_description"],
             properties=var["data_asset_properties"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -416,7 +414,6 @@ class DataAsset(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -428,7 +425,6 @@ class DataAsset(pulumi.CustomResource):
             description=var["data_asset_description"],
             properties=var["data_asset_properties"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

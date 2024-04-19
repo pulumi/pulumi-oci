@@ -110,14 +110,12 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -142,14 +140,12 @@ class ContainerConfiguration(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
 
         test_container_configuration = oci.artifacts.ContainerConfiguration("testContainerConfiguration")
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

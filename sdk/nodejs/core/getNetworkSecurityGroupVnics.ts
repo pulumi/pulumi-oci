@@ -13,7 +13,6 @@ import * as utilities from "../utilities";
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -22,7 +21,6 @@ import * as utilities from "../utilities";
  *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSecurityGroupVnics(args: GetNetworkSecurityGroupVnicsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupVnicsResult> {
 
@@ -66,7 +64,6 @@ export interface GetNetworkSecurityGroupVnicsResult {
  *
  * ## Example Usage
  *
- * <!--Start PulumiCodeChooser -->
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
@@ -75,7 +72,6 @@ export interface GetNetworkSecurityGroupVnicsResult {
  *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
  * });
  * ```
- * <!--End PulumiCodeChooser -->
  */
 export function getNetworkSecurityGroupVnicsOutput(args: GetNetworkSecurityGroupVnicsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupVnicsResult> {
     return pulumi.output(args).apply((a: any) => getNetworkSecurityGroupVnics(a, opts))

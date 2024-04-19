@@ -361,7 +361,6 @@ class PathAnalysi(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -405,7 +404,6 @@ class PathAnalysi(pulumi.CustomResource):
                 vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -451,7 +449,6 @@ class PathAnalysi(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -495,7 +492,6 @@ class PathAnalysi(pulumi.CustomResource):
                 vnic_id=oci_core_vnic_attachment["test_vnic_attachment"]["id"],
             ))
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

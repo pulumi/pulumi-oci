@@ -282,7 +282,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -292,7 +291,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
             license_acceptance_status=var["java_license_acceptance_record_license_acceptance_status"],
             license_type=var["java_license_acceptance_record_license_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 
@@ -321,7 +319,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
 
         ## Example Usage
 
-        <!--Start PulumiCodeChooser -->
         ```python
         import pulumi
         import pulumi_oci as oci
@@ -331,7 +328,6 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
             license_acceptance_status=var["java_license_acceptance_record_license_acceptance_status"],
             license_type=var["java_license_acceptance_record_license_type"])
         ```
-        <!--End PulumiCodeChooser -->
 
         ## Import
 

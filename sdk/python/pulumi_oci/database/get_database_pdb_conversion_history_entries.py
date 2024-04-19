@@ -109,7 +109,6 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -118,7 +117,6 @@ def get_database_pdb_conversion_history_entries(database_id: Optional[str] = Non
         pdb_conversion_action=var["database_pdb_conversion_history_entry_pdb_conversion_action"],
         state=var["database_pdb_conversion_history_entry_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -155,7 +153,6 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
 
     ## Example Usage
 
-    <!--Start PulumiCodeChooser -->
     ```python
     import pulumi
     import pulumi_oci as oci
@@ -164,7 +161,6 @@ def get_database_pdb_conversion_history_entries_output(database_id: Optional[pul
         pdb_conversion_action=var["database_pdb_conversion_history_entry_pdb_conversion_action"],
         state=var["database_pdb_conversion_history_entry_state"])
     ```
-    <!--End PulumiCodeChooser -->
 
 
     :param str database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
